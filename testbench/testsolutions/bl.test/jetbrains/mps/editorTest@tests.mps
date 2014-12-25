@@ -18,6 +18,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="b5734616-c4b0-4639-9c6a-f3a1cf5dc4db" name="testDefaultEditor" version="-1" />
     <use id="e228eea1-07ef-499c-8826-9c47a7e369db" name="testMoveElements" version="-1" />
+    <use id="fdcdc48f-bfd8-4831-aa76-5abac2ffa010" name="jetbrains.mps.baseLanguage.jdk8" version="0" />
   </languages>
   <imports>
     <import index="tpei" ref="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" />
@@ -45,6 +46,8 @@
     <import index="r9fo" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(org.jetbrains.mps.util@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="4rc5" ref="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" />
+    <import index="cp6v" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/f:java_stub#9c8b4b95-5d89-4201-ad78-0b2db3a22768#test(jetbrains.mps.baseLanguage.test/test@java_stub)" />
+    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -90,6 +93,7 @@
       <concept id="1101347953350122758" name="jetbrains.mps.lang.test.structure.BootstrapActionReference" flags="ng" index="3iKlGA">
         <property id="1101347953350127918" name="actionId" index="3iKnse" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -208,6 +212,10 @@
         <child id="1083245396908" name="enumConstant" index="Qtgdg" />
       </concept>
       <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -389,6 +397,7 @@
         <property id="1071364028384826862" name="count" index="1vR6C6" />
       </concept>
       <concept id="7024111702304495340" name="jetbrains.mps.baseLanguage.structure.MulAssignmentExpression" flags="nn" index="3vZbUc" />
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -462,6 +471,11 @@
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="fdcdc48f-bfd8-4831-aa76-5abac2ffa010" name="jetbrains.mps.baseLanguage.jdk8">
+      <concept id="1719162360409810393" name="jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall" flags="ng" index="3WEljn">
+        <reference id="1719162360409958622" name="classifier" index="3WFDBg" />
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -41375,6 +41389,346 @@
           <property role="p6zMs" value="6" />
           <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="xR5LymFzJL">
+    <property role="TrG5h" value="TypeSuperInterfaceMethodCall" />
+    <property role="3GE5qa" value="jdk8" />
+    <node concept="312cEu" id="xR5LymH3_E" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymH9cy" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymMo7N" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymMo7O" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymMo7Q" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymMo7R" role="3clF47">
+          <node concept="LIFWc" id="3KXnQviFmnr" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_u338ov_a0a" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymH3_F" role="1B3o_S" />
+      <node concept="3uibUv" id="3KXnQviC7FW" role="EKbjA">
+        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="xR5LymFBuI" role="LjaKd">
+      <node concept="2TK7Tu" id="xR5LymHdV0" role="3cqZAp">
+        <property role="2TTd_B" value="TestInterface.super" />
+      </node>
+    </node>
+    <node concept="312cEu" id="xR5LymHdC_" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymHdCA" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymHdCB" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymHdCC" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymHdCD" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymHdCE" role="3clF47">
+          <node concept="3clFbF" id="3KXnQviFmxu" role="3cqZAp">
+            <node concept="3WEljn" id="3KXnQviGYSB" role="3clFbG">
+              <ref role="3WFDBg" to="cp6v:~TestInterface" resolve="TestInterface" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymHdCH" role="1B3o_S" />
+      <node concept="3uibUv" id="3KXnQviC7Jx" role="EKbjA">
+        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="xR5LymHdVm">
+    <property role="3GE5qa" value="jdk8" />
+    <property role="TrG5h" value="CorrectStaticMethodCall" />
+    <node concept="312cEu" id="xR5LymHdVQ" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymHdVR" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymHdVS" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymHdVT" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymHdVU" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymHdVV" role="3clF47">
+          <node concept="3clFbF" id="xR5LymHe5Q" role="3cqZAp">
+            <node concept="10M0yZ" id="xR5LymHe5P" role="3clFbG">
+              <ref role="1PxDUh" to="cp6v:~TestInterface" resolve="TestInterface" />
+              <node concept="LIFWc" id="xR5LymHecx" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="empty_staticFieldDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymHdVY" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="xR5LymHebR" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymHebS" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymHebT" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymHebU" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymHebV" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymHebW" role="3clF47">
+          <node concept="3clFbF" id="3KXnQviuXcs" role="3cqZAp">
+            <node concept="2YIFZM" id="3KXnQviv150" role="3clFbG">
+              <ref role="37wK5l" to="cp6v:~TestInterface.getStaticTestValue():int" resolve="getStaticTestValue" />
+              <ref role="1Pybhc" to="cp6v:~TestInterface" resolve="TestInterface" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymHebZ" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="xR5LymHeBK" role="LjaKd">
+      <node concept="3cpWs8" id="3KXnQvitss2" role="3cqZAp">
+        <node concept="3cpWsn" id="3KXnQvitss3" role="3cpWs9">
+          <property role="TrG5h" value="oldProvider" />
+          <node concept="3uibUv" id="3KXnQvitss1" role="1tU5fm">
+            <ref role="3uigEE" to="i119:~JavaCompilerOptionsProvider" resolve="JavaCompilerOptionsProvider" />
+          </node>
+          <node concept="2OqwBi" id="3KXnQvitss4" role="33vP2m">
+            <node concept="2YIFZM" id="3KXnQvitss5" role="2Oq$k0">
+              <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+              <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+            </node>
+            <node concept="liA8E" id="3KXnQvitss6" role="2OqNvi">
+              <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptionsProvider(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptionsProvider" resolve="getJavaCompilerOptionsProvider" />
+              <node concept="1jxXqW" id="3KXnQvitss7" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbF" id="xR5LymH$66" role="3cqZAp">
+        <node concept="2OqwBi" id="xR5LymH$aV" role="3clFbG">
+          <node concept="2YIFZM" id="xR5LymH$ae" role="2Oq$k0">
+            <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+            <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+          </node>
+          <node concept="liA8E" id="xR5LymH$Ey" role="2OqNvi">
+            <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.registerProvider(jetbrains.mps.project.Project,jetbrains.mps.compiler.JavaCompilerOptionsProvider):void" resolve="registerProvider" />
+            <node concept="1jxXqW" id="xR5LymH$Fs" role="37wK5m" />
+            <node concept="2ShNRf" id="xR5LymH$KA" role="37wK5m">
+              <node concept="YeOm9" id="xR5LymH_Z1" role="2ShVmc">
+                <node concept="1Y3b0j" id="xR5LymH_Z4" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="i119:~JavaCompilerOptionsProvider" resolve="JavaCompilerOptionsProvider" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="xR5LymH_Z5" role="1B3o_S" />
+                  <node concept="3clFb_" id="xR5LymH_Z6" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="getJavaCompilerOptions" />
+                    <property role="DiZV1" value="false" />
+                    <property role="IEkAT" value="false" />
+                    <node concept="3Tm1VV" id="xR5LymH_Z7" role="1B3o_S" />
+                    <node concept="3uibUv" id="xR5LymH_Z9" role="3clF45">
+                      <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+                    </node>
+                    <node concept="3clFbS" id="xR5LymH_Za" role="3clF47">
+                      <node concept="3clFbF" id="xR5LymHA79" role="3cqZAp">
+                        <node concept="2ShNRf" id="xR5LymHA77" role="3clFbG">
+                          <node concept="1pGfFk" id="xR5LymHBam" role="2ShVmc">
+                            <ref role="37wK5l" to="i119:~JavaCompilerOptions.&lt;init&gt;(jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion)" resolve="JavaCompilerOptions" />
+                            <node concept="Rm8GO" id="xR5LymHBcv" role="37wK5m">
+                              <ref role="Rm8GQ" to="i119:~JavaCompilerOptionsComponent$JavaVersion.VERSION_1_8" resolve="VERSION_1_8" />
+                              <ref role="1Px2BO" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="xR5LymHl4t" role="3cqZAp">
+        <property role="2TTd_B" value="getStaticTestValue()" />
+      </node>
+      <node concept="yd1bK" id="xR5LymHw7N" role="3cqZAp">
+        <node concept="pLAjd" id="xR5LymHw7P" role="yd6KS">
+          <property role="pLAjf" value="VK_SPACE" />
+          <property role="pLAjc" value="ctrl" />
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3KXnQviMtkm" role="3cqZAp">
+        <node concept="3clFbS" id="3KXnQviMtkp" role="3clFbx">
+          <node concept="3clFbF" id="xR5LymHBde" role="3cqZAp">
+            <node concept="2OqwBi" id="xR5LymHBdf" role="3clFbG">
+              <node concept="2YIFZM" id="xR5LymHBdg" role="2Oq$k0">
+                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+                <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+              </node>
+              <node concept="liA8E" id="xR5LymHBdh" role="2OqNvi">
+                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.registerProvider(jetbrains.mps.project.Project,jetbrains.mps.compiler.JavaCompilerOptionsProvider):void" resolve="registerProvider" />
+                <node concept="1jxXqW" id="xR5LymHBdi" role="37wK5m" />
+                <node concept="37vLTw" id="3KXnQvitsXB" role="37wK5m">
+                  <ref role="3cqZAo" node="3KXnQvitss3" resolve="oldProvider" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3y3z36" id="3KXnQviMty2" role="3clFbw">
+          <node concept="10Nm6u" id="3KXnQviMtzn" role="3uHU7w" />
+          <node concept="37vLTw" id="3KXnQviMttf" role="3uHU7B">
+            <ref role="3cqZAo" node="3KXnQvitss3" resolve="oldProvider" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="xR5LymHlcM">
+    <property role="3GE5qa" value="jdk8" />
+    <property role="TrG5h" value="IncorrectStaticMethodCall" />
+    <node concept="312cEu" id="xR5LymHlcN" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymHlcO" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymHlcP" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymHlcQ" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymHlcR" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymHlcS" role="3clF47">
+          <node concept="3clFbF" id="xR5LymHlcT" role="3cqZAp">
+            <node concept="10M0yZ" id="xR5LymHlcU" role="3clFbG">
+              <ref role="1PxDUh" to="cp6v:~TestInterface" resolve="TestInterface" />
+              <node concept="LIFWc" id="3KXnQvi$LVT" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="empty_staticFieldDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymHlcW" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="xR5LymHlcX" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="xR5LymHlcY" role="jymVt" />
+      <node concept="3clFb_" id="xR5LymHlcZ" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="xR5LymHld0" role="1B3o_S" />
+        <node concept="10Oyi0" id="xR5LymHld1" role="3clF45" />
+        <node concept="3clFbS" id="xR5LymHld2" role="3clF47">
+          <node concept="3clFbF" id="xR5LymHld3" role="3cqZAp">
+            <node concept="10M0yZ" id="xR5LymHld4" role="3clFbG">
+              <ref role="1PxDUh" to="cp6v:~TestInterface" resolve="TestInterface" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="xR5LymHld6" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="xR5LymHld7" role="LjaKd">
+      <node concept="2TK7Tu" id="xR5LymHld8" role="3cqZAp">
+        <property role="2TTd_B" value="getStaticTestValue" />
+      </node>
+      <node concept="yd1bK" id="3KXnQviICdj" role="3cqZAp">
+        <node concept="pLAjd" id="3KXnQviICdl" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3KXnQviHxyU">
+    <property role="TrG5h" value="ResolveSuperInterfaceMethod" />
+    <property role="3GE5qa" value="jdk8" />
+    <node concept="312cEu" id="3KXnQviHxyV" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3KXnQviHxyW" role="jymVt" />
+      <node concept="3clFb_" id="3KXnQviHxyX" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3KXnQviHxyY" role="1B3o_S" />
+        <node concept="10Oyi0" id="3KXnQviHxyZ" role="3clF45" />
+        <node concept="3clFbS" id="3KXnQviHxz0" role="3clF47">
+          <node concept="3clFbF" id="3KXnQviHxzc" role="3cqZAp">
+            <node concept="3WEljn" id="3KXnQviHxzd" role="3clFbG">
+              <ref role="3WFDBg" to="cp6v:~TestInterface" resolve="TestInterface" />
+              <node concept="LIFWc" id="3KXnQviHxLY" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="empty_instanceMethodDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3KXnQviHxz2" role="1B3o_S" />
+      <node concept="3uibUv" id="3KXnQviHxz3" role="EKbjA">
+        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="3KXnQviHxz4" role="LjaKd">
+      <node concept="2TK7Tu" id="3KXnQviHxz5" role="3cqZAp">
+        <property role="2TTd_B" value="getDefaultTestValue" />
+      </node>
+    </node>
+    <node concept="312cEu" id="3KXnQviHxz6" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3KXnQviHxz7" role="jymVt" />
+      <node concept="3clFb_" id="3KXnQviHxz8" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3KXnQviHxz9" role="1B3o_S" />
+        <node concept="10Oyi0" id="3KXnQviHxza" role="3clF45" />
+        <node concept="3clFbS" id="3KXnQviHxzb" role="3clF47">
+          <node concept="3clFbF" id="3KXnQviHywE" role="3cqZAp">
+            <node concept="3WEljn" id="3KXnQviHywD" role="3clFbG">
+              <ref role="3WFDBg" to="cp6v:~TestInterface" resolve="TestInterface" />
+              <ref role="37wK5l" to="cp6v:~TestInterface.getDefaultTestValue():int" resolve="getDefaultTestValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3KXnQviHxze" role="1B3o_S" />
+      <node concept="3uibUv" id="3KXnQviHxzf" role="EKbjA">
+        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
       </node>
     </node>
   </node>

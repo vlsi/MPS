@@ -26,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.Chunk" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.Plugin" />
+    <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.tool.common.GeneratorProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.JavaCompilerProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
