@@ -39978,7 +39978,6 @@
       <ref role="13i0hy" node="i26MfYG" resolve="isLegalAsStatement" />
       <node concept="3Tm1VV" id="i2$LqFN" role="1B3o_S" />
       <node concept="3clFbS" id="i2$LqFO" role="3clF47">
-        <node concept="3clFbH" id="3yB0zvV6WlO" role="3cqZAp" />
         <node concept="3cpWs6" id="i2$LqFP" role="3cqZAp">
           <node concept="3clFbT" id="i2$LqFQ" role="3cqZAk" />
         </node>

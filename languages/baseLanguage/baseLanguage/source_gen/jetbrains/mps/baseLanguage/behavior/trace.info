@@ -10899,19 +10899,18 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1239714994837">
     <file name="AbstractUnaryNumberOperation_Behavior.java">
-      <node id="4082234026694002036" at="10,82,11,0" concept="15" />
-      <node id="1239714999029" at="11,0,12,17" concept="13" />
+      <node id="1239714999029" at="10,82,11,17" concept="13" />
       <node id="1239714994837" at="8,0,10,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1239714994837" at="10,0,14,0" concept="17" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1239714994837" at="10,0,13,0" concept="17" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1239714994839" at="8,43,8,43" />
+      <scope id="1239714999028" at="10,82,11,17" />
       <scope id="1239714994837" at="8,0,10,0">
         <var name="thisNode" id="1239714994837" />
       </scope>
-      <scope id="1239714999028" at="10,82,12,17" />
-      <scope id="1239714994837" at="10,0,14,0">
+      <scope id="1239714994837" at="10,0,13,0">
         <var name="thisNode" id="1239714994837" />
       </scope>
-      <unit id="1239714994837" at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" />
+      <unit id="1239714994837" at="7,0,14,0" name="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1244292059682911437">
