@@ -308,6 +308,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -2322,7 +2323,7 @@
               <node concept="2OqwBi" id="hCLnyNH" role="3fr31v">
                 <node concept="2OqwBi" id="hCLnyNI" role="2Oq$k0">
                   <node concept="pncrf" id="hCLnyNJ" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="hCLnyNK" role="2OqNvi" />
+                  <node concept="2yIwOk" id="5XpkEY8oH1h" role="2OqNvi" />
                 </node>
                 <node concept="3O6GUB" id="hCLnyNL" role="2OqNvi">
                   <node concept="chp4Y" id="hCLnyNM" role="3QVz_e">
@@ -4858,6 +4859,47 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5XpkEY8nRZ1">
+    <property role="3GE5qa" value="operation.concept" />
+    <ref role="1XX52x" to="tp25:5XpkEY8gZFT" resolve="SConceptOperation" />
+    <node concept="1QoScp" id="5XpkEY8oFnu" role="2wV5jI">
+      <property role="1QpmdY" value="true" />
+      <node concept="PMmxH" id="5XpkEY8oFnv" role="1QoS34">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="OXEIz" id="5XpkEY8oFnw" role="P5bDN">
+          <node concept="UkePV" id="5XpkEY8oFnx" role="OY2wv">
+            <ref role="Ul1FP" to="tp25:5XpkEY8gZFT" resolve="SConceptOperation" />
+          </node>
+        </node>
+        <node concept="Vb9p2" id="5XpkEY8oFny" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
+      </node>
+      <node concept="pkWqt" id="5XpkEY8oFnz" role="3e4ffs">
+        <node concept="3clFbS" id="5XpkEY8oFn$" role="2VODD2">
+          <node concept="3clFbF" id="5XpkEY8oFn_" role="3cqZAp">
+            <node concept="3fqX7Q" id="5XpkEY8oFnA" role="3clFbG">
+              <node concept="2OqwBi" id="5XpkEY8oFnB" role="3fr31v">
+                <node concept="2OqwBi" id="5XpkEY8oFnC" role="2Oq$k0">
+                  <node concept="pncrf" id="5XpkEY8oFnD" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="5XpkEY8oFKU" role="2OqNvi" />
+                </node>
+                <node concept="3O6GUB" id="5XpkEY8oFnF" role="2OqNvi">
+                  <node concept="chp4Y" id="5XpkEY8oFXx" role="3QVz_e">
+                    <ref role="cht4Q" to="tp25:5XpkEY8gZFT" resolve="SConceptOperation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1xolST" id="5XpkEY8oFnH" role="1QoVPY">
+        <property role="1xolSY" value="&lt;choose operaion&gt;" />
       </node>
     </node>
   </node>
