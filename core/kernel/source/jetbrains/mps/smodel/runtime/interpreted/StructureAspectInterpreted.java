@@ -73,7 +73,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
       if (myDescriptors != null) return;
 
       final SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
-      struct.getRepository().getModelAccess().runReadAction(new Runnable() {
+      myLanguage.getRepository().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
@@ -83,6 +83,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
             if (!isConceptDeclaration(concept)) {
               continue;
             }
+
             SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
             String conceptName = conceptFQName(root);
             ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);

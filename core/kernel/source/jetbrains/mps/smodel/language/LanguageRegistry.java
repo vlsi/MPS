@@ -220,6 +220,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   @Override
   public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
+    unloadInterpreted(loadedModules);
     for (Language language : collectLanguagesToLoad(loadedModules)) {
       SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
       assert !myLanguagesById.containsKey(languageId);
@@ -240,6 +241,22 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     }
     reinitialize();
     notifyLoad(loadedRuntimes);
+  }
+
+  private void unloadInterpreted(Set<? extends ReloadableModuleBase> loadedModules) {
+    Collection<LanguageRuntime> languagesToUnload = new ArrayList<LanguageRuntime>();
+    for (SModule module : loadedModules) {
+      if (module instanceof Language) {
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
+        if (myInterpretedLanguages.contains(languageId)) languagesToUnload.add(myLanguagesById.get(languageId));
+      }
+    }
+    notifyUnload(languagesToUnload);
+
+    for (LanguageRuntime languageRuntime : languagesToUnload) {
+      myLanguages.remove(languageRuntime.getNamespace());
+      myLanguagesById.remove(languageRuntime.getId());
+    }
   }
 
   private Iterable<SLanguageId> collectLanguagesToUnload(Set<? extends SModule> unloadedModules) {
