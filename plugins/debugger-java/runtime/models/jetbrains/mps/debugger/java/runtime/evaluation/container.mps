@@ -1896,14 +1896,14 @@
     <node concept="2tJIrI" id="1tJ4mqhtstL" role="jymVt" />
     <node concept="3clFb_" id="1tJ4mqhttFS" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getDeclaredDependencies" />
+      <property role="TrG5h" value="getUnresolvedDependencies" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1tJ4mqhttFT" role="1B3o_S" />
       <node concept="3uibUv" id="1tJ4mqhttFV" role="3clF45">
         <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-        <node concept="3uibUv" id="1tJ4mqhttFW" role="11_B2D">
-          <ref role="3uigEE" to="88zw:~SDependency" resolve="SDependency" />
+        <node concept="3uibUv" id="1Ok2Yb1bvGg" role="11_B2D">
+          <ref role="3uigEE" to="kqhl:~Dependency" resolve="Dependency" />
         </node>
       </node>
       <node concept="3clFbS" id="1tJ4mqhttFX" role="3clF47">
@@ -1936,22 +1936,22 @@
                 <node concept="3clFbS" id="7_a$FDO1bTX" role="1bW5cS">
                   <node concept="3clFbF" id="7_a$FDO1d0r" role="3cqZAp">
                     <node concept="1eOMI4" id="2rHfjKz8tFa" role="3clFbG">
-                      <node concept="10QFUN" id="2rHfjKz8tF7" role="1eOMHV">
-                        <node concept="3uibUv" id="2rHfjKz8uMC" role="10QFUM">
-                          <ref role="3uigEE" to="88zw:~SDependency" resolve="SDependency" />
-                        </node>
-                        <node concept="2ShNRf" id="2rHfjKz7$mT" role="10QFUP">
-                          <node concept="1pGfFk" id="2rHfjKz7Vej" role="2ShVmc">
-                            <ref role="37wK5l" to="42ru:~SDependencyImpl.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.module.SDependencyScope,boolean)" resolve="SDependencyImpl" />
-                            <node concept="37vLTw" id="2rHfjKz7W1Q" role="37wK5m">
+                      <node concept="2ShNRf" id="2rHfjKz7$mT" role="1eOMHV">
+                        <node concept="1pGfFk" id="2rHfjKz7Vej" role="2ShVmc">
+                          <ref role="37wK5l" to="kqhl:~Dependency.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference,org.jetbrains.mps.openapi.module.SDependencyScope,boolean)" resolve="Dependency" />
+                          <node concept="2OqwBi" id="1Ok2Yb1bKaj" role="37wK5m">
+                            <node concept="37vLTw" id="2rHfjKz7W1Q" role="2Oq$k0">
                               <ref role="3cqZAo" node="7_a$FDO1bTY" resolve="it" />
                             </node>
-                            <node concept="Rm8GO" id="2rHfjKz7YBB" role="37wK5m">
-                              <ref role="1Px2BO" to="88zw:~SDependencyScope" resolve="SDependencyScope" />
-                              <ref role="Rm8GQ" to="88zw:~SDependencyScope.DEFAULT" resolve="DEFAULT" />
+                            <node concept="liA8E" id="1Ok2Yb1bLw6" role="2OqNvi">
+                              <ref role="37wK5l" to="88zw:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
                             </node>
-                            <node concept="3clFbT" id="2rHfjKz80aW" role="37wK5m" />
                           </node>
+                          <node concept="Rm8GO" id="2rHfjKz7YBB" role="37wK5m">
+                            <ref role="1Px2BO" to="88zw:~SDependencyScope" resolve="SDependencyScope" />
+                            <ref role="Rm8GQ" to="88zw:~SDependencyScope.DEFAULT" resolve="DEFAULT" />
+                          </node>
+                          <node concept="3clFbT" id="2rHfjKz80aW" role="37wK5m" />
                         </node>
                       </node>
                     </node>
@@ -1970,6 +1970,7 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1Ok2Yb1bMui" role="jymVt" />
     <node concept="3clFb_" id="1tJ4mqhttG1" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getUsedLanguages" />

@@ -126,32 +126,38 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
+    SRepository repository = getRepository();
+    if (repository == null) throw new IllegalStateException("No repository to resolve dependencies references");
+    Iterable<Dependency> unresolvedDeps = getUnresolvedDependencies();
+    List<SDependency> resolvedDeps = new ArrayList<SDependency>();
+    for (Dependency dep : unresolvedDeps) {
+      SModuleReference moduleRef = dep.getModuleRef();
+      SModule target = moduleRef.resolve(repository);
+      resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
+    }
+    return resolvedDeps;
+  }
+
+  public Iterable<Dependency> getUnresolvedDependencies() {
     assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<SDependency>();
+    List<Dependency> result = new ArrayList<Dependency>();
+    if (descriptor == null) return result;
 
     // add declared dependencies
-    List<SDependency> dependencies = new ArrayList<SDependency>();
-    for (Dependency dependency : descriptor.getDependencies()) {
-      SModule target = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
-      if (target != null) {
-        dependencies.add(new SDependencyImpl(target, dependency.getScope(), dependency.isReexport()));
-      }
-    }
+    result.addAll(descriptor.getDependencies());
 
     // add dependencies provided by devkits as nonreexport dependencies
-    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+    for (SModuleReference usedDevkit : descriptor.getUsedDevkits()) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
       if (devKit != null) {
         for (Solution solution : devKit.getAllExportedSolutions()) {
-          if (solution != null) {
-            dependencies.add(new SDependencyImpl(solution, SDependencyScope.DEFAULT, false));
-          }
+          result.add(new Dependency(solution.getModuleReference(), SDependencyScope.DEFAULT, false));
         }
       }
     }
 
-    return dependencies;
+    return result;
   }
 
   public Set<SLanguage> getAllUsedLanguages() {

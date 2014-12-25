@@ -22,6 +22,7 @@ import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -152,31 +153,24 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
-  public Iterable<SDependency> getDeclaredDependencies() {
-    final SRepository repo = getRepository();
-    Set<SDependency> dependencies = new HashSet<SDependency>();
-    dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+  public Iterable<Dependency> getUnresolvedDependencies() {
+    Set<Dependency> dependencies = new HashSet<Dependency>();
+    dependencies.addAll(IterableUtil.asCollection(super.getUnresolvedDependencies()));
+
     // generator sees its source language
-    if (mySourceLanguage.getRepository() != null) {
-      dependencies.add(new SDependencyImpl(mySourceLanguage, SDependencyScope.DEFAULT, false));
-      // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
-      for (SModuleReference ref : mySourceLanguage.getRuntimeModulesReferences()) {
-        SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
-        if (rt != null) {
-          dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
-        }
-      }
+    dependencies.add(new Dependency(mySourceLanguage.getModuleReference(), SDependencyScope.DEFAULT, false));
+    // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
+    for (SModuleReference rt : mySourceLanguage.getRuntimeModulesReferences()) {
+      dependencies.add(new Dependency(rt, SDependencyScope.RUNTIME, false));
     }
+
     //generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       // XXX not sure it's right to resolve modules through global repository if this module is not attached anywhere
-      SModule gm = repo == null ? ModuleRepositoryFacade.getInstance().getModule(refGenerator) : refGenerator.resolve(repo);
-      if (gm != null) {
-        // FIXME all referenced generators are of 'extends' dependency at the moment
-        // but this might need a change once we store extended generators as a regular SDependency
-        // instead of hacky getReferencedGeneratorUIDs
-        dependencies.add(new SDependencyImpl(gm, SDependencyScope.EXTENDS, false));
-      }
+      // FIXME all referenced generators are of 'extends' dependency at the moment
+      // but this might need a change once we store extended generators as a regular SDependency
+      // instead of hacky getReferencedGeneratorUIDs
+      dependencies.add(new Dependency(refGenerator, SDependencyScope.EXTENDS, false));
     }
 
     return dependencies;
