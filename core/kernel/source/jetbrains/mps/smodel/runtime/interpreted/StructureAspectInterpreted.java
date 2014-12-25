@@ -25,6 +25,9 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.Category;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,6 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * compiled StructureAspectDescriptors are in use.
  */
 public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
+  private static final Logger LOG = LogManager.getLogger(StructureAspectInterpreted.class);
   private volatile Map<SConceptId, ConceptDescriptor> myDescriptors;
   private volatile Map<String, ConceptDescriptor> myDescriptorByName;
 
@@ -73,6 +77,10 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
       if (myDescriptors != null) return;
 
       SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
+      if (struct == null) {
+        LOG.warn("Structure aspect is null in the language " + myLanguage);
+        return;
+      }
 
       ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
       ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
