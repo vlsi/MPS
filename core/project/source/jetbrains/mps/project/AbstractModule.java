@@ -132,7 +132,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     List<SDependency> resolvedDeps = new ArrayList<SDependency>();
     for (Dependency dep : unresolvedDeps) {
       SModuleReference moduleRef = dep.getModuleRef();
-      SModule target = moduleRef.resolve(repository);
+      SModule target = ModuleRepositoryFacade.getInstance().getModule(moduleRef);
       if (target != null) {
         resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
       }
