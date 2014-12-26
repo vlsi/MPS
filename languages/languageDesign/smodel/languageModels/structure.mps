@@ -2055,7 +2055,7 @@
   <node concept="1TIwiD" id="5XpkEY8oJOs">
     <property role="3GE5qa" value="operation.concept" />
     <property role="TrG5h" value="ConceptShortDescriptionOperation" />
-    <property role="34LRSv" value="conceptAlias" />
+    <property role="34LRSv" value="shortDescrption" />
     <ref role="1TJDcQ" node="5XpkEY8gZFT" resolve="SConceptOperation" />
   </node>
 </model>
