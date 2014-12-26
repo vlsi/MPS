@@ -20,16 +20,21 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.Category;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -40,6 +45,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * compiled StructureAspectDescriptors are in use.
  */
 public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
+  private static final Logger LOG = LogManager.getLogger(StructureAspectInterpreted.class);
   private volatile Map<SConceptId, ConceptDescriptor> myDescriptors;
   private volatile Map<String, ConceptDescriptor> myDescriptorByName;
 
@@ -72,13 +78,22 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
     synchronized (this) {
       if (myDescriptors != null) return;
 
-      final SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
+      ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+      ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
+
+      final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
+      if (structureModel == null) {
+        LOG.warn("Structure aspect is null in the language " + myLanguage);
+        myDescriptorByName = descriptorsByName;
+        myDescriptors = descriptors;
+        return;
+      }
       myLanguage.getRepository().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
           ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
-          for (SNode root : struct.getRootNodes()) {
+          for (SNode root : structureModel.getRootNodes()) {
             SConcept concept = root.getConcept();
             if (!isConceptDeclaration(concept)) {
               continue;

@@ -2524,70 +2524,30 @@
             <ref role="37wK5l" to="bktd:~AbstractWizardEx.doNextAction():void" resolve="doNextAction" />
           </node>
         </node>
-        <node concept="3cpWs8" id="5SsFeroaauP" role="3cqZAp">
-          <node concept="3cpWsn" id="5SsFeroaauO" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="task" />
-            <node concept="3uibUv" id="5SsFeroaauQ" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
-            </node>
-            <node concept="2OqwBi" id="5SsFeroaauR" role="33vP2m">
-              <node concept="1eOMI4" id="5SsFeroaauV" role="2Oq$k0">
-                <node concept="10QFUN" id="5SsFeroaauS" role="1eOMHV">
-                  <node concept="1rXfSq" id="5SsFeroaauT" role="10QFUP">
-                    <ref role="37wK5l" to="bktd:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
-                  </node>
-                  <node concept="3uibUv" id="5SsFeroaauU" role="10QFUM">
-                    <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationStep" />
-                  </node>
+        <node concept="3clFbF" id="7rK8qWGEfsR" role="3cqZAp">
+          <node concept="2OqwBi" id="5SsFeroaauR" role="3clFbG">
+            <node concept="1eOMI4" id="5SsFeroaauV" role="2Oq$k0">
+              <node concept="10QFUN" id="5SsFeroaauS" role="1eOMHV">
+                <node concept="1rXfSq" id="5SsFeroaauT" role="10QFUP">
+                  <ref role="37wK5l" to="bktd:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
+                </node>
+                <node concept="3uibUv" id="5SsFeroaauU" role="10QFUM">
+                  <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationStep" />
                 </node>
               </node>
-              <node concept="liA8E" id="5SsFeroaauW" role="2OqNvi">
-                <ref role="37wK5l" to="o8ag:5SsFeroaadE" resolve="getAutostartTask" />
-              </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="5SsFeroaauX" role="3cqZAp">
-          <node concept="3clFbS" id="513ZrA4w1Hf" role="3clFbx">
-            <node concept="3cpWs6" id="513ZrA4w6js" role="3cqZAp" />
-          </node>
-          <node concept="3clFbC" id="513ZrA4w1Ha" role="3clFbw">
-            <node concept="37vLTw" id="5SsFeroaauZ" role="3uHU7B">
-              <ref role="3cqZAo" node="5SsFeroaauO" resolve="task" />
-            </node>
-            <node concept="10Nm6u" id="5SsFeroaav0" role="3uHU7w" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="513ZrA4w6oX" role="3cqZAp" />
-        <node concept="3clFbF" id="5SsFeroaav3" role="3cqZAp">
-          <node concept="2OqwBi" id="5SsFeroaav4" role="3clFbG">
-            <node concept="2YIFZM" id="5SsFerobuXB" role="2Oq$k0">
-              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
-              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-            </node>
-            <node concept="liA8E" id="5SsFeroaav6" role="2OqNvi">
-              <ref role="37wK5l" to="yla8:~Application.executeOnPooledThread(java.lang.Runnable):java.util.concurrent.Future" resolve="executeOnPooledThread" />
-              <node concept="1bVj0M" id="513ZrA4w6Ob" role="37wK5m">
-                <node concept="3clFbS" id="513ZrA4w6Ol" role="1bW5cS">
-                  <node concept="3clFbF" id="5SsFeroaave" role="3cqZAp">
-                    <node concept="2OqwBi" id="5SsFerobuUa" role="3clFbG">
-                      <node concept="37vLTw" id="5SsFerobuU9" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5SsFeroaauO" resolve="task" />
-                      </node>
-                      <node concept="liA8E" id="5SsFerobuUb" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="5SsFeroaavg" role="3cqZAp">
-                    <node concept="2YIFZM" id="5SsFerobv1R" role="3clFbG">
+            <node concept="liA8E" id="5SsFeroaauW" role="2OqNvi">
+              <ref role="37wK5l" to="o8ag:5SsFeroaadE" resolve="autostart" />
+              <node concept="1bVj0M" id="7rK8qWGFjHC" role="37wK5m">
+                <node concept="3clFbS" id="7rK8qWGFjHD" role="1bW5cS">
+                  <node concept="3clFbF" id="7rK8qWGFjMS" role="3cqZAp">
+                    <node concept="2YIFZM" id="7rK8qWGFsjN" role="3clFbG">
                       <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
                       <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-                      <node concept="1bVj0M" id="513ZrA4w77y" role="37wK5m">
-                        <node concept="3clFbS" id="513ZrA4w77G" role="1bW5cS">
-                          <node concept="3clFbF" id="5SsFerobv1Z" role="3cqZAp">
-                            <node concept="1rXfSq" id="5SsFerobv20" role="3clFbG">
+                      <node concept="1bVj0M" id="7rK8qWGFsB7" role="37wK5m">
+                        <node concept="3clFbS" id="7rK8qWGFsB8" role="1bW5cS">
+                          <node concept="3clFbF" id="7rK8qWGFsFC" role="3cqZAp">
+                            <node concept="1rXfSq" id="7rK8qWGFjMR" role="3clFbG">
                               <ref role="37wK5l" node="5SsFeroaauu" resolve="updateStep" />
                             </node>
                           </node>
@@ -2600,7 +2560,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="513ZrA4w6ri" role="3cqZAp" />
       </node>
       <node concept="3Tmbuc" id="5SsFeroaavv" role="1B3o_S" />
       <node concept="3cqZAl" id="5SsFeroaavw" role="3clF45" />
@@ -2656,6 +2615,15 @@
       <node concept="10P_77" id="5SsFeroaac9" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="25gV4LspHr0" role="jymVt" />
+    <node concept="3clFb_" id="7rK8qWGGnEQ" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="projectStepsCount" />
+      <node concept="3clFbS" id="7rK8qWGGnET" role="3clF47" />
+      <node concept="3Tm1VV" id="7rK8qWGGnEU" role="1B3o_S" />
+      <node concept="10Oyi0" id="7rK8qWGGnDK" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="7rK8qWGGnCH" role="jymVt" />
     <node concept="3clFb_" id="25gV4LspSM9" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
@@ -2667,9 +2635,18 @@
       </node>
     </node>
     <node concept="2tJIrI" id="25gV4LspSIF" role="jymVt" />
+    <node concept="3clFb_" id="7rK8qWGGnJl" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="languageStepsCount" />
+      <node concept="3clFbS" id="7rK8qWGGnJo" role="3clF47" />
+      <node concept="3Tm1VV" id="7rK8qWGGnJp" role="1B3o_S" />
+      <node concept="10Oyi0" id="7rK8qWGGnI2" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="7rK8qWGGnGM" role="jymVt" />
     <node concept="3clFb_" id="5SsFeroaaca" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="nextStep" />
+      <property role="TrG5h" value="nextLanguageStep" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="5SsFeroaacb" role="1B3o_S" />
@@ -2879,25 +2856,23 @@
           </node>
         </node>
         <node concept="3clFbF" id="4D3Y1hNyYck" role="3cqZAp">
-          <node concept="2OqwBi" id="4D3Y1hNzd3p" role="3clFbG">
-            <node concept="2OqwBi" id="4D3Y1hNzcUs" role="2Oq$k0">
-              <node concept="2ShNRf" id="4D3Y1hNyYci" role="2Oq$k0">
-                <node concept="1pGfFk" id="4D3Y1hNzc31" role="2ShVmc">
-                  <ref role="37wK5l" to="o8ag:5SsFeroaawc" resolve="MigrationsProgressStep" />
-                  <node concept="37vLTw" id="4D3Y1hNzcIJ" role="37wK5m">
-                    <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
-                  </node>
-                  <node concept="37vLTw" id="4D3Y1hNzcP_" role="37wK5m">
-                    <ref role="3cqZAo" node="4D3Y1hNyY1x" resolve="myMigrationManager" />
-                  </node>
+          <node concept="2OqwBi" id="4D3Y1hNzcUs" role="3clFbG">
+            <node concept="2ShNRf" id="4D3Y1hNyYci" role="2Oq$k0">
+              <node concept="1pGfFk" id="4D3Y1hNzc31" role="2ShVmc">
+                <ref role="37wK5l" to="o8ag:5SsFeroaawc" resolve="MigrationsProgressStep" />
+                <node concept="37vLTw" id="4D3Y1hNzcIJ" role="37wK5m">
+                  <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+                </node>
+                <node concept="37vLTw" id="4D3Y1hNzcP_" role="37wK5m">
+                  <ref role="3cqZAo" node="4D3Y1hNyY1x" resolve="myMigrationManager" />
                 </node>
               </node>
-              <node concept="liA8E" id="4D3Y1hNzd08" role="2OqNvi">
-                <ref role="37wK5l" to="o8ag:5SsFeroaaxk" resolve="getAutostartTask" />
-              </node>
             </node>
-            <node concept="liA8E" id="4D3Y1hNzdae" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+            <node concept="liA8E" id="4D3Y1hNzd08" role="2OqNvi">
+              <ref role="37wK5l" to="o8ag:5SsFeroaaxk" resolve="autostart" />
+              <node concept="1bVj0M" id="7rK8qWGG6pk" role="37wK5m">
+                <node concept="3clFbS" id="7rK8qWGG6pl" role="1bW5cS" />
+              </node>
             </node>
           </node>
         </node>

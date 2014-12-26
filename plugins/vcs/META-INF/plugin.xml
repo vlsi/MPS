@@ -85,6 +85,9 @@
       <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
       <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditorFix"/>
     </group>
+    <action id="LocalHistory.ShowHistory" class="jetbrains.mps.history.integration.ui.actions.ShowMpsHistoryAction">
+      <add-to-group group-id="LocalHistory" anchor="before" relative-to-action="LocalHistory.PutLabel"/>
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">

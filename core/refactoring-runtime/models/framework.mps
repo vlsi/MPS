@@ -121,7 +121,6 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -8037,16 +8036,15 @@
                               </node>
                               <node concept="3clFbF" id="2QRUVPkzk$q" role="3cqZAp">
                                 <node concept="2OqwBi" id="2QRUVPkzkC$" role="3clFbG">
-                                  <node concept="1eOMI4" id="4wS7Eo3_Fec" role="2Oq$k0">
-                                    <node concept="10QFUN" id="4wS7Eo3_Fed" role="1eOMHV">
-                                      <node concept="37vLTw" id="4wS7Eo3_Fee" role="10QFUP">
+                                  <node concept="1eOMI4" id="5XZc116mSYU" role="2Oq$k0">
+                                    <node concept="10QFUN" id="5XZc116mSYV" role="1eOMHV">
+                                      <node concept="37vLTw" id="5XZc116mSYT" role="10QFUP">
                                         <ref role="3cqZAo" node="4a0HOMfn9kr" resolve="node" />
                                       </node>
-                                      <node concept="3uibUv" id="4wS7Eo3_Fef" role="10QFUM">
+                                      <node concept="3uibUv" id="5XZc116n5uV" role="10QFUM">
                                         <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
                                       </node>
                                     </node>
-                                    <node concept="33vP2n" id="4wS7Eo3_Feg" role="1eOMHV" />
                                   </node>
                                   <node concept="liA8E" id="2QRUVPkzxzL" role="2OqNvi">
                                     <ref role="37wK5l" to="cu2c:~SNode.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
@@ -8531,7 +8529,6 @@
                                             <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
                                           </node>
                                         </node>
-                                        <node concept="33vP2n" id="2zPaT$XSJOj" role="1eOMHV" />
                                       </node>
                                       <node concept="liA8E" id="4a0HOMfn9oH" role="2OqNvi">
                                         <ref role="37wK5l" to="cu2c:~SNode.setRoleInParent(java.lang.String):void" resolve="setRoleInParent" />

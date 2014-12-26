@@ -13,12 +13,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
 import java.util.List;
-import java.util.LinkedHashSet;
+import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
+import java.util.LinkedHashSet;
 import java.util.Collections;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -68,11 +68,15 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     Project project = createDummyProject();
 
     for (IMapping<List<String>, Boolean> chunk : MapSequence.fromMap(myWhatToDo.getChunks())) {
-      List<String> modulePaths = chunk.key();
-      LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-      for (String modulePath : modulePaths) {
-        processModuleFile(new File(modulePath), modules);
-      }
+      final List<String> modulePaths = chunk.key();
+      final Set<SModule> modules = new LinkedHashSet<SModule>();
+      project.getModelAccess().runWriteAction(new Runnable() {
+        public void run() {
+          for (String modulePath : modulePaths) {
+            processModuleFile(new File(modulePath), modules);
+          }
+        }
+      });
       Boolean bootstrap = chunk.value();
       if (bootstrap) {
         warning("Found bootstrap chunk " + chunk.key() + ". Generation may be impossible.");

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
+import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.MementoPersistence;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -160,7 +160,13 @@ public abstract class BaseNodeEditor implements Editor {
       myReplace = null;
     }
     myEditorComponent = new NodeEditorComponent(myContext.getProject().getRepository());
-    myEditorPanel.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
+    JComponent externalComponent = myEditorComponent.getExternalComponent();
+    //HACK to avoid strange gray border in ScrollPane after empty aspect tab
+    if(externalComponent.getComponent(0) instanceof JBScrollPane) {
+      ((JBScrollPane) externalComponent.getComponent(0)).setBorder(new EmptyBorder(JBInsets.NONE));
+      ((JBScrollPane) externalComponent.getComponent(0)).getInsets().set(0, 0, 0, 0);
+    }
+    myEditorPanel.add(externalComponent, BorderLayout.CENTER);
     myComponent.validate();
   }
 

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
@@ -124,8 +125,8 @@ public class TestModule extends AbstractModule {
   }
 
   @Override
-  public Iterable<SDependency> getDeclaredDependencies() {
-    return myPeer.getDeclaredDependencies();
+  public Iterable<Dependency> getUnresolvedDependencies() {
+    return ((AbstractModule) myPeer).getUnresolvedDependencies();
   }
 
   @Override

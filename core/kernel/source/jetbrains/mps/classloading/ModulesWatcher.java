@@ -197,10 +197,10 @@ public class ModulesWatcher {
     }
     ReloadableModuleBase module = resolveRef(mRef);
     assert module != null;
-    Collection<? extends SModuleReference> deps = getModuleDescriptorDeps(module);
-    for (SModuleReference dep : deps) {
-      if (isModuleDisposed(dep)) {
-        String message = "Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleName() + " and therefore was marked invalid for class loading";
+    Iterable<Dependency> deps = getModuleDescriptorDeps(module);
+    for (Dependency dep : deps) {
+      if (isModuleDisposed(dep.getModuleRef())) {
+        String message = "Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleRef() + " and therefore was marked invalid for class loading";
         if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }
@@ -208,17 +208,9 @@ public class ModulesWatcher {
     return false;
   }
 
-  // FIXME: rewrite
-  // this is wrong since the actual deps are different from deps in the descriptor
-  private Collection<? extends SModuleReference> getModuleDescriptorDeps(@NotNull AbstractModule module) {
-    ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
-    if (moduleDescriptor == null) return Collections.emptySet();
-    Collection<Dependency> dependencies = moduleDescriptor.getDependencies();
-    Collection<SModuleReference> result = new HashSet<SModuleReference>();
-    for (Dependency dep : dependencies) result.add(dep.getModuleRef());
-    return result;
+  private Iterable<Dependency> getModuleDescriptorDeps(@NotNull AbstractModule module) {
+    return module.getUnresolvedDependencies();
   }
-
 
   private void checkStatusMapCorrectness() {
     assert myStatusMap.size() == getAllModules().size() : "Modules number inconsistency";

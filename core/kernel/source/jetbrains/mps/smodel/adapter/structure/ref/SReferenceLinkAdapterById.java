@@ -68,7 +68,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   @Override
   @Nullable
-  protected ReferenceDescriptor getReferenceDescriptor() {
+  public ReferenceDescriptor getReferenceDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
     if (cd == null) return null;
     return cd.getRefDescriptor(myRoleId);

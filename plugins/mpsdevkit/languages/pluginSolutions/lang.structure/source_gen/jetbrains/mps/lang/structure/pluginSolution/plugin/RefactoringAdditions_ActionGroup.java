@@ -14,6 +14,7 @@ public class RefactoringAdditions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveLinkUp_Action");

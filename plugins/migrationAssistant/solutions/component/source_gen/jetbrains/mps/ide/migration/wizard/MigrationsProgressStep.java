@@ -4,9 +4,13 @@ package jetbrains.mps.ide.migration.wizard;
 
 import jetbrains.mps.ide.migration.MigrationManager;
 import com.intellij.ui.components.JBList;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import java.util.Set;
 import java.util.HashSet;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.DefaultListModel;
@@ -14,6 +18,9 @@ import java.util.Collections;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -25,11 +32,18 @@ public class MigrationsProgressStep extends MigrationStep {
   private boolean mySuccess = true;
   private MigrationManager myManager;
   private JBList myList;
+  private Task myTask;
+  private InlineProgressIndicator myProgress;
   private Set<String> myExecuted = new HashSet<String>();
 
   public MigrationsProgressStep(Project project, MigrationManager manager) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
+    this.myTask = new Task.Modal(project, "Migrating", false) {
+      public void run(@NotNull ProgressIndicator progress) {
+        doRun(progress);
+      }
+    };
     createComponent();
   }
 
@@ -42,28 +56,52 @@ public class MigrationsProgressStep extends MigrationStep {
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
     listPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(0, 0, 2, 0), BorderFactory.createEtchedBorder()));
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
+    myProgress = new InlineProgressIndicator(true, myTask);
+    myProgress.setIndeterminate(false);
     myComponent.add(listPanel, BorderLayout.CENTER);
+    myComponent.add(myProgress.getComponent(), BorderLayout.SOUTH);
   }
 
   @Override
-  public Runnable getAutostartTask() {
-    return new Runnable() {
+  public void autostart(final _FunctionTypes._void_P0_E0 later) {
+    // this is needed to fully show the step before first migration is started 
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        doRun();
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          public void run() {
+            ProgressManager.getInstance().runProcess(new Runnable() {
+              public void run() {
+                myTask.run(myProgress);
+                later.invoke();
+              }
+            }, myProgress);
+
+          }
+        });
+
       }
-    };
+    });
   }
 
-  private void doRun() {
+  private void doRun(ProgressIndicator progress) {
     PersistenceRegistry.getInstance().disableFastFindUsages();
 
-    while (executeSingleStep(myManager.nextProjectStep())) {
-      // just continue 
-    }
+    // project steps are considered to be X percent of the whole process 
+    double projectStepsFraction = 0.3;
 
-    while (executeSingleStep(myManager.nextStep())) {
-      // just continue 
+    int projectStepsCount = myManager.projectStepsCount();
+    int languageStepsCount = myManager.languageStepsCount();
+    progress.setFraction(0);
+
+    while (executeSingleStep(myManager.nextProjectStep())) {
+      progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
     }
+    progress.setFraction(projectStepsFraction);
+
+    while (executeSingleStep(myManager.nextLanguageStep())) {
+      progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+    }
+    progress.setFraction(1.0);
 
     addElementToMigrationList("Saving changed models... Please wait.");
     ModelAccess.instance().runWriteInEDT(new Runnable() {

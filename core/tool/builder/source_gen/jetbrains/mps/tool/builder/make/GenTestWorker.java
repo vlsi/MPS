@@ -15,9 +15,9 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
-import java.util.LinkedHashSet;
+import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -30,7 +30,6 @@ import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.Set;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -119,10 +118,12 @@ public class GenTestWorker extends GeneratorWorker {
 
     Project project = createDummyProject();
 
-    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-    for (File moduleFilePath : SetSequence.fromSet(myWhatToDo.getModules())) {
-      processModuleFile(moduleFilePath, modules);
-    }
+    final Set<SModule> modules = new LinkedHashSet<SModule>();
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        collectFromModuleFiles(modules);
+      }
+    });
 
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
     if (go.hasAnythingToGenerate()) {
@@ -358,7 +359,8 @@ public class GenTestWorker extends GeneratorWorker {
   }
   @Override
   protected void showStatistic() {
-    if (myTestFailed && myWhatToDo.getFailOnError()) {
+    super.showStatistic();
+    if (myTestFailed) {
       throw new RuntimeException("Tests Failed");
     }
   }

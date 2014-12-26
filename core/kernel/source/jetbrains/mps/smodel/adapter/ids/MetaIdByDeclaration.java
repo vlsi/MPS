@@ -4,6 +4,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -14,45 +15,45 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
  * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
  */
 public class MetaIdByDeclaration {
-  public static SLanguageId getLanguageId(Language l) {
+  public static SLanguageId getLanguageId(@NotNull Language l) {
     SModuleId moduleId = l.getModuleReference().getModuleId();
     assert moduleId instanceof ModuleId.Regular;
     return new SLanguageId(((ModuleId.Regular) moduleId).getUUID());
   }
 
-  public static SConceptId getConceptId(SNode c) {
+  public static SConceptId getConceptId(@NotNull SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
   }
 
-  public static SContainmentLinkId getLinkId(SNode c) {
+  public static SContainmentLinkId getLinkId(@NotNull SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SReferenceLinkId getRefRoleId(SNode c) {
+  public static SReferenceLinkId getRefRoleId(@NotNull SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SPropertyId getPropId(SNode c) {
+  public static SPropertyId getPropId(@NotNull SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SPropertyId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SLanguage ref2Id(SModuleReference ref) {
+  public static SLanguage ref2Id(@NotNull SModuleReference ref) {
     return MetaAdapterFactory.getLanguage(ref2LangId(ref), ref.getModuleName());
   }
 
-  public static SLanguageId ref2LangId(SModuleReference ref) {
+  public static SLanguageId ref2LangId(@NotNull SModuleReference ref) {
     return new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID());
   }
 }

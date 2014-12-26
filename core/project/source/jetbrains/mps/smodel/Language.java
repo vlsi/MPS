@@ -31,6 +31,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -111,23 +112,18 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public Iterable<SDependency> getDeclaredDependencies() {
-    Set<SDependency> dependencies = new HashSet<SDependency>();
-    dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+  public Iterable<Dependency> getUnresolvedDependencies() {
+    Set<Dependency> dependencies = new HashSet<Dependency>();
+    dependencies.addAll(IterableUtil.asCollection(super.getUnresolvedDependencies()));
 
     for (SModuleReference language : getExtendedLanguageRefs()) {
       // XXX not clear whether it's worth including implicit "extends lang.core" (see getExtendedLanguageRefs())
       // or adhere to 'declared' in getDeclaredDependencies and use myLanguageDescriptor.getExtendedLanguages() only
-      final SModule langModule = language.resolve(getRepository());
-      if (langModule != null) {
-        dependencies.add(new SDependencyImpl(langModule, SDependencyScope.EXTENDS, true));
-      }
+      dependencies.add(new Dependency(language, SDependencyScope.EXTENDS, true));
     }
 
-    Language core = BootstrapLanguages.coreLanguage();
-    if (core != null) {
-      dependencies.add(new SDependencyImpl(core, SDependencyScope.DEFAULT, true));
-    }
+    // adding jetbrains.mps.lang.core as well
+    dependencies.add(new Dependency(BootstrapLanguages.coreLanguageRef(), SDependencyScope.DEFAULT, true));
 
     return dependencies;
   }
@@ -184,7 +180,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
   }
 
-  private void revalidateGenerators() {
+  void revalidateGenerators() {
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
     for (Generator generator : getGenerators()) {
       repo.unregisterModule(generator, this);
@@ -236,10 +232,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public void setLanguageVersion(int version) {
     getModuleDescriptor().setVersion(version);
-    SLanguage langId = MetaIdByDeclaration.ref2Id(getModuleReference());
-    if (getModuleDescriptor().getLanguageVersions().containsKey(langId)) {
-      getModuleDescriptor().getLanguageVersions().put(langId, version);
-    }
+    fireChanged();
     setChanged();
   }
 
@@ -291,6 +284,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Override
   public void save() {
     super.save();
+    for (Generator gen : getGenerators()) {
+      gen.validateLanguageVersions();
+    }
     if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }

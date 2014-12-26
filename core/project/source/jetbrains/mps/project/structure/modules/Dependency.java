@@ -112,4 +112,9 @@ public class Dependency {
     myReexport = stream.readBoolean();
     myScope = SDependencyScope.values()[stream.readByte()];
   }
+
+  @Override
+  public String toString() {
+    return String.format("{%s} %s", myScope, myModuleRef);
+  }
 }

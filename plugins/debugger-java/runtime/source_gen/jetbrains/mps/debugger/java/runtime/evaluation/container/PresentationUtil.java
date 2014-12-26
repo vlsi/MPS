@@ -54,7 +54,7 @@ public class PresentationUtil {
       return "new " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), "virtual_getPresentation_1213877396640", new Object[]{});
     }
 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(expression)), "virtual_constant_1262430001741498050", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), "virtual_constant_1262430001741498050", new Object[]{})) {
       return BehaviorReflection.invokeVirtual(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(expression).getModule()}) + "";
     }
 

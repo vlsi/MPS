@@ -17,11 +17,10 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import org.jetbrains.mps.openapi.module.SDependency;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.module.SDependencyImpl;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collection;
@@ -74,14 +73,15 @@ public class EvaluationModule extends AbstractModule implements SModule {
   }
 
   @Override
-  public Iterable<SDependency> getDeclaredDependencies() {
+  public Iterable<Dependency> getUnresolvedDependencies() {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
-    return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependency>() {
-      public SDependency select(SModule it) {
-        return ((SDependency) new SDependencyImpl(it, SDependencyScope.DEFAULT, false));
+    return Sequence.fromIterable(modules).select(new ISelector<SModule, Dependency>() {
+      public Dependency select(SModule it) {
+        return (new Dependency(it.getModuleReference(), SDependencyScope.DEFAULT, false));
       }
     });
   }
+
   @Override
   public Set<SLanguage> getUsedLanguages() {
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);

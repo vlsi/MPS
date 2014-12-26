@@ -5,6 +5,7 @@ package jetbrains.mps.ide.migration;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.startup.StartupManager;
 
 public class HeadlessMigrationExecutor extends AbstractProjectComponent implements IStartupMigrationExecutor {
@@ -17,7 +18,10 @@ public class HeadlessMigrationExecutor extends AbstractProjectComponent implemen
     if (!(myMigrationManager.isMigrationRequired())) {
       return;
     }
-    new MigrationsProgressStep(myProject, myMigrationManager).getAutostartTask().run();
+    new MigrationsProgressStep(myProject, myMigrationManager).autostart(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+      }
+    });
   }
   @Override
   public void projectOpened() {

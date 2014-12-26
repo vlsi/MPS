@@ -59,7 +59,7 @@ public enum TestNodeWrapperFactory {
       return new JUnit3TestWrapper(node);
     }
     public boolean canWrap(@NotNull SNode node) {
-      if (eq_kl7j79_a0a0b2(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
           return false;
         }
@@ -200,9 +200,6 @@ public enum TestNodeWrapperFactory {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     }
     return null;
-  }
-  private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_kl7j79_a0a0b4(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

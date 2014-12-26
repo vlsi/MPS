@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.wizard.CommitStepException;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -50,8 +51,8 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
   public boolean canBeCancelled() {
     return true;
   }
-  public Runnable getAutostartTask() {
-    return null;
+  public void autostart(_FunctionTypes._void_P0_E0 later) {
+    later.invoke();
   }
   protected void createComponent() {
     this.myComponent = new JPanel(new BorderLayout(5, 5));

@@ -175,7 +175,12 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    return registerModule(new Language(descriptor, handle.getFile()), moduleOwner);
+    Language newLanguage = new Language(descriptor, handle.getFile());
+    Language language = registerModule(newLanguage, moduleOwner);
+    if (language == newLanguage) {
+      language.revalidateGenerators();
+    }
+    return language;
   }
 
   private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {

@@ -275,7 +275,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
-    solutionDescriptor.getDependencies().add(new Dependency(new jetbrains.mps.project.structure.modules.ModuleReference("JDK"), true));
+    solutionDescriptor.getDependencies().add(new Dependency(BootstrapLanguages.jdkRef(), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);

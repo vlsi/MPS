@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.ReloadableModuleBase.SModuleDependenciesListener;
 import org.jetbrains.annotations.NotNull;
@@ -91,7 +90,7 @@ public class BatchEventsProcessor {
    *  This class listens for module's add/removal, for 'moduleChanged' event (triggered by AbstractModule)
    *  and for internal (so far) 'dependenciesChanged' event.
    */
-  private class MySRepositoryListener extends SRepositoryContentAdapter implements SModuleDependenciesListener{
+  private class MySRepositoryListener extends SRepositoryContentAdapter implements SModuleDependenciesListener {
     private void addEventToList(@NotNull SRepositoryEvent event) {
       synchronized (LOCK) {
         myEvents.add(event);

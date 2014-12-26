@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.classloading;
 
-import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.smodel.BatchEventsProcessor;
+import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
@@ -96,7 +96,7 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   }
 
   private void fireModuleEvents(List<SRepositoryEvent> events) {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryBatchListener listener : myListeners) {
       listener.eventsHappened(events);
     }

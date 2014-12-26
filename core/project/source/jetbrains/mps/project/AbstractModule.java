@@ -126,32 +126,40 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    assertCanRead();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<SDependency>();
-
-    // add declared dependencies
-    List<SDependency> dependencies = new ArrayList<SDependency>();
-    for (Dependency dependency : descriptor.getDependencies()) {
-      SModule target = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
+    SRepository repository = getRepository();
+    if (repository == null) throw new IllegalStateException("No repository to resolve dependencies references");
+    Iterable<Dependency> unresolvedDeps = getUnresolvedDependencies();
+    List<SDependency> resolvedDeps = new ArrayList<SDependency>();
+    for (Dependency dep : unresolvedDeps) {
+      SModuleReference moduleRef = dep.getModuleRef();
+      SModule target = ModuleRepositoryFacade.getInstance().getModule(moduleRef);
       if (target != null) {
-        dependencies.add(new SDependencyImpl(target, dependency.getScope(), dependency.isReexport()));
+        resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
       }
     }
+    return resolvedDeps;
+  }
+
+  public Iterable<Dependency> getUnresolvedDependencies() {
+    assertCanRead();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    List<Dependency> result = new ArrayList<Dependency>();
+    if (descriptor == null) return result;
+
+    // add declared dependencies
+    result.addAll(descriptor.getDependencies());
 
     // add dependencies provided by devkits as nonreexport dependencies
-    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+    for (SModuleReference usedDevkit : descriptor.getUsedDevkits()) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
       if (devKit != null) {
         for (Solution solution : devKit.getAllExportedSolutions()) {
-          if (solution != null) {
-            dependencies.add(new SDependencyImpl(solution, SDependencyScope.DEFAULT, false));
-          }
+          result.add(new Dependency(solution.getModuleReference(), SDependencyScope.DEFAULT, false));
         }
       }
     }
 
-    return dependencies;
+    return result;
   }
 
   public Set<SLanguage> getAllUsedLanguages() {
@@ -535,6 +543,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   protected void reloadAfterDescriptorChange() {
+    initFacetsAndModels();
+  }
+
+  private void initFacetsAndModels() {
     updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
@@ -654,7 +666,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
     }
-    this.reloadAfterDescriptorChange();
+    initFacetsAndModels();
   }
 
   @Override

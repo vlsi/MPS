@@ -32,10 +32,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -221,6 +223,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return true;
   }
 
+  public int projectStepsCount() {
+    return ProjectMigrationsRegistry.getInstance().getMigrations().size();
+  }
+
   public MigrationManager.MigrationState nextProjectStep() {
     ProjectMigration current = next(lastProjectMigration);
 
@@ -272,7 +278,39 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return mig.get(index + 1);
   }
 
-  public MigrationManager.MigrationState nextStep() {
+  public int languageStepsCount() {
+    final Wrappers._int result = new Wrappers._int();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        Iterable<? extends SModule> projectModules = mpsProject.getModulesWithGenerators();
+        Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
+          public Integer select(AbstractModule module) {
+            int scripts = 0;
+            for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+              int currentLangVersion = lang.getLanguageVersion();
+              int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+
+              ver = Math.max(ver, 0);
+              currentLangVersion = Math.max(currentLangVersion, 0);
+
+              if (ver < currentLangVersion) {
+                scripts += currentLangVersion - ver;
+              }
+            }
+            return scripts;
+          }
+        });
+        return result.value = Sequence.fromIterable(scriptsByModule).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
+          public Integer combine(Integer s, Integer it) {
+            return s + it;
+          }
+        });
+      }
+    }));
+    return result.value;
+  }
+
+  public MigrationManager.MigrationState nextLanguageStep() {
     final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>(null);
 
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
