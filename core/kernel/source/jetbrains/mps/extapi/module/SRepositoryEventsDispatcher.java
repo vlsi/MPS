@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.module;
 
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +22,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.List;
@@ -60,35 +58,35 @@ public class SRepositoryEventsDispatcher {
   }
 
   public final void fireModuleAdded(@NotNull SModule module) {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {
       listener.moduleAdded(module);
     }
   }
 
   public final void fireBeforeModuleRemoved(@NotNull SModule module) {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {
       listener.beforeModuleRemoved(module);
     }
   }
 
   public final void fireModuleRemoved(@NotNull SModuleReference module) {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {
       listener.moduleRemoved(module);
     }
   }
 
   public final void fireCommandStarted() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {
       listener.commandStarted(myRepository);
     }
   }
 
   public final void fireCommandFinished() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {
       listener.commandFinished(myRepository);
     }

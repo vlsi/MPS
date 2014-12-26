@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.classloading;
 
+import jetbrains.mps.smodel.BatchEventsProcessor;
+import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

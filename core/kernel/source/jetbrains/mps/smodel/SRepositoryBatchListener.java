@@ -23,7 +23,7 @@ import java.util.List;
  * Implement this class to create a listener which is able to
  * process a batch (group) of repository events (such as moduleAdded, moduleRemoved, etc.).
  *
- * @see jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher
+ * @see jetbrains.mps.classloading.SRepositoryBatchEventsDispatcher
  */
 public interface SRepositoryBatchListener {
   void eventsHappened(List<SRepositoryEvent> events);

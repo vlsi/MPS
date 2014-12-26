@@ -77,7 +77,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Override
   public void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         notifyUnload(myLanguages.values());
@@ -157,7 +157,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
    *   Collection is valid until the end of the current read action.
    */
   public Collection<LanguageRuntime> getAvailableLanguages() {
-    ModelAccess.assertLegalRead();
+    myRepository.getModelAccess().checkReadAccess();
     return myLanguages.values();
   }
 
