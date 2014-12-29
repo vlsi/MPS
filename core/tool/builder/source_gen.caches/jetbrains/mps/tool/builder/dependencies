@@ -50,6 +50,8 @@
     <classNode extendsClassName="jetbrains.mps.project.Project" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.MpsWorker" file="MpsWorker.java">
+    <classNode dependClassName="com.intellij.idea.LoggerFactory" />
+    <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />

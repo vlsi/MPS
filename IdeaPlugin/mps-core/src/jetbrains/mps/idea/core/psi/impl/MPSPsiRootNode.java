@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiBinaryFile;
 import com.intellij.psi.PsiDirectory;
@@ -63,11 +64,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   private final SNodeId myNodeId;
   private String myName;
   private MPSPsiModel myModel;
-  private boolean separateFile;
+  private VirtualFile mySeparateFile;
 
   public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
     this(nodeId, name, containingModel, manager, null);
-    separateFile = false;
+    mySeparateFile = null;
   }
 
   public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
@@ -78,7 +79,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     myName = name;
     myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
 //    myViewProvider = new SingleRootFileViewProvider(manager, virtualFile == null ? new LightVirtualFile() : virtualFile, false);
-    separateFile = true;
+    mySeparateFile = virtualFile;
   }
 
   @Override
@@ -236,14 +237,13 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   // added for idea search scope to work with our virtual files
   // see PsiSearchScopeUtil.isInScope
+  // The main thing is: return some physical real file that lives well with idea's search scopes
   @Override
   public PsiElement getContext() {
-    if (1>0) return null;
-    if (separateFile) {
-      return null;
-    } else {
-      return getParent();
-    }
+    VirtualFile vFile = mySeparateFile != null ?
+      mySeparateFile :
+      myModel.getSourceVirtualFile();
+    return PsiManager.getInstance(getProject()).findFile(vFile);
   }
 
   @Override

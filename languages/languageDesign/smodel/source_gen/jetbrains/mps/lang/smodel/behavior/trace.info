@@ -33,7 +33,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,284,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,288,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
@@ -47,6 +47,9 @@
     <file name="ChildNodeRefExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.ChildNodeRefExpression_BehaviorDescriptor" />
     </file>
+    <file name="ConceptAliasOperation_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.smodel.behavior.ConceptAliasOperation_BehaviorDescriptor" />
+    </file>
     <file name="ConceptFqNameRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptFqNameRefExpression_BehaviorDescriptor" />
     </file>
@@ -58,6 +61,9 @@
     </file>
     <file name="ConceptReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptReference_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptShortDescriptionOperation_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.smodel.behavior.ConceptShortDescriptionOperation_BehaviorDescriptor" />
     </file>
     <file name="ConceptSwitchStatementCase_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptSwitchStatementCase_BehaviorDescriptor" />
@@ -376,6 +382,9 @@
     </file>
     <file name="Reference_GetTargetOperation_BehaviorDescriptor.java">
       <unit at="10,0,33,0" name="jetbrains.mps.lang.smodel.behavior.Reference_GetTargetOperation_BehaviorDescriptor" />
+    </file>
+    <file name="SConceptOperation_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.lang.smodel.behavior.SConceptOperation_BehaviorDescriptor" />
     </file>
     <file name="SConceptTypeSConcept_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeSConcept_BehaviorDescriptor" />

@@ -15,9 +15,9 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
-import java.util.LinkedHashSet;
+import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -30,7 +30,6 @@ import jetbrains.mps.internal.make.cfg.MakeFacetInitializer;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.Set;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -38,6 +37,8 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
@@ -117,10 +118,12 @@ public class GenTestWorker extends GeneratorWorker {
 
     Project project = createDummyProject();
 
-    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-    for (File moduleFilePath : SetSequence.fromSet(myWhatToDo.getModules())) {
-      processModuleFile(moduleFilePath, modules);
-    }
+    final Set<SModule> modules = new LinkedHashSet<SModule>();
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        collectFromModuleFiles(modules);
+      }
+    });
 
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
     if (go.hasAnythingToGenerate()) {
@@ -130,7 +133,6 @@ public class GenTestWorker extends GeneratorWorker {
       error("Could not find anything to test.");
     }
 
-    environment.dispose();
     dispose();
     showStatistic();
 
@@ -211,9 +213,14 @@ public class GenTestWorker extends GeneratorWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
-    } catch (InterruptedException ignore) {
-    } catch (ExecutionException ignore) {
+      Future<IResult> result = bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
+      if (!(result.get().isSucessful())) {
+        myErrors.add("Make was not successful " + result.get().output());
+      }
+    } catch (InterruptedException e) {
+      myErrors.add(e.toString());
+    } catch (ExecutionException e) {
+      myErrors.add(e.toString());
     }
   }
   private void loadAndMake(final MpsWorker.ObjectsToProcess go) {
@@ -352,7 +359,8 @@ public class GenTestWorker extends GeneratorWorker {
   }
   @Override
   protected void showStatistic() {
-    if (myTestFailed && myWhatToDo.getFailOnError()) {
+    super.showStatistic();
+    if (myTestFailed) {
       throw new RuntimeException("Tests Failed");
     }
   }

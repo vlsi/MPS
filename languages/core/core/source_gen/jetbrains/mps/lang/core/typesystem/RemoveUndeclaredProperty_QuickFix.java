@@ -4,14 +4,15 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class RemoveUndeclaredProperty_QuickFix extends QuickFix_Runtime {
   public RemoveUndeclaredProperty_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Remove undeclared property \"" + ((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]) + "\"";
+    return "Remove undeclared property \"" + ((SProperty) RemoveUndeclaredProperty_QuickFix.this.getField("property")[0]).getName() + "\"";
   }
   public void execute(SNode node) {
-    node.setProperty(((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]), null);
+    node.setProperty(((SProperty) RemoveUndeclaredProperty_QuickFix.this.getField("property")[0]), null);
   }
 }

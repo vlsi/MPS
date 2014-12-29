@@ -49,7 +49,7 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Nullable
-  protected abstract PropertyDescriptor getPropertyDescriptor();
+  public abstract PropertyDescriptor getPropertyDescriptor();
 
   public final SNode getDeclarationNode() {
     SNode cnode = getContainingConcept().getDeclarationNode();

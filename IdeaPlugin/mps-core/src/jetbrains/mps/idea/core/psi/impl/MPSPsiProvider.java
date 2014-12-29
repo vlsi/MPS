@@ -54,7 +54,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleAdapter;
-import org.jetbrains.mps.openapi.module.SModuleListener;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -84,7 +83,6 @@ public class MPSPsiProvider extends AbstractProjectComponent {
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
-
 
   protected MPSPsiProvider(Project project) {
     super(project);
@@ -208,6 +206,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
             models.remove(modelRef);
           }
         });
+        model.addModelListener(myProject.getComponent(PsiModelReloadListener.class));
       }
       return result;
     }
@@ -238,7 +237,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     });
   }
 
-  private void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
+  void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
 
     PsiManager manager = model.getManager();
     if (manager == null || !(manager instanceof PsiManagerImpl)) return;

@@ -835,7 +835,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
-        return new PropertyChangeUndoableAction(SNode.this, property.getName(), oldValue, finalPropertyValue);
+        return new PropertyChangeUndoableAction(SNode.this, property, oldValue, finalPropertyValue);
       }
     });
 
@@ -1101,7 +1101,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public String getRoleInParent() {
     SContainmentLink cl = getContainmentLink();
     if (cl == null) return null;
-    return cl.getRole();
+    return cl.getRoleName();
   }
 
   @Deprecated

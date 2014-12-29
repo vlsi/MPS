@@ -10,7 +10,7 @@ import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsErrorStep;
 import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.SwingUtilities;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
@@ -32,14 +32,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   @Override
   protected void doNextAction() {
     super.doNextAction();
-    final Runnable task = ((MigrationStep) getCurrentStepObject()).getAutostartTask();
-    if (task == null) {
-      return;
-    }
-
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      public void run() {
-        task.run();
+    ((MigrationStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             updateStep();
@@ -47,7 +41,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         });
       }
     });
-
   }
   public boolean isFinishSuccessfull() {
     return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();

@@ -19,7 +19,7 @@ public class IOperation_Behavior {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_lvalue_1262430001741498364", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(thisNode)), "virtual_lvalue_1262430001741498364", new Object[]{});
   }
   public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return false;

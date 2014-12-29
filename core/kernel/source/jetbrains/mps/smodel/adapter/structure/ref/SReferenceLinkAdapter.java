@@ -39,7 +39,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   @Nullable
-  protected abstract ReferenceDescriptor getReferenceDescriptor();
+  public abstract ReferenceDescriptor getReferenceDescriptor();
 
   public abstract SReferenceLinkId getRoleId();
 

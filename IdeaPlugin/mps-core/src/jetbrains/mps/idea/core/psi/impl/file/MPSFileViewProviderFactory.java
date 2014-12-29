@@ -27,6 +27,7 @@ import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.idea.core.psi.MPSNodeFileViewProvider;
 import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
@@ -36,6 +37,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -46,7 +48,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class MPSFileViewProviderFactory implements FileViewProviderFactory {
   @Override
   public FileViewProvider createFileViewProvider(@NotNull VirtualFile file, Language language, @NotNull final PsiManager manager, boolean physical) {
-    return new MyFileViewProvider(manager, file, physical);
+//    return new MyFileViewProvider(manager, file, physical);
+    if (!(file instanceof MPSNodeVirtualFile)) {
+      // todo revert to exception here, we should never be called with files like .mps (de-register their type from being MPSLanguage)
+//      throw new IllegalStateException();
+      return null;
+    }
+    return new MPSNodeFileViewProvider(manager, (MPSNodeVirtualFile) file);
   }
 
   private static class MyFileViewProvider extends MPSSingleRootFileViewProvider {

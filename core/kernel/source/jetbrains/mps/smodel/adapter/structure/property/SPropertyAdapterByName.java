@@ -40,7 +40,7 @@ public final class SPropertyAdapterByName extends SPropertyAdapter {
   }
 
   @Override
-  protected PropertyDescriptor getPropertyDescriptor() {
+  public PropertyDescriptor getPropertyDescriptor() {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     if (conceptDescriptor == null) return null;
     return conceptDescriptor.getPropertyDescriptor(myPropertyName);

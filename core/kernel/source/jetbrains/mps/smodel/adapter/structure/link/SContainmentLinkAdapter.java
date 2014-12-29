@@ -38,7 +38,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   @Nullable
-  protected abstract LinkDescriptor getLinkDescriptor();
+  public abstract LinkDescriptor getLinkDescriptor();
 
   protected abstract SNode findInConcept(SNode cnode);
 
