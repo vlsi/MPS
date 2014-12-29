@@ -14,15 +14,9 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -69,7 +63,7 @@ public class MoveProperyUp_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("target") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -77,37 +71,7 @@ public class MoveProperyUp_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          concept.value = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
-        }
-      });
-      if ((concept.value == null)) {
-        return;
-      }
-
-      final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
-      if (targetConcept == null) {
-        return;
-      }
-      modelAccess.runReadInEDT(new Runnable() {
-        public void run() {
-          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-          if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
-            return;
-          }
-          SNode node1 = ((SNode) targetConcept);
-          if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
-            return;
-          }
-
-          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MovePropertyUp", Arrays.asList("targetConcept"), Arrays.asList(targetConcept), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-        }
-      });
-
+      Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "This refactoring is not supported in MPS 3.2.\n" + "The right way to perform this change is to\n" + "1. Deprecate the old property\n" + "2. Create a new property\n" + "3. Write a migration to migrate the old property into the new one", "Unsupported refactoring");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveProperyUp", t);

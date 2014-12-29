@@ -28,7 +28,9 @@ public class CommitUtil {
       return false;
     }
 
-    invalidateLanguageLater(((Language) lang));
+    if (oldValue != null) {
+      invalidateLanguageLater(((Language) lang));
+    }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       DebugRegistry.getInstance().addConceptName(MetaIdByDeclaration.getConceptId(node), BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "virtual_getFqName_1213877404258", new Object[]{}));
     }

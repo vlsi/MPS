@@ -14,20 +14,9 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.structure.scripts.RefUtil;
-import jetbrains.mps.ide.refactoring.OptionDialog;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -74,7 +63,7 @@ public class MoveLinkUp_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("target") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -82,50 +71,7 @@ public class MoveLinkUp_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "link");
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      if (targetConcept == null) {
-        return;
-      }
-      final Wrappers._T<SNode> linkToReplace = new Wrappers._T<SNode>();
-
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          linkToReplace.value = RefUtil.findLinkToMerge(targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
-        }
-      });
-      Boolean mergeLinks = false;
-      if ((linkToReplace.value != null)) {
-        String title = "Merge to link with the same name";
-        switch (OptionDialog.showDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), title, title + "?", true)) {
-          case 0:
-            mergeLinks = true;
-            break;
-          case 1:
-            mergeLinks = false;
-            break;
-          case 2:
-            return;
-          default:
-        }
-      }
-      final Boolean merge = mergeLinks;
-      modelAccess.runReadInEDT(new Runnable() {
-        public void run() {
-          if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), MPSModuleRepository.getInstance()))) {
-            return;
-          }
-          if (!(SNodeUtil.isAccessible(targetConcept, MPSModuleRepository.getInstance()))) {
-            return;
-          }
-          Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
-          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))));
-          ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
-        }
-      });
-
-
-
+      Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "This refactoring is not supported in MPS 3.2.\n" + "The right way to perform this change is to\n" + "1. Deprecate the old link\n" + "2. Create a new link\n" + "3. Write a migration to migrate the old link into the new one", "Unsupported refactoring");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveLinkUp", t);
