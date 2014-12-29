@@ -22,9 +22,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class JavaCompilerOptionsComponent {
-  private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new HashMap<Project, JavaCompilerOptionsProvider>();
+  private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new ConcurrentHashMap<Project, JavaCompilerOptionsProvider>();
   private static JavaCompilerOptionsComponent INSTANCE;
   private static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
   public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new JavaCompilerOptions(DEFAULT_JAVA_VERSION);
@@ -78,7 +79,6 @@ public class JavaCompilerOptionsComponent {
     }
     return JavaVersion.VERSION_1_6;
   }
-
 
   public static enum JavaVersion {
     VERSION_1_6(CompilerOptions.VERSION_1_6),
