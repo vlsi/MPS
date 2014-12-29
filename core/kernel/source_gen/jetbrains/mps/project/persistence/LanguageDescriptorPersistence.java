@@ -15,12 +15,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
 import org.apache.log4j.Level;
+import java.io.OutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import java.io.OutputStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -116,6 +116,7 @@ public class LanguageDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
+
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -124,6 +125,30 @@ public class LanguageDescriptorPersistence {
       return;
     }
 
+    try {
+      saveLanguageDescriptor(file.openOutputStream(), descriptor, macroHelper);
+    } catch (Exception e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("", e);
+      }
+    }
+
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
+  }
+
+  public static void saveLanguageDescriptor(OutputStream stream, LanguageDescriptor descriptor, MacroHelper macroHelper) {
+    Document doc = LanguageDescriptorPersistence.saveLanguageDescriptorToDocument(descriptor, macroHelper);
+
+    try {
+      JDOMUtil.writeDocument(doc, stream);
+    } catch (Exception e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("", e);
+      }
+    }
+  }
+
+  private static Document saveLanguageDescriptorToDocument(LanguageDescriptor descriptor, MacroHelper macroHelper) {
     Element languageElement = new Element("language");
     languageElement.setAttribute("namespace", descriptor.getNamespace());
     if (descriptor.getId() != null) {
@@ -176,16 +201,7 @@ public class LanguageDescriptorPersistence {
       XmlUtil.tagWithText(extendedLanguages, "extendedLanguage", ref.toString());
     }
     languageElement.addContent(extendedLanguages);
-
-    try {
-      OutputStream os = file.openOutputStream();
-      JDOMUtil.writeDocument(new Document(languageElement), os);
-    } catch (Exception e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
-      }
-    }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
+    return new Document(languageElement);
   }
   protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
 }
