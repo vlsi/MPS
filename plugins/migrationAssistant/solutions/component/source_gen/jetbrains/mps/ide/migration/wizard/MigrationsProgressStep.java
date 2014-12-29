@@ -22,14 +22,14 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.migration.MigrationCheckUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MigrationsProgressStep extends MigrationStep {
@@ -99,33 +99,47 @@ public class MigrationsProgressStep extends MigrationStep {
     int languageStepsCount = myManager.languageStepsCount();
     progress.setFraction(0);
 
-    while (executeSingleStep(myManager.nextProjectStep())) {
-      progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
-    }
-    progress.setFraction(projectStepsFraction);
-
-    while (executeSingleStep(myManager.nextLanguageStep())) {
-      progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
-    }
-    progress.setFraction(1.0);
-
-    addElementToMigrationList("Saving changed models... Please wait.");
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        MPSModuleRepository.getInstance().saveAll();
-      }
-    });
-
     addElementToMigrationList("Checking models... Please wait.");
-    final Wrappers._boolean postProblems = new Wrappers._boolean();
+    final Wrappers._boolean preProblems = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
         Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-        postProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+        preProblems.value = Sequence.fromIterable(problems).isNotEmpty();
       }
     });
-    myFinishedState = new MigrationsProgressStep.FinishedState(false, myNoErrors && !(myManager.isMigrationRequired()), postProblems.value);
+
+    final Wrappers._boolean postProblems = new Wrappers._boolean(false);
+    if (!(preProblems.value)) {
+      while (executeSingleStep(myManager.nextProjectStep())) {
+        progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
+      }
+      progress.setFraction(projectStepsFraction);
+
+      while (executeSingleStep(myManager.nextLanguageStep())) {
+        progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+      }
+      progress.setFraction(1.0);
+
+      addElementToMigrationList("Saving changed models... Please wait.");
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().saveAll();
+        }
+      });
+
+      addElementToMigrationList("Checking models... Please wait.");
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
+          Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
+          postProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+        }
+      });
+    }
+
+    myFinishedState = new MigrationsProgressStep.FinishedState(preProblems.value, myNoErrors && !(myManager.isMigrationRequired()), postProblems.value);
+
     addElementToMigrationList((myFinishedState.isEverythingOk() ? "Done!" : "Finished with errors. Click 'Next' to continue."));
 
     PersistenceRegistry.getInstance().enableFastFindUsages();

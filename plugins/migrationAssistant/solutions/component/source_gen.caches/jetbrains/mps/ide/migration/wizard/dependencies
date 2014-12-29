@@ -40,28 +40,16 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" file="MigrationErrorStep_Post.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" file="MigrationErrorStep_Pre.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationStep" file="MigrationStep.java">

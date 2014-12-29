@@ -4,17 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.migration.MigrationCheckUtil;
-import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import java.util.Collections;
 
 public class MigrationErrorStep_Post extends MigrationErrorStep {
   public static final String ID = "PostProblem";
@@ -28,19 +18,6 @@ public class MigrationErrorStep_Post extends MigrationErrorStep {
   }
 
   protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
-    return new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        // show nodes with no language defined for them 
-        jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-        Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
-        Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-        List<SearchResult<jetbrains.mps.smodel.SNode>> results = Sequence.fromIterable(problems).select(new ISelector<SNode, SearchResult<jetbrains.mps.smodel.SNode>>() {
-          public SearchResult<jetbrains.mps.smodel.SNode> select(SNode it) {
-            return new SearchResult<jetbrains.mps.smodel.SNode>(((jetbrains.mps.smodel.SNode) it), "Language not found");
-          }
-        }).toListSequence();
-        myProject.getComponent(UsagesViewTool.class).show(new SearchResults<jetbrains.mps.smodel.SNode>(Collections.<jetbrains.mps.smodel.SNode>emptySet(), results), "");
-      }
-    };
+    return MigrationCheckUtil.getShowUsagesCallback(myProject);
   }
 }

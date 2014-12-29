@@ -4,6 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.migration.MigrationCheckUtil;
 
 public class MigrationErrorStep_Pre extends MigrationErrorStep {
   public static final String ID = "PreProblem";
@@ -17,11 +18,6 @@ public class MigrationErrorStep_Pre extends MigrationErrorStep {
   }
 
   protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
-    return new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        // show nodes with no language defined for them 
-
-      }
-    };
+    return MigrationCheckUtil.getShowUsagesCallback(myProject);
   }
 }
