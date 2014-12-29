@@ -21,11 +21,13 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +42,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
+import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -256,7 +259,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   /**
    * We don't care to supply descriptor model for deployed modules as there's no use for language descriptor there
    */
-  /*package*/ static boolean isWorkspaceLanguageModule(@Nullable SModule module) {
+  /*package*/
+  static boolean isWorkspaceLanguageModule(@Nullable SModule module) {
     return module instanceof Language && !module.isPackaged();
   }
 
@@ -311,22 +315,25 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     @Override
     public String getModelHash() {
       String hash = myHash;
-      if (hash == null) {
-        IFile descriptorFile = myModule.getDescriptorFile();
-        hash = ModelDigestUtil.hash(new FileDataSource(descriptorFile), true);
-        if (hash == null) return null;
+      if (hash != null) return hash;
 
-        BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
-        for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
-          final SModel aspModel = aspect.get(myModule);
-          if (aspModel instanceof EditableSModel && !((EditableSModel) aspModel).isChanged() && aspModel instanceof GeneratableSModel) {
-            modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
-          }
+      IFile descriptorFile = myModule.getDescriptorFile();
+
+      ByteArrayOutputStream output = new ByteArrayOutputStream();
+      LanguageDescriptorPersistence.saveLanguageDescriptor(output, myModule.getModuleDescriptor(), MacrosFactory.forModuleFile(descriptorFile));
+      hash = ModelDigestUtil.hashBytes(output.toByteArray());
+      if (hash == null) return null;
+
+      BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
+      for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
+        final SModel aspModel = aspect.get(myModule);
+        if (aspModel instanceof EditableSModel && !((EditableSModel) aspModel).isChanged() && aspModel instanceof GeneratableSModel) {
+          modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
         }
-
-        hash = modelHash.toString(Character.MAX_RADIX);
-        myHash = hash;
       }
+
+      hash = modelHash.toString(Character.MAX_RADIX);
+      myHash = hash;
       return hash;
     }
 
