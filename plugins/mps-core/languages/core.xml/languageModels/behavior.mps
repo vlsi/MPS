@@ -30,9 +30,6 @@
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
-      <concept id="1225194628440" name="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" flags="nn" index="13iAh5">
-        <reference id="5299096511375896640" name="superConcept" index="3eA5LN" />
-      </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1690,16 +1687,6 @@
       <ref role="13i0hy" node="1Qs9WekVZ9E" resolve="hasNewLineAfter" />
       <node concept="3Tm1VV" id="1Qs9WekVWoU" role="1B3o_S" />
       <node concept="3clFbS" id="1Qs9WekVWoV" role="3clF47">
-        <node concept="3clFbF" id="4KP_IS_Dn2C" role="3cqZAp">
-          <node concept="2OqwBi" id="4KP_IS_Dn2D" role="3clFbG">
-            <node concept="13iAh5" id="4KP_IS_Dn2E" role="2Oq$k0">
-              <ref role="3eA5LN" to="iuxj:6A8NbxeeX3_" resolve="XmlPrologElement" />
-            </node>
-            <node concept="2qgKlT" id="1Qs9WekVZgb" role="2OqNvi">
-              <ref role="37wK5l" node="1Qs9WekVZ9$" resolve="onNewLine" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="1Qs9WekVWoy" role="3cqZAp">
           <property role="TyiWK" value="true" />
           <property role="TyiWL" value="false" />
