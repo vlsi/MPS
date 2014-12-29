@@ -54,8 +54,8 @@
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="nhkf" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" />
-    <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
+    <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -2499,47 +2499,36 @@
                         <node concept="3uibUv" id="6gfLObM1hph" role="1tU5fm">
                           <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
                         </node>
+                        <node concept="10Nm6u" id="6A8MX7zVxYH" role="33vP2m" />
                       </node>
                     </node>
                     <node concept="3clFbJ" id="6gfLObM0YZ4" role="3cqZAp">
                       <node concept="3clFbS" id="6gfLObM0YZ7" role="3clFbx">
-                        <node concept="3clFbF" id="6gfLObM1jL_" role="3cqZAp">
-                          <node concept="37vLTI" id="6gfLObM1jXT" role="3clFbG">
-                            <node concept="10Nm6u" id="6gfLObM1k04" role="37vLTx" />
-                            <node concept="37vLTw" id="6gfLObM1jL$" role="37vLTJ">
+                        <node concept="3clFbF" id="6gfLObM1lTi" role="3cqZAp">
+                          <node concept="37vLTI" id="6gfLObM1n73" role="3clFbG">
+                            <node concept="2OqwBi" id="6gfLObM1qCj" role="37vLTx">
+                              <node concept="2YIFZM" id="6gfLObM1pz4" role="2Oq$k0">
+                                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+                                <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+                              </node>
+                              <node concept="liA8E" id="6gfLObM1rTJ" role="2OqNvi">
+                                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
+                                <node concept="37vLTw" id="6gfLObM1stR" role="37wK5m">
+                                  <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="6gfLObM1lTh" role="37vLTJ">
                               <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbC" id="6gfLObM11d_" role="3clFbw">
-                        <node concept="10Nm6u" id="6gfLObM11dR" role="3uHU7w" />
+                      <node concept="3y3z36" id="6A8MX7zVzK3" role="3clFbw">
                         <node concept="37vLTw" id="6gfLObM115p" role="3uHU7B">
                           <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
                         </node>
-                      </node>
-                      <node concept="9aQIb" id="6gfLObM1k_n" role="9aQIa">
-                        <node concept="3clFbS" id="6gfLObM1k_o" role="9aQI4">
-                          <node concept="3clFbF" id="6gfLObM1lTi" role="3cqZAp">
-                            <node concept="37vLTI" id="6gfLObM1n73" role="3clFbG">
-                              <node concept="2OqwBi" id="6gfLObM1qCj" role="37vLTx">
-                                <node concept="2YIFZM" id="6gfLObM1pz4" role="2Oq$k0">
-                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
-                                  <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
-                                </node>
-                                <node concept="liA8E" id="6gfLObM1rTJ" role="2OqNvi">
-                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
-                                  <node concept="37vLTw" id="6gfLObM1stR" role="37wK5m">
-                                    <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="6gfLObM1lTh" role="37vLTJ">
-                                <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+                        <node concept="10Nm6u" id="6gfLObM11dR" role="3uHU7w" />
                       </node>
                     </node>
                     <node concept="3clFbF" id="6zsZmIC49Zf" role="3cqZAp">
@@ -2573,8 +2562,20 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="37vLTw" id="6gfLObM1uZJ" role="37wK5m">
-                            <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
+                          <node concept="3K4zz7" id="6A8MX7zVFV7" role="37wK5m">
+                            <node concept="37vLTw" id="6A8MX7zVONx" role="3K4E3e">
+                              <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
+                            </node>
+                            <node concept="32mWkp" id="6A8MX7zVRQ0" role="3K4GZi">
+                              <ref role="1PxDUh" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+                              <ref role="3cqZAo" to="i119:~JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS" resolve="DEFAULT_JAVA_COMPILER_OPTIONS" />
+                            </node>
+                            <node concept="3y3z36" id="6A8MX7zVQwa" role="3K4Cdx">
+                              <node concept="37vLTw" id="6gfLObM1uZJ" role="3uHU7B">
+                                <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
+                              </node>
+                              <node concept="10Nm6u" id="6A8MX7zVEpU" role="3uHU7w" />
+                            </node>
                           </node>
                         </node>
                       </node>

@@ -63,13 +63,11 @@ public class GeneratorUtil {
           }
           GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
           javaCompiler.addCompilationResultListener(compilationResult);
-          JavaCompilerOptions options;
-          if (project == null) {
-            options = null;
-          } else {
+          JavaCompilerOptions options = null;
+          if (project != null) {
             options = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
           }
-          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()), options);
+          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()), (options != null ? options : JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS));
           javaCompiler.removeCompilationResultListener(compilationResult);
 
           final String fullClassName = SNodeOperations.getModelLongName(model) + "." + className;
