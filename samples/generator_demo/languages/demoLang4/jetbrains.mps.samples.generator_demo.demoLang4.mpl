@@ -2,7 +2,6 @@
 <language namespace="jetbrains.mps.samples.generator_demo.demoLang4" uuid="1409a436-ea24-4d03-a196-53795139ce8d" version="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageAccessories" />
       <sourceRoot location="languageModels" />
     </modelRoot>
   </models>
