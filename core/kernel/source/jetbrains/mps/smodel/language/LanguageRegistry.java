@@ -279,15 +279,15 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       }
     }
 
-    for (SModule module : myRepository.getModules()) {
-      if (module instanceof Language && !loadedModules.contains(module)) {
-        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
-        if (!myLanguagesById.containsKey(languageId)) {
-          languagesToLoad.add((Language) module);
-          myInterpretedLanguages.add(languageId);
-        }
-      }
-    }
+//    for (SModule module : myRepository.getModules()) {
+//      if (module instanceof Language && !loadedModules.contains(module)) {
+//        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
+//        if (!myLanguagesById.containsKey(languageId)) {
+//          languagesToLoad.add((Language) module);
+//          myInterpretedLanguages.add(languageId);
+//        }
+//      }
+//    }
     return languagesToLoad;
   }
 
