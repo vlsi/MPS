@@ -22,10 +22,23 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.InitialStep" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsErrorStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep" />
     <classNode extendsClassName="com.intellij.ide.wizard.AbstractWizardEx" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.MigrationCheckUtil" file="MigrationCheckUtil.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationManager" file="MigrationManager.java">
     <classNode dependClassName="java.lang.String" />
