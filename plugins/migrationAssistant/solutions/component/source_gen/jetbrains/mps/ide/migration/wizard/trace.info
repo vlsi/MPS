@@ -551,28 +551,44 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/7935677192557044717">
     <file name="MigrationErrorStep_Post.java">
-      <node id="7935677192557044718" at="9,0,10,0" concept="10" trace="ID" />
-      <node id="7935677192557044727" at="11,51,12,23" concept="11" />
-      <node id="7935677192557044737" at="15,30,16,197" concept="7" />
-      <node id="7935677192557323043" at="21,28,22,56" concept="8" />
-      <node id="7935677192557322986" at="22,56,23,0" concept="9" />
-      <node id="7935677192557044723" at="11,0,14,0" concept="1" trace="MigrationErrorStep_Post#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="7935677192557044733" at="15,0,18,0" concept="5" trace="getText#()Ljava/lang/String;" />
-      <node id="7935677192557322881" at="21,0,25,0" concept="5" trace="invoke#()V" />
-      <node id="7935677192557322883" at="19,66,25,6" concept="7" />
-      <node id="7935677192557320129" at="19,0,27,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
-      <scope id="7935677192557044726" at="11,51,12,23" />
-      <scope id="7935677192557044736" at="15,30,16,197" />
-      <scope id="7935677192557322882" at="21,28,23,0" />
-      <scope id="7935677192557044723" at="11,0,14,0">
+      <node id="7935677192557044718" at="20,0,21,0" concept="10" trace="ID" />
+      <node id="7935677192557044727" at="22,51,23,23" concept="11" />
+      <node id="7935677192557044737" at="26,30,27,197" concept="7" />
+      <node id="7935677192557323043" at="32,28,33,56" concept="8" />
+      <node id="7935677192557569474" at="33,56,34,89" concept="6" />
+      <node id="7935677192557584509" at="34,89,35,96" concept="6" />
+      <node id="7935677192557558165" at="35,96,36,79" concept="6" />
+      <node id="7935677192557947397" at="38,76,39,121" concept="7" />
+      <node id="7935677192557506553" at="41,28,42,170" concept="2" />
+      <node id="7935677192557044723" at="22,0,25,0" concept="1" trace="MigrationErrorStep_Post#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="7935677192557044733" at="26,0,29,0" concept="5" trace="getText#()Ljava/lang/String;" />
+      <node id="7935677192557947395" at="38,0,41,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/findusages/model/SearchResult;" />
+      <node id="7935677192557947389" at="36,79,41,28" concept="6" />
+      <node id="7935677192557322881" at="32,0,44,0" concept="5" trace="invoke#()V" />
+      <node id="7935677192557322883" at="30,66,44,6" concept="7" />
+      <node id="7935677192557320129" at="30,0,46,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+      <scope id="7935677192557044726" at="22,51,23,23" />
+      <scope id="7935677192557044736" at="26,30,27,197" />
+      <scope id="7935677192557947396" at="38,76,39,121" />
+      <scope id="7935677192557044723" at="22,0,25,0">
         <var name="project" id="7935677192557044730" />
       </scope>
-      <scope id="7935677192557044733" at="15,0,18,0" />
-      <scope id="7935677192557322881" at="21,0,25,0" />
-      <scope id="7935677192557320134" at="19,66,25,6" />
-      <scope id="7935677192557320129" at="19,0,27,0" />
-      <unit id="7935677192557322881" at="20,15,25,5" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post$1" />
-      <unit id="7935677192557044717" at="8,0,28,0" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" />
+      <scope id="7935677192557044733" at="26,0,29,0" />
+      <scope id="7935677192557947395" at="38,0,41,0">
+        <var name="it" id="7935677192557947395" />
+      </scope>
+      <scope id="7935677192557322882" at="32,28,42,170">
+        <var name="modules" id="7935677192557584510" />
+        <var name="mpsProject" id="7935677192557569475" />
+        <var name="problems" id="7935677192557558166" />
+        <var name="results" id="7935677192557947390" />
+      </scope>
+      <scope id="7935677192557322881" at="32,0,44,0" />
+      <scope id="7935677192557320134" at="30,66,44,6" />
+      <scope id="7935677192557320129" at="30,0,46,0" />
+      <unit id="7935677192557947395" at="37,108,41,9" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post$2" />
+      <unit id="7935677192557322881" at="31,15,44,5" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post$1" />
+      <unit id="7935677192557044717" at="19,0,47,0" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" />
     </file>
   </root>
 </debug-info>
