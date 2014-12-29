@@ -19,9 +19,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * @author Kostik
- */
 public enum MessageKind {
   INFORMATION, WARNING, ERROR;
 
@@ -31,9 +28,7 @@ public enum MessageKind {
       return MessageKind.ERROR;
     } else if (level.equals(Level.WARN)) {
       return MessageKind.WARNING;
-    } else if (level.equals(Level.INFO) || level.equals(Level.DEBUG)) {
-      return MessageKind.INFORMATION;
     }
-    return MessageKind.ERROR;
+    return MessageKind.INFORMATION;
   }
 }
