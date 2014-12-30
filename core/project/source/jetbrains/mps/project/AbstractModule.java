@@ -126,8 +126,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    SRepository repository = getRepository();
-    if (repository == null) throw new IllegalStateException("No repository to resolve dependencies references");
     Iterable<Dependency> unresolvedDeps = getUnresolvedDependencies();
     List<SDependency> resolvedDeps = new ArrayList<SDependency>();
     for (Dependency dep : unresolvedDeps) {

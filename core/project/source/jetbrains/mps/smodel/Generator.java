@@ -153,18 +153,38 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
+  public Iterable<SDependency> getDeclaredDependencies() {
+    Iterable<Dependency> unresolvedDeps = IterableUtil.merge(getUnresolvedDependencies(), getUnresolvedRuntimes());
+    List<SDependency> resolvedDeps = new ArrayList<SDependency>();
+    for (Dependency dep : unresolvedDeps) {
+      SModuleReference moduleRef = dep.getModuleRef();
+      SModule target = ModuleRepositoryFacade.getInstance().getModule(moduleRef);
+      if (target != null) {
+        resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
+      }
+    }
+    return resolvedDeps;
+  }
+
+  // TODO: Remove this method when dependencies management is the same in the build languages and workbench
+  private Iterable<Dependency> getUnresolvedRuntimes() {
+    Set<Dependency> dependencies = new HashSet<Dependency>();
+    // (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
+    for (SModuleReference rt : mySourceLanguage.getRuntimeModulesReferences()) {
+      dependencies.add(new Dependency(rt, SDependencyScope.RUNTIME, false));
+    }
+    return dependencies;
+  }
+
+  @Override
   public Iterable<Dependency> getUnresolvedDependencies() {
     Set<Dependency> dependencies = new HashSet<Dependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getUnresolvedDependencies()));
 
     // generator sees its source language
     dependencies.add(new Dependency(mySourceLanguage.getModuleReference(), SDependencyScope.DEFAULT, false));
-    // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
-    for (SModuleReference rt : mySourceLanguage.getRuntimeModulesReferences()) {
-      dependencies.add(new Dependency(rt, SDependencyScope.RUNTIME, false));
-    }
 
-    //generator sees all dependent generators as non-reexport
+    // generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       // XXX not sure it's right to resolve modules through global repository if this module is not attached anywhere
       // FIXME all referenced generators are of 'extends' dependency at the moment
