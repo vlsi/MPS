@@ -7589,6 +7589,50 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="5G$1ADP9P_h" role="3cqZAp">
+              <node concept="3clFbS" id="5G$1ADP9P_i" role="3clFbx">
+                <node concept="34ab3g" id="5G$1ADP9P_j" role="3cqZAp">
+                  <property role="35gtTG" value="warn" />
+                  <property role="34fQS0" value="true" />
+                  <node concept="3cpWs3" id="5G$1ADP9RqM" role="34bqiv">
+                    <node concept="2OqwBi" id="5G$1ADP9RPe" role="3uHU7w">
+                      <node concept="2GrUjf" id="5G$1ADP9REA" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="7yFo2Ea62w_" resolve="file" />
+                      </node>
+                      <node concept="liA8E" id="5G$1ADP9SW6" role="2OqNvi">
+                        <ref role="37wK5l" to="3df7:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="5G$1ADP9P_k" role="3uHU7B">
+                      <property role="Xl_RC" value="Couldn't read model " />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3N13vt" id="5G$1ADP9YIU" role="3cqZAp" />
+              </node>
+              <node concept="22lmx$" id="5G$1ADP9P_p" role="3clFbw">
+                <node concept="3clFbC" id="5G$1ADP9P_q" role="3uHU7w">
+                  <node concept="10Nm6u" id="5G$1ADP9P_r" role="3uHU7w" />
+                  <node concept="37vLTw" id="5G$1ADP9QD0" role="3uHU7B">
+                    <ref role="3cqZAo" node="7yFo2Ea679F" resolve="repoModel" />
+                  </node>
+                </node>
+                <node concept="22lmx$" id="5G$1ADP9P_t" role="3uHU7B">
+                  <node concept="3clFbC" id="5G$1ADP9P_u" role="3uHU7B">
+                    <node concept="37vLTw" id="5G$1ADP9P_v" role="3uHU7B">
+                      <ref role="3cqZAo" node="7yFo2Ea679r" resolve="baseModel" />
+                    </node>
+                    <node concept="10Nm6u" id="5G$1ADP9P_w" role="3uHU7w" />
+                  </node>
+                  <node concept="3clFbC" id="5G$1ADP9P_x" role="3uHU7w">
+                    <node concept="37vLTw" id="5G$1ADP9P_y" role="3uHU7B">
+                      <ref role="3cqZAo" node="7yFo2Ea679z" resolve="mineModel" />
+                    </node>
+                    <node concept="10Nm6u" id="5G$1ADP9P_z" role="3uHU7w" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3SKdUt" id="7yFo2Ea679M" role="3cqZAp">
               <node concept="3SKdUq" id="7yFo2Ea679N" role="3SKWNk">
                 <property role="3SKdUp" value="read action:" />
@@ -7728,8 +7772,8 @@
       </node>
       <node concept="37vLTG" id="68MS4n2NuVV" role="3clF46">
         <property role="TrG5h" value="conflictedFiles" />
-        <node concept="_YKpA" id="68MS4n2NyKr" role="1tU5fm">
-          <node concept="3uibUv" id="68MS4n2NyKQ" role="_ZDj9">
+        <node concept="A3Dl8" id="5G$1ADP9xI0" role="1tU5fm">
+          <node concept="3uibUv" id="5G$1ADP9xI2" role="A3Ik2">
             <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
           </node>
         </node>
@@ -9030,8 +9074,47 @@
             <node concept="37vLTw" id="68MS4n2NW7A" role="37wK5m">
               <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
             </node>
-            <node concept="37vLTw" id="7UDnPJKk38l" role="37wK5m">
-              <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+            <node concept="2OqwBi" id="5G$1ADP9G$r" role="37wK5m">
+              <node concept="1eOMI4" id="5G$1ADP9FG2" role="2Oq$k0">
+                <node concept="10QFUN" id="5G$1ADP9FFZ" role="1eOMHV">
+                  <node concept="_YKpA" id="5G$1ADP9FXM" role="10QFUM">
+                    <node concept="3uibUv" id="5G$1ADP9Gd2" role="_ZDj9">
+                      <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="7UDnPJKk38l" role="10QFUP">
+                    <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3zZkjj" id="5G$1ADP9GI7" role="2OqNvi">
+                <node concept="1bVj0M" id="5G$1ADP9GI8" role="23t8la">
+                  <node concept="3clFbS" id="5G$1ADP9GI9" role="1bW5cS">
+                    <node concept="3clFbF" id="5G$1ADP9GIa" role="3cqZAp">
+                      <node concept="2OqwBi" id="5G$1ADP9GIb" role="3clFbG">
+                        <node concept="10M0yZ" id="5G$1ADP9GIc" role="2Oq$k0">
+                          <ref role="1PxDUh" node="5eJvzs3Q6DI" resolve="ModelMergeTool" />
+                          <ref role="3cqZAo" node="4e9OAPLWjQv" resolve="SUPPORTED_TYPES" />
+                        </node>
+                        <node concept="3JPx81" id="5G$1ADP9GId" role="2OqNvi">
+                          <node concept="2OqwBi" id="5G$1ADP9GIe" role="25WWJ7">
+                            <node concept="37vLTw" id="5G$1ADP9GIf" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5G$1ADP9GIh" resolve="f" />
+                            </node>
+                            <node concept="liA8E" id="5G$1ADP9GIg" role="2OqNvi">
+                              <ref role="37wK5l" to="3df7:~VirtualFile.getFileType():com.intellij.openapi.fileTypes.FileType" resolve="getFileType" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="5G$1ADP9GIh" role="1bW2Oz">
+                    <property role="TrG5h" value="f" />
+                    <node concept="2jxLKc" id="5G$1ADP9GIi" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

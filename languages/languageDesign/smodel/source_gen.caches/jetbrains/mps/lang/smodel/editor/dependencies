@@ -500,6 +500,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_GetTargetOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.SConceptOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.SConceptTypeSConcept_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.SConceptType_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.SEnumMemberType_Editor" />
@@ -2024,6 +2025,26 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.editor.SConceptOperation_Editor" file="SConceptOperation_Editor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.editor.SConceptTypeSConcept_Editor" file="SConceptTypeSConcept_Editor.java">
     <classNode dependClassName="java.lang.Class" />

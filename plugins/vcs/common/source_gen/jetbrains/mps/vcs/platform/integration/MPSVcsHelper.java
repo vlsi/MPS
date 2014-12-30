@@ -9,12 +9,14 @@ import java.util.List;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vcs.merge.MergeDialogCustomizer;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.ui.Messages;
 import java.util.Collections;
 import com.intellij.openapi.vcs.merge.MergeSession;
 import com.intellij.openapi.vcs.merge.MergeProvider2;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MPSVcsHelper extends AbstractVcsHelperImpl {
   public MPSVcsHelper(Project project) {
@@ -25,7 +27,11 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
   @Override
   public List<VirtualFile> showMergeDialog(List<VirtualFile> files, MergeProvider provider, @NotNull MergeDialogCustomizer customizer) {
 
-    if (ConflictingModelsUtil.hasResolvableConflicts(myProject, provider, files)) {
+    if (ConflictingModelsUtil.hasResolvableConflicts(myProject, provider, ListSequence.fromList(((List<VirtualFile>) files)).where(new IWhereFilter<VirtualFile>() {
+      public boolean accept(VirtualFile f) {
+        return SetSequence.fromSet(ModelMergeTool.SUPPORTED_TYPES).contains(f.getFileType());
+      }
+    }))) {
 
       int answer = Messages.showYesNoCancelDialog(myProject, "Some conflicts in MPS models can be autoresolved. Resolve such conflicts automatically?", "Conflict Resolver", Messages.getQuestionIcon());
       if (answer == Messages.CANCEL) {

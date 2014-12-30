@@ -1851,7 +1851,7 @@
   <node concept="1TIwiD" id="7GdCWpgJClo">
     <property role="TrG5h" value="AsNodeOperation" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation" />
+    <property role="3GE5qa" value="operation.concept" />
     <property role="34LRSv" value="asNode" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
@@ -1999,7 +1999,7 @@
   <node concept="1TIwiD" id="i$PM5v5z4L">
     <property role="TrG5h" value="AsSConcept" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation" />
+    <property role="3GE5qa" value="operation.concept" />
     <property role="34LRSv" value="asConcept" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
@@ -2034,6 +2034,29 @@
       <property role="TrG5h" value="bootstrap" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5XpkEY8gZFT">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SConceptOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="operation.concept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5XpkEY8gZFV" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5XpkEY8lFU0">
+    <property role="3GE5qa" value="operation.concept" />
+    <property role="TrG5h" value="ConceptAliasOperation" />
+    <property role="34LRSv" value="conceptAlias" />
+    <ref role="1TJDcQ" node="5XpkEY8gZFT" resolve="SConceptOperation" />
+  </node>
+  <node concept="1TIwiD" id="5XpkEY8oJOs">
+    <property role="3GE5qa" value="operation.concept" />
+    <property role="TrG5h" value="ConceptShortDescriptionOperation" />
+    <property role="34LRSv" value="shortDescrption" />
+    <ref role="1TJDcQ" node="5XpkEY8gZFT" resolve="SConceptOperation" />
   </node>
 </model>
 

@@ -178,6 +178,27 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
+  public String getConceptAlias() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return "";
+    return d.getConceptAlias();
+  }
+
+  @Override
+  public String getShortDescription() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return "";
+    return d.getConceptShortDescription();
+  }
+
+  @Override
+  public String getHelpUrl() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return "";
+    return d.getHelpUrl();
+  }
+
+  @Override
   public String toString() {
     return myFqName;
   }
