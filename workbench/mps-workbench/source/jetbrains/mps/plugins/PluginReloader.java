@@ -20,9 +20,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ProjectManagerListener;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.plugins.PluginUtil.ModulePluginContributor;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
@@ -180,20 +182,29 @@ public class PluginReloader implements ApplicationComponent {
     @Override
     public void projectOpened(final Project project) {
       assert SwingUtilities.isEventDispatchThread();
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
         @Override
         public void run() {
-          project.getComponent(ProjectPluginManager.class).loadPlugins(myContributors);
+          org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ProjectHelper.getModelAccess(project);
+          assert modelAccess != null;
+          modelAccess.runWriteInEDT(new Runnable() {
+            @Override
+            public void run() {
+              project.getComponent(ProjectPluginManager.class).loadPlugins(myContributors);
+              myOpenProjects.add(project);
+            }
+          });
         }
       });
-      myOpenProjects.add(project);
     }
 
     @Override
     public void projectClosing(final Project project) {
       assert SwingUtilities.isEventDispatchThread();
+      org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ProjectHelper.getModelAccess(project);
+      assert modelAccess != null;
       myOpenProjects.remove(project);
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      modelAccess.runWriteAction(new Runnable() {
         @Override
         public void run() {
           project.getComponent(ProjectPluginManager.class).unloadPlugins(myContributors);
@@ -268,7 +279,7 @@ public class PluginReloader implements ApplicationComponent {
     // We cannot make it synchronous (at least in a simple way) since this method is called on the project opening in
     // runInEDTWithProgressSynchronously block
     private void schedulePluginsReload() {
-    //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+    // write action is needed because user can acquire write action inside of this [see MPS-9139]
       LOG.debug("Scheduling plugins' reload");
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
