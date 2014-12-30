@@ -280,7 +280,8 @@ class IdeaFile implements IFileEx {
     ApplicationManager.getApplication().assertWriteAccessAllowed();
     if (findVirtualFile()) {
       myVirtualFile.getChildren(); // This was added to force refresh
-      myVirtualFile.refresh(false, false);
+      // asynchronous recursive refresh
+      myVirtualFile.refresh(true, true);
     } else {
       findVirtualFile(true);
     }

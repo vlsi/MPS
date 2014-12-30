@@ -72,7 +72,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
   void attach(boolean refreshFiles) {
     LOG.debug("Attaching " + this);
     MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
-    update(refreshFiles);
+    update(false);
     FileSystem.getInstance().addListener(this);
   }
 
