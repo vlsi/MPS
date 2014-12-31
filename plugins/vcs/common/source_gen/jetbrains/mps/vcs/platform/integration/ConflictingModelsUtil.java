@@ -16,7 +16,7 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.merge.MergeProvider;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vcs.VcsException;
 import org.apache.log4j.Level;
@@ -29,9 +29,9 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.progress.Task;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -78,8 +78,8 @@ public class ConflictingModelsUtil {
     }).toListSequence();
   }
 
-  public static boolean hasResolvableConflicts(Project project, MergeProvider provider, List<VirtualFile> conflictedFiles) {
-    for (VirtualFile file : ListSequence.fromList(conflictedFiles)) {
+  public static boolean hasResolvableConflicts(Project project, MergeProvider provider, Iterable<VirtualFile> conflictedFiles) {
+    for (VirtualFile file : Sequence.fromIterable(conflictedFiles)) {
       MergeData mergeData = null;
       try {
         mergeData = provider.loadRevisions(file);
@@ -97,6 +97,12 @@ public class ConflictingModelsUtil {
       final SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext);
       final SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext);
       final SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext);
+      if (baseModel == null || mineModel == null || repoModel == null) {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("Couldn't read model " + file.getPath());
+        }
+        continue;
+      }
       // read action: 
       final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>();
       ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {

@@ -247,7 +247,7 @@
       </node>
       <node concept="TZ5HA" id="bWBJ0IX33c" role="TZ5H$">
         <node concept="1dT_AC" id="bWBJ0IX33d" role="1dT_Ay">
-          <property role="1dT_AB" value="Read http://confluence.jetbrains.com/display/MPSD31/Custom+Persistence+Cookbook for details on custom persistence." />
+          <property role="1dT_AB" value="Read http://confluence.jetbrains.com/display/MPSD32/Custom+Persistence+Cookbook for details on custom persistence." />
         </node>
       </node>
     </node>

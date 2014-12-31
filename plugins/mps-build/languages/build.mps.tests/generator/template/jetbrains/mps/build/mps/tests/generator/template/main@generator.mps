@@ -698,7 +698,7 @@
                           </node>
                           <node concept="3cpWs8" id="6g2MV4s7FbO" role="3cqZAp">
                             <node concept="3cpWsn" id="6g2MV4s7FbP" role="3cpWs9">
-                              <property role="TrG5h" value="macros" />
+                              <property role="TrG5h" value="macroHelper" />
                               <node concept="3uibUv" id="6g2MV4s7FbI" role="1tU5fm">
                                 <ref role="3uigEE" to="o3n2:5FtnUVJR86u" resolve="MacroHelper" />
                               </node>
@@ -714,7 +714,9 @@
                                 </node>
                                 <node concept="liA8E" id="6g2MV4s7FbV" role="2OqNvi">
                                   <ref role="37wK5l" to="o3n2:5DY7s5F2PaT" resolve="getMacros" />
-                                  <node concept="30H73N" id="6g2MV4s7FbW" role="37wK5m" />
+                                  <node concept="37vLTw" id="7MPX9wYFVht" role="37wK5m">
+                                    <ref role="3cqZAo" node="6g2MV4s7TUx" resolve="project" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -748,7 +750,7 @@
                               <node concept="2qgKlT" id="6g2MV4s6rGs" role="2OqNvi">
                                 <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
                                 <node concept="37vLTw" id="6g2MV4s7Gcy" role="37wK5m">
-                                  <ref role="3cqZAo" node="6g2MV4s7FbP" resolve="macros" />
+                                  <ref role="3cqZAo" node="6g2MV4s7FbP" resolve="macroHelper" />
                                 </node>
                               </node>
                             </node>

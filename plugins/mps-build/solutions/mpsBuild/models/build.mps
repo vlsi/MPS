@@ -6669,7 +6669,7 @@
         </node>
       </node>
       <node concept="1E1JtD" id="7S0PgEj3Wad" role="2G$12L">
-        <property role="BnDLt" value="false" />
+        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.baseLanguage.doubleDispatch" />
         <property role="3LESm3" value="7db4447f-913e-4b81-bd75-c9a473319ac6" />
         <property role="2GAjPV" value="false" />

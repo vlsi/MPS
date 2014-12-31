@@ -5,11 +5,10 @@ package jetbrains.mps.lang.migration.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -28,25 +27,28 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.ArrayList;
 
 public class MigrationsCheckUtil {
-  public static boolean hasCycles(SNode migrationScript) {
-    List<SNode> step = ListSequence.fromListAndArray(new ArrayList<SNode>(), migrationScript);
-    List<SNode> all = ListSequence.fromList(new ArrayList<SNode>());
-    while (ListSequence.fromList(step).isNotEmpty()) {
-      step = ListSequence.fromList(step).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
-          return allScriptdependencies(it);
-        }
-      }).distinct().toListSequence();
-      if (ListSequence.fromList(all).intersect(ListSequence.fromList(step)).isNotEmpty()) {
-        return true;
-      }
-      ListSequence.fromList(all).addSequence(ListSequence.fromList(step));
+  public static boolean hasCycles(SNode migrationScript, final List<SNode> parentScripts) {
+    if (ListSequence.fromList(parentScripts).contains(migrationScript)) {
+      return true;
     }
+    ListSequence.fromList(parentScripts).insertElement(0, migrationScript);
+    if (Sequence.fromIterable(allScriptDependencies(migrationScript)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return hasCycles(it, parentScripts);
+      }
+    })) {
+      return true;
+    }
+    ListSequence.fromList(parentScripts).removeElementAt(0);
     return false;
   }
-  private static Iterable<SNode> allScriptdependencies(final SNode script) {
+  public static boolean hasCycles(SNode migrationScript) {
+    return hasCycles(migrationScript, ListSequence.fromList(new LinkedList<SNode>()));
+  }
+  private static Iterable<SNode> allScriptDependencies(final SNode script) {
     Iterable<SNode> result = Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script")) != null);
@@ -141,7 +143,7 @@ public class MigrationsCheckUtil {
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Language version (" + langVersion + ") is greater than the targert version of last migration script (" + maxVersion + ")");
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Language version (" + langVersion + ") is greater than the target version of last migration script (" + maxVersion + ")");
         }
       });
     }

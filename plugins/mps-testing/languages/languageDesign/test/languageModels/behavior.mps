@@ -597,14 +597,14 @@
             </node>
             <node concept="2OqwBi" id="6NlquKEx$Oy" role="37wK5m">
               <node concept="13iPFW" id="6NlquKEx$LO" role="2Oq$k0" />
-              <node concept="3TrcHB" id="6NlquKEx_3c" role="2OqNvi">
-                <ref role="3TsBF5" to="tp5g:JjtHGBNrEI" resolve="allowWarnings" />
+              <node concept="3TrcHB" id="47xtKJCP1tA" role="2OqNvi">
+                <ref role="3TsBF5" to="tp5g:JjtHGBNrEH" resolve="allowErrors" />
               </node>
             </node>
             <node concept="2OqwBi" id="6NlquKEx_8e" role="37wK5m">
               <node concept="13iPFW" id="6NlquKEx_5m" role="2Oq$k0" />
-              <node concept="3TrcHB" id="6NlquKEx_oF" role="2OqNvi">
-                <ref role="3TsBF5" to="tp5g:JjtHGBNrEH" resolve="allowErrors" />
+              <node concept="3TrcHB" id="47xtKJCP2ua" role="2OqNvi">
+                <ref role="3TsBF5" to="tp5g:JjtHGBNrEI" resolve="allowWarnings" />
               </node>
             </node>
           </node>

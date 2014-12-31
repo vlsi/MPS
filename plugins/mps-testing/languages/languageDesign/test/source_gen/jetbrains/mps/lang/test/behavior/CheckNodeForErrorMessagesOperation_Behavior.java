@@ -14,7 +14,7 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     final SNode nodeToCheck = node;
     final SNode operation = thisNode;
-    NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaaeL, "allowWarnings")), SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaadL, "allowErrors")));
+    NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaadL, "allowErrors")), SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaaeL, "allowWarnings")));
   }
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "ErrorMessagesCheck";

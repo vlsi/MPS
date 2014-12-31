@@ -8,8 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
@@ -24,14 +22,11 @@ public class Migration_Queries {
   public static void init(SNode c) {
     SModule module = SNodeOperations.getModel(c).getModule();
     if (module instanceof Language) {
-      int currentVersion = ((Language) module).getLanguageVersion();
+      Language lang = (Language) module;
+      int currentVersion = (lang).getLanguageVersion();
       SPropertyOperations.set(c, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"), "" + (currentVersion));
-      ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
-      SLanguage slang = MetaIdByDeclaration.ref2Id(module.getModuleReference());
-      if (((Language) module).getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
-        ((Language) module).getModuleDescriptor().getLanguageVersions().put(slang, currentVersion + 1);
-      }
-      ((Language) module).setChanged();
+
+      lang.setLanguageVersion(lang.getLanguageVersion() + 1);
     }
 
     SModelInternal m = ((SModelInternal) (SModel) SNodeOperations.getModel(c));

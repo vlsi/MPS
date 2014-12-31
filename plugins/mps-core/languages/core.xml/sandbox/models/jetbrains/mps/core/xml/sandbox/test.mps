@@ -7,6 +7,9 @@
   <imports />
   <registry>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
+      <concept id="2133624044437898907" name="jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration" flags="ng" index="29q25o">
+        <property id="2133624044437898910" name="doctypeName" index="29q25t" />
+      </concept>
       <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
         <child id="6666499814681515201" name="document" index="2pMbU3" />
       </concept>
@@ -15,6 +18,13 @@
       </concept>
       <concept id="6666499814681541921" name="jetbrains.mps.core.xml.structure.XmlEntityRefValue" flags="ng" index="2pMdtz">
         <property id="6666499814681543256" name="entityName" index="2pMiwq" />
+      </concept>
+      <concept id="6666499814681299057" name="jetbrains.mps.core.xml.structure.XmlProlog" flags="ng" index="2pNm8N">
+        <child id="7604553062773674214" name="elements" index="BGLLu" />
+      </concept>
+      <concept id="6666499814681299061" name="jetbrains.mps.core.xml.structure.XmlProcessingInstruction" flags="ng" index="2pNm8R">
+        <property id="6666499814681299062" name="target" index="2pNm8O" />
+        <property id="6666499814681299063" name="rawData" index="2pNm8P" />
       </concept>
       <concept id="6666499814681299066" name="jetbrains.mps.core.xml.structure.XmlCDATA" flags="ng" index="2pNm8S">
         <property id="1622293396948985395" name="content" index="3o6aOc" />
@@ -32,6 +42,9 @@
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
       </concept>
+      <concept id="7604553062773750440" name="jetbrains.mps.core.xml.structure.XmlWhitespace" flags="nn" index="BH3og">
+        <property id="5228786488744844115" name="value" index="3VrZF8" />
+      </concept>
       <concept id="1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" flags="nn" index="3o66tx">
         <property id="1622293396949036127" name="text" index="3o66tw" />
       </concept>
@@ -43,6 +56,7 @@
       </concept>
       <concept id="6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" flags="ng" index="3rIKKV">
         <child id="6666499814681299055" name="rootElement" index="2pNm8H" />
+        <child id="6666499814681299060" name="prolog" index="2pNm8Q" />
       </concept>
       <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
         <property id="3080189811177216006" name="charCode" index="1_gt1m" />
@@ -920,6 +934,54 @@
           </node>
         </node>
         <node concept="3o6iSG" id="6pYRYgn8kCy" role="3o6s8t" />
+      </node>
+      <node concept="2pNm8N" id="4r4WehwuijQ" role="2pNm8Q">
+        <node concept="29q25o" id="4r4WehwuijS" role="BGLLu">
+          <property role="29q25t" value="doc" />
+        </node>
+        <node concept="BH3og" id="4r4WehwuijU" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="BH3og" id="4r4WehwuijX" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="BH3og" id="4r4Wehwuik1" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="2pNm8R" id="4r4Wehwuikc" role="BGLLu">
+          <property role="2pNm8O" value="foo" />
+          <property role="2pNm8P" value="bar" />
+        </node>
+        <node concept="2pNm8U" id="4r4Wehwuikq" role="BGLLu">
+          <node concept="3o66tx" id="4r4Wehwuiky" role="3o66t8">
+            <property role="3o66tw" value="Demo" />
+          </node>
+        </node>
+        <node concept="BH3og" id="4r4Wehwuik$" role="BGLLu">
+          <property role="3VrZF8" value="    " />
+        </node>
+        <node concept="2pNm8U" id="4r4WehwuikR" role="BGLLu">
+          <node concept="3o66tx" id="4r4Wehwuil2" role="3o66t8">
+            <property role="3o66tw" value="of XML handling" />
+          </node>
+        </node>
+        <node concept="BH3og" id="4r4Wehwuil4" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="BH3og" id="4r4Wehwuilg" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="BH3og" id="4r4WehwuilW" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
+        <node concept="2pNm8U" id="4r4WehwuilF" role="BGLLu">
+          <node concept="3o66tx" id="4r4WehwuilU" role="3o66t8">
+            <property role="3o66tw" value="in prolog and further" />
+          </node>
+        </node>
+        <node concept="BH3og" id="4r4Wehwuimc" role="BGLLu">
+          <property role="3VrZF8" value="" />
+        </node>
       </node>
     </node>
   </node>

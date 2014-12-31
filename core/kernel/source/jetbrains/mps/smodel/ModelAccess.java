@@ -161,10 +161,20 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
     }
   }
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkWriteAccess()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static void assertLegalWrite() {
     instance().checkWriteAccess();
   }
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkReadAccess()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static void assertLegalRead() {
     instance().checkReadAccess();
   }

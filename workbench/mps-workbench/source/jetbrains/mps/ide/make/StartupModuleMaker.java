@@ -100,7 +100,9 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           });
         }
       });
-      if (mpsCompilationResult.isReloadingNeeded()) reloadClasses(mpsCompilationResult, indicator, early);
+      if (mpsCompilationResult.isReloadingNeeded()) {
+        reloadClasses(mpsCompilationResult, indicator, early);
+      }
     } finally {
       monitor.done();
     }

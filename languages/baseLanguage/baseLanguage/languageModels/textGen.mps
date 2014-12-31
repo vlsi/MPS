@@ -254,6 +254,7 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
         <child id="8465538089690917625" name="param" index="TUOzN" />
@@ -1940,22 +1941,20 @@
           <ref role="ehGHo" to="tpee:g7HP654" resolve="Interface" />
         </node>
       </node>
-      <node concept="P$JXv" id="1aKcY0Lpr7L" role="lGtFl">
-        <node concept="TZ5HI" id="1aKcY0Lpr7M" role="TZ5Hx">
-          <node concept="TZ5HA" id="1aKcY0Lpr7N" role="3HnX3l">
-            <node concept="1dT_AC" id="1aKcY0Lprh0" role="1dT_Ay">
+      <node concept="2AHcQZ" id="1aKcY0Lpr7O" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="4qFgCTNTaY1" role="lGtFl">
+        <node concept="TZ5HA" id="4qFgCTNTaY2" role="TZ5H$">
+          <node concept="1dT_AC" id="4qFgCTNTaY3" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="4qFgCTNTb5i" role="TZ5Hx">
+          <node concept="TZ5HA" id="4qFgCTNTb5j" role="3HnX3l">
+            <node concept="1dT_AC" id="4qFgCTNTbaf" role="1dT_Ay">
               <property role="1dT_AB" value="use registerExtendsRelation instead. @ToRemove(version = 3.1)" />
             </node>
           </node>
-          <node concept="TZ5HA" id="1aKcY0Lprh2" role="3HnX3l">
-            <node concept="1dT_AC" id="1aKcY0Lprh3" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="1aKcY0Lpr7O" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="1bwezc" id="3L2UhfX3eyS" role="1bwxVq">

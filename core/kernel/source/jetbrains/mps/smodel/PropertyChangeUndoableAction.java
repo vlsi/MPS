@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 class PropertyChangeUndoableAction extends SNodeUndoableAction {
-  private String myProperty;
+  private SProperty myProperty;
   private String myOldValue;
   private String myNewValue;
 
-  PropertyChangeUndoableAction(SNode node, String property, String oldValue, String newValue) {
+  PropertyChangeUndoableAction(SNode node, SProperty property, String oldValue, String newValue) {
     super(node);
     myProperty = property;
     myOldValue = oldValue;

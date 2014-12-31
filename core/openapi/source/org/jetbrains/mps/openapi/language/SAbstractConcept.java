@@ -67,6 +67,17 @@ public interface SAbstractConcept {
   @Nullable
   SNode getDeclarationNode();
 
+  /*
+   * The methods below are temporary included in openapi.
+   * They will be removed when there will exist some better way to retrieve concept alias, short description and help url from generated code.
+   */
+
+  String getConceptAlias();
+
+  String getShortDescription();
+
+  String getHelpUrl();
+
   //----------deprecated------------
 
   @Deprecated

@@ -236,10 +236,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public void setLanguageVersion(int version) {
     getModuleDescriptor().setVersion(version);
-    SLanguage langId = MetaIdByDeclaration.ref2Id(getModuleReference());
-    if (getModuleDescriptor().getLanguageVersions().containsKey(langId)) {
-      getModuleDescriptor().getLanguageVersions().put(langId, version);
-    }
+    fireChanged();
     setChanged();
   }
 
@@ -291,6 +288,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Override
   public void save() {
     super.save();
+    for (Generator gen : getGenerators()) {
+      gen.validateLanguageVersions();
+    }
     if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }

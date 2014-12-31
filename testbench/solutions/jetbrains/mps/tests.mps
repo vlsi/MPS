@@ -834,13 +834,9 @@
     </node>
   </node>
   <node concept="lpD6F" id="2l2V5vWyL7j">
-    <node concept="2R4zua" id="2LuGVbI_sjB" role="2R4z3u">
+    <node concept="2R4zua" id="5XZc116lZQF" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.build.tests" />
       <property role="2R4zu8" value="39742b07-848c-43a7-be0a-845055dd3333" />
-    </node>
-    <node concept="2R4zua" id="2l2V5vWyL7l" role="2R4z3u">
-      <property role="2R4zu8" value="39742b07-848c-43a7-be0a-845055dd3333" />
-      <property role="2R4zub" value="jetbrains.mps.buildScript.tests" />
     </node>
     <node concept="lpD6D" id="2l2V5vWyR8e" role="lpD6w">
       <ref role="lpD7u" to="msle:aJO6qS75sM" resolve="MacroTest" />
@@ -940,6 +936,9 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HD" role="lpD6w">
       <ref role="lpD7u" to="tpej:hHF2A42" resolve="AnonymousClass" />
+    </node>
+    <node concept="lpD6D" id="2eGAmjQhuFd" role="lpD6w">
+      <ref role="lpD7u" to="tpej:1C72Z0GmWpB" resolve="Cardinalities" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HE" role="lpD6w">
       <ref role="lpD7u" to="tpej:hHF2Ad8" resolve="VariableUninitialized" />

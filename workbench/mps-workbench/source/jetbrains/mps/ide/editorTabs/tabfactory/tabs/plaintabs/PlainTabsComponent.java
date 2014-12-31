@@ -16,13 +16,13 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.ui.PrevNextActionsDescriptor;
-import com.intellij.ui.TabbedPaneWrapper;
-import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
+import com.intellij.ui.tabs.JBTabsPosition;
+import com.intellij.ui.tabs.TabInfo;
+import com.intellij.ui.tabs.TabsListener;
 import com.intellij.ui.tabs.UiDecorator;
+import com.intellij.ui.tabs.impl.JBTabsImpl;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -41,10 +41,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Insets;
@@ -56,7 +53,7 @@ import java.util.Set;
 
 public class PlainTabsComponent extends BaseTabsComponent {
   private final List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
-  private final AsJBTabs myJbTabs;
+  private final JBTabsImpl myTabs;
   private RelationDescriptor myLastEmptyTab = null;
   private volatile boolean myDisposed = false;
   private volatile boolean myRebuilding = false;
@@ -71,24 +68,27 @@ public class PlainTabsComponent extends BaseTabsComponent {
       CreateModeCallback createModeCallback, Project project) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, project);
 
-    PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
-    myJbTabs = new TabbedPaneWrapper.AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
-    myJbTabs.getTabs().getPresentation().setPaintBorder(0, 0, 0, 0).setTabSidePaintBorder(1).setGhostsAlwaysVisible(true).setUiDecorator(new UiDecorator() {
-      @Override
-      @NotNull
-      public UiDecoration getDecoration() {
-        return new UiDecoration(null, new Insets(0, 8, 0, 8));
-      }
-    });
-    myJbTabs.getTabs().getComponent().setBorder(new EmptyBorder(0, 0, 1, 0));
+    myTabs = new JBTabsImpl(project, null, myJbTabsDisposable);
+    myTabs.setTabsPosition(JBTabsPosition.bottom)
+        .setPaintBorder(0,0,0,0)
+        .setTabSidePaintBorder(1)
+        .setGhostsAlwaysVisible(false)
+        .setUiDecorator(new UiDecorator() {
+          @NotNull
+          @Override
+          public UiDecoration getDecoration() {
+            return new UiDecoration(null, new Insets(0, 8, 0, 8));
+          }
+        });
+    myTabs.setBorder(new EmptyBorder(0, 0, 1, 0));
 
-    getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);
+    getComponent().add(myTabs, BorderLayout.CENTER);
 
     updateTabs();
 
-    myJbTabs.addChangeListener(new ChangeListener() {
+    myTabs.addListener(new TabsListener() {
       @Override
-      public void stateChanged(ChangeEvent e) {
+      public void selectionChanged(TabInfo oldSelection, TabInfo newSelection) {
         if (myDisposed) return;
         if (myRebuilding) return;
 
@@ -99,6 +99,13 @@ public class PlainTabsComponent extends BaseTabsComponent {
           }
         });
       }
+
+      @Override
+      public void beforeSelectionChanged(TabInfo oldSelection, TabInfo newSelection) {}
+      @Override
+      public void tabRemoved(TabInfo tabToRemove) {}
+      @Override
+      public void tabsMoved() {}
     });
 
     addListeners();
@@ -108,9 +115,9 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
 
-    if (myJbTabs.getTabCount() == 0) return;
+    if (myTabs.getTabCount() == 0) return;
 
-    int index = myJbTabs.getSelectedIndex();
+    int index = myTabs.getIndexOf(myTabs.getSelectedInfo());
     PlainEditorTab tab = myRealTabs.get(index);
     SNodeReference np = tab.getNode();
     if (np != null && EqualUtil.equals(np, getLastNode())) return;
@@ -131,7 +138,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (myDisposed) return null;
 
     if (myLastEmptyTab != null) return myLastEmptyTab;
-    return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
+    return myRealTabs.get(myTabs.getIndexOf(myTabs.getSelectedInfo())).getTab();
   }
 
   @NotNull
@@ -176,11 +183,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
       if (node != null && colorProvider != null) {
         Color color = colorProvider.getNodeColor(node);
         if (color != null) {
-          myJbTabs.setForegroundAt(i, color);
+          myTabs.getTabAt(i).setDefaultForeground(color);
           continue;
         }
       }
-      myJbTabs.setForegroundAt(i, null);
+      myTabs.getTabAt(i).setDefaultForeground(null);
     }
   }
 
@@ -191,7 +198,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     SNodeReference selNode = null;
     RelationDescriptor selRel = null;
 
-    int selected = myJbTabs.getTabCount() > 0 ? myJbTabs.getSelectedIndex() : -1;
+    int selected = myTabs.getTabCount() > 0 ? myTabs.getIndexOf(myTabs.getSelectedInfo()) : -1;
     if (selected != -1) {
       selNode = myRealTabs.get(selected).getNode();
       if (selNode == null) {
@@ -202,7 +209,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     boolean oldRebuilding = myRebuilding;
     myRebuilding = true;
     try {
-      myJbTabs.removeAll();
+      myTabs.removeAllTabs();
       myRealTabs.clear();
 
       ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
@@ -217,14 +224,20 @@ public class PlainTabsComponent extends BaseTabsComponent {
             final PlainEditorTab pet = new PlainEditorTab(tabDescriptor);
             myRealTabs.add(pet);
             SNode node = pet.getNode().resolve(MPSModuleRepository.getInstance());
-            myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), new JLabel(""), "");
-            myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
+
+            TabInfo info = new TabInfo(new JLabel(""))
+                .setIcon(IconManager.getIconFor(node))
+                .setText(node.getPresentation())
+                .setPreferredFocusableComponent(myEditor);
+            myTabs.addTab(info);
           }
         } else if (myShowGrayed) {
           myRealTabs.add(new PlainEditorTab(tab));
-          myJbTabs.addTab(tab.getTitle(), new JLabel(""));
-          myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
-          myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
+
+          TabInfo info = new TabInfo(new JLabel(""))
+              .setText(tab.getTitle()).setDefaultForeground(Color.GRAY)
+              .setPreferredFocusableComponent(myEditor);
+          myTabs.addTab(info);
         }
       }
       updateTabColors();
@@ -235,20 +248,20 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (selNode != null && selNode.resolve(MPSModuleRepository.getInstance()) != null) {
       for (PlainEditorTab tab : myRealTabs) {
         if (EqualUtil.equals(tab.getNode(), selNode)) {
-          myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
+          myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
           break;
         }
       }
     } else if (selRel != null) {
       for (PlainEditorTab tab : myRealTabs) {
         if (tab.getTab() == selRel) {
-          myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
+          myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
           break;
         }
       }
     } else {
-      if (myJbTabs.getTabCount() > 0) {
-        myJbTabs.setSelectedIndex(0);
+      if (myTabs.getTabCount() > 0) {
+        myTabs.select(myTabs.getTabAt(0), true);
 
         if (selNode != null) {
           //this is needed as Idea component sends no events if we've just removed all tabs and added one new and then are trying to select it
@@ -264,13 +277,13 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     for (PlainEditorTab t : myRealTabs) {
       if (t.getNode() != null && t.getNode().equals(getLastNode())) {
-        myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
+        myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(t)), true);
         return;
       }
     }
     for (PlainEditorTab t : myRealTabs) {
       if (t.getNode() == null && t.getTab().equals(myLastEmptyTab)) {
-        myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
+        myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(t)), true);
         return;
       }
     }
@@ -280,9 +293,9 @@ public class PlainTabsComponent extends BaseTabsComponent {
   public synchronized void nextTab() {
     if (myDisposed) return;
 
-    int i = myJbTabs.getSelectedIndex();
-    if (i < myJbTabs.getTabCount() - 1) {
-      myJbTabs.setSelectedIndex(i + 1);
+    int i = myTabs.getIndexOf(myTabs.getSelectedInfo());
+    if (i < myTabs.getTabCount() - 1) {
+      myTabs.select(myTabs.getTabAt(i + 1), true);
     }
   }
 
@@ -290,9 +303,9 @@ public class PlainTabsComponent extends BaseTabsComponent {
   public synchronized void prevTab() {
     if (myDisposed) return;
 
-    int i = myJbTabs.getSelectedIndex();
+    int i = myTabs.getIndexOf(myTabs.getSelectedInfo());
     if (i > 0) {
-      myJbTabs.setSelectedIndex(i - 1);
+      myTabs.select(myTabs.getTabAt(i - 1), true);
     }
   }
 

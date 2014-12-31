@@ -19,6 +19,7 @@ import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -89,13 +90,19 @@ public class BuildMPSPlugin_Behavior {
     // fetch gentest language 
     VisibleModules visibleModules = new VisibleModules(artifacts.getProject());
     visibleModules.collect();
-    SNode gentest = visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7");
+    SNode gentest = SNodeOperations.cast(visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
+
     if ((gentest != null)) {
       if (SNodeOperations.getContainingRoot(gentest) != SNodeOperations.getContainingRoot(thisNode)) {
-        SNode gentestJar = SNodeOperations.as(artifacts.findArtifact(gentest), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-        if (gentestJar != null) {
-          helper.artifacts().put(SPropertyOperations.getString(gentest, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), gentestJar);
-          builder.add(gentestJar, gentest);
+        MPSModulesClosure closure = new MPSModulesClosure(gentest);
+        Iterable<SNode> gentestDeps = Sequence.fromIterable(closure.runtimeClosure().getAllModules()).union(Sequence.fromIterable(Sequence.<SNode>singleton(gentest)));
+
+        for (SNode gentestDep : Sequence.fromIterable(gentestDeps)) {
+          SNode depLayoutNode = SNodeOperations.as(artifacts.findArtifact(gentestDep), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+          if (depLayoutNode != null) {
+            helper.artifacts().put(SPropertyOperations.getString(gentestDep, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), depLayoutNode);
+            builder.add(depLayoutNode, gentestDep);
+          }
         }
       }
     }

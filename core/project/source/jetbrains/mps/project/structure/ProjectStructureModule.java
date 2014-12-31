@@ -72,7 +72,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
   private final SModuleListener myModuleListener = new SModuleAdapter() {
-
+    @Override
+    public void moduleChanged(SModule module) {
+      refreshModule(module, false);
+    }
   };
   private final SRepositoryListener myListener = new SRepositoryListenerBase() {
     @Override

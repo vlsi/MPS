@@ -18,7 +18,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -126,7 +125,7 @@ public class ContextProjectSupport {
   private static Project loadProjectFromModuleHandles(final Iterable<ModulesMiner.ModuleHandle> moduleHandles) {
     // todo: check currently opened projects 
     final Project project = ActiveEnvironment.getInstance().createDummyProject();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    project.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         for (ModulesMiner.ModuleHandle moduleHandle : Sequence.fromIterable(moduleHandles)) {
           SModule module = ModuleRepositoryFacade.createModule(moduleHandle, project);

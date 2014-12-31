@@ -41,6 +41,8 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   private final IFile myFolder;
   private final ModelRoot myModelRoot;
 
+  private long myLastAddRemove = -1;
+
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
@@ -49,7 +51,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     this.myModelRoot = modelRoot;
   }
 
-  protected boolean isIncluded(IFile file) {
+  public boolean isIncluded(IFile file) {
     return myFolder.equals(file.getParent());
   }
 
@@ -126,7 +128,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
 
   @Override
   public long getTimestamp() {
-    long max = -1;
+    long max = myLastAddRemove;
     for (IFile file : getStreams()) {
       if (!isIncluded(file)) continue;
 
@@ -186,12 +188,14 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     for (IFile file : event.getCreated()) {
       if (isIncluded(file)) {
         affectedStreams.add(getStreamName(file));
+        myLastAddRemove = new Date().getTime();
         break;
       }
     }
     for (IFile file : event.getRemoved()) {
       if (isIncluded(file)) {
         affectedStreams.add(getStreamName(file));
+        myLastAddRemove = new Date().getTime();
         break;
       }
     }

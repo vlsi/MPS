@@ -6,16 +6,24 @@ package jetbrains.mps.ide.migration;
 public interface MigrationManager {
   public boolean isMigrationRequired();
 
+  public int projectStepsCount();
+
   public MigrationManager.MigrationState nextProjectStep();
 
-  public MigrationManager.MigrationState nextStep();
+  public int languageStepsCount();
+
+  public MigrationManager.MigrationState nextLanguageStep();
 
   public static interface MigrationState {
+
   }
+
   public static interface Step extends MigrationManager.MigrationState {
     public String getDescription();
     public boolean execute();
   }
+
   public static class Finished implements MigrationManager.MigrationState {
+
   }
 }
