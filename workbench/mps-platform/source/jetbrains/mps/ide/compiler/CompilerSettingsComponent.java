@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.java;
+package jetbrains.mps.ide.compiler;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
@@ -26,7 +26,7 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
-import jetbrains.mps.ide.java.CompilerSettingsComponent.CompilerState;
+import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

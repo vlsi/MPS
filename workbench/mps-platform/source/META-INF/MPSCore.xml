@@ -83,7 +83,7 @@
       <loadForDefaultProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.java.CompilerSettingsComponent</implementation-class>
+      <implementation-class>jetbrains.mps.ide.compiler.CompilerSettingsComponent</implementation-class>
       <skipForDummyProject/>
     </component>
   </project-components>
