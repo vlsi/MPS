@@ -43,7 +43,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.messages.IMessageHandler;
-import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
 
 public class BaseGeneratorWorker extends MpsWorker {
@@ -88,10 +87,13 @@ public class BaseGeneratorWorker extends MpsWorker {
     settings.setCheckModelsBeforeGeneration(false);
     info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)]));
   }
+
   @Override
   protected void showStatistic() {
     failBuild("generation");
+
   }
+
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
@@ -226,45 +228,34 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     });
   }
+
   public static void main(String[] args) {
     MpsWorker mpsWorker = new BaseGeneratorWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
+
   private class MyMessageHandler implements IMessageHandler {
-    private final List<String> myGenerationErrors = new ArrayList<String>();
-    private final List<String> myGenerationWarnings = new ArrayList<String>();
     /*package*/ MyMessageHandler() {
     }
+
     @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
-          BaseGeneratorWorker.this.error(msg.getText());
           if (msg.getException() != null) {
-            myGenerationErrors.add(MpsWorker.extractStackTrace(msg.getException()).toString());
+            BaseGeneratorWorker.this.error(MpsWorker.extractStackTrace(msg.getException()).toString());
           } else {
-            myGenerationErrors.add(msg.getText());
+            BaseGeneratorWorker.this.error(msg.getText());
           }
           break;
         case WARNING:
           BaseGeneratorWorker.this.warning(msg.getText());
-          myGenerationWarnings.add(msg.getText());
           break;
         case INFORMATION:
           BaseGeneratorWorker.this.info(msg.getText());
           break;
         default:
       }
-    }
-    public List<String> getGenerationErrors() {
-      return myGenerationErrors;
-    }
-    public List<String> getGenerationWarnings() {
-      return myGenerationWarnings;
-    }
-    public void clean() {
-      myGenerationErrors.clear();
-      myGenerationWarnings.clear();
     }
     @Override
     public void clear() {

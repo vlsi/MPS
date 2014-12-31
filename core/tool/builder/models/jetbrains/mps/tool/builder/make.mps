@@ -5378,6 +5378,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3AdfO5Faix6" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll4ot" role="jymVt">
       <property role="TrG5h" value="showStatistic" />
       <node concept="3Tmbuc" id="KL8Aqll4ou" role="1B3o_S" />
@@ -5391,11 +5392,13 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="3AdfO5FalYE" role="3cqZAp" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p6vl" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3AdfO5Fadb1" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll4o$" role="jymVt">
       <property role="TrG5h" value="generate" />
       <node concept="3Tmbuc" id="KL8Aqll4o_" role="1B3o_S" />
@@ -6660,6 +6663,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3AdfO5FbhEl" role="jymVt" />
     <node concept="2YIFZL" id="KL8Aqll4x1" role="jymVt">
       <property role="TrG5h" value="main" />
       <node concept="3Tm1VV" id="KL8Aqll4x2" role="1B3o_S" />
@@ -6718,6 +6722,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3AdfO5FbepF" role="jymVt" />
     <node concept="312cEu" id="KL8Aqll4xp" role="jymVt">
       <property role="TrG5h" value="MyMessageHandler" />
       <property role="2bfB8j" value="true" />
@@ -6725,40 +6730,11 @@
         <ref role="3uigEE" to="bq0a:~IMessageHandler" resolve="IMessageHandler" />
       </node>
       <node concept="3Tm6S6" id="KL8Aqll4xr" role="1B3o_S" />
-      <node concept="312cEg" id="KL8Aqll4xs" role="jymVt">
-        <property role="TrG5h" value="myGenerationErrors" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="KL8Aqll4xt" role="1tU5fm">
-          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-          <node concept="17QB3L" id="KL8Aqll4xu" role="11_B2D" />
-        </node>
-        <node concept="3Tm6S6" id="KL8Aqll4xv" role="1B3o_S" />
-        <node concept="2ShNRf" id="KL8Aqll4xw" role="33vP2m">
-          <node concept="1pGfFk" id="KL8Aqll4xx" role="2ShVmc">
-            <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-            <node concept="17QB3L" id="KL8Aqll4xy" role="1pMfVU" />
-          </node>
-        </node>
-      </node>
-      <node concept="312cEg" id="KL8Aqll4xz" role="jymVt">
-        <property role="TrG5h" value="myGenerationWarnings" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="KL8Aqll4x$" role="1tU5fm">
-          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-          <node concept="17QB3L" id="KL8Aqll4x_" role="11_B2D" />
-        </node>
-        <node concept="3Tm6S6" id="KL8Aqll4xA" role="1B3o_S" />
-        <node concept="2ShNRf" id="KL8Aqll4xB" role="33vP2m">
-          <node concept="1pGfFk" id="KL8Aqll4xC" role="2ShVmc">
-            <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-            <node concept="17QB3L" id="KL8Aqll4xD" role="1pMfVU" />
-          </node>
-        </node>
-      </node>
       <node concept="3clFbW" id="KL8Aqll4xE" role="jymVt">
         <node concept="3cqZAl" id="KL8Aqll4xF" role="3clF45" />
         <node concept="3clFbS" id="KL8Aqll4xG" role="3clF47" />
       </node>
+      <node concept="2tJIrI" id="3AdfO5Fbmbp" role="jymVt" />
       <node concept="3clFb_" id="KL8Aqll4xH" role="jymVt">
         <property role="TrG5h" value="handle" />
         <node concept="3Tm1VV" id="KL8Aqll4xI" role="1B3o_S" />
@@ -6786,24 +6762,6 @@
                 <ref role="Rm8GQ" to="bq0a:~MessageKind.ERROR" resolve="ERROR" />
               </node>
               <node concept="3clFbS" id="KL8Aqll4xU" role="3Kbo56">
-                <node concept="3clFbF" id="KL8Aqll4xV" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqll4xW" role="3clFbG">
-                    <node concept="Xjq3P" id="KL8Aqll4xX" role="2Oq$k0">
-                      <ref role="1HBi2w" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqll4xY" role="2OqNvi">
-                      <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
-                      <node concept="2OqwBi" id="KL8Aqll4xZ" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxgha9Q" role="2Oq$k0">
-                          <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
-                        </node>
-                        <node concept="liA8E" id="KL8Aqll4y1" role="2OqNvi">
-                          <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbJ" id="KL8Aqll4y2" role="3cqZAp">
                   <node concept="3y3z36" id="KL8Aqll4y3" role="3clFbw">
                     <node concept="2OqwBi" id="KL8Aqll4y4" role="3uHU7B">
@@ -6816,36 +6774,14 @@
                     </node>
                     <node concept="10Nm6u" id="KL8Aqll4y7" role="3uHU7w" />
                   </node>
-                  <node concept="9aQIb" id="KL8Aqll4y8" role="9aQIa">
-                    <node concept="3clFbS" id="KL8Aqll4y9" role="9aQI4">
-                      <node concept="3clFbF" id="KL8Aqll4ya" role="3cqZAp">
-                        <node concept="2OqwBi" id="KL8Aqll4yb" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxeuhgg" role="2Oq$k0">
-                            <ref role="3cqZAo" node="KL8Aqll4xs" resolve="myGenerationErrors" />
-                          </node>
-                          <node concept="liA8E" id="KL8Aqll4yd" role="2OqNvi">
-                            <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
-                            <node concept="2OqwBi" id="KL8Aqll4ye" role="37wK5m">
-                              <node concept="37vLTw" id="2BHiRxghgs9" role="2Oq$k0">
-                                <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
-                              </node>
-                              <node concept="liA8E" id="KL8Aqll4yg" role="2OqNvi">
-                                <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbS" id="KL8Aqll4yh" role="3clFbx">
-                    <node concept="3clFbF" id="KL8Aqll4yi" role="3cqZAp">
-                      <node concept="2OqwBi" id="KL8Aqll4yj" role="3clFbG">
-                        <node concept="37vLTw" id="2BHiRxeuNUj" role="2Oq$k0">
-                          <ref role="3cqZAo" node="KL8Aqll4xs" resolve="myGenerationErrors" />
+                    <node concept="3clFbF" id="3AdfO5FbnHi" role="3cqZAp">
+                      <node concept="2OqwBi" id="3AdfO5Fboey" role="3clFbG">
+                        <node concept="Xjq3P" id="3AdfO5Fbods" role="2Oq$k0">
+                          <ref role="1HBi2w" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
                         </node>
-                        <node concept="liA8E" id="KL8Aqll4yl" role="2OqNvi">
-                          <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="liA8E" id="3AdfO5Fbowl" role="2OqNvi">
+                          <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
                           <node concept="2OqwBi" id="KL8Aqll4ym" role="37wK5m">
                             <node concept="2YIFZM" id="KL8Aqll4yn" role="2Oq$k0">
                               <ref role="1Pybhc" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
@@ -6861,6 +6797,28 @@
                             </node>
                             <node concept="liA8E" id="KL8Aqll4yr" role="2OqNvi">
                               <ref role="37wK5l" to="e2lb:~StringBuffer.toString():java.lang.String" resolve="toString" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="9aQIb" id="3AdfO5FbpNw" role="9aQIa">
+                    <node concept="3clFbS" id="3AdfO5FbpNx" role="9aQI4">
+                      <node concept="3clFbF" id="KL8Aqll4xV" role="3cqZAp">
+                        <node concept="2OqwBi" id="KL8Aqll4xW" role="3clFbG">
+                          <node concept="Xjq3P" id="KL8Aqll4xX" role="2Oq$k0">
+                            <ref role="1HBi2w" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
+                          </node>
+                          <node concept="liA8E" id="KL8Aqll4xY" role="2OqNvi">
+                            <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
+                            <node concept="2OqwBi" id="KL8Aqll4xZ" role="37wK5m">
+                              <node concept="37vLTw" id="2BHiRxgha9Q" role="2Oq$k0">
+                                <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
+                              </node>
+                              <node concept="liA8E" id="KL8Aqll4y1" role="2OqNvi">
+                                <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6889,24 +6847,6 @@
                           <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
                         </node>
                         <node concept="liA8E" id="KL8Aqll4yA" role="2OqNvi">
-                          <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="KL8Aqll4yB" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqll4yC" role="3clFbG">
-                    <node concept="37vLTw" id="2BHiRxeujYW" role="2Oq$k0">
-                      <ref role="3cqZAo" node="KL8Aqll4xz" resolve="myGenerationWarnings" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqll4yE" role="2OqNvi">
-                      <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
-                      <node concept="2OqwBi" id="KL8Aqll4yF" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxgmkEH" role="2Oq$k0">
-                          <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
-                        </node>
-                        <node concept="liA8E" id="KL8Aqll4yH" role="2OqNvi">
                           <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
                         </node>
                       </node>
@@ -6947,63 +6887,6 @@
         </node>
         <node concept="2AHcQZ" id="3tYsUK_p8j4" role="2AJF6D">
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="3clFb_" id="KL8Aqll4yU" role="jymVt">
-        <property role="TrG5h" value="getGenerationErrors" />
-        <node concept="3Tm1VV" id="KL8Aqll4yV" role="1B3o_S" />
-        <node concept="3uibUv" id="KL8Aqll4yW" role="3clF45">
-          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-          <node concept="17QB3L" id="KL8Aqll4yX" role="11_B2D" />
-        </node>
-        <node concept="3clFbS" id="KL8Aqll4yY" role="3clF47">
-          <node concept="3cpWs6" id="KL8Aqll4yZ" role="3cqZAp">
-            <node concept="37vLTw" id="2BHiRxeucTc" role="3cqZAk">
-              <ref role="3cqZAo" node="KL8Aqll4xs" resolve="myGenerationErrors" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="KL8Aqll4z1" role="jymVt">
-        <property role="TrG5h" value="getGenerationWarnings" />
-        <node concept="3Tm1VV" id="KL8Aqll4z2" role="1B3o_S" />
-        <node concept="3uibUv" id="KL8Aqll4z3" role="3clF45">
-          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-          <node concept="17QB3L" id="KL8Aqll4z4" role="11_B2D" />
-        </node>
-        <node concept="3clFbS" id="KL8Aqll4z5" role="3clF47">
-          <node concept="3cpWs6" id="KL8Aqll4z6" role="3cqZAp">
-            <node concept="37vLTw" id="2BHiRxeuVYG" role="3cqZAk">
-              <ref role="3cqZAo" node="KL8Aqll4xz" resolve="myGenerationWarnings" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="KL8Aqll4z8" role="jymVt">
-        <property role="TrG5h" value="clean" />
-        <node concept="3Tm1VV" id="KL8Aqll4z9" role="1B3o_S" />
-        <node concept="3cqZAl" id="KL8Aqll4za" role="3clF45" />
-        <node concept="3clFbS" id="KL8Aqll4zb" role="3clF47">
-          <node concept="3clFbF" id="KL8Aqll4zc" role="3cqZAp">
-            <node concept="2OqwBi" id="KL8Aqll4zd" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxeuPK4" role="2Oq$k0">
-                <ref role="3cqZAo" node="KL8Aqll4xs" resolve="myGenerationErrors" />
-              </node>
-              <node concept="liA8E" id="KL8Aqll4zf" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~List.clear():void" resolve="clear" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="KL8Aqll4zg" role="3cqZAp">
-            <node concept="2OqwBi" id="KL8Aqll4zh" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxeuG_K" role="2Oq$k0">
-                <ref role="3cqZAo" node="KL8Aqll4xz" resolve="myGenerationWarnings" />
-              </node>
-              <node concept="liA8E" id="KL8Aqll4zj" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~List.clear():void" resolve="clear" />
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node concept="3clFb_" id="KL8Aqll4zk" role="jymVt">
