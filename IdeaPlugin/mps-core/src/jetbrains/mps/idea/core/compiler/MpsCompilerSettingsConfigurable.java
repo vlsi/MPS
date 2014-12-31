@@ -29,6 +29,6 @@ public class MpsCompilerSettingsConfigurable extends CompilerSettingsConfigurabl
   @Nls
   @Override
   public String getDisplayName() {
-    return MPSBundle.message("mps.code.style");
+    return MPSBundle.message("mps.compiler");
   }
 }
