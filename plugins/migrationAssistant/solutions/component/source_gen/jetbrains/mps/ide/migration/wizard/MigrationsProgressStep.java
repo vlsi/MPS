@@ -95,10 +95,6 @@ public class MigrationsProgressStep extends MigrationStep {
     // project steps are considered to be X percent of the whole process 
     double projectStepsFraction = 0.3;
 
-    int projectStepsCount = myManager.projectStepsCount();
-    int languageStepsCount = myManager.languageStepsCount();
-    progress.setFraction(0);
-
     addElementToMigrationList("Checking models... Please wait.");
     final Wrappers._boolean preProblems = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -108,6 +104,10 @@ public class MigrationsProgressStep extends MigrationStep {
         preProblems.value = Sequence.fromIterable(problems).isNotEmpty();
       }
     });
+
+    int projectStepsCount = myManager.projectStepsCount();
+    int languageStepsCount = myManager.languageStepsCount();
+    progress.setFraction(0);
 
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
     if (!(preProblems.value)) {

@@ -2806,6 +2806,16 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3clFbF" id="5iIf1_gjysP" role="3cqZAp">
+                            <node concept="2OqwBi" id="5iIf1_gjzvc" role="3clFbG">
+                              <node concept="37vLTw" id="5iIf1_gjysN" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7rK8qWGHJxc" resolve="module" />
+                              </node>
+                              <node concept="liA8E" id="5iIf1_gj_no" role="2OqNvi">
+                                <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
+                              </node>
+                            </node>
+                          </node>
                           <node concept="2Gpval" id="7rK8qWGHJwo" role="3cqZAp">
                             <node concept="2GrKxI" id="7rK8qWGHJwp" role="2Gsz3X">
                               <property role="TrG5h" value="lang" />

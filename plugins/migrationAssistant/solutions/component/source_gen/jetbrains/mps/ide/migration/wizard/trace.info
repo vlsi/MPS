@@ -308,16 +308,16 @@
       <node id="8570387127139369095" at="94,0,95,73" concept="8" />
       <node id="8570387127139354862" at="95,73,96,38" concept="6" />
       <node id="8570387127139360335" at="96,38,97,0" concept="9" />
-      <node id="8570387127139329084" at="97,0,98,58" concept="6" />
-      <node id="8570387127139347102" at="98,58,99,60" concept="6" />
-      <node id="8570387127139387027" at="99,60,100,28" concept="2" />
-      <node id="8570387127139384301" at="100,28,101,0" concept="9" />
-      <node id="7935677192558462414" at="101,0,102,65" concept="2" />
-      <node id="7935677192558470377" at="102,65,103,66" concept="6" />
-      <node id="7935677192558470383" at="105,25,106,123" concept="6" />
-      <node id="7935677192558470395" at="106,123,107,79" concept="6" />
-      <node id="7935677192558470401" at="107,79,108,73" concept="2" />
-      <node id="7935677192558524497" at="110,7,111,0" concept="9" />
+      <node id="7935677192558462414" at="97,0,98,65" concept="2" />
+      <node id="7935677192558470377" at="98,65,99,66" concept="6" />
+      <node id="7935677192558470383" at="101,25,102,123" concept="6" />
+      <node id="7935677192558470395" at="102,123,103,79" concept="6" />
+      <node id="7935677192558470401" at="103,79,104,73" concept="2" />
+      <node id="7935677192558524497" at="106,7,107,0" concept="9" />
+      <node id="8570387127139329084" at="107,0,108,58" concept="6" />
+      <node id="8570387127139347102" at="108,58,109,60" concept="6" />
+      <node id="8570387127139387027" at="109,60,110,28" concept="2" />
+      <node id="6101880624552959750" at="110,28,111,0" concept="9" />
       <node id="7935677192556386289" at="111,0,112,72" concept="6" />
       <node id="8570387127139294393" at="114,62,115,96" concept="2" />
       <node id="8570387127139378698" at="116,7,117,49" concept="2" />
@@ -388,14 +388,14 @@
       <node id="6781485246382123253" at="201,0,205,0" concept="5" trace="isComplete#()Z" />
       <node id="6781485246382123260" at="206,0,210,0" concept="5" trace="canBeCancelled#()Z" />
       <node id="8570387127138497480" at="47,24,52,6" concept="2" />
-      <node id="7935677192558470381" at="105,0,110,0" concept="5" trace="run#()V" />
+      <node id="7935677192558470381" at="101,0,106,0" concept="5" trace="run#()V" />
       <node id="3013058279687721824" at="124,73,129,9" concept="2" />
       <node id="7935677192555664995" at="133,0,138,0" concept="5" trace="run#()V" />
       <node id="5783745319707887853" at="151,0,156,0" concept="5" trace="run#()V" />
       <node id="6781485246382123173" at="166,38,171,9" concept="2" />
       <node id="7935677192556177301" at="220,0,225,0" concept="1" trace="FinishedState#(ZZZ)V" />
       <node id="8570387127138394467" at="77,29,83,27" concept="2" />
-      <node id="7935677192558470380" at="103,66,110,7" concept="2" />
+      <node id="7935677192558470380" at="99,66,106,7" concept="2" />
       <node id="7935677192555664993" at="131,67,138,9" concept="2" />
       <node id="5783745319707887851" at="149,72,156,7" concept="2" />
       <node id="8570387127138391454" at="77,0,86,0" concept="5" trace="run#()V" />
@@ -436,7 +436,7 @@
       <scope id="8570387127138497486" at="49,0,52,0">
         <var name="progress" id="8570387127138497489" />
       </scope>
-      <scope id="7935677192558470382" at="105,25,108,73">
+      <scope id="7935677192558470382" at="101,25,104,73">
         <var name="modules" id="7935677192558470384" />
         <var name="problems" id="7935677192558470396" />
       </scope>
@@ -457,7 +457,7 @@
       <scope id="6781485246382123246" at="196,0,200,0" />
       <scope id="6781485246382123253" at="201,0,205,0" />
       <scope id="6781485246382123260" at="206,0,210,0" />
-      <scope id="7935677192558470381" at="105,0,110,0" />
+      <scope id="7935677192558470381" at="101,0,106,0" />
       <scope id="7935677192555664995" at="133,0,138,0" />
       <scope id="5783745319707887853" at="151,0,156,0" />
       <scope id="7935677192556177301" at="220,0,225,0">
@@ -512,7 +512,7 @@
       <unit id="3013058279687723665" at="125,47,129,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$4" />
       <unit id="5783745319707780363" at="167,43,171,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$7" />
       <unit id="8570387127138396901" at="78,57,83,13" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$4" />
-      <unit id="7935677192558470381" at="104,45,110,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$3" />
+      <unit id="7935677192558470381" at="100,45,106,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$3" />
       <unit id="7935677192555664995" at="132,47,138,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$5" />
       <unit id="5783745319707887853" at="150,41,156,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$6" />
       <unit id="8570387127138391454" at="76,70,86,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep$3" />

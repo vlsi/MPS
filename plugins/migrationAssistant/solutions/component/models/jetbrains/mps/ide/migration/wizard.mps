@@ -1443,48 +1443,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7rK8qWGIdTf" role="3cqZAp" />
-        <node concept="3cpWs8" id="7rK8qWGI6gW" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGI6gX" role="3cpWs9">
-            <property role="TrG5h" value="projectStepsCount" />
-            <node concept="10Oyi0" id="7rK8qWGI6gV" role="1tU5fm" />
-            <node concept="2OqwBi" id="7rK8qWGI6gY" role="33vP2m">
-              <node concept="37vLTw" id="7rK8qWGI6gZ" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
-              </node>
-              <node concept="liA8E" id="7rK8qWGI6h0" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7rK8qWGIaEu" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGIaEv" role="3cpWs9">
-            <property role="TrG5h" value="languageStepsCount" />
-            <node concept="10Oyi0" id="7rK8qWGIaEt" role="1tU5fm" />
-            <node concept="2OqwBi" id="7rK8qWGIaEw" role="33vP2m">
-              <node concept="37vLTw" id="7rK8qWGIaEx" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
-              </node>
-              <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7rK8qWGIkqj" role="3cqZAp">
-          <node concept="2OqwBi" id="7rK8qWGIl4p" role="3clFbG">
-            <node concept="37vLTw" id="7rK8qWGIkqh" role="2Oq$k0">
-              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-            </node>
-            <node concept="liA8E" id="7rK8qWGIlGY" role="2OqNvi">
-              <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-              <node concept="3cmrfG" id="7rK8qWGIlIs" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7rK8qWGIjJH" role="3cqZAp" />
         <node concept="3clFbF" id="6Sxc5MiBsne" role="3cqZAp">
           <node concept="1rXfSq" id="6Sxc5MiBsnf" role="3clFbG">
             <ref role="37wK5l" node="513ZrA4x4$8" resolve="addElementToMigrationList" />
@@ -1565,6 +1523,48 @@
           </node>
         </node>
         <node concept="3clFbH" id="6Sxc5MiBFxh" role="3cqZAp" />
+        <node concept="3cpWs8" id="7rK8qWGI6gW" role="3cqZAp">
+          <node concept="3cpWsn" id="7rK8qWGI6gX" role="3cpWs9">
+            <property role="TrG5h" value="projectStepsCount" />
+            <node concept="10Oyi0" id="7rK8qWGI6gV" role="1tU5fm" />
+            <node concept="2OqwBi" id="7rK8qWGI6gY" role="33vP2m">
+              <node concept="37vLTw" id="7rK8qWGI6gZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+              </node>
+              <node concept="liA8E" id="7rK8qWGI6h0" role="2OqNvi">
+                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7rK8qWGIaEu" role="3cqZAp">
+          <node concept="3cpWsn" id="7rK8qWGIaEv" role="3cpWs9">
+            <property role="TrG5h" value="languageStepsCount" />
+            <node concept="10Oyi0" id="7rK8qWGIaEt" role="1tU5fm" />
+            <node concept="2OqwBi" id="7rK8qWGIaEw" role="33vP2m">
+              <node concept="37vLTw" id="7rK8qWGIaEx" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+              </node>
+              <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
+                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7rK8qWGIkqj" role="3cqZAp">
+          <node concept="2OqwBi" id="7rK8qWGIl4p" role="3clFbG">
+            <node concept="37vLTw" id="7rK8qWGIkqh" role="2Oq$k0">
+              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+            </node>
+            <node concept="liA8E" id="7rK8qWGIlGY" role="2OqNvi">
+              <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
+              <node concept="3cmrfG" id="7rK8qWGIlIs" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5iIf1_gklW6" role="3cqZAp" />
         <node concept="3cpWs8" id="6Sxc5MivxvL" role="3cqZAp">
           <node concept="3cpWsn" id="6Sxc5MivxvO" role="3cpWs9">
             <property role="TrG5h" value="postProblems" />
@@ -1587,7 +1587,7 @@
                       <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
                       <node concept="3cpWs3" id="7rK8qWGHY7d" role="37wK5m">
                         <node concept="FJ1c_" id="7rK8qWGI5Lo" role="3uHU7w">
-                          <node concept="37vLTw" id="7rK8qWGIcvK" role="3uHU7w">
+                          <node concept="37vLTw" id="5iIf1_gknWH" role="3uHU7w">
                             <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
                           </node>
                           <node concept="37vLTw" id="7rK8qWGIpVK" role="3uHU7B">
@@ -1644,7 +1644,7 @@
                       <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
                       <node concept="3cpWs3" id="7rK8qWGInqy" role="37wK5m">
                         <node concept="FJ1c_" id="7rK8qWGInqz" role="3uHU7w">
-                          <node concept="37vLTw" id="7rK8qWGIoN9" role="3uHU7w">
+                          <node concept="37vLTw" id="5iIf1_gko2Y" role="3uHU7w">
                             <ref role="3cqZAo" node="7rK8qWGIaEv" resolve="languageStepsCount" />
                           </node>
                           <node concept="1eOMI4" id="7rK8qWGIohu" role="3uHU7B">
