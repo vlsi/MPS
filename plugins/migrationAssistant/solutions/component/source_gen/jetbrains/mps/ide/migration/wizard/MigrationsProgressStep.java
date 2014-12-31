@@ -178,6 +178,9 @@ public class MigrationsProgressStep extends MigrationStep {
 
   @Override
   public Object getNextStepId() {
+    if (myFinishedState == null) {
+      return null;
+    }
     if (isEverythingOk()) {
       return null;
     } else if (myFinishedState.preErrors()) {
