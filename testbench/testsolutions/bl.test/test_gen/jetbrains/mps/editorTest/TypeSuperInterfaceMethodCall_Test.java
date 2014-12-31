@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.smodel.ModelAccess;
 
 @MPSLaunch
 public class TypeSuperInterfaceMethodCall_Test extends BaseTransformationTest {
@@ -24,6 +25,7 @@ public class TypeSuperInterfaceMethodCall_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("609981668907039082", "609981668907080229");
       this.typeString("TestInterface.super");
+      ModelAccess.instance().flushEventQueue();
     }
   }
 }

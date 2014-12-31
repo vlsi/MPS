@@ -41425,6 +41425,17 @@
       <node concept="2TK7Tu" id="xR5LymHdV0" role="3cqZAp">
         <property role="2TTd_B" value="TestInterface.super" />
       </node>
+      <node concept="3clFbF" id="4RVNenHm8dh" role="3cqZAp">
+        <node concept="2OqwBi" id="4RVNenHm8eC" role="3clFbG">
+          <node concept="2YIFZM" id="4RVNenHm8du" role="2Oq$k0">
+            <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+          </node>
+          <node concept="liA8E" id="4RVNenHm8L5" role="2OqNvi">
+            <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="312cEu" id="xR5LymHdC_" role="LiZbd">
       <property role="2bfB8j" value="true" />
@@ -41575,6 +41586,17 @@
         <node concept="pLAjd" id="xR5LymHw7P" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
+        </node>
+      </node>
+      <node concept="3clFbF" id="4RVNenHm9vs" role="3cqZAp">
+        <node concept="2OqwBi" id="4RVNenHm9vt" role="3clFbG">
+          <node concept="2YIFZM" id="4RVNenHm9vu" role="2Oq$k0">
+            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+          </node>
+          <node concept="liA8E" id="4RVNenHm9vv" role="2OqNvi">
+            <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
+          </node>
         </node>
       </node>
       <node concept="3clFbJ" id="3KXnQviMtkm" role="3cqZAp">

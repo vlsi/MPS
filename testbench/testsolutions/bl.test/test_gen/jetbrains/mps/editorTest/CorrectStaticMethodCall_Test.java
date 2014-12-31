@@ -11,6 +11,7 @@ import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 
 @MPSLaunch
 public class CorrectStaticMethodCall_Test extends BaseTransformationTest {
@@ -36,6 +37,7 @@ public class CorrectStaticMethodCall_Test extends BaseTransformationTest {
       });
       this.typeString("getStaticTestValue()");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      ModelAccess.instance().flushEventQueue();
       if (oldProvider != null) {
         JavaCompilerOptionsComponent.getInstance().registerProvider(this.myProject, oldProvider);
       }
