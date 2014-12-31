@@ -46,7 +46,6 @@ public class DefaultMakeTask extends Task.Modal {
             maker.clean(modules, monitor.subTask(1));
           }
           mpsCompilationResult[0] = maker.make(modules, monitor.subTask(7), JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myProject));
-          mpsCompilationResult[0] = maker.make(modules, monitor.subTask(7));
 
         }
       });
