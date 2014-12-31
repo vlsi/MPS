@@ -265,7 +265,6 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
-      <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -6837,178 +6836,22 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6ysF3v1j_fk" role="3cqZAp">
-          <node concept="3cpWsn" id="6ysF3v1j_fl" role="3cpWs9">
-            <property role="TrG5h" value="editorPanel" />
-            <node concept="3uibUv" id="6ysF3v1j_fm" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="6ysF3v1j_fn" role="33vP2m">
-              <node concept="YeOm9" id="1e$UFTGrocu" role="2ShVmc">
-                <node concept="1Y3b0j" id="1e$UFTGrocx" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="3vkz:~ScrollablePanel" resolve="ScrollablePanel" />
-                  <ref role="37wK5l" to="3vkz:~ScrollablePanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="ScrollablePanel" />
-                  <node concept="3Tm1VV" id="1e$UFTGrocy" role="1B3o_S" />
-                  <node concept="2ShNRf" id="6uoVEpbCJkj" role="37wK5m">
-                    <node concept="1pGfFk" id="6uoVEpbCLzu" role="2ShVmc">
-                      <ref role="37wK5l" to="1t7x:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                    </node>
-                  </node>
-                  <node concept="3clFb_" id="1e$UFTGr$EZ" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="getScrollableTracksViewportHeight" />
-                    <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
-                    <node concept="3Tm1VV" id="1e$UFTGr$F0" role="1B3o_S" />
-                    <node concept="10P_77" id="1e$UFTGr$F2" role="3clF45" />
-                    <node concept="3clFbS" id="1e$UFTGr$F4" role="3clF47">
-                      <node concept="3clFbF" id="4PMV3VszdRa" role="3cqZAp">
-                        <node concept="1Wc70l" id="4PMV3VszfH3" role="3clFbG">
-                          <node concept="3eOVzh" id="4PMV3Vszjwz" role="3uHU7w">
-                            <node concept="2OqwBi" id="4PMV3VszlT9" role="3uHU7w">
-                              <node concept="1rXfSq" id="4PMV3VszjOV" role="2Oq$k0">
-                                <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
-                              </node>
-                              <node concept="liA8E" id="4PMV3Vszo4D" role="2OqNvi">
-                                <ref role="37wK5l" to="1t7x:~Component.getHeight():int" resolve="getHeight" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="4PMV3VszgJ3" role="3uHU7B">
-                              <node concept="1rXfSq" id="4PMV3VszgFV" role="2Oq$k0">
-                                <ref role="37wK5l" to="dbrf:~JComponent.getPreferredSize():java.awt.Dimension" resolve="getPreferredSize" />
-                              </node>
-                              <node concept="2OwXpG" id="4PMV3VszhnJ" role="2OqNvi">
-                                <ref role="2Oxat5" to="1t7x:~Dimension.height" resolve="height" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2ZW3vV" id="4PMV3Vszedq" role="3uHU7B">
-                            <node concept="3uibUv" id="4PMV3Vszeys" role="2ZW6by">
-                              <ref role="3uigEE" to="dbrf:~JViewport" resolve="JViewport" />
-                            </node>
-                            <node concept="1rXfSq" id="4PMV3VszdR9" role="2ZW6bz">
-                              <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="1e$UFTGr$F5" role="2AJF6D">
-                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="3clFb_" id="6UBNikuT$9s" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="getScrollableTracksViewportWidth" />
-                    <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
-                    <node concept="3Tm1VV" id="6UBNikuT$9t" role="1B3o_S" />
-                    <node concept="10P_77" id="6UBNikuT$9v" role="3clF45" />
-                    <node concept="3clFbS" id="6UBNikuT$9x" role="3clF47">
-                      <node concept="3clFbF" id="6UBNikuTEai" role="3cqZAp">
-                        <node concept="1Wc70l" id="6UBNikuTEaj" role="3clFbG">
-                          <node concept="3eOVzh" id="6UBNikuTEak" role="3uHU7w">
-                            <node concept="2OqwBi" id="6UBNikuTEal" role="3uHU7w">
-                              <node concept="1rXfSq" id="6UBNikuTEam" role="2Oq$k0">
-                                <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
-                              </node>
-                              <node concept="liA8E" id="6UBNikuTEan" role="2OqNvi">
-                                <ref role="37wK5l" to="1t7x:~Component.getWidth():int" resolve="getWidth" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="6UBNikuTEao" role="3uHU7B">
-                              <node concept="1rXfSq" id="6UBNikuTEap" role="2Oq$k0">
-                                <ref role="37wK5l" to="dbrf:~JComponent.getPreferredSize():java.awt.Dimension" resolve="getPreferredSize" />
-                              </node>
-                              <node concept="2OwXpG" id="6UBNikuTNBA" role="2OqNvi">
-                                <ref role="2Oxat5" to="1t7x:~Dimension.width" resolve="width" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2ZW3vV" id="6UBNikuTEar" role="3uHU7B">
-                            <node concept="3uibUv" id="6UBNikuTEas" role="2ZW6by">
-                              <ref role="3uigEE" to="dbrf:~JViewport" resolve="JViewport" />
-                            </node>
-                            <node concept="1rXfSq" id="6UBNikuTEat" role="2ZW6bz">
-                              <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="6UBNikuT$9y" role="2AJF6D">
-                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ysF3v1j_fr" role="3cqZAp">
-          <node concept="2OqwBi" id="6ysF3v1j_fs" role="3clFbG">
-            <node concept="37vLTw" id="6ysF3v1j_ft" role="2Oq$k0">
-              <ref role="3cqZAo" node="6ysF3v1j_fl" resolve="editorPanel" />
-            </node>
-            <node concept="liA8E" id="6ysF3v1j_fu" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="6ysF3v1j_fv" role="37wK5m">
-                <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
-              </node>
-              <node concept="10M0yZ" id="4z7qId968pT" role="37wK5m">
-                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="1t7x:~BorderLayout.CENTER" resolve="CENTER" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6ysF3v1j_fw" role="3cqZAp">
-          <node concept="3cpWsn" id="6ysF3v1j_fx" role="3cpWs9">
-            <property role="TrG5h" value="scrollPane" />
-            <node concept="3uibUv" id="6ysF3v1j_fy" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JScrollPane" resolve="JScrollPane" />
-            </node>
-            <node concept="2YIFZM" id="6ysF3v1j_fz" role="33vP2m">
-              <ref role="1Pybhc" to="ayyu:~ScrollPaneFactory" resolve="ScrollPaneFactory" />
-              <ref role="37wK5l" to="ayyu:~ScrollPaneFactory.createScrollPane(java.awt.Component):javax.swing.JScrollPane" resolve="createScrollPane" />
-              <node concept="37vLTw" id="6ysF3v1j_f$" role="37wK5m">
-                <ref role="3cqZAo" node="6ysF3v1j_fl" resolve="editorPanel" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="6ysF3v1j_fG" role="3cqZAp">
           <node concept="2OqwBi" id="6ysF3v1j_fH" role="3clFbG">
             <node concept="Xjq3P" id="6ysF3v1O8RS" role="2Oq$k0" />
             <node concept="liA8E" id="6ysF3v1j_fJ" role="2OqNvi">
               <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="6ysF3v1j_fK" role="37wK5m">
-                <ref role="3cqZAo" node="6ysF3v1j_fx" resolve="scrollPane" />
+              <node concept="2OqwBi" id="4q1Go0ScYqj" role="37wK5m">
+                <node concept="37vLTw" id="4q1Go0ScXWe" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
+                </node>
+                <node concept="liA8E" id="4q1Go0Sd7Fs" role="2OqNvi">
+                  <ref role="37wK5l" to="9a8:~EditorComponent.getExternalComponent():javax.swing.JComponent" resolve="getExternalComponent" />
+                </node>
               </node>
               <node concept="10M0yZ" id="6ysF3v1j_fL" role="37wK5m">
                 <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
                 <ref role="3cqZAo" to="1t7x:~BorderLayout.CENTER" resolve="CENTER" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ysF3v1j_fM" role="3cqZAp">
-          <node concept="2OqwBi" id="6ysF3v1j_fN" role="3clFbG">
-            <node concept="Xjq3P" id="6ysF3v1Onm6" role="2Oq$k0" />
-            <node concept="liA8E" id="6ysF3v1j_fP" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2OqwBi" id="6ysF3v1j_fQ" role="37wK5m">
-                <node concept="37vLTw" id="6ysF3v1j_fR" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
-                </node>
-                <node concept="liA8E" id="6ysF3v1j_fS" role="2OqNvi">
-                  <ref role="37wK5l" to="9a8:~EditorComponent.getUpperPanel():javax.swing.JPanel" resolve="getUpperPanel" />
-                </node>
-              </node>
-              <node concept="10M0yZ" id="6ysF3v1j_fT" role="37wK5m">
-                <ref role="3cqZAo" to="1t7x:~BorderLayout.NORTH" resolve="NORTH" />
-                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
               </node>
             </node>
           </node>
