@@ -93,7 +93,6 @@
       <concept id="1101347953350122758" name="jetbrains.mps.lang.test.structure.BootstrapActionReference" flags="ng" index="3iKlGA">
         <property id="1101347953350127918" name="actionId" index="3iKnse" />
       </concept>
-      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -212,10 +211,6 @@
         <child id="1083245396908" name="enumConstant" index="Qtgdg" />
       </concept>
       <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -397,7 +392,6 @@
         <property id="1071364028384826862" name="count" index="1vR6C6" />
       </concept>
       <concept id="7024111702304495340" name="jetbrains.mps.baseLanguage.structure.MulAssignmentExpression" flags="nn" index="3vZbUc" />
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -41388,240 +41382,6 @@
           <property role="p6zMq" value="6" />
           <property role="p6zMs" value="6" />
           <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="xR5LymFzJL">
-    <property role="TrG5h" value="TypeSuperInterfaceMethodCall" />
-    <property role="3GE5qa" value="jdk8" />
-    <node concept="312cEu" id="xR5LymH3_E" role="LiRBU">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymH9cy" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymMo7N" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymMo7O" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymMo7Q" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymMo7R" role="3clF47">
-          <node concept="LIFWc" id="3KXnQviFmnr" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="Constant_u338ov_a0a" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymH3_F" role="1B3o_S" />
-      <node concept="3uibUv" id="3KXnQviC7FW" role="EKbjA">
-        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="xR5LymFBuI" role="LjaKd">
-      <node concept="2TK7Tu" id="xR5LymHdV0" role="3cqZAp">
-        <property role="2TTd_B" value="TestInterface.super" />
-      </node>
-      <node concept="3clFbF" id="4RVNenHm8dh" role="3cqZAp">
-        <node concept="2OqwBi" id="4RVNenHm8eC" role="3clFbG">
-          <node concept="2YIFZM" id="4RVNenHm8du" role="2Oq$k0">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-          </node>
-          <node concept="liA8E" id="4RVNenHm8L5" role="2OqNvi">
-            <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="312cEu" id="xR5LymHdC_" role="LiZbd">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymHdCA" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymHdCB" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymHdCC" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymHdCD" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymHdCE" role="3clF47">
-          <node concept="3clFbF" id="3KXnQviFmxu" role="3cqZAp">
-            <node concept="3WEljn" id="3KXnQviGYSB" role="3clFbG">
-              <ref role="3WFDBg" to="cp6v:~TestInterface" resolve="TestInterface" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymHdCH" role="1B3o_S" />
-      <node concept="3uibUv" id="3KXnQviC7Jx" role="EKbjA">
-        <ref role="3uigEE" to="cp6v:~TestInterface" resolve="TestInterface" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="xR5LymHdVm">
-    <property role="3GE5qa" value="jdk8" />
-    <property role="TrG5h" value="CorrectStaticMethodCall" />
-    <node concept="312cEu" id="xR5LymHdVQ" role="LiRBU">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymHdVR" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymHdVS" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymHdVT" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymHdVU" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymHdVV" role="3clF47">
-          <node concept="3clFbF" id="xR5LymHe5Q" role="3cqZAp">
-            <node concept="10M0yZ" id="xR5LymHe5P" role="3clFbG">
-              <ref role="1PxDUh" to="cp6v:~TestInterface" resolve="TestInterface" />
-              <node concept="LIFWc" id="xR5LymHecx" role="lGtFl">
-                <property role="ZRATv" value="true" />
-                <property role="OXtK3" value="true" />
-                <property role="p6zMq" value="0" />
-                <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="empty_staticFieldDeclaration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymHdVY" role="1B3o_S" />
-    </node>
-    <node concept="312cEu" id="xR5LymHebR" role="LiZbd">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymHebS" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymHebT" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymHebU" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymHebV" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymHebW" role="3clF47">
-          <node concept="3clFbF" id="3KXnQviuXcs" role="3cqZAp">
-            <node concept="2YIFZM" id="3KXnQviv150" role="3clFbG">
-              <ref role="37wK5l" to="cp6v:~TestInterface.getStaticTestValue():int" resolve="getStaticTestValue" />
-              <ref role="1Pybhc" to="cp6v:~TestInterface" resolve="TestInterface" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymHebZ" role="1B3o_S" />
-    </node>
-    <node concept="3clFbS" id="xR5LymHeBK" role="LjaKd">
-      <node concept="3cpWs8" id="3KXnQvitss2" role="3cqZAp">
-        <node concept="3cpWsn" id="3KXnQvitss3" role="3cpWs9">
-          <property role="TrG5h" value="oldProvider" />
-          <node concept="3uibUv" id="3KXnQvitss1" role="1tU5fm">
-            <ref role="3uigEE" to="i119:~JavaCompilerOptionsProvider" resolve="JavaCompilerOptionsProvider" />
-          </node>
-          <node concept="2OqwBi" id="3KXnQvitss4" role="33vP2m">
-            <node concept="2YIFZM" id="3KXnQvitss5" role="2Oq$k0">
-              <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
-              <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
-            </node>
-            <node concept="liA8E" id="3KXnQvitss6" role="2OqNvi">
-              <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptionsProvider(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptionsProvider" resolve="getJavaCompilerOptionsProvider" />
-              <node concept="1jxXqW" id="3KXnQvitss7" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbF" id="xR5LymH$66" role="3cqZAp">
-        <node concept="2OqwBi" id="xR5LymH$aV" role="3clFbG">
-          <node concept="2YIFZM" id="xR5LymH$ae" role="2Oq$k0">
-            <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
-            <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
-          </node>
-          <node concept="liA8E" id="xR5LymH$Ey" role="2OqNvi">
-            <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.registerProvider(jetbrains.mps.project.Project,jetbrains.mps.compiler.JavaCompilerOptionsProvider):void" resolve="registerProvider" />
-            <node concept="1jxXqW" id="xR5LymH$Fs" role="37wK5m" />
-            <node concept="2ShNRf" id="xR5LymH$KA" role="37wK5m">
-              <node concept="YeOm9" id="xR5LymH_Z1" role="2ShVmc">
-                <node concept="1Y3b0j" id="xR5LymH_Z4" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="i119:~JavaCompilerOptionsProvider" resolve="JavaCompilerOptionsProvider" />
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                  <node concept="3Tm1VV" id="xR5LymH_Z5" role="1B3o_S" />
-                  <node concept="3clFb_" id="xR5LymH_Z6" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="getJavaCompilerOptions" />
-                    <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
-                    <node concept="3Tm1VV" id="xR5LymH_Z7" role="1B3o_S" />
-                    <node concept="3uibUv" id="xR5LymH_Z9" role="3clF45">
-                      <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
-                    </node>
-                    <node concept="3clFbS" id="xR5LymH_Za" role="3clF47">
-                      <node concept="3clFbF" id="xR5LymHA79" role="3cqZAp">
-                        <node concept="2ShNRf" id="xR5LymHA77" role="3clFbG">
-                          <node concept="1pGfFk" id="xR5LymHBam" role="2ShVmc">
-                            <ref role="37wK5l" to="i119:~JavaCompilerOptions.&lt;init&gt;(jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion)" resolve="JavaCompilerOptions" />
-                            <node concept="Rm8GO" id="xR5LymHBcv" role="37wK5m">
-                              <ref role="Rm8GQ" to="i119:~JavaCompilerOptionsComponent$JavaVersion.VERSION_1_8" resolve="VERSION_1_8" />
-                              <ref role="1Px2BO" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2TK7Tu" id="xR5LymHl4t" role="3cqZAp">
-        <property role="2TTd_B" value="getStaticTestValue()" />
-      </node>
-      <node concept="yd1bK" id="xR5LymHw7N" role="3cqZAp">
-        <node concept="pLAjd" id="xR5LymHw7P" role="yd6KS">
-          <property role="pLAjf" value="VK_SPACE" />
-          <property role="pLAjc" value="ctrl" />
-        </node>
-      </node>
-      <node concept="3clFbF" id="4RVNenHm9vs" role="3cqZAp">
-        <node concept="2OqwBi" id="4RVNenHm9vt" role="3clFbG">
-          <node concept="2YIFZM" id="4RVNenHm9vu" role="2Oq$k0">
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-            <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-          </node>
-          <node concept="liA8E" id="4RVNenHm9vv" role="2OqNvi">
-            <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="3KXnQviMtkm" role="3cqZAp">
-        <node concept="3clFbS" id="3KXnQviMtkp" role="3clFbx">
-          <node concept="3clFbF" id="xR5LymHBde" role="3cqZAp">
-            <node concept="2OqwBi" id="xR5LymHBdf" role="3clFbG">
-              <node concept="2YIFZM" id="xR5LymHBdg" role="2Oq$k0">
-                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
-                <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
-              </node>
-              <node concept="liA8E" id="xR5LymHBdh" role="2OqNvi">
-                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.registerProvider(jetbrains.mps.project.Project,jetbrains.mps.compiler.JavaCompilerOptionsProvider):void" resolve="registerProvider" />
-                <node concept="1jxXqW" id="xR5LymHBdi" role="37wK5m" />
-                <node concept="37vLTw" id="3KXnQvitsXB" role="37wK5m">
-                  <ref role="3cqZAo" node="3KXnQvitss3" resolve="oldProvider" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3y3z36" id="3KXnQviMty2" role="3clFbw">
-          <node concept="10Nm6u" id="3KXnQviMtzn" role="3uHU7w" />
-          <node concept="37vLTw" id="3KXnQviMttf" role="3uHU7B">
-            <ref role="3cqZAo" node="3KXnQvitss3" resolve="oldProvider" />
-          </node>
         </node>
       </node>
     </node>

@@ -1987,17 +1987,11 @@
     <node concept="lpD6D" id="2TdQhrRPT78" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5kDx1Sj6jIQ" resolve="AddStaticBeforeVisibility" />
     </node>
-    <node concept="lpD6D" id="3KXnQviOtCQ" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:xR5LymHdVm" resolve="CorrectStaticMethodCall" />
-    </node>
     <node concept="lpD6D" id="3KXnQviOuoq" role="lpD6w">
       <ref role="lpD7u" to="ryl9:xR5LymHlcM" resolve="IncorrectStaticMethodCall" />
     </node>
     <node concept="lpD6D" id="3KXnQviOvcg" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3KXnQviHxyU" resolve="ResolveSuperInterfaceMethod" />
-    </node>
-    <node concept="lpD6D" id="3KXnQviOvYu" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:xR5LymFzJL" resolve="TypeSuperInterfaceMethodCall" />
     </node>
     <node concept="lpD6D" id="4Voc8ROh7y9" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4Voc8ROgYUv" resolve="psvmLiveTemplate" />
