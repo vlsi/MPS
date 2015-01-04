@@ -100,6 +100,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_E
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -197,10 +198,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (!(moduleFacet instanceof ModuleFacetBase))
         continue;
       ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
-      Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
-        moduleFacetBase.getFacetType(), moduleFacetBase);
-      if (facetTab != null)
-        addTab(facetTab);
+      Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
+      if (facetTab != null) addTab(facetTab);
     }
 
     addTab(new AddFacetsTab());
@@ -913,13 +912,22 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private boolean dependOnBL(ModuleUsedLangTableModel tableModel) {
-      SModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
-      if (tableModel.getUsedLanguages().contains(bl.getModuleReference()))
+      final Language baseLanguage = BootstrapLanguages.baseLanguage();
+      if (tableModel.getUsedLanguages().contains(baseLanguage.getModuleReference())) {
         return true;
-      for (SModuleReference reference : tableModel.getUsedDevkits()) {
-        SModule module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
-        if (module instanceof DevKit && ((DevKit) module).getAllExportedLanguages().contains(bl))
-          return true;
+      }
+      for (final SModuleReference reference : tableModel.getUsedDevkits()) {
+        final boolean[] result = new boolean[1];
+        myModule.getRepository().getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SModule module = myModule.getRepository().getModule(reference.getModuleId());
+            if ((module instanceof DevKit) && ((DevKit) module).getAllExportedLanguages().contains(baseLanguage)) {
+              result[0] = true;
+            }
+          }
+        });
+        if (result[0]) return true;
       }
       return false;
     }
