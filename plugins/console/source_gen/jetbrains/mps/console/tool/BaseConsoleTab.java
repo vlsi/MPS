@@ -69,10 +69,6 @@ import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
-import javax.swing.JViewport;
-import javax.swing.JScrollPane;
-import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -369,22 +365,9 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     toolbarComponent.add(toolbar.getComponent(), BorderLayout.CENTER);
 
     this.add(toolbarComponent, BorderLayout.WEST);
-    JPanel editorPanel = new ScrollablePanel(new BorderLayout()) {
-      @Override
-      public boolean getScrollableTracksViewportHeight() {
-        return getParent() instanceof JViewport && getPreferredSize().height < getParent().getHeight();
-      }
-      @Override
-      public boolean getScrollableTracksViewportWidth() {
-        return getParent() instanceof JViewport && getPreferredSize().width < getParent().getWidth();
-      }
-    };
-    editorPanel.add(myEditor, BorderLayout.CENTER);
-    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
-    this.add(scrollPane, BorderLayout.CENTER);
-    this.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
+    this.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
 
-    myHighlighter = check_6q36mf_a0s0ec(myTool.getProject());
+    myHighlighter = check_6q36mf_a0o0ec(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -513,7 +496,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static Highlighter check_6q36mf_a0s0ec(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0o0ec(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }

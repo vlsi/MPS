@@ -38,6 +38,7 @@
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
+    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="bw6v" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(MPS.IDEA/com.intellij.openapi.diagnostic@java_stub)" />
     <import index="gwo9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.idea(MPS.IDEA/com.intellij.idea@java_stub)" />
   </imports>
@@ -127,6 +128,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -177,7 +179,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -448,6 +450,16 @@
       </node>
       <node concept="3Tmbuc" id="KL8Aqlj5lI" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="6K365XReaA4" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myJavaProperties" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tmbuc" id="6K365XRe78_" role="1B3o_S" />
+      <node concept="3uibUv" id="6K365XRea_K" role="1tU5fm">
+        <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
+      </node>
+    </node>
     <node concept="312cEg" id="KL8Aqlj5lJ" role="jymVt">
       <property role="TrG5h" value="myLogger" />
       <property role="34CwA1" value="false" />
@@ -523,6 +535,21 @@
             </node>
             <node concept="37vLTw" id="2BHiRxgheZG" role="37vLTx">
               <ref role="3cqZAo" node="KL8Aqlj5mj" resolve="logger" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6K365XReePC" role="3cqZAp">
+          <node concept="37vLTI" id="6K365XReeTq" role="3clFbG">
+            <node concept="2ShNRf" id="6K365XReeUX" role="37vLTx">
+              <node concept="1pGfFk" id="6K365XRefX6" role="2ShVmc">
+                <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
+                <node concept="37vLTw" id="6K365XRefZ2" role="37wK5m">
+                  <ref role="3cqZAo" node="KL8Aqlj5lG" resolve="myWhatToDo" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="6K365XReePA" role="37vLTJ">
+              <ref role="3cqZAo" node="6K365XReaA4" resolve="myJavaProperties" />
             </node>
           </node>
         </node>
@@ -926,7 +953,7 @@
                           <ref role="3cqZAo" node="KL8Aqlj5oW" resolve="maker" />
                         </node>
                         <node concept="liA8E" id="KL8Aqlj5p3" role="2OqNvi">
-                          <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
+                          <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.compiler.JavaCompilerOptions):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
                           <node concept="2YIFZM" id="4r0sY_pQ7iI" role="37wK5m">
                             <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
                             <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
@@ -943,6 +970,23 @@
                           <node concept="2ShNRf" id="KL8Aqlj5p7" role="37wK5m">
                             <node concept="1pGfFk" id="KL8Aqlj5p8" role="2ShVmc">
                               <ref role="37wK5l" to="ff4b:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                            </node>
+                          </node>
+                          <node concept="2ShNRf" id="3pzB6wMXnHS" role="37wK5m">
+                            <node concept="1pGfFk" id="3pzB6wMXnHT" role="2ShVmc">
+                              <ref role="37wK5l" to="i119:~JavaCompilerOptions.&lt;init&gt;(jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion)" resolve="JavaCompilerOptions" />
+                              <node concept="2YIFZM" id="3pzB6wMXnHU" role="37wK5m">
+                                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
+                                <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
+                                <node concept="2OqwBi" id="3pzB6wMXnHV" role="37wK5m">
+                                  <node concept="37vLTw" id="6K365XReOKY" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="6K365XReaA4" resolve="myJavaProperties" />
+                                  </node>
+                                  <node concept="liA8E" id="3pzB6wMXnHX" role="2OqNvi">
+                                    <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -1788,18 +1832,18 @@
           <node concept="3cpWsn" id="KL8Aqlj5uk" role="3cpWs9">
             <property role="TrG5h" value="tmpmodules" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="KL8Aqlj5ul" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-              <node concept="3uibUv" id="KL8Aqlj5um" role="11_B2D">
-                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-              </node>
-            </node>
             <node concept="2ShNRf" id="3$4ceq7yJdj" role="33vP2m">
               <node concept="1pGfFk" id="3$4ceq7yRSy" role="2ShVmc">
                 <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
                 <node concept="3uibUv" id="3$4ceq7yVaT" role="1pMfVU">
                   <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                 </node>
+              </node>
+            </node>
+            <node concept="3uibUv" id="KL8Aqlj5ul" role="1tU5fm">
+              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+              <node concept="3uibUv" id="KL8Aqlj5um" role="11_B2D">
+                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
               </node>
             </node>
           </node>

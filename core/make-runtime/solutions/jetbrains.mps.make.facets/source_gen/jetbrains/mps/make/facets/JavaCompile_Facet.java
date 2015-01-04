@@ -35,6 +35,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.project.Project;
@@ -98,7 +99,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  cr.value = new ModuleMaker().make(toCompile, progressMonitor);
+                  cr.value = new ModuleMaker().make(toCompile, progressMonitor, vars(pa.global()).options());
                 }
               });
               if (cr.value != null) {
@@ -175,7 +176,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }
@@ -185,12 +186,12 @@ public class JavaCompile_Facet extends IFacet.Stub {
     public static JavaCompile_Facet.Target_compile.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
     }
-    public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
+    public static class Parameters extends MultiTuple._3<Boolean, Boolean, JavaCompilerOptions> {
       public Parameters() {
         super();
       }
-      public Parameters(Boolean compiledAnything, Boolean skipCompilation) {
-        super(compiledAnything, skipCompilation);
+      public Parameters(Boolean compiledAnything, Boolean skipCompilation, JavaCompilerOptions options) {
+        super(compiledAnything, skipCompilation, options);
       }
       public Boolean compiledAnything(Boolean value) {
         return super._0(value);
@@ -198,14 +199,20 @@ public class JavaCompile_Facet extends IFacet.Stub {
       public Boolean skipCompilation(Boolean value) {
         return super._1(value);
       }
+      public JavaCompilerOptions options(JavaCompilerOptions value) {
+        return super._2(value);
+      }
       public Boolean compiledAnything() {
         return super._0();
       }
       public Boolean skipCompilation() {
         return super._1();
       }
+      public JavaCompilerOptions options() {
+        return super._2();
+      }
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._2<Boolean, Boolean> from) {
+      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._3<Boolean, Boolean, JavaCompilerOptions> from) {
         return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
       }
     }
@@ -379,6 +386,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
           JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
           MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.compile.skipCompilation", String.valueOf(props.skipCompilation()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.compile.options", null);
         }
       }
       {
@@ -400,6 +408,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.compile.skipCompilation")) {
             props.skipCompilation(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.facets.JavaCompile.compile.skipCompilation")));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.compile.options")) {
+            props.options(null);
           }
         }
         {

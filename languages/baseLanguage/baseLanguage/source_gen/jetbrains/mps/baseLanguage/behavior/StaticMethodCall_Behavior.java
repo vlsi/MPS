@@ -39,7 +39,7 @@ public class StaticMethodCall_Behavior {
   }
   public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
     SNode classConcept1 = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"));
-    SNode classConcept2 = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+    SNode classConcept2 = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     return classConcept1 == classConcept2;
   }
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {

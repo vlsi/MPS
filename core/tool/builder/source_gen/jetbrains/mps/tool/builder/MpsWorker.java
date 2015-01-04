@@ -8,6 +8,7 @@ import org.apache.log4j.LogManager;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.tool.common.Script;
+import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -23,6 +24,8 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import jetbrains.mps.project.MPSExtentions;
@@ -70,6 +73,7 @@ public abstract class MpsWorker {
   protected final List<String> myErrors = new ArrayList<String>();
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final Script myWhatToDo;
+  protected final JavaCompilerProperties myJavaProperties;
   private final MpsWorker.AntLogger myLogger;
   protected Environment myEnvironment;
   public MpsWorker(Script whatToDo) {
@@ -78,6 +82,7 @@ public abstract class MpsWorker {
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     myWhatToDo = whatToDo;
     myLogger = logger;
+    myJavaProperties = new JavaCompilerProperties(myWhatToDo);
   }
   private Environment createDefaultEnvironment() {
     Environment env = new MpsEnvironment(createEnvConfig(myWhatToDo));
@@ -126,7 +131,7 @@ public abstract class MpsWorker {
     MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         ModuleMaker maker = new ModuleMaker();
-        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion())));
       }
     });
     reload(mpsCompilationResult);

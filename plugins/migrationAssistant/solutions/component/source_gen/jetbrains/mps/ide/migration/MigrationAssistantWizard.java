@@ -7,7 +7,9 @@ import com.intellij.openapi.project.Project;
 import java.util.Arrays;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
-import jetbrains.mps.ide.migration.wizard.MigrationsErrorStep;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post;
 import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -15,7 +17,7 @@ import javax.swing.SwingUtilities;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {
-    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationsErrorStep(project)));
+    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationErrorStep_Pre(project), new MigrationErrorStep_Migration(project), new MigrationErrorStep_Post(project)));
     Dimension oldSize = super.getPreferredSize();
     setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
   }
@@ -43,6 +45,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     });
   }
   public boolean isFinishSuccessfull() {
-    return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();
+    return ((MigrationsProgressStep) mySteps.get(1)).isEverythingOk();
   }
 }

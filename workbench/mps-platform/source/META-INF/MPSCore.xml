@@ -82,6 +82,10 @@
       <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsComponent</implementation-class>
       <loadForDefaultProject/>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.compiler.CompilerSettingsComponent</implementation-class>
+      <skipForDummyProject/>
+    </component>
   </project-components>
 
   <extensionPoints>

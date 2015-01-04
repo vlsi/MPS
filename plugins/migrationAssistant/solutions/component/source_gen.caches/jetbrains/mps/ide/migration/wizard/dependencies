@@ -16,6 +16,42 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" file="MigrationErrorStep.java">
+    <classNode dependClassName="com.intellij.ide.BrowserUtil" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.BorderFactory" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JTextPane" />
+    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
+    <classNode dependClassName="javax.swing.event.HyperlinkListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration" file="MigrationErrorStep_Migration.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" file="MigrationErrorStep_Post.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" file="MigrationErrorStep_Pre.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationStep" file="MigrationStep.java">
     <classNode dependClassName="com.intellij.ide.wizard.CommitStepException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -31,21 +67,6 @@
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationsErrorStep" file="MigrationsErrorStep.java">
-    <classNode dependClassName="com.intellij.ide.BrowserUtil" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.BorderFactory" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JTextPane" />
-    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
-    <classNode dependClassName="javax.swing.event.HyperlinkListener" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationsListRenderer" file="MigrationsListRenderer.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -77,6 +98,8 @@
     <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -88,15 +111,23 @@
     <classNode dependClassName="javax.swing.DefaultListModel" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsErrorStep" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsListRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
   </dependency>
 </dependenciesRoot>

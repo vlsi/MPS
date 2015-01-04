@@ -11789,33 +11789,44 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="7ECFGRPAHwj" role="3clF47">
-                          <node concept="3cpWs8" id="7ECFGRPAHwk" role="3cqZAp">
-                            <node concept="3cpWsn" id="7ECFGRPAHwl" role="3cpWs9">
-                              <property role="TrG5h" value="methodsToOverride" />
-                              <node concept="2I9FWS" id="7ECFGRPAHwm" role="1tU5fm">
+                          <node concept="3cpWs8" id="5lJG2Fvx_vG" role="3cqZAp">
+                            <node concept="3cpWsn" id="5lJG2Fvx_vH" role="3cpWs9">
+                              <property role="TrG5h" value="methodsToImplementAndOverride" />
+                              <node concept="2I9FWS" id="5lJG2Fvx_vi" role="1tU5fm">
                                 <ref role="2I9WkF" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                               </node>
-                              <node concept="3K4zz7" id="7ECFGRPAHwn" role="33vP2m">
-                                <node concept="37vLTw" id="2BHiRxeuvMF" role="3K4Cdx">
-                                  <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
+                              <node concept="2OqwBi" id="5lJG2Fvx_vI" role="33vP2m">
+                                <node concept="37vLTw" id="5lJG2Fvx_vJ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
                                 </node>
-                                <node concept="2OqwBi" id="7ECFGRPAHwp" role="3K4E3e">
-                                  <node concept="37vLTw" id="3GM_nagTulg" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
-                                  </node>
-                                  <node concept="2qgKlT" id="7ECFGRPAHwr" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:4GM03FJm3zL" resolve="getMethodsToOverride" />
-                                  </node>
+                                <node concept="2qgKlT" id="5lJG2FvzwLZ" role="2OqNvi">
+                                  <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
                                 </node>
-                                <node concept="2OqwBi" id="7ECFGRPAHws" role="3K4GZi">
-                                  <node concept="37vLTw" id="3GM_nagTAYI" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="5lJG2FvxUH4" role="3cqZAp">
+                            <node concept="3clFbS" id="5lJG2FvxUH7" role="3clFbx">
+                              <node concept="3clFbF" id="5lJG2Fvzyim" role="3cqZAp">
+                                <node concept="2OqwBi" id="5lJG2Fvz$5$" role="3clFbG">
+                                  <node concept="37vLTw" id="5lJG2Fvzyil" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5lJG2Fvx_vH" resolve="methodsToImplementAndOverride" />
                                   </node>
-                                  <node concept="2qgKlT" id="7ECFGRPAHwu" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
+                                  <node concept="X8dFx" id="5lJG2FvzTqv" role="2OqNvi">
+                                    <node concept="2OqwBi" id="5lJG2FvzX7j" role="25WWJ7">
+                                      <node concept="37vLTw" id="5lJG2FvzUqg" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
+                                      </node>
+                                      <node concept="2qgKlT" id="5lJG2Fv$3tz" role="2OqNvi">
+                                        <ref role="37wK5l" to="tpek:4GM03FJm3zL" resolve="getMethodsToOverride" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
+                            </node>
+                            <node concept="37vLTw" id="5lJG2Fvzx0E" role="3clFbw">
+                              <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
                             </node>
                           </node>
                           <node concept="3clFbF" id="7ECFGRPAHwv" role="3cqZAp">
@@ -11828,8 +11839,8 @@
                                 <node concept="37vLTw" id="3GM_nagTwmQ" role="37wK5m">
                                   <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
                                 </node>
-                                <node concept="37vLTw" id="3GM_nagTvEI" role="37wK5m">
-                                  <ref role="3cqZAo" node="7ECFGRPAHwl" resolve="methodsToOverride" />
+                                <node concept="37vLTw" id="5lJG2Fv$8bY" role="37wK5m">
+                                  <ref role="3cqZAo" node="5lJG2Fvx_vH" resolve="methodsToImplementAndOverride" />
                                 </node>
                               </node>
                             </node>

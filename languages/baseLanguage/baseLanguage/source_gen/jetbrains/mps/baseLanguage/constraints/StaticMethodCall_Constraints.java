@@ -22,6 +22,12 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
+import jetbrains.mps.scope.FilteringScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
@@ -57,7 +63,45 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
         };
       }
     });
+    references.put(MetaIdFactory.refId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L), this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_8qp2eq_a0a0a0a0a1a0b0a2a1;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")))) {
+                return new EmptyScope();
+              }
+              Scope visibleClassifiersScope = ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
+              Project project = SModuleOperations.getProjectForModule(SNodeOperations.getModel(_context.getContextNode()).getModule());
+              if (project != null && !(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project).getTargetJavaVersion().isAtLeast(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_8))) {
+                return new FilteringScope(visibleClassifiersScope) {
+
+                  @Override
+                  public boolean isExcluded(SNode node) {
+                    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+                  }
+                };
+              } else {
+                return visibleClassifiersScope;
+              }
+            }
+          }
+        };
+      }
+    });
     return references;
   }
   private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
+  private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2552221390071976040");
 }

@@ -24,9 +24,11 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectLibraryManager;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
@@ -88,7 +90,12 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
             @Override
             public MPSCompilationResult compute() {
-              return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
+              jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
+              if (project == null) {
+                return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
+              } else {
+                return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9), JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project));
+              }
             }
           });
         }
