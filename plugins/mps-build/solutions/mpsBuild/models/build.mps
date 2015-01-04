@@ -367,6 +367,9 @@
         <property id="3189788309731928316" name="reexport" index="1E1SXH" />
         <reference id="3189788309731928317" name="module" index="1E1SXG" />
       </concept>
+      <concept id="3189788309731922642" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage" flags="ng" index="1E1Vl3">
+        <reference id="3189788309731922643" name="language" index="1E1Vl2" />
+      </concept>
       <concept id="322010710375794190" name="jetbrains.mps.build.mps.structure.BuildMps_DevKit" flags="ng" index="3LEwk6">
         <child id="322010710375805250" name="extends" index="3LEz9a" />
         <child id="322010710375832962" name="exports" index="3LEDUa" />
@@ -7097,6 +7100,7 @@
           <property role="TrG5h" value="jetbrains.mps.lang.constraints#1147476727047" />
           <property role="3LESm3" value="e00b808b-8cda-4cba-becc-a390490358b1" />
           <property role="2GAjPV" value="false" />
+          <property role="BnDLt" value="false" />
           <node concept="1SiIV0" id="7YI57w6K0i3" role="3bR37C">
             <node concept="3bR9La" id="7YI57w6K0i4" role="1SiIV1">
               <property role="3bR36h" value="false" />
@@ -7126,6 +7130,9 @@
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
             </node>
+          </node>
+          <node concept="1E1Vl3" id="7HkT6P2DQw_" role="3bR37C">
+            <ref role="1E1Vl2" node="7Kfy9QB6L25" resolve="jetbrains.mps.baseLanguage.jdk7" />
           </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruxY" role="3bR37C">
@@ -8725,6 +8732,9 @@
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
             </node>
+          </node>
+          <node concept="1E1Vl3" id="3Aex4Dzm0ep" role="3bR37C">
+            <ref role="1E1Vl2" node="568PkTlOK5Q" resolve="jetbrains.mps.core.xml" />
           </node>
         </node>
         <node concept="1E0d5M" id="2a9bszgrunw" role="1E1XAP">
