@@ -17,8 +17,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.ArrayList;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
 import com.intellij.util.lang.UrlClassLoader;
@@ -81,7 +82,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
       Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
         public String select(String key) {
           return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }
@@ -91,7 +92,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   }
   private List<String> getPluginClasspath() {
     List<String> path = ListSequence.fromList(new ArrayList<String>());
-    String pluginsPath = PathManager.getPreinstalledPluginsPath();
+    String pluginsPath = PathManager.getPreInstalledPluginsPath();
     File pluginsDir = new File(pluginsPath);
     for (File pluginDirFile : pluginsDir.listFiles()) {
       if (pluginDirFile.isDirectory()) {
