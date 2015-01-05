@@ -3268,6 +3268,14 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2O7j9gjCORT" role="3cqZAp">
+          <node concept="1rXfSq" id="2O7j9gjCORR" role="3clFbG">
+            <ref role="37wK5l" node="4sm8lF4o_YW" resolve="updateStaticMethods" />
+            <node concept="37vLTw" id="2O7j9gjCSbb" role="37wK5m">
+              <ref role="3cqZAo" node="TWYrQY7cvZ" resolve="intfc" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="TWYrQY7Ji9" role="3cqZAp">
           <node concept="1rXfSq" id="TWYrQY7Ji8" role="3clFbG">
             <ref role="37wK5l" node="TWYrQY7xaw" resolve="updateVisibility" />
@@ -5580,7 +5588,7 @@
       <node concept="37vLTG" id="4sm8lF4o_Z1" role="3clF46">
         <property role="TrG5h" value="cls" />
         <node concept="3Tqbb2" id="4sm8lF4o_Z2" role="1tU5fm">
-          <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
         </node>
       </node>
       <node concept="3clFbS" id="4sm8lF4o_Z3" role="3clF47">

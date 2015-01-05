@@ -173,7 +173,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -181,6 +181,7 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -227,6 +228,7 @@
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/languages/util/jetbrains.mps.execution.util.jar" />
       <library file="${artifacts.mps}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
+      <library file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mps}/lib/mps-closures.jar" />
       <library file="${artifacts.mps}/lib/mps-collections.jar" />
       <library file="${artifacts.mps}/lib/mps-core.jar" />
@@ -266,7 +268,7 @@
   
   <target name="java.compile.jetbrains.mps.build.stripping.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/test_gen/" />
       <classpath>
@@ -314,7 +316,7 @@
   <target name="java.compile.jetbrains.mps.samples.Kaja" depends="java.compile.jetbrains.mps.samples.JavaKaja, fetchDependencies">
     <mkdir dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" />
@@ -360,7 +362,7 @@
   <target name="java.compile.jetbrains.mps.samples.Kaja#3265739055509559144" depends="java.compile.jetbrains.mps.samples.JavaKaja, java.compile.jetbrains.mps.samples.Kaja, fetchDependencies">
     <mkdir dir="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen" />
@@ -407,7 +409,7 @@
   <target name="java.compile.jetbrains.mps.samples.JavaKaja">
     <mkdir dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />

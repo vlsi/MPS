@@ -12,7 +12,7 @@
   </root>
   <root nodeRef="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)/7385586609667787292">
     <file name="test3.xml">
-      <unit id="7385586609667787292" at="1,0,28,7" name="jetbrains.mps.core.xml.sandbox.test.test3" />
+      <unit id="7385586609667787292" at="1,0,34,7" name="jetbrains.mps.core.xml.sandbox.test.test3" />
     </file>
   </root>
 </debug-info>

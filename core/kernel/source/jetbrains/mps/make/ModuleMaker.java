@@ -17,6 +17,8 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
@@ -25,6 +27,8 @@ import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -32,6 +36,8 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -45,6 +51,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
@@ -120,8 +127,12 @@ public class ModuleMaker {
     }
   }
 
-  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
+    return make(modules, monitor, null);
+  }
+
+  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
+  public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, final JavaCompilerOptions compilerOptions) {
     monitor.start("Compiling", 12);
     myTracer.push("making " + modules.size() + " modules", false);
     try {
@@ -162,7 +173,7 @@ public class ModuleMaker {
 
           inner.step("compiling " + cycle);
           myTracer.push("processing cycle", false);
-          MPSCompilationResult result = compile(cycle);
+          MPSCompilationResult result = compile(cycle, compilerOptions);
           inner.advance(cycle.size());
           myTracer.pop();
           errorCount += result.getErrors();
@@ -197,7 +208,7 @@ public class ModuleMaker {
     }
   }
 
-  private MPSCompilationResult compile(Set<SModule> modules) {
+  private MPSCompilationResult compile(Set<SModule> modules, JavaCompilerOptions compilerOptions) {
     boolean hasAnythingToCompile = false;
     List<IMessage> messages = new ArrayList<IMessage>();
 
@@ -262,7 +273,12 @@ public class ModuleMaker {
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
       myTracer.push("eclipse compiler", true);
-      compiler.compile(classPathItems);
+
+      if (compilerOptions == null) {
+        compiler.compile(classPathItems);
+      } else {
+        compiler.compile(classPathItems, compilerOptions);
+      }
       myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);

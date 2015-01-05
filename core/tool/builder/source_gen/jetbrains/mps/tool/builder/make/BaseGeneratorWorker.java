@@ -14,9 +14,15 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.service.AbstractMakeService;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import java.util.Map;
@@ -113,7 +119,15 @@ public class BaseGeneratorWorker extends MpsWorker {
 
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
-    Future<IResult> res = new BuildMakeService().make(new MakeSession(ctx, myMessageHandler, true), resources, null, null, new EmptyProgressMonitor());
+    MakeSession session = new MakeSession(ctx, myMessageHandler, true);
+    AbstractMakeService.DefaultMonitor defaultMonitor = new AbstractMakeService.DefaultMonitor(session);
+    IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
+      @Override
+      public void setup(IPropertiesPool ppool) {
+        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion()))).populate(ppool);
+      }
+    };
+    Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());
 
     try {
       if (!(res.get().isSucessful())) {
@@ -167,7 +181,7 @@ public class BaseGeneratorWorker extends MpsWorker {
   protected void makeProject() {
     final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
-        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion())));
       }
     });
     if (mpsCompilationResult.isReloadingNeeded()) {

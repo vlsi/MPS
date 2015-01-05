@@ -21,6 +21,8 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.FResource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.concurrent.ExecutionException;
@@ -61,7 +63,11 @@ public class GeneratorUtil {
           }
           GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
           javaCompiler.addCompilationResultListener(compilationResult);
-          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()));
+          JavaCompilerOptions options = null;
+          if (project != null) {
+            options = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
+          }
+          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()), (options != null ? options : JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS));
           javaCompiler.removeCompilationResultListener(compilationResult);
 
           final String fullClassName = SNodeOperations.getModelLongName(model) + "." + className;

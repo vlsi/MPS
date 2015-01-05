@@ -42,6 +42,8 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="make-facets" />
   </component>
 </module>
 

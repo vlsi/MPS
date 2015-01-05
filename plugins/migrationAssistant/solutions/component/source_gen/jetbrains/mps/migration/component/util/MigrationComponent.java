@@ -286,6 +286,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
           public Integer select(AbstractModule module) {
             int scripts = 0;
+            module.validateLanguageVersions();
             for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
               int currentLangVersion = lang.getLanguageVersion();
               int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);

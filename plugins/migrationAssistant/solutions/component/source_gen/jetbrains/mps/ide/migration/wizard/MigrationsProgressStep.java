@@ -22,14 +22,20 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.migration.MigrationCheckUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MigrationsProgressStep extends MigrationStep {
   public static final String ID = "progress";
-  private boolean myFinished;
-  private boolean mySuccess = true;
+  private volatile MigrationsProgressStep.FinishedState myFinishedState = null;
+  private boolean myNoErrors = true;
   private MigrationManager myManager;
   private JBList myList;
   private Task myTask;
@@ -89,32 +95,52 @@ public class MigrationsProgressStep extends MigrationStep {
     // project steps are considered to be X percent of the whole process 
     double projectStepsFraction = 0.3;
 
+    addElementToMigrationList("Checking models... Please wait.");
+    final Wrappers._boolean preProblems = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
+        Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
+        preProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+      }
+    });
+
     int projectStepsCount = myManager.projectStepsCount();
     int languageStepsCount = myManager.languageStepsCount();
     progress.setFraction(0);
 
-    while (executeSingleStep(myManager.nextProjectStep())) {
-      progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
-    }
-    progress.setFraction(projectStepsFraction);
-
-    while (executeSingleStep(myManager.nextLanguageStep())) {
-      progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
-    }
-    progress.setFraction(1.0);
-
-    addElementToMigrationList("Saving changed models... Please wait.");
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        MPSModuleRepository.getInstance().saveAll();
+    final Wrappers._boolean postProblems = new Wrappers._boolean(false);
+    if (!(preProblems.value)) {
+      while (executeSingleStep(myManager.nextProjectStep())) {
+        progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
       }
-    });
+      progress.setFraction(projectStepsFraction);
 
-    addElementToMigrationList("Done!");
+      while (executeSingleStep(myManager.nextLanguageStep())) {
+        progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+      }
+      progress.setFraction(1.0);
 
-    mySuccess = mySuccess && !(myManager.isMigrationRequired());
+      addElementToMigrationList("Saving changed models... Please wait.");
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().saveAll();
+        }
+      });
 
-    myFinished = true;
+      addElementToMigrationList("Checking models... Please wait.");
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
+          Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
+          postProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+        }
+      });
+    }
+
+    myFinishedState = new MigrationsProgressStep.FinishedState(preProblems.value, myNoErrors && !(myManager.isMigrationRequired()), postProblems.value);
+
+    addElementToMigrationList((myFinishedState.isEverythingOk() ? "Done!" : "Finished with errors. Click 'Next' to continue."));
 
     PersistenceRegistry.getInstance().enableFastFindUsages();
   }
@@ -140,11 +166,11 @@ public class MigrationsProgressStep extends MigrationStep {
       addElementToMigrationList(step);
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-          mySuccess = ((MigrationManager.Step) result).execute();
+          myNoErrors &= ((MigrationManager.Step) result).execute();
         }
       });
 
-      return mySuccess;
+      return myNoErrors;
     } else {
       return false;
     }
@@ -152,11 +178,19 @@ public class MigrationsProgressStep extends MigrationStep {
 
   @Override
   public Object getNextStepId() {
-    if (mySuccess) {
+    if (myFinishedState == null) {
       return null;
-    } else {
-      return MigrationsErrorStep.ID;
     }
+    if (isEverythingOk()) {
+      return null;
+    } else if (myFinishedState.preErrors()) {
+      return MigrationErrorStep_Pre.ID;
+    } else if (!(myFinishedState.migrationsCompleted())) {
+      return MigrationErrorStep_Migration.ID;
+    } else if (myFinishedState.postErrors()) {
+      return MigrationErrorStep_Post.ID;
+    }
+    throw new IllegalStateException();
   }
 
   @Override
@@ -166,7 +200,7 @@ public class MigrationsProgressStep extends MigrationStep {
 
   @Override
   public boolean isComplete() {
-    return myFinished;
+    return myFinishedState != null;
   }
 
   @Override
@@ -174,7 +208,35 @@ public class MigrationsProgressStep extends MigrationStep {
     return false;
   }
 
-  public boolean isSuccessfull() {
-    return mySuccess;
+  public boolean isEverythingOk() {
+    return myFinishedState.isEverythingOk();
+  }
+
+  public static class FinishedState {
+    private final boolean myPreErrors;
+    private final boolean myMigrationsCompleted;
+    private final boolean myPostErrors;
+
+    public FinishedState(boolean preErrors, boolean migrationsCompleted, boolean postErrors) {
+      myPreErrors = preErrors;
+      myMigrationsCompleted = migrationsCompleted;
+      myPostErrors = postErrors;
+    }
+
+    public boolean preErrors() {
+      return myPreErrors;
+    }
+
+    public boolean migrationsCompleted() {
+      return myMigrationsCompleted;
+    }
+
+    public boolean postErrors() {
+      return myPostErrors;
+    }
+
+    public boolean isEverythingOk() {
+      return !(myPreErrors) && myMigrationsCompleted && !(myPostErrors);
+    }
   }
 }
