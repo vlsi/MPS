@@ -724,21 +724,11 @@
                   <node concept="3clFbF" id="1AzqgyAfdM7" role="3cqZAp">
                     <node concept="1rXfSq" id="1AzqgyAfdM5" role="3clFbG">
                       <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
-                      <node concept="1eOMI4" id="1AzqgyAhil_" role="37wK5m">
-                        <node concept="10QFUN" id="1AzqgyAhilA" role="1eOMHV">
-                          <node concept="2OqwBi" id="1AzqgyAhily" role="10QFUP">
-                            <node concept="liA8E" id="1AzqgyAhilz" role="2OqNvi">
-                              <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                            </node>
-                            <node concept="37vLTw" id="1AzqgyAhil$" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-                            </node>
-                          </node>
-                          <node concept="A3Dl8" id="1AzqgyAhilw" role="10QFUM">
-                            <node concept="3uibUv" id="1AzqgyAhilx" role="A3Ik2">
-                              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                            </node>
-                          </node>
+                      <node concept="2YIFZM" id="39M2ISgsqYI" role="37wK5m">
+                        <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
+                        <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                        <node concept="37vLTw" id="39M2ISgsr31" role="37wK5m">
+                          <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                         </node>
                       </node>
                     </node>
@@ -1032,26 +1022,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1AzqgyAgwcF" role="3cqZAp">
-          <node concept="3cpWsn" id="1AzqgyAgwcG" role="3cpWs9">
-            <property role="TrG5h" value="projectModules" />
-            <node concept="A3Dl8" id="1AzqgyAgwcH" role="1tU5fm">
-              <node concept="3qUE_q" id="1AzqgyAgwcI" role="A3Ik2">
-                <node concept="3uibUv" id="1AzqgyAgwcJ" role="3qUE_r">
-                  <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1AzqgyAgwcK" role="33vP2m">
-              <node concept="37vLTw" id="1AzqgyAgwcL" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-              </node>
-              <node concept="liA8E" id="1AzqgyAgwcM" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1AzqgyAgwcN" role="3cqZAp">
           <node concept="3cpWsn" id="1AzqgyAgwcO" role="3cpWs9">
             <property role="TrG5h" value="addedLanguages" />
@@ -1062,15 +1032,8 @@
             </node>
             <node concept="2OqwBi" id="1AzqgyAgwcR" role="33vP2m">
               <node concept="2OqwBi" id="56hh3xWcIN6" role="2Oq$k0">
-                <node concept="2OqwBi" id="1AzqgyAgwcS" role="2Oq$k0">
-                  <node concept="37vLTw" id="1AzqgyAgwcT" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1AzqgyAgwdE" resolve="languages" />
-                  </node>
-                  <node concept="UnYns" id="1AzqgyAgwcU" role="2OqNvi">
-                    <node concept="3uibUv" id="1AzqgyAgwcV" role="UnYnz">
-                      <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="1AzqgyAgwcT" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1AzqgyAgwdE" resolve="languages" />
                 </node>
                 <node concept="3$u5V9" id="56hh3xWdoJs" role="2OqNvi">
                   <node concept="1bVj0M" id="56hh3xWdoJu" role="23t8la">
@@ -1103,9 +1066,6 @@
         </node>
         <node concept="3clFbF" id="1AzqgyAgwcX" role="3cqZAp">
           <node concept="2OqwBi" id="1AzqgyAgwcY" role="3clFbG">
-            <node concept="37vLTw" id="1AzqgyAgwcZ" role="2Oq$k0">
-              <ref role="3cqZAo" node="1AzqgyAgwcG" resolve="projectModules" />
-            </node>
             <node concept="2es0OD" id="1AzqgyAgwd0" role="2OqNvi">
               <node concept="1bVj0M" id="1AzqgyAgwd1" role="23t8la">
                 <node concept="3clFbS" id="1AzqgyAgwd2" role="1bW5cS">
@@ -1180,6 +1140,13 @@
                   <property role="TrG5h" value="it" />
                   <node concept="2jxLKc" id="1AzqgyAgwdc" role="1tU5fm" />
                 </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="39M2ISgsrcT" role="2Oq$k0">
+              <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
+              <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+              <node concept="37vLTw" id="39M2ISgsrcU" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
               </node>
             </node>
           </node>
@@ -1559,35 +1526,19 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2tFdLTRDQ6B" role="3clF47">
-        <node concept="3cpWs8" id="1AzqgyAk0GS" role="3cqZAp">
-          <node concept="3cpWsn" id="1AzqgyAk0GT" role="3cpWs9">
-            <property role="TrG5h" value="modules" />
-            <node concept="A3Dl8" id="1AzqgyAk0TO" role="1tU5fm">
-              <node concept="3qUE_q" id="1AzqgyAk0TQ" role="A3Ik2">
-                <node concept="3uibUv" id="1AzqgyAk0TR" role="3qUE_r">
-                  <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1AzqgyAk0GU" role="33vP2m">
-              <node concept="37vLTw" id="1AzqgyAk0GV" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-              </node>
-              <node concept="liA8E" id="1AzqgyAk0GW" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2tFdLTRDQ7V" role="3cqZAp">
           <node concept="2OqwBi" id="2tFdLTRDQ7W" role="3clFbG">
             <node concept="2OqwBi" id="2tFdLTRJ34b" role="2Oq$k0">
-              <node concept="37vLTw" id="1AzqgyAk1ej" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AzqgyAk0GT" resolve="modules" />
-              </node>
               <node concept="UnYns" id="2tFdLTRJ4p6" role="2OqNvi">
                 <node concept="3uibUv" id="2tFdLTRJ6F$" role="UnYnz">
                   <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="39M2ISgsrI3" role="2Oq$k0">
+                <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
+                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <node concept="37vLTw" id="39M2ISgsrI4" role="37wK5m">
+                  <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                 </node>
               </node>
             </node>
@@ -1756,35 +1707,19 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1AzqgyAk4Ve" role="3clF47">
-        <node concept="3cpWs8" id="1AzqgyAk4Vf" role="3cqZAp">
-          <node concept="3cpWsn" id="1AzqgyAk4Vg" role="3cpWs9">
-            <property role="TrG5h" value="modules" />
-            <node concept="A3Dl8" id="1AzqgyAk4Vh" role="1tU5fm">
-              <node concept="3qUE_q" id="1AzqgyAk4Vi" role="A3Ik2">
-                <node concept="3uibUv" id="1AzqgyAk4Vj" role="3qUE_r">
-                  <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1AzqgyAk4Vk" role="33vP2m">
-              <node concept="37vLTw" id="1AzqgyAk4Vl" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-              </node>
-              <node concept="liA8E" id="1AzqgyAk4Vm" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1AzqgyAk4Vn" role="3cqZAp">
           <node concept="2OqwBi" id="1AzqgyAk4Vo" role="3clFbG">
             <node concept="2OqwBi" id="1AzqgyAk4Vp" role="2Oq$k0">
-              <node concept="37vLTw" id="1AzqgyAk4Vq" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AzqgyAk4Vg" resolve="modules" />
-              </node>
               <node concept="UnYns" id="1AzqgyAk4Vr" role="2OqNvi">
                 <node concept="3uibUv" id="1AzqgyAk4Vs" role="UnYnz">
                   <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="39M2ISgsrXX" role="2Oq$k0">
+                <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
+                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <node concept="37vLTw" id="39M2ISgsrXY" role="37wK5m">
+                  <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                 </node>
               </node>
             </node>
@@ -1924,6 +1859,20 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbJ" id="39M2ISgsUMq" role="3cqZAp">
+            <node concept="3clFbS" id="39M2ISgsUMr" role="3clFbx">
+              <node concept="3cpWs6" id="39M2ISgsUMs" role="3cqZAp" />
+            </node>
+            <node concept="3fqX7Q" id="39M2ISgsUMt" role="3clFbw">
+              <node concept="2YIFZM" id="39M2ISgsUMu" role="3fr31v">
+                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="auc7:39M2ISgsON_" resolve="isModuleMigrateable" />
+                <node concept="37vLTw" id="39M2ISgsUMv" role="37wK5m">
+                  <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1AzqgyAfrlK" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfrlJ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
@@ -1988,6 +1937,20 @@
                   <node concept="37vLTw" id="68mwpVbOj6Z" role="37wK5m">
                     <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="39M2ISgsUoc" role="3cqZAp">
+            <node concept="3clFbS" id="39M2ISgsUof" role="3clFbx">
+              <node concept="3cpWs6" id="39M2ISgsUK1" role="3cqZAp" />
+            </node>
+            <node concept="3fqX7Q" id="39M2ISgsUwp" role="3clFbw">
+              <node concept="2YIFZM" id="39M2ISgsUCy" role="3fr31v">
+                <ref role="37wK5l" to="auc7:39M2ISgsON_" resolve="isModuleMigrateable" />
+                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <node concept="37vLTw" id="39M2ISgsUFg" role="37wK5m">
+                  <ref role="3cqZAo" node="1AzqgyAfr8l" resolve="module" />
                 </node>
               </node>
             </node>
