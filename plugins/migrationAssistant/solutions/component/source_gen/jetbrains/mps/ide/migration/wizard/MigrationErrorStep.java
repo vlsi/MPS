@@ -56,5 +56,5 @@ public abstract class MigrationErrorStep extends MigrationStep {
 
   protected abstract String getText();
 
-  protected abstract _FunctionTypes._void_P0_E0 afterProjectInitialized();
+  public abstract _FunctionTypes._void_P0_E0 afterProjectInitialized();
 }

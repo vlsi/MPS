@@ -529,7 +529,7 @@
       <node id="7935677192557308695" at="21,0,23,0" concept="5" trace="invoke#()V" />
       <node id="7935677192557033515" at="11,0,14,0" concept="1" trace="MigrationErrorStep_Migration#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7935677192557033340" at="15,0,18,0" concept="5" trace="getText#()Ljava/lang/String;" />
-      <node id="7935677192557308697" at="19,66,23,6" concept="7" />
+      <node id="7935677192557308697" at="19,63,23,6" concept="7" />
       <node id="7935677192557308205" at="19,0,25,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <scope id="7935677192557308696" at="21,28,21,28" />
       <scope id="7935677192557033519" at="11,56,12,23" />
@@ -539,7 +539,7 @@
         <var name="project" id="7935677192557033522" />
       </scope>
       <scope id="7935677192557033340" at="15,0,18,0" />
-      <scope id="7935677192557308210" at="19,66,23,6" />
+      <scope id="7935677192557308210" at="19,63,23,6" />
       <scope id="7935677192557308205" at="19,0,25,0" />
       <unit id="7935677192557308695" at="20,15,23,5" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration$1" />
       <unit id="7935677192557011184" at="8,0,26,0" name="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration" />
@@ -550,13 +550,13 @@
       <node id="7935677192557044694" at="10,0,11,0" concept="10" trace="ID" />
       <node id="7935677192557044703" at="12,50,13,23" concept="11" />
       <node id="7935677192557044713" at="16,30,17,432" concept="7" />
-      <node id="7935677192558408348" at="20,66,21,63" concept="7" />
+      <node id="7935677192558408348" at="20,63,21,63" concept="7" />
       <node id="7935677192557044699" at="12,0,15,0" concept="1" trace="MigrationErrorStep_Pre#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7935677192557044709" at="16,0,19,0" concept="5" trace="getText#()Ljava/lang/String;" />
       <node id="7935677192557284494" at="20,0,23,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <scope id="7935677192557044702" at="12,50,13,23" />
       <scope id="7935677192557044712" at="16,30,17,432" />
-      <scope id="7935677192557284499" at="20,66,21,63" />
+      <scope id="7935677192557284499" at="20,63,21,63" />
       <scope id="7935677192557044699" at="12,0,15,0">
         <var name="project" id="7935677192557044706" />
       </scope>
@@ -570,13 +570,13 @@
       <node id="7935677192557044718" at="10,0,11,0" concept="10" trace="ID" />
       <node id="7935677192557044727" at="12,51,13,23" concept="11" />
       <node id="7935677192557044737" at="16,30,17,197" concept="7" />
-      <node id="7935677192558408829" at="20,66,21,63" concept="7" />
+      <node id="7935677192558408829" at="20,63,21,63" concept="7" />
       <node id="7935677192557044723" at="12,0,15,0" concept="1" trace="MigrationErrorStep_Post#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7935677192557044733" at="16,0,19,0" concept="5" trace="getText#()Ljava/lang/String;" />
       <node id="7935677192557320129" at="20,0,23,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <scope id="7935677192557044726" at="12,51,13,23" />
       <scope id="7935677192557044736" at="16,30,17,197" />
-      <scope id="7935677192557320134" at="20,66,21,63" />
+      <scope id="7935677192557320134" at="20,63,21,63" />
       <scope id="7935677192557044723" at="12,0,15,0">
         <var name="project" id="7935677192557044730" />
       </scope>

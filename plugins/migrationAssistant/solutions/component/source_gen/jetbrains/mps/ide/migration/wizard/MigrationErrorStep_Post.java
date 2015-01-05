@@ -17,7 +17,7 @@ public class MigrationErrorStep_Post extends MigrationErrorStep {
     return "Migration Assistant was unable to migrate some nodes in this project.\n" + "Problem nodes will be shown in Usages tool after the project is loaded.\n" + "Please correct them manually.";
   }
 
-  protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
+  public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
     return MigrationCheckUtil.getShowUsagesCallback(myProject);
   }
 }

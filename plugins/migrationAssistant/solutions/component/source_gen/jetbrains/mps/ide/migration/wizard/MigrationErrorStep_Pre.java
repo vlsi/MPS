@@ -17,7 +17,7 @@ public class MigrationErrorStep_Pre extends MigrationErrorStep {
     return "Migration Assistant found that some languages used in this project are missing.\n" + "Try running migrations after correcting your project and/or adding necessary libraries.\n" + "Migration Assistant will be started again on next project opening or it can be started\n" + "manually by choosing Tools->Run Migration Assistant from main menu.\n" + "Problem nodes will be shown in Usages tool after the project is loaded.";
   }
 
-  protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
+  public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
     return MigrationCheckUtil.getShowUsagesCallback(myProject);
   }
 }

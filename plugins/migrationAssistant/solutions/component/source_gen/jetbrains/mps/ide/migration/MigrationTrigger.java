@@ -43,6 +43,9 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import com.intellij.util.Consumer;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -300,14 +303,34 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         if (!(finished)) {
           return;
         }
-        if (!(wizard.isFinishSuccessfull())) {
+        if (wizard.isFinishSuccessfull()) {
+          myState.migrationRequired = false;
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              ProjectManagerEx.getInstance().reloadProject(myProject);
+            }
+          });
           return;
         }
 
-        myState.migrationRequired = false;
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        MigrationErrorStep lastStep = as_feb5zp_a0a3a0a0a0a2a23(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+        if (lastStep == null) {
+          return;
+        }
+
+        final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
+        if (afterProjectInitialized == null) {
+          return;
+        }
+
+        StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
           public void run() {
-            ProjectManagerEx.getInstance().reloadProject(myProject);
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                afterProjectInitialized.invoke();
+              }
+            }, ModalityState.NON_MODAL);
+
           }
         });
       }
@@ -339,5 +362,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return checkedDotOperand.getClassesGen();
     }
     return null;
+  }
+  private static <T> T as_feb5zp_a0a3a0a0a0a2a23(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

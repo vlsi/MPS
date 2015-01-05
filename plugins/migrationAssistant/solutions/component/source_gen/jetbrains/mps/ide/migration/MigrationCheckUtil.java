@@ -4,6 +4,7 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,15 +26,19 @@ public class MigrationCheckUtil {
     return new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         // show nodes with no language defined for them 
-        jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(p);
-        Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
-        Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-        List<SearchResult<jetbrains.mps.smodel.SNode>> results = Sequence.fromIterable(problems).select(new ISelector<SNode, SearchResult<jetbrains.mps.smodel.SNode>>() {
-          public SearchResult<jetbrains.mps.smodel.SNode> select(SNode it) {
-            return new SearchResult<jetbrains.mps.smodel.SNode>(((jetbrains.mps.smodel.SNode) it), "Language not found");
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(p);
+            Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
+            Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
+            List<SearchResult<jetbrains.mps.smodel.SNode>> results = Sequence.fromIterable(problems).select(new ISelector<SNode, SearchResult<jetbrains.mps.smodel.SNode>>() {
+              public SearchResult<jetbrains.mps.smodel.SNode> select(SNode it) {
+                return new SearchResult<jetbrains.mps.smodel.SNode>(((jetbrains.mps.smodel.SNode) it), "Language not found");
+              }
+            }).toListSequence();
+            p.getComponent(UsagesViewTool.class).show(new SearchResults<jetbrains.mps.smodel.SNode>(Collections.<jetbrains.mps.smodel.SNode>emptySet(), results), "");
           }
-        }).toListSequence();
-        p.getComponent(UsagesViewTool.class).show(new SearchResults<jetbrains.mps.smodel.SNode>(Collections.<jetbrains.mps.smodel.SNode>emptySet(), results), "");
+        });
       }
     };
   }
