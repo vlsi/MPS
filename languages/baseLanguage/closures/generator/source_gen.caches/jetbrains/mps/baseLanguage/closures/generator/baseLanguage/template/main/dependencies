@@ -18,7 +18,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget" />
@@ -30,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.RuntimeUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />

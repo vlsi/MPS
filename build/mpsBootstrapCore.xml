@@ -4118,6 +4118,7 @@
         <path location="${mps_home}/languages/baseLanguage/blTypes/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/classifiers/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/javadoc/source_gen" />
+        <path location="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/logging/source_gen" />
         <path location="${mps_home}/languages/baseLanguage/tuples/languages/tuples/source_gen" />
         <path location="${mps_home}/languages/util/extensionMethod/source_gen" />
@@ -4876,7 +4877,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.jdk7" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-ui, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguage.jdk7" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-ui, java.compile.mps-platform, java.compile.java.modules.cycle.3, fetchDependencies">
     <mkdir dir="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -4900,20 +4901,13 @@
         <pathelement path="${build.tmp}/java/out/mps-generator" />
         <pathelement path="${build.tmp}/java/out/mps-ui" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.3" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
