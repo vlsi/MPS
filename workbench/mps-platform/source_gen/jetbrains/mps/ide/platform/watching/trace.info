@@ -1045,7 +1045,7 @@
       <node id="8474613039627891583" at="74,88,75,30" concept="4" />
       <node id="8474613039627891587" at="75,30,76,24" concept="4" />
       <node id="8474613039627891403" at="78,45,79,84" concept="10" />
-      <node id="8474613039627891136" at="88,64,89,74" concept="9" />
+      <node id="8474613039627891136" at="88,73,89,74" concept="9" />
       <node id="8474613039627891149" at="90,74,91,15" concept="10" />
       <node id="1041878539048419610" at="94,46,95,57" concept="10" />
       <node id="5106296896615919834" at="97,11,98,15" concept="10" />
@@ -1101,7 +1101,7 @@
       <node id="8474613039627891246" at="118,0,148,0" concept="8" trace="processAfterEvent#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/FileProcessor;)V" />
       <node id="8474613039627891128" at="87,0,118,0" concept="8" trace="after#(Ljava/util/List;)V" />
       <scope id="8474613039627890967" at="82,39,82,39" />
-      <scope id="8474613039627890975" at="85,59,85,59" />
+      <scope id="8474613039627890975" at="85,68,85,68" />
       <scope id="8474613039627891354" at="36,51,37,39" />
       <scope id="8474613039627891362" at="40,51,41,38" />
       <scope id="8474613039627891474" at="55,36,56,35" />
@@ -1168,7 +1168,7 @@
       <scope id="4774203567241165510" at="102,0,116,0">
         <var name="participant" id="4774203567241165511" />
       </scope>
-      <scope id="8474613039627891135" at="88,64,116,9">
+      <scope id="8474613039627891135" at="88,73,116,9">
         <var name="application" id="8474613039627891137" />
       </scope>
       <scope id="8474613039627891255" at="118,79,146,7" />
