@@ -47,18 +47,6 @@ import java.util.TreeMap;
 import static org.junit.Assert.fail;
 
 public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
-  private final static SRepositoryListener CRAZY_LISTENER = new SRepositoryListenerBase() {
-    @Override
-    public void moduleAdded(@NotNull SModule module) {
-      ClassLoaderManager.getInstance().reloadModule(module);
-    }
-
-    @Override
-    public void beforeModuleRemoved(@NotNull SModule module) {
-      ClassLoaderManager.getInstance().reloadModule(module);
-    }
-  };
-
   private static final String PROJECT_PATH = PathManager.getHomePath();
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
 
@@ -87,9 +75,9 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
 
   @Test
   public void ClassesAreLoadedStress() {
-    MPSModuleRepository.getInstance().addRepositoryListener(CRAZY_LISTENER);
+    MPSModuleRepository.getInstance().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
     ClassesAreLoaded();
-    MPSModuleRepository.getInstance().removeRepositoryListener(CRAZY_LISTENER);
+    MPSModuleRepository.getInstance().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
   }
 
   private boolean checkModule(SModule module) {

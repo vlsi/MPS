@@ -161,7 +161,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Override
   public void init() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
     myClassLoadersHolder.init();
@@ -172,7 +172,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Override
   public void dispose() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     myRepositoryListener.dispose();
     myClassLoadingChecker.dispose(this);
     myClassLoadersHolder.dispose();
