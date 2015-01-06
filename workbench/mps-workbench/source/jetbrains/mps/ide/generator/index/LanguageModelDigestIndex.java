@@ -39,11 +39,12 @@ public class LanguageModelDigestIndex extends BaseModelDigestIndex {
     return NAME;
   }
 
+  @NotNull
   @Override
   public InputFilter getInputFilter() {
     return new InputFilter() {
       @Override
-      public boolean acceptInput(VirtualFile file) {
+      public boolean acceptInput(@NotNull VirtualFile file) {
         return file.getFileType().equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE);
       }
     };

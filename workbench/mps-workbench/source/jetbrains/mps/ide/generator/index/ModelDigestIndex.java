@@ -37,11 +37,12 @@ public class ModelDigestIndex extends BaseModelDigestIndex {
     return NAME;
   }
 
+  @NotNull
   @Override
   public InputFilter getInputFilter() {
     return new InputFilter() {
       @Override
-      public boolean acceptInput(VirtualFile file) {
+      public boolean acceptInput(@NotNull VirtualFile file) {
         FileType fileType = file.getFileType();
         return fileType.equals(MPSFileTypeFactory.MPS_FILE_TYPE)
             || fileType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)
