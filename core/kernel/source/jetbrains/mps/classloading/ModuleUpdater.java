@@ -207,7 +207,7 @@ public class ModuleUpdater {
         myDepGraph.addEdge(refToAdd, depRef);
       } else {
 //        valid if somebody calls reloadModule in moduleAdded() listener before us
-//        throw new IllegalStateException("The dependent module " + dep + " of " + moduleToAdd + " is not registered");
+        throw new IllegalStateException("The dependent module " + dep + " of " + module + " is not registered");
       }
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.classloading;
 
-import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
+import jetbrains.mps.module.ReloadableModuleBase;
 
-import java.util.List;
+import java.util.Set;
 
 /**
- * Implement this class to create a listener which is able to
- * process a batch (group) of repository events (such as moduleAdded, moduleRemoved, etc.).
+ * Subscribe via {@link ClassLoaderManager#addReloadListener} if you want
+ * to receive class loading notifications.
  *
- * @see jetbrains.mps.classloading.ModuleEventsDispatcher
+ * API: A client must not throw exceptions in {@link #modulesReloaded(java.util.Set)}
+ * Otherwise the application may behave unexpectedly
  */
-public interface SRepositoryBatchListener {
-  void eventsHappened(List<SRepositoryEvent> events);
+public interface ModuleReloadListener {
+  void modulesReloaded(Set<ReloadableModuleBase> unloadedModules);
 }
