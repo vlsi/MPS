@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.ModuleNameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,16 +29,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class PluginUtil {
   private static final Logger LOG = LogManager.getLogger(PluginUtil.class);
-
-  public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
-  public static final String IDE_MODULE_PROJECTPLUGIN = Ide_ProjectPlugin.class.getName();
-  public static final String IDE_MODULE_APPPLUGIN = Ide_ApplicationPlugin.class.getName();
 
   // todo: move to ClassLoaderManager module?
   public static boolean isPluginModule(SModule module) {
@@ -55,16 +45,6 @@ public class PluginUtil {
     }
 
     return false;
-  }
-
-  public static Set<SModule> collectPluginModules() {
-    Set<SModule> modules = new HashSet<SModule>();
-    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      if (isPluginModule(module)) {
-        modules.add(module);
-      }
-    }
-    return modules;
   }
 
   public static List<PluginContributor> createPluginContributors(Collection<SModule> modules) {
@@ -81,26 +61,10 @@ public class PluginUtil {
     return contributors;
   }
 
-  private static Object createPlugin(SModule module, String className) {
-    try {
-      Class pluginClass = ClassLoaderManager.getInstance().getOwnClass(module, className);
-      if (pluginClass == null) return null;
-
-      return pluginClass.newInstance();
-    } catch (Throwable t) {
-      LOG.error(null, t);
-      return null;
-    }
-  }
-
-  public static void addPluginContributor(PluginContributor contributor) {
-    PluginFactoriesRegistry.registerPluginFactory(contributor);
-  }
-
   @Nullable
   public static PluginContributor createPluginContributor(SModule module) {
     if (module instanceof ReloadableModule && ((ReloadableModule) module).willLoad()) {
-      return new ModulePluginContributor(module);
+      return new ModulePluginContributor((ReloadableModule) module);
     } else {
       return null;
     }
@@ -116,63 +80,4 @@ public class PluginUtil {
     return pluginContributors;
   }
 
-  public static List<PluginContributor> getPluginContributors() {
-    List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
-
-    for (PluginContributor contributor : createPluginContributors(collectPluginModules())) {
-      pluginContributors.add(contributor);
-    }
-    for (PluginContributor contributor : getPluginFactoriesRegistryContributors()) {
-      pluginContributors.add(contributor);
-    }
-
-    return pluginContributors;
-  }
-
-  public static class ModulePluginContributor extends PluginContributor {
-    public final SModule module;
-
-    public ModulePluginContributor(SModule module) {
-      this.module = module;
-    }
-
-    @Override
-    public BaseApplicationPlugin createApplicationPlugin() {
-      String pluginClassName = getApplicationPluginClassName(module);
-      if (pluginClassName == null) return null;
-      return (BaseApplicationPlugin) createPlugin(module, pluginClassName);
-    }
-
-    @Override
-    public BaseProjectPlugin createProjectPlugin() {
-      String pluginClassName = getProjectPluginClassName(module);
-      if (pluginClassName == null) return null;
-      return (BaseProjectPlugin) createPlugin(module, pluginClassName);
-    }
-
-    @Override
-    public int hashCode() {
-      return module.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      return o instanceof ModulePluginContributor && (((ModulePluginContributor) o).module == module);
-    }
-
-    @Override
-    public String toString() {
-      return module + " plugin contributor";
-    }
-  }
-
-  public static String getApplicationPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
-    return module.getModuleName() + ".plugin." + ModuleNameUtil.getModuleShortName(module) + "_ApplicationPlugin";
-  }
-
-  public static String getProjectPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
-    return module.getModuleName() + ".plugin." + ModuleNameUtil.getModuleShortName(module) + "_ProjectPlugin";
-  }
 }

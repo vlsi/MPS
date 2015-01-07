@@ -26,7 +26,6 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.plugins.PluginUtil.ModulePluginContributor;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -78,7 +77,7 @@ public class PluginReloader implements ApplicationComponent {
     List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
     for (PluginContributor contributor : myContributors) {
       if (contributor instanceof ModulePluginContributor) {
-        if (toUnload.contains(((ModulePluginContributor) contributor).module)) {
+        if (toUnload.contains(((ModulePluginContributor) contributor).getModule())) {
           toUnloadContributors.add(contributor);
         }
       }
@@ -218,7 +217,7 @@ public class PluginReloader implements ApplicationComponent {
 
     @Override
     public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
-      Set<SModule> significantModules = getSignificantModules(unloadedModules);
+      Set<SModule> significantModules = getPluginModules(unloadedModules);
       for (SModule module : significantModules) {
         ModuleLoadingState state = states.get(module);
         if (state == null) {
@@ -241,7 +240,7 @@ public class PluginReloader implements ApplicationComponent {
 
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
-      Set<SModule> significantModules = getSignificantModules(loadedModules);
+      Set<SModule> significantModules = getPluginModules(loadedModules);
       for (SModule module : significantModules) {
         ModuleLoadingState state = states.get(module);
         if (state == null) {
@@ -262,7 +261,7 @@ public class PluginReloader implements ApplicationComponent {
       }
     }
 
-    private Set<SModule> getSignificantModules(Collection<? extends SModule> modules) {
+    private Set<SModule> getPluginModules(Collection<? extends SModule> modules) {
       Set<SModule> result = new HashSet<SModule>();
 
       for (SModule module : modules) {

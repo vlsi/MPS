@@ -35,13 +35,13 @@ public class PluginContributor extends AbstractPluginFactory {
 
   @Override
   @SuppressWarnings("unchecked")
-  public <T> T create(Class<T> klass) {
-    if (BaseProjectPlugin.class == klass) {
+  public <T> T create(Class<T> aClass) {
+    if (BaseProjectPlugin.class == aClass) {
       return (T) createProjectPlugin();
-    } else if (BaseApplicationPlugin.class == klass) {
+    } else if (BaseApplicationPlugin.class == aClass) {
       return (T) createApplicationPlugin();
     }
-    throw new IllegalArgumentException("Can't create instance: " + klass);
+    throw new IllegalArgumentException("Can't create instance: " + aClass);
   }
 
   public static PluginContributor adapt(AbstractPluginFactory factory) {
@@ -69,8 +69,8 @@ public class PluginContributor extends AbstractPluginFactory {
     }
 
     @Override
-    public <T> T create(Class<T> klass) {
-      return myFactory.create(klass);
+    public <T> T create(Class<T> aClass) {
+      return myFactory.create(aClass);
     }
 
     @Override

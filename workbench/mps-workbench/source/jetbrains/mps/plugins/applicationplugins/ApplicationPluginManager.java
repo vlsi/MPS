@@ -18,11 +18,11 @@ package jetbrains.mps.plugins.applicationplugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.BasePluginManager;
+import jetbrains.mps.plugins.ModulePluginContributor;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +55,7 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   protected void afterPluginsCreated(List<BaseApplicationPlugin> plugins) {
     BaseApplicationPlugin idePlugin = null;
     for (BaseApplicationPlugin p : plugins) {
-      if (p.getClass().getName().equals(PluginUtil.IDE_MODULE_APPPLUGIN)) {
+      if (p.getClass().getName().equals(ModulePluginContributor.IDE_MODULE_APP_PLUGIN)) {
         idePlugin = p;
         break;
       }
