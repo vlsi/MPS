@@ -17,7 +17,7 @@ import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 public class TreeHighlighterFactory extends AbstractProjectComponent {
   private CurrentDifferenceRegistry myRegistry;
   private FeatureForestMapSupport myFeatureForestMapSupport;
-  private Map<MPSTree, TreeHighlighter> myTreeToHighlighter = MapSequence.fromMap(new HashMap<MPSTree, TreeHighlighter>());
+  private final Map<MPSTree, TreeHighlighter> myTreeToHighlighter = MapSequence.fromMap(new HashMap<MPSTree, TreeHighlighter>());
   public TreeHighlighterFactory(@NotNull Project project, @NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport) {
     super(project);
     myRegistry = registry;
