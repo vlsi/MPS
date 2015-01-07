@@ -40,15 +40,15 @@ import java.util.Set;
 
 /**
  * We batch all events during write actions. (modules' events like module adding/removing/changing)
- * @see jetbrains.mps.smodel.BatchEventsProcessor
+ * @see BatchEventsProcessor
  *
  * We flush the events both at the end of write action and on request (triggered by #getClass, #getClassLoader or #reloadModules)
  * No such module events can happen outside of write action.
  */
-class CLManagerRepositoryListener implements SRepositoryBatchListener {
+class ModuleEventsHandler implements SRepositoryBatchListener {
   private ClassLoaderManager myManager;
   private final ModulesWatcher myModulesWatcher;
-  private final SRepositoryBatchEventsDispatcher myDispatcher;
+  private final ModuleEventsDispatcher myDispatcher;
 
   // order for modules loading in order to reproduce any error
   private static final Comparator<Object> MODULE_COMPARATOR = new Comparator<Object>() {
@@ -58,9 +58,9 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     }
   };
 
-  public CLManagerRepositoryListener(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
+  public ModuleEventsHandler(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
     myModulesWatcher = modulesWatcher;
-    myDispatcher = new SRepositoryBatchEventsDispatcher(repository);
+    myDispatcher = new ModuleEventsDispatcher(repository);
   }
 
   public void init(ClassLoaderManager classLoaderManager) {

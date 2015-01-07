@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.ReloadableModuleBase.SModuleDependenciesListener;
@@ -60,7 +60,6 @@ public class BatchEventsProcessor {
     }
     if (!myEvents.isEmpty()) throw new IllegalStateException("Events have not been flushed");
     myBatchStarted = true;
-    myRepository.addRepositoryListener(mySRepositoryListener);
   }
 
   /**
@@ -83,7 +82,14 @@ public class BatchEventsProcessor {
   public void finishBatching() {
     if (!myBatchStarted) throw new IllegalStateException("Batching has not been even started");
     myBatchStarted = false;
+  }
+
+  public void dispose() {
     myRepository.removeRepositoryListener(mySRepositoryListener);
+  }
+
+  public void init() {
+    myRepository.addRepositoryListener(mySRepositoryListener);
   }
 
   /**
@@ -99,6 +105,7 @@ public class BatchEventsProcessor {
 
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      if (!myBatchStarted) return;
       if (module instanceof ReloadableModuleBase) {
         module.addModuleListener(this);
         ((ReloadableModuleBase) module).addDependenciesListener(this);
@@ -108,6 +115,7 @@ public class BatchEventsProcessor {
 
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
+      if (!myBatchStarted) return;
       if (module instanceof ReloadableModuleBase) {
         ((ReloadableModuleBase) module).removeDependenciesListener(this);
         module.removeModuleListener(this);
@@ -116,16 +124,19 @@ public class BatchEventsProcessor {
 
     @Override
     public void moduleRemoved(@NotNull SModuleReference mRef) {
+      if (!myBatchStarted) return;
       addEventToList(new SModuleRemovedEvent(mRef, myRepository));
     }
 
     @Override
     public void moduleChanged(@NotNull SModule module) {
+      if (!myBatchStarted) return;
       addEventToList(new SModuleChangedEvent(module));
     }
 
     @Override
     public void dependenciesChanged(@NotNull ReloadableModuleBase module) {
+      if (!myBatchStarted) return;
       moduleChanged(module);
     }
   }
