@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.action;
+package jetbrains.mps.plugins;
 
-import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.workbench.action.IActionsRegistry;
+import java.util.List;
 
-public interface IRegistryManager{
-  IActionsRegistry getActionsRegistry(PluginId id);
+public class PluginReloadingListenerBase implements PluginReloadingListener {
+  @Override
+  public void afterPluginsLoaded(List<PluginContributor> contributors) {
+
+  }
+
+  @Override
+  public void pluginsLoading(List<PluginContributor> contributors) {
+
+  }
+
+  @Override
+  public void pluginsUnloading(List<PluginContributor> contributors) {
+
+  }
+
+  @Override
+  public void beforePluginsUnloaded(List<PluginContributor> contributors) {
+
+  }
 }

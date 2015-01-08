@@ -32,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginReloader" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -40,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.plugins.PluginReloadingListener" />
+    <classNode extendsClassName="jetbrains.mps.plugins.PluginReloadingListenerBase" />
   </dependency>
 </dependenciesRoot>
 

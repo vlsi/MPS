@@ -27,5 +27,5 @@ import java.util.Set;
  * Otherwise the application may behave unexpectedly
  */
 public interface ModuleReloadListener {
-  void modulesReloaded(Set<ReloadableModuleBase> unloadedModules);
+  void modulesReloaded(Set<ReloadableModuleBase> modules);
 }

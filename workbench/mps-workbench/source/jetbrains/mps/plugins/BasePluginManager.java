@@ -16,10 +16,11 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +30,17 @@ public abstract class BasePluginManager<T> {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 
   protected final Object myPluginsLock = new Object();
+  protected final SRepository myRepository;
+  protected final PluginReloader myPluginReloader;
+  private final PluginReloadingListener myReloadingListener = new MyPluginReloadingListenerBase();
 
   private List<T> mySortedPlugins = new ArrayList<T>();
   private final Map<PluginContributor, T> myContributorToPlugin = new HashMap<PluginContributor, T>();
+
+  public BasePluginManager(@NotNull SRepository repository, PluginReloader pluginReloader) {
+    myRepository = repository;
+    myPluginReloader = pluginReloader;
+  }
 
   protected abstract T createPlugin(PluginContributor contributor);
 
@@ -41,40 +50,22 @@ public abstract class BasePluginManager<T> {
 
   protected abstract void disposePlugin(T plugin);
 
-  // plugins should be in load order
-  public void loadPlugins(final List<PluginContributor> contributors) {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
+  protected final void startListeningToReload() {
+    myPluginReloader.addReloadingListener(myReloadingListener);
+  }
 
+  protected final void stopListeningToReload() {
+    myPluginReloader.removeReloadingListener(myReloadingListener);
+  }
+
+  // plugins should be in load order
+  protected final void loadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      LOG.debug("Loading plugins from " + contributors.size() + " contributors");
+      myRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
-          List<T> plugins = new ArrayList<T>();
-
-          LOG.debug("Loading plugins from " + contributors.size() + " contributors");
-          for (PluginContributor contributor : contributors) {
-            T plugin = null;
-
-            try {
-              plugin = createPlugin(contributor);
-            } catch (LinkageError le) {
-              LOG.error("Contributor " + contributor + " threw a linkage error during plugin creation ", le);
-            } catch (Throwable t) {
-              LOG.error("Contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
-            }
-
-            if (plugin != null) {
-              plugins.add(plugin);
-            }
-
-            if (myContributorToPlugin.containsKey(contributor)) {
-              LOG.error("", new IllegalStateException("Contributor " + contributor + " is already registered"));
-              continue;
-            }
-            myContributorToPlugin.put(contributor, plugin);
-          }
-
-          mySortedPlugins.addAll(plugins);
+          List<T> plugins = createPlugins(contributors);
 
           afterPluginsCreated(plugins);
         }
@@ -83,11 +74,9 @@ public abstract class BasePluginManager<T> {
   }
 
   // plugins should be in unload order
-  public void unloadPlugins(List<PluginContributor> contributors) {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-
-    LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
+  protected final void unloadPlugins(List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
+      LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
       final List<T> plugins = new ArrayList<T>();
 
       for (PluginContributor contributor : contributors) {
@@ -104,29 +93,77 @@ public abstract class BasePluginManager<T> {
       }
 
       beforePluginsDisposed(plugins);
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (T plugin : plugins) {
-            try {
-              disposePlugin(plugin);
-            } catch (LinkageError le) {
-              LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
-            }
-          }
-        }
-      });
-
+      disposePlugins(plugins);
       mySortedPlugins.removeAll(plugins);
     }
+  }
+
+  private List<T> createPlugins(List<PluginContributor> contributors) {
+    List<T> plugins = new ArrayList<T>();
+
+    for (PluginContributor contributor : contributors) {
+      T plugin = createPluginChecked(contributor);
+
+      if (plugin != null) {
+        plugins.add(plugin);
+      }
+
+      if (myContributorToPlugin.containsKey(contributor)) {
+        LOG.error("", new IllegalStateException("Contributor " + contributor + " is already registered"));
+        continue;
+      }
+      myContributorToPlugin.put(contributor, plugin);
+    }
+
+    mySortedPlugins.addAll(plugins);
+    return plugins;
+  }
+
+  @Nullable
+  private T createPluginChecked(PluginContributor contributor) {
+    T plugin = null;
+    try {
+      plugin = createPlugin(contributor);
+    } catch (LinkageError le) {
+      LOG.error("Contributor " + contributor + " threw a linkage error during plugin creation ", le);
+    } catch (Throwable t) {
+      LOG.error("Contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
+    }
+    return plugin;
+  }
+
+  private void disposePlugins(final List<T> plugins) {
+    myRepository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (T plugin : plugins) {
+          try {
+            disposePlugin(plugin);
+          } catch (LinkageError le) {
+            LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
+          } catch (Throwable t) {
+            LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
+          }
+        }
+      }
+    });
   }
 
   public List<T> getPlugins() {
     synchronized (myPluginsLock) {
       return new ArrayList<T>(mySortedPlugins);
+    }
+  }
+
+  private class MyPluginReloadingListenerBase extends PluginReloadingListenerBase {
+    @Override
+    public void pluginsUnloading(List<PluginContributor> contributors) {
+      unloadPlugins(contributors);
+    }
+
+    @Override
+    public void pluginsLoading(List<PluginContributor> contributors) {
+      loadPlugins(contributors);
     }
   }
 }

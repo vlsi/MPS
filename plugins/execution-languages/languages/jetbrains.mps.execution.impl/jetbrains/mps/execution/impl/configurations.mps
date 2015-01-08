@@ -96,6 +96,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -163,6 +164,7 @@
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -267,9 +269,6 @@
     <node concept="3uibUv" id="4tDMPuHd$Pz" role="EKbjA">
       <ref role="3uigEE" to="iiw6:~ProjectComponent" resolve="ProjectComponent" />
     </node>
-    <node concept="3uibUv" id="4tfwdmbFZJK" role="EKbjA">
-      <ref role="3uigEE" to="t6ll:~PluginReloadingListener" resolve="PluginReloadingListener" />
-    </node>
     <node concept="312cEg" id="4tDMPuHd$PD" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
@@ -360,13 +359,31 @@
       <node concept="2AHcQZ" id="3tYsUK_UvWB" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
+      <node concept="37vLTG" id="2dPl3A21des" role="3clF46">
+        <property role="TrG5h" value="contributors" />
+        <node concept="3uibUv" id="2dPl3A21der" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+          <node concept="3uibUv" id="2dPl3A21ey3" role="11_B2D">
+            <ref role="3uigEE" to="t6ll:~PluginContributor" resolve="PluginContributor" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="4tfwdmbGcY4" role="jymVt" />
     <node concept="3clFb_" id="1s_TLxa97VL" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="beforePluginsDisposed" />
+      <property role="TrG5h" value="beforePluginsUnloaded" />
       <property role="DiZV1" value="false" />
+      <node concept="37vLTG" id="2dPl3A21gq5" role="3clF46">
+        <property role="TrG5h" value="contributors" />
+        <node concept="3uibUv" id="2dPl3A21gq6" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+          <node concept="3uibUv" id="2dPl3A21gq7" role="11_B2D">
+            <ref role="3uigEE" to="t6ll:~PluginContributor" resolve="PluginContributor" />
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="1s_TLxa97VM" role="1B3o_S" />
       <node concept="3cqZAl" id="1s_TLxa97VN" role="3clF45" />
       <node concept="3clFbS" id="1s_TLxa97VO" role="3clF47">
@@ -1509,6 +1526,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="2dPl3A218xS" role="1zkMxy">
+      <ref role="3uigEE" to="t6ll:~PluginReloadingListenerBase" resolve="PluginReloadingListenerBase" />
     </node>
   </node>
 </model>

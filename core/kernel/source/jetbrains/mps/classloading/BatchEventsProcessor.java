@@ -44,7 +44,7 @@ public class BatchEventsProcessor {
 
   private final List<SRepositoryEvent> myEvents = new ArrayList<SRepositoryEvent>();
 
-  private final SRepositoryListener mySRepositoryListener = new MySRepositoryListener();
+  private final SRepositoryListener myRepositoryListener = new MySRepositoryListener();
 
   private final SRepository myRepository;
 
@@ -85,11 +85,11 @@ public class BatchEventsProcessor {
   }
 
   public void dispose() {
-    myRepository.removeRepositoryListener(mySRepositoryListener);
+    myRepository.removeRepositoryListener(myRepositoryListener);
   }
 
   public void init() {
-    myRepository.addRepositoryListener(mySRepositoryListener);
+    myRepository.addRepositoryListener(myRepositoryListener);
   }
 
   /**

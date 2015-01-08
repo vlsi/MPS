@@ -26,7 +26,9 @@ import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.BasePluginManager;
+import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -65,20 +67,26 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   private PluginsState myState = new PluginsState();
   private Project myProject;
+  private jetbrains.mps.project.Project myMpsProject;
   private FileEditorManager myManager;
 
-  @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+  public ProjectPluginManager(Project project, jetbrains.mps.project.Project mpsProject, PluginReloader pluginReloader, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+    super(mpsProject.getRepository(), pluginReloader);
     myProject = project;
+    myMpsProject = mpsProject;
     myManager = manager;
   }
 
   @Override
   public void projectOpened() {
+    super.loadPlugins(myPluginReloader.getLoadedContributors());
+    super.startListeningToReload();
   }
 
   @Override
   public void projectClosed() {
+    super.stopListeningToReload();
+    super.unloadPlugins(myPluginReloader.getLoadedContributors());
   }
 
   @Nullable
@@ -137,8 +145,13 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     return plugin;
   }
 
+  private void checkProjectIsNotDisposed() {
+    if (myProject.isDisposed()) throw new IllegalStateException(String.format("The project '%s' is disposed", myProject));
+  }
+
   @Override
   protected void afterPluginsCreated(List<BaseProjectPlugin> plugins) {
+    checkProjectIsNotDisposed();
     spreadState(plugins);
     for (BaseProjectPlugin plugin : plugins) {
       if (!plugin.getTabDescriptors().isEmpty()) {
@@ -150,24 +163,13 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   protected void beforePluginsDisposed(List<BaseProjectPlugin> plugins) {
+    checkProjectIsNotDisposed();
     collectState(plugins);
   }
 
   @Override
   protected void disposePlugin(BaseProjectPlugin plugin) {
     plugin.dispose();
-  }
-
-  @Override
-  public void loadPlugins(List<PluginContributor> contributors) {
-    assert !myProject.isDisposed();
-    super.loadPlugins(contributors);
-  }
-
-  @Override
-  public void unloadPlugins(List<PluginContributor> contributors) {
-    assert !myProject.isDisposed();
-    super.unloadPlugins(contributors);
   }
 
   public EditorOpenHandler getEditorOpenHandler() {
@@ -233,7 +235,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   //--------------ADDITIONAL----------------
 
   private void recreateTabbedEditors() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    myMpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         editors:

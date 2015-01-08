@@ -80,8 +80,10 @@ public class ModulePluginContributor extends PluginContributor {
       if (pluginClass == null) return null;
 
       return pluginClass.newInstance();
+    } catch (ClassNotFoundException e) {
+      return null;
     } catch (Throwable t) {
-      LOG.error(null, t);
+      LOG.error("", t);
       return null;
     }
   }
