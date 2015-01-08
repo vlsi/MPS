@@ -60,7 +60,6 @@ public class ModuleClassLoader extends ClassLoader {
 
   private final Map<String, Class> myClasses = new HashMap<String, Class>();
 
-  @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
   /**
@@ -70,10 +69,10 @@ public class ModuleClassLoader extends ClassLoader {
     return myDisposed;
   }
 
-  // FIXME we cannot use this method because of PluginReloader#schedulePluginsReload
-  // It forces us to use the objects of classes with disposed classloaders
   private void checkNotDisposed() {
-    if (isDisposed()) throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
+    if (isDisposed()) {
+      throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
+    }
   }
 
   public ModuleClassLoader(ModuleClassLoaderSupport support) {
@@ -104,6 +103,7 @@ public class ModuleClassLoader extends ClassLoader {
    * synchronization on some internal lock object leads to a dead lock.
    */
   private Class<?> loadClass(String name, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException, ModuleIsNotLoadableException {
+    checkNotDisposed();
     if (name.startsWith("java.")) {
       return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
     }
@@ -204,6 +204,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
+    checkNotDisposed();
     List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
@@ -224,6 +225,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
+    checkNotDisposed();
     List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
@@ -272,6 +274,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   public String toString() {
+    checkNotDisposed();
     return mySupport.getModule() + " class loader";
   }
 
