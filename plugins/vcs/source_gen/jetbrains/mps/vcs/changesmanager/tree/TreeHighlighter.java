@@ -16,9 +16,9 @@ import com.intellij.util.ui.update.MergingUpdateQueue;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.apache.log4j.Level;
@@ -95,7 +95,10 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     getProjectRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        registerNodeRecursively(myTree.getRootNode());
+        MPSTreeNode rootNode = myTree.getRootNode();
+        if (rootNode != null) {
+          registerNodeRecursively(rootNode);
+        }
       }
     });
   }

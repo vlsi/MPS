@@ -2677,16 +2677,37 @@
               <ref role="37wK5l" to="88zw:~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
               <node concept="1bVj0M" id="42ljTcHmp7i" role="37wK5m">
                 <node concept="3clFbS" id="42ljTcHmp7j" role="1bW5cS">
-                  <node concept="3clFbF" id="42ljTcHmp7k" role="3cqZAp">
-                    <node concept="1rXfSq" id="4hiugqyz8XC" role="3clFbG">
-                      <ref role="37wK5l" node="42ljTcHmp6B" resolve="registerNodeRecursively" />
-                      <node concept="2OqwBi" id="42ljTcHmp6X" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxeuROd" role="2Oq$k0">
+                  <node concept="3cpWs8" id="2dPl3A21Kp0" role="3cqZAp">
+                    <node concept="3cpWsn" id="2dPl3A21Kp1" role="3cpWs9">
+                      <property role="TrG5h" value="rootNode" />
+                      <node concept="3uibUv" id="2dPl3A21KoX" role="1tU5fm">
+                        <ref role="3uigEE" to="mlq0:~MPSTreeNode" resolve="MPSTreeNode" />
+                      </node>
+                      <node concept="2OqwBi" id="2dPl3A21Kp2" role="33vP2m">
+                        <node concept="37vLTw" id="2dPl3A21Kp3" role="2Oq$k0">
                           <ref role="3cqZAo" node="7YINie3rdNV" resolve="myTree" />
                         </node>
-                        <node concept="liA8E" id="42ljTcHmp71" role="2OqNvi">
+                        <node concept="liA8E" id="2dPl3A21Kp4" role="2OqNvi">
                           <ref role="37wK5l" to="mlq0:~MPSTree.getRootNode():jetbrains.mps.ide.ui.tree.MPSTreeNode" resolve="getRootNode" />
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="2dPl3A21L3d" role="3cqZAp">
+                    <node concept="3clFbS" id="2dPl3A21L3g" role="3clFbx">
+                      <node concept="3clFbF" id="42ljTcHmp7k" role="3cqZAp">
+                        <node concept="1rXfSq" id="4hiugqyz8XC" role="3clFbG">
+                          <ref role="37wK5l" node="42ljTcHmp6B" resolve="registerNodeRecursively" />
+                          <node concept="37vLTw" id="2dPl3A21Kp6" role="37wK5m">
+                            <ref role="3cqZAo" node="2dPl3A21Kp1" resolve="rootNode" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3y3z36" id="2dPl3A21OkB" role="3clFbw">
+                      <node concept="10Nm6u" id="2dPl3A21OrU" role="3uHU7w" />
+                      <node concept="37vLTw" id="2dPl3A21NG_" role="3uHU7B">
+                        <ref role="3cqZAo" node="2dPl3A21Kp1" resolve="rootNode" />
                       </node>
                     </node>
                   </node>
