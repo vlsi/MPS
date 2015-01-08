@@ -3624,8 +3624,28 @@
       <node concept="17QB3L" id="6Sxc5MixZtY" role="3clF45" />
       <node concept="3clFbS" id="6Sxc5MixZu0" role="3clF47">
         <node concept="3clFbF" id="6Sxc5MixVtZ" role="3cqZAp">
-          <node concept="Xl_RD" id="6Sxc5MixUKh" role="3clFbG">
-            <property role="Xl_RC" value="Migration was not completed.&lt;br&gt;&lt;br&gt;Some migration scripts are missing or finished with errors.&lt;br&gt;&lt;br&gt;Maybe you are trying to migrate from version which is not now supported.&lt;br&gt;&lt;br&gt;Now the project will be reloaded.&lt;br&gt;&lt;br&gt;You can try to continue migrations manually or execute Migration Assistant later." />
+          <node concept="3cpWs3" id="7u9mkj2dzmi" role="3clFbG">
+            <node concept="3cpWs3" id="7u9mkj2dz6R" role="3uHU7B">
+              <node concept="3cpWs3" id="7u9mkj2dyS8" role="3uHU7B">
+                <node concept="3cpWs3" id="7u9mkj2dxpm" role="3uHU7B">
+                  <node concept="Xl_RD" id="7u9mkj2dxps" role="3uHU7B">
+                    <property role="Xl_RC" value="Migration was not completed.&lt;br&gt;&lt;br&gt;" />
+                  </node>
+                  <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7w">
+                    <property role="Xl_RC" value="Some migration scripts are missing or finished with errors.&lt;br&gt;&lt;br&gt;" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="7u9mkj2dz6X" role="3uHU7w">
+                  <property role="Xl_RC" value="Maybe you are trying to migrate from version which is not now supported.&lt;br&gt;&lt;br&gt;" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
+                <property role="Xl_RC" value="Now the project will be reloaded.&lt;br&gt;&lt;br&gt;" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="7u9mkj2dzmq" role="3uHU7w">
+              <property role="Xl_RC" value="You can try to continue migrations manually or execute Migration Assistant later." />
+            </node>
           </node>
         </node>
       </node>
@@ -3703,18 +3723,18 @@
               <node concept="3cpWs3" id="6Sxc5MiyEuf" role="3uHU7B">
                 <node concept="3cpWs3" id="6Sxc5MiyCRh" role="3uHU7B">
                   <node concept="Xl_RD" id="6Sxc5MiyCRn" role="3uHU7B">
-                    <property role="Xl_RC" value="Migration Assistant found that some languages used in this project are missing.\n" />
+                    <property role="Xl_RC" value="Migration Assistant found that some languages used in this project are missing.&lt;br&gt;&lt;br&gt;" />
                   </node>
                   <node concept="Xl_RD" id="6Sxc5MiyEul" role="3uHU7w">
-                    <property role="Xl_RC" value="Try running migrations after correcting your project and/or adding necessary libraries.\n" />
+                    <property role="Xl_RC" value="Try running migrations after correcting your project and/or adding necessary libraries.&lt;br&gt;" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="6Sxc5MiyJQ4" role="3uHU7w">
-                  <property role="Xl_RC" value="Migration Assistant will be started again on next project opening or it can be started\n" />
+                  <property role="Xl_RC" value="Migration Assistant will be started again on next project opening or it can be started " />
                 </node>
               </node>
               <node concept="Xl_RD" id="6Sxc5MiyXpX" role="3uHU7w">
-                <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from main menu.\n" />
+                <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from main menu.&lt;br&gt;" />
               </node>
             </node>
             <node concept="Xl_RD" id="6Sxc5MiyXpZ" role="3uHU7w">
@@ -3799,10 +3819,10 @@
           <node concept="3cpWs3" id="6Sxc5MiyOgV" role="3clFbG">
             <node concept="3cpWs3" id="6Sxc5MiyOgW" role="3uHU7B">
               <node concept="Xl_RD" id="6Sxc5MiyOgX" role="3uHU7B">
-                <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.\n" />
+                <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.&lt;br&gt;&lt;br&gt;" />
               </node>
               <node concept="Xl_RD" id="6Sxc5Miz3zQ" role="3uHU7w">
-                <property role="Xl_RC" value="Problem nodes will be shown in Usages tool after the project is loaded.\n" />
+                <property role="Xl_RC" value="Problem nodes will be shown in Usages tool after the project is loaded.&lt;br&gt;" />
               </node>
             </node>
             <node concept="Xl_RD" id="6Sxc5MiyOgZ" role="3uHU7w">

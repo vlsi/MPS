@@ -14,7 +14,7 @@ public class MigrationErrorStep_Post extends MigrationErrorStep {
   }
 
   protected String getText() {
-    return "Migration Assistant was unable to migrate some nodes in this project.\n" + "Problem nodes will be shown in Usages tool after the project is loaded.\n" + "Please correct them manually.";
+    return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Usages tool after the project is loaded.<br>" + "Please correct them manually.";
   }
 
   public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
