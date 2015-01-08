@@ -197,7 +197,7 @@ public class PluginReloader implements ApplicationComponent {
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       LOG.debug(String.format("Loading plugins from %d modules", loadedModules.size()));
-      long beginTime = System.currentTimeMillis();
+      long beginTime = System.nanoTime();
       Set<ReloadableModuleBase> pluginModules = getPluginModules(loadedModules);
       if (pluginModules.isEmpty()) return;
       try {
@@ -205,7 +205,7 @@ public class PluginReloader implements ApplicationComponent {
         myLoadedContributors.addAll(toLoadContributors);
         loadPlugins(toLoadContributors);
       } finally {
-        LOG.info(String.format("Loading of %d plugins took %s s", pluginModules.size(), (System.currentTimeMillis() - beginTime) / 1000.0));
+        LOG.info(String.format("Loading of %d plugins took %.3f s", pluginModules.size(), (System.nanoTime() - beginTime) / 1e9));
       }
     }
 

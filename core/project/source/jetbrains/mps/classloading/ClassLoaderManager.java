@@ -457,6 +457,7 @@ public class ClassLoaderManager implements CoreComponent {
       return new ArrayList();
     }
     try {
+      long beginTime = System.nanoTime();
       monitor.start("Reloading modules' class loaders...", 2);
       boolean silentMode = true;
       for (SModule module : modules) {
@@ -467,7 +468,10 @@ public class ClassLoaderManager implements CoreComponent {
       }
       Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
       for (SModule module : modules) {
-        if (!(module instanceof TempModule) && module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
+        if (!(module instanceof TempModule) && module.getRepository() == null) {
+          throw new IllegalStateException(
+              String.format("Cannot reload the module %s which does not belong to a repository", module));
+        }
         if (module instanceof ReloadableModule) {
           modulesToReload.add((ReloadableModule) module);
         }
@@ -480,7 +484,9 @@ public class ClassLoaderManager implements CoreComponent {
       Collection<ReloadableModule> loadedModules = preLoadModules(modulesToReload, monitor.subTask(1));
       myBroadCaster.onReload(loadedModules);
 
-      if (!silentMode) LOG.info("Reloaded " + loadedModules.size() + " module(s)");
+      if (!silentMode) {
+        LOG.info(String.format("Reloaded %d module(s) in %.3f s", loadedModules.size(), (System.nanoTime() - beginTime) / 1e9));
+      }
 
       return new LinkedHashSet<ReloadableModule>(loadedModules);
     } finally {

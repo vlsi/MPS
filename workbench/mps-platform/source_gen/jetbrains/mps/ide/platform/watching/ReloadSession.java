@@ -69,9 +69,10 @@ public class ReloadSession {
 
     final Iterable<ReloadParticipant> participants = getParticipants();
     monitor.start("Reloading ...", Sequence.fromIterable(participants).count());
+    long beginTime = System.nanoTime();
     try {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Reload started");
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("File system reload started");
       }
       fireReloadStarted();
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -83,7 +84,7 @@ public class ReloadSession {
       });
     } finally {
       if (LOG.isInfoEnabled()) {
-        LOG.info("Reload finished");
+        LOG.info(String.format("File system reload finished in %.3f s", (System.nanoTime() - beginTime) / 1000000000.));
       }
       monitor.done();
       fireReloadFinished();
