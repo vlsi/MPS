@@ -26,6 +26,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A parent class for ProjectPluginManager and ApplicationPluginManager.
+ * Contains a {@link jetbrains.mps.plugins.PluginReloadingListener},
+ * which is triggered by a {@link PluginReloader} component. It causes plugins to load [unload].
+ * Note that a subclass chooses by himself when it is time to attach [detach] the listener ({@link #startListeningToReload()}.
+ *
+ * @param <T> -- is a class type of plugin.
+ *           @see jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin
+ *           @see jetbrains.mps.plugins.projectplugins.BaseProjectPlugin
+ */
 public abstract class BasePluginManager<T> {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 

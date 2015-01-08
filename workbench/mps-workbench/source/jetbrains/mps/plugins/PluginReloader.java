@@ -39,10 +39,13 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Represents a single listener to trigger the plugin reload in {@link jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager}
- * and {@link jetbrains.mps.plugins.projectplugins.ProjectPluginManager}.
+ * Represents a single class loading listener to trigger the plugin reload in
+ * {@link jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager}
+ * and {@link jetbrains.mps.plugins.projectplugins.ProjectPluginManager}. It does that via the {@link jetbrains.mps.plugins.PluginReloadingListener} interface.
  *
- * It listens for class loading events and pushes them down to these managers.
+ * It listens for class loading events, calculate the plugin contributors which need to be updated and notifies these managers.
+ *
+ * TODO: currently it reloads only the ModulePluginContributors, need to work on AbstractPluginFactories also. Makes sense to remove this factories at all
  */
 public class PluginReloader implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginReloader.class);
@@ -138,15 +141,11 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   public void addReloadingListener(@NotNull PluginReloadingListener listener) {
-    synchronized (myReloadingListeners) {
-      myReloadingListeners.add(listener);
-    }
+    myReloadingListeners.add(listener);
   }
 
   public void removeReloadingListener(PluginReloadingListener listener) {
-    synchronized (myReloadingListeners) {
-      myReloadingListeners.remove(listener);
-    }
+    myReloadingListeners.remove(listener);
   }
 
   //----------------COMPONENT STUFF---------------------

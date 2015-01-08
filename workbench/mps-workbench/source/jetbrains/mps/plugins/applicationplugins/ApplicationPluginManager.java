@@ -31,6 +31,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+/**
+ * Is a {@link BasePluginManager} which is responsible for loading application plugins {@link BaseApplicationPlugin};
+ * Triggered from the superclass (#afterPluginsCreated)
+ */
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 

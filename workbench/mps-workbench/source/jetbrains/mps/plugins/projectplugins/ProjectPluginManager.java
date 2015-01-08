@@ -51,6 +51,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
+/**
+ * Is a {@link BasePluginManager} which is responsible for loading project plugins {@link BaseProjectPlugin};
+ * Starts listening to the reload events of {@link jetbrains.mps.plugins.PluginReloadingListener} on {@link #projectOpened()}.
+ * The plugin creation/disposal is triggered from the superclass (#afterPluginsCreated).
+ */
 @State(
     name = "ProjectPluginManager",
     storages = {
