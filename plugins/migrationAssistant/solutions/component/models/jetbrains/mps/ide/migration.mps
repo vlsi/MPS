@@ -504,7 +504,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="1RNu34Rw7X6" role="3uHU7w">
-            <property role="Xl_RC" value="Migration assistnt can be invoked at any time by clicking Tools-&gt;Run Migration Assistant.\n" />
+            <property role="Xl_RC" value="Migration assistant can be invoked at any time by clicking Tools-&gt;Run Migration Assistant.\n" />
           </node>
         </node>
       </node>

@@ -64,7 +64,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
-  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is recommended to clean generated files before you start the migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration assistnt can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
+  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is recommended to clean generated files before you start the migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
