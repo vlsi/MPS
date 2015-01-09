@@ -3626,17 +3626,12 @@
         <node concept="3clFbF" id="6Sxc5MixVtZ" role="3cqZAp">
           <node concept="3cpWs3" id="7u9mkj2dzmi" role="3clFbG">
             <node concept="3cpWs3" id="7u9mkj2dz6R" role="3uHU7B">
-              <node concept="3cpWs3" id="7u9mkj2dyS8" role="3uHU7B">
-                <node concept="3cpWs3" id="7u9mkj2dxpm" role="3uHU7B">
-                  <node concept="Xl_RD" id="7u9mkj2dxps" role="3uHU7B">
-                    <property role="Xl_RC" value="Migration was not completed.&lt;br&gt;&lt;br&gt;" />
-                  </node>
-                  <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7w">
-                    <property role="Xl_RC" value="Some migration scripts are missing or finished with errors.&lt;br&gt;&lt;br&gt;" />
-                  </node>
+              <node concept="3cpWs3" id="7u9mkj2dxpm" role="3uHU7B">
+                <node concept="Xl_RD" id="7u9mkj2dxps" role="3uHU7B">
+                  <property role="Xl_RC" value="Migration was not completed.&lt;br&gt;" />
                 </node>
-                <node concept="Xl_RD" id="7u9mkj2dz6X" role="3uHU7w">
-                  <property role="Xl_RC" value="Maybe you are trying to migrate from version which is not now supported.&lt;br&gt;&lt;br&gt;" />
+                <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7w">
+                  <property role="Xl_RC" value="Some migration scripts are missing or finished with errors.&lt;br&gt;&lt;br&gt;" />
                 </node>
               </node>
               <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
@@ -3644,7 +3639,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="7u9mkj2dzmq" role="3uHU7w">
-              <property role="Xl_RC" value="You can try to continue migrations manually or execute Migration Assistant later." />
+              <property role="Xl_RC" value="You can try to continue migrations manually or execute Migration Assistant later by selecting Tools-&gt;Run Migration Assistant from the main menu." />
             </node>
           </node>
         </node>
@@ -3734,7 +3729,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="6Sxc5MiyXpX" role="3uHU7w">
-                <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from main menu.&lt;br&gt;" />
+                <property role="Xl_RC" value="manually by choosing Tools-&gt;Run Migration Assistant from the main menu.&lt;br&gt;&lt;br&gt;" />
               </node>
             </node>
             <node concept="Xl_RD" id="6Sxc5MiyXpZ" role="3uHU7w">

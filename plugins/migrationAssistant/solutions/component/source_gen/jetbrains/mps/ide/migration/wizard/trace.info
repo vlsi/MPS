@@ -525,7 +525,7 @@
     <file name="MigrationErrorStep_Migration.java">
       <node id="1202383101544829628" at="9,0,10,0" concept="10" trace="ID" />
       <node id="7935677192557033521" at="11,56,12,23" concept="11" />
-      <node id="7935677192557016959" at="15,30,16,339" concept="7" />
+      <node id="7935677192557016959" at="15,30,16,313" concept="7" />
       <node id="7935677192557308695" at="21,0,23,0" concept="5" trace="invoke#()V" />
       <node id="7935677192557033515" at="11,0,14,0" concept="1" trace="MigrationErrorStep_Migration#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7935677192557033340" at="15,0,18,0" concept="5" trace="getText#()Ljava/lang/String;" />
@@ -533,7 +533,7 @@
       <node id="7935677192557308205" at="19,0,25,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <scope id="7935677192557308696" at="21,28,21,28" />
       <scope id="7935677192557033519" at="11,56,12,23" />
-      <scope id="7935677192557033344" at="15,30,16,339" />
+      <scope id="7935677192557033344" at="15,30,16,313" />
       <scope id="7935677192557308695" at="21,0,23,0" />
       <scope id="7935677192557033515" at="11,0,14,0">
         <var name="project" id="7935677192557033522" />
@@ -549,13 +549,13 @@
     <file name="MigrationErrorStep_Pre.java">
       <node id="7935677192557044694" at="10,0,11,0" concept="10" trace="ID" />
       <node id="7935677192557044703" at="12,50,13,23" concept="11" />
-      <node id="7935677192557044713" at="16,30,17,441" concept="7" />
+      <node id="7935677192557044713" at="16,30,17,449" concept="7" />
       <node id="7935677192558408348" at="20,63,21,63" concept="7" />
       <node id="7935677192557044699" at="12,0,15,0" concept="1" trace="MigrationErrorStep_Pre#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7935677192557044709" at="16,0,19,0" concept="5" trace="getText#()Ljava/lang/String;" />
       <node id="7935677192557284494" at="20,0,23,0" concept="5" trace="afterProjectInitialized#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <scope id="7935677192557044702" at="12,50,13,23" />
-      <scope id="7935677192557044712" at="16,30,17,441" />
+      <scope id="7935677192557044712" at="16,30,17,449" />
       <scope id="7935677192557284499" at="20,63,21,63" />
       <scope id="7935677192557044699" at="12,0,15,0">
         <var name="project" id="7935677192557044706" />
