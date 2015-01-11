@@ -234,12 +234,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
 
     if (current == null) {
-      return new MigrationManager.Finished();
+      return null;
     }
 
     lastProjectMigration = current;
     final ProjectMigration cc = current;
-    return new MigrationManager.Step() {
+    return new MigrationManager.MigrationState() {
       public String getDescription() {
         return cc.getDescription();
       }
@@ -342,7 +342,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }));
 
-    return (result.value == null ? new MigrationManager.Finished() : result.value);
+    return result.value;
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
@@ -358,7 +358,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return requiredData;
   }
 
-  private class MyStep implements MigrationManager.Step {
+  private class MyStep implements MigrationManager.MigrationState {
     private ScriptApplied myNextScript;
     public MyStep(ScriptApplied nextScript) {
       myNextScript = nextScript;

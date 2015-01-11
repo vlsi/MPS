@@ -157,23 +157,19 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private boolean executeSingleStep(final MigrationManager.MigrationState result) {
-    if (result instanceof MigrationManager.Finished) {
+    if (!(result instanceof MigrationManager.MigrationState)) {
       return false;
     }
 
-    if (result instanceof MigrationManager.Step) {
-      final String step = ((MigrationManager.Step) result).getDescription();
-      addElementToMigrationList(step);
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          myNoErrors &= ((MigrationManager.Step) result).execute();
-        }
-      });
+    final String step = ((MigrationManager.MigrationState) result).getDescription();
+    addElementToMigrationList(step);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        myNoErrors &= ((MigrationManager.MigrationState) result).execute();
+      }
+    });
 
-      return myNoErrors;
-    } else {
-      return false;
-    }
+    return myNoErrors;
   }
 
   @Override

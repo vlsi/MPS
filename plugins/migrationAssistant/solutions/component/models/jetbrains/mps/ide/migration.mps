@@ -223,9 +223,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
-        <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
-      </concept>
+      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -2739,8 +2737,8 @@
       <property role="TrG5h" value="nextProjectStep" />
       <node concept="3clFbS" id="25gV4LspSMc" role="3clF47" />
       <node concept="3Tm1VV" id="25gV4LspSMd" role="1B3o_S" />
-      <node concept="3uibUv" id="25gV4LspSJO" role="3clF45">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
+      <node concept="3uibUv" id="1u4Xg2Y_e7c" role="3clF45">
+        <ref role="3uigEE" node="5SsFeroaabr" resolve="MigrationManager.MigrationState" />
       </node>
     </node>
     <node concept="2tJIrI" id="25gV4LspSIF" role="jymVt" />
@@ -2760,24 +2758,14 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="5SsFeroaacb" role="1B3o_S" />
       <node concept="3clFbS" id="5SsFeroaacc" role="3clF47" />
-      <node concept="3uibUv" id="5SsFeroaacd" role="3clF45">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
+      <node concept="3uibUv" id="1u4Xg2Y_e8h" role="3clF45">
+        <ref role="3uigEE" node="5SsFeroaabr" resolve="MigrationManager.MigrationState" />
       </node>
     </node>
     <node concept="2tJIrI" id="25gV4LspHj9" role="jymVt" />
-    <node concept="3HP615" id="5SsFeroaabo" role="jymVt">
-      <property role="TrG5h" value="MigrationState" />
-      <property role="2bfB8j" value="true" />
-      <node concept="2tJIrI" id="75DJ9xiF1Hr" role="jymVt" />
-      <node concept="3Tm1VV" id="5SsFeroaabq" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="75DJ9xiF38f" role="jymVt" />
     <node concept="3HP615" id="5SsFeroaabr" role="jymVt">
       <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="Step" />
-      <node concept="3uibUv" id="5SsFeroaabu" role="3HQHJm">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
-      </node>
+      <property role="TrG5h" value="MigrationState" />
       <node concept="3Tm1VV" id="5SsFeroaabt" role="1B3o_S" />
       <node concept="3clFb_" id="5SsFeroaabv" role="jymVt">
         <property role="1EzhhJ" value="true" />
@@ -2799,15 +2787,6 @@
         <node concept="3clFbS" id="5SsFeroaab_" role="3clF47" />
         <node concept="10P_77" id="5SsFeroaabA" role="3clF45" />
       </node>
-    </node>
-    <node concept="2tJIrI" id="75DJ9xiF44S" role="jymVt" />
-    <node concept="312cEu" id="3Chm5EXJu3H" role="jymVt">
-      <property role="TrG5h" value="Finished" />
-      <node concept="3Tm1VV" id="3Chm5EXJu3I" role="1B3o_S" />
-      <node concept="3uibUv" id="3Chm5EXJuaT" role="EKbjA">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
-      </node>
-      <node concept="2tJIrI" id="75DJ9xiF51y" role="jymVt" />
     </node>
   </node>
   <node concept="312cEu" id="5SsFeroaaez">

@@ -76,9 +76,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -2520,8 +2517,8 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="nextProjectStep" />
       <node concept="3Tm1VV" id="25gV4LspXUs" role="1B3o_S" />
-      <node concept="3uibUv" id="25gV4LspXUt" role="3clF45">
-        <ref role="3uigEE" to="bim2:5SsFeroaabo" resolve="MigrationManager.MigrationState" />
+      <node concept="3uibUv" id="1u4Xg2Y$PWJ" role="3clF45">
+        <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
       </node>
       <node concept="3clFbS" id="25gV4LspXUw" role="3clF47">
         <node concept="3cpWs8" id="25gV4LstDoY" role="3cqZAp">
@@ -2581,11 +2578,7 @@
         <node concept="3clFbJ" id="25gV4Lsw7Gh" role="3cqZAp">
           <node concept="3clFbS" id="25gV4Lsw7Gk" role="3clFbx">
             <node concept="3cpWs6" id="25gV4LswaUS" role="3cqZAp">
-              <node concept="2ShNRf" id="25gV4LswjCa" role="3cqZAk">
-                <node concept="HV5vD" id="3Chm5EXJIKT" role="2ShVmc">
-                  <ref role="HV5vE" to="bim2:3Chm5EXJu3H" resolve="MigrationManager.Finished" />
-                </node>
-              </node>
+              <node concept="10Nm6u" id="1u4Xg2Y_jSZ" role="3cqZAk" />
             </node>
           </node>
           <node concept="3clFbC" id="25gV4LswaLc" role="3clFbw">
@@ -3133,8 +3126,8 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1hucSHYiO1r" role="1B3o_S" />
-      <node concept="3uibUv" id="1hucSHYiO1t" role="3clF45">
-        <ref role="3uigEE" to="bim2:5SsFeroaabo" resolve="MigrationManager.MigrationState" />
+      <node concept="3uibUv" id="1u4Xg2Y_pLo" role="3clF45">
+        <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
       </node>
       <node concept="3clFbS" id="1hucSHYiO1u" role="3clF47">
         <node concept="3cpWs8" id="1NDJCs$te5Y" role="3cqZAp">
@@ -3142,8 +3135,8 @@
             <property role="TrG5h" value="result" />
             <property role="3TUv4t" value="false" />
             <node concept="10Nm6u" id="1UUjsc5fPZN" role="33vP2m" />
-            <node concept="3uibUv" id="6PbWG4t_Evr" role="1tU5fm">
-              <ref role="3uigEE" to="bim2:5SsFeroaabo" resolve="MigrationManager.MigrationState" />
+            <node concept="3uibUv" id="1u4Xg2Y_$le" role="1tU5fm">
+              <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
             </node>
           </node>
         </node>
@@ -3359,21 +3352,8 @@
         </node>
         <node concept="3clFbH" id="5TtkZMZ5iPa" role="3cqZAp" />
         <node concept="3cpWs6" id="3Chm5EXLE9U" role="3cqZAp">
-          <node concept="3K4zz7" id="3Chm5EXLOCF" role="3cqZAk">
-            <node concept="37vLTw" id="3Chm5EXLULz" role="3K4GZi">
-              <ref role="3cqZAo" node="1NDJCs$te5Z" resolve="result" />
-            </node>
-            <node concept="3clFbC" id="3Chm5EXLKzo" role="3K4Cdx">
-              <node concept="10Nm6u" id="3Chm5EXLMjW" role="3uHU7w" />
-              <node concept="37vLTw" id="3Chm5EXLIsF" role="3uHU7B">
-                <ref role="3cqZAo" node="1NDJCs$te5Z" resolve="result" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="3Chm5EXL3WI" role="3K4E3e">
-              <node concept="HV5vD" id="3Chm5EXL3WJ" role="2ShVmc">
-                <ref role="HV5vE" to="bim2:3Chm5EXJu3H" resolve="MigrationManager.Finished" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="1u4Xg2Y_xBD" role="3cqZAk">
+            <ref role="3cqZAo" node="1NDJCs$te5Z" resolve="result" />
           </node>
         </node>
       </node>
