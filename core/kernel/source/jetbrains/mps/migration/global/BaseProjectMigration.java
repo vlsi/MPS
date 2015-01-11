@@ -17,6 +17,10 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+
 /**
  * A migration that runs only once and does not run on a newly created project
  */
@@ -48,5 +52,20 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   @Override
   public void applyToCreatedProject(Project p) {
     setExecuted(p);
+  }
+
+  @Override
+  public Collection<String> getOptionIds() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public Map<String, Object> getInitialOptionValues() {
+    return Collections.emptyMap();
+  }
+
+  @Override
+  public void setOptionValues(Map<String, Object> values) {
+
   }
 }
