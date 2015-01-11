@@ -20,11 +20,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 public class ProjectMigrationUtil {
   public static void skipMigrationsOnProjectCreation(com.intellij.openapi.project.Project p) {
     for (ProjectMigration m : ProjectMigrationsRegistry.getInstance().getMigrations()) {
-      if (m instanceof SingleRunProjectMigration) {
-        if (((SingleRunProjectMigration) m).skipOnNewProject()) {
-          ((SingleRunProjectMigration) m).setExecuted(ProjectHelper.toMPSProject(p));
-        }
-      }
+      m.applyToCreatedProject(ProjectHelper.toMPSProject(p));
     }
   }
 }
