@@ -27,7 +27,9 @@ public interface ProjectMigration {
 
   boolean shouldBeExecuted(Project p);
 
-  Collection<AdditionalOptionDescriptor> getOptions();
+  Collection<String> getOptionIds();
+
+  Map<String, Object> getInitialOptionValues();
 
   void setOptionValues(Map<String,Object> values);
 
