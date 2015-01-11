@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,21 +15,5 @@
  */
 package jetbrains.mps.migration.global;
 
-import jetbrains.mps.project.Project;
-
-import java.util.Collection;
-import java.util.Map;
-
-public interface ProjectMigration {
-  String getDescription();
-
-  void applyToCreatedProject(Project p);
-
-  boolean shouldBeExecuted(Project p);
-
-  Collection<AdditionalOptionDescriptor> getOptions();
-
-  void setOptionValues(Map<String,Object> values);
-
-  void execute(Project p);
+public interface AdditionalOptionDescriptor {
 }
