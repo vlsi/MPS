@@ -27,7 +27,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   @Override
   public boolean shouldBeExecuted(Project p) {
-    return !isExecuted(p);
+    return !EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
   }
 
   @Override
@@ -40,10 +40,6 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   public void setExecuted(Project p) {
     MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
-  }
-
-  public boolean isExecuted(Project p) {
-    return EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
   }
 
   @Override
