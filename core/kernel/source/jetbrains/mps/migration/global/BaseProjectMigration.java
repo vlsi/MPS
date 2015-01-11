@@ -27,11 +27,8 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   @Override
   public boolean shouldBeExecuted(Project p) {
-    if (isExecuted(p)) return false;
-    return doShouldBeExecuted(p);
+    return !isExecuted(p);
   }
-
-  public abstract boolean doShouldBeExecuted(Project p);
 
   @Override
   public void execute(Project p) {

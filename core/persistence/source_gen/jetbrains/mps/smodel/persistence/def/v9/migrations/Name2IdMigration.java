@@ -27,10 +27,6 @@ public class Name2IdMigration extends BaseProjectMigration {
     return "Migrate names to ids";
   }
   @Override
-  public boolean doShouldBeExecuted(Project p) {
-    return true;
-  }
-  @Override
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();
     final ModelFactory defaultModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();

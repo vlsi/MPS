@@ -31,10 +31,6 @@ public class ModelRefMigration extends BaseProjectMigration {
   public String getDescription() {
     return "Add module to every model reference";
   }
-  @Override
-  public boolean doShouldBeExecuted(Project p) {
-    return true;
-  }
   public boolean doExecute(Project project) {
     saveAll(project);
     SModelReference.replaceModuleReferences = true;

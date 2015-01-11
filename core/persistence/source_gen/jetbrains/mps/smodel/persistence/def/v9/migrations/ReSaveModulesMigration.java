@@ -20,10 +20,6 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
     return "Re-save all modules";
   }
   @Override
-  public boolean doShouldBeExecuted(Project p) {
-    return true;
-  }
-  @Override
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();
     for (AbstractModule module : Sequence.fromIterable(modules).ofType(AbstractModule.class)) {
