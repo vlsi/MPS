@@ -5,12 +5,22 @@ package jetbrains.mps.ide.migration.wizard;
 import com.intellij.openapi.project.Project;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
-import java.awt.Insets;
-import java.awt.GridBagConstraints;
 import java.awt.BorderLayout;
+import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JTextPane;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.migration.global.ProjectOptionsRegistry;
 
 public class InitialStep extends MigrationStep {
   public static final String ID = "initial";
@@ -22,9 +32,10 @@ public class InitialStep extends MigrationStep {
   protected final void createComponent() {
     super.createComponent();
     GridBagLayout layout = new GridBagLayout();
-    JPanel pagePanel = new JPanel(layout);
-    Insets insets = new Insets(0, 0, 0, 0);
-    GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
+    final JPanel pagePanel = new JPanel(layout);
+    myComponent.add(pagePanel, BorderLayout.CENTER);
+
+    final Insets insets = new Insets(0, 0, 0, 0);
     JPanel infoHolder = new JPanel(new BorderLayout());
     infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
     JTextPane info = new JTextPane();
@@ -35,9 +46,25 @@ public class InitialStep extends MigrationStep {
     info.setBorder(BorderFactory.createLoweredBevelBorder());
     info.setPreferredSize(new Dimension(300, 220));
     infoHolder.add(info, BorderLayout.CENTER);
-    pagePanel.add(infoHolder);
-    layout.setConstraints(infoHolder, gbc);
-    myComponent.add(pagePanel, BorderLayout.CENTER);
+    pagePanel.add(infoHolder, new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0));
+
+    // project migration options 
+    final Wrappers._int y = new Wrappers._int(1);
+    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+    ListSequence.fromList(pMig).where(new IWhereFilter<ProjectMigration>() {
+      public boolean accept(ProjectMigration it) {
+        return it.shouldBeExecuted(ProjectHelper.toMPSProject(myProject));
+      }
+    }).translate(new ITranslator2<ProjectMigration, String>() {
+      public Iterable<String> translate(ProjectMigration it) {
+        return it.getOptionIds();
+      }
+    }).visitAll(new IVisitor<String>() {
+      public void visit(String it) {
+        pagePanel.add(ProjectOptionsRegistry.getInstance().createComponentForOption(it), new GridBagConstraints(0, y.value++, 1, 1, 0, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 5, 0));
+
+      }
+    });
   }
   @Override
   public Object getNextStepId() {

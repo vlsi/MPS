@@ -37,6 +37,7 @@
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="tk08" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
+    <import index="bco1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.migration.global(MPS.Core/jetbrains.mps.migration.global@java_stub)" />
     <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" implicit="true" />
     <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" implicit="true" />
   </imports>
@@ -49,10 +50,14 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
+      </concept>
+      <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
+        <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -209,6 +214,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="7024111702304501418" name="jetbrains.mps.baseLanguage.structure.AndAssignmentExpression" flags="nn" index="3vZ8ra" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
@@ -246,6 +252,7 @@
       </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <property id="890797661671409019" name="forceMultiLine" index="3yWfEV" />
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
@@ -262,9 +269,19 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
+        <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
+      <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
+      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
+      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
@@ -1994,7 +2011,7 @@
                 <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
               </node>
               <node concept="3uibUv" id="1u4Xg2Y$wPl" role="2ZW6by">
-                <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
+                <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationState" />
               </node>
             </node>
           </node>
@@ -2021,7 +2038,7 @@
                     <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
                   </node>
                   <node concept="3uibUv" id="5SsFeroaay8" role="10QFUM">
-                    <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
+                    <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationState" />
                   </node>
                 </node>
               </node>
@@ -2058,7 +2075,7 @@
                             <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
                           </node>
                           <node concept="3uibUv" id="6Sxc5MivkUF" role="10QFUM">
-                            <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
+                            <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationState" />
                           </node>
                         </node>
                       </node>
@@ -2085,7 +2102,7 @@
         <property role="TrG5h" value="result" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="1u4Xg2Y_HYu" role="1tU5fm">
-          <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.Step" />
+          <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationState" />
         </node>
       </node>
     </node>
@@ -2513,6 +2530,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="5SsFeroaaaQ" role="3cqZAp">
+          <node concept="2OqwBi" id="5SsFerob2JG" role="3clFbG">
+            <node concept="37vLTw" id="5SsFerob2JF" role="2Oq$k0">
+              <ref role="3cqZAo" node="5SsFeroaacs" resolve="myComponent" />
+            </node>
+            <node concept="liA8E" id="5SsFerob2JH" role="2OqNvi">
+              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="37vLTw" id="5SsFerob2JI" role="37wK5m">
+                <ref role="3cqZAo" node="5SsFeroaa9F" resolve="pagePanel" />
+              </node>
+              <node concept="10M0yZ" id="5SsFerob2JJ" role="37wK5m">
+                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
+                <ref role="3cqZAo" to="1t7x:~BorderLayout.CENTER" resolve="CENTER" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1u4Xg2YAogj" role="3cqZAp" />
         <node concept="3cpWs8" id="5SsFeroaa9L" role="3cqZAp">
           <node concept="3cpWsn" id="5SsFeroaa9K" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -2533,55 +2568,6 @@
                   <property role="3cmrfH" value="0" />
                 </node>
                 <node concept="3cmrfG" id="5SsFerob0j9" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5SsFeroaa9T" role="3cqZAp">
-          <node concept="3cpWsn" id="5SsFeroaa9S" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="gbc" />
-            <node concept="3uibUv" id="5SsFeroaa9U" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
-            </node>
-            <node concept="2ShNRf" id="5SsFerob1IM" role="33vP2m">
-              <node concept="1pGfFk" id="5SsFerob1IN" role="2ShVmc">
-                <ref role="37wK5l" to="1t7x:~GridBagConstraints.&lt;init&gt;(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)" resolve="GridBagConstraints" />
-                <node concept="3cmrfG" id="5SsFerob1IO" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-                <node concept="3cmrfG" id="5SsFerob1IP" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-                <node concept="3cmrfG" id="5SsFerob1IQ" role="37wK5m">
-                  <property role="3cmrfH" value="1" />
-                </node>
-                <node concept="3cmrfG" id="5SsFerob1IR" role="37wK5m">
-                  <property role="3cmrfH" value="1" />
-                </node>
-                <node concept="3b6qkQ" id="5SsFerob1IS" role="37wK5m">
-                  <property role="$nhwW" value="1.0" />
-                </node>
-                <node concept="3b6qkQ" id="5SsFerob1IT" role="37wK5m">
-                  <property role="$nhwW" value="1.0" />
-                </node>
-                <node concept="10M0yZ" id="5SsFerob1IU" role="37wK5m">
-                  <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
-                  <ref role="3cqZAo" to="1t7x:~GridBagConstraints.FIRST_LINE_START" resolve="FIRST_LINE_START" />
-                </node>
-                <node concept="10M0yZ" id="5SsFerob9KZ" role="37wK5m">
-                  <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
-                  <ref role="3cqZAo" to="1t7x:~GridBagConstraints.BOTH" resolve="BOTH" />
-                </node>
-                <node concept="37vLTw" id="5SsFerob1IZ" role="37wK5m">
-                  <ref role="3cqZAo" node="5SsFeroaa9K" resolve="insets" />
-                </node>
-                <node concept="3cmrfG" id="5SsFerob1J0" role="37wK5m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-                <node concept="3cmrfG" id="5SsFerob1J1" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                 </node>
               </node>
@@ -2757,42 +2743,216 @@
               <ref role="3cqZAo" node="5SsFeroaa9F" resolve="pagePanel" />
             </node>
             <node concept="liA8E" id="5SsFerob14B" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
+              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
               <node concept="37vLTw" id="5SsFerob14C" role="37wK5m">
                 <ref role="3cqZAo" node="5SsFeroaaa7" resolve="infoHolder" />
               </node>
+              <node concept="2ShNRf" id="5SsFerob1IM" role="37wK5m">
+                <node concept="1pGfFk" id="5SsFerob1IN" role="2ShVmc">
+                  <ref role="37wK5l" to="1t7x:~GridBagConstraints.&lt;init&gt;(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)" resolve="GridBagConstraints" />
+                  <node concept="3cmrfG" id="5SsFerob1IO" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="3cmrfG" id="5SsFerob1IP" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="3cmrfG" id="5SsFerob1IQ" role="37wK5m">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="3cmrfG" id="5SsFerob1IR" role="37wK5m">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="3b6qkQ" id="5SsFerob1IS" role="37wK5m">
+                    <property role="$nhwW" value="1.0" />
+                  </node>
+                  <node concept="3b6qkQ" id="5SsFerob1IT" role="37wK5m">
+                    <property role="$nhwW" value="1.0" />
+                  </node>
+                  <node concept="10M0yZ" id="5SsFerob1IU" role="37wK5m">
+                    <ref role="3cqZAo" to="1t7x:~GridBagConstraints.FIRST_LINE_START" resolve="FIRST_LINE_START" />
+                    <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
+                  </node>
+                  <node concept="10M0yZ" id="5SsFerob9KZ" role="37wK5m">
+                    <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
+                    <ref role="3cqZAo" to="1t7x:~GridBagConstraints.BOTH" resolve="BOTH" />
+                  </node>
+                  <node concept="37vLTw" id="5SsFerob1IZ" role="37wK5m">
+                    <ref role="3cqZAo" node="5SsFeroaa9K" resolve="insets" />
+                  </node>
+                  <node concept="3cmrfG" id="5SsFerob1J0" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="3cmrfG" id="5SsFerob1J1" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5SsFeroaaaM" role="3cqZAp">
-          <node concept="2OqwBi" id="5SsFeroaZq5" role="3clFbG">
-            <node concept="37vLTw" id="5SsFeroaZq4" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SsFeroaa9B" resolve="layout" />
+        <node concept="3clFbH" id="1u4Xg2YAri6" role="3cqZAp" />
+        <node concept="3SKdUt" id="1u4Xg2YA_nL" role="3cqZAp">
+          <node concept="3SKdUq" id="1u4Xg2YA_Vg" role="3SKWNk">
+            <property role="3SKdUp" value="project migration options" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1u4Xg2YAVmR" role="3cqZAp">
+          <node concept="3cpWsn" id="1u4Xg2YAVmU" role="3cpWs9">
+            <property role="TrG5h" value="y" />
+            <node concept="10Oyi0" id="1u4Xg2YAVmP" role="1tU5fm" />
+            <node concept="3cmrfG" id="1u4Xg2YAWfo" role="33vP2m">
+              <property role="3cmrfH" value="1" />
             </node>
-            <node concept="liA8E" id="5SsFeroaZq6" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~GridBagLayout.setConstraints(java.awt.Component,java.awt.GridBagConstraints):void" resolve="setConstraints" />
-              <node concept="37vLTw" id="5SsFeroaZq7" role="37wK5m">
-                <ref role="3cqZAo" node="5SsFeroaaa7" resolve="infoHolder" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="25gV4LspuWF" role="3cqZAp">
+          <node concept="3cpWsn" id="25gV4LspuWG" role="3cpWs9">
+            <property role="TrG5h" value="pMig" />
+            <node concept="_YKpA" id="25gV4Lspx4d" role="1tU5fm">
+              <node concept="3uibUv" id="25gV4Lspx4f" role="_ZDj9">
+                <ref role="3uigEE" to="bco1:~ProjectMigration" resolve="ProjectMigration" />
               </node>
-              <node concept="37vLTw" id="5SsFeroaZq8" role="37wK5m">
-                <ref role="3cqZAo" node="5SsFeroaa9S" resolve="gbc" />
+            </node>
+            <node concept="2OqwBi" id="25gV4LspuWH" role="33vP2m">
+              <node concept="2YIFZM" id="25gV4Lsxw$6" role="2Oq$k0">
+                <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
+                <ref role="1Pybhc" to="bco1:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
+              </node>
+              <node concept="liA8E" id="25gV4LspuWJ" role="2OqNvi">
+                <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getMigrations():java.util.List" resolve="getMigrations" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5SsFeroaaaQ" role="3cqZAp">
-          <node concept="2OqwBi" id="5SsFerob2JG" role="3clFbG">
-            <node concept="37vLTw" id="5SsFerob2JF" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SsFeroaacs" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="5SsFerob2JH" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="5SsFerob2JI" role="37wK5m">
-                <ref role="3cqZAo" node="5SsFeroaa9F" resolve="pagePanel" />
+        <node concept="3clFbF" id="1u4Xg2YAG6k" role="3cqZAp">
+          <node concept="2OqwBi" id="1u4Xg2YALex" role="3clFbG">
+            <node concept="2OqwBi" id="1u4Xg2YAHBy" role="2Oq$k0">
+              <node concept="2OqwBi" id="25gV4LspBhR" role="2Oq$k0">
+                <node concept="37vLTw" id="25gV4LspBhS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="25gV4LspuWG" resolve="pMig" />
+                </node>
+                <node concept="3zZkjj" id="1u4Xg2YAFcX" role="2OqNvi">
+                  <node concept="1bVj0M" id="1u4Xg2YAFcZ" role="23t8la">
+                    <node concept="3clFbS" id="1u4Xg2YAFd0" role="1bW5cS">
+                      <node concept="3clFbF" id="1u4Xg2YAFd1" role="3cqZAp">
+                        <node concept="2OqwBi" id="1u4Xg2YAFd2" role="3clFbG">
+                          <node concept="37vLTw" id="1u4Xg2YAFd3" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1u4Xg2YAFd7" resolve="it" />
+                          </node>
+                          <node concept="liA8E" id="1u4Xg2YAFd4" role="2OqNvi">
+                            <ref role="37wK5l" to="bco1:~ProjectMigration.shouldBeExecuted(jetbrains.mps.project.Project):boolean" resolve="shouldBeExecuted" />
+                            <node concept="2YIFZM" id="1u4Xg2YAFd5" role="37wK5m">
+                              <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                              <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                              <node concept="37vLTw" id="1u4Xg2YAFd6" role="37wK5m">
+                                <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="1u4Xg2YAFd7" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="1u4Xg2YAFd8" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node concept="10M0yZ" id="5SsFerob2JJ" role="37wK5m">
-                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="1t7x:~BorderLayout.CENTER" resolve="CENTER" />
+              <node concept="3goQfb" id="1u4Xg2YAJ3z" role="2OqNvi">
+                <node concept="1bVj0M" id="1u4Xg2YAJ3_" role="23t8la">
+                  <node concept="3clFbS" id="1u4Xg2YAJ3A" role="1bW5cS">
+                    <node concept="3clFbF" id="1u4Xg2YAKk4" role="3cqZAp">
+                      <node concept="2OqwBi" id="1u4Xg2YAKuC" role="3clFbG">
+                        <node concept="37vLTw" id="1u4Xg2YAKk3" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1u4Xg2YAJ3B" resolve="it" />
+                        </node>
+                        <node concept="liA8E" id="1u4Xg2YAKS6" role="2OqNvi">
+                          <ref role="37wK5l" to="bco1:~ProjectMigration.getOptionIds():java.util.Collection" resolve="getOptionIds" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="1u4Xg2YAJ3B" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="1u4Xg2YAJ3C" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2es0OD" id="1u4Xg2YANuX" role="2OqNvi">
+              <node concept="1bVj0M" id="1u4Xg2YANuZ" role="23t8la">
+                <node concept="3clFbS" id="1u4Xg2YANv0" role="1bW5cS">
+                  <node concept="3clFbF" id="1u4Xg2YAqBj" role="3cqZAp">
+                    <node concept="2OqwBi" id="1u4Xg2YAqBk" role="3clFbG">
+                      <node concept="37vLTw" id="1u4Xg2YAqBl" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5SsFeroaa9F" resolve="pagePanel" />
+                      </node>
+                      <node concept="liA8E" id="1u4Xg2YAqBm" role="2OqNvi">
+                        <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+                        <node concept="2OqwBi" id="1u4Xg2YAQT8" role="37wK5m">
+                          <node concept="2YIFZM" id="1u4Xg2YAQzw" role="2Oq$k0">
+                            <ref role="37wK5l" to="bco1:~ProjectOptionsRegistry.getInstance():jetbrains.mps.migration.global.ProjectOptionsRegistry" resolve="getInstance" />
+                            <ref role="1Pybhc" to="bco1:~ProjectOptionsRegistry" resolve="ProjectOptionsRegistry" />
+                          </node>
+                          <node concept="liA8E" id="1u4Xg2YARjA" role="2OqNvi">
+                            <ref role="37wK5l" to="bco1:~ProjectOptionsRegistry.createComponentForOption(java.lang.String):javax.swing.JComponent" resolve="createComponentForOption" />
+                            <node concept="37vLTw" id="1u4Xg2YARD$" role="37wK5m">
+                              <ref role="3cqZAo" node="1u4Xg2YANv1" resolve="it" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2ShNRf" id="1u4Xg2YAqBo" role="37wK5m">
+                          <node concept="1pGfFk" id="1u4Xg2YAqBp" role="2ShVmc">
+                            <ref role="37wK5l" to="1t7x:~GridBagConstraints.&lt;init&gt;(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)" resolve="GridBagConstraints" />
+                            <node concept="3cmrfG" id="1u4Xg2YAqBq" role="37wK5m">
+                              <property role="3cmrfH" value="0" />
+                            </node>
+                            <node concept="3uNrnE" id="1u4Xg2YAWYa" role="37wK5m">
+                              <node concept="37vLTw" id="1u4Xg2YAWYc" role="2$L3a6">
+                                <ref role="3cqZAo" node="1u4Xg2YAVmU" resolve="y" />
+                              </node>
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YAqBs" role="37wK5m">
+                              <property role="3cmrfH" value="1" />
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YAqBt" role="37wK5m">
+                              <property role="3cmrfH" value="1" />
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YASl0" role="37wK5m">
+                              <property role="3cmrfH" value="0" />
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YASGY" role="37wK5m">
+                              <property role="3cmrfH" value="1" />
+                            </node>
+                            <node concept="10M0yZ" id="1u4Xg2YAqBw" role="37wK5m">
+                              <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
+                              <ref role="3cqZAo" to="1t7x:~GridBagConstraints.FIRST_LINE_START" resolve="FIRST_LINE_START" />
+                            </node>
+                            <node concept="10M0yZ" id="1u4Xg2YAqBx" role="37wK5m">
+                              <ref role="1PxDUh" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
+                              <ref role="3cqZAo" to="1t7x:~GridBagConstraints.HORIZONTAL" resolve="HORIZONTAL" />
+                            </node>
+                            <node concept="37vLTw" id="1u4Xg2YAqBy" role="37wK5m">
+                              <ref role="3cqZAo" node="5SsFeroaa9K" resolve="insets" />
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YB1$c" role="37wK5m">
+                              <property role="3cmrfH" value="5" />
+                            </node>
+                            <node concept="3cmrfG" id="1u4Xg2YAqB$" role="37wK5m">
+                              <property role="3cmrfH" value="0" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="1u4Xg2YAPvj" role="3cqZAp" />
+                </node>
+                <node concept="Rh6nW" id="1u4Xg2YANv1" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="1u4Xg2YANv2" role="1tU5fm" />
+                </node>
               </node>
             </node>
           </node>
