@@ -17,6 +17,9 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
+/**
+ * A migration that runs only once and does not run on a newly created project
+ */
 public abstract class BaseProjectMigration implements ProjectMigration {
   public static final String EXECUTED_VALUE = "executed";
   public final String migrationId;
