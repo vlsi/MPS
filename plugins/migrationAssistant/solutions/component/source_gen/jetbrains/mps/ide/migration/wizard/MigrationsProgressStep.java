@@ -29,6 +29,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.migration.MigrationCheckUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Map;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -111,7 +112,8 @@ public class MigrationsProgressStep extends MigrationStep {
 
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
     if (!(preProblems.value)) {
-      while (executeSingleStep(myManager.nextProjectStep())) {
+      Map<String, Object> options = InitialStep.getOptions();
+      while (executeSingleStep(myManager.nextProjectStep(options))) {
         progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
       }
       progress.setFraction(projectStepsFraction);
@@ -156,16 +158,16 @@ public class MigrationsProgressStep extends MigrationStep {
     });
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationState result) {
-    if (!(result instanceof MigrationManager.MigrationState)) {
+  private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
+    if (!(result instanceof MigrationManager.MigrationStep)) {
       return false;
     }
 
-    final String step = ((MigrationManager.MigrationState) result).getDescription();
+    final String step = ((MigrationManager.MigrationStep) result).getDescription();
     addElementToMigrationList(step);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        myNoErrors &= ((MigrationManager.MigrationState) result).execute();
+        myNoErrors &= ((MigrationManager.MigrationStep) result).execute();
       }
     });
 

@@ -226,7 +226,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return ProjectMigrationsRegistry.getInstance().getMigrations().size();
   }
 
-  public MigrationManager.MigrationState nextProjectStep() {
+  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options) {
     ProjectMigration current = next(lastProjectMigration);
 
     while (current != null && !(current.shouldBeExecuted(mpsProject))) {
@@ -238,8 +238,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
 
     lastProjectMigration = current;
+    current.setOptionValues(options);
+
     final ProjectMigration cc = current;
-    return new MigrationManager.MigrationState() {
+    return new MigrationManager.MigrationStep() {
       public String getDescription() {
         return cc.getDescription();
       }
@@ -310,8 +312,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return result.value;
   }
 
-  public MigrationManager.MigrationState nextLanguageStep() {
-    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>(null);
+  public MigrationManager.MigrationStep nextLanguageStep() {
+    final Wrappers._T<MigrationManager.MigrationStep> result = new Wrappers._T<MigrationManager.MigrationStep>(null);
 
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
       public Boolean invoke() {
@@ -329,11 +331,24 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                 if (loaded == null) {
                   return false;
                 }
-                ScriptApplied applied = new ScriptApplied(loaded, module);
+                final ScriptApplied applied = new ScriptApplied(loaded, module);
                 if (!(areDepsSatisfied(applied))) {
                   return false;
                 }
-                result.value = new MigrationComponent.MyStep(applied);
+                result.value = new MigrationManager.MigrationStep() {
+                  public String getDescription() {
+                    return applied.toString();
+                  }
+                  public boolean execute() {
+                    final Wrappers._boolean res = new Wrappers._boolean();
+                    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                      public void run() {
+                        res.value = executeScript(applied);
+                      }
+                    });
+                    return res.value;
+                  }
+                };
                 return true;
               }
             });
@@ -358,24 +373,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return requiredData;
   }
 
-  private class MyStep implements MigrationManager.MigrationState {
-    private ScriptApplied myNextScript;
-    public MyStep(ScriptApplied nextScript) {
-      myNextScript = nextScript;
-    }
-    public String getDescription() {
-      return myNextScript.toString();
-    }
-    public boolean execute() {
-      final Wrappers._boolean res = new Wrappers._boolean();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          res.value = executeScript(MyStep.this.myNextScript);
-        }
-      });
-      return res.value;
-    }
-  }
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
   private static MigrationScript check_gd1mrb_a0e0s(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.migration.wizard.InitialStep" file="InitialStep.java">
+    <classNode dependClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
+    <classNode dependClassName="com.intellij.ide.wizard.CommitStepException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -11,8 +13,11 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.BorderFactory" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -117,6 +122,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="javax.swing.DefaultListModel" />
@@ -127,6 +133,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.InitialStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" />

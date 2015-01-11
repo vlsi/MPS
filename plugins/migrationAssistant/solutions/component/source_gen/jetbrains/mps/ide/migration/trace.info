@@ -55,22 +55,24 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121685">
     <file name="MigrationManager.java">
-      <node id="6781485246382121734" at="7,0,8,0" concept="4" trace="isMigrationRequired#()Z" />
-      <node id="8570387127138876086" at="9,0,10,0" concept="4" trace="projectStepsCount#()I" />
-      <node id="2400678414100434057" at="11,0,12,0" concept="4" trace="nextProjectStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
-      <node id="8570387127138876373" at="13,0,14,0" concept="4" trace="languageStepsCount#()I" />
-      <node id="6781485246382121738" at="15,0,16,0" concept="4" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
-      <node id="6781485246382121695" at="18,0,19,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
-      <node id="6781485246382121699" at="19,0,20,0" concept="4" trace="execute#()Z" />
-      <scope id="6781485246382121734" at="7,0,8,0" />
-      <scope id="8570387127138876086" at="9,0,10,0" />
-      <scope id="2400678414100434057" at="11,0,12,0" />
-      <scope id="8570387127138876373" at="13,0,14,0" />
-      <scope id="6781485246382121738" at="15,0,16,0" />
-      <scope id="6781485246382121695" at="18,0,19,0" />
-      <scope id="6781485246382121699" at="19,0,20,0" />
-      <unit id="6781485246382121691" at="17,0,21,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
-      <unit id="6781485246382121685" at="6,0,22,0" name="jetbrains.mps.ide.migration.MigrationManager" />
+      <node id="6781485246382121734" at="8,0,9,0" concept="4" trace="isMigrationRequired#()Z" />
+      <node id="8570387127138876086" at="10,0,11,0" concept="4" trace="projectStepsCount#()I" />
+      <node id="2400678414100434057" at="12,0,13,0" concept="4" trace="nextProjectStep#(Ljava/util/Map;)Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
+      <node id="8570387127138876373" at="14,0,15,0" concept="4" trace="languageStepsCount#()I" />
+      <node id="6781485246382121738" at="16,0,17,0" concept="4" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
+      <node id="6781485246382121695" at="19,0,20,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
+      <node id="6781485246382121699" at="20,0,21,0" concept="4" trace="execute#()Z" />
+      <scope id="6781485246382121734" at="8,0,9,0" />
+      <scope id="8570387127138876086" at="10,0,11,0" />
+      <scope id="2400678414100434057" at="12,0,13,0">
+        <var name="options" id="7485988173702230282" />
+      </scope>
+      <scope id="8570387127138876373" at="14,0,15,0" />
+      <scope id="6781485246382121738" at="16,0,17,0" />
+      <scope id="6781485246382121695" at="19,0,20,0" />
+      <scope id="6781485246382121699" at="20,0,21,0" />
+      <unit id="6781485246382121691" at="18,0,22,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationStep" />
+      <unit id="6781485246382121685" at="7,0,23,0" name="jetbrains.mps.ide.migration.MigrationManager" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121891">
