@@ -29,8 +29,6 @@ public interface ProjectMigration {
 
   Collection<String> getOptionIds();
 
-  Map<String, Object> getInitialOptionValues();
-
   void setOptionValues(Map<String,Object> values);
 
   void execute(Project p);

@@ -60,11 +60,6 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   }
 
   @Override
-  public Map<String, Object> getInitialOptionValues() {
-    return Collections.emptyMap();
-  }
-
-  @Override
   public void setOptionValues(Map<String, Object> values) {
 
   }
