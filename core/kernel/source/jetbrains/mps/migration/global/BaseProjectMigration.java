@@ -24,11 +24,10 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   public BaseProjectMigration(String migrationId) {
     this.migrationId = migrationId;
   }
+
   @Override
   public boolean shouldBeExecuted(Project p) {
-    if (isExecuted(p)) {
-      return false;
-    }
+    if (isExecuted(p)) return false;
     return doShouldBeExecuted(p);
   }
 
@@ -36,9 +35,8 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   @Override
   public void execute(Project p) {
-    if (doExecute(p)) {
-      setExecuted(p);
-    }
+    if (!doExecute(p)) return;
+    setExecuted(p);
   }
 
   public abstract boolean doExecute(Project p);
