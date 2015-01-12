@@ -17,10 +17,6 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-
 /**
  * A migration that runs only once and does not run on a newly created project
  */
@@ -33,19 +29,19 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   }
 
   @Override
-  public boolean shouldBeExecuted(Project p) {
+  public final boolean shouldBeExecuted(Project p) {
     return !EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
   }
 
   @Override
-  public void execute(Project p) {
+  public final void execute(Project p) {
     if (!doExecute(p)) return;
     setExecuted(p);
   }
 
   public abstract boolean doExecute(Project p);
 
-  public void setExecuted(Project p) {
+  public final void setExecuted(Project p) {
     MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
   }
 
