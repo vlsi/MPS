@@ -8,10 +8,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -40,9 +36,6 @@ public class MigrationsUtil {
     return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly()));
   }
 
-  public static String getDescriptorFQName(SModule module) {
-    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
-  }
   public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
 

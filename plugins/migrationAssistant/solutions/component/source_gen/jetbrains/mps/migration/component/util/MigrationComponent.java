@@ -17,14 +17,18 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
@@ -88,7 +92,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        name.value = MigrationsUtil.getDescriptorFQName(module);
+        name.value = getDescriptorFQName(module);
       }
     });
     try {
@@ -102,6 +106,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
       return null;
     }
+  }
+
+  public String getDescriptorFQName(SModule module) {
+    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
 
   public MigrationDescriptor getMigrationDescriptor(Language module) {
@@ -124,7 +132,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
       }
     }
-    MigrationScript script = check_gd1mrb_a0e0s(md, current);
+    MigrationScript script = check_gd1mrb_a0e0u(md, current);
     if (script == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration script for language " + depLanguage + ", version " + current + ".");
@@ -378,7 +386,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
-  private static MigrationScript check_gd1mrb_a0e0s(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0u(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
