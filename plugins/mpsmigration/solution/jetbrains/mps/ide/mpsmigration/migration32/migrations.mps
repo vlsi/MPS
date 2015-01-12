@@ -27,6 +27,8 @@
     <import index="nhkf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" />
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
+    <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
+    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1725,8 +1727,8 @@
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="25gV4Ls$Nad" role="1B3o_S" />
-    <node concept="3uibUv" id="25gV4Ls$Nae" role="EKbjA">
-      <ref role="3uigEE" to="kgxg:~CoreComponent" resolve="CoreComponent" />
+    <node concept="3uibUv" id="3UfGsectmkD" role="EKbjA">
+      <ref role="3uigEE" to="iiw6:~ApplicationComponent" resolve="ApplicationComponent" />
     </node>
     <node concept="312cEg" id="25gV4Ls$Naf" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -1763,14 +1765,14 @@
       <node concept="3Tm6S6" id="25gV4Ls$Nao" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="25gV4Ls$ZOJ" role="jymVt" />
-    <node concept="3clFb_" id="25gV4Ls$Nap" role="jymVt">
-      <property role="TrG5h" value="init" />
+    <node concept="3clFb_" id="3UfGsectmzX" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="25gV4Ls$Naq" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="25gV4Ls$Nar" role="3clF47">
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="3UfGsectmzY" role="1B3o_S" />
+      <node concept="3cqZAl" id="3UfGsectm$0" role="3clF45" />
+      <node concept="3clFbS" id="3UfGsectm$2" role="3clF47">
         <node concept="1DcWWT" id="25gV4Ls$Nas" role="3cqZAp">
           <node concept="37vLTw" id="25gV4Ls$NaB" role="1DdaDG">
             <ref role="3cqZAo" node="25gV4Ls$Naf" resolve="myMigrations" />
@@ -1786,8 +1788,8 @@
             <node concept="3clFbF" id="25gV4Ls$Nav" role="3cqZAp">
               <node concept="2OqwBi" id="25gV4Ls$Naw" role="3clFbG">
                 <node concept="2YIFZM" id="25gV4Ls$Pfo" role="2Oq$k0">
-                  <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
                   <ref role="1Pybhc" to="bco1:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
+                  <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
                 </node>
                 <node concept="liA8E" id="25gV4Ls$Nay" role="2OqNvi">
                   <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.addProjectMigration(jetbrains.mps.migration.global.ProjectMigration):void" resolve="addProjectMigration" />
@@ -1800,18 +1802,16 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="25gV4Ls$NaC" role="1B3o_S" />
-      <node concept="3cqZAl" id="25gV4Ls$NaD" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="25gV4Ls$Zr8" role="jymVt" />
-    <node concept="3clFb_" id="25gV4Ls$NaE" role="jymVt">
-      <property role="TrG5h" value="dispose" />
+    <node concept="2tJIrI" id="3UfGsectnN7" role="jymVt" />
+    <node concept="3clFb_" id="3UfGsectm$3" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="25gV4Ls$NaF" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="25gV4Ls$NaG" role="3clF47">
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="3UfGsectm$4" role="1B3o_S" />
+      <node concept="3cqZAl" id="3UfGsectm$6" role="3clF45" />
+      <node concept="3clFbS" id="3UfGsectm$8" role="3clF47">
         <node concept="1DcWWT" id="25gV4Ls$NaH" role="3cqZAp">
           <node concept="37vLTw" id="25gV4Ls$NaS" role="1DdaDG">
             <ref role="3cqZAo" node="25gV4Ls$Naf" resolve="myMigrations" />
@@ -1827,8 +1827,8 @@
             <node concept="3clFbF" id="25gV4Ls$NaK" role="3cqZAp">
               <node concept="2OqwBi" id="25gV4Ls$NaL" role="3clFbG">
                 <node concept="2YIFZM" id="25gV4Ls$Pfq" role="2Oq$k0">
-                  <ref role="1Pybhc" to="bco1:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
                   <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
+                  <ref role="1Pybhc" to="bco1:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
                 </node>
                 <node concept="liA8E" id="25gV4Ls$NaN" role="2OqNvi">
                   <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.removeProjectMigration(jetbrains.mps.migration.global.ProjectMigration):void" resolve="removeProjectMigration" />
@@ -1841,8 +1841,30 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="25gV4Ls$NaT" role="1B3o_S" />
-      <node concept="3cqZAl" id="25gV4Ls$NaU" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="3UfGsectnDx" role="jymVt" />
+    <node concept="3clFb_" id="3UfGsectm$9" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getComponentName" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="3UfGsectm$a" role="1B3o_S" />
+      <node concept="3uibUv" id="3UfGsectm$c" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="3UfGsectm$d" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
+      </node>
+      <node concept="2AHcQZ" id="3UfGsectm$e" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3clFbS" id="3UfGsectm$h" role="3clF47">
+        <node concept="3clFbF" id="3UfGsectm$j" role="3cqZAp">
+          <node concept="Xl_RD" id="3UfGsectnsT" role="3clFbG">
+            <property role="Xl_RC" value="PersistenceMigrations" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="513ZrA4uCHM">
