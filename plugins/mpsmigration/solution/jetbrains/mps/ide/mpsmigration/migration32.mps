@@ -24,8 +24,8 @@
     <import index="x609" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.progress(MPS.Platform/jetbrains.mps.progress@java_stub)" />
     <import index="fw3h" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
     <import index="h5f3" ref="r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)" />
+    <import index="ncv8" ref="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)" />
     <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" implicit="true" />
-    <import index="fzoq" ref="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)" implicit="true" />
     <import index="tprs" ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb/r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide/jetbrains.mps.ide.actions)" implicit="true" />
     <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" implicit="true" />
   </imports>
@@ -619,11 +619,11 @@
           <node concept="2OqwBi" id="25gV4Ls_iHl" role="3clFbG">
             <node concept="2ShNRf" id="25gV4Ls_gHb" role="2Oq$k0">
               <node concept="1pGfFk" id="2hzfP9XC6kg" role="2ShVmc">
-                <ref role="37wK5l" to="fzoq:22T75mlVzKi" resolve="Name2IdMigration" />
+                <ref role="37wK5l" to="ncv8:22T75mlVzKi" resolve="Name2IdMigration" />
               </node>
             </node>
             <node concept="liA8E" id="25gV4Ls_iQe" role="2OqNvi">
-              <ref role="37wK5l" to="fzoq:25gV4Ls$QG4" resolve="doExecute" />
+              <ref role="37wK5l" to="ncv8:25gV4Ls$QG4" resolve="doExecute" />
               <node concept="2OqwBi" id="25gV4Ls_iRf" role="37wK5m">
                 <node concept="2WthIp" id="25gV4Ls_iRi" role="2Oq$k0" />
                 <node concept="1DTwFV" id="25gV4Ls_iRk" role="2OqNvi">

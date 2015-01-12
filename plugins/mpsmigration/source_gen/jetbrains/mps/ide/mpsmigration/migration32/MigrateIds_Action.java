@@ -10,6 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -47,7 +48,7 @@ public class MigrateIds_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ().???(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      new Name2IdMigration().doExecute(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateIds", t);
