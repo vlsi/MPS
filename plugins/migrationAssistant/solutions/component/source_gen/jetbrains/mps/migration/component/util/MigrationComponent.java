@@ -31,6 +31,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -238,7 +239,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
 
     lastProjectMigration = current;
-    current.setOptionValues(options);
+    if (current instanceof ProjectMigrationWithOptions) {
+      ((ProjectMigrationWithOptions) current).setOptionValues(options);
+    }
 
     final ProjectMigration cc = current;
     return new MigrationManager.MigrationStep() {

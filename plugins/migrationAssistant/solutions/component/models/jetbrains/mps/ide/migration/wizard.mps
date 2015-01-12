@@ -305,6 +305,9 @@
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
+        <child id="4611582986551314344" name="requestedType" index="UnYnz" />
+      </concept>
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
@@ -2939,8 +2942,15 @@
           <node concept="2OqwBi" id="1u4Xg2YALex" role="3clFbG">
             <node concept="2OqwBi" id="1u4Xg2YAHBy" role="2Oq$k0">
               <node concept="2OqwBi" id="25gV4LspBhR" role="2Oq$k0">
-                <node concept="37vLTw" id="25gV4LspBhS" role="2Oq$k0">
-                  <ref role="3cqZAo" node="25gV4LspuWG" resolve="pMig" />
+                <node concept="2OqwBi" id="6vz$Djul$$m" role="2Oq$k0">
+                  <node concept="37vLTw" id="25gV4LspBhS" role="2Oq$k0">
+                    <ref role="3cqZAo" node="25gV4LspuWG" resolve="pMig" />
+                  </node>
+                  <node concept="UnYns" id="6vz$DjulAOg" role="2OqNvi">
+                    <node concept="3uibUv" id="6vz$DjulIYf" role="UnYnz">
+                      <ref role="3uigEE" to="bco1:~ProjectMigrationWithOptions" resolve="ProjectMigrationWithOptions" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="3zZkjj" id="1u4Xg2YAFcX" role="2OqNvi">
                   <node concept="1bVj0M" id="1u4Xg2YAFcZ" role="23t8la">
@@ -2979,7 +2989,7 @@
                           <ref role="3cqZAo" node="1u4Xg2YAJ3B" resolve="it" />
                         </node>
                         <node concept="liA8E" id="1u4Xg2YAKS6" role="2OqNvi">
-                          <ref role="37wK5l" to="bco1:~ProjectMigration.getOptionIds():java.util.Collection" resolve="getOptionIds" />
+                          <ref role="37wK5l" to="bco1:~ProjectMigrationWithOptions.getOptionIds():java.util.Collection" resolve="getOptionIds" />
                         </node>
                       </node>
                     </node>

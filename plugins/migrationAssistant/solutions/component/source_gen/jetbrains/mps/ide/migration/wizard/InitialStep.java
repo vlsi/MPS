@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -65,12 +66,12 @@ public class InitialStep extends MigrationStep {
     // project migration options 
     final Wrappers._int y = new Wrappers._int(1);
     List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-    ListSequence.fromList(pMig).where(new IWhereFilter<ProjectMigration>() {
-      public boolean accept(ProjectMigration it) {
+    ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
+      public boolean accept(ProjectMigrationWithOptions it) {
         return it.shouldBeExecuted(ProjectHelper.toMPSProject(myProject));
       }
-    }).translate(new ITranslator2<ProjectMigration, String>() {
-      public Iterable<String> translate(ProjectMigration it) {
+    }).translate(new ITranslator2<ProjectMigrationWithOptions, String>() {
+      public Iterable<String> translate(ProjectMigrationWithOptions it) {
         return it.getOptionIds();
       }
     }).visitAll(new IVisitor<String>() {

@@ -53,14 +53,4 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   public void applyToCreatedProject(Project p) {
     setExecuted(p);
   }
-
-  @Override
-  public Collection<String> getOptionIds() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public void setOptionValues(Map<String, Object> values) {
-
-  }
 }
