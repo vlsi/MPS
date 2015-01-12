@@ -17,7 +17,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103294603">
+  <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/2400678414103294603">
     <file name="PersistenceMigrations.java">
       <node id="2400678414103294607" at="10,0,11,0" concept="5" trace="myMigrations" />
       <node id="2400678414103294623" at="14,46,15,70" concept="4" />
@@ -38,13 +38,13 @@
       </scope>
       <scope id="2400678414103294617" at="12,0,18,0" />
       <scope id="2400678414103294634" at="19,0,25,0" />
-      <unit id="2400678414103294603" at="9,0,26,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.PersistenceMigrations" />
+      <unit id="2400678414103294603" at="9,0,26,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.PersistenceMigrations" />
     </file>
   </root>
-  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103309023">
+  <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/2400678414103309023">
     <file name="Name2IdMigration.java">
       <node id="2400678414103309026" at="20,0,21,0" concept="13" trace="ID" />
-      <node id="2357947033818382189" at="22,29,23,14" concept="15" />
+      <node id="2357947033818382189" at="22,29,23,31" concept="15" />
       <node id="2400678414103309033" at="26,34,27,34" concept="10" />
       <node id="7390751706570181582" at="30,39,31,71" concept="9" />
       <node id="7054543711712690613" at="31,71,32,102" concept="9" />
@@ -75,7 +75,7 @@
       <node id="404829981773975645" at="60,0,67,7" concept="4" />
       <node id="7390751706570171382" at="33,94,46,7" concept="9" />
       <node id="2400678414103309060" at="29,0,70,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
-      <scope id="2357947033818381334" at="22,29,23,14" />
+      <scope id="2357947033818381334" at="22,29,23,31" />
       <scope id="2400678414103309032" at="26,34,27,34" />
       <scope id="7390751706570196739" at="35,53,36,30" />
       <scope id="4167886119644762267" at="39,48,40,34" />
@@ -113,19 +113,19 @@
       <scope id="2400678414103309060" at="29,0,70,0">
         <var name="p" id="2400678414103309062" />
       </scope>
-      <unit id="7390751706570196738" at="34,92,38,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$1" />
-      <unit id="4167886119644762266" at="38,46,42,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$2" />
-      <unit id="1101607213767104515" at="42,55,46,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$3" />
-      <unit id="6965294250873208613" at="47,47,51,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$4" />
-      <unit id="6965294250873359795" at="54,92,59,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$5" />
-      <unit id="404829981773975653" at="61,47,67,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration$6" />
-      <unit id="2400678414103309023" at="19,0,71,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration" />
+      <unit id="7390751706570196738" at="34,92,38,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$1" />
+      <unit id="4167886119644762266" at="38,46,42,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$2" />
+      <unit id="1101607213767104515" at="42,55,46,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$3" />
+      <unit id="6965294250873208613" at="47,47,51,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$4" />
+      <unit id="6965294250873359795" at="54,92,59,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$5" />
+      <unit id="404829981773975653" at="61,47,67,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration$6" />
+      <unit id="2400678414103309023" at="19,0,71,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration" />
     </file>
   </root>
-  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103310969">
+  <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/2400678414103310969">
     <file name="ModelRefMigration.java">
       <node id="2400678414103518002" at="25,0,26,0" concept="13" trace="ID" />
-      <node id="2357947033818448830" at="27,30,28,14" concept="15" />
+      <node id="2357947033818448830" at="27,30,28,32" concept="15" />
       <node id="2400678414103518009" at="31,34,32,49" concept="10" />
       <node id="2400678414103548526" at="34,45,35,21" concept="4" />
       <node id="7942543306377408152" at="35,21,36,51" concept="4" />
@@ -163,7 +163,7 @@
       <node id="2450776685309518010" at="64,7,77,7" concept="16" />
       <node id="2533953941693793944" at="60,0,78,5" concept="6" />
       <node id="2400678414103530889" at="41,0,80,0" concept="8" trace="saveAll#(Ljetbrains/mps/project/Project;)V" />
-      <scope id="2357947033818448050" at="27,30,28,14" />
+      <scope id="2357947033818448050" at="27,30,28,32" />
       <scope id="2400678414103518008" at="31,34,32,49" />
       <scope id="120896515006498961" at="44,53,45,30" />
       <scope id="120896515006498947" at="48,48,49,48" />
@@ -207,15 +207,15 @@
       <scope id="2400678414103530889" at="41,0,80,0">
         <var name="p" id="2400678414103535730" />
       </scope>
-      <unit id="120896515006498960" at="43,82,47,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration$1" />
-      <unit id="120896515006498946" at="47,46,51,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration$2" />
-      <unit id="2400678414103310969" at="24,0,82,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration" />
+      <unit id="120896515006498960" at="43,82,47,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ModelRefMigration$1" />
+      <unit id="120896515006498946" at="47,46,51,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ModelRefMigration$2" />
+      <unit id="2400678414103310969" at="24,0,82,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ModelRefMigration" />
     </file>
   </root>
-  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/5783745319707249522">
+  <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/5783745319707249522">
     <file name="ReSaveModulesMigration.java">
       <node id="5783745319707249524" at="13,0,14,0" concept="13" trace="ID" />
-      <node id="2357947033818115653" at="15,35,16,14" concept="15" />
+      <node id="2357947033818115653" at="15,35,16,37" concept="15" />
       <node id="5783745319707249536" at="19,34,20,33" concept="10" />
       <node id="5783745319707249620" at="23,39,24,71" concept="9" />
       <node id="5783745319707296700" at="25,95,26,45" concept="4" />
@@ -225,7 +225,7 @@
       <node id="5783745319707293049" at="24,71,27,5" concept="6" />
       <node id="5783745319707249533" at="18,0,22,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
       <node id="5783745319707249615" at="22,0,31,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
-      <scope id="2357947033818115309" at="15,35,16,14" />
+      <scope id="2357947033818115309" at="15,35,16,37" />
       <scope id="5783745319707249535" at="19,34,20,33" />
       <scope id="5783745319707293053" at="25,95,26,45" />
       <scope id="2357947033818115305" at="15,0,18,0" />
@@ -239,21 +239,21 @@
       <scope id="5783745319707249615" at="22,0,31,0">
         <var name="p" id="5783745319707249617" />
       </scope>
-      <unit id="5783745319707249522" at="12,0,32,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ReSaveModulesMigration" />
+      <unit id="5783745319707249522" at="12,0,32,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ReSaveModulesMigration" />
     </file>
   </root>
-  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/7485988173703007654">
+  <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/7485988173703007654">
     <file name="CleanSourcesMigration.java">
       <node id="9082867613205812686" at="23,0,24,0" concept="13" trace="OPTION_REMOVE_SOURCES" />
       <node id="7485988173703007655" at="24,0,25,0" concept="13" trace="ID" />
       <node id="9082867613205796363" at="27,0,28,0" concept="5" trace="mySources" />
-      <node id="7485988173703007664" at="29,34,30,14" concept="15" />
+      <node id="7485988173703007664" at="29,34,30,36" concept="15" />
       <node id="7485988173703007669" at="34,34,35,70" concept="10" />
       <node id="9082867613205933249" at="39,39,40,39" concept="4" />
       <node id="9082867613205926144" at="40,39,41,16" concept="10" />
-      <node id="7485988173703007837" at="45,44,46,56" concept="10" />
-      <node id="9082867613205847079" at="50,59,51,49" concept="9" />
-      <node id="9082867613205849867" at="51,49,52,32" concept="0" />
+      <node id="7485988173703007837" at="45,44,46,78" concept="10" />
+      <node id="9082867613205847079" at="50,59,51,71" concept="9" />
+      <node id="9082867613205849867" at="51,71,52,32" concept="0" />
       <node id="9082867613205828756" at="52,32,53,30" concept="4" />
       <node id="9082867613205933220" at="59,22,60,30" concept="4" />
       <node id="9082867613205933224" at="61,9,62,0" concept="12" />
@@ -298,9 +298,9 @@
       <node id="2840424593983234568" at="77,0,91,0" concept="8" trace="visit#(Ljetbrains/mps/project/AbstractModule;)V" />
       <node id="2840424593983234555" at="75,51,91,7" concept="4" />
       <node id="9082867613205906527" at="71,0,93,0" concept="14" trace="removeGenSources#(Ljetbrains/mps/project/Project;)V" />
-      <scope id="7485988173703007663" at="29,34,30,14" />
+      <scope id="7485988173703007663" at="29,34,30,36" />
       <scope id="7485988173703007668" at="34,34,35,70" />
-      <scope id="7485988173703007836" at="45,44,46,56" />
+      <scope id="7485988173703007836" at="45,44,46,78" />
       <scope id="9082867613205933219" at="59,22,60,30" />
       <scope id="1847435758022971138" at="99,33,100,30" />
       <scope id="5308946314779665853" at="106,36,107,52" />
@@ -361,10 +361,10 @@
       <scope id="9082867613205906527" at="71,0,93,0">
         <var name="p" id="9082867613205891304" />
       </scope>
-      <unit id="1847435758022971102" at="95,120,103,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration$3" />
-      <unit id="9082867613205933216" at="57,59,68,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration$1" />
-      <unit id="2840424593983234568" at="76,120,91,5" name="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration$2" />
-      <unit id="7485988173703007654" at="22,0,118,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration" />
+      <unit id="1847435758022971102" at="95,120,103,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration$3" />
+      <unit id="9082867613205933216" at="57,59,68,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration$1" />
+      <unit id="2840424593983234568" at="76,120,91,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration$2" />
+      <unit id="7485988173703007654" at="22,0,118,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration" />
     </file>
   </root>
 </debug-info>

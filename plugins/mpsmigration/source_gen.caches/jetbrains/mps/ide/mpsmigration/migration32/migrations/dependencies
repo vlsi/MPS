@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration" file="CleanSourcesMigration.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration" file="CleanSourcesMigration.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -23,7 +23,7 @@
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
     <classNode extendsClassName="jetbrains.mps.migration.global.ProjectMigrationWithOptions" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration" file="ModelRefMigration.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.ModelRefMigration" file="ModelRefMigration.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration" file="Name2IdMigration.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration" file="Name2IdMigration.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -65,16 +65,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.migrations.PersistenceMigrations" file="PersistenceMigrations.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.PersistenceMigrations" file="PersistenceMigrations.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.migration32.migrations.ReSaveModulesMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.migrations.CleanSourcesMigration" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.migrations.ReSaveModulesMigration" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v9.migrations.ReSaveModulesMigration" file="ReSaveModulesMigration.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.ReSaveModulesMigration" file="ReSaveModulesMigration.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
