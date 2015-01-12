@@ -17,6 +17,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;

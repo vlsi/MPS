@@ -11,7 +11,7 @@ import java.util.Map;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;

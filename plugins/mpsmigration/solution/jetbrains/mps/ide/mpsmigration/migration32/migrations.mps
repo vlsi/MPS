@@ -29,6 +29,7 @@
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -610,8 +611,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="39M2ISgsrI3" role="2Oq$k0">
-                <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
-                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
                 <node concept="37vLTw" id="7ScOZyr2poy" role="37wK5m">
                   <ref role="3cqZAo" node="7ScOZyr2ozC" resolve="p" />
                 </node>
@@ -797,8 +798,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="39M2ISgsrXX" role="2Oq$k0">
-                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
-                <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                 <node concept="37vLTw" id="7ScOZyr2rrO" role="37wK5m">
                   <ref role="3cqZAo" node="7ScOZyr2qXL" resolve="p" />
                 </node>

@@ -50,6 +50,7 @@
     <import index="gct0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(MPS.Core/jetbrains.mps.smodel.adapter.structure.concept@java_stub)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="tk08" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
+    <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -706,8 +707,8 @@
                     <node concept="1rXfSq" id="1AzqgyAfdM5" role="3clFbG">
                       <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
                       <node concept="2YIFZM" id="39M2ISgsqYI" role="37wK5m">
-                        <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
-                        <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                        <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                        <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
                         <node concept="37vLTw" id="39M2ISgsr31" role="37wK5m">
                           <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                         </node>
@@ -1124,8 +1125,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="39M2ISgsrcT" role="2Oq$k0">
-              <ref role="37wK5l" to="auc7:39M2ISgsiqP" resolve="getMigrateableModulesFromProject" />
-              <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+              <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+              <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
               <node concept="37vLTw" id="39M2ISgsrcU" role="37wK5m">
                 <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
               </node>
@@ -1406,8 +1407,8 @@
             </node>
             <node concept="3fqX7Q" id="39M2ISgsUMt" role="3clFbw">
               <node concept="2YIFZM" id="39M2ISgsUMu" role="3fr31v">
-                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
-                <ref role="37wK5l" to="auc7:39M2ISgsON_" resolve="isModuleMigrateable" />
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="umn7:3UfGsecu97b" resolve="isModuleMigrateable" />
                 <node concept="37vLTw" id="39M2ISgsUMv" role="37wK5m">
                   <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
                 </node>
@@ -1488,8 +1489,8 @@
             </node>
             <node concept="3fqX7Q" id="39M2ISgsUwp" role="3clFbw">
               <node concept="2YIFZM" id="39M2ISgsUCy" role="3fr31v">
-                <ref role="37wK5l" to="auc7:39M2ISgsON_" resolve="isModuleMigrateable" />
-                <ref role="1Pybhc" to="auc7:5Fumpqe5n45" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="umn7:3UfGsecu97b" resolve="isModuleMigrateable" />
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
                 <node concept="37vLTw" id="39M2ISgsUFg" role="37wK5m">
                   <ref role="3cqZAo" node="1AzqgyAfr8l" resolve="module" />
                 </node>
