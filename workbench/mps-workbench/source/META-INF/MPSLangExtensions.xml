@@ -410,7 +410,7 @@
     <!--<applicationService serviceInterface="com.intellij.application.options.codeStyle.CodeStyleSchemesUIConfiguration"
                         serviceImplementation="com.intellij.application.options.codeStyle.CodeStyleSchemesUIConfiguration"/>
     -->
-
+    <projectConfigurable groupId="build" groupWeight="110" displayName="Java Compiler" instance="jetbrains.mps.ide.compiler.CompilerSettingsConfigurable" nonDefaultProject="true"/>
     <!-- File Types -->
     <applicationConfigurable groupId="editor" groupWeight="120" instance="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable" id="preferences.fileTypes"
                              key="filetype.settings.title" bundle="messages.FileTypesBundle"/>

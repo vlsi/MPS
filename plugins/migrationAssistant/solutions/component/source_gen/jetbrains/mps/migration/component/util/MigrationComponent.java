@@ -156,13 +156,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
         boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
           public boolean accept(ProjectMigration it) {
             return it.shouldBeExecuted(mpsProject);
           }
         });
-        boolean languageMig = isLanguageMigrationRequired(modules);
+        boolean languageMig = isLanguageMigrationRequired(MigrationsUtil.getMigrateableModulesFromProject(mpsProject));
         result.value = projectMig || languageMig;
       }
     });
@@ -286,6 +285,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
           public Integer select(AbstractModule module) {
             int scripts = 0;
+            module.validateLanguageVersions();
             for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
               int currentLangVersion = lang.getLanguageVersion();
               int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);

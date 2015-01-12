@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:640618e1-83da-4da2-a799-af20502fa1d8(TestCompileSolution.testModel)/6536521488246935282">
+    <file name="TestClass.java">
+      <node id="4870928772271063449" at="8,42,9,61" concept="2" />
+      <node id="4870928772271084752" at="9,61,10,51" concept="0" />
+      <node id="4870928772271070229" at="13,25,14,57" concept="3" />
+      <node id="4870928772271065629" at="13,0,16,0" concept="1" trace="getValue#()I" />
+      <node id="6536521488246935332" at="8,0,12,0" concept="4" trace="main#([Ljava/lang/String;)V" />
+      <scope id="4870928772271065633" at="13,25,14,57" />
+      <scope id="6536521488246935338" at="8,42,10,51">
+        <var name="staticTestValue" id="4870928772271063450" />
+      </scope>
+      <scope id="4870928772271065629" at="13,0,16,0" />
+      <scope id="6536521488246935332" at="8,0,12,0">
+        <var name="args" id="6536521488246935333" />
+      </scope>
+      <unit id="6536521488246935282" at="7,0,17,0" name="TestCompileSolution.testModel.TestClass" />
+    </file>
+  </root>
+</debug-info>
+

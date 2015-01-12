@@ -114,7 +114,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -123,6 +123,7 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
@@ -197,7 +198,7 @@
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
@@ -237,30 +238,40 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence">
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" excludes="**/*.java" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.build">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
       </src>
       <classpath />
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build">
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.ideaPlugin">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />
       </src>
       <classpath />
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin">
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="cleanSources">

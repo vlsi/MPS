@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6e21skqdtjr1aefv0mgsr24vwk36aq9" />
+<dependencies version="2" modelHash="8bnzd6s2afiok6ws635n5e6tnntezsx">
+  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-acbv13srpeme8dira2b5j7pdkdscbxn" />
+  <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="-wlft57hyzeu98vxwi3b2hqf1og7539" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="73aezwmznaw3a8h4shhmpimeqt9bmy7" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-df1hfm6p6rydlkvhmg5d51ptiwc13t8" />
+  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-cqvx7ahmaxe73lziuxu0wuwznga47wy" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="8362vqvf5fgqwuz13vzqcmaow56lcqy" />
+  <common hash="-2tfvk9nm8ocia14rbnycighof0oefi7" />
+  <source id="9212378209272343143" name="xmlPersistencePlugin" hash="93wjmte6gm6jjbv1jfnfjcdhng8ia8n">
+    <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
+    <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
+    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+    <file name="xmlPersistencePlugin.xml" />
+  </source>
+</dependencies>
 

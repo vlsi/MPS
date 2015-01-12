@@ -353,6 +353,9 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -11488,22 +11491,15 @@
         </node>
       </node>
       <node concept="3clFbS" id="6eup$H2ZAHv" role="3clF47">
-        <node concept="3cpWs8" id="6eup$H2ZAHw" role="3cqZAp">
-          <node concept="3cpWsn" id="6eup$H2ZAHx" role="3cpWs9">
+        <node concept="3cpWs8" id="7Qab_gm9vaO" role="3cqZAp">
+          <node concept="3cpWsn" id="7Qab_gm9vaP" role="3cpWs9">
             <property role="TrG5h" value="adapterAnn" />
             <property role="3TUv4t" value="true" />
-            <node concept="3Tqbb2" id="6eup$H2ZAHy" role="1tU5fm">
+            <node concept="3Tqbb2" id="7Qab_gm9vaN" role="1tU5fm">
               <ref role="ehGHo" to="tpee:hiABswc" resolve="Annotation" />
             </node>
-            <node concept="2OqwBi" id="6eup$H2ZAHz" role="33vP2m">
-              <node concept="2c44tf" id="6eup$H2ZAH$" role="2Oq$k0">
-                <node concept="2AHcQZ" id="6eup$H2ZAH_" role="2c44tc">
-                  <ref role="2AI5Lk" to="qbve:7w8CYsT5wfS" resolve="AdapterClass" />
-                </node>
-              </node>
-              <node concept="3TrEf2" id="6eup$H2ZAHA" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hiAI5P0" />
-              </node>
+            <node concept="3B5_sB" id="7Qab_gm9vaQ" role="33vP2m">
+              <ref role="3B5MYn" to="qbve:7w8CYsT5wfS" resolve="AdapterClass" />
             </node>
           </node>
         </node>
@@ -11557,7 +11553,7 @@
               </node>
               <node concept="3clFbC" id="4MeD585brBt" role="3clFbw">
                 <node concept="37vLTw" id="4MeD585brZ2" role="3uHU7w">
-                  <ref role="3cqZAo" node="6eup$H2ZAHx" resolve="adapterAnn" />
+                  <ref role="3cqZAo" node="7Qab_gm9vaP" resolve="adapterAnn" />
                 </node>
                 <node concept="2OqwBi" id="4MeD585bfhe" role="3uHU7B">
                   <node concept="37vLTw" id="4MeD585bf5y" role="2Oq$k0">

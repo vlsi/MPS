@@ -4928,9 +4928,43 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="7HkT6P2$VzF" role="3cqZAp">
+              <node concept="3cpWsn" id="7HkT6P2$VzG" role="3cpWs9">
+                <property role="TrG5h" value="usedLangs" />
+                <node concept="A3Dl8" id="7HkT6P2$VzH" role="1tU5fm">
+                  <node concept="3Tqbb2" id="7HkT6P2$VzI" role="A3Ik2">
+                    <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7HkT6P2_r4B" role="33vP2m">
+                  <node concept="2OqwBi" id="7HkT6P2$VzK" role="2Oq$k0">
+                    <node concept="1rXfSq" id="7HkT6P2$VzL" role="2Oq$k0">
+                      <ref role="37wK5l" node="6xJrZo0GT$4" resolve="dependencies" />
+                      <node concept="37vLTw" id="7HkT6P2$VzM" role="37wK5m">
+                        <ref role="3cqZAo" node="4fCiNXE$G3j" resolve="g" />
+                      </node>
+                    </node>
+                    <node concept="v3k3i" id="7HkT6P2$ZEv" role="2OqNvi">
+                      <node concept="chp4Y" id="7HkT6P2_dcH" role="v3oSu">
+                        <ref role="cht4Q" to="kdzh:2L4pT56gXbi" resolve="BuildMps_ModuleDependencyUseLanguage" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="13MTOL" id="7HkT6P2_ruC" role="2OqNvi">
+                    <ref role="13MTZf" to="kdzh:2L4pT56gXbj" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="7HkT6P2$Vsd" role="3cqZAp" />
             <node concept="3SKdUt" id="4fCiNXEB5LY" role="3cqZAp">
               <node concept="3SKdUq" id="4fCiNXEB8du" role="3SKWNk">
-                <property role="3SKdUp" value="I'm not quite sure it's possible to depend directly from generator module. Instead, introduce a dependency from generator's source language" />
+                <property role="3SKdUp" value="I'm not quite sure it's possible to depend directly from generator module." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7HkT6P2Blee" role="3cqZAp">
+              <node concept="3SKdUq" id="7HkT6P2BlF8" role="3SKWNk">
+                <property role="3SKdUp" value="Instead introduce a dependency from generator's source language" />
               </node>
             </node>
             <node concept="3clFbF" id="4fCiNXE$Xjc" role="3cqZAp">
@@ -5018,6 +5052,18 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="7HkT6P2C017" role="3cqZAp">
+              <node concept="2OqwBi" id="7HkT6P2C0yi" role="3clFbG">
+                <node concept="37vLTw" id="7HkT6P2C015" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fCiNXE$PLo" resolve="extraLangs" />
+                </node>
+                <node concept="X8dFx" id="7HkT6P2C1iM" role="2OqNvi">
+                  <node concept="37vLTw" id="2oqUJXkQQr0" role="25WWJ7">
+                    <ref role="3cqZAo" node="7HkT6P2$VzG" resolve="usedLangs" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="1Ok2Yb136m5" role="3cqZAp">
               <node concept="2OqwBi" id="1Ok2Yb15eQH" role="3clFbG">
                 <node concept="37vLTw" id="1Ok2Yb15eh3" role="2Oq$k0">
@@ -5062,8 +5108,8 @@
             <node concept="37vLTw" id="4fCiNXE_BFd" role="2Oq$k0">
               <ref role="3cqZAo" node="4fCiNXE$PLo" resolve="extraLangs" />
             </node>
-            <node concept="1kEaZ2" id="4fCiNXE_FCc" role="2OqNvi">
-              <node concept="37vLTw" id="4fCiNXE_P1E" role="25WWJ7">
+            <node concept="1kEaZ2" id="2oqUJXkSbP3" role="2OqNvi">
+              <node concept="37vLTw" id="2oqUJXkSfHT" role="25WWJ7">
                 <ref role="3cqZAo" node="6xJrZo0GW9x" resolve="modules" />
               </node>
             </node>

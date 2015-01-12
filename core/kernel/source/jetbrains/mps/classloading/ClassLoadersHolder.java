@@ -125,10 +125,9 @@ public class ClassLoadersHolder {
 
   /**
    * @param toLoad for these modules ModuleClassLoaders were actually created
-   * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED or LOADED.
    */
-  public Collection<? extends ReloadableModule> doLoadModules(Set<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-    return myMPSClassLoadersRegistry.doLoadModules(toLoad, monitor);
+  public void doLoadModules(Set<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
+    myMPSClassLoadersRegistry.doLoadModules(toLoad, monitor);
   }
 
   /**
@@ -182,22 +181,21 @@ public class ClassLoadersHolder {
       return lazyLoaded;
     }
 
-    public synchronized Collection<? extends ReloadableModule> doLoadModules(Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-      Collection<ReloadableModule> loadedModules = new LinkedHashSet<ReloadableModule>();
+    public synchronized void doLoadModules(Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
       try {
         monitor.start("Loading modules...", toLoad.size());
         for (ReloadableModule module : toLoad) {
-          ModuleClassLoader classLoader = createModuleClassLoader(module);
           SModuleReference moduleReference = ((ReloadableModuleBase) module).getModuleReference();
+          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. no listeners know about this module");
+          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.LOADED) continue;
+          ModuleClassLoader classLoader = createModuleClassLoader(module);
           putClassLoader(moduleReference, classLoader);
-          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) loadedModules.add(module);
           onLoaded(moduleReference);
           monitor.advance(1);
         }
       } finally {
         monitor.done();
       }
-      return loadedModules;
     }
 
     private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {

@@ -3386,7 +3386,7 @@
                 </node>
                 <node concept="2oxUTD" id="29vbt0Ia0Bt" role="2OqNvi">
                   <node concept="1PxgMI" id="29vbt0Ia0Bu" role="2oxUTC">
-                    <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
                     <node concept="2OqwBi" id="29vbt0Ia0Bv" role="1PxMeX">
                       <node concept="2OqwBi" id="29vbt0Ia0Bw" role="2Oq$k0">
                         <node concept="2GrUjf" id="29vbt0Ia0Bx" role="2Oq$k0">

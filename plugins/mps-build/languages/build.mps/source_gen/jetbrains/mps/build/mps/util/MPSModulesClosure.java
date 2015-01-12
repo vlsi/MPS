@@ -247,7 +247,18 @@ public class MPSModulesClosure {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cb9L, "module"));
         }
       });
-      // I'm not quite sure it's possible to depend directly from generator module. Instead, introduce a dependency from generator's source language 
+      Iterable<SNode> usedLangs = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(g), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, 0x2c4467914643d2d3L, "language")) != null);
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, 0x2c4467914643d2d3L, "language"));
+        }
+      });
+
+      // I'm not quite sure it's possible to depend directly from generator module. 
+      // Instead introduce a dependency from generator's source language 
       SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(it);
@@ -259,6 +270,7 @@ public class MPSModulesClosure {
       }));
       // any language generator depends from are better to be there, too. 
       SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"))));
+      SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(usedLangs));
       modules.addAll(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))).toListSequence());
     }
     SetSequence.fromSet(extraLangs).removeSequence(SetSequence.fromSet(modules));

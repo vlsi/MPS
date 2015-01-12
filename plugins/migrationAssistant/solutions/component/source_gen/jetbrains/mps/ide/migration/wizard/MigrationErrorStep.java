@@ -11,11 +11,11 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import com.intellij.ide.BrowserUtil;
 import java.awt.Dimension;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public class MigrationsErrorStep extends MigrationStep {
-  public static final String ID = "error";
-  public MigrationsErrorStep(Project project) {
-    super(project, "Could not Apply All Migrations", ID);
+public abstract class MigrationErrorStep extends MigrationStep {
+  public MigrationErrorStep(Project project, String id) {
+    super(project, "Could not Apply All Migrations", id);
     createComponent();
   }
   @Override
@@ -25,7 +25,7 @@ public class MigrationsErrorStep extends MigrationStep {
     infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
     JTextPane info = new JTextPane();
     info.setContentType("text/html");
-    info.setText("Migration was not completed.<br><br>Some migration scripts are missing or finished with errors.<br><br>Maybe you are trying to migrate from version which is not now supported.<br><br>Your project will be reloaded.<br><br>You can try to continue migrations manually or execute Migration Assistant later.");
+    info.setText(getText());
     info.setEditable(false);
     info.addHyperlinkListener(new HyperlinkListener() {
       public void hyperlinkUpdate(HyperlinkEvent e) {
@@ -40,6 +40,7 @@ public class MigrationsErrorStep extends MigrationStep {
     infoHolder.add(info, BorderLayout.CENTER);
     myComponent.add(infoHolder, BorderLayout.CENTER);
   }
+
   @Override
   public Object getPreviousStepId() {
     return null;
@@ -52,4 +53,8 @@ public class MigrationsErrorStep extends MigrationStep {
   public boolean canBeCancelled() {
     return false;
   }
+
+  protected abstract String getText();
+
+  public abstract _FunctionTypes._void_P0_E0 afterProjectInitialized();
 }

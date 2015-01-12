@@ -230,7 +230,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.jetpad}/jetpad" />
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.jetpad}/jetpad/languages/jetpad/jetbrains.jetpad.jar" />
@@ -243,6 +243,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
@@ -336,7 +337,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.diagram.runtime" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/runtime/source_gen" />
@@ -403,7 +404,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.figures.library" depends="java.compile.jetbrains.mps.lang.editor.diagram.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" />
@@ -456,7 +457,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.diagram" depends="java.compile.jetbrains.mps.lang.editor.diagram.runtime, java.compile.jetbrains.mps.lang.editor.figures, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/source_gen" />
@@ -527,7 +528,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.diagram#1094405431463447766" depends="java.compile.jetbrains.mps.lang.editor.diagram, java.compile.jetbrains.mps.lang.editor.diagram.runtime, java.compile.jetbrains.mps.lang.editor.figures, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram#1094405431463447766" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram#1094405431463447766" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram#1094405431463447766" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/source_gen" />
@@ -598,7 +599,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.figures" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/source_gen" />
@@ -658,7 +659,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.figures#785823818609016954" depends="java.compile.jetbrains.mps.lang.editor.figures, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures#785823818609016954" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures#785823818609016954" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures#785823818609016954" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/source_gen" />

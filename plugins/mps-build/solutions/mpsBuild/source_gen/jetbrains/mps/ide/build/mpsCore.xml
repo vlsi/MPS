@@ -10,30 +10,11 @@
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
   
-  <path id="path.javac2.classpath">
-    <fileset dir="${idea_home}/lib">
-      <include name="javac2.jar" />
-      <include name="jdom.jar" />
-      <include name="asm4-all.jar" />
-      <include name="asm-all.jar" />
-      <include name="jgoodies-forms.jar" />
-    </fileset>
-  </path>
-  
-  <path id="path.jdk.classpath">
-    <pathelement path="${java.home}/../Classes/classes.jar" />
-    <fileset dir="${java.home}">
-      <include name="lib/*.jar" />
-    </fileset>
-  </path>
-  
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
   </path>
-  
-  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/mps-core" />
@@ -197,7 +178,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-generator.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -206,6 +187,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
@@ -288,7 +270,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.table" depends="java.compile.jetbrains.mps.lang.editor.table.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" />
@@ -327,18 +309,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac2>
+    </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.editor.table#4677325677876405344" depends="java.compile.jetbrains.mps.lang.editor.table, java.compile.jetbrains.mps.lang.editor.table.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table#4677325677876405344" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table#4677325677876405344" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table#4677325677876405344" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" />
@@ -379,18 +360,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac2>
+    </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table#4677325677876405344">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.editor.table.runtime" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" />
@@ -422,18 +402,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac2>
+    </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.core.properties" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.core.properties" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.core.properties" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.core.properties" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" />
@@ -465,18 +444,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac2>
+    </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.core.properties">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.core.properties#6896005762093550227" depends="java.compile.jetbrains.mps.core.properties, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.core.properties#6896005762093550227" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.core.properties#6896005762093550227" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.core.properties#6896005762093550227" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen" />
@@ -509,11 +487,10 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
       </classpath>
-    </javac2>
+    </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.core.properties#6896005762093550227">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   

@@ -122,6 +122,7 @@ public class ClassifierUpdater {
     updateExtendsForInterface(intfc);
     updateStaticFields(intfc);
     updateInstanceMethods(intfc);
+    updateStaticMethods(intfc);
     updateVisibility();
   }
   private void updateVisibility() {

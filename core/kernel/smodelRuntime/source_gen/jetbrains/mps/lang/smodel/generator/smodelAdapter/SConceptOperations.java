@@ -194,4 +194,16 @@ public final class SConceptOperations {
     SModel model = null;
     return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(model, null, conceptFqName));
   }
+  public static String conceptAlias(SConcept concept) {
+    if (concept == null) {
+      return null;
+    }
+    return concept.getConceptAlias();
+  }
+  public static String shortDescription(SConcept concept) {
+    if (concept == null) {
+      return null;
+    }
+    return concept.getShortDescription();
+  }
 }

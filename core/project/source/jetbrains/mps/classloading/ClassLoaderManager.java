@@ -361,8 +361,8 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Loading " + modulesToLoad.size() + " modules");
       monitor.advance(1);
-      Collection<? extends ReloadableModule> notNotifiedModules = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-      assert notNotifiedModules.isEmpty();
+      if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) throw new IllegalStateException("Some modules are not preloaded yet : cannot load them");
+      myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
 
       return modulesToLoad;
     } finally {

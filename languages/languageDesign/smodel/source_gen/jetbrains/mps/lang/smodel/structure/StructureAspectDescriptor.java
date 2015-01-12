@@ -24,10 +24,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCheckedModuleQualifiedName = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6955116391921791525L, "moduleId")).properties("moduleId").alias("module qualified name", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptCheckedModuleReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.CheckedModuleReference", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4357968816427488500L, "moduleId")).properties("moduleId").alias("module reference", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptChildNodeRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L)).super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL)).parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(597763930871272016L, "targetNode", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), false)).references("targetNode").childDescriptors(new ConceptDescriptorBuilder.Link(597763930871272014L, "parent", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL), false, false, false)).children(new String[]{"parent"}, new boolean[]{false}).alias("childNode", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptConceptAliasOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptAliasOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8856be80L)).super_("jetbrains.mps.lang.smodel.structure.SConceptOperation").super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L)).parents("jetbrains.mps.lang.smodel.structure.SConceptOperation").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L)).alias("conceptAlias", "").create();
   /*package*/ final ConceptDescriptor myConceptConceptFqNameRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8339862546319741525L, "conceptDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false)).references("conceptDeclaration").alias("conceptFqName/<name>/", "full qualified name").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptConceptIdRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x24b2bf7ce180eb54L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.smodel.structure.BootstrapAwareMetaObject").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(2644386474300074837L, "conceptDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false)).references("conceptDeclaration").alias("concept/<name>/", "openapi SAbstractConcept").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptConceptRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1172424100906L, "conceptDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false)).references("conceptDeclaration").alias("conceptNode/<name>/", "concept declaration node").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptConceptReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptReference", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05c601dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1154546997487L, "concept", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false)).references("concept").create();
+  /*package*/ final ConceptDescriptor myConceptConceptShortDescriptionOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8862fd1cL)).super_("jetbrains.mps.lang.smodel.structure.SConceptOperation").super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L)).parents("jetbrains.mps.lang.smodel.structure.SConceptOperation").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L)).alias("shortDescrption", "").create();
   /*package*/ final ConceptDescriptor myConceptConceptSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(5944356402132808752L, "expression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false), new ConceptDescriptorBuilder.Link(5944356402132808753L, "case", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L), true, true, false)).children(new String[]{"expression", "case"}, new boolean[]{false, true}).alias("concept switch", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptConceptSwitchStatementCase = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(1163670677455L, "concept", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05c601dL), false, false, false), new ConceptDescriptorBuilder.Link(1163670683720L, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false)).children(new String[]{"concept", "body"}, new boolean[]{false, false}).create();
   /*package*/ final ConceptDescriptor myConceptConcept_GetAllSubConcepts = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331e18cdcL)).super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).childDescriptors(new ConceptDescriptorBuilder.Link(1182506816063L, "smodel", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"smodel"}, new boolean[]{false}).alias("sub-concepts", "").staticScope(StaticScope.NONE).create();
@@ -134,6 +136,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReference_GetResolveInfo = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4f37053c240837e1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IReferenceOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53df2L)).alias("resolveInfo", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptReference_GetRoleOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4efeb22247ff02a7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IReferenceOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53df2L)).alias("role", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptReference_GetTargetOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x393cc52c868a600aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IReferenceOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53df2L)).alias("target", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptSConceptOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.SConceptOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).abstract_().staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptSConceptType = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.SConceptType", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1180481110358L, "conceptDeclaraton", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), true)).references("conceptDeclaraton").alias("conceptNode< >", "node<AbstractConceptDeclaration>").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptSConceptTypeSConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(6677504323281689839L, "conceptDeclaraton", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), true)).references("conceptDeclaraton").alias("concept< >", "concept type").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptSEnumMemberOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120f244ef53L)).interface_().parents("jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).create();
@@ -162,13 +165,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractNodeRefExpression, myConceptAbstractOperationParameter, myConceptAllAttributeQualifier, myConceptAsNodeOperation, myConceptAsSConcept, myConceptAttributeAccess, myConceptAttributeQualifier, myConceptBootstrapAwareMetaObject, myConceptCheckedModuleQualifiedName, myConceptCheckedModuleReference, myConceptChildNodeRefExpression, myConceptConceptFqNameRefExpression, myConceptConceptIdRefExpression, myConceptConceptRefExpression, myConceptConceptReference, myConceptConceptSwitchStatement, myConceptConceptSwitchStatementCase, myConceptConcept_GetAllSubConcepts, myConceptConcept_GetAllSuperConcepts, myConceptConcept_GetDirectSuperConcepts, myConceptConcept_GetHierarchy, myConceptConcept_IsExactlyOperation, myConceptConcept_IsSubConceptOfOperation, myConceptConcept_IsSuperConceptOfOperation, myConceptConcept_NewInstance, myConceptEnumMemberReference, myConceptEnumMemberValueRefExpression, myConceptEnumMember_NameOperation, myConceptEnumMember_ValueOperation, myConceptEqualsStructurallyExpression, myConceptILinkAccess, myConceptILinkAccessQualifier, myConceptILinkAccessQualifierContainer, myConceptILinkQualifier, myConceptIPropertyQualifier, myConceptIRefConceptArg, myConceptIReferenceOperation, myConceptIfInstanceOfStatement, myConceptIfInstanceOfVarReference, myConceptIfInstanceOfVariable, myConceptLanguageReferenceExpression, myConceptLinkAttributeQualifier, myConceptLinkIdRefExpression, myConceptLinkList_AddNewChildOperation, myConceptLinkNameRefExpression, myConceptLinkQualifier, myConceptLinkRefExpression, myConceptLinkRefQualifier, myConceptLink_SetNewChildOperation, myConceptLink_SetTargetOperation, myConceptModelReferenceExpression, myConceptModel_AddRootOperation, myConceptModel_CreateNewNodeOperation, myConceptModel_CreateNewRootNodeOperation, myConceptModel_GetLongNameOperation, myConceptModel_GetModule, myConceptModel_NodesIncludingImportedOperation, myConceptModel_NodesOperation, myConceptModel_RootsIncludingImportedOperation, myConceptModel_RootsOperation, myConceptModuleReferenceExpression, myConceptNodeAttributeQualifier, myConceptNodePointerExpression, myConceptNodeRefExpression, myConceptNode_ConceptMethodCall, myConceptNode_CopyOperation, myConceptNode_DeleteOperation, myConceptNode_DetachOperation, myConceptNode_GetAllSiblingsOperation, myConceptNode_GetAncestorOperation, myConceptNode_GetAncestorsOperation, myConceptNode_GetChildrenOperation, myConceptNode_GetConceptOperation, myConceptNode_GetContainingLinkOperation, myConceptNode_GetContainingRoleOperation, myConceptNode_GetContainingRootOperation, myConceptNode_GetDescendantsOperation, myConceptNode_GetIndexInParentOperation, myConceptNode_GetModelOperation, myConceptNode_GetNextSiblingOperation, myConceptNode_GetNextSiblingsOperation, myConceptNode_GetParentOperation, myConceptNode_GetPrevSiblingOperation, myConceptNode_GetPrevSiblingsOperation, myConceptNode_GetReferenceOperation, myConceptNode_GetReferencesOperation, myConceptNode_GetReferentSearchScopeOperation, myConceptNode_GetSConceptOperation, myConceptNode_InsertNewNextSiblingOperation, myConceptNode_InsertNewPrevSiblingOperation, myConceptNode_InsertNextSiblingOperation, myConceptNode_InsertPrevSiblingOperation, myConceptNode_IsAttributeOperation, myConceptNode_IsInstanceOfOperation, myConceptNode_IsNotNullOperation, myConceptNode_IsNullOperation, myConceptNode_IsRoleOperation, myConceptNode_ReplaceWithAnotherOperation, myConceptNode_ReplaceWithNewOperation, myConceptOfConceptOperation, myConceptOperationParm_Concept, myConceptOperationParm_ConceptList, myConceptOperationParm_Inclusion, myConceptOperationParm_LinkQualifier, myConceptOperationParm_Root, myConceptOperationParm_SameMetaLevel, myConceptOperationParm_StopConceptList, myConceptPoundExpression, myConceptPropertyAttributeQualifier, myConceptPropertyIdRefExpression, myConceptPropertyNameRefExpression, myConceptPropertyQualifier, myConceptProperty_HasValue_Enum, myConceptProperty_HasValue_Simple, myConceptProperty_RemoveOperation, myConceptProperty_SetOperation, myConceptRefConcept_Reference, myConceptReference_GetLinkDeclarationOperation, myConceptReference_GetResolveInfo, myConceptReference_GetRoleOperation, myConceptReference_GetTargetOperation, myConceptSConceptType, myConceptSConceptTypeSConcept, myConceptSEnumMemberOperation, myConceptSEnumMemberType, myConceptSEnumOperation, myConceptSEnumOperationInvocation, myConceptSEnum_MemberForNameOperation, myConceptSEnum_MemberForValueOperation, myConceptSEnum_MemberOperation, myConceptSEnum_MembersOperation, myConceptSLinkAccess, myConceptSLinkImplicitSelect, myConceptSLinkListAccess, myConceptSModelType, myConceptSNodeCreator, myConceptSNodeListCreator, myConceptSNodeListType, myConceptSNodeOperation, myConceptSNodeType, myConceptSNodeTypeCastExpression, myConceptSPropertyAccess, myConceptSReferenceType, myConceptSearchScopeType, myConceptSearchScope_ContainsOperation, myConceptSemanticDowncastExpression);
+    return Arrays.asList(myConceptAbstractNodeRefExpression, myConceptAbstractOperationParameter, myConceptAllAttributeQualifier, myConceptAsNodeOperation, myConceptAsSConcept, myConceptAttributeAccess, myConceptAttributeQualifier, myConceptBootstrapAwareMetaObject, myConceptCheckedModuleQualifiedName, myConceptCheckedModuleReference, myConceptChildNodeRefExpression, myConceptConceptAliasOperation, myConceptConceptFqNameRefExpression, myConceptConceptIdRefExpression, myConceptConceptRefExpression, myConceptConceptReference, myConceptConceptShortDescriptionOperation, myConceptConceptSwitchStatement, myConceptConceptSwitchStatementCase, myConceptConcept_GetAllSubConcepts, myConceptConcept_GetAllSuperConcepts, myConceptConcept_GetDirectSuperConcepts, myConceptConcept_GetHierarchy, myConceptConcept_IsExactlyOperation, myConceptConcept_IsSubConceptOfOperation, myConceptConcept_IsSuperConceptOfOperation, myConceptConcept_NewInstance, myConceptEnumMemberReference, myConceptEnumMemberValueRefExpression, myConceptEnumMember_NameOperation, myConceptEnumMember_ValueOperation, myConceptEqualsStructurallyExpression, myConceptILinkAccess, myConceptILinkAccessQualifier, myConceptILinkAccessQualifierContainer, myConceptILinkQualifier, myConceptIPropertyQualifier, myConceptIRefConceptArg, myConceptIReferenceOperation, myConceptIfInstanceOfStatement, myConceptIfInstanceOfVarReference, myConceptIfInstanceOfVariable, myConceptLanguageReferenceExpression, myConceptLinkAttributeQualifier, myConceptLinkIdRefExpression, myConceptLinkList_AddNewChildOperation, myConceptLinkNameRefExpression, myConceptLinkQualifier, myConceptLinkRefExpression, myConceptLinkRefQualifier, myConceptLink_SetNewChildOperation, myConceptLink_SetTargetOperation, myConceptModelReferenceExpression, myConceptModel_AddRootOperation, myConceptModel_CreateNewNodeOperation, myConceptModel_CreateNewRootNodeOperation, myConceptModel_GetLongNameOperation, myConceptModel_GetModule, myConceptModel_NodesIncludingImportedOperation, myConceptModel_NodesOperation, myConceptModel_RootsIncludingImportedOperation, myConceptModel_RootsOperation, myConceptModuleReferenceExpression, myConceptNodeAttributeQualifier, myConceptNodePointerExpression, myConceptNodeRefExpression, myConceptNode_ConceptMethodCall, myConceptNode_CopyOperation, myConceptNode_DeleteOperation, myConceptNode_DetachOperation, myConceptNode_GetAllSiblingsOperation, myConceptNode_GetAncestorOperation, myConceptNode_GetAncestorsOperation, myConceptNode_GetChildrenOperation, myConceptNode_GetConceptOperation, myConceptNode_GetContainingLinkOperation, myConceptNode_GetContainingRoleOperation, myConceptNode_GetContainingRootOperation, myConceptNode_GetDescendantsOperation, myConceptNode_GetIndexInParentOperation, myConceptNode_GetModelOperation, myConceptNode_GetNextSiblingOperation, myConceptNode_GetNextSiblingsOperation, myConceptNode_GetParentOperation, myConceptNode_GetPrevSiblingOperation, myConceptNode_GetPrevSiblingsOperation, myConceptNode_GetReferenceOperation, myConceptNode_GetReferencesOperation, myConceptNode_GetReferentSearchScopeOperation, myConceptNode_GetSConceptOperation, myConceptNode_InsertNewNextSiblingOperation, myConceptNode_InsertNewPrevSiblingOperation, myConceptNode_InsertNextSiblingOperation, myConceptNode_InsertPrevSiblingOperation, myConceptNode_IsAttributeOperation, myConceptNode_IsInstanceOfOperation, myConceptNode_IsNotNullOperation, myConceptNode_IsNullOperation, myConceptNode_IsRoleOperation, myConceptNode_ReplaceWithAnotherOperation, myConceptNode_ReplaceWithNewOperation, myConceptOfConceptOperation, myConceptOperationParm_Concept, myConceptOperationParm_ConceptList, myConceptOperationParm_Inclusion, myConceptOperationParm_LinkQualifier, myConceptOperationParm_Root, myConceptOperationParm_SameMetaLevel, myConceptOperationParm_StopConceptList, myConceptPoundExpression, myConceptPropertyAttributeQualifier, myConceptPropertyIdRefExpression, myConceptPropertyNameRefExpression, myConceptPropertyQualifier, myConceptProperty_HasValue_Enum, myConceptProperty_HasValue_Simple, myConceptProperty_RemoveOperation, myConceptProperty_SetOperation, myConceptRefConcept_Reference, myConceptReference_GetLinkDeclarationOperation, myConceptReference_GetResolveInfo, myConceptReference_GetRoleOperation, myConceptReference_GetTargetOperation, myConceptSConceptOperation, myConceptSConceptType, myConceptSConceptTypeSConcept, myConceptSEnumMemberOperation, myConceptSEnumMemberType, myConceptSEnumOperation, myConceptSEnumOperationInvocation, myConceptSEnum_MemberForNameOperation, myConceptSEnum_MemberForValueOperation, myConceptSEnum_MemberOperation, myConceptSEnum_MembersOperation, myConceptSLinkAccess, myConceptSLinkImplicitSelect, myConceptSLinkListAccess, myConceptSModelType, myConceptSNodeCreator, myConceptSNodeListCreator, myConceptSNodeListType, myConceptSNodeOperation, myConceptSNodeType, myConceptSNodeTypeCastExpression, myConceptSPropertyAccess, myConceptSReferenceType, myConceptSearchScopeType, myConceptSearchScope_ContainsOperation, myConceptSemanticDowncastExpression);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0uf, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0xf, conceptFqName)) {
       case 0:
         return myConceptAbstractNodeRefExpression;
       case 1:
@@ -192,278 +195,284 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 10:
         return myConceptChildNodeRefExpression;
       case 11:
-        return myConceptConceptFqNameRefExpression;
+        return myConceptConceptAliasOperation;
       case 12:
-        return myConceptConceptIdRefExpression;
+        return myConceptConceptFqNameRefExpression;
       case 13:
-        return myConceptConceptRefExpression;
+        return myConceptConceptIdRefExpression;
       case 14:
-        return myConceptConceptReference;
+        return myConceptConceptRefExpression;
       case 15:
-        return myConceptConceptSwitchStatement;
+        return myConceptConceptReference;
       case 16:
-        return myConceptConceptSwitchStatementCase;
+        return myConceptConceptShortDescriptionOperation;
       case 17:
-        return myConceptConcept_GetAllSubConcepts;
+        return myConceptConceptSwitchStatement;
       case 18:
-        return myConceptConcept_GetAllSuperConcepts;
+        return myConceptConceptSwitchStatementCase;
       case 19:
-        return myConceptConcept_GetDirectSuperConcepts;
+        return myConceptConcept_GetAllSubConcepts;
       case 20:
-        return myConceptConcept_GetHierarchy;
+        return myConceptConcept_GetAllSuperConcepts;
       case 21:
-        return myConceptConcept_IsExactlyOperation;
+        return myConceptConcept_GetDirectSuperConcepts;
       case 22:
-        return myConceptConcept_IsSubConceptOfOperation;
+        return myConceptConcept_GetHierarchy;
       case 23:
-        return myConceptConcept_IsSuperConceptOfOperation;
+        return myConceptConcept_IsExactlyOperation;
       case 24:
-        return myConceptConcept_NewInstance;
+        return myConceptConcept_IsSubConceptOfOperation;
       case 25:
-        return myConceptEnumMemberReference;
+        return myConceptConcept_IsSuperConceptOfOperation;
       case 26:
-        return myConceptEnumMemberValueRefExpression;
+        return myConceptConcept_NewInstance;
       case 27:
-        return myConceptEnumMember_NameOperation;
+        return myConceptEnumMemberReference;
       case 28:
-        return myConceptEnumMember_ValueOperation;
+        return myConceptEnumMemberValueRefExpression;
       case 29:
-        return myConceptEqualsStructurallyExpression;
+        return myConceptEnumMember_NameOperation;
       case 30:
-        return myConceptILinkAccess;
+        return myConceptEnumMember_ValueOperation;
       case 31:
-        return myConceptILinkAccessQualifier;
+        return myConceptEqualsStructurallyExpression;
       case 32:
-        return myConceptILinkAccessQualifierContainer;
+        return myConceptILinkAccess;
       case 33:
-        return myConceptILinkQualifier;
+        return myConceptILinkAccessQualifier;
       case 34:
-        return myConceptIPropertyQualifier;
+        return myConceptILinkAccessQualifierContainer;
       case 35:
-        return myConceptIRefConceptArg;
+        return myConceptILinkQualifier;
       case 36:
-        return myConceptIReferenceOperation;
+        return myConceptIPropertyQualifier;
       case 37:
-        return myConceptIfInstanceOfStatement;
+        return myConceptIRefConceptArg;
       case 38:
-        return myConceptIfInstanceOfVarReference;
+        return myConceptIReferenceOperation;
       case 39:
-        return myConceptIfInstanceOfVariable;
+        return myConceptIfInstanceOfStatement;
       case 40:
-        return myConceptLanguageReferenceExpression;
+        return myConceptIfInstanceOfVarReference;
       case 41:
-        return myConceptLinkAttributeQualifier;
+        return myConceptIfInstanceOfVariable;
       case 42:
-        return myConceptLinkIdRefExpression;
+        return myConceptLanguageReferenceExpression;
       case 43:
-        return myConceptLinkList_AddNewChildOperation;
+        return myConceptLinkAttributeQualifier;
       case 44:
-        return myConceptLinkNameRefExpression;
+        return myConceptLinkIdRefExpression;
       case 45:
-        return myConceptLinkQualifier;
+        return myConceptLinkList_AddNewChildOperation;
       case 46:
-        return myConceptLinkRefExpression;
+        return myConceptLinkNameRefExpression;
       case 47:
-        return myConceptLinkRefQualifier;
+        return myConceptLinkQualifier;
       case 48:
-        return myConceptLink_SetNewChildOperation;
+        return myConceptLinkRefExpression;
       case 49:
-        return myConceptLink_SetTargetOperation;
+        return myConceptLinkRefQualifier;
       case 50:
-        return myConceptModelReferenceExpression;
+        return myConceptLink_SetNewChildOperation;
       case 51:
-        return myConceptModel_AddRootOperation;
+        return myConceptLink_SetTargetOperation;
       case 52:
-        return myConceptModel_CreateNewNodeOperation;
+        return myConceptModelReferenceExpression;
       case 53:
-        return myConceptModel_CreateNewRootNodeOperation;
+        return myConceptModel_AddRootOperation;
       case 54:
-        return myConceptModel_GetLongNameOperation;
+        return myConceptModel_CreateNewNodeOperation;
       case 55:
-        return myConceptModel_GetModule;
+        return myConceptModel_CreateNewRootNodeOperation;
       case 56:
-        return myConceptModel_NodesIncludingImportedOperation;
+        return myConceptModel_GetLongNameOperation;
       case 57:
-        return myConceptModel_NodesOperation;
+        return myConceptModel_GetModule;
       case 58:
-        return myConceptModel_RootsIncludingImportedOperation;
+        return myConceptModel_NodesIncludingImportedOperation;
       case 59:
-        return myConceptModel_RootsOperation;
+        return myConceptModel_NodesOperation;
       case 60:
-        return myConceptModuleReferenceExpression;
+        return myConceptModel_RootsIncludingImportedOperation;
       case 61:
-        return myConceptNodeAttributeQualifier;
+        return myConceptModel_RootsOperation;
       case 62:
-        return myConceptNodePointerExpression;
+        return myConceptModuleReferenceExpression;
       case 63:
-        return myConceptNodeRefExpression;
+        return myConceptNodeAttributeQualifier;
       case 64:
-        return myConceptNode_ConceptMethodCall;
+        return myConceptNodePointerExpression;
       case 65:
-        return myConceptNode_CopyOperation;
+        return myConceptNodeRefExpression;
       case 66:
-        return myConceptNode_DeleteOperation;
+        return myConceptNode_ConceptMethodCall;
       case 67:
-        return myConceptNode_DetachOperation;
+        return myConceptNode_CopyOperation;
       case 68:
-        return myConceptNode_GetAllSiblingsOperation;
+        return myConceptNode_DeleteOperation;
       case 69:
-        return myConceptNode_GetAncestorOperation;
+        return myConceptNode_DetachOperation;
       case 70:
-        return myConceptNode_GetAncestorsOperation;
+        return myConceptNode_GetAllSiblingsOperation;
       case 71:
-        return myConceptNode_GetChildrenOperation;
+        return myConceptNode_GetAncestorOperation;
       case 72:
-        return myConceptNode_GetConceptOperation;
+        return myConceptNode_GetAncestorsOperation;
       case 73:
-        return myConceptNode_GetContainingLinkOperation;
+        return myConceptNode_GetChildrenOperation;
       case 74:
-        return myConceptNode_GetContainingRoleOperation;
+        return myConceptNode_GetConceptOperation;
       case 75:
-        return myConceptNode_GetContainingRootOperation;
+        return myConceptNode_GetContainingLinkOperation;
       case 76:
-        return myConceptNode_GetDescendantsOperation;
+        return myConceptNode_GetContainingRoleOperation;
       case 77:
-        return myConceptNode_GetIndexInParentOperation;
+        return myConceptNode_GetContainingRootOperation;
       case 78:
-        return myConceptNode_GetModelOperation;
+        return myConceptNode_GetDescendantsOperation;
       case 79:
-        return myConceptNode_GetNextSiblingOperation;
+        return myConceptNode_GetIndexInParentOperation;
       case 80:
-        return myConceptNode_GetNextSiblingsOperation;
+        return myConceptNode_GetModelOperation;
       case 81:
-        return myConceptNode_GetParentOperation;
+        return myConceptNode_GetNextSiblingOperation;
       case 82:
-        return myConceptNode_GetPrevSiblingOperation;
+        return myConceptNode_GetNextSiblingsOperation;
       case 83:
-        return myConceptNode_GetPrevSiblingsOperation;
+        return myConceptNode_GetParentOperation;
       case 84:
-        return myConceptNode_GetReferenceOperation;
+        return myConceptNode_GetPrevSiblingOperation;
       case 85:
-        return myConceptNode_GetReferencesOperation;
+        return myConceptNode_GetPrevSiblingsOperation;
       case 86:
-        return myConceptNode_GetReferentSearchScopeOperation;
+        return myConceptNode_GetReferenceOperation;
       case 87:
-        return myConceptNode_GetSConceptOperation;
+        return myConceptNode_GetReferencesOperation;
       case 88:
-        return myConceptNode_InsertNewNextSiblingOperation;
+        return myConceptNode_GetReferentSearchScopeOperation;
       case 89:
-        return myConceptNode_InsertNewPrevSiblingOperation;
+        return myConceptNode_GetSConceptOperation;
       case 90:
-        return myConceptNode_InsertNextSiblingOperation;
+        return myConceptNode_InsertNewNextSiblingOperation;
       case 91:
-        return myConceptNode_InsertPrevSiblingOperation;
+        return myConceptNode_InsertNewPrevSiblingOperation;
       case 92:
-        return myConceptNode_IsAttributeOperation;
+        return myConceptNode_InsertNextSiblingOperation;
       case 93:
-        return myConceptNode_IsInstanceOfOperation;
+        return myConceptNode_InsertPrevSiblingOperation;
       case 94:
-        return myConceptNode_IsNotNullOperation;
+        return myConceptNode_IsAttributeOperation;
       case 95:
-        return myConceptNode_IsNullOperation;
+        return myConceptNode_IsInstanceOfOperation;
       case 96:
-        return myConceptNode_IsRoleOperation;
+        return myConceptNode_IsNotNullOperation;
       case 97:
-        return myConceptNode_ReplaceWithAnotherOperation;
+        return myConceptNode_IsNullOperation;
       case 98:
-        return myConceptNode_ReplaceWithNewOperation;
+        return myConceptNode_IsRoleOperation;
       case 99:
-        return myConceptOfConceptOperation;
+        return myConceptNode_ReplaceWithAnotherOperation;
       case 100:
-        return myConceptOperationParm_Concept;
+        return myConceptNode_ReplaceWithNewOperation;
       case 101:
-        return myConceptOperationParm_ConceptList;
+        return myConceptOfConceptOperation;
       case 102:
-        return myConceptOperationParm_Inclusion;
+        return myConceptOperationParm_Concept;
       case 103:
-        return myConceptOperationParm_LinkQualifier;
+        return myConceptOperationParm_ConceptList;
       case 104:
-        return myConceptOperationParm_Root;
+        return myConceptOperationParm_Inclusion;
       case 105:
-        return myConceptOperationParm_SameMetaLevel;
+        return myConceptOperationParm_LinkQualifier;
       case 106:
-        return myConceptOperationParm_StopConceptList;
+        return myConceptOperationParm_Root;
       case 107:
-        return myConceptPoundExpression;
+        return myConceptOperationParm_SameMetaLevel;
       case 108:
-        return myConceptPropertyAttributeQualifier;
+        return myConceptOperationParm_StopConceptList;
       case 109:
-        return myConceptPropertyIdRefExpression;
+        return myConceptPoundExpression;
       case 110:
-        return myConceptPropertyNameRefExpression;
+        return myConceptPropertyAttributeQualifier;
       case 111:
-        return myConceptPropertyQualifier;
+        return myConceptPropertyIdRefExpression;
       case 112:
-        return myConceptProperty_HasValue_Enum;
+        return myConceptPropertyNameRefExpression;
       case 113:
-        return myConceptProperty_HasValue_Simple;
+        return myConceptPropertyQualifier;
       case 114:
-        return myConceptProperty_RemoveOperation;
+        return myConceptProperty_HasValue_Enum;
       case 115:
-        return myConceptProperty_SetOperation;
+        return myConceptProperty_HasValue_Simple;
       case 116:
-        return myConceptRefConcept_Reference;
+        return myConceptProperty_RemoveOperation;
       case 117:
-        return myConceptReference_GetLinkDeclarationOperation;
+        return myConceptProperty_SetOperation;
       case 118:
-        return myConceptReference_GetResolveInfo;
+        return myConceptRefConcept_Reference;
       case 119:
-        return myConceptReference_GetRoleOperation;
+        return myConceptReference_GetLinkDeclarationOperation;
       case 120:
-        return myConceptReference_GetTargetOperation;
+        return myConceptReference_GetResolveInfo;
       case 121:
-        return myConceptSConceptType;
+        return myConceptReference_GetRoleOperation;
       case 122:
-        return myConceptSConceptTypeSConcept;
+        return myConceptReference_GetTargetOperation;
       case 123:
-        return myConceptSEnumMemberOperation;
+        return myConceptSConceptOperation;
       case 124:
-        return myConceptSEnumMemberType;
+        return myConceptSConceptType;
       case 125:
-        return myConceptSEnumOperation;
+        return myConceptSConceptTypeSConcept;
       case 126:
-        return myConceptSEnumOperationInvocation;
+        return myConceptSEnumMemberOperation;
       case 127:
-        return myConceptSEnum_MemberForNameOperation;
+        return myConceptSEnumMemberType;
       case 128:
-        return myConceptSEnum_MemberForValueOperation;
+        return myConceptSEnumOperation;
       case 129:
-        return myConceptSEnum_MemberOperation;
+        return myConceptSEnumOperationInvocation;
       case 130:
-        return myConceptSEnum_MembersOperation;
+        return myConceptSEnum_MemberForNameOperation;
       case 131:
-        return myConceptSLinkAccess;
+        return myConceptSEnum_MemberForValueOperation;
       case 132:
-        return myConceptSLinkImplicitSelect;
+        return myConceptSEnum_MemberOperation;
       case 133:
-        return myConceptSLinkListAccess;
+        return myConceptSEnum_MembersOperation;
       case 134:
-        return myConceptSModelType;
+        return myConceptSLinkAccess;
       case 135:
-        return myConceptSNodeCreator;
+        return myConceptSLinkImplicitSelect;
       case 136:
-        return myConceptSNodeListCreator;
+        return myConceptSLinkListAccess;
       case 137:
-        return myConceptSNodeListType;
+        return myConceptSModelType;
       case 138:
-        return myConceptSNodeOperation;
+        return myConceptSNodeCreator;
       case 139:
-        return myConceptSNodeType;
+        return myConceptSNodeListCreator;
       case 140:
-        return myConceptSNodeTypeCastExpression;
+        return myConceptSNodeListType;
       case 141:
-        return myConceptSPropertyAccess;
+        return myConceptSNodeOperation;
       case 142:
-        return myConceptSReferenceType;
+        return myConceptSNodeType;
       case 143:
-        return myConceptSearchScopeType;
+        return myConceptSNodeTypeCastExpression;
       case 144:
-        return myConceptSearchScope_ContainsOperation;
+        return myConceptSPropertyAccess;
       case 145:
+        return myConceptSReferenceType;
+      case 146:
+        return myConceptSearchScopeType;
+      case 147:
+        return myConceptSearchScope_ContainsOperation;
+      case 148:
         return myConceptSemanticDowncastExpression;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0uf = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AsNodeOperation", "jetbrains.mps.lang.smodel.structure.AsSConcept", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", "jetbrains.mps.lang.smodel.structure.BootstrapAwareMetaObject", "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.ILinkAccess", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer", "jetbrains.mps.lang.smodel.structure.ILinkQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier", "jetbrains.mps.lang.smodel.structure.IRefConceptArg", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OfConceptOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_Root", "jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"};
+  private static String[] stringSwitchCases_1htk8d_a0a0xf = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AsNodeOperation", "jetbrains.mps.lang.smodel.structure.AsSConcept", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", "jetbrains.mps.lang.smodel.structure.BootstrapAwareMetaObject", "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptAliasOperation", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.ILinkAccess", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer", "jetbrains.mps.lang.smodel.structure.ILinkQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier", "jetbrains.mps.lang.smodel.structure.IRefConceptArg", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OfConceptOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_Root", "jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptOperation", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"};
 }

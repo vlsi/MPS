@@ -29,6 +29,7 @@
     <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
     <import index="1kj4" ref="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
+    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -526,11 +527,17 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="1KUoCipvGqD" role="2OqNvi">
-                              <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
+                              <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.compiler.JavaCompilerOptions):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
                               <node concept="37vLTw" id="1KUoCipvGqE" role="37wK5m">
                                 <ref role="3cqZAo" node="3W4A8dypiCw" resolve="toCompile" />
                               </node>
                               <node concept="EWnkA" id="1KUoCipvGqF" role="37wK5m" />
+                              <node concept="1aIXbY" id="26I8knZGBrp" role="37wK5m">
+                                <node concept="1aIXbZ" id="26I8knZGBro" role="2Oq$k0" />
+                                <node concept="2sxana" id="26I8knZGBrs" role="2OqNvi">
+                                  <ref role="2sxfKC" node="bvkaYAFSqh" resolve="options" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="37vLTw" id="3GM_nagTx9u" role="37vLTJ">
@@ -779,6 +786,13 @@
           <property role="TrG5h" value="skipCompilation" />
           <node concept="3uibUv" id="5uk1WWiP3hB" role="2lK19J">
             <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+        <node concept="2lGYhJ" id="bvkaYAFSqh" role="2pHZQ9">
+          <property role="3dDGau" value="false" />
+          <property role="TrG5h" value="options" />
+          <node concept="3uibUv" id="26I8knZG$C4" role="2lK19J">
+            <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
           </node>
         </node>
       </node>

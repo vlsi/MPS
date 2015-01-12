@@ -388,7 +388,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
@@ -398,6 +398,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
@@ -491,7 +492,7 @@
   <target name="java.compile.test-util" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/source_gen" />
     <mkdir dir="${build.tmp}/java/out/test-util" />
-    <javac destdir="${build.tmp}/java/out/test-util" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/test-util" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/source_gen" />
@@ -522,7 +523,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.unitTest" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/source_gen" />
@@ -575,7 +576,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.unitTest#1171932017138" depends="java.compile.jetbrains.mps.baseLanguage.unitTest, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest#1171932017138" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest#1171932017138" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest#1171932017138" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" />
@@ -695,7 +696,7 @@
   <target name="java.compile.jetbrains.mps.lang.test" depends="java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.test" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/source_gen" />
@@ -765,7 +766,7 @@
   <target name="java.compile.jetbrains.mps.lang.test#1210261198005" depends="java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.lang.test, java.compile.jetbrains.mps.lang.test.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.test#1210261198005" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test#1210261198005" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test#1210261198005" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/source_gen" />
@@ -831,7 +832,7 @@
   <target name="java.compile.jetbrains.mps.lang.test.runtime" depends="java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.test-util, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
@@ -892,7 +893,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.editorTest" depends="java.compile.jetbrains.mps.baseLanguage.unitTest, java.compile.jetbrains.mps.lang.test, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest/source_gen" />
@@ -950,7 +951,7 @@
   <target name="java.compile.jetbrains.mps.lang.smodelTests" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" fork="true" includeantruntime="false" debug="true">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" fork="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/source_gen" />

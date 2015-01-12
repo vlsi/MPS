@@ -635,21 +635,21 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877497462">
     <file name="SequenceOperation_Behavior.java">
-      <node id="1213877497466" at="13,66,14,372" concept="8" />
-      <node id="1213877497492" at="14,372,15,19" concept="9" />
+      <node id="1213877497466" at="14,66,15,372" concept="8" />
+      <node id="1213877497492" at="15,372,16,19" concept="9" />
       <node id="1213877497462" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877497462" at="13,0,17,0" concept="12" trace="call_getLeft_1213877497463#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877497462" at="13,0,18,0" concept="12" trace="call_getLeft_1213877497463#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877497495" at="11,43,11,43" />
       <scope id="1213877497462" at="11,0,13,0">
         <var name="thisNode" id="1213877497462" />
       </scope>
-      <scope id="1213877497465" at="13,66,15,19">
+      <scope id="1213877497465" at="14,66,16,19">
         <var name="operand" id="1213877497467" />
       </scope>
-      <scope id="1213877497462" at="13,0,17,0">
+      <scope id="1213877497462" at="13,0,18,0">
         <var name="thisNode" id="1213877497462" />
       </scope>
-      <unit id="1213877497462" at="10,0,18,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavior" />
+      <unit id="1213877497462" at="10,0,19,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877511286">

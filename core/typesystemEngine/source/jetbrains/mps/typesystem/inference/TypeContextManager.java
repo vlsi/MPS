@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
@@ -37,12 +36,15 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class TypeContextManager implements CoreComponent {
 
@@ -52,7 +54,7 @@ public class TypeContextManager implements CoreComponent {
   private static boolean myReported = false;
 
   private final Object myLock = new Object();
-  private ConcurrentMap<ITypeContextOwner, TypecheckingContextHolder> myTypeCheckingContexts = new ConcurrentHashMap<ITypeContextOwner, TypecheckingContextHolder>();
+  private Map<ITypeContextOwner, TypecheckingContextHolder> myTypeCheckingContexts = Collections.synchronizedMap(new HashMap<ITypeContextOwner, TypecheckingContextHolder>());
 
   private TypeChecker myTypeChecker;
 
@@ -157,14 +159,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public TypeCheckingContext acquireTypecheckingContext(SNode node, ITypeContextOwner contextOwner) {
-    return getOrCreateContext(node, contextOwner, true);
-  }
-
-  public TypeCheckingContext lookupTypecheckingContext(SNode node, ITypeContextOwner contextOwner) {
-    if (!contextOwner.reuseTypecheckingContext()) {
-      throw new IllegalStateException("invalid usage of typechecking context owner");
-    }
-    return getOrCreateContext(node, contextOwner, false);
+    return getOrCreateContext(node, contextOwner);
   }
 
   @Deprecated
@@ -224,11 +219,16 @@ public class TypeContextManager implements CoreComponent {
       myRunnable = runnable;
     }
     T execute() {
-      // dispose has been called? no-no-no
-      if (myDisposeRequested.get()) return null;
-
       // one more task executing
       myExecuting.incrementAndGet();
+
+      // dispose has been called? no-no-no
+      if (myDisposeRequested.get()) {
+        if (myExecuting.decrementAndGet() == 0) {
+          doDispose();
+        }
+        return null;
+      }
 
       final ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
       if (myContextOwner != null) {
@@ -287,7 +287,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
 
-  private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
+  private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
 
     if (node == null) return null;
@@ -298,28 +298,16 @@ public class TypeContextManager implements CoreComponent {
       final TypecheckingContextHolder contextHolder = myTypeCheckingContexts.get(owner);
 
       if (contextHolder != null) {
-        if (!owner.reuseTypecheckingContext()) {
-          assert createIfAbsent;
-          return contextHolder.acquire(node);
-        } else {
-          // reuse the typechecking context
-          if (!createIfAbsent) {
-            return contextHolder.get(node);
-          }
-          return contextHolder.acquire(node);
-        }
+        // reuse the typechecking context
+        return contextHolder.acquire(node);
       }
       else {
         // not found, create new
         if (!owner.reuseTypecheckingContext()) {
-          assert createIfAbsent;
-
           final NonReusableTypecheckingContextHolder newContextHolder = new NonReusableTypecheckingContextHolder(owner);
           myTypeCheckingContexts.put(owner, newContextHolder);
           return newContextHolder.acquire(node);
-        }
-        else if (!createIfAbsent) {
-          return null;
+
         }
         else {
           final CountingTypecheckingContextHolder newContextHolder = new CountingTypecheckingContextHolder(owner);
@@ -363,18 +351,14 @@ public class TypeContextManager implements CoreComponent {
       }
     }
     //now we are not in generation mode
-
     final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
-    TypeCheckingContext context = acquireTypecheckingContext(node, contextOwner);
-    if (context == null) {
-      return TypesUtil.createRuntimeErrorType();
-    }
 
-    try {
-      return context.getTypeOf(node, myTypeChecker);
-    } finally {
-      releaseTypecheckingContext(contextOwner);
-    }
+    return new Executor<SNode>(contextOwner, node, new Computation<SNode>() {
+      @Override
+      public SNode compute(TypeCheckingContext context) {
+        return context.getTypeOf(node, myTypeChecker);
+      }
+    }).execute();
   }
 
   private interface TypecheckingContextHolder {
@@ -386,17 +370,15 @@ public class TypeContextManager implements CoreComponent {
 
     TypeCheckingContext acquire(SNode node);
 
-    TypeCheckingContext get(SNode node);
-
     void release();
 
     boolean isActive();
   }
 
   private class CountingTypecheckingContextHolder implements TypecheckingContextHolder {
-    private TypeCheckingContext myContext;
     private final ITypeContextOwner myOwner;
-    private int myCount = 0;
+    private AtomicReference<TypeCheckingContext> myContext = new AtomicReference<TypeCheckingContext>(null);
+    private Map<Thread, Integer> myCounters = Collections.synchronizedMap(new HashMap<Thread, Integer>());
 
     CountingTypecheckingContextHolder(ITypeContextOwner owner) {
       myOwner = owner;
@@ -409,47 +391,54 @@ public class TypeContextManager implements CoreComponent {
 
     @Override
     public void clear() {
-      if (myContext != null) {
-        myContext.clear();
+      if (myContext.get() != null) {
+        myContext.get().clear();
       }
     }
 
     @Override
     public void dispose() {
-      if (myContext != null) {
-        myContext.dispose();
+      if (myContext.get() != null) {
+        myContext.get().dispose();
       }
-      myContext = null;
-      myCount = 0;
+      myContext.set(null);
+      myCounters.clear();
     }
 
     @Override
     public void release() {
-      assert myCount > 0;
-      if ((myCount -= 1) <= 0) {
-        myContext.dispose();
-        myContext = null;
-      }
-    }
+      Integer ctr = myCounters.get(Thread.currentThread());
+      if (ctr == null) return;
 
-    @Override
-    public TypeCheckingContext get(SNode node) {
-      return myContext;
+      if ((ctr -= 1) == 0) {
+        myCounters.remove(Thread.currentThread());
+        if (myCounters.isEmpty()) {
+          myContext.get().dispose();
+          myContext.set(null);
+        }
+      }
+      else {
+        myCounters.put(Thread.currentThread(), ctr);
+      }
     }
 
     @Override
     public TypeCheckingContext acquire(SNode node) {
-      if (myContext == null) {
-        myContext = myOwner.createTypecheckingContext(node, TypeContextManager.this);
-        myCount = 0;
+      if (myContext.get() == null) {
+        myContext.set(myOwner.createTypecheckingContext(node, TypeContextManager.this));
+        myCounters.put(Thread.currentThread(), 1);
       }
-      myCount += 1;
-      return myContext;
+      else {
+        Integer ctr = myCounters.get(Thread.currentThread());
+        myCounters.put(Thread.currentThread(), (ctr != null ? ctr : 0) + 1);
+      }
+
+      return myContext.get();
     }
 
     @Override
     public boolean isActive() {
-      return myCount > 0;
+      return !myCounters.isEmpty();
     }
   }
 
@@ -480,12 +469,6 @@ public class TypeContextManager implements CoreComponent {
         context.dispose();
       }
       myContexts.clear();
-    }
-
-    @Override
-    public TypeCheckingContext get(SNode node) {
-      assert false;
-      return null;
     }
 
     @Override

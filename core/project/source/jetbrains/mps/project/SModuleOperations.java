@@ -28,6 +28,9 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -38,6 +41,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -216,6 +220,32 @@ public class SModuleOperations {
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }
+  }
+
+  public static Project getProjectForModule(SModule module) {
+    if (module == null) {
+      return null;
+    }
+    Project project = null;
+    SRepository repository = module.getRepository();
+    if (repository instanceof ProjectRepository) {
+      project = ((ProjectRepository) repository).getProject();
+    } else if (repository instanceof MPSModuleRepository) {
+      Language language = null;
+      Set<MPSModuleOwner> owners = ((MPSModuleRepository) repository).getOwners(module);
+      for (MPSModuleOwner owner : owners) {
+        if (owner instanceof Project) {
+          project = ((Project) owner);
+          break;
+        } else if (owner instanceof Language) {
+          language = (Language) owner;
+        }
+      }
+      if (project == null && language != null) {
+        project = getProjectForModule(language);
+      }
+    }
+    return project;
   }
 
   // helpers

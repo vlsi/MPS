@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="6k2nhtk5vuectjv1jah6uq7uxlev9kh">
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="73aezwmznaw3a8h4shhmpimeqt9bmy7" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-cqvx7ahmaxe73lziuxu0wuwznga47wy" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-7ay76nk84sm6b0hnn5rp8x2621ktgbe" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="8362vqvf5fgqwuz13vzqcmaow56lcqy" />
   <common hash="9my0sq6hsbfzlw26rk23ewq1mkeip3q" />
   <source id="5253498789149585672" name="buildMpsA" hash="8ci3hokva2mme9qjh9qsub0e9j0omwe">
     <dep root="6859736767834635843" />

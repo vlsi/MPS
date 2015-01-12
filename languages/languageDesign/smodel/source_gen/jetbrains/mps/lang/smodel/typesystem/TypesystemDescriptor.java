@@ -97,11 +97,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptAliasOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptFqNameRefExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptIdRefExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptShortDescriptionOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -378,6 +386,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_Reference_GetTargetOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_SConceptOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

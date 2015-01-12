@@ -11,12 +11,13 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -43,6 +44,9 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import com.intellij.util.Consumer;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -86,7 +90,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          postponeMigrationIfNeededOnModuleChange(((Iterable<SModule>) myMpsProject.getModulesWithGenerators()));
+          postponeMigrationIfNeededOnModuleChange(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
         }
       });
       return;
@@ -148,13 +152,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     // if a new language is added to a repo, all modules in project using it  
     // should be checked for whether their migration is needed  
     final Set<SModule> modules2Check = SetSequence.fromSet(new HashSet<SModule>());
-    Iterable<? extends SModule> projectModules = myMpsProject.getModulesWithGenerators();
-    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).ofType(Language.class).select(new ISelector<Language, SLanguage>() {
+    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
         return MetaIdByDeclaration.ref2Id(it.getModuleReference());
       }
     }).toListSequence();
-    Sequence.fromIterable(projectModules).visitAll(new IVisitor<SModule>() {
+    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         Set<SLanguage> used = new HashSet<SLanguage>(it.getUsedLanguages());
         used.retainAll(addedLanguages);
@@ -226,11 +229,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
    * be combined into one piece of universal code
    */
   public void removeGenSources() {
-    Iterable<? extends SModule> modules = myMpsProject.getModulesWithGenerators();
-    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_feb5zp_a0b0a0a1a42(it.getFacet(TestsFacet.class));
+        IFile testDir = check_feb5zp_a0b0a0a0a42(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -246,11 +248,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   public void removeClassesGen() {
-    Iterable<? extends SModule> modules = myMpsProject.getModulesWithGenerators();
-    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_feb5zp_a0b0a0a1a62(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_feb5zp_a0b0a0a0a62(it.getFacet(JavaModuleFacet.class));
         if (classesGen != null) {
           classesGen.delete();
         }
@@ -267,6 +268,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
       }
+      if (!(MigrationsUtil.isModuleMigrateable(module))) {
+        return;
+      }
       postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
     }
 
@@ -274,6 +278,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public void moduleChanged(SModule module) {
       ModelAccess.assertLegalWrite();
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
+        return;
+      }
+      if (!(MigrationsUtil.isModuleMigrateable(module))) {
         return;
       }
       postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
@@ -300,14 +307,34 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         if (!(finished)) {
           return;
         }
-        if (!(wizard.isFinishSuccessfull())) {
+        if (wizard.isFinishSuccessfull()) {
+          myState.migrationRequired = false;
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              ProjectManagerEx.getInstance().reloadProject(myProject);
+            }
+          });
           return;
         }
 
-        myState.migrationRequired = false;
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        MigrationErrorStep lastStep = as_feb5zp_a0a3a0a0a0a2a23(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+        if (lastStep == null) {
+          return;
+        }
+
+        final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
+        if (afterProjectInitialized == null) {
+          return;
+        }
+
+        StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
           public void run() {
-            ProjectManagerEx.getInstance().reloadProject(myProject);
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                afterProjectInitialized.invoke();
+              }
+            }, ModalityState.NON_MODAL);
+
           }
         });
       }
@@ -328,16 +355,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static IFile check_feb5zp_a0b0a0a1a42(TestsFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a0a42(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_feb5zp_a0b0a0a1a62(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a0a62(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
     return null;
+  }
+  private static <T> T as_feb5zp_a0a3a0a0a0a2a23(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

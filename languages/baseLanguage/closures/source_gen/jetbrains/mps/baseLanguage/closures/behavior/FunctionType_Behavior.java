@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.closures.util.RuntimeUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -97,15 +97,14 @@ with_meet:
     return null;
   }
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
-    String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
+    SNode ice = RuntimeUtil.functionClassifier(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     if (ice == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("No classifier found:" + rtCls);
+        LOG.warn("No classifier found:" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
       }
-      ice = SLinkOperations.getTarget(_quotation_createNode_ksvwin_a0a1a2a8(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+      ice = SLinkOperations.getTarget(_quotation_createNode_ksvwin_a0a1a1a8(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     }
-    SNode ct = _quotation_createNode_ksvwin_a0d0i(ice);
+    SNode ct = _quotation_createNode_ksvwin_a0c0i(ice);
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       ListSequence.fromList(SLinkOperations.getChildren(ct, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{})), true));
     }
@@ -126,12 +125,11 @@ with_meet:
     return ct;
   }
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
-    String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
+    SNode ice = RuntimeUtil.functionClassifier(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     if (ice == null) {
-      throw new RuntimeException("No classifier found:" + rtCls);
+      throw new RuntimeException("No classifier found:" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     }
-    SNode ct = _quotation_createNode_ksvwin_a0d0j(ice);
+    SNode ct = _quotation_createNode_ksvwin_a0c0j(ice);
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       ListSequence.fromList(SLinkOperations.getChildren(ct, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}))));
     }
@@ -152,12 +150,11 @@ with_meet:
     return ct;
   }
   public static SNode call_getDeclarationRuntimeType_811905832257074290(SNode thisNode, SNode sample) {
-    String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
+    SNode ice = RuntimeUtil.functionClassifier(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     if (ice == null) {
-      throw new RuntimeException("No classifier found:" + rtCls);
+      throw new RuntimeException("No classifier found:" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     }
-    SNode ct = _quotation_createNode_ksvwin_a0d0k(ice);
+    SNode ct = _quotation_createNode_ksvwin_a0c0k(ice);
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       SNode rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), sample, "virtual_getResultType_1230475757059", new Object[]{});
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sample, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"))) {
@@ -258,28 +255,28 @@ with_throws:
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ksvwin_a0a1a2a8() {
+  private static SNode _quotation_createNode_ksvwin_a0a1a1a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), facade.createNodeId("~_FunctionTypes$_return_P0_E0")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ksvwin_a0d0i(Object parameter_1) {
+  private static SNode _quotation_createNode_ksvwin_a0c0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ksvwin_a0d0j(Object parameter_1) {
+  private static SNode _quotation_createNode_ksvwin_a0c0j(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ksvwin_a0d0k(Object parameter_1) {
+  private static SNode _quotation_createNode_ksvwin_a0c0k(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
