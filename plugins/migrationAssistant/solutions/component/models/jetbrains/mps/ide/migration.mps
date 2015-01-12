@@ -473,20 +473,15 @@
         </node>
         <node concept="3cpWs3" id="1RNu34RvuFT" role="3uHU7B">
           <node concept="3cpWs3" id="73_poD1h_3I" role="3uHU7B">
-            <node concept="3cpWs3" id="73_poD1h_3J" role="3uHU7B">
-              <node concept="Xl_RD" id="73_poD1h_3K" role="3uHU7B">
-                <property role="Xl_RC" value="Some of the modules in project require migration.\n" />
-              </node>
-              <node concept="Xl_RD" id="73_poD1h_3L" role="3uHU7w">
-                <property role="Xl_RC" value="It is recommended to clean generated files before starting migration.\n" />
-              </node>
+            <node concept="Xl_RD" id="73_poD1h_3K" role="3uHU7B">
+              <property role="Xl_RC" value="Some of the modules in project require migration.\n" />
             </node>
             <node concept="Xl_RD" id="1RNu34Rvxaz" role="3uHU7w">
               <property role="Xl_RC" value="In case the migration is postponed, this notification will not appear until the project is reopened.\n" />
             </node>
           </node>
           <node concept="Xl_RD" id="1RNu34Rw7X6" role="3uHU7w">
-            <property role="Xl_RC" value="Migration assistant can be invoked at any time by clicking Tools-&gt;Run Migration Assistant.\n" />
+            <property role="Xl_RC" value="Migration Assistant can be invoked at any time by clicking Tools-&gt;Run Migration Assistant.\n" />
           </node>
         </node>
       </node>
@@ -1914,7 +1909,7 @@
     <node concept="3UR2Jj" id="3gptLqNJJLQ" role="lGtFl">
       <node concept="TZ5HA" id="3gptLqNJJLR" role="TZ5H$">
         <node concept="1dT_AC" id="3gptLqNJJLS" role="1dT_Ay">
-          <property role="1dT_AB" value="At the first startup, migraion is not required" />
+          <property role="1dT_AB" value="At the first startup, migration is not required" />
         </node>
       </node>
       <node concept="TZ5HA" id="3gptLqNJMVc" role="TZ5H$">

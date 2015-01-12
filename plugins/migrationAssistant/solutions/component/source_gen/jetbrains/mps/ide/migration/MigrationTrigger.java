@@ -42,7 +42,7 @@ import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * At the first startup, migraion is not required
+ * At the first startup, migration is not required
  * The need for migration is determined after startup by checking all modules once and then watching the repo
  * Whether some change requires migration to be executed, the user is notified about that and the project is reloaded 
  * with myState.migrationRequired set to true.
@@ -56,7 +56,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
-  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is recommended to clean generated files before starting migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
+  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
