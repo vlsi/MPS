@@ -29,7 +29,7 @@
       <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeWarningCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="ActionReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
     </file>
     <file name="AnonymousCellAnnotation_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
@@ -74,16 +74,16 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.ExpressionContainer_BehaviorDescriptor" />
     </file>
     <file name="IChecksRules_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.test.behavior.IChecksRules_BehaviorDescriptor" />
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.test.behavior.IChecksRules_BehaviorDescriptor" />
     </file>
     <file name="INodeAnnotation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.INodeAnnotation_BehaviorDescriptor" />
     </file>
     <file name="IReferenceAttachable_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.test.behavior.IReferenceAttachable_BehaviorDescriptor" />
+      <unit at="7,0,13,0" name="jetbrains.mps.lang.test.behavior.IReferenceAttachable_BehaviorDescriptor" />
     </file>
     <file name="IRuleReference_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.test.behavior.IRuleReference_BehaviorDescriptor" />
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.test.behavior.IRuleReference_BehaviorDescriptor" />
     </file>
     <file name="InvokeActionStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.InvokeActionStatement_BehaviorDescriptor" />
