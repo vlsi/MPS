@@ -904,6 +904,32 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4x27oTRX0aR" role="3cqZAp">
+          <node concept="3cpWsn" id="4x27oTRX0aS" role="3cpWs9">
+            <property role="TrG5h" value="migrationRequired" />
+            <node concept="10P_77" id="4x27oTRX0aQ" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="4x27oTRXHZ1" role="3cqZAp">
+          <node concept="1QHqEC" id="4x27oTRXHZ3" role="1QHqEI">
+            <node concept="3clFbS" id="4x27oTRXHZ5" role="1bW5cS">
+              <node concept="3clFbF" id="4x27oTRXIhg" role="3cqZAp">
+                <node concept="37vLTI" id="4x27oTRXIJN" role="3clFbG">
+                  <node concept="37vLTw" id="4x27oTRXIhe" role="37vLTJ">
+                    <ref role="3cqZAo" node="4x27oTRX0aS" resolve="migrationRequired" />
+                  </node>
+                  <node concept="2YIFZM" id="4x27oTRXIM5" role="37vLTx">
+                    <ref role="1Pybhc" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
+                    <ref role="37wK5l" to="auc7:1AzqgyAfUKj" resolve="isLanguageMigrationRequired" />
+                    <node concept="37vLTw" id="4x27oTRXIM6" role="37wK5m">
+                      <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="285c2S_Yh_T" role="3cqZAp">
           <node concept="3clFbS" id="285c2S_Yh_U" role="3clFbx">
             <node concept="3clFbF" id="285c2S_YivC" role="3cqZAp">
@@ -945,12 +971,8 @@
             <node concept="3cpWs6" id="285c2S_Yh_V" role="3cqZAp" />
           </node>
           <node concept="3fqX7Q" id="285c2S_Yh_W" role="3clFbw">
-            <node concept="2YIFZM" id="285c2S_Yh_X" role="3fr31v">
-              <ref role="37wK5l" to="auc7:1AzqgyAfUKj" resolve="isLanguageMigrationRequired" />
-              <ref role="1Pybhc" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
-              <node concept="37vLTw" id="285c2S_Yirr" role="37wK5m">
-                <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
-              </node>
+            <node concept="37vLTw" id="4x27oTRX0aV" role="3fr31v">
+              <ref role="3cqZAo" node="4x27oTRX0aS" resolve="migrationRequired" />
             </node>
           </node>
         </node>
