@@ -17,9 +17,6 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
-import java.util.Collection;
-import java.util.Map;
-
 public interface ProjectMigration {
   String getDescription();
 
