@@ -74,10 +74,10 @@ public class DispatchGroupDescriptor {
   }
   private boolean typesEqual(SNode typ1, SNode typ2) {
     {
-      SNode cls = typ1;
+      final SNode cls = typ1;
       if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
         {
-          SNode cls2 = typ2;
+          final SNode cls2 = typ2;
           if (SNodeOperations.isInstanceOf(cls2, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             return SLinkOperations.getTarget(cls, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == SLinkOperations.getTarget(cls2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
           }
@@ -92,7 +92,7 @@ public class DispatchGroupDescriptor {
   }
   private int typeHashCode(SNode typ) {
     {
-      SNode cls = typ;
+      final SNode cls = typ;
       if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
         return SLinkOperations.getTarget(cls, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")).hashCode();
       }
