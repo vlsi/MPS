@@ -31,15 +31,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.util.PairFunction;
-import javax.swing.JCheckBox;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -187,31 +179,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            String[] choises = new String[]{"Migrate", "Postpone"};
-            final int result = Messages.showCheckboxMessageDialog(DIALOG_TEXT, "Migration required", choises, "Clean generated sources", true, 0, 0, null, new PairFunction<Integer, JCheckBox, Integer>() {
-              public Integer fun(Integer selected, JCheckBox cb) {
-                if (selected == 1) {
-                  return 2;
-                }
-                return (cb.isSelected() ? 0 : 1);
-              }
-            });
-            if (result == 2) {
+            int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration required", "Migrate", "Postpone", null);
+            if (result == Messages.NO) {
               return;
             }
 
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              public void run() {
-                if (result == 0) {
-                  removeGenSources();
-                }
-
-                // clean genclasses 
-                removeClassesGen();
-                // invalidate FS caches (see InvalidateCachesAction) 
-                FSRecords.invalidateCaches();
-              }
-            });
             // set flag to execute migration after startup 
             myState.migrationRequired = true;
             // reload project and start migration assist 
@@ -222,41 +194,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     });
 
     myMigrationQueued = true;
-  }
-
-  /**
-   * todo. Was originally copied from IdeCommandUtil, then changed. Check whether they could 
-   * be combined into one piece of universal code
-   */
-  public void removeGenSources() {
-    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile testDir = check_feb5zp_a0b0a0a0a42(it.getFacet(TestsFacet.class));
-        if (outputDir != null) {
-          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
-          outputDir.delete();
-          cacheDir.delete();
-        }
-        if (testDir != null) {
-          IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
-          testDir.delete();
-          testCacheDir.delete();
-        }
-      }
-    });
-  }
-
-  public void removeClassesGen() {
-    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_feb5zp_a0b0a0a0a62(it.getFacet(JavaModuleFacet.class));
-        if (classesGen != null) {
-          classesGen.delete();
-        }
-      }
-    });
   }
 
   private class MyRepoListener extends SRepositoryContentAdapter {
@@ -317,7 +254,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
           return;
         }
 
-        MigrationErrorStep lastStep = as_feb5zp_a0a3a0a0a0a2a23(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+        MigrationErrorStep lastStep = as_feb5zp_a0a3a0a0a0a2a82(wizard.getCurrentStepObject(), MigrationErrorStep.class);
         if (lastStep == null) {
           return;
         }
@@ -355,19 +292,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static IFile check_feb5zp_a0b0a0a0a42(TestsFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTestsOutputPath();
-    }
-    return null;
-  }
-  private static IFile check_feb5zp_a0b0a0a0a62(JavaModuleFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassesGen();
-    }
-    return null;
-  }
-  private static <T> T as_feb5zp_a0a3a0a0a0a2a23(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a3a0a0a0a2a82(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
