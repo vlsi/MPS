@@ -87,6 +87,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
@@ -9829,6 +9830,7 @@
         <node concept="3cpWs8" id="1Cyzq4PvXsc" role="3cqZAp">
           <node concept="3cpWsn" id="1Cyzq4PvXsd" role="3cpWs9">
             <property role="TrG5h" value="n" />
+            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="1Cyzq4PvXse" role="1tU5fm">
               <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
             </node>
