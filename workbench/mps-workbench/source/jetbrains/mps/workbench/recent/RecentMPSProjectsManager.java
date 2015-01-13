@@ -24,6 +24,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
 import com.intellij.util.messages.MessageBus;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -42,16 +43,16 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
 
   @Override
   @Nullable
-  protected String getProjectPath(Project project) {
+  protected String getProjectPath(@NotNull Project project) {
     return project.getPresentableUrl();
   }
 
   @Override
-  protected void doOpenProject(String projectPath, Project projectToClose, boolean forceNewFrame) {
+  protected void doOpenProject(@NotNull String projectPath, Project projectToClose, boolean forceNewFrame) {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {
       Project project = ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
-      if (project != null) {
+      if (project != null && !project.isDisposed()) {
         ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
       }
     }
