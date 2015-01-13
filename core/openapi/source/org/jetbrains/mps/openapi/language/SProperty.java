@@ -40,4 +40,15 @@ public interface SProperty {
    */
   @Nullable
   SNode getDeclarationNode();
+
+  // --------todo remove
+
+  @Deprecated
+  SDataType getType();
+
+  /**
+   * Will be used to check validity of potential values.
+   */
+  @Deprecated
+  boolean isValid(String value);
 }
