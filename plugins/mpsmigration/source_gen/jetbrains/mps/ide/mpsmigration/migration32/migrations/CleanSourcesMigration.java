@@ -4,6 +4,7 @@ package jetbrains.mps.ide.mpsmigration.migration32.migrations;
 
 import jetbrains.mps.migration.global.BaseProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.project.Project;
 import java.util.Collection;
 import java.util.Collections;
@@ -22,7 +23,7 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 
-public class CleanSourcesMigration extends BaseProjectMigration implements ProjectMigrationWithOptions {
+public class CleanSourcesMigration extends BaseProjectMigration implements ProjectMigrationWithOptions, CleanupProjectMigration {
   public static final String OPTION_REMOVE_SOURCES = "jetbrains.mps.removeSources";
   public static final String ID = "jetbrains.mps.cleanSrc";
 

@@ -926,6 +926,9 @@
     <node concept="3uibUv" id="7ScOZyr23pq" role="EKbjA">
       <ref role="3uigEE" to="bco1:~ProjectMigrationWithOptions" resolve="ProjectMigrationWithOptions" />
     </node>
+    <node concept="3uibUv" id="2pwkv5png5D" role="EKbjA">
+      <ref role="3uigEE" to="bco1:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
+    </node>
   </node>
   <node concept="312cEu" id="25gV4Ls$R9T">
     <property role="TrG5h" value="ModelRefMigration" />
