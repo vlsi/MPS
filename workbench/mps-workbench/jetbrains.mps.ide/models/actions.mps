@@ -29625,12 +29625,9 @@
       <property role="TrG5h" value="refresh" />
       <node concept="3Tm6S6" id="4HeMkQiYQ0R" role="1B3o_S" />
       <node concept="3clFbS" id="4HeMkQiYQ0T" role="3clF47">
-        <node concept="1gVbGN" id="4HeMkQiYQ0U" role="3cqZAp">
-          <node concept="Xl_RD" id="4HeMkQiYQ0W" role="1gVpfI">
-            <property role="Xl_RC" value="must be called from EDT only" />
-          </node>
-          <node concept="2YIFZM" id="4HeMkQiYQ0V" role="1gVkn0">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+        <node concept="3clFbF" id="59SCzNX_oqf" role="3cqZAp">
+          <node concept="2YIFZM" id="59SCzNX_p8Q" role="3clFbG">
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
         </node>

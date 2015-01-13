@@ -40,7 +40,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   @Override
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
-      if (ThreadUtils.isEventDispatchThread()) {
+      if (ThreadUtils.isInEDT()) {
         coreTask.run(new ProgressMonitorAdapter(pi));
       } else {
         this.spawnMakeThreadThenDoRunRelayingLog(new ProgressMonitorAdapter(pi));

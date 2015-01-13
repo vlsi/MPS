@@ -921,9 +921,9 @@
             <node concept="liA8E" id="7vbFQ4bPXxE" role="2OqNvi">
               <ref role="37wK5l" to="to5d:~Logger.assertLog(boolean,java.lang.String):void" resolve="assertLog" />
               <node concept="3fqX7Q" id="7vbFQ4bPXxF" role="37wK5m">
-                <node concept="2YIFZM" id="7vbFQ4bPXxG" role="3fr31v">
+                <node concept="2YIFZM" id="59SCzNXAas6" role="3fr31v">
+                  <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
                   <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-                  <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
                 </node>
               </node>
               <node concept="Xl_RD" id="7vbFQ4bPXxH" role="37wK5m">
@@ -3052,8 +3052,8 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7vbFQ4bPXMS" role="3cqZAp">
-          <node concept="2YIFZM" id="5YmGoX0I5wO" role="3clFbw">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+          <node concept="2YIFZM" id="59SCzNXA5Ym" role="3clFbw">
+            <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
           <node concept="9aQIb" id="7vbFQ4bPXMU" role="9aQIa">
@@ -3264,8 +3264,8 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7vbFQ4bPXNC" role="3cqZAp">
-          <node concept="2YIFZM" id="5YmGoX0I5wP" role="3clFbw">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+          <node concept="2YIFZM" id="59SCzNXA4Xk" role="3clFbw">
+            <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
           <node concept="9aQIb" id="7vbFQ4bPXNE" role="9aQIa">
@@ -3468,8 +3468,8 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7vbFQ4bPXOm" role="3cqZAp">
-          <node concept="2YIFZM" id="5YmGoX0I5wQ" role="3clFbw">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+          <node concept="2YIFZM" id="59SCzNXA5mO" role="3clFbw">
+            <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
           <node concept="9aQIb" id="7vbFQ4bPXOo" role="9aQIa">
@@ -3670,8 +3670,8 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7vbFQ4bPXP4" role="3cqZAp">
-          <node concept="2YIFZM" id="5YmGoX0I5wR" role="3clFbw">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+          <node concept="2YIFZM" id="59SCzNXA57Z" role="3clFbw">
+            <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
           <node concept="9aQIb" id="7vbFQ4bPXP6" role="9aQIa">
@@ -4586,9 +4586,9 @@
             <node concept="liA8E" id="7u1yMHJYqmo" role="2OqNvi">
               <ref role="37wK5l" to="to5d:~Logger.assertLog(boolean,java.lang.String):void" resolve="assertLog" />
               <node concept="3fqX7Q" id="7u1yMHJYqmp" role="37wK5m">
-                <node concept="2YIFZM" id="7u1yMHJYqmq" role="3fr31v">
+                <node concept="2YIFZM" id="59SCzNXAbQ1" role="3fr31v">
+                  <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
                   <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-                  <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
                 </node>
               </node>
               <node concept="Xl_RD" id="7u1yMHJYqmr" role="37wK5m">

@@ -164,7 +164,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
   public void eventsHappenedInCommand(final List<SModelEvent> events) {
     final Runnable action = new UpdateRunnable(events);
 
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       action.run();
     } else {
       getTree().rebuildTreeLater(new Runnable() {

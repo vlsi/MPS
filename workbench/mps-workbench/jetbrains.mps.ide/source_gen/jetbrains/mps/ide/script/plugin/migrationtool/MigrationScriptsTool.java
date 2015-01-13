@@ -48,9 +48,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     return true;
   }
   public void startMigration(List<SNode> scriptNodes, final SearchScope scope, final IOperationContext context) {
-    if (!(ThreadUtils.isEventDispatchThread())) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     myScripts = new ArrayList<SNodeReference>();
     for (SNode scriptNode : scriptNodes) {
       myScripts.add(new SNodePointer(scriptNode));
@@ -87,9 +85,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     });
   }
   /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
-    if (!(ThreadUtils.isEventDispatchThread())) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {

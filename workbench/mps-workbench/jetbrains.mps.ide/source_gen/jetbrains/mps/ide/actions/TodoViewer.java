@@ -69,7 +69,7 @@ public class TodoViewer extends JPanel {
     return myProject;
   }
   private void refresh() {
-    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
+    ThreadUtils.assertEDT();
     removeAll();
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getProject());

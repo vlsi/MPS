@@ -130,7 +130,7 @@ public abstract class UsagesView implements IExternalizeable {
   //----RUN STUFF----
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
-    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT";
+    ThreadUtils.assertEDT();
     assert !myIsInitialized;
     myIsInitialized = true;
     myResultProvider = resultProvider;

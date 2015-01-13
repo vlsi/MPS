@@ -27,7 +27,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       ApplicationManager.getApplication().executeOnPooledThread(runnable);
     } else {
       runnable.run();
@@ -51,7 +51,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       ApplicationManager.getApplication().executeOnPooledThread(runnable);
     } else {
       runnable.run();
@@ -75,7 +75,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       ApplicationManager.getApplication().executeOnPooledThread(runnable);
     } else {
       runnable.run();
@@ -99,7 +99,7 @@ public class IdeaNavigationProvider implements NavigationProvider {
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       ApplicationManager.getApplication().executeOnPooledThread(runnable);
     } else {
       runnable.run();

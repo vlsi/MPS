@@ -56,9 +56,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private MigrationScriptsController myController;
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
     myProject = project;
-    if (!(ThreadUtils.isEventDispatchThread())) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     myFinder = finder;
     myFinder.addResultsListener(this);
     myQuery = query;

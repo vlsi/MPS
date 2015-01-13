@@ -634,8 +634,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="9D0Ba05uBs" role="3clFbw">
-                <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+              <node concept="2YIFZM" id="59SCzNX_IAE" role="3clFbw">
+                <ref role="37wK5l" to="86um:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
                 <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
               </node>
               <node concept="9aQIb" id="9D0Ba05uBt" role="9aQIa">
