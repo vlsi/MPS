@@ -75,7 +75,6 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
-  @Deprecated
   public SDataType getType() {
     // TODO reimplement using ConceptDescriptor
     SNode propertyNode = getDeclarationNode();
@@ -97,7 +96,6 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
-  @Deprecated
   public boolean isValid(String string) {
     // TODO implement
     return true;

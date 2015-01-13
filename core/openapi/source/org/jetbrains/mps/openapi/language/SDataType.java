@@ -18,11 +18,8 @@ package org.jetbrains.mps.openapi.language;
 /**
  * Data types need to be able to save to and load from strings.
  */
-@Deprecated
 public interface SDataType {
-  @Deprecated
   Object fromString(String value);
 
-  @Deprecated
   String toString(Object value);
 }

@@ -18,23 +18,19 @@ package org.jetbrains.mps.openapi.language;
 /**
  * Represents an option in an enumeration
  */
-@Deprecated
 public interface SEnumerationLiteral {
   /**
    * The owning enumeration
    */
-  @Deprecated
   SEnumeration getEnumeration();
 
   /**
    * The way to present the option to the user
    */
-  @Deprecated
   String getPresentation();
 
   /**
    * The name of the option, must be unique within the enumeration.
    */
-  @Deprecated
   String getName();
 }

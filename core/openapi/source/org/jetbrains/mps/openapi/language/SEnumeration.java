@@ -18,17 +18,13 @@ package org.jetbrains.mps.openapi.language;
 /**
  * Represents an enumeration - a collections of related options (SEnumerationLiterals)
  */
-@Deprecated
 public interface SEnumeration extends SDataType {
   /**
    * Resolves the enumeration literal with matching name
    */
-  @Deprecated
   SEnumerationLiteral getLiteral(String name);
 
-  @Deprecated
   SEnumerationLiteral getDefault();
 
-  @Deprecated
   Iterable<SEnumerationLiteral> getLiterals();
 }
