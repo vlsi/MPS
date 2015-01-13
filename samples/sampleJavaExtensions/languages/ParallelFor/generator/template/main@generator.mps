@@ -422,14 +422,11 @@
                           <node concept="3NFfHV" id="6OAzscTcN$Y" role="1sPUBK">
                             <node concept="3clFbS" id="6OAzscTcN$Z" role="2VODD2">
                               <node concept="3clFbF" id="6OAzscTcN_0" role="3cqZAp">
-                                <node concept="2OqwBi" id="6OAzscTdj4r" role="3clFbG">
-                                  <node concept="2OqwBi" id="6OAzscTcN_q" role="2Oq$k0">
-                                    <node concept="30H73N" id="6OAzscTcN_1" role="2Oq$k0" />
-                                    <node concept="3TrEf2" id="6OAzscTd7N8" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" />
-                                    </node>
+                                <node concept="2OqwBi" id="6OAzscTcN_q" role="3clFbG">
+                                  <node concept="30H73N" id="6OAzscTcN_1" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="6OAzscTd7N8" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" />
                                   </node>
-                                  <node concept="1$rogu" id="6OAzscTdj4x" role="2OqNvi" />
                                 </node>
                               </node>
                             </node>
