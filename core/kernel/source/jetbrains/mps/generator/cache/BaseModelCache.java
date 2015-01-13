@@ -158,7 +158,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
    * Forget cached state and scrap any persisted/serialized state. Does its best to ensure serialized state got discarded, but doesn't guarantee that.
    */
   public void discard(@NotNull SModel model) {
-    final Pair<IFile, T> removed = myCache.remove(model);
+    final Pair<IFile, T> removed = myCache.remove(model.getReference());
     IFile cachedFile = removed == null ? null : removed.o1;
     IFile actualCacheFile = getCacheFile(model);
     if (actualCacheFile != null) {
