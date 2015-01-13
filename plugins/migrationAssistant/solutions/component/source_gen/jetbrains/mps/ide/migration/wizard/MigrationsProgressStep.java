@@ -22,6 +22,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,7 +30,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.migration.MigrationCheckUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Map;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -93,8 +93,18 @@ public class MigrationsProgressStep extends MigrationStep {
   private void doRun(ProgressIndicator progress) {
     PersistenceRegistry.getInstance().disableFastFindUsages();
 
+    Map<String, Object> options = InitialStep.getOptions();
+
     // project steps are considered to be X percent of the whole process 
     double projectStepsFraction = 0.3;
+
+    int projectStepsCount = myManager.projectStepsCount();
+    progress.setFraction(0);
+
+    addElementToMigrationList("Cleaning project... Please wait.");
+    while (executeSingleStep(myManager.nextProjectStep(options, true))) {
+      progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
+    }
 
     addElementToMigrationList("Checking models... Please wait.");
     final Wrappers._boolean preProblems = new Wrappers._boolean();
@@ -106,13 +116,9 @@ public class MigrationsProgressStep extends MigrationStep {
       }
     });
 
-    int projectStepsCount = myManager.projectStepsCount();
-    progress.setFraction(0);
-
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
     if (!(preProblems.value)) {
-      Map<String, Object> options = InitialStep.getOptions();
-      while (executeSingleStep(myManager.nextProjectStep(options))) {
+      while (executeSingleStep(myManager.nextProjectStep(options, false))) {
         progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
       }
       progress.setFraction(projectStepsFraction);

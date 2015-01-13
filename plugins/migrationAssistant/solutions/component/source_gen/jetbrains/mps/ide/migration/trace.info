@@ -57,7 +57,7 @@
     <file name="MigrationManager.java">
       <node id="6781485246382121734" at="8,0,9,0" concept="4" trace="isMigrationRequired#()Z" />
       <node id="8570387127138876086" at="10,0,11,0" concept="4" trace="projectStepsCount#()I" />
-      <node id="2400678414100434057" at="12,0,13,0" concept="4" trace="nextProjectStep#(Ljava/util/Map;)Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
+      <node id="2400678414100434057" at="12,0,13,0" concept="4" trace="nextProjectStep#(Ljava/util/Map;Z)Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
       <node id="8570387127138876373" at="14,0,15,0" concept="4" trace="languageStepsCount#()I" />
       <node id="6781485246382121738" at="16,0,17,0" concept="4" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
       <node id="6781485246382121695" at="19,0,20,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
@@ -65,6 +65,7 @@
       <scope id="6781485246382121734" at="8,0,9,0" />
       <scope id="8570387127138876086" at="10,0,11,0" />
       <scope id="2400678414100434057" at="12,0,13,0">
+        <var name="cleanup" id="2765300268232827400" />
         <var name="options" id="7485988173702230282" />
       </scope>
       <scope id="8570387127138876373" at="14,0,15,0" />

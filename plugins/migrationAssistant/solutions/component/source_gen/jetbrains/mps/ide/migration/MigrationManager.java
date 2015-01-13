@@ -9,7 +9,7 @@ public interface MigrationManager {
 
   public int projectStepsCount();
 
-  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options);
+  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup);
 
   public int languageStepsCount();
 
