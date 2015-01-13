@@ -1582,20 +1582,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7rK8qWGIaEu" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGIaEv" role="3cpWs9">
-            <property role="TrG5h" value="languageStepsCount" />
-            <node concept="10Oyi0" id="7rK8qWGIaEt" role="1tU5fm" />
-            <node concept="2OqwBi" id="7rK8qWGIaEw" role="33vP2m">
-              <node concept="37vLTw" id="7rK8qWGIaEx" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
-              </node>
-              <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7rK8qWGIkqj" role="3cqZAp">
           <node concept="2OqwBi" id="7rK8qWGIl4p" role="3clFbG">
             <node concept="37vLTw" id="7rK8qWGIkqh" role="2Oq$k0">
@@ -1699,6 +1685,20 @@
               </node>
             </node>
             <node concept="3clFbH" id="25gV4LszNeE" role="3cqZAp" />
+            <node concept="3cpWs8" id="7rK8qWGIaEu" role="3cqZAp">
+              <node concept="3cpWsn" id="7rK8qWGIaEv" role="3cpWs9">
+                <property role="TrG5h" value="languageStepsCount" />
+                <node concept="10Oyi0" id="7rK8qWGIaEt" role="1tU5fm" />
+                <node concept="2OqwBi" id="7rK8qWGIaEw" role="33vP2m">
+                  <node concept="37vLTw" id="7rK8qWGIaEx" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+                  </node>
+                  <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
+                    <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2$JKZl" id="25gV4LsznDS" role="3cqZAp">
               <node concept="3clFbS" id="25gV4LsznDU" role="2LFqv$">
                 <node concept="3clFbF" id="7rK8qWGInqu" role="3cqZAp">
@@ -1710,7 +1710,7 @@
                       <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
                       <node concept="3cpWs3" id="7rK8qWGInqy" role="37wK5m">
                         <node concept="FJ1c_" id="7rK8qWGInqz" role="3uHU7w">
-                          <node concept="37vLTw" id="5iIf1_gko2Y" role="3uHU7w">
+                          <node concept="37vLTw" id="wVFrPa1o_1" role="3uHU7w">
                             <ref role="3cqZAo" node="7rK8qWGIaEv" resolve="languageStepsCount" />
                           </node>
                           <node concept="1eOMI4" id="7rK8qWGIohu" role="3uHU7B">

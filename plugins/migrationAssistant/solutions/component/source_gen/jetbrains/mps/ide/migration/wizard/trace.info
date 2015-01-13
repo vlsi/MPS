@@ -373,14 +373,14 @@
       <node id="7935677192558470401" at="104,79,105,73" concept="2" />
       <node id="7935677192558524497" at="107,7,108,0" concept="10" />
       <node id="8570387127139329084" at="108,0,109,58" concept="7" />
-      <node id="8570387127139347102" at="109,58,110,60" concept="7" />
-      <node id="8570387127139387027" at="110,60,111,28" concept="2" />
-      <node id="6101880624552959750" at="111,28,112,0" concept="10" />
-      <node id="7935677192556386289" at="112,0,113,72" concept="7" />
-      <node id="7485988173702225419" at="114,31,115,61" concept="7" />
-      <node id="8570387127139294393" at="116,69,117,96" concept="2" />
-      <node id="8570387127139378698" at="118,7,119,49" concept="2" />
-      <node id="2400678414103032746" at="119,49,120,0" concept="10" />
+      <node id="8570387127139387027" at="109,58,110,28" concept="2" />
+      <node id="6101880624552959750" at="110,28,111,0" concept="10" />
+      <node id="7935677192556386289" at="111,0,112,72" concept="7" />
+      <node id="7485988173702225419" at="113,31,114,61" concept="7" />
+      <node id="8570387127139294393" at="115,69,116,96" concept="2" />
+      <node id="8570387127139378698" at="117,7,118,49" concept="2" />
+      <node id="2400678414103032746" at="118,49,119,0" concept="10" />
+      <node id="8570387127139347102" at="119,0,120,62" concept="7" />
       <node id="8570387127139399326" at="121,63,122,105" concept="2" />
       <node id="8570387127139405285" at="123,7,124,32" concept="2" />
       <node id="5783745319707792976" at="124,32,125,0" concept="10" />
@@ -429,8 +429,8 @@
       <node id="7935677192556136087" at="232,33,233,26" concept="8" />
       <node id="7935677192556651571" at="236,37,237,72" concept="8" />
       <node id="8570387127138497486" at="50,0,53,0" concept="6" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="2400678414103034137" at="115,61,118,7" concept="15" />
-      <node id="2400678414102919800" at="120,0,123,7" concept="15" />
+      <node id="2400678414103034137" at="114,61,117,7" concept="15" />
+      <node id="2400678414102919800" at="120,62,123,7" concept="15" />
       <node id="3013058279687723665" at="128,0,131,0" concept="6" trace="run#()V" />
       <node id="6781485246382123132" at="161,82,164,5" concept="5" />
       <node id="5783745319707780363" at="169,0,172,0" concept="6" trace="run#()V" />
@@ -466,10 +466,10 @@
       <node id="8570387127138365063" at="74,79,90,7" concept="2" />
       <node id="6781485246382123239" at="177,0,193,0" concept="6" trace="getNextStepId#()Ljava/lang/Object;" />
       <node id="6781485246382123092" at="72,0,92,0" concept="6" trace="autostart#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-      <node id="7935677192558478292" at="113,72,141,5" concept="5" />
+      <node id="7935677192558478292" at="112,72,141,5" concept="5" />
       <node id="6781485246382123108" at="93,0,149,0" concept="6" trace="doRun#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <scope id="8570387127138497492" at="50,60,51,24" />
-      <scope id="2400678414103034138" at="116,69,117,96" />
+      <scope id="2400678414103034138" at="115,69,116,96" />
       <scope id="2400678414102919802" at="121,63,122,105" />
       <scope id="3013058279687723666" at="128,27,129,54" />
       <scope id="2400678414102806837" at="162,62,163,19" />
@@ -551,11 +551,11 @@
       <scope id="6781485246382123092" at="72,0,92,0">
         <var name="later" id="8570387127138610831" />
       </scope>
-      <scope id="7935677192558478295" at="114,31,140,9">
+      <scope id="7935677192558478295" at="113,31,140,9">
+        <var name="languageStepsCount" id="8570387127139347103" />
         <var name="options" id="7485988173702225420" />
       </scope>
       <scope id="6781485246382123109" at="93,50,147,61">
-        <var name="languageStepsCount" id="8570387127139347103" />
         <var name="postProblems" id="7935677192556386292" />
         <var name="preProblems" id="7935677192558470378" />
         <var name="projectStepsCount" id="8570387127139329085" />

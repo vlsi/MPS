@@ -107,7 +107,6 @@ public class MigrationsProgressStep extends MigrationStep {
     });
 
     int projectStepsCount = myManager.projectStepsCount();
-    int languageStepsCount = myManager.languageStepsCount();
     progress.setFraction(0);
 
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
@@ -118,6 +117,7 @@ public class MigrationsProgressStep extends MigrationStep {
       }
       progress.setFraction(projectStepsFraction);
 
+      int languageStepsCount = myManager.languageStepsCount();
       while (executeSingleStep(myManager.nextLanguageStep())) {
         progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
       }
