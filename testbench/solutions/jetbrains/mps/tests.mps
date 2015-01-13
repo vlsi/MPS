@@ -3665,13 +3665,16 @@
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
     </node>
   </node>
-  <node concept="lpD6F" id="1m15g63EbEG">
-    <node concept="2R4zua" id="1m15g63EbEH" role="2R4z3u">
+  <node concept="lpD6F" id="1V0dlEgZt9s">
+    <node concept="2R4zua" id="1V0dlEgZt9t" role="2R4z3u">
       <property role="2R4zub" value="testSubtypingTest" />
       <property role="2R4zu8" value="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c" />
     </node>
-    <node concept="lpD6D" id="1m15g63EbEI" role="lpD6w">
+    <node concept="lpD6D" id="1V0dlEgZt9u" role="lpD6w">
       <ref role="lpD7u" to="tw7x:1NmRLF_DeDu" resolve="Subtyping" />
+    </node>
+    <node concept="lpD6D" id="1V0dlEgZt9x" role="lpD6w">
+      <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
     </node>
   </node>
 </model>
