@@ -10,6 +10,9 @@ import java.util.Collections;
 import java.util.Map;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
@@ -22,7 +25,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 public class CleanSourcesMigration extends BaseProjectMigration implements ProjectMigrationWithOptions {
   public static final String OPTION_REMOVE_SOURCES = "jetbrains.mps.removeSources";
   public static final String ID = "jetbrains.mps.cleanSrc";
-
 
   private boolean mySources = false;
 
@@ -66,6 +68,11 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
         FSRecords.invalidateCaches();
       }
     });
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      }
+    });
   }
 
   /**
@@ -76,7 +83,7 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_jwqyzj_a0b0a0a0a81(it.getFacet(TestsFacet.class));
+        IFile testDir = check_jwqyzj_a0b0a0a0a71(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -95,20 +102,20 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_jwqyzj_a0b0a0a0a02(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_jwqyzj_a0b0a0a0a91(it.getFacet(JavaModuleFacet.class));
         if (classesGen != null) {
           classesGen.delete();
         }
       }
     });
   }
-  private static IFile check_jwqyzj_a0b0a0a0a81(TestsFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0b0a0a0a71(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_jwqyzj_a0b0a0a0a02(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0b0a0a0a91(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
