@@ -28,6 +28,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -201,6 +202,9 @@ public class ModulesWatcher {
     assert module != null;
     Iterable<Dependency> deps = getModuleDescriptorDeps(module);
     for (Dependency dep : deps) {
+      if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
+        continue;
+      }
       if (isModuleDisposed(dep.getModuleRef())) {
         String message;
         if (module instanceof Language) {
