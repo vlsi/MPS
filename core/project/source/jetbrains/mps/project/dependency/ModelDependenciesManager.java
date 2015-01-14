@@ -97,7 +97,11 @@ public class ModelDependenciesManager {
   public Collection<SModuleReference> getAllImportedLanguages() {
     List<SModuleReference> result = new ArrayList<SModuleReference>();
     for (SLanguage lang : getAllImportedLanguagesIds()) {
-      result.add(lang.getSourceModule().getModuleReference());
+      SModule sourceModule = lang.getSourceModule();
+
+      if (sourceModule!=null) {
+        result.add(sourceModule.getModuleReference());
+      }
     }
     return result;
   }
