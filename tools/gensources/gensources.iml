@@ -378,6 +378,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/decl/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/decl/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps/source_gen" isTestSource="false" />
@@ -488,6 +492,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/decl/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/decl/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps/classes_gen" />
