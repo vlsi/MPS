@@ -99,8 +99,12 @@ public class MigrationsProgressStep extends MigrationStep {
     int projectStepsCount = myManager.projectStepsCount();
     setFraction(progress, 0);
 
-    addElementToMigrationList("Cleaning project... Please wait.");
+    boolean cleanNotification = false;
     while (executeSingleStep(myManager.nextProjectStep(options, true))) {
+      if (!(cleanNotification)) {
+        cleanNotification = true;
+        addElementToMigrationList("Cleaning project... Please wait.");
+      }
       setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
     }
 
