@@ -10,12 +10,13 @@ import javax.swing.JPanel;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import java.awt.BorderLayout;
-import com.intellij.ui.IdeBorderFactory;
 import javax.swing.JTextPane;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.SystemInfo;
 import java.awt.Dimension;
 import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.BoxLayout;
+import com.intellij.ui.IdeBorderFactory;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
@@ -32,6 +33,8 @@ import com.intellij.ide.wizard.CommitStepException;
 public class InitialStep extends MigrationStep {
   public static final String ID = "initial";
 
+  private static final String TEXT = "Welcome to Migration Assistant!<br><br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>" + "This wizard will guide you through the migration process. It's going to take a while.<br><br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.";
+
   /**
    * due to wizard architecture we need this hacky way of passing data from one step to another
    */
@@ -44,6 +47,7 @@ public class InitialStep extends MigrationStep {
     createComponent();
   }
 
+
   @Override
   protected final void createComponent() {
     super.createComponent();
@@ -51,10 +55,14 @@ public class InitialStep extends MigrationStep {
     myComponent.add(pagePanel, BorderLayout.CENTER);
 
     JPanel infoHolder = new JPanel(new BorderLayout());
-    infoHolder.setBorder(IdeBorderFactory.createTitledBorder("Description", true));
     JTextPane info = new JTextPane();
     Messages.installHyperlinkSupport(info);
-    info.setText("Welcome to Migration Assistant!<br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br>" + "This wizard will guide you through the migration process. It's going to take a while.<br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.");
+
+    StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
+    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
+    sb.append(TEXT).append("</font></body></html>");
+    info.setText(sb.toString());
+
     info.setPreferredSize(new Dimension(300, 220));
     infoHolder.add(info, BorderLayout.CENTER);
     pagePanel.add(infoHolder, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));

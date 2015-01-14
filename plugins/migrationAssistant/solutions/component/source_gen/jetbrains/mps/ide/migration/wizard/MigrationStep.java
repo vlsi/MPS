@@ -12,6 +12,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import com.intellij.ui.IdeBorderFactory;
 
 public abstract class MigrationStep extends AbstractWizardStepEx {
   private static final Icon WIZARD_ICON = MPSIcons.General.NewProject;
@@ -54,6 +55,7 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
     later.invoke();
   }
   protected void createComponent() {
-    this.myComponent = new JPanel(new BorderLayout(5, 5));
+    this.myComponent = new JPanel(new BorderLayout());
+    myComponent.setBorder(IdeBorderFactory.createEmptyBorder(0, 10, 0, 10));
   }
 }

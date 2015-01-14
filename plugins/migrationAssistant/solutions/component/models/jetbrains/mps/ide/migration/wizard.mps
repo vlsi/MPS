@@ -42,6 +42,8 @@
     <import index="ayyu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(MPS.IDEA/com.intellij.ui@java_stub)" />
     <import index="yq2y" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.uiDesigner.core(MPS.Platform/com.intellij.uiDesigner.core@java_stub)" />
     <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
+    <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
+    <import index="o8ag" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)" />
     <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" implicit="true" />
     <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" implicit="true" />
   </imports>
@@ -243,6 +245,9 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -2570,6 +2575,31 @@
       </node>
       <node concept="3Tm1VV" id="5SsFeroaa9l" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="45bCy0j0PmH" role="jymVt" />
+    <node concept="Wx3nA" id="45bCy0j0NWk" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="TEXT" />
+      <node concept="3Tm6S6" id="45bCy0j0NWb" role="1B3o_S" />
+      <node concept="17QB3L" id="45bCy0j0NWc" role="1tU5fm" />
+      <node concept="3cpWs3" id="45bCy0j0NWd" role="33vP2m">
+        <node concept="3cpWs3" id="45bCy0j0NWe" role="3uHU7B">
+          <node concept="3cpWs3" id="45bCy0j0NWf" role="3uHU7B">
+            <node concept="Xl_RD" id="45bCy0j0NWg" role="3uHU7B">
+              <property role="Xl_RC" value="Welcome to Migration Assistant!&lt;br&gt;&lt;br&gt;" />
+            </node>
+            <node concept="Xl_RD" id="45bCy0j0NWh" role="3uHU7w">
+              <property role="Xl_RC" value="MPS has detected that your project requires migration before it can be used with this version of the product.&lt;br&gt;&lt;br&gt;" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="45bCy0j0NWi" role="3uHU7w">
+            <property role="Xl_RC" value="This wizard will guide you through the migration process. It's going to take a while.&lt;br&gt;&lt;br&gt;" />
+          </node>
+        </node>
+        <node concept="Xl_RD" id="45bCy0j0NWj" role="3uHU7w">
+          <property role="Xl_RC" value="Select Next to proceed with migration or Cancel if you wish to postpone it." />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="1u4Xg2YDwes" role="jymVt" />
     <node concept="Wx3nA" id="1u4Xg2YDrtB" role="jymVt">
       <property role="2dlcS1" value="false" />
@@ -2769,26 +2799,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6PeyMxxa1fy" role="3cqZAp">
-          <node concept="2OqwBi" id="6PeyMxxa1fz" role="3clFbG">
-            <node concept="37vLTw" id="6PeyMxxa1f$" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SsFeroaaa7" resolve="infoHolder" />
-            </node>
-            <node concept="liA8E" id="6PeyMxxa1f_" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
-              <node concept="2YIFZM" id="6PeyMxx9K6J" role="37wK5m">
-                <ref role="37wK5l" to="ayyu:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
-                <ref role="1Pybhc" to="ayyu:~IdeBorderFactory" resolve="IdeBorderFactory" />
-                <node concept="Xl_RD" id="6PeyMxx9IdG" role="37wK5m">
-                  <property role="Xl_RC" value="Description" />
-                </node>
-                <node concept="3clFbT" id="6PeyMxx9IdH" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="5SsFeroaaak" role="3cqZAp">
           <node concept="3cpWsn" id="5SsFeroaaaj" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -2812,6 +2822,75 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="45bCy0j0Mp8" role="3cqZAp" />
+        <node concept="3cpWs8" id="45bCy0j0iWe" role="3cqZAp">
+          <node concept="3cpWsn" id="45bCy0j0iWd" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="sb" />
+            <node concept="3uibUv" id="45bCy0j0iWf" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~StringBuilder" resolve="StringBuilder" />
+            </node>
+            <node concept="2ShNRf" id="45bCy0j0iW_" role="33vP2m">
+              <node concept="1pGfFk" id="45bCy0j0iXV" role="2ShVmc">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
+                <node concept="Xl_RD" id="45bCy0j0iWh" role="37wK5m">
+                  <property role="Xl_RC" value="&lt;html&gt;&lt;body&gt;&lt;font face=\&quot;Verdana\&quot; " />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="45bCy0j0iWi" role="3cqZAp">
+          <node concept="2OqwBi" id="45bCy0j0iWj" role="3clFbG">
+            <node concept="2OqwBi" id="45bCy0j0iY2" role="2Oq$k0">
+              <node concept="37vLTw" id="45bCy0j0iY1" role="2Oq$k0">
+                <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
+              </node>
+              <node concept="liA8E" id="45bCy0j0iY3" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                <node concept="3K4zz7" id="45bCy0j0iWo" role="37wK5m">
+                  <node concept="10M0yZ" id="45bCy0j0GRF" role="3K4Cdx">
+                    <ref role="3cqZAo" to="8d8y:~SystemInfo.isMac" resolve="isMac" />
+                    <ref role="1PxDUh" to="8d8y:~SystemInfo" resolve="SystemInfo" />
+                  </node>
+                  <node concept="Xl_RD" id="45bCy0j0iWm" role="3K4E3e">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                  <node concept="Xl_RD" id="45bCy0j0iWn" role="3K4GZi">
+                    <property role="Xl_RC" value="size=\&quot;-1\&quot;" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="45bCy0j0iWp" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
+              <node concept="1Xhbcc" id="45bCy0j0iWq" role="37wK5m">
+                <property role="1XhdNS" value="&gt;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="45bCy0j0iWr" role="3cqZAp">
+          <node concept="2OqwBi" id="45bCy0j0iWs" role="3clFbG">
+            <node concept="2OqwBi" id="45bCy0j0iYf" role="2Oq$k0">
+              <node concept="37vLTw" id="45bCy0j0iYe" role="2Oq$k0">
+                <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
+              </node>
+              <node concept="liA8E" id="45bCy0j0iYg" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                <node concept="37vLTw" id="45bCy0j0Qx6" role="37wK5m">
+                  <ref role="3cqZAo" node="45bCy0j0NWk" resolve="TEXT" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="45bCy0j0iWv" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+              <node concept="Xl_RD" id="45bCy0j0iWw" role="37wK5m">
+                <property role="Xl_RC" value="&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6PeyMxx7BaQ" role="3cqZAp">
           <node concept="2OqwBi" id="6PeyMxx7GV9" role="3clFbG">
             <node concept="37vLTw" id="6PeyMxx7GV8" role="2Oq$k0">
@@ -2819,27 +2898,18 @@
             </node>
             <node concept="liA8E" id="6PeyMxx7GVa" role="2OqNvi">
               <ref role="37wK5l" to="dbrf:~JEditorPane.setText(java.lang.String):void" resolve="setText" />
-              <node concept="3cpWs3" id="6PeyMxx8IUG" role="37wK5m">
-                <node concept="3cpWs3" id="6PeyMxx8J9t" role="3uHU7B">
-                  <node concept="3cpWs3" id="6PeyMxx8INv" role="3uHU7B">
-                    <node concept="Xl_RD" id="6PeyMxx8IN_" role="3uHU7B">
-                      <property role="Xl_RC" value="Welcome to Migration Assistant!&lt;br&gt;" />
-                    </node>
-                    <node concept="Xl_RD" id="6PeyMxx8J9z" role="3uHU7w">
-                      <property role="Xl_RC" value="MPS has detected that your project requires migration before it can be used with this version of the product.&lt;br&gt;" />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="6PeyMxx8J9_" role="3uHU7w">
-                    <property role="Xl_RC" value="This wizard will guide you through the migration process. It's going to take a while.&lt;br&gt;" />
-                  </node>
+              <node concept="2OqwBi" id="45bCy0j0SxC" role="37wK5m">
+                <node concept="37vLTw" id="45bCy0j0SkI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
                 </node>
-                <node concept="Xl_RD" id="6PeyMxx8IUO" role="3uHU7w">
-                  <property role="Xl_RC" value="Select Next to proceed with migration or Cancel if you wish to postpone it." />
+                <node concept="liA8E" id="45bCy0j0Tb7" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
                 </node>
               </node>
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="45bCy0j0hi1" role="3cqZAp" />
         <node concept="3clFbF" id="6PeyMxx7RsN" role="3cqZAp">
           <node concept="2OqwBi" id="6PeyMxx7RsY" role="3clFbG">
             <node concept="37vLTw" id="6PeyMxx7RsX" role="2Oq$k0">
@@ -3651,14 +3721,34 @@
                 <ref role="37wK5l" to="dbrf:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
                 <node concept="2ShNRf" id="5SsFerobFW7" role="37wK5m">
                   <node concept="1pGfFk" id="5SsFerobFW8" role="2ShVmc">
-                    <ref role="37wK5l" to="1t7x:~BorderLayout.&lt;init&gt;(int,int)" resolve="BorderLayout" />
-                    <node concept="3cmrfG" id="5SsFerobFW9" role="37wK5m">
-                      <property role="3cmrfH" value="5" />
-                    </node>
-                    <node concept="3cmrfG" id="5SsFerobFWa" role="37wK5m">
-                      <property role="3cmrfH" value="5" />
-                    </node>
+                    <ref role="37wK5l" to="1t7x:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="45bCy0iZAcl" role="3cqZAp">
+          <node concept="2OqwBi" id="45bCy0iZAJv" role="3clFbG">
+            <node concept="37vLTw" id="45bCy0iZAcj" role="2Oq$k0">
+              <ref role="3cqZAo" node="5SsFeroaacs" resolve="myComponent" />
+            </node>
+            <node concept="liA8E" id="45bCy0iZC9C" role="2OqNvi">
+              <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
+              <node concept="2YIFZM" id="Ns7_LDWkIu" role="37wK5m">
+                <ref role="1Pybhc" to="ayyu:~IdeBorderFactory" resolve="IdeBorderFactory" />
+                <ref role="37wK5l" to="ayyu:~IdeBorderFactory.createEmptyBorder(int,int,int,int):javax.swing.border.Border" resolve="createEmptyBorder" />
+                <node concept="3cmrfG" id="45bCy0j06mS" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3cmrfG" id="45bCy0j07js" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
+                <node concept="3cmrfG" id="45bCy0j07qJ" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3cmrfG" id="45bCy0j07uG" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
                 </node>
               </node>
             </node>
