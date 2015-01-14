@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:5cd0d519-a9c0-46fd-9067-d22329eb6c87(migrationData)">
+  <persistence version="9" />
+  <languages />
+  <imports />
+  <registry>
+    <language id="9882f4ad-1955-46fe-8269-94189e5dbbf2" name="jetbrains.mps.lang.migration.util">
+      <concept id="7417095922908669705" name="jetbrains.mps.lang.migration.util.structure.StepData" flags="ng" index="2z5JpS">
+        <property id="1973338949477451252" name="script" index="3qqn2_" />
+        <child id="7417095922908725798" name="data" index="2z5Xdn" />
+      </concept>
+    </language>
+    <language id="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad" name="decl">
+      <concept id="1986963296983658379" name="decl.structure.DeclMigrationData_WholeModule" flags="ng" index="11S3cs" />
+    </language>
+  </registry>
+  <node concept="2z5JpS" id="1Ij79tq$aSh">
+    <property role="3qqn2_" value="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad(decl)/1" />
+    <node concept="11S3cs" id="1Ij79tq$aSg" role="2z5Xdn" />
+  </node>
+</model>
+

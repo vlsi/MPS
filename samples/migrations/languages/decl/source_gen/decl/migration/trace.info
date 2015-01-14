@@ -20,7 +20,7 @@
   <root nodeRef="r:95faf3fd-a89c-4a10-a7cd-04dccacd63bd(decl.migration)/1986963296982667681">
     <file name="MigrationScript_1.java">
       <node id="1986963296982667681" at="28,30,29,55" concept="8" />
-      <node id="1986963296984174199" at="31,63,32,57" concept="9" />
+      <node id="1986963296984174199" at="31,61,32,57" concept="9" />
       <node id="1986963296983773087" at="32,57,33,63" concept="7" />
       <node id="1986963296983815971" at="35,51,36,48" concept="8" />
       <node id="1986963296984178025" at="38,133,39,0" concept="10" />
@@ -104,13 +104,13 @@
         <var name="parameter_1" id="1986963296983872657" />
         <var name="parameter_2" id="1986963296983872657" />
       </scope>
-      <scope id="1986963296982667681" at="31,63,66,15">
+      <scope id="1986963296982667681" at="31,61,66,15">
         <var name="components" id="1986963296983815964" />
         <var name="models" id="1986963296983773088" />
         <var name="res" id="1986963296983824591" />
       </scope>
       <scope id="1986963296982667681" at="31,0,68,0">
-        <var name="collector__0" id="1986963296982667681" />
+        <var name="collector_" id="1986963296982667681" />
         <var name="m" id="1986963296982667681" />
       </scope>
       <unit id="1986963296983815969" at="34,103,38,5" name="decl.migration.MigrationScript_1$1" />
@@ -193,7 +193,7 @@
       <node id="6129256022887923164" at="114,0,128,0" concept="11" trace="_quotation_createNode_zc5nt1_a0b0d0a0a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6129256022887923100" at="73,45,90,7" concept="0" />
       <node id="6129256022887923100" at="73,0,93,0" concept="6" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6129256022887922957" at="35,61,62,7" concept="2" />
+      <node id="6129256022887922957" at="35,63,62,7" concept="2" />
       <node id="7709929535541065766" at="35,0,65,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/DataCollector;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="6129256022887923100" at="71,44,71,44" />
       <scope id="6129256022887923100" at="85,63,85,63" />
@@ -283,9 +283,9 @@
       <scope id="6129256022887923100" at="73,0,93,0">
         <var name="nodeToMatch" id="6129256022887923100" />
       </scope>
-      <scope id="7709929535541065766" at="35,61,63,16" />
+      <scope id="7709929535541065766" at="35,63,63,16" />
       <scope id="7709929535541065766" at="35,0,65,0">
-        <var name="collector_" id="7709929535541065766" />
+        <var name="collector__0" id="7709929535541065766" />
         <var name="m" id="7709929535541065766" />
       </scope>
       <unit id="6129256022887922957" at="36,124,40,5" name="decl.migration.MigrationScript_0$1" />
