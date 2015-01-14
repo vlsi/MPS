@@ -20,6 +20,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class MigrationCheckUtil {
   public static _FunctionTypes._void_P0_E0 getShowUsagesCallback(final Project p) {
@@ -54,7 +59,34 @@ public class MigrationCheckUtil {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ((SAbstractConceptAdapter) it.getConcept()).getConceptDescriptor() == null;
+        SAbstractConceptAdapter concept = (SAbstractConceptAdapter) it.getConcept();
+        if (concept.getConceptDescriptor() == null) {
+          return true;
+        }
+
+        // in case of props, refs, links, list should be better than set 
+
+        List<SProperty> props = IterableUtil.asList(concept.getProperties());
+        for (SProperty p : Sequence.fromIterable(it.getProperties())) {
+          if (!(props.contains(p))) {
+            return true;
+          }
+        }
+
+        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
+        for (SNode n : Sequence.fromIterable(it.getChildren())) {
+          if (!(links.contains(n.getContainmentLink()))) {
+            return true;
+          }
+        }
+
+        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
+        for (SReference r : Sequence.fromIterable(it.getReferences())) {
+          if (!(refs.contains(r.getLink()))) {
+            return true;
+          }
+        }
+        return false;
       }
     });
   }
