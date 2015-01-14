@@ -166,17 +166,22 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
-          public boolean accept(ProjectMigration it) {
-            return it.shouldBeExecuted(mpsProject);
-          }
-        });
-        boolean languageMig = isLanguageMigrationRequired(MigrationsUtil.getMigrateableModulesFromProject(mpsProject));
-        result.value = projectMig || languageMig;
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+        result.value = isMigrationRequired(mpsProject, modules);
       }
     });
     return result.value;
+  }
+
+  public static boolean isMigrationRequired(final Project p, Iterable<SModule> modules) {
+    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+    boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
+      public boolean accept(ProjectMigration it) {
+        return it.shouldBeExecuted(p);
+      }
+    });
+    boolean languageMig = isLanguageMigrationRequired(modules);
+    return projectMig || languageMig;
   }
 
   public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {

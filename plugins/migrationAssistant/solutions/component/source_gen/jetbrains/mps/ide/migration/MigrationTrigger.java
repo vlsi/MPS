@@ -129,7 +129,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     final Wrappers._boolean migrationRequired = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        migrationRequired.value = MigrationComponent.isLanguageMigrationRequired(allModules);
+        migrationRequired.value = MigrationComponent.isMigrationRequired(myMpsProject, allModules);
       }
     });
     if (!(migrationRequired.value)) {
@@ -145,16 +145,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   private void tryMigratingProject() {
-    postponeMigrationIfNeededOnModuleChange(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+    postponeMigrationIfNeededOnModuleChange(myMpsProject, MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
   }
 
-  private synchronized void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
+  private synchronized void postponeMigrationIfNeededOnModuleChange(Project p, Iterable<SModule> modules) {
     if (myMigrationQueued) {
       return;
     }
 
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
+    if (!(MigrationComponent.isMigrationRequired(p, modules2Check))) {
       return;
     }
 
@@ -228,7 +228,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (!(MigrationsUtil.isModuleMigrateable(module))) {
         return;
       }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      postponeMigrationIfNeededOnModuleChange(myMpsProject, Sequence.<SModule>singleton(module));
     }
 
     @Override
@@ -240,7 +240,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (!(MigrationsUtil.isModuleMigrateable(module))) {
         return;
       }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      postponeMigrationIfNeededOnModuleChange(myMpsProject, Sequence.<SModule>singleton(module));
     }
   }
 

@@ -933,10 +933,13 @@
                   <node concept="37vLTw" id="4x27oTRXIhe" role="37vLTJ">
                     <ref role="3cqZAo" node="4x27oTRX0aS" resolve="migrationRequired" />
                   </node>
-                  <node concept="2YIFZM" id="4x27oTRXIM5" role="37vLTx">
+                  <node concept="2YIFZM" id="5DhNxihmqyo" role="37vLTx">
+                    <ref role="37wK5l" to="auc7:5DhNxihlzrg" resolve="isMigrationRequired" />
                     <ref role="1Pybhc" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
-                    <ref role="37wK5l" to="auc7:1AzqgyAfUKj" resolve="isLanguageMigrationRequired" />
-                    <node concept="37vLTw" id="4x27oTRXIM6" role="37wK5m">
+                    <node concept="37vLTw" id="5DhNxihmrcS" role="37wK5m">
+                      <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+                    </node>
+                    <node concept="37vLTw" id="5DhNxihmqyp" role="37wK5m">
                       <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
                     </node>
                   </node>
@@ -1010,6 +1013,9 @@
         <node concept="3clFbF" id="285c2S_WYWB" role="3cqZAp">
           <node concept="1rXfSq" id="285c2S_WYWC" role="3clFbG">
             <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
+            <node concept="37vLTw" id="5DhNxihmuwh" role="37wK5m">
+              <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+            </node>
             <node concept="2YIFZM" id="285c2S_WYWD" role="37wK5m">
               <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
@@ -1063,10 +1069,13 @@
             <node concept="3cpWs6" id="1AzqgyAga87" role="3cqZAp" />
           </node>
           <node concept="3fqX7Q" id="1AzqgyAga3r" role="3clFbw">
-            <node concept="2YIFZM" id="1AzqgyAg9Mg" role="3fr31v">
+            <node concept="2YIFZM" id="5DhNxihmtWJ" role="3fr31v">
+              <ref role="37wK5l" to="auc7:5DhNxihlzrg" resolve="isMigrationRequired" />
               <ref role="1Pybhc" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
-              <ref role="37wK5l" to="auc7:1AzqgyAfUKj" resolve="isLanguageMigrationRequired" />
-              <node concept="37vLTw" id="1AzqgyAg9NV" role="37wK5m">
+              <node concept="37vLTw" id="5DhNxihmuqj" role="37wK5m">
+                <ref role="3cqZAo" node="5DhNxihmrnO" resolve="p" />
+              </node>
+              <node concept="37vLTw" id="5DhNxihmtWK" role="37wK5m">
                 <ref role="3cqZAo" node="1AzqgyAg52o" resolve="modules2Check" />
               </node>
             </node>
@@ -1081,6 +1090,12 @@
       </node>
       <node concept="3Tm6S6" id="1AzqgyAffTC" role="1B3o_S" />
       <node concept="3cqZAl" id="1AzqgyAfo04" role="3clF45" />
+      <node concept="37vLTG" id="5DhNxihmrnO" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="5DhNxihmt4b" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="37vLTG" id="1AzqgyAfcMX" role="3clF46">
         <property role="TrG5h" value="modules" />
         <node concept="A3Dl8" id="1AzqgyAff1r" role="1tU5fm">
@@ -1534,6 +1549,9 @@
           <node concept="3clFbF" id="1AzqgyAfrlK" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfrlJ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
+              <node concept="37vLTw" id="5DhNxihn3kP" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+              </node>
               <node concept="2ShNRf" id="1AzqgyAfvVO" role="37wK5m">
                 <node concept="2HTt$P" id="1AzqgyAfxO3" role="2ShVmc">
                   <node concept="37vLTw" id="1AzqgyAfxO6" role="2HTEbv">
@@ -1616,6 +1634,9 @@
           <node concept="3clFbF" id="1AzqgyAfvjY" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfvjZ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
+              <node concept="37vLTw" id="5DhNxihn3vT" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+              </node>
               <node concept="2ShNRf" id="1AzqgyAfvk0" role="37wK5m">
                 <node concept="2HTt$P" id="1AzqgyAfvk1" role="2ShVmc">
                   <node concept="37vLTw" id="1AzqgyAfvuG" role="2HTEbv">
