@@ -32,8 +32,6 @@ import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.compiler.JavaCompilerOptions;
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -199,7 +197,7 @@ public class GenTestWorker extends GeneratorWorker {
         }
         myReporter.finishRun();
         myReporter.startRun(GenTestWorker.this.myWhatToDo.getProperty("ant.project.name"));
-        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion()))).populate(ppool);
+        new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
 
       }
     };
@@ -246,7 +244,7 @@ public class GenTestWorker extends GeneratorWorker {
           public void start(String taskName, int work) {
             // silently 
           }
-        }, new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion())));
+        }, myJavaCompilerOptions);
       }
     });
     // load classes 
