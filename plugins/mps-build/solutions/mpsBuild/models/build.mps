@@ -22387,9 +22387,6 @@
     <property role="TrG5h" value="mpsCore" />
     <property role="turDy" value="mpsCore.xml" />
     <property role="2DA0ip" value="../../../../" />
-    <node concept="2_Ic$z" id="3pzB6wN3fZd" role="3989C9">
-      <property role="TZNOO" value="1.6" />
-    </node>
     <node concept="2igEWh" id="2a9bszgvCzh" role="1hWBAP">
       <property role="2igJW4" value="true" />
     </node>
@@ -22543,6 +22540,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
+      <property role="TZNOO" value="1.6" />
       <node concept="3qWCbU" id="11P3qAhCOBG" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
