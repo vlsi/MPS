@@ -20,8 +20,10 @@ import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -200,7 +202,18 @@ public class ModulesWatcher {
     Iterable<Dependency> deps = getModuleDescriptorDeps(module);
     for (Dependency dep : deps) {
       if (isModuleDisposed(dep.getModuleRef())) {
-        String message = "Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleRef() + " and therefore was marked invalid for class loading";
+        String message;
+        if (module instanceof Language) {
+          message = "Language ";
+        } else if (module instanceof Solution) {
+          message = "Solution ";
+        } else if (module instanceof Generator) {
+          message = "Generator ";
+        } else {
+          message = "Module ";
+        }
+
+        message = message + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleRef() + " and therefore was marked invalid for class loading";
         if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }
