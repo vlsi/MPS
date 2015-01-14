@@ -30,7 +30,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MigrationScript_0 extends MigrationScriptBase {
   public String getCaption() {
-    return "migrate declatation";
+    return "migrate declaration using a TransformStatement";
   }
   public SNode execute(SModule m, DataCollector collector_) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

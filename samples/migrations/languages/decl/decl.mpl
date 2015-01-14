@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="decl" uuid="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad" version="1">
+<language namespace="decl" uuid="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad" version="2">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />

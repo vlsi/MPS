@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="ref" uuid="d3d2b6e3-a4b3-43d5-bb29-420d39fa86ab" version="1">
+<language namespace="ref" uuid="d3d2b6e3-a4b3-43d5-bb29-420d39fa86ab" version="2">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
