@@ -43,7 +43,6 @@
     <import index="yq2y" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.uiDesigner.core(MPS.Platform/com.intellij.uiDesigner.core@java_stub)" />
     <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
-    <import index="o8ag" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)" />
     <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" implicit="true" />
     <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" implicit="true" />
   </imports>
@@ -1154,28 +1153,6 @@
             <ref role="37wK5l" node="5SsFeroaadK" resolve="createComponent" />
           </node>
         </node>
-        <node concept="3clFbF" id="5SsFeroaawE" role="3cqZAp">
-          <node concept="2OqwBi" id="5SsFerobm0k" role="3clFbG">
-            <node concept="37vLTw" id="5SsFerobm0j" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SsFeroaacs" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="5SsFerobm0l" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2ShNRf" id="5SsFerobm0m" role="37wK5m">
-                <node concept="1pGfFk" id="5SsFerobm0n" role="2ShVmc">
-                  <ref role="37wK5l" to="dbrf:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
-                  <node concept="Xl_RD" id="5SsFerobm0o" role="37wK5m">
-                    <property role="Xl_RC" value="Applying migrations:" />
-                  </node>
-                </node>
-              </node>
-              <node concept="10M0yZ" id="5SsFerobr$t" role="37wK5m">
-                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="1t7x:~BorderLayout.NORTH" resolve="NORTH" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5SsFeroaawJ" role="3cqZAp">
           <node concept="37vLTI" id="5SsFeroaawK" role="3clFbG">
             <node concept="37vLTw" id="5SsFeroaawL" role="37vLTJ">
@@ -1531,16 +1508,14 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7rK8qWGIkqj" role="3cqZAp">
-          <node concept="2OqwBi" id="7rK8qWGIl4p" role="3clFbG">
-            <node concept="37vLTw" id="7rK8qWGIkqh" role="2Oq$k0">
+        <node concept="3clFbF" id="5fy1Xi0j8Nu" role="3cqZAp">
+          <node concept="1rXfSq" id="5fy1Xi0j8Ns" role="3clFbG">
+            <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+            <node concept="37vLTw" id="5fy1Xi0jbPJ" role="37wK5m">
               <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
             </node>
-            <node concept="liA8E" id="7rK8qWGIlGY" role="2OqNvi">
-              <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-              <node concept="3cmrfG" id="7rK8qWGIlIs" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
+            <node concept="3cmrfG" id="5fy1Xi0jbRH" role="37wK5m">
+              <property role="3cmrfH" value="0" />
             </node>
           </node>
         </node>
@@ -1555,29 +1530,27 @@
         </node>
         <node concept="2$JKZl" id="2pwkv5pjIUn" role="3cqZAp">
           <node concept="3clFbS" id="2pwkv5pjIUo" role="2LFqv$">
-            <node concept="3clFbF" id="2pwkv5pjYwB" role="3cqZAp">
-              <node concept="2OqwBi" id="2pwkv5pjYwC" role="3clFbG">
-                <node concept="37vLTw" id="2pwkv5pjYwD" role="2Oq$k0">
+            <node concept="3clFbF" id="5fy1Xi0jcWp" role="3cqZAp">
+              <node concept="1rXfSq" id="5fy1Xi0jcWn" role="3clFbG">
+                <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                <node concept="37vLTw" id="5fy1Xi0jdfN" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="liA8E" id="2pwkv5pjYwE" role="2OqNvi">
-                  <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-                  <node concept="3cpWs3" id="2pwkv5pjYwF" role="37wK5m">
-                    <node concept="FJ1c_" id="2pwkv5pjYwG" role="3uHU7w">
-                      <node concept="37vLTw" id="2pwkv5pk209" role="3uHU7w">
-                        <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
-                      </node>
-                      <node concept="37vLTw" id="2pwkv5pjYwI" role="3uHU7B">
-                        <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                      </node>
+                <node concept="3cpWs3" id="2pwkv5pjYwF" role="37wK5m">
+                  <node concept="FJ1c_" id="2pwkv5pjYwG" role="3uHU7w">
+                    <node concept="37vLTw" id="2pwkv5pk209" role="3uHU7w">
+                      <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
                     </node>
-                    <node concept="2OqwBi" id="2pwkv5pjYwJ" role="3uHU7B">
-                      <node concept="37vLTw" id="2pwkv5pjYwK" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                      </node>
-                      <node concept="liA8E" id="2pwkv5pjYwL" role="2OqNvi">
-                        <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
-                      </node>
+                    <node concept="37vLTw" id="2pwkv5pjYwI" role="3uHU7B">
+                      <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="2pwkv5pjYwJ" role="3uHU7B">
+                    <node concept="37vLTw" id="2pwkv5pjYwK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+                    </node>
+                    <node concept="liA8E" id="2pwkv5pjYwL" role="2OqNvi">
+                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
                     </node>
                   </node>
                 </node>
@@ -1696,29 +1669,27 @@
           <node concept="3clFbS" id="6Sxc5MiBwfn" role="3clFbx">
             <node concept="2$JKZl" id="25gV4LszN$p" role="3cqZAp">
               <node concept="3clFbS" id="25gV4LszN$q" role="2LFqv$">
-                <node concept="3clFbF" id="7rK8qWGHXMT" role="3cqZAp">
-                  <node concept="2OqwBi" id="7rK8qWGHXO1" role="3clFbG">
-                    <node concept="37vLTw" id="7rK8qWGHXMR" role="2Oq$k0">
+                <node concept="3clFbF" id="5fy1Xi0je1b" role="3cqZAp">
+                  <node concept="1rXfSq" id="5fy1Xi0je1c" role="3clFbG">
+                    <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                    <node concept="37vLTw" id="5fy1Xi0je1d" role="37wK5m">
                       <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                     </node>
-                    <node concept="liA8E" id="7rK8qWGHXQ5" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-                      <node concept="3cpWs3" id="7rK8qWGHY7d" role="37wK5m">
-                        <node concept="FJ1c_" id="7rK8qWGI5Lo" role="3uHU7w">
-                          <node concept="37vLTw" id="2pwkv5pk248" role="3uHU7w">
-                            <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
-                          </node>
-                          <node concept="37vLTw" id="7rK8qWGIpVK" role="3uHU7B">
-                            <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                          </node>
+                    <node concept="3cpWs3" id="5fy1Xi0je1e" role="37wK5m">
+                      <node concept="FJ1c_" id="5fy1Xi0je1f" role="3uHU7w">
+                        <node concept="37vLTw" id="5fy1Xi0je1g" role="3uHU7w">
+                          <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
                         </node>
-                        <node concept="2OqwBi" id="7rK8qWGHXTX" role="3uHU7B">
-                          <node concept="37vLTw" id="7rK8qWGHXSa" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                          </node>
-                          <node concept="liA8E" id="7rK8qWGHXYh" role="2OqNvi">
-                            <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
-                          </node>
+                        <node concept="37vLTw" id="5fy1Xi0je1h" role="3uHU7B">
+                          <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="5fy1Xi0je1i" role="3uHU7B">
+                        <node concept="37vLTw" id="5fy1Xi0je1j" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+                        </node>
+                        <node concept="liA8E" id="5fy1Xi0je1k" role="2OqNvi">
+                          <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
                         </node>
                       </node>
                     </node>
@@ -1743,16 +1714,14 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="7rK8qWGIioa" role="3cqZAp">
-              <node concept="2OqwBi" id="7rK8qWGIj1z" role="3clFbG">
-                <node concept="37vLTw" id="7rK8qWGIio8" role="2Oq$k0">
+            <node concept="3clFbF" id="5fy1Xi0jf1I" role="3cqZAp">
+              <node concept="1rXfSq" id="5fy1Xi0jf1J" role="3clFbG">
+                <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                <node concept="37vLTw" id="5fy1Xi0jf1K" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="liA8E" id="7rK8qWGIjDC" role="2OqNvi">
-                  <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-                  <node concept="37vLTw" id="7rK8qWGIjFH" role="37wK5m">
-                    <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                  </node>
+                <node concept="37vLTw" id="5fy1Xi0jfHa" role="37wK5m">
+                  <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
                 </node>
               </node>
             </node>
@@ -1773,36 +1742,34 @@
             </node>
             <node concept="2$JKZl" id="25gV4LsznDS" role="3cqZAp">
               <node concept="3clFbS" id="25gV4LsznDU" role="2LFqv$">
-                <node concept="3clFbF" id="7rK8qWGInqu" role="3cqZAp">
-                  <node concept="2OqwBi" id="7rK8qWGInqv" role="3clFbG">
-                    <node concept="37vLTw" id="7rK8qWGInqw" role="2Oq$k0">
+                <node concept="3clFbF" id="5fy1Xi0jgrO" role="3cqZAp">
+                  <node concept="1rXfSq" id="5fy1Xi0jgrP" role="3clFbG">
+                    <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                    <node concept="37vLTw" id="5fy1Xi0jgrQ" role="37wK5m">
                       <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                     </node>
-                    <node concept="liA8E" id="7rK8qWGInqx" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-                      <node concept="3cpWs3" id="7rK8qWGInqy" role="37wK5m">
-                        <node concept="FJ1c_" id="7rK8qWGInqz" role="3uHU7w">
-                          <node concept="37vLTw" id="wVFrPa1o_1" role="3uHU7w">
-                            <ref role="3cqZAo" node="7rK8qWGIaEv" resolve="languageStepsCount" />
-                          </node>
-                          <node concept="1eOMI4" id="7rK8qWGIohu" role="3uHU7B">
-                            <node concept="3cpWsd" id="7rK8qWGIoCP" role="1eOMHV">
-                              <node concept="37vLTw" id="7rK8qWGIoEC" role="3uHU7w">
-                                <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                              </node>
-                              <node concept="3b6qkQ" id="215zFAtpttC" role="3uHU7B">
-                                <property role="$nhwW" value="1.0" />
-                              </node>
+                    <node concept="3cpWs3" id="5fy1Xi0jh3T" role="37wK5m">
+                      <node concept="FJ1c_" id="5fy1Xi0jh3U" role="3uHU7w">
+                        <node concept="37vLTw" id="5fy1Xi0jh3V" role="3uHU7w">
+                          <ref role="3cqZAo" node="7rK8qWGIaEv" resolve="languageStepsCount" />
+                        </node>
+                        <node concept="1eOMI4" id="5fy1Xi0jh3W" role="3uHU7B">
+                          <node concept="3cpWsd" id="5fy1Xi0jh3X" role="1eOMHV">
+                            <node concept="37vLTw" id="5fy1Xi0jh3Y" role="3uHU7w">
+                              <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
+                            </node>
+                            <node concept="3b6qkQ" id="5fy1Xi0jh3Z" role="3uHU7B">
+                              <property role="$nhwW" value="1.0" />
                             </node>
                           </node>
                         </node>
-                        <node concept="2OqwBi" id="7rK8qWGInqA" role="3uHU7B">
-                          <node concept="37vLTw" id="7rK8qWGInqB" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                          </node>
-                          <node concept="liA8E" id="7rK8qWGInqC" role="2OqNvi">
-                            <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
-                          </node>
+                      </node>
+                      <node concept="2OqwBi" id="5fy1Xi0jh40" role="3uHU7B">
+                        <node concept="37vLTw" id="5fy1Xi0jh41" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+                        </node>
+                        <node concept="liA8E" id="5fy1Xi0jh42" role="2OqNvi">
+                          <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
                         </node>
                       </node>
                     </node>
@@ -1821,16 +1788,14 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="7rK8qWGIoR_" role="3cqZAp">
-              <node concept="2OqwBi" id="7rK8qWGIoRA" role="3clFbG">
-                <node concept="37vLTw" id="7rK8qWGIoRB" role="2Oq$k0">
+            <node concept="3clFbF" id="5fy1Xi0ji0Z" role="3cqZAp">
+              <node concept="1rXfSq" id="5fy1Xi0ji11" role="3clFbG">
+                <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                <node concept="37vLTw" id="5fy1Xi0ji12" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="liA8E" id="7rK8qWGIoRC" role="2OqNvi">
-                  <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
-                  <node concept="3b6qkQ" id="215zFAtptGS" role="37wK5m">
-                    <property role="$nhwW" value="1.0" />
-                  </node>
+                <node concept="3b6qkQ" id="5fy1Xi0jiFy" role="37wK5m">
+                  <property role="$nhwW" value="1.0" />
                 </node>
               </node>
             </node>
@@ -2029,7 +1994,56 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="513ZrA4x6yM" role="jymVt" />
+    <node concept="2tJIrI" id="5fy1Xi0itAx" role="jymVt" />
+    <node concept="3clFb_" id="5fy1Xi0iCHE" role="jymVt">
+      <property role="TrG5h" value="setFraction" />
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="5fy1Xi0i_Xf" role="3clF47">
+        <node concept="3clFbF" id="5fy1Xi0iTr3" role="3cqZAp">
+          <node concept="2OqwBi" id="5fy1Xi0iUlZ" role="3clFbG">
+            <node concept="2YIFZM" id="5fy1Xi0iUkr" role="2Oq$k0">
+              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="5fy1Xi0iUGp" role="2OqNvi">
+              <ref role="37wK5l" to="yla8:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="5fy1Xi0iUIS" role="37wK5m">
+                <node concept="3clFbS" id="5fy1Xi0iUIT" role="1bW5cS">
+                  <node concept="3clFbF" id="5fy1Xi0iXbG" role="3cqZAp">
+                    <node concept="2OqwBi" id="5fy1Xi0iXdO" role="3clFbG">
+                      <node concept="37vLTw" id="5fy1Xi0iXbF" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5fy1Xi0iUL4" resolve="p" />
+                      </node>
+                      <node concept="liA8E" id="5fy1Xi0iXra" role="2OqNvi">
+                        <ref role="37wK5l" to="fw3h:~ProgressIndicator.setFraction(double):void" resolve="setFraction" />
+                        <node concept="37vLTw" id="5fy1Xi0iXvc" role="37wK5m">
+                          <ref role="3cqZAo" node="5fy1Xi0iOeN" resolve="fraction" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="5fy1Xi0i_Xd" role="3clF45" />
+      <node concept="3Tm1VV" id="5fy1Xi0i_Xe" role="1B3o_S" />
+      <node concept="37vLTG" id="5fy1Xi0iUL4" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="5fy1Xi0iX6J" role="1tU5fm">
+          <ref role="3uigEE" to="fw3h:~ProgressIndicator" resolve="ProgressIndicator" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5fy1Xi0iOeN" role="3clF46">
+        <property role="TrG5h" value="fraction" />
+        <node concept="10P55v" id="5fy1Xi0iOeM" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5fy1Xi0iQ_v" role="jymVt" />
     <node concept="3clFb_" id="513ZrA4x4$8" role="jymVt">
       <property role="TrG5h" value="addElementToMigrationList" />
       <node concept="3Tm6S6" id="513ZrA4x4$9" role="1B3o_S" />
@@ -3120,7 +3134,7 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6PeyMxxaSoG" role="3cqZAp" />
+        <node concept="3clFbH" id="5fy1Xi0hVxF" role="3cqZAp" />
         <node concept="3cpWs8" id="25gV4LspuWF" role="3cqZAp">
           <node concept="3cpWsn" id="25gV4LspuWG" role="3cpWs9">
             <property role="TrG5h" value="pMig" />
@@ -3259,6 +3273,26 @@
                 <node concept="Rh6nW" id="1u4Xg2YANv1" role="1bW2Oz">
                   <property role="TrG5h" value="it" />
                   <node concept="2jxLKc" id="1u4Xg2YANv2" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5fy1Xi0ifx8" role="3cqZAp">
+          <node concept="2OqwBi" id="5fy1Xi0ihpX" role="3clFbG">
+            <node concept="37vLTw" id="5fy1Xi0ifx6" role="2Oq$k0">
+              <ref role="3cqZAo" node="6PeyMxxb0yX" resolve="settingsPanel" />
+            </node>
+            <node concept="liA8E" id="5fy1Xi0ikoQ" role="2OqNvi">
+              <ref role="37wK5l" to="dbrf:~JComponent.setVisible(boolean):void" resolve="setVisible" />
+              <node concept="3fqX7Q" id="5fy1Xi0imoL" role="37wK5m">
+                <node concept="2OqwBi" id="5fy1Xi0imoM" role="3fr31v">
+                  <node concept="37vLTw" id="5fy1Xi0imoN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1u4Xg2YBHFP" resolve="myComponents" />
+                  </node>
+                  <node concept="liA8E" id="5fy1Xi0imoO" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Map.isEmpty():boolean" resolve="isEmpty" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3820,51 +3854,6 @@
             <ref role="37wK5l" node="5SsFeroaadK" resolve="createComponent" />
           </node>
         </node>
-        <node concept="3cpWs8" id="12JIgXNwLbi" role="3cqZAp">
-          <node concept="3cpWsn" id="12JIgXNwLbh" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="infoHolder" />
-            <node concept="3uibUv" id="12JIgXNwLbj" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="12JIgXNwLcV" role="33vP2m">
-              <node concept="1pGfFk" id="12JIgXNwLd8" role="2ShVmc">
-                <ref role="37wK5l" to="dbrf:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
-                <node concept="2ShNRf" id="12JIgXNwNpJ" role="37wK5m">
-                  <node concept="1pGfFk" id="12JIgXNwNpK" role="2ShVmc">
-                    <ref role="37wK5l" to="1t7x:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="12JIgXNwLbm" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwM46" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwM45" role="2Oq$k0">
-              <ref role="3cqZAo" node="12JIgXNwLbh" resolve="infoHolder" />
-            </node>
-            <node concept="liA8E" id="12JIgXNwM47" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
-              <node concept="2YIFZM" id="12JIgXNwSkB" role="37wK5m">
-                <ref role="1Pybhc" to="dbrf:~BorderFactory" resolve="BorderFactory" />
-                <ref role="37wK5l" to="dbrf:~BorderFactory.createEmptyBorder(int,int,int,int):javax.swing.border.Border" resolve="createEmptyBorder" />
-                <node concept="3cmrfG" id="12JIgXNwSkC" role="37wK5m">
-                  <property role="3cmrfH" value="2" />
-                </node>
-                <node concept="3cmrfG" id="12JIgXNwSkD" role="37wK5m">
-                  <property role="3cmrfH" value="2" />
-                </node>
-                <node concept="3cmrfG" id="12JIgXNwSkE" role="37wK5m">
-                  <property role="3cmrfH" value="2" />
-                </node>
-                <node concept="3cmrfG" id="12JIgXNwSkF" role="37wK5m">
-                  <property role="3cmrfH" value="2" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="12JIgXNwLbu" role="3cqZAp">
           <node concept="3cpWsn" id="12JIgXNwLbt" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -3879,45 +3868,103 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="12JIgXNwLbx" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwM6$" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwM6z" role="2Oq$k0">
+        <node concept="3clFbF" id="3F1hOdyB$SH" role="3cqZAp">
+          <node concept="2YIFZM" id="3F1hOdyB$SI" role="3clFbG">
+            <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+            <ref role="37wK5l" to="810:~Messages.installHyperlinkSupport(javax.swing.JTextPane):void" resolve="installHyperlinkSupport" />
+            <node concept="37vLTw" id="3F1hOdyB$SJ" role="37wK5m">
               <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
             </node>
-            <node concept="liA8E" id="12JIgXNwM6_" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JEditorPane.setContentType(java.lang.String):void" resolve="setContentType" />
-              <node concept="Xl_RD" id="12JIgXNwM6A" role="37wK5m">
-                <property role="Xl_RC" value="text/html" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="3F1hOdyB$SK" role="3cqZAp" />
+        <node concept="3cpWs8" id="3F1hOdyB$SL" role="3cqZAp">
+          <node concept="3cpWsn" id="3F1hOdyB$SM" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="sb" />
+            <node concept="3uibUv" id="3F1hOdyB$SN" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~StringBuilder" resolve="StringBuilder" />
+            </node>
+            <node concept="2ShNRf" id="3F1hOdyB$SO" role="33vP2m">
+              <node concept="1pGfFk" id="3F1hOdyB$SP" role="2ShVmc">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
+                <node concept="Xl_RD" id="3F1hOdyB$SQ" role="37wK5m">
+                  <property role="Xl_RC" value="&lt;html&gt;&lt;body&gt;&lt;font face=\&quot;Verdana\&quot; " />
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="12JIgXNwLb$" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwM2t" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwM2s" role="2Oq$k0">
+        <node concept="3clFbF" id="3F1hOdyB$SR" role="3cqZAp">
+          <node concept="2OqwBi" id="3F1hOdyB$SS" role="3clFbG">
+            <node concept="2OqwBi" id="3F1hOdyB$ST" role="2Oq$k0">
+              <node concept="37vLTw" id="3F1hOdyB$SU" role="2Oq$k0">
+                <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
+              </node>
+              <node concept="liA8E" id="3F1hOdyB$SV" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                <node concept="3K4zz7" id="3F1hOdyB$SW" role="37wK5m">
+                  <node concept="10M0yZ" id="3F1hOdyB$SX" role="3K4Cdx">
+                    <ref role="3cqZAo" to="8d8y:~SystemInfo.isMac" resolve="isMac" />
+                    <ref role="1PxDUh" to="8d8y:~SystemInfo" resolve="SystemInfo" />
+                  </node>
+                  <node concept="Xl_RD" id="3F1hOdyB$SY" role="3K4E3e">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                  <node concept="Xl_RD" id="3F1hOdyB$SZ" role="3K4GZi">
+                    <property role="Xl_RC" value="size=\&quot;-1\&quot;" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3F1hOdyB$T0" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
+              <node concept="1Xhbcc" id="3F1hOdyB$T1" role="37wK5m">
+                <property role="1XhdNS" value="&gt;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3F1hOdyB$T7" role="3cqZAp">
+          <node concept="2OqwBi" id="3F1hOdyB$T8" role="3clFbG">
+            <node concept="2OqwBi" id="3F1hOdyB$T9" role="2Oq$k0">
+              <node concept="37vLTw" id="3F1hOdyB$Ta" role="2Oq$k0">
+                <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
+              </node>
+              <node concept="liA8E" id="3F1hOdyB$Tb" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                <node concept="1rXfSq" id="3F1hOdyBC6Q" role="37wK5m">
+                  <ref role="37wK5l" node="6Sxc5MixUKm" resolve="getText" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3F1hOdyB$Tc" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+              <node concept="Xl_RD" id="3F1hOdyB$Td" role="37wK5m">
+                <property role="Xl_RC" value="&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3F1hOdyB$Tj" role="3cqZAp">
+          <node concept="2OqwBi" id="3F1hOdyB$Tk" role="3clFbG">
+            <node concept="37vLTw" id="3F1hOdyB$Tl" role="2Oq$k0">
               <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
             </node>
-            <node concept="liA8E" id="12JIgXNwM2u" role="2OqNvi">
+            <node concept="liA8E" id="3F1hOdyB$Tm" role="2OqNvi">
               <ref role="37wK5l" to="dbrf:~JEditorPane.setText(java.lang.String):void" resolve="setText" />
-              <node concept="1rXfSq" id="6Sxc5MixUKp" role="37wK5m">
-                <ref role="37wK5l" node="6Sxc5MixUKm" resolve="getText" />
+              <node concept="2OqwBi" id="3F1hOdyB$Tn" role="37wK5m">
+                <node concept="37vLTw" id="3F1hOdyB$To" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
+                </node>
+                <node concept="liA8E" id="3F1hOdyB$Tp" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="12JIgXNwLbB" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwM1s" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwM1r" role="2Oq$k0">
-              <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
-            </node>
-            <node concept="liA8E" id="12JIgXNwM1t" role="2OqNvi">
-              <ref role="37wK5l" to="oj8w:~JTextComponent.setEditable(boolean):void" resolve="setEditable" />
-              <node concept="3clFbT" id="12JIgXNwM1u" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
+        <node concept="3clFbH" id="3F1hOdyB$o$" role="3cqZAp" />
         <node concept="3clFbF" id="12JIgXNwLbE" role="3cqZAp">
           <node concept="2OqwBi" id="12JIgXNwOHm" role="3clFbG">
             <node concept="37vLTw" id="12JIgXNwOHl" role="2Oq$k0">
@@ -3993,33 +4040,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="12JIgXNwLc1" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwMdc" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwMdb" role="2Oq$k0">
-              <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
-            </node>
-            <node concept="liA8E" id="12JIgXNwMdd" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.setFocusable(boolean):void" resolve="setFocusable" />
-              <node concept="3clFbT" id="12JIgXNwMde" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="12JIgXNwLc4" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwMtz" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwMty" role="2Oq$k0">
-              <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
-            </node>
-            <node concept="liA8E" id="12JIgXNwMt$" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
-              <node concept="2YIFZM" id="12JIgXNwSm2" role="37wK5m">
-                <ref role="1Pybhc" to="dbrf:~BorderFactory" resolve="BorderFactory" />
-                <ref role="37wK5l" to="dbrf:~BorderFactory.createLoweredBevelBorder():javax.swing.border.Border" resolve="createLoweredBevelBorder" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="12JIgXNwLc7" role="3cqZAp">
           <node concept="2OqwBi" id="12JIgXNwM9y" role="3clFbG">
             <node concept="37vLTw" id="12JIgXNwM9x" role="2Oq$k0">
@@ -4041,23 +4061,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="12JIgXNwLcc" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwNq1" role="3clFbG">
-            <node concept="37vLTw" id="12JIgXNwNq0" role="2Oq$k0">
-              <ref role="3cqZAo" node="12JIgXNwLbh" resolve="infoHolder" />
-            </node>
-            <node concept="liA8E" id="12JIgXNwNq2" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="12JIgXNwNq3" role="37wK5m">
-                <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
-              </node>
-              <node concept="10M0yZ" id="12JIgXNwNq4" role="37wK5m">
-                <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="1t7x:~BorderLayout.CENTER" resolve="CENTER" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="12JIgXNwLcg" role="3cqZAp">
           <node concept="2OqwBi" id="12JIgXNwMzU" role="3clFbG">
             <node concept="37vLTw" id="12JIgXNwMzT" role="2Oq$k0">
@@ -4065,8 +4068,8 @@
             </node>
             <node concept="liA8E" id="12JIgXNwMzV" role="2OqNvi">
               <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="12JIgXNwMzW" role="37wK5m">
-                <ref role="3cqZAo" node="12JIgXNwLbh" resolve="infoHolder" />
+              <node concept="37vLTw" id="3F1hOdyCjrk" role="37wK5m">
+                <ref role="3cqZAo" node="12JIgXNwLbt" resolve="info" />
               </node>
               <node concept="10M0yZ" id="12JIgXNwMzX" role="37wK5m">
                 <ref role="1PxDUh" to="1t7x:~BorderLayout" resolve="BorderLayout" />

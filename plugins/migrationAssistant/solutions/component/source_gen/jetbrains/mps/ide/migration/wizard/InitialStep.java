@@ -47,7 +47,6 @@ public class InitialStep extends MigrationStep {
     createComponent();
   }
 
-
   @Override
   protected final void createComponent() {
     super.createComponent();
@@ -88,6 +87,7 @@ public class InitialStep extends MigrationStep {
         settingsPanel.add(c);
       }
     });
+    settingsPanel.setVisible(!(myComponents.isEmpty()));
   }
 
   @Override

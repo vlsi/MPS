@@ -2276,31 +2276,42 @@
             <ref role="37wK5l" to="bktd:~AbstractWizardEx.doNextAction():void" resolve="doNextAction" />
           </node>
         </node>
-        <node concept="3clFbF" id="7rK8qWGEfsR" role="3cqZAp">
-          <node concept="2OqwBi" id="5SsFeroaauR" role="3clFbG">
-            <node concept="1eOMI4" id="5SsFeroaauV" role="2Oq$k0">
-              <node concept="10QFUN" id="5SsFeroaauS" role="1eOMHV">
-                <node concept="1rXfSq" id="5SsFeroaauT" role="10QFUP">
-                  <ref role="37wK5l" to="bktd:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
-                </node>
-                <node concept="3uibUv" id="5SsFeroaauU" role="10QFUM">
-                  <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationStep" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="5SsFeroaauW" role="2OqNvi">
-              <ref role="37wK5l" to="o8ag:5SsFeroaadE" resolve="autostart" />
-              <node concept="1bVj0M" id="7rK8qWGFjHC" role="37wK5m">
-                <node concept="3clFbS" id="7rK8qWGFjHD" role="1bW5cS">
-                  <node concept="3clFbF" id="7rK8qWGFjMS" role="3cqZAp">
-                    <node concept="2YIFZM" id="7rK8qWGFsjN" role="3clFbG">
-                      <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                      <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-                      <node concept="1bVj0M" id="7rK8qWGFsB7" role="37wK5m">
-                        <node concept="3clFbS" id="7rK8qWGFsB8" role="1bW5cS">
-                          <node concept="3clFbF" id="7rK8qWGFsFC" role="3cqZAp">
-                            <node concept="1rXfSq" id="7rK8qWGFjMR" role="3clFbG">
-                              <ref role="37wK5l" node="5SsFeroaauu" resolve="updateStep" />
+        <node concept="3clFbH" id="5fy1Xi0jpgN" role="3cqZAp" />
+        <node concept="3clFbF" id="5fy1Xi0jrel" role="3cqZAp">
+          <node concept="2YIFZM" id="5fy1Xi0jrkJ" role="3clFbG">
+            <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+            <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
+            <node concept="1bVj0M" id="5fy1Xi0jrst" role="37wK5m">
+              <node concept="3clFbS" id="5fy1Xi0jrsu" role="1bW5cS">
+                <node concept="3clFbF" id="7rK8qWGEfsR" role="3cqZAp">
+                  <node concept="2OqwBi" id="5SsFeroaauR" role="3clFbG">
+                    <node concept="1eOMI4" id="5SsFeroaauV" role="2Oq$k0">
+                      <node concept="10QFUN" id="5SsFeroaauS" role="1eOMHV">
+                        <node concept="1rXfSq" id="5SsFeroaauT" role="10QFUP">
+                          <ref role="37wK5l" to="bktd:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
+                        </node>
+                        <node concept="3uibUv" id="5SsFeroaauU" role="10QFUM">
+                          <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationStep" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5SsFeroaauW" role="2OqNvi">
+                      <ref role="37wK5l" to="o8ag:5SsFeroaadE" resolve="autostart" />
+                      <node concept="1bVj0M" id="7rK8qWGFjHC" role="37wK5m">
+                        <node concept="3clFbS" id="7rK8qWGFjHD" role="1bW5cS">
+                          <node concept="3clFbF" id="7rK8qWGFjMS" role="3cqZAp">
+                            <node concept="2YIFZM" id="7rK8qWGFsjN" role="3clFbG">
+                              <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
+                              <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                              <node concept="1bVj0M" id="7rK8qWGFsB7" role="37wK5m">
+                                <node concept="3clFbS" id="7rK8qWGFsB8" role="1bW5cS">
+                                  <node concept="3clFbF" id="7rK8qWGFsFC" role="3cqZAp">
+                                    <node concept="1rXfSq" id="7rK8qWGFjMR" role="3clFbG">
+                                      <ref role="37wK5l" node="5SsFeroaauu" resolve="updateStep" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>

@@ -12,8 +12,8 @@ import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post;
 import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {
@@ -34,11 +34,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   @Override
   protected void doNextAction() {
     super.doNextAction();
-    ((MigrationStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            updateStep();
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ((MigrationStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                updateStep();
+              }
+            });
           }
         });
       }

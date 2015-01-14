@@ -11,11 +11,10 @@ import java.util.HashSet;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.DefaultListModel;
 import java.util.Collections;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -57,7 +56,6 @@ public class MigrationsProgressStep extends MigrationStep {
   @Override
   protected final void createComponent() {
     super.createComponent();
-    myComponent.add(new JLabel("Applying migrations:"), BorderLayout.NORTH);
     myList = new JBList(new DefaultListModel());
     myList.setCellRenderer(new MigrationsListRenderer(myExecuted, Collections.emptySet()));
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
@@ -99,11 +97,11 @@ public class MigrationsProgressStep extends MigrationStep {
     double projectStepsFraction = 0.3;
 
     int projectStepsCount = myManager.projectStepsCount();
-    progress.setFraction(0);
+    setFraction(progress, 0);
 
     addElementToMigrationList("Cleaning project... Please wait.");
     while (executeSingleStep(myManager.nextProjectStep(options, true))) {
-      progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
+      setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
     }
 
     addElementToMigrationList("Checking models... Please wait.");
@@ -119,15 +117,15 @@ public class MigrationsProgressStep extends MigrationStep {
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
     if (!(preProblems.value)) {
       while (executeSingleStep(myManager.nextProjectStep(options, false))) {
-        progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
+        setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
       }
-      progress.setFraction(projectStepsFraction);
+      setFraction(progress, projectStepsFraction);
 
       int languageStepsCount = myManager.languageStepsCount();
       while (executeSingleStep(myManager.nextLanguageStep())) {
-        progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+        setFraction(progress, progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
       }
-      progress.setFraction(1.0);
+      setFraction(progress, 1.0);
 
       addElementToMigrationList("Saving changed models... Please wait.");
       ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -151,6 +149,14 @@ public class MigrationsProgressStep extends MigrationStep {
     addElementToMigrationList((myFinishedState.isEverythingOk() ? "Done!" : "Finished with errors. Click 'Next' to continue."));
 
     PersistenceRegistry.getInstance().enableFastFindUsages();
+  }
+
+  public void setFraction(final ProgressIndicator p, final double fraction) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        p.setFraction(fraction);
+      }
+    });
   }
 
   private void addElementToMigrationList(final String step) {
