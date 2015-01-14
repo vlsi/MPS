@@ -88,6 +88,6 @@ public class MigrationCheckUtil {
         }
         return false;
       }
-    });
+    }).take(100);
   }
 }

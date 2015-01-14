@@ -524,7 +524,7 @@
       <node id="7935677192557322883" at="30,83,48,6" concept="7" />
       <node id="7935677192558373103" at="30,0,50,0" concept="11" trace="getShowUsagesCallback#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
       <node id="7935677192555883508" at="61,0,91,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7935677192555769751" at="51,76,91,7" concept="7" />
+      <node id="7935677192555769751" at="51,76,91,17" concept="7" />
       <node id="7935677192555760068" at="51,0,93,0" concept="11" trace="getProblemNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
       <scope id="7935677192557947396" at="40,80,41,125" />
       <scope id="7935677192555777091" at="53,53,54,30" />
@@ -576,7 +576,7 @@
       <scope id="7935677192555883508" at="61,0,91,0">
         <var name="it" id="7935677192555883508" />
       </scope>
-      <scope id="7935677192555760074" at="51,76,91,7" />
+      <scope id="7935677192555760074" at="51,76,91,17" />
       <scope id="7935677192555760068" at="51,0,93,0">
         <var name="modules" id="7935677192555767256" />
       </scope>
