@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
 
 /**
  * Update presentation of MPSTreeNode (with {@link jetbrains.mps.ide.ui.tree.MPSTreeNode#updatePresentation(boolean, boolean)})
- * with read command from EDT.
+ * with read command from EDT. Uses {@link com.intellij.util.ui.update.MergingUpdateQueue} to avoid queuing too many updates.
  * Override {@link #isValid(jetbrains.mps.ide.ui.tree.MPSTreeNode)} to control update dispatch
 * @author Artem Tikhomirov
 */
 public class PresentationUpdater<T extends MPSTreeNode> implements Runnable {
+
+  private static MergingUpdateQueue ourUpdateQueue = new MergingUpdateQueue("PresentationUpdater", 300, true, null);
+
   private final T myTreeNode;
   private boolean reloadSubTree, updateAncestors;
 
@@ -35,8 +40,15 @@ public class PresentationUpdater<T extends MPSTreeNode> implements Runnable {
   public void update(boolean reloadSubTree, boolean updateAncestors) {
     this.reloadSubTree = reloadSubTree;
     this.updateAncestors = updateAncestors;
-    ModelAccess.instance().runReadInEDT(this);
+
+    ourUpdateQueue.queue(new Update(new Object[]{PresentationUpdater.class, myTreeNode}) {
+      @Override
+      public void run() {
+        ModelAccess.instance().runReadInEDT(PresentationUpdater.this);
+      }
+    });
   }
+
   public void run() {
     if (isValid(myTreeNode)) {
       myTreeNode.updatePresentation(reloadSubTree, updateAncestors);
