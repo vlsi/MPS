@@ -258,8 +258,8 @@ public class MPSMakeMediator {
           catch (IOException e) {
             myContext.getCompileContext().processMessage(
               new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+            success = false;
           }
-          success = false;
         }
 
         FSOperations.markDirty(myContext.getCompileContext(), file);
