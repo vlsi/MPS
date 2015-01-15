@@ -125,8 +125,11 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     String target;
     if (ref instanceof StaticReference) {
       final SNodeId targetNodeId = ref.getTargetNodeId();
-      assert targetNodeId != null;
-      target = toText(targetNodeId);
+      if (targetNodeId == null) {
+        target = DYNAMIC_REFERENCE_ID;
+      } else {
+        target = toText(targetNodeId);
+      }
     } else {
       target = DYNAMIC_REFERENCE_ID;
     }
