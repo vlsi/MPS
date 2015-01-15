@@ -16,20 +16,17 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -40,7 +37,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SNodeAccessUtilImpl extends SNodeAccessUtil {
-  private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(SNodeAccessUtil.class));
 
   //SNodeAccessUtilImpl has only one instance, so we can omit remove() here though the field is not static
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertySettersInProgress = new InProgressThreadLocal<SProperty>();
@@ -74,7 +71,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       Object getterValue = descriptor != null ? descriptor.getValue(node) : node.getProperty(property);
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
-      LOG.error(null, t);
+      LOG.error(t);
       return null;
     } finally {
       getters.remove(current);
@@ -136,12 +133,12 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       if (descriptor != null) {
         descriptor.setValue(node, propertyValue);
       } else {
-        LOG.warn(
-            "Can't set property " + property.getName() + " in node " + node.getPresentation() + " to " + propertyValue + ". No property constrains found.");
+        LOG.warning(
+            "Can't find property constraints for property `" + property.getName() + "`. Setting directly. Value: `" + propertyValue + "`.", node);
         node.setProperty(property, propertyValue);
       }
     } catch (Exception t) {
-      LOG.error(null, t);
+      LOG.error(t);
     } finally {
       threadSet.remove(pair);
     }
@@ -167,8 +164,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     ReferenceConstraintsDescriptor descriptor = getReferenceConstraintsDescriptor(node, referenceLink);
 
     if (descriptor == null) {
-      LOG.warn(
-          "Can't find reference constraints while trying to set a reference. Ref role: " + referenceLink.getRoleName() + ", node: " + node.getPresentation());
+      LOG.warning(
+          "Can't find reference constraints for reference `" + referenceLink.getRoleName() + "`. Setting directly.", node);
       node.setReferenceTarget(referenceLink, target);
       return;
     }
