@@ -41,7 +41,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent, JavaCompilerOptionsProvider {
   private CompilerState myState = new CompilerState();
-  private CompilerSettingsPreferencePage myCompilerSettingsPreferencePage;
   private Project myProject;
   public CompilerSettingsComponent(Project project) {
     myProject = project;
@@ -91,19 +90,6 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
       return;
     }
     JavaCompilerOptionsComponent.getInstance().unregisterProviderForProject(project);
-  }
-
-  void commit() {
-    myCompilerSettingsPreferencePage.commit();
-    myState = new CompilerState();
-    myState.setTargetVersion(myCompilerSettingsPreferencePage.getSelectedTargetJavaVersion());
-  }
-
-  public CompilerSettingsPreferencePage getPreferencePage() {
-    if (myCompilerSettingsPreferencePage == null) {
-      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(getJavaCompilerOptions());
-    }
-    return myCompilerSettingsPreferencePage;
   }
 
   @NotNull
