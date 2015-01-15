@@ -4,5 +4,6 @@
     <entry key="jetbrains.mps.name2id" value="executed" />
     <entry key="jetbrains.mps.resaveModules" value="executed" />
     <entry key="jetbrains.mps.name2id_gen" value="executed" />
+    <entry key="jetbrains.mps.cleanSrc" value="executed" />
   </component>
 </project>
