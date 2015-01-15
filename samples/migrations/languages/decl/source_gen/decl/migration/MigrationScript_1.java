@@ -7,8 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -28,9 +30,13 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector_) {
+  public SNode execute(SModule m, DataCollector collector__0) {
     // get all old instances in all models of the module 
-    Iterable<SModel> models = (Iterable<SModel>) m.getModels();
+    Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(LanguageAspect.MIGRATION.is(it));
+      }
+    });
     Iterable<SNode> components = SNodeOperations.ofConcept(Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.roots(it, null);

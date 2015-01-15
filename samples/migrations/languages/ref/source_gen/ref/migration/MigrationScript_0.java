@@ -27,9 +27,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class MigrationScript_0 extends MigrationScriptBase {
   public String getCaption() {
-    return "migrate references using a TransformStatement";
+    return "migrate the references using a TransformStatement";
   }
-  public SNode execute(SModule m, DataCollector collector__0) {
+  public SNode execute(SModule m, DataCollector collector_) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, "ref.structure.OldComponentRef"));

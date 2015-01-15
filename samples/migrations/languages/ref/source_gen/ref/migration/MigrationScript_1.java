@@ -11,6 +11,8 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -19,7 +21,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,13 +32,17 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector_) {
-    final Map<SModule, SNode> declData = collector_.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
+  public SNode execute(SModule m, DataCollector collector__0) {
+    final Map<SModule, SNode> declData = collector__0.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 
     final Map<SModule, SNode> requiredData = declData;
 
     // get all models in the current module 
-    Iterable<SModel> models = (Iterable<SModel>) m.getModels();
+    Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(LanguageAspect.MIGRATION.is(it));
+      }
+    });
 
     // get all old references in all models of this module 
     Iterable<SNode> references = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {

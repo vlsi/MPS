@@ -30,9 +30,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MigrationScript_0 extends MigrationScriptBase {
   public String getCaption() {
-    return "migrate declaration using a TransformStatement";
+    return "migrate the declarations using a TransformStatement";
   }
-  public SNode execute(SModule m, DataCollector collector__0) {
+  public SNode execute(SModule m, DataCollector collector_) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, "decl.structure.OldComponent"));
