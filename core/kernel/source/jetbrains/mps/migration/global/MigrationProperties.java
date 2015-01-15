@@ -18,11 +18,11 @@ package jetbrains.mps.migration.global;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MigrationProperties {
-  protected Map<String, String> myProperties = new HashMap<String, String>();
+  protected Map<String, String> myProperties = new TreeMap<String, String>();
 
   public void setProperty(@NotNull String key, String value) {
     if (value == null) {
