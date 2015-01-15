@@ -20,14 +20,13 @@ import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class JavaCompilerOptionsComponent {
-  private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new ConcurrentHashMap<Project, JavaCompilerOptionsProvider>();
+  private Map<Project, JavaCompilerOptions> myProjectToOptions = new ConcurrentHashMap<Project, JavaCompilerOptions>();
   private static JavaCompilerOptionsComponent INSTANCE;
-  private static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
+  public static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
   public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new JavaCompilerOptions(DEFAULT_JAVA_VERSION);
 
   private JavaCompilerOptionsComponent() {
@@ -39,35 +38,25 @@ public class JavaCompilerOptionsComponent {
     }
     return INSTANCE;
   }
-
-  public void registerProvider(@NotNull Project project, @NotNull JavaCompilerOptionsProvider provider) {
-    myProjectToProvider.put(project, provider);
+  public void setJavaCompilerOptions(@NotNull Project project, @NotNull JavaCompilerOptions options) {
+    myProjectToOptions.put(project, options);
   }
 
-  public void unregisterProviderForProject(@NotNull Project project) {
-    if (myProjectToProvider.containsKey(project)) {
-      myProjectToProvider.remove(project);
+  public void removeJavaCompilerOptions(@NotNull Project project) {
+    if (myProjectToOptions.containsKey(project)) {
+      myProjectToOptions.remove(project);
     }
   }
 
-  public JavaCompilerOptionsProvider getJavaCompilerOptionsProvider(Project project) {
-    return myProjectToProvider.get(project);
-  }
-
+  @NotNull
   public JavaCompilerOptions getJavaCompilerOptions(Project project) {
-    if (project == null) {
+    if (project == null || !myProjectToOptions.containsKey(project)) {
       return DEFAULT_JAVA_COMPILER_OPTIONS;
     }
-    if (myProjectToProvider.containsKey(project)) {
-      JavaCompilerOptionsProvider javaCompilerOptionsProvider = myProjectToProvider.get(project);
-      assert javaCompilerOptionsProvider != null;
-      JavaCompilerOptions javaCompilerOptions = javaCompilerOptionsProvider.getJavaCompilerOptions();
-      JavaVersion targetJavaVersion = javaCompilerOptions.getTargetJavaVersion();
-      return new JavaCompilerOptions(targetJavaVersion == null ? DEFAULT_JAVA_VERSION : targetJavaVersion);
-    }
-    return DEFAULT_JAVA_COMPILER_OPTIONS;
+    return myProjectToOptions.get(project);
   }
 
+  @NotNull
   private static JavaVersion getDefaultJavaVersion() {
     String property = System.getProperty("java.version");
     if (property.startsWith("1.6")) {

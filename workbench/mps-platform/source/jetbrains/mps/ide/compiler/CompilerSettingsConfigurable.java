@@ -88,7 +88,7 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
 
   private CompilerSettingsPreferencePage getPreferencePage() {
     if (myCompilerSettingsPreferencePage == null) {
-      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(CompilerSettingsComponent.getInstance(myProject).getJavaCompilerOptions());
+      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(CompilerSettingsComponent.getInstance(myProject).getState());
     }
     return myCompilerSettingsPreferencePage;
   }

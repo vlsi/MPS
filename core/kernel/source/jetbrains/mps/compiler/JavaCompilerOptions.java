@@ -16,12 +16,14 @@
 package jetbrains.mps.compiler;
 
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
+import org.jetbrains.annotations.NotNull;
 
 public class JavaCompilerOptions {
   private JavaVersion myTargetVersion;
-  public JavaCompilerOptions(JavaVersion targetVersion) {
+  public JavaCompilerOptions(@NotNull JavaVersion targetVersion) {
     myTargetVersion = targetVersion;
   }
+  @NotNull
   public JavaVersion getTargetJavaVersion() {
     return myTargetVersion;
   }

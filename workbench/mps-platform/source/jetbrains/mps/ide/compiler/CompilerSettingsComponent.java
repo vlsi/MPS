@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
-import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
 import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
     }
 )
 
-public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent, JavaCompilerOptionsProvider {
+public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent {
   private CompilerState myState = new CompilerState();
   private Project myProject;
   public CompilerSettingsComponent(Project project) {
@@ -62,6 +61,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   public void loadState(CompilerState state) {
     myState = new CompilerState();
     myState.setTargetVersion(state.getTargetVersion());
+    registerOptions();
   }
 
   @Override
@@ -76,11 +76,15 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
 
   @Override
   public void initComponent() {
+    registerOptions();
+  }
+
+  private void registerOptions() {
     jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
     if (project == null) {
       return;
     }
-    JavaCompilerOptionsComponent.getInstance().registerProvider(project, this);
+    JavaCompilerOptionsComponent.getInstance().setJavaCompilerOptions(project, createOptions());
   }
 
   @Override
@@ -89,7 +93,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
     if (project == null) {
       return;
     }
-    JavaCompilerOptionsComponent.getInstance().unregisterProviderForProject(project);
+    JavaCompilerOptionsComponent.getInstance().removeJavaCompilerOptions(project);
   }
 
   @NotNull
@@ -105,14 +109,13 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
       return myTargetVersion;
     }
 
-
     public void setTargetVersion(JavaVersion targetVersion) {
       myTargetVersion = targetVersion;
     }
   }
 
-  @Override
-  public JavaCompilerOptions getJavaCompilerOptions() {
-    return new JavaCompilerOptions(myState.getTargetVersion());
+  private JavaCompilerOptions createOptions() {
+    JavaVersion targetVersion = myState.getTargetVersion();
+    return new JavaCompilerOptions(targetVersion == null ? JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION : targetVersion);
   }
 }
