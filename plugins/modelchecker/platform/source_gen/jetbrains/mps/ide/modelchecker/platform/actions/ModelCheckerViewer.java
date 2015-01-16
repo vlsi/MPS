@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -147,14 +148,14 @@ public class ModelCheckerViewer extends JPanel {
     }).toListSequence();
   }
   /*package*/ void checkModules(List<SModule> modules, String taskTargetTitle) {
-    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), myProject.getScope()), taskTargetTitle);
+    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), GlobalScope.getInstance()), taskTargetTitle);
   }
   /*package*/ void checkModels(List<SModel> models, String taskTargetTitle) {
     runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
-    }).toListSequence()), myProject.getScope()), taskTargetTitle);
+    }).toListSequence()), GlobalScope.getInstance()), taskTargetTitle);
   }
   /*package*/ void runCheck(IResultProvider resultProvider, SearchQuery searchQuery, String taskTargetTitle) {
     myCheckAction.setProgressText(String.format("Checking %s", taskTargetTitle));

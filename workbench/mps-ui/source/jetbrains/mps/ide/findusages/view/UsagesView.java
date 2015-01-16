@@ -167,6 +167,7 @@ public class UsagesView implements IExternalizeable {
   }
 
   public void setContents(SearchResults results) {
+    myLastResults = results;
     myTreeComponent.setContents(results);
   }
 
@@ -178,9 +179,9 @@ public class UsagesView implements IExternalizeable {
   @ToRemove(version = 3.2)
   public void run(ProgressIndicator indicator) {
     assert mySearchTask != null;
-    myLastResults = mySearchTask.execute(myProject, new ProgressMonitorAdapter(indicator));
-    myLastResults.removeDuplicates();
-    setContents(myLastResults);
+    SearchResults sr = mySearchTask.execute(myProject, new ProgressMonitorAdapter(indicator));
+    sr.removeDuplicates();
+    setContents(sr);
   }
 
   //----COMPONENT STUFF----

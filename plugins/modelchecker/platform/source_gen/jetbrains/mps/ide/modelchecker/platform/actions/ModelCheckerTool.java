@@ -16,6 +16,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
@@ -53,7 +54,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
-    }).toListSequence()), mpsProject.getScope()), title);
+    }).toListSequence()), GlobalScope.getInstance()), title);
     revealResults(newViewer, title, IdeIcons.MODEL_ICON);
   }
   public void checkModulesAndShowResult(List<SModule> modules) {

@@ -1547,15 +1547,23 @@
                       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="2K4NeDxFKXd" role="33vP2m">
-                    <ref role="37wK5l" to="msyo:~IterableUtil.asSet(java.lang.Iterable):java.util.Set" resolve="asSet" />
-                    <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
-                    <node concept="2OqwBi" id="2K4NeDxFwUP" role="37wK5m">
-                      <node concept="37vLTw" id="2K4NeDxFwUQ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2K4NeDxEs5m" resolve="scope" />
+                  <node concept="2ShNRf" id="2Dcf5u9NYXR" role="33vP2m">
+                    <node concept="1pGfFk" id="2Dcf5u9Ookg" role="2ShVmc">
+                      <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
+                      <node concept="2YIFZM" id="2Dcf5u9NEZ8" role="37wK5m">
+                        <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
+                        <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
+                        <node concept="2OqwBi" id="2Dcf5u9NF97" role="37wK5m">
+                          <node concept="37vLTw" id="2Dcf5u9NF98" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2K4NeDxEs5m" resolve="scope" />
+                          </node>
+                          <node concept="liA8E" id="2Dcf5u9NF99" role="2OqNvi">
+                            <ref role="37wK5l" to="88zw:~SearchScope.getModules():java.lang.Iterable" resolve="getModules" />
+                          </node>
+                        </node>
                       </node>
-                      <node concept="liA8E" id="2K4NeDxFwUR" role="2OqNvi">
-                        <ref role="37wK5l" to="88zw:~SearchScope.getModules():java.lang.Iterable" resolve="getModules" />
+                      <node concept="3uibUv" id="2Dcf5u9OpYk" role="1pMfVU">
+                        <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                       </node>
                     </node>
                   </node>
@@ -6027,13 +6035,9 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="3pNk_u$bzV6" role="37wK5m">
-                    <node concept="37vLTw" id="3pNk_u$b_m4" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3pNk_u$axiz" resolve="mpsProject" />
-                    </node>
-                    <node concept="liA8E" id="3pNk_u$bzV8" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
-                    </node>
+                  <node concept="2YIFZM" id="18U67YxAGQP" role="37wK5m">
+                    <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                    <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
                   </node>
                 </node>
               </node>
@@ -7989,13 +7993,9 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3pNk_u$1aba" role="37wK5m">
-                  <node concept="37vLTw" id="3pNk_u$1abb" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2K4NeDxB5Kx" resolve="myProject" />
-                  </node>
-                  <node concept="liA8E" id="3pNk_u$1abc" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
-                  </node>
+                <node concept="2YIFZM" id="18U67YxAXq9" role="37wK5m">
+                  <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
+                  <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
                 </node>
               </node>
             </node>
@@ -8068,13 +8068,9 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3pNk_u$1du6" role="37wK5m">
-                  <node concept="37vLTw" id="3pNk_u$1du7" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2K4NeDxB5Kx" resolve="myProject" />
-                  </node>
-                  <node concept="liA8E" id="3pNk_u$1du8" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
-                  </node>
+                <node concept="2YIFZM" id="18U67YxAX_M" role="37wK5m">
+                  <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
+                  <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
                 </node>
               </node>
             </node>
