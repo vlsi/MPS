@@ -43,8 +43,9 @@
     <import index="yq2y" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.uiDesigner.core(MPS.Platform/com.intellij.uiDesigner.core@java_stub)" />
     <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
-    <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" implicit="true" />
-    <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" implicit="true" />
+    <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" />
+    <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" />
+    <import index="t99v" ref="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1659,8 +1660,8 @@
                     <node concept="3Tqbb2" id="6Sxc5MiBujY" role="A3Ik2" />
                   </node>
                   <node concept="2YIFZM" id="6Sxc5MiBujZ" role="33vP2m">
-                    <ref role="1Pybhc" to="bim2:6Sxc5Mit6Cp" resolve="MigrationCheckUtil" />
-                    <ref role="37wK5l" to="bim2:6Sxc5Mit8B4" resolve="getProblemNodes" />
+                    <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
+                    <ref role="37wK5l" to="t99v:3n7MNzO_xES" resolve="getProblemNodes" />
                     <node concept="37vLTw" id="6Sxc5MiBuk0" role="37wK5m">
                       <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
                     </node>
@@ -1913,8 +1914,8 @@
                         <node concept="3Tqbb2" id="6Sxc5MitY6A" role="A3Ik2" />
                       </node>
                       <node concept="2YIFZM" id="6Sxc5MitY6D" role="33vP2m">
-                        <ref role="1Pybhc" to="bim2:6Sxc5Mit6Cp" resolve="MigrationCheckUtil" />
-                        <ref role="37wK5l" to="bim2:6Sxc5Mit8B4" resolve="getProblemNodes" />
+                        <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
+                        <ref role="37wK5l" to="t99v:3n7MNzO_xES" resolve="getProblemNodes" />
                         <node concept="37vLTw" id="6Sxc5MitY6E" role="37wK5m">
                           <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
                         </node>
@@ -4357,8 +4358,8 @@
       <node concept="3clFbS" id="6Sxc5MiyWMj" role="3clF47">
         <node concept="3clFbF" id="6Sxc5MiBfas" role="3cqZAp">
           <node concept="2YIFZM" id="6Sxc5MiBeZW" role="3clFbG">
-            <ref role="37wK5l" to="bim2:6Sxc5MiB6zJ" resolve="getShowUsagesCallback" />
-            <ref role="1Pybhc" to="bim2:6Sxc5Mit6Cp" resolve="MigrationCheckUtil" />
+            <ref role="37wK5l" to="t99v:3n7MNzO_xDr" resolve="getShowUsagesCallback" />
+            <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
             <node concept="37vLTw" id="6Sxc5MiBf4e" role="37wK5m">
               <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
             </node>
@@ -4445,8 +4446,8 @@
       <node concept="3clFbS" id="6Sxc5Miz5v6" role="3clF47">
         <node concept="3clFbF" id="6Sxc5MiBfhX" role="3cqZAp">
           <node concept="2YIFZM" id="6Sxc5MiBfhZ" role="3clFbG">
-            <ref role="37wK5l" to="bim2:6Sxc5MiB6zJ" resolve="getShowUsagesCallback" />
-            <ref role="1Pybhc" to="bim2:6Sxc5Mit6Cp" resolve="MigrationCheckUtil" />
+            <ref role="37wK5l" to="t99v:3n7MNzO_xDr" resolve="getShowUsagesCallback" />
+            <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
             <node concept="37vLTw" id="6Sxc5MiBfi0" role="37wK5m">
               <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
             </node>
