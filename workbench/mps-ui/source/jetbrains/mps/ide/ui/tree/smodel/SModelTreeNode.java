@@ -415,6 +415,8 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       }
     });
 
+    //Assuming that "added" as well as targetNode.children are sorted already, so we get merge the two by remembering the last insert point
+    final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<MPSTreeNode, Integer>();
     for (SNode root : added) {
       SNodeTreeNode nodeToInsert = new SNodeTreeNode(root);
       MPSTreeNode targetNode = getNodeGroupFor(root);
@@ -424,7 +426,10 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       }
 
       int index = -1;
-      for (int i = 0; i < targetNode.getChildCount(); i++) {
+      Integer lastPosition = lastPositions.get(targetNode);
+      if(lastPosition==null) lastPosition = 0;
+
+      for (int i = lastPosition; i < targetNode.getChildCount(); i++) {
         if (!(targetNode.getChildAt(i) instanceof SNodeTreeNode)) {
           continue;
         }
@@ -439,6 +444,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       if (index == -1) {
         index = targetNode.getChildCount();
       }
+      lastPositions.put(targetNode, index+1);
       treeModel.insertNodeInto(nodeToInsert, targetNode, index);
     }
   }
