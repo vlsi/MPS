@@ -85,7 +85,7 @@ public abstract class MpsWorker {
     JavaCompilerProperties myJavaProperties = new JavaCompilerProperties(myWhatToDo);
     String targetJavaVersion = myJavaProperties.getTargetJavaVersion();
     JavaCompilerOptionsComponent.JavaVersion parsedJavaVersion = JavaCompilerOptionsComponent.JavaVersion.parse(targetJavaVersion);
-    if (targetJavaVersion == null || parsedJavaVersion == null) {
+    if (parsedJavaVersion == null) {
       myJavaCompilerOptions = JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS;
     } else {
       myJavaCompilerOptions = new JavaCompilerOptions(parsedJavaVersion);

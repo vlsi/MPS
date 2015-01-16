@@ -599,19 +599,11 @@
               </node>
             </node>
           </node>
-          <node concept="22lmx$" id="qlHM05jrsE" role="3clFbw">
-            <node concept="3clFbC" id="qlHM05jHVJ" role="3uHU7w">
-              <node concept="37vLTw" id="qlHM05jrwX" role="3uHU7B">
-                <ref role="3cqZAo" node="qlHM05joK0" resolve="parsedJavaVersion" />
-              </node>
-              <node concept="10Nm6u" id="qlHM05jrNg" role="3uHU7w" />
+          <node concept="3clFbC" id="qlHM05jHVJ" role="3clFbw">
+            <node concept="37vLTw" id="qlHM05jrwX" role="3uHU7B">
+              <ref role="3cqZAo" node="qlHM05joK0" resolve="parsedJavaVersion" />
             </node>
-            <node concept="3clFbC" id="6wglnuBaE9n" role="3uHU7B">
-              <node concept="37vLTw" id="6wglnuBcMNm" role="3uHU7B">
-                <ref role="3cqZAo" node="6wglnuBcMNi" resolve="targetJavaVersion" />
-              </node>
-              <node concept="10Nm6u" id="6wglnuBaEbx" role="3uHU7w" />
-            </node>
+            <node concept="10Nm6u" id="qlHM05jrNg" role="3uHU7w" />
           </node>
           <node concept="9aQIb" id="6wglnuBcluL" role="9aQIa">
             <node concept="3clFbS" id="6wglnuBcluM" role="9aQI4">
