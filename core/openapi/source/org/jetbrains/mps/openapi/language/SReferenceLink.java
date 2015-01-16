@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Reference links describe relations that do not follow the parent-child relationships pattern. Target nodes can
  * physically lie anywhere in the AST (even in a different model).
  */
-public interface SReferenceLink extends SAbstractLink {
+public interface SReferenceLink extends SAbstractLink, SConceptFeature {
   /**
    * Returns a name of this reference
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
@@ -34,6 +34,7 @@ public interface SReferenceLink extends SAbstractLink {
    * Note that if you've got some reference from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this reference.
    */
+  @Deprecated// use SConceptFeature.getContainingConcept()
   SAbstractConcept getContainingConcept();
 
   /**
@@ -55,7 +56,8 @@ public interface SReferenceLink extends SAbstractLink {
   /**
    * Instance nodes can contain more than one target element.
    */
-  @Deprecated //always false
+  @Deprecated
+  //always false
   boolean isMultiple();
 
   /**
@@ -76,7 +78,7 @@ public interface SReferenceLink extends SAbstractLink {
    * <p/>
    * In this case you must provide the nearest available ancestor node as a context node and the location within
    * it where the reference will be placed.
-   *
+   * <p/>
    * Example: while typing a new statement in the middle of a statement list, the context menu builds a scope before
    * the statement has been created, in order to offer, among other things, all local variables defined up to this point in code.
    * This is achieved by passing the statement list as a context node, "statement" link as the second parameter and the index of

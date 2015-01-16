@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,37 +15,11 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
-
-/**
- * Represents a concept property
- */
-public interface SProperty extends SConceptFeature {
+public interface SConceptFeature {
   /**
-   * Return the concept that contains the declaration of this property.
+   * Return the concept that contains the declaration of this concept feature.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this property.
    */
-  @Deprecated// use SConceptFeature.getContainingConcept()
   SAbstractConcept getContainingConcept();
-
-  /**
-   * Returns a name of this property
-   * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
-   */
-  String getName();
-
-  /**
-   * Returns the declaration node in case sources for this concept are present in IDE
-   */
-  @Nullable
-  SNode getDeclarationNode();
-
-  SDataType getType();
-
-  /**
-   * Will be used to check validity of potential values.
-   */
-  boolean isValid(String value);
 }
