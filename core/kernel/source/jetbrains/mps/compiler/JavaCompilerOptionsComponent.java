@@ -74,10 +74,11 @@ public class JavaCompilerOptionsComponent {
     VERSION_1_7(CompilerOptions.VERSION_1_7),
     VERSION_1_8(CompilerOptions.VERSION_1_8);
     private String myCompilerVersion;
-    JavaVersion(String compilerVersion) {
+    JavaVersion(@NotNull String compilerVersion) {
       myCompilerVersion = compilerVersion;
     }
 
+    @NotNull
     public String getCompilerVersion() {
       return myCompilerVersion;
     }
@@ -87,9 +88,14 @@ public class JavaCompilerOptionsComponent {
 
     @Nullable
     public static JavaVersion parse(@Nullable String value) {
-      if ("1.6".equals(value)) return VERSION_1_6;
-      if ("1.7".equals(value)) return VERSION_1_7;
-      if ("1.8".equals(value)) return VERSION_1_8;
+      if (value == null) {
+        return null;
+      }
+      for (JavaVersion version : JavaVersion.values()) {
+        if (value.equals(version.getCompilerVersion())) {
+          return version;
+        }
+      }
       return null;
     }
 

@@ -73,7 +73,7 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
   public void apply() throws ConfigurationException {
     getPreferencePage().commit();
     CompilerState compilerState = new CompilerState();
-    compilerState.setTargetVersion(getPreferencePage().getSelectedTargetJavaVersion());
+    compilerState.setTargetVersion(getPreferencePage().getSelectedTargetJavaVersion().getCompilerVersion());
     CompilerSettingsComponent.getInstance(myProject).loadState(compilerState);
   }
 

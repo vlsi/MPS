@@ -43,7 +43,7 @@ public class CompilerSettingsPreferencePage {
     myTargetVersionItems.add(DEFAULT_VERSION_ITEM);
   }
   public CompilerSettingsPreferencePage(CompilerState options) {
-    JavaVersion targetJavaVersion = options.getTargetVersion();
+    JavaVersion targetJavaVersion = JavaVersion.parse(options.getTargetVersion());
     if (targetJavaVersion == null) {
       myInitialTargetJavaVersion = DEFAULT_VERSION_ITEM;
     } else {
