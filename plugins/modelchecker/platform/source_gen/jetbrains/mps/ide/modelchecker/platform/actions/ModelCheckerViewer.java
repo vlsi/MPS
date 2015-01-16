@@ -5,11 +5,15 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import javax.swing.Icon;
 import javax.swing.JButton;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.icons.AllIcons;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -25,23 +29,20 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
+import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.util.StringUtil;
@@ -51,14 +52,12 @@ import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
-public abstract class ModelCheckerViewer extends JPanel {
+public class ModelCheckerViewer extends JPanel {
   private final Project myIdeaProject;
   private final jetbrains.mps.project.Project myProject;
   private UsagesView myUsagesView;
-  private String myTabTitle;
-  private Icon myTabIcon;
   private JButton myFixButton;
-  private String myCheckProgressTitle = "Checking...";
+  private UsagesView.RerunAction myCheckAction;
   public ModelCheckerViewer(Project project) {
     myIdeaProject = project;
     myProject = ProjectHelper.toMPSProject(project);
@@ -67,25 +66,18 @@ public abstract class ModelCheckerViewer extends JPanel {
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategories = new boolean[]{true, false};
 
-    myUsagesView = new UsagesView(project, viewOptions) {
-      @Override
-      public void close() {
+    myUsagesView = new UsagesView(project, viewOptions);
+    myCheckAction = new UsagesView.RerunAction(myUsagesView, "Check again");
+    myUsagesView.setActions(myCheckAction, new UsagesView.RebuildAction(myUsagesView), new AnAction("Close", "", AllIcons.Actions.Cancel) {
+      public void actionPerformed(@NotNull AnActionEvent p0) {
         ModelCheckerViewer.this.close();
       }
-      @Override
-      protected String getRerunSearchTooltip() {
-        return "Recheck";
-      }
-      @Override
-      protected String getSearchProgressTitle() {
-        return myCheckProgressTitle;
-      }
-    };
+    }, new PinToolwindowTabAction());
     myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
+    // XXX fix button might be an action along with others above (i.e. button in the left pane) 
     myFixButton = new JButton("Perform Quick Fixes");
     myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
     myFixButton.addActionListener(new ActionListener() {
@@ -97,7 +89,9 @@ public abstract class ModelCheckerViewer extends JPanel {
     buttonPanel.add(myFixButton);
     add(buttonPanel, BorderLayout.SOUTH);
   }
-  protected abstract void close();
+  protected void close() {
+    // no-op, override to react on view close action 
+  }
   public void performQuickFixes() {
     // Ask if need to fix 
 
@@ -137,7 +131,7 @@ public abstract class ModelCheckerViewer extends JPanel {
         return;
       }
 
-      runCheck();
+      doReCheck();
     }
   }
   private List<ModelCheckerIssue> getIssuesToFix() {
@@ -152,58 +146,26 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
     }).toListSequence();
   }
-  private void runCheck() {
-    try {
-      ProgressManager.getInstance().run(new Task.Modal(myIdeaProject, myCheckProgressTitle, true) {
-        @Override
-        public void run(@NotNull ProgressIndicator indicator) {
-          myUsagesView.run(indicator);
-        }
-      });
-    } catch (Throwable t) {
-      LogManager.getLogger(ModelCheckerViewer.class).error("An error occurred while model checking:\n" + t);
-    }
-
+  /*package*/ void checkModules(List<SModule> modules, String taskTargetTitle) {
+    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), myProject.getScope()), taskTargetTitle);
   }
-  public void prepareAndCheckModules(List<SModule> modules, String taskTargetTitle, Icon taskIcon) {
-    IResultProvider resultProvider = FindUtils.makeProvider(newModelChecker());
-    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), myProject.getScope());
-    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
-
-    myCheckProgressTitle = "Checking " + taskTargetTitle;
-    setTabProperties(taskTargetTitle, taskIcon);
-
-    runCheck();
-  }
-  public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
-    IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(ListSequence.fromList(modelDescriptors).select(new ISelector<SModel, SModelReference>() {
+  /*package*/ void checkModels(List<SModel> models, String taskTargetTitle) {
+    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
-    }).toListSequence()), myProject.getScope());
-    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
-
-    myCheckProgressTitle = "Checking " + taskTargetTitle;
-    setTabProperties(taskTargetTitle, taskIcon);
-
-    runCheck();
+    }).toListSequence()), myProject.getScope()), taskTargetTitle);
   }
-  public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
-    prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon, newModelChecker());
+  /*package*/ void runCheck(IResultProvider resultProvider, SearchQuery searchQuery, String taskTargetTitle) {
+    myCheckAction.setProgressText(String.format("Checking %s", taskTargetTitle));
+    myCheckAction.setRunOptions(resultProvider, searchQuery);
+    doReCheck();
   }
-  public void setTabProperties(String title, Icon icon) {
-    myTabTitle = title;
-    myTabIcon = icon;
+  private void doReCheck() {
+    myCheckAction.actionPerformed(AnActionEvent.createFromInputEvent(myCheckAction, null, ActionPlaces.UNKNOWN));
   }
   public void dispose() {
     myUsagesView.dispose();
-  }
-  public String getTabTitle() {
-    return myTabTitle;
-  }
-  public Icon getTabIcon() {
-    return myTabIcon;
   }
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();

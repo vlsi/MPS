@@ -15,37 +15,42 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.Toolwindows;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.progress.Task.Backgroundable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.UsagesView.FindUsagesWithDialogAction;
+import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
+import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
+import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
@@ -111,71 +116,62 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne,
       final boolean forceNewTab,
       final String notFoundMsg) {
+    final SearchTask searchTask = new SearchTask(provider, query);
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        final SearchResults[] searchResults = new SearchResults[1];
-        final boolean[] isCancelled = new boolean[1];
-        ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
+        new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
+          private SearchResults searchResults;
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults[0] = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
-            isCancelled[0] = indicator.isCanceled();
+            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()), new ProgressMonitorAdapter(indicator));
           }
-        });
-        if (!isCancelled[0]) {
-          SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-              showResults(provider, query, searchResults[0], showOne, forceNewTab, isRerunnable, notFoundMsg);
-            }
-          });
-        }
+
+          @Override
+          public void onSuccess() {
+            showResults(searchTask, searchResults, showOne, forceNewTab, isRerunnable, notFoundMsg);
+          }
+        }.queue();
       }
     });
   }
 
   public void show(SearchResults results, String notFoundMsg) {
     ThreadUtils.assertEDT();
-    showResults(null, null, results, true, true, false, notFoundMsg);
+    showResults(null, results, true, true, false, notFoundMsg);
   }
 
-  private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne,
+  private void showResults(SearchTask searchTask, final SearchResults searchResults, final boolean showOne,
       final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
       manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
     } else if (resCount == 1 && !showOne) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
           // TODO: use node pointers here
           if (node != null) {
-            IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
+            NavigationSupport.getInstance().openNode(mpsProject, node, true, !(node.getModel() != null && node.getParent() == null));
           }
         }
       });
     } else {
       int index = getCurrentTabIndex();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          UsageViewData usageViewData = new UsageViewData();
-          usageViewData.createUsageView();
-          myUsageViewsData.add(usageViewData);
+      UsagesView usagesView = createUsageView(isRerunnable ? searchTask : null);
+      UsageViewData usageViewData = new UsageViewData(usagesView, isRerunnable ? searchTask : null);
+      myUsageViewsData.add(usageViewData);
 
-          usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable).showSettingsButton(true), searchResults);
+      usagesView.setContents(searchResults);
 
-          Icon icon = usageViewData.myUsagesView.getIcon();
-          String caption = usageViewData.myUsagesView.getCaption();
-          JComponent component = usageViewData.myUsagesView.getComponent();
-          Content content = addContent(component, caption, icon, true);
-          getContentManager().setSelectedContent(content);
-        }
-      });
+      Icon icon = usagesView.getIcon();
+      String caption = usagesView.getCaption();
+      JComponent component = usagesView.getComponent();
+      Content content = addContent(component, caption, icon, true);
+      getContentManager().setSelectedContent(content);
 
       if (!forceNewTab) {
         closeLastUnpinnedTab(index);
@@ -194,20 +190,20 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
-      for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-        final UsageViewData usageViewData = new UsageViewData();
+      for (Element tabXML : tabsXML.getChildren()) {
+        final UsageViewData usageViewData;
         try {
-          usageViewData.read(tabXML, project);
+          usageViewData = UsageViewData.read(this, tabXML, project);
         } catch (CantLoadSomethingException e) {
           continue;
         }
         myUsageViewsData.add(usageViewData);
 
-        final String caption = usageViewData.myUsagesView.getCaption();
-        final Icon icon = usageViewData.myUsagesView.getIcon();
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
+            final String caption = usageViewData.myUsagesView.getCaption();
+            final Icon icon = usageViewData.myUsagesView.getIcon();
             addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
           }
         });
@@ -252,14 +248,15 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   @Override
   public Element getState() {
-    return ModelAccess.instance().runReadAction(new Computable<Element>() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    final Element state = new Element("state");
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
-      public Element compute() {
-        Element state = new Element("state");
-        write(state, getProject().getComponent(MPSProject.class));
-        return state;
+      public void run() {
+        write(state, mpsProject);
       }
     });
+    return state;
   }
 
   @Override
@@ -269,41 +266,75 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+        mpsProject.getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
-            read(state, getProject().getComponent(MPSProject.class));
+            read(state, mpsProject);
           }
         });
       }
     });
   }
 
-  public class UsageViewData {
+  private UsagesView createUsageView(@Nullable SearchTask searchTask) {
+    final UsagesView view = new UsagesView(getProject(), myDefaultViewOptions);
+    ArrayList<AnAction> actions = new ArrayList<AnAction>();
+    if (searchTask != null) {
+      final RerunAction rerunAction = new RerunAction(view, "Run again");
+      rerunAction.setRunOptions(searchTask);
+      actions.add(rerunAction);
+    }
+    actions.add(new RebuildAction(view));
+    actions.add(new AnAction("Close", "", Actions.Cancel) {
+      @Override
+      public void actionPerformed(@NotNull AnActionEvent e) {
+        int i = 0;
+        for (UsageViewData vd : myUsageViewsData) {
+          if (vd.myUsagesView == view) {
+            UsagesViewTool.this.closeTab(i);
+            break;
+          }
+          i++;
+        }
+      }
+    });
+    actions.add(new PinToolwindowTabAction());
+    if (ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null && searchTask != null) {
+      actions.add(new FindUsagesWithDialogAction(searchTask));
+    }
+    view.setActions(actions);
+    return view;
+  }
+
+  /**
+   * Tracks result presentation and optional task to re-populate the view.
+   * Persists state
+   */
+  private static class UsageViewData {
     private static final String USAGE_VIEW = "usage_view";
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
 
-    public UsagesView myUsagesView;
+    public final UsagesView myUsagesView;
+    public final SearchTask mySearchTask;
     // now it's not in use, but will be used to implement constructable finders
 //    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
-    public void createUsageView() {
-      myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
-        @Override
-        public void close() {
-          int index = myUsageViewsData.indexOf(UsageViewData.this);
-          UsagesViewTool.this.closeTab(index);
-        }
-      };
+    public UsageViewData(@NotNull UsagesView view, @Nullable SearchTask searchTask) {
+      myUsagesView = view;
+      mySearchTask = searchTask;
     }
 
-    public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
+    @NotNull
+    public static UsageViewData read(UsagesViewTool tool, Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
+      final SearchTask task = SearchTask.read(element, project);
+      final UsagesView usageView = tool.createUsageView(task);
       Element usageViewXML = element.getChild(USAGE_VIEW);
-      createUsageView();
-      myUsagesView.read(usageViewXML, project);
+      usageView.read(usageViewXML, project);
 
 //      Element usageViewOptionsXML = element.getChild(USAGE_VIEW_OPTIONS);
 //      myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
+      return new UsageViewData(usageView, task);
     }
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
@@ -311,6 +342,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       if (myUsagesView.getTreeComponent().getAllResultNodes().size() > 500)
         throw new CantSaveSomethingException("usages view size too big to save");
 
+
+      if (mySearchTask != null) {
+        mySearchTask.write(element, project);
+      }
       Element usageViewXML = new Element(USAGE_VIEW);
       myUsagesView.write(usageViewXML, project);
       element.addContent(usageViewXML);

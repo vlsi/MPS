@@ -46,7 +46,7 @@ public abstract class FindUsagesFacade {
   /**
    * Finds instances of the provided concepts in the scope.
    */
-  public abstract Set<SNode> findInstances(SearchScope scope, Set<SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor);
+  public abstract Set<SNode> findInstances(SearchScope scope, Set<? extends SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor);
 
   /**
    * Finds models referencing the provided set of models in the scope.

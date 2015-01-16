@@ -13,6 +13,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class RefactoringView extends TabbedUsagesTool {
   private List<RefactoringViewItemImpl> myRefactoringViews = new ArrayList<RefactoringViewItemImpl>();
@@ -35,14 +36,12 @@ public class RefactoringView extends TabbedUsagesTool {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
     addContent(refactoringViewItem.getComponent(), refactoringContext.getRefactoring().getUserFriendlyName(), null, false);
-    refactoringViewItem.initUsagesView();
     openTool(true);
   }
   public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(p, refactoringViewAction, searchResults, hasModelsToGenerate);
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(ProjectHelper.toMPSProject(p), refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
     addContent(refactoringViewItem.getComponent(), name, null, false);
-    refactoringViewItem.initUsagesView();
     openTool(true);
   }
   public int getPriority() {
@@ -52,7 +51,7 @@ public class RefactoringView extends TabbedUsagesTool {
     public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
       super(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
     }
-    public MyRefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+    public MyRefactoringViewItem(jetbrains.mps.project.Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
       super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     }
     @Override

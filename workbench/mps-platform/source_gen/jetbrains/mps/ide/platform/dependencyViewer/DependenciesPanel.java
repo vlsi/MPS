@@ -10,9 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.tools.BaseTool;
 import java.awt.BorderLayout;
-import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
+import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.progress.ProgressManager;
@@ -53,7 +53,6 @@ public class DependenciesPanel extends JPanel {
     myProject = project;
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new ReferencesView(myProject, this);
-    myReferencesView.setRunOptions(null, null, new UsagesView.ButtonConfiguration(false, false, false));
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
     Splitter treeSplitter = new Splitter(false);
     treeSplitter.setFirstComponent(leftPane);
