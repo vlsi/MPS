@@ -58,6 +58,7 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -324,14 +325,16 @@
                     <node concept="3cpWs8" id="3n7MNzO_xDP" role="3cqZAp">
                       <node concept="3cpWsn" id="3n7MNzO_xDQ" role="3cpWs9">
                         <property role="TrG5h" value="problems" />
-                        <node concept="A3Dl8" id="3n7MNzO_xDR" role="1tU5fm">
-                          <node concept="3Tqbb2" id="3n7MNzO_xDS" role="A3Ik2" />
-                        </node>
-                        <node concept="2YIFZM" id="3n7MNzO_xDT" role="33vP2m">
-                          <ref role="37wK5l" node="3n7MNzO_xES" resolve="getProblemNodes" />
+                        <node concept="2YIFZM" id="3n7MNzOJHIJ" role="33vP2m">
+                          <ref role="37wK5l" node="3n7MNzO_xEA" resolve="getProblems" />
                           <ref role="1Pybhc" node="3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                          <node concept="37vLTw" id="3n7MNzO_xDU" role="37wK5m">
+                          <node concept="37vLTw" id="3n7MNzOJHIK" role="37wK5m">
                             <ref role="3cqZAo" node="3n7MNzO_xDF" resolve="modules" />
+                          </node>
+                        </node>
+                        <node concept="3vKaQO" id="3n7MNzOJJso" role="1tU5fm">
+                          <node concept="3uibUv" id="3n7MNzOJJsr" role="3O5elw">
+                            <ref role="3uigEE" node="3n7MNzO_IjP" resolve="Problem" />
                           </node>
                         </node>
                       </node>
@@ -448,6 +451,24 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3n7MNzO_xE_" role="jymVt" />
+    <node concept="2YIFZL" id="3n7MNzOJVMu" role="jymVt">
+      <property role="TrG5h" value="haveProblems" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="3n7MNzOJXgD" role="3clF46">
+        <property role="TrG5h" value="modules" />
+        <node concept="A3Dl8" id="3n7MNzOJXgE" role="1tU5fm">
+          <node concept="3uibUv" id="3n7MNzOJXgF" role="A3Ik2">
+            <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="3n7MNzOJVMx" role="3clF47" />
+      <node concept="3Tm1VV" id="3n7MNzOJUrA" role="1B3o_S" />
+      <node concept="10P_77" id="3n7MNzOJVMk" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="3n7MNzOJT6Z" role="jymVt" />
     <node concept="2YIFZL" id="3n7MNzO_xEA" role="jymVt">
       <property role="TrG5h" value="getProblems" />
       <property role="od$2w" value="false" />

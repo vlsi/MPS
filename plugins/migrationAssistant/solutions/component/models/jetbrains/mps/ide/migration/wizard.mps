@@ -283,9 +283,6 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
     </language>
-    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
@@ -320,7 +317,6 @@
       </concept>
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
-      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="312cEu" id="5SsFeroaapp">
@@ -1653,31 +1649,17 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs8" id="6Sxc5MiBujV" role="3cqZAp">
-                <node concept="3cpWsn" id="6Sxc5MiBujW" role="3cpWs9">
-                  <property role="TrG5h" value="problems" />
-                  <node concept="A3Dl8" id="6Sxc5MiBujX" role="1tU5fm">
-                    <node concept="3Tqbb2" id="6Sxc5MiBujY" role="A3Ik2" />
-                  </node>
-                  <node concept="2YIFZM" id="6Sxc5MiBujZ" role="33vP2m">
-                    <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                    <ref role="37wK5l" to="t99v:3n7MNzO_xES" resolve="getProblemNodes" />
-                    <node concept="37vLTw" id="6Sxc5MiBuk0" role="37wK5m">
-                      <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="6Sxc5MiBuk1" role="3cqZAp">
                 <node concept="37vLTI" id="6Sxc5MiBuk2" role="3clFbG">
-                  <node concept="2OqwBi" id="6Sxc5MiBuk3" role="37vLTx">
-                    <node concept="37vLTw" id="6Sxc5MiBuk4" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6Sxc5MiBujW" resolve="problems" />
-                    </node>
-                    <node concept="3GX2aA" id="6Sxc5MiBuk5" role="2OqNvi" />
-                  </node>
                   <node concept="37vLTw" id="6Sxc5MiBuk6" role="37vLTJ">
                     <ref role="3cqZAo" node="6Sxc5MiBujE" resolve="preProblems" />
+                  </node>
+                  <node concept="2YIFZM" id="3n7MNzOJZrb" role="37vLTx">
+                    <ref role="37wK5l" to="t99v:3n7MNzOJVMu" resolve="haveProblems" />
+                    <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
+                    <node concept="37vLTw" id="3n7MNzOJZrc" role="37wK5m">
+                      <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1907,31 +1889,17 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="6Sxc5MitY6B" role="3cqZAp">
-                    <node concept="3cpWsn" id="6Sxc5MitY6C" role="3cpWs9">
-                      <property role="TrG5h" value="problems" />
-                      <node concept="A3Dl8" id="6Sxc5MitY6z" role="1tU5fm">
-                        <node concept="3Tqbb2" id="6Sxc5MitY6A" role="A3Ik2" />
-                      </node>
-                      <node concept="2YIFZM" id="6Sxc5MitY6D" role="33vP2m">
-                        <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-                        <ref role="37wK5l" to="t99v:3n7MNzO_xES" resolve="getProblemNodes" />
-                        <node concept="37vLTw" id="6Sxc5MitY6E" role="37wK5m">
-                          <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbF" id="6Sxc5Mivydd" role="3cqZAp">
                     <node concept="37vLTI" id="6Sxc5Mivys7" role="3clFbG">
-                      <node concept="2OqwBi" id="6Sxc5MivyUq" role="37vLTx">
-                        <node concept="37vLTw" id="6Sxc5MivyAD" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6Sxc5MitY6C" resolve="problems" />
-                        </node>
-                        <node concept="3GX2aA" id="6Sxc5MivzL_" role="2OqNvi" />
-                      </node>
                       <node concept="37vLTw" id="6Sxc5MiBHBr" role="37vLTJ">
                         <ref role="3cqZAo" node="6Sxc5MivxvO" resolve="postProblems" />
+                      </node>
+                      <node concept="2YIFZM" id="3n7MNzOJZQY" role="37vLTx">
+                        <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
+                        <ref role="37wK5l" to="t99v:3n7MNzOJVMu" resolve="haveProblems" />
+                        <node concept="37vLTw" id="3n7MNzOJZQZ" role="37wK5m">
+                          <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
+                        </node>
                       </node>
                     </node>
                   </node>
