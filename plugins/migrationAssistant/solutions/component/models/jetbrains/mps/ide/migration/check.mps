@@ -1402,7 +1402,7 @@
     <property role="TrG5h" value="Problem" />
     <property role="1sVAO0" value="true" />
     <node concept="312cEg" id="3n7MNzOKQNs" role="jymVt">
-      <property role="TrG5h" value="myReason" />
+      <property role="TrG5h" value="myNode" />
       <node concept="3Tm6S6" id="3n7MNzOKQNt" role="1B3o_S" />
       <node concept="3uibUv" id="3n7MNzOKQNv" role="1tU5fm">
         <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
@@ -1416,7 +1416,7 @@
         <node concept="3clFbF" id="3n7MNzOKQNw" role="3cqZAp">
           <node concept="37vLTI" id="3n7MNzOKQNy" role="3clFbG">
             <node concept="37vLTw" id="3n7MNzOKR03" role="37vLTJ">
-              <ref role="3cqZAo" node="3n7MNzOKQNs" resolve="myReason" />
+              <ref role="3cqZAo" node="3n7MNzOKQNs" resolve="myNode" />
             </node>
             <node concept="37vLTw" id="3n7MNzOKQNE" role="37vLTx">
               <ref role="3cqZAo" node="3n7MNzOKQMw" resolve="reason" />
@@ -1442,8 +1442,21 @@
       <node concept="3clFbS" id="3n7MNzO_JgX" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="3n7MNzOA6l0" role="jymVt" />
+    <node concept="3clFb_" id="3n7MNzOOraF" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3n7MNzOOraI" role="3clF47" />
+      <node concept="3Tm1VV" id="3n7MNzOOr8$" role="1B3o_S" />
+      <node concept="3uibUv" id="3n7MNzOOrav" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3n7MNzOOr6G" role="jymVt" />
     <node concept="3clFb_" id="3n7MNzOA6ls" role="jymVt">
-      <property role="TrG5h" value="getReason" />
+      <property role="TrG5h" value="getNode" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="3n7MNzOKRuy" role="3clF45">
         <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
@@ -1452,7 +1465,7 @@
       <node concept="3clFbS" id="3n7MNzOA6lw" role="3clF47">
         <node concept="3cpWs6" id="3n7MNzOKRw0" role="3cqZAp">
           <node concept="37vLTw" id="3n7MNzOKRxw" role="3cqZAk">
-            <ref role="3cqZAo" node="3n7MNzOKQNs" resolve="myReason" />
+            <ref role="3cqZAo" node="3n7MNzOKQNs" resolve="myNode" />
           </node>
         </node>
       </node>
@@ -1594,6 +1607,25 @@
                 <ref role="3cqZAo" node="3n7MNzOBEGy" resolve="myConcept" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3n7MNzOOtKm" role="jymVt" />
+    <node concept="3clFb_" id="3n7MNzOOtAy" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tm1VV" id="3n7MNzOOtAz" role="1B3o_S" />
+      <node concept="3uibUv" id="3n7MNzOOtA$" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="3n7MNzOOtA_" role="3clF47">
+        <node concept="3clFbF" id="3n7MNzOOtAA" role="3cqZAp">
+          <node concept="Xl_RD" id="3n7MNzOOtAB" role="3clFbG">
+            <property role="Xl_RC" value="Absent concept" />
           </node>
         </node>
       </node>
@@ -1751,6 +1783,25 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3n7MNzOOssy" role="jymVt" />
+    <node concept="3clFb_" id="3n7MNzOOsKx" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tm1VV" id="3n7MNzOOsKz" role="1B3o_S" />
+      <node concept="3uibUv" id="3n7MNzOOsK$" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="3n7MNzOOsK_" role="3clF47">
+        <node concept="3clFbF" id="3n7MNzOOt0Z" role="3cqZAp">
+          <node concept="Xl_RD" id="3n7MNzOOt0Y" role="3clFbG">
+            <property role="Xl_RC" value="Absent concept feature" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3uibUv" id="3n7MNzODSAG" role="1zkMxy">
       <ref role="3uigEE" node="3n7MNzO_IjP" resolve="Problem" />
     </node>
@@ -1796,7 +1847,7 @@
         <node concept="3clFbF" id="3n7MNzOL21l" role="3cqZAp">
           <node concept="3cpWs3" id="3n7MNzOL21m" role="3clFbG">
             <node concept="Xl_RD" id="3n7MNzOL21n" role="3uHU7w">
-              <property role="Xl_RC" value=" can't be loaded. Please check its dependenices." />
+              <property role="Xl_RC" value=" can't be loaded" />
             </node>
             <node concept="3cpWs3" id="3n7MNzOL21o" role="3uHU7B">
               <node concept="Xl_RD" id="3n7MNzOL21p" role="3uHU7B">
@@ -1806,6 +1857,25 @@
                 <ref role="37wK5l" node="3n7MNzOAemG" resolve="getLanguage" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3n7MNzOOx1z" role="jymVt" />
+    <node concept="3clFb_" id="3n7MNzOOwSj" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tm1VV" id="3n7MNzOOwSk" role="1B3o_S" />
+      <node concept="3uibUv" id="3n7MNzOOwSl" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="3n7MNzOOwSm" role="3clF47">
+        <node concept="3clFbF" id="3n7MNzOOwSn" role="3cqZAp">
+          <node concept="Xl_RD" id="3n7MNzOOwSo" role="3clFbG">
+            <property role="Xl_RC" value="Absent language (dependency problem?)" />
           </node>
         </node>
       </node>
@@ -1855,9 +1925,9 @@
       <node concept="3Tm1VV" id="3n7MNzOJCop" role="1B3o_S" />
       <node concept="3clFbS" id="3n7MNzOJCoq" role="3clF47">
         <node concept="3clFbF" id="3n7MNzOL0Zl" role="3cqZAp">
-          <node concept="3cpWs3" id="3n7MNzOL1ee" role="3clFbG">
-            <node concept="Xl_RD" id="3n7MNzOL1er" role="3uHU7w">
-              <property role="Xl_RC" value=" not found in repository. Most possibly some language plugin is missing." />
+          <node concept="3cpWs3" id="3n7MNzOOxu4" role="3clFbG">
+            <node concept="Xl_RD" id="3n7MNzOOxuh" role="3uHU7w">
+              <property role="Xl_RC" value=" is not in repository" />
             </node>
             <node concept="3cpWs3" id="3n7MNzOL16o" role="3uHU7B">
               <node concept="Xl_RD" id="3n7MNzOL0Zk" role="3uHU7B">
@@ -1867,6 +1937,25 @@
                 <ref role="37wK5l" node="3n7MNzOAemG" resolve="getLanguage" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3n7MNzOOubH" role="jymVt" />
+    <node concept="3clFb_" id="3n7MNzOOujX" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tm1VV" id="3n7MNzOOujY" role="1B3o_S" />
+      <node concept="3uibUv" id="3n7MNzOOujZ" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="3n7MNzOOuk0" role="3clF47">
+        <node concept="3clFbF" id="3n7MNzOOuk1" role="3cqZAp">
+          <node concept="Xl_RD" id="3n7MNzOOuk2" role="3clFbG">
+            <property role="Xl_RC" value="Absent language (missing plugin?)" />
           </node>
         </node>
       </node>
