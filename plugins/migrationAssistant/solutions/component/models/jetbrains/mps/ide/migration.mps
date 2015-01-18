@@ -239,6 +239,9 @@
       <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
+        <child id="1235746996653" name="function" index="2SgG2M" />
+      </concept>
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
       </concept>
@@ -246,7 +249,6 @@
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
-      <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
@@ -1907,11 +1909,10 @@
                                         <node concept="1bVj0M" id="3rL1l7hSraV" role="37wK5m">
                                           <node concept="3clFbS" id="3rL1l7hSraX" role="1bW5cS">
                                             <node concept="3clFbF" id="3rL1l7hSroE" role="3cqZAp">
-                                              <node concept="2OqwBi" id="3qhWPTbAKNZ" role="3clFbG">
-                                                <node concept="37vLTw" id="6sptR7_ICEz" role="2Oq$k0">
+                                              <node concept="2Sg_IR" id="3n7MNzOKFxW" role="3clFbG">
+                                                <node concept="37vLTw" id="3n7MNzOKFxX" role="2SgG2M">
                                                   <ref role="3cqZAo" node="6sptR7_IyeC" resolve="afterProjectInitialized" />
                                                 </node>
-                                                <node concept="1Bd96e" id="3qhWPTbALuL" role="2OqNvi" />
                                               </node>
                                             </node>
                                           </node>
