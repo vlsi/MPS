@@ -778,9 +778,19 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
-                    <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
-                      <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
+                  <node concept="3clFbF" id="3n7MNzP5gxN" role="3cqZAp">
+                    <node concept="2YIFZM" id="3n7MNzP5gET" role="3clFbG">
+                      <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                      <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
+                      <node concept="1bVj0M" id="3n7MNzP5gOt" role="37wK5m">
+                        <node concept="3clFbS" id="3n7MNzP5gOu" role="1bW5cS">
+                          <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
+                            <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
+                              <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -103,7 +104,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             VirtualFileManager.getInstance().syncRefresh();
           }
         });
-        executeWizard();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            executeWizard();
+          }
+        });
       }
     });
   }
