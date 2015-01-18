@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MigrationsProgressStep extends MigrationStep {
@@ -156,7 +157,7 @@ public class MigrationsProgressStep extends MigrationStep {
       public void run() {
         p.setFraction(fraction);
       }
-    });
+    }, ModalityState.current());
   }
 
   private void addElementToMigrationList(final String step) {

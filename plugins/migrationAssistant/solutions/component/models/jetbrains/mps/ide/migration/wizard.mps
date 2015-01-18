@@ -2016,7 +2016,7 @@
               <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
             </node>
             <node concept="liA8E" id="5fy1Xi0iUGp" role="2OqNvi">
-              <ref role="37wK5l" to="yla8:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <ref role="37wK5l" to="yla8:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
               <node concept="1bVj0M" id="5fy1Xi0iUIS" role="37wK5m">
                 <node concept="3clFbS" id="5fy1Xi0iUIT" role="1bW5cS">
                   <node concept="3clFbF" id="5fy1Xi0iXbG" role="3cqZAp">
@@ -2033,6 +2033,10 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="2YIFZM" id="7MqBKG8Xj1F" role="37wK5m">
+                <ref role="37wK5l" to="yla8:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                <ref role="1Pybhc" to="yla8:~ModalityState" resolve="ModalityState" />
               </node>
             </node>
           </node>
