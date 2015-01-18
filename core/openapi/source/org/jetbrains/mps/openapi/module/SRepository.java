@@ -38,6 +38,11 @@ package org.jetbrains.mps.openapi.module;
  * </pre>
  */
 public interface SRepository {
+  @Deprecated
+  // There's no parent repos now, we don't expect them in future.
+  // The code written is not supposed to work with multiple repos, there's no code using this method
+  SRepository getParent();
+
   SModule getModule(SModuleId ref);
 
   /**

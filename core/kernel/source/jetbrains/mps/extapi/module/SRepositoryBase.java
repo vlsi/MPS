@@ -30,6 +30,11 @@ public abstract class SRepositoryBase implements SRepository {
   protected SRepositoryBase() {
   }
 
+  @Override
+  public SRepository getParent() {
+    return null;
+  }
+
   protected void init() {
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
     SRepositoryRegistry.getInstance().addRepository(this);
