@@ -26,9 +26,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.migration.MigrationCheckUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -113,8 +111,7 @@ public class MigrationsProgressStep extends MigrationStep {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-        Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-        preProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+        preProblems.value = MigrationCheckUtil.haveProblems(modules);
       }
     });
 
@@ -142,8 +139,7 @@ public class MigrationsProgressStep extends MigrationStep {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-          Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-          postProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+          postProblems.value = MigrationCheckUtil.haveProblems(modules);
         }
       });
     }
