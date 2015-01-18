@@ -172,7 +172,7 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
-    if (!(result instanceof MigrationManager.MigrationStep)) {
+    if (result == null) {
       return false;
     }
 

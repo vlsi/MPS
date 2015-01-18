@@ -111,10 +111,6 @@
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -2152,14 +2148,10 @@
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="25gV4LszgZ1" role="3clF47">
         <node concept="3clFbJ" id="5SsFeroaaxW" role="3cqZAp">
-          <node concept="3fqX7Q" id="1u4Xg2Y$wPi" role="3clFbw">
-            <node concept="2ZW3vV" id="1u4Xg2Y$wPj" role="3fr31v">
-              <node concept="37vLTw" id="1u4Xg2Y$wPk" role="2ZW6bz">
-                <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
-              </node>
-              <node concept="3uibUv" id="1u4Xg2Y$wPl" role="2ZW6by">
-                <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
-              </node>
+          <node concept="3clFbC" id="7MqBKG8Z4SP" role="3clFbw">
+            <node concept="10Nm6u" id="7MqBKG8Z745" role="3uHU7w" />
+            <node concept="37vLTw" id="7MqBKG8Z2is" role="3uHU7B">
+              <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
             </node>
           </node>
           <node concept="3clFbS" id="25gV4LsyW4P" role="3clFbx">
