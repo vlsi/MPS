@@ -51,7 +51,6 @@
     <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
     <import index="ai1m" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
     <import index="jwd7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)" implicit="true" />
-    <import index="5fm0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4390,19 +4389,14 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbF" id="GJWkFdw$a4" role="3cqZAp">
-                      <node concept="2OqwBi" id="GJWkFdwIj3" role="3clFbG">
-                        <node concept="2OqwBi" id="GJWkFdw$Df" role="2Oq$k0">
-                          <node concept="37vLTw" id="GJWkFdw$a2" role="2Oq$k0">
-                            <ref role="3cqZAo" node="GJWkFdvNC6" resolve="v" />
-                          </node>
-                          <node concept="liA8E" id="GJWkFdwC75" role="2OqNvi">
-                            <ref role="37wK5l" to="phxh:3etVqSRRN$O" resolve="getSearchResults" />
-                          </node>
+                    <node concept="3clFbF" id="3bKt22a1z49" role="3cqZAp">
+                      <node concept="2OqwBi" id="3bKt22a1zv$" role="3clFbG">
+                        <node concept="37vLTw" id="3bKt22a1z47" role="2Oq$k0">
+                          <ref role="3cqZAo" node="GJWkFdvNC6" resolve="v" />
                         </node>
-                        <node concept="liA8E" id="GJWkFdwL4h" role="2OqNvi">
-                          <ref role="37wK5l" to="5fm0:~SearchResults.addAll(jetbrains.mps.ide.findusages.model.SearchResults):void" resolve="addAll" />
-                          <node concept="37vLTw" id="GJWkFdwMjV" role="37wK5m">
+                        <node concept="liA8E" id="3bKt22a1AjO" role="2OqNvi">
+                          <ref role="37wK5l" to="phxh:3bKt22a04PA" resolve="setSearchResults" />
+                          <node concept="37vLTw" id="3bKt22a1ByE" role="37wK5m">
                             <ref role="3cqZAo" node="3n7MNzOO6NM" resolve="result" />
                           </node>
                         </node>

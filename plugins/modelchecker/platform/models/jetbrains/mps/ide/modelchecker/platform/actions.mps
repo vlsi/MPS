@@ -8212,6 +8212,35 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="3bKt22a04PA" role="jymVt">
+      <property role="TrG5h" value="setSearchResults" />
+      <node concept="37vLTG" id="3bKt22a0tVv" role="3clF46">
+        <property role="TrG5h" value="issues" />
+        <node concept="3uibUv" id="3bKt22a04PH" role="1tU5fm">
+          <ref role="3uigEE" to="5fm0:~SearchResults" resolve="SearchResults" />
+          <node concept="3uibUv" id="3bKt22a04PI" role="11_B2D">
+            <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="3bKt22a04PB" role="3clF47">
+        <node concept="3clFbF" id="3bKt22a0zS_" role="3cqZAp">
+          <node concept="2OqwBi" id="3bKt22a0Au$" role="3clFbG">
+            <node concept="37vLTw" id="3bKt22a0zSz" role="2Oq$k0">
+              <ref role="3cqZAo" node="3etVqSRRNrc" resolve="myUsagesView" />
+            </node>
+            <node concept="liA8E" id="3bKt22a0B37" role="2OqNvi">
+              <ref role="37wK5l" to="tk08:~UsagesView.setContents(jetbrains.mps.ide.findusages.model.SearchResults):void" resolve="setContents" />
+              <node concept="37vLTw" id="3bKt22a0BgB" role="37wK5m">
+                <ref role="3cqZAo" node="3bKt22a0tVv" resolve="issues" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3bKt22a04PG" role="1B3o_S" />
+      <node concept="3cqZAl" id="3bKt22a0p0o" role="3clF45" />
+    </node>
     <node concept="3clFb_" id="2$1L9HI8KW2" role="jymVt">
       <property role="TrG5h" value="newModelChecker" />
       <node concept="3uibUv" id="2$1L9HI8U_o" role="3clF45">

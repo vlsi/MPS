@@ -45,8 +45,8 @@
       <node id="3875289449861508337" at="88,14,89,99" concept="7" />
       <node id="3875289449861577969" at="91,45,92,119" concept="7" />
       <node id="3875289449861563792" at="92,119,93,101" concept="2" />
-      <node id="806128161900348036" at="95,15,96,48" concept="2" />
-      <node id="806128161900268632" at="96,48,97,116" concept="2" />
+      <node id="3670561379410391305" at="95,15,96,39" concept="2" />
+      <node id="806128161900268632" at="96,39,97,116" concept="2" />
       <node id="1202383101544844128" at="47,53,50,9" concept="5" />
       <node id="1202383101544829632" at="31,0,35,0" concept="1" trace="MigrationErrorStep#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
       <node id="1202383101544829718" at="57,0,61,0" concept="6" trace="getPreviousStepId#()Ljava/lang/Object;" />

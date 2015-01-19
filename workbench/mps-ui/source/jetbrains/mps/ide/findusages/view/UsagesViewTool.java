@@ -16,10 +16,12 @@
 package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.icons.AllIcons.Actions;
+import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -35,13 +37,13 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.UsagesView.FindUsagesWithDialogAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
@@ -49,6 +51,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -353,6 +356,49 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 //      Element usageViewOptionsXML = new Element(USAGE_VIEW_OPTIONS);
 //      myOptions.write(usageViewOptionsXML, project);
 //      element.addContent(usageViewOptionsXML);
+    }
+  }
+
+  private static class FindUsagesWithDialogAction extends AnAction {
+    private final SearchTask mySearchTask;
+
+    public FindUsagesWithDialogAction(@NotNull SearchTask searchTask) {
+      super("Settings...", "Show find usages settings dialog", General.ProjectSettings);
+      mySearchTask = searchTask;
+    }
+    @Override
+    public void update(AnActionEvent e) {
+      e.getPresentation().setEnabled(ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null);
+    }
+
+    @Override
+    public void actionPerformed(final AnActionEvent e) {
+      if (!mySearchTask.canExecute()) {
+        return;
+      }
+      // FIXME Fix NodeHolder to give SNodeReference, and resolve it with query's scope
+      if (!(mySearchTask.getSearchObject() instanceof SNode)) {
+        return; //object was deleted or of incompatible kind (see #getData() below)
+      }
+
+      DataContext dataContext = new DataContext() {
+        private final DataContext myDelegate = e.getDataContext();
+        @Nullable
+        @Override
+        public Object getData(@NonNls String dataId) {
+          if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataId)) {
+            return ((SNode) mySearchTask.getSearchObject()).getModel();
+          }
+          if (MPSCommonDataKeys.NODE.is(dataId)) {
+            return mySearchTask.getSearchObject();
+          }
+          return myDelegate.getData(dataId);
+        }
+      };
+      AnActionEvent event = new AnActionEvent(e.getInputEvent(), dataContext, e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers());
+
+      AnAction action = ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION);
+      action.actionPerformed(event);
     }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Toolwindows;
@@ -33,9 +32,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -57,7 +54,6 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +81,6 @@ public class UsagesView implements IExternalizeable {
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";
   private static final String CLASS_NAME = "class_name";
-  private static final String BUTTONS = "buttons";
   private static final String TREE_WRAPPER = "tree_wrapper";
 
   private Project myProject;
@@ -96,18 +91,8 @@ public class UsagesView implements IExternalizeable {
   private String myCaption = "Usages";
   private Icon myIcon = Toolwindows.ToolWindowFind;
 
-  private ButtonConfiguration myButtonConfiguration;
-
   // note: this field is not restored from XML
   private SearchResults myLastResults;
-
-  /*
-   * Compatibility field, for clients still using setRunOptions. Those switched to setActions()
-   * track search queries themselves.
-   * Shall be gone once we get rid of ButtonConfiguration and #setRunOptions
-   */
-  private SearchTask mySearchTask;
-
 
   public UsagesView(com.intellij.openapi.project.Project project, ViewOptions defaultOptions) {
     this(ProjectHelper.toMPSProject(project), defaultOptions);
@@ -135,37 +120,6 @@ public class UsagesView implements IExternalizeable {
 
   //----RUN STUFF----
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
-    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT";
-    assert mySearchTask == null: "initialize run options only once";
-    SearchTask t = null;
-    if (resultProvider != null && searchQuery != null) {
-      t = new SearchTask(resultProvider, searchQuery);
-    }
-    setRunOptions(t, buttonConfiguration);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  private void setRunOptions(SearchTask searchTask, ButtonConfiguration buttonConfiguration) {
-    mySearchTask = searchTask;
-    if (searchTask != null) {
-      setCaption(searchTask.getCaption());
-      setIcon(searchTask.getIcon());
-    }
-    myButtonConfiguration = buttonConfiguration;
-    myPanel.add(createActionsToolbar(createButtons(buttonConfiguration)), BorderLayout.WEST);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
-    setRunOptions(resultProvider, searchQuery, buttonConfiguration);
-    setContents(results);
-  }
-
   public void setContents(SearchResults results) {
     myLastResults = results;
     myTreeComponent.setContents(results);
@@ -173,15 +127,6 @@ public class UsagesView implements IExternalizeable {
 
   public void setCustomNodeRepresentator(INodeRepresentator nodeRepresentator) {
     myTreeComponent.setCustomRepresentator(nodeRepresentator);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void run(ProgressIndicator indicator) {
-    assert mySearchTask != null;
-    SearchResults sr = mySearchTask.execute(myProject, new ProgressMonitorAdapter(indicator));
-    sr.removeDuplicates();
-    setContents(sr);
   }
 
   //----COMPONENT STUFF----
@@ -249,128 +194,15 @@ public class UsagesView implements IExternalizeable {
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
-    Element optionsXML = element.getChild(BUTTONS);
-    ButtonConfiguration buttonConfiguration = new ButtonConfiguration(false, false, false);
-    if (optionsXML != null) {
-      buttonConfiguration = new ButtonConfiguration(optionsXML, project);
-    }
-
     Element treeWrapperXML = element.getChild(TREE_WRAPPER);
     myTreeComponent.read(treeWrapperXML, project);
-
-    SearchTask t = SearchTask.read(element, project);
-    setRunOptions(t, buttonConfiguration);
   }
 
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    if (myButtonConfiguration != null) {
-      Element optionsXML = new Element(BUTTONS);
-      myButtonConfiguration.write(optionsXML, project);
-      element.addContent(optionsXML);
-    }
-
     Element treeWrapperXML = new Element(TREE_WRAPPER);
     myTreeComponent.write(treeWrapperXML, project);
     element.addContent(treeWrapperXML);
-
-    //todo replace this with show-only tabs
-    if (mySearchTask == null) {
-      return;
-    }
-    mySearchTask.write(element, project);
-  }
-
-  public static class ButtonConfiguration implements IExternalizeable {
-    private static final String SETTINGS = "settings";
-    private static final String RERUN = "rerun";
-    private static final String CLOSE = "close";
-    private static final String PIN = "pin";
-    private static final String REGENERATE = "rebuild";
-
-    private boolean myShowSettingsButton;
-    private boolean myShowRerunButton;
-    private boolean myShowCloseButton;
-    private boolean myShowPinButton;
-    private boolean myShowRegenerateButton;
-
-    public ButtonConfiguration(boolean showRerun, boolean showRegenerate, boolean showClose) {
-      myShowRerunButton = showRerun;
-      myShowRegenerateButton = showRegenerate;
-      myShowCloseButton = showClose;
-      myShowPinButton = true;
-      myShowSettingsButton = false;
-    }
-
-    public ButtonConfiguration(boolean showRerun) {
-      myShowRerunButton = showRerun;
-      myShowRegenerateButton = true;
-      myShowCloseButton = true;
-      myShowPinButton = true;
-    }
-
-    public ButtonConfiguration(Element optionsXML, jetbrains.mps.project.Project project) {
-      read(optionsXML, project);
-    }
-
-    public ButtonConfiguration showSettingsButton(boolean flag) {
-      myShowSettingsButton = flag;
-      return this;
-    }
-
-    public boolean isShowSettingsButton() {
-      return myShowSettingsButton;
-    }
-
-    public ButtonConfiguration showRerunButton(boolean flag) {
-      myShowRerunButton = flag;
-      return this;
-    }
-
-    public boolean isShowRerunButton() {
-      return myShowRerunButton;
-    }
-
-    public ButtonConfiguration showCloseButton(boolean flag) {
-      myShowCloseButton = flag;
-      return this;
-    }
-
-    public boolean isShowCloseButton() {
-      return myShowCloseButton;
-    }
-
-    public ButtonConfiguration showPinButton(boolean flag) {
-      myShowPinButton = flag;
-      return this;
-    }
-
-    public boolean isShowPinButton() {
-      return myShowPinButton;
-    }
-
-    public ButtonConfiguration showRegenerateButton(boolean flag) {
-      myShowRegenerateButton = flag;
-      return this;
-    }
-
-    public boolean isShowRegenerateButton() {
-      return myShowRegenerateButton;
-    }
-
-    @Override
-    public void read(Element element, jetbrains.mps.project.Project project) {
-      myShowRerunButton = Boolean.parseBoolean(element.getAttributeValue(RERUN));
-      myShowRegenerateButton = Boolean.parseBoolean(element.getAttributeValue(REGENERATE));
-      myShowCloseButton = Boolean.parseBoolean(element.getAttributeValue(CLOSE));
-    }
-
-    @Override
-    public void write(Element element, jetbrains.mps.project.Project project) {
-      element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
-      element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
-      element.setAttribute(CLOSE, Boolean.toString(myShowCloseButton));
-    }
   }
 
   private static class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
@@ -429,90 +261,6 @@ public class UsagesView implements IExternalizeable {
     return rv;
   }
 
-  private ActionGroup createButtons(ButtonConfiguration buttonConfiguration) {
-    DefaultActionGroup actionGroup = new DefaultActionGroup();
-
-    if (buttonConfiguration.isShowRerunButton()) {
-      final RerunAction action = new RerunAction(this, getRerunSearchTooltip());
-      action.setProgressText(getSearchProgressTitle());
-      actionGroup.addAction(action);
-    }
-
-    if (buttonConfiguration.isShowCloseButton()) {
-      actionGroup.addAction(new AnAction("Close", "", Actions.Cancel) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          close();
-        }
-      });
-    }
-
-    if (buttonConfiguration.isShowPinButton()) {
-      actionGroup.addAction(new PinToolwindowTabAction() {
-
-        @Override
-        public void update(AnActionEvent event) {
-          super.update(event);
-
-          event.getPresentation().setIcon(AllIcons.General.Pin_tab);
-          event.getPresentation().setEnabledAndVisible(true);
-        }
-      });
-    }
-
-    actionGroup.addAll(myTreeComponent.getActionsToolbar());
-
-    if (buttonConfiguration.isShowRegenerateButton()) {
-      actionGroup.addAction(new RebuildAction(this));
-    }
-
-    return actionGroup;
-  }
-
-  // FIXME move to UsagesViewTool once dust settles down (refactoring of UsagesView is over)
-  public static class FindUsagesWithDialogAction extends AnAction {
-    private final SearchTask mySearchTask;
-
-    public FindUsagesWithDialogAction(@NotNull SearchTask searchTask) {
-      super("Settings...", "Show find usages settings dialog", General.ProjectSettings);
-      mySearchTask = searchTask;
-    }
-    @Override
-    public void update(AnActionEvent e) {
-      e.getPresentation().setEnabled(ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null);
-    }
-
-    @Override
-    public void actionPerformed(final AnActionEvent e) {
-      if (!mySearchTask.canExecute()) {
-        return;
-      }
-      // FIXME Fix NodeHolder to give SNodeReference, and resolve it with query's scope
-      if (!(mySearchTask.getSearchObject() instanceof SNode)) {
-        return; //object was deleted or of incompatible kind (see #getData() below)
-      }
-
-      DataContext dataContext = new DataContext() {
-        private final DataContext myDelegate = e.getDataContext();
-        @Nullable
-        @Override
-        public Object getData(@NonNls String dataId) {
-          if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataId)) {
-            return ((SNode) mySearchTask.getSearchObject()).getModel();
-          }
-          if (MPSCommonDataKeys.NODE.is(dataId)) {
-            return mySearchTask.getSearchObject();
-          }
-          return myDelegate.getData(dataId);
-        }
-      };
-      AnActionEvent event = new AnActionEvent(e.getInputEvent(), dataContext, e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers());
-
-      AnAction action = ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION);
-      action.actionPerformed(event);
-    }
-  }
-
   public static class RerunAction extends AnAction {
     private final UsagesView myView;
     private SearchTask mySearchTask;
@@ -544,7 +292,7 @@ public class UsagesView implements IExternalizeable {
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
       assert mySearchTask != null;
       if (!mySearchTask.canExecute()) {
         return;
@@ -588,10 +336,7 @@ public class UsagesView implements IExternalizeable {
         return false;
       }
       final IHolder holder = mySearchQuery.getObjectHolder();
-      if (holder instanceof VoidHolder) {
-        return false;
-      }
-      return holder.getObject() != null;
+      return !(holder instanceof VoidHolder) && holder.getObject() != null;
     }
 
     public Object getSearchObject() {
@@ -660,12 +405,12 @@ public class UsagesView implements IExternalizeable {
     }
 
     @Override
-    public void update(AnActionEvent e) {
+    public void update(@NotNull AnActionEvent e) {
       e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.isSessionActive());
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
       List<SModel> models = new ArrayList<SModel>();
       for (SModel modelDescriptor : myView.getIncludedModels()) {
         if (GenerationFacade.canGenerate(modelDescriptor)) {
@@ -684,17 +429,5 @@ public class UsagesView implements IExternalizeable {
         }
       }
     }
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  protected String getRerunSearchTooltip() {
-    return "Rerun search";
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  protected String getSearchProgressTitle() {
-    return "Searching";
   }
 }

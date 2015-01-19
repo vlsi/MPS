@@ -93,7 +93,7 @@ public abstract class MigrationErrorStep extends MigrationStep {
                 result.add(new SearchResult<ModelCheckerIssue>(mci, it.getNode(), it.getCategory()));
               }
             });
-            v.getSearchResults().addAll(result);
+            v.setSearchResults(result);
             ModelCheckerTool.getInstance(p).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
           }
         });

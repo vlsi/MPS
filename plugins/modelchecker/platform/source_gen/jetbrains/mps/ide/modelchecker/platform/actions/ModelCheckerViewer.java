@@ -171,6 +171,9 @@ public class ModelCheckerViewer extends JPanel {
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();
   }
+  public void setSearchResults(SearchResults<ModelCheckerIssue> issues) {
+    myUsagesView.setContents(issues);
+  }
   private ModelCheckerIssueFinder newModelChecker() {
     return new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(myProject));
   }
