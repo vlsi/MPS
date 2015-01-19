@@ -415,7 +415,8 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       }
     });
 
-    //Assuming that "added" as well as targetNode.children for all targetNodes are sorted already, so we get merge the two by remembering the last insert point
+    //Assuming that "added" as well as targetNode.children for all targetNodes are sorted already,
+    //so we merge the two by always remembering the last insertion point
     final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<MPSTreeNode, Integer>();
     for (SNode root : added) {
       SNodeTreeNode nodeToInsert = new SNodeTreeNode(root);
