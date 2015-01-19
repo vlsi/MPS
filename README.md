@@ -20,9 +20,10 @@ Building MPS from sources
 
 1. Clone MPS
 2. Open the project in [IntelliJ IDEA](http://www.jetbrains.com/idea) (either Community or Ultimate Edition)
-3. Rebuild the project from the _Build_ menu (will take quite a while the first time)
-4. Run the _MPSLauncher_ run configuration in the _Run_ menu
-5. Once MPS starts, open the _MPS_ project (point MPS to the root folder of what you've cloned)
+3. Attach JDK 6 to the project
+4. Rebuild the project from the _Build_ menu (will take quite a while the first time)
+5. Run the _MPSLauncher_ run configuration in the _Run_ menu
+6. Once MPS starts, open the _MPS_ project (point MPS to the root folder of what you've cloned)
 
 Download
 --------
@@ -37,7 +38,7 @@ _MPS is licensed under the Apache 2 open-source license. See the [complete MPS l
 System requirements
 -------------------
 
-To run JetBrains MPS you need JDK 5.0 or JDK 6.0.
+To build JetBrains MPS from sources you need JDK 6.0. Other JDK versions are currently not supported for building MPS from sources.
 
 
 ----------------------
