@@ -184,6 +184,10 @@ public class ClassLoaderManager implements CoreComponent {
     return myModulesWatcher;
   }
 
+  public boolean isValidForClassloading(SModuleReference m){
+    return myModulesWatcher.getStatus(m).isValid();
+  }
+
   /**
    * Please ensure this method returns true before calling {@link #getClass} or {@link #getClassLoader} methods
    * @return true whenever module can be associated with some class loader.

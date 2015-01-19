@@ -4,6 +4,11 @@ package jetbrains.mps.ide.migration.check;
 
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.classloading.ClassLoaderManager;
 
 public class LanguageNotLoadedProblem extends LanguageMissingProblem {
   public LanguageNotLoadedProblem(SLanguage language, SNode instance) {
@@ -11,10 +16,25 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
   }
 
   public String getMessage() {
-    return "Language " + getLanguage() + " can't be loaded";
+    SLanguage lang = getLanguage();
+    String err = "Language " + lang + " can't be loaded";
+
+    AbstractModule langModule = (AbstractModule) lang.getSourceModule();
+
+    SModuleReference invalidDep = null;
+    for (Dependency dep : Sequence.fromIterable(langModule.getUnresolvedDependencies())) {
+      if (ClassLoaderManager.getInstance().isValidForClassloading(dep.getModuleRef())) {
+        invalidDep = dep.getModuleRef();
+      }
+    }
+    if (invalidDep != null) {
+      err += ": dependency " + invalidDep.getModuleName() + " can't be loaded";
+    }
+
+    return err;
   }
 
   public String getCategory() {
-    return "Absent language (dependency problem?)";
+    return "Language not loaded (dependency problem)";
   }
 }

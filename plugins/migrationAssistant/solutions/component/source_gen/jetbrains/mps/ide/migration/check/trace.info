@@ -307,22 +307,45 @@
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/3875289449860269660">
     <file name="LanguageNotLoadedProblem.java">
-      <node id="3875289449860702281" at="9,71,10,30" concept="13" />
-      <node id="3875289449860702293" at="13,30,14,60" concept="9" />
-      <node id="3875289449861615127" at="17,31,18,51" concept="9" />
-      <node id="3875289449860702277" at="9,0,12,0" concept="1" trace="LanguageNotLoadedProblem#(Lorg/jetbrains/mps/openapi/language/SLanguage;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3875289449860702289" at="13,0,16,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="3875289449861615123" at="17,0,20,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
-      <scope id="3875289449860702280" at="9,71,10,30" />
-      <scope id="3875289449860702292" at="13,30,14,60" />
-      <scope id="3875289449861615126" at="17,31,18,51" />
-      <scope id="3875289449860702277" at="9,0,12,0">
+      <node id="3875289449860702281" at="14,71,15,30" concept="13" />
+      <node id="1315974995648865287" at="18,30,19,35" concept="8" />
+      <node id="1315974995648888954" at="19,35,20,57" concept="8" />
+      <node id="1315974995648895413" at="20,57,21,0" concept="11" />
+      <node id="1315974995648877615" at="21,0,22,72" concept="8" />
+      <node id="1315974995648897887" at="22,72,23,0" concept="11" />
+      <node id="1315974995648901836" at="23,0,24,39" concept="8" />
+      <node id="1315974995648902976" at="26,88,27,40" concept="3" />
+      <node id="1315974995648910162" at="30,29,31,79" concept="3" />
+      <node id="1315974995648889781" at="32,5,33,0" concept="11" />
+      <node id="1315974995648890640" at="33,0,34,15" concept="9" />
+      <node id="3875289449861615127" at="37,31,38,54" concept="9" />
+      <node id="3875289449860702277" at="14,0,17,0" concept="1" trace="LanguageNotLoadedProblem#(Lorg/jetbrains/mps/openapi/language/SLanguage;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1315974995648880355" at="25,90,28,7" concept="6" />
+      <node id="1315974995648908184" at="29,5,32,5" concept="6" />
+      <node id="3875289449861615123" at="37,0,40,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
+      <node id="1315974995648870619" at="24,39,29,5" concept="5" />
+      <node id="3875289449860702289" at="18,0,36,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
+      <scope id="3875289449860702280" at="14,71,15,30" />
+      <scope id="1315974995648880356" at="26,88,27,40" />
+      <scope id="1315974995648908187" at="30,29,31,79" />
+      <scope id="3875289449861615126" at="37,31,38,54" />
+      <scope id="3875289449860702277" at="14,0,17,0">
         <var name="instance" id="3875289449860702286" />
         <var name="language" id="3875289449860702284" />
       </scope>
-      <scope id="3875289449860702289" at="13,0,16,0" />
-      <scope id="3875289449861615123" at="17,0,20,0" />
-      <unit id="3875289449860269660" at="8,0,21,0" name="jetbrains.mps.ide.migration.check.LanguageNotLoadedProblem" />
+      <scope id="1315974995648870623" at="25,90,28,7" />
+      <scope id="3875289449861615123" at="37,0,40,0" />
+      <scope id="1315974995648870619" at="24,39,29,5">
+        <var name="dep" id="1315974995648870621" />
+      </scope>
+      <scope id="3875289449860702292" at="18,30,34,15">
+        <var name="err" id="1315974995648888955" />
+        <var name="invalidDep" id="1315974995648901837" />
+        <var name="lang" id="1315974995648865288" />
+        <var name="langModule" id="1315974995648877616" />
+      </scope>
+      <scope id="3875289449860702289" at="18,0,36,0" />
+      <unit id="3875289449860269660" at="13,0,41,0" name="jetbrains.mps.ide.migration.check.LanguageNotLoadedProblem" />
     </file>
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/3875289449860335086">
