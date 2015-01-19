@@ -58114,6 +58114,52 @@
       </node>
       <node concept="10P_77" id="1cFY5dX01sg" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="3KP_RVYS8Md" role="13h7CS">
+      <property role="TrG5h" value="isPossitionThatAllowsByteAndShort" />
+      <node concept="3Tm1VV" id="3KP_RVYS8Me" role="1B3o_S" />
+      <node concept="10P_77" id="3KP_RVYSeT0" role="3clF45" />
+      <node concept="3clFbS" id="3KP_RVYS8Mg" role="3clF47">
+        <node concept="3clFbF" id="3KP_RVYSeT$" role="3cqZAp">
+          <node concept="22lmx$" id="3KP_RVYSh8k" role="3clFbG">
+            <node concept="2OqwBi" id="3KP_RVYSibK" role="3uHU7w">
+              <node concept="2OqwBi" id="3KP_RVYShmu" role="2Oq$k0">
+                <node concept="13iPFW" id="3KP_RVYShh5" role="2Oq$k0" />
+                <node concept="1mfA1w" id="3KP_RVYShUo" role="2OqNvi" />
+              </node>
+              <node concept="1mIQ4w" id="3KP_RVYSiQT" role="2OqNvi">
+                <node concept="chp4Y" id="3KP_RVYSiZB" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                </node>
+              </node>
+            </node>
+            <node concept="22lmx$" id="3KP_RVYSfMf" role="3uHU7B">
+              <node concept="2OqwBi" id="3KP_RVYSfq4" role="3uHU7B">
+                <node concept="2OqwBi" id="3KP_RVYSeVW" role="2Oq$k0">
+                  <node concept="13iPFW" id="3KP_RVYSeTz" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="3KP_RVYSfff" role="2OqNvi" />
+                </node>
+                <node concept="1mIQ4w" id="3KP_RVYSfAi" role="2OqNvi">
+                  <node concept="chp4Y" id="3KP_RVYSfBJ" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3KP_RVYSg$b" role="3uHU7w">
+                <node concept="2OqwBi" id="3KP_RVYSfTf" role="2Oq$k0">
+                  <node concept="13iPFW" id="3KP_RVYSfQ6" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="3KP_RVYSgoR" role="2OqNvi" />
+                </node>
+                <node concept="1mIQ4w" id="3KP_RVYSgM_" role="2OqNvi">
+                  <node concept="chp4Y" id="3KP_RVYSgQH" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="1cFY5dX0eBz">
     <property role="3GE5qa" value="primitive" />
