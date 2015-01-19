@@ -13,25 +13,19 @@ import java.awt.Dimension;
 import java.awt.BorderLayout;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class MigrationErrorStep extends MigrationStep {
   public MigrationErrorStep(Project project, String id) {
@@ -80,32 +74,29 @@ public abstract class MigrationErrorStep extends MigrationStep {
   public static _FunctionTypes._void_P0_E0 getPrePostShowUsagesCallback(final Project p) {
     return new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<ModelCheckerViewer>() {
-          public ModelCheckerViewer invoke() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
             jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(p);
             Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
             final Collection<Problem> problems = MigrationCheckUtil.getProblems(modules, 100);
-
-            return p.getComponent(ModelCheckerTool.class).checkModels(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-              public Iterable<SModel> translate(SModule it) {
-                return it.getModels();
-              }
-            }).toListSequence(), new ProjectOperationContext(ProjectHelper.toMPSProject(p)), true, new ModelCheckerIssueFinder() {
-
+            ModelCheckerViewer v = new ModelCheckerViewer(p) {
               @Override
-              public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
-                final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-                CollectionSequence.fromCollection(problems).visitAll(new IVisitor<Problem>() {
-                  public void visit(Problem it) {
-                    ModelCheckerIssue.NodeIssue mci = new ModelCheckerIssue.NodeIssue(it.getNode(), it.getMessage(), null);
-                    result.add(new SearchResult<ModelCheckerIssue>(mci, it.getNode(), it.getCategory()));
-                  }
-                });
-                return result;
+              protected void close() {
+                ModelCheckerTool.getInstance(p).closeTab(this);
+                super.close();
+              }
+            };
+            final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
+            CollectionSequence.fromCollection(problems).visitAll(new IVisitor<Problem>() {
+              public void visit(Problem it) {
+                ModelCheckerIssue.NodeIssue mci = new ModelCheckerIssue.NodeIssue(it.getNode(), it.getMessage(), null);
+                result.add(new SearchResult<ModelCheckerIssue>(mci, it.getNode(), it.getCategory()));
               }
             });
+            v.getSearchResults().addAll(result);
+            ModelCheckerTool.getInstance(p).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
           }
-        }));
+        });
       }
     };
   }
