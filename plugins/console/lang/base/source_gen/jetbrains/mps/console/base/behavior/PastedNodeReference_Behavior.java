@@ -24,4 +24,7 @@ public class PastedNodeReference_Behavior {
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return PastedNodeReference_Behavior.call_getText_6888400917983823151(thisNode) + "(deleted node)";
   }
+  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
+    return false;
+  }
 }

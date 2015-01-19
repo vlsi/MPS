@@ -12,13 +12,15 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -43,7 +45,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_7k9x8q_a0(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) != null;
   }
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
