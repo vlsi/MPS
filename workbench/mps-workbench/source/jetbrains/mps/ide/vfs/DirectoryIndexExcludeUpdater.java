@@ -152,8 +152,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
       for (VFileEvent event : events) {
         if (event instanceof VFileCreateEvent) {
           VirtualFile file = event.getFile();
-          assert file != null;
-          if (file.isDirectory() && isExcluded(file)) {
+          if (file != null && file.isDirectory() && isExcluded(file)) {
             notifyRootsChanged(false);
           }
         }
