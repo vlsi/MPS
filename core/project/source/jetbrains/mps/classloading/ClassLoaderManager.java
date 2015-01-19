@@ -162,10 +162,9 @@ public class ClassLoaderManager implements CoreComponent {
     myRepository.getModelAccess().checkWriteAccess();
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
-    myClassLoadersHolder.init();
     myClassLoadingChecker.init(this);
     myRepositoryListener.init(this);
-    addDumbIdeaPluginFacetFactory();
+    addDumbIdeaPluginFacetFactory(); // FIXME : it does not belong here
   }
 
   @Override
@@ -173,7 +172,6 @@ public class ClassLoaderManager implements CoreComponent {
     myRepository.getModelAccess().checkWriteAccess();
     myRepositoryListener.dispose();
     myClassLoadingChecker.dispose(this);
-    myClassLoadersHolder.dispose();
     INSTANCE = null;
   }
 

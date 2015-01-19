@@ -42,13 +42,6 @@ public class ClassLoadersHolder {
   private final ModulesWatcher myModulesWatcher;
   private MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
 
-  public void init() {
-  }
-
-  public void dispose() {
-    // NOP
-  }
-
   public ClassLoadersHolder(ModulesWatcher modulesWatcher) {
     myModulesWatcher = modulesWatcher;
   }
