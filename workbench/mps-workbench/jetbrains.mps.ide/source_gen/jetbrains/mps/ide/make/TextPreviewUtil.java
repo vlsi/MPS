@@ -16,6 +16,8 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
+
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.IMakeService;
@@ -93,8 +95,9 @@ public class TextPreviewUtil {
             });
             ProjectPane.getInstance(context.getProject()).rebuild();
           }
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
+        } catch (InterruptedException ignored) {
+        } catch (ExecutionException ignored) {
+        } catch (CancellationException ignored) {
         }
       }
     });
