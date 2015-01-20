@@ -27,6 +27,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.PersistenceMigrations</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.ProjectJavaVersionMigration</implementation-class>
+    </component>
   </application-components>
 
 </idea-plugin>
