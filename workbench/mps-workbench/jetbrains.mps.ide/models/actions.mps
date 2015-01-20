@@ -20910,7 +20910,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="New..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Common" />
-    <property role="fJN8o" value="true" />
     <node concept="tnohg" id="6R$xsE24akj" role="tncku">
       <node concept="3clFbS" id="6R$xsE24akk" role="2VODD2">
         <node concept="3cpWs8" id="6R$xsE24DTa" role="3cqZAp">
@@ -21122,13 +21121,38 @@
     <node concept="1DS2jV" id="6R$xsE24DTi" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.TREE_NODE" resolve="TREE_NODE" />
-      <node concept="1oajcY" id="7zxi3b38CYs" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6IkgXpMX_Wu" role="1NuT2Z">
       <property role="TrG5h" value="group" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CREATE_GROUP" resolve="EDITOR_CREATE_GROUP" />
     </node>
     <node concept="mfpdH" id="3y8w4iFFcqJ" role="med8o" />
+    <node concept="2ScWuX" id="4wDTh0pazwO" role="tmbBb">
+      <node concept="3clFbS" id="4wDTh0pazwP" role="2VODD2">
+        <node concept="3clFbF" id="4wDTh0paFDW" role="3cqZAp">
+          <node concept="22lmx$" id="4wDTh0paItA" role="3clFbG">
+            <node concept="3y3z36" id="4wDTh0paMbe" role="3uHU7w">
+              <node concept="10Nm6u" id="4wDTh0paM_z" role="3uHU7w" />
+              <node concept="2OqwBi" id="4wDTh0paJl0" role="3uHU7B">
+                <node concept="2WthIp" id="4wDTh0paINK" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4wDTh0paKWs" role="2OqNvi">
+                  <ref role="2WH_rO" node="6IkgXpMX_Wu" resolve="group" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4wDTh0paI7$" role="3uHU7B">
+              <node concept="2OqwBi" id="4wDTh0paGt1" role="3uHU7B">
+                <node concept="2WthIp" id="4wDTh0paFDV" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4wDTh0paHhp" role="2OqNvi">
+                  <ref role="2WH_rO" node="6R$xsE24DTi" resolve="node" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="4wDTh0paI7V" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="Zd50a" id="27Eq39VFQ_D">
     <property role="Zd52Q" value="$default" />
