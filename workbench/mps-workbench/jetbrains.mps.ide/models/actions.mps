@@ -30418,7 +30418,7 @@
   </node>
   <node concept="2DaZZR" id="6dAEaqvcjpH" />
   <node concept="2JRCWQ" id="3m6vHQ0jWU9">
-    <property role="TrG5h" value="DefaultNonDumbAware" />
+    <property role="TrG5h" value="IndexSensitive" />
     <node concept="2JRCWP" id="2TidO$LtTCA" role="2JRCWR">
       <ref role="2JRCWa" node="4NbzjXXK6us" resolve="HighlightUsages" />
     </node>
@@ -30433,6 +30433,9 @@
     </node>
     <node concept="2JRCWP" id="3m6vHQ0jWUc" role="2JRCWR">
       <ref role="2JRCWa" node="4npc6Q0oGJs" resolve="FindSpecificNodeUsages" />
+    </node>
+    <node concept="2JRCWP" id="43JJTDUK3LS" role="2JRCWR">
+      <ref role="2JRCWa" node="6qBuBFvMxqN" resolve="ShowImplementations" />
     </node>
     <node concept="2JRCWP" id="3m6vHQ0l7NF" role="2JRCWR">
       <ref role="2JRCWa" node="3oS0mv1G9Wv" resolve="GoToRootNode" />
