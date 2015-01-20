@@ -52,6 +52,9 @@ public class NewElement_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("group", event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP));
     return true;
   }
