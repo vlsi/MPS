@@ -157,7 +157,7 @@ public class MigrationsProgressStep extends MigrationStep {
       public void run() {
         p.setFraction(fraction);
       }
-    }, ModalityState.current());
+    }, ModalityState.any());
   }
 
   private void addElementToMigrationList(final String step) {

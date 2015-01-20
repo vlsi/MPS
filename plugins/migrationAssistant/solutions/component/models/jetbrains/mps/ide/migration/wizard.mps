@@ -2035,8 +2035,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="7MqBKG8Xj1F" role="37wK5m">
-                <ref role="37wK5l" to="yla8:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+              <node concept="2YIFZM" id="5n1niCby_p5" role="37wK5m">
+                <ref role="37wK5l" to="yla8:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
                 <ref role="1Pybhc" to="yla8:~ModalityState" resolve="ModalityState" />
               </node>
             </node>
