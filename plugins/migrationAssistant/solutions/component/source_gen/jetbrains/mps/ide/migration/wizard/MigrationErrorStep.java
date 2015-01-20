@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.icons.IdeIcons;
 
@@ -89,8 +90,17 @@ public abstract class MigrationErrorStep extends MigrationStep {
             final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
             CollectionSequence.fromCollection(problems).visitAll(new IVisitor<Problem>() {
               public void visit(Problem it) {
-                ModelCheckerIssue.NodeIssue mci = new ModelCheckerIssue.NodeIssue(it.getNode(), it.getMessage(), null);
-                result.add(new SearchResult<ModelCheckerIssue>(mci, it.getNode(), it.getCategory()));
+                Object r = it.getReason();
+
+                ModelCheckerIssue mci;
+                if (r instanceof SNode) {
+                  mci = new ModelCheckerIssue.NodeIssue(((org.jetbrains.mps.openapi.model.SNode) r), it.getMessage(), null);
+                } else if (r instanceof SModule) {
+                  mci = new ModelCheckerIssue.ModuleIssue(it.getMessage(), null);
+                } else {
+                  throw new IllegalArgumentException(r.getClass().getName());
+                }
+                result.add(new SearchResult<ModelCheckerIssue>(mci, r, it.getCategory()));
               }
             });
             v.setSearchResults(result);

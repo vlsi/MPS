@@ -24,11 +24,16 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -41,11 +46,19 @@ public class MigrationCheckUtil {
   public static Collection<Problem> getProblems(Iterable<SModule> modules, int maxErrors) {
     List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
+    Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
+    ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModuleProblems));
+
+    maxErrors -= CollectionSequence.fromCollection(badModuleProblems).count();
+    if (maxErrors == 0) {
+      return result;
+    }
+
     // find missing languages 
-    Collection<LanguageMissingProblem> missingLangProblems = getMissingLanguages(modules, maxErrors);
+    Collection<LanguageMissingProblem> missingLangProblems = findMissingLanguages(modules, maxErrors);
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(missingLangProblems));
 
-    maxErrors -= ListSequence.fromList(result).count();
+    maxErrors -= CollectionSequence.fromCollection(missingLangProblems).count();
     if (maxErrors == 0) {
       return result;
     }
@@ -128,7 +141,32 @@ public class MigrationCheckUtil {
     return result;
   }
 
-  private static Collection<LanguageMissingProblem> getMissingLanguages(Iterable<SModule> modules, int maxErrors) {
+  private static Collection<DependencyProblem> findBadModules(Iterable<SModule> modules, int maxErrors) {
+    final Map<SModuleReference, SModule> badModule2Dependant = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
+
+    Sequence.fromIterable(modules).visitAll(new IVisitor<SModule>() {
+      public void visit(final SModule module) {
+        Iterable<Dependency> deps = ((AbstractModule) module).getUnresolvedDependencies();
+        Sequence.fromIterable(deps).where(new IWhereFilter<Dependency>() {
+          public boolean accept(Dependency it) {
+            return it.getModuleRef().resolve(MPSModuleRepository.getInstance()) == null;
+          }
+        }).visitAll(new IVisitor<Dependency>() {
+          public void visit(Dependency dep) {
+            MapSequence.fromMap(badModule2Dependant).put(dep.getModuleRef(), module);
+          }
+        });
+      }
+    });
+
+    return MapSequence.fromMap(badModule2Dependant).take(maxErrors).select(new ISelector<IMapping<SModuleReference, SModule>, DependencyProblem>() {
+      public DependencyProblem select(IMapping<SModuleReference, SModule> it) {
+        return new DependencyProblem(it.value(), "Unresolved dependency in module " + it.value().getModuleName() + ". " + it.key().getModuleName() + " not found in repository");
+      }
+    }).toListSequence();
+  }
+
+  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors) {
     // we can add here an additional chank for "used", "exported", "generated into" languages etc.,  
     // but I'm not sure this is needed. All we need in migration is working concepts. 
 
