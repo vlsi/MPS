@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -67,9 +66,9 @@ public class DeployScript {
 
   @Nullable
   public String make() {
-    MakeSession session = new MakeSession(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), null, false);
+    MakeSession session = new MakeSession(ProjectHelper.toMPSProject(myProject), null, false);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), myModelsToMake).resources(false));
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).resources(false));
       IResult result = null;
       try {
         result = future.get();

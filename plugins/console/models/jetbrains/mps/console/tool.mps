@@ -8186,23 +8186,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="1xyr94TevDc" role="3cqZAp" />
-        <node concept="3cpWs8" id="6eocJ5$6Gxs" role="3cqZAp">
-          <node concept="3cpWsn" id="6eocJ5$6Gxt" role="3cpWs9">
-            <property role="TrG5h" value="projectOperationContext" />
-            <property role="3TUv4t" value="false" />
-            <node concept="2ShNRf" id="6eocJ5$6GMU" role="33vP2m">
-              <node concept="1pGfFk" id="6eocJ5$6Hpu" role="2ShVmc">
-                <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                <node concept="37vLTw" id="6eocJ5$6HqE" role="37wK5m">
-                  <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
-                </node>
-              </node>
-            </node>
-            <node concept="3uibUv" id="6eocJ5$6Gxu" role="1tU5fm">
-              <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7USPsgtRSJa" role="3cqZAp">
           <node concept="3cpWsn" id="7USPsgtRSJb" role="3cpWs9">
             <property role="TrG5h" value="mvt" />
@@ -8211,11 +8194,11 @@
               <ref role="3uigEE" to="pdak:~MessagesViewTool" resolve="MessagesViewTool" />
             </node>
             <node concept="2OqwBi" id="7USPsgtR$sK" role="33vP2m">
-              <node concept="37vLTw" id="7USPsgtR$kh" role="2Oq$k0">
-                <ref role="3cqZAo" node="6eocJ5$6Gxt" resolve="projectOperationContext" />
+              <node concept="37vLTw" id="2BjwmTxYKu3" role="2Oq$k0">
+                <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
               </node>
               <node concept="liA8E" id="7USPsgtR$Mq" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="vsqj:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="7USPsgtROJC" role="37wK5m">
                   <ref role="3VsUkX" to="pdak:~MessagesViewTool" resolve="MessagesViewTool" />
                 </node>
@@ -8289,9 +8272,9 @@
             </node>
             <node concept="2ShNRf" id="1xyr94TevDg" role="33vP2m">
               <node concept="1pGfFk" id="1xyr94TevDh" role="2ShVmc">
-                <ref role="37wK5l" to="hfuk:1T5_pb6mN1r" resolve="MakeSession" />
-                <node concept="37vLTw" id="6eocJ5$6HF7" role="37wK5m">
-                  <ref role="3cqZAo" node="6eocJ5$6Gxt" resolve="projectOperationContext" />
+                <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
+                <node concept="37vLTw" id="2BjwmTxYILh" role="37wK5m">
+                  <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
                 </node>
                 <node concept="2OqwBi" id="59UVr$K8qaq" role="37wK5m">
                   <node concept="37vLTw" id="59UVr$K8pRR" role="2Oq$k0">
@@ -8329,10 +8312,7 @@
                     <node concept="2OqwBi" id="1xyr94TevDt" role="37wK5m">
                       <node concept="2ShNRf" id="1xyr94TevDu" role="2Oq$k0">
                         <node concept="1pGfFk" id="1xyr94TevDv" role="2ShVmc">
-                          <ref role="37wK5l" to="fn29:6gLh390EkrL" resolve="ModelsToResources" />
-                          <node concept="37vLTw" id="6eocJ5$6HUm" role="37wK5m">
-                            <ref role="3cqZAo" node="6eocJ5$6Gxt" resolve="projectOperationContext" />
-                          </node>
+                          <ref role="37wK5l" to="fn29:6zsZmIC0WqK" resolve="ModelsToResources" />
                           <node concept="2ShNRf" id="1xyr94TevDx" role="37wK5m">
                             <node concept="2HTt$P" id="1xyr94TevDy" role="2ShVmc">
                               <node concept="3uibUv" id="6kErf9mLisc" role="2HTBi0">

@@ -17,8 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.service.AbstractMakeService;
@@ -108,10 +106,9 @@ public class ModuleGenerationHolder {
     final Exception[] exceptions = new Exception[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        IOperationContext context = new ProjectOperationContext(project);
         IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
         try {
-          final MakeSession session = new MakeSession(context, myMessageHandler, true);
+          final MakeSession session = new MakeSession(project, myMessageHandler, true);
           final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
           IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
             @Override
@@ -128,7 +125,7 @@ public class ModuleGenerationHolder {
             }
           };
 
-          result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
+          result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
         } catch (InterruptedException ex) {
           exceptions[0] = ex;
         } catch (ExecutionException ex) {
@@ -292,7 +289,7 @@ public class ModuleGenerationHolder {
       }
     }));
   }
-  private static Iterable<IResource> collectResources(IOperationContext context, final SModule module) {
+  private static Iterable<IResource> collectResources(Project project, final SModule module) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -305,7 +302,7 @@ public class ModuleGenerationHolder {
         }
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {
+    return new ModelsToResources(Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }

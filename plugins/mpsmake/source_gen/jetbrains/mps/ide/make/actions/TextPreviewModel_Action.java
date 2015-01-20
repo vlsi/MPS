@@ -14,7 +14,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.make.TextPreviewUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -56,8 +56,8 @@ public class TextPreviewModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("cnode", event.getData(MPSCommonDataKeys.NODE));
@@ -70,9 +70,9 @@ public class TextPreviewModel_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
+      MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), null, true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
+        TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

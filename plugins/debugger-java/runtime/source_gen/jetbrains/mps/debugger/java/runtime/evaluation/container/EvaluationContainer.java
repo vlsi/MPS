@@ -83,7 +83,7 @@ public class EvaluationContainer implements IEvaluationContainer {
   @Override
   public Class generateClass() throws EvaluationException {
     SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
-    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, containerModel, Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, containerModel, Properties.EVALUATOR_NAME, Properties.IS_DEVELOPER_MODE, ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
   }
   @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {

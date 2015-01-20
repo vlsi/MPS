@@ -26,8 +26,9 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
@@ -38,7 +39,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -119,8 +119,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   @Override
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
-    if (DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).isDumb()) {
-      DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).showDumbModeNotification("Generation is not available until indices are built");
+    Project ideaProject = ProjectHelper.toIdeaProject(session.getProject());
+    if (DumbService.getInstance(ideaProject).isDumb()) {
+      DumbService.getInstance(ideaProject).showDumbModeNotification("Generation is not available until indices are built");
       return false;
     }
     if (!(currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky()))) {
@@ -192,8 +193,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
     IMessageHandler mh = this.getSession().getMessageHandler();
-    if (mh == null) {
-      MessagesViewTool mvt = this.getSession().getContext().getComponent(MessagesViewTool.class);
+    if (mh == null || mh == IMessageHandler.NULL_HANDLER) {
+      // FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH. 
+      MessagesViewTool mvt = this.getSession().getProject().getComponent(MessagesViewTool.class);
       mh = mvt.newHandler("Make");
     }
     mh.clear();
@@ -215,7 +217,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     final MakeSession session = getSession();
     makeSeq.prepareScipts(defaultScript, session);
 
-    Project ideaPrj = ProjectHelper.toIdeaProject(session.getContext().getProject());
+    Project ideaPrj = ProjectHelper.toIdeaProject(session.getProject());
     final MakeTask task = new MakeTask(ideaPrj, scrName, makeSeq, new WorkbenchMakeService.Controller(controller, mh), mh, PerformInBackgroundOption.DEAF) {
       @Override
       protected void aboutToStart() {
@@ -274,7 +276,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
   private void displayInfo(String info) {
-    IdeFrame frame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(this.getSession().getContext().getProject()));
+    IdeFrame frame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(this.getSession().getProject()));
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
@@ -333,7 +335,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       predParamPool = ppool;
       Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean> vars = (Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
-        vars._0(getSession().getContext().getProject());
+        vars._0(getSession().getProject());
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
       }
@@ -341,7 +343,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
       Tuples._2<jetbrains.mps.project.Project, Boolean> varsForJavaCompile = (Tuples._2<jetbrains.mps.project.Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
       if (varsForJavaCompile != null) {
-        varsForJavaCompile._0(getSession().getContext().getProject());
+        varsForJavaCompile._0(getSession().getProject());
       }
       // end of hack 
 
@@ -351,7 +353,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
 
-      new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getContext().getProject())).populate(ppool);
+      new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 
       if (delegateScrCtr != null) {
         delegateScrCtr.setup(ppool, targets, input);

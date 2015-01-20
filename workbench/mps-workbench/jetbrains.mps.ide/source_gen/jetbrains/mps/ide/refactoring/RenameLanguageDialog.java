@@ -21,7 +21,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -70,7 +69,7 @@ public class RenameLanguageDialog extends RenameDialog {
       return;
     }
     final LanguageRenamer renamer = new LanguageRenamer(myProject, myLanguage, fqName);
-    ModelAccess modelAccess = myProject.getRepository().getModelAccess();
+    ModelAccess modelAccess = myProject.getModelAccess();
     modelAccess.executeCommand(new Runnable() {
       public void run() {
         renamer.rename(needToRegenerate);
@@ -85,10 +84,9 @@ public class RenameLanguageDialog extends RenameDialog {
         }
       });
       for (final List<SModel> models : langs.values()) {
-        ModuleContext context = new ModuleContext(myLanguage, myProject);
-        MakeSession sess = new MakeSession(context);
+        MakeSession sess = new MakeSession(myProject, null, false);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, models).resources(false));
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(models).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }
