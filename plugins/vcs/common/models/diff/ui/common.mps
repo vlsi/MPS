@@ -17852,6 +17852,96 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="bkly9Zb$a9" role="3cqZAp">
+              <node concept="1Wc70l" id="bkly9Zb$aa" role="3clFbw">
+                <node concept="3eOSWO" id="bkly9Zb$ab" role="3uHU7B">
+                  <node concept="2OqwBi" id="bkly9Zb$ac" role="3uHU7B">
+                    <node concept="2OqwBi" id="bkly9Zb$ay" role="2Oq$k0">
+                      <node concept="37vLTw" id="bkly9Zb$ax" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7$NO6fvW2BF" resolve="myDiffRequest" />
+                      </node>
+                      <node concept="liA8E" id="bkly9Zb$az" role="2OqNvi">
+                        <ref role="37wK5l" to="xa8l:~DiffRequest.getContents():com.intellij.openapi.diff.DiffContent[]" resolve="getContents" />
+                      </node>
+                    </node>
+                    <node concept="1Rwk04" id="bkly9ZbE$B" role="2OqNvi" />
+                  </node>
+                  <node concept="3cmrfG" id="bkly9Zb$af" role="3uHU7w">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                </node>
+                <node concept="2ZW3vV" id="bkly9Zb$ak" role="3uHU7w">
+                  <node concept="AH0OO" id="bkly9Zb$ag" role="2ZW6bz">
+                    <node concept="2OqwBi" id="bkly9Zb$aA" role="AHHXb">
+                      <node concept="37vLTw" id="bkly9Zb$a_" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7$NO6fvW2BF" resolve="myDiffRequest" />
+                      </node>
+                      <node concept="liA8E" id="bkly9Zb$aB" role="2OqNvi">
+                        <ref role="37wK5l" to="xa8l:~DiffRequest.getContents():com.intellij.openapi.diff.DiffContent[]" resolve="getContents" />
+                      </node>
+                    </node>
+                    <node concept="3cmrfG" id="bkly9Zb$ai" role="AHEQo">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="bkly9Zb$aj" role="2ZW6by">
+                    <ref role="3uigEE" to="xa8l:~FileContent" resolve="FileContent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="bkly9Zb$am" role="3clFbx">
+                <node concept="3cpWs8" id="bkly9ZbK_q" role="3cqZAp">
+                  <node concept="3cpWsn" id="bkly9ZbK_r" role="3cpWs9">
+                    <property role="TrG5h" value="document" />
+                    <node concept="3uibUv" id="bkly9ZbK_p" role="1tU5fm">
+                      <ref role="3uigEE" to="18ql:~Document" resolve="Document" />
+                    </node>
+                    <node concept="2OqwBi" id="bkly9ZbK_s" role="33vP2m">
+                      <node concept="AH0OO" id="bkly9ZbK_t" role="2Oq$k0">
+                        <node concept="2OqwBi" id="bkly9ZbK_u" role="AHHXb">
+                          <node concept="37vLTw" id="bkly9ZbK_v" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7$NO6fvW2BF" resolve="myDiffRequest" />
+                          </node>
+                          <node concept="liA8E" id="bkly9ZbK_w" role="2OqNvi">
+                            <ref role="37wK5l" to="xa8l:~DiffRequest.getContents():com.intellij.openapi.diff.DiffContent[]" resolve="getContents" />
+                          </node>
+                        </node>
+                        <node concept="3cmrfG" id="bkly9ZbK_x" role="AHEQo">
+                          <property role="3cmrfH" value="1" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="bkly9ZbK_y" role="2OqNvi">
+                        <ref role="37wK5l" to="xa8l:~DiffContent.getDocument():com.intellij.openapi.editor.Document" resolve="getDocument" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="bkly9ZbKJa" role="3cqZAp">
+                  <node concept="3clFbS" id="bkly9ZbKJd" role="3clFbx">
+                    <node concept="3clFbF" id="bkly9Zb$an" role="3cqZAp">
+                      <node concept="2OqwBi" id="bkly9Zb$ao" role="3clFbG">
+                        <node concept="2YIFZM" id="bkly9ZbDCZ" role="2Oq$k0">
+                          <ref role="1Pybhc" to="vrix:~FileDocumentManager" resolve="FileDocumentManager" />
+                          <ref role="37wK5l" to="vrix:~FileDocumentManager.getInstance():com.intellij.openapi.fileEditor.FileDocumentManager" resolve="getInstance" />
+                        </node>
+                        <node concept="liA8E" id="bkly9Zb$aq" role="2OqNvi">
+                          <ref role="37wK5l" to="vrix:~FileDocumentManager.reloadFromDisk(com.intellij.openapi.editor.Document):void" resolve="reloadFromDisk" />
+                          <node concept="37vLTw" id="bkly9ZbK_z" role="37wK5m">
+                            <ref role="3cqZAo" node="bkly9ZbK_r" resolve="document" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="bkly9ZbOPR" role="3clFbw">
+                    <node concept="10Nm6u" id="bkly9ZbOQE" role="3uHU7w" />
+                    <node concept="37vLTw" id="bkly9ZbOOk" role="3uHU7B">
+                      <ref role="3cqZAo" node="bkly9ZbK_r" resolve="document" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="7$NO6fvW2CE" role="3cqZAp">
               <node concept="2OqwBi" id="7$NO6fvW2CF" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxeulyd" role="2Oq$k0">
