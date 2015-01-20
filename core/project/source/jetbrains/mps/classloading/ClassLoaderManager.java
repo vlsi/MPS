@@ -26,6 +26,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -175,7 +176,7 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  // for tests
+  @TestOnly
   ModulesWatcher getModulesWatcher() {
     return myModulesWatcher;
   }
