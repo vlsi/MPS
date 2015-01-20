@@ -233,7 +233,7 @@ __switch__:
         return GenerationFacade.canGenerate(md);
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);
+    return new ModelsToResources(Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);
   }
   public Iterable<SModel> modelsToMake(SModule module) {
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {

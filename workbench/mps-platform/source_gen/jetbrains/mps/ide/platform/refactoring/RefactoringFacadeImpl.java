@@ -45,7 +45,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -294,14 +293,13 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       }
     }
 
-    final IOperationContext operationContext = new ProjectOperationContext(context.getSelectedProject());
     new Thread() {
       @Override
       public void run() {
         try {
-          MakeSession sess = new MakeSession(operationContext);
+          MakeSession sess = new MakeSession(context.getSelectedProject(), null, false);
           if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-            Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
+            Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(descriptors).resources(false));
             result.get();
             //  wait for end of make to remove member access modifier 
           }

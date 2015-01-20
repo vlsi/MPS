@@ -3042,10 +3042,7 @@
                 <node concept="2OqwBi" id="9D0Ba05uTv" role="37wK5m">
                   <node concept="2ShNRf" id="9D0Ba05uTw" role="2Oq$k0">
                     <node concept="1pGfFk" id="9D0Ba05uTx" role="2ShVmc">
-                      <ref role="37wK5l" to="fn29:6gLh390EkrL" resolve="ModelsToResources" />
-                      <node concept="37vLTw" id="2BHiRxgmC7O" role="37wK5m">
-                        <ref role="3cqZAo" node="9D0Ba05uVk" resolve="context" />
-                      </node>
+                      <ref role="37wK5l" to="fn29:6zsZmIC0WqK" resolve="ModelsToResources" />
                       <node concept="2ShNRf" id="9D0Ba05uTz" role="37wK5m">
                         <node concept="2HTt$P" id="9D0Ba05uT$" role="2ShVmc">
                           <node concept="3uibUv" id="2eVlusX0ZG4" role="2HTBi0">
@@ -3085,38 +3082,54 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="9D0Ba05uTI" role="3cqZAp" />
         <node concept="3cpWs8" id="3A4pD5XxlWV" role="3cqZAp">
           <node concept="3cpWsn" id="3A4pD5XxlWW" role="3cpWs9">
             <property role="TrG5h" value="contextRootNode" />
             <property role="3TUv4t" value="true" />
             <node concept="2OqwBi" id="3A4pD5XxAvy" role="33vP2m">
               <node concept="liA8E" id="3A4pD5XxDdp" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runWriteAction" />
-                <node concept="1bVj0M" id="3A4pD5XxETV" role="37wK5m">
-                  <property role="3yWfEV" value="true" />
-                  <node concept="3clFbS" id="3A4pD5XxETW" role="1bW5cS">
-                    <node concept="3clFbF" id="3A4pD5XAqF5" role="3cqZAp">
-                      <node concept="2EnYce" id="3A4pD5Xyfmb" role="3clFbG">
-                        <node concept="2EnYce" id="3A4pD5XykaE" role="2Oq$k0">
-                          <node concept="37vLTw" id="3A4pD5XxMaM" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7rKYJcjBngR" resolve="contextNode" />
+                <ref role="37wK5l" to="msyo:~ModelComputeRunnable.runWrite(org.jetbrains.mps.openapi.module.ModelAccess):java.lang.Object" resolve="runWrite" />
+                <node concept="2OqwBi" id="2BjwmTy5k1m" role="37wK5m">
+                  <node concept="2OqwBi" id="2BjwmTy5iJq" role="2Oq$k0">
+                    <node concept="37vLTw" id="2BjwmTy5iqm" role="2Oq$k0">
+                      <ref role="3cqZAo" node="9D0Ba05uVi" resolve="session" />
+                    </node>
+                    <node concept="liA8E" id="2BjwmTy5jzZ" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2BjwmTy5l6f" role="2OqNvi">
+                    <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ShNRf" id="2BjwmTy4RSd" role="2Oq$k0">
+                <node concept="1pGfFk" id="2BjwmTy53HG" role="2ShVmc">
+                  <ref role="37wK5l" to="msyo:~ModelComputeRunnable.&lt;init&gt;(jetbrains.mps.util.Computable)" resolve="ModelComputeRunnable" />
+                  <node concept="1bVj0M" id="3A4pD5XxETV" role="37wK5m">
+                    <property role="3yWfEV" value="true" />
+                    <node concept="3clFbS" id="3A4pD5XxETW" role="1bW5cS">
+                      <node concept="3clFbF" id="3A4pD5XAqF5" role="3cqZAp">
+                        <node concept="2EnYce" id="3A4pD5Xyfmb" role="3clFbG">
+                          <node concept="2EnYce" id="3A4pD5XykaE" role="2Oq$k0">
+                            <node concept="37vLTw" id="3A4pD5XxMaM" role="2Oq$k0">
+                              <ref role="3cqZAo" node="7rKYJcjBngR" resolve="contextNode" />
+                            </node>
+                            <node concept="liA8E" id="3A4pD5Xy29h" role="2OqNvi">
+                              <ref role="37wK5l" to="ec5l:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
+                            </node>
                           </node>
-                          <node concept="liA8E" id="3A4pD5Xy29h" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
+                          <node concept="liA8E" id="3A4pD5Xy7Jt" role="2OqNvi">
+                            <ref role="37wK5l" to="ec5l:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                           </node>
-                        </node>
-                        <node concept="liA8E" id="3A4pD5Xy7Jt" role="2OqNvi">
-                          <ref role="37wK5l" to="ec5l:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                         </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="3uibUv" id="2BjwmTy5q1N" role="1pMfVU">
+                    <ref role="3uigEE" to="ec5l:~SNodeReference" resolve="SNodeReference" />
+                  </node>
                 </node>
-              </node>
-              <node concept="2YIFZM" id="3A4pD5Xx$J_" role="2Oq$k0">
-                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
             </node>
             <node concept="3uibUv" id="3A4pD5XxlWX" role="1tU5fm">
@@ -3199,7 +3212,7 @@
                                     <node concept="3K4zz7" id="7rKYJcjCj3r" role="33vP2m">
                                       <node concept="10Nm6u" id="7rKYJcjCDzE" role="3K4GZi" />
                                       <node concept="3EllGN" id="7rKYJcjCzSe" role="3K4E3e">
-                                        <node concept="37vLTw" id="3A4pD5XAyii" role="3ElVtu">
+                                        <node concept="37vLTw" id="2BjwmTy5qLi" role="3ElVtu">
                                           <ref role="3cqZAo" node="3A4pD5XxlWW" resolve="contextRootNode" />
                                         </node>
                                         <node concept="2OqwBi" id="7rKYJcjCrbS" role="3ElQJh">
@@ -3415,11 +3428,11 @@
                                               <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
                                               <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
                                               <node concept="2OqwBi" id="9D0Ba05uUN" role="37wK5m">
-                                                <node concept="37vLTw" id="2BHiRxgm7Dx" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="9D0Ba05uVk" resolve="context" />
+                                                <node concept="37vLTw" id="2BjwmTy5rq4" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="9D0Ba05uVi" resolve="session" />
                                                 </node>
                                                 <node concept="liA8E" id="9D0Ba05uUP" role="2OqNvi">
-                                                  <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                                                  <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3473,11 +3486,11 @@
                                       <ref role="37wK5l" to="gcfa:~ProjectPane.getInstance(jetbrains.mps.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolve="getInstance" />
                                       <ref role="1Pybhc" to="gcfa:~ProjectPane" resolve="ProjectPane" />
                                       <node concept="2OqwBi" id="9D0Ba05uV3" role="37wK5m">
-                                        <node concept="37vLTw" id="2BHiRxgm5ZW" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="9D0Ba05uVk" resolve="context" />
+                                        <node concept="37vLTw" id="2BjwmTy5sh4" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="9D0Ba05uVi" resolve="session" />
                                         </node>
                                         <node concept="liA8E" id="9D0Ba05uV5" role="2OqNvi">
-                                          <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                                          <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                                         </node>
                                       </node>
                                     </node>
@@ -3533,13 +3546,6 @@
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="9D0Ba05uVj" role="1tU5fm">
           <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="9D0Ba05uVk" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="9D0Ba05uVl" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
       <node concept="37vLTG" id="9D0Ba05uVm" role="3clF46">
@@ -4485,6 +4491,26 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2BjwmTxV0jn" role="3cqZAp">
+          <node concept="3cpWsn" id="2BjwmTxV0jo" role="3cpWs9">
+            <property role="TrG5h" value="ideaProject" />
+            <node concept="3uibUv" id="2BjwmTxV0jj" role="1tU5fm">
+              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+            </node>
+            <node concept="2YIFZM" id="2BjwmTxV0jp" role="33vP2m">
+              <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+              <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="2OqwBi" id="2BjwmTxV0jq" role="37wK5m">
+                <node concept="37vLTw" id="2BjwmTxV0js" role="2Oq$k0">
+                  <ref role="3cqZAo" node="9D0Ba05vcW" resolve="session" />
+                </node>
+                <node concept="liA8E" id="2BjwmTxV0ju" role="2OqNvi">
+                  <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="9D0Ba05vd3" role="3cqZAp">
           <node concept="3clFbS" id="9D0Ba05vd4" role="3clFbx">
             <node concept="3clFbF" id="9D0Ba05vd5" role="3cqZAp">
@@ -4492,22 +4518,8 @@
                 <node concept="2YIFZM" id="9D0Ba05vd7" role="2Oq$k0">
                   <ref role="1Pybhc" to="b2mh:~DumbService" resolve="DumbService" />
                   <ref role="37wK5l" to="b2mh:~DumbService.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.project.DumbService" resolve="getInstance" />
-                  <node concept="2YIFZM" id="9D0Ba05vd8" role="37wK5m">
-                    <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                    <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                    <node concept="2OqwBi" id="9D0Ba05vd9" role="37wK5m">
-                      <node concept="2OqwBi" id="9D0Ba05vda" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxglRLd" role="2Oq$k0">
-                          <ref role="3cqZAo" node="9D0Ba05vcW" resolve="session" />
-                        </node>
-                        <node concept="liA8E" id="9D0Ba05vdc" role="2OqNvi">
-                          <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="9D0Ba05vdd" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="2BjwmTxV0jw" role="37wK5m">
+                    <ref role="3cqZAo" node="2BjwmTxV0jo" resolve="ideaProject" />
                   </node>
                 </node>
                 <node concept="liA8E" id="9D0Ba05vde" role="2OqNvi">
@@ -4528,22 +4540,8 @@
             <node concept="2YIFZM" id="9D0Ba05vdj" role="2Oq$k0">
               <ref role="1Pybhc" to="b2mh:~DumbService" resolve="DumbService" />
               <ref role="37wK5l" to="b2mh:~DumbService.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.project.DumbService" resolve="getInstance" />
-              <node concept="2YIFZM" id="9D0Ba05vdk" role="37wK5m">
-                <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="2OqwBi" id="9D0Ba05vdl" role="37wK5m">
-                  <node concept="2OqwBi" id="9D0Ba05vdm" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxgmaSj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="9D0Ba05vcW" resolve="session" />
-                    </node>
-                    <node concept="liA8E" id="9D0Ba05vdo" role="2OqNvi">
-                      <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="9D0Ba05vdp" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="2BjwmTxV0jv" role="37wK5m">
+                <ref role="3cqZAo" node="2BjwmTxV0jo" resolve="ideaProject" />
               </node>
             </node>
             <node concept="liA8E" id="9D0Ba05vdq" role="2OqNvi">
@@ -5263,6 +5261,11 @@
         </node>
         <node concept="3clFbJ" id="9D0Ba05vjP" role="3cqZAp">
           <node concept="3clFbS" id="9D0Ba05vjQ" role="3clFbx">
+            <node concept="3SKdUt" id="2BjwmTxVx__" role="3cqZAp">
+              <node concept="3SKdUq" id="2BjwmTxVx_U" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH." />
+              </node>
+            </node>
             <node concept="3cpWs8" id="59UVr$Ka7Wa" role="3cqZAp">
               <node concept="3cpWsn" id="59UVr$Ka7Wb" role="3cpWs9">
                 <property role="TrG5h" value="mvt" />
@@ -5277,12 +5280,12 @@
                         <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="59UVr$Ka7Wh" role="2OqNvi">
-                      <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
+                    <node concept="liA8E" id="2BjwmTxVoPl" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                     </node>
                   </node>
                   <node concept="liA8E" id="59UVr$Ka7Wi" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <ref role="37wK5l" to="vsqj:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="59UVr$Ka7Wj" role="37wK5m">
                       <ref role="3VsUkX" to="pdak:~MessagesViewTool" resolve="MessagesViewTool" />
                     </node>
@@ -5309,10 +5312,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="9D0Ba05vk2" role="3clFbw">
-            <node concept="10Nm6u" id="9D0Ba05vk3" role="3uHU7w" />
-            <node concept="37vLTw" id="3GM_nagTBPB" role="3uHU7B">
-              <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
+          <node concept="22lmx$" id="2BjwmTxVsTS" role="3clFbw">
+            <node concept="3clFbC" id="2BjwmTxVx3U" role="3uHU7w">
+              <node concept="10M0yZ" id="2BjwmTxVxgf" role="3uHU7w">
+                <ref role="1PxDUh" to="bq0a:~IMessageHandler" resolve="IMessageHandler" />
+                <ref role="3cqZAo" to="bq0a:~IMessageHandler.NULL_HANDLER" resolve="NULL_HANDLER" />
+              </node>
+              <node concept="37vLTw" id="2BjwmTxVwzh" role="3uHU7B">
+                <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="9D0Ba05vk2" role="3uHU7B">
+              <node concept="37vLTw" id="3GM_nagTBPB" role="3uHU7B">
+                <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
+              </node>
+              <node concept="10Nm6u" id="9D0Ba05vk3" role="3uHU7w" />
             </node>
           </node>
         </node>
@@ -5512,16 +5526,11 @@
               <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
               <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
               <node concept="2OqwBi" id="41innpApNZn" role="37wK5m">
-                <node concept="2OqwBi" id="41innpApNZo" role="2Oq$k0">
-                  <node concept="liA8E" id="41innpApNZp" role="2OqNvi">
-                    <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                  </node>
-                  <node concept="37vLTw" id="41innpApNZq" role="2Oq$k0">
-                    <ref role="3cqZAo" node="41innpApzBL" resolve="session" />
-                  </node>
+                <node concept="37vLTw" id="41innpApNZq" role="2Oq$k0">
+                  <ref role="3cqZAo" node="41innpApzBL" resolve="session" />
                 </node>
                 <node concept="liA8E" id="41innpApNZr" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                  <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                 </node>
               </node>
             </node>
@@ -5937,19 +5946,14 @@
                   <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
                   <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
                   <node concept="2OqwBi" id="9D0Ba05vlX" role="37wK5m">
-                    <node concept="2OqwBi" id="9D0Ba05vlY" role="2Oq$k0">
-                      <node concept="2OqwBi" id="9D0Ba05vlZ" role="2Oq$k0">
-                        <node concept="Xjq3P" id="9D0Ba05vm0" role="2Oq$k0" />
-                        <node concept="liA8E" id="9D0Ba05vm1" role="2OqNvi">
-                          <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="9D0Ba05vm2" role="2OqNvi">
-                        <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
+                    <node concept="2OqwBi" id="9D0Ba05vlZ" role="2Oq$k0">
+                      <node concept="Xjq3P" id="9D0Ba05vm0" role="2Oq$k0" />
+                      <node concept="liA8E" id="9D0Ba05vm1" role="2OqNvi">
+                        <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                       </node>
                     </node>
                     <node concept="liA8E" id="9D0Ba05vm3" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                     </node>
                   </node>
                 </node>
@@ -6504,16 +6508,11 @@
                     </node>
                   </node>
                   <node concept="2OqwBi" id="9D0Ba05v53" role="37vLTx">
-                    <node concept="2OqwBi" id="9D0Ba05v54" role="2Oq$k0">
-                      <node concept="1rXfSq" id="4hiugqyyR2m" role="2Oq$k0">
-                        <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
-                      </node>
-                      <node concept="liA8E" id="9D0Ba05v56" role="2OqNvi">
-                        <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                      </node>
+                    <node concept="1rXfSq" id="4hiugqyyR2m" role="2Oq$k0">
+                      <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                     </node>
                     <node concept="liA8E" id="9D0Ba05v57" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                     </node>
                   </node>
                 </node>
@@ -6626,15 +6625,10 @@
                 <node concept="37vLTI" id="2zR2ackhP6t" role="3clFbG">
                   <node concept="2OqwBi" id="2zR2acki1JS" role="37vLTx">
                     <node concept="liA8E" id="2zR2acki5s7" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                     </node>
-                    <node concept="2OqwBi" id="2zR2ackhVdt" role="2Oq$k0">
-                      <node concept="liA8E" id="2zR2ackhYUF" role="2OqNvi">
-                        <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                      </node>
-                      <node concept="1rXfSq" id="2zR2ackhS80" role="2Oq$k0">
-                        <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
-                      </node>
+                    <node concept="1rXfSq" id="2zR2ackhS80" role="2Oq$k0">
+                      <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                     </node>
                   </node>
                   <node concept="1LFfDK" id="2zR2ackhGv7" role="37vLTJ">
@@ -6768,16 +6762,11 @@
                     <node concept="liA8E" id="bvkaYAHV_C" role="2OqNvi">
                       <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
                       <node concept="2OqwBi" id="bvkaYAHWuB" role="37wK5m">
-                        <node concept="2OqwBi" id="bvkaYAHW8i" role="2Oq$k0">
-                          <node concept="1rXfSq" id="bvkaYAHVKW" role="2Oq$k0">
-                            <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
-                          </node>
-                          <node concept="liA8E" id="bvkaYAHWoF" role="2OqNvi">
-                            <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
-                          </node>
+                        <node concept="1rXfSq" id="bvkaYAHVKW" role="2Oq$k0">
+                          <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                         </node>
                         <node concept="liA8E" id="bvkaYAHXfE" role="2OqNvi">
-                          <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                          <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                         </node>
                       </node>
                     </node>
