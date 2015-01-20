@@ -61,7 +61,7 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   public List<PluginContributor> getLoadedContributors() {
-    return myLoadedContributors;
+    return new ArrayList<PluginContributor>(myLoadedContributors);
   }
 
   private static List<PluginContributor> getPluginFactoriesRegistryContributors() {

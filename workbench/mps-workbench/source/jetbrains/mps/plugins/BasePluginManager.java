@@ -71,12 +71,11 @@ public abstract class BasePluginManager<T> {
   // plugins should be in load order
   protected final void loadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
-      LOG.debug("Loading plugins from " + contributors.size() + " contributors");
-      myRepository.getModelAccess().runReadAction(new Runnable() {
+      myRepository.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
+          LOG.debug("Loading plugins from " + contributors.size() + " contributors");
           List<T> plugins = createPlugins(contributors);
-
           afterPluginsCreated(plugins);
         }
       });
@@ -84,27 +83,32 @@ public abstract class BasePluginManager<T> {
   }
 
   // plugins should be in unload order
-  protected final void unloadPlugins(List<PluginContributor> contributors) {
+  protected final void unloadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
-      LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
-      final List<T> plugins = new ArrayList<T>();
+      myRepository.getModelAccess().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
+          final List<T> plugins = new ArrayList<T>();
 
-      for (PluginContributor contributor : contributors) {
-        if (!myContributorToPlugin.containsKey(contributor)) {
-          LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
-          continue;
+          for (PluginContributor contributor : contributors) {
+            if (!myContributorToPlugin.containsKey(contributor)) {
+              LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
+              continue;
+            }
+            T plugin = myContributorToPlugin.get(contributor);
+            myContributorToPlugin.remove(contributor);
+
+            if (plugin != null) {
+              plugins.add(plugin);
+            }
+          }
+
+          beforePluginsDisposed(plugins);
+          disposePlugins(plugins);
+          mySortedPlugins.removeAll(plugins);
         }
-        T plugin = myContributorToPlugin.get(contributor);
-        myContributorToPlugin.remove(contributor);
-
-        if (plugin != null) {
-          plugins.add(plugin);
-        }
-      }
-
-      beforePluginsDisposed(plugins);
-      disposePlugins(plugins);
-      mySortedPlugins.removeAll(plugins);
+      });
     }
   }
 
@@ -143,20 +147,15 @@ public abstract class BasePluginManager<T> {
   }
 
   private void disposePlugins(final List<T> plugins) {
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (T plugin : plugins) {
-          try {
-            disposePlugin(plugin);
-          } catch (LinkageError le) {
-            LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
-          } catch (Throwable t) {
-            LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
-          }
-        }
+    for (T plugin : plugins) {
+      try {
+        disposePlugin(plugin);
+      } catch (LinkageError le) {
+        LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
+      } catch (Throwable t) {
+        LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
       }
-    });
+    }
   }
 
   public List<T> getPlugins() {

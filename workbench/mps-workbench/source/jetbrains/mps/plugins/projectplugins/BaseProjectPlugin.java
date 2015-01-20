@@ -19,6 +19,8 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -27,6 +29,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,22 +71,19 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   //------------------shared stuff-----------------------
 
-  public final void init(final Project project) {
+  public final void init(@NotNull final Project project) {
     myProject = project;
 
     myCustomPartsToDispose = initCustomParts(project);
-
-    for (RelationDescriptor d : initTabbedEditors(project)) {
-      myTabDescriptors.add(d);
-    }
-
+    myTabDescriptors = initTabbedEditors(project);
     myTools = initAllTools(myProject);
-    final Project ideaProject = myProject;
+
+    if (myProject.isDisposed()) return;
+
     for (final BaseGeneratedTool tool : myTools) {
-      if (ideaProject.isDisposed()) return;
       try {
-        tool.init(ideaProject);
-        tool.register();
+        tool.init(myProject);
+        tool.registerLater();
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -109,7 +110,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
       } catch (Throwable t) {
         LOG.error(null, t);
       }
-      tool.unregister();
+      tool.unregisterLater();
     }
     myTools.clear();
 

@@ -21,12 +21,12 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
@@ -42,8 +42,6 @@ import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -74,8 +72,9 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private Project myProject;
   private jetbrains.mps.project.Project myMpsProject;
   private FileEditorManager myManager;
+  private boolean myInitialized = false;
 
-  public ProjectPluginManager(Project project, jetbrains.mps.project.Project mpsProject, PluginReloader pluginReloader, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+  public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginReloader pluginReloader, StartupModuleMaker moduleMaker, FileEditorManager manager) {
     super(mpsProject.getRepository(), pluginReloader);
     myProject = project;
     myMpsProject = mpsProject;
@@ -84,12 +83,28 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   public void projectOpened() {
+    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+      @Override
+      public void run() {
+        runStartupActivity();
+        myInitialized = true;
+      }
+    });
+  }
+
+  private void runStartupActivity() {
     super.loadPlugins(myPluginReloader.getLoadedContributors());
     super.startListeningToReload();
   }
 
   @Override
   public void projectClosed() {
+    if (myInitialized) {
+      runShutDownActivity();
+    }
+  }
+
+  private void runShutDownActivity() {
     super.stopListeningToReload();
     super.unloadPlugins(myPluginReloader.getLoadedContributors());
   }
@@ -142,6 +157,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   //----------------RELOAD STUFF---------------------
   @Override
   protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
+    myRepository.getModelAccess().checkWriteAccess();
     BaseProjectPlugin plugin = contributor.createProjectPlugin();
     if (plugin == null) return null;
 
@@ -253,7 +269,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
           } else if (editor.getNodeEditor() instanceof NodeEditor) {
             //and this is to make non-tabbed editors tabbed if they need to
             for (RelationDescriptor tab : getTabDescriptors()) {
-              SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
+              SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(myRepository);
               if (tab.getBaseNode(node) != null) {
                 editor.recreateEditor();
                 continue editors;

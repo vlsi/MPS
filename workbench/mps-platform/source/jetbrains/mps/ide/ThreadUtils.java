@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -28,7 +27,7 @@ public class ThreadUtils {
   public static boolean runInUIThreadAndWait(Runnable r) {
     if (SwingUtilities.isEventDispatchThread()) {
       try {
-          r.run();
+        r.run();
       } catch (Exception e) {
         LOG.error(null, e);
         return false;
