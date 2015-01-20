@@ -158,7 +158,7 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   public void disposeComponent() {
     super.stopListeningToReload();
     if (!myPluginReloader.getLoadedContributors().isEmpty()) {
-      LOG.warn("Some contributor plugins will not be unloaded because of too early component disposal.");
+      super.unloadPlugins(myPluginReloader.getLoadedContributors());
     }
   }
 }

@@ -71,44 +71,34 @@ public abstract class BasePluginManager<T> {
   // plugins should be in load order
   protected final void loadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
-      myRepository.getModelAccess().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          LOG.debug("Loading plugins from " + contributors.size() + " contributors");
-          List<T> plugins = createPlugins(contributors);
-          afterPluginsCreated(plugins);
-        }
-      });
+      LOG.debug("Loading plugins from " + contributors.size() + " contributors");
+      List<T> plugins = createPlugins(contributors);
+      afterPluginsCreated(plugins);
     }
   }
 
   // plugins should be in unload order
   protected final void unloadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
-      myRepository.getModelAccess().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
-          final List<T> plugins = new ArrayList<T>();
+      LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
+      final List<T> plugins = new ArrayList<T>();
 
-          for (PluginContributor contributor : contributors) {
-            if (!myContributorToPlugin.containsKey(contributor)) {
-              LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
-              continue;
-            }
-            T plugin = myContributorToPlugin.get(contributor);
-            myContributorToPlugin.remove(contributor);
-
-            if (plugin != null) {
-              plugins.add(plugin);
-            }
-          }
-
-          beforePluginsDisposed(plugins);
-          disposePlugins(plugins);
-          mySortedPlugins.removeAll(plugins);
+      for (PluginContributor contributor : contributors) {
+        if (!myContributorToPlugin.containsKey(contributor)) {
+          LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
+          continue;
         }
-      });
+        T plugin = myContributorToPlugin.get(contributor);
+        myContributorToPlugin.remove(contributor);
+
+        if (plugin != null) {
+          plugins.add(plugin);
+        }
+      }
+
+      beforePluginsDisposed(plugins);
+      disposePlugins(plugins);
+      mySortedPlugins.removeAll(plugins);
     }
   }
 

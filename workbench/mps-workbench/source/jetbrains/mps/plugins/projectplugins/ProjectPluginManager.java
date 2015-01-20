@@ -157,7 +157,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   //----------------RELOAD STUFF---------------------
   @Override
   protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
-    myRepository.getModelAccess().checkWriteAccess();
     BaseProjectPlugin plugin = contributor.createProjectPlugin();
     if (plugin == null) return null;
 

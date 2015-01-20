@@ -77,41 +77,56 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     myCustomPartsToDispose = initCustomParts(project);
     myTabDescriptors = initTabbedEditors(project);
     myTools = initAllTools(myProject);
-
-    if (myProject.isDisposed()) return;
-
-    for (final BaseGeneratedTool tool : myTools) {
-      try {
-        tool.init(myProject);
-        tool.registerLater();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-      myInitializedTools.add(tool);
-    }
-
     myPrefsComponents = createPreferencesComponents(myProject);
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.init();
-    }
+
+    getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myProject.isDisposed()) return;
+
+        for (BaseGeneratedTool tool : myTools) {
+          try {
+            tool.init(myProject);
+            tool.register();
+          } catch (Throwable t) {
+            LOG.error("", t);
+          }
+          myInitializedTools.add(tool);
+        }
+        for (BaseProjectPrefsComponent component : myPrefsComponents) {
+          component.init();
+        }
+      }
+    });
+  }
+
+  @NotNull
+  private ModelAccess getModelAccess() {
+    ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
+    assert modelAccess != null;
+    return modelAccess;
   }
 
   public final void dispose() {
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.dispose();
-    }
+    getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myProject.isDisposed()) return;
 
-    if (myProject.isDisposed()) return;
+        for (BaseProjectPrefsComponent component : myPrefsComponents) {
+          component.dispose();
+        }
 
-    for (final BaseGeneratedTool tool : myTools) {
-      if (!myInitializedTools.contains(tool)) continue;
-      try {
-        tool.dispose();
-      } catch (Throwable t) {
-        LOG.error(null, t);
+        for (BaseGeneratedTool tool : myTools) {
+          if (!myInitializedTools.contains(tool)) continue;
+          try {
+            tool.dispose();
+          } catch (Throwable t) {
+            LOG.error("", t);
+          }
+        }
       }
-      tool.unregisterLater();
-    }
+    });
     myTools.clear();
 
     myTabDescriptors.clear();
