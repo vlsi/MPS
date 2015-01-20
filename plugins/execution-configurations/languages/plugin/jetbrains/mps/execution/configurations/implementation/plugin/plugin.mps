@@ -9622,17 +9622,12 @@
             </node>
             <node concept="2ShNRf" id="4oL4a6sn6EG" role="33vP2m">
               <node concept="1pGfFk" id="4oL4a6sn6EH" role="2ShVmc">
-                <ref role="37wK5l" to="hb0s:~MakeSession.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.messages.IMessageHandler,boolean)" resolve="MakeSession" />
-                <node concept="2ShNRf" id="4oL4a6sn6EI" role="37wK5m">
-                  <node concept="1pGfFk" id="4oL4a6sn6EJ" role="2ShVmc">
-                    <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                    <node concept="2YIFZM" id="4oL4a6sn6EK" role="37wK5m">
-                      <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                      <node concept="37vLTw" id="4oL4a6snfAB" role="37wK5m">
-                        <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
-                      </node>
-                    </node>
+                <ref role="37wK5l" to="hb0s:~MakeSession.&lt;init&gt;(jetbrains.mps.project.Project,jetbrains.mps.messages.IMessageHandler,boolean)" resolve="MakeSession" />
+                <node concept="2YIFZM" id="4oL4a6sn6EK" role="37wK5m">
+                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                  <node concept="37vLTw" id="4oL4a6snfAB" role="37wK5m">
+                    <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="4oL4a6sn6EM" role="37wK5m" />
@@ -9665,19 +9660,7 @@
                     <node concept="2OqwBi" id="4oL4a6sn6F5" role="37wK5m">
                       <node concept="2ShNRf" id="4oL4a6sn6F6" role="2Oq$k0">
                         <node concept="1pGfFk" id="4oL4a6sn6F7" role="2ShVmc">
-                          <ref role="37wK5l" to="lzhn:~ModelsToResources.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.lang.Iterable)" resolve="ModelsToResources" />
-                          <node concept="2ShNRf" id="4oL4a6sn6F8" role="37wK5m">
-                            <node concept="1pGfFk" id="4oL4a6sn6F9" role="2ShVmc">
-                              <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                              <node concept="2YIFZM" id="4oL4a6sn6Fa" role="37wK5m">
-                                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                                <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                                <node concept="37vLTw" id="4oL4a6snfAK" role="37wK5m">
-                                  <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="lzhn:~ModelsToResources.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsToResources" />
                           <node concept="37vLTw" id="4oL4a6sr_eN" role="37wK5m">
                             <ref role="3cqZAo" node="4oL4a6sng2A" resolve="myModelsToMake" />
                           </node>

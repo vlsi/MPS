@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.icons.AllIcons.Actions;
-import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -25,7 +24,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -33,8 +31,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.ide.actions.MPSActions;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -52,14 +48,12 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -418,11 +412,10 @@ public class UsagesView implements IExternalizeable {
         }
       }
 
-      ProjectOperationContext context = new ProjectOperationContext(myView.myProject);
-      if (myMakeSession.compareAndSet(null, new MakeSession(context))) {
+      if (myMakeSession.compareAndSet(null, new MakeSession(myView.myProject, null, false))) {
         try {
           if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
-            IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(context, models).resources(false));
+            IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(models).resources(false));
           }
         } finally {
           myMakeSession.set(null);

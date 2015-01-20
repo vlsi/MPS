@@ -5,7 +5,6 @@ package jetbrains.mps.debugger.java.runtime.evaluation.container;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
@@ -34,9 +33,9 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class GeneratorUtil {
   @Nullable
-  public static Class generateAndLoadEvaluatorClass(Project project, SModel model, String className, IOperationContext context, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
+  public static Class generateAndLoadEvaluatorClass(Project project, SModel model, String className, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
     IMakeService makeService = IMakeService.INSTANCE.get();
-    MakeSession makeSession = new MakeSession(context);
+    MakeSession makeSession = new MakeSession(project, null, false);
     if (makeService.openNewSession(makeSession)) {
       try {
         IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();

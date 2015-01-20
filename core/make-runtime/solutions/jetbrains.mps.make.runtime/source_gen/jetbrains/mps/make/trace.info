@@ -195,65 +195,82 @@
   </root>
   <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8695426379435232461">
     <file name="MakeSession.java">
-      <node id="8695426379435237583" at="11,0,12,0" concept="3" trace="context" />
-      <node id="8695426379435237592" at="12,0,13,0" concept="3" trace="messageHandler" />
-      <node id="8695426379435237601" at="13,0,14,0" concept="3" trace="cleanMake" />
-      <node id="2181314052156513930" at="14,0,15,0" concept="3" trace="sticky" />
-      <node id="1841925426083462710" at="15,49,16,30" concept="11" />
-      <node id="2181314052156502142" at="18,100,19,52" concept="11" />
-      <node id="8695426379435237586" at="21,116,22,27" concept="2" />
-      <node id="8695426379435237595" at="22,27,23,41" concept="2" />
-      <node id="8695426379435237604" at="23,41,24,31" concept="2" />
-      <node id="2181314052156513933" at="24,31,25,25" concept="2" />
-      <node id="8695426379435237610" at="27,41,28,19" concept="6" />
-      <node id="8695426379435237612" at="30,46,31,26" concept="6" />
-      <node id="8695426379435237614" at="33,32,34,21" concept="6" />
-      <node id="2181314052156513939" at="36,29,37,18" concept="6" />
-      <node id="8695426379435237553" at="39,50,40,25" concept="2" />
-      <node id="7260781342054369291" at="42,56,43,36" concept="6" />
-      <node id="1841925426083462703" at="15,0,18,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <node id="2181314052156502107" at="18,0,21,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
-      <node id="8695426379435232473" at="27,0,30,0" concept="5" trace="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
-      <node id="8695426379435232480" at="30,0,33,0" concept="5" trace="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
-      <node id="8695426379435237569" at="33,0,36,0" concept="5" trace="isCleanMake#()Z" />
-      <node id="1841925426083462791" at="36,0,39,0" concept="5" trace="isSticky#()Z" />
-      <node id="8695426379435237541" at="39,0,42,0" concept="5" trace="doExecute#(Ljava/lang/Runnable;)V" />
-      <node id="7260781342054369284" at="42,0,45,0" concept="5" trace="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
-      <node id="8075512910924574289" at="21,0,27,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
-      <scope id="1841925426083462706" at="15,49,16,30" />
-      <scope id="2181314052156502110" at="18,100,19,52" />
-      <scope id="8695426379435232476" at="27,41,28,19" />
-      <scope id="8695426379435232483" at="30,46,31,26" />
-      <scope id="8695426379435237572" at="33,32,34,21" />
-      <scope id="1841925426083462794" at="36,29,37,18" />
-      <scope id="8695426379435237544" at="39,50,40,25" />
-      <scope id="7260781342054369287" at="42,56,43,36" />
-      <scope id="1841925426083462703" at="15,0,18,0">
+      <node id="8695426379435237583" at="16,0,17,0" concept="3" trace="context" />
+      <node id="3013894886729777622" at="17,0,18,0" concept="3" trace="myProject" />
+      <node id="8695426379435237592" at="18,0,19,0" concept="3" trace="myMessageHandler" />
+      <node id="8695426379435237601" at="19,0,20,0" concept="3" trace="myIsCleanMake" />
+      <node id="2181314052156513930" at="20,0,21,0" concept="3" trace="myIsSticky" />
+      <node id="1841925426083462710" at="29,49,30,30" concept="11" />
+      <node id="2181314052156502142" at="40,100,41,52" concept="11" />
+      <node id="8695426379435237586" at="51,116,52,27" concept="2" />
+      <node id="3013894886729785855" at="52,27,53,37" concept="2" />
+      <node id="8695426379435237595" at="53,37,54,43" concept="2" />
+      <node id="8695426379435237604" at="54,43,55,35" concept="2" />
+      <node id="2181314052156513933" at="55,35,56,29" concept="2" />
+      <node id="3013894886729788874" at="58,112,59,27" concept="2" />
+      <node id="3013894886729748402" at="59,27,60,101" concept="2" />
+      <node id="3013894886729748410" at="60,101,61,35" concept="2" />
+      <node id="3013894886729748418" at="61,35,62,28" concept="2" />
+      <node id="3013894886729984046" at="71,41,72,80" concept="6" />
+      <node id="3013894886729777595" at="75,31,76,21" concept="6" />
+      <node id="8695426379435237612" at="79,46,80,28" concept="6" />
+      <node id="8695426379435237614" at="82,32,83,25" concept="6" />
+      <node id="2181314052156513939" at="93,29,94,22" concept="6" />
+      <node id="8695426379435237553" at="96,50,97,25" concept="2" />
+      <node id="7260781342054369291" at="99,56,100,36" concept="6" />
+      <node id="8695426379435237569" at="82,0,85,0" concept="5" trace="isCleanMake#()Z" />
+      <node id="8695426379435237541" at="96,0,99,0" concept="5" trace="doExecute#(Ljava/lang/Runnable;)V" />
+      <node id="7260781342054369284" at="99,0,102,0" concept="5" trace="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
+      <node id="3013894886729773252" at="74,0,78,0" concept="5" trace="getProject#()Ljetbrains/mps/project/Project;" />
+      <node id="8695426379435232480" at="78,0,82,0" concept="5" trace="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
+      <node id="3013894886729743751" at="58,0,64,0" concept="1" trace="MakeSession#(Ljetbrains/mps/project/Project;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
+      <node id="8695426379435232473" at="64,0,74,0" concept="5" trace="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
+      <node id="1841925426083462703" at="21,0,32,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="2181314052156502107" at="32,0,43,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
+      <node id="1841925426083462791" at="85,0,96,0" concept="5" trace="isSticky#()Z" />
+      <node id="8075512910924574289" at="43,0,58,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
+      <scope id="1841925426083462706" at="29,49,30,30" />
+      <scope id="2181314052156502110" at="40,100,41,52" />
+      <scope id="8695426379435232476" at="71,41,72,80" />
+      <scope id="3013894886729773256" at="75,31,76,21" />
+      <scope id="8695426379435232483" at="79,46,80,28" />
+      <scope id="8695426379435237572" at="82,32,83,25" />
+      <scope id="1841925426083462794" at="93,29,94,22" />
+      <scope id="8695426379435237544" at="96,50,97,25" />
+      <scope id="7260781342054369287" at="99,56,100,36" />
+      <scope id="8695426379435237569" at="82,0,85,0" />
+      <scope id="8695426379435237541" at="96,0,99,0">
+        <var name="scriptRunnable" id="8695426379435237550" />
+      </scope>
+      <scope id="7260781342054369284" at="99,0,102,0">
+        <var name="scriptBuilder" id="7260781342054369289" />
+      </scope>
+      <scope id="3013894886729743754" at="58,112,62,28" />
+      <scope id="3013894886729773252" at="74,0,78,0" />
+      <scope id="8695426379435232480" at="78,0,82,0" />
+      <scope id="8075512910924574292" at="51,116,56,29" />
+      <scope id="3013894886729743751" at="58,0,64,0">
+        <var name="cleanMake" id="3013894886729745333" />
+        <var name="messageHandler" id="3013894886729745162" />
+        <var name="mpsProject" id="3013894886729745100" />
+      </scope>
+      <scope id="8695426379435232473" at="64,0,74,0" />
+      <scope id="1841925426083462703" at="21,0,32,0">
         <var name="context" id="1841925426083462707" />
       </scope>
-      <scope id="2181314052156502107" at="18,0,21,0">
+      <scope id="2181314052156502107" at="32,0,43,0">
         <var name="cleanMake" id="2181314052156502133" />
         <var name="context" id="2181314052156502129" />
         <var name="messageHandler" id="2181314052156502131" />
       </scope>
-      <scope id="8695426379435232473" at="27,0,30,0" />
-      <scope id="8695426379435232480" at="30,0,33,0" />
-      <scope id="8695426379435237569" at="33,0,36,0" />
-      <scope id="1841925426083462791" at="36,0,39,0" />
-      <scope id="8695426379435237541" at="39,0,42,0">
-        <var name="scriptRunnable" id="8695426379435237550" />
-      </scope>
-      <scope id="7260781342054369284" at="42,0,45,0">
-        <var name="scriptBuilder" id="7260781342054369289" />
-      </scope>
-      <scope id="8075512910924574292" at="21,116,25,25" />
-      <scope id="8075512910924574289" at="21,0,27,0">
+      <scope id="1841925426083462791" at="85,0,96,0" />
+      <scope id="8075512910924574289" at="43,0,58,0">
         <var name="cleanMake" id="8075512910924574297" />
         <var name="context" id="8075512910924574293" />
         <var name="messageHandler" id="8075512910924574295" />
         <var name="sticky" id="8075512910924574299" />
       </scope>
-      <unit id="8695426379435232461" at="10,0,46,0" name="jetbrains.mps.make.MakeSession" />
+      <unit id="8695426379435232461" at="15,0,103,0" name="jetbrains.mps.make.MakeSession" />
     </file>
   </root>
 </debug-info>

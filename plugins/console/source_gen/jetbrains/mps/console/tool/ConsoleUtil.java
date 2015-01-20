@@ -15,8 +15,6 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
@@ -50,14 +48,13 @@ public class ConsoleUtil {
       }
     }, new IJobMonitor.Stub());
 
-    IOperationContext projectOperationContext = new ProjectOperationContext(project);
-    final MessagesViewTool mvt = projectOperationContext.getComponent(MessagesViewTool.class);
+    final MessagesViewTool mvt = project.getComponent(MessagesViewTool.class);
     final String messagesListName = "Console Make";
     mvt.getAvailableList(messagesListName, true).setWarningsEnabled(false);
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
-    MakeSession session = new MakeSession(projectOperationContext, mvt.newHandler(messagesListName), true);
+    MakeSession session = new MakeSession(project, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(projectOperationContext, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {

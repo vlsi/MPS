@@ -44,7 +44,7 @@ public class MakeActionImpl {
     });
 
     final List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes));
-    MakeSession session = new MakeSession(context, null, cleanMake) {
+    MakeSession session = new MakeSession(project, null, cleanMake) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
         if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, models)) {

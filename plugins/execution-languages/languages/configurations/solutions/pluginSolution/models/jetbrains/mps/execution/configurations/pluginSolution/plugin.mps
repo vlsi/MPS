@@ -553,16 +553,11 @@
             </node>
             <node concept="2ShNRf" id="7nsdmC8vnpa" role="33vP2m">
               <node concept="1pGfFk" id="7nsdmC8vnpb" role="2ShVmc">
-                <ref role="37wK5l" to="hb0s:~MakeSession.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.messages.IMessageHandler,boolean)" resolve="MakeSession" />
-                <node concept="2ShNRf" id="1jvPZ1MMmVz" role="37wK5m">
-                  <node concept="1pGfFk" id="1jvPZ1MMmV$" role="2ShVmc">
-                    <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                    <node concept="2YIFZM" id="1jvPZ1MMmV_" role="37wK5m">
-                      <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                      <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                      <node concept="21ER0p" id="7Mz_zRJxRqC" role="37wK5m" />
-                    </node>
-                  </node>
+                <ref role="37wK5l" to="hb0s:~MakeSession.&lt;init&gt;(jetbrains.mps.project.Project,jetbrains.mps.messages.IMessageHandler,boolean)" resolve="MakeSession" />
+                <node concept="2YIFZM" id="1jvPZ1MMmV_" role="37wK5m">
+                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="21ER0p" id="7Mz_zRJxRqC" role="37wK5m" />
                 </node>
                 <node concept="10Nm6u" id="7nsdmC8vnpe" role="37wK5m" />
                 <node concept="3clFbT" id="7nsdmC8vnpf" role="37wK5m">
@@ -596,17 +591,7 @@
                     <node concept="2OqwBi" id="7nsdmC8vzqC" role="37wK5m">
                       <node concept="2ShNRf" id="7nsdmC8vzqD" role="2Oq$k0">
                         <node concept="1pGfFk" id="7nsdmC8vzqE" role="2ShVmc">
-                          <ref role="37wK5l" to="lzhn:~ModelsToResources.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.lang.Iterable)" resolve="ModelsToResources" />
-                          <node concept="2ShNRf" id="1jvPZ1MMmVC" role="37wK5m">
-                            <node concept="1pGfFk" id="1jvPZ1MMmVD" role="2ShVmc">
-                              <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                              <node concept="2YIFZM" id="1jvPZ1MMmVE" role="37wK5m">
-                                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                                <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                                <node concept="21ER0p" id="7Mz_zRJxRqP" role="37wK5m" />
-                              </node>
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="lzhn:~ModelsToResources.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsToResources" />
                           <node concept="37vLTw" id="7Mz_zRJxRqI" role="37wK5m">
                             <ref role="3cqZAo" node="7Mz_zRJxtbc" resolve="models" />
                           </node>

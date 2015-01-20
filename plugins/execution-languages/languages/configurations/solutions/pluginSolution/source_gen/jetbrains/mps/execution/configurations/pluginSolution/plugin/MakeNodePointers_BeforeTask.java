@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
@@ -64,9 +63,9 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
         return true;
       }
 
-      MakeSession session = new MakeSession(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), null, true);
+      MakeSession session = new MakeSession(ProjectHelper.toMPSProject(project), null, true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), models).resources(false));
+        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(models).resources(false));
         IResult result = null;
         try {
           result = future.get();
