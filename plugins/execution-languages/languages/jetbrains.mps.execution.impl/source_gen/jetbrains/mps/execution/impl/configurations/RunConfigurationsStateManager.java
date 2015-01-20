@@ -8,11 +8,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.PluginReloader;
 import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
-import jetbrains.mps.RuntimeFlags;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.ui.content.Content;
 import org.apache.log4j.Level;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.execution.ExecutionManager;
@@ -34,8 +34,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import com.intellij.execution.RunManagerAdapter;
-import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import org.apache.log4j.Logger;
@@ -53,17 +51,11 @@ public class RunConfigurationsStateManager extends PluginReloadingListenerBase i
 
   @Override
   public void afterPluginsLoaded(List<PluginContributor> contributors) {
-    if (RuntimeFlags.isTestMode()) {
-      return;
-    }
     initRunConfigurations();
   }
 
   @Override
   public void beforePluginsUnloaded(List<PluginContributor> contributors) {
-    if (RuntimeFlags.isTestMode()) {
-      return;
-    }
     disposeRunConfigurations();
   }
 
@@ -101,21 +93,22 @@ public class RunConfigurationsStateManager extends PluginReloadingListenerBase i
       @Override
       public void run() {
         {
-          Iterator<RunContentDescriptor> d_it = ListSequence.fromList(descriptors).iterator();
-          RunContentDescriptor d_var;
-          while (d_it.hasNext()) {
-            d_var = d_it.next();
-            if (d_var.getAttachedContent() == null) {
+          Iterator<RunContentDescriptor> descriptor_it = ListSequence.fromList(descriptors).iterator();
+          RunContentDescriptor descriptor_var;
+          while (descriptor_it.hasNext()) {
+            descriptor_var = descriptor_it.next();
+            Content attachedContent = descriptor_var.getAttachedContent();
+            if (attachedContent == null) {
               if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
+                LOG.warn("Attached content of descriptor " + descriptor_var.getDisplayName() + " is null.");
               }
             } else
-            if (d_var.getAttachedContent().getManager() == null) {
+            if (attachedContent.getManager() == null) {
               if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
+                LOG.warn("Manager of attached content of descriptor " + descriptor_var.getDisplayName() + " is null.");
               }
             } else {
-              d_var.getAttachedContent().getManager().removeAllContents(true);
+              attachedContent.getManager().removeAllContents(true);
             }
           }
         }
@@ -171,7 +164,7 @@ public class RunConfigurationsStateManager extends PluginReloadingListenerBase i
 
   @Override
   public void initComponent() {
-    myState = new RunConfigurationsStateManager.RunConfigurationsState(getRunManager());
+    myState = new RunConfigurationsStateManager.RunConfigurationsState();
     myState.saveState();
     myPluginReloader.addReloadingListener(this);
   }
@@ -205,23 +198,7 @@ public class RunConfigurationsStateManager extends PluginReloadingListenerBase i
     private Element myState;
     private Element mySharedState;
 
-    public RunConfigurationsState(RunManagerEx runManager) {
-      runManager.addRunManagerListener(new RunManagerAdapter() {
-        @Override
-        public void runConfigurationSelected() {
-          saveState();
-        }
-
-        @Override
-        public void beforeRunTasksChanged() {
-          saveState();
-        }
-
-        @Override
-        public void runConfigurationChanged(@NotNull RunnerAndConfigurationSettings p0) {
-          saveState();
-        }
-      });
+    public RunConfigurationsState() {
     }
 
     public void restoreState() {

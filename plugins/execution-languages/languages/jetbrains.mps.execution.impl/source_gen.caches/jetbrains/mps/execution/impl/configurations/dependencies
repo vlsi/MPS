@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.impl.configurations.DummyRunConfigurationsStateManager" file="DummyRunConfigurationsStateManager.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" file="RunConfigurationsStateManager.java">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
-    <classNode dependClassName="com.intellij.execution.RunManagerAdapter" />
     <classNode dependClassName="com.intellij.execution.RunManagerEx" />
-    <classNode dependClassName="com.intellij.execution.RunnerAndConfigurationSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.impl.ProjectRunConfigurationManager" />
@@ -17,6 +22,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="com.intellij.ui.content.Content" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -25,7 +31,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
