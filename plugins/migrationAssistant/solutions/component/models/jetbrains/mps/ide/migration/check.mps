@@ -27,6 +27,7 @@
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="tilo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.language(MPS.Core/jetbrains.mps.smodel.adapter.structure.language@java_stub)" />
     <import index="wqua" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
+    <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -181,6 +182,7 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -1183,8 +1185,48 @@
         <node concept="3clFbH" id="193i4_4ZMXS" role="3cqZAp" />
         <node concept="3clFbF" id="193i4_4ZIgN" role="3cqZAp">
           <node concept="2OqwBi" id="193i4_4ZIyb" role="3clFbG">
-            <node concept="37vLTw" id="193i4_4ZIgL" role="2Oq$k0">
-              <ref role="3cqZAo" node="193i4_4ZBT0" resolve="modules" />
+            <node concept="2OqwBi" id="5n1niCbyRC_" role="2Oq$k0">
+              <node concept="37vLTw" id="193i4_4ZIgL" role="2Oq$k0">
+                <ref role="3cqZAo" node="193i4_4ZBT0" resolve="modules" />
+              </node>
+              <node concept="3zZkjj" id="5n1niCbySM9" role="2OqNvi">
+                <node concept="1bVj0M" id="5n1niCbySMb" role="23t8la">
+                  <node concept="3clFbS" id="5n1niCbySMc" role="1bW5cS">
+                    <node concept="3clFbF" id="5n1niCbyVkx" role="3cqZAp">
+                      <node concept="1Wc70l" id="5n1niCbyWLV" role="3clFbG">
+                        <node concept="1eOMI4" id="5n1niCbyX8r" role="3uHU7B">
+                          <node concept="2ZW3vV" id="5n1niCbyXNK" role="1eOMHV">
+                            <node concept="3uibUv" id="5n1niCbyY8w" role="2ZW6by">
+                              <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
+                            </node>
+                            <node concept="37vLTw" id="5n1niCbyXtL" role="2ZW6bz">
+                              <ref role="3cqZAo" node="5n1niCbySMd" resolve="it" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2YIFZM" id="5n1niCbyVCa" role="3uHU7w">
+                          <ref role="37wK5l" to="wqua:~ModuleClassLoaderSupport.canCreate(jetbrains.mps.module.ReloadableModule):boolean" resolve="canCreate" />
+                          <ref role="1Pybhc" to="wqua:~ModuleClassLoaderSupport" resolve="ModuleClassLoaderSupport" />
+                          <node concept="1eOMI4" id="5n1niCbyYtC" role="37wK5m">
+                            <node concept="10QFUN" id="5n1niCbyYtD" role="1eOMHV">
+                              <node concept="37vLTw" id="5n1niCbyYtB" role="10QFUP">
+                                <ref role="3cqZAo" node="5n1niCbySMd" resolve="it" />
+                              </node>
+                              <node concept="3uibUv" id="5n1niCbyYtA" role="10QFUM">
+                                <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="5n1niCbySMd" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="5n1niCbySMe" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="2es0OD" id="193i4_4ZLkH" role="2OqNvi">
               <node concept="1bVj0M" id="193i4_4ZLkJ" role="23t8la">

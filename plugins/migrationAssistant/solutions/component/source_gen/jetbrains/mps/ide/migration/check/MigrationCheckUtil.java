@@ -27,10 +27,12 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
@@ -144,7 +146,11 @@ public class MigrationCheckUtil {
   private static Collection<DependencyProblem> findBadModules(Iterable<SModule> modules, int maxErrors) {
     final Map<SModuleReference, SModule> badModule2Dependant = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
 
-    Sequence.fromIterable(modules).visitAll(new IVisitor<SModule>() {
+    Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return (it instanceof ReloadableModule) && ModuleClassLoaderSupport.canCreate(((ReloadableModule) it));
+      }
+    }).visitAll(new IVisitor<SModule>() {
       public void visit(final SModule module) {
         Iterable<Dependency> deps = ((AbstractModule) module).getUnresolvedDependencies();
         Sequence.fromIterable(deps).where(new IWhereFilter<Dependency>() {

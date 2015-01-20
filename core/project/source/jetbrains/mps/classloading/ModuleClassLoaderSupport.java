@@ -52,7 +52,7 @@ public class ModuleClassLoaderSupport {
    * TODO: must be just MPS_FACET
    * ext point possible here
    */
-  static boolean canCreate(ReloadableModule module1) {
+  public static boolean canCreate(ReloadableModule module1) {
     ReloadableModuleBase module = (ReloadableModuleBase) module1;
     assert module != null;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
