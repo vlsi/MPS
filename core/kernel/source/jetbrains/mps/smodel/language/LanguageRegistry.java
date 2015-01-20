@@ -131,8 +131,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       final Class<?> rtClass = l.getOwnClass(rtClassName);
       if (rtClass == null) {
         return new InterpretedLanguageRuntime(l);
-      }
-      if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
+      } else if (LanguageRuntime.class.isAssignableFrom(rtClass)) {
         return ((Class<LanguageRuntime>) rtClass).newInstance();
       }
     } catch (ClassNotFoundException ex) {
@@ -220,43 +219,31 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   @Override
   public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
-    unloadInterpreted(loadedModules);
     for (Language language : collectLanguagesToLoad(loadedModules)) {
       SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
-      assert !myLanguagesById.containsKey(languageId);
+      if (myLanguagesById.containsKey(languageId)) {
+        LOG.error("", new IllegalArgumentException("There is already a language " + myLanguagesById.get(languageId) + " with id " + languageId));
+        continue;
+      }
       try {
-        LanguageRuntime runtime = createRuntime(language);
-        if (runtime == null) continue;
-        if (runtime.getId() == null) runtime.setId(MetaIdByDeclaration.getLanguageId(language));
+        LanguageRuntime langRuntime = createRuntime(language);
+        if (langRuntime == null) continue;
+        if (langRuntime.getId() == null) langRuntime.setId(languageId);
 
-        assert languageId.equals(runtime.getId());
-        String namespace = runtime.getNamespace();
-        assert !myLanguages.containsKey(namespace);
-        myLanguages.put(namespace, runtime);
-        myLanguagesById.put(languageId, runtime);
-        loadedRuntimes.add(runtime);
+        String langName = langRuntime.getNamespace();
+        if (myLanguages.containsKey(langName)) {
+          LOG.error("", new IllegalArgumentException("There is already a language " + myLanguages.get(langName) + " with a name " + langName));
+          continue;
+        }
+        myLanguages.put(langName, langRuntime);
+        myLanguagesById.put(languageId, langRuntime);
+        loadedRuntimes.add(langRuntime);
       } catch (LinkageError le) {
         processLinkageErrorForLanguage(language, le);
       }
     }
     reinitialize();
     notifyLoad(loadedRuntimes);
-  }
-
-  private void unloadInterpreted(Set<? extends ReloadableModuleBase> loadedModules) {
-    Collection<LanguageRuntime> languagesToUnload = new ArrayList<LanguageRuntime>();
-    for (SModule module : loadedModules) {
-      if (module instanceof Language) {
-        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
-        if (myInterpretedLanguages.contains(languageId)) languagesToUnload.add(myLanguagesById.get(languageId));
-      }
-    }
-    notifyUnload(languagesToUnload);
-
-    for (LanguageRuntime languageRuntime : languagesToUnload) {
-      myLanguages.remove(languageRuntime.getNamespace());
-      myLanguagesById.remove(languageRuntime.getId());
-    }
   }
 
   private Iterable<SLanguageId> collectLanguagesToUnload(Set<? extends SModule> unloadedModules) {
@@ -279,15 +266,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       }
     }
 
-//    for (SModule module : myRepository.getModules()) {
-//      if (module instanceof Language && !loadedModules.contains(module)) {
-//        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
-//        if (!myLanguagesById.containsKey(languageId)) {
-//          languagesToLoad.add((Language) module);
-//          myInterpretedLanguages.add(languageId);
-//        }
-//      }
-//    }
     return languagesToLoad;
   }
 
