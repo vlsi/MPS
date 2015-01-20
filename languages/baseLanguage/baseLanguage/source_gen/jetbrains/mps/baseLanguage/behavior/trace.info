@@ -339,7 +339,7 @@
       <unit at="8,0,12,0" name="jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor" />
     </file>
     <file name="HexIntegerLiteral_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_BehaviorDescriptor" />
     </file>
     <file name="IAnonymousClass_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" />
@@ -480,10 +480,10 @@
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.behavior.InstanceOfExpression_BehaviorDescriptor" />
     </file>
     <file name="IntegerConstant_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.baseLanguage.behavior.IntegerConstant_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.behavior.IntegerConstant_BehaviorDescriptor" />
     </file>
     <file name="IntegerLiteral_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" />
     </file>
     <file name="IntegerType_BehaviorDescriptor.java">
       <unit at="7,0,24,0" name="jetbrains.mps.baseLanguage.behavior.IntegerType_BehaviorDescriptor" />
@@ -10673,34 +10673,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1238860889064">
     <file name="IntegerConstant_Behavior.java">
       <node id="1238860905407" at="13,106,14,165" concept="13" />
-      <node id="7584461597468817299" at="17,106,18,19" concept="13" />
-      <node id="7584461597466461618" at="19,5,20,0" concept="15" />
-      <node id="4338540387729175993" at="20,0,21,170" concept="12" />
-      <node id="6460384142095787333" at="22,61,23,18" concept="13" />
-      <node id="6460384142095787632" at="24,12,25,19" concept="13" />
-      <node id="6460384142095790464" at="29,106,30,19" concept="13" />
-      <node id="6460384142095790470" at="31,5,32,0" concept="15" />
-      <node id="6460384142095790471" at="32,0,33,170" concept="12" />
-      <node id="6460384142095790479" at="34,63,35,18" concept="13" />
-      <node id="6460384142095790506" at="36,12,37,19" concept="13" />
       <node id="1238860889064" at="11,0,13,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4338540387729176032" at="24,10,26,5" concept="1" />
-      <node id="6460384142095790504" at="36,10,38,5" concept="1" />
       <node id="1238860889064" at="13,0,16,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
-      <node id="7584461597466459301" at="16,86,19,5" concept="10" />
-      <node id="6460384142095790462" at="28,87,31,5" concept="10" />
-      <node id="4338540387729176000" at="21,170,26,5" concept="10" />
-      <node id="6460384142095790477" at="33,170,38,5" concept="10" />
-      <node id="1238860889064" at="16,0,28,0" concept="17" trace="virtual_isByteAssignable_6460384142095735181#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1238860889064" at="28,0,40,0" concept="17" trace="virtual_isShortAssignable_6460384142095788691#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1238860889066" at="11,43,11,43" />
       <scope id="1238860891027" at="13,106,14,165" />
-      <scope id="7584461597466459304" at="17,106,18,19" />
-      <scope id="4338540387729176001" at="22,61,23,18" />
-      <scope id="4338540387729176033" at="24,12,25,19" />
-      <scope id="6460384142095790463" at="29,106,30,19" />
-      <scope id="6460384142095790478" at="34,63,35,18" />
-      <scope id="6460384142095790505" at="36,12,37,19" />
       <scope id="1238860889064" at="11,0,13,0">
         <var name="thisNode" id="1238860889064" />
       </scope>
@@ -10708,19 +10684,7 @@
         <var name="module" id="1238861695814" />
         <var name="thisNode" id="1238860889064" />
       </scope>
-      <scope id="6460384142095776688" at="16,86,26,5">
-        <var name="value" id="4338540387729175994" />
-      </scope>
-      <scope id="6460384142095790461" at="28,87,38,5">
-        <var name="value" id="6460384142095790472" />
-      </scope>
-      <scope id="1238860889064" at="16,0,28,0">
-        <var name="thisNode" id="1238860889064" />
-      </scope>
-      <scope id="1238860889064" at="28,0,40,0">
-        <var name="thisNode" id="1238860889064" />
-      </scope>
-      <unit id="1238860889064" at="10,0,41,0" name="jetbrains.mps.baseLanguage.behavior.IntegerConstant_Behavior" />
+      <unit id="1238860889064" at="10,0,17,0" name="jetbrains.mps.baseLanguage.behavior.IntegerConstant_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1238860923432">
@@ -11455,115 +11419,42 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1381470748182162364">
     <file name="IntegerLiteral_Behavior.java">
-      <node id="1381470748182320916" at="13,92,14,16" concept="13" />
-      <node id="6460384142095774699" at="16,86,17,17" concept="13" />
-      <node id="6460384142095788695" at="19,87,20,17" concept="13" />
-      <node id="4338540387739168356" at="22,100,23,1589" concept="13" />
-      <node id="1381470748182162364" at="11,0,13,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1381470748182162364" at="13,0,16,0" concept="17" trace="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1381470748182162364" at="16,0,19,0" concept="17" trace="virtual_isByteAssignable_6460384142095735181#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1381470748182162364" at="19,0,22,0" concept="17" trace="virtual_isShortAssignable_6460384142095788691#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1381470748182162364" at="22,0,25,0" concept="17" trace="call_isPossitionThatAllowsByteAndShort_4338540387739143309#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1381470748182162754" at="11,43,11,43" />
-      <scope id="1381470748182320911" at="13,92,14,16" />
-      <scope id="6460384142095735184" at="16,86,17,17" />
-      <scope id="6460384142095788694" at="19,87,20,17" />
-      <scope id="4338540387739143312" at="22,100,23,1589" />
-      <scope id="1381470748182162364" at="11,0,13,0">
+      <node id="1381470748182320916" at="11,92,12,16" concept="13" />
+      <node id="1381470748182162364" at="9,0,11,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1381470748182162364" at="11,0,14,0" concept="17" trace="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="1381470748182162754" at="9,43,9,43" />
+      <scope id="1381470748182320911" at="11,92,12,16" />
+      <scope id="1381470748182162364" at="9,0,11,0">
         <var name="thisNode" id="1381470748182162364" />
       </scope>
-      <scope id="1381470748182162364" at="13,0,16,0">
+      <scope id="1381470748182162364" at="11,0,14,0">
         <var name="thisConcept" id="1381470748182162364" />
       </scope>
-      <scope id="1381470748182162364" at="16,0,19,0">
-        <var name="thisNode" id="1381470748182162364" />
-      </scope>
-      <scope id="1381470748182162364" at="19,0,22,0">
-        <var name="thisNode" id="1381470748182162364" />
-      </scope>
-      <scope id="1381470748182162364" at="22,0,25,0">
-        <var name="thisNode" id="1381470748182162364" />
-      </scope>
-      <unit id="1381470748182162364" at="10,0,26,0" name="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_Behavior" />
+      <unit id="1381470748182162364" at="8,0,15,0" name="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1381470748182374883">
     <file name="HexIntegerLiteral_Behavior.java">
-      <node id="1381470748182375039" at="13,106,14,166" concept="13" />
-      <node id="6460384142095820700" at="17,106,18,19" concept="13" />
-      <node id="4338540387729288220" at="20,180,21,19" concept="13" />
-      <node id="6460384142095820706" at="22,5,23,0" concept="15" />
-      <node id="4338540387729240306" at="24,9,25,195" concept="12" />
-      <node id="6460384142095820715" at="26,63,27,20" concept="13" />
-      <node id="6460384142095820726" at="28,14,29,21" concept="13" />
-      <node id="4338540387729294638" at="31,41,32,19" concept="13" />
-      <node id="6460384142095820734" at="36,106,37,19" concept="13" />
-      <node id="6460384142095862242" at="39,180,40,19" concept="13" />
-      <node id="6460384142095862249" at="41,5,42,0" concept="15" />
-      <node id="6460384142095862252" at="43,9,44,195" concept="12" />
-      <node id="6460384142095862262" at="45,65,46,20" concept="13" />
-      <node id="6460384142095862273" at="47,14,48,21" concept="13" />
-      <node id="6460384142095862277" at="50,41,51,19" concept="13" />
-      <node id="4338540387729287345" at="54,52,55,44" concept="13" />
+      <node id="6473069772995530938" at="14,9,15,190" concept="13" />
+      <node id="6473069772995432087" at="16,41,17,15" concept="13" />
       <node id="1381470748182374883" at="11,0,13,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6460384142095820724" at="28,12,30,7" concept="1" />
-      <node id="6460384142095862271" at="47,12,49,7" concept="1" />
-      <node id="1381470748182374883" at="13,0,16,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
-      <node id="6460384142095820698" at="16,86,19,5" concept="10" />
-      <node id="4338540387729274627" at="19,5,22,5" concept="10" />
-      <node id="6460384142095820732" at="35,87,38,5" concept="10" />
-      <node id="6460384142095862240" at="38,5,41,5" concept="10" />
-      <node id="4338540387729287345" at="54,0,57,0" concept="17" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="6460384142095820713" at="25,195,30,7" concept="10" />
-      <node id="6460384142095862260" at="44,195,49,7" concept="10" />
-      <node id="4338540387729288502" at="23,0,33,5" concept="19" />
-      <node id="6460384142095862250" at="42,0,52,5" concept="19" />
-      <node id="1381470748182374883" at="16,0,35,0" concept="17" trace="virtual_isByteAssignable_6460384142095735181#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1381470748182374883" at="35,0,54,0" concept="17" trace="virtual_isShortAssignable_6460384142095788691#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6473069772995432060" at="13,106,18,5" concept="19" />
+      <node id="1381470748182374883" at="13,0,20,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
       <scope id="1381470748182374885" at="11,43,11,43" />
-      <scope id="1381470748182374896" at="13,106,14,166" />
-      <scope id="6460384142095820699" at="17,106,18,19" />
-      <scope id="4338540387729274630" at="20,180,21,19" />
-      <scope id="6460384142095820714" at="26,63,27,20" />
-      <scope id="6460384142095820725" at="28,14,29,21" />
-      <scope id="4338540387729288505" at="31,0,32,19">
-        <var name="num" id="4338540387729288509" />
+      <scope id="6473069772995432061" at="14,9,15,190" />
+      <scope id="6473069772995432085" at="16,0,17,15">
+        <var name="num" id="6473069772995432089" />
       </scope>
-      <scope id="4338540387729288507" at="31,41,32,19" />
-      <scope id="6460384142095820733" at="36,106,37,19" />
-      <scope id="6460384142095862241" at="39,180,40,19" />
-      <scope id="6460384142095862261" at="45,65,46,20" />
-      <scope id="6460384142095862272" at="47,14,48,21" />
-      <scope id="6460384142095862275" at="50,0,51,19">
-        <var name="num" id="6460384142095862279" />
-      </scope>
-      <scope id="6460384142095862276" at="50,41,51,19" />
-      <scope id="4338540387729287345" at="54,52,55,44" />
+      <scope id="6473069772995432086" at="16,41,17,15" />
       <scope id="1381470748182374883" at="11,0,13,0">
         <var name="thisNode" id="1381470748182374883" />
       </scope>
-      <scope id="1381470748182374883" at="13,0,16,0">
+      <scope id="1381470748182374896" at="13,106,18,5" />
+      <scope id="1381470748182374883" at="13,0,20,0">
         <var name="module" id="1381470748182374897" />
         <var name="thisNode" id="1381470748182374883" />
       </scope>
-      <scope id="4338540387729287345" at="54,0,57,0">
-        <var name="str" id="4338540387729287345" />
-      </scope>
-      <scope id="4338540387729288504" at="24,9,30,7">
-        <var name="value" id="4338540387729240307" />
-      </scope>
-      <scope id="6460384142095862251" at="43,9,49,7">
-        <var name="value" id="6460384142095862253" />
-      </scope>
-      <scope id="6460384142095820697" at="16,86,33,5" />
-      <scope id="6460384142095820731" at="35,87,52,5" />
-      <scope id="1381470748182374883" at="16,0,35,0">
-        <var name="thisNode" id="1381470748182374883" />
-      </scope>
-      <scope id="1381470748182374883" at="35,0,54,0">
-        <var name="thisNode" id="1381470748182374883" />
-      </scope>
-      <unit id="1381470748182374883" at="10,0,58,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" />
+      <unit id="1381470748182374883" at="10,0,21,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1457547649399766338">

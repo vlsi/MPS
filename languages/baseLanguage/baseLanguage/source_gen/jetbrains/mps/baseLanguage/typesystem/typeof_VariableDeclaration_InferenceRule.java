@@ -28,7 +28,7 @@ public class typeof_VariableDeclaration_InferenceRule extends AbstractInferenceR
         // needed for MPS-20925 
         return;
       } else {
-        if (!((CheckingUtil.isValidByteOrShortAssignment(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), initializer)))) {
+        if (!((CheckingUtil.isValidByteOrShortExpression(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), initializer)))) {
           {
             SNode _nodeToCheck_1029348928467 = variableDeclaration;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820442", 0, null);

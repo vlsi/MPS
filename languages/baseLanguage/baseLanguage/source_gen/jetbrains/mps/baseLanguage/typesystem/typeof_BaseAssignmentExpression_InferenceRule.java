@@ -24,7 +24,7 @@ public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInfer
       final SNode lType = typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6460384142106933485", true);
       typeCheckingContext.whenConcrete(lType, new Runnable() {
         public void run() {
-          if (!((CheckingUtil.isValidByteOrShortAssignment(typeCheckingContext.getExpandedNode(lType), rval)))) {
+          if (!((CheckingUtil.isValidByteOrShortExpression(typeCheckingContext.getExpandedNode(lType), rval)))) {
             if (!(typeCheckingContext.isSingleTypeComputation())) {
               {
                 SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;

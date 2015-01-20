@@ -12,12 +12,6 @@ public class IntegerConstant_BehaviorDescriptor extends IntegerLiteral_BehaviorD
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return IntegerConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
-  public boolean virtual_isByteAssignable_6460384142095735181(SNode thisNode) {
-    return IntegerConstant_Behavior.virtual_isByteAssignable_6460384142095735181(thisNode);
-  }
-  public boolean virtual_isShortAssignable_6460384142095788691(SNode thisNode) {
-    return IntegerConstant_Behavior.virtual_isShortAssignable_6460384142095788691(thisNode);
-  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IntegerConstant";

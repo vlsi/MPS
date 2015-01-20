@@ -66,7 +66,16 @@ public class CheckingUtil {
     });
   }
 
-  public static boolean isValidByteOrShortAssignment(SNode expectedType, SNode expr) {
-    return (SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType")) && SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")), "virtual_isByteAssignable_6460384142095735181", new Object[]{})) || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType")) && SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")), "virtual_isShortAssignable_6460384142095788691", new Object[]{});
+  public static boolean isValidByteOrShortExpression(SNode expectedType, SNode expr) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
+      return false;
+    }
+    Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{expr.getModel().getModule()});
+    if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
+      return false;
+    }
+
+    int value = ((Integer) compileTimeConstantValue).intValue();
+    return (SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType")) && value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType")) && value >= Short.MIN_VALUE && value <= Short.MAX_VALUE;
   }
 }

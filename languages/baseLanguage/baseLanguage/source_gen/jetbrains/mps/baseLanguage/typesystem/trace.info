@@ -23785,7 +23785,12 @@
       <node id="576141512674002885" at="59,220,60,51" concept="12" />
       <node id="576141512674002891" at="60,51,61,406" concept="6" />
       <node id="576141512674002947" at="63,39,64,187" concept="13" />
-      <node id="6460384142117064962" at="69,86,70,1314" concept="13" />
+      <node id="6473069772995824618" at="70,129,71,19" concept="13" />
+      <node id="6473069772995790168" at="72,5,73,187" concept="12" />
+      <node id="6473069772995865165" at="74,93,75,19" concept="13" />
+      <node id="6473069772995904361" at="76,5,77,0" concept="15" />
+      <node id="6473069772995906608" at="77,0,78,64" concept="12" />
+      <node id="6473069772995952876" at="78,64,79,487" concept="13" />
       <node id="7970711249077251766" at="20,0,22,0" concept="3" trace="CheckingUtil#()V" />
       <node id="5749030987683755344" at="22,48,25,5" concept="10" />
       <node id="7970711249077251776" at="26,229,29,5" concept="10" />
@@ -23794,10 +23799,12 @@
       <node id="4705425356438182975" at="41,0,44,0" concept="17" trace="isAssignedIllegaly#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="576141512674002871" at="55,179,58,5" concept="10" />
       <node id="576141512674002945" at="63,0,66,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6460384142117028870" at="69,0,72,0" concept="17" trace="isValidByteOrShortAssignment#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6473069772995820552" at="69,86,72,5" concept="10" />
+      <node id="6473069772995861776" at="73,187,76,5" concept="10" />
       <node id="775398157027968656" at="45,73,50,5" concept="10" />
       <node id="576141512674002940" at="61,406,66,7" concept="13" />
       <node id="775398157027906468" at="45,0,53,0" concept="17" trace="refersToDeclarationWithInitializer#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6460384142117028870" at="69,0,81,0" concept="17" trace="isValidByteOrShortExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="576141512674002858" at="54,0,68,0" concept="17" trace="isFieldDuplicated#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="7970711249077251770" at="22,0,40,0" concept="17" trace="isAssigned#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="7970711249077251769" at="20,25,20,25" />
@@ -23810,7 +23817,8 @@
       <scope id="775398157029072049" at="48,205,49,514" />
       <scope id="576141512674002872" at="56,47,57,19" />
       <scope id="576141512674002946" at="63,39,64,187" />
-      <scope id="6460384142117028873" at="69,86,70,1314" />
+      <scope id="6473069772995820555" at="70,129,71,19" />
+      <scope id="6473069772995861779" at="74,93,75,19" />
       <scope id="7970711249077251766" at="20,0,22,0" />
       <scope id="4705425356438182975" at="41,0,44,0">
         <var name="node" id="4705425356438182998" />
@@ -23818,18 +23826,22 @@
       <scope id="576141512674002945" at="63,0,66,0">
         <var name="it" id="576141512674002945" />
       </scope>
-      <scope id="6460384142117028870" at="69,0,72,0">
-        <var name="expectedType" id="6460384142117029476" />
-        <var name="expr" id="6460384142117029534" />
-      </scope>
       <scope id="775398157027906471" at="45,73,51,17" />
       <scope id="775398157027906468" at="45,0,53,0">
         <var name="node" id="775398157027919649" />
+      </scope>
+      <scope id="6460384142117028873" at="69,86,79,487">
+        <var name="compileTimeConstantValue" id="6473069772995790169" />
+        <var name="value" id="6473069772995906611" />
       </scope>
       <scope id="576141512674002861" at="54,66,66,7">
         <var name="allFields" id="576141512674002886" />
         <var name="classifier" id="576141512674002878" />
         <var name="name" id="576141512674002866" />
+      </scope>
+      <scope id="6460384142117028870" at="69,0,81,0">
+        <var name="expectedType" id="6460384142117029476" />
+        <var name="expr" id="6460384142117029534" />
       </scope>
       <scope id="576141512674002858" at="54,0,68,0">
         <var name="fieldDecl" id="576141512674002863" />
@@ -23843,7 +23855,7 @@
         <var name="node" id="7970711249077251774" />
       </scope>
       <unit id="576141512674002945" at="62,52,66,5" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil$1" />
-      <unit id="7970711249077251764" at="19,0,73,0" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil" />
+      <unit id="7970711249077251764" at="19,0,82,0" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/818296778583662710">
