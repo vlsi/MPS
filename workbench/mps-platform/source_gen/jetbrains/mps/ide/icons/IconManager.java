@@ -13,7 +13,7 @@ import java.awt.Component;
 import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -80,10 +80,10 @@ public final class IconManager {
   }
   public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
     Icon mainIcon = null;
-    if (SNodeOperations.isUnknown(node)) {
+    if (!(node.getConcept().isValid())) {
       return IdeIcons.UNKNOWN_ICON;
     }
-    SNode concept = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node);
+    SNode concept = SNodeOperations.getConceptDeclaration(node);
     if ((concept != null)) {
       Icon alternativeIcon = null;
       try {
@@ -100,14 +100,14 @@ public final class IconManager {
       }
     }
     if (mainIcon == null) {
-      if (SNodeOperations.isRoot(node)) {
+      if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
         return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
         return IdeIcons.DEFAULT_NODE_ICON;
       }
     }
-    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
-    if (model == null || SNodeOperations.isModelDisposed(model)) {
+    SModel model = SNodeOperations.getModel(node);
+    if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
       return mainIcon;
     }
     if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && model.isReadOnly()) {
@@ -167,11 +167,11 @@ public final class IconManager {
     SNode cd = null;
     Icon icon = null;
     if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
-      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      cd = SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       icon = getIconForConcept(cd);
     }
     if (icon == null) {
-      if (cd != null && SNodeOperations.isRoot(cd)) {
+      if (cd != null && jetbrains.mps.util.SNodeOperations.isRoot(cd)) {
         return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
         return IdeIcons.DEFAULT_NODE_ICON;

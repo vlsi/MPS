@@ -50,7 +50,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
-      if (!jetbrains.mps.util.SNodeOperations.isUnknown(getSNode())) {
+      if (getSNode().getConcept().isValid()) {
         LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
       }
       myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
