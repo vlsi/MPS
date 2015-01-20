@@ -22,6 +22,8 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="139.1"/>
 
+  <depends>jetbrains.mps.ide.modelchecker</depends>
+
   <actions>
     <action id="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" class="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action"></action>
     <group id="jetbrains.mps.migration.component.plugin.MigationAssistantActions_ActionGroup">

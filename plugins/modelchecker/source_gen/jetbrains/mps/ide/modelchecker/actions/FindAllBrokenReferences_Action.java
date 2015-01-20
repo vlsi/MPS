@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.ide.modelchecker.platform.actions.UnresolvedReferencesChecker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -68,7 +67,7 @@ public class FindAllBrokenReferences_Action extends BaseAction {
           return SModelStereotype.isUserModel(md);
         }
       }));
-      ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModels(models, null, true, new ModelCheckerIssueFinder(new UnresolvedReferencesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")))));
+      ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModelsAndShowResult(models, new UnresolvedReferencesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindAllBrokenReferences", t);

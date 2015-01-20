@@ -742,7 +742,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.migrationAssistant" depends="fetchDependencies">
+  <target name="java.compile.migrationAssistant" depends="java.compile.modelchecker, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
     <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -762,6 +762,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
+        <pathelement path="${build.tmp}/java/out/modelchecker" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

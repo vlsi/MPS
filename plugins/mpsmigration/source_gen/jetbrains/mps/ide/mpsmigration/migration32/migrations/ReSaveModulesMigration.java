@@ -23,7 +23,9 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();
     for (AbstractModule module : Sequence.fromIterable(modules).ofType(AbstractModule.class)) {
-      ((AbstractModule) module).setChanged();
+      if (!(module.getModuleDescriptor().hasLanguageVersions())) {
+        module.setChanged();
+      }
     }
     MPSModuleRepository.getInstance().saveAll();
     return true;

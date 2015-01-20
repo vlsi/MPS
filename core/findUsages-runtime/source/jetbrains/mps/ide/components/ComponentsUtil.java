@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.components;
 
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,8 +26,12 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
+ * @deprecated SNodeReference provides mechanism to persist reference to nodes. ComponentsUtil is stupid name, anyway.
+ * The only usage, NodeNodeData, shall be refactored to use SNodeReference.toString and PersistenceFacade
  * @author Kostik
  */
+@Deprecated
+@ToRemove(version = 3.2)
 public class ComponentsUtil {
   public static final String NODE = "node";
   public static final String MODEL = "model";

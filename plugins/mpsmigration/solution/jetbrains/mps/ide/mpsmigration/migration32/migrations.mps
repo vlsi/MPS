@@ -34,6 +34,7 @@
     <import index="wqua" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <import index="fw3h" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
     <import index="ff4b" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
+    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -925,6 +926,9 @@
     </node>
     <node concept="3uibUv" id="7ScOZyr23pq" role="EKbjA">
       <ref role="3uigEE" to="bco1:~ProjectMigrationWithOptions" resolve="ProjectMigrationWithOptions" />
+    </node>
+    <node concept="3uibUv" id="2pwkv5png5D" role="EKbjA">
+      <ref role="3uigEE" to="bco1:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
     </node>
   </node>
   <node concept="312cEu" id="25gV4Ls$R9T">
@@ -1989,20 +1993,32 @@
             <property role="TrG5h" value="module" />
           </node>
           <node concept="3clFbS" id="513ZrA4uNlX" role="2LFqv$">
-            <node concept="3clFbF" id="513ZrA4uOeW" role="3cqZAp">
-              <node concept="2OqwBi" id="513ZrA4uOyi" role="3clFbG">
-                <node concept="1eOMI4" id="513ZrA4uPqW" role="2Oq$k0">
-                  <node concept="10QFUN" id="513ZrA4uPqX" role="1eOMHV">
-                    <node concept="2GrUjf" id="513ZrA4uPqV" role="10QFUP">
+            <node concept="3clFbJ" id="uUg8lPrh0S" role="3cqZAp">
+              <node concept="3clFbS" id="uUg8lPrh0V" role="3clFbx">
+                <node concept="3clFbF" id="513ZrA4uOeW" role="3cqZAp">
+                  <node concept="2OqwBi" id="513ZrA4uOyi" role="3clFbG">
+                    <node concept="2GrUjf" id="513ZrA4uPqV" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="513ZrA4uNlV" resolve="module" />
                     </node>
-                    <node concept="3uibUv" id="513ZrA4uPvs" role="10QFUM">
-                      <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                    <node concept="liA8E" id="513ZrA4uPGs" role="2OqNvi">
+                      <ref role="37wK5l" to="vsqj:~AbstractModule.setChanged():void" resolve="setChanged" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="513ZrA4uPGs" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.setChanged():void" resolve="setChanged" />
+              </node>
+              <node concept="3fqX7Q" id="uUg8lPrkku" role="3clFbw">
+                <node concept="2OqwBi" id="uUg8lPrkkw" role="3fr31v">
+                  <node concept="2OqwBi" id="uUg8lPrkkx" role="2Oq$k0">
+                    <node concept="2GrUjf" id="uUg8lPrkky" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="513ZrA4uNlV" resolve="module" />
+                    </node>
+                    <node concept="liA8E" id="uUg8lPrkkz" role="2OqNvi">
+                      <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="uUg8lPrkk$" role="2OqNvi">
+                    <ref role="37wK5l" to="kqhl:~ModuleDescriptor.hasLanguageVersions():boolean" resolve="hasLanguageVersions" />
+                  </node>
                 </node>
               </node>
             </node>

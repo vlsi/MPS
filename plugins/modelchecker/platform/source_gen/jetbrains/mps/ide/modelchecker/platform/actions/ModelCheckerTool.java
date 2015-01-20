@@ -7,18 +7,21 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import javax.swing.JOptionPane;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.icons.IdeIcons;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.icons.IconManager;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.Messages;
@@ -32,58 +35,52 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     super(project, "Model Checker", -1, ICON, ToolWindowAnchor.BOTTOM, true);
     myProject = project;
   }
-
-  private ModelCheckerViewer performCheckingTask(_FunctionTypes._void_P1_E0<? super ModelCheckerViewer> task, boolean showTab) {
-    ModelCheckerViewer newViewer = this.createViewer();
-    task.invoke(newViewer);
-    if (showTab) {
-      if (newViewer.getSearchResults().getSearchResults().isEmpty() && !(ModelCheckerSettings.getInstance().getMigrationMode())) {
-        JOptionPane.showMessageDialog(this.getComponent(), "There were no problems detected during Model Checker execution", "Model Checker results", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        this.showTabWithResults(newViewer);
-      }
-    }
+  public ModelCheckerViewer checkModels(List<SModel> models) {
+    ModelCheckerViewer newViewer = createViewerForTab();
+    newViewer.checkModels(models, "models");
     return newViewer;
   }
-  private ModelCheckerViewer performCheckingTaskForModels(final List<SModel> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, boolean showTab) {
-    return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
-      public void invoke(ModelCheckerViewer newViewer) {
-        newViewer.prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon);
-      }
-    }, showTab);
-  }
-  private ModelCheckerViewer performCheckingTaskForModules(final List<SModule> modules, final String taskTargetTitle, final Icon taskIcon, boolean showTab) {
-    return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
-      public void invoke(ModelCheckerViewer newViewer) {
-        newViewer.prepareAndCheckModules(modules, taskTargetTitle, taskIcon);
-      }
-    }, showTab);
-  }
-  public ModelCheckerViewer checkModel(SModel model, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModels(ListSequence.fromListAndArray(new ArrayList<SModel>(), model), model.getModelName(), IconManager.getIconFor(model), showTab);
-  }
-  public ModelCheckerViewer checkModels(List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), IdeIcons.MODEL_ICON, showTab);
-  }
-  public ModelCheckerViewer checkModels(final List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab, final ModelCheckerIssueFinder finder) {
-    return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
-      public void invoke(ModelCheckerViewer newViewer) {
-        newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", IdeIcons.MODEL_ICON, finder);
-      }
-    }, showTab);
-  }
-  public ModelCheckerViewer checkModule(SModule module, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), module.getModuleName(), IconManager.getIconFor(module), showTab);
-  }
-  public ModelCheckerViewer checkModules(List<SModule> modules, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), IdeIcons.MODULE_GROUP_CLOSED, showTab);
-  }
-  public ModelCheckerViewer checkProject(boolean showTab) {
+  public void checkModelsAndShowResult(List<SModel> models, SpecificChecker... checkers) {
+    ModelCheckerViewer newViewer = createViewerForTab();
+    ModelCheckerIssueFinder finder;
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-    return this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, showTab);
+    if (checkers == null || checkers.length == 0) {
+      finder = new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(mpsProject));
+    } else {
+      finder = new ModelCheckerIssueFinder(checkers);
+    }
+    String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getModelName() : String.format("%d models", ListSequence.fromList(models).count()));
+    newViewer.runCheck(FindUtils.makeProvider(finder), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
+      public SModelReference select(SModel it) {
+        return it.getReference();
+      }
+    }).toListSequence()), GlobalScope.getInstance()), title);
+    revealResults(newViewer, title, IdeIcons.MODEL_ICON);
   }
-  public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModel> modelDescriptors) {
-    ModelCheckerViewer viewer = this.checkModels(modelDescriptors, operationContext, false);
+  public void checkModulesAndShowResult(List<SModule> modules) {
+    ModelCheckerViewer newViewer = createViewerForTab();
+    String title = (ListSequence.fromList(modules).count() == 1 ? ListSequence.fromList(modules).first().getModuleName() : "modules");
+    newViewer.checkModules(modules, title);
+    Icon icon = (ListSequence.fromList(modules).count() == 1 ? IconManager.getIconFor(ListSequence.fromList(modules).first()) : IdeIcons.MODULE_GROUP_CLOSED);
+    revealResults(newViewer, title, icon);
+  }
+  private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {
+    if (newViewer.getSearchResults().getSearchResults().isEmpty() && !(ModelCheckerSettings.getInstance().getMigrationMode())) {
+      JOptionPane.showMessageDialog(this.getComponent(), "There were no problems detected during Model Checker execution", "Model Checker results", JOptionPane.INFORMATION_MESSAGE);
+    } else {
+      this.showTabWithResults(newViewer, title, icon);
+    }
+  }
+  public void checkProjectAndShowResults() {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    ModelCheckerViewer newViewer = createViewerForTab();
+    newViewer.checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getModules()), mpsProject.getName());
+    revealResults(newViewer, mpsProject.getName(), IdeIcons.PROJECT_ICON);
+  }
+  public CheckinHandler.ReturnResult checkModelsBeforeCommit(List<SModel> models) {
+    ModelCheckerViewer viewer = createViewerForTab();
+    viewer.checkModels(models, "models");
+
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
 
     int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
@@ -91,10 +88,10 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";
-      int dialogAnswer = Messages.showDialog(ProjectHelper.toIdeaProject(operationContext.getProject()), dialogMessage, "Model Checking", new String[]{"Review", "Commit", "Cancel"}, 0, null);
+      int dialogAnswer = Messages.showDialog(myProject, dialogMessage, "Model Checking", new String[]{"Review", "Commit", "Cancel"}, 0, null);
       if (dialogAnswer == 0) {
         // review errors and warnings, don't commit 
-        this.showTabWithResults(viewer);
+        this.showTabWithResults(viewer, "Pre-commit check", IdeIcons.MODEL_ICON);
         return CheckinHandler.ReturnResult.CLOSE_WINDOW;
       } else if (dialogAnswer == 1) {
         // ignore errors and warnings 
@@ -106,16 +103,17 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     }
     return CheckinHandler.ReturnResult.COMMIT;
   }
-  private ModelCheckerViewer createViewer() {
-    return new ModelCheckerViewer(this.myProject) {
+  private ModelCheckerViewer createViewerForTab() {
+    // viewer that knows how to close tool's tab 
+    return new ModelCheckerViewer(myProject) {
       @Override
       protected void close() {
         ModelCheckerTool.this.closeTab(this);
       }
     };
   }
-  public void showTabWithResults(ModelCheckerViewer viewer) {
-    this.addTab(viewer, viewer.getTabTitle(), viewer.getTabIcon(), new IComponentDisposer<ModelCheckerViewer>() {
+  public void showTabWithResults(ModelCheckerViewer viewer, String tabTitle, Icon tabIcon) {
+    this.addTab(viewer, tabTitle, tabIcon, new IComponentDisposer<ModelCheckerViewer>() {
       public void disposeComponent(ModelCheckerViewer c) {
         c.dispose();
       }

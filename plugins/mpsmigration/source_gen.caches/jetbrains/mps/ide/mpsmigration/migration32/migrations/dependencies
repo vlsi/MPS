@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
+    <classNode extendsClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
     <classNode extendsClassName="jetbrains.mps.migration.global.ProjectMigrationWithOptions" />
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.ModelRefMigration" file="ModelRefMigration.java">

@@ -21,12 +21,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * Represents a concept property
  */
-public interface SProperty {
+public interface SProperty extends SConceptFeature {
   /**
    * Return the concept that contains the declaration of this property.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this property.
    */
+  @Deprecated// use SConceptFeature.getContainingConcept()
   SAbstractConcept getContainingConcept();
 
   /**

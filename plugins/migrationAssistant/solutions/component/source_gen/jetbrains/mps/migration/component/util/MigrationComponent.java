@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -165,17 +166,22 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
-          public boolean accept(ProjectMigration it) {
-            return it.shouldBeExecuted(mpsProject);
-          }
-        });
-        boolean languageMig = isLanguageMigrationRequired(MigrationsUtil.getMigrateableModulesFromProject(mpsProject));
-        result.value = projectMig || languageMig;
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+        result.value = isMigrationRequired(mpsProject, modules);
       }
     });
     return result.value;
+  }
+
+  public static boolean isMigrationRequired(final Project p, Iterable<SModule> modules) {
+    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+    boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
+      public boolean accept(ProjectMigration it) {
+        return it.shouldBeExecuted(p);
+      }
+    });
+    boolean languageMig = isLanguageMigrationRequired(modules);
+    return projectMig || languageMig;
   }
 
   public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {
@@ -236,11 +242,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return ProjectMigrationsRegistry.getInstance().getMigrations().size();
   }
 
-  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options) {
-    ProjectMigration current = next(lastProjectMigration);
+  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
+    ProjectMigration current = next(lastProjectMigration, cleanup);
 
     while (current != null && !(current.shouldBeExecuted(mpsProject))) {
-      current = next(current);
+      current = next(current, cleanup);
     }
 
     if (current == null) {
@@ -275,20 +281,34 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     };
   }
 
-  private ProjectMigration next(ProjectMigration current) {
+  private ProjectMigration next(ProjectMigration current, final boolean cleanup) {
     List<ProjectMigration> mig = ProjectMigrationsRegistry.getInstance().getMigrations();
-    if (mig.isEmpty()) {
+
+    mig = ListSequence.fromList(mig).where(new IWhereFilter<ProjectMigration>() {
+      public boolean accept(ProjectMigration it) {
+        boolean isCleanup = it instanceof CleanupProjectMigration;
+        // this is xor, which is absent in bl 
+        return (cleanup ? isCleanup : !(isCleanup));
+      }
+    }).toListSequence();
+
+    if (ListSequence.fromList(mig).isEmpty()) {
       return null;
-    }
-    if (current == null) {
-      return mig.iterator().next();
     }
 
-    int index = mig.indexOf(current);
-    if (index == mig.size() - 1) {
+    if (ListSequence.fromList(mig).indexOf(current) < 0) {
+      // was: cleanup, now: not cleanup 
+      current = null;
+    }
+    if (current == null) {
+      return ListSequence.fromList(mig).getElement(0);
+    }
+
+    int index = ListSequence.fromList(mig).indexOf(current);
+    if (index == ListSequence.fromList(mig).count() - 1) {
       return null;
     }
-    return mig.get(index + 1);
+    return ListSequence.fromList(mig).getElement(index + 1);
   }
 
   public int languageStepsCount() {

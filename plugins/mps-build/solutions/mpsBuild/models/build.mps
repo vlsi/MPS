@@ -15978,6 +15978,9 @@
       <node concept="nCB5N" id="42rJ_CGYJaq" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-core" />
       </node>
+      <node concept="nCB5N" id="7MqBKG8XGbq" role="nCB5Z">
+        <ref role="nCB5Y" node="1nJh0raVm57" resolve="modelchecker" />
+      </node>
     </node>
     <node concept="398b33" id="1nJh0raVm57" role="3989C9">
       <property role="TrG5h" value="modelchecker" />

@@ -11,8 +11,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
@@ -64,7 +62,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 
-    return ModelCheckerTool.getInstance(myProject).checkModelsBeforeCommit(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), getModelsByFiles(myPanel.getFiles()));
+    return ModelCheckerTool.getInstance(myProject).checkModelsBeforeCommit(getModelsByFiles(myPanel.getFiles()));
   }
   private static List<SModel> getModelsByFiles(Iterable<File> files) {
     final SModelFileTracker ft = SModelFileTracker.getInstance();

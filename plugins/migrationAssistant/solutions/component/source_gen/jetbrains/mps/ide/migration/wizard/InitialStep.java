@@ -6,15 +6,17 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.swing.JComponent;
 import com.intellij.openapi.project.Project;
-import java.awt.GridBagLayout;
 import javax.swing.JPanel;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.ui.JBInsets;
 import java.awt.BorderLayout;
-import java.awt.Insets;
-import javax.swing.BorderFactory;
 import javax.swing.JTextPane;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.SystemInfo;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.uiDesigner.core.GridConstraints;
+import javax.swing.BoxLayout;
+import com.intellij.ui.IdeBorderFactory;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
@@ -31,6 +33,8 @@ import com.intellij.ide.wizard.CommitStepException;
 public class InitialStep extends MigrationStep {
   public static final String ID = "initial";
 
+  private static final String TEXT = "Welcome to Migration Assistant!<br><br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>" + "This wizard will guide you through the migration process. It's going to take a while.<br><br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.";
+
   /**
    * due to wizard architecture we need this hacky way of passing data from one step to another
    */
@@ -46,25 +50,27 @@ public class InitialStep extends MigrationStep {
   @Override
   protected final void createComponent() {
     super.createComponent();
-    GridBagLayout layout = new GridBagLayout();
-    final JPanel pagePanel = new JPanel(layout);
+    JPanel pagePanel = new JPanel(new GridLayoutManager(2, 1, new JBInsets(5, 5, 5, 0), -1, -1));
     myComponent.add(pagePanel, BorderLayout.CENTER);
 
-    final Insets insets = new Insets(0, 0, 0, 0);
     JPanel infoHolder = new JPanel(new BorderLayout());
-    infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
     JTextPane info = new JTextPane();
-    info.setContentType("text/html");
-    info.setText("Welcome to Migration Assistant!<br><br>MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>This wizard will guide you through the migration process. It's going to take a while.<br><br>Select Next to proceed with migration or Cancel if you wish to postpone it.");
-    info.setEditable(false);
-    info.setFocusable(false);
-    info.setBorder(BorderFactory.createLoweredBevelBorder());
+    Messages.installHyperlinkSupport(info);
+
+    StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
+    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
+    sb.append(TEXT).append("</font></body></html>");
+    info.setText(sb.toString());
+
     info.setPreferredSize(new Dimension(300, 220));
     infoHolder.add(info, BorderLayout.CENTER);
-    pagePanel.add(infoHolder, new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0));
+    pagePanel.add(infoHolder, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
 
-    // project migration options 
-    final Wrappers._int y = new Wrappers._int(1);
+    final JPanel settingsPanel = new JPanel();
+    settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
+    settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Settings", true));
+    pagePanel.add(settingsPanel, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+
     List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
     ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
       public boolean accept(ProjectMigrationWithOptions it) {
@@ -78,10 +84,10 @@ public class InitialStep extends MigrationStep {
       public void visit(String it) {
         JComponent c = ProjectOptionsRegistry.getInstance().createComponentForOption(it);
         myComponents.put(it, c);
-        pagePanel.add(c, new GridBagConstraints(0, y.value++, 1, 1, 0, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 5, 0));
-
+        settingsPanel.add(c);
       }
     });
+    settingsPanel.setVisible(!(myComponents.isEmpty()));
   }
 
   @Override

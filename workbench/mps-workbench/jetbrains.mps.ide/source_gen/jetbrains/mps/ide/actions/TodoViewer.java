@@ -16,17 +16,18 @@ import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.actionSystem.AnAction;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -69,27 +70,22 @@ public class TodoViewer extends JPanel {
     return myProject;
   }
   private void refresh() {
-    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
+    ThreadUtils.assertEDT();
     removeAll();
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getProject());
-    myUsagesView = new UsagesView(project, viewOptions) {
-      @Override
-      public void close() {
+    myUsagesView = new UsagesView(project, viewOptions);
+    UsagesView.RerunAction searchTodoAction = new UsagesView.RerunAction(myUsagesView, "Search again");
+    myUsagesView.setActions(searchTodoAction, new UsagesView.RebuildAction(myUsagesView), new AnAction("Close", "", AllIcons.Actions.Cancel) {
+      public void actionPerformed(@NotNull AnActionEvent p0) {
         getTool().makeUnavailableLater();
       }
-    };
+    }, new PinToolwindowTabAction());
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
-    myUsagesView.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new ProjectScope(myProject)), new UsagesView.ButtonConfiguration(true), new SearchResults());
+    searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new ProjectScope(myProject)));
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
-    ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
-      @Override
-      public void run(@NotNull final ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
-        myUsagesView.run(indicator);
-        getTool().openToolLater(true);
-      }
-    });
+    searchTodoAction.actionPerformed(AnActionEvent.createFromInputEvent(searchTodoAction, null, ActionPlaces.UNKNOWN));
+    getTool().openToolLater(true);
   }
   public static class MyNodeRepresentator implements INodeRepresentator<SNode> {
     public MyNodeRepresentator() {
@@ -97,7 +93,7 @@ public class TodoViewer extends JPanel {
     @NotNull
     @Override
     public String getPresentation(SNode node) {
-      return "<font color=blue>" + SNodeAccessUtil.getProperty(node, "text") + "</font>";
+      return "<font color=blue>" + SNodeAccessUtil.getProperty(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")) + "</font>";
     }
     @Override
     public String getResultsText(TextOptions options) {

@@ -50,7 +50,7 @@ public class CheckProject_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkProject(true);
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkProjectAndShowResults();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CheckProject", t);
