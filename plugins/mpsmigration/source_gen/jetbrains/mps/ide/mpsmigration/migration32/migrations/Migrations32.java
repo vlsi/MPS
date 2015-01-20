@@ -8,7 +8,7 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class PersistenceMigrations implements ApplicationComponent {
+public class Migrations32 implements ApplicationComponent {
   private final ProjectMigration[] myMigrations = new ProjectMigration[]{new CleanSourcesMigration(), new ReSaveModulesMigration(), new Name2IdMigration()};
 
   public void initComponent() {
@@ -26,6 +26,6 @@ public class PersistenceMigrations implements ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "PersistenceMigrations";
+    return "Migrations32";
   }
 }

@@ -18,11 +18,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/2400678414103294603">
-    <file name="PersistenceMigrations.java">
+    <file name="Migrations32.java">
       <node id="2400678414103294607" at="12,0,13,0" concept="5" trace="myMigrations" />
       <node id="2400678414103294623" at="15,46,16,70" concept="4" />
       <node id="2400678414103294640" at="21,46,22,73" concept="4" />
-      <node id="4508017205454399763" at="28,36,29,35" concept="10" />
+      <node id="4508017205454399763" at="28,36,29,26" concept="10" />
       <node id="2400678414103294620" at="14,31,17,5" concept="6" />
       <node id="2400678414103294637" at="20,34,23,5" concept="6" />
       <node id="4508017205454399741" at="14,0,19,0" concept="8" trace="initComponent#()V" />
@@ -30,7 +30,7 @@
       <node id="4508017205454399753" at="26,0,31,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
       <scope id="2400678414103294622" at="15,46,16,70" />
       <scope id="2400678414103294639" at="21,46,22,73" />
-      <scope id="4508017205454399761" at="28,36,29,35" />
+      <scope id="4508017205454399761" at="28,36,29,26" />
       <scope id="2400678414103294620" at="14,31,17,5">
         <var name="pm" id="2400678414103294628" />
       </scope>
@@ -42,7 +42,7 @@
       <scope id="4508017205454399741" at="14,0,19,0" />
       <scope id="4508017205454399747" at="20,0,25,0" />
       <scope id="4508017205454399753" at="26,0,31,0" />
-      <unit id="2400678414103294603" at="11,0,32,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.PersistenceMigrations" />
+      <unit id="2400678414103294603" at="11,0,32,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.Migrations32" />
     </file>
   </root>
   <root nodeRef="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)/2400678414103309023">

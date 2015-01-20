@@ -1759,7 +1759,7 @@
     </node>
   </node>
   <node concept="312cEu" id="25gV4Ls$Nab">
-    <property role="TrG5h" value="PersistenceMigrations" />
+    <property role="TrG5h" value="Migrations32" />
     <property role="2bfB8j" value="true" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
@@ -1898,7 +1898,7 @@
       <node concept="3clFbS" id="3UfGsectm$h" role="3clF47">
         <node concept="3clFbF" id="3UfGsectm$j" role="3cqZAp">
           <node concept="Xl_RD" id="3UfGsectnsT" role="3clFbG">
-            <property role="Xl_RC" value="PersistenceMigrations" />
+            <property role="Xl_RC" value="Migrations32" />
           </node>
         </node>
       </node>
