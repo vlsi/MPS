@@ -21,7 +21,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new MoveConcepts_Action());
-    addAction(new MoveLinkUpMigration_Action());
     addAction(new MoveLinkUp_Action());
     addAction(new MoveProperyUp_Action());
     addAction(new RenameConcept_Action());
