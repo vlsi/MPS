@@ -148,6 +148,9 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -2294,19 +2297,21 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="193i4_4WEzy" role="3clFbw">
-                <node concept="2YIFZM" id="193i4_4WEyg" role="2Oq$k0">
-                  <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                  <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                </node>
-                <node concept="liA8E" id="193i4_4WENu" role="2OqNvi">
-                  <ref role="37wK5l" to="wqua:~ClassLoaderManager.isValidForClassloading(org.jetbrains.mps.openapi.module.SModuleReference):boolean" resolve="isValidForClassloading" />
-                  <node concept="2OqwBi" id="193i4_4WEQD" role="37wK5m">
-                    <node concept="2GrUjf" id="193i4_4WEOO" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="193i4_4WBzt" resolve="dep" />
-                    </node>
-                    <node concept="liA8E" id="193i4_4WFpY" role="2OqNvi">
-                      <ref role="37wK5l" to="kqhl:~Dependency.getModuleRef():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleRef" />
+              <node concept="3fqX7Q" id="MARF4O$hi8" role="3clFbw">
+                <node concept="2OqwBi" id="MARF4O$hia" role="3fr31v">
+                  <node concept="2YIFZM" id="MARF4O$hib" role="2Oq$k0">
+                    <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
+                    <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
+                  </node>
+                  <node concept="liA8E" id="MARF4O$hic" role="2OqNvi">
+                    <ref role="37wK5l" to="wqua:~ClassLoaderManager.isValidForClassloading(org.jetbrains.mps.openapi.module.SModuleReference):boolean" resolve="isValidForClassloading" />
+                    <node concept="2OqwBi" id="MARF4O$hid" role="37wK5m">
+                      <node concept="2GrUjf" id="MARF4O$hie" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="193i4_4WBzt" resolve="dep" />
+                      </node>
+                      <node concept="liA8E" id="MARF4O$hif" role="2OqNvi">
+                        <ref role="37wK5l" to="kqhl:~Dependency.getModuleRef():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleRef" />
+                      </node>
                     </node>
                   </node>
                 </node>

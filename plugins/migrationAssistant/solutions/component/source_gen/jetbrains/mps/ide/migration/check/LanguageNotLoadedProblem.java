@@ -23,7 +23,7 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
 
     SModuleReference invalidDep = null;
     for (Dependency dep : Sequence.fromIterable(langModule.getUnresolvedDependencies())) {
-      if (ClassLoaderManager.getInstance().isValidForClassloading(dep.getModuleRef())) {
+      if (!(ClassLoaderManager.getInstance().isValidForClassloading(dep.getModuleRef()))) {
         invalidDep = dep.getModuleRef();
       }
     }
