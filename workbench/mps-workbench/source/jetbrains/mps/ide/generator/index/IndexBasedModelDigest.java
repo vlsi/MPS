@@ -65,27 +65,27 @@ public class IndexBasedModelDigest implements ApplicationComponent {
     }
 
     @Override
-      public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
-        try {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-          if (file == null) return null;
+    public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
+      try {
+        VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
+        if (file == null) return null;
 
-          final Map<String, String>[] valueArray = new Map[]{null};
-          FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,
-              new ValueProcessor<Map<String, String>>() {
-                @Override
-                public boolean process(VirtualFile file, Map<String, String> values) {
-                  valueArray[0] = values;
-                  return true;
-                }
-              }, new EverythingGlobalScope());
-          return valueArray[0];
-        } catch (IndexNotReadyException e) {
-          LOG.warn(e.getMessage());
-        } catch (ProcessCanceledException e) {
-          LOG.warn(e.getMessage());
-        }
-        return null;
+        final Map<String, String>[] valueArray = new Map[]{null};
+        FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,
+            new ValueProcessor<Map<String, String>>() {
+              @Override
+              public boolean process(VirtualFile file, Map<String, String> values) {
+                valueArray[0] = values;
+                return true;
+              }
+            }, new EverythingGlobalScope());
+        return valueArray[0];
+      } catch (IndexNotReadyException e) {
+        LOG.error("", e);
+      } catch (ProcessCanceledException e) {
+        LOG.warn(e.getMessage());
       }
+      return null;
     }
+  }
 }
