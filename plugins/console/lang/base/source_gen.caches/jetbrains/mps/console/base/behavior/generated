@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ceto3jwx3f4hm9cu5bp7ebhcz6xzzhx">
+<dependencies version="2" modelHash="-68fcqrdix2kfan5vg1hsdtzd7y95hic">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -42,7 +42,7 @@
   <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" hash="9r1wygnqv3idv2ggllhi39np6bvp15b" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="4yuncavoqhqnvwytey6u777j2u1wj3r" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="eqxetffw2bixf5c415pipp3oosuwnec" />
-  <common hash="-3c8frseggeywjsk38ol5xnlko7w3rnq" dependsOnNodes="true">
+  <common hash="4psvngd44giqyrwfuje3eiijpzlc7mo" dependsOnNodes="true">
     <dep root="1769790395579662700" />
     <dep root="2348043250037383206" />
     <dep root="3002373989556540709" />
@@ -143,12 +143,14 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="INodeWithReference_Behavior.java" />
   </source>
-  <source id="5842059399443118726" name="PastedNodeReference_Behavior" hash="-2zm0axum8e7mofbl2dgqwi43qb4ckud">
+  <source id="5842059399443118726" name="PastedNodeReference_Behavior" hash="8o6xr0usiy2k1tlj6lyp8cjf3gxjdsb">
     <dep root="3939645998855102457" />
     <dep root="8517397753921951854" />
+    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PastedNodeReference_Behavior.java" />
   </source>
   <source id="6854397602732226001" name="Command_Behavior" hash="-5m6835g72gtalzz3pyzeuoxkzb5hssy">
