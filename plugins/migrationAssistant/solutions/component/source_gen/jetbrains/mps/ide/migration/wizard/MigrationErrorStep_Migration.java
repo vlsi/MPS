@@ -13,10 +13,10 @@ public class MigrationErrorStep_Migration extends MigrationErrorStep {
   }
 
   protected String getText() {
-    return "Migration was not completed.<br><br>Some migration scripts are missing or finished with errors.<br><br>Maybe you are trying to migrate from version which is not now supported.<br><br>Now the project will be reloaded.<br><br>You can try to continue migrations manually or execute Migration Assistant later.";
+    return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Now the project will be reloaded.<br><br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
   }
 
-  protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
+  public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
     return new _FunctionTypes._void_P0_E0() {
       public void invoke() {
       }

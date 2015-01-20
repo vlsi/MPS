@@ -11,25 +11,24 @@ import java.util.HashSet;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.DefaultListModel;
 import java.util.Collections;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.migration.MigrationCheckUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MigrationsProgressStep extends MigrationStep {
@@ -56,7 +55,6 @@ public class MigrationsProgressStep extends MigrationStep {
   @Override
   protected final void createComponent() {
     super.createComponent();
-    myComponent.add(new JLabel("Applying migrations:"), BorderLayout.NORTH);
     myList = new JBList(new DefaultListModel());
     myList.setCellRenderer(new MigrationsListRenderer(myExecuted, Collections.emptySet()));
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
@@ -92,34 +90,44 @@ public class MigrationsProgressStep extends MigrationStep {
   private void doRun(ProgressIndicator progress) {
     PersistenceRegistry.getInstance().disableFastFindUsages();
 
+    Map<String, Object> options = InitialStep.getOptions();
+
     // project steps are considered to be X percent of the whole process 
     double projectStepsFraction = 0.3;
+
+    int projectStepsCount = myManager.projectStepsCount();
+    setFraction(progress, 0);
+
+    boolean cleanNotification = false;
+    while (executeSingleStep(myManager.nextProjectStep(options, true))) {
+      if (!(cleanNotification)) {
+        cleanNotification = true;
+        addElementToMigrationList("Cleaning project... Please wait.");
+      }
+      setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
+    }
 
     addElementToMigrationList("Checking models... Please wait.");
     final Wrappers._boolean preProblems = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-        Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-        preProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+        preProblems.value = MigrationCheckUtil.haveProblems(modules);
       }
     });
 
-    int projectStepsCount = myManager.projectStepsCount();
-    int languageStepsCount = myManager.languageStepsCount();
-    progress.setFraction(0);
-
     final Wrappers._boolean postProblems = new Wrappers._boolean(false);
     if (!(preProblems.value)) {
-      while (executeSingleStep(myManager.nextProjectStep())) {
-        progress.setFraction(progress.getFraction() + projectStepsFraction / projectStepsCount);
+      while (executeSingleStep(myManager.nextProjectStep(options, false))) {
+        setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
       }
-      progress.setFraction(projectStepsFraction);
+      setFraction(progress, projectStepsFraction);
 
+      int languageStepsCount = myManager.languageStepsCount();
       while (executeSingleStep(myManager.nextLanguageStep())) {
-        progress.setFraction(progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+        setFraction(progress, progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
       }
-      progress.setFraction(1.0);
+      setFraction(progress, 1.0);
 
       addElementToMigrationList("Saving changed models... Please wait.");
       ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -132,8 +140,7 @@ public class MigrationsProgressStep extends MigrationStep {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-          Iterable<SNode> problems = MigrationCheckUtil.getProblemNodes(modules);
-          postProblems.value = Sequence.fromIterable(problems).isNotEmpty();
+          postProblems.value = MigrationCheckUtil.haveProblems(modules);
         }
       });
     }
@@ -143,6 +150,14 @@ public class MigrationsProgressStep extends MigrationStep {
     addElementToMigrationList((myFinishedState.isEverythingOk() ? "Done!" : "Finished with errors. Click 'Next' to continue."));
 
     PersistenceRegistry.getInstance().enableFastFindUsages();
+  }
+
+  public void setFraction(final ProgressIndicator p, final double fraction) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        p.setFraction(fraction);
+      }
+    }, ModalityState.any());
   }
 
   private void addElementToMigrationList(final String step) {
@@ -156,24 +171,20 @@ public class MigrationsProgressStep extends MigrationStep {
     });
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationState result) {
-    if (result instanceof MigrationManager.Finished) {
+  private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
+    if (result == null) {
       return false;
     }
 
-    if (result instanceof MigrationManager.Step) {
-      final String step = ((MigrationManager.Step) result).getDescription();
-      addElementToMigrationList(step);
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          myNoErrors &= ((MigrationManager.Step) result).execute();
-        }
-      });
+    final String step = ((MigrationManager.MigrationStep) result).getDescription();
+    addElementToMigrationList(step);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        myNoErrors &= ((MigrationManager.MigrationStep) result).execute();
+      }
+    });
 
-      return myNoErrors;
-    } else {
-      return false;
-    }
+    return myNoErrors;
   }
 
   @Override

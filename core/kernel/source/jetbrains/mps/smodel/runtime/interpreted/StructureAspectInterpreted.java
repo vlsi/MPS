@@ -20,13 +20,11 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.Category;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -34,7 +32,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -78,14 +75,11 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
     synchronized (this) {
       if (myDescriptors != null) return;
 
-      ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
-      ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
-
       final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
       if (structureModel == null) {
         LOG.warn("Structure aspect is null in the language " + myLanguage);
-        myDescriptorByName = descriptorsByName;
-        myDescriptors = descriptors;
+        myDescriptorByName = new ConcurrentHashMap<String, ConceptDescriptor>();
+        myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
         return;
       }
       myLanguage.getRepository().getModelAccess().runReadAction(new Runnable() {

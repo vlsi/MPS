@@ -5830,6 +5830,50 @@
       <unit id="4246727699196031257" at="10,0,30,0" name="jetbrains.mps.editorTest.RT_toStaticFieldReference_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4338540387697898242">
+    <file name="SideDeleteMethodAtEndInInterfaceWithBackSpace_Test.java">
+      <node id="4338540387697898242" at="15,85,16,107" concept="2" />
+      <node id="4338540387697898242" at="16,107,17,126" concept="2" />
+      <node id="4338540387697898242" at="24,51,25,63" concept="2" />
+      <node id="4338540387697898244" at="25,63,26,77" concept="2" />
+      <node id="4338540387697898242" at="12,0,14,0" concept="1" trace="SideDeleteMethodAtEndInInterfaceWithBackSpace_Test#()V" />
+      <node id="4338540387697898242" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4338540387697898242" at="14,0,19,0" concept="5" trace="test_SideDeleteMethodAtEndInInterfaceWithBackSpace#()V" />
+      <node id="4338540387697898242" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4338540387697898242" at="12,63,12,63" />
+      <scope id="4338540387697898242" at="21,23,21,23" />
+      <scope id="4338540387697898242" at="12,0,14,0" />
+      <scope id="4338540387697898242" at="15,85,17,126" />
+      <scope id="4338540387697898242" at="21,0,23,0" />
+      <scope id="4338540387697898242" at="24,51,26,77" />
+      <scope id="4338540387697898242" at="14,0,19,0" />
+      <scope id="4338540387697898242" at="23,0,28,0" />
+      <unit id="4338540387697898242" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteMethodAtEndInInterfaceWithBackSpace_Test$TestBody" />
+      <unit id="4338540387697898242" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteMethodAtEndInInterfaceWithBackSpace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4338540387697958006">
+    <file name="SidedeleteAtEndInInterfaceWithOneStatement_Test.java">
+      <node id="4338540387697958006" at="15,82,16,107" concept="2" />
+      <node id="4338540387697958006" at="16,107,17,123" concept="2" />
+      <node id="4338540387697958006" at="24,51,25,63" concept="2" />
+      <node id="4338540387697958022" at="25,63,26,74" concept="2" />
+      <node id="4338540387697958006" at="12,0,14,0" concept="1" trace="SidedeleteAtEndInInterfaceWithOneStatement_Test#()V" />
+      <node id="4338540387697958006" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4338540387697958006" at="14,0,19,0" concept="5" trace="test_SidedeleteAtEndInInterfaceWithOneStatement#()V" />
+      <node id="4338540387697958006" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4338540387697958006" at="12,60,12,60" />
+      <scope id="4338540387697958006" at="21,23,21,23" />
+      <scope id="4338540387697958006" at="12,0,14,0" />
+      <scope id="4338540387697958006" at="15,82,17,123" />
+      <scope id="4338540387697958006" at="21,0,23,0" />
+      <scope id="4338540387697958006" at="24,51,26,74" />
+      <scope id="4338540387697958006" at="14,0,19,0" />
+      <scope id="4338540387697958006" at="23,0,28,0" />
+      <unit id="4338540387697958006" at="19,0,29,0" name="jetbrains.mps.editorTest.SidedeleteAtEndInInterfaceWithOneStatement_Test$TestBody" />
+      <unit id="4338540387697958006" at="10,0,30,0" name="jetbrains.mps.editorTest.SidedeleteAtEndInInterfaceWithOneStatement_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4340730515376445626">
     <file name="ResolveSuperInterfaceMethod_Test.java">
       <node id="4340730515376445626" at="15,67,16,107" concept="2" />

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.ide.migration.MigrationCheckUtil;
 
 public class MigrationErrorStep_Post extends MigrationErrorStep {
   public static final String ID = "PostProblem";
@@ -14,10 +13,10 @@ public class MigrationErrorStep_Post extends MigrationErrorStep {
   }
 
   protected String getText() {
-    return "Migration Assistant was unable to migrate some nodes in this project.\n" + "Problem nodes will be shown in Usages tool after the project is loaded.\n" + "Please correct them manually.";
+    return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Usages tool after the project is loaded.<br>" + "Please correct them manually.";
   }
 
-  protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
-    return MigrationCheckUtil.getShowUsagesCallback(myProject);
+  public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
+    return MigrationErrorStep.getPrePostShowUsagesCallback(myProject);
   }
 }

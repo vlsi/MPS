@@ -22,6 +22,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -59,13 +60,20 @@ public class MatchingUtil {
       // (assuming NodeId is different and nodes otherwise match).
       String stringValue1 = node1.getProperty(property);
       String stringValue2 = node2.getProperty(property);
+      Object propertyValue1 = stringValue1;
+      Object propertyValue2 = stringValue2;
       if (!IterableUtil.asCollection(node1.getConcept().getProperties()).contains(property)) {
         SNode diagnosticsNode = stringValue1 != null ? node1 : node2;
         LOG.warning("can't find a property declaration for property `" + property.getName() + "` in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
+      } else {
+        SDataType dataType = property.getType();
+        if (dataType != null) {
+          propertyValue1 = dataType.fromString(stringValue1);
+          propertyValue2 = dataType.fromString(stringValue2);
+        }
       }
-
-      if (!EqualUtil.equals(stringValue1, stringValue2)) return false;
+      if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
     }
 
     //-- matching references

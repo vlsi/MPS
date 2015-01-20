@@ -20,6 +20,8 @@ import jetbrains.mps.project.Project;
 public interface ProjectMigration {
   String getDescription();
 
+  void applyToCreatedProject(Project p);
+
   boolean shouldBeExecuted(Project p);
 
   void execute(Project p);

@@ -209,7 +209,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -6894,28 +6894,6 @@
               </node>
               <node concept="3clFbS" id="KL8Aqll4xU" role="3Kbo56">
                 <node concept="3clFbJ" id="KL8Aqll4y2" role="3cqZAp">
-                  <node concept="9aQIb" id="3AdfO5FbpNw" role="9aQIa">
-                    <node concept="3clFbS" id="3AdfO5FbpNx" role="9aQI4">
-                      <node concept="3clFbF" id="KL8Aqll4xV" role="3cqZAp">
-                        <node concept="2OqwBi" id="KL8Aqll4xW" role="3clFbG">
-                          <node concept="Xjq3P" id="KL8Aqll4xX" role="2Oq$k0">
-                            <ref role="1HBi2w" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
-                          </node>
-                          <node concept="liA8E" id="KL8Aqll4xY" role="2OqNvi">
-                            <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
-                            <node concept="2OqwBi" id="KL8Aqll4xZ" role="37wK5m">
-                              <node concept="37vLTw" id="2BHiRxgha9Q" role="2Oq$k0">
-                                <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
-                              </node>
-                              <node concept="liA8E" id="KL8Aqll4y1" role="2OqNvi">
-                                <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3y3z36" id="KL8Aqll4y3" role="3clFbw">
                     <node concept="2OqwBi" id="KL8Aqll4y4" role="3uHU7B">
                       <node concept="37vLTw" id="2BHiRxgm9UW" role="2Oq$k0">
@@ -6950,6 +6928,28 @@
                             </node>
                             <node concept="liA8E" id="KL8Aqll4yr" role="2OqNvi">
                               <ref role="37wK5l" to="e2lb:~StringBuffer.toString():java.lang.String" resolve="toString" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="9aQIb" id="3AdfO5FbpNw" role="9aQIa">
+                    <node concept="3clFbS" id="3AdfO5FbpNx" role="9aQI4">
+                      <node concept="3clFbF" id="KL8Aqll4xV" role="3cqZAp">
+                        <node concept="2OqwBi" id="KL8Aqll4xW" role="3clFbG">
+                          <node concept="Xjq3P" id="KL8Aqll4xX" role="2Oq$k0">
+                            <ref role="1HBi2w" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
+                          </node>
+                          <node concept="liA8E" id="KL8Aqll4xY" role="2OqNvi">
+                            <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
+                            <node concept="2OqwBi" id="KL8Aqll4xZ" role="37wK5m">
+                              <node concept="37vLTw" id="2BHiRxgha9Q" role="2Oq$k0">
+                                <ref role="3cqZAo" node="KL8Aqll4xK" resolve="msg" />
+                              </node>
+                              <node concept="liA8E" id="KL8Aqll4y1" role="2OqNvi">
+                                <ref role="37wK5l" to="bq0a:~IMessage.getText():java.lang.String" resolve="getText" />
+                              </node>
                             </node>
                           </node>
                         </node>

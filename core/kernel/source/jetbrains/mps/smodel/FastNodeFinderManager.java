@@ -67,8 +67,10 @@ public class FastNodeFinderManager {
         // use FNF implementation that doesn't track changes
         finder = new BaseFastNodeFinder(model);
       }
-      ourFinders.putIfAbsent(mr, finder);
-      finder = ourFinders.get(mr);
+      final FastNodeFinder existing = ourFinders.putIfAbsent(mr, finder);
+      if (existing != null) {
+        finder = existing;
+      }
     }
     return finder;
   }

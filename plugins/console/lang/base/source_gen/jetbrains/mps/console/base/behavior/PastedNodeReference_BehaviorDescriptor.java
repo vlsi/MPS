@@ -11,7 +11,7 @@ public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpre
   public PastedNodeReference_BehaviorDescriptor() {
   }
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return INodeWithReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
+    return PastedNodeReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);

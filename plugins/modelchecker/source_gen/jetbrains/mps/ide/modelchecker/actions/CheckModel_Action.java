@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -103,11 +102,7 @@ public class CheckModel_Action extends BaseAction {
           }
         }
       }
-      if (modelsToCheck.size() > 1) {
-        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelsToCheck, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
-      } else {
-        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
-      }
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelsToCheck);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CheckModel", t);

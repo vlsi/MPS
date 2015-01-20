@@ -125,8 +125,11 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     String target;
     if (ref instanceof StaticReference) {
       final SNodeId targetNodeId = ref.getTargetNodeId();
-      assert targetNodeId != null;
-      target = toText(targetNodeId);
+      if (targetNodeId == null) {
+        target = DYNAMIC_REFERENCE_ID;
+      } else {
+        target = toText(targetNodeId);
+      }
     } else {
       target = DYNAMIC_REFERENCE_ID;
     }
@@ -139,7 +142,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
    *
    * NOTE, the way import index and nodeId value are serialized is expected to never include ':' separator char
    */
-  public String toTextExternal(@NotNull ImportsHelper imports, @Nullable SModelReference modelRef, @NotNull SReference ref) {
+  public String toTextExternal(@NotNull ImportsHelper imports, @NotNull SReference ref) {
     String target = toTextLocal(ref);
     SModelReference targetModel = ref.getTargetSModelReference();
 

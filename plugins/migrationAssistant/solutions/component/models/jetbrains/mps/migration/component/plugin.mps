@@ -79,15 +79,25 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
@@ -130,22 +140,29 @@
       <node concept="3clFbS" id="6MUcJMtBJJg" role="2VODD2">
         <node concept="3clFbF" id="6MUcJMtC7yE" role="3cqZAp">
           <node concept="2OqwBi" id="6MUcJMtCgwq" role="3clFbG">
-            <node concept="2OqwBi" id="6MUcJMtCfxg" role="2Oq$k0">
-              <node concept="2OqwBi" id="6MUcJMtC7y$" role="2Oq$k0">
-                <node concept="2WthIp" id="6MUcJMtC7yB" role="2Oq$k0" />
-                <node concept="1DTwFV" id="6MUcJMtC7yD" role="2OqNvi">
-                  <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
+            <node concept="1eOMI4" id="285c2S_XMmX" role="2Oq$k0">
+              <node concept="10QFUN" id="285c2S_XMmY" role="1eOMHV">
+                <node concept="2OqwBi" id="285c2S_XMmR" role="10QFUP">
+                  <node concept="2OqwBi" id="285c2S_XMmS" role="2Oq$k0">
+                    <node concept="2WthIp" id="285c2S_XMmT" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="285c2S_XMmU" role="2OqNvi">
+                      <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="285c2S_XMmV" role="2OqNvi">
+                    <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="285c2S_XMmW" role="37wK5m">
+                      <ref role="3VsUkX" to="bim2:4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
+                    </node>
+                  </node>
                 </node>
-              </node>
-              <node concept="liA8E" id="6MUcJMtCgbC" role="2OqNvi">
-                <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="6MUcJMtCgke" role="37wK5m">
-                  <ref role="3VsUkX" to="bim2:4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
+                <node concept="3uibUv" id="285c2S_XN1a" role="10QFUM">
+                  <ref role="3uigEE" to="bim2:5SsFeroaajZ" resolve="MigrationTrigger" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="6MUcJMtChNb" role="2OqNvi">
-              <ref role="37wK5l" to="bim2:4D3Y1hNyymu" resolve="executeWizard" />
+              <ref role="37wK5l" to="bim2:285c2S_X7aX" resolve="tryMigratingProjectNoQueue" />
             </node>
           </node>
         </node>

@@ -321,7 +321,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
       ByteArrayOutputStream output = new ByteArrayOutputStream();
       LanguageDescriptorPersistence.saveLanguageDescriptor(output, myModule.getModuleDescriptor(), MacrosFactory.forModuleFile(descriptorFile));
-      hash = ModelDigestUtil.hashBytes(output.toByteArray());
+      hash = ModelDigestUtil.hashText(output.toString());
       if (hash == null) return null;
 
       BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);

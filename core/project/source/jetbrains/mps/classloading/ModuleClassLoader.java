@@ -62,16 +62,14 @@ public class ModuleClassLoader extends ClassLoader {
 
   private boolean myDisposed;
 
-  /**
-   * for debugging needs
-   */
   public boolean isDisposed() {
     return myDisposed;
   }
 
   private void checkNotDisposed() {
     if (isDisposed()) {
-      throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
+//      TODO too many weird places where disposed class loader seems to be used. Will enable after 3.2 release
+//      throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
     }
   }
 

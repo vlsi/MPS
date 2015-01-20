@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
-import jetbrains.mps.smodel.persistence.def.v9.migrations.PersistenceMigrations;
 
 /**
  * evgeny, 11/9/12
@@ -36,6 +35,5 @@ public final class MPSPersistence extends ComponentPlugin {
     init(new FilePerRootModelPersistence(persistenceRegistry));
     init(new BinaryModelPersistence(persistenceRegistry));
     init(new JavaClassesPersistence(persistenceRegistry));
-    init(new PersistenceMigrations());
   }
 }

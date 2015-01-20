@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,38,0" name="jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor" />
-    </file>
-  </root>
-</debug-info>
-

@@ -7,16 +7,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import com.intellij.openapi.project.Project;
 
 public class NodeReferencePresentation_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation"), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
-  }
-  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_canExecute_3282455643657932881", new Object[]{});
-  }
-  public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_execute_8517397753922085153", new Object[]{project});
   }
 }

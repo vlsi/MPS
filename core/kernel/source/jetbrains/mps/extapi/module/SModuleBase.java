@@ -91,6 +91,7 @@ public abstract class SModuleBase implements SModule {
         m.detach();
       }
       myModels.clear();
+      myIdToModelMap.clear();
       myRepository = null;
     }
   }

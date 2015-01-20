@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1167245930434(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -46,6 +49,11 @@ public class QueriesGenerated {
                   SLinkOperations.setTarget(lvr, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")));
                 }
                 return logStatement;
+              }
+              @Override
+              protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+                SelectionUtil.selectCell(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL);
+                return null;
               }
               public String getMatchingText(String pattern) {
                 return SEnumOperations.getEnumMemberValue((item));

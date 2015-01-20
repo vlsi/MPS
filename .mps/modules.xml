@@ -136,7 +136,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.sandbox/jetbrains.mps.traceInfo.tracemacro.sandbox.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.testlang/jetbrains.mps.traceInfo.tracemacro.testlang.mpl" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" folder="core.aspects.typesystem" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/typesystem/languages/test/jetbrains.mps.bootstrap.helgins.test.mpl" folder="core.aspects.typesystem" />
       <modulePath path="$PROJECT_DIR$/languages/util/builders/jetbrains.mps.baseLanguage.builders.mpl" folder="core.baseLanguage.builders" />
       <modulePath path="$PROJECT_DIR$/languages/util/builders/sandbox/jetbrains.mps.baseLanguage.builders.sandbox.msd" folder="core.baseLanguage.builders" />
       <modulePath path="$PROJECT_DIR$/languages/util/execution/util/jetbrains.mps.execution.util.mpl" folder="workbench.execution" />
@@ -340,6 +339,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoring/testRefactoring.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testPrimitiveType/testPrimitiveType.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" folder="tests.subtyping" />

@@ -284,7 +284,7 @@ public class ModelWriter9 implements IModelWriter {
       if (targetModel != null && myImportsHelper.isLocal(targetModel)) {
         linkElement.setAttribute(ModelPersistence9.NODE, myIdEncoder.toTextLocal(reference));
       } else {
-        linkElement.setAttribute(ModelPersistence9.TO, myIdEncoder.toTextExternal(myImportsHelper, targetModel, reference));
+        linkElement.setAttribute(ModelPersistence9.TO, myIdEncoder.toTextExternal(myImportsHelper, reference));
       }
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE, genResolveInfo(reference));
       nodeElement.addContent(linkElement);

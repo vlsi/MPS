@@ -18,6 +18,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -49,7 +50,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       }
     } else if (objectHolder instanceof ModulesHolder) {
       ModulesHolder modulesHolder = (ModulesHolder) objectHolder;
-      Set<SModule> visibleModules = IterableUtil.asSet(scope.getModules());
+      Set<SModule> visibleModules = new HashSet<SModule>(IterableUtil.asCollection(scope.getModules()));
       visibleModules.retainAll(modulesHolder.getObject());
       ListSequence.fromList(models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(visibleModules)));
       ListSequence.fromList(modules).addSequence(ListSequence.fromList(modulesHolder.getObject()));

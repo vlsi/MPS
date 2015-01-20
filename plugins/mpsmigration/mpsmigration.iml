@@ -30,6 +30,7 @@
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="console" />
+    <orderEntry type="module" module-name="migrations-runtime" />
   </component>
 </module>
 

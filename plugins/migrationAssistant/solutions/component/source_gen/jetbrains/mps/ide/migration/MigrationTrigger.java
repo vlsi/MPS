@@ -11,16 +11,20 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.migration.component.util.MigrationComponent;
+import com.intellij.openapi.ui.Messages;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -29,24 +33,17 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.util.PairFunction;
-import javax.swing.JCheckBox;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
-import com.intellij.util.Consumer;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * At the first startup, migraion is not required
+ * At the first startup, migration is not required
  * The need for migration is determined after startup by checking all modules once and then watching the repo
  * Whether some change requires migration to be executed, the user is notified about that and the project is reloaded 
  * with myState.migrationRequired set to true.
@@ -60,12 +57,12 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
-  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is recommended to clean generated files before you start the migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration assistnt can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
+  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
-  private volatile boolean myMigrationQueued = false;
+  private boolean myMigrationQueued = false;
 
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
@@ -86,7 +83,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          postponeMigrationIfNeededOnModuleChange(((Iterable<SModule>) myMpsProject.getModulesWithGenerators()));
+          tryMigratingProject();
         }
       });
       return;
@@ -106,7 +103,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             VirtualFileManager.getInstance().syncRefresh();
           }
         });
-        executeWizard();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            executeWizard();
+          }
+        });
       }
     });
   }
@@ -127,20 +128,44 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     return "MigrationTrigger";
   }
 
-  private void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
-    if (myMigrationQueued) {
-      return;
-    }
-
-    Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
+  public synchronized void tryMigratingProjectNoQueue() {
+    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
+    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        migrationRequired.value = MigrationComponent.isMigrationRequired(myMpsProject, allModules);
+      }
+    });
+    if (!(migrationRequired.value)) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          Messages.showMessageDialog(myProject, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
+        }
+      });
       return;
     }
 
     postponeMigration();
   }
 
-  private void postponeMigrationIfNeededOnLanguageReload(Iterable<Language> languages) {
+  private void tryMigratingProject() {
+    postponeMigrationIfNeededOnModuleChange(myMpsProject, MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+  }
+
+  private synchronized void postponeMigrationIfNeededOnModuleChange(Project p, Iterable<SModule> modules) {
+    if (myMigrationQueued) {
+      return;
+    }
+
+    Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
+    if (!(MigrationComponent.isMigrationRequired(p, modules2Check))) {
+      return;
+    }
+
+    postponeMigration();
+  }
+
+  private synchronized void postponeMigrationIfNeededOnLanguageReload(Iterable<Language> languages) {
     if (myMigrationQueued) {
       return;
     }
@@ -148,13 +173,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     // if a new language is added to a repo, all modules in project using it  
     // should be checked for whether their migration is needed  
     final Set<SModule> modules2Check = SetSequence.fromSet(new HashSet<SModule>());
-    Iterable<? extends SModule> projectModules = myMpsProject.getModulesWithGenerators();
-    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).ofType(Language.class).select(new ISelector<Language, SLanguage>() {
+    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
         return MetaIdByDeclaration.ref2Id(it.getModuleReference());
       }
     }).toListSequence();
-    Sequence.fromIterable(projectModules).visitAll(new IVisitor<SModule>() {
+    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         Set<SLanguage> used = new HashSet<SLanguage>(it.getUsedLanguages());
         used.retainAll(addedLanguages);
@@ -170,12 +194,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     postponeMigration();
   }
 
-  private synchronized void postponeMigration() {
-    // note this check is under sync block so we don't queue more than 1 reload 
-    if (myMigrationQueued) {
-      return;
-    }
-
+  private void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myMpsProject);
 
     // wait until project is fully loaded (if not yet) 
@@ -184,31 +203,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            String[] choises = new String[]{"Migrate", "Postpone"};
-            final int result = Messages.showCheckboxMessageDialog(DIALOG_TEXT, "Migration required", choises, "Clean generated sources", true, 0, 0, null, new PairFunction<Integer, JCheckBox, Integer>() {
-              public Integer fun(Integer selected, JCheckBox cb) {
-                if (selected == 1) {
-                  return 2;
-                }
-                return (cb.isSelected() ? 0 : 1);
-              }
-            });
-            if (result == 2) {
+            int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration required", "Migrate", "Postpone", null);
+            if (result == Messages.NO) {
               return;
             }
 
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              public void run() {
-                if (result == 0) {
-                  removeGenSources();
-                }
-
-                // clean genclasses 
-                removeClassesGen();
-                // invalidate FS caches (see InvalidateCachesAction) 
-                FSRecords.invalidateCaches();
-              }
-            });
             // set flag to execute migration after startup 
             myState.migrationRequired = true;
             // reload project and start migration assist 
@@ -221,43 +220,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myMigrationQueued = true;
   }
 
-  /**
-   * todo. Was originally copied from IdeCommandUtil, then changed. Check whether they could 
-   * be combined into one piece of universal code
-   */
-  public void removeGenSources() {
-    Iterable<? extends SModule> modules = myMpsProject.getModulesWithGenerators();
-    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile testDir = check_feb5zp_a0b0a0a1a42(it.getFacet(TestsFacet.class));
-        if (outputDir != null) {
-          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
-          outputDir.delete();
-          cacheDir.delete();
-        }
-        if (testDir != null) {
-          IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
-          testDir.delete();
-          testCacheDir.delete();
-        }
-      }
-    });
-  }
-
-  public void removeClassesGen() {
-    Iterable<? extends SModule> modules = myMpsProject.getModulesWithGenerators();
-    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_feb5zp_a0b0a0a1a62(it.getFacet(JavaModuleFacet.class));
-        if (classesGen != null) {
-          classesGen.delete();
-        }
-      }
-    });
-  }
-
   private class MyRepoListener extends SRepositoryContentAdapter {
     public MyRepoListener() {
     }
@@ -267,7 +229,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
       }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      if (!(MigrationsUtil.isModuleMigrateable(module))) {
+        return;
+      }
+      postponeMigrationIfNeededOnModuleChange(myMpsProject, Sequence.<SModule>singleton(module));
     }
 
     @Override
@@ -276,7 +241,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
       }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      if (!(MigrationsUtil.isModuleMigrateable(module))) {
+        return;
+      }
+      postponeMigrationIfNeededOnModuleChange(myMpsProject, Sequence.<SModule>singleton(module));
     }
   }
 
@@ -292,24 +260,42 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   @Override
   public void executeWizard() {
+    myState.migrationRequired = false;
+
     final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
-    wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
-      @Override
-      public void consume(Boolean finished) {
-        if (!(finished)) {
-          return;
-        }
-        if (!(wizard.isFinishSuccessfull())) {
-          return;
-        }
+    boolean finished = wizard.showAndGet();
+    if (!(finished)) {
+      return;
+    }
 
-        myState.migrationRequired = false;
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    if (wizard.isFinishSuccessfull()) {
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        public void run() {
+          ProjectManagerEx.getInstance().reloadProject(myProject);
+        }
+      });
+      return;
+    }
+
+    MigrationErrorStep lastStep = as_feb5zp_a0a9a23(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+    if (lastStep == null) {
+      return;
+    }
+
+    final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
+    if (afterProjectInitialized == null) {
+      return;
+    }
+
+    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            ProjectManagerEx.getInstance().reloadProject(myProject);
+            afterProjectInitialized.invoke();
           }
-        });
+        }, ModalityState.NON_MODAL);
+
       }
     });
   }
@@ -328,16 +314,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static IFile check_feb5zp_a0b0a0a1a42(TestsFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTestsOutputPath();
-    }
-    return null;
-  }
-  private static IFile check_feb5zp_a0b0a0a1a62(JavaModuleFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassesGen();
-    }
-    return null;
+  private static <T> T as_feb5zp_a0a9a23(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

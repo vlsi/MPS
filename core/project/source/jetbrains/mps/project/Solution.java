@@ -111,10 +111,15 @@ public class Solution extends ReloadableModuleBase {
   public void save() {
     super.save();
     //do not save stub solutions (otherwise build model generation fails)
-    if (bootstrapCP.keySet().contains(this.getModuleReference())) return;
+    SModuleReference ref = this.getModuleReference();
+    if (isBootstrapSolution(ref)) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
     if (myDescriptorFile == null || isReadOnly()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModule(this));
+  }
+
+  public static boolean isBootstrapSolution(SModuleReference ref) {
+    return bootstrapCP.keySet().contains(ref);
   }
 
   @Override

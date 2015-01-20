@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * Containment links describe parent-child relationships.
  */
-public interface SContainmentLink extends SAbstractLink {
+public interface SContainmentLink extends SAbstractLink, SConceptFeature {
   /**
    * Returns a name of this property
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
@@ -33,6 +33,7 @@ public interface SContainmentLink extends SAbstractLink {
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this property.
    */
+  @Deprecated// use SConceptFeature.getContainingConcept()
   SAbstractConcept getContainingConcept();
 
   /**

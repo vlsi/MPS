@@ -19,7 +19,6 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 import com.intellij.util.ui.Timer;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public final class TreeNodeUpdater {
 
   public TreeNodeUpdater(Project mpsProject) {
     myProject = mpsProject;
-    myTimer = new Timer("ProjectPane Tree Updater", 500) {
+    myTimer = new Timer("ProjectPane Tree Update Thread", 500) {
       @Override
       protected void onTimer() throws InterruptedException {
         process();
@@ -54,8 +53,13 @@ public final class TreeNodeUpdater {
         int batchProcessMax = 20; // do not process more than X at once, not to block any write actions nor UI thread for too long
         final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<Pair<MPSTreeNode, NodeUpdate>>(batchProcessMax);
         Pair<MPSTreeNode, NodeUpdate> u;
-        while ((u = myUpdates.poll()) != null && --batchProcessMax >= 0) {
+        while ((u = myUpdates.poll()) != null && batchProcessMax > 0) {
+          if (u.o1.getTree() == null) {
+            // no reason to update element which is not in the tree
+            continue;
+          }
           updates.add(u);
+          batchProcessMax--;
         }
         if (updates.isEmpty()) {
           break;
@@ -67,7 +71,7 @@ public final class TreeNodeUpdater {
             for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
               MPSTreeNode node = next.o1;
               if (node.getTree() == null) {
-                // no reason to update element which is not in the tree
+                // once again, no reason to update element which is not in the tree
                 continue;
               }
               next.o2.update(node);
@@ -89,9 +93,5 @@ public final class TreeNodeUpdater {
     if (!r.needed(node)) return;
     myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
     myTimer.start(); // sic(!), resume() or restart() force timer into 'running' state, effectively skipping initial delay
-  }
-
-  public static boolean checkDisposed(MPSTreeNode node) {
-    return node.getTree() != null;
   }
 }

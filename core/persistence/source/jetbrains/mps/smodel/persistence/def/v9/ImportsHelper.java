@@ -27,8 +27,8 @@ import java.util.Set;
  * model imports and their respective index values.
  *
  * The way model imports as well as node references utilizing these imports get serialized
- * is external to this class, see {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#toTextExternal(ImportsHelper, org.jetbrains.mps.openapi.model.SModelReference, org.jetbrains.mps.openapi.model.SReference)}
- *
+ * is external to this class, see {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#toTextExternal(ImportsHelper, org.jetbrains.mps.openapi.model.SReference)}
+` *
  * Alternative to StorageIndexHelper9, index generation code (although questionable) is identical.
  */
 class ImportsHelper {

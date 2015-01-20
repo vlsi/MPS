@@ -10,15 +10,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/1883223317720973623">
     <file name="LatticeUtil.java">
-      <node id="1883223317721339522" at="21,5,22,28" concept="5" />
+      <node id="1883223317721339522" at="21,5,22,34" concept="5" />
       <node id="1883223317721339532" at="24,192,25,38" concept="2" />
-      <node id="1883223317721339536" at="26,11,27,40" concept="5" />
+      <node id="1883223317721339536" at="26,11,27,46" concept="5" />
       <node id="1883223317721339546" at="29,208,30,55" concept="2" />
       <node id="1883223317720979906" at="30,55,31,225" concept="2" />
       <node id="1883223317721340741" at="32,15,33,48" concept="2" />
-      <node id="1883223317721340762" at="39,5,40,28" concept="5" />
+      <node id="1883223317721340762" at="39,5,40,34" concept="5" />
       <node id="1883223317721340772" at="42,192,43,38" concept="2" />
-      <node id="1883223317721340775" at="44,11,45,40" concept="5" />
+      <node id="1883223317721340775" at="44,11,45,46" concept="5" />
       <node id="1883223317721340785" at="47,208,48,55" concept="2" />
       <node id="1883223317721340789" at="48,55,49,225" concept="2" />
       <node id="1883223317721340796" at="50,15,51,48" concept="2" />
@@ -93,8 +93,8 @@
       <node id="1883223317720980584" at="158,0,161,0" concept="7" trace="getJoinArguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="1883223317720979893" at="28,203,32,15" concept="3" />
       <node id="1883223317721340778" at="46,203,50,15" concept="3" />
-      <node id="1883223317721339536" at="27,40,34,13" concept="4" />
-      <node id="1883223317721340775" at="45,40,52,13" concept="4" />
+      <node id="1883223317721339536" at="27,46,34,13" concept="4" />
+      <node id="1883223317721340775" at="45,46,52,13" concept="4" />
       <node id="1883223317720980029" at="64,7,72,7" concept="4" />
       <node id="4545016991847814954" at="92,7,100,7" concept="4" />
       <node id="1883223317721339536" at="25,38,35,11" concept="0" />
@@ -103,8 +103,8 @@
       <node id="4545016991847814869" at="101,10,111,5" concept="4" />
       <node id="1883223317720979874" at="23,192,36,9" concept="3" />
       <node id="1883223317721340765" at="41,192,54,9" concept="3" />
-      <node id="1883223317721339522" at="22,28,37,7" concept="4" />
-      <node id="1883223317721340762" at="40,28,55,7" concept="4" />
+      <node id="1883223317721339522" at="22,34,37,7" concept="4" />
+      <node id="1883223317721340762" at="40,34,55,7" concept="4" />
       <node id="6007597446559172591" at="114,0,130,0" concept="7" trace="joinNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6007597446559193325" at="130,0,146,0" concept="7" trace="meetNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1883223317721339522" at="20,56,38,5" concept="0" />

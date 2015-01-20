@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration;
+import jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;

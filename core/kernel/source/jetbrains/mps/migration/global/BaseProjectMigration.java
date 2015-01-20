@@ -17,44 +17,36 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
-public abstract class BaseProjectMigration implements ProjectMigration, SingleRunProjectMigration {
+/**
+ * A migration that runs only once and does not run on a newly created project
+ */
+public abstract class BaseProjectMigration implements ProjectMigration {
   public static final String EXECUTED_VALUE = "executed";
   public final String migrationId;
 
   public BaseProjectMigration(String migrationId) {
     this.migrationId = migrationId;
   }
+
   @Override
-  public boolean shouldBeExecuted(Project p) {
-    if (isExecuted(p)) {
-      return false;
-    }
-    return doShouldBeExecuted(p);
+  public final boolean shouldBeExecuted(Project p) {
+    return !EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
   }
 
-  public abstract boolean doShouldBeExecuted(Project p);
-
   @Override
-  public void execute(Project p) {
-    if (doExecute(p)) {
-      setExecuted(p);
-    }
+  public final void execute(Project p) {
+    if (!doExecute(p)) return;
+    setExecuted(p);
   }
 
   public abstract boolean doExecute(Project p);
 
-  @Override
-  public void setExecuted(Project p) {
+  public final void setExecuted(Project p) {
     MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
   }
 
   @Override
-  public boolean isExecuted(Project p) {
-    return EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
-  }
-
-  @Override
-  public boolean skipOnNewProject() {
-    return true;
+  public void applyToCreatedProject(Project p) {
+    setExecuted(p);
   }
 }

@@ -10,7 +10,6 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,8 +20,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -55,10 +52,6 @@ public class FindAllAdapterUsages_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
-    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
@@ -68,7 +61,7 @@ public class FindAllAdapterUsages_Action extends BaseAction {
           return SModelStereotype.isUserModel(md);
         }
       }));
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new AdapterUsagesChecker()));
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(models, new AdapterUsagesChecker());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);

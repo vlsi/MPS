@@ -214,7 +214,7 @@
       <property role="TrG5h" value="linkRole" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
       <node concept="asaX9" id="7R2Gq48DAB9" role="lGtFl">
-        <property role="YLQ7P" value="linkRole and linkId should be used directly. Use getLink() behaviour method or AttributeOperations.getLink(node&lt;LinkAttribute&gt;)" />
+        <property role="YLQ7P" value="linkRole and linkId should not be used directly. Use getLink() behaviour method or AttributeOperations.getLink(node&lt;LinkAttribute&gt;)" />
       </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4B$JLs" role="1TKVEl">
@@ -245,7 +245,7 @@
       <property role="TrG5h" value="propertyName" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
       <node concept="asaX9" id="7R2Gq48DzZK" role="lGtFl">
-        <property role="YLQ7P" value="propertyName and propertyId should be used directly. Use getProperty() behaviour method or AttributeOperations.getProperty(node&lt;PropertyAttribute&gt;)" />
+        <property role="YLQ7P" value="propertyName and propertyId should not be used directly. Use getProperty() behaviour method or AttributeOperations.getProperty(node&lt;PropertyAttribute&gt;)" />
       </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4BzllH" role="1TKVEl">

@@ -10,10 +10,10 @@ public class NodeReferencePresentation_BehaviorDescriptor extends BaseConcept_Be
   public NodeReferencePresentation_BehaviorDescriptor() {
   }
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return NodeReferencePresentation_Behavior.virtual_canExecute_3282455643657932881(thisNode);
+    return INodeWithReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    NodeReferencePresentation_Behavior.virtual_execute_8517397753922085153(thisNode, project);
+    INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
   public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return INodeWithReference_Behavior.virtual_getTextWhenBroken_328850564593858078(thisNode);

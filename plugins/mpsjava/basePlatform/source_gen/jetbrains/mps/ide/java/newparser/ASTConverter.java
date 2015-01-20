@@ -181,7 +181,7 @@ public class ASTConverter {
     childConverter.convertAnnotations(x.annotations, cls);
 
     {
-      SNode claz = cls;
+      final SNode claz = cls;
       if (SNodeOperations.isInstanceOf(claz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         // we're either class or enum 
         SLinkOperations.setTarget(claz, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), SNodeOperations.cast(childConverter.convertTypeReference(x.superclass), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
@@ -196,7 +196,7 @@ public class ASTConverter {
     }
 
     {
-      SNode iface = cls;
+      final SNode iface = cls;
       if (SNodeOperations.isInstanceOf(iface, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         // <node> 
         if (x.superInterfaces != null) {
@@ -208,7 +208,7 @@ public class ASTConverter {
     }
 
     {
-      SNode enm = cls;
+      final SNode enm = cls;
       if (SNodeOperations.isInstanceOf(enm, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         if (x.fields != null) {
           for (FieldDeclaration f : x.fields) {
@@ -529,7 +529,7 @@ public class ASTConverter {
     check_rbndtb_a6a71(idBuilder);
 
     {
-      SNode imd = result;
+      final SNode imd = result;
       if (SNodeOperations.isInstanceOf(imd, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
         if (flagSet(x.modifiers, ClassFileConstants.AccAbstract)) {
           SPropertyOperations.set(imd, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (true));
@@ -575,7 +575,7 @@ public class ASTConverter {
     }
 
     {
-      SNode mem = result;
+      final SNode mem = result;
       if (SNodeOperations.isInstanceOf(mem, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
         if ((SLinkOperations.getTarget(mem, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == null)) {
           SLinkOperations.setTarget(mem, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), convertVisibility(x.modifiers));

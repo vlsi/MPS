@@ -4,7 +4,6 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.ide.migration.MigrationCheckUtil;
 
 public class MigrationErrorStep_Pre extends MigrationErrorStep {
   public static final String ID = "PreProblem";
@@ -14,10 +13,10 @@ public class MigrationErrorStep_Pre extends MigrationErrorStep {
   }
 
   protected String getText() {
-    return "Migration Assistant found that some languages used in this project are missing.\n" + "Try running migrations after correcting your project and/or adding necessary libraries.\n" + "Migration Assistant will be started again on next project opening or it can be started\n" + "manually by choosing Tools->Run Migration Assistant from main menu.\n" + "Problem nodes will be shown in Usages tool after the project is loaded.";
+    return "Migration Assistant found that some languages used in this project are missing.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problem nodes will be shown in Usages tool after the project is loaded.";
   }
 
-  protected _FunctionTypes._void_P0_E0 afterProjectInitialized() {
-    return MigrationCheckUtil.getShowUsagesCallback(myProject);
+  public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
+    return MigrationErrorStep.getPrePostShowUsagesCallback(myProject);
   }
 }
