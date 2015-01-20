@@ -29,10 +29,10 @@
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(java.util.concurrent@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -1602,17 +1602,13 @@
             </node>
             <node concept="3clFbF" id="1KUoCipvD3U" role="3cqZAp">
               <node concept="2OqwBi" id="1KUoCipvD3V" role="3clFbG">
-                <node concept="2OqwBi" id="7K4C0v00HHd" role="2Oq$k0">
-                  <node concept="2YIFZM" id="7K4C0v00HAp" role="2Oq$k0">
-                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                    <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                  </node>
-                  <node concept="liA8E" id="7K4C0v00HS5" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <node concept="2ShNRf" id="5piBd3sKHql" role="2Oq$k0">
+                  <node concept="1pGfFk" id="5piBd3sKIck" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~GlobalModelAccess.&lt;init&gt;()" resolve="GlobalModelAccess" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1KUoCipvD3X" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                  <ref role="37wK5l" to="cu2c:~ModelAccessBase.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                   <node concept="1bVj0M" id="1KUoCipvD3Y" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCipvD3Z" role="1bW5cS">
                       <node concept="3clFbF" id="1KUoCipvD40" role="3cqZAp">
@@ -2907,16 +2903,23 @@
               <node concept="10Nm6u" id="i2aoFGd" role="33vP2m" />
             </node>
           </node>
+          <node concept="3cpWs8" id="5piBd3sJKyr" role="3cqZAp">
+            <node concept="3cpWsn" id="5piBd3sJKys" role="3cpWs9">
+              <property role="TrG5h" value="modelAccess" />
+              <node concept="3uibUv" id="5piBd3sJKyt" role="1tU5fm">
+                <ref role="3uigEE" to="88zw:~ModelAccess" resolve="ModelAccess" />
+              </node>
+              <node concept="2ShNRf" id="5piBd3sJKFE" role="33vP2m">
+                <node concept="1pGfFk" id="5piBd3sJQNI" role="2ShVmc">
+                  <ref role="37wK5l" to="cu2c:~GlobalModelAccess.&lt;init&gt;()" resolve="GlobalModelAccess" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1KUoCipv$fb" role="3cqZAp">
             <node concept="2OqwBi" id="1KUoCipv$fc" role="3clFbG">
-              <node concept="2OqwBi" id="7K4C0uZY1ow" role="2Oq$k0">
-                <node concept="2YIFZM" id="7K4C0uZY0Q_" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                  <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                </node>
-                <node concept="liA8E" id="7K4C0uZY1G3" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                </node>
+              <node concept="37vLTw" id="5piBd3sJK$1" role="2Oq$k0">
+                <ref role="3cqZAo" node="5piBd3sJKys" resolve="modelAccess" />
               </node>
               <node concept="liA8E" id="1KUoCipv$fe" role="2OqNvi">
                 <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
