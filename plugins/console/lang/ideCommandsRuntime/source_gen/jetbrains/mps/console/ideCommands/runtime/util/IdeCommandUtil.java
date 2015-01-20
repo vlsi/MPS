@@ -48,7 +48,7 @@ import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
   public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
-    final ProjectOperationContext context = new ProjectOperationContext(project);
+    ProjectOperationContext context = new ProjectOperationContext(project);
 
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -100,7 +100,7 @@ public class IdeCommandUtil {
     });
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
+        new MakeActionImpl(new MakeActionParameters(project).models(modelsToGenerate.value).cleanMake(false)).executeAction();
       }
     });
   }

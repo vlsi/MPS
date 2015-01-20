@@ -10,12 +10,12 @@ import jetbrains.mps.make.IMakeService;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import java.util.ArrayList;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -34,8 +34,11 @@ public class RebuildSelectedModels_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModel) MapSequence.fromMap(_params).get("cmodel")), null, null).actionText(true);
+    List<SModel> list = RebuildSelectedModels_Action.this.getModels(_params);
+    if (ListSequence.fromList(list).isEmpty()) {
+      return false;
+    }
+    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(list).cleanMake(true).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -59,8 +62,8 @@ public class RebuildSelectedModels_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
@@ -69,13 +72,22 @@ public class RebuildSelectedModels_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModel) MapSequence.fromMap(_params).get("cmodel")), null, null), true).executeAction();
+      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(RebuildSelectedModels_Action.this.getModels(_params)).cleanMake(true)).executeAction();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RebuildSelectedModels", t);
       }
     }
+  }
+  private List<SModel> getModels(final Map<String, Object> _params) {
+    List<SModel> rv = ListSequence.fromList(new ArrayList<SModel>());
+    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
+      ListSequence.fromList(rv).insertElement(0, ((SModel) MapSequence.fromMap(_params).get("cmodel")));
+      return rv;
+    } else if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+      ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models"))));
+    }
+    return rv;
   }
   protected static Logger LOG = LogManager.getLogger(RebuildSelectedModels_Action.class);
 }
