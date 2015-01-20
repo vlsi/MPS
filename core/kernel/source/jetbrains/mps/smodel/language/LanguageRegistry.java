@@ -55,7 +55,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   private Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
   private Map<SLanguageId, LanguageRuntime> myLanguagesById = new HashMap<SLanguageId, LanguageRuntime>();
-  private Set<SLanguageId> myInterpretedLanguages = new HashSet<SLanguageId>();
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
@@ -202,9 +201,10 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SLanguageId languageId : collectLanguagesToUnload(unloadedModules)) {
-      if (myLanguagesById.containsKey(languageId)) {
-        languagesToUnload.add(myLanguagesById.get(languageId));
+      if (!myLanguagesById.containsKey(languageId)) {
+        LOG.warn("No language with id " + languageId + " to unload");
       }
+      languagesToUnload.add(myLanguagesById.get(languageId));
     }
 
     notifyUnload(languagesToUnload);
@@ -222,7 +222,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (Language language : collectLanguagesToLoad(loadedModules)) {
       SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
       if (myLanguagesById.containsKey(languageId)) {
-        LOG.error("", new IllegalArgumentException("There is already a language " + myLanguagesById.get(languageId) + " with id " + languageId));
+        LOG.error("", new IllegalArgumentException(String.format("There is already a language '%s' with id '%s'", myLanguagesById.get(languageId), languageId)));
         continue;
       }
       try {
@@ -232,8 +232,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
         String langName = langRuntime.getNamespace();
         if (myLanguages.containsKey(langName)) {
-          LOG.error("", new IllegalArgumentException("There is already a language " + myLanguages.get(langName) + " with a name " + langName));
-          continue;
+          LOG.warn(String.format("There is already a language '%s' with a name '%s'", myLanguages.get(langName), langName));
         }
         myLanguages.put(langName, langRuntime);
         myLanguagesById.put(languageId, langRuntime);
@@ -253,8 +252,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         languagesToUnload.add(MetaIdByDeclaration.getLanguageId((Language) unloadedModule));
       }
     }
-    languagesToUnload.addAll(myInterpretedLanguages);
-    myInterpretedLanguages.clear();
     return languagesToUnload;
   }
 
