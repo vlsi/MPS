@@ -16,10 +16,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConcept_Constraints();
       case 1:
         return new IResolveInfo_Constraints();
-      case 3:
-        return new PropertyAttribute_Constraints();
-      case 2:
-        return new LinkAttribute_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -32,13 +28,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x116b17c6e46L) {
       return new IResolveInfo_Constraints();
     }
-    if (id == 0x2eb1ad060897da56L) {
-      return new PropertyAttribute_Constraints();
-    }
-    if (id == 0x2eb1ad060897da51L) {
-      return new LinkAttribute_Constraints();
-    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"};
 }

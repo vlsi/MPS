@@ -4,17 +4,17 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -29,7 +29,7 @@ public class NewElement_Action extends BaseAction {
   private static final Icon ICON = null;
   public NewElement_Action() {
     super("New...", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
     this.addPlace(null);
   }
@@ -37,9 +37,15 @@ public class NewElement_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((TreeNode) MapSequence.fromMap(_params).get("node")) != null || ((ActionGroup) MapSequence.fromMap(_params).get("group")) != null;
+  }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewElement", t);

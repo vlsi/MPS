@@ -7,14 +7,14 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.Collections;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import java.util.Collections;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class TodoFinder implements IFinder {
@@ -22,10 +22,11 @@ public class TodoFinder implements IFinder {
   }
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    Set<SNode> nodes = (Set<SNode>) FindUsagesFacade.getInstance().findInstances(query.getScope(), Collections.singleton(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.TextCommentPart")), false, new EmptyProgressMonitor());
+    Set<SConcept> s = Collections.singleton(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
+    Set<SNode> textCommentParts = FindUsagesFacade.getInstance().findInstances(query.getScope(), s, false, new EmptyProgressMonitor());
     SearchResults<SNode> results = new SearchResults<SNode>();
-    for (SNode node : nodes) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart")), "virtual_isToDo_7236590470026152831", new Object[]{})) {
+    for (SNode node : SNodeOperations.ofConcept(textCommentParts, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isToDo_7236590470026152831", new Object[]{})) {
         results.getSearchResults().add(new SearchResult<SNode>(node, "TODO items"));
       }
     }

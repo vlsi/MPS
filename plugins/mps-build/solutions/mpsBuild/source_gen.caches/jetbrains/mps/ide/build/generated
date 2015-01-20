@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-wlft57hyzeu98vxwi3b2hqf1og7539">
+<dependencies version="2" modelHash="bcnay0tbwpw5hcw6zwgt2kv3sxapdrf">
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="bwtktbchllw7ig06ddz3g9drsanbnud" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="3b1nqkol7hbo3iv79ho64ds826p8vms" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="3fmamqjqlfsx8kxfmdxuq8cbug9a0yx" />
@@ -113,7 +113,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsTroveCollections.xml" />
   </source>
-  <source id="6391307088354381121" name="mpsPlugins" hash="-a46tf873srtm5gwilejmr7psuce8b2j">
+  <source id="6391307088354381121" name="mpsPlugins" hash="9l1k1phat4k01y5sdukiw6iouq1mufw">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="5548512857136492214" />

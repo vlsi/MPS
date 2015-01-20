@@ -11,6 +11,11 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.icons.AllIcons;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.AbstractAction;
@@ -20,7 +25,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import javax.swing.SwingUtilities;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.TaskInfo;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
@@ -56,9 +60,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private MigrationScriptsController myController;
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
     myProject = project;
-    if (!(ThreadUtils.isEventDispatchThread())) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     myFinder = finder;
     myFinder.addResultsListener(this);
     myQuery = query;
@@ -68,13 +70,15 @@ public abstract class MigrationScriptsView implements ResultsListener {
     viewOptions.myShowSearchedNodes = false;
     viewOptions.myGroupSearchedNodes = false;
     viewOptions.mySearchedNodesButtonsVisible = false;
-    myUsagesView = new UsagesView(project, viewOptions) {
-      @Override
-      public void close() {
+    myUsagesView = new UsagesView(project, viewOptions);
+    UsagesView.RerunAction searchAction = new UsagesView.RerunAction(myUsagesView, "Search again");
+    searchAction.setRunOptions(provider, query);
+    myUsagesView.setActions(searchAction, new UsagesView.RebuildAction(myUsagesView), new AnAction("Close", "", AllIcons.Actions.Cancel) {
+      public void actionPerformed(@NotNull AnActionEvent p0) {
         MigrationScriptsView.this.close();
       }
-    };
-    myUsagesView.setRunOptions(provider, query, new UsagesView.ButtonConfiguration(true, true, true), finder.getLastSearchResults());
+    }, new PinToolwindowTabAction());
+    myUsagesView.setContents(finder.getLastSearchResults());
     myMainPanel = new JPanel(new BorderLayout());
     myMainPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));

@@ -5,7 +5,9 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
@@ -13,8 +15,8 @@ public class PastedNodeReference_Behavior {
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
   }
-  public static String call_getText_6888400917983823151(SNode thisNode) {
-    SNodeId targetNodeId = thisNode.getReference(MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")).getTargetNodeId();
+  public static String call_getText_6888400917983823151(SAbstractConcept thisConcept, SNode targetNode) {
+    SNodeId targetNodeId = check_mc1kik_a0a0b(targetNode);
     if (targetNodeId == null) {
       return "(deleted node)";
     }
@@ -22,6 +24,15 @@ public class PastedNodeReference_Behavior {
     return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return PastedNodeReference_Behavior.call_getText_6888400917983823151(thisNode) + "(deleted node)";
+    return PastedNodeReference_Behavior.call_getText_6888400917983823151(SNodeOperations.asSConcept(SNodeOperations.getConcept(thisNode)), thisNode) + "(deleted node)";
+  }
+  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
+    return false;
+  }
+  private static SNodeId check_mc1kik_a0a0b(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
+    }
+    return null;
   }
 }

@@ -19,6 +19,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.ModelValidator;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -59,7 +60,7 @@ public class ModelValidatorAdapter implements ModelValidator {
       return true;
     }
 
-    ModelCheckerViewer viewer = tool.checkModels(modelDescriptors, operationContext, false);
+    ModelCheckerViewer viewer = tool.checkModels(modelDescriptors);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
 
     int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
@@ -71,7 +72,7 @@ public class ModelValidatorAdapter implements ModelValidator {
 
       if (dialog.isOK()) {
         // review errors and warnings, don't generate
-        tool.showTabWithResults(viewer);
+        tool.showTabWithResults(viewer, "Pre-generate validation", IdeIcons.MODEL_ICON);
         return false;
       } else {
         // ignore errors and warnings
