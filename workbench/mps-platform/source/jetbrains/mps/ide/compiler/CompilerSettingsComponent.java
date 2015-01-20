@@ -49,7 +49,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
     return project.getComponent(CompilerSettingsComponent.class);
   }
 
-  @Nullable
+  @NotNull
   @Override
   public CompilerState getState() {
     CompilerState state = new CompilerState();

@@ -385,46 +385,54 @@
       <node id="1932393287524592989" at="19,40,20,14" concept="15" />
       <node id="7669180959145370468" at="23,45,24,92" concept="9" />
       <node id="3744346502598053114" at="25,26,26,19" concept="10" />
-      <node id="1932393287524673999" at="27,5,28,98" concept="9" />
-      <node id="1932393287524674399" at="28,98,29,102" concept="4" />
-      <node id="7669180959145371840" at="29,102,30,72" concept="4" />
-      <node id="1932393287524769416" at="30,72,31,16" concept="10" />
-      <node id="7669180959145251117" at="33,34,34,45" concept="10" />
-      <node id="1932393287524580950" at="37,54,38,41" concept="4" />
-      <node id="3144483314667875927" at="40,34,41,73" concept="4" />
-      <node id="3144483314667874445" at="43,31,44,70" concept="4" />
-      <node id="3144483314667873060" at="48,36,49,36" concept="10" />
+      <node id="3744346502598274430" at="27,5,28,109" concept="9" />
+      <node id="3744346502598334593" at="29,44,30,19" concept="10" />
+      <node id="1932393287524673999" at="32,74,33,100" concept="9" />
+      <node id="1932393287524674399" at="33,100,34,104" concept="4" />
+      <node id="7669180959145371840" at="34,104,35,49" concept="4" />
+      <node id="1932393287524769416" at="36,5,37,16" concept="10" />
+      <node id="7669180959145251117" at="39,34,40,45" concept="10" />
+      <node id="1932393287524580950" at="43,54,44,41" concept="4" />
+      <node id="3144483314667875927" at="46,34,47,73" concept="4" />
+      <node id="3144483314667874445" at="49,31,50,70" concept="4" />
+      <node id="3144483314667873060" at="54,36,55,36" concept="10" />
       <node id="1932393287524590122" at="19,0,22,0" concept="2" trace="ProjectJavaVersionMigration#()V" />
       <node id="3744346502598047586" at="24,92,27,5" concept="7" />
-      <node id="7669180959145244061" at="33,0,36,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
-      <node id="3144483314667869076" at="40,0,43,0" concept="8" trace="disposeComponent#()V" />
-      <node id="3144483314667869084" at="43,0,46,0" concept="8" trace="initComponent#()V" />
-      <node id="1932393287524580940" at="36,0,40,0" concept="8" trace="applyToCreatedProject#(Ljetbrains/mps/project/Project;)V" />
-      <node id="3144483314667869092" at="46,0,51,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="7669180959145244052" at="23,0,33,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
+      <node id="3744346502598278182" at="28,109,31,5" concept="7" />
+      <node id="7669180959145244061" at="39,0,42,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
+      <node id="3144483314667869076" at="46,0,49,0" concept="8" trace="disposeComponent#()V" />
+      <node id="3144483314667869084" at="49,0,52,0" concept="8" trace="initComponent#()V" />
+      <node id="1932393287524580940" at="42,0,46,0" concept="8" trace="applyToCreatedProject#(Ljetbrains/mps/project/Project;)V" />
+      <node id="3744346502598344777" at="31,5,36,5" concept="7" />
+      <node id="3144483314667869092" at="52,0,57,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="7669180959145244052" at="23,0,39,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
       <scope id="1932393287524590126" at="19,40,20,14" />
       <scope id="3744346502598047589" at="25,26,26,19" />
-      <scope id="7669180959145244067" at="33,34,34,45" />
-      <scope id="1932393287524580946" at="37,54,38,41" />
-      <scope id="3144483314667869083" at="40,34,41,73" />
-      <scope id="3144483314667869091" at="43,31,44,70" />
-      <scope id="3144483314667869102" at="48,36,49,36" />
+      <scope id="3744346502598278185" at="29,44,30,19" />
+      <scope id="7669180959145244067" at="39,34,40,45" />
+      <scope id="1932393287524580946" at="43,54,44,41" />
+      <scope id="3144483314667869083" at="46,34,47,73" />
+      <scope id="3144483314667869091" at="49,31,50,70" />
+      <scope id="3144483314667869102" at="54,36,55,36" />
       <scope id="1932393287524590122" at="19,0,22,0" />
-      <scope id="7669180959145244061" at="33,0,36,0" />
-      <scope id="3144483314667869076" at="40,0,43,0" />
-      <scope id="3144483314667869084" at="43,0,46,0" />
-      <scope id="1932393287524580940" at="36,0,40,0">
-        <var name="project" id="1932393287524580944" />
-      </scope>
-      <scope id="3144483314667869092" at="46,0,51,0" />
-      <scope id="7669180959145244058" at="23,45,31,16">
-        <var name="ideaProject" id="7669180959145370469" />
+      <scope id="3744346502598344780" at="32,74,35,49">
         <var name="state" id="1932393287524674000" />
       </scope>
-      <scope id="7669180959145244052" at="23,0,33,0">
+      <scope id="7669180959145244061" at="39,0,42,0" />
+      <scope id="3144483314667869076" at="46,0,49,0" />
+      <scope id="3144483314667869084" at="49,0,52,0" />
+      <scope id="1932393287524580940" at="42,0,46,0">
+        <var name="project" id="1932393287524580944" />
+      </scope>
+      <scope id="3144483314667869092" at="52,0,57,0" />
+      <scope id="7669180959145244058" at="23,45,37,16">
+        <var name="compilerSettingsComponent" id="3744346502598274431" />
+        <var name="ideaProject" id="7669180959145370469" />
+      </scope>
+      <scope id="7669180959145244052" at="23,0,39,0">
         <var name="project" id="7669180959145244056" />
       </scope>
-      <unit id="7669180959145224655" at="15,0,52,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ProjectJavaVersionMigration" />
+      <unit id="7669180959145224655" at="15,0,58,0" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.ProjectJavaVersionMigration" />
     </file>
   </root>
 </debug-info>

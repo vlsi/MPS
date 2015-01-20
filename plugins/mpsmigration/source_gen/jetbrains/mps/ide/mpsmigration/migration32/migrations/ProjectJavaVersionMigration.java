@@ -25,9 +25,15 @@ public class ProjectJavaVersionMigration extends BaseProjectMigration implements
     if (project == null) {
       return false;
     }
-    CompilerSettingsComponent.CompilerState state = new CompilerSettingsComponent.CompilerState();
-    state.setTargetVersion(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_6.getCompilerVersion());
-    CompilerSettingsComponent.getInstance(ideaProject).loadState(state);
+    CompilerSettingsComponent compilerSettingsComponent = CompilerSettingsComponent.getInstance(ideaProject);
+    if (compilerSettingsComponent == null) {
+      return false;
+    }
+    if (compilerSettingsComponent.getState().getTargetVersion() == null) {
+      CompilerSettingsComponent.CompilerState state = new CompilerSettingsComponent.CompilerState();
+      state.setTargetVersion(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_6.getCompilerVersion());
+      compilerSettingsComponent.loadState(state);
+    }
     return true;
   }
   public String getDescription() {

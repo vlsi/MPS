@@ -2141,53 +2141,99 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1FhfnjHguBf" role="3cqZAp">
-          <node concept="3cpWsn" id="1FhfnjHguBg" role="3cpWs9">
-            <property role="TrG5h" value="state" />
-            <node concept="3uibUv" id="1FhfnjHguBd" role="1tU5fm">
-              <ref role="3uigEE" to="vobj:~CompilerSettingsComponent$CompilerState" resolve="CompilerSettingsComponent.CompilerState" />
+        <node concept="3cpWs8" id="3fQ_OT3maPY" role="3cqZAp">
+          <node concept="3cpWsn" id="3fQ_OT3maPZ" role="3cpWs9">
+            <property role="TrG5h" value="compilerSettingsComponent" />
+            <node concept="3uibUv" id="3fQ_OT3maPX" role="1tU5fm">
+              <ref role="3uigEE" to="vobj:~CompilerSettingsComponent" resolve="CompilerSettingsComponent" />
             </node>
-            <node concept="2ShNRf" id="1FhfnjHguBh" role="33vP2m">
-              <node concept="1pGfFk" id="1FhfnjHguBi" role="2ShVmc">
-                <ref role="37wK5l" to="vobj:~CompilerSettingsComponent$CompilerState.&lt;init&gt;()" resolve="CompilerSettingsComponent.CompilerState" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1FhfnjHguHv" role="3cqZAp">
-          <node concept="2OqwBi" id="1FhfnjHguJv" role="3clFbG">
-            <node concept="37vLTw" id="1FhfnjHguHt" role="2Oq$k0">
-              <ref role="3cqZAo" node="1FhfnjHguBg" resolve="state" />
-            </node>
-            <node concept="liA8E" id="1FhfnjHguRS" role="2OqNvi">
-              <ref role="37wK5l" to="vobj:~CompilerSettingsComponent$CompilerState.setTargetVersion(java.lang.String):void" resolve="setTargetVersion" />
-              <node concept="2OqwBi" id="2IzsICsUEiP" role="37wK5m">
-                <node concept="Rm8GO" id="qlHM05irUD" role="2Oq$k0">
-                  <ref role="Rm8GQ" to="i119:~JavaCompilerOptionsComponent$JavaVersion.VERSION_1_6" resolve="VERSION_1_6" />
-                  <ref role="1Px2BO" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
-                </node>
-                <node concept="liA8E" id="2IzsICsUEOJ" role="2OqNvi">
-                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.getCompilerVersion():java.lang.String" resolve="getCompilerVersion" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6DIpRc43az0" role="3cqZAp">
-          <node concept="2OqwBi" id="6DIpRc43aLZ" role="3clFbG">
-            <node concept="2YIFZM" id="6DIpRc43a$j" role="2Oq$k0">
+            <node concept="2YIFZM" id="3fQ_OT3maQ0" role="33vP2m">
               <ref role="37wK5l" to="vobj:~CompilerSettingsComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.compiler.CompilerSettingsComponent" resolve="getInstance" />
               <ref role="1Pybhc" to="vobj:~CompilerSettingsComponent" resolve="CompilerSettingsComponent" />
-              <node concept="37vLTw" id="6DIpRc43aCO" role="37wK5m">
+              <node concept="37vLTw" id="3fQ_OT3maQ1" role="37wK5m">
                 <ref role="3cqZAo" node="6DIpRc43ad_" resolve="ideaProject" />
               </node>
             </node>
-            <node concept="liA8E" id="1FhfnjHgoOU" role="2OqNvi">
-              <ref role="37wK5l" to="vobj:~CompilerSettingsComponent.loadState(jetbrains.mps.ide.compiler.CompilerSettingsComponent$CompilerState):void" resolve="loadState" />
-              <node concept="37vLTw" id="1FhfnjHguBj" role="37wK5m">
-                <ref role="3cqZAo" node="1FhfnjHguBg" resolve="state" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3fQ_OT3mbKA" role="3cqZAp">
+          <node concept="3clFbS" id="3fQ_OT3mbKD" role="3clFbx">
+            <node concept="3cpWs6" id="3fQ_OT3mpy1" role="3cqZAp">
+              <node concept="3clFbT" id="3fQ_OT3mpy$" role="3cqZAk">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
+          </node>
+          <node concept="3clFbC" id="3fQ_OT3mpuH" role="3clFbw">
+            <node concept="10Nm6u" id="3fQ_OT3mpxc" role="3uHU7w" />
+            <node concept="37vLTw" id="3fQ_OT3mpl1" role="3uHU7B">
+              <ref role="3cqZAo" node="3fQ_OT3maPZ" resolve="compilerSettingsComponent" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3fQ_OT3ms19" role="3cqZAp">
+          <node concept="3clFbS" id="3fQ_OT3ms1c" role="3clFbx">
+            <node concept="3cpWs8" id="1FhfnjHguBf" role="3cqZAp">
+              <node concept="3cpWsn" id="1FhfnjHguBg" role="3cpWs9">
+                <property role="TrG5h" value="state" />
+                <node concept="3uibUv" id="1FhfnjHguBd" role="1tU5fm">
+                  <ref role="3uigEE" to="vobj:~CompilerSettingsComponent$CompilerState" resolve="CompilerSettingsComponent.CompilerState" />
+                </node>
+                <node concept="2ShNRf" id="1FhfnjHguBh" role="33vP2m">
+                  <node concept="1pGfFk" id="1FhfnjHguBi" role="2ShVmc">
+                    <ref role="37wK5l" to="vobj:~CompilerSettingsComponent$CompilerState.&lt;init&gt;()" resolve="CompilerSettingsComponent.CompilerState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1FhfnjHguHv" role="3cqZAp">
+              <node concept="2OqwBi" id="1FhfnjHguJv" role="3clFbG">
+                <node concept="37vLTw" id="1FhfnjHguHt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1FhfnjHguBg" resolve="state" />
+                </node>
+                <node concept="liA8E" id="1FhfnjHguRS" role="2OqNvi">
+                  <ref role="37wK5l" to="vobj:~CompilerSettingsComponent$CompilerState.setTargetVersion(java.lang.String):void" resolve="setTargetVersion" />
+                  <node concept="2OqwBi" id="2IzsICsUEiP" role="37wK5m">
+                    <node concept="Rm8GO" id="qlHM05irUD" role="2Oq$k0">
+                      <ref role="Rm8GQ" to="i119:~JavaCompilerOptionsComponent$JavaVersion.VERSION_1_6" resolve="VERSION_1_6" />
+                      <ref role="1Px2BO" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
+                    </node>
+                    <node concept="liA8E" id="2IzsICsUEOJ" role="2OqNvi">
+                      <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.getCompilerVersion():java.lang.String" resolve="getCompilerVersion" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6DIpRc43az0" role="3cqZAp">
+              <node concept="2OqwBi" id="6DIpRc43aLZ" role="3clFbG">
+                <node concept="37vLTw" id="3fQ_OT3maQ2" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3fQ_OT3maPZ" resolve="compilerSettingsComponent" />
+                </node>
+                <node concept="liA8E" id="1FhfnjHgoOU" role="2OqNvi">
+                  <ref role="37wK5l" to="vobj:~CompilerSettingsComponent.loadState(jetbrains.mps.ide.compiler.CompilerSettingsComponent$CompilerState):void" resolve="loadState" />
+                  <node concept="37vLTw" id="1FhfnjHguBj" role="37wK5m">
+                    <ref role="3cqZAo" node="1FhfnjHguBg" resolve="state" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3fQ_OT3muYJ" role="3clFbw">
+            <node concept="2OqwBi" id="3fQ_OT3mr7_" role="3uHU7B">
+              <node concept="2OqwBi" id="3fQ_OT3mqgd" role="2Oq$k0">
+                <node concept="37vLTw" id="3fQ_OT3mq7z" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3fQ_OT3maPZ" resolve="compilerSettingsComponent" />
+                </node>
+                <node concept="liA8E" id="3fQ_OT3mr6j" role="2OqNvi">
+                  <ref role="37wK5l" to="vobj:~CompilerSettingsComponent.getState():jetbrains.mps.ide.compiler.CompilerSettingsComponent$CompilerState" resolve="getState" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3fQ_OT3mrlG" role="2OqNvi">
+                <ref role="37wK5l" to="vobj:~CompilerSettingsComponent$CompilerState.getTargetVersion():java.lang.String" resolve="getTargetVersion" />
+              </node>
+            </node>
+            <node concept="10Nm6u" id="3fQ_OT3msA_" role="3uHU7w" />
           </node>
         </node>
         <node concept="3cpWs6" id="1FhfnjHgPU8" role="3cqZAp">
