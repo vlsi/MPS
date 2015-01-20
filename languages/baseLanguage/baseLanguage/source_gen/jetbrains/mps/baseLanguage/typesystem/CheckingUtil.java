@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CheckingUtil {
   public CheckingUtil() {
@@ -63,5 +64,9 @@ public class CheckingUtil {
         return it != fieldDecl && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
       }
     });
+  }
+
+  public static boolean isValidByteOrShortAssignment(SNode expectedType, SNode expr) {
+    return (SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType")) && SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")), "virtual_isByteAssignable_6460384142095735181", new Object[]{})) || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType")) && SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral")), "virtual_isShortAssignable_6460384142095788691", new Object[]{});
   }
 }

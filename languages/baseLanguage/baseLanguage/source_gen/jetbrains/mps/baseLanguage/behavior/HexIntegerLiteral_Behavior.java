@@ -13,4 +13,45 @@ public class HexIntegerLiteral_Behavior {
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value"));
   }
+  public static boolean virtual_isByteAssignable_6460384142095735181(SNode thisNode) {
+    if (!(IntegerLiteral_Behavior.call_isPossitionThatAllowsByteAndShort_4338540387739143309(thisNode))) {
+      return false;
+    }
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")))) {
+      return false;
+    }
+
+    try {
+      int value = Integer.parseInt(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")), 16);
+      if (value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (NumberFormatException num) {
+      return false;
+    }
+  }
+  public static boolean virtual_isShortAssignable_6460384142095788691(SNode thisNode) {
+    if (!(IntegerLiteral_Behavior.call_isPossitionThatAllowsByteAndShort_4338540387739143309(thisNode))) {
+      return false;
+    }
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")))) {
+      return false;
+    }
+
+    try {
+      int value = Integer.parseInt(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")), 16);
+      if (value >= Short.MIN_VALUE && value <= Short.MAX_VALUE) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (NumberFormatException num) {
+      return false;
+    }
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
 }

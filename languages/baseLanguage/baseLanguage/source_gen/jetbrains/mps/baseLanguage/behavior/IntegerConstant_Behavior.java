@@ -13,4 +13,28 @@ public class IntegerConstant_Behavior {
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"));
   }
+  public static boolean virtual_isByteAssignable_6460384142095735181(SNode thisNode) {
+    if (!(IntegerLiteral_Behavior.call_isPossitionThatAllowsByteAndShort_4338540387739143309(thisNode))) {
+      return false;
+    }
+
+    int value = SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"));
+    if (value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  public static boolean virtual_isShortAssignable_6460384142095788691(SNode thisNode) {
+    if (!(IntegerLiteral_Behavior.call_isPossitionThatAllowsByteAndShort_4338540387739143309(thisNode))) {
+      return false;
+    }
+
+    int value = SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"));
+    if (value >= Short.MIN_VALUE && value <= Short.MAX_VALUE) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
