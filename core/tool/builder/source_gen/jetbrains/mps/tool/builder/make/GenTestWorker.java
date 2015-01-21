@@ -32,8 +32,6 @@ import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
