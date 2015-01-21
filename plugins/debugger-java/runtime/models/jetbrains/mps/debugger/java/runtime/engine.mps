@@ -191,10 +191,6 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-        <child id="1160998916832" name="message" index="1gVpfI" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -5327,13 +5323,10 @@
         </node>
       </node>
       <node concept="3clFbS" id="3L_P6qKHafH" role="3clF47">
-        <node concept="1gVbGN" id="3L_P6qKHafI" role="3cqZAp">
-          <node concept="2YIFZM" id="3L_P6qKHafJ" role="1gVkn0">
-            <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+        <node concept="3clFbF" id="59SCzNX$20K" role="3cqZAp">
+          <node concept="2YIFZM" id="59SCzNX$4T6" role="3clFbG">
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-          </node>
-          <node concept="Xl_RD" id="3L_P6qKHafK" role="1gVpfI">
-            <property role="Xl_RC" value="must be called from EDT only" />
           </node>
         </node>
         <node concept="3clFbF" id="3L_P6qKHafL" role="3cqZAp">

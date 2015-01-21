@@ -113,15 +113,14 @@ class EDTExecutor {
   }
 
   public void flushEventQueue() {
-    if (ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("possible deadlock");
+    if (ThreadUtils.isInEDT()) {
+      throw new IllegalStateException("We are in EDT : possible deadlock");
     }
     synchronized (myLock) {
       while (!myTasks.isEmpty()) {
         try {
           myLock.wait();
-        } catch (InterruptedException e) {
-          /* ignore */
+        } catch (InterruptedException ignored) {
         }
       }
     }

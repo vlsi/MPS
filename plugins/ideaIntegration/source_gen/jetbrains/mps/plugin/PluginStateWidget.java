@@ -110,7 +110,7 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     return "MpsPluginStateMonitor";
   }
   private void tick() {
-    LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
+    LOG.assertLog(!(ThreadUtils.isInEDT()), "You should not do this in EDT");
     tickImpl();
   }
   private void tickImpl() {

@@ -57,6 +57,7 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -181,7 +182,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   void revalidateGenerators() {
-    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    MPSModuleRepository repo = (MPSModuleRepository) getRepository();
     for (Generator generator : getGenerators()) {
       repo.unregisterModule(generator, this);
     }

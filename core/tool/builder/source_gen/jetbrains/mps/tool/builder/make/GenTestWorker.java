@@ -201,10 +201,9 @@ public class GenTestWorker extends GeneratorWorker {
 
       }
     };
-    IOperationContext context = new ProjectOperationContext(project);
     try {
       BuildMakeService bms = new BuildMakeService();
-      MakeSession ms = new MakeSession(context, myMessageHandler, true) {
+      MakeSession ms = new MakeSession(project, myMessageHandler, true) {
         @Override
         public IScript toScript(ScriptBuilder scriptBuilder) {
           if (isInvokeTestsSet()) {
@@ -216,7 +215,7 @@ public class GenTestWorker extends GeneratorWorker {
           return scriptBuilder.toScript();
         }
       };
-      Future<IResult> result = bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
+      Future<IResult> result = bms.make(ms, collectResources(project, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
       if (!(result.get().isSucessful())) {
         myErrors.add("Make was not successful " + result.get().output());
       }
@@ -282,7 +281,7 @@ public class GenTestWorker extends GeneratorWorker {
     this.tmpPath = null;
     MapSequence.fromMap(path2tmp).clear();
   }
-  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<SModule> modules, final Iterable<SModel> models) {
+  private Iterable<IResource> collectResources(Project project, final Iterable<SModule> modules, final Iterable<SModel> models) {
     final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -307,7 +306,7 @@ public class GenTestWorker extends GeneratorWorker {
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(result.value).where(new IWhereFilter<SModel>() {
+    return new ModelsToResources(Sequence.fromIterable(result.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }

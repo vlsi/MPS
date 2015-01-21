@@ -2677,28 +2677,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7e9vQv_JDob" role="3cqZAp" />
-        <node concept="3cpWs8" id="1TclyuNTOuG" role="3cqZAp">
-          <node concept="3cpWsn" id="1TclyuNTOuH" role="3cpWs9">
-            <property role="TrG5h" value="operationContext" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="1TclyuNTOuI" role="1tU5fm">
-              <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-            </node>
-            <node concept="2ShNRf" id="1TclyuNTOuJ" role="33vP2m">
-              <node concept="1pGfFk" id="1TclyuNTOuK" role="2ShVmc">
-                <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                <node concept="2OqwBi" id="1TclyuNTOuL" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxgm6Yt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1TclyuNTOtE" resolve="context" />
-                  </node>
-                  <node concept="liA8E" id="1TclyuNTOuN" role="2OqNvi">
-                    <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1TclyuNTOuO" role="3cqZAp">
           <node concept="2OqwBi" id="1TclyuNTOuP" role="3clFbG">
             <node concept="2ShNRf" id="1TclyuNTOuQ" role="2Oq$k0">
@@ -2773,9 +2751,18 @@
                               </node>
                               <node concept="2ShNRf" id="1TclyuNTOvh" role="33vP2m">
                                 <node concept="1pGfFk" id="1TclyuNTOvi" role="2ShVmc">
-                                  <ref role="37wK5l" to="hfuk:1AfPmE4tJSJ" resolve="MakeSession" />
-                                  <node concept="37vLTw" id="3GM_nagTw3F" role="37wK5m">
-                                    <ref role="3cqZAo" node="1TclyuNTOuH" resolve="operationContext" />
+                                  <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
+                                  <node concept="2OqwBi" id="2BjwmTxXRQp" role="37wK5m">
+                                    <node concept="37vLTw" id="2BjwmTxXQ_d" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="1TclyuNTOtE" resolve="context" />
+                                    </node>
+                                    <node concept="liA8E" id="2BjwmTxXTCm" role="2OqNvi">
+                                      <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
+                                    </node>
+                                  </node>
+                                  <node concept="10Nm6u" id="2BjwmTxXUIk" role="37wK5m" />
+                                  <node concept="3clFbT" id="2BjwmTxXZcG" role="37wK5m">
+                                    <property role="3clFbU" value="false" />
                                   </node>
                                 </node>
                               </node>
@@ -2818,10 +2805,7 @@
                                       <node concept="2OqwBi" id="1TclyuNTOvy" role="37wK5m">
                                         <node concept="2ShNRf" id="1TclyuNTOvz" role="2Oq$k0">
                                           <node concept="1pGfFk" id="1TclyuNTOv$" role="2ShVmc">
-                                            <ref role="37wK5l" to="fn29:6gLh390EkrL" resolve="ModelsToResources" />
-                                            <node concept="37vLTw" id="3GM_nagTyo1" role="37wK5m">
-                                              <ref role="3cqZAo" node="1TclyuNTOuH" resolve="operationContext" />
-                                            </node>
+                                            <ref role="37wK5l" to="fn29:6zsZmIC0WqK" resolve="ModelsToResources" />
                                             <node concept="37vLTw" id="3GM_nagTA0M" role="37wK5m">
                                               <ref role="3cqZAo" node="1TclyuNTOtW" resolve="descriptors" />
                                             </node>

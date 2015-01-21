@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -78,8 +78,8 @@ public class MigrationCheckUtil {
     Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
 
     for (SNode node : Sequence.fromIterable(MigrationCheckUtil.allNodes(modules))) {
-      SAbstractConceptAdapter concept = (SAbstractConceptAdapter) node.getConcept();
-      if (concept.getConceptDescriptor() == null) {
+      SConcept concept = node.getConcept();
+      if (!(concept.isValid())) {
         if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
           continue;
         }

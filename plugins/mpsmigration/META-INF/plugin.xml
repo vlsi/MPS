@@ -5,7 +5,7 @@
         >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.mpsmigration</id>
-  <name>Migration 3.1</name>
+  <name>Migration 3.2</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>3.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
@@ -25,7 +25,7 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.PersistenceMigrations</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.Migrations32</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.ProjectJavaVersionMigration</implementation-class>

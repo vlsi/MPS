@@ -42,8 +42,9 @@ public class GroupAdjuster {
 
   private static void addPlace(String groupId, ActionPlace place) {
     BaseGroup group = ActionUtils.getGroup(groupId);
-    if (group != null)
+    if (group != null) {
       group.addPlace(place, null);
+    }
   }
 
   public static void adjustTopLevelGroups(BaseApplicationPlugin idePlugin) {

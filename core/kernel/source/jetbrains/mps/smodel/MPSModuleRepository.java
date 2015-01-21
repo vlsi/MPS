@@ -66,13 +66,28 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
   private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<SModule, MPSModuleOwner>();
 
+  /**
+   * Use {@link org.jetbrains.mps.openapi.module.SRepository} from the project whenever it is possible
+   *
+   * Currently the context object is an MPS project class
+   * @see jetbrains.mps.project.Project
+   *
+   * It can provide a repository and a model access
+   * {@link jetbrains.mps.project.Project#getModelAccess()}
+   * {@link jetbrains.mps.project.Project#getRepository()}}
+   *
+   * So in each case you must have an MPS project within your scope and request SRepository explicitily from the project.
+   * @deprecated
+   * @since 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static MPSModuleRepository getInstance() {
     return ourInstance;
   }
 
   public MPSModuleRepository() {
     myGlobalModelAccess = new GlobalModelAccess();
-
   }
 
   @Override

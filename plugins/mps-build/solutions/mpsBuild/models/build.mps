@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
   </languages>
   <imports />
   <registry>
@@ -19912,11 +19912,6 @@
             <ref role="3bR37D" node="1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgrvjK" role="3bR37C">
-          <node concept="1Busua" id="2a9bszgrvjJ" role="1SiIV1">
-            <ref role="1Busuk" node="2eDSGe9d1pJ" resolve="jetbrains.mps.lang.plugin.standalone" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2a9bszgrvjM" role="3bR37C">
           <node concept="1Busua" id="2a9bszgrvjL" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6L2l" resolve="jetbrains.mps.baseLanguage.logging" />
@@ -19970,6 +19965,12 @@
           <node concept="3bR9La" id="1LdRpEZ6G9T" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="13rZRDQqXHA" role="3bR37C">
+          <node concept="3bR9La" id="13rZRDQqXHB" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="2eDSGe9d1pJ" resolve="jetbrains.mps.lang.plugin.standalone" />
           </node>
         </node>
       </node>

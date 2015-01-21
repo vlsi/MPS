@@ -36,10 +36,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
   private final LinkedHashSet<ReloadableModule> myLoadedModules = new LinkedHashSet<ReloadableModule>();
+  private final ModelAccess myModelAccess;
 
   // reload handlers
   private final List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
-  private final ModelAccess myModelAccess;
+  private final List<ModuleReloadListener> myReloadListeners = new CopyOnWriteArrayList<ModuleReloadListener>();
 
   public ClassLoadingBroadCaster(ModelAccess modelAccess) {
     myModelAccess = modelAccess;
@@ -53,7 +54,15 @@ public class ClassLoadingBroadCaster {
     myClassesHandlers.remove(handler);
   }
 
-  public Collection<? extends ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+  public void addReloadListener(ModuleReloadListener listener) {
+    myReloadListeners.add(listener);
+  }
+
+  public void removeReloadListener(ModuleReloadListener listener) {
+    myReloadListeners.remove(listener);
+  }
+
+  public Collection<ReloadableModuleBase> onUnload(Collection<? extends SModuleReference> refsToUnload) {
     myModelAccess.checkWriteAccess();
     if (refsToUnload.size() == 0) return Collections.emptySet();
     final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
@@ -81,6 +90,18 @@ public class ClassLoadingBroadCaster {
 
     for (MPSClassesListener listener : myClassesHandlers) {
       listener.afterClassesLoaded(modulesToLoad);
+    }
+  }
+
+  public void onReload(Collection<ReloadableModule> reloadedModules) {
+    myModelAccess.checkWriteAccess();
+    if (reloadedModules.size() == 0) return;
+
+    final Set<ReloadableModuleBase> modulesToReload = new LinkedHashSet<ReloadableModuleBase>(reloadedModules.size());
+    for (ReloadableModule module : reloadedModules) modulesToReload.add((ReloadableModuleBase) module);
+
+    for (ModuleReloadListener listener : myReloadListeners) {
+      listener.modulesReloaded(modulesToReload);
     }
   }
 }

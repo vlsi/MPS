@@ -122,20 +122,17 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime != null) {
           StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-          if (structureAspectDescriptor != null) {
-            descriptor = structureAspectDescriptor.getDescriptor(fqName);
-          }
+          if (structureAspectDescriptor == null) return new IllegalConceptDescriptor(fqName);
+
+          descriptor = structureAspectDescriptor.getDescriptor(fqName);
         }
       } catch (Throwable e) {
         LOG.error("Exception while structure descriptor creating for the concept " + fqName, e);
       }
 
-      if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(fqName);
-      } else {
-        conceptDescriptors.put(fqName, descriptor);
-      }
+      if (descriptor == null) return new IllegalConceptDescriptor(fqName);
 
+      conceptDescriptors.put(fqName, descriptor);
       return descriptor;
     } finally {
       finishLoad(fqName, LanguageAspect.STRUCTURE);
@@ -159,18 +156,16 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
         if (languageRuntime != null) {
           StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
+          if (structureAspectDescriptor == null) return new IllegalConceptDescriptor(id);
           descriptor = structureAspectDescriptor.getDescriptor(id);
         }
       } catch (Throwable e) {
         LOG.error("Exception while structure descriptor creating for the concept " + id, e);
       }
 
-      if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(id);
-      } else {
-        conceptDescriptorsById.put(id, descriptor);
-      }
+      if (descriptor == null) return new IllegalConceptDescriptor(id);
 
+      conceptDescriptorsById.put(id, descriptor);
       return descriptor;
     } finally {
       finishLoad(id, LanguageAspect.STRUCTURE);

@@ -42,13 +42,6 @@ public class ClassLoadersHolder {
   private final ModulesWatcher myModulesWatcher;
   private MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
 
-  public void init() {
-  }
-
-  public void dispose() {
-    // NOP
-  }
-
   public ClassLoadersHolder(ModulesWatcher modulesWatcher) {
     myModulesWatcher = modulesWatcher;
   }
@@ -119,7 +112,7 @@ public class ClassLoadersHolder {
    *                   No actual loading is performed for these modules.
    * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED.
    */
-  public Collection<? extends ReloadableModule> onLazyLoaded(Set<? extends ReloadableModule> toLoadLazy) {
+  public Collection<ReloadableModule> onLazyLoaded(Set<? extends ReloadableModule> toLoadLazy) {
     return myMPSClassLoadersRegistry.onLazyLoaded(toLoadLazy);
   }
 
@@ -152,7 +145,7 @@ public class ClassLoadersHolder {
       return myMPSLoadableModules.get(mRef);
     }
 
-    public synchronized Collection<? extends SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
+    public synchronized Collection<SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
       Collection<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
       for (SModuleReference mRef : toUnload) {
         if (!myMPSLoadableModules.containsKey(mRef)) {
@@ -166,7 +159,7 @@ public class ClassLoadersHolder {
       return unloaded;
     }
 
-    public synchronized Collection<? extends ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
+    public synchronized Collection<ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
       Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
       for (ReloadableModule module : toLoadLazy) {
         SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();

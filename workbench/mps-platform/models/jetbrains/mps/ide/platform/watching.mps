@@ -1239,6 +1239,9 @@
               </node>
             </node>
           </node>
+          <node concept="2AHcQZ" id="4fuF50W5mhT" role="2AJF6D">
+            <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          </node>
         </node>
         <node concept="3clFbS" id="7mrRUyVUv4v" role="3clF47" />
         <node concept="2AHcQZ" id="3tYsUK_ScJj" role="2AJF6D">
@@ -1258,6 +1261,9 @@
                 <ref role="3uigEE" to="v3ux:~VFileEvent" resolve="VFileEvent" />
               </node>
             </node>
+          </node>
+          <node concept="2AHcQZ" id="4fuF50W5n88" role="2AJF6D">
+            <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
           </node>
         </node>
         <node concept="3clFbS" id="7mrRUyVUv6Z" role="3clF47">
@@ -4510,12 +4516,42 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="55Eywv1eXbe" role="3cqZAp">
+          <node concept="3cpWsn" id="55Eywv1eXbh" role="3cpWs9">
+            <property role="TrG5h" value="beginTime" />
+            <node concept="3cpWsb" id="55Eywv1eXbc" role="1tU5fm" />
+            <node concept="2YIFZM" id="55Eywv1eXGN" role="33vP2m">
+              <ref role="37wK5l" to="e2lb:~System.nanoTime():long" resolve="nanoTime" />
+              <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+            </node>
+          </node>
+        </node>
         <node concept="2GUZhq" id="9H$2_ta26s" role="3cqZAp">
           <node concept="3clFbS" id="9H$2_ta26t" role="2GVbov">
             <node concept="34ab3g" id="9H$2_ta26u" role="3cqZAp">
               <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="9H$2_ta26v" role="34bqiv">
-                <property role="Xl_RC" value="Reload finished" />
+              <node concept="2YIFZM" id="5td12NyaeC3" role="34bqiv">
+                <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                <node concept="Xl_RD" id="9H$2_ta26v" role="37wK5m">
+                  <property role="Xl_RC" value="File system reload finished in %.3f s" />
+                </node>
+                <node concept="FJ1c_" id="55Eywv1f0wi" role="37wK5m">
+                  <node concept="3b6qkQ" id="7AHuwl0dsLk" role="3uHU7w">
+                    <property role="$nhwW" value="1000000000." />
+                  </node>
+                  <node concept="1eOMI4" id="55Eywv1f0bH" role="3uHU7B">
+                    <node concept="3cpWsd" id="55Eywv1eZRS" role="1eOMHV">
+                      <node concept="2YIFZM" id="55Eywv1eXSJ" role="3uHU7B">
+                        <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+                        <ref role="37wK5l" to="e2lb:~System.nanoTime():long" resolve="nanoTime" />
+                      </node>
+                      <node concept="37vLTw" id="55Eywv1eZSe" role="3uHU7w">
+                        <ref role="3cqZAo" node="55Eywv1eXbh" resolve="beginTime" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="3clFbF" id="9H$2_ta26w" role="3cqZAp">
@@ -4536,9 +4572,9 @@
           </node>
           <node concept="3clFbS" id="9H$2_ta26A" role="2GV8ay">
             <node concept="34ab3g" id="4DjT7UC5JJL" role="3cqZAp">
-              <property role="35gtTG" value="info" />
+              <property role="35gtTG" value="debug" />
               <node concept="Xl_RD" id="4DjT7UC5JJN" role="34bqiv">
-                <property role="Xl_RC" value="Reload started" />
+                <property role="Xl_RC" value="File system reload started" />
               </node>
             </node>
             <node concept="3clFbF" id="9H$2_ta26q" role="3cqZAp">

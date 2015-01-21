@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.editor.ScrollType;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.TextEditor;
@@ -36,6 +37,7 @@ class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPo
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     if (vf == null) return;
 
+    FileDocumentManager.getInstance().reloadFiles(vf);
     for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true, true)){
       if (!(fe instanceof TextEditor)) continue;
 

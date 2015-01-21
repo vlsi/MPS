@@ -4,8 +4,6 @@ package jetbrains.mps.testbench;
 
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.messages.IMessageHandler;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
@@ -15,39 +13,26 @@ import jetbrains.mps.make.script.IScriptController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
-  private IOperationContext context;
-  private IMessageHandler messageHandler;
-  @Deprecated
-  public TestMakeService(IOperationContext context, IMessageHandler messageHandler) {
-    this.context = context;
-    this.messageHandler = messageHandler;
-  }
   public TestMakeService() {
   }
 
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    if (session == null) {
-      // FIXME compatibility, tolerance to null session will be dropped 
-      assert context != null : "Either pass non-null session, or use cons with args";
-      assert messageHandler != null;
-      session = new MakeSession(context, messageHandler, true);
-    }
     String scrName = "Build";
     if (Sequence.fromIterable(resources).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
-      this.showError(msg);
+      session.getMessageHandler().handle(new Message(MessageKind.ERROR, msg));
       return new FutureValue<IResult>(new IResult.FAILURE(null));
     }
 
@@ -57,7 +42,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
 
     IScriptController ctl = this.completeController(controller, session);
 
-    CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, messageHandler);
+    CoreMakeTask task = new CoreMakeTask(scrName, makeSeq, ctl, session.getMessageHandler());
     task.run(monitor);
     return new FutureValue<IResult>(task.getResult());
   }
@@ -79,9 +64,6 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
   @Override
   public void removeListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
-  }
-  private void showError(String msg) {
-    messageHandler.handle(new Message(MessageKind.ERROR, msg));
   }
   private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
     // client is responsible to populate properties of possible facets, don't do anything if 

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -39,7 +40,9 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
   protected Set<VirtualFile> getAllExcludeRoots() {
     final Set<VirtualFile> roots = new HashSet<VirtualFile>();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ProjectHelper.getModelAccess(getProject());
+    assert modelAccess != null;
+    modelAccess.runReadAction(new Runnable() {
       @Override
       public void run() {
         for (SModule module : MPSModuleRepository.getInstance().getModules()) {
@@ -57,9 +60,10 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
             roots.add(classesGenVF);
           }
 
-          // todo: =(
-          if (((AbstractModule) module).getModuleSourceDir() != null && ((AbstractModule) module).getModuleSourceDir().getDescendant("classes") != null) {
-            VirtualFile classesVF = VirtualFileUtils.getVirtualFile(((AbstractModule) module).getModuleSourceDir().getDescendant("classes"));
+          if (((AbstractModule) module).getModuleSourceDir() == null) continue;
+          IFile classesDir = ((AbstractModule) module).getModuleSourceDir().getDescendant(AbstractModule.CLASSES);
+          if (classesDir.exists()) {
+            VirtualFile classesVF = VirtualFileUtils.getVirtualFile(classesDir);
             if (classesVF != null) {
               roots.add(classesVF);
             }

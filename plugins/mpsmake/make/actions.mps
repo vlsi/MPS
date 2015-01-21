@@ -3025,10 +3025,7 @@
             </node>
             <node concept="2ShNRf" id="7tZeFupJF30" role="2Oq$k0">
               <node concept="1pGfFk" id="7tZeFupJF31" role="2ShVmc">
-                <ref role="37wK5l" to="fn29:6gLh390EkrL" resolve="ModelsToResources" />
-                <node concept="37vLTw" id="2BHiRxeug4h" role="37wK5m">
-                  <ref role="3cqZAo" node="7tZeFupJF5u" resolve="context" />
-                </node>
+                <ref role="37wK5l" to="fn29:6zsZmIC0WqK" resolve="ModelsToResources" />
                 <node concept="2OqwBi" id="5CORZJXccfE" role="37wK5m">
                   <node concept="ANE8D" id="5CORZJXccfI" role="2OqNvi" />
                   <node concept="37vLTw" id="3GM_nagTxV0" role="2Oq$k0">
@@ -3764,9 +3761,9 @@
                 <node concept="1Y3b0j" id="1AfPmE4ty$7" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
-                  <ref role="37wK5l" to="hfuk:1T5_pb6mN1r" resolve="MakeSession" />
-                  <node concept="37vLTw" id="2BHiRxeumYz" role="37wK5m">
-                    <ref role="3cqZAo" node="7tZeFupJF8p" resolve="context" />
+                  <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
+                  <node concept="37vLTw" id="2BjwmTy783Z" role="37wK5m">
+                    <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
                   </node>
                   <node concept="10Nm6u" id="1AfPmE4ty$a" role="37wK5m" />
                   <node concept="37vLTw" id="2BHiRxeulx2" role="37wK5m">
@@ -5464,6 +5461,11 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Make" />
     <property role="2uzpH1" value="Preview Generated Text" />
+    <node concept="1DS2jV" id="2BjwmTy5x3F" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="2BjwmTy5x3G" role="1oa70y" />
+    </node>
     <node concept="2XrIbr" id="7tZeFupJFeU" role="32lrUH">
       <property role="TrG5h" value="modelToGenerate" />
       <node concept="3uibUv" id="4O9Oe_ftaBq" role="3clF45">
@@ -5575,11 +5577,11 @@
             </node>
             <node concept="2ShNRf" id="2OOLb0mE4bv" role="33vP2m">
               <node concept="1pGfFk" id="2OOLb0mE4bw" role="2ShVmc">
-                <ref role="37wK5l" to="hfuk:1T5_pb6mN1r" resolve="MakeSession" />
-                <node concept="2OqwBi" id="55mQcz8zEN" role="37wK5m">
-                  <node concept="2WthIp" id="55mQcz8zEM" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="55mQcz8zER" role="2OqNvi">
-                    <ref role="2WH_rO" node="7tZeFupJFi6" resolve="context" />
+                <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
+                <node concept="2OqwBi" id="2BjwmTy5_dm" role="37wK5m">
+                  <node concept="2WthIp" id="2BjwmTy5_dp" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2BjwmTy5_dr" role="2OqNvi">
+                    <ref role="2WH_rO" node="2BjwmTy5x3F" resolve="mpsProject" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="2OOLb0mE4b$" role="37wK5m" />
@@ -5598,12 +5600,6 @@
                 <ref role="1Pybhc" to="bcn8:9D0Ba05uSB" resolve="TextPreviewUtil" />
                 <node concept="37vLTw" id="3GM_nagTBOu" role="37wK5m">
                   <ref role="3cqZAo" node="2OOLb0mE4bt" resolve="session" />
-                </node>
-                <node concept="2OqwBi" id="18Tx31EnToV" role="37wK5m">
-                  <node concept="2WthIp" id="18Tx31EnTgz" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="18Tx31EnToZ" role="2OqNvi">
-                    <ref role="2WH_rO" node="7tZeFupJFi6" resolve="context" />
-                  </node>
                 </node>
                 <node concept="2OqwBi" id="18Tx31EnTp2" role="37wK5m">
                   <node concept="2WthIp" id="18Tx31EnTp3" role="2Oq$k0" />
@@ -5634,11 +5630,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="7tZeFupJFi6" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDj6" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="7rKYJcjJkbF" role="1NuT2Z">
       <property role="TrG5h" value="cnode" />

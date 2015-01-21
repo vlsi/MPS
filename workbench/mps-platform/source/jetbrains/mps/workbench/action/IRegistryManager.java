@@ -19,5 +19,5 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 
 public interface IRegistryManager{
-  IActionsRegistry getActionsRegistry (PluginId id);
+  IActionsRegistry getActionsRegistry(PluginId id);
 }

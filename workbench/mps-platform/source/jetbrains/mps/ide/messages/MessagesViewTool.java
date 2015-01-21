@@ -30,7 +30,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;

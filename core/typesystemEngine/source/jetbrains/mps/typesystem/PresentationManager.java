@@ -32,7 +32,7 @@ public class PresentationManager {
       return (type).getName();
     }
 
-    if (jetbrains.mps.util.SNodeOperations.isUnknown(type)) {
+    if (!type.getConcept().isValid()) {
       String persistentName = type.getName();
       if (persistentName == null) {
         return "?" + NameUtil.shortNameFromLongName(type.getConcept().getQualifiedName()) + "?";

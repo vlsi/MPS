@@ -67,6 +67,12 @@ public interface SAbstractConcept {
   @Nullable
   SNode getDeclarationNode();
 
+  /**
+   * Returns true if this concept is fully-functional. Typically, user code should not care about this
+   * Can return false, for example, if the containing language is absent
+   */
+  boolean isValid();
+
   /*
    * The methods below are temporary included in openapi.
    * They will be removed when there will exist some better way to retrieve concept alias, short description and help url from generated code.

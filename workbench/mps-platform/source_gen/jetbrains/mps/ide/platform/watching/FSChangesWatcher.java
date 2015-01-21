@@ -82,10 +82,10 @@ public class FSChangesWatcher implements ApplicationComponent {
     private BulkFileChangesListener() {
     }
     @Override
-    public void before(List<? extends VFileEvent> events) {
+    public void before(@NotNull List<? extends VFileEvent> events) {
     }
     @Override
-    public void after(final List<? extends VFileEvent> events) {
+    public void after(@NotNull final List<? extends VFileEvent> events) {
       final Application application = ApplicationManager.getApplication();
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;

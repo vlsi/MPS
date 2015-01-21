@@ -867,9 +867,6 @@
               <ref role="1PxDUh" node="7GZZbkP$rA" resolve="Properties" />
               <ref role="3cqZAo" node="7GZZbkP_jz" resolve="EVALUATOR_NAME" />
             </node>
-            <node concept="1rXfSq" id="IYmOvnSq9A" role="37wK5m">
-              <ref role="37wK5l" node="IYmOvnJt$P" resolve="getContext" />
-            </node>
             <node concept="10M0yZ" id="7GZZbkQhro" role="37wK5m">
               <ref role="1PxDUh" node="7GZZbkP$rA" resolve="Properties" />
               <ref role="3cqZAo" node="7GZZbkPAws" resolve="IS_DEVELOPER_MODE" />
@@ -2080,12 +2077,6 @@
         <property role="TrG5h" value="className" />
         <node concept="17QB3L" id="IYmOvntYfv" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="IYmOvntYfw" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="IYmOvntYfx" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
       <node concept="37vLTG" id="IYmOvntYfy" role="3clF46">
         <property role="TrG5h" value="developerMode" />
         <node concept="10P_77" id="IYmOvntYfz" role="1tU5fm" />
@@ -2117,9 +2108,13 @@
             </node>
             <node concept="2ShNRf" id="6zsZmIBZKAA" role="33vP2m">
               <node concept="1pGfFk" id="6zsZmIBZMgw" role="2ShVmc">
-                <ref role="37wK5l" to="hfuk:1AfPmE4tJSJ" resolve="MakeSession" />
-                <node concept="37vLTw" id="6zsZmIBZNfP" role="37wK5m">
-                  <ref role="3cqZAo" node="IYmOvntYfw" resolve="context" />
+                <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
+                <node concept="37vLTw" id="2BjwmTxW$X4" role="37wK5m">
+                  <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                </node>
+                <node concept="10Nm6u" id="2BjwmTxWCcL" role="37wK5m" />
+                <node concept="3clFbT" id="2BjwmTxWDXi" role="37wK5m">
+                  <property role="3clFbU" value="false" />
                 </node>
               </node>
             </node>

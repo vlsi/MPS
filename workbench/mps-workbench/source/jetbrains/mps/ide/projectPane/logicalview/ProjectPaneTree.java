@@ -103,7 +103,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
     MessageBusConnection connection = project.getMessageBus().connect();
     Disposer.register(this, connection);
-    connection.subscribe(DumbService.DUMB_MODE, new  DumbModeListener() {
+    connection.subscribe(DumbService.DUMB_MODE, new DumbModeListener() {
       @Override
       public void enteredDumbMode() {
         // there used to be update both on enter and exit of the dumb mode, however, I don't see a reason to

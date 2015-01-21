@@ -73,7 +73,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   protected void loadLibraries() {
-    if (!ThreadUtils.isEventDispatchThread()) {
+    if (!ThreadUtils.isInEDT()) {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override
         public void run() {
