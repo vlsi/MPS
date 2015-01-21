@@ -241,7 +241,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     List<MessageList> lists = myMessageLists.get(name);
     if (lists != null) {
       lists.remove(list);
-      Disposer.dispose(list);
     }
   }
 
@@ -253,10 +252,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     private final String myTitle;
     private String myTitleUpdateFormat = "{0}: {1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}";
 
-    protected MyMessageList(Project project, String title) {
+    protected MyMessageList(@NotNull Project project, @NotNull String title) {
       super(project);
       myTitle = title;
       Disposer.register(MessagesViewTool.this, this);
+    }
+
+    @Override
+    public void dispose() {
+      super.dispose();
+      removeList(this, myTitle);
     }
 
     public void setTitleUpdateFormat(String pattern) {
@@ -277,15 +282,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
           content.setPinnable(isMultiple);
           if (canClose) {
             content.setShouldDisposeContent(true);
-            content.setDisposer(new Disposable() {
-              @Override
-              public void dispose() {
-                removeList(MyMessageList.this, myTitle);
-              }
-            });
+            content.setDisposer(MyMessageList.this);
           }
           content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
           service.getContentManager().addContent(content);
+          activateUpdate();
         }
       };
       getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));

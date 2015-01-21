@@ -135,7 +135,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
   private Project myProject;
-  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, true, myComponent, null, null, true);
+  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, null, null, true);
   private final Object myUpdateIdentity = new Object();
   private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
   private volatile boolean myIsDisposed = false;
@@ -449,8 +449,21 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     // no-op
   }
 
+  /**
+   * Override and implement registration of UI component into the MessageView.
+   * Don't forget to activate message dispatch once content is ready.
+   * @see #activateUpdate()
+   */
   public void createContent(final boolean canClose, final boolean isMultiple) {
     createContent();
+  }
+
+  /**
+   * MessageList doesn't update once instantiated, activate update dispatch once
+   * content is created ({@link #createContent(boolean, boolean)})
+   */
+  protected final void activateUpdate() {
+    myUpdateQueue.activate();
   }
 
   private void showPopupMenu(MouseEvent evt) {
