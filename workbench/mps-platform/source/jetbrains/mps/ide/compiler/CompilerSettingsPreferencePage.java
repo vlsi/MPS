@@ -80,7 +80,7 @@ public class CompilerSettingsPreferencePage {
     myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(myTargetVersionItems.toArray()));
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
 
-    panel.add(new JLabel("Java target bytecode version"), c);
+    panel.add(new JLabel("Project bytecode version"), c);
     c.gridx = 1;
     c.insets.top = 0;
     panel.add(myTargetJavaVersionComboBox, c);
