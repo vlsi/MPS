@@ -21,9 +21,11 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
+
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -128,11 +130,13 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     // otherwise we treat an error as invalid/missing language.
     try {
       final Class<?> rtClass = l.getOwnClass(rtClassName);
-      if (rtClass == null) {
-        return new InterpretedLanguageRuntime(l);
-      } else if (LanguageRuntime.class.isAssignableFrom(rtClass)) {
-        return ((Class<LanguageRuntime>) rtClass).newInstance();
+      if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
+        LanguageRuntime result = ((Class<LanguageRuntime>) rtClass).newInstance();
+        if (result.getAspect(StructureAspectDescriptor.class) instanceof BaseStructureAspectDescriptor) {
+          return result;
+        }
       }
+      return new InterpretedLanguageRuntime(l);
     } catch (ClassNotFoundException ex) {
       return new InterpretedLanguageRuntime(l);
     } catch (InstantiationException e) {
@@ -140,7 +144,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     } catch (IllegalAccessException e) {
       return null;
     }
-    return null;
   }
 
   public String toString() {
