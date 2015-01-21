@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ProjectJavaVersionMigration extends BaseProjectMigration implements ApplicationComponent {
 
-  public static final String ID = "jetbrains.mps.javaVersionMigration";
+  public static final String ID = "jetbrains.mps.projectJavaVersionMigration";
 
   public ProjectJavaVersionMigration() {
     super(ID);

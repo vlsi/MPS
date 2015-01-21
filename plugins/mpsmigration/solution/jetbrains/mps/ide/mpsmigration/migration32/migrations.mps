@@ -2079,7 +2079,7 @@
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="1FhfnjHgdNL" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.javaVersionMigration" />
+        <property role="Xl_RC" value="jetbrains.mps.projectJavaVersionMigration" />
       </node>
       <node concept="3Tm1VV" id="1FhfnjHgdNM" role="1B3o_S" />
     </node>
