@@ -15,19 +15,18 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TempModule;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -96,7 +95,7 @@ import static jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress
  * Reload may be triggered by a client explicitly with {@link #reloadModules(Iterable)}.
  * [**] Notice that it is a very uncommon case when you might need an explicit reload.
  * Currently a module's reload happens automatically on module's changes (some specific changes, details below).
- * @see jetbrains.mps.smodel.BatchEventsProcessor for details
+ * @see BatchEventsProcessor for details
  *
  * CLManager exploits a lazy mechanism of module's reloading. It stacks all module events,
  * and occasionally <em>refresh</em> happens: CLM flushes them and processes all the accumulated events.
@@ -136,13 +135,13 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final ClassLoadingChecker myClassLoadingChecker = new ClassLoadingChecker();
 
-  private final CLManagerRepositoryListener myRepositoryListener;
+  private final ModuleEventsHandler myRepositoryListener;
 
   public ClassLoaderManager(SRepository repository) {
     myRepository = repository;
     myModulesWatcher = new ModulesWatcher(myRepository, myWatchableCondition);
     myClassLoadersHolder = new ClassLoadersHolder(myModulesWatcher);
-    myRepositoryListener = new CLManagerRepositoryListener(repository, myModulesWatcher);
+    myRepositoryListener = new ModuleEventsHandler(repository, myModulesWatcher);
     myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
   }
 
@@ -161,25 +160,23 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Override
   public void init() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
-    myClassLoadersHolder.init();
     myClassLoadingChecker.init(this);
     myRepositoryListener.init(this);
-    addDumbIdeaPluginFacetFactory();
+    addDumbIdeaPluginFacetFactory(); // FIXME : it does not belong here
   }
 
   @Override
   public void dispose() {
-    ModelAccess.assertLegalWrite();
+    myRepository.getModelAccess().checkWriteAccess();
     myRepositoryListener.dispose();
     myClassLoadingChecker.dispose(this);
-    myClassLoadersHolder.dispose();
     INSTANCE = null;
   }
 
-  // for tests
+  @TestOnly
   ModulesWatcher getModulesWatcher() {
     return myModulesWatcher;
   }
@@ -300,7 +297,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   /**
    * Flushes all delayed notifications to keep up with the module repository state
-   * @see jetbrains.mps.classloading.CLManagerRepositoryListener
+   * @see ModuleEventsHandler
    * @return if refresh actually happened
    */
   private boolean refresh() {
@@ -317,7 +314,7 @@ public class ClassLoaderManager implements CoreComponent {
    * These clients need to be rewritten in a lazy way, i.e. using only #getClass [#getClassLoader] method.
    * @deprecated there is an intention to get rid of {@link MPSClassesListener} clients. When it's done we are able to remove this method.
    */
-  Collection<? extends ReloadableModule> preLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
+  Collection<ReloadableModule> preLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
     checkWriteAccess();
     monitor.start("Pre-loading modules...", 1);
     try {
@@ -335,7 +332,7 @@ public class ClassLoaderManager implements CoreComponent {
       modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
       if (modulesPreLoad.isEmpty()) return Collections.emptySet();
 
-      Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
+      Collection<ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
       myBroadCaster.onLoad(modulesToNotify);
 
       return modulesToNotify;
@@ -382,7 +379,7 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #myMPSLoadableCondition
    */
   @NotNull
-  Collection<? extends ReloadableModule> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+  Collection<ReloadableModuleBase> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
     checkWriteAccess();
     monitor.start("Unloading modules...", 1);
     try {
@@ -398,7 +395,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Unloading " + modulesToUnload.size() + " modules");
       monitor.step("Disposing old class loaders...");
-      Collection<? extends ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
+      Collection<ReloadableModuleBase> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
       myClassLoadersHolder.doUnloadModules(modulesToUnload);
       monitor.advance(1);
 
@@ -418,7 +415,7 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * NOTE: It is recommended to use lazy loading (just #getClass, it will create the right class loaders automatically)
+   * NOTE: It is recommended to use {@link jetbrains.mps.classloading.ModuleReloadListener}
    * Although you can use the old listening mechanism {@link MPSClassesListener}
    */
   public void addClassesHandler(MPSClassesListener handler) {
@@ -429,6 +426,13 @@ public class ClassLoaderManager implements CoreComponent {
     myBroadCaster.removeClassesHandler(handler);
   }
 
+  public void addReloadListener(ModuleReloadListener listener) {
+    myBroadCaster.addReloadListener(listener);
+  }
+
+  public void removeReloadListener(ModuleReloadListener listener) {
+    myBroadCaster.removeReloadListener(listener);
+  }
   /**
    * Use this method to invalidate modules (namely, recreate their class loaders)
    * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule(SModule)}.
@@ -456,6 +460,7 @@ public class ClassLoaderManager implements CoreComponent {
       return new ArrayList();
     }
     try {
+      long beginTime = System.nanoTime();
       monitor.start("Reloading modules' class loaders...", 2);
       boolean silentMode = true;
       for (SModule module : modules) {
@@ -466,7 +471,10 @@ public class ClassLoaderManager implements CoreComponent {
       }
       Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
       for (SModule module : modules) {
-        if (!(module instanceof TempModule) && module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
+        if (!(module instanceof TempModule) && module.getRepository() == null) {
+          throw new IllegalStateException(
+              String.format("Cannot reload the module %s which does not belong to a repository", module));
+        }
         if (module instanceof ReloadableModule) {
           modulesToReload.add((ReloadableModule) module);
         }
@@ -474,11 +482,14 @@ public class ClassLoaderManager implements CoreComponent {
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
       myModulesWatcher.updateModules(modulesToReload);
-      Collection<? extends ReloadableModule> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
+      Collection<ReloadableModuleBase> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
-      Collection<? extends ReloadableModule> loadedModules = preLoadModules(modulesToReload, monitor.subTask(1));
+      Collection<ReloadableModule> loadedModules = preLoadModules(modulesToReload, monitor.subTask(1));
+      myBroadCaster.onReload(loadedModules);
 
-      if (!silentMode) LOG.info("Reloaded " + loadedModules.size() + " module(s)");
+      if (!silentMode) {
+        LOG.info(String.format("Reloaded %d module(s) in %.3f s", loadedModules.size(), (System.nanoTime() - beginTime) / 1e9));
+      }
 
       return new LinkedHashSet<ReloadableModule>(loadedModules);
     } finally {

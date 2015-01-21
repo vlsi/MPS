@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -26,7 +27,7 @@ public class ThreadUtils {
   public static boolean runInUIThreadAndWait(Runnable r) {
     if (SwingUtilities.isEventDispatchThread()) {
       try {
-          r.run();
+        r.run();
       } catch (Exception e) {
         LOG.error(null, e);
         return false;
@@ -55,16 +56,18 @@ public class ThreadUtils {
   }
 
   /**
-   * use ModelAccess.instance().isInEDT()
+   * use {@link #isInEDT()}
    */
   @Deprecated
   public static boolean isEventDispatchThread() {
-    return SwingUtilities.isEventDispatchThread();
+    return ApplicationManager.getApplication().isDispatchThread();
+  }
+
+  public static boolean isInEDT() {
+    return isEventDispatchThread();
   }
 
   public static void assertEDT() {
-    if(!isEventDispatchThread()) {
-      LOG.error(new IllegalStateException("must be called from EDT"));
-    }
+    ApplicationManager.getApplication().assertIsDispatchThread();
   }
 }

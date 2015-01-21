@@ -78,7 +78,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   @Nullable
   @Override
   public ExecutionResult startSession(final Executor executor, final ProgramRunner runner, final RunProfileState state, Project project) throws ExecutionException {
-    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
+    ThreadUtils.assertEDT();
     myConnectionSettings = createLocalConnectionSettings(state);
     myEventsProcessor.getSystemMessagesReporter().setProcessName(getConnectionSettings().getPresentation());
     createVirtualMachine();

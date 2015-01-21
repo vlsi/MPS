@@ -638,6 +638,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs" file="JvmArgs.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.InternalFlag" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.ListCommandPart" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration" file="MPSInstance_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
@@ -832,7 +840,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
@@ -841,6 +848,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ListCommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.PropertyCommandPart" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />

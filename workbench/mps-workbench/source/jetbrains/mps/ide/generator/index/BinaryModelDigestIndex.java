@@ -38,6 +38,7 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
     return NAME;
   }
 
+  @NotNull
   @Override
   public FileBasedIndex.InputFilter getInputFilter() {
     return new FileBasedIndex.InputFilter() {

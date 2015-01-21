@@ -56,7 +56,6 @@ public class ModuleUpdater {
   public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
-        hackGeneratorReloaded(module);
         myModulesToReload.add(module);
       }
       // need this call because we might get #addModules notification later than this one
@@ -67,31 +66,10 @@ public class ModuleUpdater {
   public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
-        hackGeneratorAdded(module);
         myModulesToAdd.add(module);
         myModulesToRemove.add(((ReloadableModuleBase) module).getModuleReference());
       }
       myRefStorage.moduleAdded((ReloadableModuleBase) module);
-    }
-  }
-
-  //  FIXME: special hacks for generator, reason for that : at first we create generators, and language after that
-  private void hackGeneratorAdded(ReloadableModule module) {
-    if (module instanceof Generator) {
-      Generator generator = (Generator) module;
-      Language sourceLanguage = generator.getSourceLanguage();
-      myModulesToRemove.add(sourceLanguage.getModuleReference());
-      myModulesToAdd.add(sourceLanguage);
-      myRefStorage.moduleAdded(sourceLanguage);
-    }
-  }
-
-  private void hackGeneratorReloaded(ReloadableModule module) {
-    if (module instanceof Generator) {
-      Generator generator = (Generator) module;
-      Language sourceLanguage = generator.getSourceLanguage();
-      myModulesToReload.add(sourceLanguage);
-      myRefStorage.moduleAdded(sourceLanguage);
     }
   }
 
@@ -229,7 +207,7 @@ public class ModuleUpdater {
         myDepGraph.addEdge(refToAdd, depRef);
       } else {
 //        valid if somebody calls reloadModule in moduleAdded() listener before us
-//        throw new IllegalStateException("The dependent module " + dep + " of " + moduleToAdd + " is not registered");
+        throw new IllegalStateException("The dependent module " + dep + " of " + module + " is not registered");
       }
     }
   }

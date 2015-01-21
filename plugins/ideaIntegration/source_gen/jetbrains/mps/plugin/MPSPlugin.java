@@ -91,6 +91,6 @@ public class MPSPlugin {
     return ourInstance;
   }
   private static void assertNotInEDT() {
-    LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
+    LOG.assertLog(!(ThreadUtils.isInEDT()), "You should not do this in EDT");
   }
 }

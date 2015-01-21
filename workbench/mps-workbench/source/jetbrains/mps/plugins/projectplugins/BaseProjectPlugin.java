@@ -19,6 +19,8 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -27,6 +29,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,50 +71,62 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   //------------------shared stuff-----------------------
 
-  public final void init(final Project project) {
+  public final void init(@NotNull final Project project) {
     myProject = project;
 
     myCustomPartsToDispose = initCustomParts(project);
-
-    for (RelationDescriptor d : initTabbedEditors(project)) {
-      myTabDescriptors.add(d);
-    }
-
+    myTabDescriptors = initTabbedEditors(project);
     myTools = initAllTools(myProject);
-    final Project ideaProject = myProject;
-    for (final BaseGeneratedTool tool : myTools) {
-      if (ideaProject.isDisposed()) return;
-      try {
-        tool.init(ideaProject);
-        tool.register();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-      myInitializedTools.add(tool);
-    }
-
     myPrefsComponents = createPreferencesComponents(myProject);
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.init();
-    }
+
+    getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myProject.isDisposed()) return;
+
+        for (BaseGeneratedTool tool : myTools) {
+          try {
+            tool.init(myProject);
+            tool.register();
+          } catch (Throwable t) {
+            LOG.error("", t);
+          }
+          myInitializedTools.add(tool);
+        }
+        for (BaseProjectPrefsComponent component : myPrefsComponents) {
+          component.init();
+        }
+      }
+    });
+  }
+
+  @NotNull
+  private ModelAccess getModelAccess() {
+    ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
+    assert modelAccess != null;
+    return modelAccess;
   }
 
   public final void dispose() {
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      component.dispose();
-    }
+    getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myProject.isDisposed()) return;
 
-    if (myProject.isDisposed()) return;
+        for (BaseProjectPrefsComponent component : myPrefsComponents) {
+          component.dispose();
+        }
 
-    for (final BaseGeneratedTool tool : myTools) {
-      if (!myInitializedTools.contains(tool)) continue;
-      try {
-        tool.dispose();
-      } catch (Throwable t) {
-        LOG.error(null, t);
+        for (BaseGeneratedTool tool : myTools) {
+          if (!myInitializedTools.contains(tool)) continue;
+          try {
+            tool.dispose();
+          } catch (Throwable t) {
+            LOG.error("", t);
+          }
+        }
       }
-      tool.unregister();
-    }
+    });
     myTools.clear();
 
     myTabDescriptors.clear();

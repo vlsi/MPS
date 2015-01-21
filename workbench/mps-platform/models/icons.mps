@@ -548,11 +548,21 @@
           </node>
         </node>
         <node concept="3clFbJ" id="277Nzj6qTQu" role="3cqZAp">
-          <node concept="2YIFZM" id="5w9tMTnpT0e" role="3clFbw">
-            <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-            <ref role="37wK5l" to="unno:5w9tMTnp0VI" resolve="isUnknown" />
-            <node concept="37vLTw" id="5w9tMTnpT0f" role="37wK5m">
-              <ref role="3cqZAo" node="277Nzj6qTG0" resolve="node" />
+          <node concept="3fqX7Q" id="3UghWjDZD0G" role="3clFbw">
+            <node concept="2OqwBi" id="3UghWjDZGv1" role="3fr31v">
+              <node concept="2OqwBi" id="3UghWjDZE7C" role="2Oq$k0">
+                <node concept="2JrnkZ" id="3UghWjDZG2z" role="2Oq$k0">
+                  <node concept="37vLTw" id="3UghWjDZDMC" role="2JrQYb">
+                    <ref role="3cqZAo" node="277Nzj6qTG0" resolve="node" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3UghWjDZGjJ" role="2OqNvi">
+                  <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3UghWjDZGNF" role="2OqNvi">
+                <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="277Nzj6qTQx" role="3clFbx">

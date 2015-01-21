@@ -58,6 +58,7 @@
     <import index="vft3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)" />
     <import index="pxuo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.containers(MPS.Core/jetbrains.mps.util.containers@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
+    <import index="ic9i" ref="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
   </imports>
   <registry>
@@ -5672,15 +5673,14 @@
                 </node>
                 <node concept="2OqwBi" id="5GQ6hZvswZq" role="1Lso8e">
                   <node concept="2OqwBi" id="5GQ6hZvswYD" role="2Oq$k0">
-                    <node concept="2ShNRf" id="5GQ6hZvswYz" role="2Oq$k0">
-                      <node concept="Tc6Ow" id="5GQ6hZvswY_" role="2ShVmc">
-                        <node concept="17QB3L" id="5GQ6hZvswYB" role="HW$YZ" />
-                        <node concept="Xl_RD" id="i05Q5aC" role="HW$Y0">
-                          <property role="Xl_RC" value="-Xmx1024m" />
+                    <node concept="2OqwBi" id="7jEXsfiOZci" role="2Oq$k0">
+                      <node concept="2ShNRf" id="7jEXsfiOUIu" role="2Oq$k0">
+                        <node concept="1pGfFk" id="7jEXsfiOXec" role="2ShVmc">
+                          <ref role="37wK5l" to="ic9i:7jEXsfiNILh" resolve="JvmArgs" />
                         </node>
-                        <node concept="Xl_RD" id="2peK2wMFtcI" role="HW$Y0">
-                          <property role="Xl_RC" value="-XX:PermSize=256m" />
-                        </node>
+                      </node>
+                      <node concept="liA8E" id="7jEXsfiP137" role="2OqNvi">
+                        <ref role="37wK5l" to="ic9i:7jEXsfiNKal" resolve="getDefaultJvmArgs" />
                       </node>
                     </node>
                     <node concept="4Tj9Z" id="5GQ6hZvswYI" role="2OqNvi">
@@ -5794,8 +5794,8 @@
           <node concept="3cpWsn" id="2z4mUjZxL0b" role="3cpWs9">
             <property role="TrG5h" value="pluginsPath" />
             <node concept="17QB3L" id="2z4mUjZxL0e" role="1tU5fm" />
-            <node concept="2YIFZM" id="2z4mUjZxL0d" role="33vP2m">
-              <ref role="37wK5l" to="yla8:~PathManager.getPreinstalledPluginsPath():java.lang.String" resolve="getPreinstalledPluginsPath" />
+            <node concept="2YIFZM" id="7jEXsfiMyp5" role="33vP2m">
+              <ref role="37wK5l" to="yla8:~PathManager.getPreInstalledPluginsPath():java.lang.String" resolve="getPreInstalledPluginsPath" />
               <ref role="1Pybhc" to="yla8:~PathManager" resolve="PathManager" />
             </node>
           </node>

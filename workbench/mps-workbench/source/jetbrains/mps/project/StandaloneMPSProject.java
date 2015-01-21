@@ -49,6 +49,7 @@ import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -161,7 +162,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     }
   }
 
-  // public for tests only!
+  @TestOnly
   public void init(final ProjectDescriptor projectDescriptor) {
     LOG.info("Initializing project");
     if (myProject.isDefault()) return;

@@ -264,9 +264,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void activate() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     activatePane(new PaneActivator(false), true);
   }
 

@@ -22,15 +22,20 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.EverythingGlobalScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
+import com.intellij.util.indexing.ID;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.persistence.ModelDigestHelper.DigestProvider;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
 public class IndexBasedModelDigest implements ApplicationComponent {
+  private static final Logger LOG = LogManager.getLogger(IndexBasedModelDigest.class);
+
   @Override
   @NotNull
   public String getComponentName() {
@@ -40,83 +45,47 @@ public class IndexBasedModelDigest implements ApplicationComponent {
   @Override
   public void initComponent() {
     // default model persistence (.mps files)
-    ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
-      @Override
-      public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
-        if (iFile == null) return null;
-        try {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-          if (file == null) return null;
-
-          final Map<String, String>[] valueArray = new Map[]{null};
-          FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(file), file,
-              new ValueProcessor<Map<String, String>>() {
-                @Override
-                public boolean process(VirtualFile file, Map<String, String> values) {
-                  valueArray[0] = values;
-                  return true;
-                }
-              }, new EverythingGlobalScope());
-          return valueArray[0];
-        } catch (IndexNotReadyException ignored) {
-        } catch (ProcessCanceledException ignored) {
-        }
-        return null;
-      }
-    });
+    ModelDigestHelper.getInstance().addDigestProvider(new BaseModelDigestProvider(ModelDigestIndex.NAME));
     // binary model persistence (.mpb files)
-    ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
-      @Override
-      public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
-        if (iFile == null) return null;
-        try {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-          if (file == null) return null;
-
-          final Map<String, String>[] valueArray = new Map[]{null};
-          FileBasedIndex.getInstance().processValues(BinaryModelDigestIndex.NAME, FileBasedIndex.getFileId(file), file,
-              new ValueProcessor<Map<String, String>>() {
-                @Override
-                public boolean process(VirtualFile file, Map<String, String> values) {
-                  valueArray[0] = values;
-                  return true;
-                }
-              }, new EverythingGlobalScope());
-          return valueArray[0];
-        } catch (IndexNotReadyException ignored) {
-        } catch (ProcessCanceledException ignored) {
-        }
-        return null;
-      }
-    });
+    ModelDigestHelper.getInstance().addDigestProvider(new BaseModelDigestProvider(BinaryModelDigestIndex.NAME));
     // language module files (.mpl files)
-    ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
-      @Override
-      public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
-        try {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-          if (file == null) return null;
-
-          final Map<String, String>[] valueArray = new Map[]{null};
-          FileBasedIndex.getInstance().processValues(LanguageModelDigestIndex.NAME, FileBasedIndex.getFileId(file), file,
-              new ValueProcessor<Map<String, String>>() {
-                @Override
-                public boolean process(VirtualFile file, Map<String, String> values) {
-                  valueArray[0] = values;
-                  return true;
-                }
-              }, new EverythingGlobalScope());
-          return valueArray[0];
-        } catch (IndexNotReadyException e) {
-        } catch (ProcessCanceledException e) {
-        }
-        return null;
-      }
-    });
+    ModelDigestHelper.getInstance().addDigestProvider(new BaseModelDigestProvider(LanguageModelDigestIndex.NAME));
   }
+
 
   @Override
   public void disposeComponent() {
+  }
 
+  private static class BaseModelDigestProvider implements DigestProvider {
+    private ID<Integer, Map<String, String>> myName;
+
+    private BaseModelDigestProvider(ID<Integer, Map<String, String>> name) {
+      myName = name;
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
+      try {
+        VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
+        if (file == null) return null;
+
+        final Map<String, String>[] valueArray = new Map[]{null};
+        FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,
+            new ValueProcessor<Map<String, String>>() {
+              @Override
+              public boolean process(VirtualFile file, Map<String, String> values) {
+                valueArray[0] = values;
+                return true;
+              }
+            }, new EverythingGlobalScope());
+        return valueArray[0];
+      } catch (IndexNotReadyException e) {
+        LOG.error("", e);
+      } catch (ProcessCanceledException e) {
+        LOG.warn(e.getMessage());
+      }
+      return null;
+    }
   }
 }

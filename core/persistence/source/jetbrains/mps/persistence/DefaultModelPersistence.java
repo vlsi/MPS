@@ -266,6 +266,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       super(modelFactory, dataSource);
     }
 
+    @NotNull
     @Override
     public StreamDataSource getSource() {
       return (StreamDataSource) super.getSource();

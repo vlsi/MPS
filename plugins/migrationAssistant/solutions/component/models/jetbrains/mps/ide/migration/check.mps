@@ -579,22 +579,17 @@
             <node concept="3cpWs8" id="3n7MNzOAPtJ" role="3cqZAp">
               <node concept="3cpWsn" id="3n7MNzOAPtK" role="3cpWs9">
                 <property role="TrG5h" value="concept" />
-                <node concept="3uibUv" id="3n7MNzOAPtL" role="1tU5fm">
-                  <ref role="3uigEE" to="gct0:~SAbstractConceptAdapter" resolve="SAbstractConceptAdapter" />
+                <node concept="3uibUv" id="3UghWjDYmDf" role="1tU5fm">
+                  <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
                 </node>
-                <node concept="10QFUN" id="3n7MNzOAPtM" role="33vP2m">
-                  <node concept="2OqwBi" id="3n7MNzOAPtN" role="10QFUP">
-                    <node concept="2JrnkZ" id="3n7MNzOAPtO" role="2Oq$k0">
-                      <node concept="2GrUjf" id="3n7MNzOM6Vn" role="2JrQYb">
-                        <ref role="2Gs0qQ" node="3n7MNzOLUVb" resolve="node" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3n7MNzOAPtQ" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                <node concept="2OqwBi" id="3n7MNzOAPtN" role="33vP2m">
+                  <node concept="2JrnkZ" id="3n7MNzOAPtO" role="2Oq$k0">
+                    <node concept="2GrUjf" id="3n7MNzOM6Vn" role="2JrQYb">
+                      <ref role="2Gs0qQ" node="3n7MNzOLUVb" resolve="node" />
                     </node>
                   </node>
-                  <node concept="3uibUv" id="3n7MNzOAPtR" role="10QFUM">
-                    <ref role="3uigEE" to="gct0:~SAbstractConceptAdapter" resolve="SAbstractConceptAdapter" />
+                  <node concept="liA8E" id="3n7MNzOAPtQ" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
                   </node>
                 </node>
               </node>
@@ -693,16 +688,15 @@
                 <node concept="3clFbH" id="3n7MNzOMip6" role="3cqZAp" />
                 <node concept="3N13vt" id="3n7MNzOMbiG" role="3cqZAp" />
               </node>
-              <node concept="3clFbC" id="3n7MNzOCT6k" role="3clFbw">
-                <node concept="2OqwBi" id="3n7MNzOCT6l" role="3uHU7B">
-                  <node concept="37vLTw" id="3n7MNzOCT6m" role="2Oq$k0">
+              <node concept="3fqX7Q" id="3UghWjDYA4n" role="3clFbw">
+                <node concept="2OqwBi" id="3UghWjDYA4p" role="3fr31v">
+                  <node concept="37vLTw" id="3UghWjDYA4q" role="2Oq$k0">
                     <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                   </node>
-                  <node concept="liA8E" id="3n7MNzOCT6n" role="2OqNvi">
-                    <ref role="37wK5l" to="gct0:~SAbstractConceptAdapter.getConceptDescriptor():jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
+                  <node concept="liA8E" id="3UghWjDYA4r" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
                   </node>
                 </node>
-                <node concept="10Nm6u" id="3n7MNzOCT6o" role="3uHU7w" />
               </node>
             </node>
             <node concept="3clFbH" id="3n7MNzOD$IN" role="3cqZAp" />
@@ -728,7 +722,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPuk" role="2OqNvi">
-                      <ref role="37wK5l" to="gct0:~SAbstractConceptAdapter.getProperties():java.lang.Iterable" resolve="getProperties" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getProperties():java.lang.Iterable" resolve="getProperties" />
                     </node>
                   </node>
                 </node>
@@ -854,7 +848,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPuH" role="2OqNvi">
-                      <ref role="37wK5l" to="gct0:~SAbstractConceptAdapter.getContainmentLinks():java.lang.Iterable" resolve="getContainmentLinks" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getContainmentLinks():java.lang.Iterable" resolve="getContainmentLinks" />
                     </node>
                   </node>
                 </node>
@@ -996,7 +990,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPv8" role="2OqNvi">
-                      <ref role="37wK5l" to="gct0:~SAbstractConceptAdapter.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
                     </node>
                   </node>
                 </node>

@@ -1362,20 +1362,6 @@
             </node>
           </node>
           <node concept="1Wc70l" id="6qi2OtU3urA" role="3clFbw">
-            <node concept="3fqX7Q" id="6qi2OtU3urB" role="3uHU7w">
-              <node concept="2YIFZM" id="5w9tMTnq8XV" role="3fr31v">
-                <ref role="37wK5l" to="unno:5w9tMTnp0VI" resolve="isUnknown" />
-                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                <node concept="2JrnkZ" id="5w9tMTnq8XW" role="37wK5m">
-                  <node concept="2OqwBi" id="5w9tMTnq8XX" role="2JrQYb">
-                    <node concept="37vLTw" id="5w9tMTnq8XY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                    </node>
-                    <node concept="1mfA1w" id="5w9tMTnq8XZ" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3y3z36" id="6qi2OtU3urH" role="3uHU7B">
               <node concept="2OqwBi" id="6qi2OtU3urI" role="3uHU7B">
                 <node concept="37vLTw" id="2BHiRxglB5G" role="2Oq$k0">
@@ -1384,6 +1370,24 @@
                 <node concept="1mfA1w" id="6qi2OtU3urK" role="2OqNvi" />
               </node>
               <node concept="10Nm6u" id="6qi2OtU3urL" role="3uHU7w" />
+            </node>
+            <node concept="2OqwBi" id="3UghWjDZQQr" role="3uHU7w">
+              <node concept="2OqwBi" id="3UghWjDZPPZ" role="2Oq$k0">
+                <node concept="2JrnkZ" id="5w9tMTnq8XW" role="2Oq$k0">
+                  <node concept="2OqwBi" id="5w9tMTnq8XX" role="2JrQYb">
+                    <node concept="37vLTw" id="5w9tMTnq8XY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                    </node>
+                    <node concept="1mfA1w" id="5w9tMTnq8XZ" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3UghWjDZQN0" role="2OqNvi">
+                  <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3UghWjDZR3U" role="2OqNvi">
+                <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+              </node>
             </node>
           </node>
         </node>

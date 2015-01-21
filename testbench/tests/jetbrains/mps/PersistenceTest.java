@@ -310,7 +310,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
   }
 
   public void upgradePersistence(DefaultSModelDescriptor modelDescriptor, final int toVersion) {
-    assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
+    assert ThreadUtils.isInEDT() : "you must be in EDT to write files";
 
     StreamDataSource source = (StreamDataSource) modelDescriptor.getSource();
     if (source.isReadOnly()) return;

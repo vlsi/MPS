@@ -46,7 +46,7 @@ public class ClassPathFactory {
       if (myCache.containsKey(path)) return myCache.get(path);
       IFile file = FileSystem.getInstance().getFileByPath(path);
       path = file.getPath();
-      boolean jared = FileSystem.getInstance().isPackaged(file) || path.endsWith(".jar");
+      boolean isPackaged = FileSystem.getInstance().isPackaged(file) || path.endsWith(".jar") || path.endsWith(".zip");
       boolean isDirectory = file.isDirectory();
       boolean exists = file.exists() || new File(path).exists();
       RealClassPathItem item;
@@ -54,10 +54,10 @@ public class ClassPathFactory {
         String moduleString = requestor == null ? "" : (" in " + requestor);
         LOG.debug("Can't load class path item " + path + moduleString + "." + (isDirectory ? " Execute make in IDEA." : ""));
         item = new NonExistingClassPathItem(path);
-      } else if (jared) {
+      } else if (isPackaged) {
         item = new JarFileClassPathItem(path);
       } else {
-        if (!isDirectory) throw new IllegalArgumentException("Path variable must point to a directory or to a jar location");
+        if (!isDirectory) throw new IllegalArgumentException("Path variable must point to a directory or to a jar/zip location");
         item = new FileClassPathItem(path);
       }
 

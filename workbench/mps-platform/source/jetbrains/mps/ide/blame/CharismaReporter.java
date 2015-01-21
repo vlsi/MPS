@@ -39,7 +39,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
 
   @Override
   public void submitAsync(IdeaLoggingEvent[] events, String additionalInfo, Component parentComponent, Consumer<SubmittedReportInfo> consumer) {
-    assert ThreadUtils.isEventDispatchThread();
+    ThreadUtils.assertEDT();
 
     if (events.length == 0) {
       consumer.consume(new SubmittedReportInfo(null, null, SubmissionStatus.FAILED));

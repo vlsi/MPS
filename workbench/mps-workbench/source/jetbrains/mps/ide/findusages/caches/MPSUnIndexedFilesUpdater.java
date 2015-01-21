@@ -52,8 +52,9 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
     return myIndex.getNumberOfPendingInvalidations();
   }
 
+  @NotNull
   @Override
-  public VirtualFile[] queryNeededFiles(ProgressIndicator indicator) {
+  public VirtualFile[] queryNeededFiles(@NotNull ProgressIndicator indicator) {
     final CollectingContentIterator finder = myIndex.createContentIterator(indicator);
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -67,7 +68,7 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
   }
 
   @Override
-  public void processFile(final FileContent fileContent) {
+  public void processFile(@NotNull final FileContent fileContent) {
     myIndex.indexFileContent(null, fileContent);
     IndexingStamp.flushCache(fileContent.getVirtualFile());
   }

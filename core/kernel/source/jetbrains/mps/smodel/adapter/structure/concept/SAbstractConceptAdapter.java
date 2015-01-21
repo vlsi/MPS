@@ -134,7 +134,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(MetaAdapterFactory.getProperty(pid,d.getPropertyDescriptor(pid).getName()));
+      result.add(MetaAdapterFactory.getProperty(pid, d.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }
@@ -200,6 +200,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return "";
     return d.getHelpUrl();
+  }
+
+  @Override
+  public boolean isValid() {
+    return getConceptDescriptor() != null;
   }
 
   @Override

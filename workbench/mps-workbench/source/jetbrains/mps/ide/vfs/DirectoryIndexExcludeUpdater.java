@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.ProjectTopics;
+import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationListener;
 import com.intellij.openapi.application.ApplicationManager;
@@ -29,8 +31,18 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import com.intellij.openapi.vfs.newvfs.BulkFileListener.Adapter;
+import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.messages.MessageBus;
+import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.ide.platform.watching.FileProcessor;
+import jetbrains.mps.ide.platform.watching.ReloadAction;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -47,6 +59,8 @@ import java.util.List;
 public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
   private MessageBus myMessageBus;
+  private MessageBusConnection myConnection;
+  private BulkFileListener myFSListener = new BulkFileChangesListener();
   private VirtualFileAdapter myVirtualFileListener = new MyVirtualFileListener();
   private DirectoryIndexExcludePolicy[] myExcludePolicies;
 
@@ -80,28 +94,35 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   @Override
   public void initComponent() {
-    final SRepository repository = ProjectHelper.toMPSProject(myProject).getRepository();
+    final SRepository repository = getRepository();
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         myRepositoryListener.subscribeTo(repository);
       }
     });
-    VirtualFileManager.getInstance().addVirtualFileListener(myVirtualFileListener);
+    myConnection = myMessageBus.connect();
+    myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myFSListener);
     ApplicationManager.getApplication().addApplicationListener(myListener);
   }
 
   @Override
   public void disposeComponent() {
     ApplicationManager.getApplication().removeApplicationListener(myListener);
-    VirtualFileManager.getInstance().removeVirtualFileListener(myVirtualFileListener);
-    final SRepository repository = ProjectHelper.toMPSProject(myProject).getRepository();
+    myConnection.disconnect();
+    final SRepository repository = getRepository();
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         myRepositoryListener.unsubscribeFrom(repository);
       }
     });
+  }
+
+  private SRepository getRepository() {
+    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
+    if (project == null) throw new IllegalStateException("Cannot obtain a repository from the project which is null");
+    return project.getRepository();
   }
 
   private void notifyRootsChanged(boolean async) {
@@ -125,9 +146,23 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     return false;
   }
 
+  private class BulkFileChangesListener extends Adapter {
+    @Override
+    public void after(@NotNull final List<? extends VFileEvent> events) {
+      for (VFileEvent event : events) {
+        if (event instanceof VFileCreateEvent) {
+          VirtualFile file = event.getFile();
+          if (file != null && file.isDirectory() && isExcluded(file)) {
+            notifyRootsChanged(false);
+          }
+        }
+      }
+    }
+  }
+
   private class MyVirtualFileListener extends VirtualFileAdapter {
     @Override
-    public void fileCreated(VirtualFileEvent event) {
+    public void fileCreated(@NotNull VirtualFileEvent event) {
       if (event.getFile().isDirectory() && isExcluded(event.getFile())) {
         notifyRootsChanged(false);
       }

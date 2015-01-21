@@ -17,20 +17,30 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.plugins.BasePluginManager;
+import jetbrains.mps.plugins.ModulePluginContributor;
 import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+/**
+ * Is a {@link BasePluginManager} which is responsible for loading application plugins {@link BaseApplicationPlugin};
+ * Triggered from the superclass (#afterPluginsCreated)
+ */
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
+
+  public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginReloader pluginReloader) {
+    super(coreComponents.getModuleRepository(), pluginReloader);
+  }
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
     for (BaseApplicationPlugin p : getPlugins()) {
@@ -44,8 +54,6 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
     return getPlugin(id);
   }
 
-  // load stuff
-
   @Override
   protected BaseApplicationPlugin createPlugin(PluginContributor contributor) {
     return contributor.createApplicationPlugin();
@@ -53,50 +61,71 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   protected void afterPluginsCreated(List<BaseApplicationPlugin> plugins) {
-    BaseApplicationPlugin idePlugin = null;
-    for (BaseApplicationPlugin p : plugins) {
-      if (p.getClass().getName().equals(PluginUtil.IDE_MODULE_APPPLUGIN)) {
-        idePlugin = p;
-        break;
-      }
-    }
+    createKeyMaps(plugins);
+    createGroups(plugins);
+    adjustGroups(plugins);
+    createCustomParts(plugins);
+    adjustIdePlugin(plugins);
+  }
 
-    for (BaseApplicationPlugin plugin : plugins) {
-      try {
-        plugin.createKeymaps();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : plugins) {
-      try {
-        plugin.createGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : plugins) {
-      try {
-        plugin.adjustGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : plugins) {
-      try {
-        plugin.createCustomParts();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
+  private void adjustIdePlugin(List<BaseApplicationPlugin> plugins) {
+    BaseApplicationPlugin idePlugin = findIdePlugin(plugins);
 
     if (idePlugin != null) {
       GroupAdjuster.adjustTopLevelGroups(idePlugin);
     }
     GroupAdjuster.refreshCustomizations();
+  }
+
+  private BaseApplicationPlugin findIdePlugin(List<BaseApplicationPlugin> plugins) {
+    BaseApplicationPlugin idePlugin = null;
+    for (BaseApplicationPlugin p : plugins) {
+      if (p.getClass().getName().equals(ModulePluginContributor.IDE_MODULE_APP_PLUGIN)) {
+        idePlugin = p;
+        break;
+      }
+    }
+    return idePlugin;
+  }
+
+  private void createKeyMaps(List<BaseApplicationPlugin> plugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createKeymaps();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during key maps creating ", t1);
+      }
+    }
+  }
+
+  private void createGroups(List<BaseApplicationPlugin> plugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during groups creating ", t1);
+      }
+    }
+  }
+
+  private void adjustGroups(List<BaseApplicationPlugin> plugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.adjustGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during groups adjusting ", t1);
+      }
+    }
+  }
+
+  private void createCustomParts(List<BaseApplicationPlugin> plugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createCustomParts();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during creating custom parts ", t1);
+      }
+    }
   }
 
   @Override
@@ -119,9 +148,17 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   public void initComponent() {
+    if (!myPluginReloader.getLoadedContributors().isEmpty()) {
+      LOG.warn("Some contributor plugins will not be loaded because of too late component initialization.");
+    }
+    super.startListeningToReload();
   }
 
   @Override
   public void disposeComponent() {
+    super.stopListeningToReload();
+    if (!myPluginReloader.getLoadedContributors().isEmpty()) {
+      super.unloadPlugins(myPluginReloader.getLoadedContributors());
+    }
   }
 }

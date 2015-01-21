@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<String, String>> {
+  @NotNull
   @Override
   public DataExternalizer<Map<String, String>> getValueExternalizer() {
     return new MapStringStringExternalizer();
@@ -41,7 +42,7 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
     private DataExternalizer<String> myInnerExternalizer = new EnumeratorStringDescriptor();
 
     @Override
-    public void save(DataOutput output, Map<String, String> map) throws IOException {
+    public void save(@NotNull DataOutput output, Map<String, String> map) throws IOException {
       output.writeInt(map.size());
       for (Map.Entry<String, String> entry : map.entrySet()) {
         myInnerExternalizer.save(output, entry.getKey());
@@ -50,7 +51,7 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
     }
 
     @Override
-    public Map<String, String> read(DataInput input) throws IOException {
+    public Map<String, String> read(@NotNull DataInput input) throws IOException {
       Map<String, String> result = new HashMap<String, String>();
       for (int i = input.readInt(); i > 0; i--) {
         result.put(myInnerExternalizer.read(input), myInnerExternalizer.read(input));

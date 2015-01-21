@@ -36,6 +36,17 @@ import java.util.List;
 public class GlobalSModelEventsManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(GlobalSModelEventsManager.class);
   private static GlobalSModelEventsManager ourInstance;
+  private SModelRepositoryListener myRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
+    @Override
+    public void modelAdded(SModel modelDescriptor) {
+      addListeners(modelDescriptor);
+    }
+
+    @Override
+    public void modelRemoved(SModel modelDescriptor) {
+      removeListeners(modelDescriptor);
+    }
+  };
 
   public static GlobalSModelEventsManager getInstance() {
     return ourInstance;
@@ -49,8 +60,8 @@ public class GlobalSModelEventsManager implements CoreComponent {
   private SModelListener[] myRelayListeners;
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
 
-  public GlobalSModelEventsManager(SModelRepository SModelRepository) {
-    mySModelRepository = SModelRepository;
+  public GlobalSModelEventsManager(SModelRepository modelRepository) {
+    mySModelRepository = modelRepository;
     myRelayListeners = new SModelListener[SModelListenerPriority.values().length];
     myGlobalListenersList = new ArrayList<List<SModelListener>>(SModelListenerPriority.values().length);
     for (SModelListenerPriority priority : SModelListenerPriority.values()) {
@@ -65,30 +76,22 @@ public class GlobalSModelEventsManager implements CoreComponent {
       throw new IllegalStateException("already initialized");
     }
     ourInstance = this;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
-          @Override
-          public void modelAdded(SModel modelDescriptor) {
-            addListeners(modelDescriptor);
-          }
 
-          @Override
-          public void modelRemoved(SModel modelDescriptor) {
-            removeListeners(modelDescriptor);
-          }
-        });
+    mySModelRepository.addModelRepositoryListener(myRepositoryListener);
 
-        for (SModel sm : mySModelRepository.getModelDescriptors()) {
-          addListeners(sm);
-        }
-      }
-    });
+    for (SModel sm : mySModelRepository.getModelDescriptors()) {
+      addListeners(sm);
+    }
   }
 
   @Override
   public void dispose() {
+    for (SModel sm : mySModelRepository.getModelDescriptors()) {
+      removeListeners(sm);
+    }
+
+    mySModelRepository.removeModelRepositoryListener(myRepositoryListener);
+
     myEventsCollector.dispose();
     ourInstance = null;
   }
@@ -128,9 +131,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
   }
 
   private SModelListener createRelayListener(final SModelListenerPriority priority) {
-    return (SModelListener) Proxy.newProxyInstance(
-      getClass().getClassLoader(),
-      new Class[]{SModelListener.class},
+    return (SModelListener) Proxy.newProxyInstance(getClass().getClassLoader(), new Class[]{SModelListener.class},
       new InvocationHandler() {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

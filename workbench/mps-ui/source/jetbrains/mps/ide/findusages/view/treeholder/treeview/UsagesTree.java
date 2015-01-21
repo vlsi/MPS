@@ -176,9 +176,7 @@ public class UsagesTree extends MPSTree {
 
   @Override
   public void rebuildNow() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
 
     UsagesTree.super.rebuildNow();
     int i;

@@ -60,7 +60,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
 
   @Override
   public boolean isInsideUndoableCommand() {
-    return ModelAccess.instance().isInsideCommand() && !ourUndoBlocked && ThreadUtils.isEventDispatchThread();
+    return ModelAccess.instance().isInsideCommand() && !ourUndoBlocked && ThreadUtils.isInEDT();
   }
 
   @Override

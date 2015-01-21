@@ -411,6 +411,9 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -3938,50 +3941,20 @@
       <node concept="17QB3L" id="5gyVhZ18bnM" role="3clF45" />
       <node concept="3Tm1VV" id="5gyVhZ18bnN" role="1B3o_S" />
       <node concept="3clFbS" id="5gyVhZ18bnO" role="3clF47">
-        <node concept="3clFbF" id="5gyVhZ18bnP" role="3cqZAp">
-          <node concept="2OqwBi" id="5gyVhZ18bnQ" role="3clFbG">
-            <node concept="2OqwBi" id="5gyVhZ18bnR" role="2Oq$k0">
-              <node concept="1tenjt" id="5gyVhZ18bnS" role="2Oq$k0">
-                <node concept="Xl_RD" id="5gyVhZ18bnT" role="1r8FgC">
-                  <property role="Xl_RC" value="-client" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnU" role="1r8FgC">
-                  <property role="Xl_RC" value="-Xss1024k" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnV" role="1r8FgC">
-                  <property role="Xl_RC" value="-ea" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnW" role="1r8FgC">
-                  <property role="Xl_RC" value="-Xmx1200m" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnX" role="1r8FgC">
-                  <property role="Xl_RC" value="-XX:MaxPermSize=150m" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnY" role="1r8FgC">
-                  <property role="Xl_RC" value="-XX:+HeapDumpOnOutOfMemoryError" />
-                </node>
-                <node concept="Xl_RD" id="5gyVhZ18bnZ" role="1r8FgC">
-                  <property role="Xl_RC" value="-Dfile.encoding=UTF-8" />
-                </node>
-                <node concept="1eOMI4" id="5gyVhZ18bo0" role="1r8FgC">
-                  <node concept="3K4zz7" id="5gyVhZ18bo1" role="1eOMHV">
-                    <node concept="Xl_RD" id="5gyVhZ18bo2" role="3K4E3e">
-                      <property role="Xl_RC" value=" -Dmps.internal=true" />
-                    </node>
-                    <node concept="Xl_RD" id="5gyVhZ18bo3" role="3K4GZi">
-                      <property role="Xl_RC" value="" />
-                    </node>
-                    <node concept="2YIFZM" id="5gyVhZ18bo4" role="3K4Cdx">
-                      <ref role="37wK5l" to="1p1s:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
-                      <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
-                    </node>
-                  </node>
+        <node concept="3clFbF" id="7jEXsfiO4Ac" role="3cqZAp">
+          <node concept="2OqwBi" id="7jEXsfiOEtH" role="3clFbG">
+            <node concept="2OqwBi" id="7jEXsfiOy59" role="2Oq$k0">
+              <node concept="2ShNRf" id="7jEXsfiO4_$" role="2Oq$k0">
+                <node concept="1pGfFk" id="7jEXsfiOy42" role="2ShVmc">
+                  <ref role="37wK5l" node="7jEXsfiNILh" resolve="JvmArgs" />
                 </node>
               </node>
-              <node concept="2TNl2y" id="5gyVhZ18bo5" role="2OqNvi" />
+              <node concept="liA8E" id="7jEXsfiOynf" role="2OqNvi">
+                <ref role="37wK5l" node="7jEXsfiNKal" resolve="getDefaultJvmArgs" />
+              </node>
             </node>
-            <node concept="3uJxvA" id="5gyVhZ18bo6" role="2OqNvi">
-              <node concept="Xl_RD" id="5gyVhZ18bo7" role="3uJOhx">
+            <node concept="3uJxvA" id="7jEXsfiOIes" role="2OqNvi">
+              <node concept="Xl_RD" id="7jEXsfiOKjj" role="3uJOhx">
                 <property role="Xl_RC" value=" " />
               </node>
             </node>
@@ -13526,6 +13499,71 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="1b7CZFPOU0a" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="7jEXsfiNGiU">
+    <property role="TrG5h" value="JvmArgs" />
+    <node concept="3clFbW" id="7jEXsfiNILh" role="jymVt">
+      <node concept="3cqZAl" id="7jEXsfiNILi" role="3clF45" />
+      <node concept="3clFbS" id="7jEXsfiNILk" role="3clF47" />
+      <node concept="3Tm1VV" id="7jEXsfiNHJp" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="7jEXsfiNILs" role="jymVt" />
+    <node concept="3clFb_" id="7jEXsfiNKal" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDefaultJvmArgs" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7jEXsfiNKao" role="3clF47">
+        <node concept="3clFbF" id="7jEXsfiNRpG" role="3cqZAp">
+          <node concept="2OqwBi" id="7jEXsfiO_95" role="3clFbG">
+            <node concept="1tenjt" id="7jEXsfiNRpJ" role="2Oq$k0">
+              <node concept="Xl_RD" id="7jEXsfiNRpK" role="1r8FgC">
+                <property role="Xl_RC" value="-client" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpL" role="1r8FgC">
+                <property role="Xl_RC" value="-Xss1024k" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpM" role="1r8FgC">
+                <property role="Xl_RC" value="-ea" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpN" role="1r8FgC">
+                <property role="Xl_RC" value="-Xmx1200m" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpO" role="1r8FgC">
+                <property role="Xl_RC" value="-XX:MaxPermSize=150m" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpP" role="1r8FgC">
+                <property role="Xl_RC" value="-XX:+HeapDumpOnOutOfMemoryError" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpQ" role="1r8FgC">
+                <property role="Xl_RC" value="-Dfile.encoding=UTF-8" />
+              </node>
+              <node concept="1eOMI4" id="7jEXsfiNRpR" role="1r8FgC">
+                <node concept="3K4zz7" id="7jEXsfiNRpS" role="1eOMHV">
+                  <node concept="Xl_RD" id="7jEXsfiNRpT" role="3K4E3e">
+                    <property role="Xl_RC" value=" -Dmps.internal=true" />
+                  </node>
+                  <node concept="Xl_RD" id="7jEXsfiNRpU" role="3K4GZi">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                  <node concept="2YIFZM" id="7jEXsfiNRpV" role="3K4Cdx">
+                    <ref role="37wK5l" to="1p1s:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
+                    <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2TNl2y" id="7jEXsfiO_ji" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7jEXsfiNIOO" role="1B3o_S" />
+      <node concept="_YKpA" id="7jEXsfiO$Lh" role="3clF45">
+        <node concept="17QB3L" id="7jEXsfiO$Wa" role="_ZDj9" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7jEXsfiNGiV" role="1B3o_S" />
   </node>
 </model>
 

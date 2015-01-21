@@ -88,9 +88,7 @@ public abstract class BaseTool {
   }
 
   public boolean toolIsOpened() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     return getToolWindow().isVisible();
   }
 
@@ -107,6 +105,7 @@ public abstract class BaseTool {
   }
 
   public void openTool(boolean setActive) {
+    ThreadUtils.assertEDT();
     ToolWindow window = getToolWindow();
     if (!isAvailable()) makeAvailable();
     if (!toolIsOpened()) window.show(null);
@@ -126,6 +125,7 @@ public abstract class BaseTool {
   }
 
   public void close() {
+    ThreadUtils.assertEDT();
     if (isAvailable() && toolIsOpened()) getToolWindow().hide(null);
   }
 
@@ -133,13 +133,12 @@ public abstract class BaseTool {
    * @return whether the tool is visible by user (in the panel)
    */
   public boolean isAvailable() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
     return getToolWindow().isAvailable();
   }
 
   public void setAvailable(boolean state) {
+    ThreadUtils.assertEDT();
     if (state) makeAvailable();
     else makeUnavailable();
   }
@@ -157,6 +156,7 @@ public abstract class BaseTool {
   }
 
   public void makeAvailable() {
+    ThreadUtils.assertEDT();
     if (!isAvailable()) getToolWindow().setAvailable(true, null);
   }
 
@@ -173,13 +173,12 @@ public abstract class BaseTool {
   }
 
   public void makeUnavailable() {
+    ThreadUtils.assertEDT();
     if (isAvailable()) getToolWindow().setAvailable(false, null);
   }
 
   public ToolWindow getToolWindow() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
+    ThreadUtils.assertEDT();
 
     if (!isRegistered()) register();
     // register() may fail if myProject hasn't been initialized - ToolWindowManager is a ProjectComponent
@@ -204,6 +203,7 @@ public abstract class BaseTool {
   public final void register() {
     if (myProject.isDisposed()) return;
     if (isRegistered()) return;
+    ThreadUtils.assertEDT();
     setIsRegistered(true);
 
     myWindowManager = ToolWindowManager.getInstance(myProject);
@@ -275,6 +275,7 @@ public abstract class BaseTool {
 
   public final void unregister() {
     if (!isRegistered()) return;
+    ThreadUtils.assertEDT();
 
     doUnregister();
 

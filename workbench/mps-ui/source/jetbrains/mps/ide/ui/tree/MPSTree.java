@@ -375,7 +375,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (RuntimeFlags.isTestMode()) {
       return;
     }
-    if (!ThreadUtils.isEventDispatchThread()) {
+    if (!ThreadUtils.isInEDT()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
@@ -430,7 +430,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void rebuildNow() {
-    if (!ThreadUtils.isEventDispatchThread()) {
+    if (!ThreadUtils.isInEDT()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
     assert !isDisposed() : "Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";

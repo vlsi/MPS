@@ -105,7 +105,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
     setIcon(IconManager.getIconFor(myNode));
 
-    if (jetbrains.mps.util.SNodeOperations.isUnknown(myNode)) {
+    if (!myNode.getConcept().isValid()) {
       setErrorState(ErrorState.ERROR);
     }
     if (NodeAttributesUtil.isDeprecatedNode(myNode)) {

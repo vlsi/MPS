@@ -105,6 +105,8 @@ public class RulesManager {
         IHelginsDescriptor typesystem = null;
         try {
           typesystem = language.getAspect(IHelginsDescriptor.class);
+        } catch (LinkageError linkageError) {
+          LOG.warn("Problems with creating typesystem descriptor " + linkageError.getMessage());
         } catch (Throwable t) {
           LOG.error("Error while loading language: " + language.getNamespace(), t);
         }

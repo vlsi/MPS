@@ -62,7 +62,7 @@
       <node id="3875289449858040341" at="76,63,77,97" concept="8" />
       <node id="3875289449858495810" at="77,97,78,95" concept="8" />
       <node id="3875289449858487774" at="78,95,79,0" concept="11" />
-      <node id="3875289449858029423" at="80,84,81,84" concept="8" />
+      <node id="3875289449858029423" at="80,84,81,43" concept="8" />
       <node id="3875289449861002335" at="83,138,84,19" concept="2" />
       <node id="3875289449858212404" at="85,9,86,65" concept="3" />
       <node id="3875289449858231254" at="86,65,87,91" concept="3" />
@@ -127,7 +127,7 @@
       <node id="1315974995649578686" at="54,78,57,5" concept="6" />
       <node id="3875289449860839995" at="63,80,66,5" concept="6" />
       <node id="3875289449857941265" at="70,0,73,0" concept="7" trace="select#(Ljetbrains/mps/ide/migration/check/LanguageMissingProblem;)Lorg/jetbrains/mps/openapi/language/SLanguage;" />
-      <node id="3875289449858577471" at="82,51,85,9" concept="6" />
+      <node id="3875289449858577471" at="82,33,85,9" concept="6" />
       <node id="3875289449860905451" at="89,20,92,9" concept="6" />
       <node id="3875289449858029464" at="99,71,102,9" concept="6" />
       <node id="3875289449861062573" at="106,20,109,9" concept="6" />
@@ -156,7 +156,7 @@
       <node id="1315974995649697071" at="154,0,166,0" concept="7" trace="visit#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="3875289449858029486" at="112,88,125,7" concept="5" />
       <node id="3875289449858029513" at="127,83,140,7" concept="5" />
-      <node id="3875289449858563815" at="81,84,95,7" concept="6" />
+      <node id="3875289449858563815" at="81,43,95,7" concept="6" />
       <node id="1315974995649684531" at="148,0,166,7" concept="3" />
       <node id="3875289449857686188" at="175,0,202,0" concept="12" trace="findMissingLanguages#(Ljava/lang/Iterable;I)Ljava/util/Collection;" />
       <node id="1315974995649658431" at="146,0,174,0" concept="12" trace="findBadModules#(Ljava/lang/Iterable;I)Ljava/util/Collection;" />
@@ -231,7 +231,7 @@
       <scope id="3875289449859466863" at="204,0,215,0">
         <var name="modules" id="3875289449859466480" />
       </scope>
-      <scope id="3875289449858563818" at="82,51,94,17" />
+      <scope id="3875289449858563818" at="82,33,94,17" />
       <scope id="3875289449858029461" at="98,75,110,7">
         <var name="p" id="3875289449858029462" />
       </scope>

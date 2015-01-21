@@ -1662,10 +1662,10 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
                   <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
-                  <node concept="3Tm1VV" id="KL8Aqll4BQ" role="1B3o_S" />
                   <node concept="37vLTw" id="2BjwmTy27U5" role="37wK5m">
                     <ref role="3cqZAo" node="KL8Aqll4Bf" resolve="project" />
                   </node>
+                  <node concept="3Tm1VV" id="KL8Aqll4BQ" role="1B3o_S" />
                   <node concept="1rXfSq" id="4hiugqyzbYQ" role="37wK5m">
                     <ref role="37wK5l" node="KL8Aqll4nb" resolve="getMyMessageHandler" />
                   </node>
@@ -8154,10 +8154,10 @@
                       <property role="2bfB8j" value="true" />
                       <ref role="1Y3XeK" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
                       <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
-                      <node concept="3Tm1VV" id="KL8Aqll538" role="1B3o_S" />
                       <node concept="37vLTw" id="2BjwmTy35IG" role="37wK5m">
                         <ref role="3cqZAo" node="KL8Aqll4VM" resolve="project" />
                       </node>
+                      <node concept="3Tm1VV" id="KL8Aqll538" role="1B3o_S" />
                       <node concept="37vLTw" id="2BHiRxeuyRc" role="37wK5m">
                         <ref role="3cqZAo" node="KL8Aqll4Tk" resolve="myMessageHandler" />
                       </node>

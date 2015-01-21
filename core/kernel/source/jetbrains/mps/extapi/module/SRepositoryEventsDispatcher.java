@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -64,6 +66,9 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
+  // TODO : there is a need to introduce some kind of priority for SRepositoryListener.
+  // For example, class loading system wants to be the first to know everything about modules' addition/removal (important to handle an event before a potential client)
+  // As for now, just notifying
   public final void fireBeforeModuleRemoved(@NotNull SModule module) {
     myRepository.getModelAccess().checkWriteAccess();
     for (SRepositoryListener listener : myListeners) {

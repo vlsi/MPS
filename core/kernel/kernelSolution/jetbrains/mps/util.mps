@@ -3100,65 +3100,6 @@
       <node concept="3Tm1VV" id="1NYD3hytmWy" role="1B3o_S" />
       <node concept="3clFbS" id="1NYD3hytmWz" role="3clF47" />
     </node>
-    <node concept="2YIFZL" id="5w9tMTnp0VI" role="jymVt">
-      <property role="TrG5h" value="isUnknown" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="37vLTG" id="5w9tMTnp0VJ" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="5w9tMTnp4vs" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5w9tMTnp0VL" role="3clF47">
-        <node concept="3cpWs8" id="64qxNob5IWH" role="3cqZAp">
-          <node concept="3cpWsn" id="64qxNob5IWI" role="3cpWs9">
-            <property role="TrG5h" value="cd" />
-            <node concept="3uibUv" id="64qxNob5IW_" role="1tU5fm">
-              <ref role="3uigEE" to="fwv2:~ConceptDescriptor" resolve="ConceptDescriptor" />
-            </node>
-            <node concept="2OqwBi" id="64qxNob5IWJ" role="33vP2m">
-              <node concept="1eOMI4" id="64qxNob5IWK" role="2Oq$k0">
-                <node concept="10QFUN" id="64qxNob5IWL" role="1eOMHV">
-                  <node concept="2OqwBi" id="64qxNob5IWM" role="10QFUP">
-                    <node concept="37vLTw" id="64qxNob5IWN" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5w9tMTnp0VJ" resolve="node" />
-                    </node>
-                    <node concept="liA8E" id="64qxNob5IWO" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="64qxNob5IWP" role="10QFUM">
-                    <ref role="3uigEE" to="gct0:~SAbstractConceptAdapter" resolve="SAbstractConceptAdapter" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="64qxNob5IWQ" role="2OqNvi">
-                <ref role="37wK5l" to="gct0:~SAbstractConceptAdapter.getConceptDescriptor():jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="64qxNob5J9T" role="3cqZAp">
-          <node concept="3clFbC" id="3ReQht34T99" role="3cqZAk">
-            <node concept="10Nm6u" id="3ReQht34TaQ" role="3uHU7w" />
-            <node concept="37vLTw" id="3ReQht34SCq" role="3uHU7B">
-              <ref role="3cqZAo" node="64qxNob5IWI" resolve="cd" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="5w9tMTnp0Wf" role="1B3o_S" />
-      <node concept="10P_77" id="5w9tMTnp0Wg" role="3clF45" />
-      <node concept="P$JXv" id="1bvnJw3DHT1" role="lGtFl">
-        <node concept="TZ5HA" id="1bvnJw3DHT2" role="TZ5H$">
-          <node concept="1dT_AC" id="1bvnJw3DHT3" role="1dT_Ay">
-            <property role="1dT_AB" value="FIXME what on earth this method is supposed to tell?" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2YIFZL" id="1NYD3hytmTb" role="jymVt">
       <property role="TrG5h" value="isAncestor" />
       <node concept="10P_77" id="1NYD3hytmTc" role="3clF45" />

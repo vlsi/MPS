@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.smodel.BatchEventsProcessor;
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.LogManager;
@@ -38,8 +37,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess#runWriteAction(Runnable)
  */
-public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
-  private static final Logger LOG = LogManager.getLogger(SRepositoryBatchEventsDispatcher.class);
+public class ModuleEventsDispatcher implements WriteActionListener {
+  private static final Logger LOG = LogManager.getLogger(ModuleEventsDispatcher.class);
 
   private final BatchEventsProcessor myBatchEventsProcessor;
 
@@ -47,17 +46,19 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
 
   private final SRepository myRepository;
 
-  public SRepositoryBatchEventsDispatcher(@NotNull SRepository repository) {
+  public ModuleEventsDispatcher(@NotNull SRepository repository) {
     myRepository = repository;
     myBatchEventsProcessor = new BatchEventsProcessor(repository);
   }
 
   public void init() {
+    myBatchEventsProcessor.init();
     myRepository.getModelAccess().addWriteActionListener(this);
   }
 
   public void dispose() {
     myRepository.getModelAccess().removeWriteActionListener(this);
+    myBatchEventsProcessor.dispose();
   }
 
   @Override

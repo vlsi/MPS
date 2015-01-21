@@ -43,9 +43,9 @@
     <import index="u741" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view.treeholder.treeview(MPS.Platform/jetbrains.mps.ide.findusages.view.treeholder.treeview@java_stub)" />
     <import index="tk08" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
     <import index="uwxg" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view.icons(MPS.Platform/jetbrains.mps.ide.findusages.view.icons@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
-    <import index="oxmj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.content.tabs(MPS.IDEA/com.intellij.ui.content.tabs@java_stub)" />
+    <import index="nx1" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
+    <import index="zxm0" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(com.intellij.icons@java_stub)" />
+    <import index="oxmj" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.content.tabs(com.intellij.ui.content.tabs@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -110,9 +110,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
-        <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
@@ -410,8 +407,8 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3pNk_u$vk29" role="3cqZAp">
-          <node concept="2YIFZM" id="3pNk_u$vl5N" role="3clFbG">
+        <node concept="3clFbF" id="59SCzNX_Z4B" role="3cqZAp">
+          <node concept="2YIFZM" id="59SCzNX_ZZ2" role="3clFbG">
             <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
             <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
@@ -2323,24 +2320,10 @@
         </node>
       </node>
       <node concept="3clFbS" id="6m98d5YYbDb" role="3clF47">
-        <node concept="3clFbJ" id="6m98d5YYbDc" role="3cqZAp">
-          <node concept="3fqX7Q" id="6m98d5YYbDd" role="3clFbw">
-            <node concept="2YIFZM" id="6m98d5YYbDe" role="3fr31v">
-              <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-              <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="6m98d5YYbDf" role="3clFbx">
-            <node concept="YS8fn" id="6m98d5YYbDg" role="3cqZAp">
-              <node concept="2ShNRf" id="6m98d5YYbDh" role="YScLw">
-                <node concept="1pGfFk" id="6m98d5YYbDi" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="Xl_RD" id="6m98d5YYbDj" role="37wK5m">
-                    <property role="Xl_RC" value="Can't use this outside of EDT" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbF" id="59SCzNX_Qx_" role="3cqZAp">
+          <node concept="2YIFZM" id="59SCzNX_RmD" role="3clFbG">
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
+            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
         </node>
         <node concept="3clFbF" id="6m98d5YYbDk" role="3cqZAp">
@@ -2721,24 +2704,10 @@
         </node>
       </node>
       <node concept="3clFbS" id="6m98d5YYbDQ" role="3clF47">
-        <node concept="3clFbJ" id="6m98d5YYbDR" role="3cqZAp">
-          <node concept="3fqX7Q" id="6m98d5YYbDS" role="3clFbw">
-            <node concept="2YIFZM" id="6m98d5YYbDT" role="3fr31v">
-              <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-              <ref role="37wK5l" to="86um:~ThreadUtils.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="6m98d5YYbDU" role="3clFbx">
-            <node concept="YS8fn" id="6m98d5YYbDV" role="3cqZAp">
-              <node concept="2ShNRf" id="6m98d5YYbDW" role="YScLw">
-                <node concept="1pGfFk" id="6m98d5YYbDX" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="Xl_RD" id="6m98d5YYbDY" role="37wK5m">
-                    <property role="Xl_RC" value="Can't use this outside of EDT" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbF" id="59SCzNX_PcT" role="3cqZAp">
+          <node concept="2YIFZM" id="59SCzNX_PBE" role="3clFbG">
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
+            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
           </node>
         </node>
         <node concept="3clFbF" id="6m98d5YYbDZ" role="3cqZAp">

@@ -152,7 +152,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   private void rebuildTree() {
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (ThreadUtils.isInEDT()) {
       getTree().rebuildNow();
     } else {
       getTree().rebuildLater();
