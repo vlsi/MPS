@@ -19,11 +19,10 @@
     <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="pt5l" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
-    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="wu7h" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.make.script(MPS.Core/jetbrains.mps.make.script@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
-    <import index="hb0s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.make(MPS.Core/jetbrains.mps.make@java_stub)" />
     <import index="lzhn" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.resources(MPS.Core/jetbrains.mps.smodel.resources@java_stub)" />
+    <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -548,12 +547,12 @@
         <node concept="3cpWs8" id="7nsdmC8vnp7" role="3cqZAp">
           <node concept="3cpWsn" id="7nsdmC8vnp8" role="3cpWs9">
             <property role="TrG5h" value="session" />
-            <node concept="3uibUv" id="7nsdmC8vnp9" role="1tU5fm">
-              <ref role="3uigEE" to="hb0s:~MakeSession" resolve="MakeSession" />
+            <node concept="3uibUv" id="3gaTARFf73c" role="1tU5fm">
+              <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
             </node>
             <node concept="2ShNRf" id="7nsdmC8vnpa" role="33vP2m">
               <node concept="1pGfFk" id="7nsdmC8vnpb" role="2ShVmc">
-                <ref role="37wK5l" to="hb0s:~MakeSession.&lt;init&gt;(jetbrains.mps.project.Project,jetbrains.mps.messages.IMessageHandler,boolean)" resolve="MakeSession" />
+                <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
                 <node concept="2YIFZM" id="1jvPZ1MMmV_" role="37wK5m">
                   <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                   <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
@@ -574,17 +573,17 @@
                 <property role="TrG5h" value="future" />
                 <node concept="3uibUv" id="7nsdmC8vzqy" role="1tU5fm">
                   <ref role="3uigEE" to="53gy:~Future" resolve="Future" />
-                  <node concept="3uibUv" id="7nsdmC8vzqz" role="11_B2D">
-                    <ref role="3uigEE" to="wu7h:~IResult" resolve="IResult" />
+                  <node concept="3uibUv" id="3gaTARFf3Z5" role="11_B2D">
+                    <ref role="3uigEE" to="i9so:17I1R__cQ5X" resolve="IResult" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="7nsdmC8vzq$" role="33vP2m">
-                  <node concept="2YIFZM" id="6Us3mEdXdHS" role="2Oq$k0">
-                    <ref role="1Pybhc" to="hb0s:~IMakeService$INSTANCE" resolve="IMakeService.INSTANCE" />
-                    <ref role="37wK5l" to="hb0s:~IMakeService$INSTANCE.get():jetbrains.mps.make.IMakeService" resolve="get" />
+                  <node concept="2YIFZM" id="3gaTARFf5VD" role="2Oq$k0">
+                    <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
+                    <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
                   </node>
                   <node concept="liA8E" id="7nsdmC8vzqA" role="2OqNvi">
-                    <ref role="37wK5l" to="hb0s:~IMakeService.make(jetbrains.mps.make.MakeSession,java.lang.Iterable):java.util.concurrent.Future" resolve="make" />
+                    <ref role="37wK5l" to="hfuk:7yGn3z4N64K" resolve="make" />
                     <node concept="37vLTw" id="3GM_nagTuLR" role="37wK5m">
                       <ref role="3cqZAo" node="7nsdmC8vnp8" resolve="session" />
                     </node>
@@ -611,8 +610,8 @@
             <node concept="3cpWs8" id="506QX5GcrGG" role="3cqZAp">
               <node concept="3cpWsn" id="506QX5GcrGH" role="3cpWs9">
                 <property role="TrG5h" value="result" />
-                <node concept="3uibUv" id="506QX5GcrGI" role="1tU5fm">
-                  <ref role="3uigEE" to="wu7h:~IResult" resolve="IResult" />
+                <node concept="3uibUv" id="3gaTARFf4wI" role="1tU5fm">
+                  <ref role="3uigEE" to="i9so:17I1R__cQ5X" resolve="IResult" />
                 </node>
                 <node concept="10Nm6u" id="506QX5GcrH6" role="33vP2m" />
               </node>
@@ -670,7 +669,7 @@
                     <ref role="3cqZAo" node="506QX5GcrGH" resolve="result" />
                   </node>
                   <node concept="liA8E" id="506QX5GcrH4" role="2OqNvi">
-                    <ref role="37wK5l" to="wu7h:~IResult.isSucessful():boolean" resolve="isSucessful" />
+                    <ref role="37wK5l" to="i9so:17I1R__cQ6v" resolve="isSucessful" />
                   </node>
                 </node>
                 <node concept="3y3z36" id="506QX5GcrGS" role="3uHU7B">
@@ -683,12 +682,12 @@
             </node>
           </node>
           <node concept="2OqwBi" id="7nsdmC8vnpr" role="3clFbw">
-            <node concept="2YIFZM" id="7nsdmC8vnpq" role="2Oq$k0">
-              <ref role="37wK5l" to="hb0s:~IMakeService$INSTANCE.get():jetbrains.mps.make.IMakeService" resolve="get" />
-              <ref role="1Pybhc" to="hb0s:~IMakeService$INSTANCE" resolve="IMakeService.INSTANCE" />
+            <node concept="2YIFZM" id="3gaTARFfado" role="2Oq$k0">
+              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
+              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
             </node>
             <node concept="liA8E" id="7nsdmC8vnpv" role="2OqNvi">
-              <ref role="37wK5l" to="hb0s:~IMakeService.openNewSession(jetbrains.mps.make.MakeSession):boolean" resolve="openNewSession" />
+              <ref role="37wK5l" to="hfuk:7yGn3z4N63W" resolve="openNewSession" />
               <node concept="37vLTw" id="3GM_nagTvPg" role="37wK5m">
                 <ref role="3cqZAo" node="7nsdmC8vnp8" resolve="session" />
               </node>
