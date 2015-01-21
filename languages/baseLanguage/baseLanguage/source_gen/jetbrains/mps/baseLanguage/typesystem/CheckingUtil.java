@@ -67,7 +67,7 @@ public class CheckingUtil {
   }
 
   public static boolean isValidByteOrShortExpression(SNode expectedType, SNode expr) {
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
+    if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
       return false;
     }
     Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{expr.getModel().getModule()});
