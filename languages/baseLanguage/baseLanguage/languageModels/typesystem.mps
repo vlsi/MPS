@@ -31644,8 +31644,8 @@
                   <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
                 </node>
                 <node concept="1mIQ4w" id="4$rqbvLO7Lx" role="2OqNvi">
-                  <node concept="chp4Y" id="4$rqbvLO7Ly" role="cj9EA">
-                    <ref role="cht4Q" to="tpee:fz3vP1J" resolve="Expression" />
+                  <node concept="chp4Y" id="6TgsWupv3Dy" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:hanubx6" resolve="IntegerLiteral" />
                   </node>
                 </node>
               </node>
