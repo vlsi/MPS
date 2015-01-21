@@ -53,8 +53,6 @@ import org.eclipse.jdt.internal.compiler.ast.ArrayTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ArrayQualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
-import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
-import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import jetbrains.mps.util.NameUtil;
@@ -868,37 +866,7 @@ public class ASTConverter {
       return convertExpression((Literal) x);
     } else {
       // FIXME do expressions in annotations properly 
-
-      if (1 < 0) {
-        return _quotation_createNode_rbndtb_a0a2a34();
-
-      } else if (x instanceof QualifiedNameReference) {
-
-        // FIXME HACK it can be static field ref as well, and maybe something else 
-        SNode enumRef = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")));
-        char[][] tokens = ((QualifiedNameReference) x).tokens;
-
-        String enumName = new String(tokens[0]);
-        for (int i = 1; i < tokens.length - 1; i++) {
-          enumName = enumName + "." + new String(tokens[i]);
-        }
-
-        String enumConstName = new String(tokens[tokens.length - 1]);
-
-        SReference enumClRef = new DynamicReference("enumClass", enumRef, null, enumName);
-        SReference enumConstRef = new DynamicReference("enumConstantDeclaration", enumRef, null, enumConstName);
-
-        enumRef.setReference(enumClRef.getRole(), enumClRef);
-        enumRef.setReference(enumConstRef.getRole(), enumConstRef);
-        return enumRef;
-
-      } else if (x instanceof SingleNameReference) {
-        // FIXME 
-        return _quotation_createNode_rbndtb_a1a1c0rb();
-      } else {
-        LOG.error("This kind of expression is not supported yet: " + x.getClass().getName());
-        return null;
-      }
+      return _quotation_createNode_rbndtb_a1a34();
     }
 
   }
@@ -1284,18 +1252,11 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_rbndtb_a0a2a34() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "true");
-    return quotedNode_1;
-  }
-  private static SNode _quotation_createNode_rbndtb_a1a1c0rb() {
+  private static SNode _quotation_createNode_rbndtb_a1a34() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "NOT SUPPORTED YET");
+    SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "NO EXPR IN STUBS");
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_rbndtb_a1a0c0tb(Object parameter_1) {

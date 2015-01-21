@@ -33,6 +33,7 @@ import com.intellij.psi.PsiWildcardType;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiLiteralExpression;
+import com.intellij.psi.impl.source.PsiClassReferenceType;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
@@ -110,7 +111,7 @@ public class ASTConverter {
 
     // class's super types and implemented ifaces 
     {
-      final SNode reallyClass = classifier.value;
+      SNode reallyClass = classifier.value;
       if (SNodeOperations.isInstanceOf(reallyClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         if (x.getSuperTypes().length > 0) {
           SLinkOperations.setTarget(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), currConverter.resolveClass(x.getSuperTypes()[0]));
@@ -128,7 +129,7 @@ public class ASTConverter {
 
     // interface's super intefaces 
     {
-      final SNode iface = classifier.value;
+      SNode iface = classifier.value;
       if (SNodeOperations.isInstanceOf(iface, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         ListSequence.fromList(SLinkOperations.getChildren(iface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getSuperTypes())).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
@@ -400,7 +401,13 @@ public class ASTConverter {
   }
   public SNode resolveClass(PsiClassType t) {
     SNode clsType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
-    clsType.setReference("classifier", new DynamicReference("classifier", clsType, null, t.getClassName()));
+    String resolveInfo;
+    if (t instanceof PsiClassReferenceType) {
+      resolveInfo = ((PsiClassReferenceType) t).getReference().getQualifiedName();
+    } else {
+      resolveInfo = t.getClassName();
+    }
+    clsType.setReference("classifier", new DynamicReference("classifier", clsType, null, resolveInfo));
 
     ListSequence.fromList(SLinkOperations.getChildren(clsType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).addSequence(Sequence.fromIterable(Sequence.fromArray(t.getParameters())).select(new ISelector<PsiType, SNode>() {
       public SNode select(PsiType it) {
