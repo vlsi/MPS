@@ -20,8 +20,6 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOr
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -37,6 +35,8 @@ import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class PropertyCellProvider extends CellProviderWithRole {
@@ -48,12 +48,16 @@ public class PropertyCellProvider extends CellProviderWithRole {
   @Override
   public void setRole(Object role) {
     myPropertyName = InternUtil.intern(role.toString());
-    myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
+    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
+      }
+    });
     if (myPropertyDeclaration == null) {
       if (getSNode().getConcept().isValid()) {
         LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
       }
-      myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
     }
   }
 

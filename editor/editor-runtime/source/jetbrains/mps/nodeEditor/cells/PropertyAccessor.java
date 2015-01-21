@@ -39,8 +39,13 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
-    myPropertyDeclaration = propertyDeclaration != null ? propertyDeclaration.getReference() : null;
+    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
+      @Override
+      public SNodeReference compute() {
+        SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) myNode).getPropertyDeclaration(myPropertyName);
+        return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
+      }
+    });
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
@@ -48,8 +53,13 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel());
     myAllowEmptyText = allowEmptyText;
-    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
-    myPropertyDeclaration = propertyDeclaration != null ? propertyDeclaration.getReference() : null;
+    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
+      @Override
+      public SNodeReference compute() {
+        SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) myNode).getPropertyDeclaration(myPropertyName);
+        return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
+      }
+    });
   }
 
   public SNode getNode() {
@@ -142,6 +152,11 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private SNode getPropertyDeclaration() {
-    return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(MPSModuleRepository.getInstance()) : null;
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(MPSModuleRepository.getInstance()) : null;
+      }
+    });
   }
 }

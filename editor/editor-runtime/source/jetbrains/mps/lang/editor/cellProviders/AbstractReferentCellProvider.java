@@ -66,18 +66,18 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
 
   @Override
-  public void setRole(Object role) {
-    myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
-    if (myLinkDeclaration == null) {
-      myErrorText = "?" + role.toString() + "?";
-      LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
-      return;
-    }
-    myRole = role.toString();
-
+  public void setRole(final Object role) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
+        myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
+        if (myLinkDeclaration == null) {
+          myErrorText = "?" + role.toString() + "?";
+          LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
+          return;
+        }
+        myRole = role.toString();
+
         myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
         myIsAggregation = !SNodeUtil.getLinkDeclaration_IsReference(myGenuineLinkDeclaration);
