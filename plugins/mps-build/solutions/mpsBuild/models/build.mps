@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
   </languages>
   <imports />
   <registry>
@@ -1278,6 +1278,7 @@
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
       <property role="2_Ic$y" value="withoutXmls" />
+      <property role="TZNOO" value="1.6" />
       <node concept="3qWCbU" id="WgHS__ALjO" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -11342,6 +11343,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
+      <property role="TZNOO" value="1.6" />
       <node concept="3qWCbU" id="6Za9XhmfePi" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>

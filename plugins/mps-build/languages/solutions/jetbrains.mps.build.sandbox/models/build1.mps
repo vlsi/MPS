@@ -77,6 +77,7 @@
         <property id="927724900262398958" name="noWarnings" index="2_GNGf" />
         <property id="927724900262033861" name="generateDebugInfo" index="2_Ic$$" />
         <property id="927724900262033862" name="copyResources" index="2_Ic$B" />
+        <property id="6998860900671147996" name="javaLevel" index="TZNOO" />
       </concept>
       <concept id="1500819558096177282" name="jetbrains.mps.build.structure.BuildSource_JavaFiles" flags="ng" index="2GAZfH">
         <child id="1500819558096177283" name="resset" index="2GAZfG" />
@@ -195,6 +196,7 @@
       <property role="2_GNGf" value="true" />
       <property role="2_GNG2" value="512" />
       <property role="2_Ic$B" value="true" />
+      <property role="TZNOO" value="1.6" />
     </node>
     <node concept="PiPfp" id="2xHpXR_dnC3" role="3989C9">
       <property role="TrG5h" value="abcde-lib" />
