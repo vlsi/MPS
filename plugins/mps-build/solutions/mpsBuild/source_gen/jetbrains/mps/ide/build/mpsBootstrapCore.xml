@@ -3891,7 +3891,7 @@
   
   <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.java.modules.cycle.2, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-platform" />
-    <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/workbench/mps-platform/source" />
@@ -4025,7 +4025,7 @@
   
   <target name="java.compile.mps-editor" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-generator, java.compile.mps-ui, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-icons, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-editor" />
-    <javac2 destdir="${build.tmp}/java/out/mps-editor" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/mps-editor" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/editor/editor-runtime/source" />
