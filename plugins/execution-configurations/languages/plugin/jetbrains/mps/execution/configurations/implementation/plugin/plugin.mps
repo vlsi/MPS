@@ -105,6 +105,7 @@
     <import index="fnd7" ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
+    <import index="q6yx" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.make(MPS.Workbench/jetbrains.mps.ide.make@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="auou" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" implicit="true" />
   </imports>
@@ -9570,6 +9571,21 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="4oL4a6slRzg" role="3clF47">
+        <node concept="3cpWs8" id="7JDtVAB6BAd" role="3cqZAp">
+          <node concept="3cpWsn" id="7JDtVAB6BAe" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="7JDtVAB6BAc" role="1tU5fm">
+              <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+            </node>
+            <node concept="2YIFZM" id="7JDtVAB6BAf" role="33vP2m">
+              <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+              <node concept="37vLTw" id="7JDtVAB6BAg" role="37wK5m">
+                <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4oL4a6sn6ED" role="3cqZAp">
           <node concept="3cpWsn" id="4oL4a6sn6EE" role="3cpWs9">
             <property role="TrG5h" value="session" />
@@ -9579,14 +9595,17 @@
             <node concept="2ShNRf" id="4oL4a6sn6EG" role="33vP2m">
               <node concept="1pGfFk" id="4oL4a6sn6EH" role="2ShVmc">
                 <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
-                <node concept="2YIFZM" id="4oL4a6sn6EK" role="37wK5m">
-                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="37vLTw" id="4oL4a6snfAB" role="37wK5m">
-                    <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
+                <node concept="37vLTw" id="7JDtVAB6BAh" role="37wK5m">
+                  <ref role="3cqZAo" node="7JDtVAB6BAe" resolve="mpsProject" />
+                </node>
+                <node concept="2ShNRf" id="7JDtVAB6Wxx" role="37wK5m">
+                  <node concept="1pGfFk" id="7JDtVAB78sY" role="2ShVmc">
+                    <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                    <node concept="37vLTw" id="7JDtVAB78ZJ" role="37wK5m">
+                      <ref role="3cqZAo" node="7JDtVAB6BAe" resolve="mpsProject" />
+                    </node>
                   </node>
                 </node>
-                <node concept="10Nm6u" id="4oL4a6sn6EM" role="37wK5m" />
                 <node concept="3clFbT" id="4oL4a6sn6EN" role="37wK5m" />
               </node>
             </node>

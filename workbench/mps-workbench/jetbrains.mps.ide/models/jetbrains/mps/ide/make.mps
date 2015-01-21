@@ -63,6 +63,7 @@
     <import index="j07i" ref="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)" />
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
+    <import index="q6yx" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.make(MPS.Workbench/jetbrains.mps.ide.make@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -5283,47 +5284,37 @@
                 <property role="3SKdUp" value="FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH." />
               </node>
             </node>
-            <node concept="3cpWs8" id="59UVr$Ka7Wa" role="3cqZAp">
-              <node concept="3cpWsn" id="59UVr$Ka7Wb" role="3cpWs9">
-                <property role="TrG5h" value="mvt" />
-                <node concept="3uibUv" id="59UVr$Ka7W2" role="1tU5fm">
-                  <ref role="3uigEE" to="pdak:~MessagesViewTool" resolve="MessagesViewTool" />
-                </node>
-                <node concept="2OqwBi" id="59UVr$Ka7Wc" role="33vP2m">
-                  <node concept="2OqwBi" id="59UVr$Ka7Wd" role="2Oq$k0">
-                    <node concept="liA8E" id="2BjwmTxVoPl" role="2OqNvi">
-                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
-                    </node>
-                    <node concept="2OqwBi" id="59UVr$Ka7We" role="2Oq$k0">
-                      <node concept="Xjq3P" id="59UVr$Ka7Wf" role="2Oq$k0" />
-                      <node concept="liA8E" id="59UVr$Ka7Wg" role="2OqNvi">
+            <node concept="3SKdUt" id="7JDtVAB53ZC" role="3cqZAp">
+              <node concept="3SKdUq" id="7JDtVAB547V" role="3SKWNk">
+                <property role="3SKdUp" value="This code is left here in 3.2 for compatibility reasons. Legacy MakeSession constuctors might be still in use" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7JDtVAB54k4" role="3cqZAp">
+              <node concept="3SKdUq" id="7JDtVAB54nd" role="3SKWNk">
+                <property role="3SKdUp" value="along with IMakeService, assuming null for default 'Make' view. After 3.2, once legacy constructors are gone," />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7JDtVAB5PNq" role="3cqZAp">
+              <node concept="3SKdUq" id="7JDtVAB5PNF" role="3SKWNk">
+                <property role="3SKdUp" value="remove this code altogether (rely on notnull for session.getMessageHandler()" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="7JDtVAB54BD" role="3cqZAp">
+              <node concept="37vLTI" id="7JDtVAB54MF" role="3clFbG">
+                <node concept="2ShNRf" id="7JDtVAB54TG" role="37vLTx">
+                  <node concept="1pGfFk" id="7JDtVAB5Nrg" role="2ShVmc">
+                    <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                    <node concept="2OqwBi" id="7JDtVAB5OOB" role="37wK5m">
+                      <node concept="1rXfSq" id="7JDtVAB5OxE" role="2Oq$k0">
                         <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
+                      </node>
+                      <node concept="liA8E" id="7JDtVAB5Pg$" role="2OqNvi">
+                        <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="59UVr$Ka7Wi" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                    <node concept="3VsKOn" id="59UVr$Ka7Wj" role="37wK5m">
-                      <ref role="3VsUkX" to="pdak:~MessagesViewTool" resolve="MessagesViewTool" />
-                    </node>
-                  </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="9D0Ba05vjR" role="3cqZAp">
-              <node concept="37vLTI" id="9D0Ba05vjS" role="3clFbG">
-                <node concept="2OqwBi" id="59UVr$KahIG" role="37vLTx">
-                  <node concept="37vLTw" id="59UVr$Kah$z" role="2Oq$k0">
-                    <ref role="3cqZAo" node="59UVr$Ka7Wb" resolve="mvt" />
-                  </node>
-                  <node concept="liA8E" id="59UVr$KaijG" role="2OqNvi">
-                    <ref role="37wK5l" to="pdak:~MessagesViewTool.newHandler(java.lang.String):jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
-                    <node concept="Xl_RD" id="59UVr$Kaior" role="37wK5m">
-                      <property role="Xl_RC" value="Make" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="3GM_nagT$vn" role="37vLTJ">
+                <node concept="37vLTw" id="7JDtVAB54BB" role="37vLTJ">
                   <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
                 </node>
               </node>

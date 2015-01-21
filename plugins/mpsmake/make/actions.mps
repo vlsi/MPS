@@ -76,6 +76,7 @@
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="eunx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" />
+    <import index="q6yx" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.make(MPS.Workbench/jetbrains.mps.ide.make@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
@@ -3651,7 +3652,14 @@
                   <node concept="37vLTw" id="2BjwmTy783Z" role="37wK5m">
                     <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
                   </node>
-                  <node concept="10Nm6u" id="1AfPmE4ty$a" role="37wK5m" />
+                  <node concept="2ShNRf" id="7JDtVAB8VTA" role="37wK5m">
+                    <node concept="1pGfFk" id="7JDtVAB91xk" role="2ShVmc">
+                      <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                      <node concept="37vLTw" id="7JDtVAB91Ew" role="37wK5m">
+                        <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="2OqwBi" id="7iCFfvQy3sT" role="37wK5m">
                     <node concept="37vLTw" id="7iCFfvQy3jK" role="2Oq$k0">
                       <ref role="3cqZAo" node="7tZeFupJF8s" resolve="myParams" />
@@ -5671,7 +5679,17 @@
                     <ref role="2WH_rO" node="2BjwmTy5x3F" resolve="mpsProject" />
                   </node>
                 </node>
-                <node concept="10Nm6u" id="2OOLb0mE4b$" role="37wK5m" />
+                <node concept="2ShNRf" id="7JDtVAB92sJ" role="37wK5m">
+                  <node concept="1pGfFk" id="7JDtVAB93Mv" role="2ShVmc">
+                    <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                    <node concept="2OqwBi" id="7JDtVAB93S9" role="37wK5m">
+                      <node concept="2WthIp" id="7JDtVAB93Sc" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="7JDtVAB93Se" role="2OqNvi">
+                        <ref role="2WH_rO" node="2BjwmTy5x3F" resolve="mpsProject" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbT" id="2OOLb0mE4b_" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>

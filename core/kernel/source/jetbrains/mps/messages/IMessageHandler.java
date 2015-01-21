@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.messages;
 
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.Log4jUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 public interface IMessageHandler {
@@ -28,25 +30,28 @@ public interface IMessageHandler {
     }
   };
 
-  /**
-   * @deprecated jetbrains.mps.logging.Logger is abandoned in favor of apache's log4j or native java.util.logging.Logger.
-   */
-  @Deprecated
   public final static class LogHandler implements IMessageHandler {
-    @NotNull
     private final Logger myLog;
 
+    /**
+     * @deprecated jetbrains.mps.logging.Logger is abandoned in favor of apache's log4j or native java.util.logging.Logger.
+     */
+    @Deprecated
+    @ToRemove(version = 3.2)
+    public LogHandler(@NotNull jetbrains.mps.logging.Logger log) {
+      this(Logger.getLogger(IMessageHandler.class));
+    }
     public LogHandler(@NotNull Logger log) {
       myLog = log;
     }
     @Override
     public void handle(IMessage msg) {
       if (msg.getKind() == MessageKind.ERROR) {
-        myLog.error(msg.getText(), msg.getException(), msg.getHintObject());
+        myLog.error(Log4jUtil.createMessageObject(msg.getText(), msg.getHintObject()), msg.getException());
       } else if (msg.getKind() == MessageKind.WARNING) {
-        myLog.warning(msg.getText(), msg.getException(), msg.getHintObject());
+        myLog.warn(Log4jUtil.createMessageObject(msg.getText(), msg.getHintObject()), msg.getException());
       } else {
-        myLog.info(msg.getText(), msg.getException(), msg.getHintObject());
+        myLog.info(Log4jUtil.createMessageObject(msg.getText(), msg.getHintObject()), msg.getException());
       }
     }
 

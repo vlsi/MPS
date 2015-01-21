@@ -33,7 +33,6 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -195,8 +194,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     IMessageHandler mh = this.getSession().getMessageHandler();
     if (mh == null || mh == IMessageHandler.NULL_HANDLER) {
       // FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH. 
-      MessagesViewTool mvt = this.getSession().getProject().getComponent(MessagesViewTool.class);
-      mh = mvt.newHandler("Make");
+      // This code is left here in 3.2 for compatibility reasons. Legacy MakeSession constuctors might be still in use 
+      // along with IMakeService, assuming null for default 'Make' view. After 3.2, once legacy constructors are gone, 
+      // remove this code altogether (rely on notnull for session.getMessageHandler() 
+      mh = new DefaultMakeMessageHandler(getSession().getProject());
     }
     mh.clear();
 

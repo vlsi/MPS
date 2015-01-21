@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -35,7 +36,7 @@ public class GeneratorUtil {
   @Nullable
   public static Class generateAndLoadEvaluatorClass(Project project, SModel model, String className, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
     IMakeService makeService = IMakeService.INSTANCE.get();
-    MakeSession makeSession = new MakeSession(project, null, false);
+    MakeSession makeSession = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
     if (makeService.openNewSession(makeSession)) {
       try {
         IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();

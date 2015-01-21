@@ -13,32 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages;
+package jetbrains.mps.ide.make;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.project.Project;
 import org.apache.log4j.Logger;
 
 /**
- * Implementation of {@link jetbrains.mps.messages.IMessageHandler} that pipes
- * messages to a dedicated IDE view, or to log if no IDE view is available
- * Igor Alshannikov
- * Jul 27, 2007
+ * Message handler to use for all make sessions that
+ * has to pipe messages to shared (common) 'Make' view.
  */
-public class DefaultMessageHandler implements IMessageHandler {
+public class DefaultMakeMessageHandler implements IMessageHandler {
   private final IMessageHandler myDelegate;
 
-  public DefaultMessageHandler(Project project) {
-    MessagesViewTool tool = project.getComponent(MessagesViewTool.class);
-    if (tool != null) {
-      myDelegate = tool.newHandler();
-    } else {
-      //it might happen if we haven't opened IDE yet
-      myDelegate = new LogHandler(Logger.getLogger(DefaultMessageHandler.class));
-    }
+  public DefaultMakeMessageHandler(Project mpsProject) {
+      MessagesViewTool tool = mpsProject.getComponent(MessagesViewTool.class);
+      if (tool != null) {
+        myDelegate = tool.newHandler("Make");
+      } else {
+        //it might happen if we haven't opened IDE yet
+        myDelegate = new LogHandler(Logger.getLogger(IMakeService.class));
+      }
   }
-
 
   @Override
   public void handle(IMessage msg) {

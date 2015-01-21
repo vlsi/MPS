@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 
@@ -84,7 +85,7 @@ public class RenameLanguageDialog extends RenameDialog {
         }
       });
       for (final List<SModel> models : langs.values()) {
-        MakeSession sess = new MakeSession(myProject, null, false);
+        MakeSession sess = new MakeSession(myProject, new DefaultMakeMessageHandler(myProject), false);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
           IMakeService.INSTANCE.get().make(sess, new ModelsToResources(models).resources(false));
         }

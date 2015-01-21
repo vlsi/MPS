@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.make;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
@@ -27,8 +25,6 @@ import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -36,8 +32,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -51,7 +45,6 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
@@ -73,7 +66,6 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 public class ModuleMaker {
 
   private final static int MAX_ERRORS = 100;
-  private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ModuleMaker.class);
 
   private Map<String, SModule> myContainingModules = new HashMap<String, SModule>();
   private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
@@ -92,7 +84,7 @@ public class ModuleMaker {
       myHandler = handler;
       myTracer = new PerformanceTracer("module maker");
     } else {
-      myHandler = new LogHandler(Logger.wrap(LogManager.getLogger(ModuleMaker.class)));
+      myHandler = new LogHandler(LogManager.getLogger(ModuleMaker.class));
       myTracer = new NullPerformanceTracer();
     }
     myLevel = level;

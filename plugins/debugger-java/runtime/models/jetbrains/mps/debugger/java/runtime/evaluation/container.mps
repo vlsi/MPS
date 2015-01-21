@@ -54,6 +54,7 @@
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="nhkf" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" />
+    <import index="q6yx" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.make(MPS.Workbench/jetbrains.mps.ide.make@java_stub)" />
     <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -2112,7 +2113,14 @@
                 <node concept="37vLTw" id="2BjwmTxW$X4" role="37wK5m">
                   <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
                 </node>
-                <node concept="10Nm6u" id="2BjwmTxWCcL" role="37wK5m" />
+                <node concept="2ShNRf" id="7JDtVAB6r_i" role="37wK5m">
+                  <node concept="1pGfFk" id="7JDtVAB6u4_" role="2ShVmc">
+                    <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                    <node concept="37vLTw" id="7JDtVAB6vl0" role="37wK5m">
+                      <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbT" id="2BjwmTxWDXi" role="37wK5m">
                   <property role="3clFbU" value="false" />
                 </node>

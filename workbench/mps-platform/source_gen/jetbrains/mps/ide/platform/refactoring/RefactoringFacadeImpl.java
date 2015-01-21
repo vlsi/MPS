@@ -46,6 +46,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -297,7 +298,8 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       @Override
       public void run() {
         try {
-          MakeSession sess = new MakeSession(context.getSelectedProject(), null, false);
+          Project project = context.getSelectedProject();
+          MakeSession sess = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
           if (IMakeService.INSTANCE.get().openNewSession(sess)) {
             Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(descriptors).resources(false));
             result.get();

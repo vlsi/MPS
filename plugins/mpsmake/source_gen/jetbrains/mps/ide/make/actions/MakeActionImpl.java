@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.IMakeService;
@@ -52,7 +53,7 @@ public class MakeActionImpl {
     });
 
     final List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes));
-    MakeSession session = new MakeSession(project, null, myParams.isCleanMake()) {
+    MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake()) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
         if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, new ProjectOperationContext(project), models)) {

@@ -44,6 +44,7 @@
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="y38" ref="r:4c8c6241-8bf4-4d04-84a1-f7fd7fcbdc2c(jetbrains.mps.refactoring.runtime.access)" />
+    <import index="q6yx" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.make(MPS.Workbench/jetbrains.mps.ide.make@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -2742,6 +2743,22 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="1TclyuNTOvd" role="2GV8ay">
+                          <node concept="3cpWs8" id="7JDtVAB9fDY" role="3cqZAp">
+                            <node concept="3cpWsn" id="7JDtVAB9fDZ" role="3cpWs9">
+                              <property role="TrG5h" value="project" />
+                              <node concept="3uibUv" id="7JDtVAB9fDT" role="1tU5fm">
+                                <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+                              </node>
+                              <node concept="2OqwBi" id="7JDtVAB9fE0" role="33vP2m">
+                                <node concept="37vLTw" id="7JDtVAB9fE1" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1TclyuNTOtE" resolve="context" />
+                                </node>
+                                <node concept="liA8E" id="7JDtVAB9fE2" role="2OqNvi">
+                                  <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3cpWs8" id="1TclyuNTOve" role="3cqZAp">
                             <node concept="3cpWsn" id="1TclyuNTOvf" role="3cpWs9">
                               <property role="TrG5h" value="sess" />
@@ -2752,15 +2769,17 @@
                               <node concept="2ShNRf" id="1TclyuNTOvh" role="33vP2m">
                                 <node concept="1pGfFk" id="1TclyuNTOvi" role="2ShVmc">
                                   <ref role="37wK5l" to="hfuk:2BjwmTxT7Q7" resolve="MakeSession" />
-                                  <node concept="2OqwBi" id="2BjwmTxXRQp" role="37wK5m">
-                                    <node concept="37vLTw" id="2BjwmTxXQ_d" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="1TclyuNTOtE" resolve="context" />
-                                    </node>
-                                    <node concept="liA8E" id="2BjwmTxXTCm" role="2OqNvi">
-                                      <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
+                                  <node concept="37vLTw" id="7JDtVAB9fE3" role="37wK5m">
+                                    <ref role="3cqZAo" node="7JDtVAB9fDZ" resolve="project" />
+                                  </node>
+                                  <node concept="2ShNRf" id="7JDtVAB9bbp" role="37wK5m">
+                                    <node concept="1pGfFk" id="7JDtVAB9dGb" role="2ShVmc">
+                                      <ref role="37wK5l" to="q6yx:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
+                                      <node concept="37vLTw" id="7JDtVAB9hr1" role="37wK5m">
+                                        <ref role="3cqZAo" node="7JDtVAB9fDZ" resolve="project" />
+                                      </node>
                                     </node>
                                   </node>
-                                  <node concept="10Nm6u" id="2BjwmTxXUIk" role="37wK5m" />
                                   <node concept="3clFbT" id="2BjwmTxXZcG" role="37wK5m">
                                     <property role="3clFbU" value="false" />
                                   </node>
