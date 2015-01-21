@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,16 +31,19 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.ide.ThreadUtils.RunInUIRunnable;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JList;
 import javax.swing.SwingUtilities;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,24 +62,29 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
   private Project myProject;
-  private Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
-  private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
-  private boolean myDisposed = false;
+  private final MyMessageList myDefaultList;
+  private final Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
 
   private boolean showToolAfterAddingMessage = true;
 
+  /**
+   * @deprecated there are no uses for this method
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setShowToolAfterAddingMessage(boolean showToolAfterAddingMessage) {
     this.showToolAfterAddingMessage = showToolAfterAddingMessage;
   }
 
   public MessagesViewTool(Project project) {
     myProject = project;
-    addList(DEFAULT_LIST, new DefaultMessageList(project));
+    myDefaultList = new MyMessageList(project, "Messages");
+    myDefaultList.setTitleUpdateFormat("{1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}");
+    addList(DEFAULT_LIST, myDefaultList);
   }
 
   @Override
   public void dispose() {
-    myContents.clear();
     myMessageLists.clear();
   }
 
@@ -113,12 +121,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     list.add(message);
 
     if (list.isVisible(message) && (showToolAfterAddingMessage || message.getKind() == MessageKind.ERROR)) {
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          list.show(false);
-        }
-      });
+      new ShowList(list).execute();
     }
   }
 
@@ -130,13 +133,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   @Override
   public void initComponent() {
-    getDefaultList().createContent();
+    getDefaultList().createContent(false, false);
   }
 
   @Override
   public void disposeComponent() {
     Disposer.dispose(this);
-    myDisposed = true;
   }
 
   @Override
@@ -177,37 +179,22 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   /**
    * What's this?
+   * @deprecated Since 2011, developers question themselves, what it this method for, and nobody knows the answer.
    */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void resetAutoscrollOption() {
     getDefaultList().resetAutoscrollOption();
   }
 
   public IMessageHandler newHandler() {
-    return new IMessageHandler() {
-      @Override
-      public void handle(IMessage msg) {
-        MessagesViewTool.this.add(msg);
-      }
-
-      @Override
-      public void clear() {
-        MessagesViewTool.this.clear();
-      }
-    };
+    // default list doesn't need too much attention, don't activate it on any message
+    return new MsgHandler(getDefaultList()).activateOnMessage(false);
   }
 
   public IMessageHandler newHandler(@NotNull final String name) {
-    return new IMessageHandler() {
-      @Override
-      public void handle(IMessage msg) {
-        MessagesViewTool.this.add(msg, name);
-      }
+    return new MsgHandler(getAvailableList(name, true));
 
-      @Override
-      public void clear() {
-        MessagesViewTool.this.clear(name);
-      }
-    };
   }
 
   private synchronized void addList(String name, MessageList list) {
@@ -243,21 +230,14 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return null;
   }
 
-  private synchronized MessageList getSingletonList(String name) {
-    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
-    if (lists == null) return null;
-    assert lists.size() == 1;
-    return lists.get(0);
-  }
-
   private synchronized MessageList createList(String name) {
-    AuxMessageList list = new AuxMessageList(myProject, name);
+    MyMessageList list = new MyMessageList(myProject, name);
     list.loadState(getDefaultList().getState());
-    list.createContent();
+    list.createContent(true, true);
     return list;
   }
 
-  private synchronized void removeList(MessageList list, String name) {
+  /*package*/ synchronized void removeList(MessageList list, String name) {
     List<MessageList> lists = myMessageLists.get(name);
     if (lists != null) {
       lists.remove(list);
@@ -266,13 +246,66 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   private MessageList getDefaultList() {
-    return getSingletonList(DEFAULT_LIST);
+    return myDefaultList;
   }
 
-  private abstract class MessageListWithActions extends MessageList {
-    protected MessageListWithActions(Project project) {
+  private class MyMessageList extends MessageList {
+    private final String myTitle;
+    private String myTitleUpdateFormat = "{0}: {1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}";
+
+    protected MyMessageList(Project project, String title) {
       super(project);
+      myTitle = title;
       Disposer.register(MessagesViewTool.this, this);
+    }
+
+    public void setTitleUpdateFormat(String pattern) {
+      myTitleUpdateFormat = pattern;
+    }
+
+    public void createContent(final boolean canClose, final boolean isMultiple) {
+      if (RuntimeFlags.isTestMode()) return;
+
+      final Runnable initRunnable = new Runnable() {
+        @Override
+        public void run() {
+          initUI();
+          final MessageView service = getMessagesService();
+          Content content = service.getContentManager().getFactory().createContent(getComponent(), myTitle, true);
+
+          content.setCloseable(canClose);
+          content.setPinnable(isMultiple);
+          if (canClose) {
+            content.setShouldDisposeContent(true);
+            content.setDisposer(new Disposable() {
+              @Override
+              public void dispose() {
+                removeList(MyMessageList.this, myTitle);
+              }
+            });
+          }
+          content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+          service.getContentManager().addContent(content);
+        }
+      };
+      getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));
+    }
+
+
+    @Override
+    protected void updateHeader() {
+      if (myTitle.equals(myTitleUpdateFormat) || myTitleUpdateFormat == null) {
+        return;
+      }
+      Content content = getMessagesService().getContentManager().getContent(getComponent());
+      if (content != null) {
+        if (hasErrors() || hasWarnings() || hasInfo()) {
+          final String t = MessageFormat.format(myTitleUpdateFormat, myTitle, myErrors, myWarnings, myInfos);
+          content.setDisplayName(t);
+        } else {
+          content.setDisplayName(myTitle);
+        }
+      }
     }
 
     @Override
@@ -282,123 +315,51 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
   }
 
-  private class DefaultMessageList extends MessageListWithActions {
-
-    public DefaultMessageList(Project project) {
-      super(project);
-    }
-
-    @Override
-    public void createContent() {
-      if (RuntimeFlags.isTestMode()) return;
-
-      final MessageView service = getMessagesService();
-      service.runWhenInitialized(new Runnable() {
-        @Override
-        public void run() {
-          initUI();
-          Content content = service.getContentManager().getFactory().createContent(getComponent(), "Messages", true);
-          myContents.put(content, DefaultMessageList.this);
-
-          content.setCloseable(false);
-          content.setPinned(false);
-          content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-          service.getContentManager().addContent(content);
-        }
-      });
-    }
-
-    @Override
-    protected boolean isDisposed() {
-      return myDisposed;
-    }
-
-    @Override
-    protected void setDisplayInfo(final String name) {
-      final MessageView service = getMessagesService();
-      service.runWhenInitialized(new Runnable() {
-        @Override
-        public void run() {
-          Content content = service.getContentManager().getContent(getComponent());
-          if (content != null) {
-            content.setDisplayName(name);
-          }
-        }
-      });
-    }
-  }
-
-  private class AuxMessageList extends MessageListWithActions {
-
-    private String myName;
-
-    public AuxMessageList(Project project, String name) {
-      super(project);
-      myName = name;
-    }
-
-    public String getName() {
-      return myName;
-    }
-
-    @Override
-    public void createContent() {
-      if (RuntimeFlags.isTestMode()) return;
-
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-
-          final MessageView service = getMessagesService();
-          service.runWhenInitialized(new Runnable() {
-            @Override
-            public void run() {
-              initUI();
-              final Content content = service.getContentManager().getFactory().createContent(getComponent(), myName, true);
-              myContents.put(content, AuxMessageList.this);
-
-              content.setCloseable(true);
-              content.setDisposer(new Disposable() {
-                @Override
-                public void dispose() {
-                  AuxMessageList list = (AuxMessageList) myContents.remove(content);
-                  if (list != null) {
-                    removeList(list, list.getName());
-                  }
-                }
-              });
-              content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-              service.getContentManager().addContent(content);
-            }
-          });
-
-        }
-      });
-    }
-
-    @Override
-    protected boolean isDisposed() {
-      return myDisposed;
-    }
-
-    @Override
-    protected void setDisplayInfo(final String name) {
-      final MessageView service = getMessagesService();
-
-      service.runWhenInitialized(new Runnable() {
-        @Override
-        public void run() {
-          Content content = service.getContentManager().getContent(getComponent());
-          if (content != null) {
-            content.setDisplayName((name != null && name.length() > 0) ? myName + ": " + name : myName);
-          }
-        }
-      });
-
-    }
-  }
-
   public static void log(Project p, MessageKind kind, String message) {
     p.getComponent(MessagesViewTool.class).add(new Message(kind, message));
+  }
+
+  private static class MsgHandler implements IMessageHandler {
+    private final MessageList myList;
+    private boolean myActivateOnMessage = true;
+
+    MsgHandler(@NotNull MessageList list) {
+      myList = list;
+    }
+
+    protected MsgHandler activateOnMessage(boolean activateOnMessage) {
+      myActivateOnMessage = activateOnMessage;
+      return this;
+    }
+
+    @Override
+    public void handle(IMessage msg) {
+      myList.add(msg);
+      if (myActivateOnMessage && myList.isVisible(msg)) {
+        new ShowList(myList).execute();
+      }
+    }
+
+    @Override
+    public void clear() {
+      myList.clear();
+    }
+  }
+
+  private static class ShowList implements Runnable {
+    private final MessageList myList;
+
+    ShowList(@NotNull MessageList list) {
+      myList = list;
+    }
+
+    public void execute() {
+      SwingUtilities.invokeLater(this);
+    }
+
+    @Override
+    public void run() {
+      myList.show(false);
+    }
   }
 }

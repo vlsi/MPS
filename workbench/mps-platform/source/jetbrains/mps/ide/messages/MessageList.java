@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,6 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -58,6 +57,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -101,19 +101,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
-  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
+  private final MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasWarnings();
     }
   };
-  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", Icons.INFORMATION_ICON) {
+  private final MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", Icons.INFORMATION_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasInfo();
     }
   };
-  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", Icons.AUTOSCROLLS_ICON) {
+  private final MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", Icons.AUTOSCROLLS_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasHintObjects();
@@ -121,10 +121,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   };
 
   private Queue<IMessage> myMessages = new LinkedList<IMessage>();
-  private int myInfos;
-  private int myWarnings;
-  private int myErrors;
-  private int myHintObjects;
+  protected int myInfos;
+  protected int myWarnings;
+  protected int myErrors;
+  protected int myHintObjects;
   private List<String> mySearches = new ArrayList<String>();
   private int myMaxListSize = 10000;
 
@@ -136,17 +136,19 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private MessageToolSearchPanel mySearchPanel = null;
   private Project myProject;
   private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, true, myComponent, null, null, true);
-  private Object myUpdateIdentity = new Object();
+  private final Object myUpdateIdentity = new Object();
   private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
+  private volatile boolean myIsDisposed = false;
 
   protected MessageList(Project project) {
     this.myProject = project;
     myUpdateQueue.setRestartTimerOnAdd(true);
-    Disposer.register(this, myUpdateQueue);
   }
 
   @Override
   public void dispose() {
+    myUpdateQueue.dispose();
+    myIsDisposed = true;
   }
 
   public void show(boolean setActive) {
@@ -168,7 +170,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        if (isDisposed()) {
+        if (myIsDisposed) {
           return;
         }
         myModel.clear();
@@ -194,7 +196,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myUpdateQueue.queue(new Update(myUpdateIdentity) {
       @Override
       public void run() {
-        if (isDisposed()) {
+        if (myIsDisposed) {
           return;
         }
 
@@ -429,11 +431,27 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     });
   }
 
-  protected abstract void setDisplayInfo(String name);
+  /**
+   * @deprecated override {@link #updateHeader()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  protected void setDisplayInfo(String name) {
+    // inherently no-op
+  }
 
-  public abstract void createContent();
+  /**
+   * use {@link #createContent(boolean, boolean)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public void createContent() {
+    // no-op
+  }
 
-  protected abstract boolean isDisposed();
+  public void createContent(final boolean canClose, final boolean isMultiple) {
+    createContent();
+  }
 
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
@@ -547,7 +565,8 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     return true;
   }
 
-  private void updateHeader() {
+  protected void updateHeader() {
+    // FIXME would be empty once setDisplayInfo is gone
     if (hasErrors() || hasWarnings() || hasInfo()) {
       setDisplayInfo(NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
@@ -562,19 +581,19 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myToolbar.updateActionsImmediately();
   }
 
-  private boolean hasErrors() {
+  protected boolean hasErrors() {
     return myErrors > 0;
   }
 
-  private boolean hasWarnings() {
+  protected boolean hasWarnings() {
     return myWarnings > 0;
   }
 
-  private boolean hasInfo() {
+  protected boolean hasInfo() {
     return myInfos > 0;
   }
 
-  private boolean hasHintObjects() {
+  protected boolean hasHintObjects() {
     return myHintObjects > 0;
   }
 

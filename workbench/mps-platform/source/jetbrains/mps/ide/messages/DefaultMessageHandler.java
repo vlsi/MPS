@@ -21,6 +21,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import org.apache.log4j.LogManager;
 
 /**
+ * Implementation of {@link jetbrains.mps.messages.IMessageHandler} that pipes messages to a dedicated IDE view
  * Igor Alshannikov
  * Jul 27, 2007
  */
@@ -30,7 +31,6 @@ public class DefaultMessageHandler implements IMessageHandler {
   public DefaultMessageHandler(Project project) {
     MessagesViewTool tool = project.getComponent(MessagesViewTool.class);
     if (tool != null) {
-      tool.resetAutoscrollOption();
       myDelegate = tool.newHandler();
     } else {
       //it might happen if we haven't opened IDE yet
