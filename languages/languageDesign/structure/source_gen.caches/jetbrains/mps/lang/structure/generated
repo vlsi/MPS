@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="66ow5f0qvnaqlob6cuk7s24itxbwwhi">
+<dependencies version="2" modelHash="czj4wz1wtxn7ncqwbc4m4rr6h7fkzc1">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-2wpz0yd6kdla3r48xgerqq9w3samaym" />
   <dep model="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" hash="b5dzkyhynid0g5lfm7b7b9ctdg6go8j" />
-  <dep model="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" hash="atgv9c45g6abso6bbs766w8wy5rijwy" />
+  <dep model="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" hash="uk8xpv8df2wzymqcyfd7ke0q31p8sl" />
   <dep model="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" hash="-cfmc0emg4adka9yvfqf0wturjv9nc1" />
   <dep model="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)" hash="-875khnxxsdfz8w40zrpuuaxnjdcw3dr" />
   <dep model="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" hash="-bs4uperg7yl8zu9ptj82pe8s5x5bomn" />
