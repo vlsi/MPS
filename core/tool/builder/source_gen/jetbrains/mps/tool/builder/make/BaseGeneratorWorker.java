@@ -18,8 +18,6 @@ import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.compiler.JavaCompilerOptions;
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -120,7 +118,7 @@ public class BaseGeneratorWorker extends MpsWorker {
     IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
       @Override
       public void setup(IPropertiesPool ppool) {
-        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion()))).populate(ppool);
+        new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
       }
     };
     Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());
@@ -177,7 +175,7 @@ public class BaseGeneratorWorker extends MpsWorker {
   protected void makeProject() {
     final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
-        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion())));
+        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), myJavaCompilerOptions);
       }
     });
     if (mpsCompilationResult.isReloadingNeeded()) {

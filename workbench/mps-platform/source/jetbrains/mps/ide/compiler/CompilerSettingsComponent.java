@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
-import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
 import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
@@ -39,9 +38,8 @@ import org.jetbrains.annotations.Nullable;
     }
 )
 
-public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent, JavaCompilerOptionsProvider {
+public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent {
   private CompilerState myState = new CompilerState();
-  private CompilerSettingsPreferencePage myCompilerSettingsPreferencePage;
   private Project myProject;
   public CompilerSettingsComponent(Project project) {
     myProject = project;
@@ -51,7 +49,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
     return project.getComponent(CompilerSettingsComponent.class);
   }
 
-  @Nullable
+  @NotNull
   @Override
   public CompilerState getState() {
     CompilerState state = new CompilerState();
@@ -61,8 +59,10 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
 
   @Override
   public void loadState(CompilerState state) {
-    myState = new CompilerState();
-    myState.setTargetVersion(state.getTargetVersion());
+    CompilerState newState = new CompilerState();
+    newState.setTargetVersion(state.getTargetVersion());
+    myState = newState;
+    registerOptions();
   }
 
   @Override
@@ -77,11 +77,15 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
 
   @Override
   public void initComponent() {
+    registerOptions();
+  }
+
+  private void registerOptions() {
     jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
     if (project == null) {
       return;
     }
-    JavaCompilerOptionsComponent.getInstance().registerProvider(project, this);
+    JavaCompilerOptionsComponent.getInstance().setJavaCompilerOptions(project, createOptions());
   }
 
   @Override
@@ -90,20 +94,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
     if (project == null) {
       return;
     }
-    JavaCompilerOptionsComponent.getInstance().unregisterProviderForProject(project);
-  }
-
-  void commit() {
-    myCompilerSettingsPreferencePage.commit();
-    myState = new CompilerState();
-    myState.setTargetVersion(myCompilerSettingsPreferencePage.getSelectedTargetJavaVersion());
-  }
-
-  public CompilerSettingsPreferencePage getPreferencePage() {
-    if (myCompilerSettingsPreferencePage == null) {
-      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(getJavaCompilerOptions());
-    }
-    return myCompilerSettingsPreferencePage;
+    JavaCompilerOptionsComponent.getInstance().removeJavaCompilerOptions(project);
   }
 
   @NotNull
@@ -113,20 +104,20 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   }
 
   public static class CompilerState {
-    private JavaVersion myTargetVersion;
+    private String myTargetVersion;
 
-    public JavaVersion getTargetVersion() {
+    public String getTargetVersion() {
       return myTargetVersion;
     }
 
-
-    public void setTargetVersion(JavaVersion targetVersion) {
+    public void setTargetVersion(String targetVersion) {
       myTargetVersion = targetVersion;
     }
   }
 
-  @Override
-  public JavaCompilerOptions getJavaCompilerOptions() {
-    return new JavaCompilerOptions(myState.getTargetVersion());
+  private JavaCompilerOptions createOptions() {
+    String targetVersion = myState.getTargetVersion();
+    JavaVersion parsedTargetVersion = JavaVersion.parse(targetVersion);
+    return new JavaCompilerOptions(parsedTargetVersion == null ? JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION : parsedTargetVersion);
   }
 }

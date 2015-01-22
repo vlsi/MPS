@@ -18,6 +18,7 @@ package jetbrains.mps.ide.compiler;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public class CompilerSettingsConfigurable implements SearchableConfigurable {
+  private CompilerSettingsPreferencePage myCompilerSettingsPreferencePage;
   private Project myProject;
 
   public CompilerSettingsConfigurable(Project project) {
@@ -59,25 +61,35 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
   @Nullable
   @Override
   public JComponent createComponent() {
-    return CompilerSettingsComponent.getInstance(myProject).getPreferencePage().getMainPanel();
+    return getPreferencePage().getMainPanel();
   }
 
   @Override
   public boolean isModified() {
-    return CompilerSettingsComponent.getInstance(myProject).getPreferencePage().isModified();
+    return getPreferencePage().isModified();
   }
 
   @Override
   public void apply() throws ConfigurationException {
-    CompilerSettingsComponent.getInstance(myProject).commit();
+    getPreferencePage().commit();
+    CompilerState compilerState = new CompilerState();
+    compilerState.setTargetVersion(getPreferencePage().getSelectedTargetJavaVersion().getCompilerVersion());
+    CompilerSettingsComponent.getInstance(myProject).loadState(compilerState);
   }
 
   @Override
   public void reset() {
-    CompilerSettingsComponent.getInstance(myProject).getPreferencePage().reset();
+    getPreferencePage().reset();
   }
 
   @Override
   public void disposeUIResources() {
+  }
+
+  private CompilerSettingsPreferencePage getPreferencePage() {
+    if (myCompilerSettingsPreferencePage == null) {
+      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(CompilerSettingsComponent.getInstance(myProject).getState());
+    }
+    return myCompilerSettingsPreferencePage;
   }
 }

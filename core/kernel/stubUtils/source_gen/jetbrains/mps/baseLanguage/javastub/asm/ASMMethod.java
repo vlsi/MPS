@@ -174,7 +174,7 @@ public class ASMMethod {
     return myMethod.name.equals("<init>");
   }
   public boolean isCompilerGenerated() {
-    return myMethod.name.startsWith("access$") || myMethod.name.equals("<clinit>");
+    return myMethod.name.startsWith("access$") || myMethod.name.equals("<clinit>") || myMethod.name.startsWith("lambda$") || myMethod.name.startsWith("$deserializeLambda");
   }
   public List<ASMTypeVariable> getTypeParameters() {
     return myTypeVariables;

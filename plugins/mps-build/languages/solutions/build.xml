@@ -143,7 +143,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -299,7 +299,7 @@
   <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
@@ -336,12 +336,15 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.build.sandbox">
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.build.tests" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.tests/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.tests/source_gen" />
@@ -384,6 +387,9 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.build.tests">
+      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="cleanSources">

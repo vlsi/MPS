@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.compiler;
 
-import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
+import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -42,8 +42,8 @@ public class CompilerSettingsPreferencePage {
     }
     myTargetVersionItems.add(DEFAULT_VERSION_ITEM);
   }
-  public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
-    JavaVersion targetJavaVersion = options.getTargetJavaVersion();
+  public CompilerSettingsPreferencePage(CompilerState options) {
+    JavaVersion targetJavaVersion = JavaVersion.parse(options.getTargetVersion());
     if (targetJavaVersion == null) {
       myInitialTargetJavaVersion = DEFAULT_VERSION_ITEM;
     } else {
@@ -80,7 +80,7 @@ public class CompilerSettingsPreferencePage {
     myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(myTargetVersionItems.toArray()));
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
 
-    panel.add(new JLabel("Java target bytecode version"), c);
+    panel.add(new JLabel("Project bytecode version"), c);
     c.gridx = 1;
     c.insets.top = 0;
     panel.add(myTargetJavaVersionComboBox, c);
