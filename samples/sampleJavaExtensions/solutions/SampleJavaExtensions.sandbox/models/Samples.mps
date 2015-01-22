@@ -260,8 +260,8 @@
         <child id="954830572075912398" name="body" index="2w1b6m" />
         <child id="954830572075974221" name="alternative" index="2w1kcl" />
       </concept>
-      <concept id="954830572075998495" name="org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow" flags="sg" index="2w1u17" />
-      <concept id="954830572075998500" name="org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow" flags="sg" index="2w1u1W" />
+      <concept id="954830572075998495" name="org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow" flags="ig" index="2w1u17" />
+      <concept id="954830572075998500" name="org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow" flags="ig" index="2w1u1W" />
     </language>
     <language id="662a9f2b-5802-4d16-9558-72c65c7a681e" name="org.jetbrains.mps.samples.Money">
       <concept id="5447719361346490730" name="org.jetbrains.mps.samples.Money.structure.MoneyType" flags="in" index="iynUf" />
