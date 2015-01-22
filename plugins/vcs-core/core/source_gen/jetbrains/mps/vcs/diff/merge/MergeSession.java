@@ -33,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
@@ -48,6 +47,8 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public final class MergeSession {
   private ChangeSet myMineChangeSet;
@@ -212,7 +213,7 @@ public final class MergeSession {
       ModelChange symmChange = ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)).subtract(SetSequence.fromSet(myResolvedChanges)).first();
       if (symmChange != null) {
         boolean isMineChange = change.getChangeSet() == myMineChangeSet;
-        SNode mergeHint = SNodeOperations.as(((SNode) change.getMergeHint().resolve(MPSModuleRepository.getInstance())), MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+        SNode mergeHint = SNodeOperations.as(((SNode) check_bow6nj_a0a0a1a1a3a13(change.getMergeHint())), MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"));
         if ((mergeHint != null) && (SPropertyOperations.hasValue(mergeHint, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1", "1") != isMineChange)) {
           // execute more appropriate symmetric change, original change will be excluded 
           change = symmChange;
@@ -403,6 +404,12 @@ public final class MergeSession {
       beforeNodeRemovedRecursively(event.getRoot());
       invalidateDeletedRoot(event);
     }
+  }
+  private static SNode check_bow6nj_a0a0a1a1a3a13(SNodeReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+    }
+    return null;
   }
   private static void check_bow6nj_a1a0a54(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
     if (null != checkedDotOperand) {
