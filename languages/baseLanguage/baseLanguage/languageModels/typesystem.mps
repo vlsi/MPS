@@ -32079,15 +32079,15 @@
                 </node>
               </node>
               <node concept="34ab3g" id="24B8XX2$usk" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
+                <property role="35gtTG" value="trace" />
                 <property role="34fQS0" value="true" />
                 <node concept="3cpWs3" id="5FrpC_UjC_5" role="34bqiv">
                   <node concept="Xl_RD" id="5FrpC_UjC_A" role="3uHU7w">
-                    <property role="Xl_RC" value=". Resorting to default." />
+                    <property role="Xl_RC" value="." />
                   </node>
                   <node concept="3cpWs3" id="24B8XX2$vkR" role="3uHU7B">
                     <node concept="Xl_RD" id="24B8XX2$usm" role="3uHU7B">
-                      <property role="Xl_RC" value="Unable to obtain a compile time constant from " />
+                      <property role="Xl_RC" value="Using a default compile time constant for " />
                     </node>
                     <node concept="37vLTw" id="24B8XX2$voQ" role="3uHU7w">
                       <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
@@ -32127,7 +32127,7 @@
                   </node>
                   <node concept="3cpWs3" id="5FrpC_UjNcI" role="3uHU7B">
                     <node concept="Xl_RD" id="5FrpC_UjNcJ" role="3uHU7B">
-                      <property role="Xl_RC" value="Unable to obtain a compile time constant from " />
+                      <property role="Xl_RC" value="Unable to obtain a compile time constant for " />
                     </node>
                     <node concept="37vLTw" id="5FrpC_UjNcK" role="3uHU7w">
                       <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />

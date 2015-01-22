@@ -87,14 +87,14 @@ public class CheckingUtil {
     } catch (IllegalStateException e) {
       // the process of retrieving compile-time constants is flaky ATM 
       // e.g. StaticFieldReference pointing to a stub model may fail 
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Unable to obtain a compile time constant from " + expr + ". Resorting to default.", e);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Using a default compile time constant for " + expr + ".", e);
       }
       return false;
     } catch (UnsupportedOperationException e) {
       // Some expressions may not implement the compile-time constant retrieval method 
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Unable to obtain a compile time constant from " + expr + ". Resorting to default.", e);
+        LOG.warn("Unable to obtain a compile time constant for " + expr + ". Resorting to default.", e);
       }
       return false;
     }
