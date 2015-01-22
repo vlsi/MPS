@@ -8,7 +8,6 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -143,15 +142,25 @@
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
-      <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
-    </language>
-    <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1216383170661" name="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" flags="ng" index="Q5z_Y">
-        <child id="1216383424566" name="executeBlock" index="Q6x$H" />
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
       </concept>
-      <concept id="1216383287005" name="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" flags="in" index="Q5ZZ6" />
-      <concept id="1210784285454" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" flags="ng" index="3Cnw8n">
-        <reference id="1216388525179" name="quickFix" index="QpYPw" />
+      <concept id="5455284157993911077" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty" flags="ng" index="2pJxcG">
+        <reference id="5455284157993911078" name="property" index="2pJxcJ" />
+      </concept>
+      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
+        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
+      <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
+      <concept id="8182547171709752110" name="jetbrains.mps.lang.quotation.structure.NodeBuilderExpression" flags="nn" index="36biLy">
+        <child id="8182547171709752112" name="expression" index="36biLW" />
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
@@ -562,11 +571,26 @@
             <node concept="3Tqbb2" id="2Rjnwer$mCO" role="1tU5fm">
               <ref role="ehGHo" to="tpd4:hGQ5zx_" resolve="TypesystemQuickFix" />
             </node>
-            <node concept="2c44tf" id="2Rjnwer$mCP" role="33vP2m">
-              <node concept="Q5z_Y" id="2Rjnwer$mCQ" role="2c44tc">
-                <property role="TrG5h" value="fix_" />
-                <node concept="Q5ZZ6" id="2Rjnwer$mCR" role="Q6x$H">
-                  <node concept="3clFbS" id="2Rjnwer$mCS" role="2VODD2" />
+            <node concept="2pJPEk" id="1crrmiqZGj0" role="33vP2m">
+              <node concept="2pJPED" id="1crrmiqZGiT" role="2pJPEn">
+                <ref role="2pJxaS" to="tpd4:hGQ5zx_" resolve="TypesystemQuickFix" />
+                <node concept="2pJxcG" id="1crrmiqZGiU" role="2pJxcM">
+                  <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
+                  <node concept="Xl_RD" id="1crrmiqZGiV" role="2pJxcZ">
+                    <property role="Xl_RC" value="fix_" />
+                  </node>
+                </node>
+                <node concept="2pIpSj" id="1crrmiqZGiZ" role="2pJxcM">
+                  <ref role="2pIpSl" to="tpd4:hGQ6xwQ" />
+                  <node concept="2pJPED" id="1crrmiqZGiW" role="2pJxcZ">
+                    <ref role="2pJxaS" to="tpd4:hGQ5ZVt" resolve="QuickFixExecuteBlock" />
+                    <node concept="2pIpSj" id="1crrmiqZGiY" role="2pJxcM">
+                      <ref role="2pIpSl" to="tpee:gyVODHa" />
+                      <node concept="2pJPED" id="1crrmiqZGiX" role="2pJxcZ">
+                        <ref role="2pJxaS" to="tpee:fzclF80" resolve="StatementList" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -579,14 +603,15 @@
             <node concept="3Tqbb2" id="2Rjnwer$mDl" role="1tU5fm">
               <ref role="ehGHo" to="tpd4:hBCnwce" resolve="TypesystemIntention" />
             </node>
-            <node concept="2c44tf" id="2Rjnwer$mDm" role="33vP2m">
-              <node concept="3Cnw8n" id="2Rjnwer$mDn" role="2c44tc">
-                <ref role="QpYPw" node="2Rjnwer$mCQ" resolve="fix_" />
-                <node concept="2c44tb" id="2Rjnwer$mDo" role="lGtFl">
-                  <property role="2qtEX8" value="quickFix" />
-                  <property role="P3scX" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1210784285454/1216388525179" />
-                  <node concept="37vLTw" id="3GM_nagT_5y" role="2c44t1">
-                    <ref role="3cqZAo" node="2Rjnwer$mCN" resolve="quickFixNode" />
+            <node concept="2pJPEk" id="1crrmiqZGCL" role="33vP2m">
+              <node concept="2pJPED" id="1crrmiqZGCI" role="2pJPEn">
+                <ref role="2pJxaS" to="tpd4:hBCnwce" resolve="TypesystemIntention" />
+                <node concept="2pIpSj" id="1crrmiqZGCJ" role="2pJxcM">
+                  <ref role="2pIpSl" to="tpd4:hGQpYLV" />
+                  <node concept="36biLy" id="1crrmiqZGCK" role="2pJxcZ">
+                    <node concept="37vLTw" id="3GM_nagT_5y" role="36biLW">
+                      <ref role="3cqZAo" node="2Rjnwer$mCN" resolve="quickFixNode" />
+                    </node>
                   </node>
                 </node>
               </node>
