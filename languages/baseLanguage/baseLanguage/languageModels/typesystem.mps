@@ -32081,12 +32081,17 @@
               <node concept="34ab3g" id="24B8XX2$usk" role="3cqZAp">
                 <property role="35gtTG" value="warn" />
                 <property role="34fQS0" value="true" />
-                <node concept="3cpWs3" id="24B8XX2$vkR" role="34bqiv">
-                  <node concept="37vLTw" id="24B8XX2$voQ" role="3uHU7w">
-                    <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
+                <node concept="3cpWs3" id="5FrpC_UjC_5" role="34bqiv">
+                  <node concept="Xl_RD" id="5FrpC_UjC_A" role="3uHU7w">
+                    <property role="Xl_RC" value=". Resorting to default." />
                   </node>
-                  <node concept="Xl_RD" id="24B8XX2$usm" role="3uHU7B">
-                    <property role="Xl_RC" value="Error obtaining a compile time constant from " />
+                  <node concept="3cpWs3" id="24B8XX2$vkR" role="3uHU7B">
+                    <node concept="Xl_RD" id="24B8XX2$usm" role="3uHU7B">
+                      <property role="Xl_RC" value="Unable to obtain a compile time constant from " />
+                    </node>
+                    <node concept="37vLTw" id="24B8XX2$voQ" role="3uHU7w">
+                      <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
+                    </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="24B8XX2$uso" role="34bMjA">
@@ -32101,8 +32106,48 @@
             </node>
             <node concept="3cpWsn" id="24B8XX2$ss5" role="TDEfY">
               <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="24B8XX2$ujt" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+              <node concept="3uibUv" id="5FrpC_U9Lfg" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~IllegalStateException" resolve="IllegalStateException" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="5FrpC_UjLOO" role="TEbGg">
+            <node concept="3clFbS" id="5FrpC_UjLOP" role="TDEfX">
+              <node concept="3SKdUt" id="5FrpC_UjORh" role="3cqZAp">
+                <node concept="3SKdUq" id="5FrpC_UjPLJ" role="3SKWNk">
+                  <property role="3SKdUp" value="Some expressions may not implement the compile-time constant retrieval method" />
+                </node>
+              </node>
+              <node concept="34ab3g" id="5FrpC_UjNcF" role="3cqZAp">
+                <property role="35gtTG" value="warn" />
+                <property role="34fQS0" value="true" />
+                <node concept="3cpWs3" id="5FrpC_UjNcG" role="34bqiv">
+                  <node concept="Xl_RD" id="5FrpC_UjNcH" role="3uHU7w">
+                    <property role="Xl_RC" value=". Resorting to default." />
+                  </node>
+                  <node concept="3cpWs3" id="5FrpC_UjNcI" role="3uHU7B">
+                    <node concept="Xl_RD" id="5FrpC_UjNcJ" role="3uHU7B">
+                      <property role="Xl_RC" value="Unable to obtain a compile time constant from " />
+                    </node>
+                    <node concept="37vLTw" id="5FrpC_UjNcK" role="3uHU7w">
+                      <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="5FrpC_UjNcL" role="34bMjA">
+                  <ref role="3cqZAo" node="5FrpC_UjLOQ" resolve="e" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="5FrpC_UjNcM" role="3cqZAp">
+                <node concept="3clFbT" id="5FrpC_UjNcN" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="5FrpC_UjLOQ" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="5FrpC_UjMPT" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~UnsupportedOperationException" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
