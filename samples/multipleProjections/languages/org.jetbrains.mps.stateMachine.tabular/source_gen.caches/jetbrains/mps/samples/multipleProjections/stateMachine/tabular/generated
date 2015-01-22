@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4aof8qzcczs9kjhi8p3t8v4n6j7d4i9">
+<dependencies version="2" modelHash="dxmtm99zecrivos0nrl167r13w2s9if">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1h31ezyqnoyoq0zmqvadd6ivsixfi7i" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
-  <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" hash="-5flbivk14vm4v0rfcyoc4m8widluz0f" />
+  <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" hash="-elp0yqniqpqzpcq2n2qw6usuwzz003t" />
   <dep model="r:6e7c10db-d700-4e02-a6b2-759da83a915e(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.behavior)" hash="1g4gs0jsizai7s79mrjlh15e5x514xs" />
   <dep model="r:995e083b-5cc3-4bb5-be6c-dcb076136b05(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem)" hash="-2bkj3qzq84pkwqhzo4npibb3amevqa9" />
   <dep model="r:ad28332d-4f2f-44e3-a5cc-8828525ac9ee(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.structure)" hash="-yrjir5x4megzfxxq050v9dpkzjrpw" />
