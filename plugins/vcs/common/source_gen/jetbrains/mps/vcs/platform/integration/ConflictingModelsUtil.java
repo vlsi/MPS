@@ -172,6 +172,9 @@ public class ConflictingModelsUtil {
           final SModel baseModel = loadModel(mergeData.ORIGINAL, ext.value);
           final SModel mineModel = loadModel(mergeData.CURRENT, ext.value);
           final SModel repoModel = loadModel(mergeData.LAST, ext.value);
+          if (baseModel == null || mineModel == null || repoModel == null) {
+            continue;
+          }
 
           final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
           // read action: 
@@ -223,7 +226,7 @@ public class ConflictingModelsUtil {
                     }
                     try {
                       file.setBinaryContent(resultContent.getBytes(FileUtil.DEFAULT_CHARSET));
-                      check_2bxr1q_a1a2a0b0a0a0a0a02a0a3a01g(mySession, file);
+                      check_2bxr1q_a1a2a0b0a0a0a0a12a0a3a01g(mySession, file);
                       VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
                       ListSequence.fromList(myResolvedModelFiles).addElement(file);
                     } catch (IOException e) {
@@ -248,7 +251,7 @@ public class ConflictingModelsUtil {
         monitor.done();
       }
     }
-    private static void check_2bxr1q_a1a2a0b0a0a0a0a02a0a3a01g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
+    private static void check_2bxr1q_a1a2a0b0a0a0a0a12a0a3a01g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
       if (null != checkedDotOperand) {
         checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
       }
