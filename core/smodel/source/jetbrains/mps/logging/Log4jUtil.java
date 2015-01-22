@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -104,7 +103,14 @@ public class Log4jUtil {
     }
   }
 
-  private static Object createMessageObject(String message, Object hintObject) {
+  /**
+   * Wrap message object and hint into single log object.
+   * Use message as log object if hint is <code>null</code>
+   * @param message text to log
+   * @param hintObject optional extra information for the log entry
+   * @return message object for log
+   */
+  public static Object createMessageObject(String message, Object hintObject) {
     return hintObject != null ? new MessageObject(message, hintObject) : message;
   }
 

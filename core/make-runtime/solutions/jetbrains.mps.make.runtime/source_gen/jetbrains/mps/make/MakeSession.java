@@ -7,7 +7,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
@@ -51,13 +50,24 @@ public class MakeSession {
   public MakeSession(IOperationContext context, IMessageHandler messageHandler, boolean cleanMake, boolean sticky) {
     this.context = context;
     myProject = context.getProject();
-    this.myMessageHandler = messageHandler;
+    this.myMessageHandler = (messageHandler == null ? IMessageHandler.NULL_HANDLER : messageHandler);
     this.myIsCleanMake = cleanMake;
     this.myIsSticky = sticky;
   }
-  public MakeSession(@NotNull Project mpsProject, @Nullable IMessageHandler messageHandler, boolean cleanMake) {
+  /**
+   * <code>MakeSession</code> captures global parameters for the make session to run
+   * Note, unlike earlier versions, <code>null</code> message handler is no longer supported.
+   * Use <code>IMessageHandler.NULL_HANDLER</code> if <code>/dev/null</code> for messages is indeed what you want.
+   * Otherwise, use meaningful handler, e.g. <code>DefaultMakeMessageHandler</code> or 
+   * <code>DefaultMessageHandler</code>from IDE, <code>IMessageHandler.LogHandler</code> or any tailored handler for non-IDE uses.
+   * 
+   * @param mpsProject MPS project to run make at
+   * @param messageHandler where to pipe make messages
+   * @param cleanMake <code>true</code> to perform complete rebuild, not make of dirty models only.
+   */
+  public MakeSession(@NotNull Project mpsProject, @NotNull IMessageHandler messageHandler, boolean cleanMake) {
     myProject = mpsProject;
-    this.myMessageHandler = (messageHandler == null ? IMessageHandler.NULL_HANDLER : messageHandler);
+    this.myMessageHandler = messageHandler;
     this.myIsCleanMake = cleanMake;
     this.myIsSticky = false;
   }

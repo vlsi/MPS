@@ -17,6 +17,9 @@
       <concept id="4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" flags="ng" index="2sgV4H">
         <reference id="5617550519002745380" name="script" index="1l3spb" />
       </concept>
+      <concept id="927724900262033858" name="jetbrains.mps.build.structure.BuildSource_JavaOptions" flags="ng" index="2_Ic$z">
+        <property id="6998860900671147996" name="javaLevel" index="TZNOO" />
+      </concept>
       <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
         <child id="4903714810883783243" name="parts" index="3MwsjC" />
       </concept>
@@ -181,6 +184,9 @@
     </node>
     <node concept="10PD9b" id="6ZfgptH0kgN" role="10PD9s" />
     <node concept="3b7kt6" id="6ZfgptH0kgP" role="10PD9s" />
+    <node concept="2_Ic$z" id="7XMK9W6CC9X" role="3989C9">
+      <property role="TZNOO" value="1.6" />
+    </node>
   </node>
   <node concept="1l3spW" id="70qJ_RossVc">
     <property role="TrG5h" value="buildTest2" />
@@ -294,6 +300,9 @@
     </node>
     <node concept="10PD9b" id="70qJ_RossVr" role="10PD9s" />
     <node concept="3b7kt6" id="70qJ_RossVs" role="10PD9s" />
+    <node concept="2_Ic$z" id="7XMK9W6CC9Y" role="3989C9">
+      <property role="TZNOO" value="1.6" />
+    </node>
   </node>
 </model>
 
