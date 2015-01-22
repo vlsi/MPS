@@ -77,6 +77,10 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -180,9 +184,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -1241,11 +1242,11 @@
       <node concept="3Tm6S6" id="5ooWrzQB8DT" role="1B3o_S" />
       <node concept="3clFbS" id="5ooWrzQB8DS" role="3clF47">
         <node concept="3clFbJ" id="5ooWrzQB8El" role="3cqZAp">
-          <node concept="3clFbC" id="5ooWrzQB8Eu" role="3clFbw">
-            <node concept="3VsKOn" id="2LiDtbYeDIT" role="3uHU7w">
-              <ref role="3VsUkX" to="p7r7:~IdeaFileSystemProvider" resolve="IdeaFileSystemProvider" />
+          <node concept="2ZW3vV" id="4rXN3wkfYLF" role="3clFbw">
+            <node concept="3uibUv" id="4rXN3wkg3KV" role="2ZW6by">
+              <ref role="3uigEE" to="p7r7:~IdeaFileSystemProvider" resolve="IdeaFileSystemProvider" />
             </node>
-            <node concept="2OqwBi" id="5ooWrzQB8Ep" role="3uHU7B">
+            <node concept="2OqwBi" id="5ooWrzQB8Ep" role="2ZW6bz">
               <node concept="37vLTw" id="2BHiRxgm745" role="2Oq$k0">
                 <ref role="3cqZAo" node="5ooWrzQB8DU" resolve="e" />
               </node>

@@ -18,7 +18,7 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.ide.vfs.IdeaFileSystemProviderSR;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import static org.junit.Assert.*;
@@ -54,7 +54,7 @@ public class VfsTest extends WorkbenchMpsTest {
   private static final TestInvoker IDEA_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(final Runnable testRunnable) {
-      FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
+      FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProviderSR());
       final Throwable[] ex = new Throwable[1];
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

@@ -38,7 +38,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
   }
   private void resolveIfNeeded(VirtualFileEvent e) {
-    if (e.getRequestor() == IdeaFileSystemProvider.class) {
+    if (e.getRequestor() instanceof IdeaFileSystemProvider) {
       VirtualFile file = e.getFile();
       if (SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
         return;
