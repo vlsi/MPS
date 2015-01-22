@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:4f3f3d44-88a3-4a22-aa9e-fb5ea41e67af(jetbrains.mps.lang.migration.pluginSolution.util)/1909661648054735008">
+    <file name="MigrationScriptBuilder.java">
+      <node id="1909661648054780963" at="18,90,19,75" concept="1" />
+      <node id="1909661648055035835" at="19,75,20,432" concept="1" />
+      <node id="1909661648055055269" at="20,432,21,414" concept="0" />
+      <node id="1909661648055329659" at="21,414,22,152" concept="0" />
+      <node id="1909661648055304739" at="22,152,23,14" concept="2" />
+      <node id="1909661648054751535" at="18,0,25,0" concept="3" trace="createMigrationSciript#(Ljetbrains/mps/smodel/Language;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1909661648054751520" at="18,90,23,14">
+        <var name="migrationModel" id="1909661648054780964" />
+        <var name="ms" id="1909661648055035836" />
+      </scope>
+      <scope id="1909661648054751535" at="18,0,25,0">
+        <var name="body" id="1909661648054751582" />
+        <var name="language" id="1909661648054751631" />
+        <var name="name" id="1909661648055323906" />
+      </scope>
+      <unit id="1909661648054735008" at="16,0,27,0" name="jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder" />
+    </file>
+  </root>
+</debug-info>
+
