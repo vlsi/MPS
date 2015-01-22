@@ -18,29 +18,18 @@ package jetbrains.mps.util;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 
-public final class AndCondition<T> implements Condition<T> {
-  private final Condition<T> myC1;
-  private final Condition<T> myC2;
-  private final boolean myExecuteBoth;
+/**
+ * @author Artem Tikhomirov
+ */
+public final class NotCondition<T> implements Condition<T> {
+  private final Condition<T> myDelegate;
 
-  public AndCondition(@NotNull Condition<T> c1, @NotNull Condition<T> c2) {
-    this(c1, c2, false);
-  }
-
-  public AndCondition(@NotNull Condition<T> c1, @NotNull Condition<T> c2, boolean executeBoth) {
-    myC1 = c1;
-    myC2 = c2;
-    myExecuteBoth = executeBoth;
+  public NotCondition(@NotNull Condition<T> delegate) {
+    myDelegate = delegate;
   }
 
   @Override
-  public boolean met(T object) {
-    if (myExecuteBoth) {
-      boolean b1 = myC1.met(object);
-      boolean b2 = myC2.met(object);
-      return b1 && b2;
-    } else {
-      return myC1.met(object) && myC2.met(object);
-    }
+  public boolean met(T obj) {
+    return !myDelegate.met(obj);
   }
 }

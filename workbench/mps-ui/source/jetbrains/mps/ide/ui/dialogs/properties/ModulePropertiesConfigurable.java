@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,8 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBInsets;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.icons.MPSIcons.General;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -100,7 +97,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_E
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -110,8 +106,8 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -119,12 +115,14 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -139,8 +137,6 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
@@ -392,14 +388,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
-      return new ModuleTableCellRender() {
-        @Override
-        protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
-          if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) == null)
-            return DependencyCellState.NOT_AVALIABLE;
-          return super.getDependencyCellState(moduleReference);
+      final SRepository repo = myModule.getRepository();
+      class MissingModuleCondition implements Condition<SModuleReference> {
+        private final SRepository myRepository;
+
+        public MissingModuleCondition(@NotNull SRepository repository) {
+          myRepository = repository;
         }
-      };
+        @Override
+        public boolean met(SModuleReference moduleReference) {
+          return moduleReference.resolve(myRepository) == null;
+        }
+      }
+      final ModuleTableCellRender missing = new ModuleTableCellRender(repo);
+      missing.addCellState(new MissingModuleCondition(repo), DependencyCellState.NOT_AVAILABLE);
+      return missing;
     }
 
     @Nullable
@@ -529,7 +532,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myRuntimeTableModel = new RuntimeTableModel();
       runtimeTable.setModel(myRuntimeTableModel);
 
-      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
+      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(myModule.getRepository()));
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(runtimeTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -883,53 +886,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  private BaseTab myTab;
-
   public class ModuleUsedLanguagesTab extends UsedLanguagesTab {
 
     @Override
     protected UsedLangsTableModel getUsedLangsTableModel() {
-      final ModuleUsedLangTableModel tableModel = new ModuleUsedLangTableModel(myModuleDescriptor);
-      tableModel.addTableModelListener(new TableModelListener() {
-        @Override
-        public void tableChanged(TableModelEvent e) {
-          if (e.getType() == TableModelEvent.UPDATE) {
-            if (dependOnBL(tableModel)) {
-              ModulePropertiesConfigurable.this.addTab(
-                ModulePropertiesConfigurable.this.myTab == null
-                  ? (ModulePropertiesConfigurable.this.myTab = null) //new JavaModuleFacetTab(myModule, myModuleDescriptor))
-                  : ModulePropertiesConfigurable.this.myTab
-              );
-            }
-          } else if (e.getType() == TableModelEvent.DELETE) {
-            if (!dependOnBL(tableModel)) {
-              ModulePropertiesConfigurable.this.removeTab(ModulePropertiesConfigurable.this.myTab);
-            }
-          }
-        }
-      });
-      return tableModel;
-    }
-
-    private boolean dependOnBL(ModuleUsedLangTableModel tableModel) {
-      final Language baseLanguage = BootstrapLanguages.baseLanguage();
-      if (tableModel.getUsedLanguages().contains(baseLanguage.getModuleReference())) {
-        return true;
-      }
-      for (final SModuleReference reference : tableModel.getUsedDevkits()) {
-        final boolean[] result = new boolean[1];
-        myModule.getRepository().getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SModule module = myModule.getRepository().getModule(reference.getModuleId());
-            if ((module instanceof DevKit) && ((DevKit) module).getAllExportedLanguages().contains(baseLanguage)) {
-              result[0] = true;
-            }
-          }
-        });
-        if (result[0]) return true;
-      }
-      return false;
+      return new ModuleUsedLangTableModel(myModuleDescriptor);
     }
   }
 
