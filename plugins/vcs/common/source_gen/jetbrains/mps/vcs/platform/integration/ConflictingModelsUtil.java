@@ -25,7 +25,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -40,9 +39,11 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import java.io.IOException;
+import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -94,9 +95,9 @@ public class ConflictingModelsUtil {
       if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
         ext = MPSExtentions.MODEL;
       }
-      final SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext);
-      final SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext);
-      final SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext);
+      final SModel baseModel = loadModel(mergeData.ORIGINAL, ext);
+      final SModel mineModel = loadModel(mergeData.CURRENT, ext);
+      final SModel repoModel = loadModel(mergeData.LAST, ext);
       if (baseModel == null || mineModel == null || repoModel == null) {
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Couldn't read model " + file.getPath());
@@ -168,9 +169,9 @@ public class ConflictingModelsUtil {
           if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
             ext.value = MPSExtentions.MODEL;
           }
-          final SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext.value);
-          final SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext.value);
-          final SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext.value);
+          final SModel baseModel = loadModel(mergeData.ORIGINAL, ext.value);
+          final SModel mineModel = loadModel(mergeData.CURRENT, ext.value);
+          final SModel repoModel = loadModel(mergeData.LAST, ext.value);
 
           final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
           // read action: 
@@ -253,6 +254,14 @@ public class ConflictingModelsUtil {
       }
 
     }
+  }
+
+  @Nullable
+  private static SModel loadModel(byte[] bytes, String ext) {
+    if (bytes.length == 0) {
+      return null;
+    }
+    return PersistenceUtil.loadModel(bytes, ext);
   }
   protected static Logger LOG = LogManager.getLogger(ConflictingModelsUtil.class);
 }

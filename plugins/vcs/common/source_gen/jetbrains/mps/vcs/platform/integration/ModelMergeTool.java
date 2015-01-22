@@ -29,6 +29,7 @@ import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.util.FileUtil;
 
@@ -57,8 +58,8 @@ public class ModelMergeTool extends MergeTool {
         ext.value = MPSExtentions.MODEL;
       }
       SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
-      SModel mineModel = PersistenceUtil.loadModel(contents[MergeConstants.CURRENT].getBytes(), ext.value);
-      SModel newModel = PersistenceUtil.loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext.value);
+      SModel mineModel = loadModel(contents[MergeConstants.CURRENT].getBytes(), ext.value);
+      SModel newModel = loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
         if (LOG_705910402.isEnabledFor(Level.WARN)) {
           LOG_705910402.warn("Couldn't read model, invoking text merge");
@@ -94,6 +95,14 @@ public class ModelMergeTool extends MergeTool {
       LOG.error(null, e);
     }
   }
+  @Nullable
+  private static SModel loadModel(byte[] bytes, String ext) {
+    if (bytes.length == 0) {
+      return null;
+      // <node> 
+    }
+    return PersistenceUtil.loadModel(bytes, ext);
+  }
   @Override
   public boolean canShow(DiffRequest request) {
     if (!(super.canShow(request))) {
@@ -114,7 +123,7 @@ public class ModelMergeTool extends MergeTool {
   }
   private static void resolved(MergeRequestImpl req, final String result) {
     req.setResult(DialogWrapper.OK_EXIT_CODE);
-    final VirtualFile modelFile = check_7qvsj_a0b0f(req.getResultContent());
+    final VirtualFile modelFile = check_7qvsj_a0b0g(req.getResultContent());
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         try {
@@ -134,7 +143,7 @@ public class ModelMergeTool extends MergeTool {
     }
     return null;
   }
-  private static VirtualFile check_7qvsj_a0b0f(DiffContent checkedDotOperand) {
+  private static VirtualFile check_7qvsj_a0b0g(DiffContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getFile();
     }
