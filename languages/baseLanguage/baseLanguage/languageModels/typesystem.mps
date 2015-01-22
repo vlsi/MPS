@@ -32060,8 +32060,8 @@
                   <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
                 </node>
                 <node concept="1mIQ4w" id="1R9e3Q5Ku6U" role="2OqNvi">
-                  <node concept="chp4Y" id="1R9e3Q5Ku6V" role="cj9EA">
-                    <ref role="cht4Q" to="tpee:fz3vP1J" resolve="Expression" />
+                  <node concept="chp4Y" id="6vNKRFStOEC" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:hanubx6" resolve="IntegerLiteral" />
                   </node>
                 </node>
               </node>
