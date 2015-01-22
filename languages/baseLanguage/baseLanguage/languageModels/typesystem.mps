@@ -584,7 +584,6 @@
         <property id="1167228628751" name="hasException" index="34fQS0" />
         <property id="1167245565795" name="severity" index="35gtTG" />
         <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -32108,9 +32107,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="37vLTw" id="24B8XX2$uso" role="34bMjA">
-                  <ref role="3cqZAo" node="24B8XX2$ss5" resolve="e" />
-                </node>
               </node>
               <node concept="3cpWs6" id="24B8XX2$w0r" role="3cqZAp">
                 <node concept="3clFbT" id="24B8XX2$x7n" role="3cqZAk">
@@ -32147,9 +32143,6 @@
                       <ref role="3cqZAo" node="5ABTiofsWqu" resolve="expr" />
                     </node>
                   </node>
-                </node>
-                <node concept="37vLTw" id="5FrpC_UjNcL" role="34bMjA">
-                  <ref role="3cqZAo" node="5FrpC_UjLOQ" resolve="e" />
                 </node>
               </node>
               <node concept="3cpWs6" id="5FrpC_UjNcM" role="3cqZAp">
