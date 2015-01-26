@@ -1246,6 +1246,12 @@
     <node concept="lpD6D" id="66auKH98M_r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5YjQP9rNnLE" resolve="DeleteUnaryMinus" />
     </node>
+    <node concept="lpD6D" id="7s4edfJCChf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7s4edfJBLz4" resolve="DuplicateNotDuplicatable" />
+    </node>
+    <node concept="lpD6D" id="7s4edfJCDl6" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7s4edfJBqzZ" resolve="DuplicateStatement" />
+    </node>
     <node concept="lpD6D" id="4$ezt8Zmuja" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4$ezt8ZmoHQ" resolve="LocalVariableMadeFinalCaret" />
     </node>
@@ -3267,6 +3273,9 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cb" role="lpD6w">
       <ref role="lpD7u" to="hbb4:3waFG77kiZl" resolve="IntroduceFinalLocalVariable" />
+    </node>
+    <node concept="lpD6D" id="7s4edfJAVDl" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:7s4edfJ_IDY" resolve="IntroduceLocalVariableFromMethodCall" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3bW" role="lpD6w">
       <ref role="lpD7u" to="hbb4:2GBYV6rKlYL" resolve="IntroduceVariableFromAnonimousClass" />

@@ -3388,6 +3388,36 @@
       <unit id="8556882668095222061" at="22,0,50,0" name="jetbrains.mps.refactoringTest.SimpleFindForExtractFromStatement_Test" />
     </file>
   </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8576042073329166974">
+    <file name="IntroduceLocalVariableFromMethodCall_Test.java">
+      <node id="8576042073329166974" at="22,67,23,119" concept="1" />
+      <node id="8576042073329166974" at="23,119,24,143" concept="1" />
+      <node id="8576042073329166975" at="28,69,29,46" concept="1" />
+      <node id="8576042073329166975" at="29,46,30,46" concept="1" />
+      <node id="8576042073329166978" at="30,46,31,94" concept="5" />
+      <node id="8576042073329166983" at="31,94,32,249" concept="1" />
+      <node id="8576042073329166989" at="32,249,33,31" concept="1" />
+      <node id="8576042073329166999" at="33,31,34,34" concept="1" />
+      <node id="8576042073329167003" at="35,7,36,292" concept="5" />
+      <node id="8576042073329167003" at="36,292,37,291" concept="5" />
+      <node id="8576042073329167003" at="37,291,38,146" concept="1" />
+      <node id="8576042073329166974" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8576042073329167003" at="34,34,39,7" concept="0" />
+      <node id="8576042073329166975" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <scope id="8576042073329166974" at="22,67,24,143" />
+      <scope id="8576042073329167003" at="35,7,38,146">
+        <var name="nodesAfter" id="8576042073329167003" />
+        <var name="nodesBefore" id="8576042073329167003" />
+      </scope>
+      <scope id="8576042073329166974" at="21,0,26,0" />
+      <scope id="8576042073329166975" at="28,69,39,7">
+        <var name="refactoring" id="8576042073329166979" />
+      </scope>
+      <scope id="8576042073329166975" at="28,0,41,0" />
+      <unit id="8576042073329166974" at="26,0,42,0" name="jetbrains.mps.refactoringTest.IntroduceLocalVariableFromMethodCall_Test$TestBody" />
+      <unit id="8576042073329166974" at="19,0,43,0" name="jetbrains.mps.refactoringTest.IntroduceLocalVariableFromMethodCall_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8823815475437525602">
     <file name="ExtractMethodWithThrows_Test.java">
       <node id="8823815475437525602" at="24,67,25,119" concept="1" />
