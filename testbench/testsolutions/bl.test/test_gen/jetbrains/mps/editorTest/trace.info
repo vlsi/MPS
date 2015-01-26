@@ -13583,28 +13583,6 @@
       <unit id="8576042073329608959" at="10,0,30,0" name="jetbrains.mps.editorTest.DuplicateStatement_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8576042073329703108">
-    <file name="DuplicateNotDuplicatable_Test.java">
-      <node id="8576042073329703108" at="15,64,16,107" concept="2" />
-      <node id="8576042073329703108" at="16,107,17,105" concept="2" />
-      <node id="8576042073329703108" at="24,51,25,63" concept="2" />
-      <node id="8576042073329911054" at="25,63,26,80" concept="2" />
-      <node id="8576042073329703108" at="12,0,14,0" concept="1" trace="DuplicateNotDuplicatable_Test#()V" />
-      <node id="8576042073329703108" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="8576042073329703108" at="14,0,19,0" concept="5" trace="test_DuplicateNotDuplicatable#()V" />
-      <node id="8576042073329703108" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="8576042073329703108" at="12,42,12,42" />
-      <scope id="8576042073329703108" at="21,23,21,23" />
-      <scope id="8576042073329703108" at="12,0,14,0" />
-      <scope id="8576042073329703108" at="15,64,17,105" />
-      <scope id="8576042073329703108" at="21,0,23,0" />
-      <scope id="8576042073329703108" at="24,51,26,80" />
-      <scope id="8576042073329703108" at="14,0,19,0" />
-      <scope id="8576042073329703108" at="23,0,28,0" />
-      <unit id="8576042073329703108" at="19,0,29,0" name="jetbrains.mps.editorTest.DuplicateNotDuplicatable_Test$TestBody" />
-      <unit id="8576042073329703108" at="10,0,30,0" name="jetbrains.mps.editorTest.DuplicateNotDuplicatable_Test" />
-    </file>
-  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8630667313531347630">
     <file name="EditorCellSomeProblem_Test.java">
       <node id="8630667313531347630" at="15,61,16,107" concept="2" />
