@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,15 +35,15 @@ import java.util.List;
  */
 public class ModuleTableCellRender extends ColoredTableCellRenderer {
   protected final SRepository myRepository;
-  private final List<Pair<Condition<SModuleReference>, DependencyCellState>> myCellStates;;
+  private final List<Pair<Condition<SModule>, DependencyCellState>> myCellStates;;
 
   public ModuleTableCellRender(@NotNull SRepository repository) {
     myRepository = repository;
-    myCellStates = new ArrayList<Pair<Condition<SModuleReference>, DependencyCellState>>(2);
+    myCellStates = new ArrayList<Pair<Condition<SModule>, DependencyCellState>>(2);
   }
 
-  public void addCellState(@NotNull Condition<SModuleReference> condition, @NotNull DependencyCellState cellState) {
-    myCellStates.add(new Pair<Condition<SModuleReference>, DependencyCellState>(condition, cellState));
+  public void addCellState(@NotNull Condition<SModule> condition, @NotNull DependencyCellState cellState) {
+    myCellStates.add(new Pair<Condition<SModule>, DependencyCellState>(condition, cellState));
   }
 
   @Override
@@ -54,23 +54,23 @@ public class ModuleTableCellRender extends ColoredTableCellRenderer {
     if (value != null) {
       final SModuleReference moduleReference = (SModuleReference) value;
       final SModule[] module = {null};
+      final DependencyCellState[] cellState = { null };
       myRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           module[0] = moduleReference.resolve(myRepository);
+          cellState[0] = getDependencyCellState(module[0]);
         }
       });
       setIcon(IconManager.getIconFor(module[0]));
-
-      final DependencyCellState cellState = getDependencyCellState(moduleReference);
-      append(moduleReference.getModuleName(), cellState.getTextAttributes());
-      setToolTipText(cellState.getTooltip());
+      append(moduleReference.getModuleName(), cellState[0].getTextAttributes());
+      setToolTipText(cellState[0].getTooltip());
     }
   }
 
-  protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
-    for (Pair<Condition<SModuleReference>, DependencyCellState> cellState : myCellStates) {
-      if (cellState.o1.met(moduleReference)) {
+  protected DependencyCellState getDependencyCellState(SModule module) {
+    for (Pair<Condition<SModule>, DependencyCellState> cellState : myCellStates) {
+      if (cellState.o1.met(module)) {
         return cellState.o2;
       }
     }
