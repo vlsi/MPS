@@ -209,7 +209,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -825,35 +825,15 @@
             <node concept="2ShNRf" id="41innpAkZBX" role="33vP2m">
               <node concept="1pGfFk" id="41innpAl7Hu" role="2ShVmc">
                 <ref role="37wK5l" to="j07i:41innpAipgn" resolve="MakeSequence" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="41innpAl9ah" role="3cqZAp">
-          <node concept="2OqwBi" id="41innpAl9LA" role="3clFbG">
-            <node concept="37vLTw" id="41innpAl9ag" role="2Oq$k0">
-              <ref role="3cqZAo" node="41innpAkY8K" resolve="makeSeq" />
-            </node>
-            <node concept="liA8E" id="41innpAlbCX" role="2OqNvi">
-              <ref role="37wK5l" to="j07i:41innpAgfGv" resolve="prepareClusters" />
-              <node concept="37vLTw" id="41innpAlbJ_" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aqll4bg" resolve="inputRes" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="41innpAldna" role="3cqZAp">
-          <node concept="2OqwBi" id="41innpAleQC" role="3clFbG">
-            <node concept="37vLTw" id="41innpAldn9" role="2Oq$k0">
-              <ref role="3cqZAo" node="41innpAkY8K" resolve="makeSeq" />
-            </node>
-            <node concept="liA8E" id="41innpAlg10" role="2OqNvi">
-              <ref role="37wK5l" to="j07i:41innpAggHG" resolve="prepareScipts" />
-              <node concept="37vLTw" id="41innpAlgNE" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aqll4bl" resolve="defaultScript" />
-              </node>
-              <node concept="37vLTw" id="41innpAlh0U" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aqll4be" resolve="makeSession" />
+                <node concept="37vLTw" id="6ZzUxXZSTfy" role="37wK5m">
+                  <ref role="3cqZAo" node="KL8Aqll4bg" resolve="inputRes" />
+                </node>
+                <node concept="37vLTw" id="6ZzUxXZSVKz" role="37wK5m">
+                  <ref role="3cqZAo" node="KL8Aqll4bl" resolve="defaultScript" />
+                </node>
+                <node concept="37vLTw" id="6ZzUxXZSXl0" role="37wK5m">
+                  <ref role="3cqZAo" node="KL8Aqll4be" resolve="makeSession" />
+                </node>
               </node>
             </node>
           </node>
@@ -1636,7 +1616,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="KL8Aqll4BD" role="3cqZAp" />
-        <node concept="3clFbH" id="KL8Aqll4BE" role="3cqZAp" />
         <node concept="3cpWs8" id="KL8Aqll4BF" role="3cqZAp">
           <node concept="3cpWsn" id="KL8Aqll4BG" role="3cpWs9">
             <property role="TrG5h" value="bms" />

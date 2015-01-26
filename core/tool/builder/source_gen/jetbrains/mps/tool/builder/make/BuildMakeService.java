@@ -71,9 +71,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       makeSession.getMessageHandler().handle(new Message(MessageKind.ERROR, msg));
       return new FutureValue<IResult>(new IResult.FAILURE(null));
     }
-    MakeSequence makeSeq = new MakeSequence();
-    makeSeq.prepareClusters(inputRes);
-    makeSeq.prepareScipts(defaultScript, makeSession);
+    MakeSequence makeSeq = new MakeSequence(inputRes, defaultScript, makeSession);
 
     IScriptController ctl = this.completeController(makeSession, controller);
 

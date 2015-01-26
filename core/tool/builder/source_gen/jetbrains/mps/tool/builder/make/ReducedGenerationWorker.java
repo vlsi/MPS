@@ -51,7 +51,6 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
     ModelAccess.instance().flushEventQueue();
     Future<IResult> res;
 
-
     BuildMakeService bms = new BuildMakeService();
     MakeSession ms = new MakeSession(project, getMyMessageHandler(), true) {
       @Override
