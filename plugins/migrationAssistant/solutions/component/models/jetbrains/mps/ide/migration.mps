@@ -28,30 +28,18 @@
     <import index="o8ag" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)" />
     <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="owhg" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util(MPS.IDEA/com.intellij.util@java_stub)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" />
-    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
-    <import index="a093" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs.newvfs.persistent(MPS.IDEA/com.intellij.openapi.vfs.newvfs.persistent@java_stub)" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="wqua" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
-    <import index="9nge" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.fileGenerator(MPS.Core/jetbrains.mps.generator.fileGenerator@java_stub)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
-    <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="nhkf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" />
-    <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="gct0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(MPS.Core/jetbrains.mps.smodel.adapter.structure.concept@java_stub)" />
-    <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
-    <import index="tk08" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
     <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="1y3e" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.migration.global(MPS.Workbench/jetbrains.mps.migration.global@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -97,7 +85,9 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
+        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
+      </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -225,6 +215,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -579,6 +572,21 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="2Om_nYXquPH" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myPropertiesListener" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="2Om_nYXquPJ" role="1tU5fm">
+        <ref role="3uigEE" node="2Om_nYXqla7" resolve="MigrationTrigger.MyPropertiesListener" />
+      </node>
+      <node concept="2ShNRf" id="2Om_nYXquPM" role="33vP2m">
+        <node concept="HV5vD" id="2Om_nYXquPN" role="2ShVmc">
+          <ref role="HV5vE" node="2Om_nYXqla7" resolve="MigrationTrigger.MyPropertiesListener" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="2Om_nYXquPL" role="1B3o_S" />
+    </node>
     <node concept="2tJIrI" id="1AzqgyAfbQd" role="jymVt" />
     <node concept="3clFbW" id="1AzqgyAfaNk" role="jymVt">
       <node concept="3cqZAl" id="1AzqgyAfaNl" role="3clF45" />
@@ -679,6 +687,32 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbF" id="2Om_nYXqzqW" role="3cqZAp">
+                    <node concept="2OqwBi" id="2Om_nYXqzqX" role="3clFbG">
+                      <node concept="2OqwBi" id="2Om_nYXqzrg" role="2Oq$k0">
+                        <node concept="37vLTw" id="2Om_nYXqzrf" role="2Oq$k0">
+                          <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+                        </node>
+                        <node concept="liA8E" id="2Om_nYXqzrh" role="2OqNvi">
+                          <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                          <node concept="3VsKOn" id="2Om_nYXqzr0" role="37wK5m">
+                            <ref role="3VsUkX" to="1y3e:~ProjectMigrationProperties" resolve="ProjectMigrationProperties" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="2Om_nYXqzr1" role="2OqNvi">
+                        <ref role="37wK5l" to="1y3e:~ProjectMigrationProperties.addListener(jetbrains.mps.migration.global.ProjectMigrationProperties$MigrationPropertiesReloadListener):void" resolve="addListener" />
+                        <node concept="2OqwBi" id="2Om_nYXqzr2" role="37wK5m">
+                          <node concept="Xjq3P" id="2Om_nYXqzr3" role="2Oq$k0">
+                            <ref role="1HBi2w" node="5SsFeroaajZ" resolve="MigrationTrigger" />
+                          </node>
+                          <node concept="2OwXpG" id="2Om_nYXqzr5" role="2OqNvi">
+                            <ref role="2Oxat5" node="2Om_nYXquPH" resolve="myPropertiesListener" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -732,7 +766,7 @@
                   </node>
                   <node concept="3SKdUt" id="73_poD1fA08" role="3cqZAp">
                     <node concept="3SKdUq" id="73_poD1fA8P" role="3SKWNk">
-                      <property role="3SKdUp" value="they are compiled at startup, they are only reloaded in a pre-startuo activity" />
+                      <property role="3SKdUp" value="they are compiled at startup, they are only reloaded in a pre-startup activity" />
                     </node>
                   </node>
                   <node concept="3clFbJ" id="5SsFeroaakG" role="3cqZAp">
@@ -989,7 +1023,8 @@
     <node concept="2tJIrI" id="285c2S_WG_A" role="jymVt" />
     <node concept="3clFb_" id="285c2S_WYWH" role="jymVt">
       <property role="TrG5h" value="tryMigratingProject" />
-      <node concept="3Tm6S6" id="285c2S_WYWI" role="1B3o_S" />
+      <property role="od$2w" value="true" />
+      <node concept="3Tm1VV" id="2Om_nYXqqv8" role="1B3o_S" />
       <node concept="3cqZAl" id="285c2S_WYWJ" role="3clF45" />
       <node concept="3clFbS" id="285c2S_WYWA" role="3clF47">
         <node concept="3clFbF" id="285c2S_WYWB" role="3cqZAp">
@@ -1699,6 +1734,40 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3gptLqNIa63" role="jymVt" />
+    <node concept="312cEu" id="2Om_nYXqla7" role="jymVt">
+      <property role="TrG5h" value="MyPropertiesListener" />
+      <property role="2bfB8j" value="true" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <node concept="3Tm6S6" id="2Om_nYXqla9" role="1B3o_S" />
+      <node concept="3uibUv" id="2Om_nYXqps2" role="EKbjA">
+        <ref role="3uigEE" to="1y3e:~ProjectMigrationProperties$MigrationPropertiesReloadListener" resolve="ProjectMigrationProperties.MigrationPropertiesReloadListener" />
+      </node>
+      <node concept="3clFb_" id="2Om_nYXqlab" role="jymVt">
+        <property role="TrG5h" value="onReload" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="2AHcQZ" id="2Om_nYXqlac" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+        <node concept="3clFbS" id="2Om_nYXqlad" role="3clF47">
+          <node concept="1QHqEM" id="2Om_nYXqpQr" role="3cqZAp">
+            <node concept="1QHqEC" id="2Om_nYXqpQs" role="1QHqEI">
+              <node concept="3clFbS" id="2Om_nYXqpQt" role="1bW5cS">
+                <node concept="3clFbF" id="2Om_nYXqq7B" role="3cqZAp">
+                  <node concept="1rXfSq" id="2Om_nYXqq7A" role="3clFbG">
+                    <ref role="37wK5l" node="285c2S_WYWH" resolve="tryMigratingProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="2Om_nYXqlat" role="1B3o_S" />
+        <node concept="3cqZAl" id="2Om_nYXqlau" role="3clF45" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2Om_nYXqiRa" role="jymVt" />
     <node concept="3clFb_" id="6MUcJMtBBjy" role="jymVt">
       <property role="TrG5h" value="executeWizard" />
       <node concept="3cqZAl" id="6MUcJMtBBj$" role="3clF45" />
@@ -2009,7 +2078,7 @@
       </node>
       <node concept="TZ5HA" id="3gptLqNJMW2" role="TZ5H$">
         <node concept="1dT_AC" id="3gptLqNJMW3" role="1dT_Ay">
-          <property role="1dT_AB" value="Whether some change requires migration to be executed, the user is notified about that and the project is reloaded " />
+          <property role="1dT_AB" value="Whether some change requires migration to be executed, the user is notified about that and the project is reloaded" />
         </node>
       </node>
       <node concept="TZ5HA" id="3gptLqNJMWU" role="TZ5H$">
@@ -2039,7 +2108,7 @@
       </node>
       <node concept="TZ5HA" id="3gptLqNJOhc" role="TZ5H$">
         <node concept="1dT_AC" id="3gptLqNJOhd" role="1dT_Ay">
-          <property role="1dT_AB" value="1. The reload cycle with migration wizard happens w/o addig repo listeners" />
+          <property role="1dT_AB" value="1. The reload cycle with migration wizard happens w/o adding repo listeners" />
         </node>
       </node>
       <node concept="TZ5HA" id="3gptLqNJOig" role="TZ5H$">
