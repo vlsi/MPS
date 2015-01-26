@@ -49,6 +49,7 @@
     <import index="cp6v" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/f:java_stub#9c8b4b95-5d89-4201-ad78-0b2db3a22768#test(jetbrains.mps.baseLanguage.test/test@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
+    <import index="7dtq" ref="f:diff_old#r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests@old)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -41719,59 +41720,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7s4edfJBLz4">
-    <property role="3GE5qa" value="DuplicateNode" />
-    <property role="TrG5h" value="DuplicateNotDuplicatable" />
-    <node concept="312cEu" id="7s4edfJBLz6" role="LiRBU">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="NotDuplicatable" />
-      <node concept="3clFb_" id="7s4edfJC$7F" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="abc" />
-        <property role="od$2w" value="false" />
-        <property role="DiZV1" value="false" />
-        <property role="2aFKle" value="false" />
-        <node concept="3clFbS" id="7s4edfJC$7I" role="3clF47" />
-        <node concept="3Tm1VV" id="7s4edfJCzZI" role="1B3o_S" />
-        <node concept="10Oyi0" id="7s4edfJC$bM" role="3clF45">
-          <node concept="LIFWc" id="7s4edfJC$bY" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="3" />
-            <property role="p6zMs" value="3" />
-            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-        </node>
-      </node>
-      <node concept="2tJIrI" id="7s4edfJBLzB" role="jymVt" />
-      <node concept="3Tm1VV" id="7s4edfJBLz7" role="1B3o_S" />
-    </node>
-    <node concept="3clFb_" id="7s4edfJC$ck" role="LiZbd">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="abc" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="7s4edfJC$cl" role="3clF47" />
-      <node concept="3Tm1VV" id="7s4edfJC$cm" role="1B3o_S" />
-      <node concept="10Oyi0" id="7s4edfJC$cn" role="3clF45">
-        <node concept="LIFWc" id="7s4edfJC$co" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="3" />
-          <property role="p6zMs" value="3" />
-          <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="7s4edfJC$kg" role="LjaKd">
-      <node concept="2HxZob" id="7s4edfJC$ke" role="3cqZAp">
-        <node concept="1iFQzN" id="7s4edfJC$kk" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:3M9DpEEa3zL" resolve="CopyThisDown" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="7wuMSYjK5IB">
     <property role="TrG5h" value="IntroduceLocalVariableFromAnonymousClassMethod" />
     <property role="3GE5qa" value="IntroduceVariable" />
@@ -41872,7 +41820,7 @@
           </node>
           <node concept="3clFbF" id="l2cEPUqYEp" role="3cqZAp">
             <node concept="37vLTw" id="l2cEPUqYId" role="3clFbG">
-              <ref role="3cqZAo" node="l2cEPUqYI4" resolve="runnable" />
+              <ref role="3cqZAo" to="7dtq:l2cEPUqYI4" resolve="runnable" />
             </node>
           </node>
         </node>

@@ -22,7 +22,7 @@ public class DuplicateNotDuplicatable_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8576042073329703110", "8576042073329910548");
+      initEditor("8576042073329703110", "4089982167774017904");
       this.invokeAction("jetbrains.mps.ide.editor.actions.CopyThisDown_Action");
     }
   }
