@@ -20,9 +20,9 @@ import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MoveProperyUp_Action extends BaseAction {
+public class MovePropertyUp_Action extends BaseAction {
   private static final Icon ICON = null;
-  public MoveProperyUp_Action() {
+  public MovePropertyUp_Action() {
     super("Move Property Up", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -42,7 +42,7 @@ public class MoveProperyUp_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MoveProperyUp", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "MovePropertyUp", t);
       }
       this.disable(event.getPresentation());
     }
@@ -74,9 +74,9 @@ public class MoveProperyUp_Action extends BaseAction {
       Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "This refactoring is not supported in MPS 3.2.\n" + "The right way to perform this change is to\n" + "1. Deprecate the old property\n" + "2. Create a new property\n" + "3. Write a migration to migrate the old property into the new one", "Unsupported refactoring");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MoveProperyUp", t);
+        LOG.error("User's action execute method failed. Action:" + "MovePropertyUp", t);
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MoveProperyUp_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MovePropertyUp_Action.class);
 }

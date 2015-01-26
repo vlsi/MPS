@@ -9,18 +9,40 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationScriptBuilder {
 
-  public static SNode createMigrationSciript(Language language, SNode body, String name) {
+  private SNode myScript;
+
+  private MigrationScriptBuilder(Language language) {
     SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
-    SNode ms = SNodeOperations.cast(ClassLikeUtil.createNewClassLike(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "2260648088429212842"), migrationModel), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
-    SLinkOperations.setTarget(MigrationScript_Behavior.call_getMethod_7153805464403784143(ms, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), body);
-    SPropertyOperations.set(ms, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
-    return ms;
+    myScript = SNodeOperations.cast(ClassLikeUtil.createNewClassLike(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "2260648088429212842"), migrationModel), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+  }
+
+  public static MigrationScriptBuilder createMigrationScript(Language language) {
+    return new MigrationScriptBuilder(language);
+  }
+
+  public MigrationScriptBuilder setName(String name) {
+    SPropertyOperations.set(myScript, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
+    return this;
+  }
+
+  public MigrationScriptBuilder setBody(SNode body) {
+    SLinkOperations.setTarget(MigrationScript_Behavior.call_getMethod_7153805464403784143(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), body);
+    return this;
+  }
+
+  public MigrationScriptBuilder setExecuteMethod(SNode method) {
+    SNodeOperations.replaceWithAnother(MigrationScript_Behavior.call_getMethod_7153805464403784143(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), method);
+    return this;
+  }
+
+  public SNode getScript() {
+    return myScript;
   }
 
 }
