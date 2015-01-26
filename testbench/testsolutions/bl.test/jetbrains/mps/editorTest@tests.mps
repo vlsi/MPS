@@ -48,6 +48,7 @@
     <import index="4rc5" ref="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" />
     <import index="cp6v" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/f:java_stub#9c8b4b95-5d89-4201-ad78-0b2db3a22768#test(jetbrains.mps.baseLanguage.test/test@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
+    <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -41756,6 +41757,126 @@
       <node concept="2HxZob" id="7s4edfJC$ke" role="3cqZAp">
         <node concept="1iFQzN" id="7s4edfJC$kk" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:3M9DpEEa3zL" resolve="CopyThisDown" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7wuMSYjK5IB">
+    <property role="TrG5h" value="IntroduceVariableFromAnonymousClassMethod" />
+    <property role="3GE5qa" value="IntroduceVariable" />
+    <node concept="312cEu" id="7wuMSYjKg5J" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="IntroduceAnonymousClassTest" />
+      <node concept="2YIFZL" id="7wuMSYjKgaO" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="7wuMSYjKgaP" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="7wuMSYjKgaQ" role="1tU5fm">
+            <node concept="17QB3L" id="7wuMSYjKgaR" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="7wuMSYjKgaS" role="3clF45" />
+        <node concept="3Tm1VV" id="7wuMSYjKgaT" role="1B3o_S" />
+        <node concept="3clFbS" id="7wuMSYjKgaU" role="3clF47">
+          <node concept="3clFbF" id="7wuMSYjK$gA" role="3cqZAp">
+            <node concept="2ShNRf" id="7wuMSYjK$1Q" role="3clFbG">
+              <node concept="YeOm9" id="7wuMSYjK$1R" role="2ShVmc">
+                <node concept="1Y3b0j" id="7wuMSYjK$1S" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="7wuMSYjK$1T" role="1B3o_S" />
+                  <node concept="3clFb_" id="7wuMSYjK$1U" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="run" />
+                    <property role="DiZV1" value="false" />
+                    <property role="IEkAT" value="false" />
+                    <node concept="3Tm1VV" id="7wuMSYjK$1V" role="1B3o_S">
+                      <node concept="LIFWc" id="7wuMSYjK$zk" role="lGtFl">
+                        <property role="LIFWa" value="4" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="4" />
+                        <property role="p6zMs" value="4" />
+                        <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+                      </node>
+                    </node>
+                    <node concept="3cqZAl" id="7wuMSYjK$1W" role="3clF45" />
+                    <node concept="3clFbS" id="7wuMSYjK$1X" role="3clF47" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7wuMSYjKg5K" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="7wuMSYjKvsb" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="IntroduceAnonymousClassTest" />
+      <node concept="2YIFZL" id="7wuMSYjKvsc" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="7wuMSYjKvsd" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="7wuMSYjKvse" role="1tU5fm">
+            <node concept="17QB3L" id="7wuMSYjKvsf" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="7wuMSYjKvsg" role="3clF45" />
+        <node concept="3Tm1VV" id="7wuMSYjKvsh" role="1B3o_S" />
+        <node concept="3clFbS" id="7wuMSYjKvsi" role="3clF47">
+          <node concept="3cpWs8" id="7wuMSYjK$6f" role="3cqZAp">
+            <node concept="3cpWsn" id="7wuMSYjK$6g" role="3cpWs9">
+              <property role="TrG5h" value="runnable" />
+              <node concept="3uibUv" id="7wuMSYjK$6h" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
+              </node>
+              <node concept="2ShNRf" id="7wuMSYjK$6i" role="33vP2m">
+                <node concept="YeOm9" id="7wuMSYjK$6j" role="2ShVmc">
+                  <node concept="1Y3b0j" id="7wuMSYjK$6k" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
+                    <node concept="3Tm1VV" id="7wuMSYjK$6l" role="1B3o_S" />
+                    <node concept="3clFb_" id="7wuMSYjK$6m" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="run" />
+                      <property role="DiZV1" value="false" />
+                      <property role="IEkAT" value="false" />
+                      <node concept="3Tm1VV" id="7wuMSYjK$6n" role="1B3o_S" />
+                      <node concept="3cqZAl" id="7wuMSYjK$6o" role="3clF45" />
+                      <node concept="3clFbS" id="7wuMSYjK$6p" role="3clF47" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="LIFWc" id="7wuMSYjK$pF" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="8" />
+                <property role="LIFWd" value="VDNCC_property_name" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7wuMSYjK$6q" role="3cqZAp">
+            <node concept="2OqwBi" id="7wuMSYjK$6r" role="3clFbG">
+              <node concept="37vLTw" id="7wuMSYjK$6s" role="2Oq$k0">
+                <ref role="3cqZAo" node="7wuMSYjK$6g" resolve="runnable" />
+              </node>
+              <node concept="liA8E" id="7wuMSYjK$6t" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7wuMSYjKvsu" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="7wuMSYjK$G6" role="LjaKd">
+      <node concept="2HxZob" id="7wuMSYjK$G4" role="3cqZAp">
+        <node concept="1iFQzN" id="7wuMSYjK$JO" role="3iKnsn">
+          <ref role="1iFR8X" to="xq5q:8qS5$SbRd" resolve="IntroduceVariable" />
         </node>
       </node>
     </node>

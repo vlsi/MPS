@@ -3268,17 +3268,32 @@
     <node concept="lpD6D" id="3FJ0r$qO3bY" role="lpD6w">
       <ref role="lpD7u" to="hbb4:1S4GctIhVsk" resolve="IntroduceConstantFromAnonimousClass" />
     </node>
+    <node concept="lpD6D" id="7wuMSYjJDNi" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:7wuMSYjJtVu" resolve="IntroduceConstantFromOperation" />
+    </node>
+    <node concept="lpD6D" id="7wuMSYjIW3w" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:7wuMSYjHAbi" resolve="IntroduceFieldFromOperation" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3cc" role="lpD6w">
       <ref role="lpD7u" to="hbb4:3waFG77kqjB" resolve="IntroduceFinalField" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cb" role="lpD6w">
       <ref role="lpD7u" to="hbb4:3waFG77kiZl" resolve="IntroduceFinalLocalVariable" />
     </node>
+    <node concept="lpD6D" id="7wuMSYjIWqN" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:7wuMSYjIOsd" resolve="IntroduceLocalVariableFromArray" />
+    </node>
     <node concept="lpD6D" id="7s4edfJAVDl" role="lpD6w">
       <ref role="lpD7u" to="hbb4:7s4edfJ_IDY" resolve="IntroduceLocalVariableFromMethodCall" />
     </node>
+    <node concept="lpD6D" id="7wuMSYjGCcI" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:7wuMSYjGlyX" resolve="IntroduceLocalVariableFromOperation" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3bW" role="lpD6w">
       <ref role="lpD7u" to="hbb4:2GBYV6rKlYL" resolve="IntroduceVariableFromAnonimousClass" />
+    </node>
+    <node concept="lpD6D" id="7wuMSYjKHfM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7wuMSYjK5IB" resolve="IntroduceVariableFromAnonymousClassMethod" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c8" role="lpD6w">
       <ref role="lpD7u" to="hbb4:639v8iJcA6v" resolve="IntroduceVariableFromWildcards" />
