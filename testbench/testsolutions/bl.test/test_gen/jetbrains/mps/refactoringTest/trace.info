@@ -3390,9 +3390,9 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8576042073329166974">
     <file name="IntroduceLocalVariableFromMethodCall_Test.java">
-      <node id="8576042073329166974" at="22,67,23,119" concept="1" />
-      <node id="8576042073329166974" at="23,119,24,143" concept="1" />
-      <node id="8576042073329166975" at="28,69,29,46" concept="1" />
+      <node id="8576042073329166974" at="22,76,23,119" concept="1" />
+      <node id="8576042073329166974" at="23,119,24,152" concept="1" />
+      <node id="8576042073329166975" at="28,78,29,46" concept="1" />
       <node id="8576042073329166975" at="29,46,30,46" concept="1" />
       <node id="8576042073329166978" at="30,46,31,94" concept="5" />
       <node id="8576042073329166983" at="31,94,32,249" concept="1" />
@@ -3401,16 +3401,16 @@
       <node id="8576042073329167003" at="35,7,36,292" concept="5" />
       <node id="8576042073329167003" at="36,292,37,291" concept="5" />
       <node id="8576042073329167003" at="37,291,38,146" concept="1" />
-      <node id="8576042073329166974" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8576042073329166974" at="21,0,26,0" concept="4" trace="test_IntroduceLocalVariableFromMethodCall#()V" />
       <node id="8576042073329167003" at="34,34,39,7" concept="0" />
-      <node id="8576042073329166975" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
-      <scope id="8576042073329166974" at="22,67,24,143" />
+      <node id="8576042073329166975" at="28,0,41,0" concept="4" trace="test_IntroduceLocalVariableFromMethodCall#()V" />
+      <scope id="8576042073329166974" at="22,76,24,152" />
       <scope id="8576042073329167003" at="35,7,38,146">
         <var name="nodesAfter" id="8576042073329167003" />
         <var name="nodesBefore" id="8576042073329167003" />
       </scope>
       <scope id="8576042073329166974" at="21,0,26,0" />
-      <scope id="8576042073329166975" at="28,69,39,7">
+      <scope id="8576042073329166975" at="28,78,39,7">
         <var name="refactoring" id="8576042073329166979" />
       </scope>
       <scope id="8576042073329166975" at="28,0,41,0" />
@@ -3420,9 +3420,9 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8655579351371307197">
     <file name="IntroduceLocalVariableFromOperation_Test.java">
-      <node id="8655579351371307197" at="22,67,23,119" concept="1" />
-      <node id="8655579351371307197" at="23,119,24,142" concept="1" />
-      <node id="8655579351371307198" at="28,69,29,46" concept="1" />
+      <node id="8655579351371307197" at="22,75,23,119" concept="1" />
+      <node id="8655579351371307197" at="23,119,24,150" concept="1" />
+      <node id="8655579351371307198" at="28,77,29,46" concept="1" />
       <node id="8655579351371307198" at="29,46,30,46" concept="1" />
       <node id="8655579351371307201" at="30,46,31,94" concept="5" />
       <node id="8655579351371307206" at="31,94,32,251" concept="1" />
@@ -3431,16 +3431,16 @@
       <node id="8655579351371307221" at="35,7,36,292" concept="5" />
       <node id="8655579351371307221" at="36,292,37,291" concept="5" />
       <node id="8655579351371307221" at="37,291,38,146" concept="1" />
-      <node id="8655579351371307197" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8655579351371307197" at="21,0,26,0" concept="4" trace="test_IntroduceLocalVariableFromOperation#()V" />
       <node id="8655579351371307221" at="34,34,39,7" concept="0" />
-      <node id="8655579351371307198" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
-      <scope id="8655579351371307197" at="22,67,24,142" />
+      <node id="8655579351371307198" at="28,0,41,0" concept="4" trace="test_IntroduceLocalVariableFromOperation#()V" />
+      <scope id="8655579351371307197" at="22,75,24,150" />
       <scope id="8655579351371307221" at="35,7,38,146">
         <var name="nodesAfter" id="8655579351371307221" />
         <var name="nodesBefore" id="8655579351371307221" />
       </scope>
       <scope id="8655579351371307197" at="21,0,26,0" />
-      <scope id="8655579351371307198" at="28,69,39,7">
+      <scope id="8655579351371307198" at="28,77,39,7">
         <var name="refactoring" id="8655579351371307202" />
       </scope>
       <scope id="8655579351371307198" at="28,0,41,0" />
@@ -3461,9 +3461,9 @@
       <node id="8655579351371637482" at="35,7,36,292" concept="5" />
       <node id="8655579351371637482" at="36,292,37,291" concept="5" />
       <node id="8655579351371637482" at="37,291,38,146" concept="1" />
-      <node id="8655579351371637458" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8655579351371637458" at="21,0,26,0" concept="4" trace="test_IntroduceFieldFromOperation#()V" />
       <node id="8655579351371637482" at="34,34,39,7" concept="0" />
-      <node id="8655579351371637459" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8655579351371637459" at="28,0,41,0" concept="4" trace="test_IntroduceFieldFromOperation#()V" />
       <scope id="8655579351371637458" at="22,67,24,134" />
       <scope id="8655579351371637482" at="35,7,38,146">
         <var name="nodesAfter" id="8655579351371637482" />
@@ -3480,9 +3480,9 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8655579351371958029">
     <file name="IntroduceLocalVariableFromArray_Test.java">
-      <node id="8655579351371958029" at="22,67,23,119" concept="1" />
-      <node id="8655579351371958029" at="23,119,24,138" concept="1" />
-      <node id="8655579351371958030" at="28,69,29,46" concept="1" />
+      <node id="8655579351371958029" at="22,71,23,119" concept="1" />
+      <node id="8655579351371958029" at="23,119,24,142" concept="1" />
+      <node id="8655579351371958030" at="28,73,29,46" concept="1" />
       <node id="8655579351371958030" at="29,46,30,46" concept="1" />
       <node id="8655579351371958033" at="30,46,31,94" concept="5" />
       <node id="8655579351371958038" at="31,94,32,249" concept="1" />
@@ -3491,16 +3491,16 @@
       <node id="8655579351371958053" at="35,7,36,292" concept="5" />
       <node id="8655579351371958053" at="36,292,37,291" concept="5" />
       <node id="8655579351371958053" at="37,291,38,146" concept="1" />
-      <node id="8655579351371958029" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8655579351371958029" at="21,0,26,0" concept="4" trace="test_IntroduceLocalVariableFromArray#()V" />
       <node id="8655579351371958053" at="34,34,39,7" concept="0" />
-      <node id="8655579351371958030" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
-      <scope id="8655579351371958029" at="22,67,24,138" />
+      <node id="8655579351371958030" at="28,0,41,0" concept="4" trace="test_IntroduceLocalVariableFromArray#()V" />
+      <scope id="8655579351371958029" at="22,71,24,142" />
       <scope id="8655579351371958053" at="35,7,38,146">
         <var name="nodesAfter" id="8655579351371958053" />
         <var name="nodesBefore" id="8655579351371958053" />
       </scope>
       <scope id="8655579351371958029" at="21,0,26,0" />
-      <scope id="8655579351371958030" at="28,69,39,7">
+      <scope id="8655579351371958030" at="28,73,39,7">
         <var name="refactoring" id="8655579351371958034" />
       </scope>
       <scope id="8655579351371958030" at="28,0,41,0" />
@@ -3510,9 +3510,9 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8655579351372127966">
     <file name="IntroduceConstantFromOperation_Test.java">
-      <node id="8655579351372127966" at="22,67,23,119" concept="1" />
-      <node id="8655579351372127966" at="23,119,24,137" concept="1" />
-      <node id="8655579351372127967" at="28,69,29,46" concept="1" />
+      <node id="8655579351372127966" at="22,70,23,119" concept="1" />
+      <node id="8655579351372127966" at="23,119,24,140" concept="1" />
+      <node id="8655579351372127967" at="28,72,29,46" concept="1" />
       <node id="8655579351372127967" at="29,46,30,46" concept="1" />
       <node id="8655579351372127970" at="30,46,31,84" concept="5" />
       <node id="8655579351372127975" at="31,84,32,251" concept="1" />
@@ -3521,16 +3521,16 @@
       <node id="8655579351372127990" at="35,7,36,292" concept="5" />
       <node id="8655579351372127990" at="36,292,37,291" concept="5" />
       <node id="8655579351372127990" at="37,291,38,146" concept="1" />
-      <node id="8655579351372127966" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
+      <node id="8655579351372127966" at="21,0,26,0" concept="4" trace="test_IntroduceConstantFromOperation#()V" />
       <node id="8655579351372127990" at="34,34,39,7" concept="0" />
-      <node id="8655579351372127967" at="28,0,41,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
-      <scope id="8655579351372127966" at="22,67,24,137" />
+      <node id="8655579351372127967" at="28,0,41,0" concept="4" trace="test_IntroduceConstantFromOperation#()V" />
+      <scope id="8655579351372127966" at="22,70,24,140" />
       <scope id="8655579351372127990" at="35,7,38,146">
         <var name="nodesAfter" id="8655579351372127990" />
         <var name="nodesBefore" id="8655579351372127990" />
       </scope>
       <scope id="8655579351372127966" at="21,0,26,0" />
-      <scope id="8655579351372127967" at="28,69,39,7">
+      <scope id="8655579351372127967" at="28,72,39,7">
         <var name="refactoring" id="8655579351372127971" />
       </scope>
       <scope id="8655579351372127967" at="28,0,41,0" />

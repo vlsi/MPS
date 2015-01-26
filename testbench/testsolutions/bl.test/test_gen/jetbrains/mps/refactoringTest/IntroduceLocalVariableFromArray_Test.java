@@ -19,13 +19,13 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 @MPSLaunch
 public class IntroduceLocalVariableFromArray_Test extends BaseTransformationTest {
   @Test
-  public void test_IntroduceFinalLocalVariable() throws Throwable {
+  public void test_IntroduceLocalVariableFromArray() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.IntroduceLocalVariableFromArray_Test$TestBody", "test_IntroduceFinalLocalVariable", true);
+    this.runTest("jetbrains.mps.refactoringTest.IntroduceLocalVariableFromArray_Test$TestBody", "test_IntroduceLocalVariableFromArray", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_IntroduceFinalLocalVariable() throws Exception {
+    public void test_IntroduceLocalVariableFromArray() throws Exception {
       this.addNodeById("8655579351371958056");
       this.addNodeById("8655579351371958074");
       IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();

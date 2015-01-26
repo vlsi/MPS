@@ -24723,7 +24723,7 @@
     <property role="TrG5h" value="IntroduceLocalVariableFromMethodCall" />
     <property role="3GE5qa" value="introduceVariable" />
     <node concept="1LZb2c" id="7s4edfJ_IDZ" role="1SL9yI">
-      <property role="TrG5h" value="IntroduceFinalLocalVariable" />
+      <property role="TrG5h" value="IntroduceLocalVariableFromMethodCall" />
       <node concept="3cqZAl" id="7s4edfJ_IE0" role="3clF45" />
       <node concept="3clFbS" id="7s4edfJ_IE1" role="3clF47">
         <node concept="3cpWs8" id="7s4edfJ_IE2" role="3cqZAp">
@@ -24875,7 +24875,7 @@
     <property role="TrG5h" value="IntroduceLocalVariableFromOperation" />
     <property role="3GE5qa" value="introduceVariable" />
     <node concept="1LZb2c" id="7wuMSYjGlyY" role="1SL9yI">
-      <property role="TrG5h" value="IntroduceFinalLocalVariable" />
+      <property role="TrG5h" value="IntroduceLocalVariableFromOperation" />
       <node concept="3cqZAl" id="7wuMSYjGlyZ" role="3clF45" />
       <node concept="3clFbS" id="7wuMSYjGlz0" role="3clF47">
         <node concept="3cpWs8" id="7wuMSYjGlz1" role="3cqZAp">
@@ -25035,7 +25035,7 @@
     <property role="TrG5h" value="IntroduceFieldFromOperation" />
     <property role="3GE5qa" value="introduceVariable" />
     <node concept="1LZb2c" id="7wuMSYjHAbj" role="1SL9yI">
-      <property role="TrG5h" value="IntroduceFinalLocalVariable" />
+      <property role="TrG5h" value="IntroduceFieldFromOperation" />
       <node concept="3cqZAl" id="7wuMSYjHAbk" role="3clF45" />
       <node concept="3clFbS" id="7wuMSYjHAbl" role="3clF47">
         <node concept="3cpWs8" id="7wuMSYjHAbm" role="3cqZAp">
@@ -25200,7 +25200,7 @@
     <property role="TrG5h" value="IntroduceLocalVariableFromArray" />
     <property role="3GE5qa" value="introduceVariable" />
     <node concept="1LZb2c" id="7wuMSYjIOse" role="1SL9yI">
-      <property role="TrG5h" value="IntroduceFinalLocalVariable" />
+      <property role="TrG5h" value="IntroduceLocalVariableFromArray" />
       <node concept="3cqZAl" id="7wuMSYjIOsf" role="3clF45" />
       <node concept="3clFbS" id="7wuMSYjIOsg" role="3clF47">
         <node concept="3cpWs8" id="7wuMSYjIOsh" role="3cqZAp">
@@ -25364,7 +25364,7 @@
     <property role="TrG5h" value="IntroduceConstantFromOperation" />
     <property role="3GE5qa" value="introduceVariable" />
     <node concept="1LZb2c" id="7wuMSYjJtVv" role="1SL9yI">
-      <property role="TrG5h" value="IntroduceFinalLocalVariable" />
+      <property role="TrG5h" value="IntroduceConstantFromOperation" />
       <node concept="3cqZAl" id="7wuMSYjJtVw" role="3clF45" />
       <node concept="3clFbS" id="7wuMSYjJtVx" role="3clF47">
         <node concept="3cpWs8" id="7wuMSYjJtVy" role="3cqZAp">

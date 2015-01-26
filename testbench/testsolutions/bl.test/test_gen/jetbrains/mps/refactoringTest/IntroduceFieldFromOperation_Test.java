@@ -19,13 +19,13 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 @MPSLaunch
 public class IntroduceFieldFromOperation_Test extends BaseTransformationTest {
   @Test
-  public void test_IntroduceFinalLocalVariable() throws Throwable {
+  public void test_IntroduceFieldFromOperation() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.IntroduceFieldFromOperation_Test$TestBody", "test_IntroduceFinalLocalVariable", true);
+    this.runTest("jetbrains.mps.refactoringTest.IntroduceFieldFromOperation_Test$TestBody", "test_IntroduceFieldFromOperation", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_IntroduceFinalLocalVariable() throws Exception {
+    public void test_IntroduceFieldFromOperation() throws Exception {
       this.addNodeById("8655579351371637485");
       this.addNodeById("8655579351371637503");
       IntroduceFieldRefactoring refactoring = new IntroduceFieldRefactoring();

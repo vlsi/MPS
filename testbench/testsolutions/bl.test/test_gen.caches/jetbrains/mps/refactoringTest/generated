@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3pzzjd3ulpg63fyveujr24dyg8uoxsj">
+<dependencies version="2" modelHash="-atr5nn9cbqm9fd9r6t3vfmtrza6hkt5">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -14882,7 +14882,7 @@
     <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" />
     <file name="ExtractWithStaticFieldReference_Test.java" />
   </source>
-  <source id="8576042073329166974" name="IntroduceLocalVariableFromMethodCall" hash="-8dwd3oc4i16guvj28muqyvnhnxom9mr" dependsOnNodes="true">
+  <source id="8576042073329166974" name="IntroduceLocalVariableFromMethodCall" hash="-4ty7avjuuf4e7fxdsp7l0pabzt0utb9" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />
@@ -15011,7 +15011,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IntroduceLocalVariableFromMethodCall_Test.java" />
   </source>
-  <source id="8655579351371307197" name="IntroduceLocalVariableFromOperation" hash="-uujsnusafaavw29zqmtghi6hiyp5jp" dependsOnNodes="true">
+  <source id="8655579351371307197" name="IntroduceLocalVariableFromOperation" hash="5fyw2kifb2uugp8iotv7airm4ipnd6p" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />
@@ -15140,7 +15140,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IntroduceLocalVariableFromOperation_Test.java" />
   </source>
-  <source id="8655579351371637458" name="IntroduceFieldFromOperation" hash="-1lybjek6u6mdcmhimcrg3d9fda9b2c9" dependsOnNodes="true">
+  <source id="8655579351371637458" name="IntroduceFieldFromOperation" hash="7f6dluvx9jucfyiy6su6lkoz88p4goi" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />
@@ -15269,7 +15269,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IntroduceFieldFromOperation_Test.java" />
   </source>
-  <source id="8655579351371958029" name="IntroduceLocalVariableFromArray" hash="-95v1tocnydytja5hwk41jfenodl6bxq" dependsOnNodes="true">
+  <source id="8655579351371958029" name="IntroduceLocalVariableFromArray" hash="4s3aj5h5rltm9fa6gkc1v3bbjz0jniv" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />
@@ -15398,7 +15398,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IntroduceLocalVariableFromArray_Test.java" />
   </source>
-  <source id="8655579351372127966" name="IntroduceConstantFromOperation" hash="1wixoux6kjjuzwo5urkdn8ijypjzaba" dependsOnNodes="true">
+  <source id="8655579351372127966" name="IntroduceConstantFromOperation" hash="3s3eb527751ed49vp9b9bfdfi0b4pau" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />

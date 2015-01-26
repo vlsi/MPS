@@ -19,13 +19,13 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 @MPSLaunch
 public class IntroduceConstantFromOperation_Test extends BaseTransformationTest {
   @Test
-  public void test_IntroduceFinalLocalVariable() throws Throwable {
+  public void test_IntroduceConstantFromOperation() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.IntroduceConstantFromOperation_Test$TestBody", "test_IntroduceFinalLocalVariable", true);
+    this.runTest("jetbrains.mps.refactoringTest.IntroduceConstantFromOperation_Test$TestBody", "test_IntroduceConstantFromOperation", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_IntroduceFinalLocalVariable() throws Exception {
+    public void test_IntroduceConstantFromOperation() throws Exception {
       this.addNodeById("8655579351372127993");
       this.addNodeById("8655579351372128011");
       IntroduceConstantRefactoring refactoring = new IntroduceConstantRefactoring();
