@@ -25,8 +25,8 @@ public class MigrationScript_0 extends MigrationScriptBase {
   public SNode execute(SModule m, DataCollector collector_) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> propertyAttributes = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel attribute) {
-        return SModelOperations.nodes(((SModel) attribute), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
+      public Iterable<SNode> translate(SModel model) {
+        return SModelOperations.nodes(((SModel) model), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       }
     });
     Sequence.fromIterable(propertyAttributes).visitAll(new IVisitor<SNode>() {
@@ -36,8 +36,8 @@ public class MigrationScript_0 extends MigrationScriptBase {
     });
 
     Iterable<SNode> referenceAttributes = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel attribute) {
-        return SModelOperations.nodes(((SModel) attribute), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
+      public Iterable<SNode> translate(SModel model) {
+        return SModelOperations.nodes(((SModel) model), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
       }
     });
 
