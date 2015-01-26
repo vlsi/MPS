@@ -95,7 +95,7 @@ public class ProjectMigrationProperties extends MigrationProperties implements P
 
   @Override
   public void projectClosed() {
-
+    myProperties.clear();
   }
 
   @Override
