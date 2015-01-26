@@ -17,13 +17,10 @@ import java.util.LinkedHashSet;
 public class GenerateTask extends MpsLoadTask {
   private final GeneratorProperties myGenProps;
   private final JavaCompilerProperties myJavaCompilerProperties;
-  public static final String DEFAULT_TARGET_JAVA_VERSION = getDefaultJavaVersion();
   public GenerateTask() {
     myGenProps = new GeneratorProperties(myWhatToDo);
     myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false);
     myJavaCompilerProperties = new JavaCompilerProperties(myWhatToDo);
-    myJavaCompilerProperties.setTargetJavaVersion(DEFAULT_TARGET_JAVA_VERSION);
-
   }
   @Override
   protected String getWorkerClass() {
@@ -80,18 +77,4 @@ public class GenerateTask extends MpsLoadTask {
 
     return classPath;
   }
-  private static String getDefaultJavaVersion() {
-    String property = System.getProperty("java.version");
-    if (property.startsWith("1.6")) {
-      return "1.6";
-    } else
-    if (property.startsWith("1.7")) {
-      return "1.7";
-    } else
-    if (property.startsWith("1.8")) {
-      return "1.8";
-    }
-    return "1.6";
-  }
-
 }

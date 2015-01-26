@@ -43,6 +43,7 @@ import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
@@ -412,7 +413,8 @@ public class UsagesView implements IExternalizeable {
         }
       }
 
-      if (myMakeSession.compareAndSet(null, new MakeSession(myView.myProject, null, false))) {
+      final Project mpsProject = myView.myProject;
+      if (myMakeSession.compareAndSet(null, new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), false))) {
         try {
           if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
             IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(models).resources(false));

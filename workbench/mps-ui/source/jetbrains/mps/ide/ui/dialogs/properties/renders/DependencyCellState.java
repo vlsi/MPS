@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,42 @@
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.SimpleTextAttributes;
+import org.jetbrains.annotations.Nullable;
+
+import java.awt.Color;
 
 public enum DependencyCellState {
   NORMAL(SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES),
-  NOT_AVALIABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),
+  NOT_AVAILABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),
   NOT_IN_SCOPE(SimpleTextAttributes.ERROR_ATTRIBUTES), //new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))
-  UNUSED(SimpleTextAttributes.GRAYED_ATTRIBUTES);
+  /**
+   * Superfluous entries that can be removed
+   */
+  UNUSED(SimpleTextAttributes.GRAYED_ATTRIBUTES),
+  /**
+   * Engaged generator entry that might need attention as the language is directly in use by the model
+   */
+  SUPERFLUOUS_ENGAGED(
+      new SimpleTextAttributes(NORMAL.getTextAttributes().getStyle() | SimpleTextAttributes.STYLE_WAVED, NORMAL.getTextAttributes().getFgColor(), Color.YELLOW),
+      "Language is used by the model directly, no need to engage it explicitly");
 
   private final SimpleTextAttributes myTextAttributes;
+  private final String myTooltip;
 
   private DependencyCellState (SimpleTextAttributes textAttributes) {
+    this(textAttributes, null);
+  }
+
+  private DependencyCellState (SimpleTextAttributes textAttributes, @Nullable String tooltip) {
     myTextAttributes = textAttributes;
+    myTooltip = tooltip;
   }
 
   public SimpleTextAttributes getTextAttributes() {
     return myTextAttributes;
+  }
+
+  public String getTooltip() {
+    return myTooltip;
   }
 }

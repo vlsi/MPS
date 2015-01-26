@@ -11435,19 +11435,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1381470748182374883">
     <file name="HexIntegerLiteral_Behavior.java">
-      <node id="1381470748182375039" at="13,106,14,166" concept="13" />
+      <node id="6473069772995530938" at="14,9,15,190" concept="13" />
+      <node id="6473069772995432087" at="16,41,17,15" concept="13" />
       <node id="1381470748182374883" at="11,0,13,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1381470748182374883" at="13,0,16,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
+      <node id="6473069772995432060" at="13,106,18,5" concept="19" />
+      <node id="1381470748182374883" at="13,0,20,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
       <scope id="1381470748182374885" at="11,43,11,43" />
-      <scope id="1381470748182374896" at="13,106,14,166" />
+      <scope id="6473069772995432061" at="14,9,15,190" />
+      <scope id="6473069772995432085" at="16,0,17,15">
+        <var name="num" id="6473069772995432089" />
+      </scope>
+      <scope id="6473069772995432086" at="16,41,17,15" />
       <scope id="1381470748182374883" at="11,0,13,0">
         <var name="thisNode" id="1381470748182374883" />
       </scope>
-      <scope id="1381470748182374883" at="13,0,16,0">
+      <scope id="1381470748182374896" at="13,106,18,5" />
+      <scope id="1381470748182374883" at="13,0,20,0">
         <var name="module" id="1381470748182374897" />
         <var name="thisNode" id="1381470748182374883" />
       </scope>
-      <unit id="1381470748182374883" at="10,0,17,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" />
+      <unit id="1381470748182374883" at="10,0,21,0" name="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1457547649399766338">

@@ -2,7 +2,7 @@
 <model ref="r:82298b99-88ac-48a3-9119-4c699a39ac9a(testPrimitiveType.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="8a53c705-15e4-4f87-8796-457845605512" name="jetbrains.mps.lang.typesystem.testLang" version="-1" />
+    <use id="8a53c705-15e4-4f87-8796-457845605512" name="testPrimitiveType" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />

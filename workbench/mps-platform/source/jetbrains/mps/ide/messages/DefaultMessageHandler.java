@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,11 @@ package jetbrains.mps.ide.messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
+ * Implementation of {@link jetbrains.mps.messages.IMessageHandler} that pipes
+ * messages to a dedicated IDE view, or to log if no IDE view is available
  * Igor Alshannikov
  * Jul 27, 2007
  */
@@ -30,11 +32,10 @@ public class DefaultMessageHandler implements IMessageHandler {
   public DefaultMessageHandler(Project project) {
     MessagesViewTool tool = project.getComponent(MessagesViewTool.class);
     if (tool != null) {
-      tool.resetAutoscrollOption();
       myDelegate = tool.newHandler();
     } else {
       //it might happen if we haven't opened IDE yet
-      myDelegate = IMessageHandler.NULL_HANDLER;
+      myDelegate = new LogHandler(Logger.getLogger(DefaultMessageHandler.class));
     }
   }
 

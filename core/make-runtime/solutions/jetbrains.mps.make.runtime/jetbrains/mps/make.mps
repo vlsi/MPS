@@ -191,15 +191,30 @@
         <child id="2546654756694997556" name="reference" index="92FcQ" />
         <child id="3106559687488913694" name="line" index="2XjZqd" />
       </concept>
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="8465538089690917625" name="param" index="TUOzN" />
+      </concept>
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
+        <property id="6612597108003615642" name="name" index="2U$1Ai" />
+        <child id="6612597108003615643" name="line" index="2U$1Aj" />
       </concept>
       <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
         <reference id="2217234381367530213" name="classifier" index="VXe09" />
@@ -777,8 +792,20 @@
                 <ref role="2Oxat5" node="7yGn3z4N63o" resolve="myMessageHandler" />
               </node>
             </node>
-            <node concept="37vLTw" id="2BHiRxgm8KG" role="37vLTx">
-              <ref role="3cqZAo" node="70hZ3jyJmTn" resolve="messageHandler" />
+            <node concept="3K4zz7" id="7JDtVAB4QVa" role="37vLTx">
+              <node concept="37vLTw" id="7JDtVAB4QVb" role="3K4GZi">
+                <ref role="3cqZAo" node="70hZ3jyJmTn" resolve="messageHandler" />
+              </node>
+              <node concept="10M0yZ" id="7JDtVAB4QVc" role="3K4E3e">
+                <ref role="1PxDUh" to="bq0a:~IMessageHandler" resolve="IMessageHandler" />
+                <ref role="3cqZAo" to="bq0a:~IMessageHandler.NULL_HANDLER" resolve="NULL_HANDLER" />
+              </node>
+              <node concept="3clFbC" id="7JDtVAB4QVd" role="3K4Cdx">
+                <node concept="10Nm6u" id="7JDtVAB4QVe" role="3uHU7w" />
+                <node concept="37vLTw" id="7JDtVAB4QVf" role="3uHU7B">
+                  <ref role="3cqZAo" node="70hZ3jyJmTn" resolve="messageHandler" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -863,20 +890,8 @@
                 <ref role="2Oxat5" node="7yGn3z4N63o" resolve="myMessageHandler" />
               </node>
             </node>
-            <node concept="3K4zz7" id="2BjwmTxTblb" role="37vLTx">
-              <node concept="37vLTw" id="2BjwmTxTdIf" role="3K4GZi">
-                <ref role="3cqZAo" node="2BjwmTxT8ca" resolve="messageHandler" />
-              </node>
-              <node concept="10M0yZ" id="2BjwmTxTbn8" role="3K4E3e">
-                <ref role="1PxDUh" to="bq0a:~IMessageHandler" resolve="IMessageHandler" />
-                <ref role="3cqZAo" to="bq0a:~IMessageHandler.NULL_HANDLER" resolve="NULL_HANDLER" />
-              </node>
-              <node concept="3clFbC" id="2BjwmTxTaP8" role="3K4Cdx">
-                <node concept="10Nm6u" id="2BjwmTxTb4X" role="3uHU7w" />
-                <node concept="37vLTw" id="2BjwmTxT8YR" role="3uHU7B">
-                  <ref role="3cqZAo" node="2BjwmTxT8ca" resolve="messageHandler" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="7JDtVAB5SW$" role="37vLTx">
+              <ref role="3cqZAo" node="2BjwmTxT8ca" resolve="messageHandler" />
             </node>
           </node>
         </node>
@@ -923,12 +938,134 @@
           <ref role="3uigEE" to="bq0a:~IMessageHandler" resolve="IMessageHandler" />
         </node>
         <node concept="2AHcQZ" id="2BjwmTxT8Lo" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="37vLTG" id="2BjwmTxT8eP" role="3clF46">
         <property role="TrG5h" value="cleanMake" />
         <node concept="10P_77" id="2BjwmTxT8fT" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="7JDtVAB5S$7" role="lGtFl">
+        <node concept="TUZQ0" id="7JDtVAB5S$a" role="TUOzN">
+          <property role="TUZQ4" value="MPS project to run make at" />
+          <node concept="zr_55" id="7JDtVAB5S$c" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8bc" resolve="mpsProject" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="7JDtVAB5S$d" role="TUOzN">
+          <property role="TUZQ4" value="where to pipe make messages" />
+          <node concept="zr_55" id="7JDtVAB5S$f" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8ca" resolve="messageHandler" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="7JDtVAB5S$g" role="TUOzN">
+          <property role="TUZQ4" value="&lt;code&gt;true&lt;/code&gt; to perform complete rebuild, not make of dirty models only." />
+          <node concept="zr_55" id="7JDtVAB5S$i" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8eP" resolve="cleanMake" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7JDtVAB5SL5" role="TZ5H$">
+          <node concept="1dT_AC" id="7JDtVAB5SL6" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SLb" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SLc" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SLh" role="1dT_Ay">
+                <property role="1dT_AB" value="MakeSession" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SLa" role="1dT_Ay">
+            <property role="1dT_AB" value=" captures global parameters for the make session to run" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7JDtVAB5SLt" role="TZ5H$">
+          <node concept="1dT_AC" id="7JDtVAB5SLu" role="1dT_Ay">
+            <property role="1dT_AB" value="Note, unlike earlier versions, " />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SLR" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SLS" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SLX" role="1dT_Ay">
+                <property role="1dT_AB" value="null" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SLQ" role="1dT_Ay">
+            <property role="1dT_AB" value=" message handler is no longer supported." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7JDtVAB5SMA" role="TZ5H$">
+          <node concept="1dT_AC" id="7JDtVAB5SMB" role="1dT_Ay">
+            <property role="1dT_AB" value="Use " />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SN7" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SN8" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SNh" role="1dT_Ay">
+                <property role="1dT_AB" value="IMessageHandler.NULL_HANDLER" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SN6" role="1dT_Ay">
+            <property role="1dT_AB" value=" if " />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SM0" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SM1" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SMa" role="1dT_Ay">
+                <property role="1dT_AB" value="/dev/null" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SLZ" role="1dT_Ay">
+            <property role="1dT_AB" value=" for messages is indeed what you want." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7JDtVAB5SOg" role="TZ5H$">
+          <node concept="1dT_AC" id="7JDtVAB5SOh" role="1dT_Ay">
+            <property role="1dT_AB" value="Otherwise, use meaningful handler, e.g. " />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SP6" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SP7" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SPc" role="1dT_Ay">
+                <property role="1dT_AB" value="DefaultMakeMessageHandler" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SP5" role="1dT_Ay">
+            <property role="1dT_AB" value=" or " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7JDtVAB5SPr" role="TZ5H$">
+          <node concept="1dT_AC" id="7JDtVAB5SPs" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SPf" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SPg" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SPp" role="1dT_Ay">
+                <property role="1dT_AB" value="DefaultMessageHandler" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SPe" role="1dT_Ay">
+            <property role="1dT_AB" value="from IDE, " />
+          </node>
+          <node concept="2U$1Ah" id="7JDtVAB5SZg" role="1dT_Ay">
+            <property role="2U$1Ai" value="code" />
+            <node concept="TZ5HA" id="7JDtVAB5SZh" role="2U$1Aj">
+              <node concept="1dT_AC" id="7JDtVAB5SZq" role="1dT_Ay">
+                <property role="1dT_AB" value="IMessageHandler.LogHandler" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="7JDtVAB5SZf" role="1dT_Ay">
+            <property role="1dT_AB" value=" or any tailored handler for non-IDE uses." />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="7yGn3z4N4Np" role="jymVt">

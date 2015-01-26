@@ -17,18 +17,35 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.ColoredTableCellRenderer;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.BorderFactory;
 import javax.swing.JTable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * TableCellRenderer for SModuleReference
+ * TableCellRenderer for SModuleReference, which may alter presentation of of a module
+ * according to conditions supplied via {@link #addCellState(org.jetbrains.mps.util.Condition, DependencyCellState)}
  */
 public class ModuleTableCellRender extends ColoredTableCellRenderer {
+  protected final SRepository myRepository;
+  private final List<Pair<Condition<SModuleReference>, DependencyCellState>> myCellStates;;
+
+  public ModuleTableCellRender(@NotNull SRepository repository) {
+    myRepository = repository;
+    myCellStates = new ArrayList<Pair<Condition<SModuleReference>, DependencyCellState>>(2);
+  }
+
+  public void addCellState(@NotNull Condition<SModuleReference> condition, @NotNull DependencyCellState cellState) {
+    myCellStates.add(new Pair<Condition<SModuleReference>, DependencyCellState>(condition, cellState));
+  }
+
   @Override
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
     setPaintFocusBorder(false);
@@ -37,19 +54,26 @@ public class ModuleTableCellRender extends ColoredTableCellRenderer {
     if (value != null) {
       final SModuleReference moduleReference = (SModuleReference) value;
       final SModule[] module = {null};
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
-          module[0] = MPSModuleRepository.getInstance().getModule(moduleReference.getModuleId());
+          module[0] = moduleReference.resolve(myRepository);
         }
       });
       setIcon(IconManager.getIconFor(module[0]));
 
-      append(moduleReference.getModuleName(), getDependencyCellState(moduleReference).getTextAttributes());
+      final DependencyCellState cellState = getDependencyCellState(moduleReference);
+      append(moduleReference.getModuleName(), cellState.getTextAttributes());
+      setToolTipText(cellState.getTooltip());
     }
   }
 
   protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
+    for (Pair<Condition<SModuleReference>, DependencyCellState> cellState : myCellStates) {
+      if (cellState.o1.met(moduleReference)) {
+        return cellState.o2;
+      }
+    }
     return DependencyCellState.NORMAL;
   }
 }

@@ -11,11 +11,10 @@ import javax.swing.tree.TreeNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +43,7 @@ public class MakeNamespace_Action extends BaseAction {
         return false;
       }
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null).actionText(MakeNamespace_Action.this.cleanMake);
+    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeNamespace_Action.this.selectedModules(_params)).cleanMake(MakeNamespace_Action.this.cleanMake).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -68,12 +67,8 @@ public class MakeNamespace_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("ppNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
@@ -84,7 +79,7 @@ public class MakeNamespace_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
+      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeNamespace_Action.this.selectedModules(_params)).cleanMake(MakeNamespace_Action.this.cleanMake)).executeAction();
 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

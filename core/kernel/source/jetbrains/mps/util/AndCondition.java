@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 
-public class AndCondition<T> implements Condition<T> {
-  private Condition<T> myC1;
-  private Condition<T> myC2;
-  private boolean myExecuteBoth = false;
+public final class AndCondition<T> implements Condition<T> {
+  private final Condition<T> myC1;
+  private final Condition<T> myC2;
+  private final boolean myExecuteBoth;
 
-  public AndCondition(Condition<T> c1, Condition<T> c2) {
-    myC1 = c1;
-    myC2 = c2;
+  public AndCondition(@NotNull Condition<T> c1, @NotNull Condition<T> c2) {
+    this(c1, c2, false);
   }
 
-  public AndCondition(Condition<T> c1, Condition<T> c2, boolean executeBoth) {
+  public AndCondition(@NotNull Condition<T> c1, @NotNull Condition<T> c2, boolean executeBoth) {
     myC1 = c1;
     myC2 = c2;
     myExecuteBoth = executeBoth;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,6 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -122,10 +121,9 @@ public class MPSMakeMediator {
   }
 
   public boolean build() {
-    ProjectOperationContext context = new ProjectOperationContext(myProject);
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(context, myToMake.keySet())).toListSequence();
+    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(myToMake.keySet())).toListSequence();
     ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
       public SModule select(IMResource r) {
         return r.module();
@@ -176,7 +174,7 @@ public class MPSMakeMediator {
     Future<IResult> res;
 
     BuildMakeService bms = new BuildMakeService();
-    MakeSession ms = new MakeSession(context, myMessageHandler, true) {
+    MakeSession ms = new MakeSession(myProject, myMessageHandler, true) {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
         scriptBuilder.withFacetNames(
@@ -346,8 +344,8 @@ public class MPSMakeMediator {
   }
 
 
-  private Iterable<IMResource> collectResources(IOperationContext context, Collection<SModel> models) {
-    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+  private Iterable<IMResource> collectResources(Collection<SModel> models) {
+    return Sequence.fromIterable(new ModelsToResources(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }

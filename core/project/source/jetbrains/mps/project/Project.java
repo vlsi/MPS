@@ -150,12 +150,10 @@ public abstract class Project implements MPSModuleOwner {
     myModules.remove(module);
   }
 
-  /** @deprecated
-   * should be left for compatibility with generated plugins (editor openers)
-   * @see jetbrains.mps.smodel.IOperationContext
+  /**
+   * Generic extension mechanism
+   * @return component instance or <code>null</code> if no extension of specified kind found.
    */
-  @Deprecated
-  @ToRemove(version = 3.2)
   public abstract <T> T getComponent(Class<T> t);
 
   public abstract String getName();

@@ -18,6 +18,7 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 
@@ -56,15 +57,38 @@ public class ThreadUtils {
   }
 
   /**
+   * Handy wrap for {@link #runInUIThreadAndWait(Runnable)} and {@link #runInUIThreadNoWait(Runnable)} as a Runnable
+   * one could pass to a facility that accepts Runnable
+   */
+  public static class RunInUIRunnable implements Runnable {
+    private final Runnable myDelegate;
+    private final boolean myWaitDelegateToComplete;
+
+    public RunInUIRunnable(@NotNull Runnable delegate, boolean wait) {
+      myDelegate = delegate;
+      myWaitDelegateToComplete = wait;
+    }
+
+    @Override
+    public void run() {
+      if (myWaitDelegateToComplete) {
+        runInUIThreadAndWait(myDelegate);
+      } else {
+        runInUIThreadNoWait(myDelegate);
+      }
+    }
+  }
+
+  /**
    * use {@link #isInEDT()}
    */
   @Deprecated
   public static boolean isEventDispatchThread() {
-    return ApplicationManager.getApplication().isDispatchThread();
+    return isInEDT();
   }
 
   public static boolean isInEDT() {
-    return isEventDispatchThread();
+    return ApplicationManager.getApplication().isDispatchThread();
   }
 
   public static void assertEDT() {

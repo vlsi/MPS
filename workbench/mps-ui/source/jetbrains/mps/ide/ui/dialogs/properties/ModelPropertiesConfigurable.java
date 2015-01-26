@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NotCondition;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
@@ -225,7 +226,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 @Override
                 public DependencyCellState compute() {
                   if (!StateUtil.isAvailable(modelReference)) {
-                    return DependencyCellState.NOT_AVALIABLE;
+                    return DependencyCellState.NOT_AVAILABLE;
                   }
                   if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
                     return DependencyCellState.NOT_IN_SCOPE;
@@ -388,7 +389,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
-      return new InModelModuleTableCellRender();
+      ModuleTableCellRender usedInModel = new ModuleTableCellRender(myModelProperties.getModelDescriptor().getRepository());
+      usedInModel.addCellState(myModelProperties.getUsedLanguageRemoveCondition(), DependencyCellState.UNUSED);
+      return usedInModel;
     }
 
     @Override
@@ -541,7 +544,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       myLangEngagedOnGenTM = new ModelsLangEngagedOnGenTM(myModelProperties);
       languagesTable.setModel(myLangEngagedOnGenTM);
 
-      languagesTable.setDefaultRenderer(SModuleReference.class, new InModelModuleTableCellRender());
+      ModuleTableCellRender engagedLanguages = new ModuleTableCellRender(myModelProperties.getModelDescriptor().getRepository());
+      engagedLanguages.addCellState(new NotCondition<SModuleReference>(myModelProperties.getUsedLanguageRemoveCondition()), DependencyCellState.SUPERFLUOUS_ENGAGED);
+      languagesTable.setDefaultRenderer(SModuleReference.class, engagedLanguages);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(languagesTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -634,17 +639,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myIsDefSModelDescr)
         myModelProperties.setGenerateIntoModelFolder(myGenerateIntoModelFolderCheckBox.isSelected());
       myLangEngagedOnGenTM.apply();
-    }
-  }
-
-  private class InModelModuleTableCellRender extends ModuleTableCellRender {
-    @Override
-    protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
-      if (myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference)) {
-        return DependencyCellState.UNUSED;
-      }
-
-      return super.getDependencyCellState(moduleReference);
     }
   }
 }

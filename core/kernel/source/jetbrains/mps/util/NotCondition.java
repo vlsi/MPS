@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.compiler;
+package jetbrains.mps.util;
 
-public interface JavaCompilerOptionsProvider {
-  JavaCompilerOptions getJavaCompilerOptions();
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.util.Condition;
+
+/**
+ * @author Artem Tikhomirov
+ */
+public final class NotCondition<T> implements Condition<T> {
+  private final Condition<T> myDelegate;
+
+  public NotCondition(@NotNull Condition<T> delegate) {
+    myDelegate = delegate;
+  }
+
+  @Override
+  public boolean met(T obj) {
+    return !myDelegate.met(obj);
+  }
 }

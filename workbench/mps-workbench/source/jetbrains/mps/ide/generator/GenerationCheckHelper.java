@@ -17,10 +17,16 @@ package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
+/**
+ * DON'T USE THIS CODE AS IT'S SCHEDULED FOR REFACTORING/REMOVAL
+ * FIXME MakeActionImpl could use ModelValidator directly, there's little sense in static instance of this class
+ */
+@ToRemove(version = 3.2)
 public class GenerationCheckHelper {
 
   private static GenerationCheckHelper INSTANCE = new GenerationCheckHelper();

@@ -24,7 +24,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
@@ -267,7 +269,21 @@ public abstract class LanguageRuntime {
       // after 3.2, prior to removing of this code, check expectations of the calling code - now it expects non-null
       // structure aspect, while this generated factory method supply one only when non-empty structure model exists.
       // The requirement to have structure model shall be relaxed.
-      return (T) getStructureAspectDescriptor();
+      StructureAspectDescriptor oldDescriptor = getStructureAspectDescriptor();
+      // In case of empty structure model StructureAspectDescriptor class does not exist. In such case returning empty structure.
+      if (oldDescriptor == null) {
+        return (T) new BaseStructureAspectDescriptor() {
+          @Override
+          public Collection<ConceptDescriptor> getDescriptors() {
+            return Collections.EMPTY_LIST;
+          }
+          @Override
+          public ConceptDescriptor getDescriptor(String fqName) {
+            return null;
+          }
+        };
+      }
+      return (T) oldDescriptor;
     }
     if (descriptorInterface == BehaviorAspectDescriptor.class) {
       // same here, ConceptRegistry instantiates InterpretedBehaviorDescriptor if can't get one from LanguageRuntime - inconsistency.

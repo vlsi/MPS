@@ -15,7 +15,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -42,7 +42,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null).actionText(MakeOrRebuildModelsFromChangeList_Action.this.rebuild);
+    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -66,8 +66,8 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("virtualFiles", event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY));
@@ -79,7 +79,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), MakeOrRebuildModelsFromChangeList_Action.this.rebuild).executeAction();
+      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);

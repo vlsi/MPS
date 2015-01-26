@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.make.TextPreviewUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -70,7 +71,7 @@ public class TextPreviewModel_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), null, true);
+      MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new DefaultMakeMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))), true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
         TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
       }

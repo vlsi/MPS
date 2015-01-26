@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -560,7 +560,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected TableCellRenderer getTableCellRender() {
-      return new ModuleTableCellRender();
+      return new ModuleTableCellRender(myProject.getRepository());
     }
 
     protected void findUsages(Object value) {}
