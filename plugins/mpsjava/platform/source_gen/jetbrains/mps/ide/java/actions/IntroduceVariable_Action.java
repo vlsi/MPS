@@ -7,11 +7,12 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -23,7 +24,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
@@ -42,11 +42,11 @@ public class IntroduceVariable_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode nodeToRefactor = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    SNode nodeToRefactor = new ModelComputeRunnable<SNode>(new Computable<SNode>() {
       public SNode compute() {
         return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), true, false);
       }
-    });
+    }).runRead(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess());
     if (ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(nodeToRefactor)))) {
       return false;
     }
@@ -103,11 +103,11 @@ public class IntroduceVariable_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceVariable");
 
       final IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();
-      final SNode nodeToRefactor = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      final SNode nodeToRefactor = new ModelComputeRunnable<SNode>(new Computable<SNode>() {
         public SNode compute() {
           return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), true, false);
         }
-      });
+      }).runRead(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess());
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
