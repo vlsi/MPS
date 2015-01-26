@@ -16,23 +16,34 @@
 package jetbrains.mps.module;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Straightforward implementation of SDependency interface
  */
 @Immutable
 public final class SDependencyImpl implements SDependency {
-  private final SModule myTarget;
+  private final SModuleReference myTarget;
+  private SModule myTargetModule;
+  private final SRepository myContextRepo;
   private final SDependencyScope myScope;
   private final boolean myIsExport;
-  public SDependencyImpl(@NotNull SModule target, @NotNull SDependencyScope scope, boolean export) {
+  public SDependencyImpl(@NotNull SModuleReference target, @Nullable SRepository contextRepo, @NotNull SDependencyScope scope, boolean export) {
     myTarget = target;
+    myContextRepo = contextRepo;
     myScope = scope;
     myIsExport = export;
+  }
+
+  public SDependencyImpl(@NotNull SModule target, @NotNull SDependencyScope scope, boolean export) {
+    this(target.getModuleReference(), null, scope, export);
+    myTargetModule = target;
   }
 
   @Override
@@ -46,10 +57,21 @@ public final class SDependencyImpl implements SDependency {
     return myIsExport;
   }
 
-  @Override
   @NotNull
-  public SModule getTarget() {
+  @Override
+  public SModuleReference getTargetModule() {
     return myTarget;
+  }
+
+  @Override
+  public SModule getTarget() {
+    if (myTargetModule != null) {
+      return myTargetModule;
+    }
+    if (myContextRepo == null) {
+      return null;
+    }
+    return myTarget.resolve(myContextRepo);
   }
 
   @Override
@@ -63,7 +85,7 @@ public final class SDependencyImpl implements SDependency {
       return false;
     }
     SDependencyImpl o = (SDependencyImpl) obj;
-    return myTarget == o.myTarget && myScope == o.myScope && myIsExport == o.myIsExport;
+    return myTarget.equals(o.myTarget) && myScope == o.myScope && myIsExport == o.myIsExport;
   }
 
   @Override
