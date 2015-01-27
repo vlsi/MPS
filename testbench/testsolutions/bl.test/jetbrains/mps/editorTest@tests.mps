@@ -49,7 +49,6 @@
     <import index="cp6v" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/f:java_stub#9c8b4b95-5d89-4201-ad78-0b2db3a22768#test(jetbrains.mps.baseLanguage.test/test@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
-    <import index="7dtq" ref="f:diff_old#r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests@old)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -41820,7 +41819,7 @@
           </node>
           <node concept="3clFbF" id="l2cEPUqYEp" role="3cqZAp">
             <node concept="37vLTw" id="l2cEPUqYId" role="3clFbG">
-              <ref role="3cqZAo" to="7dtq:l2cEPUqYI4" resolve="runnable" />
+              <ref role="3cqZAo" node="l2cEPUqYI4" resolve="runnable" />
             </node>
           </node>
         </node>
