@@ -25,9 +25,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
+import jetbrains.mps.baseLanguage.scopes.MethodsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.baseLanguage.constraints.ConstraintsUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -116,11 +117,13 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
               if (superClassifier == null) {
                 return null;
               }
-              return new FilteringScope(new NamedElementsScope(((Iterable<SNode>) ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), superClassifier, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+              SNode classifierType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), superClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
+              MethodsScope scope = new MethodsScope(classifierType, Sequence.fromIterable(Members.visibleInstanceMethods(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), "virtual_isAbstract_1232982539764", new Object[]{}));
+                  return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{}));
                 }
-              })))) {};
+              }));
+              return scope;
             }
           }
         };
