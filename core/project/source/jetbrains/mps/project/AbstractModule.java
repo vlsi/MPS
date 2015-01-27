@@ -375,7 +375,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     assertCanRead();
     ArrayList<Dependency> rv = new ArrayList<Dependency>();
     for (SDependency dep : getDeclaredDependencies()) {
-      rv.add(new Dependency(dep.getTarget().getModuleReference(), dep.isReexport()));
+      rv.add(new Dependency(dep.getTargetModule(), dep.isReexport()));
     }
     return rv;
   }

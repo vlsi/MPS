@@ -101,7 +101,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Language language = createLanguage();
     Assert.assertTrue(safeGetClass(language, CLASS_TO_LOAD) == null);
     addClassTo(language);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         language.reload();
@@ -115,7 +115,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Generator generator = createGenerator();
     Assert.assertTrue(safeGetClass(generator, CLASS_TO_LOAD) == null);
     addClassTo(generator);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         generator.reload();
@@ -129,7 +129,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Solution solution = createSolution();
     addClassTo(solution);
     solution.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         solution.reload();
@@ -144,7 +144,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     addClassTo(solution);
     solution.getModuleDescriptor().setKind(SolutionKind.NONE);
     final Language l1 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadModule(solution);
@@ -160,7 +160,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Solution solution = createSolution();
     addClassTo(solution);
     solution.getModuleDescriptor().setKind(SolutionKind.NONE);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadModule(solution);
@@ -173,7 +173,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testReloadNonLoadableSolution() {
     final Solution solution = createSolution();
     solution.getModuleDescriptor().setKind(SolutionKind.NONE);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         solution.reload();
@@ -186,7 +186,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testReloadingSolutionKinds() {
     final Solution solution = createSolution();
     addClassTo(solution);
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         solution.getModuleDescriptor().setKind(SolutionKind.NONE);
@@ -209,7 +209,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testDepsAreLoadable1() {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         addClassTo(l2);
@@ -224,7 +224,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testDepsAreLoadable2() {
     final Language l = createLanguage();
     final Solution s = createSolution();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         addClassTo(s);
@@ -241,7 +241,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testNonLoadableDepsThrows() {
     final Language l = createLanguage();
     final Solution s = createSolution();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         addClassTo(s);
@@ -255,14 +255,14 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testBackDepsReload() {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l1.addDependency(l2.getModuleReference(), false);
         l1.reload();
       }
     });
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         addClassTo(l2);
@@ -275,7 +275,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @Test
   public void testLanguageAddRemove() {
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         final Language language = createLanguage();
@@ -287,7 +287,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @Test
   public void testUnload1() {
     final Language l1 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         removeModule(l1);
@@ -303,7 +303,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
     final Language l3 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l1.addDependency(l2.getModuleReference(), false);
@@ -323,7 +323,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   public void testModuleRecreation() {
     final Language l1 = createLanguage();
     final Language[] l2 = new Language[1];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         addClassTo(l1);
@@ -340,7 +340,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @Test
   public void testModuleRecreation2() {
     final Language[] l = new Language[1];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l[0] = createLanguage();
@@ -356,7 +356,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @Test
   public void testModuleRecreation3() {
     final Language[] l = new Language[3];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l[0] = createLanguage();
@@ -375,7 +375,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @Test
   public void testModuleDeps() {
     final Language[] l = new Language[2];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l[0] = createLanguage();
@@ -397,7 +397,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Language l3 = createLanguage();
     final Wrapper<Dependency> dep12 = new Wrapper<Dependency>();
     final Wrapper<Dependency> dep13 = new Wrapper<Dependency>();
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         dep12.setValue(l1.addDependency(l2.getModuleReference(), false));
@@ -409,14 +409,14 @@ public class ModulesReloadTest extends ModuleMpsTest {
     Assert.assertTrue(!classIsLoadableFromModule(l1));
     removeModule(l3);
     Assert.assertTrue(!classIsLoadableFromModule(l1));
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l1.removeDependency(dep12.getValue());
       }
     });
     Assert.assertTrue(!classIsLoadableFromModule(l1)); // still no, obviously
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         l1.removeDependency(dep13.getValue());

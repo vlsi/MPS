@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.TestLanguage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.After;
 
 import java.util.UUID;
@@ -53,14 +54,13 @@ public class ModuleMpsTest extends CoreMpsTest {
   private static final String TEST_PREFIX_DEVKIT = "TEST_DVK";
   private static final String TEST_PREFIX_GENERATOR = "TEST_GEN";
   private static int ourId = 0;
-  protected final ModelAccess myAccess = MPSModuleRepository.getInstance().getModelAccess();
 
   private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner();
 
   @After
   public void afterTest() {
     org.apache.log4j.LogManager.getLogger(ModuleMpsTest.class).info("Cleaning up after the test");
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
@@ -69,18 +69,30 @@ public class ModuleMpsTest extends CoreMpsTest {
   }
 
   /**
+   * This is the repository test modules get created/registered in.
+   * At the moment, bound to be instance of MPSModuleRepository (the only way to register/unregister module)
+   */
+  protected final SRepository getTestRepository() {
+    return MPSModuleRepository.getInstance();
+  }
+
+  protected final ModelAccess getModelAccess() {
+    return getTestRepository().getModelAccess();
+  }
+
+  /**
    * methods create modules and register it in the repository (assuming it is the only one)
    */
   protected Solution createSolution() {
     final Solution[] solutions = new Solution[1];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         SolutionDescriptor descriptor = new SolutionDescriptor();
         String uuid = UUID.randomUUID().toString();
         descriptor.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
         descriptor.setId(ModuleId.fromString(uuid));
-        solutions[0] = StubSolution.newInstance(descriptor, OWNER);
+        solutions[0] = StubSolution.newInstance(getTestRepository(), descriptor, OWNER);
       }
     });
     return solutions[0];
@@ -122,10 +134,10 @@ public class ModuleMpsTest extends CoreMpsTest {
 
   private Language createLanguageFromDescriptor(final LanguageDescriptor descriptor) {
     final Language[] languages = new Language[1];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        languages[0] = TestLanguage.newInstance(descriptor, OWNER);
+        languages[0] = TestLanguage.newInstance(getTestRepository(), descriptor, OWNER);
       }
     });
     return languages[0];
@@ -133,14 +145,14 @@ public class ModuleMpsTest extends CoreMpsTest {
 
   protected DevKit createDevKit() {
     final DevKit[] devKits = new DevKit[1];
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         DevkitDescriptor d = new DevkitDescriptor();
         String uuid = UUID.randomUUID().toString();
         d.setNamespace(TEST_PREFIX_DEVKIT + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
-        devKits[0] = (DevKit) ModuleRepositoryFacade.createModule(new ModuleHandle(null, d), OWNER);
+        devKits[0] = ((MPSModuleRepository) getTestRepository()).registerModule(new DevKit(d, null), OWNER);
       }
     });
     return devKits[0];
@@ -153,10 +165,10 @@ public class ModuleMpsTest extends CoreMpsTest {
   }
 
   protected void removeModule(final SModule module) {
-    myAccess.runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+        ((MPSModuleRepository) getTestRepository()).unregisterModule(module, OWNER);
       }
     });
   }

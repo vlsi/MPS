@@ -6,6 +6,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class DependencyTreeNode extends MPSTreeNode {
@@ -24,7 +25,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     return myLink;
   }
   public SModule getModule() {
-    return check_akkfj9_a0a4(myLink);
+    return myLink.module.resolve(ProjectHelper.getProjectRepository(myProject));
   }
   public void setDepLeaf() {
     String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
@@ -33,11 +34,5 @@ public class DependencyTreeNode extends MPSTreeNode {
   @Override
   public void doubleClick() {
     ProjectPane.getInstance(myProject).selectModule(getModule(), false);
-  }
-  private static SModule check_akkfj9_a0a4(DepLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.module;
-    }
-    return null;
   }
 }

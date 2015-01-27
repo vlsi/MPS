@@ -89,24 +89,25 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     ArrayList<String> warnings = new ArrayList<String>(5);
     HashSet<SModule> seen = new HashSet<SModule>();
     for (SDependency dep : myModule.getDeclaredDependencies()) {
-      if (seen.contains(dep.getTarget()) || (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
+      final SModule depTarget = dep.getTarget();
+      if (depTarget == null || seen.contains(depTarget) || (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
         continue;
       }
-      if (dep.getTarget() instanceof Generator) {
+      if (depTarget instanceof Generator) {
         HashSet<SModelReference> otherGeneratorModels = new HashSet<SModelReference>();
-        for (SModel m : dep.getTarget().getModels()) {
+        for (SModel m : depTarget.getModels()) {
           otherGeneratorModels.add(m.getReference());
         }
-        final Language otherGenLanguage = ((Generator) dep.getTarget()).getSourceLanguage();
+        final Language otherGenLanguage = ((Generator) depTarget).getSourceLanguage();
         for (SModel m : (otherGenLanguage == null ? Collections.<SModel>emptySet() : otherGenLanguage.getModels())) {
           otherGeneratorModels.add(m.getReference());
         }
-        seen.add(dep.getTarget());
+        seen.add(depTarget);
         if (CollectionUtil.intersects(dependencies.getCrossModelReferences(), otherGeneratorModels)) {
           continue;
         }
         // models of the dep.target are not referenced, likely superfluous dependency.
-        warnings.add(String.format("Superfluous dependency to generator %s, no generator template nor its source language's node is in use", dep.getTarget().getModuleName()));
+        warnings.add(String.format("Superfluous dependency to generator %s, no generator template nor its source language's node is in use", depTarget.getModuleName()));
       }
     }
     return warnings;

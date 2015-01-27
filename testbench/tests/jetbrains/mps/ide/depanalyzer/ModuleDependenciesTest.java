@@ -47,7 +47,7 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
   }
 
   private void testDependency(SModule source, SModule target, boolean showRuntime, int numPaths) {
-    final List<DepLink> paths = findPaths(new DependencyUtil().trackRuntime(showRuntime).build(source), target);
+    final List<DepLink> paths = findPaths(new DependencyUtil(getTestRepository()).trackRuntime(showRuntime).build(source), target);
     for (Iterator<DepLink> it = paths.iterator(); it.hasNext();) {
       DepLink e = it.next();
       if (!e.role.isDependency()) {
@@ -202,8 +202,8 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
     languages[1].addUsedDevkit(devKit.getModuleReference());
     languages[5].addExtendedLanguage(languages[6].getModuleReference());
 
-    final DepLink l0 = new DependencyUtil().trackRuntime(false).build(languages[0]);
-    final DepLink l1 = new DependencyUtil().trackRuntime(false).build(languages[1]);
+    final DepLink l0 = new DependencyUtil(getTestRepository()).trackRuntime(false).build(languages[0]);
+    final DepLink l1 = new DependencyUtil(getTestRepository()).trackRuntime(false).build(languages[1]);
 
     testUsedLanguage(l0, languages[1], 1);    //simple
     testUsedLanguage(l0, languages[2], 1);    //extended language is usedLanguage

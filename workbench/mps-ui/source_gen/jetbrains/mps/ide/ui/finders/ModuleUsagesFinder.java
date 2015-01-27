@@ -14,6 +14,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -65,7 +66,8 @@ public class ModuleUsagesFinder implements IFinder {
     return searchResults;
   }
   /*package*/ void collectUsagesInSolution(SModule searchedModule, Solution solution, SearchResults searchResults) {
-    if (getDeclaredDependenciesTargets(solution).contains(searchedModule)) {
+    SModuleReference searchModuleRef = searchedModule.getModuleReference();
+    if (getDeclaredDependenciesTargets(solution).contains(searchModuleRef)) {
       searchResults.add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
     if (new GlobalModuleDependenciesManager(solution).getUsedLanguages().contains(searchedModule)) {
@@ -74,17 +76,18 @@ public class ModuleUsagesFinder implements IFinder {
     }
   }
   /*package*/ void collectUsagesInLanguage(SModule searchedModule, Language language, SearchResults searchResults) {
-    if (language.getExtendedLanguageRefs().contains(searchedModule.getModuleReference())) {
+    SModuleReference searchModuleRef = searchedModule.getModuleReference();
+    if (language.getExtendedLanguageRefs().contains(searchModuleRef)) {
       searchResults.add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
     }
     if (new GlobalModuleDependenciesManager(language).getUsedLanguages().contains(searchedModule)) {
       searchResults.add(new SearchResult<Language>(language, USED_BY));
       collectUsagesInModels(searchedModule, language, searchResults);
     }
-    if (getDeclaredDependenciesTargets(language).contains(searchedModule)) {
+    if (getDeclaredDependenciesTargets(language).contains(searchModuleRef)) {
       searchResults.add(new SearchResult<Language>(language, DEPENDENT_MODULES));
     }
-    if (language.getRuntimeModulesReferences().contains(searchedModule.getModuleReference())) {
+    if (language.getRuntimeModulesReferences().contains(searchModuleRef)) {
       searchResults.add(new SearchResult<Language>(language, RUNTIME_MODULES));
       collectUsagesInModels(searchedModule, language, searchResults);
     }
@@ -93,7 +96,7 @@ public class ModuleUsagesFinder implements IFinder {
     boolean depExtends = false;
     boolean depRuntime = false;
     boolean depRegular = false;
-    for (SDependency dep : findDependencies(generator, searchedModule)) {
+    for (SDependency dep : findDependencies(generator, searchedModule.getModuleReference())) {
       if (dep.getScope() == SDependencyScope.EXTENDS) {
         depExtends = true;
       } else if (dep.getScope() == SDependencyScope.RUNTIME) {
@@ -120,34 +123,33 @@ public class ModuleUsagesFinder implements IFinder {
     if (devKit.getExportedLanguages().contains(searchedModule)) {
       searchResults.add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
     }
-    if (getDeclaredDependenciesTargets(devKit).contains(searchedModule)) {
+    SModuleReference searchModuleRef = searchedModule.getModuleReference();
+    if (getDeclaredDependenciesTargets(devKit).contains(searchModuleRef)) {
       searchResults.add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }
   /*package*/ void collectUsagesInModels(SModule searchedModule, SModule owner, SearchResults searchResults) {
-    for (SModel modelDescriptor : owner.getModels()) {
-      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+    for (SModel model : owner.getModels()) {
+      if (!(SModelStereotype.isUserModel(model))) {
         continue;
       }
-      if (SModelOperations.hasLanguage(modelDescriptor, searchedModule.getModuleReference())) {
-        SModel model = modelDescriptor;
+      if (SModelOperations.hasLanguage(model, searchedModule.getModuleReference())) {
         searchResults.add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }
     }
   }
-  /*package*/ static Set<SModule> getDeclaredDependenciesTargets(SModule module) {
-    Set<SModule> result = new HashSet<SModule>();
+  private static Set<SModuleReference> getDeclaredDependenciesTargets(SModule module) {
+    Set<SModuleReference> result = new HashSet<SModuleReference>();
     for (SDependency dep : module.getDeclaredDependencies()) {
-      result.add(dep.getTarget());
+      result.add(dep.getTargetModule());
     }
     return result;
   }
-  private static Set<SDependency> findDependencies(SModule from, SModule to) {
+  private static Set<SDependency> findDependencies(SModule from, SModuleReference to) {
     // FIXME nice candidate to move into SModule (along with findDependencies(SDependencyKind) 
     LinkedHashSet<SDependency> rv = new LinkedHashSet<SDependency>();
     for (SDependency dep : from.getDeclaredDependencies()) {
-      // XXX need to clarify whether SModule.equals or SModule.getReference().equals shall be used 
-      if (dep.getTarget().equals(to)) {
+      if (dep.getTargetModule().equals(to)) {
         rv.add(dep);
       }
     }
