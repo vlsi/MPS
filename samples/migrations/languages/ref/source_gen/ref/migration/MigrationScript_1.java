@@ -32,8 +32,8 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector__0) {
-    final Map<SModule, SNode> declData = collector__0.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
+  public SNode execute(SModule m, DataCollector collector_) {
+    final Map<SModule, SNode> declData = collector_.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 
     final Map<SModule, SNode> requiredData = declData;
 
