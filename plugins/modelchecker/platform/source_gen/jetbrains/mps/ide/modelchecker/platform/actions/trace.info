@@ -24,46 +24,34 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3119624751582469314">
     <file name="ModelPersistenceVersionChecker.java">
-      <node id="3119624751582469321" at="20,94,21,50" concept="4" />
-      <node id="3119624751582469328" at="21,50,22,124" concept="9" />
-      <node id="3119624751582469337" at="22,124,23,0" concept="12" />
-      <node id="3119624751583292142" at="24,47,25,72" concept="9" />
-      <node id="3119624751582715442" at="25,72,26,57" concept="9" />
-      <node id="3119624751583304709" at="29,34,30,25" concept="4" />
-      <node id="7054543711712776763" at="30,25,31,43" concept="4" />
-      <node id="404829981773975837" at="31,43,32,54" concept="4" />
-      <node id="7054543711712826629" at="32,54,33,44" concept="4" />
-      <node id="3119624751583321080" at="33,44,34,24" concept="10" />
-      <node id="3119624751582722710" at="36,18,37,319" concept="4" />
-      <node id="3119624751583068083" at="39,5,40,0" concept="12" />
-      <node id="3119624751582469411" at="40,0,41,19" concept="4" />
-      <node id="3119624751582469415" at="41,19,42,19" concept="10" />
-      <node id="3119624751582469315" at="17,0,19,0" concept="2" trace="ModelPersistenceVersionChecker#()V" />
-      <node id="3119624751583264994" at="29,0,36,0" concept="8" trace="doFix#()Z" />
-      <node id="3119624751583264988" at="27,59,36,18" concept="9" />
-      <node id="3119624751582714926" at="26,57,38,7" concept="7" />
-      <node id="3119624751582552419" at="23,0,39,5" concept="7" />
-      <node id="3119624751582469319" at="19,0,44,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <scope id="3119624751582469316" at="17,43,17,43" />
-      <scope id="3119624751582469315" at="17,0,19,0" />
-      <scope id="3119624751583264997" at="29,34,34,24" />
-      <scope id="3119624751583264994" at="29,0,36,0" />
-      <scope id="3119624751582714929" at="27,59,37,319">
-        <var name="fix" id="3119624751583264989" />
-      </scope>
-      <scope id="3119624751582552422" at="24,47,38,7">
+      <node id="3119624751582469321" at="19,94,20,50" concept="4" />
+      <node id="3119624751582469328" at="20,50,21,124" concept="9" />
+      <node id="3119624751582469337" at="21,124,22,0" concept="12" />
+      <node id="3119624751583292142" at="23,47,24,72" concept="9" />
+      <node id="3119624751582715442" at="24,72,25,57" concept="9" />
+      <node id="3119624751582722710" at="26,59,27,303" concept="4" />
+      <node id="3119624751583068083" at="29,5,30,0" concept="12" />
+      <node id="3119624751582469411" at="30,0,31,19" concept="4" />
+      <node id="3119624751582469415" at="31,19,32,19" concept="10" />
+      <node id="3119624751582469315" at="16,0,18,0" concept="2" trace="ModelPersistenceVersionChecker#()V" />
+      <node id="3119624751582714926" at="25,57,28,7" concept="7" />
+      <node id="3119624751582552419" at="22,0,29,5" concept="7" />
+      <node id="3119624751582469319" at="18,0,34,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <scope id="3119624751582469316" at="16,43,16,43" />
+      <scope id="3119624751582714929" at="26,59,27,303" />
+      <scope id="3119624751582469315" at="16,0,18,0" />
+      <scope id="3119624751582552422" at="23,47,28,7">
         <var name="currentVersion" id="3119624751582715443" />
         <var name="model" id="3119624751583292143" />
       </scope>
-      <scope id="3119624751582469320" at="20,94,42,19">
+      <scope id="3119624751582469320" at="19,94,32,19">
         <var name="results" id="3119624751582469329" />
       </scope>
-      <scope id="3119624751582469319" at="19,0,44,0">
+      <scope id="3119624751582469319" at="18,0,34,0">
         <var name="m" id="3119624751582469417" />
         <var name="monitor" id="3119624751582469419" />
       </scope>
-      <unit id="3119624751583264992" at="28,70,36,9" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelPersistenceVersionChecker$1" />
-      <unit id="3119624751582469314" at="16,0,45,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelPersistenceVersionChecker" />
+      <unit id="3119624751582469314" at="15,0,35,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelPersistenceVersionChecker" />
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793464912">

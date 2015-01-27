@@ -282,14 +282,12 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.IModelCheckerFix" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />

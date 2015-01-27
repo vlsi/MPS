@@ -10190,108 +10190,6 @@
             </node>
             <node concept="3clFbJ" id="2Hb8yVuADKI" role="3cqZAp">
               <node concept="3clFbS" id="2Hb8yVuADKL" role="3clFbx">
-                <node concept="3cpWs8" id="2Hb8yVuCK3s" role="3cqZAp">
-                  <node concept="3cpWsn" id="2Hb8yVuCK3t" role="3cpWs9">
-                    <property role="TrG5h" value="fix" />
-                    <node concept="3uibUv" id="2Hb8yVuCK3r" role="1tU5fm">
-                      <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
-                    </node>
-                    <node concept="3K4zz7" id="2Hb8yVuD2w9" role="33vP2m">
-                      <node concept="10Nm6u" id="2Hb8yVuD32K" role="3K4GZi" />
-                      <node concept="2ZW3vV" id="2Hb8yVuD1vp" role="3K4Cdx">
-                        <node concept="3uibUv" id="2Hb8yVuD1Z2" role="2ZW6by">
-                          <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
-                        </node>
-                        <node concept="37vLTw" id="2Hb8yVuD1gw" role="2ZW6bz">
-                          <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                        </node>
-                      </node>
-                      <node concept="2ShNRf" id="2Hb8yVuCK3u" role="3K4E3e">
-                        <node concept="YeOm9" id="2Hb8yVuCK3v" role="2ShVmc">
-                          <node concept="1Y3b0j" id="2Hb8yVuCK3w" role="YeSDq">
-                            <property role="2bfB8j" value="true" />
-                            <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                            <ref role="1Y3XeK" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
-                            <node concept="3Tm1VV" id="2Hb8yVuCK3x" role="1B3o_S" />
-                            <node concept="3clFb_" id="2Hb8yVuCK3y" role="jymVt">
-                              <property role="1EzhhJ" value="false" />
-                              <property role="TrG5h" value="doFix" />
-                              <node concept="10P_77" id="2Hb8yVuCK3z" role="3clF45" />
-                              <node concept="3Tm1VV" id="2Hb8yVuCK3$" role="1B3o_S" />
-                              <node concept="3clFbS" id="2Hb8yVuCK3_" role="3clF47">
-                                <node concept="3clFbF" id="2Hb8yVuCTK5" role="3cqZAp">
-                                  <node concept="2OqwBi" id="2Hb8yVuCTQ2" role="3clFbG">
-                                    <node concept="37vLTw" id="2Hb8yVuCTK3" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                                    </node>
-                                    <node concept="liA8E" id="2Hb8yVuCU0Y" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~SModel.load():void" resolve="load" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3clFbF" id="67ALy4l6L8V" role="3cqZAp">
-                                  <node concept="2OqwBi" id="67ALy4l6LBx" role="3clFbG">
-                                    <node concept="37vLTw" id="2Hb8yVuCSBE" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                                    </node>
-                                    <node concept="liA8E" id="67ALy4l6NaB" role="2OqNvi">
-                                      <ref role="37wK5l" to="d2v5:~PersistenceVersionAware.setPersistenceVersion(int):void" resolve="setPersistenceVersion" />
-                                      <node concept="3cmrfG" id="67ALy4l6NDh" role="37wK5m">
-                                        <property role="3cmrfH" value="9" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3clFbF" id="mufF$U4d4t" role="3cqZAp">
-                                  <node concept="2OqwBi" id="mufF$U4d4u" role="3clFbG">
-                                    <node concept="1eOMI4" id="mufF$U4d4v" role="2Oq$k0">
-                                      <node concept="10QFUN" id="mufF$U4d4w" role="1eOMHV">
-                                        <node concept="3uibUv" id="67ALy4l6Ptj" role="10QFUM">
-                                          <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
-                                        </node>
-                                        <node concept="37vLTw" id="2Hb8yVuCTjG" role="10QFUP">
-                                          <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="liA8E" id="mufF$U4d4z" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~EditableSModel.setChanged(boolean):void" resolve="setChanged" />
-                                      <node concept="3clFbT" id="67ALy4l6QXT" role="37wK5m">
-                                        <property role="3clFbU" value="true" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3clFbF" id="67ALy4l6Xk5" role="3cqZAp">
-                                  <node concept="2OqwBi" id="67ALy4l6Xk6" role="3clFbG">
-                                    <node concept="1eOMI4" id="67ALy4l6Xk7" role="2Oq$k0">
-                                      <node concept="10QFUN" id="67ALy4l6Xk8" role="1eOMHV">
-                                        <node concept="3uibUv" id="67ALy4l6Xk9" role="10QFUM">
-                                          <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
-                                        </node>
-                                        <node concept="37vLTw" id="2Hb8yVuCTql" role="10QFUP">
-                                          <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="liA8E" id="67ALy4l6Xkb" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~EditableSModel.save():void" resolve="save" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3cpWs6" id="2Hb8yVuCXJS" role="3cqZAp">
-                                  <node concept="3clFbT" id="2Hb8yVuCY2X" role="3cqZAk">
-                                    <property role="3clFbU" value="true" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="2Hb8yVuAFEm" role="3cqZAp">
                   <node concept="2OqwBi" id="2Hb8yVuAFWG" role="3clFbG">
                     <node concept="37vLTw" id="2Hb8yVuAFEl" role="2Oq$k0">
@@ -10304,41 +10202,33 @@
                         <node concept="37vLTw" id="2Hb8yVuAI9L" role="37wK5m">
                           <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
                         </node>
-                        <node concept="3cpWs3" id="2Hb8yVuBY1R" role="37wK5m">
-                          <node concept="10M0yZ" id="2Hb8yVuBYmg" role="3uHU7w">
-                            <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                            <ref role="3cqZAo" to="zofw:~ModelPersistence.LAST_VERSION" resolve="LAST_VERSION" />
-                          </node>
-                          <node concept="3cpWs3" id="2Hb8yVuBGI1" role="3uHU7B">
-                            <node concept="3cpWs3" id="2Hb8yVuBEYI" role="3uHU7B">
-                              <node concept="3cpWs3" id="2Hb8yVuAJcm" role="3uHU7B">
-                                <node concept="3cpWs3" id="2Hb8yVuBMyW" role="3uHU7B">
-                                  <node concept="Xl_RD" id="2Hb8yVuBMGl" role="3uHU7B">
-                                    <property role="Xl_RC" value="Model" />
-                                  </node>
-                                  <node concept="2OqwBi" id="2Hb8yVuAIHe" role="3uHU7w">
-                                    <node concept="37vLTw" id="2Hb8yVuAIo6" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
-                                    </node>
-                                    <node concept="LkI2h" id="2Hb8yVuAISD" role="2OqNvi" />
-                                  </node>
+                        <node concept="3cpWs3" id="2Hb8yVuBGI1" role="37wK5m">
+                          <node concept="3cpWs3" id="2Hb8yVuBEYI" role="3uHU7B">
+                            <node concept="3cpWs3" id="2Hb8yVuAJcm" role="3uHU7B">
+                              <node concept="3cpWs3" id="2Hb8yVuBMyW" role="3uHU7B">
+                                <node concept="Xl_RD" id="2Hb8yVuBMGl" role="3uHU7B">
+                                  <property role="Xl_RC" value="Model" />
                                 </node>
-                                <node concept="Xl_RD" id="2Hb8yVuAJlz" role="3uHU7w">
-                                  <property role="Xl_RC" value=" persistence version: " />
+                                <node concept="2OqwBi" id="2Hb8yVuAIHe" role="3uHU7w">
+                                  <node concept="37vLTw" id="2Hb8yVuAIo6" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
+                                  </node>
+                                  <node concept="LkI2h" id="2Hb8yVuAISD" role="2OqNvi" />
                                 </node>
                               </node>
-                              <node concept="37vLTw" id="2Hb8yVuBFhs" role="3uHU7w">
-                                <ref role="3cqZAo" node="2Hb8yVuADSN" resolve="currentVersion" />
+                              <node concept="Xl_RD" id="2Hb8yVuAJlz" role="3uHU7w">
+                                <property role="Xl_RC" value=" persistence version: " />
                               </node>
                             </node>
-                            <node concept="Xl_RD" id="2Hb8yVuBGXB" role="3uHU7w">
-                              <property role="Xl_RC" value=", currently supported version is " />
+                            <node concept="37vLTw" id="2Hb8yVuBFhs" role="3uHU7w">
+                              <ref role="3cqZAo" node="2Hb8yVuADSN" resolve="currentVersion" />
                             </node>
                           </node>
+                          <node concept="Xl_RD" id="2Hb8yVuBGXB" role="3uHU7w">
+                            <property role="Xl_RC" value=", try running `Migrate from Names to Ids` action" />
+                          </node>
                         </node>
-                        <node concept="37vLTw" id="2Hb8yVuCYl3" role="37wK5m">
-                          <ref role="3cqZAo" node="2Hb8yVuCK3t" resolve="fix" />
-                        </node>
+                        <node concept="10Nm6u" id="5dsJNHMwot3" role="37wK5m" />
                         <node concept="10M0yZ" id="2Hb8yVuAQom" role="37wK5m">
                           <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
                           <ref role="3cqZAo" node="3etVqSRKzLv" resolve="SEVERITY_WARNING" />

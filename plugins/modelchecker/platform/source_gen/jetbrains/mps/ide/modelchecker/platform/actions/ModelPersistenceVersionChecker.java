@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ModelPersistenceVersionChecker extends SpecificChecker {
@@ -25,16 +24,7 @@ public class ModelPersistenceVersionChecker extends SpecificChecker {
       final PersistenceVersionAware model = (PersistenceVersionAware) m;
       int currentVersion = model.getPersistenceVersion();
       if (currentVersion < ModelPersistence.LAST_VERSION) {
-        IModelCheckerFix fix = (model instanceof EditableSModel ? new IModelCheckerFix() {
-          public boolean doFix() {
-            model.load();
-            model.setPersistenceVersion(9);
-            ((EditableSModel) model).setChanged(true);
-            ((EditableSModel) model).save();
-            return true;
-          }
-        } : null);
-        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(m, "Model" + SModelOperations.getModelName(m) + " persistence version: " + currentVersion + ", currently supported version is " + ModelPersistence.LAST_VERSION, fix, ModelChecker.SEVERITY_WARNING, "Model persistence version"));
+        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(m, "Model" + SModelOperations.getModelName(m) + " persistence version: " + currentVersion + ", try running `Migrate from Names to Ids` action", null, ModelChecker.SEVERITY_WARNING, "Model persistence version"));
       }
     }
 
