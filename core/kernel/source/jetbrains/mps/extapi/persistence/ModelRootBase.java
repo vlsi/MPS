@@ -85,9 +85,8 @@ public abstract class ModelRootBase implements ModelRoot {
     SModuleBase module = (SModuleBase) getModule();
 
     for (SModel model : myModels) {
-      if (model.getReference().resolve(MPSModuleRepository.getInstance()) != model) {
-        // TODO fix the problem and remove continue statement
-        // theoretically can happen in JavaStubs (where several roots share the same model)
+      if (model.getReference().resolve(MPSModuleRepository.getInstance()) != null) {
+        LOG.error("Trying to dispose model `" + model.getModelName() + "` which was not previously removed from repository.");
         continue;
       }
       if (module != null) {
