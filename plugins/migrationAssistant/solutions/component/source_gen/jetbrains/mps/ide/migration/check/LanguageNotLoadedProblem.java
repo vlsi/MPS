@@ -5,8 +5,8 @@ package jetbrains.mps.ide.migration.check;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.Dependency;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.classloading.ClassLoaderManager;
 
@@ -21,14 +21,14 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
 
     AbstractModule langModule = (AbstractModule) lang.getSourceModule();
 
-    SModuleReference invalidDep = null;
-    for (Dependency dep : Sequence.fromIterable(langModule.getUnresolvedDependencies())) {
-      if (!(ClassLoaderManager.getInstance().isValidForClassloading(dep.getModuleRef()))) {
-        invalidDep = dep.getModuleRef();
+    HashSet<String> invalidDep = new HashSet<String>();
+    for (SDependency dep : Sequence.fromIterable(langModule.getDeclaredDependencies())) {
+      if (!(ClassLoaderManager.getInstance().isValidForClassloading(dep.getTargetModule()))) {
+        invalidDep.add(dep.getTargetModule().getModuleName());
       }
     }
-    if (invalidDep != null) {
-      err += ": dependency " + invalidDep.getModuleName() + " can't be loaded";
+    if (!(invalidDep.isEmpty())) {
+      err += String.format(": dependencies %s can't be loaded", invalidDep);
     }
 
     return err;

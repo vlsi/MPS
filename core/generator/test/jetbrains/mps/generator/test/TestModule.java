@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,18 +18,13 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
@@ -48,7 +43,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -125,8 +119,8 @@ public class TestModule extends AbstractModule {
   }
 
   @Override
-  public Iterable<Dependency> getUnresolvedDependencies() {
-    return ((AbstractModule) myPeer).getUnresolvedDependencies();
+  public Iterable<SDependency> getDeclaredDependencies() {
+    return myPeer.getDeclaredDependencies();
   }
 
   @Override

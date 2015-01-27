@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,12 +31,10 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -49,7 +47,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -113,20 +110,15 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public Iterable<Dependency> getUnresolvedDependencies() {
-    Set<Dependency> dependencies = new HashSet<Dependency>();
-    dependencies.addAll(IterableUtil.asCollection(super.getUnresolvedDependencies()));
-
+  public Iterable<SDependency> getDeclaredDependencies() {
+    HashSet<SDependency> rv = new HashSet<SDependency>(IterableUtil.asCollection(super.getDeclaredDependencies()));
+    final SRepository repo = getRepository();
     for (SModuleReference language : getExtendedLanguageRefs()) {
       // XXX not clear whether it's worth including implicit "extends lang.core" (see getExtendedLanguageRefs())
-      // or adhere to 'declared' in getDeclaredDependencies and use myLanguageDescriptor.getExtendedLanguages() only
-      dependencies.add(new Dependency(language, SDependencyScope.EXTENDS, true));
+      // or adhere to 'declared' in the name of getDeclaredDependencies and use myLanguageDescriptor.getExtendedLanguages() only
+      rv.add(new SDependencyImpl(language, repo, SDependencyScope.EXTENDS, true));
     }
-
-    // adding jetbrains.mps.lang.core as well
-    dependencies.add(new Dependency(BootstrapLanguages.coreLanguageRef(), SDependencyScope.DEFAULT, true));
-
-    return dependencies;
+    return rv;
   }
 
   /**

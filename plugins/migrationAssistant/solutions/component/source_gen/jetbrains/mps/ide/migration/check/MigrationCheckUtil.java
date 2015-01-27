@@ -23,19 +23,16 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
-import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.IMapping;
+import org.jetbrains.mps.openapi.module.SDependency;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -144,32 +141,26 @@ public class MigrationCheckUtil {
   }
 
   private static Collection<DependencyProblem> findBadModules(Iterable<SModule> modules, int maxErrors) {
-    final Map<SModuleReference, SModule> badModule2Dependant = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
-
-    Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return (it instanceof ReloadableModule) && ModuleClassLoaderSupport.canCreate(((ReloadableModule) it));
+    final List<DependencyProblem> rv = ListSequence.fromList(new ArrayList<DependencyProblem>());
+    Sequence.fromIterable(modules).ofType(ReloadableModule.class).where(new IWhereFilter<ReloadableModule>() {
+      public boolean accept(ReloadableModule it) {
+        return ModuleClassLoaderSupport.canCreate(it);
       }
-    }).visitAll(new IVisitor<SModule>() {
-      public void visit(final SModule module) {
-        Iterable<Dependency> deps = ((AbstractModule) module).getUnresolvedDependencies();
-        Sequence.fromIterable(deps).where(new IWhereFilter<Dependency>() {
-          public boolean accept(Dependency it) {
-            return it.getModuleRef().resolve(MPSModuleRepository.getInstance()) == null;
+    }).visitAll(new IVisitor<ReloadableModule>() {
+      public void visit(final ReloadableModule module) {
+        Iterable<SDependency> deps = module.getDeclaredDependencies();
+        Sequence.fromIterable(deps).where(new IWhereFilter<SDependency>() {
+          public boolean accept(SDependency it) {
+            return it.getTarget() == null;
           }
-        }).visitAll(new IVisitor<Dependency>() {
-          public void visit(Dependency dep) {
-            MapSequence.fromMap(badModule2Dependant).put(dep.getModuleRef(), module);
+        }).visitAll(new IVisitor<SDependency>() {
+          public void visit(SDependency dep) {
+            ListSequence.fromList(rv).addElement(new DependencyProblem(module, String.format("Unresolved dependency in module %s: Module %s not found in repository", module.getModuleName(), dep.getTargetModule().getModuleName())));
           }
         });
       }
     });
-
-    return MapSequence.fromMap(badModule2Dependant).take(maxErrors).select(new ISelector<IMapping<SModuleReference, SModule>, DependencyProblem>() {
-      public DependencyProblem select(IMapping<SModuleReference, SModule> it) {
-        return new DependencyProblem(it.value(), "Unresolved dependency in module " + it.value().getModuleName() + ". " + it.key().getModuleName() + " not found in repository");
-      }
-    }).toListSequence();
+    return ListSequence.fromList(rv).take(maxErrors).toListSequence();
   }
 
   private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors) {

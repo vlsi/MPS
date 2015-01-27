@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.testbench.WriteAction;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -37,9 +38,10 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
   //------------module depends on solution------------
 
   private List<DepLink> findPaths(DepLink root, SModule target) {
+    final SModuleReference targetRef = target.getModuleReference();
     ArrayList<DepLink> rv = new ArrayList<DepLink>();
     for(DepLink dl : root.allDependencies()) {
-      if (dl.module == target) {
+      if (targetRef.equals(dl.module)) {
         rv.add(dl);
       }
     }

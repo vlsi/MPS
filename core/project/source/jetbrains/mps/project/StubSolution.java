@@ -31,8 +31,7 @@ public class StubSolution extends Solution {
 
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SRepository repo, SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    assert repo instanceof MPSModuleRepository;
-    return ((MPSModuleRepository) repo).registerModule(new StubSolution(descriptor, null), moduleOwner);
+    return register(repo, moduleOwner, new StubSolution(descriptor, null));
   }
 
   /**
@@ -41,7 +40,22 @@ public class StubSolution extends Solution {
   @Deprecated
   @ToRemove(version = 3.2)
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    return MPSModuleRepository.getInstance().registerModule(new StubSolution(descriptor, null), moduleOwner);
+    return register(MPSModuleRepository.getInstance(), moduleOwner, new StubSolution(descriptor, null));
+  }
+
+  /**
+   * @deprecated use {@link #register(org.jetbrains.mps.openapi.module.SRepository, jetbrains.mps.smodel.MPSModuleOwner, Solution)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  protected static Solution register(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner, Solution solution) {
+    return register(MPSModuleRepository.getInstance(), moduleOwner, solution);
+  }
+
+  protected static Solution register(SRepository repo, MPSModuleOwner moduleOwner, Solution solution) {
+    // unless we add interface which extends SRepository and adds register/unregister methods, expect the only repo kind we have
+    assert repo instanceof MPSModuleRepository;
+    return ((MPSModuleRepository) repo).registerModule(solution, moduleOwner);
   }
 
   @Override

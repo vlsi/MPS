@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * Represents a module which can be associated with some class loader.
@@ -33,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
  * such modules which can be redeployed during design-time in MPS.
  * So the language L in the given example is clearly a reloadable module.
  */
-public interface ReloadableModule {
+public interface ReloadableModule extends SModule {
   /**
    * @return a class which can be obtained by calling #getclass from
    * {@link #getClassLoader()} method.

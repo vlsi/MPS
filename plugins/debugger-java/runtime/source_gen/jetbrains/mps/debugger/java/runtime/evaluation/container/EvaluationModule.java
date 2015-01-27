@@ -17,10 +17,11 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.module.SDependencyImpl;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collection;
@@ -73,13 +74,13 @@ public class EvaluationModule extends AbstractModule implements SModule {
   }
 
   @Override
-  public Iterable<Dependency> getUnresolvedDependencies() {
+  public Iterable<SDependency> getDeclaredDependencies() {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
-    return Sequence.fromIterable(modules).select(new ISelector<SModule, Dependency>() {
-      public Dependency select(SModule it) {
-        return (new Dependency(it.getModuleReference(), SDependencyScope.DEFAULT, false));
+    return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependencyImpl>() {
+      public SDependencyImpl select(SModule it) {
+        return (new SDependencyImpl(it, SDependencyScope.DEFAULT, false));
       }
-    });
+    }).ofType(SDependency.class);
   }
 
   @Override

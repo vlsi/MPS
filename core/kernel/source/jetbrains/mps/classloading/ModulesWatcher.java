@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,14 @@ import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -65,14 +64,13 @@ import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID
  * Notice, that read action is required on every update.
  *
  * @see ClassLoaderManager#myLoadableCondition
- * @see #myWatchableCondition
+ * @see ClassLoaderManager#myWatchableCondition
  */
 public class ModulesWatcher {
   private static final Logger LOG = LogManager.getLogger(ModulesWatcher.class);
 
   private static final Object LOCK = new Object();
   private final SRepository myRepository;
-  private final Condition<ReloadableModule> myWatchableCondition;
   private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
 
   // change the boolean property to the list of "dirty" modules
@@ -86,7 +84,6 @@ public class ModulesWatcher {
 
   public ModulesWatcher(SRepository repository, final Condition<ReloadableModule> watchableCondition) {
     myRepository = repository;
-    myWatchableCondition = watchableCondition;
     myModuleUpdater = new ModuleUpdater(repository, watchableCondition, myDepGraphHolder, myRefStorage);
   }
 
@@ -200,12 +197,11 @@ public class ModulesWatcher {
     }
     ReloadableModuleBase module = resolveRef(mRef);
     assert module != null;
-    Iterable<Dependency> deps = getModuleDescriptorDeps(module);
-    for (Dependency dep : deps) {
+    for (SDependency dep : module.getDeclaredDependencies()) {
       if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
         continue;
       }
-      if (isModuleDisposed(dep.getModuleRef())) {
+      if (isModuleDisposed(dep.getTargetModule())) {
         String message;
         if (module instanceof Language) {
           message = "Language ";
@@ -217,16 +213,12 @@ public class ModulesWatcher {
           message = "Module ";
         }
 
-        message = message + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleRef() + " and therefore was marked invalid for class loading";
+        message = String.format("%s %s depends on a disposed module %s and therefore was marked invalid for class loading", message, mRef.getModuleName(), dep.getTargetModule());
         if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }
     }
     return false;
-  }
-
-  private Iterable<Dependency> getModuleDescriptorDeps(@NotNull AbstractModule module) {
-    return module.getUnresolvedDependencies();
   }
 
   private void checkStatusMapCorrectness() {

@@ -126,37 +126,28 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    Iterable<Dependency> unresolvedDeps = getUnresolvedDependencies();
-    List<SDependency> resolvedDeps = new ArrayList<SDependency>();
-    for (Dependency dep : unresolvedDeps) {
-      SModuleReference moduleRef = dep.getModuleRef();
-      SModule target = ModuleRepositoryFacade.getInstance().getModule(moduleRef);
-      if (target != null) {
-        resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
-      }
-    }
-    return resolvedDeps;
-  }
-
-  public Iterable<Dependency> getUnresolvedDependencies() {
     assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    List<Dependency> result = new ArrayList<Dependency>();
-    if (descriptor == null) return result;
+    if (descriptor == null) {
+      return Collections.emptyList();
+    }
+    HashSet<SDependency> result = new HashSet<SDependency>();
+    final SRepository repo = getRepository();
 
     // add declared dependencies
-    result.addAll(descriptor.getDependencies());
+    for (Dependency d : descriptor.getDependencies()) {
+      result.add(new SDependencyImpl(d.getModuleRef(), repo, d.getScope(), d.isReexport()));
+    }
 
     // add dependencies provided by devkits as nonreexport dependencies
     for (SModuleReference usedDevkit : descriptor.getUsedDevkits()) {
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
-      if (devKit != null) {
-        for (Solution solution : devKit.getAllExportedSolutions()) {
-          result.add(new Dependency(solution.getModuleReference(), SDependencyScope.DEFAULT, false));
+      final SModule devkit = usedDevkit.resolve(repo);
+      if (DevKit.class.isInstance(devkit)) {
+        for (Solution solution : ((DevKit) devkit).getAllExportedSolutions()) {
+          result.add(new SDependencyImpl(solution.getModuleReference(), repo, SDependencyScope.DEFAULT, false));
         }
       }
     }
-
     return result;
   }
 
