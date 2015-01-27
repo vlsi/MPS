@@ -30,7 +30,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector__0) {
+  public SNode execute(SModule m, DataCollector collector_) {
     // get all old instances in all models of the module 
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
