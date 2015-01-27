@@ -47,17 +47,13 @@ import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
-  private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<SimpleEditorMessage>() {
+  private static final Comparator<GutterMark> EDITOR_MESSAGES_COMPARATOR = new Comparator<GutterMark>() {
     @Override
-    public int compare(SimpleEditorMessage m1, SimpleEditorMessage m2) {
+    public int compare(GutterMark m1, GutterMark m2) {
       if (m2.getPriority() != m1.getPriority()) {
         return m2.getPriority() - m1.getPriority();
       }
@@ -68,9 +64,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<SimpleEditorMessage> myMessages = new CopyOnWriteArrayList<SimpleEditorMessage>();
-  private Map<SimpleEditorMessage, EditorMessageOwner> myOwners = new HashMap<SimpleEditorMessage, EditorMessageOwner>();
-  private boolean myStatusIsDirty = false;
-  private Set<SimpleEditorMessage> myMessagesToRemove = new HashSet<SimpleEditorMessage>();
+  private List<GutterMark> myGutterMarks = Collections.emptyList();
   private boolean myRightToLeft;
   private MergingUpdateQueue myUpdateQueue;
   private Object myUpdateIdentity = new Object();
@@ -101,8 +95,8 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void uninstallListeners() {
-    scrollbar.addMouseMotionListener(this);
-    scrollbar.addMouseListener(this);
+    scrollbar.removeMouseMotionListener(this);
+    scrollbar.removeMouseListener(this);
     if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().unregisterComponentRightAligned(scrollbar);
     }
@@ -174,8 +168,8 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   public void mouseMoved(MouseEvent e) {
-    List<SimpleEditorMessage> messages = getMessagesAt(e.getY());
-    if (messages.size() > 0) {
+    List<GutterMark> gutterMarks = getGutterMarksAt(e.getY());
+    if (gutterMarks.size() > 0) {
       scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     } else {
       scrollbar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -190,14 +184,15 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   @Override
   public void mousePressed(MouseEvent e) {
     int y = e.getY();
-    List<SimpleEditorMessage> messages = getMessagesAt(y);
-    if (messages.size() > 0) {
-      SimpleEditorMessage message = messages.get(0);
+    List<GutterMark> gutterMarks = getGutterMarksAt(y);
+    if (gutterMarks.size() > 0) {
+      GutterMark mark = gutterMarks.get(0);
+      SimpleEditorMessage message = mark.getEditorMessage();
       if (message instanceof EditorMessage) {
         ((EditorMessage) message).doNavigate(myEditorComponent);
       } else {
         // (markY - y) / markHeight = (realY - start) / height
-        int realY = message.getStart(myEditorComponent) + (getMessageStart(message) - y) * message.getHeight(myEditorComponent) / getMessageHeight(message);
+        int realY = message.getStart(myEditorComponent) + (mark.getY() - y) * message.getHeight(myEditorComponent) / mark.getHeight();
         EditorCell editorCell = myEditorComponent.findCellWeak(1, realY + 1);
         if (editorCell != null) {
           myEditorComponent.changeSelection(editorCell);
@@ -222,30 +217,48 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return myEditorComponent;
   }
 
-  private void validateStatus() {
+  private void updateGutterMarks() {
+    if (scrollbar == null) {
+      return;
+    }
     myUpdateQueue.queue(new Update(myUpdateIdentity) {
       @Override
       public void run() {
         GutterStatus status = GutterStatus.OK;
+        List<GutterMark> marks = new ArrayList<GutterMark>();
         for (SimpleEditorMessage message : myMessages) {
-          // for MPS-10768: Gutter marker is red although no errors are present
-          if (!(message instanceof EditorMessage && ((EditorMessage) message).isValid(myEditorComponent))) continue;
-          // also a possible source of leaks is found:
-          // an invalid message which keeps undisposed node which is "in air";
-          // however there possibly are very little of such nodes and such messages are cleared after the next check.
-          //
-          // isValid is used incorrectly by AbstractLeftEditorHighlighterMessage so we can't clear all "invalid" messages.
-          if (message.getStatus() == MessageStatus.WARNING) {
-            status = GutterStatus.WARNING;
+          GutterMark mark = new GutterMark(message);
+          if (!mark.isValid()) {
+            continue;
           }
-          if (message.getStatus() == MessageStatus.ERROR) {
-            status = GutterStatus.ERROR;
-            break;
-          }
-        }
-        setStatus(status);
-        myStatusIsDirty = false;
 
+          GutterStatus messageStatus = GutterStatus.getStatus(message.getStatus());
+          if (messageStatus.ordinal() > status.ordinal()) {
+            status = messageStatus;
+          }
+          marks.add(mark);
+        }
+
+        Collections.sort(marks, new Comparator<GutterMark>() {
+          @Override
+          public int compare(GutterMark mark1, GutterMark mark2) {
+            if (mark1 == mark2) return 0;
+            SimpleEditorMessage message1 = mark1.getEditorMessage();
+            SimpleEditorMessage message2 = mark2.getEditorMessage();
+            if (message1 instanceof EditorMessage == message2 instanceof EditorMessage) {
+              if (message1 instanceof EditorMessage) {
+                return mark1.getStatus() != mark2.getStatus() ? mark1.getStatus().ordinal() - mark2.getStatus().ordinal() : mark1.getY() - mark2.getY();
+              } else {
+                return mark1.getY() - mark2.getY();
+              }
+            } else {
+              return message1 instanceof EditorMessage ? 1 : -1;
+            }
+          }
+        });
+
+        myGutterMarks = marks;
+        setStatus(status);
         //otherwise some messages (removal of which does not affect model) could be not repainted
         if (scrollbar != null) {
           scrollbar.repaint();
@@ -254,22 +267,13 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     });
   }
 
-  private void removeLater(Set<SimpleEditorMessage> messages) {
-    myMessagesToRemove.addAll(messages);
-    invalidateStatus();
-  }
-
   @Override
   public boolean alwaysShowTrack() {
     if (scrollbar.getOrientation() == Adjustable.VERTICAL) return true;
     return super.alwaysShowTrack();
   }
 
-  private void invalidateStatus() {
-    myStatusIsDirty = true;
-  }
-
-  public void setStatus(GutterStatus status) {
+  private void setStatus(GutterStatus status) {
     switch (status) {
       case OK:
         myErrorsButton.setIcon(Icons.OK);
@@ -288,34 +292,23 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   public void add(SimpleEditorMessage message) {
     myMessages.add(message);
-    myOwners.put(message, message.getOwner());
-    validateStatus();
+    updateGutterMarks();
   }
 
   public void remove(SimpleEditorMessage message) {
     myMessages.remove(message);
-    myOwners.remove(message);
-    validateStatus();
-  }
-
-  public void removeBadMessages() {
-    if (myStatusIsDirty) {
-      myMessages.removeAll(myMessagesToRemove);
-      myMessagesToRemove.clear();
-      validateStatus();
-    }
+    updateGutterMarks();
   }
 
   public boolean removeMessages(EditorMessageOwner owner) {
     boolean removedAnything = false;
     for (SimpleEditorMessage m : new ArrayList<SimpleEditorMessage>(myMessages)) {
-      if (myOwners.get(m) == owner) {
+      if (m.getOwner() == owner) {
         myMessages.remove(m);
-        myOwners.remove(m);
         removedAnything = true;
       }
     }
-    validateStatus();
+    updateGutterMarks();
     return removedAnything;
   }
 
@@ -325,68 +318,11 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   private void drawMarks(Graphics graphics) {
-    removeBadMessages();
-    Graphics2D g = (Graphics2D) graphics;
-    //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
-    List<SimpleEditorMessage> editorMessages = new ArrayList<SimpleEditorMessage>(myMessages);
-    Collections.sort(editorMessages, new Comparator<SimpleEditorMessage>() {
-      @Override
-      public int compare(SimpleEditorMessage o1, SimpleEditorMessage o2) {
-        if (o1 == o2) return 0;
-        if (o1 == null) return -1;
-        if (o2 == null) return 1;
-        if (o1 instanceof EditorMessage == o2 instanceof EditorMessage) {
-          if (o1 instanceof EditorMessage) {
-            if (o1.getStatus() == o2.getStatus()) {
-              return getMessageStart(o1) - getMessageStart(o2);
-            } else {
-              return o1.getStatus().ordinal() - o2.getStatus().ordinal();
-            }
-          } else {
-            return getMessageStart(o1) - getMessageStart(o2);
-          }
-        } else {
-          return o1 instanceof EditorMessage ? 1 : -1;
-        }
+    for (GutterMark mark : myGutterMarks) {
+      if (graphics.hitClip(mark.getX(), mark.getY(), mark.getWidth(), mark.getHeight())) {
+        mark.paint(graphics);
       }
-    });
-
-    for (SimpleEditorMessage msg : editorMessages) {
-      if (msg == null || msg instanceof EditorMessage && !((EditorMessage) msg).isValid(myEditorComponent)) {
-        continue;
-      }
-      int x = myRightToLeft ? 3 : 5;
-      int width = Icons.OK.getIconWidth() - 1;
-      if (!(msg instanceof EditorMessage)) {
-        // thin
-
-        width /= 2;
-        width += 1;
-        x = myRightToLeft ? width + 2 : 0;
-      }
-      Color color = msg.getColor();
-      int messageY = getMessageStart(msg);
-      int messageHeight = Math.max(getMessageHeight(msg), 3);
-
-      if (color == null) continue;
-      g.setColor(color);
-      g.fillRect(x + 1, messageY, width - 2, messageHeight);
-
-      Color brighter = color.brighter();
-      g.setColor(brighter);
-      // left decoration
-      UIUtil.drawLine(g, x, messageY, x, messageY + messageHeight);
-      // top decoration
-      UIUtil.drawLine(g, x + 1, messageY, x + width - 2, messageY);
-      Color darker = ColorUtil.shift(color, 0.75);
-
-      g.setColor(darker);
-      // bottom decoration
-      UIUtil.drawLine(g, x + 1, messageY + messageHeight, x + width - 2, messageY + messageHeight);   // large bottom to let overwrite by hl below
-      // right decoration
-      UIUtil.drawLine(g, x + width - 2, messageY, x + width - 2, messageY + messageHeight - 1);
     }
-    //removeLater(messagesToRemove);
   }
 
   private int getMessagesAreaShift() {
@@ -397,39 +333,15 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return scrollbar.getHeight() - getIncrementButtonHeight() - Math.max(getDecrementButtonHeight(), scrollbar.getBounds().y);
   }
 
-  private int getMessageHeight(SimpleEditorMessage msg) {
-    int height = msg.getHeight(myEditorComponent);
-    if (msg instanceof EditorMessage) {
-      EditorCell cell = ((EditorMessage) msg).getCell(myEditorComponent);
-      if (cell != null) {
-        while (cell instanceof EditorCell_Collection) {
-          cell = ((EditorCell_Collection) cell).lastCell();
-        }
-        if (cell != null) {
-          height -= cell.getHeight();
-        }
-      }
-    }
-    return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 3;
-  }
-
-  private int getMessageStart(SimpleEditorMessage msg) {
-    return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
-  }
-
-  private List<SimpleEditorMessage> getMessagesAt(int y) {
-    List<SimpleEditorMessage> result = new SortedList<SimpleEditorMessage>(EDITOR_MESSAGES_COMPARATOR);
-    Set<SimpleEditorMessage> messagesToRemove = new HashSet<SimpleEditorMessage>();
-    for (SimpleEditorMessage msg : myMessages) {
-      if (!(msg instanceof EditorMessage && ((EditorMessage) msg).isValid(myEditorComponent))) continue;
-
-      int start = getMessageStart(msg);
-      int end = start + getMessageHeight(msg);
+  private List<GutterMark> getGutterMarksAt(int y) {
+    List<GutterMark> result = new SortedList<GutterMark>(EDITOR_MESSAGES_COMPARATOR);
+    for (GutterMark gutterMark : myGutterMarks) {
+      int start = gutterMark.getY();
+      int end = start + gutterMark.getHeight();
       if (start - 3 <= y && y <= end + 3) {
-        result.add(msg);
+        result.add(gutterMark);
       }
     }
-    removeLater(messagesToRemove);
     return result;
   }
 
@@ -437,15 +349,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   public String getMPSTooltipText(MouseEvent event) {
     int y = event.getY();
 
-    List<SimpleEditorMessage> messages = getMessagesAt(y);
-    if (messages.size() > 0) {
+    List<GutterMark> gutterMarks = getGutterMarksAt(y);
+    if (gutterMarks.size() > 0) {
       StringBuilder text = new StringBuilder();
-      for (SimpleEditorMessage msg : messages) {
+      for (GutterMark mark : gutterMarks) {
         if (text.length() > 0) {
           text.append("\n");
         }
-        text.append(msg.getMessage());
-        // text.append("(owner: " + msg.getOwner() + ")");
+        text.append(mark.getEditorMessage().getMessage());
       }
       return text.toString();
     }
@@ -453,11 +364,125 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return null;
   }
 
-  public enum GutterStatus {
+  private class GutterMark {
+    private int myX, myY, myWidth, myHeight;
+    private Color myColor;
+    private SimpleEditorMessage myMessage;
+    private boolean myValid = false;
+
+    GutterMark(SimpleEditorMessage message) {
+      if ((myMessage = message) == null || (myColor = myMessage.getColor()) == null ||
+          myMessage instanceof EditorMessage && !((EditorMessage) myMessage).isValid(myEditorComponent)) {
+        return;
+      }
+      myValid = true;
+
+      myX = myRightToLeft ? 3 : 5;
+      myWidth = Icons.OK.getIconWidth() - 1;
+      if (!(myMessage instanceof EditorMessage)) {
+        // thin
+
+        myWidth /= 2;
+        myWidth += 1;
+        myX = myRightToLeft ? myWidth + 2 : 0;
+      }
+      myY = calculateY(myMessage);
+      myHeight = calculateHeight(myMessage);
+    }
+
+    private int calculateY(SimpleEditorMessage message) {
+      return getMessagesAreaShift() +
+          (int) (message.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
+    }
+
+    private int calculateHeight(SimpleEditorMessage message) {
+      int height = message.getHeight(myEditorComponent);
+      if (message instanceof EditorMessage) {
+        EditorCell cell = ((EditorMessage) message).getCell(myEditorComponent);
+        if (cell != null) {
+          while (cell instanceof EditorCell_Collection) {
+            cell = ((EditorCell_Collection) cell).lastCell();
+          }
+          if (cell != null) {
+            height -= cell.getHeight();
+          }
+        }
+      }
+      return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 3;
+    }
+
+    public boolean isValid() {
+      return myValid;
+    }
+
+    public void paint(Graphics g) {
+      assert myValid;
+      g.setColor(myColor);
+      int x = getX();
+      int y = getY();
+      int height = Math.max(getHeight(), 3);
+      int width = getWidth();
+      g.fillRect(x + 1, y, width - 2, height);
+
+      Color brighter = myColor.brighter();
+      g.setColor(brighter);
+      // left decoration
+      UIUtil.drawLine(g, x, y, x, y + height);
+      // top decoration
+      UIUtil.drawLine(g, x + 1, y, x + width - 2, y);
+
+      Color darker = ColorUtil.shift(myColor, 0.75);
+      g.setColor(darker);
+      // bottom decoration
+      UIUtil.drawLine(g, x + 1, y + height, x + width - 2, y + height);   // large bottom to let overwrite by hl below
+      // right decoration
+      UIUtil.drawLine(g, x + width - 2, y, x + width - 2, y + height - 1);
+    }
+
+    public int getX() {
+      return myX;
+    }
+
+    public int getY() {
+      return myY;
+    }
+
+    public int getWidth() {
+      return myWidth;
+    }
+
+    public int getHeight() {
+      return myHeight;
+    }
+
+    public int getPriority() {
+      return myMessage.getPriority();
+    }
+
+    public MessageStatus getStatus() {
+      return myMessage.getStatus();
+    }
+
+    public SimpleEditorMessage getEditorMessage() {
+      return myMessage;
+    }
+  }
+
+  private enum GutterStatus {
     OK,
     WARNING,
     ERROR,
-    IN_PROGRESS
+    IN_PROGRESS;
+
+    static GutterStatus getStatus(MessageStatus status) {
+      switch (status) {
+        case WARNING:
+          return WARNING;
+        case ERROR:
+          return ERROR;
+      }
+      return OK;
+    }
   }
 
   private class MyErrorsButton extends JButton {
