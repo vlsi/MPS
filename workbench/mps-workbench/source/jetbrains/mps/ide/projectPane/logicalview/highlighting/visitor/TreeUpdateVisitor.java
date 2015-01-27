@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
-import com.intellij.openapi.project.DumbService;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.NodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -78,14 +76,7 @@ public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
         if (disposed) {
           return;
         }
-
-        // XXX why do we care to wait for end of dumb mode? Why don't we care it might start once again right after?
-        // XXX it's bad to access platform project from within internals of MPS project pane
-        com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
-        if (project != null && !project.isDisposed()) {
-          DumbService.getInstance(project).waitForSmartMode();
-          runnable.run();
-        }
+        runnable.run();
       }
     });
   }
