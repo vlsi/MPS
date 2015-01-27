@@ -70,6 +70,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
       }
       ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker(mpsProject));
+      ListSequence.fromList(specificCheckers).addElement(new ModelPersistenceVersionChecker());
     }
     return specificCheckers;
   }

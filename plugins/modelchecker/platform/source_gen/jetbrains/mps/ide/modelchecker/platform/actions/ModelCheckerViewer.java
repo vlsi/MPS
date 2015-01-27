@@ -26,6 +26,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -34,7 +35,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -137,15 +137,17 @@ public class ModelCheckerViewer extends JPanel {
   }
   private List<ModelCheckerIssue> getIssuesToFix() {
     final Set<SNodeReference> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), myUsagesView.getIncludedResultNodes());
+    final Set<SModel> includedResultModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), myUsagesView.getIncludedModels());
     return ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
       public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
         return sr.getObject();
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable();
+        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable() || sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
       }
     }).toListSequence();
+
   }
   /*package*/ void checkModules(List<SModule> modules, String taskTargetTitle) {
     runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), GlobalScope.getInstance()), taskTargetTitle);
