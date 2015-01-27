@@ -4,19 +4,20 @@ package jetbrains.mps.baseLanguage.jdk8.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
@@ -27,11 +28,26 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.baseLanguage.constraints.ConstraintsUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescriptor {
   public SuperInterfaceMethodCall_Constraints() {
     super(MetaIdFactory.conceptId(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L));
+  }
+  @Override
+  public boolean hasOwnCanBeChildMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
+    }
+
+    return result;
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
@@ -47,7 +63,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_bs3nei_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_bs3nei_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -91,7 +107,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_bs3nei_a0a0a0a0a1a0b0a2a1;
+            return breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -112,6 +128,10 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "2710732029817742423");
-  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a1 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6434457067210687039");
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
+  }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "2043122710974594130");
+  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "2710732029817742423");
+  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6434457067210687039");
 }

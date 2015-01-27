@@ -18,6 +18,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
