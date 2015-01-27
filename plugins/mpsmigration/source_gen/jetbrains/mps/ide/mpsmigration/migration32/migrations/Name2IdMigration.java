@@ -7,6 +7,8 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.FilePerRootModelPersistence;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -17,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class Name2IdMigration extends BaseProjectMigration {
-  public static final String ID = "jetbrains.mps.name2id_gen";
+  public static final String ID = "jetbrains.mps.name2id_gen_perroot";
 
   public Name2IdMigration() {
     super(Name2IdMigration.ID);
@@ -30,7 +32,8 @@ public class Name2IdMigration extends BaseProjectMigration {
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();
     final ModelFactory defaultModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
-    // models: editable, persistence aware, in xml (default) persistence and of older version 
+    final ModelFactory perRootModelFactory = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID);
+    // models: editable, persistence aware, in xml (default) or per-root persistence and of older version 
     Iterable<PersistenceVersionAware> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -41,7 +44,11 @@ public class Name2IdMigration extends BaseProjectMigration {
       }
     }).ofType(PersistenceVersionAware.class).where(new IWhereFilter<PersistenceVersionAware>() {
       public boolean accept(PersistenceVersionAware it) {
-        return it.getModelFactory() == defaultModelFactory && it.getPersistenceVersion() < 9;
+        return it.getPersistenceVersion() < 9;
+      }
+    }).where(new IWhereFilter<PersistenceVersionAware>() {
+      public boolean accept(PersistenceVersionAware it) {
+        return it.getModelFactory() == defaultModelFactory || it.getModelFactory() == perRootModelFactory;
       }
     });
     Sequence.fromIterable(models).visitAll(new IVisitor<PersistenceVersionAware>() {

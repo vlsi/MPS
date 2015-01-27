@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -48,13 +49,14 @@ public class MoveRefactoringUtils {
 
     SModule module = model.getModule();
     if (module instanceof Language) {
+      SModuleReference module2import = toImport.getModule().getModuleReference();
       Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
       for (SDependency dependency : Sequence.fromIterable(declaredDependencies)) {
-        if (dependency.getTarget() == toImport.getModule()) {
+        if (dependency.getTargetModule().equals(module2import)) {
           return;
         }
       }
-      ((Language) module).addDependency(toImport.getModule().getModuleReference(), false);
+      ((Language) module).addDependency(module2import, false);
     }
   }
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

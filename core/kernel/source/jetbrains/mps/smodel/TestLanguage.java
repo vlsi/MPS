@@ -16,18 +16,30 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class TestLanguage extends Language {
   private TestLanguage(LanguageDescriptor descriptor, IFile file) {
     super(descriptor, file);
   }
 
-  // this is for tests only. Can be later converted into subclass
+  /**
+   * @deprecated use {@link #newInstance(org.jetbrains.mps.openapi.module.SRepository, jetbrains.mps.project.structure.modules.LanguageDescriptor, MPSModuleOwner)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    return newInstance(MPSModuleRepository.getInstance(), descriptor, moduleOwner);
+  }
+
+  // this is for tests only. Can be later converted into subclass
+  public static Language newInstance(SRepository repo, LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    assert repo instanceof MPSModuleRepository;
     Language newLanguage = new TestLanguage(descriptor, null);
 
-    Language language = MPSModuleRepository.getInstance().registerModule(newLanguage, moduleOwner);
+    Language language = ((MPSModuleRepository) repo).registerModule(newLanguage, moduleOwner);
     if (language == newLanguage) {
       language.revalidateGenerators();
     }

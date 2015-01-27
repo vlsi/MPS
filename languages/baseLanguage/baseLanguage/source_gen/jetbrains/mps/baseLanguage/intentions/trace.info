@@ -5540,7 +5540,7 @@
       <node id="2357139912674293033" at="42,53,43,19" concept="9" />
       <node id="2357139912674293033" at="44,5,45,16" concept="9" />
       <node id="3255477953600058484" at="48,213,49,19" concept="9" />
-      <node id="3255477953600058419" at="50,5,51,519" concept="9" />
+      <node id="3255477953600058419" at="50,5,51,744" concept="9" />
       <node id="2357139912674293033" at="53,53,54,132" concept="9" />
       <node id="2357139912674293033" at="56,35,57,17" concept="9" />
       <node id="2357139912674293033" at="60,37,61,143" concept="3" />
@@ -5548,6 +5548,7 @@
       <node id="2357139912674293199" at="68,87,69,35" concept="9" />
       <node id="3255477953600058487" at="71,78,72,358" concept="3" />
       <node id="2357139912674293033" at="74,48,75,56" concept="9" />
+      <node id="133147827774149611" at="78,64,79,46" concept="9" />
       <node id="2357139912674293033" at="21,0,23,0" concept="2" trace="MakeClassAbstractFromMethod_Intention#()V" />
       <node id="2357139912674293033" at="66,0,68,0" concept="2" trace="IntentionImplementation#()V" />
       <node id="2357139912674293033" at="23,0,26,0" concept="7" trace="getConcept#()Ljava/lang/String;" />
@@ -5564,6 +5565,7 @@
       <node id="2357139912674293033" at="68,0,71,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="2357139912674293033" at="71,0,74,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2357139912674293033" at="74,0,77,0" concept="7" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="133147827774149611" at="78,0,81,0" concept="13" trace="eq_vh1n9u_a0a0b0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2357139912674293033" at="41,0,47,0" concept="7" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2357139912674293033" at="47,0,53,0" concept="7" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2357139912674293033" at="59,0,65,0" concept="7" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
@@ -5583,6 +5585,7 @@
       <scope id="2357139912674293035" at="68,87,69,35" />
       <scope id="2357139912674293037" at="71,78,72,358" />
       <scope id="2357139912674293033" at="74,48,75,56" />
+      <scope id="133147827774149611" at="78,64,79,46" />
       <scope id="2357139912674293033" at="21,0,23,0" />
       <scope id="2357139912674293033" at="66,0,68,0" />
       <scope id="2357139912674293033" at="23,0,26,0" />
@@ -5602,8 +5605,12 @@
         <var name="node" id="2357139912674293033" />
       </scope>
       <scope id="2357139912674293033" at="74,0,77,0" />
+      <scope id="133147827774149611" at="78,0,81,0">
+        <var name="a" id="133147827774149611" />
+        <var name="b" id="133147827774149611" />
+      </scope>
       <scope id="2357139912674293033" at="41,84,45,16" />
-      <scope id="2357139912674293202" at="47,91,51,519" />
+      <scope id="2357139912674293202" at="47,91,51,744" />
       <scope id="2357139912674293033" at="59,99,63,30" />
       <scope id="2357139912674293033" at="41,0,47,0">
         <var name="editorContext" id="2357139912674293033" />
@@ -5618,7 +5625,7 @@
         <var name="node" id="2357139912674293033" />
       </scope>
       <unit id="2357139912674293033" at="65,0,78,0" name="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention$IntentionImplementation" />
-      <unit id="2357139912674293033" at="19,0,79,0" name="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention" />
+      <unit id="2357139912674293033" at="19,0,82,0" name="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/2990635952104560718">

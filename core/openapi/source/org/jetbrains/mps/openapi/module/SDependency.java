@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a dependency between modules. It points to the target module, can be of several kinds and may declare re-export.
@@ -27,6 +28,19 @@ public interface SDependency {
 
   boolean isReexport();
 
+  /**
+   * Target module of this dependency as we know it. Presence of a dependency doesn't mean its target is present,
+   * it's subject to resolution with appropriate <code>SRepository</code>
+   * @return identity of dependency target module
+   */
   @NotNull
+  SModuleReference getTargetModule();
+
+  /**
+   * Resolves dependency target in scope of source's repository.
+   * If a different scope/repository shall be used for resolution, use {@link #getTargetModule()}
+   * @return <code>null</code> if dependency could not be resolved
+   */
+  @Nullable
   SModule getTarget();
 }

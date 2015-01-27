@@ -21,12 +21,13 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
-import jetbrains.mps.migration.global.MigrationProperties;
-import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @State(
     name = "MigrationProperties",
@@ -34,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
         @Storage(file = StoragePathMacros.PROJECT_FILE),
         @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/migration.xml", scheme = StorageScheme.DIRECTORY_BASED)
     },
-    reloadable = false
+    reloadable = true
 )
 public class ProjectMigrationProperties extends MigrationProperties implements ProjectComponent,
     PersistentStateComponent<Element> {
@@ -46,6 +47,20 @@ public class ProjectMigrationProperties extends MigrationProperties implements P
 
   public ProjectMigrationProperties(Project project) {
     myProject = project;
+  }
+
+  public interface MigrationPropertiesReloadListener {
+    void onReload();
+  }
+
+  private List<MigrationPropertiesReloadListener> myListeners = new ArrayList<MigrationPropertiesReloadListener>(1);
+
+  public void addListener(MigrationPropertiesReloadListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeListener(MigrationPropertiesReloadListener l) {
+    myListeners.remove(l);
   }
 
   @Nullable
@@ -68,6 +83,9 @@ public class ProjectMigrationProperties extends MigrationProperties implements P
     for (Element e : state.getChildren(SINGLE_PROP)) {
       myProperties.put(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));
     }
+    for (MigrationPropertiesReloadListener listener : myListeners) {
+      listener.onReload();
+    }
   }
 
   @Override
@@ -77,7 +95,7 @@ public class ProjectMigrationProperties extends MigrationProperties implements P
 
   @Override
   public void projectClosed() {
-
+    myProperties.clear();
   }
 
   @Override

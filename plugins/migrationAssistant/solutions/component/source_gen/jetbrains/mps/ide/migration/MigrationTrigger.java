@@ -11,6 +11,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -45,13 +46,13 @@ import org.jetbrains.annotations.Nullable;
 /**
  * At the first startup, migration is not required
  * The need for migration is determined after startup by checking all modules once and then watching the repo
- * Whether some change requires migration to be executed, the user is notified about that and the project is reloaded 
+ * Whether some change requires migration to be executed, the user is notified about that and the project is reloaded
  * with myState.migrationRequired set to true.
  * In this case, the migration is executed and no watchers are added (as they could try to run the migration once again)
  * After the migration is completed, myState.migrationRequired is set to false again and the project is reloaded
  * 
  * Reasons to reload project after migration:
- * 1. The reload cycle with migration wizard happens w/o addig repo listeners
+ * 1. The reload cycle with migration wizard happens w/o adding repo listeners
  * 2. Models should be unloaded after migration
  */
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
@@ -66,6 +67,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
+  private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
 
   public MigrationTrigger(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager migrationManager) {
     super(ideaProject);
@@ -79,6 +81,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         public void run() {
           MPSModuleRepository.getInstance().addRepositoryListener(MigrationTrigger.this.myRepoListener);
           ClassLoaderManager.getInstance().addClassesHandler(MigrationTrigger.this.myClassesListener);
+          myProject.getComponent(ProjectMigrationProperties.class).addListener(MigrationTrigger.this.myPropertiesListener);
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -93,7 +96,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       public void run() {
         // this line should be executed in post-startup activity as we can have language in the same project 
         // with the solution to migrate, and in this case classes of this language will be cleared, but after 
-        // they are compiled at startup, they are only reloaded in a pre-startuo activity 
+        // they are compiled at startup, they are only reloaded in a pre-startup activity 
         if (!(myMigrationManager.isMigrationRequired())) {
           return;
         }
@@ -148,7 +151,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     postponeMigration();
   }
 
-  private void tryMigratingProject() {
+  public synchronized void tryMigratingProject() {
     postponeMigrationIfNeededOnModuleChange(myMpsProject, MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
   }
 
@@ -258,6 +261,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
   }
 
+  private class MyPropertiesListener implements ProjectMigrationProperties.MigrationPropertiesReloadListener {
+    @Override
+    public void onReload() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          tryMigratingProject();
+        }
+      });
+    }
+  }
+
   @Override
   public void executeWizard() {
     myState.migrationRequired = false;
@@ -278,7 +292,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    MigrationErrorStep lastStep = as_feb5zp_a0a9a23(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+    MigrationErrorStep lastStep = as_feb5zp_a0a9a53(wizard.getCurrentStepObject(), MigrationErrorStep.class);
     if (lastStep == null) {
       return;
     }
@@ -314,7 +328,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static <T> T as_feb5zp_a0a9a23(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a9a53(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

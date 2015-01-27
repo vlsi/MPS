@@ -11,6 +11,7 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.TreeMessage;
 import java.awt.Color;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -58,7 +59,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     if (myModule == null) {
       return new TextTreeNode("No Content");
     }
-    DepLink deps = new DependencyUtil().trackRuntime(isShowRuntime()).build(myModule);
+    DepLink deps = new DependencyUtil(myModule.getRepository()).trackRuntime(isShowRuntime()).build(myModule);
     TextTreeNode root = new TextTreeNode(myModule.getModuleName());
     root.setIcon(IconManager.getIconFor(myModule));
     populate(root, deps.allDependencies());
@@ -69,17 +70,17 @@ public class DependencyTree extends MPSTree implements DataProvider {
     final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
     final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "language with bootstrap dependency", null);
 
-    Iterable<SModule> sortedModules = Sequence.fromIterable(allDependencies).select(new ISelector<DepLink, SModule>() {
-      public SModule select(DepLink it) {
+    Iterable<SModuleReference> sortedModules = Sequence.fromIterable(allDependencies).select(new ISelector<DepLink, SModuleReference>() {
+      public SModuleReference select(DepLink it) {
         return it.module;
       }
-    }).distinct().sort(new ISelector<SModule, String>() {
-      public String select(SModule it) {
+    }).distinct().sort(new ISelector<SModuleReference, String>() {
+      public String select(SModuleReference it) {
         return it.getModuleName();
       }
     }, true);
 
-    for (final SModule module : Sequence.fromIterable(sortedModules)) {
+    for (final SModuleReference module : Sequence.fromIterable(sortedModules)) {
       Iterable<DepLink> moduleDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
         public boolean accept(DepLink it) {
           return it.module == module && it.role.isDependency();
@@ -109,7 +110,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     if (isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextTreeNode("Used Languages");
       boolean hasBootstrapDep = false;
-      for (final SModule module : Sequence.fromIterable(sortedModules)) {
+      for (final SModuleReference module : Sequence.fromIterable(sortedModules)) {
         Iterable<DepLink> usedLangDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
           public boolean accept(DepLink it) {
             return it.module == module && it.role.isUsedLanguage();

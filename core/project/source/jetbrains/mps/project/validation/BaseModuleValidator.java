@@ -102,7 +102,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
     List<String> errors = new ArrayList<String>();
     for (SDependency dependency : myModule.getDeclaredDependencies()) {
       if (dependency.getTarget() instanceof Generator) {
-        errors.add("Contains dependency on generator: " + dependency.getTarget().getModuleName());
+        errors.add("Contains dependency on generator: " + dependency.getTargetModule().getModuleName());
       }
     }
     return errors;

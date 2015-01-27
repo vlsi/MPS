@@ -58,28 +58,36 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.NotCondition;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -87,8 +95,12 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Dimension;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModelProperties myModelProperties;
@@ -389,8 +401,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
-      ModuleTableCellRender usedInModel = new ModuleTableCellRender(myModelProperties.getModelDescriptor().getRepository());
-      usedInModel.addCellState(myModelProperties.getUsedLanguageRemoveCondition(), DependencyCellState.UNUSED);
+      final SRepository contextRepo = myModelProperties.getModelDescriptor().getRepository();
+      Set<SModuleReference> inUse = new ModelComputeRunnable<Set<SModuleReference>>(new ComputeUsedLanguages(myModelDescriptor)).runRead(contextRepo.getModelAccess());
+      IsModuleInUse inUseCondition = new IsModuleInUse(inUse, myModelProperties.getUsedLanguages());
+      ModuleTableCellRender usedInModel = new ModuleTableCellRender(contextRepo);
+      usedInModel.addCellState(new NotCondition<SModule>(inUseCondition), DependencyCellState.UNUSED);
       return usedInModel;
     }
 
@@ -544,8 +559,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       myLangEngagedOnGenTM = new ModelsLangEngagedOnGenTM(myModelProperties);
       languagesTable.setModel(myLangEngagedOnGenTM);
 
-      ModuleTableCellRender engagedLanguages = new ModuleTableCellRender(myModelProperties.getModelDescriptor().getRepository());
-      engagedLanguages.addCellState(new NotCondition<SModuleReference>(myModelProperties.getUsedLanguageRemoveCondition()), DependencyCellState.SUPERFLUOUS_ENGAGED);
+      final SRepository contextRepo = myModelProperties.getModelDescriptor().getRepository();
+      ModuleTableCellRender engagedLanguages = new ModuleTableCellRender(contextRepo);
+      Set<SModuleReference> languagesInUse = new ModelComputeRunnable<Set<SModuleReference>>(new ComputeUsedLanguages(myModelDescriptor)).runRead(contextRepo.getModelAccess());
+      IsModuleInUse inUseCondition = new IsModuleInUse(languagesInUse, Collections.<SModuleReference>emptySet());
+      engagedLanguages.addCellState(inUseCondition, DependencyCellState.SUPERFLUOUS_ENGAGED);
       languagesTable.setDefaultRenderer(SModuleReference.class, engagedLanguages);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(languagesTable);
@@ -639,6 +657,59 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myIsDefSModelDescr)
         myModelProperties.setGenerateIntoModelFolder(myGenerateIntoModelFolderCheckBox.isSelected());
       myLangEngagedOnGenTM.apply();
+    }
+  }
+
+  /**
+   * Answers whether given module is among specified
+   */
+  private static class IsModuleInUse implements Condition<SModule> {
+    private final Collection<SModuleReference> myScope;
+    private final Collection<SModuleReference> myImplicitUse;
+
+    /**
+     * @param actualInUse set of modules to check against
+     * @param implicitInUse set of modules to treat as implicitly known and that should not be considered when (and if) we build derived
+     *                      dependencies of a module in question.
+     *                      The name might be confusing as these modules might be those <em>explicitly</em> specified.
+     */
+    public IsModuleInUse(@NotNull Collection<SModuleReference> actualInUse, @NotNull Collection<SModuleReference> implicitInUse) {
+      myScope = actualInUse;
+      myImplicitUse = implicitInUse;
+    }
+    @Override
+    public boolean met(SModule module) {
+      final SModuleReference moduleReference = module.getModuleReference();
+      if (myScope.contains(moduleReference)) {
+        return true;
+      }
+      if (module instanceof DevKit) {
+        HashSet<SModuleReference> burstDeps = new HashSet<SModuleReference>();
+        // FIXME I'm fine with SModuleReference for exported modules, however, API lacks suitable methods
+        final DevKit devKit = (DevKit) module;
+        for (Language l : devKit.getAllExportedLanguages()) {
+          burstDeps.add(l.getModuleReference());
+        }
+        for (Solution s : devKit.getAllExportedSolutions()) {
+          burstDeps.add(s.getModuleReference());
+        }
+        // if module is implicitly there (e.g. explicitly imported), do not consider devkit with it as used/necessary
+        burstDeps.removeAll(myImplicitUse);
+        return CollectionUtil.intersects(burstDeps, myScope);
+      }
+      return false;
+    }
+  }
+
+  private static class ComputeUsedLanguages implements Computable<Set<SModuleReference>> {
+    private final SModel myModel;
+
+    public ComputeUsedLanguages(@NotNull SModel model) {
+      myModel = model;
+    }
+    @Override
+    public Set<SModuleReference> compute() {
+      return SModelOperations.getUsedLanguages(myModel);
     }
   }
 }

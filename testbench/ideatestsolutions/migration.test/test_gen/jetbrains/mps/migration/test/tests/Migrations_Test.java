@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.module.SDependencyImpl;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -101,19 +101,7 @@ public class Migrations_Test extends TestCase {
     public Iterable<SDependency> getDeclaredDependencies() {
       return Sequence.fromIterable(myDependencies).select(new ISelector<SModule, SDependency>() {
         public SDependency select(final SModule it) {
-          return new SDependency() {
-            @NotNull
-            public SDependencyScope getScope() {
-              return SDependencyScope.DEFAULT;
-            }
-            public boolean isReexport() {
-              return false;
-            }
-            @NotNull
-            public SModule getTarget() {
-              return it;
-            }
-          };
+          return (SDependency) new SDependencyImpl(it, SDependencyScope.DEFAULT, false);
         }
       });
     }

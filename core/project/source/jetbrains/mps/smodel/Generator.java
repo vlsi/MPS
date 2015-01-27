@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -154,35 +153,14 @@ public class Generator extends ReloadableModuleBase {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    Iterable<Dependency> unresolvedDeps = IterableUtil.merge(getUnresolvedDependencies(), getUnresolvedRuntimes());
-    List<SDependency> resolvedDeps = new ArrayList<SDependency>();
-    for (Dependency dep : unresolvedDeps) {
-      SModuleReference moduleRef = dep.getModuleRef();
-      SModule target = ModuleRepositoryFacade.getInstance().getModule(moduleRef);
-      if (target != null) {
-        resolvedDeps.add(new SDependencyImpl(target, dep.getScope(), dep.isReexport()));
-      }
-    }
-    return resolvedDeps;
-  }
-
-  // TODO: Remove this method when dependencies management is the same in the build languages and workbench
-  private Iterable<Dependency> getUnresolvedRuntimes() {
-    Set<Dependency> dependencies = new HashSet<Dependency>();
-    // (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
-    for (SModuleReference rt : mySourceLanguage.getRuntimeModulesReferences()) {
-      dependencies.add(new Dependency(rt, SDependencyScope.RUNTIME, false));
-    }
-    return dependencies;
-  }
-
-  @Override
-  public Iterable<Dependency> getUnresolvedDependencies() {
-    Set<Dependency> dependencies = new HashSet<Dependency>();
-    dependencies.addAll(IterableUtil.asCollection(super.getUnresolvedDependencies()));
+    HashSet<SDependency> rv = new HashSet<SDependency>(IterableUtil.asCollection(super.getDeclaredDependencies()));
+    final SRepository repo = getRepository();
 
     // generator sees its source language
-    dependencies.add(new Dependency(mySourceLanguage.getModuleReference(), SDependencyScope.DEFAULT, false));
+    rv.add(new SDependencyImpl(mySourceLanguage.getModuleReference(), repo, SDependencyScope.DEFAULT, false));
+    for (SModuleReference rt : mySourceLanguage.getRuntimeModulesReferences()) {
+      rv.add(new SDependencyImpl(rt, repo, SDependencyScope.RUNTIME, false));
+    }
 
     // generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
@@ -190,10 +168,9 @@ public class Generator extends ReloadableModuleBase {
       // FIXME all referenced generators are of 'extends' dependency at the moment
       // but this might need a change once we store extended generators as a regular SDependency
       // instead of hacky getReferencedGeneratorUIDs
-      dependencies.add(new Dependency(refGenerator, SDependencyScope.EXTENDS, false));
+      rv.add(new SDependencyImpl(refGenerator, repo, SDependencyScope.EXTENDS, false));
     }
-
-    return dependencies;
+    return rv;
   }
 
   public List<SModuleReference> getReferencedGeneratorUIDs() {

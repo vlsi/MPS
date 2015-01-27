@@ -101,9 +101,11 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nls;
@@ -388,20 +390,17 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
-      final SRepository repo = myModule.getRepository();
-      class MissingModuleCondition implements Condition<SModuleReference> {
-        private final SRepository myRepository;
-
-        public MissingModuleCondition(@NotNull SRepository repository) {
-          myRepository = repository;
+      final SRepository repo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
+      class MissingModuleCondition implements Condition<SModule> {
+        public MissingModuleCondition() {
         }
         @Override
-        public boolean met(SModuleReference moduleReference) {
-          return moduleReference.resolve(myRepository) == null;
+        public boolean met(SModule module) {
+          return module == null;
         }
       }
       final ModuleTableCellRender missing = new ModuleTableCellRender(repo);
-      missing.addCellState(new MissingModuleCondition(repo), DependencyCellState.NOT_AVAILABLE);
+      missing.addCellState(new MissingModuleCondition(), DependencyCellState.NOT_AVAILABLE);
       return missing;
     }
 
@@ -532,7 +531,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myRuntimeTableModel = new RuntimeTableModel();
       runtimeTable.setModel(myRuntimeTableModel);
 
-      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(myModule.getRepository()));
+      final SRepository contextRepo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
+      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(contextRepo));
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(runtimeTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -1425,6 +1425,27 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           }
         }
       }
+    }
+  }
+  /*
+   * FIXME myModule.getRepository requires read action (implementation, not API), while mpsProject.getRepository does not
+   * Not sure whether which one is right (both seem reasonable, repository of a module might change, repository of the project could not)
+   * and I need module's repo to check for dependency availability.
+   * The problem is that I need a repo to run the command to get the repo, which does look stupid, perhaps,
+   * myModule.getRepository shall be relaxed to give SRepo without read action or we shall use SModuleReference and project's repo instead of
+   * myModule (SModule instance) throughout whole ModulePropertiesConfigurable. One more alternative is to have myModule.getProject().getRepo()
+   * (i.e. something that gives access to module's repo without need for read action. Present use of myProject.getRepo to run the command
+   * basically does exactly that, although a bit indirectly)
+   */
+  private static class GetModuleRepo implements Computable<SRepository> {
+    private final SModule myModule;
+
+    public GetModuleRepo(@NotNull SModule module) {
+      myModule = module;
+    }
+    @Override
+    public SRepository compute() {
+      return myModule.getRepository();
     }
   }
 }
