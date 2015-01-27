@@ -556,6 +556,9 @@
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
+        <reference id="3562215692195600259" name="link" index="13MTZf" />
+      </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
       </concept>
@@ -2183,6 +2186,72 @@
         </node>
       </node>
       <node concept="17QB3L" id="2a$QO9k_z5d" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="7c4zijkc$wi" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getScope" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+      <node concept="3Tm1VV" id="7c4zijkc$wj" role="1B3o_S" />
+      <node concept="3clFbS" id="7c4zijkc$Ch" role="3clF47">
+        <node concept="3clFbJ" id="7c4zijkcAaC" role="3cqZAp">
+          <node concept="3clFbS" id="7c4zijkcAaF" role="3clFbx">
+            <node concept="3cpWs6" id="7c4zijkcDEG" role="3cqZAp">
+              <node concept="2ShNRf" id="2mut6H6_91m" role="3cqZAk">
+                <node concept="1pGfFk" id="2mut6H6_91n" role="2ShVmc">
+                  <ref role="37wK5l" to="6xgk:7lHSllLpTWM" resolve="NamedElementsScope" />
+                  <node concept="2OqwBi" id="2mut6H6_91o" role="37wK5m">
+                    <node concept="2OqwBi" id="2mut6H6_91p" role="2Oq$k0">
+                      <node concept="3Tsc0h" id="2mut6H6_hpj" role="2OqNvi">
+                        <ref role="3TtcxE" to="tpee:g7HQHFn" />
+                      </node>
+                      <node concept="13iPFW" id="7c4zijkcDVC" role="2Oq$k0" />
+                    </node>
+                    <node concept="13MTOL" id="2mut6H6_91t" role="2OqNvi">
+                      <ref role="13MTZf" to="tpee:g7uigIF" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7c4zijkcArc" role="3clFbw">
+            <node concept="37vLTw" id="7c4zijkcAh_" role="2Oq$k0">
+              <ref role="3cqZAo" node="7c4zijkc$Ci" resolve="kind" />
+            </node>
+            <node concept="2Zo12i" id="7c4zijkcAUZ" role="2OqNvi">
+              <node concept="chp4Y" id="7c4zijkcAXc" role="2Zo12j">
+                <ref role="cht4Q" to="tpee:7c4zijk9vdu" resolve="SuperInerfaceKind" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7c4zijkc$Cs" role="3cqZAp">
+          <node concept="2OqwBi" id="7c4zijkc$Cp" role="3clFbG">
+            <node concept="13iAh5" id="7c4zijkc$Cq" role="2Oq$k0" />
+            <node concept="2qgKlT" id="7c4zijkc$Cr" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+              <node concept="37vLTw" id="7c4zijkc$Cn" role="37wK5m">
+                <ref role="3cqZAo" node="7c4zijkc$Ci" resolve="kind" />
+              </node>
+              <node concept="37vLTw" id="7c4zijkc$Co" role="37wK5m">
+                <ref role="3cqZAo" node="7c4zijkc$Ck" resolve="child" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7c4zijkc$Ci" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3THzug" id="7c4zijkc$Cj" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7c4zijkc$Ck" role="3clF46">
+        <property role="TrG5h" value="child" />
+        <node concept="3Tqbb2" id="7c4zijkc$Cl" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="7c4zijkc$Cm" role="3clF45">
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+      </node>
     </node>
     <node concept="13i0hz" id="1UeCwxlXxzN" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -22337,6 +22406,38 @@
                     <ref role="cht4Q" to="tpee:25$0boVbwWx" resolve="SuperConstructorKind" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7c4zijkbraf" role="3cqZAp">
+          <node concept="3clFbS" id="7c4zijkbrai" role="3clFbx">
+            <node concept="3cpWs6" id="7c4zijkcw5t" role="3cqZAp">
+              <node concept="2ShNRf" id="2mut6H6$FKG" role="3cqZAk">
+                <node concept="1pGfFk" id="2mut6H6$LAk" role="2ShVmc">
+                  <ref role="37wK5l" to="6xgk:7lHSllLpTWM" resolve="NamedElementsScope" />
+                  <node concept="2OqwBi" id="2mut6H6$ViN" role="37wK5m">
+                    <node concept="2OqwBi" id="2mut6H6$PAX" role="2Oq$k0">
+                      <node concept="3Tsc0h" id="2mut6H6$Riv" role="2OqNvi">
+                        <ref role="3TtcxE" to="tpee:fWEKbgp" />
+                      </node>
+                      <node concept="13iPFW" id="7c4zijkcwlb" role="2Oq$k0" />
+                    </node>
+                    <node concept="13MTOL" id="2mut6H6$ZAw" role="2OqNvi">
+                      <ref role="13MTZf" to="tpee:g7uigIF" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7c4zijkbrK1" role="3clFbw">
+            <node concept="37vLTw" id="7c4zijkbriu" role="2Oq$k0">
+              <ref role="3cqZAo" node="7lHSllLofKC" resolve="kind" />
+            </node>
+            <node concept="2Zo12i" id="7c4zijkbsiG" role="2OqNvi">
+              <node concept="chp4Y" id="7c4zijkbuKY" role="2Zo12j">
+                <ref role="cht4Q" to="tpee:7c4zijk9vdu" resolve="SuperInerfaceKind" />
               </node>
             </node>
           </node>

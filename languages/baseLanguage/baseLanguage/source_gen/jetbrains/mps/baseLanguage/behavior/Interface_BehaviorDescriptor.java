@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.List;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
@@ -20,6 +21,9 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
   }
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  }
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return Interface_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
   public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return Interface_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
