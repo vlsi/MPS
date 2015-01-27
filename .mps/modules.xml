@@ -290,8 +290,10 @@
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/jetbrains.mps.baseLanguage.math.tests.msd" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/pluginSolution/jetbrains.mps.baseLanguage.math.pluginSolution.msd" folder="samples.math" />
-      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/decl/decl.mpl" folder="samples.migrations" />
-      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/ref/ref.mpl" folder="samples.migrations" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/decl/decl.mpl" folder="samples.migrations.example1" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/declarations/declarations.mpl" folder="samples.migrations.example2" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/ref/ref.mpl" folder="samples.migrations.example1" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/languages/references/references.mpl" folder="samples.migrations.example2" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/jetbrains.mps.samples.mindmaps.figures.msd" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/jetbrains.mps.samples.mindmaps.sandbox.msd" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/jetbrains.mps.samples.mindmaps.mpl" folder="samples.mindmaps" />
