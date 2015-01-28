@@ -49,6 +49,7 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
+    <import index="dibr" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.actions(MPS.IDEA/com.intellij.ide.actions@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -56,6 +57,7 @@
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
+      <concept id="394857668357342104" name="jetbrains.mps.lang.plugin.structure.EverywhereActionPlace" flags="ng" index="mfpdH" />
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
@@ -63,6 +65,8 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="3984210554599197374" name="ID" index="3mtozt" />
+        <child id="394857668356997869" name="places" index="med8o" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
@@ -138,6 +142,9 @@
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
@@ -226,6 +233,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -469,6 +477,7 @@
     <property role="TrG5h" value="ShowDefaultHelp" />
     <property role="2uzpH1" value="Show Default Help" />
     <property role="3GE5qa" value="Actions" />
+    <property role="3mtozt" value="ContextHelp" />
     <node concept="1DS2jV" id="4KDfkUwM9dh" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <property role="1Ld5UQ" value="true" />
@@ -487,6 +496,86 @@
     </node>
     <node concept="tnohg" id="4KDfkUwM9dm" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9dn" role="2VODD2">
+        <node concept="3clFbJ" id="2deDxeE$_Rf" role="3cqZAp">
+          <node concept="3clFbS" id="2deDxeE$_Ri" role="3clFbx">
+            <node concept="3cpWs8" id="2deDxeE$Bvs" role="3cqZAp">
+              <node concept="3cpWsn" id="2deDxeE$Bvt" role="3cpWs9">
+                <property role="TrG5h" value="contextHelpAction" />
+                <node concept="3uibUv" id="2deDxeE$Bvu" role="1tU5fm">
+                  <ref role="3uigEE" to="dibr:~ContextHelpAction" resolve="ContextHelpAction" />
+                </node>
+                <node concept="2ShNRf" id="2deDxeE$Bvv" role="33vP2m">
+                  <node concept="1pGfFk" id="2deDxeE$Bvw" role="2ShVmc">
+                    <ref role="37wK5l" to="dibr:~ContextHelpAction.&lt;init&gt;()" resolve="ContextHelpAction" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2deDxeE$Bvx" role="3cqZAp">
+              <node concept="2OqwBi" id="2deDxeE$Bvy" role="3clFbG">
+                <node concept="37vLTw" id="2deDxeE$Bvz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2deDxeE$Bvt" resolve="contextHelpAction" />
+                </node>
+                <node concept="liA8E" id="2deDxeE$Bv$" role="2OqNvi">
+                  <ref role="37wK5l" to="dibr:~ContextHelpAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+                  <node concept="tl45R" id="2deDxeE$Bv_" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2deDxeE$BAT" role="3cqZAp">
+              <node concept="3clFbS" id="2deDxeE$BAW" role="3clFbx">
+                <node concept="3clFbF" id="2deDxeE$EGy" role="3cqZAp">
+                  <node concept="2OqwBi" id="2deDxeE$ELW" role="3clFbG">
+                    <node concept="37vLTw" id="2deDxeE$EGx" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2deDxeE$Bvt" resolve="contextHelpAction" />
+                    </node>
+                    <node concept="liA8E" id="2deDxeE$FtQ" role="2OqNvi">
+                      <ref role="37wK5l" to="dibr:~ContextHelpAction.actionPerformed(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="actionPerformed" />
+                      <node concept="tl45R" id="2deDxeE$Fvl" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2deDxeE$E9n" role="3clFbw">
+                <node concept="2OqwBi" id="2deDxeE$DD_" role="2Oq$k0">
+                  <node concept="tl45R" id="2deDxeE$DgA" role="2Oq$k0" />
+                  <node concept="liA8E" id="2deDxeE$E7x" role="2OqNvi">
+                    <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="2deDxeE$Exo" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~Presentation.isEnabled():boolean" resolve="isEnabled" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2deDxeE$Dwv" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="2deDxeE$Apj" role="3clFbw">
+            <node concept="10Nm6u" id="2deDxeE$AD6" role="3uHU7w" />
+            <node concept="2YIFZM" id="2deDxeE$A4J" role="3uHU7B">
+              <ref role="37wK5l" node="4KDfkUwM9eW" resolve="getDefaultHelpFor" />
+              <ref role="1Pybhc" node="4KDfkUwM9es" resolve="HelpHelper" />
+              <node concept="2OqwBi" id="2deDxeE$A4K" role="37wK5m">
+                <node concept="2WthIp" id="2deDxeE$A4L" role="2Oq$k0" />
+                <node concept="1DTwFV" id="2deDxeE$A4M" role="2OqNvi">
+                  <ref role="2WH_rO" node="4KDfkUwM9dh" resolve="module" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2deDxeE$A4N" role="37wK5m">
+                <node concept="2WthIp" id="2deDxeE$A4O" role="2Oq$k0" />
+                <node concept="1DTwFV" id="2deDxeE$A4P" role="2OqNvi">
+                  <ref role="2WH_rO" node="4KDfkUwM9di" resolve="model" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2deDxeE$A4Q" role="37wK5m">
+                <node concept="2WthIp" id="2deDxeE$A4R" role="2Oq$k0" />
+                <node concept="3gHZIF" id="2deDxeE$A4S" role="2OqNvi">
+                  <ref role="2WH_rO" node="4KDfkUwM9dj" resolve="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4KDfkUwM9do" role="3cqZAp">
           <node concept="2YIFZM" id="4KDfkUwM9dp" role="3clFbG">
             <ref role="37wK5l" node="4KDfkUwM9fr" resolve="showHelpFor" />
@@ -547,6 +636,46 @@
         </node>
         <node concept="3clFbJ" id="4KDfkUwM9dM" role="3cqZAp">
           <node concept="3clFbS" id="4KDfkUwM9dN" role="3clFbx">
+            <node concept="3cpWs8" id="2deDxeEzvQ1" role="3cqZAp">
+              <node concept="3cpWsn" id="2deDxeEzvQ2" role="3cpWs9">
+                <property role="TrG5h" value="contextHelpAction" />
+                <node concept="3uibUv" id="2deDxeEzvQ3" role="1tU5fm">
+                  <ref role="3uigEE" to="dibr:~ContextHelpAction" resolve="ContextHelpAction" />
+                </node>
+                <node concept="2ShNRf" id="2deDxeEzvSP" role="33vP2m">
+                  <node concept="1pGfFk" id="2deDxeE$xaZ" role="2ShVmc">
+                    <ref role="37wK5l" to="dibr:~ContextHelpAction.&lt;init&gt;()" resolve="ContextHelpAction" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2deDxeE$xnd" role="3cqZAp">
+              <node concept="2OqwBi" id="2deDxeE$yAx" role="3clFbG">
+                <node concept="37vLTw" id="2deDxeE$xnb" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2deDxeEzvQ2" resolve="contextHelpAction" />
+                </node>
+                <node concept="liA8E" id="2deDxeE$zir" role="2OqNvi">
+                  <ref role="37wK5l" to="dibr:~ContextHelpAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+                  <node concept="tl45R" id="2deDxeE$zjS" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2deDxeE$zsd" role="3cqZAp">
+              <node concept="3clFbS" id="2deDxeE$zsg" role="3clFbx">
+                <node concept="3cpWs6" id="2deDxeE$$$9" role="3cqZAp" />
+              </node>
+              <node concept="2OqwBi" id="2deDxeE$$65" role="3clFbw">
+                <node concept="2OqwBi" id="2deDxeE$zAj" role="2Oq$k0">
+                  <node concept="tl45R" id="2deDxeE$zvL" role="2Oq$k0" />
+                  <node concept="liA8E" id="2deDxeE$$4f" role="2OqNvi">
+                    <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="2deDxeE$$u4" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~Presentation.isEnabled():boolean" resolve="isEnabled" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="4KDfkUwM9dO" role="3cqZAp">
               <node concept="2OqwBi" id="4KDfkUwM9dP" role="3clFbG">
                 <node concept="2WthIp" id="4KDfkUwM9dQ" role="2Oq$k0" />
@@ -622,6 +751,7 @@
         </node>
       </node>
     </node>
+    <node concept="mfpdH" id="79ALBP9Jg68" role="med8o" />
   </node>
   <node concept="tC5Ba" id="4KDfkUwM9ek">
     <property role="TrG5h" value="ShowHelp" />

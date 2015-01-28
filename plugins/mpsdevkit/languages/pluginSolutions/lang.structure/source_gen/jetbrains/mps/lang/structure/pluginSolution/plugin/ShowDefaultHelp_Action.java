@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.ide.actions.ContextHelpAction;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -23,6 +24,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
     super("Show Default Help", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
+    this.addPlace(null);
   }
   @Override
   public boolean isDumbAware() {
@@ -33,6 +35,11 @@ public class ShowDefaultHelp_Action extends BaseAction {
       {
         HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
         if (defaultHelp == null) {
+          ContextHelpAction contextHelpAction = new ContextHelpAction();
+          contextHelpAction.update(event);
+          if (event.getPresentation().isEnabled()) {
+            return;
+          }
           ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
           return;
         }
@@ -62,12 +69,26 @@ public class ShowDefaultHelp_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      if (HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) == null) {
+        ContextHelpAction contextHelpAction = new ContextHelpAction();
+        contextHelpAction.update(event);
+        if (event.getPresentation().isEnabled()) {
+          contextHelpAction.actionPerformed(event);
+        }
+        return;
+      }
       HelpHelper.showHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
       }
     }
+  }
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append("ContextHelp");
+    return res.toString();
   }
   protected static Logger LOG = LogManager.getLogger(ShowDefaultHelp_Action.class);
 }
