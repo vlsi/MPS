@@ -11,6 +11,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.ide.actions.SynchronizeAction;
 
 public class InvokeTextDiffAction extends BaseAction implements DumbAware {
   private static final Icon TEXT_ICON = AllIcons.FileTypes.Text;
@@ -29,6 +30,7 @@ public class InvokeTextDiffAction extends BaseAction implements DumbAware {
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     if (myDiffTool.canShow(myDiffRequest)) {
       myDialog.close(DialogWrapper.NEXT_USER_EXIT_CODE);
+      new SynchronizeAction().actionPerformed(event);
       myDiffTool.show(myDiffRequest);
     }
   }
