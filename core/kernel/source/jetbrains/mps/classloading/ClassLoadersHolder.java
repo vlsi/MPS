@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,7 +89,7 @@ public class ClassLoadersHolder {
    */
   @NotNull
   public ClassLoadingProgress getClassLoadingProgress(ReloadableModule module) {
-    SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+    SModuleReference mRef = module.getModuleReference();
     return getClassLoadingProgress(mRef);
   }
 
@@ -162,7 +162,7 @@ public class ClassLoadersHolder {
     public synchronized Collection<ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
       Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
       for (ReloadableModule module : toLoadLazy) {
-        SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+        SModuleReference mRef = module.getModuleReference();
         ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);
         if (classLoadingProgress != null) {
           LOG.error("Illegal state: module is already loaded " + module, new Throwable());
@@ -178,7 +178,7 @@ public class ClassLoadersHolder {
       try {
         monitor.start("Loading modules...", toLoad.size());
         for (ReloadableModule module : toLoad) {
-          SModuleReference moduleReference = ((ReloadableModuleBase) module).getModuleReference();
+          SModuleReference moduleReference = module.getModuleReference();
           if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. no listeners know about this module");
           if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.LOADED) continue;
           ModuleClassLoader classLoader = createModuleClassLoader(module);
