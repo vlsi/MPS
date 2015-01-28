@@ -8,6 +8,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
@@ -216,6 +217,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -229,6 +233,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
         <child id="1170075728144" name="expression" index="1HWFw0" />
         <child id="1170075736412" name="block" index="1HWHxc" />
@@ -279,6 +284,23 @@
       </concept>
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="5858074156537516440" name="return" index="x79VK" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -289,6 +311,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -5169,6 +5192,34 @@
       <node concept="3Tm6S6" id="2jv$fqwD$pf" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="2jv$fqwIHqT" role="jymVt" />
+    <node concept="312cEg" id="5$xqaErcJWW" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="mySaver" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="5$xqaErc_a5" role="1B3o_S" />
+      <node concept="3uibUv" id="5$xqaErcJL$" role="1tU5fm">
+        <ref role="3uigEE" node="5$xqaErb5$G" resolve="ISaveMergedModel" />
+      </node>
+      <node concept="1bVj0M" id="5$xqaErdaPN" role="33vP2m">
+        <node concept="37vLTG" id="5$xqaErdSOV" role="1bW2Oz">
+          <property role="TrG5h" value="dialog" />
+          <node concept="3uibUv" id="7LCpE5f4Gee" role="1tU5fm">
+            <ref role="3uigEE" node="2jv$fqwD$ox" resolve="MergeModelsDialog" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="5$xqaErdTsn" role="1bW2Oz">
+          <property role="TrG5h" value="resultModel" />
+          <node concept="H_c77" id="7LCpE5f4HBT" role="1tU5fm" />
+        </node>
+        <node concept="3clFbS" id="5$xqaErdaPP" role="1bW5cS">
+          <node concept="3cpWs6" id="5$xqaErdaVh" role="3cqZAp">
+            <node concept="3clFbT" id="7LCpE5f4yXo" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5$xqaErcmny" role="jymVt" />
     <node concept="312cEg" id="2jv$fqwD$oV" role="jymVt">
       <property role="TrG5h" value="myMergeTree" />
       <node concept="3Tm6S6" id="2jv$fqwD$oW" role="1B3o_S" />
@@ -5294,14 +5345,6 @@
       <node concept="3Tm6S6" id="2jv$fqwD$ph" role="1B3o_S" />
       <node concept="10Q1$e" id="2jv$fqwD$pi" role="1tU5fm">
         <node concept="17QB3L" id="2jv$fqwD$pj" role="10Q1$1" />
-      </node>
-    </node>
-    <node concept="312cEg" id="2jv$fqwD$p5" role="jymVt">
-      <property role="TrG5h" value="myApplyChanges" />
-      <node concept="3Tm6S6" id="2jv$fqwD$p6" role="1B3o_S" />
-      <node concept="10P_77" id="2jv$fqwD$p7" role="1tU5fm" />
-      <node concept="3clFbT" id="2jv$fqwD$p8" role="33vP2m">
-        <property role="3clFbU" value="false" />
       </node>
     </node>
     <node concept="312cEg" id="2jv$fqwD$pk" role="jymVt">
@@ -5758,6 +5801,64 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2jv$fqx1Ydt" role="jymVt" />
+    <node concept="3clFb_" id="5$xqaEreqhH" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setSaver" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5$xqaEreqhK" role="3clF47">
+        <node concept="3clFbF" id="5$xqaEreDkS" role="3cqZAp">
+          <node concept="37vLTI" id="5$xqaEreDyO" role="3clFbG">
+            <node concept="37vLTw" id="5$xqaEreDIq" role="37vLTx">
+              <ref role="3cqZAo" node="5$xqaErey3I" resolve="saver" />
+            </node>
+            <node concept="37vLTw" id="5$xqaEreDkR" role="37vLTJ">
+              <ref role="3cqZAo" node="5$xqaErcJWW" resolve="mySaver" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5$xqaEreig$" role="1B3o_S" />
+      <node concept="3cqZAl" id="5$xqaEreq5s" role="3clF45" />
+      <node concept="37vLTG" id="5$xqaErey3I" role="3clF46">
+        <property role="TrG5h" value="saver" />
+        <node concept="3uibUv" id="60LhNvlwer8" role="1tU5fm">
+          <ref role="3uigEE" node="5$xqaErb5$G" resolve="ISaveMergedModel" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5$xqaEre76H" role="jymVt" />
+    <node concept="3clFb_" id="7LCpE5eYhZz" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="saveModel" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7LCpE5eYhZA" role="3clF47">
+        <node concept="3clFbF" id="7LCpE5f6CPM" role="3cqZAp">
+          <node concept="2OqwBi" id="7LCpE5f6CPO" role="3clFbG">
+            <node concept="37vLTw" id="7LCpE5f6CPP" role="2Oq$k0">
+              <ref role="3cqZAo" node="5$xqaErcJWW" resolve="mySaver" />
+            </node>
+            <node concept="liA8E" id="7LCpE5f6CPQ" role="2OqNvi">
+              <ref role="37wK5l" node="7LCpE5eWcu6" resolve="save" />
+              <node concept="Xjq3P" id="7LCpE5f6CPR" role="37wK5m" />
+              <node concept="37vLTw" id="7LCpE5f6CPS" role="37wK5m">
+                <ref role="3cqZAo" node="7LCpE5eZ3Hu" resolve="resultModel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="7LCpE5f3eCp" role="3clF45" />
+      <node concept="3Tmbuc" id="7LCpE5eZrub" role="1B3o_S" />
+      <node concept="37vLTG" id="7LCpE5eZ3Hu" role="3clF46">
+        <property role="TrG5h" value="resultModel" />
+        <node concept="H_c77" id="7LCpE5eZ3Ht" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7LCpE5eXZwH" role="jymVt" />
     <node concept="3clFb_" id="2jv$fqwD$DD" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -6178,24 +6279,31 @@
             </node>
             <node concept="1bVj0M" id="2jv$fqwD$uL" role="37wK5m">
               <node concept="3clFbS" id="2jv$fqwD$uM" role="1bW5cS">
-                <node concept="3clFbF" id="2jv$fqwD$uN" role="3cqZAp">
-                  <node concept="37vLTI" id="2jv$fqwD$uO" role="3clFbG">
-                    <node concept="3clFbT" id="2jv$fqwD$uP" role="37vLTx">
-                      <property role="3clFbU" value="true" />
+                <node concept="3clFbH" id="5$xqaEre6JZ" role="3cqZAp" />
+                <node concept="3clFbJ" id="7LCpE5f3$5N" role="3cqZAp">
+                  <node concept="3clFbS" id="7LCpE5f3$5Q" role="3clFbx">
+                    <node concept="3clFbF" id="7LCpE5f3Bnr" role="3cqZAp">
+                      <node concept="1rXfSq" id="7LCpE5f3Bnp" role="3clFbG">
+                        <ref role="37wK5l" node="2jv$fqwD$vU" resolve="unregisterModels" />
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="2BHiRxeuEKa" role="37vLTJ">
-                      <ref role="3cqZAo" node="2jv$fqwD$p5" resolve="myApplyChanges" />
+                    <node concept="3clFbF" id="2jv$fqwD$uR" role="3cqZAp">
+                      <node concept="1rXfSq" id="4hiugqyz9oo" role="3clFbG">
+                        <ref role="37wK5l" to="810:~DialogWrapper.close(int):void" resolve="close" />
+                        <node concept="37vLTw" id="2BHiRxeodlz" role="37wK5m">
+                          <ref role="3cqZAo" to="810:~DialogWrapper.OK_EXIT_CODE" resolve="OK_EXIT_CODE" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1rXfSq" id="7LCpE5f3$t$" role="3clFbw">
+                    <ref role="37wK5l" node="7LCpE5eYhZz" resolve="saveModel" />
+                    <node concept="1rXfSq" id="7LCpE5f3$t_" role="37wK5m">
+                      <ref role="37wK5l" node="2jv$fqwD$vy" resolve="getResultModelWithFixedId" />
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="2jv$fqwD$uR" role="3cqZAp">
-                  <node concept="1rXfSq" id="4hiugqyz9oo" role="3clFbG">
-                    <ref role="37wK5l" to="810:~DialogWrapper.close(int):void" resolve="close" />
-                    <node concept="37vLTw" id="2BHiRxeodlz" role="37wK5m">
-                      <ref role="3cqZAo" to="810:~DialogWrapper.OK_EXIT_CODE" resolve="OK_EXIT_CODE" />
-                    </node>
-                  </node>
-                </node>
+                <node concept="3clFbH" id="7LCpE5f4mXx" role="3cqZAp" />
               </node>
             </node>
           </node>
@@ -6312,45 +6420,10 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2jv$fqx2pM9" role="jymVt" />
-    <node concept="3clFb_" id="2jv$fqwD$vn" role="jymVt">
-      <property role="TrG5h" value="getResultModel" />
-      <node concept="3Tm1VV" id="2jv$fqwD$vo" role="1B3o_S" />
-      <node concept="3clFbS" id="2jv$fqwD$vp" role="3clF47">
-        <node concept="3clFbF" id="2jv$fqwD$vq" role="3cqZAp">
-          <node concept="3K4zz7" id="2jv$fqwD$vr" role="3clFbG">
-            <node concept="2OqwBi" id="2jv$fqwD$vs" role="3K4E3e">
-              <node concept="37vLTw" id="2BHiRxeuoMD" role="2Oq$k0">
-                <ref role="3cqZAo" node="2jv$fqwD$oJ" resolve="myMergeSession" />
-              </node>
-              <node concept="liA8E" id="2jv$fqwD$vu" role="2OqNvi">
-                <ref role="37wK5l" to="bmv6:3$YpntjF4sv" resolve="getResultModel" />
-              </node>
-            </node>
-            <node concept="10Nm6u" id="2jv$fqwD$vv" role="3K4GZi" />
-            <node concept="37vLTw" id="2BHiRxeuoMo" role="3K4Cdx">
-              <ref role="3cqZAo" node="2jv$fqwD$p5" resolve="myApplyChanges" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="H_c77" id="4hhnRwRpWHf" role="3clF45" />
-    </node>
     <node concept="3clFb_" id="2jv$fqwD$vy" role="jymVt">
       <property role="TrG5h" value="getResultModelWithFixedId" />
-      <node concept="3Tm1VV" id="2jv$fqwD$vz" role="1B3o_S" />
+      <node concept="3Tm6S6" id="7LCpE5f8q6E" role="1B3o_S" />
       <node concept="3clFbS" id="2jv$fqwD$v$" role="3clF47">
-        <node concept="3clFbJ" id="2jv$fqwD$v_" role="3cqZAp">
-          <node concept="3fqX7Q" id="2jv$fqwD$vA" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuTu$" role="3fr31v">
-              <ref role="3cqZAo" node="2jv$fqwD$p5" resolve="myApplyChanges" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="2jv$fqwD$vC" role="3clFbx">
-            <node concept="3cpWs6" id="2jv$fqwD$vD" role="3cqZAp">
-              <node concept="10Nm6u" id="2jv$fqwD$vE" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="6E2SOPziqY_" role="3cqZAp">
           <node concept="3cpWsn" id="6E2SOPziqYC" role="3cpWs9">
             <property role="TrG5h" value="resultModel" />
@@ -6491,7 +6564,7 @@
     <node concept="3clFb_" id="2jv$fqwD$vU" role="jymVt">
       <property role="TrG5h" value="unregisterModels" />
       <node concept="3cqZAl" id="2jv$fqwD$vV" role="3clF45" />
-      <node concept="3Tm1VV" id="2jv$fqwD$vW" role="1B3o_S" />
+      <node concept="3Tm6S6" id="7LCpE5f86jf" role="1B3o_S" />
       <node concept="3clFbS" id="2jv$fqwD$vX" role="3clF47">
         <node concept="1QHqEM" id="2jv$fqwD$wd" role="3cqZAp">
           <node concept="1QHqEC" id="2jv$fqwD$we" role="1QHqEI">
@@ -9038,6 +9111,38 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="3HP615" id="5$xqaErb5$G">
+    <property role="TrG5h" value="ISaveMergedModel" />
+    <node concept="3clFb_" id="7LCpE5eWcu6" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="save" />
+      <node concept="3clFbS" id="7LCpE5eWcu9" role="3clF47" />
+      <node concept="3Tm1VV" id="7LCpE5eWcua" role="1B3o_S" />
+      <node concept="10P_77" id="7LCpE5f38C4" role="3clF45" />
+      <node concept="37vLTG" id="7LCpE5eWcAk" role="3clF46">
+        <property role="TrG5h" value="parent" />
+        <node concept="3uibUv" id="7LCpE5eWcBc" role="1tU5fm">
+          <ref role="3uigEE" node="2jv$fqwD$ox" resolve="MergeModelsDialog" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7LCpE5f0gwo" role="3clF46">
+        <property role="TrG5h" value="resultModel" />
+        <node concept="H_c77" id="7LCpE5f0gxn" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="7LCpE5f38DU" role="lGtFl">
+        <node concept="x79VA" id="7LCpE5f38Iw" role="x79VK">
+          <property role="x79VB" value="true - close dialog, false - continue merging" />
+        </node>
+        <node concept="TZ5HA" id="7LCpE5feOQ_" role="TZ5H$">
+          <node concept="1dT_AC" id="7LCpE5feOQA" role="1dT_Ay">
+            <property role="1dT_AB" value="Called on OK in MergeModelsDialog before closing" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="5$xqaErb5$H" role="1B3o_S" />
   </node>
 </model>
 

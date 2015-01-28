@@ -27,7 +27,11 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.persistence.PersistenceVersionAware;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -40,7 +44,7 @@ public class ModelMergeTool extends MergeTool {
   }
   @Override
   public void show(final DiffRequest request) {
-    MergeRequestImpl mrequest = (MergeRequestImpl) request;
+    final MergeRequestImpl mrequest = (MergeRequestImpl) request;
     try {
       final Wrappers._T<VirtualFile> file = new Wrappers._T<VirtualFile>(check_7qvsj_a0a0b0d(mrequest.getResultContent()));
       if (file.value == null) {
@@ -51,13 +55,13 @@ public class ModelMergeTool extends MergeTool {
       }
       final IFile iFile = FileSystem.getInstance().getFileByPath(file.value.getPath());
 
-      File backupFile = MergeBackupUtil.zipModel(request.getContents(), file.value);
+      final File backupFile = MergeBackupUtil.zipModel(request.getContents(), file.value);
       DiffContent[] contents = mrequest.getContents();
       final Wrappers._T<String> ext = new Wrappers._T<String>(file.value.getExtension());
       if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
         ext.value = MPSExtentions.MODEL;
       }
-      SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
+      final SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
       SModel mineModel = loadModel(contents[MergeConstants.CURRENT].getBytes(), ext.value);
       SModel newModel = loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
@@ -74,23 +78,53 @@ public class ModelMergeTool extends MergeTool {
           dialog.toFront();
         }
       });
-      dialog.show();
-      final SModel resultModel = dialog.getResultModelWithFixedId();
-      if (resultModel != null) {
-        final Wrappers._T<String> resultContent = new Wrappers._T<String>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
-              resultContent.value = PersistenceUtil.savePerRootModel(resultModel, file.value.getExtension().equals(MPSExtentions.MODEL_HEADER));
-            } else {
-              resultContent.value = PersistenceUtil.saveModel(resultModel, ext.value);
+
+      ISaveMergedModel saver = new ISaveMergedModel() {
+        public boolean save(MergeModelsDialog parent, final SModel resultModel) {
+          final Wrappers._boolean closeDialog = new Wrappers._boolean(true);
+          final Wrappers._T<String> resultContent = new Wrappers._T<String>(null);
+
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              try {
+                resultContent.value = ModelMergeTool.saveModel(resultModel, iFile, file.value, ext.value);
+              } catch (Throwable error) {
+                // this can be when saving in 9 persistence after merge with 8 persistence => trying to save in 8th 
+                if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
+                  int result = Messages.showYesNoCancelDialog(dialog.getContentPane(), "Cannot save merged model in 9th persistence. Save in 8th model persistence version?", "Save model " + SModelOperations.getModelName(resultModel), "Save in 8th persistence", "Revert", "Return to merge", Messages.getWarningIcon());
+                  switch (result) {
+                    case Messages.YES:
+                      ((PersistenceVersionAware) resultModel).setPersistenceVersion(8);
+                      resultContent.value = ModelMergeTool.saveModel(resultModel, iFile, file.value, ext.value);
+                      break;
+                    case Messages.NO:
+                      resultContent.value = null;
+                      break;
+                    default:
+                      closeDialog.value = false;
+                      break;
+                  }
+                } else {
+                  if (LOG_705910402.isEnabledFor(Level.ERROR)) {
+                    LOG_705910402.error("Cannot save merge resulting model " + SModelOperations.getModelName(resultModel), error);
+                  }
+                }
+              }
+
+              if (resultContent.value != null) {
+                setResolved(mrequest, resultContent.value);
+                MergeBackupUtil.packMergeResult(backupFile, file.value.getName(), resultContent.value);
+              }
             }
-          }
-        });
-        resolved(mrequest, resultContent.value);
-        MergeBackupUtil.packMergeResult(backupFile, file.value.getName(), resultContent.value);
-      }
-      dialog.unregisterModels();
+          });
+
+          return closeDialog.value;
+        }
+      };
+
+      dialog.setSaver(saver);
+      dialog.show();
+
     } catch (IOException e) {
       LOG.error(null, e);
     }
@@ -121,7 +155,7 @@ public class ModelMergeTool extends MergeTool {
     }
     return true;
   }
-  private static void resolved(MergeRequestImpl req, final String result) {
+  private static void setResolved(MergeRequestImpl req, final String result) {
     req.setResult(DialogWrapper.OK_EXIT_CODE);
     final VirtualFile modelFile = check_7qvsj_a0b0g(req.getResultContent());
     ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -130,11 +164,18 @@ public class ModelMergeTool extends MergeTool {
           modelFile.setBinaryContent(result.getBytes(FileUtil.DEFAULT_CHARSET));
         } catch (IOException e) {
           if (LOG_705910402.isEnabledFor(Level.ERROR)) {
-            LOG_705910402.error("", e);
+            LOG_705910402.error("Cannot save merge result into " + modelFile.getPath(), e);
           }
         }
       }
     });
+  }
+  private static String saveModel(SModel resultModel, IFile iFile, VirtualFile file, String ext) {
+    if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
+      return PersistenceUtil.savePerRootModel(resultModel, file.getExtension().equals(MPSExtentions.MODEL_HEADER));
+    } else {
+      return PersistenceUtil.saveModel(resultModel, ext);
+    }
   }
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
   private static VirtualFile check_7qvsj_a0a0b0d(DiffContent checkedDotOperand) {
