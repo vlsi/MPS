@@ -21,7 +21,6 @@ import com.intellij.openapi.application.ApplicationManager;
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   private ModelCheckerPreferencesPage myPreferences;
-  private boolean myMigrationMode = false;
   public ModelCheckerSettings() {
   }
   @NonNls
@@ -57,21 +56,16 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
-    if (myMigrationMode) {
-      // todo this is a hack to use model checker in migration tool 
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
-    } else {
-      ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-      if (isCheckModelProperties()) {
-        ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
-      }
-      ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
-      if (isCheckUnresolvedReferences()) {
-        ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
-      }
-      ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker(mpsProject));
-      ListSequence.fromList(specificCheckers).addElement(new ModelPersistenceVersionChecker());
+    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
+    if (isCheckModelProperties()) {
+      ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
     }
+    ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
+    if (isCheckUnresolvedReferences()) {
+      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
+    }
+    ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker(mpsProject));
+    ListSequence.fromList(specificCheckers).addElement(new ModelPersistenceVersionChecker());
     return specificCheckers;
   }
   public boolean checkerIsOn(String category) {
@@ -118,14 +112,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
   public void setCheckBeforeCommit(boolean checkBeforeCommit) {
     myState.myCheckBeforeCommit = checkBeforeCommit;
-  }
-  @Deprecated
-  public void setMigrationMode(boolean migrationMode) {
-    myMigrationMode = migrationMode;
-  }
-  @Deprecated
-  public boolean getMigrationMode() {
-    return myMigrationMode;
   }
   public static ModelCheckerSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);

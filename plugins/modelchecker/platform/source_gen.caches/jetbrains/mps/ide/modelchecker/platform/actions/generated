@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="40arohckk7umqy3ytggw0nh3gsjaknl">
+<dependencies version="2" modelHash="-3ppfyes205nbzwipemuuqlvu9qh8pjp">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -67,7 +67,7 @@
   <common hash="-dhxrkuv07ucggajrcmta4ds5hef2s0y" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="3719390199793464912" name="ModelCheckerSettings" hash="55uhc76dy1o4u0j4dy84i727a2s9ijy">
+  <source id="3719390199793464912" name="ModelCheckerSettings" hash="-qfnz32nm58qfz0anqgfyplleaqmcnq">
     <dep root="3719390199795290578" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -220,7 +220,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnresolvedReferencesChecker.java" />
   </source>
-  <source id="3719390199793468053" name="ModelCheckerTool" hash="-e88qqhfs4usrklbesdpsvay2csluxms">
+  <source id="3719390199793468053" name="ModelCheckerTool" hash="-5bvcist35tpakp5ws1qbll6g38gxwgu">
     <dep root="3719390199795365573" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
