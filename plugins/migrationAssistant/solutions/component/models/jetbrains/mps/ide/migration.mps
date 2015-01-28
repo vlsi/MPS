@@ -40,6 +40,7 @@
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
     <import index="1y3e" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.migration.global(MPS.Workbench/jetbrains.mps.migration.global@java_stub)" />
+    <import index="p7r7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.vfs(MPS.Platform/jetbrains.mps.ide.vfs@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -795,31 +796,49 @@
                         <ref role="37wK5l" to="yla8:~Application.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                         <node concept="1bVj0M" id="3gptLqNGiMl" role="37wK5m">
                           <node concept="3clFbS" id="3gptLqNGiMw" role="1bW5cS">
+                            <node concept="3clFbF" id="5qfN6LqBUcZ" role="3cqZAp">
+                              <node concept="2YIFZM" id="5qfN6LqBUGh" role="3clFbG">
+                                <ref role="37wK5l" to="p7r7:~VirtualFileUtils.refreshSynchronouslyRecursively(com.intellij.openapi.vfs.VirtualFile):void" resolve="refreshSynchronouslyRecursively" />
+                                <ref role="1Pybhc" to="p7r7:~VirtualFileUtils" resolve="VirtualFileUtils" />
+                                <node concept="2OqwBi" id="5qfN6LqBVY4" role="37wK5m">
+                                  <node concept="37vLTw" id="5qfN6LqBVo4" role="2Oq$k0">
+                                    <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+                                  </node>
+                                  <node concept="liA8E" id="5qfN6LqBWDa" role="2OqNvi">
+                                    <ref role="37wK5l" to="b2mh:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="5SsFeroaalc" role="3cqZAp">
                               <node concept="2OqwBi" id="5SsFeroaald" role="3clFbG">
                                 <node concept="2YIFZM" id="5SsFeroafMD" role="2Oq$k0">
                                   <ref role="37wK5l" to="3df7:~VirtualFileManager.getInstance():com.intellij.openapi.vfs.VirtualFileManager" resolve="getInstance" />
                                   <ref role="1Pybhc" to="3df7:~VirtualFileManager" resolve="VirtualFileManager" />
                                 </node>
-                                <node concept="liA8E" id="5SsFeroaalf" role="2OqNvi">
-                                  <ref role="37wK5l" to="3df7:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
+                                <node concept="liA8E" id="5qfN6LqBXsK" role="2OqNvi">
+                                  <ref role="37wK5l" to="3df7:~VirtualFileManager.asyncRefresh(java.lang.Runnable):long" resolve="asyncRefresh" />
+                                  <node concept="1bVj0M" id="5qfN6LqBXEC" role="37wK5m">
+                                    <node concept="3clFbS" id="5qfN6LqBXED" role="1bW5cS">
+                                      <node concept="3clFbF" id="5qfN6LqBYyb" role="3cqZAp">
+                                        <node concept="2YIFZM" id="3n7MNzP5gET" role="3clFbG">
+                                          <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
+                                          <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                                          <node concept="1bVj0M" id="3n7MNzP5gOt" role="37wK5m">
+                                            <node concept="3clFbS" id="3n7MNzP5gOu" role="1bW5cS">
+                                              <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
+                                                <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
+                                                  <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="3n7MNzP5gxN" role="3cqZAp">
-                    <node concept="2YIFZM" id="3n7MNzP5gET" role="3clFbG">
-                      <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                      <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-                      <node concept="1bVj0M" id="3n7MNzP5gOt" role="37wK5m">
-                        <node concept="3clFbS" id="3n7MNzP5gOu" role="1bW5cS">
-                          <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
-                            <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
-                              <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
                             </node>
                           </node>
                         </node>

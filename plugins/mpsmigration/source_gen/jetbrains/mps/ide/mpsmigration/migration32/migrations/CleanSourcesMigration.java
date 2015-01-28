@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -65,8 +64,6 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
 
         // clean genclasses 
         removeClassesGen(p);
-        // invalidate FS caches (see InvalidateCachesAction) 
-        FSRecords.invalidateCaches();
       }
     });
     ModelAccess.instance().runWriteAction(new Runnable() {

@@ -588,17 +588,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3SKdUt" id="7ScOZyr2yMI" role="3cqZAp">
-                    <node concept="3SKdUq" id="7ScOZyr2yMJ" role="3SKWNk">
-                      <property role="3SKdUp" value="invalidate FS caches (see InvalidateCachesAction)" />
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="7ScOZyr2yMK" role="3cqZAp">
-                    <node concept="2YIFZM" id="7ScOZyr2yML" role="3clFbG">
-                      <ref role="37wK5l" to="a093:~FSRecords.invalidateCaches():void" resolve="invalidateCaches" />
-                      <ref role="1Pybhc" to="a093:~FSRecords" resolve="FSRecords" />
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
