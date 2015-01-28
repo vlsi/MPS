@@ -18,7 +18,7 @@ package jetbrains.mps.generator;
 import org.jetbrains.annotations.Nullable;
 
 public class DefaultModifiableGenerationSettings implements IModifiableGenerationSettings {
-  private boolean mySaveTransientModels;
+  private boolean mySaveTransientModels = false;
   private boolean myCheckModelsBeforeGeneration = true;
   private boolean myParallelGenerator = false;
   private boolean myStrictMode = true;
@@ -28,13 +28,13 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myShowInfo = false;
   private boolean myShowWarnings = true;
   private boolean myKeepModelsWithWarnings = true;
-  private boolean myIncremental = true;
+  private boolean myIncremental = false;
   private boolean myIncrementalUseCache = false;
   private boolean myDebugIncrementalDependencies = false;
   private boolean myFailOnMissingTextGen = false;
   private boolean myGenerateDebugInfo = true;
   private boolean myShowBadChildWarning = true;
-  private boolean myActiveInplaceTransorm = true;
+  private boolean myActiveInplaceTransform = true;
   private GenTraceSettings myTraceSettings = new GenTraceSettings();
 
   @Override
@@ -199,12 +199,12 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public void enableInplaceTransformations(boolean enabled) {
-    myActiveInplaceTransorm = enabled;
+    myActiveInplaceTransform = enabled;
   }
 
   @Override
-  public boolean useInplaceTransofrmations() {
-    return myActiveInplaceTransorm;
+  public boolean useInplaceTransformations() {
+    return myActiveInplaceTransform;
   }
 
   @Override

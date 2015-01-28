@@ -27,6 +27,7 @@ import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -106,14 +107,24 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myDependenciesTraces = new HashMap<String, String>();
   }
 
+  // there's nobody using dependency traces, and as long as incremental story needs complete refactoring, no reason to keep them
+  @ToRemove(version = 3.2)
   void reportModelAccess(SModel model, SNode root) {
     if (myDependenciesTraces == null) return;
     String key = model.getReference().toString() + " in " + (root == null ? "common" : root.getNodeId().toString());
     if (myDependenciesTraces.containsKey(key)) return;
 
     StringWriter stringWriter = new StringWriter();
-    new Throwable().printStackTrace(new PrintWriter(stringWriter));
-    myDependenciesTraces.put(key, stringWriter.toString());
+    final Throwable stackTrace = new Throwable();
+    stackTrace.printStackTrace(new PrintWriter(stringWriter));
+    final String v = stringWriter.toString();
+    myDependenciesTraces.put(key, v);
+    if (myDependenciesTraces.containsKey(null)) {
+      throw new IllegalStateException("Got null key in dep traces after adding key " + key, stackTrace);
+    }
+    if (!v.equals(myDependenciesTraces.get(key))) {
+      throw new IllegalStateException("Mismatch in recorded value for key " + key, stackTrace);
+    }
   }
 
   public void propagateDependencies(Set<SNode> unchangedRoots, Set<SNode> requiredRoots, boolean conditionalsUnchanged, boolean conditionalsRequired, GenerationDependencies saved) {
