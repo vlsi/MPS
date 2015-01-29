@@ -26507,7 +26507,7 @@
     </node>
     <node concept="3clFbS" id="5kDx1Sj6jKF" role="LjaKd">
       <node concept="2TK7Tu" id="5kDx1Sj6jKG" role="3cqZAp">
-        <property role="2TTd_B" value=" extends Runnable " />
+        <property role="2TTd_B" value=" extends Runnable" />
       </node>
     </node>
     <node concept="312cEu" id="5kDx1Sj6jKH" role="LiZbd">
@@ -41681,13 +41681,6 @@
                   <property role="Xl_RC" value="Hi" />
                 </node>
               </node>
-            </node>
-            <node concept="LIFWc" id="7s4edfJB$xU" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="1" />
-              <property role="p6zMs" value="1" />
-              <property role="LIFWd" value="Constant_zedcwq_b0" />
             </node>
           </node>
         </node>
