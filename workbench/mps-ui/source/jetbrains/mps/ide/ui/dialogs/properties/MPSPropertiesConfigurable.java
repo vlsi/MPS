@@ -164,7 +164,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   protected void removeTab(Tab tab) {
-    if(tab == null) return;
+    if(tab == null) {
+      return;
+    }
     removeTab(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()));
     myTabs.remove(tab);
   }
@@ -178,8 +180,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   public final void addChangeListener(final ChangeListener listener){
-    if(myTabbedPaneWrapper != null)
-    myTabbedPaneWrapper.addChangeListener(listener);
+    if(myTabbedPaneWrapper != null) {
+      myTabbedPaneWrapper.addChangeListener(listener);
+    }
   }
 
   @Override
@@ -187,8 +190,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        for (Tab tab : myTabs)
+        for (Tab tab : myTabs) {
           tab.apply();
+        }
         save();
       }
     });
@@ -197,8 +201,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   @Override
   public boolean isModified() {
     for (Tab tab : myTabs)
-      if(tab.isModified())
+      if (tab.isModified()) {
         return true;
+      }
 
     return false;
   }
