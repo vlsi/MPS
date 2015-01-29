@@ -69,6 +69,7 @@
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <import index="8pnb" ref="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -1113,6 +1114,33 @@
     </node>
     <node concept="lpD6D" id="69H_rR6IlQg" role="lpD6w">
       <ref role="lpD7u" to="5ivf:4ackmjcdW2w" resolve="JavaToMps" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CDO" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUmxT6" resolve="IntroduceConstantFromOperation" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CIU" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUnu2X" resolve="IntroduceFieldFromOperation" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CK8" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUo9JZ" resolve="IntroduceLocalVariable" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CLq" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:7wuMSYjK5IB" resolve="IntroduceLocalVariableFromAnonymousClassMethod" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CMK" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUnDv$" resolve="IntroduceLocalVariableFromArray" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0COa" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUnTLQ" resolve="IntroduceLocalVariableFromMethodCall" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CPC" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUnTLQ" resolve="IntroduceLocalVariableFromMethodCall" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CRa" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUo44J" resolve="IntroduceLocalVariableFromNoExpression" />
+    </node>
+    <node concept="lpD6D" id="4Hk57oa0CSK" role="lpD6w">
+      <ref role="lpD7u" to="8pnb:l2cEPUnMop" resolve="IntroduceLocalVariableFromOperation" />
     </node>
   </node>
   <node concept="lpD6F" id="3FJ0r$qNTEf">
@@ -3265,12 +3293,6 @@
     <node concept="lpD6D" id="3FJ0r$qO3bY" role="lpD6w">
       <ref role="lpD7u" to="hbb4:1S4GctIhVsk" resolve="IntroduceConstantFromAnonimousClass" />
     </node>
-    <node concept="lpD6D" id="7wuMSYjJDNi" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUmxT6" resolve="IntroduceConstantFromOperation" />
-    </node>
-    <node concept="lpD6D" id="7wuMSYjIW3w" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUnu2X" resolve="IntroduceFieldFromOperation" />
-    </node>
     <node concept="lpD6D" id="3FJ0r$qO3cc" role="lpD6w">
       <ref role="lpD7u" to="hbb4:3waFG77kqjB" resolve="IntroduceFinalField" />
     </node>
@@ -3279,24 +3301,6 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3bW" role="lpD6w">
       <ref role="lpD7u" to="hbb4:2GBYV6rKlYL" resolve="IntroduceVariableFromAnonimousClass" />
-    </node>
-    <node concept="lpD6D" id="l2cEPUobBS" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUo9JZ" resolve="IntroduceLocalVariable" />
-    </node>
-    <node concept="lpD6D" id="7wuMSYjKHfM" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:7wuMSYjK5IB" resolve="IntroduceLocalVariableFromAnonymousClassMethod" />
-    </node>
-    <node concept="lpD6D" id="7wuMSYjIWqN" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUnDv$" resolve="IntroduceLocalVariableFromArray" />
-    </node>
-    <node concept="lpD6D" id="7s4edfJAVDl" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUnTLQ" resolve="IntroduceLocalVariableFromMethodCall" />
-    </node>
-    <node concept="lpD6D" id="l2cEPUo828" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUo44J" resolve="IntroduceLocalVariableFromNoExpression" />
-    </node>
-    <node concept="lpD6D" id="7wuMSYjGCcI" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:l2cEPUnMop" resolve="IntroduceLocalVariableFromOperation" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c8" role="lpD6w">
       <ref role="lpD7u" to="hbb4:639v8iJcA6v" resolve="IntroduceVariableFromWildcards" />

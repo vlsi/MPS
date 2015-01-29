@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316000326">
+    <file name="IntroduceConstantFromOperation_Test.java">
+      <node id="378921039316000326" at="17,70,18,123" concept="1" />
+      <node id="378921039316000326" at="18,123,19,127" concept="1" />
+      <node id="378921039316000326" at="26,51,27,62" concept="1" />
+      <node id="378921039316227114" at="27,62,28,83" concept="1" />
+      <node id="378921039316245544" at="28,83,29,87" concept="1" />
+      <node id="378921039316000326" at="14,0,16,0" concept="0" trace="IntroduceConstantFromOperation_Test#()V" />
+      <node id="378921039316000326" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316000326" at="16,0,21,0" concept="2" trace="test_IntroduceConstantFromOperation#()V" />
+      <node id="378921039316000326" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316000326" at="14,48,14,48" />
+      <scope id="378921039316000326" at="23,23,23,23" />
+      <scope id="378921039316000326" at="14,0,16,0" />
+      <scope id="378921039316000326" at="17,70,19,127" />
+      <scope id="378921039316000326" at="23,0,25,0" />
+      <scope id="378921039316000326" at="26,51,29,87" />
+      <scope id="378921039316000326" at="16,0,21,0" />
+      <scope id="378921039316000326" at="25,0,31,0" />
+      <unit id="378921039316000326" at="21,0,32,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceConstantFromOperation_Test$TestBody" />
+      <unit id="378921039316000326" at="12,0,33,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceConstantFromOperation_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316246717">
+    <file name="IntroduceFieldFromOperation_Test.java">
+      <node id="378921039316246717" at="17,67,18,123" concept="1" />
+      <node id="378921039316246717" at="18,123,19,124" concept="1" />
+      <node id="378921039316246717" at="26,51,27,61" concept="1" />
+      <node id="378921039316246754" at="27,61,28,80" concept="1" />
+      <node id="378921039316246756" at="28,80,29,87" concept="1" />
+      <node id="378921039316246717" at="14,0,16,0" concept="0" trace="IntroduceFieldFromOperation_Test#()V" />
+      <node id="378921039316246717" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316246717" at="16,0,21,0" concept="2" trace="test_IntroduceFieldFromOperation#()V" />
+      <node id="378921039316246717" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316246717" at="14,45,14,45" />
+      <scope id="378921039316246717" at="23,23,23,23" />
+      <scope id="378921039316246717" at="14,0,16,0" />
+      <scope id="378921039316246717" at="17,67,19,124" />
+      <scope id="378921039316246717" at="23,0,25,0" />
+      <scope id="378921039316246717" at="26,51,29,87" />
+      <scope id="378921039316246717" at="16,0,21,0" />
+      <scope id="378921039316246717" at="25,0,31,0" />
+      <unit id="378921039316246717" at="21,0,32,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceFieldFromOperation_Test$TestBody" />
+      <unit id="378921039316246717" at="12,0,33,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceFieldFromOperation_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316293604">
+    <file name="IntroduceLocalVariableFromArray_Test.java">
+      <node id="378921039316293604" at="15,71,16,123" concept="1" />
+      <node id="378921039316293604" at="16,123,17,128" concept="1" />
+      <node id="378921039316293604" at="24,51,25,62" concept="1" />
+      <node id="378921039316293650" at="25,62,26,83" concept="1" />
+      <node id="378921039316293604" at="12,0,14,0" concept="0" trace="IntroduceLocalVariableFromArray_Test#()V" />
+      <node id="378921039316293604" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316293604" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariableFromArray#()V" />
+      <node id="378921039316293604" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316293604" at="12,49,12,49" />
+      <scope id="378921039316293604" at="21,23,21,23" />
+      <scope id="378921039316293604" at="12,0,14,0" />
+      <scope id="378921039316293604" at="15,71,17,128" />
+      <scope id="378921039316293604" at="21,0,23,0" />
+      <scope id="378921039316293604" at="24,51,26,83" />
+      <scope id="378921039316293604" at="14,0,19,0" />
+      <scope id="378921039316293604" at="23,0,28,0" />
+      <unit id="378921039316293604" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromArray_Test$TestBody" />
+      <unit id="378921039316293604" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromArray_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316330009">
+    <file name="IntroduceLocalVariableFromOperation_Test.java">
+      <node id="378921039316330009" at="15,75,16,123" concept="1" />
+      <node id="378921039316330009" at="16,123,17,132" concept="1" />
+      <node id="378921039316330009" at="24,51,25,61" concept="1" />
+      <node id="378921039316330055" at="25,61,26,83" concept="1" />
+      <node id="378921039316330009" at="12,0,14,0" concept="0" trace="IntroduceLocalVariableFromOperation_Test#()V" />
+      <node id="378921039316330009" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316330009" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariableFromOperation#()V" />
+      <node id="378921039316330009" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316330009" at="12,53,12,53" />
+      <scope id="378921039316330009" at="21,23,21,23" />
+      <scope id="378921039316330009" at="12,0,14,0" />
+      <scope id="378921039316330009" at="15,75,17,132" />
+      <scope id="378921039316330009" at="21,0,23,0" />
+      <scope id="378921039316330009" at="24,51,26,83" />
+      <scope id="378921039316330009" at="14,0,19,0" />
+      <scope id="378921039316330009" at="23,0,28,0" />
+      <unit id="378921039316330009" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromOperation_Test$TestBody" />
+      <unit id="378921039316330009" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromOperation_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316360310">
+    <file name="IntroduceLocalVariableFromMethodCall_Test.java">
+      <node id="378921039316360310" at="15,76,16,123" concept="1" />
+      <node id="378921039316360310" at="16,123,17,133" concept="1" />
+      <node id="378921039316360310" at="24,51,25,61" concept="1" />
+      <node id="378921039316360348" at="25,61,26,83" concept="1" />
+      <node id="378921039316360310" at="12,0,14,0" concept="0" trace="IntroduceLocalVariableFromMethodCall_Test#()V" />
+      <node id="378921039316360310" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316360310" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariableFromMethodCall#()V" />
+      <node id="378921039316360310" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316360310" at="12,54,12,54" />
+      <scope id="378921039316360310" at="21,23,21,23" />
+      <scope id="378921039316360310" at="12,0,14,0" />
+      <scope id="378921039316360310" at="15,76,17,133" />
+      <scope id="378921039316360310" at="21,0,23,0" />
+      <scope id="378921039316360310" at="24,51,26,83" />
+      <scope id="378921039316360310" at="14,0,19,0" />
+      <scope id="378921039316360310" at="23,0,28,0" />
+      <unit id="378921039316360310" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromMethodCall_Test$TestBody" />
+      <unit id="378921039316360310" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromMethodCall_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316402479">
+    <file name="IntroduceLocalVariableFromNoExpression_Test.java">
+      <node id="378921039316402479" at="15,78,16,123" concept="1" />
+      <node id="378921039316402479" at="16,123,17,135" concept="1" />
+      <node id="378921039316402479" at="24,51,25,61" concept="1" />
+      <node id="378921039316402513" at="25,61,26,83" concept="1" />
+      <node id="378921039316402479" at="12,0,14,0" concept="0" trace="IntroduceLocalVariableFromNoExpression_Test#()V" />
+      <node id="378921039316402479" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316402479" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariableFromNoExpression#()V" />
+      <node id="378921039316402479" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316402479" at="12,56,12,56" />
+      <scope id="378921039316402479" at="21,23,21,23" />
+      <scope id="378921039316402479" at="12,0,14,0" />
+      <scope id="378921039316402479" at="15,78,17,135" />
+      <scope id="378921039316402479" at="21,0,23,0" />
+      <scope id="378921039316402479" at="24,51,26,83" />
+      <scope id="378921039316402479" at="14,0,19,0" />
+      <scope id="378921039316402479" at="23,0,28,0" />
+      <unit id="378921039316402479" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromNoExpression_Test$TestBody" />
+      <unit id="378921039316402479" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromNoExpression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/378921039316425727">
+    <file name="IntroduceLocalVariable_Test.java">
+      <node id="378921039316425727" at="15,62,16,123" concept="1" />
+      <node id="378921039316425727" at="16,123,17,119" concept="1" />
+      <node id="378921039316425727" at="24,51,25,61" concept="1" />
+      <node id="378921039316425765" at="25,61,26,83" concept="1" />
+      <node id="378921039316425727" at="12,0,14,0" concept="0" trace="IntroduceLocalVariable_Test#()V" />
+      <node id="378921039316425727" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="378921039316425727" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariable#()V" />
+      <node id="378921039316425727" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="378921039316425727" at="12,40,12,40" />
+      <scope id="378921039316425727" at="21,23,21,23" />
+      <scope id="378921039316425727" at="12,0,14,0" />
+      <scope id="378921039316425727" at="15,62,17,119" />
+      <scope id="378921039316425727" at="21,0,23,0" />
+      <scope id="378921039316425727" at="24,51,26,83" />
+      <scope id="378921039316425727" at="14,0,19,0" />
+      <scope id="378921039316425727" at="23,0,28,0" />
+      <unit id="378921039316425727" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariable_Test$TestBody" />
+      <unit id="378921039316425727" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f688bd3e-ea58-4dd1-bd4c-13336ee4cd0b(jetbrains.mps.ide.java.tests.editorTests@tests)/8655579351372290983">
+    <file name="IntroduceLocalVariableFromAnonymousClassMethod_Test.java">
+      <node id="8655579351372290983" at="15,86,16,123" concept="1" />
+      <node id="8655579351372290983" at="16,123,17,143" concept="1" />
+      <node id="8655579351372290983" at="24,51,25,63" concept="1" />
+      <node id="8655579351372417796" at="25,63,26,83" concept="1" />
+      <node id="8655579351372290983" at="12,0,14,0" concept="0" trace="IntroduceLocalVariableFromAnonymousClassMethod_Test#()V" />
+      <node id="8655579351372290983" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8655579351372290983" at="14,0,19,0" concept="2" trace="test_IntroduceLocalVariableFromAnonymousClassMethod#()V" />
+      <node id="8655579351372290983" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8655579351372290983" at="12,64,12,64" />
+      <scope id="8655579351372290983" at="21,23,21,23" />
+      <scope id="8655579351372290983" at="12,0,14,0" />
+      <scope id="8655579351372290983" at="15,86,17,143" />
+      <scope id="8655579351372290983" at="21,0,23,0" />
+      <scope id="8655579351372290983" at="24,51,26,83" />
+      <scope id="8655579351372290983" at="14,0,19,0" />
+      <scope id="8655579351372290983" at="23,0,28,0" />
+      <unit id="8655579351372290983" at="19,0,29,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromAnonymousClassMethod_Test$TestBody" />
+      <unit id="8655579351372290983" at="10,0,30,0" name="jetbrains.mps.ide.java.tests.editorTests.IntroduceLocalVariableFromAnonymousClassMethod_Test" />
+    </file>
+  </root>
+</debug-info>
+
