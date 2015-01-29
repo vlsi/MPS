@@ -30,8 +30,8 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ModelComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -59,7 +59,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     if (IMakeService.INSTANCE.isSessionActive()) return true;
 
     Application application = ApplicationManager.getApplication();
-    return (application.isDisposed() || application.isDisposeInProgress());
+    return (application.isDisposed() || application.isDisposeInProgress() || myProject.isDisposed());
   }
 
   @Override
@@ -95,6 +95,17 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         if (moduleNode.getModule().isReadOnly()) {
           new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
           new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
+          return;
+        }
+
+        final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+        if (project != null && DumbService.getInstance(project).isDumb()) {
+          // while idea updates its index, we can't use index to check model hashes.
+          // of course, we can calculate hash again (i.e. if none in index found),
+          // however, as long as we use index for hashes, seems reasonable to wait for end of dumb mode
+          // and to update status again then (PPTH.dumbUpdate does that).
+          // Here, I don't care to set status of individual models and modules - status for a group seems to be enough
+          propagateStatusToNamespaceNodes(moduleNode, GenerationStatus.UPDATING);
           return;
         }
 
@@ -136,7 +147,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       if (myModuleNode == null && myModelNode == null) {
         return null;
       }
-      GenerationStatus status = ModelAccess.instance().runReadAction(this);
+      GenerationStatus status = new ModelComputeRunnable<GenerationStatus>(this).runRead(myProject.getModelAccess());
       update(status);
       return status;
     }
@@ -192,12 +203,6 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
-
-    final Project mpsProject = ProjectHelper.getProject(node.getModel().getRepository());
-    if (mpsProject != null) {
-      // FIXME why (a) it's here, not in the GenStatusUpdater, prior to StatusUpdate call; (b) are we bound to the Idea platform here?
-      if (DumbService.getInstance(ProjectHelper.toIdeaProject(mpsProject)).isDumb()) return GenerationStatus.UPDATING;
-    }
 
     boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getModel());
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;

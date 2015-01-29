@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,10 @@ public class IndexBasedModelDigest implements ApplicationComponent {
             }, new EverythingGlobalScope());
         return valueArray[0];
       } catch (IndexNotReadyException e) {
-        LOG.error("", e);
+        // generally, it's bad to get here (we'd rather check for dumb mode prior accessing the index
+        // however, there's nothing bad in returning null here as it's merely an indication of no cached
+        // hash value, and we can calculate it again, if needed. Hence, debug log level looks fine.
+        LOG.debug(e.getClass().getName(), e);
       } catch (ProcessCanceledException e) {
         LOG.warn(e.getMessage());
       }
