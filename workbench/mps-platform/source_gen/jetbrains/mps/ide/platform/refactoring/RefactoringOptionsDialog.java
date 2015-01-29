@@ -44,7 +44,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     if (myRefactoring instanceof ILoggableRefactoring) {
       myIsLocalCheckBox = new JCheckBox("is local (don't write refactoring history into log)");
       myIsLocalCheckBox.setSelected(myRefactoringContext.isLocal());
-      myIsLocalCheckBox.setEnabled(false);
       myInnerPanel.add(myIsLocalCheckBox, c);
     }
     if (myHasModelsToGenerate) {
@@ -62,6 +61,9 @@ public class RefactoringOptionsDialog extends DialogWrapper {
   @Override
   protected void doOKAction() {
     myIsCancelled = false;
+    if (myRefactoring instanceof ILoggableRefactoring) {
+      myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
+    }
     if (myGenerateModelsCheckBox != null) {
       myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
     } else {

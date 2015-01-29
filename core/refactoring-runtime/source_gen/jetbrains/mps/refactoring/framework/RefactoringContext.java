@@ -59,7 +59,7 @@ public class RefactoringContext {
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();
   private UsagesList myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
-  private boolean myIsLocal = true;
+  private boolean myIsLocal = false;
   private boolean myDoesGenerateModels = false;
   private SModel mySelectedModel;
   private SNode mySelectedNode;
