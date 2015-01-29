@@ -1030,6 +1030,9 @@
     <node concept="lpD6D" id="6_1qUe4eP2U" role="lpD6w">
       <ref role="lpD7u" to="tpej:6_1qUe3MTtm" resolve="ByteTypeOfIntegerConstant" />
     </node>
+    <node concept="lpD6D" id="ROe8AA1GAV" role="lpD6w">
+      <ref role="lpD7u" to="tpej:ROe8A_SmDX" resolve="CaseInsensitiveDuplicatedClassifierName" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQmKZ" role="lpD6w">
       <ref role="lpD7u" to="tpej:2jmlBNW7vIq" resolve="ClassifierNameUniqueness" />
     </node>

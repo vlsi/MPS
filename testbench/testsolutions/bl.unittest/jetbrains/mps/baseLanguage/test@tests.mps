@@ -21092,5 +21092,44 @@
       </node>
     </node>
   </node>
+  <node concept="1lH9Xt" id="ROe8A_SmDX">
+    <property role="3GE5qa" value="typeSystem" />
+    <property role="TrG5h" value="CaseInsensitiveDuplicatedClassifierName" />
+    <node concept="1qefOq" id="ROe8A_SmDY" role="1SKRRt">
+      <node concept="312cEu" id="ROe8A_SmDZ" role="1qenE9">
+        <property role="2bfB8j" value="true" />
+        <property role="TrG5h" value="Foo" />
+        <property role="1sVAO0" value="false" />
+        <node concept="312cEu" id="ROe8A_SvHK" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="Bar" />
+          <node concept="3Tm1VV" id="ROe8A_SvHL" role="1B3o_S" />
+          <node concept="7CXmI" id="ROe8AA1zz8" role="lGtFl">
+            <node concept="1TM$A" id="ROe8AA1zz9" role="7EUXB" />
+          </node>
+        </node>
+        <node concept="312cEu" id="ROe8A_SvKj" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="Bar" />
+          <node concept="3Tm1VV" id="ROe8A_SvKk" role="1B3o_S" />
+          <node concept="7CXmI" id="ROe8AA1zyO" role="lGtFl">
+            <node concept="1TM$A" id="ROe8AA1zyP" role="7EUXB" />
+          </node>
+        </node>
+        <node concept="312cEu" id="ROe8A_SvMU" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="bAr" />
+          <node concept="3Tm1VV" id="ROe8A_SvMV" role="1B3o_S" />
+          <node concept="7CXmI" id="ROe8AA1zyw" role="lGtFl">
+            <node concept="29bkU" id="ROe8AA1zyx" role="7EUXB" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="ROe8A_SmEi" role="1B3o_S" />
+        <node concept="7CXmI" id="ROe8A_SmEj" role="lGtFl">
+          <node concept="7OXhh" id="ROe8A_SmEk" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
