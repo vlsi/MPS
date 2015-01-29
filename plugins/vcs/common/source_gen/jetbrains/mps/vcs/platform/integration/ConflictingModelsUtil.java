@@ -39,6 +39,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
@@ -134,6 +135,7 @@ public class ConflictingModelsUtil {
     private com.intellij.openapi.vcs.merge.MergeSession mySession;
     private List<VirtualFile> myConflictedModelFiles;
     private List<VirtualFile> myResolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
+    private List<VirtualFile> myUnresolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
 
     public ModelConflictResolver(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
       super(project, "Resolving conflicts in models", true);
@@ -145,6 +147,10 @@ public class ConflictingModelsUtil {
 
     public List<VirtualFile> getResolvedFiles() {
       return myResolvedModelFiles;
+    }
+    public List<VirtualFile> getUnresolvedFiles() {
+      // list of old files with possible errors because of 8th persistence merge 
+      return myUnresolvedModelFiles;
     }
 
     public void run(@NotNull ProgressIndicator indicator) {
@@ -220,9 +226,14 @@ public class ConflictingModelsUtil {
                   }
                 } catch (Throwable error) {
                   // this can be when saving in 9 persistence after merge with 8 persistence => leave it for UI merge 
-                  if (LOG.isEnabledFor(Level.WARN)) {
-                    LOG.warn("Cannot save merge resulting model " + SModelOperations.getModelName(resultModel), error);
+                  if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
+                    ListSequence.fromList(myUnresolvedModelFiles).addElement(file);
+                  } else {
+                    if (LOG.isEnabledFor(Level.ERROR)) {
+                      LOG.error("Cannot save merge resulting model " + SModelOperations.getModelName(resultModel), error);
+                    }
                   }
+
                 }
               }
             }
@@ -235,7 +246,7 @@ public class ConflictingModelsUtil {
                   public void run() {
                     try {
                       file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
-                      check_2bxr1q_a1a0a0a0a0a0a0w0a0d0k6(mySession, file);
+                      check_2bxr1q_a1a0a0a0a0a0a0w0a0d0m6(mySession, file);
                       VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
                       ListSequence.fromList(myResolvedModelFiles).addElement(file);
                     } catch (IOException e) {
@@ -259,7 +270,7 @@ public class ConflictingModelsUtil {
         monitor.done();
       }
     }
-    private static void check_2bxr1q_a1a0a0a0a0a0a0w0a0d0k6(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
+    private static void check_2bxr1q_a1a0a0a0a0a0a0w0a0d0m6(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
       if (null != checkedDotOperand) {
         checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
       }

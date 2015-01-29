@@ -35,7 +35,7 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
 
       int answer = Messages.showYesNoCancelDialog(myProject, "Some conflicts in MPS models can be autoresolved. Resolve such conflicts automatically?", "Conflict Resolver", Messages.getQuestionIcon());
       if (answer == Messages.CANCEL) {
-        return Collections.emptyList();
+        return Collections.<VirtualFile>emptyList();
       }
       if (answer == Messages.YES) {
         MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession(files) : null);
@@ -43,6 +43,18 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
         ProgressManager.getInstance().run(modelConflictResolverTask);
         // update list of files 
         List<VirtualFile> autoResolvedFiles = modelConflictResolverTask.getResolvedFiles();
+        List<VirtualFile> unresolvedFiles = modelConflictResolverTask.getUnresolvedFiles();
+        if (ListSequence.fromList(unresolvedFiles).isNotEmpty()) {
+          String message = "Conflicts in the following model files were not autoresolved:\n";
+          for (VirtualFile file : ListSequence.fromList(unresolvedFiles)) {
+            message += " " + file.getPath() + "\n";
+          }
+          message += "This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." + " It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again.\n" + "Continue with merge?";
+          int ans = Messages.showYesNoDialog(myProject, message, "Conflict Resolver", Messages.getWarningIcon());
+          if (ans == Messages.NO) {
+            return autoResolvedFiles;
+          }
+        }
         List<VirtualFile> toResolve = ListSequence.fromList(((List<VirtualFile>) files)).subtract(ListSequence.fromList(autoResolvedFiles)).toListSequence();
         List<VirtualFile> resolvedFiles = super.showMergeDialog(toResolve, provider, customizer);
         return ListSequence.fromList(autoResolvedFiles).addSequence(ListSequence.fromList(resolvedFiles));

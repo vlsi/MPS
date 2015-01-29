@@ -91,7 +91,8 @@ public class ModelMergeTool extends MergeTool {
               } catch (Throwable error) {
                 // this can be when saving in 9 persistence after merge with 8 persistence => trying to save in 8th 
                 if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
-                  int result = Messages.showYesNoCancelDialog(dialog.getContentPane(), "Cannot save merged model in 9th persistence. Save in 8th model persistence version?", "Save model " + SModelOperations.getModelName(resultModel), "Save in 8th persistence", "Revert", "Return to merge", Messages.getWarningIcon());
+                  String message = "Cannot save merged model in 9th persistence. The possible reason: one of languages used in this model is not generated." + " You can revert changes and first merge and generate used languages then merge this model again." + " Or you can save model in old 8th persistence version and then migrate it to the latest persistence after all used languages will be merged.";
+                  int result = Messages.showYesNoCancelDialog(dialog.getContentPane(), message, "Save model " + SModelOperations.getModelName(resultModel), "Save in 8th persistence", "Revert changes", "Return to merge", Messages.getWarningIcon());
                   switch (result) {
                     case Messages.YES:
                       ((PersistenceVersionAware) resultModel).setPersistenceVersion(8);
