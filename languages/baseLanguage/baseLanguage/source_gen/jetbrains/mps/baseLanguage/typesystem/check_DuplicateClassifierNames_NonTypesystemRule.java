@@ -70,6 +70,24 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Duplicated name of nested classifier '" + name, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2654404125185755179", null, errorTarget);
         }
       }
+    } else if (Sequence.fromIterable(siblingClassifiers).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != classifier && name.equalsIgnoreCase(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      }
+    })) {
+      if ((parentClassifier == null)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(classifier, "Duplicated case-insensitive name of classifier '" + name + "' in model", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1005490780644144570", null, errorTarget);
+        }
+      } else {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(classifier, "Duplicated case-insensitive name of nested classifier '" + name, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1005490780655218249", null, errorTarget);
+        }
+      }
     }
   }
   public String getApplicableConceptFQName() {
