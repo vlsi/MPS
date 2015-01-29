@@ -19,7 +19,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration" file="CleanSourcesMigration.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -40,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.project.facets.TestsFacet" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.ex.IFileEx" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
     <classNode extendsClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
     <classNode extendsClassName="jetbrains.mps.migration.global.ProjectMigrationWithOptions" />

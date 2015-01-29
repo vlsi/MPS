@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,6 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -30,7 +28,6 @@ import java.util.Collection;
 import java.util.Enumeration;
 
 public class ModuleClassLoaderSupport {
-  private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
 
   private final ReloadableModule myModule;
   private final IClassPathItem myClassPathItem;
@@ -64,7 +61,7 @@ public class ModuleClassLoaderSupport {
   }
 
   public SModule getModule() {
-    return (SModule) myModule;
+    return myModule;
   }
 
   public IClassPathItem getClassPathItem() {

@@ -68,10 +68,13 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
-  private ReloadManagerComponent reloadManager;
+
+  private final ReloadManagerComponent reloadManager;
+
   public WorkbenchMakeService(ReloadManagerComponent reloadManager) {
     this.reloadManager = reloadManager;
   }
+
   @Override
   public void initComponent() {
     INSTANCE = this;
@@ -79,6 +82,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     reloadManager.setMakeService(this);
     GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
+
   @Override
   public void disposeComponent() {
     GenerationSettingsProvider.getInstance().setGenerationSettings(null);
@@ -86,6 +90,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;
   }
+
   @NonNls
   @NotNull
   @Override
@@ -119,6 +124,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
     Project ideaProject = ProjectHelper.toIdeaProject(session.getProject());
+    assert ideaProject != null;
     if (DumbService.getInstance(ideaProject).isDumb()) {
       DumbService.getInstance(ideaProject).showDumbModeNotification("Generation is not available until indices are built");
       return false;
@@ -213,10 +219,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
 
-    MakeSequence makeSeq = new MakeSequence();
-    makeSeq.prepareClusters(inputRes);
     final MakeSession session = getSession();
-    makeSeq.prepareScipts(defaultScript, session);
+    MakeSequence makeSeq = new MakeSequence(inputRes, defaultScript, session);
 
     Project ideaPrj = ProjectHelper.toIdeaProject(session.getProject());
     final MakeTask task = new MakeTask(ideaPrj, scrName, makeSeq, new WorkbenchMakeService.Controller(controller, mh), mh, PerformInBackgroundOption.DEAF) {

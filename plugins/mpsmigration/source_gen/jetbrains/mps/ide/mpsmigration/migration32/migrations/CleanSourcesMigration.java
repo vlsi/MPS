@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -22,6 +21,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.vfs.ex.IFileEx;
 
 public class CleanSourcesMigration extends BaseProjectMigration implements ProjectMigrationWithOptions, CleanupProjectMigration {
   public static final String OPTION_REMOVE_SOURCES = "jetbrains.mps.removeSources";
@@ -65,8 +65,6 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
 
         // clean genclasses 
         removeClassesGen(p);
-        // invalidate FS caches (see InvalidateCachesAction) 
-        FSRecords.invalidateCaches();
       }
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -87,13 +85,13 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
         IFile testDir = check_jwqyzj_a0b0a0a0a71(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
-          outputDir.delete();
-          cacheDir.delete();
+          refreshAndDelete(outputDir);
+          refreshAndDelete(cacheDir);
         }
         if (testDir != null) {
           IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
-          testDir.delete();
-          testCacheDir.delete();
+          refreshAndDelete(testDir);
+          refreshAndDelete(testCacheDir);
         }
       }
     });
@@ -102,13 +100,28 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
   private static void removeClassesGen(Project p) {
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_jwqyzj_a0b0a0a0a91(it.getFacet(JavaModuleFacet.class));
-        if (classesGen != null) {
-          classesGen.delete();
-        }
+        IFile classesGen = check_jwqyzj_a0a0a0a0a91(it.getFacet(JavaModuleFacet.class));
+        refreshAndDelete(classesGen);
       }
     });
+  }
+
+  /**
+   * Workaround for output locations that are exposed in SModule/SModuleFacet API as IFile, but are
+   * populated through java.io.File and hence might not be up to date here.
+   * E.g. ModuleMaker compiles classes of a module with sources only into brand new classes_gen. When CleanSourcesMigration tries to remove classes_gen after project re-open, 
+   * it fails to find VFS file of JavaModuleFacet.getClassesGen which doesn't exist and hence is not removed. Then, language classes get loaded from this location (despite the 
+   * use of VFS file to build module classpath (see JavaModuleFacetImpl.getClassPath(), it's only name of un-existing VFS file being used), and migration fails as it uses stale LanguageRuntime classes.
+   * @see https://youtrack.jetbrains.com/issue/MPS-21303
+   */
+  private static void refreshAndDelete(IFile f) {
+    if (f == null) {
+      return;
+    }
+    if (f instanceof IFileEx) {
+      ((IFileEx) f).refresh();
+    }
+    f.delete();
   }
   private static IFile check_jwqyzj_a0b0a0a0a71(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -116,7 +129,7 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     }
     return null;
   }
-  private static IFile check_jwqyzj_a0b0a0a0a91(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0a0a0a0a91(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
