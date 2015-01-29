@@ -5,7 +5,7 @@ package jetbrains.mps.kernel.model;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -33,8 +34,10 @@ public class SModelUtil {
     return MetaAdapterFactoryByName.getConcept(conceptFQName).getDeclarationNode();
   }
   @NotNull
+  @Deprecated
   public static SNode getBaseConcept() {
-    return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+    // Deprecated, use SNodeUtil.concept_BaseConcept nstead! 
+    return (SNode) SNodeUtil.concept_BaseConcept.getDeclarationNode();
   }
   public static Language getDeclaringLanguage(final SNode concept) {
     if (concept == null) {

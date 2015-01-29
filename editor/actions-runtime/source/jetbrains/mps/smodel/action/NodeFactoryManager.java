@@ -104,7 +104,7 @@ public class NodeFactoryManager {
     for (SAbstractConcept ancestor : new DepthFirstConceptIterator(nodeConcept)) {
       // FIXME NodeFactories is just another aspect of the language and shall be retrieved through LanguageRuntime and DescriptorAspect
       // meanwhile, fall back to legacy implementation with SNode fro SConcept
-      SNode acd = SModelUtil.findConceptDeclaration(ancestor.getQualifiedName());
+      SNode acd = ancestor.getDeclarationNode();
       Language language = SModelUtil.getDeclaringLanguage(acd);
       if (language == null) break;
       nodeFactories.addAll(NodeFactoryUtil.getApplicableNodeFactories(acd, language));
