@@ -121,10 +121,6 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
   }
   private void doRefactor() {
     if (myRefactoringContext != null) {
-      if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
-        // noinspection ConstantConditions 
-        myRefactoringContext.setLocal(myIsLocalCheckbox.isSelected());
-      }
       if (myGenerateModelsCheckbox != null) {
         // noinspection ConstantConditions 
         myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckbox.isSelected());
