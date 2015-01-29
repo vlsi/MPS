@@ -5895,6 +5895,12 @@
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1WC3z$1bWMd" role="3bR37C">
+          <node concept="3bR9La" id="1WC3z$1bWMe" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6L25" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -9941,6 +9947,12 @@
           <node concept="3bR9La" id="5Gpnhm8rSMl" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1WC3z$1bZY2" role="3bR37C">
+          <node concept="3bR9La" id="1WC3z$1bZY3" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lh2" resolve="jetbrains.mps.refactoring.runtime" />
           </node>
         </node>
       </node>

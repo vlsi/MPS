@@ -172,7 +172,7 @@ public final class SConceptOperations {
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getQualifiedName());
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
     for (String descendant : descendants) {
-      SAbstractConcept declaration = MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SModelUtil.findConceptDeclaration(descendant));
+      SAbstractConcept declaration = MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(descendant));
       SLanguage lang = declaration.getLanguage();
       if (SetSequence.fromSet(availableLanguages).contains(lang)) {
         result.add(declaration);
