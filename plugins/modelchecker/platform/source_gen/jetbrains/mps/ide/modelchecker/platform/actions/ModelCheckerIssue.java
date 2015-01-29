@@ -41,7 +41,7 @@ public abstract class ModelCheckerIssue {
     return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
   public static SearchResult<ModelCheckerIssue> getSearchResultForModel(SModel model, String message, IModelCheckerFix fix, String severity, String issueType) {
-    ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(message, fix);
+    ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(model, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, model, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
   public static class NodeIssue extends ModelCheckerIssue {
@@ -68,8 +68,13 @@ public abstract class ModelCheckerIssue {
     }
   }
   public static class ModelIssue extends ModelCheckerIssue {
-    public ModelIssue(String message, IModelCheckerFix fix) {
+    private SModel myModel;
+    public ModelIssue(SModel model, String message, IModelCheckerFix fix) {
       super(message, fix);
+      myModel = model;
+    }
+    public SModel getModel() {
+      return myModel;
     }
   }
 }

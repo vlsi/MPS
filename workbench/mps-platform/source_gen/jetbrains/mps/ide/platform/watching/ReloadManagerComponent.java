@@ -131,7 +131,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     if (session == null) {
       return;
     }
-    // Q: also do normal progressMonintor, as in real reload on timeout ? 
+    // Q: also do normal progressMonitor, as in real reload on timeout ? 
     session.doReload(new EmptyProgressMonitor());
   }
 

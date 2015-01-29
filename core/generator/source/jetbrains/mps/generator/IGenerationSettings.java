@@ -49,7 +49,7 @@ public interface IGenerationSettings {
 
   boolean isSaveTransientModels();
 
-  boolean useInplaceTransofrmations();
+  boolean useInplaceTransformations();
 
   /**
    * Presentation options of the new generation tracer. At the moment, they affect the way trace is represented, not collected, and as such

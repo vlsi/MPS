@@ -34,6 +34,7 @@ import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
+import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.apache.log4j.Level;
@@ -116,30 +117,33 @@ public class TestMergeDialog {
         } catch (Exception e) {
           e.printStackTrace();
         }
-        dialog.show();
-        final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
-        if (result == null) {
-          dialog.close(0);
-          System.exit(0);
-        }
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
-            if (!(iFile.exists())) {
-              iFile.createNewFile();
+
+        ISaveMergedModel saver = new ISaveMergedModel() {
+          public boolean save(MergeModelsDialog dialog, final org.jetbrains.mps.openapi.model.SModel resultModel) {
+            if (resultModel != null) {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
+                  if (!(iFile.exists())) {
+                    iFile.createNewFile();
+                  }
+                  try {
+                    PersistenceFacade.getInstance().getDefaultModelFactory().save(resultModel, new FileDataSource(iFile));
+                  } catch (Exception ex) {
+                    if (LOG.isEnabledFor(Level.ERROR)) {
+                      LOG.error("Cannot save model.", ex);
+                    }
+                  }
+                }
+              });
             }
-            try {
-              PersistenceFacade.getInstance().getDefaultModelFactory().save(result, new FileDataSource(iFile));
-            } catch (Exception ex) {
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("Cannot save model.", ex);
-              }
-            }
+            return true;
           }
-        });
-        dialog.unregisterModels();
-        dialog.close(0);
+        };
+
+        dialog.setSaver(saver);
+        dialog.show();
+
         Disposer.dispose(TestMergeDialog.myParentDisposable);
         System.exit(0);
       }

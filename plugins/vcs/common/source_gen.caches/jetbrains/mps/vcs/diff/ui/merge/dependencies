@@ -25,6 +25,10 @@
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel" file="ISaveMergedModel.java">
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter" file="MergeButtonsPainter.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -129,6 +133,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.AcceptYoursTheirs" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeConfirmation" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeNonConflictingRoots" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane" />

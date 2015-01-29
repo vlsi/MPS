@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.tempmodel.TempModule;
+import jetbrains.mps.util.NotCondition;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -42,7 +43,9 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import static jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress.*;
+import static jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress.LAZY_LOADED;
+import static jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress.LOADED;
+import static jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress.UNLOADED;
 
 /**
  * A ClassLoaderManager is a singleton and provides an internal API for loading classes
@@ -351,7 +354,7 @@ public class ClassLoaderManager implements CoreComponent {
   private Collection<? extends ReloadableModule> doLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
     monitor.start("Loading modules...", 1);
     try {
-      Condition<ReloadableModule> notLoadedCondition = negateCondition(myLoadedCondition);
+      Condition<ReloadableModule> notLoadedCondition = new NotCondition<ReloadableModule>(myLoadedCondition);
       Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
       if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
@@ -383,7 +386,7 @@ public class ClassLoaderManager implements CoreComponent {
     checkWriteAccess();
     monitor.start("Unloading modules...", 1);
     try {
-      Condition<SModuleReference> loadedCondition = negateCondition(myUnloadedRefCondition);
+      Condition<SModuleReference> loadedCondition = new NotCondition<SModuleReference>(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
       if (modulesToUnload.isEmpty()) return Collections.emptySet();
 
@@ -610,13 +613,4 @@ public class ClassLoaderManager implements CoreComponent {
       return myClassLoadersHolder.getClassLoadingProgress(module) == LOADED;
     }
   };
-
-  private static <T> Condition<T> negateCondition(final Condition<T> condition) {
-    return new Condition<T>() {
-      @Override
-      public boolean met(T t) {
-        return !condition.met(t);
-      }
-    };
-  }
 }

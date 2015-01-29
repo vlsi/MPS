@@ -65,7 +65,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {
-    if (newViewer.getSearchResults().getSearchResults().isEmpty() && !(ModelCheckerSettings.getInstance().getMigrationMode())) {
+    if (newViewer.getSearchResults().getSearchResults().isEmpty()) {
       JOptionPane.showMessageDialog(this.getComponent(), "There were no problems detected during Model Checker execution", "Model Checker results", JOptionPane.INFORMATION_MESSAGE);
     } else {
       this.showTabWithResults(newViewer, title, icon);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,42 +23,43 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.ProjectLibraryManager;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectLibraryManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.ModelComputeRunnable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   private static final Logger LOG = LogManager.getLogger(StartupModuleMaker.class);
+  private final MPSProject myMPSProject;
   private final ReloadManagerComponent myReloadManager;
+
 
   @SuppressWarnings({"UnusedDeclaration"})
   public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager) {
     super(project);
+    myMPSProject = mpsProject;
     myReloadManager = reloadManager;
   }
 
   @Override
   public void projectOpened() {
-    if (RuntimeFlags.isTestMode())
+    if (RuntimeFlags.isTestMode()) {
       return;
+    }
     compileProjectModulesWithProgress(true);
   }
 
@@ -80,26 +81,21 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     monitor.start("Making modules", 10);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
-      MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+      MPSCompilationResult mpsCompilationResult = new ModelComputeRunnable<MPSCompilationResult>(new Computable<MPSCompilationResult>() {
         @Override
         public MPSCompilationResult compute() {
           monitor.advance(1);
 
-          MessagesViewTool mvt = myProject.getComponent(MessagesViewTool.class);
-          final ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
+          final ModuleMaker maker = new ModuleMaker(new DefaultMessageHandler(myProject), MessageKind.ERROR);
           return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
             @Override
             public MPSCompilationResult compute() {
-              jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
-              if (project == null) {
-                return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
-              } else {
-                return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9), JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project));
-              }
+              return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9),
+                  JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject));
             }
           });
         }
-      });
+      }).runRead(myMPSProject.getModelAccess());
       if (mpsCompilationResult.isReloadingNeeded()) {
         reloadClasses(mpsCompilationResult, indicator, early);
       }
@@ -117,21 +113,17 @@ public class StartupModuleMaker extends AbstractProjectComponent {
         ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules(), monitor);
       }
     };
+    final Runnable reload = new Runnable() {
+      @Override
+      public void run() {
+        myMPSProject.getModelAccess().runWriteAction(reloadTask);
+      }
+    };
     if (asPreStartup) {
       //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
-      StartupManager.getInstance(myProject).registerPreStartupActivity(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(reloadTask);
-        }
-      });
+      StartupManager.getInstance(myProject).registerPreStartupActivity(reload);
     } else {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(reloadTask);
-        }
-      });
+      ThreadUtils.runInUIThreadNoWait(reload);
     }
   }
 }

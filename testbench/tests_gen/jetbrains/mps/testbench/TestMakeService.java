@@ -36,9 +36,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       return new FutureValue<IResult>(new IResult.FAILURE(null));
     }
 
-    MakeSequence makeSeq = new MakeSequence();
-    makeSeq.prepareClusters(resources);
-    makeSeq.prepareScipts(script, session);
+    MakeSequence makeSeq = new MakeSequence(resources, script, session);
 
     IScriptController ctl = this.completeController(controller, session);
 
