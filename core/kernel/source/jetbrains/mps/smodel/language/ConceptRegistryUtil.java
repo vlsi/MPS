@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,9 @@ public class ConceptRegistryUtil {
   @Nullable
   public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
-    if (cr==null) return null;
+    if (cr == null) {
+      return null;
+    }
     ConceptDescriptor result = cr.getConceptDescriptor(conceptId);
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
@@ -55,11 +57,14 @@ public class ConceptRegistryUtil {
   @NotNull
   public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
-    if (cr==null) return null;
+    if (cr == null) {
+      // FIXME WTF? non-initialized component in test doesn't justify not-null contract violation
+      return null;
+    }
 
     if (concept instanceof SAbstractConceptAdapterById) {
       return cr.getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
     }
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(concept.getQualifiedName());
+    return cr.getConstraintsDescriptor(concept.getQualifiedName());
   }
 }

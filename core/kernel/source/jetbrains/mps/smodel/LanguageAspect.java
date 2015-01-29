@@ -290,6 +290,8 @@ public enum LanguageAspect {
   @Nullable
   public abstract String getHelpURL();
 
+  // FIXME tell it as SLanguage
+  // refactor to have constants as fields, not as methods
   public abstract SModuleReference getMainLanguage();
 
   public static Collection<SModel> getAspectModels(Language l) {

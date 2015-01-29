@@ -124,6 +124,18 @@ public class ModelConstraints {
     return descriptor.canBeRoot(model, getOperationContext(getModule(model)), checkingNodeContext);
   }
 
+  public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
+    if (concept.isAbstract()) {
+      return false;
+    }
+    SNode conceptDecl = concept.getDeclarationNode();
+    if (conceptDecl != null && !SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl)) {
+      return false;
+    }
+    ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
+    return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
+  }
+
   // scopes part
   @NotNull
   public static Scope getScope(@NotNull SReference reference) {
