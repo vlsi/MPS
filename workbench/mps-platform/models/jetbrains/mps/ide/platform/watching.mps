@@ -5654,7 +5654,7 @@
         </node>
         <node concept="3SKdUt" id="37zweLaaLDw" role="3cqZAp">
           <node concept="3SKdUq" id="37zweLaaLDD" role="3SKWNk">
-            <property role="3SKdUp" value="Q: also do normal progressMonintor, as in real reload on timeout ?" />
+            <property role="3SKdUp" value="Q: also do normal progressMonitor, as in real reload on timeout ?" />
           </node>
         </node>
         <node concept="3clFbF" id="37zweLai1_0" role="3cqZAp">

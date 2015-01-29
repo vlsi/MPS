@@ -17,6 +17,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -34,7 +35,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
@@ -109,6 +109,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               public void run() {
                 SwingUtilities.invokeLater(new Runnable() {
                   public void run() {
+                    ReloadManager.getInstance().flush();
                     executeWizard();
                   }
                 });
@@ -203,7 +204,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   private void postponeMigration() {
-    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myMpsProject);
+    final com.intellij.openapi.project.Project ideaProject = myProject;
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -211,15 +212,25 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration required", "Migrate", "Postpone", null);
+            int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration Required", "Migrate", "Postpone", null);
             if (result == Messages.NO) {
               return;
             }
 
-            // set flag to execute migration after startup 
-            myState.migrationRequired = true;
-            // reload project and start migration assist 
-            ProjectManagerEx.getInstance().reloadProject(ideaProject);
+            VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
+            VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
+              public void run() {
+                ApplicationManager.getApplication().invokeLater(new Runnable() {
+                  public void run() {
+                    ReloadManager.getInstance().flush();
+                    // set flag to execute migration after startup 
+                    myState.migrationRequired = true;
+                    // reload project and start migration assist 
+                    ProjectManagerEx.getInstance().reloadProject(ideaProject);
+                  }
+                });
+              }
+            });
           }
         });
       }
