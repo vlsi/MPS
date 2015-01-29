@@ -29,7 +29,7 @@ public class EditorActionUtils {
   public EditorActionUtils() {
   }
   /*package*/ static boolean isReadonlyActionEnabled(EditorComponent editorComponent) {
-    return !(editorComponent.getNodeSubstituteChooser().isVisible()) && editorComponent.getSelectionManager().getSelection() != null;
+    return editorComponent.isFocusOwner() && !(editorComponent.getNodeSubstituteChooser().isVisible()) && editorComponent.getSelectionManager().getSelection() != null;
   }
   public static boolean isWriteActionEnabled(EditorComponent editorComponent, Iterable<EditorCell> changingCells) {
     if (!(isReadonlyActionEnabled(editorComponent))) {

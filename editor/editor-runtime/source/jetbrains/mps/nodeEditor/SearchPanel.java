@@ -99,16 +99,18 @@ public class SearchPanel extends AbstractSearchPanel {
     addToHistory();
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditor.getDeepestSelectedCell();
     int selectionStart = 0;
+    boolean isEmpty = false;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
       selectionStart = labelCell.getSelectionStart();
+      isEmpty = labelCell.getText().isEmpty();
     }
     SearchEntry entryToSelect = null;
     for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(mySearchEntries.size()); it.hasPrevious() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.previous();
       if (CellTraversalUtil.compare(selectedCell, currentEntry.getStartLabel()) >= 0) {
         while (entryToSelect == null) {
-          if (!currentEntry.getStartLabel().equals(selectedCell) || selectionStart >= currentEntry.getFirstRange().getEndPosition()) {
+          if (!currentEntry.getStartLabel().equals(selectedCell) || (selectionStart >= currentEntry.getFirstRange().getEndPosition() && !isEmpty)) {
             entryToSelect = currentEntry;
           }
           if (it.hasPrevious()) {
@@ -131,16 +133,18 @@ public class SearchPanel extends AbstractSearchPanel {
     addToHistory();
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditor.getDeepestSelectedCell();
     int selectionEnd = -1;
+    boolean isEmpty = false;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
       selectionEnd = labelCell.getSelectionEnd();
+      isEmpty = labelCell.getText().isEmpty();
     }
     SearchEntry entryToSelect = null;
     for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(); it.hasNext() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.next();
       if (CellTraversalUtil.compare(selectedCell, currentEntry.getStartLabel()) <= 0) {
         while (entryToSelect == null) {
-          if (!currentEntry.getStartLabel().equals(selectedCell) || selectionEnd <= currentEntry.getFirstRange().getStartPosition()) {
+          if (!currentEntry.getStartLabel().equals(selectedCell) || (selectionEnd <= currentEntry.getFirstRange().getStartPosition() && !isEmpty)) {
             entryToSelect = currentEntry;
           }
           if (it.hasNext()) {
