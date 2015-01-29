@@ -92,7 +92,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
             {
               SNode superClassifier = SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, 0x17dbb10eeb7528deL, "classifier"));
               if (superClassifier == null) {
-                return null;
+                return new EmptyScope();
               }
               SNode classifierType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), superClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
               MethodsScope scope = new MethodsScope(classifierType, Sequence.fromIterable(Members.visibleInstanceMethods(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {

@@ -154,7 +154,11 @@
           <node concept="3clFbJ" id="5_bM9M5A90Y" role="3cqZAp">
             <node concept="3clFbS" id="5_bM9M5A911" role="3clFbx">
               <node concept="3cpWs6" id="5_bM9M5A9oI" role="3cqZAp">
-                <node concept="10Nm6u" id="5_bM9M5A9sc" role="3cqZAk" />
+                <node concept="2ShNRf" id="i6jSUovt9B" role="3cqZAk">
+                  <node concept="1pGfFk" id="i6jSUovtMP" role="2ShVmc">
+                    <ref role="37wK5l" to="o8zo:7ipADkTfAzT" resolve="EmptyScope" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="3clFbC" id="5_bM9M5A9kb" role="3clFbw">
