@@ -4047,7 +4047,7 @@
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/7791284463049113795">
     <file name="EditorActionUtils.java">
-      <node id="130230197973334068" at="31,87,32,167" concept="9" />
+      <node id="130230197973334068" at="31,87,32,133" concept="9" />
       <node id="795210086019271320" at="35,54,36,19" concept="9" />
       <node id="795210086019271338" at="37,5,38,83" concept="9" />
       <node id="6786694707189028631" at="40,88,41,79" concept="8" />
@@ -4160,7 +4160,7 @@
       <node id="7791284463049113980" at="119,0,151,0" concept="13" trace="hasSingleRolesAtRightBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <node id="7791284463049114023" at="151,0,183,0" concept="13" trace="hasSingleRolesAtLeftBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <scope id="7791284463049114128" at="29,30,29,30" />
-      <scope id="130230197973334066" at="31,87,32,167" />
+      <scope id="130230197973334066" at="31,87,32,133" />
       <scope id="795210086019271319" at="35,54,36,19" />
       <scope id="6786694707189037794" at="43,52,44,18" />
       <scope id="130230197973316880" at="47,32,48,18" />
