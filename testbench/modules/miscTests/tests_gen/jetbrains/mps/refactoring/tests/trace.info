@@ -373,36 +373,37 @@
     <file name="RefactoringTestFacade.java">
       <node id="2529529415857702876" at="14,76,15,56" concept="1" />
       <node id="8082134315887528054" at="16,7,17,43" concept="6" />
-      <node id="2630603470921026422" at="20,27,21,44" concept="1" />
-      <node id="8306023725008095404" at="24,27,25,27" concept="1" />
-      <node id="2630603470921029058" at="29,51,30,46" concept="9" />
+      <node id="8528533622075726191" at="20,27,21,45" concept="1" />
+      <node id="2630603470921026422" at="21,45,22,44" concept="1" />
+      <node id="8306023725008095404" at="25,27,26,27" concept="1" />
+      <node id="2630603470921029058" at="30,51,31,46" concept="9" />
       <node id="8306023725008095392" at="10,0,12,0" concept="0" trace="RefactoringTestFacade#()V" />
       <node id="2529529415857702851" at="13,9,16,7" concept="2" />
-      <node id="1161420610165001867" at="19,0,23,0" concept="3" trace="run#()V" />
-      <node id="2630603470921026425" at="28,0,32,0" concept="3" trace="execute#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-      <node id="1161420610165001832" at="17,43,23,9" concept="1" />
-      <node id="8306023725008095401" at="12,76,26,5" concept="10" />
-      <node id="8306023725008095395" at="12,0,28,0" concept="3" trace="doExecuteInTest#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+      <node id="2630603470921026425" at="29,0,33,0" concept="3" trace="execute#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+      <node id="1161420610165001867" at="19,0,24,0" concept="3" trace="run#()V" />
+      <node id="1161420610165001832" at="17,43,24,9" concept="1" />
+      <node id="8306023725008095401" at="12,76,27,5" concept="10" />
+      <node id="8306023725008095395" at="12,0,29,0" concept="3" trace="doExecuteInTest#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
       <scope id="8306023725008095394" at="10,39,10,39" />
       <scope id="2529529415857702852" at="14,76,15,56" />
-      <scope id="1161420610165001870" at="20,27,21,44" />
-      <scope id="8306023725008095402" at="24,0,25,27">
+      <scope id="8306023725008095402" at="25,0,26,27">
         <var name="t" id="8306023725008095409" />
       </scope>
-      <scope id="8306023725008095403" at="24,27,25,27" />
-      <scope id="2630603470921026430" at="29,51,30,46" />
+      <scope id="8306023725008095403" at="25,27,26,27" />
+      <scope id="2630603470921026430" at="30,51,31,46" />
       <scope id="8306023725008095392" at="10,0,12,0" />
-      <scope id="1161420610165001867" at="19,0,23,0" />
-      <scope id="2630603470921026425" at="28,0,32,0">
+      <scope id="1161420610165001870" at="20,27,22,44" />
+      <scope id="2630603470921026425" at="29,0,33,0">
         <var name="context" id="2630603470921026426" />
       </scope>
-      <scope id="8306023725008095411" at="13,9,23,9" />
-      <scope id="8306023725008095400" at="12,76,26,5" />
-      <scope id="8306023725008095395" at="12,0,28,0">
+      <scope id="1161420610165001867" at="19,0,24,0" />
+      <scope id="8306023725008095411" at="13,9,24,9" />
+      <scope id="8306023725008095400" at="12,76,27,5" />
+      <scope id="8306023725008095395" at="12,0,29,0">
         <var name="refactoringContext" id="8306023725008095398" />
       </scope>
-      <unit id="1161420610165001865" at="18,47,23,7" name="jetbrains.mps.refactoring.tests.RefactoringTestFacade$1" />
-      <unit id="8306023725008095390" at="9,0,33,0" name="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
+      <unit id="1161420610165001865" at="18,47,24,7" name="jetbrains.mps.refactoring.tests.RefactoringTestFacade$1" />
+      <unit id="8306023725008095390" at="9,0,34,0" name="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     </file>
   </root>
   <root nodeRef="r:9f33ff09-28dd-4da2-8dbe-cebf2d7195a4(jetbrains.mps.refactoring.tests)/8306023725008095415">

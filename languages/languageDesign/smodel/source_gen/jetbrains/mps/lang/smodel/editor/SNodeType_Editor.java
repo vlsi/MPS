@@ -38,7 +38,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     return this.createCollection_x5m1a6_a_0(editorContext, node);
   }
   private EditorCell createCollection_x5m1a6_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x5m1a6_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_x5m1a6_a0(editorContext, node));

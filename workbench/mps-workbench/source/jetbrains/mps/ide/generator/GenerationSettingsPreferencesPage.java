@@ -354,7 +354,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
       myDebugIncrementalDependencies.setSelected(myGenerationSettings.isDebugIncrementalDependencies());
       myDebugIncrementalDependencies.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
     }
-    myInplaceTransform.setSelected(myGenerationSettings.useInplaceTransofrmations());
+    myInplaceTransform.setSelected(myGenerationSettings.useInplaceTransformations());
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());

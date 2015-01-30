@@ -155,7 +155,7 @@ public class GenerationOptions {
   public static OptionsBuilder fromSettings(IGenerationSettings settings) {
     return new OptionsBuilder().
       strictMode(settings.isStrictMode()).saveTransientModels(settings.isSaveTransientModels()).
-      useInplaceTransformations(settings.useInplaceTransofrmations()).
+      useInplaceTransformations(settings.useInplaceTransformations()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
       reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
       showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies());

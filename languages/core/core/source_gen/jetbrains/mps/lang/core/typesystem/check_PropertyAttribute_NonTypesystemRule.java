@@ -48,6 +48,15 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
+    } else if (SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")) == null) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(propertyAttribute, "Property attribute should have property id", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8689990658168084241", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.add_PropertyAttribute_id_QuickFix", false);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
     }
 
   }

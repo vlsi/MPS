@@ -66,7 +66,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -498,25 +497,6 @@
     </node>
     <node concept="1M1Ini" id="65fYhwGpOTi" role="1M1Ino">
       <node concept="3clFbS" id="65fYhwGpOTj" role="2VODD2">
-        <node concept="3clFbF" id="L2MDnu8gzk" role="3cqZAp">
-          <node concept="2OqwBi" id="L2MDnu8gzv" role="3clFbG">
-            <node concept="1eOMI4" id="L2MDnu8gzu" role="2Oq$k0">
-              <node concept="10QFUN" id="L2MDnu8gzq" role="1eOMHV">
-                <node concept="3uibUv" id="769DNvT5pE9" role="10QFUM">
-                  <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
-                </node>
-                <node concept="50NuE" id="L2MDnu8gzl" role="10QFUP" />
-              </node>
-            </node>
-            <node concept="liA8E" id="L2MDnu8gzz" role="2OqNvi">
-              <ref role="37wK5l" to="ge2m:4a0HOMfn97v" resolve="setLocal" />
-              <node concept="3clFbT" id="L2MDnu8gz$" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3HO6DnBf89I" role="3cqZAp" />
         <node concept="3cpWs8" id="34XUxf_4HiW" role="3cqZAp">
           <node concept="3cpWsn" id="34XUxf_4HiX" role="3cpWs9">
             <property role="TrG5h" value="result" />

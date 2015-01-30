@@ -24,9 +24,12 @@ public class check_DuplicatedRules_NonTypesystemRule extends AbstractNonTypesyst
   }
   public void applyRule(final SNode abstractRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(abstractRule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    if ((name == null || name.length() == 0)) {
+      return;
+    }
     if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(abstractRule), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != abstractRule && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
+        return it != abstractRule && name.equalsIgnoreCase(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     })) {
       {

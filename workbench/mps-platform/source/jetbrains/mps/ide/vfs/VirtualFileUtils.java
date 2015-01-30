@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VFileProperty;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.vfs.FileSystem;
@@ -45,6 +46,16 @@ public class VirtualFileUtils {
       return new File(f.getPath());
     } else {
       throw new RuntimeException("Attempt to get File for non local file." + f.getPath());
+    }
+  }
+
+  public static void refreshSynchronouslyRecursively(VirtualFile file) {
+    if (file.is(VFileProperty.SPECIAL) || file.is(VFileProperty.SYMLINK)) {
+      return;
+    }
+    file.refresh(false, false);
+    for (VirtualFile child : file.getChildren()) {
+      refreshSynchronouslyRecursively(child);
     }
   }
 

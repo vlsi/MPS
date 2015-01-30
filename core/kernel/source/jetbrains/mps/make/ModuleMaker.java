@@ -280,6 +280,10 @@ public class ModuleMaker {
     myTracer.push("copying resources", false);
     for (SModule module : modules) {
       ModuleSources sources = getModuleSources(module);
+      IFile classesGen = getJavaFacet(module).getClassesGen();
+      if (classesGen == null) {
+        continue;
+      }
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
         String fqName = toCopy.getPath();
 
@@ -287,15 +291,7 @@ public class ModuleMaker {
         String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
 
         if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
-          IFile classesGen = getJavaFacet(module).getClassesGen();
-          if (classesGen != null) {
-            FileUtil.copyFile(
-                new File(toCopy.getFile().getAbsolutePath()),
-                new File(classesGen.getDescendant(path).getPath())
-            );
-          } else {
-            // log ?
-          }
+          FileUtil.copyFile(new File(toCopy.getFile().getAbsolutePath()), new File(classesGen.getDescendant(path).getPath()));
         }
       }
     }

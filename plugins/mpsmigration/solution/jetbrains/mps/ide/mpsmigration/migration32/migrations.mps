@@ -38,6 +38,7 @@
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="vobj" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.compiler(MPS.Platform/jetbrains.mps.ide.compiler@java_stub)" />
+    <import index="ol0c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs.ex(MPS.Core/jetbrains.mps.vfs.ex@java_stub)" />
     <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -150,7 +151,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -588,17 +589,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3SKdUt" id="7ScOZyr2yMI" role="3cqZAp">
-                    <node concept="3SKdUq" id="7ScOZyr2yMJ" role="3SKWNk">
-                      <property role="3SKdUp" value="invalidate FS caches (see InvalidateCachesAction)" />
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="7ScOZyr2yMK" role="3cqZAp">
-                    <node concept="2YIFZM" id="7ScOZyr2yML" role="3clFbG">
-                      <ref role="37wK5l" to="a093:~FSRecords.invalidateCaches():void" resolve="invalidateCaches" />
-                      <ref role="1Pybhc" to="a093:~FSRecords" resolve="FSRecords" />
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -723,23 +713,19 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbF" id="4AHaCIo3W57" role="3cqZAp">
-                        <node concept="2OqwBi" id="4AHaCIo3W58" role="3clFbG">
-                          <node concept="37vLTw" id="4AHaCIo3W59" role="2Oq$k0">
+                      <node concept="3clFbF" id="14qpOexiB8U" role="3cqZAp">
+                        <node concept="1rXfSq" id="14qpOexiB8S" role="3clFbG">
+                          <ref role="37wK5l" node="14qpOexip5f" resolve="refreshAndDelete" />
+                          <node concept="37vLTw" id="14qpOexiBm2" role="37wK5m">
                             <ref role="3cqZAo" node="4AHaCIo3NT_" resolve="outputDir" />
-                          </node>
-                          <node concept="liA8E" id="4AHaCIo3W5a" role="2OqNvi">
-                            <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbF" id="4AHaCIo3W5b" role="3cqZAp">
-                        <node concept="2OqwBi" id="4AHaCIo3W5c" role="3clFbG">
-                          <node concept="37vLTw" id="4AHaCIo3W5d" role="2Oq$k0">
+                      <node concept="3clFbF" id="14qpOexiBAR" role="3cqZAp">
+                        <node concept="1rXfSq" id="14qpOexiBAP" role="3clFbG">
+                          <ref role="37wK5l" node="14qpOexip5f" resolve="refreshAndDelete" />
+                          <node concept="37vLTw" id="14qpOexiBOk" role="37wK5m">
                             <ref role="3cqZAo" node="4AHaCIo3W53" resolve="cacheDir" />
-                          </node>
-                          <node concept="liA8E" id="4AHaCIo3W5e" role="2OqNvi">
-                            <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
                           </node>
                         </node>
                       </node>
@@ -768,23 +754,19 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbF" id="2tFdLTRGxHi" role="3cqZAp">
-                        <node concept="2OqwBi" id="2tFdLTRGxHj" role="3clFbG">
-                          <node concept="37vLTw" id="4AHaCIo3Y3T" role="2Oq$k0">
+                      <node concept="3clFbF" id="14qpOexi_QP" role="3cqZAp">
+                        <node concept="1rXfSq" id="14qpOexi_QN" role="3clFbG">
+                          <ref role="37wK5l" node="14qpOexip5f" resolve="refreshAndDelete" />
+                          <node concept="37vLTw" id="14qpOexiA45" role="37wK5m">
                             <ref role="3cqZAo" node="2tFdLTRG9if" resolve="testDir" />
-                          </node>
-                          <node concept="liA8E" id="2tFdLTRGxHo" role="2OqNvi">
-                            <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbF" id="2tFdLTRGmbA" role="3cqZAp">
-                        <node concept="2OqwBi" id="2tFdLTRGuf1" role="3clFbG">
-                          <node concept="37vLTw" id="2tFdLTRJuyj" role="2Oq$k0">
+                      <node concept="3clFbF" id="14qpOexiAyn" role="3cqZAp">
+                        <node concept="1rXfSq" id="14qpOexiAyl" role="3clFbG">
+                          <ref role="37wK5l" node="14qpOexip5f" resolve="refreshAndDelete" />
+                          <node concept="37vLTw" id="14qpOexiAK0" role="37wK5m">
                             <ref role="3cqZAo" node="2tFdLTRFXru" resolve="testCacheDir" />
-                          </node>
-                          <node concept="liA8E" id="2tFdLTRGvgd" role="2OqNvi">
-                            <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
                           </node>
                         </node>
                       </node>
@@ -853,22 +835,6 @@
             <node concept="2es0OD" id="1AzqgyAk4Vt" role="2OqNvi">
               <node concept="1bVj0M" id="1AzqgyAk4Vu" role="23t8la">
                 <node concept="3clFbS" id="1AzqgyAk4Vv" role="1bW5cS">
-                  <node concept="3cpWs8" id="1AzqgyAk4Vw" role="3cqZAp">
-                    <node concept="3cpWsn" id="1AzqgyAk4Vx" role="3cpWs9">
-                      <property role="TrG5h" value="outputDir" />
-                      <node concept="3uibUv" id="1AzqgyAk4Vy" role="1tU5fm">
-                        <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
-                      </node>
-                      <node concept="2OqwBi" id="1AzqgyAk4Vz" role="33vP2m">
-                        <node concept="37vLTw" id="1AzqgyAk4V$" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1AzqgyAk4Wj" resolve="it" />
-                        </node>
-                        <node concept="liA8E" id="1AzqgyAk4V_" role="2OqNvi">
-                          <ref role="37wK5l" to="vsqj:~AbstractModule.getOutputPath():jetbrains.mps.vfs.IFile" resolve="getOutputPath" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="1AzqgyAk4VA" role="3cqZAp">
                     <node concept="3cpWsn" id="1AzqgyAk4VB" role="3cpWs9">
                       <property role="TrG5h" value="classesGen" />
@@ -893,22 +859,10 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbJ" id="1AzqgyAk4W1" role="3cqZAp">
-                    <node concept="3clFbS" id="1AzqgyAk4W2" role="3clFbx">
-                      <node concept="3clFbF" id="1AzqgyAk4W8" role="3cqZAp">
-                        <node concept="2OqwBi" id="1AzqgyAk4W9" role="3clFbG">
-                          <node concept="37vLTw" id="1AzqgyAk4Wa" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1AzqgyAk4VB" resolve="classesGen" />
-                          </node>
-                          <node concept="liA8E" id="1AzqgyAk4Wb" role="2OqNvi">
-                            <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3y3z36" id="1AzqgyAk4Wg" role="3clFbw">
-                      <node concept="10Nm6u" id="1AzqgyAk4Wh" role="3uHU7w" />
-                      <node concept="37vLTw" id="1AzqgyAk4Wi" role="3uHU7B">
+                  <node concept="3clFbF" id="14qpOexi_n3" role="3cqZAp">
+                    <node concept="1rXfSq" id="14qpOexi_n1" role="3clFbG">
+                      <ref role="37wK5l" node="14qpOexip5f" resolve="refreshAndDelete" />
+                      <node concept="37vLTw" id="14qpOexi_yl" role="37wK5m">
                         <ref role="3cqZAo" node="1AzqgyAk4VB" resolve="classesGen" />
                       </node>
                     </node>
@@ -931,6 +885,105 @@
       </node>
       <node concept="3cqZAl" id="1AzqgyAk4Wl" role="3clF45" />
       <node concept="3Tm6S6" id="7ScOZyr2tys" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="14qpOexiC4E" role="jymVt" />
+    <node concept="2YIFZL" id="14qpOexip5f" role="jymVt">
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="refreshAndDelete" />
+      <node concept="3clFbS" id="14qpOexiosN" role="3clF47">
+        <node concept="3clFbJ" id="14qpOexipIK" role="3cqZAp">
+          <node concept="3clFbS" id="14qpOexipIL" role="3clFbx">
+            <node concept="3cpWs6" id="14qpOexi$pM" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="14qpOexi$9a" role="3clFbw">
+            <node concept="10Nm6u" id="14qpOexi$9J" role="3uHU7w" />
+            <node concept="37vLTw" id="14qpOexizN3" role="3uHU7B">
+              <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="14qpOexi$r5" role="3cqZAp">
+          <node concept="3clFbS" id="14qpOexi$r8" role="3clFbx">
+            <node concept="3clFbF" id="14qpOexi$Kr" role="3cqZAp">
+              <node concept="2OqwBi" id="14qpOexi$Zh" role="3clFbG">
+                <node concept="1eOMI4" id="14qpOexi$XU" role="2Oq$k0">
+                  <node concept="10QFUN" id="14qpOexi$XR" role="1eOMHV">
+                    <node concept="3uibUv" id="14qpOexi$XW" role="10QFUM">
+                      <ref role="3uigEE" to="ol0c:~IFileEx" resolve="IFileEx" />
+                    </node>
+                    <node concept="37vLTw" id="14qpOexi$XX" role="10QFUP">
+                      <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="14qpOexi_f_" role="2OqNvi">
+                  <ref role="37wK5l" to="ol0c:~IFileEx.refresh():void" resolve="refresh" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="14qpOexi$u2" role="3clFbw">
+            <node concept="3uibUv" id="14qpOexi$J7" role="2ZW6by">
+              <ref role="3uigEE" to="ol0c:~IFileEx" resolve="IFileEx" />
+            </node>
+            <node concept="37vLTw" id="14qpOexi$s_" role="2ZW6bz">
+              <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="14qpOexi$aT" role="3cqZAp">
+          <node concept="2OqwBi" id="14qpOexi$bF" role="3clFbG">
+            <node concept="37vLTw" id="14qpOexi$aR" role="2Oq$k0">
+              <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />
+            </node>
+            <node concept="liA8E" id="14qpOexi$p1" role="2OqNvi">
+              <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="14qpOexiosL" role="3clF45" />
+      <node concept="3Tm6S6" id="14qpOexioOI" role="1B3o_S" />
+      <node concept="37vLTG" id="14qpOexipHW" role="3clF46">
+        <property role="TrG5h" value="f" />
+        <node concept="3uibUv" id="14qpOexipHV" role="1tU5fm">
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="14qpOexiCsi" role="lGtFl">
+        <node concept="TZ5HA" id="14qpOexiCsj" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiCsk" role="1dT_Ay">
+            <property role="1dT_AB" value="Workaround for output locations that are exposed in SModule/SModuleFacet API as IFile, but are" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="14qpOexiCKu" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiCKv" role="1dT_Ay">
+            <property role="1dT_AB" value="populated through java.io.File and hence might not be up to date here." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="14qpOexiCK$" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiCK_" role="1dT_Ay">
+            <property role="1dT_AB" value="E.g. ModuleMaker compiles classes of a module with sources only into brand new classes_gen. When CleanSourcesMigration tries to remove classes_gen after project re-open, " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="14qpOexiCLb" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiCLc" role="1dT_Ay">
+            <property role="1dT_AB" value="it fails to find VFS file of JavaModuleFacet.getClassesGen which doesn't exist and hence is not removed. Then, language classes get loaded from this location (despite the " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="14qpOexiCLw" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiCLx" role="1dT_Ay">
+            <property role="1dT_AB" value="use of VFS file to build module classpath (see JavaModuleFacetImpl.getClassPath(), it's only name of un-existing VFS file being used), and migration fails as it uses stale LanguageRuntime classes." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="14qpOexiDg9" role="TZ5H$">
+          <node concept="1dT_AC" id="14qpOexiDga" role="1dT_Ay">
+            <property role="1dT_AB" value="@see https://youtrack.jetbrains.com/issue/MPS-21303" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="6vz$DjulWTG" role="1B3o_S" />
     <node concept="3uibUv" id="6vz$DjulWTH" role="1zkMxy">

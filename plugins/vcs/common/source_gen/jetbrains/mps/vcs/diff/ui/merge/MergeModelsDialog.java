@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.JBSplitter;
@@ -24,7 +25,6 @@ import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -78,6 +78,12 @@ public class MergeModelsDialog extends DialogWrapper {
   private MergeSessionState myMetadataInitialState;
   private SNodeId myRootId;
 
+  private ISaveMergedModel mySaver = new ISaveMergedModel() {
+    public boolean save(MergeModelsDialog dialog, SModel resultModel) {
+      return false;
+    }
+  };
+
   private MergeModelsDialog.MergeModelsTree myMergeTree;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private JBSplitter myPanel = new JBSplitter(true, 0.25f);
@@ -90,7 +96,6 @@ public class MergeModelsDialog extends DialogWrapper {
   private GoToNeighbourRootActions myGoToNeighbourRootActions;
 
   private String[] myContentTitles;
-  private boolean myApplyChanges = false;
   private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
 
   public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repoModel, DiffRequest request) {
@@ -131,6 +136,14 @@ public class MergeModelsDialog extends DialogWrapper {
     myActionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request, new MergeTool()), Separator.getInstance(), new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
 
     init();
+  }
+
+  public void setSaver(ISaveMergedModel saver) {
+    mySaver = saver;
+  }
+
+  protected boolean saveModel(SModel resultModel) {
+    return mySaver.save(this, resultModel);
   }
 
   @Nullable
@@ -182,8 +195,12 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        myApplyChanges = true;
-        close(OK_EXIT_CODE);
+
+        if (saveModel(getResultModelWithFixedId())) {
+          unregisterModels();
+          close(OK_EXIT_CODE);
+        }
+
       }
     });
   }
@@ -203,17 +220,11 @@ public class MergeModelsDialog extends DialogWrapper {
     super.dispose();
   }
 
-  public SModel getResultModel() {
-    return (myApplyChanges ? myMergeSession.getResultModel() : null);
-  }
-  public SModel getResultModelWithFixedId() {
-    if (!(myApplyChanges)) {
-      return null;
-    }
+  private SModel getResultModelWithFixedId() {
     SModel resultModel = ModelAccess.instance().runReadAction(new Computable<MergeTemporaryModel>() {
       public MergeTemporaryModel compute() {
         // copy to avoid problems with de-registration 
-        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_3qqb0l_a0a0a1a0a0a0a0b0jb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
+        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_3qqb0l_a0a0a1a0a0a0a0a0nb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
         return new MergeTemporaryModel(resModel, false);
       }
     });
@@ -224,7 +235,7 @@ public class MergeModelsDialog extends DialogWrapper {
     }
     return resultModel;
   }
-  public void unregisterModels() {
+  private void unregisterModels() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
@@ -541,7 +552,7 @@ public class MergeModelsDialog extends DialogWrapper {
       changeCurrentRoot(rootId);
     }
   }
-  private static <T> T as_3qqb0l_a0a0a1a0a0a0a0b0jb(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a0a1a0a0a0a0a0nb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -158,7 +158,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myGenerateDebugInfo = s.isGenerateDebugInfo();
       myShowBadChildWarning = s.isShowBadChildWarning();
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
-      myActiveInplaceTransform = s.useInplaceTransofrmations();
+      myActiveInplaceTransform = s.useInplaceTransformations();
       GenTraceSettings gts = s.getTraceSettings();
       myTraceCompactTemplates = gts.isCompactTemplates();
       myTraceGroupSteps = gts.isGroupByStep();
