@@ -315,7 +315,6 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
-        <property id="3497141547781541446" name="eap" index="2OjLBN" />
         <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
         <child id="6108265972537182996" name="splashScreen" index="2EqU2t" />
@@ -15002,7 +15001,6 @@
     </node>
     <node concept="1zClus" id="6Iq8148fw_a" role="3989C9">
       <property role="2OjLBK" value="2" />
-      <property role="2OjLBN" value="true" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
       <node concept="55IIr" id="ES2LjlZRAH" role="3vi$VU">
