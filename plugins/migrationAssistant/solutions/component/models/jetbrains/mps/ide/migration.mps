@@ -838,6 +838,17 @@
                                                   </node>
                                                 </node>
                                               </node>
+                                              <node concept="3clFbF" id="7prs2iB5Fcj" role="3cqZAp">
+                                                <node concept="2OqwBi" id="7prs2iB5FDv" role="3clFbG">
+                                                  <node concept="2YIFZM" id="7prs2iB5FqN" role="2Oq$k0">
+                                                    <ref role="37wK5l" to="ji0:~ProjectManagerEx.getInstanceEx():com.intellij.openapi.project.ex.ProjectManagerEx" resolve="getInstanceEx" />
+                                                    <ref role="1Pybhc" to="ji0:~ProjectManagerEx" resolve="ProjectManagerEx" />
+                                                  </node>
+                                                  <node concept="liA8E" id="7prs2iB5FZm" role="2OqNvi">
+                                                    <ref role="37wK5l" to="ji0:~ProjectManagerEx.unblockReloadingProjectOnExternalChanges():void" resolve="unblockReloadingProjectOnExternalChanges" />
+                                                  </node>
+                                                </node>
+                                              </node>
                                               <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
                                                 <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
                                                   <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
@@ -1494,6 +1505,17 @@
                                                     </node>
                                                     <node concept="liA8E" id="4tP09YuErl7" role="2OqNvi">
                                                       <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node concept="3clFbF" id="7prs2iB5Gwb" role="3cqZAp">
+                                                  <node concept="2OqwBi" id="7prs2iB5Gwc" role="3clFbG">
+                                                    <node concept="2YIFZM" id="7prs2iB5Gwd" role="2Oq$k0">
+                                                      <ref role="37wK5l" to="ji0:~ProjectManagerEx.getInstanceEx():com.intellij.openapi.project.ex.ProjectManagerEx" resolve="getInstanceEx" />
+                                                      <ref role="1Pybhc" to="ji0:~ProjectManagerEx" resolve="ProjectManagerEx" />
+                                                    </node>
+                                                    <node concept="liA8E" id="7prs2iB5Gwe" role="2OqNvi">
+                                                      <ref role="37wK5l" to="ji0:~ProjectManagerEx.unblockReloadingProjectOnExternalChanges():void" resolve="unblockReloadingProjectOnExternalChanges" />
                                                     </node>
                                                   </node>
                                                 </node>

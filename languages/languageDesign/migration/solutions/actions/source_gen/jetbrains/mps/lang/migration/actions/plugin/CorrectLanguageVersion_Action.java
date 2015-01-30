@@ -52,7 +52,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     if (mig == null) {
-      return false;
+      return true;
     }
 
     List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
@@ -106,7 +106,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     try {
       final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
       SModel mig = LanguageAspect.MIGRATION.get(lang);
-      List<SNode> scripts = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+      List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
       if (ListSequence.fromList(scripts).isNotEmpty()) {
         int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
           public Integer select(SNode it) {
@@ -150,4 +150,10 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CorrectLanguageVersion_Action.class);
+  private static List<SNode> check_wnyb8b_a0c0a(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+    }
+    return null;
+  }
 }

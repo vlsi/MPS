@@ -352,8 +352,8 @@
     <file name="SNodeType_Editor.java">
       <node id="1138405893950" at="34,79,35,63" concept="8" />
       <node id="1138405893950" at="37,82,38,65" concept="8" />
-      <node id="1138405893950" at="40,89,41,99" concept="7" />
-      <node id="1138405893950" at="41,99,42,48" concept="2" />
+      <node id="1138405893950" at="40,89,41,96" concept="7" />
+      <node id="1138405893950" at="41,96,42,48" concept="2" />
       <node id="1138405893950" at="42,48,43,28" concept="2" />
       <node id="1138405893950" at="43,28,44,81" concept="0" />
       <node id="1138405893950" at="43,28,44,81" concept="2" />

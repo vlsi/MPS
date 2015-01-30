@@ -3142,55 +3142,58 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/1541218333119613305">
     <file name="check_DuplicatedRules_NonTypesystemRule.java">
       <node id="1541218333119649102" at="25,125,26,182" concept="7" />
-      <node id="8433157989202145592" at="28,39,29,190" concept="8" />
-      <node id="8433157989202147284" at="32,7,33,60" concept="7" />
-      <node id="8433157989202147284" at="33,60,34,56" concept="3" />
-      <node id="8433157989202147284" at="34,56,35,264" concept="7" />
-      <node id="1541218333119613305" at="39,46,40,66" concept="8" />
-      <node id="1541218333119613305" at="43,5,44,130" concept="7" />
-      <node id="1541218333119613305" at="44,130,45,45" concept="8" />
-      <node id="1541218333119613305" at="48,30,49,17" concept="8" />
+      <node id="1005490780658639963" at="27,47,28,13" concept="8" />
+      <node id="8433157989202145592" at="31,39,32,208" concept="8" />
+      <node id="8433157989202147284" at="35,7,36,60" concept="7" />
+      <node id="8433157989202147284" at="36,60,37,56" concept="3" />
+      <node id="8433157989202147284" at="37,56,38,264" concept="7" />
+      <node id="1541218333119613305" at="42,46,43,66" concept="8" />
+      <node id="1541218333119613305" at="46,5,47,130" concept="7" />
+      <node id="1541218333119613305" at="47,130,48,45" concept="8" />
+      <node id="1541218333119613305" at="51,30,52,17" concept="8" />
       <node id="1541218333119613305" at="23,0,25,0" concept="2" trace="check_DuplicatedRules_NonTypesystemRule#()V" />
-      <node id="8433157989202145588" at="28,0,31,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1541218333119613305" at="39,0,42,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1541218333119613305" at="48,0,51,0" concept="6" trace="overrides#()Z" />
-      <node id="1541218333119613305" at="42,68,46,5" concept="0" />
-      <node id="8433157989202147284" at="31,9,36,7" concept="0" />
-      <node id="1541218333119613305" at="42,0,48,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="8433157989202145568" at="26,182,37,5" concept="5" />
-      <node id="1541218333119613305" at="25,0,39,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="1005490780658635776" at="26,182,29,5" concept="5" />
+      <node id="8433157989202145588" at="31,0,34,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1541218333119613305" at="42,0,45,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1541218333119613305" at="51,0,54,0" concept="6" trace="overrides#()Z" />
+      <node id="1541218333119613305" at="45,68,49,5" concept="0" />
+      <node id="8433157989202147284" at="34,9,39,7" concept="0" />
+      <node id="1541218333119613305" at="45,0,51,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8433157989202145568" at="29,5,40,5" concept="5" />
+      <node id="1541218333119613305" at="25,0,42,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1541218333119613305" at="23,52,23,52" />
-      <scope id="8433157989202145589" at="28,39,29,190" />
-      <scope id="1541218333119613305" at="39,46,40,66" />
-      <scope id="1541218333119613305" at="48,30,49,17" />
+      <scope id="1005490780658635779" at="27,47,28,13" />
+      <scope id="8433157989202145589" at="31,39,32,208" />
+      <scope id="1541218333119613305" at="42,46,43,66" />
+      <scope id="1541218333119613305" at="51,30,52,17" />
       <scope id="1541218333119613305" at="23,0,25,0" />
-      <scope id="1541218333119613305" at="43,5,45,45">
+      <scope id="1541218333119613305" at="46,5,48,45">
         <var name="b" id="1541218333119613305" />
       </scope>
-      <scope id="8433157989202145588" at="28,0,31,0">
+      <scope id="8433157989202145588" at="31,0,34,0">
         <var name="it" id="8433157989202145588" />
       </scope>
-      <scope id="8433157989202147284" at="32,7,35,264">
+      <scope id="8433157989202147284" at="35,7,38,264">
         <var name="_reporter_2309309498" id="8433157989202147284" />
         <var name="errorTarget" id="8433157989202147284" />
       </scope>
-      <scope id="1541218333119613305" at="39,0,42,0" />
-      <scope id="1541218333119613305" at="48,0,51,0" />
-      <scope id="1541218333119613305" at="42,68,46,5" />
-      <scope id="8433157989202145569" at="31,9,36,7" />
-      <scope id="1541218333119613305" at="42,0,48,0">
+      <scope id="1541218333119613305" at="42,0,45,0" />
+      <scope id="1541218333119613305" at="51,0,54,0" />
+      <scope id="1541218333119613305" at="45,68,49,5" />
+      <scope id="8433157989202145569" at="34,9,39,7" />
+      <scope id="1541218333119613305" at="45,0,51,0">
         <var name="argument" id="1541218333119613305" />
       </scope>
-      <scope id="1541218333119613306" at="25,125,37,5">
+      <scope id="1541218333119613306" at="25,125,40,5">
         <var name="name" id="1541218333119649103" />
       </scope>
-      <scope id="1541218333119613305" at="25,0,39,0">
+      <scope id="1541218333119613305" at="25,0,42,0">
         <var name="abstractRule" id="1541218333119613305" />
         <var name="status" id="1541218333119613305" />
         <var name="typeCheckingContext" id="1541218333119613305" />
       </scope>
-      <unit id="8433157989202145588" at="27,247,31,5" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule$1" />
-      <unit id="1541218333119613305" at="22,0,52,0" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule" />
+      <unit id="8433157989202145588" at="30,247,34,5" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule$1" />
+      <unit id="1541218333119613305" at="22,0,55,0" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/4251858506886757239">

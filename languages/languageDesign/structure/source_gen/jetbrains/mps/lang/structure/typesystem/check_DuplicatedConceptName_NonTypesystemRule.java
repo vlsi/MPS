@@ -29,7 +29,7 @@ public class check_DuplicatedConceptName_NonTypesystemRule extends AbstractNonTy
     }
     if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(conceptDeclaration), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != conceptDeclaration && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
+        return it != conceptDeclaration && name.equalsIgnoreCase(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     })) {
       {

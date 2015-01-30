@@ -88,6 +88,7 @@
     <import index="lcqf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" />
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <import index="e1oh" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.editor.colors(MPS.IDEA/com.intellij.openapi.editor.colors@java_stub)" />
+    <import index="dibr" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.actions(MPS.IDEA/com.intellij.ide.actions@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -17848,6 +17849,21 @@
                   <node concept="10M0yZ" id="7$NO6fvW2CZ" role="37wK5m">
                     <ref role="3cqZAo" to="810:~DialogWrapper.NEXT_USER_EXIT_CODE" resolve="NEXT_USER_EXIT_CODE" />
                     <ref role="1PxDUh" to="810:~DialogWrapper" resolve="DialogWrapper" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6Ygl$L$FRUB" role="3cqZAp">
+              <node concept="2OqwBi" id="6Ygl$L$GT$I" role="3clFbG">
+                <node concept="2ShNRf" id="6Ygl$L$FRUz" role="2Oq$k0">
+                  <node concept="1pGfFk" id="6Ygl$L$GTti" role="2ShVmc">
+                    <ref role="37wK5l" to="dibr:~SynchronizeAction.&lt;init&gt;()" resolve="SynchronizeAction" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6Ygl$L$GTW5" role="2OqNvi">
+                  <ref role="37wK5l" to="dibr:~SynchronizeAction.actionPerformed(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="actionPerformed" />
+                  <node concept="37vLTw" id="6Ygl$L$GTXC" role="37wK5m">
+                    <ref role="3cqZAo" node="7$NO6fvW2Ct" resolve="event" />
                   </node>
                 </node>
               </node>

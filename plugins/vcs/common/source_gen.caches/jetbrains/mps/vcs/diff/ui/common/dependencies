@@ -432,6 +432,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" file="InvokeTextDiffAction.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
+    <classNode dependClassName="com.intellij.ide.actions.SynchronizeAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffTool" />
