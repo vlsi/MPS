@@ -314,6 +314,7 @@
     <property role="TrG5h" value="NodeSetupFunction" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node setup function" />
+    <property role="R4oN_" value="initialize newly created concept instance" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="h8tXkkr">
@@ -1586,6 +1587,7 @@
     <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="newNode" />
+    <property role="R4oN_" value="newly created node" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="4PZKMKmrf9t">
@@ -1593,6 +1595,7 @@
     <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="sampleNode" />
+    <property role="R4oN_" value="existing node which will be replaced by new node, can be null" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="4PZKMKmrfdu">
@@ -1600,6 +1603,7 @@
     <property role="3GE5qa" value="conceptFunctionParameters" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="enclosingNode" />
+    <property role="R4oN_" value="node to be used as a parent of newly creted one, can be null" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="PlHQZ" id="7gMlvD5bxAl">

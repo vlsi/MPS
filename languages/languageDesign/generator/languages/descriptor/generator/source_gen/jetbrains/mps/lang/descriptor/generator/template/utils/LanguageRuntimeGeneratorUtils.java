@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -21,6 +22,13 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class LanguageRuntimeGeneratorUtils {
+  /**
+   * 
+   * 
+
+   * @deprecated since MPS 3.2 use isAspectOfLanguage(..., concept ... rootConcepts);
+   */
+  @Deprecated
   public static boolean isAspectOfLanguage(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext, final SNode... rootConcepts) {
     SModel aspectModel = getAspectModel(modelReference, aspect, genContext);
     if (aspectModel == null) {
@@ -31,6 +39,23 @@ public class LanguageRuntimeGeneratorUtils {
       public boolean accept(SNode it) {
         for (SNode rootConcept : rootConcepts) {
           if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), SNodeOperations.asSConcept(rootConcept))) {
+            return true;
+          }
+        }
+        return false;
+      }
+    }) != null);
+  }
+  public static boolean isAspectOfLanguage(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext, final SAbstractConcept... rootConcepts) {
+    SModel aspectModel = getAspectModel(modelReference, aspect, genContext);
+    if (aspectModel == null) {
+      return false;
+    }
+    List<SNode> roots = SModelOperations.roots(((SModel) aspectModel), null);
+    return (rootConcepts.length == 0 ? ListSequence.fromList(roots).isNotEmpty() : ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        for (SAbstractConcept rootConcept : rootConcepts) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(rootConcept))) {
             return true;
           }
         }

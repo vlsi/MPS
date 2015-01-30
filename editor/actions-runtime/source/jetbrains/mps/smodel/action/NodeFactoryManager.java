@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.actions.runtime.impl.InterpretedActionDescriptor;
+import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
+import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +38,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class NodeFactoryManager {
@@ -76,8 +79,8 @@ public class NodeFactoryManager {
   }
 
   private static void createNodeStructure(SAbstractConcept nodeConcept,
-                                         SNode newNode, SNode sampleNode, SNode enclosingNode,
-                                         SModel model) {
+      SNode newNode, SNode sampleNode, SNode enclosingNode,
+      SModel model) {
     for (SAbstractLink linkDeclaration : nodeConcept.getLinks()) {
       if (linkDeclaration.isReference() || linkDeclaration.isOptional()) {
         continue;
@@ -102,19 +105,18 @@ public class NodeFactoryManager {
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
     List<SNode> nodeFactories = new ArrayList<SNode>();
     for (SAbstractConcept ancestor : new DepthFirstConceptIterator(nodeConcept)) {
-      // FIXME NodeFactories is just another aspect of the language and shall be retrieved through LanguageRuntime and DescriptorAspect
-      // meanwhile, fall back to legacy implementation with SNode fro SConcept
-      SNode acd = ancestor.getDeclarationNode();
-      Language language = SModelUtil.getDeclaringLanguage(acd);
-      if (language == null) break;
-      nodeFactories.addAll(NodeFactoryUtil.getApplicableNodeFactories(acd, language));
-    }
-
-    if (nodeFactories.isEmpty()) return;
-
-    // setup node
-    for (SNode factory : nodeFactories) {
-      NodeFactoryUtil.invokeNodeSetupFunction(factory, node, sampleNode, enclosingNode, model);
+      ActionAspectDescriptor actionAspectDescriptor = null;
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage().getQualifiedName());
+      if (languageRuntime != null) {
+        actionAspectDescriptor = languageRuntime.getAspect(ActionAspectDescriptor.class);
+      }
+      if (actionAspectDescriptor == null) {
+        actionAspectDescriptor = new InterpretedActionDescriptor();
+      }
+      Collection<NodeFactory> factories = actionAspectDescriptor.getFactories(ancestor);
+      for (NodeFactory factory : factories) {
+        factory.setup(node, sampleNode, enclosingNode, model);
+      }
     }
   }
 

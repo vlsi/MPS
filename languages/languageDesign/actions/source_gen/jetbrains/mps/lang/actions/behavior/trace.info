@@ -1720,18 +1720,18 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741647474">
     <file name="NodeSetupFunction_Behavior.java">
-      <node id="1262430001741647472" at="15,103,16,16" concept="7" />
+      <node id="1262430001741647472" at="15,103,16,17" concept="7" />
       <node id="3044950653914723210" at="18,125,19,289" concept="6" />
-      <node id="3044950653914723225" at="19,289,20,173" concept="2" />
-      <node id="3044950653914723230" at="20,173,21,173" concept="2" />
-      <node id="3044950653914723235" at="21,173,22,174" concept="2" />
-      <node id="3044950653914723240" at="22,174,23,173" concept="2" />
-      <node id="3044950653914723244" at="23,173,24,18" concept="7" />
+      <node id="3044950653914723230" at="19,289,20,173" concept="2" />
+      <node id="3044950653914723225" at="20,173,21,173" concept="2" />
+      <node id="3044950653914723240" at="21,173,22,173" concept="2" />
+      <node id="3044950653914723235" at="22,173,23,174" concept="2" />
+      <node id="3044950653914723244" at="23,174,24,18" concept="7" />
       <node id="1262430001741647474" at="13,0,15,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741647474" at="15,0,18,0" concept="10" trace="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="1262430001741647474" at="18,0,26,0" concept="10" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <scope id="1262430001741647476" at="13,43,13,43" />
-      <scope id="1262430001741647471" at="15,103,16,16" />
+      <scope id="1262430001741647471" at="15,103,16,17" />
       <scope id="1262430001741647474" at="13,0,15,0">
         <var name="thisNode" id="1262430001741647474" />
       </scope>

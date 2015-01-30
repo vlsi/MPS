@@ -21,8 +21,16 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+/**
+ * 
+ * 
+
+ * @deprecated since MPS 3.2 ActionAspectDescriptor is completely generated, so this class should be removed after MPS 3.2
+ */
+@Deprecated
 public class NodeFactoryUtil {
   private static final Logger LOG = LogManager.getLogger(NodeFactoryUtil.class);
+  @Deprecated
   public NodeFactoryUtil() {
   }
   public static List<SNode> getApplicableNodeFactories(final SNode concept, Language language) {
