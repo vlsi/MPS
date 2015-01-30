@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,27,0" name="jetbrains.mps.baseLanguage.unitTest.actions.ActionAspectDescriptorImpl" />
+    </file>
     <file name="QueriesGenerated.java">
-      <unit at="17,0,29,0" name="jetbrains.mps.baseLanguage.unitTest.actions.QueriesGenerated" />
+      <unit at="15,0,24,0" name="jetbrains.mps.baseLanguage.unitTest.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d0(jetbrains.mps.baseLanguage.unitTest.actions)/1198167751204">
-    <file name="QueriesGenerated.java">
-      <node id="1198167785565" at="18,144,19,366" concept="0" />
-      <node id="1198167764447" at="18,0,21,0" concept="2" trace="nodeFactory_NodeSetup_TestMethod_1198167764447#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="1198167764448" at="18,144,19,366" />
-      <scope id="1198167764447" at="18,0,21,0">
-        <var name="_context" id="1198167764447" />
-        <var name="operationContext" id="1198167764447" />
+    <file name="unitTest_Factory.java">
+      <node id="1198167785565" at="13,91,14,354" concept="0" />
+      <node id="1198167764446" at="13,0,16,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="1198167764446" at="13,91,14,354" />
+      <scope id="1198167764446" at="13,0,16,0">
+        <var name="enclosingNode" id="1198167764446" />
+        <var name="model" id="1198167764446" />
+        <var name="newNode" id="1198167764446" />
+        <var name="sampleNode" id="1198167764446" />
       </scope>
+      <unit id="1198167764446" at="12,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.actions.unitTest_Factory$NodeFactory_1198167764446" />
+      <unit id="1198167751204" at="11,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.actions.unitTest_Factory" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d0(jetbrains.mps.baseLanguage.unitTest.actions)/589054057631277539">
     <file name="QueriesGenerated.java">
-      <node id="589054057631277619" at="25,194,26,242" concept="1" />
-      <node id="589054057631277541" at="25,0,28,0" concept="2" trace="nodeSubstituteActionsBuilder_Precondition_AssertStatement_589054057631277541#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="589054057631277542" at="25,194,26,242" />
-      <scope id="589054057631277541" at="25,0,28,0">
+      <node id="589054057631277619" at="20,194,21,242" concept="2" />
+      <node id="589054057631277541" at="20,0,23,0" concept="3" trace="nodeSubstituteActionsBuilder_Precondition_AssertStatement_589054057631277541#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
+      <scope id="589054057631277542" at="20,194,21,242" />
+      <scope id="589054057631277541" at="20,0,23,0">
         <var name="_context" id="589054057631277541" />
         <var name="operationContext" id="589054057631277541" />
       </scope>

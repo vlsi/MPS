@@ -8,6 +8,8 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
+import jetbrains.mps.actions.descriptor.AbstractActionAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.actions.testLanguage.editor.EditorAspectDescriptorImpl;
@@ -42,6 +44,9 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
+    if (descriptorClass == ActionAspectDescriptor.class) {
+      return (T) new AbstractActionAspectDescriptor() {};
+    }
     if (descriptorClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.actions.testLanguage.constraints.ConstraintsAspectDescriptor();
     }
