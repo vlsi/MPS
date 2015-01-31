@@ -39,6 +39,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     setModuleReference(reference);
     myDescriptor = new ModuleDescriptor();
   }
+
   @Override
   public String toString() {
     return getName() + " [evaluation module]";

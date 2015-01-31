@@ -1607,9 +1607,11 @@
       <node concept="3clFbS" id="IYmOvntYfi" role="3clF47">
         <node concept="3clFbF" id="IYmOvntYfj" role="3cqZAp">
           <node concept="3cpWs3" id="4AqxpFz48P" role="3clFbG">
-            <node concept="33vP2n" id="4AqxpFz48Q" role="3uHU7B" />
-            <node concept="Xl_RD" id="IYmOvntYfk" role="3uHU7w">
-              <property role="Xl_RC" value="Evaluation Module" />
+            <node concept="1rXfSq" id="7InF663BXa6" role="3uHU7B">
+              <ref role="37wK5l" to="vsqj:~AbstractModule.getName():java.lang.String" resolve="getName" />
+            </node>
+            <node concept="Xl_RD" id="7InF663C4pU" role="3uHU7w">
+              <property role="Xl_RC" value=" [evaluation module]" />
             </node>
           </node>
         </node>
