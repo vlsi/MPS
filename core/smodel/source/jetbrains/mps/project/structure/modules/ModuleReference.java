@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -68,7 +69,7 @@ public final class ModuleReference implements SModuleReference {
   }
 
   @Override
-  public SModule resolve(SRepository repo) {
+  public SModule resolve(@NotNull SRepository repo) {
     return repo.getModule(getModuleId());
   }
 
