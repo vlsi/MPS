@@ -187,25 +187,15 @@ public class Utils {
       assert ListSequence.fromList(parsedModels).count() == 1;
       final SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
-      try {
-        for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
-          NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
-        }
-
-        Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-        buildModelNodeMap(resultModel, expected, referentMap);
-
-        boolean wereErrors = compare2models(resultModel, expected, referentMap);
-        Assert.assertFalse(wereErrors);
-      } finally {
-        // DirParser.parseDirs() pipes model creation to SModuleOperations.createModelWithAdjustments 
-        // which saves the model. This is not what we need here, as j.m.ide.java.testMaterial is going to be 
-        // build afterwards, and diff-ed against existing structure. If there's this source-backed 'pkg' model, 
-        // it would get generated (all other models in testMaterial are doNotGenerate == false), and there'd be  
-        // puzzling diff 
-        // FIXME I know this is not the best way to delete a model, feel free to do it right 
-        SModelRepository.getInstance().deleteModel(resultModel);
+      for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
+        NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
+
+      Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      buildModelNodeMap(resultModel, expected, referentMap);
+
+      boolean wereErrors = compare2models(resultModel, expected, referentMap);
+      Assert.assertFalse(wereErrors);
 
 
     } catch (JavaParseException e) {
