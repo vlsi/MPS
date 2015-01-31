@@ -22,6 +22,7 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
@@ -156,9 +157,12 @@ public abstract class ReferenceDescriptor {
     @Nullable
     static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
       // todo: should be private
-      ReferenceScopeProvider result =
-          ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
-      if (result != null) return result;
+      ReferenceConstraintsDescriptor refConstraintsDescriptor =
+          ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole);
+      if (refConstraintsDescriptor != null) {
+        ReferenceScopeProvider result = refConstraintsDescriptor.getScopeProvider();
+        if (result != null) return result;
+      }
       SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
       if (linkDeclaration == null) {
         LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
