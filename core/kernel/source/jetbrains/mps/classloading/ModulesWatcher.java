@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -169,7 +170,8 @@ public class ModulesWatcher {
    * we need to mark it invalid
    */
   private boolean isModuleDisposed(SModuleReference mRef) {
-    return mRef.resolve(myRepository) == null;
+    SModule resolvedModule = mRef.resolve(myRepository);
+    return (resolvedModule == null || resolvedModule.getRepository() == null);
   }
 
   @Nullable
