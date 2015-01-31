@@ -102,7 +102,7 @@ public class TestModule extends AbstractModule {
   }
 
   public String toString() {
-    return "Test Transient models";
+    return getName() + " [test transient module]";
   }
 
   @Override

@@ -204,18 +204,7 @@ public class ModulesWatcher {
         continue;
       }
       if (isModuleDisposed(dep.getTargetModule())) {
-        String message;
-        if (module instanceof Language) {
-          message = "Language ";
-        } else if (module instanceof Solution) {
-          message = "Solution ";
-        } else if (module instanceof Generator) {
-          message = "Generator ";
-        } else {
-          message = "Module ";
-        }
-
-        message = String.format("%s %s depends on a disposed module %s and therefore was marked invalid for class loading", message, mRef.getModuleName(), dep.getTargetModule());
+        String message = String.format("%s depends on a disposed module %s and therefore was marked invalid for class loading", module, dep.getTargetModule());
         if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }

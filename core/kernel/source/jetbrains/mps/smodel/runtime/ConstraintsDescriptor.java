@@ -49,6 +49,7 @@ public interface ConstraintsDescriptor {
   ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink);
 
   @Deprecated
+  @Nullable
   ReferenceConstraintsDescriptor getReference(String refName);
 
   @Nullable

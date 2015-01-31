@@ -315,7 +315,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public String toString() {
-    return getModuleDescriptor().getNamespace() + " [lang]";
+    return getName() + " [language]";
   }
 
   public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {

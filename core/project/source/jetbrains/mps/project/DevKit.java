@@ -171,10 +171,7 @@ public class DevKit extends AbstractModule {
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
-  public String getName() {
-    return myDescriptor.getNamespace();
-  }
-
+  @Override
   public String toString() {
     return getName() + " [devkit]";
   }

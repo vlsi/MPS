@@ -133,6 +133,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     HashSet<SDependency> result = new HashSet<SDependency>();
     final SRepository repo = getRepository();
+    if (repo == null) {
+      throw new IllegalStateException("It is not possible to resolve all declared dependencies with a null repository : module " + this);
+    }
 
     // add declared dependencies
     for (Dependency d : descriptor.getDependencies()) {
@@ -689,6 +692,23 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         return;
       }
     }
+  }
+
+  public String toString() {
+    String namespace = getName();
+    return namespace + " [module]";
+  }
+
+  public String getName() {
+    String namespace = getModuleDescriptor().getNamespace();
+    if (namespace == null || namespace.length() == 0) {
+      if (myDescriptorFile != null) {
+        namespace = myDescriptorFile.getName();
+      } else {
+        namespace = "";
+      }
+    }
+    return namespace;
   }
 
   @Override

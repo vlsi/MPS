@@ -117,10 +117,6 @@ public class Generator extends ReloadableModuleBase {
     getSourceLanguage().setModuleDescriptor(languageDescriptor);
   }
 
-  public String getName() {
-    return myGeneratorDescriptor.getNamespace();
-  }
-
   public String getAlias() {
     String name = myGeneratorDescriptor.getNamespace();
     return getSourceLanguage().getModuleName() + "/" + (name == null ? "<no name>" : name);

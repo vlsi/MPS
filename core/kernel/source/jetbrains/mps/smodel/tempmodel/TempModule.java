@@ -107,6 +107,10 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     return myJavaModuleFacet != null ? Collections.<SModuleFacet>singleton(myJavaModuleFacet) : Collections.<SModuleFacet>emptySet();
   }
 
+  public String toString() {
+    return getName() + " [temp module]";
+  }
+
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
