@@ -41,8 +41,9 @@ public class EvaluationModule extends AbstractModule implements SModule {
   }
   @Override
   public String toString() {
-    return "Evaluation Module";
+    return getName() + " [evaluation module]";
   }
+
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
