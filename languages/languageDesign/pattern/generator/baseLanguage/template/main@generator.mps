@@ -2736,17 +2736,12 @@
                                           <node concept="3cpWsn" id="5TGiDLIk8sx" role="3cpWs9">
                                             <property role="TrG5h" value="role" />
                                             <node concept="2YIFZM" id="7AG9JT29YLl" role="33vP2m">
-                                              <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(jetbrains.mps.smodel.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                                               <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                                              <node concept="10QFUN" id="7AG9JT2a3jh" role="37wK5m">
-                                                <node concept="2OqwBi" id="7U87j6$6orF" role="10QFUP">
-                                                  <node concept="30H73N" id="5TGiDLIk8s_" role="2Oq$k0" />
-                                                  <node concept="3TrEf2" id="7AG9JT29EKh" role="2OqNvi">
-                                                    <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
-                                                  </node>
-                                                </node>
-                                                <node concept="3uibUv" id="7AG9JT2a3ji" role="10QFUM">
-                                                  <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                                              <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                                              <node concept="2OqwBi" id="7U87j6$6orF" role="37wK5m">
+                                                <node concept="30H73N" id="5TGiDLIk8s_" role="2Oq$k0" />
+                                                <node concept="3TrEf2" id="7AG9JT29EKh" role="2OqNvi">
+                                                  <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3139,17 +3134,12 @@
                                     <node concept="3cpWsn" id="7AG9JT2afCR" role="3cpWs9">
                                       <property role="TrG5h" value="role" />
                                       <node concept="2YIFZM" id="7AG9JT2afCS" role="33vP2m">
-                                        <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(jetbrains.mps.smodel.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                                         <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                                        <node concept="10QFUN" id="7AG9JT2afCT" role="37wK5m">
-                                          <node concept="2OqwBi" id="7AG9JT2afCU" role="10QFUP">
-                                            <node concept="30H73N" id="7AG9JT2afCV" role="2Oq$k0" />
-                                            <node concept="3TrEf2" id="7AG9JT2afCW" role="2OqNvi">
-                                              <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
-                                            </node>
-                                          </node>
-                                          <node concept="3uibUv" id="7AG9JT2afCX" role="10QFUM">
-                                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                                        <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                                        <node concept="2OqwBi" id="7AG9JT2afCU" role="37wK5m">
+                                          <node concept="30H73N" id="7AG9JT2afCV" role="2Oq$k0" />
+                                          <node concept="3TrEf2" id="7AG9JT2afCW" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
                                           </node>
                                         </node>
                                       </node>
@@ -3189,17 +3179,12 @@
                                 <node concept="3cpWsn" id="5sMqFE7D_nd" role="3cpWs9">
                                   <property role="TrG5h" value="childRole_" />
                                   <node concept="2YIFZM" id="7AG9JT2cdbg" role="33vP2m">
-                                    <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(jetbrains.mps.smodel.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                                     <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                                    <node concept="10QFUN" id="7AG9JT2cigd" role="37wK5m">
-                                      <node concept="2OqwBi" id="7AG9JT2cdLV" role="10QFUP">
-                                        <node concept="30H73N" id="7AG9JT2cdAd" role="2Oq$k0" />
-                                        <node concept="3TrEf2" id="7AG9JT2cf8p" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
-                                        </node>
-                                      </node>
-                                      <node concept="3uibUv" id="7AG9JT2cige" role="10QFUM">
-                                        <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                                    <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                                    <node concept="2OqwBi" id="7AG9JT2cdLV" role="37wK5m">
+                                      <node concept="30H73N" id="7AG9JT2cdAd" role="2Oq$k0" />
+                                      <node concept="3TrEf2" id="7AG9JT2cf8p" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
                                       </node>
                                     </node>
                                   </node>
@@ -3801,17 +3786,12 @@
                                       <node concept="3cpWsn" id="5sMqFE7D_r6" role="3cpWs9">
                                         <property role="TrG5h" value="role" />
                                         <node concept="2YIFZM" id="7AG9JT2bYlL" role="33vP2m">
-                                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(jetbrains.mps.smodel.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                                           <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                                          <node concept="10QFUN" id="7AG9JT2c5NR" role="37wK5m">
-                                            <node concept="2OqwBi" id="7AG9JT2bZLT" role="10QFUP">
-                                              <node concept="30H73N" id="7AG9JT2bZlg" role="2Oq$k0" />
-                                              <node concept="3TrEf2" id="7AG9JT2c1GV" role="2OqNvi">
-                                                <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
-                                              </node>
-                                            </node>
-                                            <node concept="3uibUv" id="7AG9JT2c5NS" role="10QFUM">
-                                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                                          <node concept="2OqwBi" id="7AG9JT2bZLT" role="37wK5m">
+                                            <node concept="30H73N" id="7AG9JT2bZlg" role="2Oq$k0" />
+                                            <node concept="3TrEf2" id="7AG9JT2c1GV" role="2OqNvi">
+                                              <ref role="3Tt5mk" to="tp3t:7U87j6$6nB5" />
                                             </node>
                                           </node>
                                         </node>

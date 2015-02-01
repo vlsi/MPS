@@ -1593,6 +1593,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4AqxpFyVu6" role="jymVt" />
     <node concept="3uibUv" id="IYmOvntYfd" role="EKbjA">
       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
     </node>
@@ -1605,8 +1606,13 @@
       <node concept="3Tm1VV" id="IYmOvntYfh" role="1B3o_S" />
       <node concept="3clFbS" id="IYmOvntYfi" role="3clF47">
         <node concept="3clFbF" id="IYmOvntYfj" role="3cqZAp">
-          <node concept="Xl_RD" id="IYmOvntYfk" role="3clFbG">
-            <property role="Xl_RC" value="Evaluation Module" />
+          <node concept="3cpWs3" id="4AqxpFz48P" role="3clFbG">
+            <node concept="1rXfSq" id="7InF663BXa6" role="3uHU7B">
+              <ref role="37wK5l" to="vsqj:~AbstractModule.getName():java.lang.String" resolve="getName" />
+            </node>
+            <node concept="Xl_RD" id="7InF663C4pU" role="3uHU7w">
+              <property role="Xl_RC" value=" [evaluation module]" />
+            </node>
           </node>
         </node>
       </node>
@@ -1615,6 +1621,7 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4AqxpFyU5M" role="jymVt" />
     <node concept="3clFb_" id="29Pb3oJpRIW" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />

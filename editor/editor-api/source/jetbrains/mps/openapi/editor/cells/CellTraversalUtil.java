@@ -71,6 +71,52 @@ public class CellTraversalUtil {
     return null;
   }
 
+  /**
+   * Compares two cells.
+   * Cell which is first is the editor is lesser.
+   *
+   * <p>
+   * Comparing cells must have common parent.
+   * Check getCommonParent(firstCell, secondCell) != null
+   *
+   * @param firstCell a first cell to be compared.
+   * @param secondCell a second cell to be compared.
+   * @return  -1, zero, or 1 as the first cell
+   *		is less than, equal to, or greater than the second cell.
+   *
+   * @throws java.lang.IllegalArgumentException if the first cell and
+   *         the second cell don't have common parent.
+   */
+  public static int compare(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    if (firstCell.equals(secondCell)) {
+      return 0;
+    }
+    EditorCell parent = getCommonParent(firstCell, secondCell);
+
+    if (parent == null) {
+      throw new IllegalArgumentException(firstCell.toString() + " and " + secondCell.toString() + " don't have common parent");
+    }
+    assert parent instanceof EditorCell_Collection;
+
+    if (parent.equals(firstCell)) {
+      return -1;
+    }
+    if (parent.equals(secondCell)) {
+      return 1;
+    }
+    for (EditorCell cell : ((EditorCell_Collection) parent)) {
+      if (isAncestorOrEquals(cell, firstCell)) {
+        return -1;
+      }
+
+      if (isAncestorOrEquals(cell, secondCell)) {
+        return 1;
+      }
+    }
+    assert false; //this line should not be reached
+    return 0;
+  }
+
   public static EditorCell getNextLeaf(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition) {
     EditorCell current = getNextLeaf(cell);
     while (current != null) {
@@ -121,38 +167,6 @@ public class CellTraversalUtil {
     } else {
       return cell;
     }
-  }
-
-  //first cell and second cell MUST have common parent
-  //check getCommonParent (firstCell, secondCell) != null
-  public static int compare(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
-    if (firstCell.equals(secondCell)) {
-      return 0;
-    }
-    EditorCell parent = getCommonParent(firstCell, secondCell);
-
-    assert parent != null;
-    assert parent instanceof EditorCell_Collection;
-
-    if (parent.equals(firstCell)) {
-      return -1;
-    }
-    if (parent.equals(secondCell)) {
-      return 1;
-    }
-
-
-    for (EditorCell cell : ((EditorCell_Collection) parent)) {
-      if (isAncestorOrEquals(cell, firstCell)) {
-        return -1;
-      }
-
-      if (isAncestorOrEquals(cell, secondCell)) {
-        return 1;
-      }
-    }
-    assert false; //this line should not be reached
-    return 0;
   }
 
   public static EditorCell getCommonParent(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {

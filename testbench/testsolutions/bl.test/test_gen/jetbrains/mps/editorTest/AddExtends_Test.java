@@ -23,7 +23,7 @@ public class AddExtends_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("6136581231973317671", "6136581231973317677");
-      this.typeString(" extends Runnable ");
+      this.typeString(" extends Runnable");
     }
   }
 }

@@ -20,13 +20,21 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
         case 1:
           return Collections.<NodeFactory>singletonList(new _AbstractEquationStatement_factory.NodeFactory_1178879020940());
         case 2:
-          return Collections.<NodeFactory>singletonList(new _AbstractEquationStatement_factory.NodeFactory_1177408248539());
+          return Collections.<NodeFactory>singletonList(new MessageFactories.NodeFactory_1005490780642154321());
         case 3:
+          return Collections.<NodeFactory>singletonList(new _AbstractEquationStatement_factory.NodeFactory_1177408248539());
+        case 4:
+          return Collections.<NodeFactory>singletonList(new MessageFactories.NodeFactory_1005490780641997347());
+        case 5:
+          return Collections.<NodeFactory>singletonList(new MessageFactories.NodeFactory_1005490780642123875());
+        case 6:
           return Collections.<NodeFactory>singletonList(new _AbstractEquationStatement_factory.NodeFactory_1179476271703());
+        case 7:
+          return Collections.<NodeFactory>singletonList(new MessageFactories.NodeFactory_1005490780642148227());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractEquationStatement", "CoerceExpression", "IsSubtypeExpression", "TypeOfExpression"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractEquationStatement", "CoerceExpression", "InfoStatement", "IsSubtypeExpression", "MessageStatement", "ReportErrorStatement", "TypeOfExpression", "WarningStatement"};
 }

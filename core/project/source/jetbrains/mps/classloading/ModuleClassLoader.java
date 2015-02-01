@@ -25,7 +25,6 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.net.URL;
@@ -66,10 +65,9 @@ public class ModuleClassLoader extends ClassLoader {
     return myDisposed;
   }
 
-  private void checkNotDisposed() {
+  private void checkNotDisposed() throws ModuleClassLoaderIsDisposedException {
     if (isDisposed()) {
-//      TODO too many weird places where disposed class loader seems to be used. Will enable after 3.2 release
-      throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
+      throw new ModuleClassLoaderIsDisposedException(String.format("ClassLoader of the module '%s' is disposed and not operable!", getModule()), getModule());
     }
   }
 
@@ -85,7 +83,7 @@ public class ModuleClassLoader extends ClassLoader {
     return aClass;
   }
 
-  private SModule getModule() {
+  private ReloadableModule getModule() {
     return mySupport.getModule();
   }
 
@@ -136,7 +134,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private ModuleClassNotFoundException createCLNFException(String name) {
-    SModule module = mySupport.getModule();
+    ReloadableModule module = mySupport.getModule();
     return new ModuleClassNotFoundException(module, "Unable to load class: " + name +
         " using ModuleClassLoader of " + module.getModuleName() + " module");
   }
@@ -272,11 +270,10 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   public String toString() {
-    checkNotDisposed();
-    return mySupport.getModule() + " class loader";
+    return String.format("%s ModuleClassLoader %s", mySupport.getModule(), myDisposed ? "[DISPOSED]" : "");
   }
 
-  private static ClassLoader getParentPluginClassLoader(SModule module) {
+  private static ClassLoader getParentPluginClassLoader(ReloadableModule module) {
     IFile moduleHome = ((AbstractModule) module).getModuleSourceDir();
 
     if (moduleHome == null) return null;
@@ -284,4 +281,12 @@ public class ModuleClassLoader extends ClassLoader {
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 
+  private static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
+    private final ReloadableModule myModule;
+
+    private ModuleClassLoaderIsDisposedException(String msg, @NotNull ReloadableModule module) {
+      super(msg);
+      myModule = module;
+    }
+  }
 }

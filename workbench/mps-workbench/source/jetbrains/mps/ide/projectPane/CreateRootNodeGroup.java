@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,23 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseGroup;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,23 +67,21 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-    if (modelDescriptor == null) {
-      setEnabledState(event.getPresentation(), false);
+    SModel targetModel = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+    if (targetModel == null) {
+      disable(event.getPresentation());
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModel) || modelDescriptor.isReadOnly()) {
+    if (!(targetModel instanceof EditableSModel) || targetModel.isReadOnly()) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;
     }
 
-    IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-
-    boolean isStubModel = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
-    if (context == null || isStubModel) {
-      setEnabledState(event.getPresentation(), false);
+    boolean isStubModel = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(targetModel));
+    if (isStubModel) {
+      disable(event.getPresentation());
       return;
     }
 
@@ -91,7 +92,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
 
       if (!singleItemSelected) {
-        setEnabledState(event.getPresentation(), false);
+        disable(event.getPresentation());
         return;
       }
 
@@ -108,75 +109,66 @@ public class CreateRootNodeGroup extends BaseGroup {
       myPackage = null;
       if (node != null) {
         SNode root = node.getContainingRoot();
-        myPackage = SNodeAccessUtil.getProperty(root, SNodeUtil.propertyName_BaseConcept_virtualPackage);
+        myPackage = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
       }
     }
 
-    setEnabledState(event.getPresentation(), true);
+    enable(event.getPresentation());
 
-    List<SModuleReference> modelLanguages = new ArrayList<SModuleReference>(SModelOperations.getAllImportedLanguages(modelDescriptor));
+    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllImportedLanguageIds(targetModel));
 
-    LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
+    LanguageAspect aspect = Language.getModelAspect(targetModel);
     if (aspect != null) {
       SModuleReference ref = aspect.getMainLanguage();
-      Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-      if (lang != null) {
-        modelLanguages.remove(ref);
+      Language langModule = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+      if (langModule != null) {
+        // FIXME LanguageAspect shall tell its main language as SLanguage, not as SModuleReference
+        final SLanguage language = MetaAdapterByDeclaration.getLanguage(langModule);
+        modelLanguages.remove(language);
 
-        for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-          if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
-            add(new NewRootNodeAction(conceptDeclaration, modelDescriptor, myPackage));
-          }
-        }
-
+        addActionsForRoots(language, targetModel, this);
         addSeparator();
       }
     }
 
     Collections.sort(modelLanguages, new ToStringComparator());
 
-    List<Language> languagesWithRoots = new ArrayList<Language>();
-    for (final SModuleReference ref : modelLanguages) {
-      Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-      if (lang != null) {
-        for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-          if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
-            languagesWithRoots.add(lang);
-            break;
-          }
-        }
+    ArrayList<DefaultActionGroup> byLanguage = new ArrayList<DefaultActionGroup>();
+    for (SLanguage language : modelLanguages) {
+      String name = language.getQualifiedName();
+      Icon icon = IconManager.getIconForNamespace(name);
+      DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
+      langRootsGroup.getTemplatePresentation().setIcon(icon);
+
+      addActionsForRoots(language, targetModel, langRootsGroup);
+
+      if (langRootsGroup.getChildrenCount() > 0) {
+        byLanguage.add(langRootsGroup);
       }
     }
 
-    boolean plain = myPlain || (languagesWithRoots.size() == 1 && aspect == null);
+    final boolean plain = myPlain || (byLanguage.size() == 1 && aspect == null);
 
-    for (final Language language : languagesWithRoots) {
-      String name = language.getModuleName();
-      Icon icon = IconManager.getIconForNamespace(language.getModuleName());
-      BaseGroup langRootsGroup;
-
-      if (!plain) {
-        langRootsGroup = new BaseGroup(NameUtil.compactNamespace(name), name, icon);
-        langRootsGroup.setPopup(true);
+    for (DefaultActionGroup g : byLanguage) {
+      if (plain) {
+        addSeparator();
+        addAll(g.getChildren(null));
       } else {
-        langRootsGroup = this;
-      }
-
-      for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
-          langRootsGroup.add(new NewRootNodeAction(conceptDeclaration, modelDescriptor, myPackage));
-        }
-      }
-      if (!plain) {
-        this.add(langRootsGroup);
-      } else {
-        this.addSeparator();
+        this.add(g);
       }
     }
 
     if (getChildrenCount() == 0) {
       add(ActionManager.getInstance().getAction(
           "jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
+    }
+  }
+
+  private void addActionsForRoots(SLanguage from, SModel target, DefaultActionGroup group) {
+    for (SAbstractConcept c : from.getConcepts()) {
+      if (ModelConstraints.canBeRoot(c, target)) {
+        group.add(new NewRootNodeAction(c, target, myPackage));
+      }
     }
   }
 

@@ -21,7 +21,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.Collection;
@@ -60,7 +59,7 @@ public class ModuleClassLoaderSupport {
     return new ModuleClassLoaderSupport((ReloadableModuleBase) module, compileDependencies);
   }
 
-  public SModule getModule() {
+  public ReloadableModule getModule() {
     return myModule;
   }
 

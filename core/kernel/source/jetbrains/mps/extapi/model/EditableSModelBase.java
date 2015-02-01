@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,14 +174,18 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     // probably should be changed to assert
     // see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
-    if (!isLoaded()) return;
+    if (!isChanged() && !isLoaded()) {
+      return;
+    }
 
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
 
     LOG.info("Saving model " + getModelName());
 
-    if (!checkAndResolveConflictOnSave()) return;
+    if (!checkAndResolveConflictOnSave()) {
+      return;
+    }
 
     boolean isSaved = false;
     try {

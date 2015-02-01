@@ -1030,6 +1030,9 @@
     <node concept="lpD6D" id="6_1qUe4eP2U" role="lpD6w">
       <ref role="lpD7u" to="tpej:6_1qUe3MTtm" resolve="ByteTypeOfIntegerConstant" />
     </node>
+    <node concept="lpD6D" id="ROe8AA1GAV" role="lpD6w">
+      <ref role="lpD7u" to="tpej:ROe8A_SmDX" resolve="CaseInsensitiveDuplicatedClassifierName" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQmKZ" role="lpD6w">
       <ref role="lpD7u" to="tpej:2jmlBNW7vIq" resolve="ClassifierNameUniqueness" />
     </node>
@@ -1245,6 +1248,9 @@
     </node>
     <node concept="lpD6D" id="66auKH98M_r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5YjQP9rNnLE" resolve="DeleteUnaryMinus" />
+    </node>
+    <node concept="lpD6D" id="7s4edfJCDl6" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7s4edfJBqzZ" resolve="DuplicateStatement" />
     </node>
     <node concept="lpD6D" id="4$ezt8Zmuja" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4$ezt8ZmoHQ" resolve="LocalVariableMadeFinalCaret" />

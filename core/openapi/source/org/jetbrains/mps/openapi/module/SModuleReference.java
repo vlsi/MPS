@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A globally unique reference to a module
  */
@@ -24,5 +26,5 @@ public interface SModuleReference {
 
   String getModuleName();
 
-  SModule resolve(SRepository repo);
+  SModule resolve(@NotNull SRepository repo);
 }

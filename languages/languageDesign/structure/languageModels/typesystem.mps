@@ -264,9 +264,6 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1146253292180" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" flags="nn" index="3y1jeu">
-        <child id="1146253292181" name="value" index="3y1jev" />
-      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -1450,18 +1447,19 @@
                         <ref role="1YBMHb" node="6uCSBqVTxCs" resolve="conceptDeclaration" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="6uCSBqVTH9A" role="3uHU7w">
-                      <node concept="2OqwBi" id="6uCSBqVTH9B" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxglhWE" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6uCSBqVTH9G" resolve="it" />
-                        </node>
-                        <node concept="3TrcHB" id="6uCSBqVTH9D" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                        </node>
+                    <node concept="2OqwBi" id="ROe8AA84jX" role="3uHU7w">
+                      <node concept="37vLTw" id="ROe8AA844c" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6uCSBqVTH8I" resolve="name" />
                       </node>
-                      <node concept="3y1jeu" id="6uCSBqVTH9E" role="2OqNvi">
-                        <node concept="37vLTw" id="3GM_nagTv1I" role="3y1jev">
-                          <ref role="3cqZAo" node="6uCSBqVTH8I" resolve="name" />
+                      <node concept="liA8E" id="ROe8AA85dr" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~String.equalsIgnoreCase(java.lang.String):boolean" resolve="equalsIgnoreCase" />
+                        <node concept="2OqwBi" id="ROe8AA85xj" role="37wK5m">
+                          <node concept="37vLTw" id="ROe8AA85kn" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6uCSBqVTH9G" resolve="it" />
+                          </node>
+                          <node concept="3TrcHB" id="ROe8AA85OF" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
                         </node>
                       </node>
                     </node>

@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
+          refactoringContext.setLocal(false);
           executeSimple(refactoringContext);
         }
       });

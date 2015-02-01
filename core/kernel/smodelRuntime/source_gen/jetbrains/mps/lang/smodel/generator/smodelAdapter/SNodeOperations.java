@@ -350,7 +350,7 @@ public class SNodeOperations {
       return EMPTY_LIST;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SLinkOperations.getChildren(node, MetaAdapterByDeclaration.getContainmentLink((jetbrains.mps.smodel.SNode) linkDeclaration));
+    return SLinkOperations.getChildren(node, MetaAdapterByDeclaration.getContainmentLink(linkDeclaration));
   }
   public static SModel getModel(SNode node) {
     if (node == null) {
@@ -769,7 +769,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node).isSubConceptOf(castTo))) {
+    if (!(MetaAdapterByDeclaration.getConcept(node).isSubConceptOf(castTo))) {
       String message = "Can't cast concept: " + node.getNodeId().toString() + ", FQName: " + NameUtil.nodeFQName(node) + " to concept: " + castTo;
       if (ourCastExceptionsEnabled) {
         throw new NodeCastException(message);
@@ -794,7 +794,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node).isSubConceptOf(castTo))) {
+    if (!(MetaAdapterByDeclaration.getConcept(node).isSubConceptOf(castTo))) {
       return null;
     }
     return node;
@@ -816,7 +816,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getConcept(node);
   }
   /**
    * this method is used where both concept and declaration should be acceptable
@@ -830,7 +830,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return MetaAdapterByDeclaration.getInstanceConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getInstanceConcept(node);
   }
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
     return MetaAdapterByDeclaration.asInstanceConcept(concept);

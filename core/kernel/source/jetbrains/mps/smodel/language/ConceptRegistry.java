@@ -188,7 +188,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime == null) {
-          LOG.warn("No language for: " + fqName + ", while looking for behavior descriptor.", new Throwable());
+          LOG.warn("No language for: " + fqName + ", while looking for behavior descriptor.");
         } else {
           final BehaviorAspectDescriptor behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
           descriptor = behaviorAspect != null ? behaviorAspect.getDescriptor(fqName) : null;
@@ -244,7 +244,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         ConstraintsAspectDescriptor constraintsAspectDescriptor;
         if (languageRuntime == null) {
           // Then language was just renamed and was not re-generated then it can happen that it has no
-          LOG.warn("No language for: " + conceptId + ", while looking for constraints descriptor.", new Throwable());
+          LOG.warn("No language for: " + conceptId + ", while looking for constraints descriptor.");
           constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
@@ -292,7 +292,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       TextGenAspectDescriptor textGenAspectDescriptor;
       if (languageRuntime == null) {
         // Then language was just renamed and was not re-generated then it can happen that it has no
-        LOG.warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName), new Throwable());
+        LOG.warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName));
         textGenAspectDescriptor = new TextGenAspectInterpreted();
       } else {
         textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);

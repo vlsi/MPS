@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,13 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -46,19 +48,33 @@ import javax.swing.Icon;
 import java.util.Map;
 
 public class NewRootNodeAction extends BaseAction implements DumbAware {
-  private final String myPack;
+  private final String myVirtualPackage;
+  private final SAbstractConcept myNodeConcept;
+  private final SModel myModel;
   private Project myProject;
-  private final SNodeReference myNodeConcept;
-  private final SModel myModelDescriptor;
 
-  public NewRootNodeAction(final SNode nodeConcept, SModel modelDescriptor, String pack) {
-    super(NodePresentationUtil.matchingText(nodeConcept));
-    myPack = pack;
-    myNodeConcept = nodeConcept.getReference();
-    myModelDescriptor = modelDescriptor;
-    Icon icon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept));
+  public NewRootNodeAction(@NotNull SAbstractConcept nodeConcept, @NotNull SModel model, @Nullable String virtualPackage) {
+    super();
+    myNodeConcept = nodeConcept;
+    myModel = model;
+    myVirtualPackage = virtualPackage;
+    String name = nodeConcept.getConceptAlias();
+    if (name == null || name.isEmpty()) {
+      name = nodeConcept.getName();
+    }
+    getTemplatePresentation().setText(name);
+    Icon icon = IconManager.getIcon(nodeConcept);
     getTemplatePresentation().setIcon(icon);
     setExecuteOutsideCommand(true);
+  }
+
+  /**
+   * @deprecated use {@link #NewRootNodeAction(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SModel, String)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public NewRootNodeAction(final SNode nodeConcept, SModel model, String virtualPackage) {
+    this(MetaAdapterByDeclaration.getConcept(nodeConcept), model, virtualPackage);
   }
 
   @Override
@@ -75,9 +91,9 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     modelAccess.executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(projectRepo), null, null, myModelDescriptor);
-        SNodeAccessUtil.setProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage, myPack);
-        myModelDescriptor.addRootNode(node);
+        final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
+        SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
+        myModel.addRootNode(node);
 
         modelAccess.runWriteInEDT(new Runnable() {
           @Override

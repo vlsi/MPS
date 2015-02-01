@@ -30,6 +30,14 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import java.util.Collections;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.tool.builder.FileMPSProject;
 import java.io.File;
@@ -118,6 +126,8 @@ public class Utils {
     // <node> 
     // <node> 
 
+    mr.dispose();
+
     {
       List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), expected);
       List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
@@ -155,13 +165,27 @@ public class Utils {
     try {
       SModule testMaterials = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
 
+      String tmpDir = FileUtil.createTmpDir().getAbsolutePath();
+
+      Memento mem = new MementoImpl();
+      mem.put("contentPath", tmpDir);
+      mem.put("type", PersistenceRegistry.DEFAULT_MODEL_ROOT);
+
+      Memento memIn = mem.createChild(FileBasedModelRoot.SOURCE_ROOTS);
+      memIn.put("path", tmpDir);
+
+      ModelRootDescriptor mrDesc = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, mem);
+
+      TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc), false, true);
+      testMaterials = tempModOpts.createModule();
+
       DirParser dirParser = new DirParser(testMaterials, new FileMPSProject(new File(PathManager.getHomePath())), FileSystem.getInstance().getFileByPath(dirPath));
 
       dirParser.parseDirs();
 
       List<SModel> parsedModels = dirParser.getAffectedModels();
       assert ListSequence.fromList(parsedModels).count() == 1;
-      SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
+      final SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
       for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
@@ -172,6 +196,7 @@ public class Utils {
 
       boolean wereErrors = compare2models(resultModel, expected, referentMap);
       Assert.assertFalse(wereErrors);
+
 
     } catch (JavaParseException e) {
       throw new RuntimeException(e);

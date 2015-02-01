@@ -52,7 +52,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="2" eap="true" update-channel="MPS32" />
+        <version codename="MPS" major="3" minor="2" eap="false" update-channel="MPS32" />
         <build date="${date}" number="${build.number}" />
         <logo url="/splash.png" textcolor="002387" />
         <about url="/mpsAbout.png" />
@@ -63,7 +63,7 @@
         <update-urls check="http://www.jetbrains.com/mps/update.xml" update="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
         <welcome-screen caption-url="/mpsWelcomeCaption.png" slogan-url="/mpsSlogan.png" logo-url="/MPS_32.png" />
         <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
-        <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" />
+        <feedback release-url="http://forum.jetbrains.com/forum/Meta-Programming-System" />
       </component>
     </echoxml>
     <jar destfile="${build.layout}/lib/branding.jar">

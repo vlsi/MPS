@@ -9,8 +9,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.validation.ModelValidator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
@@ -21,15 +19,13 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    List<String> errors = new ModelValidator(model).validate();
-    if (!(errors.isEmpty())) {
-      String extraMessage = ListSequence.fromList(errors).getElement(0);
-      if (errors.size() == 2) {
-        extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
-      } else if (errors.size() > 2) {
-        extraMessage += "; ...";
-      }
-      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(errors.size(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
+    ModelValidator validator = new ModelValidator(model);
+    validator.validate(((SModel) model).getRepository());
+    for (String error : validator.errors()) {
+      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, error, null, ModelChecker.SEVERITY_ERROR, "Model properties"));
+    }
+    for (String w : validator.warnings()) {
+      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, w, null, ModelChecker.SEVERITY_WARNING, "Model properties"));
     }
     monitor.done();
     return results;

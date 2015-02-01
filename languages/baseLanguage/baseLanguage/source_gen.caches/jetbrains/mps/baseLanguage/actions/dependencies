@@ -5,20 +5,11 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactories" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.BL_node_factories" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.FieldConversions" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactories" file="AlterStatementListContainerFactories.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" />
-    <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" file="AlterStatementListContainerFactoryUtils.java">
     <classNode dependClassName="java.lang.Class" />
@@ -102,6 +93,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

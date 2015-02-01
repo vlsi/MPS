@@ -17,9 +17,11 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -27,25 +29,46 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ModelValidator {
-  private SModel myModel;
+  private final SModel myModel;
+  private List<String> myErrors;
+  private List<String> myWarnings;
 
   public ModelValidator(SModel model) {
     myModel = model;
   }
 
+  /**
+   * @deprecated use {@link #validate(org.jetbrains.mps.openapi.module.SRepository)} instead.
+   * FIXME Better yet, come up with a better API. Perhaps, shall return ModelCheckerIssue or any other more complicated
+   * object. Important is to support quick fixes. Perhaps, errors/warnings with quick fixes shall be part if ModelPropertiesChecker?
+   * OTOH, these are legitimate warnings not only for MPC, and shall be visible in project tree UI as well (@see ErrorChecker)
+   * @return
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public List<String> validate() {
+    validate(MPSModuleRepository.getInstance());
+    return errors();
+  }
+
+
+  public void validate(SRepository repository) {
     ModelAccess.assertLegalRead();
 
-    List<String> errors = new ArrayList<String>();
+    myErrors = Collections.emptyList();
+    myWarnings = Collections.emptyList();
+
     if (myModel instanceof TransientSModel || myModel.getModule() == null) {
-      return errors;
+      return;
     }
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
-      return errors;
+      return;
     }
+    List<String> errors = new ArrayList<String>();
     if (myModel instanceof InvalidSModel) {
       Iterable<SModel.Problem> problems = myModel.getProblems();
       for (SModel.Problem m : problems) {
@@ -56,19 +79,19 @@ public class ModelValidator {
       if (errors.isEmpty()) {
         errors.add("Couldn't read model.");
       }
-      return errors;
+      myErrors = errors;
+      return;
     }
 
+    List<String> warnings = new ArrayList<String>(5);
     SModule module = myModel.getModule();
-    SRepository repository = module.getRepository();
     final SModelReference modelToValidateRef = myModel.getReference();
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {
         errors.add("Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName()));
       }
       if (reference.equals(modelToValidateRef)) {
-        // FIXME refactor ModelValidator and report this as warning, not error
-        errors.add(String.format("Model shall not import self, remove %s from imports", reference.getModelName()));
+        warnings.add(String.format("Model shall not import self, remove %s from imports", reference.getModelName()));
       }
     }
 
@@ -87,6 +110,15 @@ public class ModelValidator {
       }
     }
 
-    return errors;
+    myErrors = errors;
+    myWarnings = warnings;
+  }
+
+  public List<String> errors() {
+    return myErrors;
+  }
+
+  public List<String> warnings() {
+    return myWarnings;
   }
 }

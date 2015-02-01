@@ -2365,6 +2365,19 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="7prs2iANQSV" role="3cqZAp">
+              <node concept="2OqwBi" id="7prs2iANRnT" role="3clFbG">
+                <node concept="37vLTw" id="7prs2iANQST" role="2Oq$k0">
+                  <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
+                </node>
+                <node concept="liA8E" id="7prs2iANTgi" role="2OqNvi">
+                  <ref role="37wK5l" to="dbrf:~AbstractButton.setEnabled(boolean):void" resolve="setEnabled" />
+                  <node concept="3clFbT" id="7prs2iAO6Ms" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="29N7xYwTG1b" role="3cqZAp">
               <node concept="2OqwBi" id="29N7xYwTG1c" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxeu_BE" role="2Oq$k0">
@@ -2445,46 +2458,6 @@
             <node concept="10Nm6u" id="29N7xYwTG1Q" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="29N7xYwTG1R" role="3clFbx">
-            <node concept="3clFbJ" id="29N7xYwTG1S" role="3cqZAp">
-              <node concept="2ZW3vV" id="29N7xYwTG1T" role="3clFbw">
-                <node concept="2OqwBi" id="29N7xYwTG1U" role="2ZW6bz">
-                  <node concept="37vLTw" id="2BHiRxeuM$b" role="2Oq$k0">
-                    <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-                  </node>
-                  <node concept="liA8E" id="29N7xYwTG1W" role="2OqNvi">
-                    <ref role="37wK5l" to="ge2m:4a0HOMfn9t2" resolve="getRefactoring" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="29N7xYwTG1X" role="2ZW6by">
-                  <ref role="3uigEE" to="ge2m:4a0HOMfn6Vq" resolve="ILoggableRefactoring" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="29N7xYwTG1Y" role="3clFbx">
-                <node concept="3SKdUt" id="29N7xYwTGs$" role="3cqZAp">
-                  <node concept="3SKdUq" id="29N7xYwTGs_" role="3SKWNk">
-                    <property role="3SKdUp" value="noinspection ConstantConditions" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="29N7xYwTG1Z" role="3cqZAp">
-                  <node concept="2OqwBi" id="29N7xYwTG20" role="3clFbG">
-                    <node concept="37vLTw" id="2BHiRxeul5b" role="2Oq$k0">
-                      <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-                    </node>
-                    <node concept="liA8E" id="29N7xYwTG22" role="2OqNvi">
-                      <ref role="37wK5l" to="ge2m:4a0HOMfn97v" resolve="setLocal" />
-                      <node concept="2OqwBi" id="29N7xYwTG23" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxeuwyd" role="2Oq$k0">
-                          <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
-                        </node>
-                        <node concept="liA8E" id="29N7xYwTG25" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~AbstractButton.isSelected():boolean" resolve="isSelected" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="29N7xYwTG26" role="3cqZAp">
               <node concept="3y3z36" id="29N7xYwTG27" role="3clFbw">
                 <node concept="37vLTw" id="2BHiRxeuHqo" role="3uHU7B">

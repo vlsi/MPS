@@ -378,6 +378,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   myDependTableModel.addGeneratorItem(dep);
                 } else if (module instanceof  Solution) {
                   myDependTableModel.addSolutionItem(dep);
+                } else if (module instanceof DevKit) {
+                  myDependTableModel.addDevkitItem(dep);
                 } else {
                   myDependTableModel.addUnspecifiedItem(dep);
                 }

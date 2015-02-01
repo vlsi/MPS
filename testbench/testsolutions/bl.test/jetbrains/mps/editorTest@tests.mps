@@ -35,19 +35,14 @@
     <import index="4ky7" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
     <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
     <import index="jsgz" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" />
-    <import index="jxum" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.selection(jetbrains.mps.nodeEditor.selection@java_stub)" />
-    <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
-    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(jetbrains.mps.openapi.editor@java_stub)" />
     <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(jetbrains.mps.openapi.editor.cells@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
     <import index="y596" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(jetbrains.mps.openapi.editor.selection@java_stub)" />
     <import index="r9fo" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(org.jetbrains.mps.util@java_stub)" />
-    <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="4rc5" ref="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" />
     <import index="cp6v" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/f:java_stub#9c8b4b95-5d89-4201-ad78-0b2db3a22768#test(jetbrains.mps.baseLanguage.test/test@java_stub)" />
-    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -26512,7 +26507,7 @@
     </node>
     <node concept="3clFbS" id="5kDx1Sj6jKF" role="LjaKd">
       <node concept="2TK7Tu" id="5kDx1Sj6jKG" role="3cqZAp">
-        <property role="2TTd_B" value=" extends Runnable " />
+        <property role="2TTd_B" value=" extends Runnable" />
       </node>
     </node>
     <node concept="312cEu" id="5kDx1Sj6jKH" role="LiZbd">
@@ -41602,6 +41597,102 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3KP_RVWr243" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7s4edfJBqzZ">
+    <property role="3GE5qa" value="DuplicateNode" />
+    <property role="TrG5h" value="DuplicateStatement" />
+    <node concept="312cEu" id="7s4edfJBukb" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="DuplicateStatement" />
+      <node concept="2YIFZL" id="7s4edfJBzZy" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="7s4edfJBzZz" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="7s4edfJBzZ$" role="1tU5fm">
+            <node concept="17QB3L" id="7s4edfJBzZ_" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="7s4edfJBzZA" role="3clF45" />
+        <node concept="3Tm1VV" id="7s4edfJBzZB" role="1B3o_S" />
+        <node concept="3clFbS" id="7s4edfJBzZC" role="3clF47">
+          <node concept="3clFbF" id="7s4edfJB$b3" role="3cqZAp">
+            <node concept="2OqwBi" id="7s4edfJB$b0" role="3clFbG">
+              <node concept="10M0yZ" id="7s4edfJB$b1" role="2Oq$k0">
+                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              </node>
+              <node concept="liA8E" id="7s4edfJB$b2" role="2OqNvi">
+                <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                <node concept="Xl_RD" id="7s4edfJB$cc" role="37wK5m">
+                  <property role="Xl_RC" value="Hi" />
+                </node>
+              </node>
+            </node>
+            <node concept="LIFWc" id="7s4edfJB$vh" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="1" />
+              <property role="p6zMs" value="1" />
+              <property role="LIFWd" value="Constant_zedcwq_b0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7s4edfJBukc" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="7s4edfJB$ib" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="DuplicateStatement" />
+      <node concept="2YIFZL" id="7s4edfJB$ic" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="7s4edfJB$id" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="7s4edfJB$ie" role="1tU5fm">
+            <node concept="17QB3L" id="7s4edfJB$if" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="7s4edfJB$ig" role="3clF45" />
+        <node concept="3Tm1VV" id="7s4edfJB$ih" role="1B3o_S" />
+        <node concept="3clFbS" id="7s4edfJB$ii" role="3clF47">
+          <node concept="3clFbF" id="7s4edfJB$ij" role="3cqZAp">
+            <node concept="2OqwBi" id="7s4edfJB$ik" role="3clFbG">
+              <node concept="10M0yZ" id="7s4edfJB$il" role="2Oq$k0">
+                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              </node>
+              <node concept="liA8E" id="7s4edfJB$im" role="2OqNvi">
+                <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                <node concept="Xl_RD" id="7s4edfJB$in" role="37wK5m">
+                  <property role="Xl_RC" value="Hi" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7s4edfJB$nK" role="3cqZAp">
+            <node concept="2OqwBi" id="7s4edfJB$nL" role="3clFbG">
+              <node concept="10M0yZ" id="7s4edfJB$nM" role="2Oq$k0">
+                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              </node>
+              <node concept="liA8E" id="7s4edfJB$nN" role="2OqNvi">
+                <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                <node concept="Xl_RD" id="7s4edfJB$nO" role="37wK5m">
+                  <property role="Xl_RC" value="Hi" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7s4edfJB$io" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="7s4edfJB$G7" role="LjaKd">
+      <node concept="2HxZob" id="7s4edfJB$G5" role="3cqZAp">
+        <node concept="1iFQzN" id="7s4edfJB$GD" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3M9DpEEa3zL" resolve="CopyThisDown" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

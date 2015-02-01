@@ -3938,5 +3938,10 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7c4zijk9vdu">
+    <property role="3GE5qa" value="scopes" />
+    <property role="TrG5h" value="SuperInerfaceKind" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

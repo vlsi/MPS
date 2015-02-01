@@ -221,7 +221,7 @@
                           <node concept="10QFUN" id="7_qPA17JbQP" role="1eOMHV">
                             <node concept="H_c77" id="7_qPA17JbQQ" role="10QFUM" />
                             <node concept="37vLTw" id="7_qPA17JbQR" role="10QFUP">
-                              <ref role="3cqZAo" node="7_qPA17JbQT" resolve="attribute" />
+                              <ref role="3cqZAo" node="7_qPA17JbQT" resolve="model" />
                             </node>
                           </node>
                         </node>
@@ -232,7 +232,7 @@
                     </node>
                   </node>
                   <node concept="Rh6nW" id="7_qPA17JbQT" role="1bW2Oz">
-                    <property role="TrG5h" value="attribute" />
+                    <property role="TrG5h" value="model" />
                     <node concept="2jxLKc" id="7_qPA17JbQU" role="1tU5fm" />
                   </node>
                 </node>
@@ -320,7 +320,7 @@
                           <node concept="10QFUN" id="7_qPA17Kdvu" role="1eOMHV">
                             <node concept="H_c77" id="7_qPA17Kdvv" role="10QFUM" />
                             <node concept="37vLTw" id="7_qPA17Kdvw" role="10QFUP">
-                              <ref role="3cqZAo" node="7_qPA17Kdvy" resolve="attribute" />
+                              <ref role="3cqZAo" node="7_qPA17Kdvy" resolve="model" />
                             </node>
                           </node>
                         </node>
@@ -331,7 +331,7 @@
                     </node>
                   </node>
                   <node concept="Rh6nW" id="7_qPA17Kdvy" role="1bW2Oz">
-                    <property role="TrG5h" value="attribute" />
+                    <property role="TrG5h" value="model" />
                     <node concept="2jxLKc" id="7_qPA17Kdvz" role="1tU5fm" />
                   </node>
                 </node>

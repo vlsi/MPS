@@ -6386,6 +6386,17 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="7prs2iANpB8" role="3cqZAp">
+              <node concept="2OqwBi" id="7prs2iANpB9" role="3clFbG">
+                <node concept="37vLTw" id="7prs2iANpBa" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2i7OIWGq9Z$" resolve="myIsLocalCheckBox" />
+                </node>
+                <node concept="liA8E" id="7prs2iANpBb" role="2OqNvi">
+                  <ref role="37wK5l" to="dbrf:~AbstractButton.setEnabled(boolean):void" resolve="setEnabled" />
+                  <node concept="3clFbT" id="7prs2iAND9n" role="37wK5m" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="4mfhXkKmwjS" role="3cqZAp">
               <node concept="2OqwBi" id="4mfhXkKmwjT" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxeufP4" role="2Oq$k0">
@@ -6529,36 +6540,6 @@
             </node>
             <node concept="3clFbT" id="4mfhXkKmwXE" role="37vLTx">
               <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4mfhXkKmwXF" role="3cqZAp">
-          <node concept="2ZW3vV" id="4mfhXkKmwXG" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuuTz" role="2ZW6bz">
-              <ref role="3cqZAo" node="2i7OIWGq9Zx" resolve="myRefactoring" />
-            </node>
-            <node concept="3uibUv" id="4mfhXkKmAGJ" role="2ZW6by">
-              <ref role="3uigEE" to="ge2m:4a0HOMfn6Vq" resolve="ILoggableRefactoring" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="4mfhXkKmwXJ" role="3clFbx">
-            <node concept="3clFbF" id="4mfhXkKmwXK" role="3cqZAp">
-              <node concept="2OqwBi" id="4mfhXkKmwXL" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeukns" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2i7OIWGq9Zu" resolve="myRefactoringContext" />
-                </node>
-                <node concept="liA8E" id="4mfhXkKmwXN" role="2OqNvi">
-                  <ref role="37wK5l" to="ge2m:4a0HOMfn97v" resolve="setLocal" />
-                  <node concept="2OqwBi" id="4mfhXkKmwXO" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxeuRyj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2i7OIWGq9Z$" resolve="myIsLocalCheckBox" />
-                    </node>
-                    <node concept="liA8E" id="4mfhXkKmwXQ" role="2OqNvi">
-                      <ref role="37wK5l" to="dbrf:~AbstractButton.isSelected():boolean" resolve="isSelected" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>

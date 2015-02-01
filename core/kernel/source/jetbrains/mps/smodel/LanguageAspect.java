@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,9 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -32,193 +30,47 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum LanguageAspect {
-  STRUCTURE("structure") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.structureLanguageRef();
-    }
+  STRUCTURE("structure", BootstrapLanguages.structureLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Structure"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Structure";
-    }
-  },
+  EDITOR("editor", BootstrapLanguages.editorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor"),
 
-  EDITOR("editor") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.editorLanguageRef();
-    }
+  ACTIONS("actions", BootstrapLanguages.actionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor+Actions"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Editor";
-    }
-  },
+  CONSTRAINTS("constraints", BootstrapLanguages.constraintsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Constraints"),
 
-  ACTIONS("actions") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.actionsLanguageRef();
-    }
+  BEHAVIOR("behavior", BootstrapLanguages.behaviorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Behavior"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Editor+Actions";
-    }
-  },
+  TYPESYSTEM("typesystem", BootstrapLanguages.typesystemLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Typesystem"),
 
-  CONSTRAINTS("constraints") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.constraintsLanguageRef();
-    }
+  REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Constraints";
-    }
-  },
+  SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), ""),
 
-  BEHAVIOR("behavior") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.behaviorLanguageRef();
-    }
+  INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Behavior";
-    }
-  },
-
-  TYPESYSTEM("typesystem") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.typesystemLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Typesystem";
-    }
-  },
-
-  REFACTORINGS("refactorings") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.refactoringLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Refactoring";
-    }
-  },
-
-  SCRIPTS("scripts") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.scriptLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return "";
-    }
-  },
-
-  INTENTIONS("intentions") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.intentionsLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Intentions";
-    }
-  },
-
-  FIND_USAGES("findUsages") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.findUsagesLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Find+usages";
-    }
-  },
+  FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
   @Deprecated
-  PLUGIN("plugin") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.pluginLanguageRef();
-    }
+  PLUGIN("plugin", BootstrapLanguages.pluginLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Plugin"),
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Plugin";
-    }
-  },
+  DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
-  DATA_FLOW("dataFlow") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.dataFlowLanguageRef();
-    }
+  TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction") ,
 
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage";
-    }
-  },
+  TEXT_GEN("textGen",BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
-  TEST("test") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.testLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction";
-    }
-  },
-
-  TEXT_GEN("textGen") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.textGenLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "TextGen";
-    }
-  },
-
-  MIGRATION("migration") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.migrationLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return CONFLUENCE_BASE + "Migrations";
-    }
-  };
+  MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
   public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";
 
   private String myName;
+  private final SModuleReference myMainLang;
+  private final String myHelpURL;
 
-  LanguageAspect(String name) {
+  LanguageAspect(String name, SModuleReference mainLang, String helpURL) {
     myName = name;
+    myMainLang = mainLang;
+    myHelpURL = helpURL;
   }
 
   /**
@@ -288,9 +140,15 @@ public enum LanguageAspect {
   }
 
   @Nullable
-  public abstract String getHelpURL();
+  public String getHelpURL() {
+    return myHelpURL;
+  }
 
-  public abstract SModuleReference getMainLanguage();
+  // FIXME tell it as SLanguage
+  // refactor to have constants as fields, not as methods
+  public SModuleReference getMainLanguage() {
+    return myMainLang;
+  }
 
   public static Collection<SModel> getAspectModels(Language l) {
     Set<SModel> result = new HashSet<SModel>();

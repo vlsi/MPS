@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -169,7 +170,8 @@ public class ModulesWatcher {
    * we need to mark it invalid
    */
   private boolean isModuleDisposed(SModuleReference mRef) {
-    return mRef.resolve(myRepository) == null;
+    SModule resolvedModule = mRef.resolve(myRepository);
+    return (resolvedModule == null || resolvedModule.getRepository() == null);
   }
 
   @Nullable
@@ -202,18 +204,7 @@ public class ModulesWatcher {
         continue;
       }
       if (isModuleDisposed(dep.getTargetModule())) {
-        String message;
-        if (module instanceof Language) {
-          message = "Language ";
-        } else if (module instanceof Solution) {
-          message = "Solution ";
-        } else if (module instanceof Generator) {
-          message = "Generator ";
-        } else {
-          message = "Module ";
-        }
-
-        message = String.format("%s %s depends on a disposed module %s and therefore was marked invalid for class loading", message, mRef.getModuleName(), dep.getTargetModule());
+        String message = String.format("%s depends on a disposed module %s and therefore was marked invalid for class loading", module, dep.getTargetModule());
         if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }

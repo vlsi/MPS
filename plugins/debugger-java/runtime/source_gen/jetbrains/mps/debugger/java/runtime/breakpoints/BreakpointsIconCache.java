@@ -82,30 +82,36 @@ public class BreakpointsIconCache implements ProjectComponent {
       myUpdateFromCurrent.invoke();
     }
   };
+
   public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager, BreakpointsUiComponent breakpointsUiComponent) {
     myProject = project;
     myBreakpointManager = breakpointManager;
     myDebugSessionManager = debugSessionManager;
     myBreakpointsUiComponent = breakpointsUiComponent;
   }
+
   @Override
   public void projectOpened() {
-  }
-  @Override
-  public void projectClosed() {
-  }
-  @Override
-  public void initComponent() {
     myBreakpointManager.addChangeListener(myBreakpointsManagerListener);
     myDebugSessionManager.addDebugSessionListener(myDebugSessionAdapter);
     CleanupManager.getInstance().addCleanupListener(myCleanupListener);
   }
+
   @Override
-  public void disposeComponent() {
+  public void projectClosed() {
     CleanupManager.getInstance().removeCleanupListener(myCleanupListener);
     myDebugSessionManager.removeDebugSessionListener(myDebugSessionAdapter);
     myBreakpointManager.removeChangeListener(myBreakpointsManagerListener);
   }
+
+  @Override
+  public void initComponent() {
+  }
+
+  @Override
+  public void disposeComponent() {
+  }
+
   @Nullable
   private DebugSession currentSession() {
     AbstractDebugSession session = myDebugSessionManager.getDebugSessionByCurrentTab();

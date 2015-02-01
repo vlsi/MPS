@@ -136,6 +136,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
@@ -378,6 +379,7 @@
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1184963466173" name="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" flags="nn" index="3_kTaI" />
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="sE7Ow" id="78RbNhWi9JH">
@@ -2652,6 +2654,38 @@
           </node>
         </node>
         <node concept="3clFbH" id="7yFo2Ea1rfY" role="3cqZAp" />
+        <node concept="3cpWs8" id="29lH0gw0EL0" role="3cqZAp">
+          <node concept="3cpWsn" id="29lH0gw0EL1" role="3cpWs9">
+            <property role="TrG5h" value="resolver" />
+            <node concept="3uibUv" id="29lH0gw0EL2" role="1tU5fm">
+              <ref role="3uigEE" to="qyr2:68MS4n2IA6m" resolve="ConflictingModelsUtil.ModelConflictResolver" />
+            </node>
+            <node concept="2YIFZM" id="29lH0gw0GbX" role="33vP2m">
+              <ref role="37wK5l" to="qyr2:68MS4n2MKAn" resolve="getModelConflictResolverTask" />
+              <ref role="1Pybhc" to="qyr2:68MS4n2I8HR" resolve="ConflictingModelsUtil" />
+              <node concept="2OqwBi" id="29lH0gw0GbY" role="37wK5m">
+                <node concept="2OqwBi" id="29lH0gw0GbZ" role="2Oq$k0">
+                  <node concept="2WthIp" id="29lH0gw0Gc0" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="29lH0gw0Gc1" role="2OqNvi">
+                    <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="29lH0gw0Gc2" role="2OqNvi">
+                  <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="29lH0gw0Gc3" role="37wK5m">
+                <ref role="3cqZAo" node="7yFo2Ea1dCX" resolve="provider" />
+              </node>
+              <node concept="37vLTw" id="29lH0gw0Gc4" role="37wK5m">
+                <ref role="3cqZAo" node="7yFo2Ea1kAk" resolve="session" />
+              </node>
+              <node concept="37vLTw" id="29lH0gw0Gc5" role="37wK5m">
+                <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedModelFiles" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="68MS4n2MqhO" role="3cqZAp">
           <node concept="2OqwBi" id="68MS4n2MumT" role="3clFbG">
             <node concept="2YIFZM" id="68MS4n2Mt6y" role="2Oq$k0">
@@ -2660,31 +2694,113 @@
             </node>
             <node concept="liA8E" id="68MS4n2Mw2u" role="2OqNvi">
               <ref role="37wK5l" to="fw3h:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
-              <node concept="2YIFZM" id="68MS4n2MQOy" role="37wK5m">
-                <ref role="37wK5l" to="qyr2:68MS4n2MKAn" resolve="getModelConflictResolverTask" />
-                <ref role="1Pybhc" to="qyr2:68MS4n2I8HR" resolve="ConflictingModelsUtil" />
-                <node concept="2OqwBi" id="68MS4n2MROX" role="37wK5m">
-                  <node concept="2OqwBi" id="68MS4n2MQTB" role="2Oq$k0">
-                    <node concept="2WthIp" id="68MS4n2MQTE" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="68MS4n2MQTG" role="2OqNvi">
-                      <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="68MS4n2MUo2" role="2OqNvi">
-                    <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="68MS4n2MXdl" role="37wK5m">
-                  <ref role="3cqZAo" node="7yFo2Ea1dCX" resolve="provider" />
-                </node>
-                <node concept="37vLTw" id="68MS4n2MZDa" role="37wK5m">
-                  <ref role="3cqZAo" node="7yFo2Ea1kAk" resolve="session" />
-                </node>
-                <node concept="37vLTw" id="68MS4n2N2qb" role="37wK5m">
-                  <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedModelFiles" />
+              <node concept="37vLTw" id="29lH0gw0JFA" role="37wK5m">
+                <ref role="3cqZAo" node="29lH0gw0EL1" resolve="resolver" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="29lH0gw0R4G" role="3cqZAp" />
+        <node concept="3clFbJ" id="29lH0gw0K_$" role="3cqZAp">
+          <node concept="3clFbS" id="29lH0gw0K_B" role="3clFbx">
+            <node concept="3cpWs8" id="29lH0gvZB5c" role="3cqZAp">
+              <node concept="3cpWsn" id="29lH0gvZB5d" role="3cpWs9">
+                <property role="TrG5h" value="message" />
+                <node concept="17QB3L" id="29lH0gvZB5e" role="1tU5fm" />
+                <node concept="Xl_RD" id="29lH0gvZB5f" role="33vP2m">
+                  <property role="Xl_RC" value="Conflicts in the following model files were not autoresolved:\n" />
                 </node>
               </node>
             </node>
+            <node concept="2Gpval" id="29lH0gvZB5g" role="3cqZAp">
+              <node concept="2GrKxI" id="29lH0gvZB5h" role="2Gsz3X">
+                <property role="TrG5h" value="file" />
+              </node>
+              <node concept="3clFbS" id="29lH0gvZB5i" role="2LFqv$">
+                <node concept="3clFbF" id="29lH0gvZB5j" role="3cqZAp">
+                  <node concept="d57v9" id="29lH0gvZB5k" role="3clFbG">
+                    <node concept="3cpWs3" id="29lH0gvZB5l" role="37vLTx">
+                      <node concept="Xl_RD" id="29lH0gvZB5m" role="3uHU7w">
+                        <property role="Xl_RC" value="\n" />
+                      </node>
+                      <node concept="3cpWs3" id="3dMY8lFLtVz" role="3uHU7B">
+                        <node concept="Xl_RD" id="3dMY8lFLu70" role="3uHU7B">
+                          <property role="Xl_RC" value=" " />
+                        </node>
+                        <node concept="2OqwBi" id="29lH0gvZB5n" role="3uHU7w">
+                          <node concept="2GrUjf" id="29lH0gvZB5o" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="29lH0gvZB5h" resolve="file" />
+                          </node>
+                          <node concept="liA8E" id="29lH0gvZB5p" role="2OqNvi">
+                            <ref role="37wK5l" to="3df7:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="29lH0gvZB5q" role="37vLTJ">
+                      <ref role="3cqZAo" node="29lH0gvZB5d" resolve="message" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="29lH0gw14U3" role="2GsD0m">
+                <node concept="37vLTw" id="29lH0gw14U4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="29lH0gw0EL1" resolve="resolver" />
+                </node>
+                <node concept="liA8E" id="29lH0gw14U5" role="2OqNvi">
+                  <ref role="37wK5l" to="qyr2:29lH0gvYgfx" resolve="getUnresolvedFiles" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3dMY8lFLvdL" role="3cqZAp">
+              <node concept="d57v9" id="3dMY8lFLwgU" role="3clFbG">
+                <node concept="3cpWs3" id="3dMY8lFLIeg" role="37vLTx">
+                  <node concept="Xl_RD" id="3dMY8lFLIem" role="3uHU7B">
+                    <property role="Xl_RC" value="This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." />
+                  </node>
+                  <node concept="Xl_RD" id="3dMY8lFLIeo" role="3uHU7w">
+                    <property role="Xl_RC" value=" It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again." />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="3dMY8lFLvdJ" role="37vLTJ">
+                  <ref role="3cqZAo" node="29lH0gvZB5d" resolve="message" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="29lH0gw0YpC" role="3cqZAp">
+              <node concept="2YIFZM" id="29lH0gw0ZUi" role="3clFbG">
+                <ref role="37wK5l" to="810:~Messages.showWarningDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
+                <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                <node concept="2OqwBi" id="29lH0gw11uI" role="37wK5m">
+                  <node concept="2OqwBi" id="29lH0gw0ZUj" role="2Oq$k0">
+                    <node concept="2WthIp" id="29lH0gw0ZUk" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="29lH0gw0ZUl" role="2OqNvi">
+                      <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="29lH0gw139C" role="2OqNvi">
+                    <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="29lH0gw1aGM" role="37wK5m">
+                  <ref role="3cqZAo" node="29lH0gvZB5d" resolve="message" />
+                </node>
+                <node concept="Xl_RD" id="29lH0gw0ZUn" role="37wK5m">
+                  <property role="Xl_RC" value="Conflict Resolver" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="29lH0gw0MVf" role="3clFbw">
+            <node concept="2OqwBi" id="29lH0gw0LuL" role="2Oq$k0">
+              <node concept="37vLTw" id="29lH0gw0L1G" role="2Oq$k0">
+                <ref role="3cqZAo" node="29lH0gw0EL1" resolve="resolver" />
+              </node>
+              <node concept="liA8E" id="29lH0gw0MxO" role="2OqNvi">
+                <ref role="37wK5l" to="qyr2:29lH0gvYgfx" resolve="getUnresolvedFiles" />
+              </node>
+            </node>
+            <node concept="3GX2aA" id="29lH0gw0R3b" role="2OqNvi" />
           </node>
         </node>
       </node>

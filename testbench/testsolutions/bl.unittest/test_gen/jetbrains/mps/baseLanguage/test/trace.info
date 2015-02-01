@@ -8,6 +8,60 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1005490780655151741">
+    <file name="CaseInsensitiveDuplicatedClassifierName_Test.java">
+      <node id="1005490780655151741" at="17,73,18,121" concept="2" />
+      <node id="1005490780655151741" at="18,121,19,154" concept="2" />
+      <node id="1005490780655151741" at="22,73,23,121" concept="2" />
+      <node id="1005490780655151741" at="23,121,24,154" concept="2" />
+      <node id="1005490780655151741" at="27,75,28,121" concept="2" />
+      <node id="1005490780655151741" at="28,121,29,156" concept="2" />
+      <node id="1005490780655151741" at="32,77,33,121" concept="2" />
+      <node id="1005490780655151741" at="33,121,34,158" concept="2" />
+      <node id="1005490780655151741" at="38,75,39,235" concept="4" />
+      <node id="1005490780655151741" at="39,235,40,159" concept="2" />
+      <node id="1005490780655151741" at="42,75,43,235" concept="4" />
+      <node id="1005490780655151741" at="43,235,44,159" concept="2" />
+      <node id="1005490780655151741" at="46,77,47,235" concept="4" />
+      <node id="1005490780655151741" at="47,235,48,159" concept="2" />
+      <node id="1005490780655151741" at="50,79,51,235" concept="4" />
+      <node id="1005490780655151741" at="51,235,52,159" concept="2" />
+      <node id="1005490780655151741" at="38,0,42,0" concept="3" trace="test_NodeErrorCheck1005490780657563849#()V" />
+      <node id="1005490780655151741" at="42,0,46,0" concept="3" trace="test_NodeErrorCheck1005490780657563829#()V" />
+      <node id="1005490780655151741" at="46,0,50,0" concept="3" trace="test_NodeWarningCheck1005490780657563809#()V" />
+      <node id="1005490780655151741" at="50,0,54,0" concept="3" trace="test_ErrorMessagesCheck1005490780655151764#()V" />
+      <node id="1005490780655151741" at="16,0,21,0" concept="3" trace="test_NodeErrorCheck1005490780657563849#()V" />
+      <node id="1005490780655151741" at="21,0,26,0" concept="3" trace="test_NodeErrorCheck1005490780657563829#()V" />
+      <node id="1005490780655151741" at="26,0,31,0" concept="3" trace="test_NodeWarningCheck1005490780657563809#()V" />
+      <node id="1005490780655151741" at="31,0,36,0" concept="3" trace="test_ErrorMessagesCheck1005490780655151764#()V" />
+      <scope id="1005490780655151741" at="17,73,19,154" />
+      <scope id="1005490780655151741" at="22,73,24,154" />
+      <scope id="1005490780655151741" at="27,75,29,156" />
+      <scope id="1005490780655151741" at="32,77,34,158" />
+      <scope id="1005490780655151741" at="38,75,40,159">
+        <var name="operation" id="1005490780655151741" />
+      </scope>
+      <scope id="1005490780655151741" at="42,75,44,159">
+        <var name="operation" id="1005490780655151741" />
+      </scope>
+      <scope id="1005490780655151741" at="46,77,48,159">
+        <var name="operation" id="1005490780655151741" />
+      </scope>
+      <scope id="1005490780655151741" at="50,79,52,159">
+        <var name="operation" id="1005490780655151741" />
+      </scope>
+      <scope id="1005490780655151741" at="38,0,42,0" />
+      <scope id="1005490780655151741" at="42,0,46,0" />
+      <scope id="1005490780655151741" at="46,0,50,0" />
+      <scope id="1005490780655151741" at="50,0,54,0" />
+      <scope id="1005490780655151741" at="16,0,21,0" />
+      <scope id="1005490780655151741" at="21,0,26,0" />
+      <scope id="1005490780655151741" at="26,0,31,0" />
+      <scope id="1005490780655151741" at="31,0,36,0" />
+      <unit id="1005490780655151741" at="36,0,55,0" name="jetbrains.mps.baseLanguage.test.CaseInsensitiveDuplicatedClassifierName_Test$TestBody" />
+      <unit id="1005490780655151741" at="14,0,56,0" name="jetbrains.mps.baseLanguage.test.CaseInsensitiveDuplicatedClassifierName_Test" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1100850602766269370">
     <file name="ArrayCreatorTest_Test.java">
       <node id="1100850602766269370" at="17,73,18,121" concept="2" />

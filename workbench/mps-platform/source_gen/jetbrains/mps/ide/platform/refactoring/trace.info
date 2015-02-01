@@ -773,49 +773,46 @@
       <node id="2992466356732700334" at="42,63,43,38" concept="5" />
       <node id="5012303891251463403" at="44,56,45,95" concept="5" />
       <node id="5012303891251463409" at="45,95,46,68" concept="5" />
-      <node id="5012303891251463416" at="46,68,47,45" concept="5" />
-      <node id="5012303891251463429" at="49,32,50,92" concept="5" />
-      <node id="5012303891251463435" at="50,92,51,52" concept="5" />
-      <node id="5012303891251463441" at="51,52,52,49" concept="5" />
-      <node id="5012303891251463450" at="53,5,54,18" concept="5" />
-      <node id="5012303891251463463" at="54,18,55,59" concept="5" />
-      <node id="5012303891251463471" at="55,59,56,24" concept="11" />
-      <node id="5012303891251466081" at="58,32,59,25" concept="11" />
-      <node id="5012303891251466087" at="62,31,63,26" concept="5" />
-      <node id="5012303891251466096" at="64,56,65,68" concept="5" />
-      <node id="5012303891251466115" at="67,43,68,88" concept="5" />
-      <node id="5012303891251466109" at="69,12,70,56" concept="5" />
-      <node id="5012303891251466122" at="71,5,72,24" concept="5" />
-      <node id="5012303891251466138" at="77,45,78,32" concept="11" />
-      <node id="6193323012353279089" at="80,121,81,36" concept="5" />
-      <node id="6193323012353279092" at="81,36,82,46" concept="5" />
-      <node id="6193323012353279096" at="82,46,83,32" concept="5" />
-      <node id="6193323012353279100" at="83,32,84,48" concept="5" />
-      <node id="6193323012353279134" at="84,48,85,11" concept="5" />
-      <node id="8190289045953662975" at="87,94,88,78" concept="11" />
-      <node id="5012303891251466107" at="69,10,71,5" concept="1" />
-      <node id="5012303891251466077" at="58,0,61,0" concept="9" trace="isCancelled#()Z" />
-      <node id="5012303891251466091" at="63,26,66,5" concept="8" />
-      <node id="8190289045953660892" at="87,0,90,0" concept="15" trace="needToBeShown#(Ljetbrains/mps/refactoring/framework/IRefactoring;Z)Z" />
+      <node id="8528533622075791816" at="46,68,47,42" concept="5" />
+      <node id="5012303891251463416" at="47,42,48,45" concept="5" />
+      <node id="5012303891251463429" at="50,32,51,92" concept="5" />
+      <node id="5012303891251463435" at="51,92,52,52" concept="5" />
+      <node id="5012303891251463441" at="52,52,53,49" concept="5" />
+      <node id="5012303891251463450" at="54,5,55,18" concept="5" />
+      <node id="5012303891251463463" at="55,18,56,59" concept="5" />
+      <node id="5012303891251463471" at="56,59,57,24" concept="11" />
+      <node id="5012303891251466081" at="59,32,60,25" concept="11" />
+      <node id="5012303891251466087" at="63,31,64,26" concept="5" />
+      <node id="5012303891251466115" at="65,43,66,88" concept="5" />
+      <node id="5012303891251466109" at="67,12,68,56" concept="5" />
+      <node id="5012303891251466122" at="69,5,70,24" concept="5" />
+      <node id="5012303891251466138" at="75,45,76,32" concept="11" />
+      <node id="6193323012353279089" at="78,121,79,36" concept="5" />
+      <node id="6193323012353279092" at="79,36,80,46" concept="5" />
+      <node id="6193323012353279096" at="80,46,81,32" concept="5" />
+      <node id="6193323012353279100" at="81,32,82,48" concept="5" />
+      <node id="6193323012353279134" at="82,48,83,11" concept="5" />
+      <node id="8190289045953662975" at="85,94,86,78" concept="11" />
+      <node id="5012303891251466107" at="67,10,69,5" concept="1" />
+      <node id="5012303891251466077" at="59,0,62,0" concept="9" trace="isCancelled#()Z" />
+      <node id="8190289045953660892" at="85,0,88,0" concept="15" trace="needToBeShown#(Ljetbrains/mps/refactoring/framework/IRefactoring;Z)Z" />
       <node id="6193323012353274079" at="29,0,33,0" concept="3" trace="RefactoringOptionsDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
-      <node id="5012303891251463398" at="43,38,48,5" concept="8" />
-      <node id="5012303891251463426" at="48,5,53,5" concept="8" />
-      <node id="5012303891251466103" at="66,5,71,5" concept="8" />
-      <node id="5012303891251466134" at="74,0,80,0" concept="9" trace="getDimensionServiceKey#()Ljava/lang/String;" />
-      <node id="6193323012353279082" at="80,0,87,0" concept="9" trace="initDialog#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
-      <node id="5012303891251466083" at="61,0,74,0" concept="9" trace="doOKAction#()V" />
-      <node id="5012303891251463352" at="33,0,58,0" concept="9" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <scope id="5012303891251466080" at="58,32,59,25" />
-      <scope id="5012303891251466095" at="64,56,65,68" />
-      <scope id="5012303891251466114" at="67,43,68,88" />
-      <scope id="5012303891251466108" at="69,12,70,56" />
-      <scope id="5012303891251466137" at="77,45,78,32" />
-      <scope id="8190289045953660895" at="87,94,88,78" />
+      <node id="5012303891251463426" at="49,5,54,5" concept="8" />
+      <node id="5012303891251466103" at="64,26,69,5" concept="8" />
+      <node id="5012303891251463398" at="43,38,49,5" concept="8" />
+      <node id="5012303891251466134" at="72,0,78,0" concept="9" trace="getDimensionServiceKey#()Ljava/lang/String;" />
+      <node id="6193323012353279082" at="78,0,85,0" concept="9" trace="initDialog#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
+      <node id="5012303891251466083" at="62,0,72,0" concept="9" trace="doOKAction#()V" />
+      <node id="5012303891251463352" at="33,0,59,0" concept="9" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <scope id="5012303891251466080" at="59,32,60,25" />
+      <scope id="5012303891251466114" at="65,43,66,88" />
+      <scope id="5012303891251466108" at="67,12,68,56" />
+      <scope id="5012303891251466137" at="75,45,76,32" />
+      <scope id="8190289045953660895" at="85,94,86,78" />
       <scope id="6193323012353274082" at="29,146,31,69" />
-      <scope id="5012303891251463402" at="44,56,47,45" />
-      <scope id="5012303891251463428" at="49,32,52,49" />
-      <scope id="5012303891251466077" at="58,0,61,0" />
-      <scope id="8190289045953660892" at="87,0,90,0">
+      <scope id="5012303891251463428" at="50,32,53,49" />
+      <scope id="5012303891251466077" at="59,0,62,0" />
+      <scope id="8190289045953660892" at="85,0,88,0">
         <var name="hasModelsToGenerate" id="8190289045953662972" />
         <var name="refactoring" id="8190289045953662970" />
       </scope>
@@ -825,20 +822,21 @@
         <var name="refactoring" id="6193323012353274107" />
         <var name="refactoringContext" id="6193323012353274105" />
       </scope>
-      <scope id="6193323012353279088" at="80,121,85,11" />
-      <scope id="5012303891251466134" at="74,0,80,0" />
-      <scope id="6193323012353279082" at="80,0,87,0">
+      <scope id="5012303891251463402" at="44,56,48,45" />
+      <scope id="6193323012353279088" at="78,121,83,11" />
+      <scope id="5012303891251466134" at="72,0,78,0" />
+      <scope id="5012303891251466086" at="63,31,70,24" />
+      <scope id="6193323012353279082" at="78,0,85,0">
         <var name="hasModelsToGenerate" id="6193323012353279081" />
         <var name="refactoring" id="6193323012353279080" />
         <var name="refactoringContext" id="6193323012353279079" />
       </scope>
-      <scope id="5012303891251466086" at="62,31,72,24" />
-      <scope id="5012303891251466083" at="61,0,74,0" />
-      <scope id="5012303891251463355" at="34,44,56,24">
+      <scope id="5012303891251466083" at="62,0,72,0" />
+      <scope id="5012303891251463355" at="34,44,57,24">
         <var name="c" id="5012303891251463364" />
       </scope>
-      <scope id="5012303891251463352" at="33,0,58,0" />
-      <unit id="2632304431905415118" at="21,0,91,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" />
+      <scope id="5012303891251463352" at="33,0,59,0" />
+      <unit id="2632304431905415118" at="21,0,89,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/3748064186690605985">

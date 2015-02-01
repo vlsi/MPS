@@ -34,17 +34,17 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
         case 8:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1178291598889());
         case 9:
-          return Collections.<NodeFactory>singletonList(new AlterStatementListContainerFactories.NodeFactory_4920206213435982910());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_3450034536571911403());
         case 10:
           return Collections.<NodeFactory>singletonList(new FieldConversions.NodeFactory_3207672282897664378());
         case 11:
-          return Arrays.asList(new NodeFactory[]{new BL_node_factories.NodeFactory_1188991552884(), new AlterStatementListContainerFactories.NodeFactory_4920206213436039858()});
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1188991552884());
         case 12:
-          return Arrays.asList(new NodeFactory[]{new BL_node_factories.NodeFactory_1188991457470(), new AlterStatementListContainerFactories.NodeFactory_4920206213436049781()});
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1188991457470());
         case 13:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1187945171249());
         case 14:
-          return Arrays.asList(new NodeFactory[]{new BL_node_factories.NodeFactory_1178272045313(), new AlterStatementListContainerFactories.NodeFactory_4920206213435985510()});
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1178272045313());
         case 15:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_2580416627845395972());
         case 16:
@@ -70,7 +70,7 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
         case 26:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1183997675651());
         case 27:
-          return Collections.<NodeFactory>singletonList(new AlterStatementListContainerFactories.NodeFactory_4920206213425901380());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_3450034536571911384());
         default:
       }
     }

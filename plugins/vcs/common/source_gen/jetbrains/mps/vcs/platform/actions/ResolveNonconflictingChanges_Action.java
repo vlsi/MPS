@@ -19,6 +19,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.vcs.merge.MergeSession;
 import com.intellij.openapi.vcs.merge.MergeProvider2;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.ui.Messages;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -69,7 +71,17 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
       MergeProvider provider = GitVcs.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject()).getMergeProvider();
       MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession(conflictedModelFiles) : null);
 
-      ProgressManager.getInstance().run(ConflictingModelsUtil.getModelConflictResolverTask(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), provider, session, conflictedModelFiles));
+      ConflictingModelsUtil.ModelConflictResolver resolver = ConflictingModelsUtil.getModelConflictResolverTask(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), provider, session, conflictedModelFiles);
+      ProgressManager.getInstance().run(resolver);
+
+      if (ListSequence.fromList(resolver.getUnresolvedFiles()).isNotEmpty()) {
+        String message = "Conflicts in the following model files were not autoresolved:\n";
+        for (VirtualFile file : ListSequence.fromList(resolver.getUnresolvedFiles())) {
+          message += " " + file.getPath() + "\n";
+        }
+        message += "This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." + " It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again.";
+        Messages.showWarningDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), message, "Conflict Resolver");
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ResolveNonconflictingChanges", t);
