@@ -83,6 +83,11 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
   }
 
   @Override
+  public long getLastCommittedStamp(@NotNull Document document) {
+    return 0;
+  }
+
+  @Override
   public Document[] getUncommittedDocuments() {
     return new Document[0];
   }
