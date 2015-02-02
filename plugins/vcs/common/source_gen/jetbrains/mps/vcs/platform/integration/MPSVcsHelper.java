@@ -33,7 +33,7 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
       }
     }))) {
 
-      int answer = Messages.showYesNoCancelDialog(myProject, "Some conflicts in MPS models can be autoresolved. Resolve such conflicts automatically?", "Conflict Resolver", Messages.getQuestionIcon());
+      int answer = Messages.showYesNoCancelDialog(myProject, "Conflicting changes have been detected. Some conflicts in the models can be autoresolved.\nResolve these conflicts automatically?", "Conflict Resolver", Messages.getQuestionIcon());
       if (answer == Messages.CANCEL) {
         return Collections.<VirtualFile>emptyList();
       }
@@ -49,7 +49,7 @@ public class MPSVcsHelper extends AbstractVcsHelperImpl {
           for (VirtualFile file : ListSequence.fromList(unresolvedFiles)) {
             message += " " + file.getPath() + "\n";
           }
-          message += "This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." + " It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again.\n" + "Continue with merge?";
+          message += "This happens when you merge in models in an old persistence format and have not merged and re-generated all of their used languages." + " It is recommended to first merge and re-generate the used languages, and then try to auto resolve the conflicts again.\n" + "Continue with merge?";
           int ans = Messages.showYesNoDialog(myProject, message, "Conflict Resolver", Messages.getWarningIcon());
           if (ans == Messages.NO) {
             return autoResolvedFiles;
