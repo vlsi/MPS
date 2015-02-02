@@ -193,7 +193,8 @@ public class ModulesWatcher {
       if (errorMode) LOG.error(message); else LOG.trace(message);
       return true;
     }
-    ReloadableModule module = resolveRef(mRef);
+
+    ReloadableModule module = (ReloadableModule) mRef.resolve(myRepository);
     assert module != null;
     for (SDependency dep : module.getDeclaredDependencies()) {
       if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
