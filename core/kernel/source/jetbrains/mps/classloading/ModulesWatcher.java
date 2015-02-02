@@ -18,10 +18,6 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -76,7 +72,7 @@ public class ModulesWatcher {
 
   // change the boolean property to the list of "dirty" modules
   private volatile boolean myChanged = false;
-  private final ReferenceStorage<ReloadableModuleBase> myRefStorage = new ReferenceStorage<ReloadableModuleBase>();
+  private final ReferenceStorage<ReloadableModule> myRefStorage = new ReferenceStorage<ReloadableModule>();
 
   private final ModuleUpdater myModuleUpdater;
   private final GraphHolder<SModuleReference> myDepGraphHolder = new GraphHolder<SModuleReference>(); // deps graph
@@ -175,7 +171,7 @@ public class ModulesWatcher {
   }
 
   @Nullable
-  private ReloadableModuleBase resolveRef(SModuleReference ref) {
+  private ReloadableModule resolveRef(SModuleReference ref) {
     return myRefStorage.resolveRef(ref);
   }
 
@@ -197,7 +193,7 @@ public class ModulesWatcher {
       if (errorMode) LOG.error(message); else LOG.trace(message);
       return true;
     }
-    ReloadableModuleBase module = resolveRef(mRef);
+    ReloadableModule module = resolveRef(mRef);
     assert module != null;
     for (SDependency dep : module.getDeclaredDependencies()) {
       if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
@@ -252,29 +248,29 @@ public class ModulesWatcher {
     }
   }
 
-  Collection<? extends ReloadableModuleBase> getResolvedDependencies(Iterable<? extends ReloadableModule> modules) {
+  Collection<? extends ReloadableModule> getResolvedDependencies(Iterable<? extends ReloadableModule> modules) {
     synchronized (LOCK) {
       Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
-      for (ReloadableModule module : modules) refs.add(((ReloadableModuleBase) module).getModuleReference());
+      for (ReloadableModule module : modules) refs.add(module.getModuleReference());
       Collection<? extends SModuleReference> referencedDeps = getDependencies(refs);
-      Collection<? extends ReloadableModuleBase> resolvedDeps = resolveRefs(referencedDeps);
+      Collection<? extends ReloadableModule> resolvedDeps = resolveRefs(referencedDeps);
       assert (resolvedDeps.size() == referencedDeps.size());
       return resolvedDeps;
     }
   }
 
-  private Collection<? extends ReloadableModuleBase> resolveRefs(final Iterable<? extends SModuleReference> refs) {
-    final Collection<ReloadableModuleBase> modules = new LinkedHashSet<ReloadableModuleBase>();
+  private Collection<? extends ReloadableModule> resolveRefs(final Iterable<? extends SModuleReference> refs) {
+    final Collection<ReloadableModule> modules = new LinkedHashSet<ReloadableModule>();
     for (SModuleReference mRef : refs) {
       ReloadableModule module = resolveRef(mRef);
-      if (module != null)  modules.add((ReloadableModuleBase) module);
+      if (module != null)  modules.add(module);
     }
     return modules;
   }
 
   Set<? extends SModuleReference> getModuleRefs(Iterable<? extends ReloadableModule> modules) {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (ReloadableModule module : modules) result.add(((ReloadableModuleBase) module).getModuleReference());
+    for (ReloadableModule module : modules) result.add(module.getModuleReference());
     return result;
   }
 
@@ -298,7 +294,7 @@ public class ModulesWatcher {
 
   public Collection<? extends ReloadableModule> getResolvedBackDependencies(Iterable<? extends ReloadableModule> modules) {
     Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
-    for (ReloadableModule module : modules) refs.add(((ReloadableModuleBase) module).getModuleReference());
+    for (ReloadableModule module : modules) refs.add(module.getModuleReference());
     return resolveRefs(getBackDependencies(refs));
   }
 
@@ -306,7 +302,7 @@ public class ModulesWatcher {
     return myChanged;
   }
 
-  boolean isModuleWatched(ReloadableModuleBase module) {
+  boolean isModuleWatched(ReloadableModule module) {
     return getAllModules().contains(module.getModuleReference());
   }
 
