@@ -206,8 +206,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (SLanguageId languageId : collectLanguagesToUnload(unloadedModules)) {
       if (!myLanguagesById.containsKey(languageId)) {
         LOG.warn("No language with id " + languageId + " to unload");
+      } else {
+        languagesToUnload.add(myLanguagesById.get(languageId));
       }
-      languagesToUnload.add(myLanguagesById.get(languageId));
     }
 
     notifyUnload(languagesToUnload);
