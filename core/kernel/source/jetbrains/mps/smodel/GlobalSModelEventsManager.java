@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.classloading.ModuleClassLoader;
+import jetbrains.mps.classloading.ModuleClassLoader.ModuleClassLoaderIsDisposedException;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -135,28 +137,39 @@ public class GlobalSModelEventsManager implements CoreComponent {
       new InvocationHandler() {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          if (method.getName().equals("equals") && args.length == 1) {
+          String methodName = method.getName();
+
+          if (methodName.equals("equals") && args.length == 1) {
             return proxy == args[0];
-          }
-
-          if (method.getName().equals("hashCode") && args == null) {
+          } else if (methodName.equals("hashCode") && args == null) {
             return this.hashCode();
-          }
-
-          if (method.getName().equals("getPriority") && args == null) {
+          } else if (methodName.equals("getPriority") && args == null) {
             return priority;
           }
-
           method.setAccessible(true);
-          for (SModelListener l : globalListeners(priority)) {
+
+          List<SModelListener> listeners = globalListeners(priority);
+          for (SModelListener listener : listeners) {
             try {
-              method.invoke(l, args);
+              checkListenerIsValid(listener);
+              method.invoke(listener, args);
             } catch (Throwable t) {
-              LOG.error(null, t);
+              LOG.error("Exception while invoking an SModelListener " + listener + " by reflection", t);
             }
           }
 
           return null;
+        }
+
+        /**
+         * Checks that listener's class loader is not disposed (in the case when the listener belongs to some module)
+         */
+        private void checkListenerIsValid(SModelListener listener) {
+          ClassLoader classLoader = listener.getClass().getClassLoader();
+          if (classLoader instanceof ModuleClassLoader && ((ModuleClassLoader) classLoader).isDisposed()) {
+            LOG.error("SModelListener " + listener + " has a disposed ClassLoader. A possible reason: the listener was not properly unregistered. Removing the listener explicitly.", new IllegalStateException());
+            GlobalSModelEventsManager.this.removeGlobalModelListener(listener);
+          }
         }
       }
     );
