@@ -86,10 +86,11 @@ public class RebuildSelectedModules_Action extends BaseAction {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
     List<SModule> rv = ListSequence.fromList(new ArrayList<SModule>());
-    if (cmd != null) {
-      ListSequence.fromList(rv).insertElement(0, cmd);
-    } else if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+    if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
       ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules"))));
+    }
+    if (cmd != null && !(ListSequence.fromList(rv).contains(cmd))) {
+      ListSequence.fromList(rv).addElement(cmd);
     }
     return rv;
   }
