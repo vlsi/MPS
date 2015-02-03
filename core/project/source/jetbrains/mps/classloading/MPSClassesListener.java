@@ -29,7 +29,17 @@ import java.util.Set;
  * Otherwise the application may behave unexpectedly
  */
 public interface MPSClassesListener {
+  /**
+   * Contract: The class loaders of the {@code unloadedModules} are still valid (i.e. not disposed)
+   *
+   * WARN:
+   * @param unloadedModules are likely to be removed from the repository at this moment
+   */
   void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules);
 
+  /**
+   * Contract: The class loaders of the {@code loadedModules} are valid (of course)
+   * @param loadedModules are surely in the repository at this moment.
+   */
   void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules);
 }
