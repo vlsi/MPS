@@ -3325,28 +3325,18 @@
       <node concept="3clFbS" id="7eEUNheFwM" role="3clF47">
         <node concept="3clFbF" id="7eEUNheFwO" role="3cqZAp">
           <node concept="1Wc70l" id="7eEUNheFwP" role="3clFbG">
-            <node concept="1Wc70l" id="7eEUNheFwQ" role="3uHU7B">
-              <node concept="2OqwBi" id="7eEUNheFwR" role="3uHU7B">
-                <node concept="liA8E" id="7eEUNheFwV" role="2OqNvi">
-                  <ref role="37wK5l" to="1t7x:~Component.isFocusOwner():boolean" resolve="isFocusOwner" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxglIRk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7eEUNheFxd" resolve="editorComponent" />
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="7eEUNheFwW" role="3uHU7w">
-                <node concept="2OqwBi" id="7eEUNheFwX" role="3fr31v">
-                  <node concept="2OqwBi" id="7eEUNheFwY" role="2Oq$k0">
-                    <node concept="liA8E" id="7eEUNheFx2" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-                    </node>
-                    <node concept="37vLTw" id="2BHiRxglRGV" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7eEUNheFxd" resolve="editorComponent" />
-                    </node>
+            <node concept="3fqX7Q" id="7eEUNheFwW" role="3uHU7B">
+              <node concept="2OqwBi" id="7eEUNheFwX" role="3fr31v">
+                <node concept="2OqwBi" id="7eEUNheFwY" role="2Oq$k0">
+                  <node concept="liA8E" id="7eEUNheFx2" role="2OqNvi">
+                    <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
                   </node>
-                  <node concept="liA8E" id="7eEUNheFx3" role="2OqNvi">
-                    <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+                  <node concept="37vLTw" id="2BHiRxglRGV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7eEUNheFxd" resolve="editorComponent" />
                   </node>
+                </node>
+                <node concept="liA8E" id="7eEUNheFx3" role="2OqNvi">
+                  <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
                 </node>
               </node>
             </node>
@@ -6599,11 +6589,6 @@
     <property role="TrG5h" value="GoByCurrentReference" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="2uzpH1" value="Declaration" />
-    <node concept="1DS2jV" id="2Nd7jcMoufI" role="1NuT2Z">
-      <property role="TrG5h" value="editorComponent" />
-      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
-      <node concept="1oajcY" id="2Nd7jcMoufJ" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2Nd7jcMoufK" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
