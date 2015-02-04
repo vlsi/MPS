@@ -37,9 +37,9 @@ import java.util.Arrays;
 
 /**
  * Intention is to keep all serialize/de-serialize code in a single place.
- *
+ * <p/>
  * FIXME this class is public merely for the sake of GoToNodeById action. Once this encoder is part of persistence API, action shall use API, not this class
- *
+ * <p/>
  * This class is not thread-safe, uses internal buffers to save memory on (de-)serialize, do not share it between thread (although unlikely to happen as
  * persistence demands single thread access).
  */
@@ -70,6 +70,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   public String toText(SPropertyId propertyId) {
     return Long.toString(propertyId.getIdValue());
   }
+
   public SPropertyId parsePropertyId(SConceptId concept, String text) {
     return new SPropertyId(concept, Long.parseLong(text));
   }
@@ -77,6 +78,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   public String toText(SReferenceLinkId linkId) {
     return Long.toString(linkId.getIdValue());
   }
+
   public SReferenceLinkId parseAssociation(SConceptId concept, String text) {
     return new SReferenceLinkId(concept, Long.parseLong(text));
   }
@@ -84,6 +86,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   public String toText(SContainmentLinkId linkId) {
     return Long.toString(linkId.getIdValue());
   }
+
   public SContainmentLinkId parseAggregation(SConceptId concept, String text) {
     return new SContainmentLinkId(concept, Long.parseLong(text));
   }
@@ -97,7 +100,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     return nodeId.toString();
   }
 
-  public SNodeId parseNodeId(String text) {
+  public SNodeId parseNodeId(String text) throws EncodingException {
     if (!text.startsWith(Foreign.ID_PREFIX)) {
       long v = parseLongB64(text);
       return new Regular(v);
@@ -109,6 +112,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   public String toText(SModelReference mr) {
     return PersistenceFacade.getInstance().asString(mr);
   }
+
   public SModelReference parseModelReference(String text) {
     return PersistenceFacade.getInstance().createModelReference(text);
   }
@@ -117,6 +121,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
 //    return PersistenceFacade.getInstance().asString(ref); FIXME add counterpart for createModuleReference
     return ref.toString();
   }
+
   public SModuleReference parseModuleReference(String text) {
     return PersistenceFacade.getInstance().createModuleReference(text);
   }
@@ -139,7 +144,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   /**
    * Local references are saved in a form of serialized node id, or '^' for dynamic references.
    * External references are prefixed with import index and ':'.
-   *
+   * <p/>
    * NOTE, the way import index and nodeId value are serialized is expected to never include ':' separator char
    */
   public String toTextExternal(@NotNull ImportsHelper imports, @NotNull SReference ref) {
@@ -160,10 +165,14 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     if (DYNAMIC_REFERENCE_ID.equals(text)) {
       return null;
     }
-    return parseNodeId(text);
+    try {
+      return parseNodeId(text);
+    } catch (EncodingException e) {
+      throw new IllegalArgumentException(e);
+    }
   }
 
-  public Pair<SModelReference,SNodeId> parseExternalNodeReference(ImportsHelper imports, String referenceTarget) {
+  public Pair<SModelReference, SNodeId> parseExternalNodeReference(ImportsHelper imports, String referenceTarget) {
     int separatorIndex = referenceTarget.indexOf(REF_TARGET_IMPORT_SEPARATOR);
     assert separatorIndex >= 0;
     final SModelReference modelRef = separatorIndex == 0 ? null : imports.getModelReference(referenceTarget.substring(0, separatorIndex));
@@ -207,19 +216,24 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     // strip leading zeros, up to last digit, which is kept anyway (if it's zero, fine)
     for (int i = 0; i < myBufferLong.length - 1; i++) {
       if (myBufferLong[i] != '0') {
-        return new String(myBufferLong, i, myBufferLong.length-i);
+        return new String(myBufferLong, i, myBufferLong.length - i);
       }
     }
     return new String(myBufferLong, myBufferLong.length - 1, 1);
   }
 
-  private long parseLongB64(String text) {
+  private long parseLongB64(String text) throws EncodingException {
     long result = 0;
     for (int i = 0, x = text.length(), shift = 0; i < x; i++, shift = 6) {
       result <<= shift;
       char c = text.charAt(i);
+      if (c - MIN_CHAR < 0 || c - MIN_CHAR >= myCharToValue.length) {
+        throw new EncodingException("String \"" + text + "\" cannot be parsed as long value: invalid character \"" + c + "\"");
+      }
       int value = myCharToValue[c - MIN_CHAR];
-      assert value >= 0;
+      if (value < 0) {
+        throw new EncodingException("String \"" + text + "\" cannot be parsed as long value: invalid character \"" + c + "\"");
+      }
       result |= value;
     }
     return result;
@@ -256,7 +270,17 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     final long[] test = {0, 1, 15, 63, 64, 65, 123, 9834503475l, Long.MAX_VALUE, Long.MIN_VALUE};
     for (long l : test) {
       final String s = x.toStringB64(l);
-      System.out.printf("%d: toString: %s, fromString:%d\n", l, s, x.parseLongB64(s));
+      try {
+        System.out.printf("%d: toString: %s, fromString:%d\n", l, s, x.parseLongB64(s));
+      } catch (EncodingException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  public static class EncodingException extends Exception {
+    public EncodingException(String message) {
+      super(message);
     }
   }
 }

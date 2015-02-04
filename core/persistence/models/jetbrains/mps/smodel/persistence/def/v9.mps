@@ -72,8 +72,16 @@
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
+      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
+        <child id="1164879758292" name="body" index="SfCbr" />
+        <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
@@ -667,28 +675,52 @@
         <property role="TrG5h" value="id" />
         <node concept="CQp6y" id="6dQUqCkLgf2" role="CQp6I">
           <node concept="3clFbS" id="6dQUqCkLgf3" role="2VODD2">
-            <node concept="3clFbF" id="6dQUqCkLgf4" role="3cqZAp">
-              <node concept="2OqwBi" id="6dQUqCkLgf5" role="3clFbG">
-                <node concept="CQp63" id="6dQUqCkLgf6" role="2Oq$k0">
-                  <ref role="CQp62" node="6dQUqCkLgdZ" resolve="accumulator" />
-                </node>
-                <node concept="liA8E" id="6dQUqCkLgf7" role="2OqNvi">
-                  <ref role="37wK5l" to="t77w:7E_6zdv1nkp" resolve="pushNode" />
-                  <node concept="2OqwBi" id="3HZUBMwRbWI" role="37wK5m">
-                    <node concept="2OqwBi" id="3HZUBMwRbKn" role="2Oq$k0">
-                      <node concept="CQp63" id="3HZUBMwRb4U" role="2Oq$k0">
-                        <ref role="CQp62" node="3HZUBMwQO8p" resolve="readHelper" />
-                      </node>
-                      <node concept="liA8E" id="3HZUBMwRbSU" role="2OqNvi">
-                        <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.getIdEncoder():jetbrains.mps.smodel.persistence.def.v9.IdEncoder" resolve="getIdEncoder" />
-                      </node>
+            <node concept="SfApY" id="6F7SoxNMIQW" role="3cqZAp">
+              <node concept="3clFbS" id="6F7SoxNMIQY" role="SfCbr">
+                <node concept="3clFbF" id="6dQUqCkLgf4" role="3cqZAp">
+                  <node concept="2OqwBi" id="6dQUqCkLgf5" role="3clFbG">
+                    <node concept="CQp63" id="6dQUqCkLgf6" role="2Oq$k0">
+                      <ref role="CQp62" node="6dQUqCkLgdZ" resolve="accumulator" />
                     </node>
-                    <node concept="liA8E" id="3HZUBMwRc6W" role="2OqNvi">
-                      <ref role="37wK5l" to="fo6t:~IdEncoder.parseNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="parseNodeId" />
-                      <node concept="3kJR9K" id="3HZUBMwRca4" role="37wK5m" />
+                    <node concept="liA8E" id="6dQUqCkLgf7" role="2OqNvi">
+                      <ref role="37wK5l" to="t77w:7E_6zdv1nkp" resolve="pushNode" />
+                      <node concept="2OqwBi" id="3HZUBMwRbWI" role="37wK5m">
+                        <node concept="2OqwBi" id="3HZUBMwRbKn" role="2Oq$k0">
+                          <node concept="CQp63" id="3HZUBMwRb4U" role="2Oq$k0">
+                            <ref role="CQp62" node="3HZUBMwQO8p" resolve="readHelper" />
+                          </node>
+                          <node concept="liA8E" id="3HZUBMwRbSU" role="2OqNvi">
+                            <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.getIdEncoder():jetbrains.mps.smodel.persistence.def.v9.IdEncoder" resolve="getIdEncoder" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="3HZUBMwRc6W" role="2OqNvi">
+                          <ref role="37wK5l" to="fo6t:~IdEncoder.parseNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="parseNodeId" />
+                          <node concept="3kJR9K" id="3HZUBMwRca4" role="37wK5m" />
+                        </node>
+                      </node>
+                      <node concept="CQp6e" id="6dQUqCkLgfa" role="37wK5m" />
                     </node>
                   </node>
-                  <node concept="CQp6e" id="6dQUqCkLgfa" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="TDmWw" id="6F7SoxNMIQZ" role="TEbGg">
+                <node concept="3clFbS" id="6F7SoxNMIR1" role="TDEfX">
+                  <node concept="YS8fn" id="6F7SoxNMJft" role="3cqZAp">
+                    <node concept="2ShNRf" id="6F7SoxNMJlZ" role="YScLw">
+                      <node concept="1pGfFk" id="6F7SoxNMJPO" role="2ShVmc">
+                        <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.Throwable)" resolve="IllegalArgumentException" />
+                        <node concept="37vLTw" id="6F7SoxNMJSC" role="37wK5m">
+                          <ref role="3cqZAo" node="6F7SoxNMIR3" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWsn" id="6F7SoxNMIR3" role="TDEfY">
+                  <property role="TrG5h" value="e" />
+                  <node concept="3uibUv" id="6F7SoxNMIUD" role="1tU5fm">
+                    <ref role="3uigEE" to="fo6t:~IdEncoder$EncodingException" resolve="IdEncoder.EncodingException" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -4086,23 +4118,47 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="4Kem6uXVnsx" role="3cqZAp">
-            <node concept="2OqwBi" id="4Kem6uXVnsy" role="3clFbG">
-              <node concept="37vLTw" id="4Kem6uXVnsz" role="2Oq$k0">
-                <ref role="3cqZAo" node="4Kem6uXVnsn" resolve="result" />
-              </node>
-              <node concept="liA8E" id="4Kem6uXVns$" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~SNode.setId(org.jetbrains.mps.openapi.model.SNodeId):void" resolve="setId" />
-                <node concept="2OqwBi" id="5$D2sKZK5UK" role="37wK5m">
-                  <node concept="CQp63" id="5$D2sKZK5sC" role="2Oq$k0">
-                    <ref role="CQp62" node="5$D2sKZJIcP" resolve="idEncoder" />
+          <node concept="SfApY" id="6F7SoxNMWkZ" role="3cqZAp">
+            <node concept="3clFbS" id="6F7SoxNMWl1" role="SfCbr">
+              <node concept="3clFbF" id="4Kem6uXVnsx" role="3cqZAp">
+                <node concept="2OqwBi" id="4Kem6uXVnsy" role="3clFbG">
+                  <node concept="37vLTw" id="4Kem6uXVnsz" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4Kem6uXVnsn" resolve="result" />
                   </node>
-                  <node concept="liA8E" id="5$D2sKZK6uU" role="2OqNvi">
-                    <ref role="37wK5l" to="fo6t:~IdEncoder.parseNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="parseNodeId" />
-                    <node concept="CQp6E" id="5$D2sKZK6W6" role="37wK5m">
-                      <ref role="CQp6D" node="4Kem6uXVnrl" resolve="id" />
+                  <node concept="liA8E" id="4Kem6uXVns$" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~SNode.setId(org.jetbrains.mps.openapi.model.SNodeId):void" resolve="setId" />
+                    <node concept="2OqwBi" id="5$D2sKZK5UK" role="37wK5m">
+                      <node concept="CQp63" id="5$D2sKZK5sC" role="2Oq$k0">
+                        <ref role="CQp62" node="5$D2sKZJIcP" resolve="idEncoder" />
+                      </node>
+                      <node concept="liA8E" id="5$D2sKZK6uU" role="2OqNvi">
+                        <ref role="37wK5l" to="fo6t:~IdEncoder.parseNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="parseNodeId" />
+                        <node concept="CQp6E" id="5$D2sKZK6W6" role="37wK5m">
+                          <ref role="CQp6D" node="4Kem6uXVnrl" resolve="id" />
+                        </node>
+                      </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="TDmWw" id="6F7SoxNMWl2" role="TEbGg">
+              <node concept="3clFbS" id="6F7SoxNMWl4" role="TDEfX">
+                <node concept="YS8fn" id="6F7SoxNMZrg" role="3cqZAp">
+                  <node concept="2ShNRf" id="6F7SoxNMZZI" role="YScLw">
+                    <node concept="1pGfFk" id="6F7SoxNN0Qu" role="2ShVmc">
+                      <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.Throwable)" resolve="IllegalArgumentException" />
+                      <node concept="37vLTw" id="6F7SoxNN1qi" role="37wK5m">
+                        <ref role="3cqZAo" node="6F7SoxNMWl6" resolve="e" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWsn" id="6F7SoxNMWl6" role="TDEfY">
+                <property role="TrG5h" value="e" />
+                <node concept="3uibUv" id="6F7SoxNMWOV" role="1tU5fm">
+                  <ref role="3uigEE" to="fo6t:~IdEncoder$EncodingException" resolve="IdEncoder.EncodingException" />
                 </node>
               </node>
             </node>

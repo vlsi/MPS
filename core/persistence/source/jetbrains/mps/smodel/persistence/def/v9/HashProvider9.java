@@ -20,6 +20,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
+import jetbrains.mps.smodel.persistence.def.v9.IdEncoder.EncodingException;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.HashMap;
@@ -80,7 +81,12 @@ public class HashProvider9 extends IHashProvider {
       }
       if (rootId != null && nodeStart != -1 && nodeEnd != -1) {
         String s = scanner.getText(nodeStart, nodeEnd);
-        SNodeId nodeId = idEncoder.parseNodeId(rootId);
+        SNodeId nodeId = null;
+        try {
+          nodeId = idEncoder.parseNodeId(rootId);
+        } catch (EncodingException e) {
+          throw new IllegalArgumentException(e);
+        }
         // presentation of node id in persistence is different from what customers use (SNodeId.toString).
         // However, it's bad idea to have map<string,string> here, and shall get refactored.
         rootHashes.put(nodeId.toString(), ModelDigestUtil.hashText(s));

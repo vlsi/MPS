@@ -77,7 +77,10 @@ public class GoToNodeById_Action extends BaseAction {
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(jetbrains.mps.smodel.SNodeId.fromString(value));
       if (id.value == null) {
         // try new nodeId presentation format 
-        id.value = new IdEncoder().parseNodeId(value);
+        try {
+          id.value = new IdEncoder().parseNodeId(value);
+        } catch (IdEncoder.EncodingException e) {
+        }
       }
       if (id.value == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);

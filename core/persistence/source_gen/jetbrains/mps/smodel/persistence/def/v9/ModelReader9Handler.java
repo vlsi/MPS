@@ -441,7 +441,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         interfaceNode = (my_readHelperParam.isInterface(concept) || attrs.getValue("role") == null);
       }
       SNode result = (interfaceNode ? new InterfaceSNode(concept) : new SNode(concept));
-      result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
+      try {
+        result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
+      } catch (IdEncoder.EncodingException e) {
+        throw new IllegalArgumentException(e);
+      }
       // can be root 
       return MultiTuple.<org.jetbrains.mps.openapi.model.SNode,SContainmentLink>from(((org.jetbrains.mps.openapi.model.SNode) result), my_readHelperParam.readAggregation(attrs.getValue("role")));
     }

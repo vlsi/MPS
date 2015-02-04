@@ -16,7 +16,6 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -48,15 +47,14 @@ public class ClassLoadersHolder {
 
   @Nullable
   public ClassLoader getClassLoader(ReloadableModule module) {
-    ReloadableModuleBase module1 = (ReloadableModuleBase) module;
     try {
-      return getModuleClassLoader(module1);
+      return getModuleClassLoader(module);
     } catch (ClassLoaderNotFoundException ignored) {
       // do nothing, there is no MPS ModuleClassLoader for this module
     }
 
     try {
-      return getNonReloadableClassLoader(module1);
+      return getNonReloadableClassLoader(module);
     } catch (ClassLoaderNotFoundException ignored) {
       // do nothing, there is no IDEA ClassLoader for this module
     }
@@ -79,7 +77,7 @@ public class ClassLoadersHolder {
   }
 
   @Nullable
-  private ClassLoader getModuleClassLoader(ReloadableModuleBase module) throws ClassLoaderNotFoundException {
+  private ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
     return myMPSClassLoadersRegistry.getModuleClassLoader(module);
   }
 
@@ -133,7 +131,7 @@ public class ClassLoadersHolder {
     private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
 
     @Nullable
-    private synchronized ClassLoader getModuleClassLoader(ReloadableModuleBase module) throws ClassLoaderNotFoundException {
+    private synchronized ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
       SModuleReference mRef = module.getModuleReference();
       if (!myClassLoaders.containsKey(mRef)) throw new ClassLoaderNotFoundException();
       return myClassLoaders.get(mRef);
@@ -193,7 +191,7 @@ public class ClassLoadersHolder {
 
     private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
       LOG.debug("Creating ModuleClassLoader for " + module);
-      Collection<? extends ReloadableModuleBase> deps = myModulesWatcher.getResolvedDependencies(Arrays.asList(module));
+      Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Arrays.asList(module));
       ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
       return new ModuleClassLoader(support);
     }

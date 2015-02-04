@@ -281,12 +281,16 @@ public class ModuleClassLoader extends ClassLoader {
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 
-  private static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
+  public static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
     private final ReloadableModule myModule;
 
     private ModuleClassLoaderIsDisposedException(String msg, @NotNull ReloadableModule module) {
       super(msg);
       myModule = module;
+    }
+
+    public ReloadableModule getModule() {
+      return myModule;
     }
   }
 }

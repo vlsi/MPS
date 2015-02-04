@@ -79,7 +79,7 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
         for (VirtualFile file : ListSequence.fromList(resolver.getUnresolvedFiles())) {
           message += " " + file.getPath() + "\n";
         }
-        message += "This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." + " It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again.";
+        message += "This happens when you merge in models in an old persistence format and have not merged and re-generated all of their used languages." + " It is recommended to first merge and re-generate the used languages, and then try to auto resolve the conflicts again.";
         Messages.showWarningDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), message, "Conflict Resolver");
       }
     } catch (Throwable t) {
