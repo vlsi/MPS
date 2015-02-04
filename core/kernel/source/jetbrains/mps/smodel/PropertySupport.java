@@ -27,6 +27,9 @@ import jetbrains.mps.util.JavaNameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Constructor;
@@ -75,6 +78,18 @@ public abstract class PropertySupport {
 
   public String fromInternalValue(String value) {
     return value;
+  }
+
+  public static PropertySupport getPropertySupport(@NotNull final SProperty property) {
+    SDataType dataType = property.getType();
+    if (dataType instanceof SPrimitiveDataType) {
+      switch (((SPrimitiveDataType) dataType).getType()) {
+        case SPrimitiveDataType.BOOL:
+        case SPrimitiveDataType.INT:
+        default:
+      }
+
+    }
   }
 
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {

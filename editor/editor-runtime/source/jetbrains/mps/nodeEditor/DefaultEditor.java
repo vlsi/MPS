@@ -39,24 +39,23 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.Collection;
 import java.util.Stack;
 
 /**
@@ -66,7 +65,6 @@ import java.util.Stack;
 public class DefaultEditor extends DefaultNodeEditor {
 
 
-  private static final String BASE_CONCEPT_FQ_NAME = "jetbrains.mps.lang.core.structure.BaseConcept";
   private static final String NAME_NAME = "name";
   private static final int NAME_PRIORITY = 10000;
   private static final String IDENTIFIER_NAME = "identifier";
@@ -75,10 +73,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private static final String QUALIFIED_NAME = "qualified";
   private static final int QUALIFIED_PRIORITY = 200;
   private SNode mySNode;
-  private List<String> myPropertyNames;
-  private List<String> myChildrenNames;
-  private List<String> myReferencesNames;
-  private String myNameProperty;
+
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
@@ -86,12 +81,18 @@ public class DefaultEditor extends DefaultNodeEditor {
   private ConceptDescriptor myConceptDescriptor;
   private boolean myNullConcept;
 
+  private SConcept myConcept;
+  private SProperty myNameProperty;
+  private Collection<SProperty> myProperties = new ArrayList<SProperty>();
+  private Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
+  private Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
+
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    addLabel(camelToLabel(mySNode.getConcept().getName()));
+    addLabel(camelToLabel(myConcept.getName()));
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
@@ -129,73 +130,89 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheParameters(SNode node, EditorContext editorContext) {
     myEditorContext = editorContext;
     mySNode = node;
-    String qualifiedName = node.getConcept().getQualifiedName();
-    myConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
+    myConcept = node.getConcept();
+    myNullConcept = ((SAbstractConceptAdapter) myConcept).getConceptDescriptor() == null;
 
-    //todo: remove getDeclarationNode() check when editor doesn't need concept node
-    if (myConceptDescriptor instanceof IllegalConceptDescriptor ||
-        !(mySNode instanceof jetbrains.mps.smodel.SNode) || ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null) {
-      myNullConcept = true;
-    }
-
-    ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(BASE_CONCEPT_FQ_NAME);
     if (!myNullConcept) {
-      myPropertyNames = new ArrayList<String>(myConceptDescriptor.getPropertyNames());
-      myReferencesNames = new ArrayList<String>(myConceptDescriptor.getReferenceNames());
-      myChildrenNames = new ArrayList<String>(myConceptDescriptor.getChildrenNames());
-    } else {
-      myPropertyNames = new ArrayList<String>();
-      for (String name : mySNode.getPropertyNames()) {
-        myPropertyNames.add(name);
+      for (SProperty sProperty : myConcept.getProperties()) {
+        myProperties.add(sProperty);
       }
-      myReferencesNames = new ArrayList<String>();
-      for (SReference ref : mySNode.getReferences()) {
-        myReferencesNames.add(ref.getRole());
+      // TODO: add other SProperties declared in this node, not declared in the concept
+
+      for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
+        myReferenceLinks.add(sReferenceLink);
+      }
+      // TODO: add other SReferenceLinks declared in this node, not declared in the concept
+
+      for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
+        myContainmentLinks.add(sContainmentLink);
+      }
+      // TODO: add other SContainmentLinks declared in this node, not declared in the concept
+    } else {
+      for (SProperty sProperty : mySNode.getProperties()) {
+        myProperties.add(sProperty);
       }
 
-      Set<String> rolesSet = new HashSet<String>();
-      for (SNode sNode : mySNode.getChildren()) {
-        rolesSet.add(sNode.getRoleInParent());
+      for (SReference sReference : mySNode.getReferences()) {
+        SReferenceLink link = sReference.getLink();
+        assert link != null : "Null meta-link from node: " + mySNode + ", role: " + sReference.getRole();
+        myReferenceLinks.add(link);
       }
-      myChildrenNames = new ArrayList<String>(rolesSet);
+
+      for (SNode child : mySNode.getChildren()) {
+        SContainmentLink containmentLink = child.getContainmentLink();
+        assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + mySNode + ", child: " + child;
+        myContainmentLinks.add(containmentLink);
+      }
     }
 
+    SConcept baseConcept = SNodeUtil.concept_BaseConcept;
+    for (SProperty sProperty : baseConcept.getProperties()) {
+      sProperty.getName()
+      myProperties.remove(sProperty);
+    }
 
-    Set<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
-    Set<String> baseRefNames = baseConceptDescriptor.getReferenceNames();
-    Set<String> baseChildNames = baseConceptDescriptor.getChildrenNames();
-    myPropertyNames.removeAll(basePropertyNames);
-    myReferencesNames.removeAll(baseRefNames);
-    myChildrenNames.removeAll(baseChildNames);
+    for (SReferenceLink sReferenceLink : baseConcept.getReferenceLinks()) {
+      myReferenceLinks.remove(sReferenceLink);
+    }
+
+    for (SContainmentLink sContainmentLink : baseConcept.getContainmentLinks()) {
+      myContainmentLinks.remove(sContainmentLink);
+    }
 
     cacheNameProperty();
   }
 
   private void cacheNameProperty() {
-    final Map<String, Integer> priorityMap = new HashMap<String, Integer>();
-    for (String property : myPropertyNames) {
-      int priority = property.equals(NAME_NAME) ? NAME_PRIORITY : 0;
-      priority += property.toLowerCase().contains(IDENTIFIER_NAME) ? IDENTIFIER_PRIORITY : 0;
-      priority += property.toLowerCase().contains(NAME_NAME) ? NAME_ADD_PRIORITY : 0;
-      priority += property.toLowerCase().contains(QUALIFIED_NAME) ? QUALIFIED_PRIORITY : 0;
-      priorityMap.put(property, priority);
-    }
-    if (priorityMap.isEmpty()) {
-      return;
-    }
-    ArrayList<String> arrayList = new ArrayList<String>(priorityMap.keySet());
-    Collections.sort(arrayList, new Comparator<String>() {
-      @Override
-      public int compare(String p1, String p2) {
-        assert priorityMap.containsKey(p1) && priorityMap.containsKey(p2);
-        return priorityMap.get(p2) - priorityMap.get(p1);
+    int maxPriority = -1;
+    for (SProperty property : myProperties) {
+      String propertyName = property.getName();
+      if (propertyName == null) {
+        continue;
       }
-    });
-
-    String result = arrayList.get(0);
-    if (priorityMap.get(result) > 0) {
-      myNameProperty = result;
+      int propertyPriority = getPropertyPriority(propertyName);
+      if (maxPriority < propertyPriority) {
+        maxPriority = propertyPriority;
+        myNameProperty = property;
+      }
     }
+  }
+
+  private int getPropertyPriority(@NotNull String propertyName) {
+    if (NAME_NAME.equals(propertyName)) {
+      return NAME_PRIORITY;
+    }
+    int priority = 0;
+    if (propertyName.toLowerCase().contains(IDENTIFIER_NAME)) {
+      priority += IDENTIFIER_PRIORITY;
+    }
+    if (propertyName.toLowerCase().contains(NAME_NAME)) {
+      priority += NAME_ADD_PRIORITY;
+    }
+    if (propertyName.toLowerCase().contains(QUALIFIED_NAME)) {
+      priority += QUALIFIED_PRIORITY;
+    }
+    return priority;
   }
 
   private void addReferences() {
@@ -287,15 +304,15 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
 
-  private void addPropertyCell(final String name) {
+  private void addPropertyCell(final SProperty property) {
     if (myNullConcept) {
-      addPropertyCellForNullConcept(name);
+      addPropertyCellForNullConcept(property);
     } else {
-      addPropertyCellForNonNullConcept(name);
+      addPropertyCellForNonNullConcept(property);
     }
   }
 
-  private void addPropertyCellForNonNullConcept(String name) {
+  private void addPropertyCellForNonNullConcept(SProperty name) {
     CellProviderWithRole provider = new PropertyCellProvider(mySNode, myEditorContext);
     provider.setRole(name);
     provider.setNoTargetText("<no " + name + ">");
