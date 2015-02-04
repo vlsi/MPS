@@ -27989,6 +27989,11 @@
     <property role="TrG5h" value="GoByCurrentReferenceToIDEA" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="2uzpH1" value="Open Declaration in IDEA" />
+    <node concept="1DS2jV" id="7A$kb8eg1gK" role="1NuT2Z">
+      <property role="TrG5h" value="editorComponent" />
+      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <node concept="1oajcY" id="7A$kb8eg1gL" role="1oa70y" />
+    </node>
     <node concept="1DS2jV" id="1JdTZ5pVx7s" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />

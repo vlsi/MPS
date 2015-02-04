@@ -2737,6 +2737,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
+    if (mySearchPanel != null && mySearchPanel.isVisible() && mySearchPanel.isTextFieldFocused()) {
+      return null;
+    }
     //MPSDK
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) return getSelectedNode();
     if (dataId.equals(MPSCommonDataKeys.NODES.getName())) return getSelectedNodes();
@@ -2766,10 +2769,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (dataId.equals(MPSEditorDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
+
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
-    if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName()) &&
-                     !(mySearchPanel != null && mySearchPanel.isVisible() && mySearchPanel.isTextFieldFocused())) return this;
+    if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) return this;
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) return ActionPlace.EDITOR;
 
     //PDK
