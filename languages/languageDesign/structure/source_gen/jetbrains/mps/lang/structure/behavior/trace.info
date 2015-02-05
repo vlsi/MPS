@@ -44,7 +44,7 @@
       <unit at="11,0,22,0" name="jetbrains.mps.lang.structure.behavior.DeprecatedNodeAnnotation_BehaviorDescriptor" />
     </file>
     <file name="EnumerationDataTypeDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_BehaviorDescriptor" />
     </file>
     <file name="EnumerationMemberDeclaration_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_BehaviorDescriptor" />
