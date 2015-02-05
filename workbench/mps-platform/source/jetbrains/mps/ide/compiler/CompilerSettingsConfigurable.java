@@ -18,6 +18,7 @@ package jetbrains.mps.ide.compiler;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -73,7 +74,12 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
   public void apply() throws ConfigurationException {
     getPreferencePage().commit();
     CompilerState compilerState = new CompilerState();
-    compilerState.setTargetVersion(getPreferencePage().getSelectedTargetJavaVersion().getCompilerVersion());
+    JavaVersion selectedTargetJavaVersion = getPreferencePage().getSelectedTargetJavaVersion();
+    if (selectedTargetJavaVersion != null) {
+      compilerState.setTargetVersion(selectedTargetJavaVersion.getCompilerVersion());
+    } else {
+      compilerState.setTargetVersion(null);
+    }
     CompilerSettingsComponent.getInstance(myProject).loadState(compilerState);
   }
 
