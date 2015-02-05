@@ -24,31 +24,39 @@ import java.util.List;
  * evgeny, 11/18/11
  */
 public class PatternUtil {
+
+  private static enum State {
+    NO_QUOTING,
+    QUOTING,
+    SEQUENCE_LETTERS
+  }
+
+
   public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots, boolean useStarAndQuestionMark) {
     StringBuilder b = new StringBuilder();
-    int state = 0;
+    State state = State.NO_QUOTING;
     for (int i = 0; i < text.length(); i++) {
       char c = text.charAt(i);
       state = appendNextChar(c, state, b, useDots, useStarAndQuestionMark);
     }
-    if (state == 1) {
+    if (state == State.QUOTING) {
       b.append("\\E");
     }
     return b;
   }
 
-  private static int appendNextChar(char c, int state, StringBuilder b, boolean useDots, boolean useStarAndQuestionMark) {
-    if (state == 2 && Character.isUpperCase(c)) {
+  private static State appendNextChar(char c, State state, StringBuilder b, boolean useDots, boolean useStarAndQuestionMark) {
+    if (state == State.SEQUENCE_LETTERS && Character.isUpperCase(c)) {
       b.append("[a-z0-9_]*");
       b.append(c);
-      return 2;
+      return State.SEQUENCE_LETTERS;
     }
-    if (c == '*' || c == '?' || c == '.'  || c == '@' || Character.isLetterOrDigit(c) || c == '_') {
-      if (state == 1) {
+    if (c == '*' || c == '?' || c == '.' || c == '@' || Character.isLetterOrDigit(c) || c == '_') {
+      if (state == State.QUOTING) {
         b.append("\\E");
       }
     } else {
-      if (state != 1) {
+      if (state != State.QUOTING) {
         b.append("\\Q");
       }
     }
@@ -59,30 +67,30 @@ public class PatternUtil {
       } else {
         b.append("\\*");
       }
-      return 0;
+      return State.NO_QUOTING;
     } else if (c == '?') {
       if (useStarAndQuestionMark) {
         b.append(".");
       } else {
         b.append("\\?");
       }
-      return 0;
+      return State.NO_QUOTING;
     } else if (c == '.') {
       if (useDots) {
         b.append("[^\\.]*\\.");
       } else {
         b.append("\\.");
       }
-      return 0;
+      return State.NO_QUOTING;
     } else if (c == '@') {
       b.append("[^\\@\\.]*\\@");
-      return 0;
+      return State.NO_QUOTING;
     } else if (Character.isLetterOrDigit(c) || c == '_') {
       b.append(c);
-      return 2;
+      return State.SEQUENCE_LETTERS;
     } else {
       b.append(c);
-      return 1;
+      return State.QUOTING;
     }
   }
 
@@ -95,7 +103,7 @@ public class PatternUtil {
       indexList = new ArrayList<Integer>();
     }
     StringBuilder nextSubstring = new StringBuilder();
-    for (int i = 0 ; i < pattern.length(); i++) {
+    for (int i = 0; i < pattern.length(); i++) {
       char c = pattern.charAt(i);
       if (c == '*' || c == '?') {
         if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
