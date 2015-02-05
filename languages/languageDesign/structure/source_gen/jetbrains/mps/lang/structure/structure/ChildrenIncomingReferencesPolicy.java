@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum ChildrenIncomingReferencesPolicy {
-  allowed("allowed", null),
-  local("enforce `same root only'", "local"),
-  forbidden("enforce `forbidden'", "forbidden");
+  _allowed("allowed", null),
+  _local("enforce `same root only'", "local"),
+  _forbidden("enforce `forbidden'", "forbidden");
 
   private String myName;
   public String getName() {
@@ -20,26 +20,26 @@ public enum ChildrenIncomingReferencesPolicy {
   }
   public static List<ChildrenIncomingReferencesPolicy> getConstants() {
     List<ChildrenIncomingReferencesPolicy> list = ListSequence.fromList(new LinkedList<ChildrenIncomingReferencesPolicy>());
-    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy.allowed);
-    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy.local);
-    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy.forbidden);
+    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy._allowed);
+    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy._local);
+    ListSequence.fromList(list).addElement(ChildrenIncomingReferencesPolicy._forbidden);
     return list;
   }
   public static ChildrenIncomingReferencesPolicy getDefault() {
-    return ChildrenIncomingReferencesPolicy.allowed;
+    return ChildrenIncomingReferencesPolicy._allowed;
   }
   public static ChildrenIncomingReferencesPolicy parseValue(String value) {
     if (value == null) {
       return ChildrenIncomingReferencesPolicy.getDefault();
     }
-    if (value.equals(ChildrenIncomingReferencesPolicy.allowed.getValueAsString())) {
-      return ChildrenIncomingReferencesPolicy.allowed;
+    if (value.equals(ChildrenIncomingReferencesPolicy._allowed.getValueAsString())) {
+      return ChildrenIncomingReferencesPolicy._allowed;
     }
-    if (value.equals(ChildrenIncomingReferencesPolicy.local.getValueAsString())) {
-      return ChildrenIncomingReferencesPolicy.local;
+    if (value.equals(ChildrenIncomingReferencesPolicy._local.getValueAsString())) {
+      return ChildrenIncomingReferencesPolicy._local;
     }
-    if (value.equals(ChildrenIncomingReferencesPolicy.forbidden.getValueAsString())) {
-      return ChildrenIncomingReferencesPolicy.forbidden;
+    if (value.equals(ChildrenIncomingReferencesPolicy._forbidden.getValueAsString())) {
+      return ChildrenIncomingReferencesPolicy._forbidden;
     }
     return ChildrenIncomingReferencesPolicy.getDefault();
   }

@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum LinkMetaclass {
-  reference("reference", "reference"),
-  aggregation("aggregation", "aggregation");
+  _reference("reference", "reference"),
+  _aggregation("aggregation", "aggregation");
 
   private String myName;
   public String getName() {
@@ -19,22 +19,22 @@ public enum LinkMetaclass {
   }
   public static List<LinkMetaclass> getConstants() {
     List<LinkMetaclass> list = ListSequence.fromList(new LinkedList<LinkMetaclass>());
-    ListSequence.fromList(list).addElement(LinkMetaclass.reference);
-    ListSequence.fromList(list).addElement(LinkMetaclass.aggregation);
+    ListSequence.fromList(list).addElement(LinkMetaclass._reference);
+    ListSequence.fromList(list).addElement(LinkMetaclass._aggregation);
     return list;
   }
   public static LinkMetaclass getDefault() {
-    return LinkMetaclass.reference;
+    return LinkMetaclass._reference;
   }
   public static LinkMetaclass parseValue(String value) {
     if (value == null) {
       return LinkMetaclass.getDefault();
     }
-    if (value.equals(LinkMetaclass.reference.getValueAsString())) {
-      return LinkMetaclass.reference;
+    if (value.equals(LinkMetaclass._reference.getValueAsString())) {
+      return LinkMetaclass._reference;
     }
-    if (value.equals(LinkMetaclass.aggregation.getValueAsString())) {
-      return LinkMetaclass.aggregation;
+    if (value.equals(LinkMetaclass._aggregation.getValueAsString())) {
+      return LinkMetaclass._aggregation;
     }
     return LinkMetaclass.getDefault();
   }

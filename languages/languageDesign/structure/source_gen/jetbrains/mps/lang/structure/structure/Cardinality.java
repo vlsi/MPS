@@ -7,10 +7,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Cardinality {
-  _0__1("0..1", "0..1"),
-  _1("1", "1"),
-  _0__n("0..n", "0..n"),
-  _1__n("1..n", "1..n");
+  __0__1("0..1", "0..1"),
+  __1("1", "1"),
+  __0__n("0..n", "0..n"),
+  __1__n("1..n", "1..n");
 
   private String myName;
   public String getName() {
@@ -21,30 +21,30 @@ public enum Cardinality {
   }
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = ListSequence.fromList(new LinkedList<Cardinality>());
-    ListSequence.fromList(list).addElement(Cardinality._0__1);
-    ListSequence.fromList(list).addElement(Cardinality._1);
-    ListSequence.fromList(list).addElement(Cardinality._0__n);
-    ListSequence.fromList(list).addElement(Cardinality._1__n);
+    ListSequence.fromList(list).addElement(Cardinality.__0__1);
+    ListSequence.fromList(list).addElement(Cardinality.__1);
+    ListSequence.fromList(list).addElement(Cardinality.__0__n);
+    ListSequence.fromList(list).addElement(Cardinality.__1__n);
     return list;
   }
   public static Cardinality getDefault() {
-    return Cardinality._0__1;
+    return Cardinality.__0__1;
   }
   public static Cardinality parseValue(String value) {
     if (value == null) {
       return Cardinality.getDefault();
     }
-    if (value.equals(Cardinality._0__1.getValueAsString())) {
-      return Cardinality._0__1;
+    if (value.equals(Cardinality.__0__1.getValueAsString())) {
+      return Cardinality.__0__1;
     }
-    if (value.equals(Cardinality._1.getValueAsString())) {
-      return Cardinality._1;
+    if (value.equals(Cardinality.__1.getValueAsString())) {
+      return Cardinality.__1;
     }
-    if (value.equals(Cardinality._0__n.getValueAsString())) {
-      return Cardinality._0__n;
+    if (value.equals(Cardinality.__0__n.getValueAsString())) {
+      return Cardinality.__0__n;
     }
-    if (value.equals(Cardinality._1__n.getValueAsString())) {
-      return Cardinality._1__n;
+    if (value.equals(Cardinality.__1__n.getValueAsString())) {
+      return Cardinality.__1__n;
     }
     return Cardinality.getDefault();
   }

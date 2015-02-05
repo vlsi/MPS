@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum InstanceIncomingReferencesPolicy {
-  allowed("allowed", null),
-  local("same root only", "local"),
-  forbidden("forbidden", "forbidden");
+  _allowed("allowed", null),
+  _local("same root only", "local"),
+  _forbidden("forbidden", "forbidden");
 
   private String myName;
   public String getName() {
@@ -20,26 +20,26 @@ public enum InstanceIncomingReferencesPolicy {
   }
   public static List<InstanceIncomingReferencesPolicy> getConstants() {
     List<InstanceIncomingReferencesPolicy> list = ListSequence.fromList(new LinkedList<InstanceIncomingReferencesPolicy>());
-    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy.allowed);
-    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy.local);
-    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy.forbidden);
+    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy._allowed);
+    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy._local);
+    ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy._forbidden);
     return list;
   }
   public static InstanceIncomingReferencesPolicy getDefault() {
-    return InstanceIncomingReferencesPolicy.allowed;
+    return InstanceIncomingReferencesPolicy._allowed;
   }
   public static InstanceIncomingReferencesPolicy parseValue(String value) {
     if (value == null) {
       return InstanceIncomingReferencesPolicy.getDefault();
     }
-    if (value.equals(InstanceIncomingReferencesPolicy.allowed.getValueAsString())) {
-      return InstanceIncomingReferencesPolicy.allowed;
+    if (value.equals(InstanceIncomingReferencesPolicy._allowed.getValueAsString())) {
+      return InstanceIncomingReferencesPolicy._allowed;
     }
-    if (value.equals(InstanceIncomingReferencesPolicy.local.getValueAsString())) {
-      return InstanceIncomingReferencesPolicy.local;
+    if (value.equals(InstanceIncomingReferencesPolicy._local.getValueAsString())) {
+      return InstanceIncomingReferencesPolicy._local;
     }
-    if (value.equals(InstanceIncomingReferencesPolicy.forbidden.getValueAsString())) {
-      return InstanceIncomingReferencesPolicy.forbidden;
+    if (value.equals(InstanceIncomingReferencesPolicy._forbidden.getValueAsString())) {
+      return InstanceIncomingReferencesPolicy._forbidden;
     }
     return InstanceIncomingReferencesPolicy.getDefault();
   }
