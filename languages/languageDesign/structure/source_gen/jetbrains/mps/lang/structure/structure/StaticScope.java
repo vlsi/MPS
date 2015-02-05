@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum StaticScope {
-  _global("global", null),
-  _root("containing root", "root"),
-  _none("none", "none");
+  global("global", null),
+  root("containing root", "root"),
+  none("none", "none");
 
   private String myName;
   public String getName() {
@@ -20,26 +20,26 @@ public enum StaticScope {
   }
   public static List<StaticScope> getConstants() {
     List<StaticScope> list = ListSequence.fromList(new LinkedList<StaticScope>());
-    ListSequence.fromList(list).addElement(StaticScope._global);
-    ListSequence.fromList(list).addElement(StaticScope._root);
-    ListSequence.fromList(list).addElement(StaticScope._none);
+    ListSequence.fromList(list).addElement(StaticScope.global);
+    ListSequence.fromList(list).addElement(StaticScope.root);
+    ListSequence.fromList(list).addElement(StaticScope.none);
     return list;
   }
   public static StaticScope getDefault() {
-    return StaticScope._global;
+    return StaticScope.global;
   }
   public static StaticScope parseValue(String value) {
     if (value == null) {
       return StaticScope.getDefault();
     }
-    if (value.equals(StaticScope._global.getValueAsString())) {
-      return StaticScope._global;
+    if (value.equals(StaticScope.global.getValueAsString())) {
+      return StaticScope.global;
     }
-    if (value.equals(StaticScope._root.getValueAsString())) {
-      return StaticScope._root;
+    if (value.equals(StaticScope.root.getValueAsString())) {
+      return StaticScope.root;
     }
-    if (value.equals(StaticScope._none.getValueAsString())) {
-      return StaticScope._none;
+    if (value.equals(StaticScope.none.getValueAsString())) {
+      return StaticScope.none;
     }
     return StaticScope.getDefault();
   }

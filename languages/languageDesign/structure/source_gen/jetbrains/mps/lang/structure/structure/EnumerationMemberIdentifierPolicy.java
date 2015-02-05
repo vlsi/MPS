@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum EnumerationMemberIdentifierPolicy {
-  _derive_from_presentation("derive from presentation", "derive_from_presentation"),
-  _derive_from_internal_value("derive from internal value", "derive_from_internal_value"),
-  _custom("custom", "custom");
+  derive_from_presentation("derive from presentation", "derive_from_presentation"),
+  derive_from_internal_value("derive from internal value", "derive_from_internal_value"),
+  custom("custom", "custom");
 
   private String myName;
   public String getName() {
@@ -20,26 +20,26 @@ public enum EnumerationMemberIdentifierPolicy {
   }
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = ListSequence.fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
-    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy._derive_from_presentation);
-    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy._derive_from_internal_value);
-    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy._custom);
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_presentation);
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_internal_value);
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.custom);
     return list;
   }
   public static EnumerationMemberIdentifierPolicy getDefault() {
-    return EnumerationMemberIdentifierPolicy._derive_from_presentation;
+    return EnumerationMemberIdentifierPolicy.derive_from_presentation;
   }
   public static EnumerationMemberIdentifierPolicy parseValue(String value) {
     if (value == null) {
       return EnumerationMemberIdentifierPolicy.getDefault();
     }
-    if (value.equals(EnumerationMemberIdentifierPolicy._derive_from_presentation.getValueAsString())) {
-      return EnumerationMemberIdentifierPolicy._derive_from_presentation;
+    if (value.equals(EnumerationMemberIdentifierPolicy.derive_from_presentation.getValueAsString())) {
+      return EnumerationMemberIdentifierPolicy.derive_from_presentation;
     }
-    if (value.equals(EnumerationMemberIdentifierPolicy._derive_from_internal_value.getValueAsString())) {
-      return EnumerationMemberIdentifierPolicy._derive_from_internal_value;
+    if (value.equals(EnumerationMemberIdentifierPolicy.derive_from_internal_value.getValueAsString())) {
+      return EnumerationMemberIdentifierPolicy.derive_from_internal_value;
     }
-    if (value.equals(EnumerationMemberIdentifierPolicy._custom.getValueAsString())) {
-      return EnumerationMemberIdentifierPolicy._custom;
+    if (value.equals(EnumerationMemberIdentifierPolicy.custom.getValueAsString())) {
+      return EnumerationMemberIdentifierPolicy.custom;
     }
     return EnumerationMemberIdentifierPolicy.getDefault();
   }
