@@ -973,6 +973,33 @@
       <node concept="3cqZAl" id="78tlMyQ2NAd" role="3clF45" />
       <node concept="3Tm6S6" id="78tlMyQ2NAg" role="1B3o_S" />
       <node concept="3clFbS" id="78tlMyQ2NAf" role="3clF47">
+        <node concept="3cpWs8" id="NOsWLGBd4J" role="3cqZAp">
+          <node concept="3cpWsn" id="NOsWLGBd4K" role="3cpWs9">
+            <property role="TrG5h" value="projectFile" />
+            <node concept="3uibUv" id="NOsWLGBd4L" role="1tU5fm">
+              <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+            </node>
+            <node concept="2OqwBi" id="NOsWLGBeoF" role="33vP2m">
+              <node concept="37vLTw" id="NOsWLGBdPA" role="2Oq$k0">
+                <ref role="3cqZAo" node="38_6U8fKv5Y" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="NOsWLGBeUg" role="2OqNvi">
+                <ref role="37wK5l" to="b2mh:~Project.getProjectFile():com.intellij.openapi.vfs.VirtualFile" resolve="getProjectFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="NOsWLGBhbB" role="3cqZAp">
+          <node concept="3clFbS" id="NOsWLGBhbD" role="3clFbx">
+            <node concept="3cpWs6" id="NOsWLGBiwH" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="NOsWLGBi7m" role="3clFbw">
+            <node concept="10Nm6u" id="NOsWLGBisK" role="3uHU7w" />
+            <node concept="37vLTw" id="NOsWLGBhCh" role="3uHU7B">
+              <ref role="3cqZAo" node="NOsWLGBd4K" resolve="projectFile" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="78tlMyQ2NLd" role="3cqZAp">
           <node concept="3cpWsn" id="78tlMyQ2NLe" role="3cpWs9">
             <property role="TrG5h" value="currentStatus" />
@@ -989,13 +1016,8 @@
               </node>
               <node concept="liA8E" id="78tlMyQ2NLj" role="2OqNvi">
                 <ref role="37wK5l" to="3dcm:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                <node concept="2OqwBi" id="78tlMyQ2NLk" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxeuQwy" role="2Oq$k0">
-                    <ref role="3cqZAo" node="38_6U8fKv5Y" resolve="myProject" />
-                  </node>
-                  <node concept="liA8E" id="78tlMyQ2NLm" role="2OqNvi">
-                    <ref role="37wK5l" to="b2mh:~Project.getProjectFile():com.intellij.openapi.vfs.VirtualFile" resolve="getProjectFile" />
-                  </node>
+                <node concept="37vLTw" id="NOsWLGBgAZ" role="37wK5m">
+                  <ref role="3cqZAo" node="NOsWLGBd4K" resolve="projectFile" />
                 </node>
               </node>
             </node>
@@ -1049,13 +1071,8 @@
                           <node concept="2YIFZM" id="78tlMyQ2R7R" role="37wK5m">
                             <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                             <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                            <node concept="2OqwBi" id="78tlMyQ2R7V" role="37wK5m">
-                              <node concept="37vLTw" id="2BHiRxeuTwk" role="2Oq$k0">
-                                <ref role="3cqZAo" node="38_6U8fKv5Y" resolve="myProject" />
-                              </node>
-                              <node concept="liA8E" id="78tlMyQ2R7Z" role="2OqNvi">
-                                <ref role="37wK5l" to="b2mh:~Project.getProjectFile():com.intellij.openapi.vfs.VirtualFile" resolve="getProjectFile" />
-                              </node>
+                            <node concept="37vLTw" id="NOsWLGBUJ9" role="37wK5m">
+                              <ref role="3cqZAo" node="NOsWLGBd4K" resolve="projectFile" />
                             </node>
                           </node>
                         </node>
