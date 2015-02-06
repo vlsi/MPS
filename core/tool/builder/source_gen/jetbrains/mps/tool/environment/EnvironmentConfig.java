@@ -11,12 +11,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.Collections;
 import jetbrains.mps.tool.builder.util.PathManager;
-import jetbrains.mps.tool.common.util.FileUtil;
 
 public class EnvironmentConfig {
   private final Set<String> myPlugins = SetSequence.fromSet(new LinkedHashSet<String>());
   private final Map<String, File> myMacros = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
-  private final Set<File> myLibs = SetSequence.fromSet(new LinkedHashSet<File>());
+  private final Set<String> myLibs = SetSequence.fromSet(new LinkedHashSet<String>());
 
   private EnvironmentConfig() {
   }
@@ -29,7 +28,7 @@ public class EnvironmentConfig {
     return Collections.unmodifiableMap(myMacros);
   }
 
-  public Set<File> getLibs() {
+  public Set<String> getLibs() {
     return SetSequence.fromSet(myLibs).asUnmodifiable();
   }
 
@@ -43,7 +42,7 @@ public class EnvironmentConfig {
     return this;
   }
 
-  public EnvironmentConfig addLib(File libPath) {
+  public EnvironmentConfig addLib(String libPath) {
     SetSequence.fromSet(myLibs).addElement(libPath);
     return this;
   }
@@ -58,14 +57,14 @@ public class EnvironmentConfig {
 
   public EnvironmentConfig withBootstrapLibraries() {
     for (String path : PathManager.getBootstrapPaths()) {
-      addLib(new File(path));
+      addLib(path);
     }
-    addLib(new File(PathManager.getLanguagesPath()));
+    addLib(PathManager.getLanguagesPath());
     return this;
   }
 
   public EnvironmentConfig withWorkbenchPath() {
-    File workbenchPath = FileUtil.findFirstThatExist(PathManager.getHomePath() + File.separator + "workbench");
+    String workbenchPath = PathManager.getHomePath() + File.separator + "workbench";
     if (workbenchPath != null) {
       addLib(workbenchPath);
     }

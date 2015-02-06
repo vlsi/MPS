@@ -54,7 +54,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       if (!(jarFile.exists())) {
         warning("Library " + jar + " does not exist.");
       }
-      config = config.addLib(jarFile);
+      config = config.addLib(jar);
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
@@ -108,8 +108,8 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       registerFactory();
       // todo: !next line was removed  <node> 
       Set<LibraryContributor.LibDescriptor> libraryPaths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
-      for (File libFile : config.getLibs()) {
-        libraryPaths.add(new LibraryContributor.LibDescriptor(libFile.getAbsolutePath(), myClassLoader));
+      for (String libPath : config.getLibs()) {
+        libraryPaths.add(new LibraryContributor.LibDescriptor(libPath, myClassLoader));
       }
       return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
     }

@@ -103,7 +103,7 @@ public class GenTestWorker extends GeneratorWorker {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
     for (String jar : myWhatToDo.getLibraryJars()) {
-      config = config.addLib(new File(jar));
+      config = config.addLib(jar);
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
