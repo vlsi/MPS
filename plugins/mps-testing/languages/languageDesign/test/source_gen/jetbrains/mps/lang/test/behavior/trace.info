@@ -68,7 +68,7 @@
       <unit at="11,0,34,0" name="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />
     </file>
     <file name="EditorTestCase_BehaviorDescriptor.java">
-      <unit at="16,0,51,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
+      <unit at="16,0,54,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
     </file>
     <file name="ExpressionContainer_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.ExpressionContainer_BehaviorDescriptor" />
@@ -155,7 +155,7 @@
       <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodesTestCase_BehaviorDescriptor.java">
-      <unit at="16,0,60,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
+      <unit at="16,0,63,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
     </file>
     <file name="NodesTestMethod_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />

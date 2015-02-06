@@ -16,6 +16,9 @@ import java.util.List;
 public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public EditorTestCase_BehaviorDescriptor() {
   }
+  public boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode) {
+    return ITestCase_Behavior.virtual_canRunInProcess_6436735966448788391(thisNode);
+  }
   public String virtual_getClassName_1216136193905(SNode thisNode) {
     return ITestCase_Behavior.virtual_getClassName_1216136193905(thisNode);
   }

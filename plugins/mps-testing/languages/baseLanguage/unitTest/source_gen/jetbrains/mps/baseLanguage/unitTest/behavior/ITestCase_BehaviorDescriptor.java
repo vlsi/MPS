@@ -11,4 +11,5 @@ public interface ITestCase_BehaviorDescriptor extends ITestable_BehaviorDescript
   public String virtual_getClassName_1216136193905(SNode thisNode);
   public String virtual_getSimpleClassName_1229278847513(SNode thisNode);
   public List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode);
+  public boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode);
 }

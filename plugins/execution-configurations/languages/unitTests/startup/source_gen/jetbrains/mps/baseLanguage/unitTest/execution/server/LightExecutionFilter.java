@@ -29,17 +29,15 @@ public class LightExecutionFilter implements Filter {
           result[0] = new Filter.FilterException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
         }
         if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+          if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "virtual_canRunInProcess_6436735966448788391", new Object[]{}))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
-
         }
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
         if (SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+          if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "virtual_canRunInProcess_6436735966448788391", new Object[]{}))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
-
         }
       }
     });
