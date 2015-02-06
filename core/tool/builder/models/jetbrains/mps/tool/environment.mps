@@ -807,25 +807,33 @@
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5UWB9tiBhf" role="3clF47">
         <node concept="3cpWs6" id="4KgFbPVmerv" role="3cqZAp">
-          <node concept="2OqwBi" id="hEPAoIDWHj" role="3cqZAk">
-            <node concept="2OqwBi" id="4KgFbPVmerB" role="2Oq$k0">
-              <node concept="1rXfSq" id="4KgFbPVmerC" role="2Oq$k0">
-                <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                <node concept="Xl_RD" id="4KgFbPVmerD" role="37wK5m">
-                  <property role="Xl_RC" value="jetbrains.mps.ide.make" />
+          <node concept="2OqwBi" id="5aJ2JHVPKj9" role="3cqZAk">
+            <node concept="2OqwBi" id="hEPAoIDWHj" role="2Oq$k0">
+              <node concept="2OqwBi" id="4KgFbPVmerB" role="2Oq$k0">
+                <node concept="1rXfSq" id="4KgFbPVmerC" role="2Oq$k0">
+                  <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+                  <node concept="Xl_RD" id="4KgFbPVmerD" role="37wK5m">
+                    <property role="Xl_RC" value="jetbrains.mps.ide.make" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4KgFbPVmerE" role="2OqNvi">
+                  <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+                  <node concept="Xl_RD" id="4KgFbPVmerF" role="37wK5m">
+                    <property role="Xl_RC" value="jetbrains.mps.vcs" />
+                  </node>
                 </node>
               </node>
-              <node concept="liA8E" id="4KgFbPVmerE" role="2OqNvi">
+              <node concept="liA8E" id="hEPAoIDZuy" role="2OqNvi">
                 <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                <node concept="Xl_RD" id="4KgFbPVmerF" role="37wK5m">
-                  <property role="Xl_RC" value="jetbrains.mps.vcs" />
+                <node concept="Xl_RD" id="hEPAoIEsUh" role="37wK5m">
+                  <property role="Xl_RC" value="jetbrains.mps.testing" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="hEPAoIDZuy" role="2OqNvi">
+            <node concept="liA8E" id="5aJ2JHVPLPc" role="2OqNvi">
               <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-              <node concept="Xl_RD" id="hEPAoIEsUh" role="37wK5m">
-                <property role="Xl_RC" value="jetbrains.mps.testing" />
+              <node concept="Xl_RD" id="5aJ2JHVQ1dR" role="37wK5m">
+                <property role="Xl_RC" value="Git4Idea" />
               </node>
             </node>
           </node>

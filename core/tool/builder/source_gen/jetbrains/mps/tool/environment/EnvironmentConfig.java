@@ -53,7 +53,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.testing");
+    return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.testing").addPlugin("Git4Idea");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
