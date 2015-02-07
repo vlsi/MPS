@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.GraphHolder.Graph;
+import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.apache.log4j.LogManager;
@@ -25,6 +27,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -34,49 +37,65 @@ import java.util.Set;
 
 public class ModuleUpdater {
   private static final Logger LOG = LogManager.getLogger(ModuleUpdater.class);
+  private static final Object LOCK = new Object();
+
+  private volatile boolean myChangedFlag = false;
   private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<ReloadableModule>();
   private final Set<ReloadableModule> myModulesToReload = new LinkedHashSet<ReloadableModule>();
   private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<SModuleReference>();
   private final Condition<ReloadableModule> myWatchableCondition;
-  private final GraphHolder<SModuleReference> myDepGraph;
+  private final GraphHolder<SModuleReference> myDepGraph = new GraphHolder<SModuleReference>();
   private final ReferenceStorage<ReloadableModule> myRefStorage;
   private final SRepository myRepository;
 
-  public ModuleUpdater(SRepository repository, Condition<ReloadableModule> watchableCondition,
-      GraphHolder<SModuleReference> depGraph, ReferenceStorage<ReloadableModule> refStorage) {
+  public ModuleUpdater(SRepository repository, Condition<ReloadableModule> watchableCondition, ReferenceStorage<ReloadableModule> refStorage) {
     myRepository = repository;
     myWatchableCondition = watchableCondition;
-    myDepGraph = depGraph;
     myRefStorage = refStorage;
   }
 
   public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
-    for (ReloadableModule module : modules) {
-      if (myWatchableCondition.met(module)) {
-        myModulesToReload.add(module);
+    synchronized (LOCK) {
+      myChangedFlag = true;
+      for (ReloadableModule module : modules) {
+        if (myWatchableCondition.met(module)) {
+          myModulesToReload.add(module);
+        }
+        // need this call because we might get #addModules notification later than this one
+        myRefStorage.moduleAdded(module);
       }
-      // need this call because we might get #addModules notification later than this one
-      myRefStorage.moduleAdded(module);
     }
   }
 
   public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
-    for (ReloadableModule module : modules) {
-      if (myWatchableCondition.met(module)) {
-        myModulesToAdd.add(module);
-        myModulesToRemove.add(module.getModuleReference());
+    synchronized (LOCK) {
+      myChangedFlag = true;
+      for (ReloadableModule module : modules) {
+        if (myWatchableCondition.met(module)) {
+          myModulesToAdd.add(module);
+          myModulesToRemove.add(module.getModuleReference());
+        }
+        myRefStorage.moduleAdded(module);
       }
-      myRefStorage.moduleAdded(module);
     }
   }
 
   public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
-    for (SModuleReference mRef : mRefs) {
-      // need to clean up myModulesToLoad and myModulesToReload
-      removeMRefFromModules(mRef, myModulesToAdd);
-      removeMRefFromModules(mRef, myModulesToReload);
-      myModulesToRemove.add(mRef);
-      myRefStorage.moduleRemoved(mRef);
+    synchronized (LOCK) {
+      myChangedFlag = true;
+      for (SModuleReference mRef : mRefs) {
+        // need to clean up myModulesToLoad and myModulesToReload
+        removeMRefFromModules(mRef, myModulesToAdd);
+        removeMRefFromModules(mRef, myModulesToReload);
+        myModulesToRemove.add(mRef);
+        myRefStorage.moduleRemoved(mRef);
+      }
+    }
+  }
+
+  public Collection<SModuleReference> getModules() {
+    synchronized (LOCK) {
+      return myDepGraph.getVertices();
     }
   }
 
@@ -91,23 +110,26 @@ public class ModuleUpdater {
   /**
    * @return if graph did change (some edges or vertices added/removed)
    */
-  public boolean updateGraph() {
+  public boolean refreshGraph() {
     myRepository.getModelAccess().checkReadAccess();
-    myDepGraph.checkGraphsCorrectness();
-    int wasEdges = myDepGraph.getEdgesCount();
-    int wasVertices = myDepGraph.getVerticesCount();
+    synchronized (LOCK) {
+      myChangedFlag = false;
+      myDepGraph.checkGraphsCorrectness();
+      int wasEdges = myDepGraph.getEdgesCount();
+      int wasVertices = myDepGraph.getVerticesCount();
 
-    boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
-    updateRemoved(myModulesToRemove);
-    updateAdded(myModulesToAdd);
-    updated |= updateReloaded(myModulesToReload);
-    myModulesToRemove.clear();
-    myModulesToAdd.clear();
-    myModulesToReload.clear();
+      boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
+      updateRemoved(myModulesToRemove);
+      updateAdded(myModulesToAdd);
+      updated |= updateReloaded(myModulesToReload);
+      myModulesToRemove.clear();
+      myModulesToAdd.clear();
+      myModulesToReload.clear();
 
-    LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
-    LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
-    return updated;
+      LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
+      LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
+      return updated;
+    }
   }
 
   private void updateRemoved(Set<? extends SModuleReference> modulesToRemove) {
@@ -181,7 +203,9 @@ public class ModuleUpdater {
             myDepGraph.addEdge(mRef, depRef);
             updated = true;
           }
-        } else currentDeps.remove(depRef);
+        } else {
+          currentDeps.remove(depRef);
+        }
       }
       for (SModuleReference curDep : currentDeps) {
         myDepGraph.removeEdge(mRef, curDep);
@@ -219,7 +243,7 @@ public class ModuleUpdater {
     }
   }
 
-  private Collection<? extends ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) {
+  private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) {
     myRepository.getModelAccess().checkReadAccess();
     if (module.getRepository() == null) return Collections.emptySet();
     Set<ReloadableModule> deps = new LinkedHashSet<ReloadableModule>();
@@ -233,5 +257,37 @@ public class ModuleUpdater {
       }
     }
     return deps;
+  }
+
+  public Collection<SModuleReference> getDeps(Iterable<? extends SModuleReference> mRefs) {
+    synchronized (LOCK) {
+      final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
+      Graph<SModuleReference> depGraph = myDepGraph.getGraph();
+      depGraph.dfs(mRefs, new VertexVisitor<SModuleReference>() {
+        @Override
+        public void visit(SModuleReference mRef) {
+          result.add(mRef);
+        }
+      });
+      return Collections.unmodifiableCollection(result);
+    }
+  }
+
+  public Collection<SModuleReference> getBackDeps(Iterable<? extends SModuleReference> mRefs) {
+    synchronized (LOCK) {
+      final Collection<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+      Graph<SModuleReference> backDepGraph = myDepGraph.getConjugateGraph();
+      backDepGraph.dfs(mRefs, new VertexVisitor<SModuleReference>() {
+        @Override
+        public void visit(SModuleReference mRef) {
+          result.add(mRef);
+        }
+      });
+      return Collections.unmodifiableCollection(result);
+    }
+  }
+
+  public boolean isDirty() {
+    return myChangedFlag;
   }
 }

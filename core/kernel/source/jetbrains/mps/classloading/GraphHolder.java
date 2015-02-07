@@ -18,9 +18,9 @@ package jetbrains.mps.classloading;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -56,9 +56,9 @@ public class GraphHolder<V> {
     }
   }
 
-  public Collection<? extends V> getVertices() {
+  public Collection<V> getVertices() {
     checkGraphsCorrectness();
-    return myGraph.getVertices();
+    return Collections.unmodifiableCollection(myGraph.getVertices());
   }
 
   public void add(V v) {
