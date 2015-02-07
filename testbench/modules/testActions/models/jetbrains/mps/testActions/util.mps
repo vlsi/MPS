@@ -20,6 +20,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -180,6 +181,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WCBx" role="jymVt" />
     <node concept="3clFbW" id="1ns9w4VAN7w" role="jymVt">
       <node concept="3cqZAl" id="1ns9w4VAN7x" role="3clF45" />
       <node concept="3Tm6S6" id="ThWTaQhJwh" role="1B3o_S" />
@@ -191,6 +193,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WDFR" role="jymVt" />
     <node concept="3clFb_" id="1YKWOow4fNY" role="jymVt">
       <property role="TrG5h" value="getIdeaCoreActions" />
       <node concept="3uibUv" id="3SXwVgLRUHz" role="3clF45">
@@ -322,6 +325,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WEKe" role="jymVt" />
     <node concept="3clFb_" id="1ns9w4VAN9l" role="jymVt">
       <property role="TrG5h" value="findFlyingActions" />
       <node concept="3cqZAl" id="1ns9w4VAN9m" role="3clF45" />
@@ -357,7 +361,7 @@
         </node>
         <node concept="3cpWs8" id="3SXwVgLRRzk" role="3cqZAp">
           <node concept="3cpWsn" id="3SXwVgLRRzl" role="3cpWs9">
-            <property role="TrG5h" value="childrenOrSortCutActionsSet" />
+            <property role="TrG5h" value="childrenOrShortCutActionsSet" />
             <node concept="3uibUv" id="3SXwVgLRRzm" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
               <node concept="17QB3L" id="3SXwVgLRRzq" role="11_B2D" />
@@ -404,7 +408,7 @@
                 <node concept="3clFbF" id="3SXwVgLS3BW" role="3cqZAp">
                   <node concept="2OqwBi" id="3SXwVgLS3C4" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagT$BM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrSortCutActionsSet" />
+                      <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
                     </node>
                     <node concept="liA8E" id="3SXwVgLS3Ca" role="2OqNvi">
                       <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
@@ -444,7 +448,7 @@
                     <node concept="3clFbF" id="3SXwVgLRTKT" role="3cqZAp">
                       <node concept="2OqwBi" id="3SXwVgLRTL1" role="3clFbG">
                         <node concept="37vLTw" id="3GM_nagTw4z" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrSortCutActionsSet" />
+                          <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
                         </node>
                         <node concept="liA8E" id="3SXwVgLRTL7" role="2OqNvi">
                           <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
@@ -517,7 +521,7 @@
             <node concept="liA8E" id="3SXwVgLRTPW" role="2OqNvi">
               <ref role="37wK5l" to="k7g3:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
               <node concept="37vLTw" id="3GM_nagTsL_" role="37wK5m">
-                <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrSortCutActionsSet" />
+                <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
               </node>
             </node>
           </node>
@@ -550,6 +554,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WFOA" role="jymVt" />
     <node concept="3clFb_" id="1YKWOow3Pn7" role="jymVt">
       <property role="TrG5h" value="getFlyingActions" />
       <node concept="3Tm6S6" id="ThWTaQhJwf" role="1B3o_S" />
@@ -575,6 +580,7 @@
         <node concept="17QB3L" id="3SXwVgLRUIg" role="11_B2D" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WGSZ" role="jymVt" />
     <node concept="2YIFZL" id="1YKWOow4ryp" role="jymVt">
       <property role="TrG5h" value="getMPSRootActionIds" />
       <node concept="3Tm1VV" id="1YKWOow4ryr" role="1B3o_S" />
@@ -647,6 +653,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3nWZTp1WA2d" role="3cqZAp">
+          <node concept="2OqwBi" id="3nWZTp1WAnd" role="3clFbG">
+            <node concept="37vLTw" id="3nWZTp1WA2b" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="3nWZTp1WAJf" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="3nWZTp1WARn" role="37wK5m">
+                <property role="Xl_RC" value="Git.LogContextMenu" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="1YKWOow4nWD" role="3cqZAp" />
         <node concept="3cpWs6" id="1YKWOow4nW_" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTuRz" role="3cqZAk">
@@ -674,6 +693,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3nWZTp1WHXp" role="jymVt" />
     <node concept="2YIFZL" id="ThWTaQhJw7" role="jymVt">
       <property role="TrG5h" value="getAllFlyingActions" />
       <node concept="3Tm1VV" id="ThWTaQhJw9" role="1B3o_S" />

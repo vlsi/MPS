@@ -16,9 +16,11 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 public class FlyingActionsFinder {
   private ActionManager myActionManager = ActionManager.getInstance();
   private Set<String> myFlyingActions = new HashSet<String>();
+
   private FlyingActionsFinder() {
     findFlyingActions();
   }
+
   /**
    * Get Set of actionGroups ids which belongs to MPS Core
    * Such actionGroups belongs to main menu, so we could ignore them in check
@@ -38,27 +40,29 @@ public class FlyingActionsFinder {
     }
     return ideaCoreActions;
   }
+
   private void findFlyingActions() {
     myFlyingActions = new HashSet<String>(Arrays.asList(myActionManager.getActionIds("")));
-    Set<String> childrenOrSortCutActionsSet = new HashSet<String>();
+    Set<String> childrenOrShortCutActionsSet = new HashSet<String>();
 
     AnAction anAction;
     for (String id : myFlyingActions) {
       anAction = myActionManager.getAction(id);
       if (anAction.getShortcutSet().getShortcuts().length > 0) {
-        childrenOrSortCutActionsSet.add(id);
+        childrenOrShortCutActionsSet.add(id);
       }
       if (ActionGroup.class.isInstance(anAction)) {
         for (AnAction child : ((ActionGroup) anAction).getChildren(null)) {
-          childrenOrSortCutActionsSet.add(myActionManager.getId(child));
+          childrenOrShortCutActionsSet.add(myActionManager.getId(child));
         }
       }
     }
 
-    myFlyingActions.removeAll(childrenOrSortCutActionsSet);
+    myFlyingActions.removeAll(childrenOrShortCutActionsSet);
     myFlyingActions.removeAll(getIdeaCoreActions());
     myFlyingActions.removeAll(getMPSRootActionIds());
   }
+
   /**
    * Creates list of actions/actionGroups with no parent, no shortcuts and not presented in MPS Core actions
    * 
@@ -67,6 +71,7 @@ public class FlyingActionsFinder {
   private Set<String> getFlyingActions() {
     return myFlyingActions;
   }
+
   /**
    * Hardcoded action/actionGroups ids that can have no parent, have no shortcuts
    * and do not belong to main menu
@@ -80,9 +85,11 @@ public class FlyingActionsFinder {
     set.add("jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup");
     set.add("jetbrains.mps.vcs.plugin.TestMergeAction_Action");
     set.add("jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DataFlowInternal_ActionGroup");
+    set.add("Git.LogContextMenu");
 
     return set;
   }
+
   public static Set<String> getAllFlyingActions() {
     FlyingActionsFinder finder = new FlyingActionsFinder();
     return finder.getFlyingActions();
