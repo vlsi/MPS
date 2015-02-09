@@ -221,7 +221,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       }
     });
 
-    configuration.setRunType(myRunKind);
+    configuration.setRunType(myRunKind.ordinal());
 
     configuration.setTestMethods(testMethods);
     configuration.setTestCases(testCases);
@@ -233,8 +233,8 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   public void reset(final JUnitSettings_Configuration settings) {
-    if (settings.getRunType() != null) {
-      myRunKind = settings.getRunType();
+    if (settings.getRunType() >= 0 && settings.getRunType() < JUnitRunTypes.values().length) {
+      myRunKind = settings.getJUnitRunType();
     } else {
       myRunKind = JUnitRunTypes.PROJECT;
     }

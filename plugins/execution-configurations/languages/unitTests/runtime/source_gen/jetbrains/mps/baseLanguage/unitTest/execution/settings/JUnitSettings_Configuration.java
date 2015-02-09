@@ -15,17 +15,16 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
@@ -36,13 +35,12 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (this.getRunType() == null) {
+    if (this.getRunType() < 0 || this.getRunType() > JUnitRunTypes.values().length) {
       throw new RuntimeConfigurationError("Type of test not selected.");
-    }
-    if (this.getRunType() != null) {
+    } else {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (eq_jtq3ac_a0c0b0a0b(this.getRunType(), JUnitRunTypes.PROJECT)) {
+      if (eq_jtq3ac_a0c0a0a0a1(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())) {
         return;
       }
       if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
@@ -92,10 +90,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public ClonableList<String> getTestMethods() {
     return myState.myTestMethods;
   }
-  public Iterable<ITestNodeWrapper> getTestNodes() {
-    return myState.myTestNodes;
-  }
-  public JUnitRunTypes getRunType() {
+  public int getRunType() {
     return myState.myRunType;
   }
   public void setModel(String value) {
@@ -122,14 +117,17 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setTestMethods(ClonableList<String> value) {
     myState.myTestMethods = value;
   }
-  public void setTestNodes(Iterable<ITestNodeWrapper> value) {
-    myState.myTestNodes = value;
-  }
-  public void setRunType(JUnitRunTypes value) {
+  public void setRunType(int value) {
     myState.myRunType = value;
   }
   public String getDefaultPath() {
     return new DefaultCachesPathChooser().chooseDir();
+  }
+  public JUnitRunTypes getJUnitRunType() {
+    return JUnitRunTypes.values()[this.getRunType()];
+  }
+  public void setJUnitRunType(JUnitRunTypes runType) {
+    this.setRunType(runType.ordinal());
   }
   public boolean canSaveCachesPath() {
     return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
@@ -138,27 +136,19 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return this.getLightExec() && !(this.getDebug());
   }
   public List<ITestNodeWrapper> getTests(final Project project) {
-    if (this.getRunType() == null) {
-      return null;
-    }
     return Sequence.fromIterable(collectTests(project)).toListSequence();
   }
   public boolean hasTests(final Project project) {
     final boolean[] hasTests = {true};
     final JUnitSettings_Configuration settings = this;
-    if (this.getRunType() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          hasTests[0] = JUnitSettings_Configuration.this.getRunType().hasTests(settings, project);
-        }
-      });
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        hasTests[0] = getJUnitRunType().hasTests(settings, project);
+      }
+    });
     return hasTests[0];
   }
   public List<ITestNodeWrapper> getTestsUnderProgress(final Project project) {
-    if (this.getRunType() == null) {
-      return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-    }
     return Sequence.fromIterable(collectTests(project)).toListSequence();
   }
   public List<SNodeReference> getTestsToMake(final Project project) {
@@ -176,10 +166,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }).toListSequence();
   }
   private Iterable<ITestNodeWrapper> collectTests(final Project project) {
-    if (this.getTestNodes() == null) {
-      this.setTestNodes(this.getRunType().collect(this, project));
-    }
-    return this.getTestNodes();
+    return getJUnitRunType().collect(this, project);
   }
   @Override
   public JUnitSettings_Configuration clone() {
@@ -204,8 +191,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myCachesPath = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
-    public Iterable<ITestNodeWrapper> myTestNodes;
-    public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
+    public int myRunType = JUnitRunTypes.PROJECT.ordinal();
     public MyState() {
     }
     @Override
@@ -223,7 +209,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       if (myTestMethods != null) {
         state.myTestMethods = myTestMethods.clone();
       }
-      state.myTestNodes = myTestNodes;
       state.myRunType = myRunType;
       return state;
     }
@@ -246,7 +231,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
-  private static boolean eq_jtq3ac_a0c0b0a0b(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0c0a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
