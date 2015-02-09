@@ -2,7 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/samples/sampleXML/languages/sampleXML/jetbrains.mps.sampleXML.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/../samples/sampleXML/languages/sampleXML/jetbrains.mps.sampleXML.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/demoLang1/jetbrains.mps.samples.generator_demo.demoLang1.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/demoLang2/jetbrains.mps.samples.generator_demo.demoLang2.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/demoLang3/jetbrains.mps.samples.generator_demo.demoLang3.mpl" folder="" />
