@@ -143,7 +143,7 @@ public class ClassLoaderManager implements CoreComponent {
   public ClassLoaderManager(SRepository repository) {
     myRepository = repository;
     myModulesWatcher = new ModulesWatcher(myRepository, myWatchableCondition);
-    myClassLoadersHolder = new ClassLoadersHolder(myModulesWatcher);
+    myClassLoadersHolder = new ClassLoadersHolder(myRepository.getModelAccess(), myModulesWatcher);
     myRepositoryListener = new ModuleEventsHandler(repository, myModulesWatcher);
     myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
   }
@@ -280,11 +280,17 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   @Nullable
   public ClassLoader getClassLoader(final SModule module) {
-    if (!myLoadableCondition.met(module)) return null;
+    if (!myLoadableCondition.met(module)) {
+      return null;
+    }
 
-    if (myRepository.getModelAccess().canWrite()) refresh();
+    if (myRepository.getModelAccess().canWrite()) {
+      refresh();
+    }
     ReloadableModule reloadableModule = (ReloadableModule) module;
-    if (!myValidCondition.met(reloadableModule)) return null;
+    if (!myValidCondition.met(reloadableModule)) {
+      return null;
+    }
     doLoadModules(Collections.singleton(reloadableModule), new EmptyProgressMonitor());
     return doGetClassLoader(reloadableModule);
   }
@@ -389,7 +395,6 @@ public class ClassLoaderManager implements CoreComponent {
       Condition<SModuleReference> loadedCondition = new NotCondition<SModuleReference>(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
       if (modulesToUnload.isEmpty()) return Collections.emptySet();
-
 
       // transitive closure
       Collection<? extends SModuleReference> modulesAndBackDeps = myModulesWatcher.getBackDependencies(modulesToUnload);
@@ -588,7 +593,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Condition<ReloadableModule> myValidCondition = new Condition<ReloadableModule>() {
     @Override
     public boolean met(ReloadableModule module) {
-      SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+      SModuleReference mRef = module.getModuleReference();
       return myWatchableCondition.met(module) && myModulesWatcher.getStatus(mRef).isValid();
     }
   };

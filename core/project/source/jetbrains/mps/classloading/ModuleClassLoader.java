@@ -241,10 +241,12 @@ public class ModuleClassLoader extends ClassLoader {
     return new IterableEnumeration<URL>(result);
   }
 
+  /**
+   * Note: the actual dispose is called asynchronously in the EDT.
+   * The motive is to allow a ClassLoading client to dispose asynchronously in the Event Dispatch Thread.
+   */
   public void dispose() {
     myDisposed = true;
-    // reason for clearing:
-    // if one classloader A leak some classes, all compile time dependencies of A leak too
     myClasses.clear();
     if (myDependenciesClassLoaders != null) {
       myDependenciesClassLoaders.clear();
