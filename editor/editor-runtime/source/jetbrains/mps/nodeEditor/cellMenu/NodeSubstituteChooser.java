@@ -569,6 +569,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myScroller.getVerticalScrollBar().setFocusable(false);
 
       myList.setFocusable(false);
+
+      setPosition(PopupWindowPosition.BOTTOM);
+
       setLayout(new AbstractLayoutManager() {
         @Override
         public Dimension preferredLayoutSize(Container parent) {
@@ -589,12 +592,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public void done() {
       setRelativeCell(null);
+      setPosition(PopupWindowPosition.BOTTOM);
     }
 
     @Override
     public void dispose() {
       getOwner().removeComponentListener(myComponentListener);
-
       super.dispose();
     }
 
@@ -637,10 +640,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Dimension preferredSize = getPreferredSize();
       if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150 && location.getY() - getPatternEditor().getHeight() / 2 > deviceBounds.y + deviceBounds.height / 2) {
         setPosition(PopupWindowPosition.TOP);
-      } else {
-        setPosition(PopupWindowPosition.BOTTOM);
       }
-
 
       if (getPosition() == PopupWindowPosition.TOP && myList.getFixedCellHeight() != 0) {
         double maxHeight = location.getY() - getPatternEditor().getHeight() - deviceBounds.y;
