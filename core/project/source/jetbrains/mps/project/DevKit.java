@@ -173,17 +173,17 @@ public class DevKit extends AbstractModule {
   }
 
   /**
-   * @deprecated use {@link AbstractModule#getName()}
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.SModule#getModuleName()}
    */
   @ToRemove(version = 3.2)
   @Deprecated
   @Override
   public String getName() {
-    return super.getName();
+    return getModuleName();
   }
 
   public String toString() {
-    return getName() + " [devkit]";
+    return getModuleName() + " [devkit]";
   }
 
   public boolean isHidden() {
