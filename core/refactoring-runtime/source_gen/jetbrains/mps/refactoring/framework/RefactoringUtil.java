@@ -24,8 +24,9 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import org.apache.log4j.Level;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
@@ -83,16 +84,37 @@ public class RefactoringUtil {
       for (SNode refactoring : SModelOperations.roots(refactoringsModel, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-          Class<IRefactoring> cls = ((Class<IRefactoring>) ClassLoaderManager.getInstance().getClass(language, fqName));
+          Class<IRefactoring> cls = null;
+          try {
+            cls = ((Class<IRefactoring>) language.getOwnClass(fqName));
+          } catch (ClassNotFoundException e) {
+            // Class not found - refactoring is not available now 
+          }
           if (cls == null) {
-            LOG.error("Can't find " + fqName);
+            if (LOG_1635700302.isEnabledFor(Level.WARN)) {
+              LOG_1635700302.warn("Can't find class " + fqName + " for refactoring. Refactoring disabled.");
+            }
             continue;
           }
           Constructor<IRefactoring> constructor = cls.getConstructor();
           constructor.setAccessible(false);
           result.add(constructor.newInstance());
-        } catch (Throwable t) {
-          LOG.error(null, t);
+        } catch (InstantiationException e) {
+          if (LOG_1635700302.isEnabledFor(Level.ERROR)) {
+            LOG_1635700302.error("", e);
+          }
+        } catch (InvocationTargetException e) {
+          if (LOG_1635700302.isEnabledFor(Level.ERROR)) {
+            LOG_1635700302.error("", e);
+          }
+        } catch (IllegalAccessException e) {
+          if (LOG_1635700302.isEnabledFor(Level.ERROR)) {
+            LOG_1635700302.error("", e);
+          }
+        } catch (NoSuchMethodException e) {
+          if (LOG_1635700302.isEnabledFor(Level.ERROR)) {
+            LOG_1635700302.error("", e);
+          }
         }
       }
     }
@@ -139,7 +161,9 @@ public class RefactoringUtil {
       try {
         applicable = target.isApplicable(entity);
       } catch (Throwable t) {
-        LOG.error("An error occured while executing " + refactoringName + ".isApplicable(). This refactoring will not be available.", t);
+        if (LOG_1635700302.isEnabledFor(Level.ERROR)) {
+          LOG_1635700302.error("An error occured while executing " + refactoringName + ".isApplicable(). This refactoring will not be available.", t);
+        }
         applicable = false;
       }
       if (!(applicable)) {
@@ -208,4 +232,5 @@ public class RefactoringUtil {
     }
     public abstract boolean lessThan(RefactoringUtil.Applicability level);
   }
+  protected static Logger LOG_1635700302 = LogManager.getLogger(RefactoringUtil.class);
 }

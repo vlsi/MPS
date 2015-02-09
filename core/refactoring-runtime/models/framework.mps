@@ -6,6 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="tp1h" ref="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" />
@@ -31,6 +32,7 @@
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
+    <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -252,6 +254,14 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1666,30 +1676,6 @@
             <node concept="1DcWWT" id="4a0HOMfn704" role="3cqZAp">
               <node concept="3clFbS" id="4a0HOMfn70b" role="2LFqv$">
                 <node concept="SfApY" id="4a0HOMfn70c" role="3cqZAp">
-                  <node concept="TDmWw" id="4a0HOMfn70d" role="TEbGg">
-                    <node concept="3clFbS" id="4a0HOMfn70e" role="TDEfX">
-                      <node concept="3clFbF" id="4a0HOMfn70f" role="3cqZAp">
-                        <node concept="2OqwBi" id="4a0HOMfn70g" role="3clFbG">
-                          <node concept="liA8E" id="4a0HOMfn70i" role="2OqNvi">
-                            <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
-                            <node concept="10Nm6u" id="4t57iE9WNhC" role="37wK5m" />
-                            <node concept="37vLTw" id="3GM_nagTtFE" role="37wK5m">
-                              <ref role="3cqZAo" node="4a0HOMfn70k" resolve="t" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="2BHiRxeoeip" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4a0HOMfn6Wi" resolve="LOG" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWsn" id="4a0HOMfn70k" role="TDEfY">
-                      <property role="TrG5h" value="t" />
-                      <node concept="3uibUv" id="4a0HOMfn70l" role="1tU5fm">
-                        <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbS" id="4a0HOMfn70m" role="SfCbr">
                     <node concept="3cpWs8" id="4a0HOMfn70n" role="3cqZAp">
                       <node concept="3cpWsn" id="4a0HOMfn70o" role="3cpWs9">
@@ -1720,35 +1706,58 @@
                     <node concept="3cpWs8" id="4a0HOMfn70x" role="3cqZAp">
                       <node concept="3cpWsn" id="4a0HOMfn70y" role="3cpWs9">
                         <property role="TrG5h" value="cls" />
-                        <node concept="1eOMI4" id="13WDUBiHq2u" role="33vP2m">
-                          <node concept="10QFUN" id="13WDUBiHpwR" role="1eOMHV">
-                            <node concept="3uibUv" id="13WDUBiHq$3" role="10QFUM">
-                              <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
-                              <node concept="3uibUv" id="13WDUBiHqXZ" role="11_B2D">
-                                <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="USp7Tv$YS4" role="10QFUP">
-                              <node concept="liA8E" id="USp7Tv_2vK" role="2OqNvi">
-                                <ref role="37wK5l" to="wqua:~ClassLoaderManager.getClass(org.jetbrains.mps.openapi.module.SModule,java.lang.String):java.lang.Class" resolve="getClass" />
-                                <node concept="37vLTw" id="USp7Tv_7Oy" role="37wK5m">
-                                  <ref role="3cqZAo" node="4a0HOMfn6XY" resolve="language" />
-                                </node>
-                                <node concept="37vLTw" id="USp7Tv_ddE" role="37wK5m">
-                                  <ref role="3cqZAo" node="4a0HOMfn70o" resolve="fqName" />
-                                </node>
-                              </node>
-                              <node concept="2YIFZM" id="USp7Tv$Wbl" role="2Oq$k0">
-                                <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                                <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                         <node concept="3uibUv" id="4a0HOMfn70z" role="1tU5fm">
                           <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
                           <node concept="3uibUv" id="4a0HOMfn70$" role="11_B2D">
                             <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="3pbHAqzAyL$" role="33vP2m" />
+                      </node>
+                    </node>
+                    <node concept="SfApY" id="3pbHAqzAfPH" role="3cqZAp">
+                      <node concept="3clFbS" id="3pbHAqzAfPJ" role="SfCbr">
+                        <node concept="3clFbF" id="3pbHAqzA8bP" role="3cqZAp">
+                          <node concept="37vLTI" id="3pbHAqzA8bR" role="3clFbG">
+                            <node concept="1eOMI4" id="13WDUBiHq2u" role="37vLTx">
+                              <node concept="10QFUN" id="13WDUBiHpwR" role="1eOMHV">
+                                <node concept="3uibUv" id="13WDUBiHq$3" role="10QFUM">
+                                  <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+                                  <node concept="3uibUv" id="13WDUBiHqXZ" role="11_B2D">
+                                    <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="3pbHAqzzXIG" role="10QFUP">
+                                  <node concept="37vLTw" id="3pbHAqzzWNL" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4a0HOMfn6XY" resolve="language" />
+                                  </node>
+                                  <node concept="liA8E" id="3pbHAqzzYPz" role="2OqNvi">
+                                    <ref role="37wK5l" to="42ru:~ReloadableModuleBase.getOwnClass(java.lang.String):java.lang.Class" resolve="getOwnClass" />
+                                    <node concept="37vLTw" id="3pbHAqzzZ2s" role="37wK5m">
+                                      <ref role="3cqZAo" node="4a0HOMfn70o" resolve="fqName" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="3pbHAqzA8bV" role="37vLTJ">
+                              <ref role="3cqZAo" node="4a0HOMfn70y" resolve="cls" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="TDmWw" id="3pbHAqzAuap" role="TEbGg">
+                        <node concept="3clFbS" id="3pbHAqzAuaq" role="TDEfX">
+                          <node concept="3SKdUt" id="3pbHAqzBtr$" role="3cqZAp">
+                            <node concept="3SKdUq" id="3pbHAqzBuyY" role="3SKWNk">
+                              <property role="3SKdUp" value="Class not found - refactoring is not available now" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWsn" id="3pbHAqzAuar" role="TDEfY">
+                          <property role="TrG5h" value="e" />
+                          <node concept="3uibUv" id="3pbHAqzAuas" role="1tU5fm">
+                            <ref role="3uigEE" to="e2lb:~ClassNotFoundException" resolve="ClassNotFoundException" />
                           </node>
                         </node>
                       </node>
@@ -1761,20 +1770,18 @@
                         <node concept="10Nm6u" id="4a0HOMfn70G" role="3uHU7w" />
                       </node>
                       <node concept="3clFbS" id="4a0HOMfn70H" role="3clFbx">
-                        <node concept="3clFbF" id="4a0HOMfn70I" role="3cqZAp">
-                          <node concept="2OqwBi" id="4a0HOMfn70J" role="3clFbG">
-                            <node concept="37vLTw" id="2BHiRxeoekm" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4a0HOMfn6Wi" resolve="LOG" />
+                        <node concept="34ab3g" id="3pbHAqzBgym" role="3cqZAp">
+                          <property role="35gtTG" value="warn" />
+                          <node concept="3cpWs3" id="3pbHAqzBhN2" role="34bqiv">
+                            <node concept="Xl_RD" id="3pbHAqzBhN3" role="3uHU7w">
+                              <property role="Xl_RC" value=" for refactoring. Refactoring disabled." />
                             </node>
-                            <node concept="liA8E" id="4a0HOMfn70L" role="2OqNvi">
-                              <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object):void" resolve="error" />
-                              <node concept="3cpWs3" id="4a0HOMfn70M" role="37wK5m">
-                                <node concept="Xl_RD" id="4a0HOMfn70N" role="3uHU7B">
-                                  <property role="Xl_RC" value="Can't find " />
-                                </node>
-                                <node concept="37vLTw" id="3GM_nagTAVF" role="3uHU7w">
-                                  <ref role="3cqZAo" node="4a0HOMfn70o" resolve="fqName" />
-                                </node>
+                            <node concept="3cpWs3" id="3pbHAqzBhN4" role="3uHU7B">
+                              <node concept="Xl_RD" id="3pbHAqzBhN5" role="3uHU7B">
+                                <property role="Xl_RC" value="Can't find class " />
+                              </node>
+                              <node concept="37vLTw" id="3pbHAqzBhN6" role="3uHU7w">
+                                <ref role="3cqZAo" node="4a0HOMfn70o" resolve="fqName" />
                               </node>
                             </node>
                           </node>
@@ -1828,6 +1835,78 @@
                         <node concept="37vLTw" id="3GM_nagTu2y" role="2Oq$k0">
                           <ref role="3cqZAo" node="4a0HOMfn6Y2" resolve="result" />
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="3pbHAqz$k59" role="TEbGg">
+                    <node concept="3clFbS" id="3pbHAqz$k5a" role="TDEfX">
+                      <node concept="34ab3g" id="3pbHAqzBp1g" role="3cqZAp">
+                        <property role="35gtTG" value="error" />
+                        <property role="34fQS0" value="true" />
+                        <node concept="Xl_RD" id="3pbHAqzBp1i" role="34bqiv" />
+                        <node concept="37vLTw" id="3pbHAqzBp1k" role="34bMjA">
+                          <ref role="3cqZAo" node="3pbHAqz$k5b" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="3pbHAqz$k5b" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="3pbHAqz$k5c" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~InstantiationException" resolve="InstantiationException" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="3pbHAqz$k5d" role="TEbGg">
+                    <node concept="3clFbS" id="3pbHAqz$k5e" role="TDEfX">
+                      <node concept="34ab3g" id="3pbHAqzBqbn" role="3cqZAp">
+                        <property role="35gtTG" value="error" />
+                        <property role="34fQS0" value="true" />
+                        <node concept="Xl_RD" id="3pbHAqzBqbo" role="34bqiv" />
+                        <node concept="37vLTw" id="3pbHAqzBqbp" role="34bMjA">
+                          <ref role="3cqZAo" node="3pbHAqz$k5f" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="3pbHAqz$k5f" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="3pbHAqz$k5g" role="1tU5fm">
+                        <ref role="3uigEE" to="xqpa:~InvocationTargetException" resolve="InvocationTargetException" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="3pbHAqz$k5h" role="TEbGg">
+                    <node concept="3clFbS" id="3pbHAqz$k5i" role="TDEfX">
+                      <node concept="34ab3g" id="3pbHAqzBrgT" role="3cqZAp">
+                        <property role="35gtTG" value="error" />
+                        <property role="34fQS0" value="true" />
+                        <node concept="Xl_RD" id="3pbHAqzBrgU" role="34bqiv" />
+                        <node concept="37vLTw" id="3pbHAqzBrgV" role="34bMjA">
+                          <ref role="3cqZAo" node="3pbHAqz$k5j" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="3pbHAqz$k5j" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="3pbHAqz$k5k" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~IllegalAccessException" resolve="IllegalAccessException" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="3pbHAqz$oAO" role="TEbGg">
+                    <node concept="3clFbS" id="3pbHAqz$oAP" role="TDEfX">
+                      <node concept="34ab3g" id="3pbHAqzBsmn" role="3cqZAp">
+                        <property role="35gtTG" value="error" />
+                        <property role="34fQS0" value="true" />
+                        <node concept="Xl_RD" id="3pbHAqzBsmo" role="34bqiv" />
+                        <node concept="37vLTw" id="3pbHAqzBsmp" role="34bMjA">
+                          <ref role="3cqZAo" node="3pbHAqz$oAQ" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="3pbHAqz$oAQ" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="3pbHAqz$oAR" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~NoSuchMethodException" resolve="NoSuchMethodException" />
                       </node>
                     </node>
                   </node>
@@ -2371,29 +2450,23 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="4a0HOMfn745" role="TDEfX">
-                  <node concept="3clFbF" id="4a0HOMfn746" role="3cqZAp">
-                    <node concept="2OqwBi" id="4a0HOMfn747" role="3clFbG">
-                      <node concept="liA8E" id="4a0HOMfn749" role="2OqNvi">
-                        <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
-                        <node concept="3cpWs3" id="4a0HOMfn74a" role="37wK5m">
-                          <node concept="3cpWs3" id="4a0HOMfn74b" role="3uHU7B">
-                            <node concept="37vLTw" id="2BHiRxgm8Wh" role="3uHU7w">
-                              <ref role="3cqZAo" node="4a0HOMfn73O" resolve="refactoringName" />
-                            </node>
-                            <node concept="Xl_RD" id="4a0HOMfn74c" role="3uHU7B">
-                              <property role="Xl_RC" value="An error occured while executing " />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="4a0HOMfn74e" role="3uHU7w">
-                            <property role="Xl_RC" value=".isApplicable(). This refactoring will not be available." />
-                          </node>
+                  <node concept="34ab3g" id="3pbHAqzBkkj" role="3cqZAp">
+                    <property role="35gtTG" value="error" />
+                    <property role="34fQS0" value="true" />
+                    <node concept="37vLTw" id="3pbHAqzBkkn" role="34bMjA">
+                      <ref role="3cqZAo" node="4a0HOMfn74k" resolve="t" />
+                    </node>
+                    <node concept="3cpWs3" id="3pbHAqzBkvY" role="34bqiv">
+                      <node concept="3cpWs3" id="3pbHAqzBkvZ" role="3uHU7B">
+                        <node concept="37vLTw" id="3pbHAqzBkw0" role="3uHU7w">
+                          <ref role="3cqZAo" node="4a0HOMfn73O" resolve="refactoringName" />
                         </node>
-                        <node concept="37vLTw" id="3GM_nagT$Av" role="37wK5m">
-                          <ref role="3cqZAo" node="4a0HOMfn74k" resolve="t" />
+                        <node concept="Xl_RD" id="3pbHAqzBkw1" role="3uHU7B">
+                          <property role="Xl_RC" value="An error occured while executing " />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="2BHiRxeojYZ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4a0HOMfn6Wi" resolve="LOG" />
+                      <node concept="Xl_RD" id="3pbHAqzBkw2" role="3uHU7w">
+                        <property role="Xl_RC" value=".isApplicable(). This refactoring will not be available." />
                       </node>
                     </node>
                   </node>
