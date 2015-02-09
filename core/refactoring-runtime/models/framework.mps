@@ -1565,66 +1565,6 @@
             </node>
           </node>
         </node>
-        <node concept="9aQIb" id="4a0HOMfn6Y8" role="3cqZAp">
-          <node concept="3clFbS" id="4a0HOMfn6Y9" role="9aQI4">
-            <node concept="3cpWs8" id="4a0HOMfn6Ya" role="3cqZAp">
-              <node concept="3cpWsn" id="4a0HOMfn6Yb" role="3cpWs9">
-                <property role="TrG5h" value="scriptsModelDescriptor" />
-                <node concept="2OqwBi" id="4a0HOMfn6Yd" role="33vP2m">
-                  <node concept="Rm8GO" id="6QdonRgXTfy" role="2Oq$k0">
-                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.SCRIPTS" resolve="SCRIPTS" />
-                  </node>
-                  <node concept="liA8E" id="4a0HOMfn6Yf" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                    <node concept="37vLTw" id="2BHiRxgl3Er" role="37wK5m">
-                      <ref role="3cqZAo" node="4a0HOMfn6XY" resolve="language" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="4a0HOMfn6Yc" role="1tU5fm">
-                  <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="4a0HOMfn6Yh" role="3cqZAp">
-              <node concept="3clFbS" id="4a0HOMfn6Yl" role="3clFbx">
-                <node concept="3cpWs8" id="4a0HOMfn6Ym" role="3cqZAp">
-                  <node concept="3cpWsn" id="4a0HOMfn6Yn" role="3cpWs9">
-                    <property role="TrG5h" value="scriptsModel" />
-                    <node concept="37vLTw" id="3GM_nagTzfr" role="33vP2m">
-                      <ref role="3cqZAo" node="4a0HOMfn6Yb" resolve="scriptsModelDescriptor" />
-                    </node>
-                    <node concept="H_c77" id="6KUHvCV8gmS" role="1tU5fm" />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="4a0HOMfn6Ys" role="3cqZAp">
-                  <node concept="3cpWsn" id="4a0HOMfn6Yt" role="3cpWs9">
-                    <property role="TrG5h" value="packageName" />
-                    <node concept="2YIFZM" id="2n9zn0CqMVd" role="33vP2m">
-                      <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                      <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                      <node concept="2JrnkZ" id="2n9zn0CqMVe" role="37wK5m">
-                        <node concept="37vLTw" id="3GM_nagTB3m" role="2JrQYb">
-                          <ref role="3cqZAo" node="4a0HOMfn6Yn" resolve="scriptsModel" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="4a0HOMfn6Yu" role="1tU5fm">
-                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3y3z36" id="4a0HOMfn6Yi" role="3clFbw">
-                <node concept="10Nm6u" id="4a0HOMfn6Yk" role="3uHU7w" />
-                <node concept="37vLTw" id="3GM_nagTygX" role="3uHU7B">
-                  <ref role="3cqZAo" node="4a0HOMfn6Yb" resolve="scriptsModelDescriptor" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="4a0HOMfn6ZG" role="3cqZAp">
           <node concept="3cpWsn" id="4a0HOMfn6ZH" role="3cpWs9">
             <property role="TrG5h" value="refModelDescriptor" />

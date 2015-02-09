@@ -70,13 +70,6 @@ public class RefactoringUtil {
   }
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
-    {
-      SModel scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
-      if (scriptsModelDescriptor != null) {
-        SModel scriptsModel = scriptsModelDescriptor;
-        String packageName = SNodeOperations.getModelLongName(scriptsModel);
-      }
-    }
     SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor;
