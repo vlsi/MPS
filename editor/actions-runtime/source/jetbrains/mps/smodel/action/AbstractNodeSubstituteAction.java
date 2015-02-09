@@ -138,7 +138,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
   }
 
   private boolean matches(String pattern, String matchingText) {
-    return matchingText.toLowerCase().startsWith(pattern.toLowerCase()) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*");
+    return matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*");
   }
 
 

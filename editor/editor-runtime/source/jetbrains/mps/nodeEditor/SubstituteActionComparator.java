@@ -52,10 +52,6 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     return myPattern != null && getVisibleMatchingText(action).startsWith(myPattern);
   }
 
-  protected boolean startsWithLowerCase(SubstituteAction action) {
-    return myPattern != null && getVisibleMatchingText(action).toLowerCase().startsWith(myPattern.toLowerCase());
-  }
-
   private int compareByRate(SubstituteAction firstAction, SubstituteAction secondAction) {
     if (myPattern == null || myPattern.length() == 0) {
       return 0;
@@ -89,15 +85,6 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     return 0;
   }
 
-  private int compareByStartsWithLowerCase(SubstituteAction i1, SubstituteAction i2) {
-    boolean startsWithLowerCase1 = startsWithLowerCase(i1);
-    boolean startsWithLowerCase2 = startsWithLowerCase(i2);
-    if (startsWithLowerCase1 != startsWithLowerCase2) {
-      return startsWithLowerCase1 ? -1 : 1;
-    }
-    return 0;
-  }
-
 
   @Override
   public int compare(SubstituteAction action1, SubstituteAction action2) {
@@ -105,9 +92,6 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     if (result != 0) return result;
 
     result = compareByStartsWith(action1, action2);
-    if (result != 0) return result;
-
-    result = compareByStartsWithLowerCase(action1, action2);
     if (result != 0) return result;
 
     result = compareByRate(action1, action2);
