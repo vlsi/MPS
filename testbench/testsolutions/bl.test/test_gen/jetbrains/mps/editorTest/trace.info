@@ -13598,6 +13598,31 @@
       <unit id="8976921645732250110" at="10,0,30,0" name="jetbrains.mps.editorTest.PerformLeftTransformWithNoLeftTransformActions_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9010159352460099163">
+    <file name="CompletionStartsWithTest_Test.java">
+      <node id="9010159352460099163" at="17,64,18,107" concept="2" />
+      <node id="9010159352460099163" at="18,107,19,105" concept="2" />
+      <node id="9010159352460099163" at="26,51,27,63" concept="2" />
+      <node id="9010159352460138969" at="27,63,28,32" concept="2" />
+      <node id="9010159352460166083" at="28,32,29,91" concept="2" />
+      <node id="9010159352460166200" at="29,91,30,87" concept="2" />
+      <node id="9010159352460166157" at="30,87,31,0" concept="8" />
+      <node id="9010159352460099163" at="14,0,16,0" concept="1" trace="CompletionStartsWithTest_Test#()V" />
+      <node id="9010159352460099163" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="9010159352460099163" at="16,0,21,0" concept="5" trace="test_CompletionStartsWithTest#()V" />
+      <node id="9010159352460099163" at="25,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9010159352460099163" at="14,42,14,42" />
+      <scope id="9010159352460099163" at="23,23,23,23" />
+      <scope id="9010159352460099163" at="14,0,16,0" />
+      <scope id="9010159352460099163" at="17,64,19,105" />
+      <scope id="9010159352460099163" at="23,0,25,0" />
+      <scope id="9010159352460099163" at="16,0,21,0" />
+      <scope id="9010159352460099163" at="26,51,31,0" />
+      <scope id="9010159352460099163" at="25,0,33,0" />
+      <unit id="9010159352460099163" at="21,0,34,0" name="jetbrains.mps.editorTest.CompletionStartsWithTest_Test$TestBody" />
+      <unit id="9010159352460099163" at="12,0,35,0" name="jetbrains.mps.editorTest.CompletionStartsWithTest_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9032151315009630188">
     <file name="TypeMethodCaret_Test.java">
       <node id="9032151315009630188" at="15,55,16,107" concept="2" />

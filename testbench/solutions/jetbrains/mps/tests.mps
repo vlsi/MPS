@@ -2932,6 +2932,9 @@
     <node concept="lpD6D" id="3FJ0r$qO3cS" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hZ88umP" resolve="ComplexTransformTest" />
     </node>
+    <node concept="lpD6D" id="7Oax35P4k$z" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7Oax35P33Tr" resolve="CompletionStartsWithTest" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4jBMNo5VBVj" resolve="EditingNotEditableProperty" />
     </node>
