@@ -7,7 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.Level;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -20,7 +21,8 @@ import jetbrains.mps.persistence.IdHelper;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AttributeOperations {
   private AttributeOperations() {
@@ -37,7 +39,14 @@ public class AttributeOperations {
     if (Sequence.fromIterable(list).isEmpty()) {
       return null;
     }
-    // todo: error if more than 1 attribute found 
+    if (Sequence.fromIterable(list).count() > 1) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error(Sequence.fromIterable(list).count() + " nodes match single value attribute. The first found node returned as the value.");
+      }
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("  node=" + node.getReference() + "; attribute=" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(list).first())), "virtual_getRole_1262430001741497900", new Object[]{}) + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
+      }
+    }
     return Sequence.fromIterable(list).first();
   }
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
@@ -46,7 +55,7 @@ public class AttributeOperations {
     return value;
   }
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
-    SNodeOperations.insertChild(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), value, anchor);
+    jetbrains.mps.util.SNodeOperations.insertChild(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), value, anchor);
     descriptor.update(value);
     return value;
   }
@@ -55,21 +64,26 @@ public class AttributeOperations {
     ListSequence.fromList(list).addSequence(Sequence.fromIterable(getAttributes(node, descriptor)));
     for (SNode attribute : ListSequence.fromList(list)) {
       if (value == null || value == attribute) {
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(attribute);
+        SNodeOperations.deleteNode(attribute);
       }
     }
   }
   public static SNode setAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     Iterable<SNode> oldlist = getAttributes(node, descriptor);
-    if (Sequence.fromIterable(oldlist).isEmpty()) {
-      if ((value == null)) {
-        return null;
-      }
+    if (Sequence.fromIterable(oldlist).isEmpty() && (value != null)) {
       addAttribute(node, descriptor, value);
     } else if ((value == null)) {
       deleteAttribute(node, descriptor, value);
     } else {
-      // todo: error if more than 1 attribute found 
+      if (Sequence.fromIterable(oldlist).count() > 1) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(Sequence.fromIterable(oldlist).count() + " nodes match signle value attribute during attribute replacing. Only the first found node replaced.");
+        }
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("  node=" + node.getReference() + "; attribute=" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first())), "virtual_getRole_1262430001741497900", new Object[]{}) + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
+        }
+      }
+      SNodeOperations.replaceWithAnother(Sequence.fromIterable(oldlist).first(), value);
       descriptor.update(value);
     }
     return value;
@@ -80,27 +94,27 @@ public class AttributeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
-    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    SModel model = SNodeOperations.getModel(node);
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
   }
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, SConcept newConcept) {
-    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    SModel model = SNodeOperations.getModel(node);
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConcept));
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
-    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    SModel model = SNodeOperations.getModel(node);
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
   }
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, SConcept newConceptFqname) {
-    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    SModel model = SNodeOperations.getModel(node);
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getLinkDeclaration(SNode attribute) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(getLink(attribute).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+    return SNodeOperations.as(getLink(attribute).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
   @Deprecated
   @ToRemove(version = 3.2)
@@ -124,7 +138,7 @@ public class AttributeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getPropertyDeclaration(SNode attribute) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(getProperty(attribute).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+    return SNodeOperations.as(getProperty(attribute).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
   @Deprecated
   @ToRemove(version = 3.2)
@@ -159,19 +173,19 @@ public class AttributeOperations {
     return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
   }
   public static Iterable<SNode> getNodeAttributes(SNode node) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"));
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"));
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0x(getPropertyName(it), propertyName);
       }
     });
   }
   public static Iterable<SNode> getPropertyAttributes(SNode node, final SProperty property) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0y(BehaviorReflection.invokeNonVirtual(SProperty.class, it, "jetbrains.mps.lang.core.structure.PropertyAttribute", "call_getProperty_1341860900488756504", new Object[]{}), property);
       }
@@ -180,29 +194,29 @@ public class AttributeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0z(getLinkRole(it), linkRole);
       }
     });
   }
   public static Iterable<SNode> getLinkAttributes(SNode node, final SReferenceLink link) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0ab(BehaviorReflection.invokeNonVirtual(SReferenceLink.class, it, "jetbrains.mps.lang.core.structure.LinkAttribute", "call_getLink_1341860900489573894", new Object[]{}), link);
       }
     });
   }
   public static boolean hasPropertyAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).isNotEmpty();
   }
   public static boolean hasLinkAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).isNotEmpty();
   }
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attributed, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), descriptor)).toListSequence());
+      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
     @Override
@@ -218,6 +232,7 @@ public class AttributeOperations {
       AttributeOperations.deleteAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(AttributeOperations.class);
   private static boolean eq_b2vkxw_a0a0a0a0a0a0x(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
