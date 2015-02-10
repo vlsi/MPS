@@ -178,6 +178,7 @@ public class ClassLoadersHolder {
                 toDispose.add(myClassLoaders.get(mRef));
               }
             }
+            myClassLoaders.remove(mRef);
             unloaded.add(mRef);
           }
         }
