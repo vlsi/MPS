@@ -7749,24 +7749,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="17Uvod" id="1KBnK_bG0Is" role="lGtFl">
-                      <property role="2qtEX9" value="name" />
-                      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-                      <node concept="3zFVjK" id="1KBnK_bG0It" role="3zH0cK">
-                        <node concept="3clFbS" id="1KBnK_bG0Iu" role="2VODD2">
-                          <node concept="3clFbF" id="1KBnK_bG0Iv" role="3cqZAp">
-                            <node concept="2OqwBi" id="1KBnK_bG0Iw" role="3clFbG">
-                              <node concept="3TrcHB" id="1KBnK_bG0Ix" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
-                              <node concept="3TUQnm" id="1KBnK_bG0Iy" role="2Oq$k0">
-                                <ref role="3TV0OU" to="tpdg:hYf4wkz" resolve="ConceptFunctionParameter_EditorCell" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                   </node>
                   <node concept="3clFbS" id="hYl1$Uz" role="3clF47">
                     <node concept="29HgVG" id="hYl2aKj" role="lGtFl">
