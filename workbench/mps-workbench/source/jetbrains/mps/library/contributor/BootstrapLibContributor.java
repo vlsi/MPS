@@ -18,7 +18,6 @@ package jetbrains.mps.library.contributor;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSWorkbenchComponents;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;

@@ -108,7 +108,7 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
   }
 
   public String toString() {
-    return getName() + " [temp module]";
+    return getModuleName() + " [temp module]";
   }
 
   @Override

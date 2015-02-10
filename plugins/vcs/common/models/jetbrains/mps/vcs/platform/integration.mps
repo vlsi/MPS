@@ -3122,15 +3122,20 @@
                                                   <node concept="17QB3L" id="3dMY8lFNSyx" role="1tU5fm" />
                                                   <node concept="3cpWs3" id="3dMY8lFNYkx" role="33vP2m">
                                                     <node concept="3cpWs3" id="3dMY8lFNXz7" role="3uHU7B">
-                                                      <node concept="Xl_RD" id="3dMY8lFNXzd" role="3uHU7B">
-                                                        <property role="Xl_RC" value="Cannot save merged model in 9th persistence. The possible reason: one of languages used in this model is not generated." />
+                                                      <node concept="3cpWs3" id="608r05_cMLU" role="3uHU7B">
+                                                        <node concept="Xl_RD" id="608r05_cMM0" role="3uHU7B">
+                                                          <property role="Xl_RC" value="The merged model cannot be saved using the new 9th persistence." />
+                                                        </node>
+                                                        <node concept="Xl_RD" id="608r05_cMM2" role="3uHU7w">
+                                                          <property role="Xl_RC" value=" The most-likely reason: one of the languages used in this model has not yet been generated." />
+                                                        </node>
                                                       </node>
                                                       <node concept="Xl_RD" id="3dMY8lFNYkB" role="3uHU7w">
-                                                        <property role="Xl_RC" value=" You can revert changes and first merge and generate used languages then merge this model again." />
+                                                        <property role="Xl_RC" value=" You can revert the changes, merge and generate the used languages first and only then merge this model again." />
                                                       </node>
                                                     </node>
                                                     <node concept="Xl_RD" id="3dMY8lFNYkD" role="3uHU7w">
-                                                      <property role="Xl_RC" value=" Or you can save model in old 8th persistence version and then migrate it to the latest persistence after all used languages will be merged." />
+                                                      <property role="Xl_RC" value=" Alternatively, you can save the model in old 8th persistence version and then migrate it to the latest persistence, after all used languages will have been merged manually." />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -9548,7 +9553,7 @@
                     <ref role="3cqZAo" to="3dcm:~AbstractVcsHelper.myProject" resolve="myProject" />
                   </node>
                   <node concept="Xl_RD" id="7UDnPJKkDIu" role="37wK5m">
-                    <property role="Xl_RC" value="Some conflicts in MPS models can be autoresolved. Resolve such conflicts automatically?" />
+                    <property role="Xl_RC" value="Conflicting changes have been detected. Some conflicts in the models can be autoresolved.\nResolve these conflicts automatically?" />
                   </node>
                   <node concept="Xl_RD" id="7UDnPJKkDIv" role="37wK5m">
                     <property role="Xl_RC" value="Conflict Resolver" />
@@ -9754,10 +9759,10 @@
                           </node>
                           <node concept="3cpWs3" id="3dMY8lFLIeg" role="3uHU7B">
                             <node concept="Xl_RD" id="3dMY8lFLIem" role="3uHU7B">
-                              <property role="Xl_RC" value="This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." />
+                              <property role="Xl_RC" value="This happens when you merge in models in an old persistence format and have not merged and re-generated all of their used languages." />
                             </node>
                             <node concept="Xl_RD" id="3dMY8lFLIeo" role="3uHU7w">
-                              <property role="Xl_RC" value=" It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again.\n" />
+                              <property role="Xl_RC" value=" It is recommended to first merge and re-generate the used languages, and then try to auto resolve the conflicts again.\n" />
                             </node>
                           </node>
                         </node>

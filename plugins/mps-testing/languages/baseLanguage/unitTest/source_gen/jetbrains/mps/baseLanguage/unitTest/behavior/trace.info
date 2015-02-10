@@ -35,7 +35,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
     </file>
     <file name="BTestCase_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
+      <unit at="11,0,43,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
     </file>
     <file name="BeforeTest_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
@@ -50,7 +50,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
     </file>
     <file name="ITestCase_BehaviorDescriptor.java">
-      <unit at="9,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
+      <unit at="9,0,16,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
     </file>
     <file name="ITestMethod_BehaviorDescriptor.java">
       <unit at="7,0,11,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
@@ -147,6 +147,7 @@
       <node id="1227020864862" at="66,217,67,394" concept="1" />
       <node id="1227020900805" at="67,394,68,19" concept="6" />
       <node id="4520990320128652662" at="70,81,71,165" concept="6" />
+      <node id="38079724654148624" at="73,85,74,17" concept="6" />
       <node id="1213877487741" at="17,0,19,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8084800926155112057" at="29,0,32,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1213877487741" at="37,0,40,0" concept="8" trace="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -154,6 +155,7 @@
       <node id="7691748101595466459" at="47,203,50,9" concept="3" />
       <node id="3324600636006964373" at="58,395,61,7" concept="3" />
       <node id="1213877487741" at="70,0,73,0" concept="8" trace="virtual_getSimpleClassName_1229278847513#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1213877487741" at="73,0,76,0" concept="8" trace="virtual_canRunInProcess_6436735966448788391#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8084800926155111948" at="21,49,25,5" concept="3" />
       <node id="8084800926155112050" at="27,43,32,20" concept="6" />
       <node id="1596174191051133108" at="40,88,45,5" concept="2" />
@@ -173,6 +175,7 @@
       <scope id="7691748101595466460" at="48,369,49,22" />
       <scope id="3324600636006964374" at="59,513,60,708" />
       <scope id="4520990320128651402" at="70,81,71,165" />
+      <scope id="38079724654036498" at="73,85,74,17" />
       <scope id="1213877487741" at="17,0,19,0">
         <var name="thisNode" id="1213877487741" />
       </scope>
@@ -191,6 +194,9 @@
         <var name="members" id="1227020780681" />
       </scope>
       <scope id="1213877487741" at="70,0,73,0">
+        <var name="thisNode" id="1213877487741" />
+      </scope>
+      <scope id="1213877487741" at="73,0,76,0">
         <var name="thisNode" id="1213877487741" />
       </scope>
       <scope id="3467804703473707110" at="57,175,61,7" />
@@ -230,7 +236,7 @@
       </scope>
       <unit id="8084800926155112057" at="28,216,32,9" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$2" />
       <unit id="8084800926155112048" at="26,399,34,5" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$1" />
-      <unit id="1213877487741" at="16,0,74,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
+      <unit id="1213877487741" at="16,0,77,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1215620458415">
@@ -254,13 +260,13 @@
       <node id="1229279172100" at="16,75,17,190" concept="6" />
       <node id="1229279129626" at="19,81,20,175" concept="6" />
       <node id="2148145109766218410" at="22,88,23,34" concept="6" />
-      <node id="2287490320665948750" at="25,82,26,28" concept="7" />
+      <node id="2287490320665948750" at="25,85,26,28" concept="7" />
       <node id="6436735966448788408" at="26,28,27,188" concept="6" />
       <node id="1216130717292" at="14,0,16,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1216130717292" at="16,0,19,0" concept="8" trace="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1216130717292" at="19,0,22,0" concept="8" trace="virtual_getSimpleClassName_1229278847513#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1216130717292" at="22,0,25,0" concept="8" trace="virtual_getTestMethods_2148145109766218395#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1216130717292" at="25,0,29,0" concept="8" trace="call_canRunInProcess_6436735966448788391#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1216130717292" at="25,0,29,0" concept="8" trace="virtual_canRunInProcess_6436735966448788391#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1216130717294" at="14,43,14,43" />
       <scope id="1216136193907" at="16,75,17,190" />
       <scope id="1229278847515" at="19,81,20,175" />
@@ -268,7 +274,7 @@
       <scope id="1216130717292" at="14,0,16,0">
         <var name="thisNode" id="1216130717292" />
       </scope>
-      <scope id="6436735966448788394" at="25,82,27,188" />
+      <scope id="6436735966448788394" at="25,85,27,188" />
       <scope id="1216130717292" at="16,0,19,0">
         <var name="thisNode" id="1216130717292" />
       </scope>

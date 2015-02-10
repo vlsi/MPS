@@ -209,7 +209,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3632,8 +3632,8 @@
                 <node concept="2OqwBi" id="5kpQnuAvidc" role="37vLTx">
                   <node concept="liA8E" id="5kpQnuAvjTR" role="2OqNvi">
                     <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
-                    <node concept="37vLTw" id="5WphLl0rv8u" role="37wK5m">
-                      <ref role="3cqZAo" node="5WphLl0qQHJ" resolve="jarFile" />
+                    <node concept="2GrUjf" id="DMIDDhifY_" role="37wK5m">
+                      <ref role="2Gs0qQ" node="3ag$5R8QM58" resolve="jar" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5kpQnuAvi9l" role="2Oq$k0">
@@ -4128,11 +4128,9 @@
               </node>
             </node>
             <node concept="3cpWsn" id="Y0KSQty4jy" role="1Duv9x">
-              <property role="TrG5h" value="libFile" />
+              <property role="TrG5h" value="libPath" />
               <property role="3TUv4t" value="false" />
-              <node concept="3uibUv" id="MVJ1IE95Gw" role="1tU5fm">
-                <ref role="3uigEE" to="fxg7:~File" resolve="File" />
-              </node>
+              <node concept="17QB3L" id="DMIDDhgNWs" role="1tU5fm" />
             </node>
             <node concept="3clFbS" id="Y0KSQty4j$" role="2LFqv$">
               <node concept="3clFbF" id="Y0KSQty4j_" role="3cqZAp">
@@ -4145,13 +4143,8 @@
                     <node concept="2ShNRf" id="6JI3W8Fx0U1" role="37wK5m">
                       <node concept="1pGfFk" id="6JI3W8Fx0U2" role="2ShVmc">
                         <ref role="37wK5l" to="c762:~LibraryContributor$LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibraryContributor.LibDescriptor" />
-                        <node concept="2OqwBi" id="Y0KSQty4jD" role="37wK5m">
-                          <node concept="37vLTw" id="MVJ1IE97AX" role="2Oq$k0">
-                            <ref role="3cqZAo" node="Y0KSQty4jy" resolve="libFile" />
-                          </node>
-                          <node concept="liA8E" id="Y0KSQty4jK" role="2OqNvi">
-                            <ref role="37wK5l" to="fxg7:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                          </node>
+                        <node concept="37vLTw" id="MVJ1IE97AX" role="37wK5m">
+                          <ref role="3cqZAo" node="Y0KSQty4jy" resolve="libPath" />
                         </node>
                         <node concept="37vLTw" id="2hWPXztVoTm" role="37wK5m">
                           <ref role="3cqZAo" node="2hWPXztVkJy" resolve="myClassLoader" />
@@ -7143,13 +7136,8 @@
                 <node concept="2OqwBi" id="2E$3v$W6cj8" role="37vLTx">
                   <node concept="liA8E" id="2E$3v$W6cj9" role="2OqNvi">
                     <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
-                    <node concept="2ShNRf" id="2E$3v$W6cjb" role="37wK5m">
-                      <node concept="1pGfFk" id="2E$3v$W6cjc" role="2ShVmc">
-                        <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                        <node concept="2GrUjf" id="2E$3v$W6cjd" role="37wK5m">
-                          <ref role="2Gs0qQ" node="2E$3v$W6cj4" resolve="jar" />
-                        </node>
-                      </node>
+                    <node concept="2GrUjf" id="DMIDDhicZe" role="37wK5m">
+                      <ref role="2Gs0qQ" node="2E$3v$W6cj4" resolve="jar" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="2E$3v$W6cje" role="2Oq$k0">

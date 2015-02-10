@@ -11,8 +11,8 @@ import org.junit.runners.model.InitializationError;
 import java.util.Collections;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.io.File;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
@@ -35,8 +35,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class MpsTestsSuite extends Suite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
   private static final String MPS_MACRO_PREFIX = "mps.macro.";
-
   private final Project contextProject;
+
   private final List<Runner> children;
 
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
@@ -52,7 +52,7 @@ public class MpsTestsSuite extends Suite {
   private static void initIdeaEnvironment() {
     // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
-    for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
+    for (IMapping<String, String> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.value());
     }
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
@@ -61,8 +61,8 @@ public class MpsTestsSuite extends Suite {
     MpsTestsSupport.initEnv(true, config);
   }
 
-  private static Map<String, File> loadLibraries() {
-    Map<String, File> result = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
+  private static Map<String, String> loadLibraries() {
+    Map<String, String> result = MapSequence.fromMap(new LinkedHashMap<String, String>(16, (float) 0.75, false));
     String librariesString = System.getProperty(PROPERTY_LIBRARY);
     if ((librariesString == null || librariesString.length() == 0)) {
       return result;
@@ -71,7 +71,7 @@ public class MpsTestsSuite extends Suite {
     for (String lib : libraries) {
       File libFile = new File(lib);
       if (libFile.exists()) {
-        MapSequence.fromMap(result).put(libFile.getName(), libFile);
+        MapSequence.fromMap(result).put(libFile.getName(), lib);
       }
     }
     return result;

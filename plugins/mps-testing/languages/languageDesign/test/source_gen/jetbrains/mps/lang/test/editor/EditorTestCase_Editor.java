@@ -16,7 +16,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -213,7 +213,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_6iwt9a_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestCase_Behavior.call_canRunInProcess_6436735966448788391(node) + "";
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canRunInProcess_6436735966448788391", new Object[]{}) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

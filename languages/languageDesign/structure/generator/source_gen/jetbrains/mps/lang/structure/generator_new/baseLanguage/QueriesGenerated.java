@@ -14,6 +14,7 @@ import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavi
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -60,7 +61,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
   }
   public static Object propertyMacro_GetPropertyValue_1174698110415(final PropertyMacroContext _context) {
-    return EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(_context.getNode());
+    String identifier = EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(_context.getNode());
+    if (IdentifierConstraintsUtil.isJavaReserved(identifier)) {
+      return "_" + identifier;
+    } else {
+      return identifier;
+    }
   }
   public static Object propertyMacro_GetPropertyValue_1174698054118(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

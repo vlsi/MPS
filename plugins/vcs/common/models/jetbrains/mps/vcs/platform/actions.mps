@@ -2756,10 +2756,10 @@
               <node concept="d57v9" id="3dMY8lFLwgU" role="3clFbG">
                 <node concept="3cpWs3" id="3dMY8lFLIeg" role="37vLTx">
                   <node concept="Xl_RD" id="3dMY8lFLIem" role="3uHU7B">
-                    <property role="Xl_RC" value="This can happen when you merge with old persistence models and have some of used languages not merged and re-generated." />
+                    <property role="Xl_RC" value="This happens when you merge in models in an old persistence format and have not merged and re-generated all of their used languages." />
                   </node>
                   <node concept="Xl_RD" id="3dMY8lFLIeo" role="3uHU7w">
-                    <property role="Xl_RC" value=" It is recommended first to merge and re-generate used languages then try to autoresolve conflicts again." />
+                    <property role="Xl_RC" value=" It is recommended to first merge and re-generate the used languages, and then try to auto resolve the conflicts again." />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3dMY8lFLvdJ" role="37vLTJ">

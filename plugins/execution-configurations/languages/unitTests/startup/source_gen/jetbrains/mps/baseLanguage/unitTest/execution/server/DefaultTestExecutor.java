@@ -8,6 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
 import java.io.IOException;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.util.Disposer;
 
 public class DefaultTestExecutor extends AbstractTestExecutor {
   private final String[] myArgs;
@@ -75,6 +79,19 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
   }
 
   protected void exit() {
+    final Application application = ApplicationManager.getApplication();
+    if (application != null) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          application.runWriteAction(new Runnable() {
+            public void run() {
+              Disposer.dispose(application);
+            }
+          });
+        }
+      });
+    }
+
     DefaultRunListener listener = ((DefaultRunListener) this.getListener());
     if (listener == null) {
       System.exit(EXIT_CODE_FOR_EXCEPTION);

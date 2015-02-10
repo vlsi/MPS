@@ -240,7 +240,11 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Void result = (Void) resultObject;
       if ("id".equals(name)) {
-        my_accumulatorField.pushNode(my_readHelperParam.getIdEncoder().parseNodeId(value), myLocator);
+        try {
+          my_accumulatorField.pushNode(my_readHelperParam.getIdEncoder().parseNodeId(value), myLocator);
+        } catch (IdEncoder.EncodingException e) {
+          throw new IllegalArgumentException(e);
+        }
         return;
       }
       super.handleAttribute(resultObject, name, value);

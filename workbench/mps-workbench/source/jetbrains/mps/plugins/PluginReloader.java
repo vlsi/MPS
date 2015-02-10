@@ -202,8 +202,8 @@ public class PluginReloader implements ApplicationComponent {
       if (pluginModules.isEmpty()) return;
       try {
         List<PluginContributor> toLoadContributors = calcContributorsToLoad(pluginModules);
-        myLoadedContributors.addAll(toLoadContributors);
         loadPlugins(toLoadContributors);
+        myLoadedContributors.addAll(toLoadContributors);
       } finally {
         LOG.info(String.format("Loading of %d plugins took %.3f s", pluginModules.size(), (System.nanoTime() - beginTime) / 1e9));
       }

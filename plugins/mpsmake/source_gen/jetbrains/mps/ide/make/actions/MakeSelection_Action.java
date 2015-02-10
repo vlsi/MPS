@@ -96,20 +96,21 @@ public class MakeSelection_Action extends BaseAction {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
     List<SModule> rv = ListSequence.fromList(new ArrayList<SModule>());
-    if (cmd != null) {
-      ListSequence.fromList(rv).insertElement(0, cmd);
-    } else if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+    if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
       ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules"))));
+    }
+    if (cmd != null && !(ListSequence.fromList(rv).contains(cmd))) {
+      ListSequence.fromList(rv).addElement(cmd);
     }
     return rv;
   }
   private List<SModel> getModels(final Map<String, Object> _params) {
     List<SModel> rv = ListSequence.fromList(new ArrayList<SModel>());
-    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
-      ListSequence.fromList(rv).insertElement(0, ((SModel) MapSequence.fromMap(_params).get("cmodel")));
-      return rv;
-    } else if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+    if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
       ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models"))));
+    }
+    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null && !(ListSequence.fromList(rv).contains(((SModel) MapSequence.fromMap(_params).get("cmodel"))))) {
+      ListSequence.fromList(rv).addElement(((SModel) MapSequence.fromMap(_params).get("cmodel")));
     }
     return rv;
   }

@@ -336,6 +336,10 @@ public class SearchPanel extends AbstractSearchPanel {
 //    usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
   }
 
+  boolean isTextFieldFocused(){
+    return myText.isFocusOwner();
+  }
+
   @Override
   public void deactivate() {
     setVisible(false);

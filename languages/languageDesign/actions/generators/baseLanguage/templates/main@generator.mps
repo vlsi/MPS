@@ -366,6 +366,9 @@
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
       <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
+      <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
+        <child id="1218047638032" name="baseName" index="2piZGb" />
+      </concept>
       <concept id="2721957369897614808" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" flags="nn" index="1bhEwm">
         <reference id="2721957369897614810" name="varmacro" index="1bhEwk" />
       </concept>
@@ -10343,6 +10346,29 @@
       <property role="2qtEX9" value="name" />
       <node concept="3zFVjK" id="4UrKinLhO_H" role="3zH0cK">
         <node concept="3clFbS" id="4UrKinLhO_I" role="2VODD2">
+          <node concept="3clFbJ" id="1EKi9wqH36d" role="3cqZAp">
+            <node concept="3clFbS" id="1EKi9wqH36f" role="3clFbx">
+              <node concept="3cpWs6" id="1EKi9wqH8qj" role="3cqZAp">
+                <node concept="2OqwBi" id="1EKi9wqH9xK" role="3cqZAk">
+                  <node concept="1iwH7S" id="1EKi9wqH8OU" role="2Oq$k0" />
+                  <node concept="2piZGk" id="1EKi9wqH9MY" role="2OqNvi">
+                    <node concept="Xl_RD" id="1EKi9wqHa0C" role="2piZGb">
+                      <property role="Xl_RC" value="DefaultNodeFactory" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="1EKi9wqH62N" role="3clFbw">
+              <node concept="10Nm6u" id="1EKi9wqH636" role="3uHU7w" />
+              <node concept="2OqwBi" id="1EKi9wqH4ym" role="3uHU7B">
+                <node concept="30H73N" id="1EKi9wqH3j2" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1EKi9wqH5wD" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="4UrKinLhQbe" role="3cqZAp">
             <node concept="2OqwBi" id="4UrKinLhQgE" role="3clFbG">
               <node concept="30H73N" id="4UrKinLhQbd" role="2Oq$k0" />

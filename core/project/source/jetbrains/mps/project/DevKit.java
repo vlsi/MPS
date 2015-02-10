@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -171,9 +172,18 @@ public class DevKit extends AbstractModule {
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.SModule#getModuleName()}
+   */
+  @ToRemove(version = 3.2)
+  @Deprecated
   @Override
+  public String getName() {
+    return getModuleName();
+  }
+
   public String toString() {
-    return getName() + " [devkit]";
+    return getModuleName() + " [devkit]";
   }
 
   public boolean isHidden() {

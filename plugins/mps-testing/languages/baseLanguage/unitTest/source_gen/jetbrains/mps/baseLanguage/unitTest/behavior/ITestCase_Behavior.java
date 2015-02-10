@@ -22,7 +22,7 @@ public class ITestCase_Behavior {
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return new ArrayList<SNode>();
   }
-  public static boolean call_canRunInProcess_6436735966448788391(SNode thisNode) {
+  public static boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode) {
     // method is a property 
     return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess")));
   }

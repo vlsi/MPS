@@ -151,7 +151,7 @@ public class TransformationTestRunner implements TestRunner {
 
   public void runTest(@NotNull final TransformationTest projectTest, final String className, final String methodName, boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Running test " + className);
+      LOG.info("Running test " + methodName);
     }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {

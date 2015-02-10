@@ -62,7 +62,6 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     super();
     setPreferredSize(new Dimension((int) getPreferredSize().getWidth(),
       (int) myText.getPreferredSize().getHeight() + 5));
-
     myDefaultBackground = myText.getBackground();
 
     JPanel mainPanel = new NonOpaquePanel(new FlowLayout(FlowLayout.LEFT, 5, 0));

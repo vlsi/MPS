@@ -241,10 +241,12 @@ public class ModuleClassLoader extends ClassLoader {
     return new IterableEnumeration<URL>(result);
   }
 
+  /**
+   * Note: the actual dispose is called asynchronously in the EDT.
+   * The motive is to allow a ClassLoading client to dispose asynchronously in the Event Dispatch Thread.
+   */
   public void dispose() {
     myDisposed = true;
-    // reason for clearing:
-    // if one classloader A leak some classes, all compile time dependencies of A leak too
     myClasses.clear();
     if (myDependenciesClassLoaders != null) {
       myDependenciesClassLoaders.clear();
@@ -281,12 +283,16 @@ public class ModuleClassLoader extends ClassLoader {
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 
-  private static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
+  public static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
     private final ReloadableModule myModule;
 
     private ModuleClassLoaderIsDisposedException(String msg, @NotNull ReloadableModule module) {
       super(msg);
       myModule = module;
+    }
+
+    public ReloadableModule getModule() {
+      return myModule;
     }
   }
 }

@@ -268,7 +268,9 @@ public class QueriesGenerated {
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             List<SNode> descendants = SNodeOperations.getNodeDescendants(_context.getParentNode(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), false, new SAbstractConcept[]{});
-            ListSequence.fromList(descendants).removeElement(_context.getCurrentTargetNode());
+            if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"))) {
+              ListSequence.fromList(descendants).removeElement(SNodeOperations.cast(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration")));
+            }
             return ListSequence.fromList(descendants).isEmpty();
           }
           public String getDescriptionText(String pattern) {

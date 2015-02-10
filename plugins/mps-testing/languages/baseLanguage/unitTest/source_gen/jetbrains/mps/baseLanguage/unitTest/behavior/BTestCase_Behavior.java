@@ -70,4 +70,7 @@ public class BTestCase_Behavior {
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
+  public static boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode) {
+    return false;
+  }
 }

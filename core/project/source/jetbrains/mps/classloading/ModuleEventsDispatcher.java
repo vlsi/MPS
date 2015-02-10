@@ -81,7 +81,9 @@ public class ModuleEventsDispatcher implements WriteActionListener {
     try {
       do {
         batchedEvents = myBatchEventsProcessor.flush();
-        fireModuleEvents(batchedEvents);
+        if (!batchedEvents.isEmpty()) {
+          fireModuleEvents(batchedEvents);
+        }
       } while (!batchedEvents.isEmpty());
     } finally {
       myBatchEventsProcessor.finishBatching();

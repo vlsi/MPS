@@ -280,6 +280,9 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
+        <reference id="1171323947160" name="concept" index="2SmgA8" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
@@ -291,6 +294,7 @@
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -366,6 +370,7 @@
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
+      <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
@@ -3612,6 +3617,131 @@
     <node concept="1YaCAy" id="7zL4upEowXb" role="1YuTPh">
       <property role="TrG5h" value="styleAttributeDeclaration" />
       <ref role="1YaFvo" to="tpc2:3t4KfBEkQvF" resolve="StyleAttributeDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6SUBcAgb1QA">
+    <property role="TrG5h" value="check_CellActionMapDeclarationUsed" />
+    <node concept="3clFbS" id="6SUBcAgb1QB" role="18ibNy">
+      <node concept="3clFbJ" id="6SUBcAgbkt2" role="3cqZAp">
+        <node concept="3clFbS" id="6SUBcAgbktE" role="3clFbx">
+          <node concept="a7r0C" id="6SUBcAgbkwQ" role="3cqZAp">
+            <node concept="Xl_RD" id="6SUBcAgbkxk" role="a7wSD">
+              <property role="Xl_RC" value="Unused action map" />
+            </node>
+            <node concept="1YBJjd" id="6SUBcAgbk$y" role="2OEOjV">
+              <ref role="1YBMHb" node="6SUBcAgb1QD" resolve="cellActionMapDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="6SUBcAgbjiS" role="3clFbw">
+          <node concept="2OqwBi" id="6SUBcAgb5BG" role="2Oq$k0">
+            <node concept="2OqwBi" id="6SUBcAgb3Uh" role="2Oq$k0">
+              <node concept="2OqwBi" id="6SUBcAgb3e8" role="2Oq$k0">
+                <node concept="1YBJjd" id="6SUBcAgb3as" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6SUBcAgb1QD" resolve="cellActionMapDeclaration" />
+                </node>
+                <node concept="I4A8Y" id="6SUBcAgb3Eg" role="2OqNvi" />
+              </node>
+              <node concept="2SmgA7" id="6SUBcAgb443" role="2OqNvi">
+                <ref role="2SmgA8" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+              </node>
+            </node>
+            <node concept="1z4cxt" id="6SUBcAgbj8x" role="2OqNvi">
+              <node concept="1bVj0M" id="6SUBcAgbj8z" role="23t8la">
+                <node concept="3clFbS" id="6SUBcAgbj8$" role="1bW5cS">
+                  <node concept="3clFbF" id="6SUBcAgbj8_" role="3cqZAp">
+                    <node concept="17R0WA" id="6SUBcAgbj8A" role="3clFbG">
+                      <node concept="1YBJjd" id="6SUBcAgbj8B" role="3uHU7w">
+                        <ref role="1YBMHb" node="6SUBcAgb1QD" resolve="cellActionMapDeclaration" />
+                      </node>
+                      <node concept="2OqwBi" id="6SUBcAgbj8C" role="3uHU7B">
+                        <node concept="37vLTw" id="6SUBcAgbj8D" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6SUBcAgbj8F" resolve="it" />
+                        </node>
+                        <node concept="3TrEf2" id="6SUBcAgbj8E" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:g_ERwze" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="6SUBcAgbj8F" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="6SUBcAgbj8G" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3w_OXm" id="6SUBcAgbjMQ" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6SUBcAgb1QD" role="1YuTPh">
+      <property role="TrG5h" value="cellActionMapDeclaration" />
+      <ref role="1YaFvo" to="tpc2:g_h_SNY" resolve="CellActionMapDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6SUBcAgbk_E">
+    <property role="TrG5h" value="check_CellKeyMapDeclarationUsed" />
+    <property role="3GE5qa" value="CellKeyMap" />
+    <node concept="3clFbS" id="6SUBcAgbk_F" role="18ibNy">
+      <node concept="3clFbJ" id="6SUBcAgbkPb" role="3cqZAp">
+        <node concept="3clFbS" id="6SUBcAgbkPc" role="3clFbx">
+          <node concept="a7r0C" id="6SUBcAgbkPd" role="3cqZAp">
+            <node concept="Xl_RD" id="6SUBcAgbkPe" role="a7wSD">
+              <property role="Xl_RC" value="Unused key map" />
+            </node>
+            <node concept="1YBJjd" id="6SUBcAgblpP" role="2OEOjV">
+              <ref role="1YBMHb" node="6SUBcAgbk_H" resolve="cellKeyMapDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="6SUBcAgbkPg" role="3clFbw">
+          <node concept="2OqwBi" id="6SUBcAgbkPh" role="2Oq$k0">
+            <node concept="2OqwBi" id="6SUBcAgbkPi" role="2Oq$k0">
+              <node concept="2OqwBi" id="6SUBcAgbkPj" role="2Oq$k0">
+                <node concept="1YBJjd" id="6SUBcAgbljC" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6SUBcAgbk_H" resolve="cellKeyMapDeclaration" />
+                </node>
+                <node concept="I4A8Y" id="6SUBcAgbkPl" role="2OqNvi" />
+              </node>
+              <node concept="2SmgA7" id="6SUBcAgbkPm" role="2OqNvi">
+                <ref role="2SmgA8" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+              </node>
+            </node>
+            <node concept="1z4cxt" id="6SUBcAgbkPn" role="2OqNvi">
+              <node concept="1bVj0M" id="6SUBcAgbkPo" role="23t8la">
+                <node concept="3clFbS" id="6SUBcAgbkPp" role="1bW5cS">
+                  <node concept="3clFbF" id="6SUBcAgbkPq" role="3cqZAp">
+                    <node concept="17R0WA" id="6SUBcAgbkPr" role="3clFbG">
+                      <node concept="1YBJjd" id="6SUBcAgblu$" role="3uHU7w">
+                        <ref role="1YBMHb" node="6SUBcAgbk_H" resolve="cellKeyMapDeclaration" />
+                      </node>
+                      <node concept="2OqwBi" id="6SUBcAgbkPt" role="3uHU7B">
+                        <node concept="37vLTw" id="6SUBcAgbkPu" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6SUBcAgbkPw" resolve="it" />
+                        </node>
+                        <node concept="3TrEf2" id="6SUBcAgblZh" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:fJ4QXdL" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="6SUBcAgbkPw" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="6SUBcAgbkPx" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3w_OXm" id="6SUBcAgbkPy" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6SUBcAgbk_H" role="1YuTPh">
+      <property role="TrG5h" value="cellKeyMapDeclaration" />
+      <ref role="1YaFvo" to="tpc2:fJ25Fcr" resolve="CellKeyMapDeclaration" />
     </node>
   </node>
 </model>

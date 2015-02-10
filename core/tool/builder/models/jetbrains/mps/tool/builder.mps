@@ -557,9 +557,7 @@
         <node concept="3cpWs8" id="6wglnuBcMNh" role="3cqZAp">
           <node concept="3cpWsn" id="6wglnuBcMNi" role="3cpWs9">
             <property role="TrG5h" value="targetJavaVersion" />
-            <node concept="3uibUv" id="6wglnuBcMNa" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="DMIDDhhGE0" role="1tU5fm" />
             <node concept="2OqwBi" id="6wglnuBcMNj" role="33vP2m">
               <node concept="37vLTw" id="6wglnuBcMNk" role="2Oq$k0">
                 <ref role="3cqZAo" node="6wglnuBc4_Q" resolve="myJavaProperties" />
@@ -765,10 +763,15 @@
                 <node concept="2OqwBi" id="5kpQnuAHvX4" role="37vLTx">
                   <node concept="liA8E" id="5kpQnuAH$0b" role="2OqNvi">
                     <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
-                    <node concept="2OqwBi" id="5kpQnuAHNhE" role="37wK5m">
-                      <node concept="3AV6Ez" id="5kpQnuAHR3O" role="2OqNvi" />
-                      <node concept="2GrUjf" id="5kpQnuAHJgL" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="5kpQnuAHkOg" resolve="lib" />
+                    <node concept="2OqwBi" id="DMIDDhhTbv" role="37wK5m">
+                      <node concept="2OqwBi" id="5kpQnuAHNhE" role="2Oq$k0">
+                        <node concept="3AV6Ez" id="5kpQnuAHR3O" role="2OqNvi" />
+                        <node concept="2GrUjf" id="5kpQnuAHJgL" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="5kpQnuAHkOg" resolve="lib" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="DMIDDhiooA" role="2OqNvi">
+                        <ref role="37wK5l" to="fxg7:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                       </node>
                     </node>
                   </node>

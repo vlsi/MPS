@@ -51,86 +51,89 @@
       <node id="3613324658897711684" at="116,51,117,42" concept="7" />
       <node id="3613324658897711698" at="120,31,121,74" concept="2" />
       <node id="3613324658897711715" at="124,34,125,77" concept="2" />
-      <node id="8222824327012891725" at="127,46,128,110" concept="6" />
-      <node id="8222824327012905326" at="130,120,131,243" concept="6" />
-      <node id="8222824327012905458" at="132,26,133,110" concept="2" />
-      <node id="8222824327012891714" at="135,7,136,42" concept="2" />
-      <node id="3613324658897711725" at="139,71,140,82" concept="7" />
-      <node id="3613324658897711524" at="142,69,143,53" concept="7" />
-      <node id="18693120959317320" at="149,44,150,18" concept="7" />
-      <node id="3613324658897711769" at="156,49,157,18" concept="7" />
-      <node id="3613324658897711772" at="161,56,162,18" concept="7" />
-      <node id="3613324658897711776" at="165,71,166,18" concept="7" />
-      <node id="3613324658897711779" at="169,74,170,18" concept="7" />
-      <node id="3613324658897711786" at="185,58,186,36" concept="7" />
-      <node id="3613324658897711442" at="190,0,191,0" concept="3" trace="myVirtualFile" />
-      <node id="3613324658897711445" at="191,0,192,0" concept="3" trace="myIsMergedWithConflict" />
-      <node id="3613324658897711789" at="192,51,193,28" concept="2" />
-      <node id="3613324658897711794" at="196,100,197,36" concept="2" />
-      <node id="3613324658897711800" at="200,90,201,36" concept="2" />
-      <node id="3613324658897711813" at="205,76,206,68" concept="6" />
-      <node id="3613324658897711836" at="208,104,209,42" concept="2" />
-      <node id="3613324658897711841" at="214,35,215,36" concept="7" />
-      <node id="8222824327012891025" at="222,39,223,36" concept="2" />
-      <node id="8222824327012891047" at="227,52,228,38" concept="2" />
-      <node id="7860944453394965435" at="233,36,234,37" concept="2" />
-      <node id="7860944453394965435" at="235,5,236,0" concept="8" />
-      <node id="3613324658897711380" at="146,0,148,0" concept="1" trace="StubChangeListManagerGate#()V" />
-      <node id="8222824327012887838" at="219,0,221,0" concept="1" trace="MyFileStatusListener#()V" />
+      <node id="933498344605274415" at="127,46,128,57" concept="6" />
+      <node id="933498344605296685" at="129,30,130,13" concept="7" />
+      <node id="8222824327012891725" at="131,5,132,95" concept="6" />
+      <node id="8222824327012905326" at="134,120,135,243" concept="6" />
+      <node id="8222824327012905458" at="136,26,137,95" concept="2" />
+      <node id="8222824327012891714" at="139,7,140,42" concept="2" />
+      <node id="3613324658897711725" at="143,71,144,82" concept="7" />
+      <node id="3613324658897711524" at="146,69,147,53" concept="7" />
+      <node id="18693120959317320" at="153,44,154,18" concept="7" />
+      <node id="3613324658897711769" at="160,49,161,18" concept="7" />
+      <node id="3613324658897711772" at="165,56,166,18" concept="7" />
+      <node id="3613324658897711776" at="169,71,170,18" concept="7" />
+      <node id="3613324658897711779" at="173,74,174,18" concept="7" />
+      <node id="3613324658897711786" at="189,58,190,36" concept="7" />
+      <node id="3613324658897711442" at="194,0,195,0" concept="3" trace="myVirtualFile" />
+      <node id="3613324658897711445" at="195,0,196,0" concept="3" trace="myIsMergedWithConflict" />
+      <node id="3613324658897711789" at="196,51,197,28" concept="2" />
+      <node id="3613324658897711794" at="200,100,201,36" concept="2" />
+      <node id="3613324658897711800" at="204,90,205,36" concept="2" />
+      <node id="3613324658897711813" at="209,76,210,68" concept="6" />
+      <node id="3613324658897711836" at="212,104,213,42" concept="2" />
+      <node id="3613324658897711841" at="218,35,219,36" concept="7" />
+      <node id="8222824327012891025" at="226,39,227,36" concept="2" />
+      <node id="8222824327012891047" at="231,52,232,38" concept="2" />
+      <node id="7860944453394965435" at="237,36,238,37" concept="2" />
+      <node id="7860944453394965435" at="239,5,240,0" concept="8" />
+      <node id="3613324658897711380" at="150,0,152,0" concept="1" trace="StubChangeListManagerGate#()V" />
+      <node id="8222824327012887838" at="223,0,225,0" concept="1" trace="MyFileStatusListener#()V" />
       <node id="3613324658897711582" at="68,49,71,5" concept="4" />
       <node id="3613324658897711610" at="74,60,77,5" concept="4" />
       <node id="7860944453394967332" at="87,31,90,5" concept="4" />
       <node id="7794712048471487317" at="95,0,98,0" concept="5" trace="directoryMappingChanged#()V" />
       <node id="5678297231090798651" at="99,100,102,5" concept="4" />
       <node id="3613324658897711680" at="116,0,119,0" concept="5" trace="isChangeListManagerInitialized#()Z" />
-      <node id="8222824327012905338" at="131,243,134,9" concept="4" />
-      <node id="3613324658897711720" at="139,0,142,0" concept="5" trace="getUnversionedFilesFromChangeListManager#()Ljava/util/List;" />
-      <node id="3613324658897711517" at="142,0,145,0" concept="10" trace="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/MPSVcsManager;" />
-      <node id="6976105926957963289" at="152,0,155,0" concept="5" trace="setDefaultChangeList#(Ljava/lang/String;)V" />
-      <node id="3613324658897711406" at="172,0,175,0" concept="5" trace="editComment#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3613324658897711413" at="175,0,178,0" concept="5" trace="editName#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3613324658897711420" at="178,0,181,0" concept="5" trace="moveChanges#(Ljava/lang/String;Ljava/util/Collection;)V" />
-      <node id="3613324658897711428" at="181,0,184,0" concept="5" trace="setListsToDisappear#(Ljava/util/Collection;)V" />
-      <node id="3613324658897711448" at="192,0,195,0" concept="1" trace="MyChangelistBuilder#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-      <node id="3613324658897711824" at="207,38,210,11" concept="4" />
-      <node id="3613324658897711478" at="214,0,217,0" concept="5" trace="isInConflict#()Z" />
-      <node id="8222824327012891027" at="226,62,229,7" concept="4" />
-      <node id="7860944453394965435" at="232,82,235,5" concept="4" />
+      <node id="933498344605291239" at="128,57,131,5" concept="4" />
+      <node id="8222824327012905338" at="135,243,138,9" concept="4" />
+      <node id="3613324658897711720" at="143,0,146,0" concept="5" trace="getUnversionedFilesFromChangeListManager#()Ljava/util/List;" />
+      <node id="3613324658897711517" at="146,0,149,0" concept="10" trace="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/MPSVcsManager;" />
+      <node id="6976105926957963289" at="156,0,159,0" concept="5" trace="setDefaultChangeList#(Ljava/lang/String;)V" />
+      <node id="3613324658897711406" at="176,0,179,0" concept="5" trace="editComment#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3613324658897711413" at="179,0,182,0" concept="5" trace="editName#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3613324658897711420" at="182,0,185,0" concept="5" trace="moveChanges#(Ljava/lang/String;Ljava/util/Collection;)V" />
+      <node id="3613324658897711428" at="185,0,188,0" concept="5" trace="setListsToDisappear#(Ljava/util/Collection;)V" />
+      <node id="3613324658897711448" at="196,0,199,0" concept="1" trace="MyChangelistBuilder#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+      <node id="3613324658897711824" at="211,38,214,11" concept="4" />
+      <node id="3613324658897711478" at="218,0,221,0" concept="5" trace="isInConflict#()Z" />
+      <node id="8222824327012891027" at="230,62,233,7" concept="4" />
+      <node id="7860944453394965435" at="236,82,239,5" concept="4" />
       <node id="3613324658897711514" at="55,0,59,0" concept="5" trace="changeListUpdateDone#()V" />
       <node id="3613324658897711686" at="119,0,123,0" concept="5" trace="initComponent#()V" />
       <node id="3613324658897711703" at="123,0,127,0" concept="5" trace="disposeComponent#()V" />
-      <node id="18693120959317314" at="148,0,152,0" concept="5" trace="getStatus#(Ljava/io/File;)Lcom/intellij/openapi/vcs/FileStatus;" />
-      <node id="3613324658897711383" at="155,0,159,0" concept="5" trace="getListsCopy#()Ljava/util/List;" />
-      <node id="3613324658897711392" at="164,0,168,0" concept="5" trace="addChangeList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-      <node id="3613324658897711399" at="168,0,172,0" concept="5" trace="findOrCreateList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-      <node id="3613324658897711434" at="184,0,188,0" concept="5" trace="getStatus#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/vcs/FileStatus;" />
-      <node id="3613324658897711453" at="195,0,199,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-      <node id="3613324658897711462" at="199,0,203,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Ljava/lang/String;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-      <node id="8222824327012887843" at="221,0,225,0" concept="5" trace="fileStatusesChanged#()V" />
+      <node id="18693120959317314" at="152,0,156,0" concept="5" trace="getStatus#(Ljava/io/File;)Lcom/intellij/openapi/vcs/FileStatus;" />
+      <node id="3613324658897711383" at="159,0,163,0" concept="5" trace="getListsCopy#()Ljava/util/List;" />
+      <node id="3613324658897711392" at="168,0,172,0" concept="5" trace="addChangeList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+      <node id="3613324658897711399" at="172,0,176,0" concept="5" trace="findOrCreateList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+      <node id="3613324658897711434" at="188,0,192,0" concept="5" trace="getStatus#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/vcs/FileStatus;" />
+      <node id="3613324658897711453" at="199,0,203,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+      <node id="3613324658897711462" at="203,0,207,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Ljava/lang/String;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+      <node id="8222824327012887843" at="225,0,229,0" concept="5" trace="fileStatusesChanged#()V" />
       <node id="3613324658897711529" at="62,0,67,0" concept="1" trace="MPSVcsManager#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/changes/ChangeListManager;)V" />
       <node id="3613324658897711623" at="78,99,83,5" concept="12" />
       <node id="7794712048471487315" at="93,65,98,6" concept="6" />
       <node id="3613324658897711652" at="105,0,110,0" concept="5" trace="projectClosed#()V" />
-      <node id="3613324658897711387" at="159,0,164,0" concept="5" trace="findChangeList#(Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-      <node id="3613324658897711819" at="206,68,211,9" concept="4" />
+      <node id="3613324658897711387" at="163,0,168,0" concept="5" trace="findChangeList#(Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+      <node id="3613324658897711819" at="210,68,215,9" concept="4" />
       <node id="3613324658897711508" at="54,0,60,0" concept="3" trace="myChangeListUpdateListener" />
       <node id="3613324658897711656" at="110,0,116,0" concept="5" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="8222824327012891746" at="129,47,135,7" concept="4" />
-      <node id="8222824327012887847" at="225,0,231,0" concept="5" trace="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-      <node id="7860944453394965435" at="232,0,238,0" concept="10" trace="check_2eqssr_a1a21#(Lcom/intellij/util/messages/MessageBusConnection;)V" />
-      <node id="3613324658897711805" at="204,61,212,7" concept="4" />
-      <node id="8222824327012891737" at="128,110,137,5" concept="4" />
-      <node id="3613324658897711471" at="203,0,214,0" concept="5" trace="processChange#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-      <node id="8222824327012891020" at="127,0,139,0" concept="5" trace="checkIfProjectIsConflicting#()V" />
+      <node id="8222824327012891746" at="133,47,139,7" concept="4" />
+      <node id="8222824327012887847" at="229,0,235,0" concept="5" trace="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+      <node id="7860944453394965435" at="236,0,242,0" concept="10" trace="check_2eqssr_a1a21#(Lcom/intellij/util/messages/MessageBusConnection;)V" />
+      <node id="3613324658897711805" at="208,61,216,7" concept="4" />
+      <node id="8222824327012891737" at="132,95,141,5" concept="4" />
+      <node id="3613324658897711471" at="207,0,218,0" concept="5" trace="processChange#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+      <node id="8222824327012891020" at="127,0,143,0" concept="5" trace="checkIfProjectIsConflicting#()V" />
       <node id="3613324658897711551" at="67,0,86,0" concept="5" trace="isInConflict#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
       <node id="3613324658897711648" at="86,0,105,0" concept="5" trace="projectOpened#()V" />
-      <scope id="3613324658897711767" at="146,40,146,40" />
-      <scope id="6976105926957963295" at="153,62,153,62" />
-      <scope id="3613324658897711781" at="173,58,173,58" />
-      <scope id="3613324658897711782" at="176,58,176,58" />
-      <scope id="3613324658897711783" at="179,72,179,72" />
-      <scope id="3613324658897711784" at="182,63,182,63" />
-      <scope id="8222824327012887841" at="219,36,219,36" />
+      <scope id="3613324658897711767" at="150,40,150,40" />
+      <scope id="6976105926957963295" at="157,62,157,62" />
+      <scope id="3613324658897711781" at="177,58,177,58" />
+      <scope id="3613324658897711782" at="180,58,180,58" />
+      <scope id="3613324658897711783" at="183,72,183,72" />
+      <scope id="3613324658897711784" at="186,63,186,63" />
+      <scope id="8222824327012887841" at="223,36,223,36" />
       <scope id="3613324658897711843" at="56,40,57,44" />
       <scope id="3613324658897711586" at="69,22,70,19" />
       <scope id="3613324658897711614" at="75,33,76,19" />
@@ -146,123 +149,125 @@
       <scope id="3613324658897711683" at="116,51,117,42" />
       <scope id="3613324658897711689" at="120,31,121,74" />
       <scope id="3613324658897711706" at="124,34,125,77" />
-      <scope id="8222824327012905339" at="132,26,133,110" />
-      <scope id="3613324658897711724" at="139,71,140,82" />
-      <scope id="3613324658897711523" at="142,69,143,53" />
-      <scope id="18693120959317319" at="149,44,150,18" />
-      <scope id="3613324658897711768" at="156,49,157,18" />
-      <scope id="3613324658897711771" at="161,56,162,18" />
-      <scope id="3613324658897711775" at="165,71,166,18" />
-      <scope id="3613324658897711778" at="169,74,170,18" />
-      <scope id="3613324658897711785" at="185,58,186,36" />
-      <scope id="3613324658897711788" at="192,51,193,28" />
-      <scope id="3613324658897711793" at="196,100,197,36" />
-      <scope id="3613324658897711799" at="200,90,201,36" />
-      <scope id="3613324658897711835" at="208,104,209,42" />
-      <scope id="3613324658897711840" at="214,35,215,36" />
-      <scope id="8222824327012887846" at="222,39,223,36" />
-      <scope id="8222824327012891029" at="227,52,228,38" />
-      <scope id="7860944453394965435" at="233,36,234,37" />
+      <scope id="933498344605291241" at="129,30,130,13" />
+      <scope id="8222824327012905339" at="136,26,137,95" />
+      <scope id="3613324658897711724" at="143,71,144,82" />
+      <scope id="3613324658897711523" at="146,69,147,53" />
+      <scope id="18693120959317319" at="153,44,154,18" />
+      <scope id="3613324658897711768" at="160,49,161,18" />
+      <scope id="3613324658897711771" at="165,56,166,18" />
+      <scope id="3613324658897711775" at="169,71,170,18" />
+      <scope id="3613324658897711778" at="173,74,174,18" />
+      <scope id="3613324658897711785" at="189,58,190,36" />
+      <scope id="3613324658897711788" at="196,51,197,28" />
+      <scope id="3613324658897711793" at="200,100,201,36" />
+      <scope id="3613324658897711799" at="204,90,205,36" />
+      <scope id="3613324658897711835" at="212,104,213,42" />
+      <scope id="3613324658897711840" at="218,35,219,36" />
+      <scope id="8222824327012887846" at="226,39,227,36" />
+      <scope id="8222824327012891029" at="231,52,232,38" />
+      <scope id="7860944453394965435" at="237,36,238,37" />
       <scope id="3613324658897711655" at="106,31,108,47" />
-      <scope id="3613324658897711380" at="146,0,148,0" />
-      <scope id="8222824327012887838" at="219,0,221,0" />
+      <scope id="3613324658897711380" at="150,0,152,0" />
+      <scope id="8222824327012887838" at="223,0,225,0" />
       <scope id="3613324658897711538" at="62,102,65,36" />
       <scope id="7794712048471487317" at="95,0,98,0" />
       <scope id="3613324658897711680" at="116,0,119,0" />
-      <scope id="3613324658897711720" at="139,0,142,0" />
-      <scope id="3613324658897711517" at="142,0,145,0">
+      <scope id="3613324658897711720" at="143,0,146,0" />
+      <scope id="3613324658897711517" at="146,0,149,0">
         <var name="project" id="3613324658897711520" />
       </scope>
-      <scope id="6976105926957963289" at="152,0,155,0">
+      <scope id="6976105926957963289" at="156,0,159,0">
         <var name="string" id="6976105926957963292" />
       </scope>
-      <scope id="3613324658897711406" at="172,0,175,0">
+      <scope id="3613324658897711406" at="176,0,179,0">
         <var name="comment" id="3613324658897711411" />
         <var name="name" id="3613324658897711409" />
       </scope>
-      <scope id="3613324658897711413" at="175,0,178,0">
+      <scope id="3613324658897711413" at="179,0,182,0">
         <var name="newName" id="3613324658897711418" />
         <var name="oldName" id="3613324658897711416" />
       </scope>
-      <scope id="3613324658897711420" at="178,0,181,0">
+      <scope id="3613324658897711420" at="182,0,185,0">
         <var name="changes" id="3613324658897711425" />
         <var name="toList" id="3613324658897711423" />
       </scope>
-      <scope id="3613324658897711428" at="181,0,184,0">
+      <scope id="3613324658897711428" at="185,0,188,0">
         <var name="names" id="3613324658897711431" />
       </scope>
-      <scope id="3613324658897711448" at="192,0,195,0">
+      <scope id="3613324658897711448" at="196,0,199,0">
         <var name="vfile" id="3613324658897711451" />
       </scope>
-      <scope id="3613324658897711823" at="207,38,210,11" />
-      <scope id="3613324658897711478" at="214,0,217,0" />
-      <scope id="8222824327012887853" at="226,62,229,7" />
+      <scope id="3613324658897711823" at="211,38,214,11" />
+      <scope id="3613324658897711478" at="218,0,221,0" />
+      <scope id="8222824327012887853" at="230,62,233,7" />
       <scope id="3613324658897711514" at="55,0,59,0" />
       <scope id="3613324658897711686" at="119,0,123,0" />
       <scope id="3613324658897711703" at="123,0,127,0" />
-      <scope id="8222824327012891747" at="130,120,134,9">
+      <scope id="8222824327012891747" at="134,120,138,9">
         <var name="answer" id="8222824327012905327" />
       </scope>
-      <scope id="18693120959317314" at="148,0,152,0">
+      <scope id="18693120959317314" at="152,0,156,0">
         <var name="file" id="18693120959317317" />
       </scope>
-      <scope id="3613324658897711383" at="155,0,159,0" />
-      <scope id="3613324658897711392" at="164,0,168,0">
+      <scope id="3613324658897711383" at="159,0,163,0" />
+      <scope id="3613324658897711392" at="168,0,172,0">
         <var name="comment" id="3613324658897711397" />
         <var name="name" id="3613324658897711395" />
       </scope>
-      <scope id="3613324658897711399" at="168,0,172,0">
+      <scope id="3613324658897711399" at="172,0,176,0">
         <var name="comment" id="3613324658897711404" />
         <var name="name" id="3613324658897711402" />
       </scope>
-      <scope id="3613324658897711434" at="184,0,188,0">
+      <scope id="3613324658897711434" at="188,0,192,0">
         <var name="virtualFile" id="3613324658897711437" />
       </scope>
-      <scope id="3613324658897711453" at="195,0,199,0">
+      <scope id="3613324658897711453" at="199,0,203,0">
         <var name="change" id="3613324658897711456" />
         <var name="changeList" id="3613324658897711458" />
         <var name="vcsKey" id="3613324658897711460" />
       </scope>
-      <scope id="3613324658897711462" at="199,0,203,0">
+      <scope id="3613324658897711462" at="203,0,207,0">
         <var name="change" id="3613324658897711465" />
         <var name="changeListName" id="3613324658897711467" />
         <var name="vcsKey" id="3613324658897711469" />
       </scope>
-      <scope id="8222824327012887843" at="221,0,225,0" />
-      <scope id="7860944453394965435" at="232,82,236,0" />
+      <scope id="8222824327012887843" at="225,0,229,0" />
+      <scope id="7860944453394965435" at="236,82,240,0" />
       <scope id="3613324658897711529" at="62,0,67,0">
         <var name="clmanager" id="3613324658897711536" />
         <var name="manager" id="3613324658897711534" />
         <var name="project" id="3613324658897711532" />
       </scope>
       <scope id="3613324658897711652" at="105,0,110,0" />
-      <scope id="3613324658897711387" at="159,0,164,0">
+      <scope id="3613324658897711387" at="163,0,168,0">
         <var name="name" id="3613324658897711390" />
       </scope>
       <scope id="3613324658897711656" at="110,0,116,0" />
-      <scope id="3613324658897711812" at="205,76,211,9">
+      <scope id="3613324658897711812" at="209,76,215,9">
         <var name="contentRevision" id="3613324658897711814" />
       </scope>
-      <scope id="8222824327012887847" at="225,0,231,0">
+      <scope id="8222824327012887847" at="229,0,235,0">
         <var name="file" id="8222824327012887850" />
       </scope>
-      <scope id="7860944453394965435" at="232,0,238,0">
+      <scope id="7860944453394965435" at="236,0,242,0">
         <var name="checkedDotOperand" id="7860944453394965435" />
       </scope>
-      <scope id="8222824327012891738" at="129,47,136,42" />
-      <scope id="3613324658897711804" at="204,61,212,7" />
-      <scope id="8222824327012891023" at="127,46,137,5">
-        <var name="currentStatus" id="8222824327012891726" />
-      </scope>
-      <scope id="3613324658897711471" at="203,0,214,0">
+      <scope id="8222824327012891738" at="133,47,140,42" />
+      <scope id="3613324658897711804" at="208,61,216,7" />
+      <scope id="3613324658897711471" at="207,0,218,0">
         <var name="change" id="3613324658897711474" />
         <var name="vcsKey" id="3613324658897711476" />
       </scope>
-      <scope id="8222824327012891020" at="127,0,139,0" />
+      <scope id="8222824327012891023" at="127,46,141,5">
+        <var name="currentStatus" id="8222824327012891726" />
+        <var name="projectFile" id="933498344605274416" />
+      </scope>
       <scope id="3613324658897711651" at="87,31,103,89">
         <var name="mergeDriverNotification" id="7307809004211498228" />
         <var name="vcsListener" id="7794712048471487316" />
       </scope>
+      <scope id="8222824327012891020" at="127,0,143,0" />
       <scope id="3613324658897711557" at="67,56,84,34">
         <var name="builder" id="3613324658897711618" />
         <var name="changeProvider" id="3613324658897711605" />
@@ -275,10 +280,10 @@
       <scope id="3613324658897711648" at="86,0,105,0" />
       <unit id="7794712048471487317" at="94,34,98,5" name="jetbrains.mps.vcs.MPSVcsManager$2" />
       <unit id="3613324658897711513" at="54,67,59,3" name="jetbrains.mps.vcs.MPSVcsManager$1" />
-      <unit id="8222824327012887836" at="218,0,232,0" name="jetbrains.mps.vcs.MPSVcsManager$MyFileStatusListener" />
-      <unit id="3613324658897711439" at="189,0,218,0" name="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
-      <unit id="3613324658897711377" at="145,0,189,0" name="jetbrains.mps.vcs.MPSVcsManager$StubChangeListManagerGate" />
-      <unit id="3613324658897711340" at="47,0,239,0" name="jetbrains.mps.vcs.MPSVcsManager" />
+      <unit id="8222824327012887836" at="222,0,236,0" name="jetbrains.mps.vcs.MPSVcsManager$MyFileStatusListener" />
+      <unit id="3613324658897711439" at="193,0,222,0" name="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
+      <unit id="3613324658897711377" at="149,0,193,0" name="jetbrains.mps.vcs.MPSVcsManager$StubChangeListManagerGate" />
+      <unit id="3613324658897711340" at="47,0,243,0" name="jetbrains.mps.vcs.MPSVcsManager" />
     </file>
   </root>
   <root nodeRef="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)/3613324658897713212">

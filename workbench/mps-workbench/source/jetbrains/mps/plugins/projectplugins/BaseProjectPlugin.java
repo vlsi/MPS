@@ -108,27 +108,30 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   }
 
   public final void dispose() {
+    final List<BaseGeneratedTool> initializedTools = new ArrayList<BaseGeneratedTool>(myInitializedTools);
+    final List<BaseGeneratedTool> toolsToDispose = new ArrayList<BaseGeneratedTool>(myTools);
+    final List<BaseProjectPrefsComponent> prefsComponentsToDispose = new ArrayList<BaseProjectPrefsComponent>(myPrefsComponents);
     getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         if (myProject.isDisposed()) return;
 
-        for (BaseProjectPrefsComponent component : myPrefsComponents) {
+        for (BaseProjectPrefsComponent component : prefsComponentsToDispose) {
           component.dispose();
         }
 
-        for (BaseGeneratedTool tool : myTools) {
-          if (!myInitializedTools.contains(tool)) continue;
-          try {
-            tool.dispose();
-          } catch (Throwable t) {
-            LOG.error("", t);
+        for (BaseGeneratedTool tool : toolsToDispose) {
+          if (initializedTools.contains(tool)) {
+            try {
+              tool.dispose();
+            } catch (Throwable t) {
+              LOG.error("", t);
+            }
           }
         }
       }
     });
     myTools.clear();
-
     myTabDescriptors.clear();
 
     for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {

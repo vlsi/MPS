@@ -6,6 +6,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -178,7 +179,7 @@
   </node>
   <node concept="1TIwiD" id="fKAxPRU">
     <property role="TrG5h" value="DataTypeDeclaration" />
-    <node concept="PrWs8" id="h4SlDeR" role="PzmwI">
+    <node concept="PrWs8" id="yuXZmMPAvJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
@@ -217,6 +218,9 @@
       <property role="20kJfa" value="member" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="fKM4N6M" resolve="EnumerationMemberDeclaration" />
+    </node>
+    <node concept="PrWs8" id="yuXZmMPAu4" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="fKAz7CR">

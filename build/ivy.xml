@@ -110,6 +110,12 @@
     <dependency org="lib.ant.lib" name="ant-junit.pom" rev="${idea.platform.version}">
       <artifact name="ant-junit.pom" ext="xml"/>
     </dependency>
+    <dependency org="lib.ant.lib" name="ant-junit4.jar" rev="${idea.platform.version}">
+      <artifact name="ant-junit4.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-junit4.pom" rev="${idea.platform.version}">
+      <artifact name="ant-junit4.pom" ext="xml"/>
+    </dependency>
     <dependency org="lib.ant.lib" name="ant-launcher.jar" rev="${idea.platform.version}">
       <artifact name="ant-launcher.jar" ext="jar"/>
     </dependency>

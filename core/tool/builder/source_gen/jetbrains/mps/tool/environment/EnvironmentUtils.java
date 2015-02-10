@@ -123,18 +123,18 @@ public class EnvironmentUtils {
   }
 
   public static LibraryContributor createLibContributor(EnvironmentConfig config) {
-    Map<File, ClassLoader> libToCLMap = new LinkedHashMap<File, ClassLoader>();
-    for (File lib : SetSequence.fromSet(config.getLibs())) {
+    Map<String, ClassLoader> libToCLMap = new LinkedHashMap<String, ClassLoader>();
+    for (String lib : config.getLibs()) {
       libToCLMap.put(lib, null);
     }
 
     return createLibContributor(libToCLMap);
   }
 
-  public static LibraryContributor createLibContributor(Map<File, ClassLoader> libToClassLoader) {
-    Set<LibraryContributor.LibDescriptor> libDescriptors = new LinkedHashSet<LibraryContributor.LibDescriptor>();
-    for (File libFile : libToClassLoader.keySet()) {
-      libDescriptors.add(new LibraryContributor.LibDescriptor(libFile.getAbsolutePath(), libToClassLoader.get(libFile)));
+  public static LibraryContributor createLibContributor(Map<String, ClassLoader> libToClassLoader) {
+    Set<LibraryContributor.LibDescriptor> libDescriptors = SetSequence.fromSet(new LinkedHashSet<LibraryContributor.LibDescriptor>());
+    for (String libPath : libToClassLoader.keySet()) {
+      SetSequence.fromSet(libDescriptors).addElement(new LibraryContributor.LibDescriptor(libPath, libToClassLoader.get(libPath)));
     }
     return new SetLibraryContributor(libDescriptors);
   }

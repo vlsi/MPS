@@ -5245,8 +5245,8 @@
             <node concept="Xl_RD" id="1K136DJAmRV" role="3uHU7B">
               <property role="Xl_RC" value="Running test " />
             </node>
-            <node concept="37vLTw" id="6KwuuSyhKUL" role="3uHU7w">
-              <ref role="3cqZAo" node="6azle7m3uK7" resolve="className" />
+            <node concept="37vLTw" id="2iEdVVe8YFW" role="3uHU7w">
+              <ref role="3cqZAo" node="6azle7m3uK9" resolve="methodName" />
             </node>
           </node>
         </node>

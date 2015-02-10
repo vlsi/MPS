@@ -11,6 +11,9 @@ import java.util.List;
 public class BTestCase_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public BTestCase_BehaviorDescriptor() {
   }
+  public boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode) {
+    return BTestCase_Behavior.virtual_canRunInProcess_6436735966448788391(thisNode);
+  }
   public String virtual_getClassName_1216136193905(SNode thisNode) {
     return BTestCase_Behavior.virtual_getClassName_1216136193905(thisNode);
   }

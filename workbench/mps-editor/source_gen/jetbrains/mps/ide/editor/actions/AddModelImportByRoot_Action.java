@@ -15,11 +15,11 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -89,33 +89,36 @@ public class AddModelImportByRoot_Action extends BaseAction {
     try {
       final Wrappers._T<String> initialText = new Wrappers._T<String>("");
 
-
-      NodeSubstituteChooser nodeSubstituteChooser = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser();
-      if (check_a68f4j_a4a0(nodeSubstituteChooser)) {
-        String pattern = nodeSubstituteChooser.getPatternEditor().getPattern();
-        if (check_a68f4j_a1a4a0(pattern)) {
-          initialText.value = pattern;
+      final Wrappers._T<EditorCell_Label> errorLabel = new Wrappers._T<EditorCell_Label>(null);
+      final Wrappers._T<SNode> unresolvedReference = new Wrappers._T<SNode>(null);
+      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) != null) {
+        unresolvedReference.value = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
+        errorLabel.value = AddModelImportByRoot_Action.this.getErrorCell(_params);
+        NodeSubstituteChooser nodeSubstituteChooser = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser();
+        if (check_a68f4j_a3a4a0(nodeSubstituteChooser)) {
+          String pattern = nodeSubstituteChooser.getPatternEditor().getPattern();
+          if (check_a68f4j_a1a3a4a0(pattern)) {
+            initialText.value = pattern;
+          }
         }
-      }
-      if (isEmptyString(initialText.value)) {
-        EditorCell_Label label = AddModelImportByRoot_Action.this.getCellLabel(_params);
-        String selectedText = check_a68f4j_a0b0f0a(label);
-        if (selectedText != null && !(selectedText.isEmpty())) {
-          initialText.value = selectedText;
+        if (isEmptyString(initialText.value)) {
+          EditorCell_Label label = AddModelImportByRoot_Action.this.getCellLabel(_params);
+          String selectedText = check_a68f4j_a0b0e0e0a(label);
+          if (selectedText != null && !(selectedText.isEmpty())) {
+            initialText.value = selectedText;
+          }
         }
-      }
 
-      final EditorCell_Label errorLabel = AddModelImportByRoot_Action.this.getErrorCell(_params);
-      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
-      if (isEmptyString(initialText.value)) {
+        if (isEmptyString(initialText.value)) {
 
-        if (errorLabel != null) {
-          initialText.value = errorLabel.getRenderedText();
-        } else if (unresolvedReference != null) {
-          initialText.value = SPropertyOperations.getString(unresolvedReference, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, 0x28e9fc3ba3fa3941L, "resolveName"));
+          if (errorLabel.value != null) {
+            initialText.value = errorLabel.value.getRenderedText();
+          } else if (unresolvedReference.value != null) {
+            initialText.value = SPropertyOperations.getString(unresolvedReference.value, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, 0x28e9fc3ba3fa3941L, "resolveName"));
+          }
         }
-      }
 
+      }
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
           String textToMatch = (rootName != null ? rootName : initialText.value);
@@ -123,10 +126,10 @@ public class AddModelImportByRoot_Action extends BaseAction {
             return;
           }
           SubstituteInfo substituteInfo = null;
-          if (errorLabel != null) {
-            substituteInfo = errorLabel.getSubstituteInfo();
-          } else if (unresolvedReference != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {
-            substituteInfo = new DefaultChildSubstituteInfo(SNodeOperations.getParent(unresolvedReference), unresolvedReference, SNodeOperations.getContainingLinkDeclaration(unresolvedReference), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          if (errorLabel.value != null) {
+            substituteInfo = errorLabel.value.getSubstituteInfo();
+          } else if (unresolvedReference.value != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {
+            substituteInfo = new DefaultChildSubstituteInfo(SNodeOperations.getParent(unresolvedReference.value), unresolvedReference.value, SNodeOperations.getContainingLinkDeclaration(unresolvedReference.value), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             substituteInfo.setOriginalText(initialText.value);
           }
           if (substituteInfo == null) {
@@ -163,19 +166,19 @@ public class AddModelImportByRoot_Action extends BaseAction {
     return null;
   }
   protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
-  private static boolean check_a68f4j_a1a4a0(String checkedDotOperand) {
+  private static boolean check_a68f4j_a1a3a4a0(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (checkedDotOperand != null && checkedDotOperand.length() > 0);
     }
     return false;
   }
-  private static boolean check_a68f4j_a4a0(NodeSubstituteChooser checkedDotOperand) {
+  private static boolean check_a68f4j_a3a4a0(NodeSubstituteChooser checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isVisible();
     }
     return false;
   }
-  private static String check_a68f4j_a0b0f0a(EditorCell_Label checkedDotOperand) {
+  private static String check_a68f4j_a0b0e0e0a(EditorCell_Label checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSelectedText();
     }

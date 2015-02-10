@@ -197,7 +197,7 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public void dispose() {
-    ((SRepositoryBase)myRepository).dispose();
+    ((SRepositoryBase) myRepository).dispose();
     isDisposed = true;
   }
 

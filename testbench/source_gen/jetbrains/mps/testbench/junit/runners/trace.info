@@ -251,7 +251,7 @@
     <file name="MpsTestsSuite.java">
       <node id="7535322034160451297" at="36,0,37,0" concept="15" trace="PROPERTY_LIBRARY" />
       <node id="149846544987197579" at="37,0,38,0" concept="15" trace="MPS_MACRO_PREFIX" />
-      <node id="1884528325077489196" at="39,0,40,0" concept="6" trace="contextProject" />
+      <node id="1884528325077489196" at="38,0,39,0" concept="6" trace="contextProject" />
       <node id="1884528325077570777" at="40,0,41,0" concept="6" trace="children" />
       <node id="1884528325076895761" at="42,90,43,50" concept="17" />
       <node id="1884528325077735060" at="43,50,44,69" concept="13" />
@@ -262,15 +262,15 @@
       <node id="1884528325077575781" at="48,14,49,43" concept="5" />
       <node id="4470267393704961814" at="52,45,53,95" concept="13" />
       <node id="6132171475558103981" at="53,95,54,68" concept="11" />
-      <node id="6132171475558141263" at="55,77,56,42" concept="5" />
+      <node id="6132171475558141263" at="55,79,56,42" concept="5" />
       <node id="149846544987979498" at="58,76,59,59" concept="5" />
       <node id="1884528325077968617" at="60,5,61,42" concept="5" />
-      <node id="7781441327979299002" at="64,52,65,109" concept="11" />
-      <node id="7535322034160520584" at="65,109,66,66" concept="11" />
+      <node id="7781441327979299002" at="64,54,65,113" concept="11" />
+      <node id="7535322034160520584" at="65,113,66,66" concept="11" />
       <node id="7781441327979360998" at="67,69,68,20" concept="12" />
       <node id="7535322034160538385" at="69,5,70,67" concept="11" />
       <node id="7781441327979273282" at="71,34,72,35" concept="11" />
-      <node id="7781441327979371090" at="73,29,74,68" concept="5" />
+      <node id="7781441327979371090" at="73,29,74,64" concept="5" />
       <node id="7781441327979365199" at="76,5,77,18" concept="12" />
       <node id="149846544987763374" at="80,49,81,80" concept="11" />
       <node id="149846544987584516" at="83,89,84,48" concept="11" />
@@ -302,10 +302,10 @@
       <node id="3540760116424835070" at="64,0,79,0" concept="16" trace="loadLibraries#()Ljava/util/Map;" />
       <node id="149846544987354236" at="80,0,95,0" concept="16" trace="loadMacros#()Ljava/util/Map;" />
       <node id="1884528325077587018" at="101,0,116,0" concept="10" trace="createChildRunners#(Lorg/junit/runners/model/RunnerBuilder;)Ljava/util/List;" />
-      <scope id="6132171475558119346" at="55,77,56,42" />
+      <scope id="6132171475558119346" at="55,79,56,42" />
       <scope id="149846544987917450" at="58,76,59,59" />
       <scope id="7781441327979343216" at="67,69,68,20" />
-      <scope id="7781441327979279935" at="73,29,74,68" />
+      <scope id="7781441327979279935" at="73,29,74,64" />
       <scope id="1884528325077667365" at="97,40,98,20" />
       <scope id="8177223897055542628" at="107,257,108,197" />
       <scope id="149846544988590900" at="87,91,89,72">
@@ -354,7 +354,7 @@
       <scope id="149846544987409740" at="81,80,92,5">
         <var name="property" id="149846544987409742" />
       </scope>
-      <scope id="3540760116424835073" at="64,52,77,18">
+      <scope id="3540760116424835073" at="64,54,77,18">
         <var name="libraries" id="7535322034160538386" />
         <var name="librariesString" id="7535322034160520585" />
         <var name="result" id="7781441327979299005" />

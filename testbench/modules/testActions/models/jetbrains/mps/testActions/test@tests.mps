@@ -84,6 +84,9 @@
       </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
+      <concept id="1216130694486" name="jetbrains.mps.baseLanguage.unitTest.structure.ITestCase" flags="ng" index="B2rLd">
+        <property id="6427619394892729757" name="canNotRunInProcess" index="26Nn1l" />
+      </concept>
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
@@ -102,6 +105,7 @@
   </registry>
   <node concept="1lH9Xt" id="2LwxHZFoyXH">
     <property role="TrG5h" value="ActionsTest" />
+    <property role="26Nn1l" value="true" />
     <node concept="1LZb2c" id="2LwxHZFoyXS" role="1SL9yI">
       <property role="TrG5h" value="checkRoots" />
       <node concept="3cqZAl" id="2LwxHZFoyXT" role="3clF45" />
