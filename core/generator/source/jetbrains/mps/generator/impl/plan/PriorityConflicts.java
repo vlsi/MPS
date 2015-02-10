@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.plan.PriorityGraph.Cycle;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -33,7 +36,7 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 final class PriorityConflicts {
-  /*package*/enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, Invalid}
+  /*package*/enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, Invalid, Cycle}
 
   private final Collection<TemplateModule> myGenerators;
   private final Map<Kind, List<Conflict>> myConflictingRules;
@@ -75,6 +78,22 @@ final class PriorityConflicts {
     SModuleReference origin = getOrigin(rules);
     String msg = String.format("Rules left after all top-priority rules were consumed: %s", describeCollection(rules));
     register(Kind.PastTopPri, new Conflict(origin, msg, rules));
+  }
+
+  void registerCycle(Cycle c) {
+    ArrayList<String> cycleElements = new ArrayList<String>();
+    for (Group g : c.elements) {
+      StringBuilder sb = new StringBuilder();
+      for (Pair<String, TemplateMappingConfiguration> p : GenerationPartitioningUtil.toStrings(g.getElements())) {
+        sb.append(p.o1);
+        sb.append(',');
+      }
+      sb.setLength(sb.length() - 1); // we're safe - there should be at least 3 elements to constitute a cycle.
+      cycleElements.add(sb.toString());
+    }
+    String msg = String.format("Cycle detected: %s", describeCollection(cycleElements));
+    final Collection<MappingPriorityRule> rules = c.getRules();
+    register(Kind.Cycle, new Conflict(getOrigin(rules), msg, rules));
   }
 
   void registerInvalid(SModuleReference origin, @NotNull String message, MappingPriorityRule badRule) {

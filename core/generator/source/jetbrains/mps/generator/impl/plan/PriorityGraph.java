@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,9 +359,9 @@ class PriorityGraph {
       rules.addAll(edge.getRules());
     }
     conflicts.registerLeftovers(rules);
-//    for (Cycle c : cd.detect()) {
-//      System.out.println(c.elements);
-//    }
+    for (Cycle c : cd.detect()) {
+      conflicts.registerCycle(c);
+    }
   }
 
   public boolean isEmpty() {
@@ -440,7 +440,7 @@ class PriorityGraph {
     }
 
     Collection<Cycle> detect() {
-      ArrayList<Cycle> rv = new ArrayList<Cycle>();
+      HashSet<Cycle> rv = new HashSet<Cycle>();
       for (Group g : soonerToEntry.keySet()) {
         // build closure of all possible rhs (later) elements
         // i.e. for A <= B, B <= C, C <= D, A <= X and given A, builds A := B, C, D, X
@@ -480,10 +480,33 @@ class PriorityGraph {
       this.elements = elements;
       this.edges = edges;
     }
+
+    // Rules involved in cycle inception
+    public Collection<MappingPriorityRule> getRules() {
+      HashSet<MappingPriorityRule> rv = new HashSet<MappingPriorityRule>();
+      for (Entry edge : edges) {
+        rv.addAll(edge.getRules());
+      }
+      return rv;
+    }
+
+    @Override
+    public int hashCode() {
+      return elements.hashCode() + edges.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Cycle)) {
+        return false;
+      }
+      Cycle o = ((Cycle) obj);
+      return elements.equals(o.elements) && edges.equals(o.edges);
+    }
   }
 
   /**
-   * For a transitive relation, builds a closure of elements, excluding the starting one, unless there's a cycle.
+   * For a transitive relation, builds a closure of elements. The closure doesn't contain the starting one, unless there's a cycle.
    * E.g. fed with elements: AxB, BxC, CxD, produces for A: {B,C,D}, for C: {D}
    * With another element, DxA, produces for A: {B,C,D,A}, for C:{D,A,B,C}
    */
