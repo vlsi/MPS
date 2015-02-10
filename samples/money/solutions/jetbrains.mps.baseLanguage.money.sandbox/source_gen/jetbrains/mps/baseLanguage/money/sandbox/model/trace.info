@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:53dcac98-920f-4bbc-b1cd-3c9b6b614f80(jetbrains.mps.baseLanguage.money.sandbox.model)/3786603370712998601">
+    <file name="Sample.java">
+      <node id="3786603370713000534" at="8,42,9,44" concept="1" />
+      <node id="3786603370713000861" at="9,44,10,44" concept="1" />
+      <node id="3786603370713001726" at="10,44,11,50" concept="0" />
+      <node id="3786603370712998627" at="8,0,13,0" concept="2" trace="main#([Ljava/lang/String;)V" />
+      <scope id="3786603370712998633" at="8,42,11,50">
+        <var name="m1" id="3786603370713000537" />
+        <var name="m2" id="3786603370713000862" />
+      </scope>
+      <scope id="3786603370712998627" at="8,0,13,0">
+        <var name="args" id="3786603370712998628" />
+      </scope>
+      <unit id="3786603370712998601" at="7,0,14,0" name="jetbrains.mps.baseLanguage.money.sandbox.model.Sample" />
+    </file>
+  </root>
+</debug-info>
+

@@ -2419,23 +2419,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ1887H" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ1887I" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqMG" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmql" resolve="PROJECT" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ1887K" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayjE" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTtE2" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ1887C" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayjI" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2ls0" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2ls1" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2ls2" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2ls3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ1887C" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMD" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2ls4" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2ls5" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2ScJ" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmql" resolve="PROJECT" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>
@@ -2502,23 +2500,21 @@
             </node>
           </node>
           <node concept="3clFbF" id="5gyVhZ18876" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ18877" role="3clFbG">
-              <node concept="2OqwBi" id="5gyVhZ18878" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayjw" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTtQz" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ1886W" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayj$" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+            <node concept="2OqwBi" id="5gyVhZ18878" role="3clFbG">
+              <node concept="2OqwBi" id="5gyVhZ1ayjw" role="2Oq$k0">
+                <node concept="37vLTw" id="3GM_nagTtQz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ1886W" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMA" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="5gyVhZ1ayj$" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
                 </node>
               </node>
-              <node concept="Rm8GO" id="5gyVhZ1bqMC" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmp3" resolve="MODULE" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
+              <node concept="2XshWL" id="2h1wjLc27Cr" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2iMu" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmp3" resolve="MODULE" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
+                </node>
               </node>
             </node>
           </node>
@@ -2627,23 +2623,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ1886g" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ1886h" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqMx" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmnN" resolve="MODEL" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ1886j" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayjm" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTsUZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ18866" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayjq" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2lPy" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2lPz" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2lP$" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2lP_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ18866" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMv" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2lPA" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2lPB" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2MFv" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmnN" resolve="MODEL" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>
@@ -2873,23 +2867,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ1889K" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ1889L" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqMO" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmmw" resolve="NODE" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ1889N" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayjT" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTr8f" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ1889D" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayjX" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2muK" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2muL" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2muM" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2muN" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ1889D" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMM" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2muO" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2muP" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2JLI" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmmw" resolve="NODE" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>
@@ -3070,23 +3062,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ1888v" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ1888w" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqMI" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmld" resolve="METHOD" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ1888y" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayjJ" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTzv4" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ1888o" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayjN" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2oFA" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2oFB" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2oFC" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2oFD" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ1888o" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMH" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2oFE" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2oFF" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2E3q" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmld" resolve="METHOD" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>
@@ -3282,23 +3272,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ188aG" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ188aH" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqN0" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmmw" resolve="NODE" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ188aJ" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1ayk3" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagT_p1" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ188aw" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1ayk7" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2pMR" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2pMS" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2pMT" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2pMU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ188aw" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMR" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2pMV" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2pMW" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2$la" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmmw" resolve="NODE" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>
@@ -3366,23 +3354,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5gyVhZ188bb" role="3cqZAp">
-            <node concept="37vLTI" id="5gyVhZ188bc" role="3clFbG">
-              <node concept="Rm8GO" id="5gyVhZ1bqMX" role="37vLTx">
-                <ref role="Rm8GQ" to="tty3:5gyVhZ1bmld" resolve="METHOD" />
-                <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
-              </node>
-              <node concept="2OqwBi" id="5gyVhZ188be" role="37vLTJ">
-                <node concept="2OqwBi" id="5gyVhZ1aykd" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagT_CZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5gyVhZ188b0" resolve="configuration" />
-                  </node>
-                  <node concept="yHkDZ" id="5gyVhZ1aykh" role="2OqNvi">
-                    <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
-                  </node>
+          <node concept="3clFbF" id="2h1wjLc2rYm" role="3cqZAp">
+            <node concept="2OqwBi" id="2h1wjLc2rYn" role="3clFbG">
+              <node concept="2OqwBi" id="2h1wjLc2rYo" role="2Oq$k0">
+                <node concept="37vLTw" id="2h1wjLc2rYp" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ188b0" resolve="configuration" />
                 </node>
-                <node concept="yHkDZ" id="5gyVhZ1bqMT" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcx" resolve="myRunType" />
+                <node concept="yHkDZ" id="2h1wjLc2rYq" role="2OqNvi">
+                  <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
+                </node>
+              </node>
+              <node concept="2XshWL" id="2h1wjLc2rYr" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:2h1wjLc1Cd3" resolve="setJUnitRunType" />
+                <node concept="Rm8GO" id="2h1wjLc2t4C" role="2XxRq1">
+                  <ref role="Rm8GQ" to="tty3:5gyVhZ1bmld" resolve="METHOD" />
+                  <ref role="1Px2BO" to="tty3:5gyVhZ1bmkR" resolve="JUnitRunTypes" />
                 </node>
               </node>
             </node>

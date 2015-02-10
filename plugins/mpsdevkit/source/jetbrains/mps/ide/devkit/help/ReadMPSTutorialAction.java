@@ -23,6 +23,6 @@ public class ReadMPSTutorialAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://www.jetbrains.com/mps/docs/tutorial.html";
+    return "https://confluence.jetbrains.com/display/MPSD32/Fast+Track+to+MPS";
   }
 }

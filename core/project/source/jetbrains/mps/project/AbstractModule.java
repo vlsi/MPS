@@ -93,6 +93,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public static final String CLASSES_GEN = "classes_gen";
   public static final String CLASSES = "classes";
 
+  @Nullable
   protected final IFile myDescriptorFile;
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
@@ -121,7 +122,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public String getModuleName() {
     assertCanRead();
-    return myModuleReference.getModuleName();
+    return getModuleReference().getModuleName();
   }
 
   @Override
@@ -229,13 +230,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //module reference is immutable, so we cn return original
   public SModuleReference getModuleReference() {
     assertCanRead();
-
     return myModuleReference;
   }
 
   //----save
 
   //todo move to EditableModule class
+  @Nullable
   public ModuleDescriptor getModuleDescriptor() {
     assertCanRead();
 
@@ -694,26 +695,24 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
+  @Override
   public String toString() {
-    String namespace = getName();
+    String namespace = getModuleName();
     return namespace + " [module]";
   }
 
+  /**
+   * @deprecated use {@link #getModuleName}
+   */
+  @Deprecated
   public String getName() {
-    String namespace = getModuleDescriptor().getNamespace();
-    if (namespace == null || namespace.length() == 0) {
-      if (myDescriptorFile != null) {
-        namespace = myDescriptorFile.getName();
-      } else {
-        namespace = "";
-      }
-    }
-    return namespace;
+    return getModuleName();
   }
 
   @Override
   public void dispose() {
     assertCanChange();
+    LOG.trace("Disposing the module " + this);
     FileSystem.getInstance().removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();

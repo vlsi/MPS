@@ -149,7 +149,7 @@ public class Solution extends ReloadableModuleBase {
   }
 
   public String toString() {
-    return getName() + " [solution]";
+    return getModuleName() + " [solution]";
   }
 
   public SolutionKind getKind() {

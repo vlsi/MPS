@@ -12,6 +12,8 @@ import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.HashSet;
 
 public class NodeHierarchyChooser extends JBScrollPane {
@@ -49,7 +51,13 @@ public class NodeHierarchyChooser extends JBScrollPane {
     @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       this.ancestorsProvider = new ConceptAncestorsProvider();
-      return this.ancestorsProvider.getDescendants(node);
+      Set<SNode> descendants = this.ancestorsProvider.getDescendants(node);
+      SetSequence.fromSet(descendants).removeSequence(SetSequence.fromSet(descendants).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.getModel(it).isReadOnly());
+        }
+      }));
+      return descendants;
     }
     @Override
     protected SNode getParent(SNode node) {

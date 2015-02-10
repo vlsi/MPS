@@ -42,7 +42,7 @@ public abstract class BasePluginManager<T> {
   protected final Object myPluginsLock = new Object();
   protected final SRepository myRepository;
   protected final PluginReloader myPluginReloader;
-  private final PluginReloadingListener myReloadingListener = new MyPluginReloadingListenerBase();
+  private final PluginReloadingListener myReloadingListener = new MyPluginReloadingListener();
 
   private List<T> mySortedPlugins = new ArrayList<T>();
   private final Map<PluginContributor, T> myContributorToPlugin = new HashMap<PluginContributor, T>();
@@ -154,7 +154,7 @@ public abstract class BasePluginManager<T> {
     }
   }
 
-  private class MyPluginReloadingListenerBase extends PluginReloadingListenerBase {
+  private class MyPluginReloadingListener extends PluginReloadingListenerBase {
     @Override
     public void pluginsUnloading(List<PluginContributor> contributors) {
       unloadPlugins(contributors);

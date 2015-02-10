@@ -54,7 +54,7 @@ public class ComponentPlugin {
       });
       myComponents.push(component);
     } catch (Exception th) {
-      throw new RuntimeException("component initialization error", th);
+      throw new RuntimeException("Component " + component + " initialization error", th);
     }
     return component;
   }
@@ -63,7 +63,7 @@ public class ComponentPlugin {
     try {
       component.dispose();
     } catch (Exception th) {
-      throw new RuntimeException("component dispose error", th);
+      throw new RuntimeException("Component " + component + " dispose error", th);
     }
   }
 }
