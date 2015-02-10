@@ -49,6 +49,8 @@
     <import index="d58o" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.internal(MPS.Workbench/org.junit.internal@java_stub)" />
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
+    <import index="86um" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(MPS.Platform/jetbrains.mps.ide@java_stub)" />
+    <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -302,6 +304,11 @@
       </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
+      </concept>
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -801,6 +808,63 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5vTxdEzG8sn" role="3clF47">
+        <node concept="3cpWs8" id="1MjyxT2YW4w" role="3cqZAp">
+          <node concept="3cpWsn" id="1MjyxT2YW4u" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="application" />
+            <node concept="3uibUv" id="1MjyxT2YYxm" role="1tU5fm">
+              <ref role="3uigEE" to="yla8:~Application" resolve="Application" />
+            </node>
+            <node concept="2YIFZM" id="1MjyxT2YZP3" role="33vP2m">
+              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1MjyxT2ZjAS" role="3cqZAp">
+          <node concept="3clFbS" id="1MjyxT2ZjAU" role="3clFbx">
+            <node concept="3clFbF" id="1MjyxT2YZUn" role="3cqZAp">
+              <node concept="2YIFZM" id="1MjyxT2ZjtW" role="3clFbG">
+                <ref role="37wK5l" to="86um:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
+                <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
+                <node concept="1bVj0M" id="1MjyxT2ZnAo" role="37wK5m">
+                  <node concept="3clFbS" id="1MjyxT2ZnAp" role="1bW5cS">
+                    <node concept="3clFbF" id="1MjyxT2Zoaf" role="3cqZAp">
+                      <node concept="2OqwBi" id="1MjyxT2ZrDo" role="3clFbG">
+                        <node concept="37vLTw" id="1MjyxT2Zr$b" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1MjyxT2YW4u" resolve="application" />
+                        </node>
+                        <node concept="liA8E" id="1MjyxT2Zs0b" role="2OqNvi">
+                          <ref role="37wK5l" to="yla8:~Application.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                          <node concept="1bVj0M" id="1MjyxT2Zs2_" role="37wK5m">
+                            <node concept="3clFbS" id="1MjyxT2Zs2A" role="1bW5cS">
+                              <node concept="3clFbF" id="1MjyxT2Zsew" role="3cqZAp">
+                                <node concept="2YIFZM" id="1MjyxT2ZsTW" role="3clFbG">
+                                  <ref role="37wK5l" to="8d8y:~Disposer.dispose(com.intellij.openapi.Disposable):void" resolve="dispose" />
+                                  <ref role="1Pybhc" to="8d8y:~Disposer" resolve="Disposer" />
+                                  <node concept="37vLTw" id="1MjyxT2ZsYf" role="37wK5m">
+                                    <ref role="3cqZAo" node="1MjyxT2YW4u" resolve="application" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1MjyxT2ZkfB" role="3clFbw">
+            <node concept="10Nm6u" id="1MjyxT2Zkgp" role="3uHU7w" />
+            <node concept="37vLTw" id="1MjyxT2ZjGz" role="3uHU7B">
+              <ref role="3cqZAo" node="1MjyxT2YW4u" resolve="application" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1MjyxT2Ztd_" role="3cqZAp" />
         <node concept="3cpWs8" id="5vTxdEzFTWH" role="3cqZAp">
           <node concept="3cpWsn" id="5vTxdEzFTWI" role="3cpWs9">
             <property role="TrG5h" value="listener" />
