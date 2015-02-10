@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.CachingIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
@@ -24,8 +24,8 @@ import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -63,6 +63,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private int myOldStyle = Font.PLAIN;
   private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
+  private CachingIconManager myIconManager = new CachingIconManager();
   private static final int MY_MIN_CELL_HEIGHT_TO_ADD = 2;
 
 
@@ -91,11 +92,12 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   }
 
   @NotNull
-  Dimension getMaxDimension (List<SubstituteAction> actions) {
+  Dimension getMaxDimension(List<SubstituteAction> actions) {
     int maxWidth = 0;
     int maxHeight = 0;
     myConceptIconMap.clear();
     myNodeIconMap.clear();
+    myIconManager = new CachingIconManager();
     for (SubstituteAction action : actions) {
       Dimension dimension = getDimension(action);
       maxWidth = Math.max(maxWidth, dimension.width);
@@ -103,6 +105,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     }
     return new Dimension(maxWidth, maxHeight);
   }
+
   private Dimension getDimension(SubstituteAction action) {
     String pattern = myPatternEditor.getPattern();
     String matchingText;
@@ -238,7 +241,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
         icon = myNodeIconMap.get(iconNode);
       }
       if (icon == null) {
-        icon = isConcept ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+        icon = isConcept ? myIconManager.getConceptIcon(MetaAdapterByDeclaration.getConcept(iconNode)) : myIconManager.getNodeIcon(iconNode);
         if (isConcept) {
           myConceptIconMap.put(iconNode, icon);
         } else {
