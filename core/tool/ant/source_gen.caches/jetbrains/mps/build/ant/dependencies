@@ -31,11 +31,14 @@
   </dependency>
   <dependency className="jetbrains.mps.build.ant.MPSClasspathUtil" file="MPSClasspathUtil.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.UnsupportedEncodingException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.net.URLDecoder" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
