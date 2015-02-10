@@ -63,6 +63,8 @@ import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID
 public class ModulesWatcher {
   private static final Logger LOG = LogManager.getLogger(ModulesWatcher.class);
 
+  private final Object myStatusMapLock = new Object();
+
   private final SRepository myRepository;
   private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
   private Collection<SModuleReference> myCurrentInvalidModules;
@@ -91,10 +93,15 @@ public class ModulesWatcher {
     updateIfChanged();
     if (!getAllModules().contains(mRef)) {
       return INVALID;
-    } else if (!myStatusMap.containsKey(mRef)) {
-      throw new IllegalArgumentException("No status for module " + mRef);
     } else {
-      return myStatusMap.get(mRef);
+      synchronized (myStatusMapLock) {
+        if (!myStatusMap.containsKey(mRef)) {
+          LOG.warn("No status for the module " + mRef);
+          return INVALID;
+        } else {
+          return myStatusMap.get(mRef);
+        }
+      }
     }
   }
 
@@ -139,14 +146,17 @@ public class ModulesWatcher {
    * costly because of backDeps request
    */
   private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
-    myStatusMap.clear();
-    for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
-    Collection<? extends SModuleReference> allInvalidModules = getBackDependencies(invalidModules);
-    for (SModuleReference mRef : allInvalidModules) myStatusMap.put(mRef, INVALID);
-    LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() + " modules [totally in the repository]");
-    LOG.debug("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
+    synchronized (myStatusMapLock) {
+      myStatusMap.clear();
+      for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
+      Collection<? extends SModuleReference> allInvalidModules = getBackDependencies(invalidModules);
+      for (SModuleReference mRef : allInvalidModules) myStatusMap.put(mRef, INVALID);
+      LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
+          " modules [totally in the repository]");
+      LOG.debug("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
 
-    checkStatusMapCorrectness();
+      checkStatusMapCorrectness();
+    }
   }
 
   /**

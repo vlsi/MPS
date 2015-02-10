@@ -78,9 +78,9 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   void dispose() {
     LOG.debug("Disposing " + this);
-    MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
     FileSystem.getInstance().removeListener(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
   }
 
   @Override
@@ -97,7 +97,10 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
     boolean changed = false;
     for (IFile f : event.getCreated()) {
-      if (ModulesMiner.getInstance().isModuleFile(f)) changed = true;
+      if (ModulesMiner.getInstance().isModuleFile(f)) {
+        changed = true;
+        break;
+      }
     }
     if (changed) {
       update(false);
