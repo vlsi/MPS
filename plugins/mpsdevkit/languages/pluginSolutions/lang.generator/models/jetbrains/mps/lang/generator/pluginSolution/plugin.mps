@@ -1754,14 +1754,14 @@
                   </node>
                   <node concept="3SKdUt" id="nMe5u0DxiH" role="3cqZAp">
                     <node concept="3SKdUq" id="nMe5u0DxiI" role="3SKWNk">
-                      <property role="3SKdUp" value="create new MAP_SRC macro" />
+                      <property role="3SKdUp" value="create new Label macro" />
                     </node>
                   </node>
                   <node concept="3cpWs8" id="nMe5u0DxiJ" role="3cqZAp">
                     <node concept="3cpWsn" id="nMe5u0DxiK" role="3cpWs9">
                       <property role="TrG5h" value="newMacro" />
                       <node concept="3Tqbb2" id="nMe5u0DxiL" role="1tU5fm">
-                        <ref role="ehGHo" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+                        <ref role="ehGHo" to="tpf8:4sWLrFSCuu$" resolve="LabelMacro" />
                       </node>
                       <node concept="2OqwBi" id="nMe5u0DxiM" role="33vP2m">
                         <node concept="2OqwBi" id="nMe5u0DxiN" role="2Oq$k0">
@@ -1778,7 +1778,7 @@
                           </node>
                         </node>
                         <node concept="2DeJg1" id="nMe5u0DxiT" role="2OqNvi">
-                          <ref role="1A0vxQ" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+                          <ref role="1A0vxQ" to="tpf8:4sWLrFSCuu$" resolve="LabelMacro" />
                         </node>
                       </node>
                     </node>
