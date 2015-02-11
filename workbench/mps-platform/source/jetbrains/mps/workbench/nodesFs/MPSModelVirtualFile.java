@@ -119,6 +119,7 @@ public class MPSModelVirtualFile extends VirtualFile {
       public VirtualFile compute() {
         if (myModelReference == null) return null;
         SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
+        if (model == null) return null;
         DataSource ds = model.getSource();
         if (ds instanceof FileDataSource) {
           return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());

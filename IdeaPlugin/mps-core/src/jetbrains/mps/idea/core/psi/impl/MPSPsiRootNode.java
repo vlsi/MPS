@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.FileViewProvider;
@@ -98,6 +99,24 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Override
   protected Icon getElementIcon(@IconFlags int flags) {
     return getBaseIcon();
+  }
+
+  @Override
+  public boolean isValid() {
+    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final Ref<Boolean> result = new Ref<Boolean>(false);
+    final SNodeReference nodeRef = getSNodeReference();
+    if (nodeRef == null) return false;
+
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SNode node = nodeRef.resolve(repository);
+        result.set(node != null);
+      }
+    });
+
+    return result.get();
   }
 
   @Nullable
