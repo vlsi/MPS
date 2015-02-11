@@ -2430,7 +2430,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/1178287491408">
     <file name="supertypesOf_SConceptType_SNodeType_SubtypingRule.java">
       <node id="1180544752193" at="20,121,21,191" concept="8" />
-      <node id="1180545081632" at="23,199,24,55" concept="9" />
+      <node id="1180545081632" at="23,331,24,55" concept="9" />
       <node id="7376433222636453681" at="25,7,26,32" concept="10" />
       <node id="7376433222636454245" at="26,32,27,107" concept="10" />
       <node id="7376433222636453735" at="27,107,28,73" concept="10" />
@@ -2476,7 +2476,7 @@
       <node id="1180544724301" at="21,191,35,5" concept="6" />
       <node id="1178287491408" at="20,0,38,0" concept="7" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178287491408" at="18,62,18,62" />
-      <scope id="1180545047058" at="23,199,24,55" />
+      <scope id="1180545047058" at="23,331,24,55" />
       <scope id="1227611647414" at="31,211,32,58" />
       <scope id="1178287491408" at="38,46,39,62" />
       <scope id="1178287491408" at="47,27,48,16" />
