@@ -77,6 +77,9 @@ public class CheckNamespace_Action extends BaseAction {
   /*package*/ List<SModule> modules2check(final Map<String, Object> _params) {
     List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     for (TreeNode node : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")))) {
+      if (!(node instanceof NamespaceTextNode)) {
+        return ListSequence.fromList(new ArrayList<SModule>());
+      }
       ListSequence.fromList(modules).addSequence(ListSequence.fromList(((NamespaceTextNode) node).getModulesUnder()));
     }
     return modules;

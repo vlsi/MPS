@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,19 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.junit.Before;
@@ -34,6 +38,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -49,11 +54,13 @@ import static org.junit.Assert.assertTrue;
 public class GenPlanTest {
   private PriorityConflicts myConflicts;
   private PartitioningSolver mySolver;
+  private MockTemplateModel myTemplateModel;
 
   @Before
   public void setup() {
     myConflicts = new PriorityConflicts(Collections.<TemplateModule>emptyList());
     mySolver = new PartitioningSolver(myConflicts);
+    myTemplateModel = new MockTemplateModel("MockTemplateModel");
   }
 
 
@@ -67,9 +74,9 @@ public class GenPlanTest {
    */
   @Test
   public void testWeakEdgeReplacedSimple() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -103,12 +110,12 @@ public class GenPlanTest {
    */
   @Test
   public void testWeakEdgeReplacedComplex() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
-    TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
-    TemplateMappingConfiguration tmcY = new MockMapConfig("Y", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = newMapConfig("D", false);
+    TemplateMappingConfiguration tmcX = newMapConfig("X", false);
+    TemplateMappingConfiguration tmcY = newMapConfig("Y", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcX, tmcY);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -147,12 +154,12 @@ public class GenPlanTest {
    */
   @Test
   public void testMergeCoherentEdges() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
-    TemplateMappingConfiguration tmcE = new MockMapConfig("E", false);
-    TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = newMapConfig("D", false);
+    TemplateMappingConfiguration tmcE = newMapConfig("E", false);
+    TemplateMappingConfiguration tmcX = newMapConfig("X", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcE, tmcX);
     mySolver.prepare(allConfigs);
     addCoherentConfigs(tmcA, tmcB);
@@ -186,9 +193,9 @@ public class GenPlanTest {
    */
   @Test
   public void testWeakWithCoherent_1() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -215,8 +222,8 @@ public class GenPlanTest {
    */
   @Test
   public void testWeakWithCoherent_2() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -237,9 +244,9 @@ public class GenPlanTest {
    */
   @Test
   public void testCoherentOnBothSidesOfStrictRule() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
@@ -260,10 +267,10 @@ public class GenPlanTest {
    */
   @Test
   public void testCoherentOnBothSidesOfWeakRule() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcX = newMapConfig("X", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcX);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -292,10 +299,10 @@ public class GenPlanTest {
    */
   @Test
   public void testTopPriorityComesFirst() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = newMapConfig("D", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD);
     mySolver.prepare(allConfigs);
     addWeak(tmcB, tmcC);
@@ -321,8 +328,8 @@ public class GenPlanTest {
    */
   @Test
   public void testTopPriorityDependsOnLowPriorityStrict() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", true);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
@@ -340,9 +347,9 @@ public class GenPlanTest {
    */
   @Test
   public void testTopPrioDependsOnTopPrio() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
@@ -369,9 +376,9 @@ public class GenPlanTest {
      */
   @Test
   public void testTopPriorityDependsOnLowPriorityWeak() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -388,8 +395,8 @@ public class GenPlanTest {
    */
   @Test
   public void testTopPriorityCoherentWithLowPriority() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addCoherentConfigs(tmcA, tmcB);
@@ -407,8 +414,8 @@ public class GenPlanTest {
    */
   @Test
   public void testSameEdgeBothWeakAndStrict() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -432,11 +439,11 @@ public class GenPlanTest {
    */
   @Test
   public void testReplaceCoherent_1() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
-    TemplateMappingConfiguration tmcE = new MockMapConfig("E", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = newMapConfig("D", false);
+    TemplateMappingConfiguration tmcE = newMapConfig("E", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcE);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcD);
@@ -467,10 +474,10 @@ public class GenPlanTest {
    */
   @Test
   public void testReplaceCoherent_2() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
-    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = newMapConfig("D", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
@@ -497,9 +504,9 @@ public class GenPlanTest {
    */
   @Test
   public void testReplaceCoherent_3() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcC);
@@ -526,9 +533,9 @@ public class GenPlanTest {
    */
   @Test
   public void testWeakCycle() {
-    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
-    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
-    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcA = newMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = newMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = newMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
@@ -542,6 +549,49 @@ public class GenPlanTest {
     assertEquals(asSingleGroup(tmcA, tmcB, tmcC), groupsPhase1.get(0));
   }
 
+  /**
+   * L1, G1: A
+   * L2, G2: B
+   *  A < B
+   *
+   * L3, G3: C, D, E, F. usedLanguages: L1, L2
+   *  B <= C
+   *  B <= E
+   *  D  < B
+   *  F == B
+   *  Implicit rule (due to usedLanguage L1): C, D, E, F <= A
+   *
+   *  FIXME usedLanguage are respected 'per generator', not 'per MC'. If we could do that per MC, implicit rule would be much less demanding
+   */
+  @Test
+  public void testImplicitPriorities() {
+    MockTemplateModel g1 = new MockTemplateModel("G1");
+    MockTemplateModel g2 = new MockTemplateModel("G2");
+    MockTemplateModel g3 = new MockTemplateModel("G3");
+    TemplateMappingConfiguration tmcA = newMapConfig(g1, "A");
+    TemplateMappingConfiguration tmcB = newMapConfig(g2, "B");
+    TemplateMappingConfiguration tmcC = newMapConfig(g3, "C");
+    TemplateMappingConfiguration tmcD = newMapConfig(g3, "D");
+    TemplateMappingConfiguration tmcE = newMapConfig(g3, "E");
+    TemplateMappingConfiguration tmcF = newMapConfig(g3, "F");
+    mySolver.prepare(Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcE, tmcF));
+    addStrict(tmcA, tmcB);
+    addWeak(tmcB, tmcC);
+    addWeak(tmcB, tmcE);
+    addStrict(tmcD, tmcB);
+    addCoherentConfigs(tmcF, tmcB);
+    addWeak(tmcC, tmcA);
+    addWeak(tmcD, tmcA);
+    addWeak(tmcE, tmcA);
+    addWeak(tmcF, tmcA);
+    final List<GenerationPhase> phases = mySolver.solve();
+    print(phases);
+    for (Conflict c : myConflicts.getConflicts()) {
+      System.out.println(c.getText());
+    }
+    final List<Conflict> cycles = myConflicts.getConflicts(Arrays.asList(Kind.Cycle));
+    assertEquals(1, cycles.size());
+  }
 
   private void addWeak(TemplateMappingConfiguration sooner, TemplateMappingConfiguration later) {
     mySolver.establishDependency(Collections.singleton(sooner), Collections.singleton(later), getWeakRule());
@@ -555,12 +605,28 @@ public class GenPlanTest {
     mySolver.registerCoherent(Arrays.asList(mc), getStrictRule());
   }
 
-  private static void print(List<List<TemplateMappingConfiguration>> r) {
-    for (List<TemplateMappingConfiguration> steps : r) {
+  private TemplateMappingConfiguration newMapConfig(String name, boolean topPri) {
+    return new MockMapConfig(myTemplateModel, createMapConfigNode(name), name, topPri);
+  }
+  private TemplateMappingConfiguration newMapConfig(MockTemplateModel model, String name) {
+    return new MockMapConfig(model, createMapConfigNode(name), name, false);
+  }
+
+  private static void print(List<GenerationPhase> r) {
+    for (GenerationPhase steps : r) {
       System.out.print("Step: ");
-      for (TemplateMappingConfiguration tmc : steps) {
-        System.out.print(tmc.getName());
-        System.out.print(", ");
+      for (Group group : steps.getGroups()) {
+        final Collection<TemplateMappingConfiguration> elements = group.getElements();
+        if (elements.size() > 1) {
+          System.out.print("{ ");
+        }
+        for (TemplateMappingConfiguration tmc : elements) {
+          System.out.print(tmc.getName());
+          System.out.print(", ");
+        }
+        if (elements.size() > 1) {
+          System.out.print("} ");
+        }
       }
       System.out.println();
     }
@@ -594,16 +660,26 @@ public class GenPlanTest {
     return rv;
   }
 
+  private static SNode createMapConfigNode(String name) {
+    SNode n = new jetbrains.mps.smodel.SNode(RuleUtil.concept_MappingConfiguration);
+    n.setProperty(SNodeUtil.property_INamedConcept_name, name);
+    return n;
+  }
+
   private static class MockMapConfig extends TemplateMappingConfigurationInterpreted {
-    private final SNodeReference myNode;
+    private final SNodeReference myNodePtr;
     private final String myName;
     private final boolean myTopPri;
 
-    public MockMapConfig(String name, boolean topPri) {
-      super(null, createMapConfigNode(name));
+    public MockMapConfig(MockTemplateModel model, SNode mcNode, String name, boolean topPri) {
+      super(model, mcNode);
+      // name and topPri are direct values, not through SNode.getProperty as it
+      // name requires node to be isSubConceptOf(INamedConcept), which requires concept registry et al.
+      // topPri involves constraints - too much, imo.
       myName = name;
       myTopPri = topPri;
-      myNode = new SNodePointer(new SModelReference(new ModuleReference("MockModule"), SModelId.generate(), "MockModel"), SModel.generateUniqueId());
+      myNodePtr = new SNodePointer(model.getSModelReference(), mcNode.getNodeId());
+      model.registerMapConfig(this);
     }
 
     @Override
@@ -618,13 +694,52 @@ public class GenPlanTest {
 
     @Override
     public SNodeReference getMappingNode() {
-      return myNode;
+      return myNodePtr;
+    }
+  }
+
+  private static class MockTemplateModel implements TemplateModel {
+    private final String myName;
+    private final SModelReference myModelRef;
+    private static final List<TemplateMappingConfiguration> myMC = new ArrayList<TemplateMappingConfiguration>();
+
+    public MockTemplateModel(String name) {
+      myName = name;
+      myModelRef = new SModelReference(new ModuleReference("MockModule"), SModelId.generate(), name);
     }
 
-    private static SNode createMapConfigNode(String name) {
-      SNode n = new jetbrains.mps.smodel.SNode(RuleUtil.concept_MappingConfiguration);
-      n.setProperty("name", name);
-      return n;
+    @Override
+    public String getLongName() {
+      return myName;
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SModelReference getSModelReference() {
+      return myModelRef;
+    }
+
+    @Override
+    public Collection<TemplateSwitchMapping> getSwitches() {
+      return Collections.emptyList();
+    }
+
+    @Override
+    public Collection<TemplateMappingConfiguration> getConfigurations() {
+      return Collections.unmodifiableCollection(myMC);
+    }
+
+    @Override
+    public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
+      return null;
+    }
+
+    @Override
+    public TemplateModule getModule() {
+      return null;
+    }
+
+    /*package*/ void registerMapConfig(@NotNull TemplateMappingConfiguration mc) {
+      myMC.add(mc);
     }
   }
 }

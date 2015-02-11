@@ -19,6 +19,7 @@ import com.intellij.ui.ColoredTableCellRenderer;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -68,7 +69,8 @@ public class ModuleTableCellRender extends ColoredTableCellRenderer {
     }
   }
 
-  protected DependencyCellState getDependencyCellState(SModule module) {
+  @NotNull
+  protected DependencyCellState getDependencyCellState(@Nullable SModule module) {
     for (Pair<Condition<SModule>, DependencyCellState> cellState : myCellStates) {
       if (cellState.o1.met(module)) {
         return cellState.o2;

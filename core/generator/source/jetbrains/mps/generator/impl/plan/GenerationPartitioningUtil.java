@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class GenerationPartitioningUtil {
     return new EngagedGeneratorCollector(inputModel, null).getGenerators();
   }
 
-  public static List<Pair<String, TemplateMappingConfiguration>> toStrings(List<TemplateMappingConfiguration> mappings) {
+  public static List<Pair<String, TemplateMappingConfiguration>> toStrings(Collection<TemplateMappingConfiguration> mappings) {
     List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<Pair<String, TemplateMappingConfiguration>>();
 
     // consolidate mappings
