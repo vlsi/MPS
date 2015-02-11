@@ -26,6 +26,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.PsiTreeChangeEvent;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
@@ -200,6 +201,11 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         result.reload(model);
         models.put(modelRef, result);
         model.getModule().addModuleListener(new SModuleAdapter() {
+          @Override
+          public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
+            models.remove(model.getReference());
+          }
+
           @Override
           public void beforeModelRemoved(SModule module, SModel removedModel) {
             if (removedModel != model) return;
