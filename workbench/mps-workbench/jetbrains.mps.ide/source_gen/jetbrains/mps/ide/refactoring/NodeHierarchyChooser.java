@@ -54,7 +54,7 @@ public class NodeHierarchyChooser extends JBScrollPane {
       Set<SNode> descendants = this.ancestorsProvider.getDescendants(node);
       SetSequence.fromSet(descendants).removeSequence(SetSequence.fromSet(descendants).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.getModel(it).isReadOnly());
+          return SNodeOperations.getModel(it).isReadOnly();
         }
       }));
       return descendants;
