@@ -173,6 +173,7 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
       <library file="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
+      <library file="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <library file="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -465,6 +466,7 @@
   <target name="test.execution" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
+      <pathelement location="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <pathelement location="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
