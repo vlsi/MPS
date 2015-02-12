@@ -682,6 +682,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
     @Override
     public boolean met(SModule module) {
+      if (module == null) {
+        return false;
+      }
       final SModuleReference moduleReference = module.getModuleReference();
       if (myScope.contains(moduleReference)) {
         return true;

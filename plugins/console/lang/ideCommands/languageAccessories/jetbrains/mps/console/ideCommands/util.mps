@@ -850,7 +850,7 @@
                 </node>
                 <node concept="2YIFZM" id="67MRmR$wKVJ" role="33vP2m">
                   <ref role="1Pybhc" to="i6ta:~GenerationPartitioningUtil" resolve="GenerationPartitioningUtil" />
-                  <ref role="37wK5l" to="i6ta:~GenerationPartitioningUtil.toStrings(java.util.List):java.util.List" resolve="toStrings" />
+                  <ref role="37wK5l" to="i6ta:~GenerationPartitioningUtil.toStrings(java.util.Collection):java.util.List" resolve="toStrings" />
                   <node concept="37vLTw" id="67MRmR$wJp1" role="37wK5m">
                     <ref role="3cqZAo" node="67MRmR$wJoD" resolve="mappingSet" />
                   </node>
