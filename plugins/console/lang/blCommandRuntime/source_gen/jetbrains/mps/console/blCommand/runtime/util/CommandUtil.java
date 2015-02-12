@@ -17,11 +17,11 @@ import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Level;
 import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -89,9 +89,9 @@ public class CommandUtil {
     return FindUsagesManager.getInstance().findInstances(scope.getSearchScope(), Collections.singleton(concept), false, new EmptyProgressMonitor());
   }
 
-  public static void show(Project p, SearchResults results) {
+  public static void show(Project p, _FunctionTypes._return_P0_E0<? extends SearchResults> results) {
     try {
-      check_1pinza_a0a0a0n(ProjectHelper.toIdeaProject(p)).show(results, "No results to show");
+      check_1pinza_a0a0a0n(ProjectHelper.toIdeaProject(p)).show(results.invoke(), "No results to show");
     } catch (Exception e) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Exception in showing custom console result", e);
@@ -112,52 +112,65 @@ public class CommandUtil {
     } else {
       CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          CommandUtil.show(project, results.invoke());
+          CommandUtil.show(project, results);
         }
       }, resultsCount + " " + resultDescription);
     }
   }
 
-  public static SearchResults nodesToResults(Iterable<SNodeReference> nodes, final SRepository repository) {
-    final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(nodes).where(new IWhereFilter<SNodeReference>() {
-      public boolean accept(SNodeReference it) {
-        return check_1pinza_a0a0a0a0b0t(it, repository) != null;
+  public static _FunctionTypes._return_P0_E0<? extends SearchResults> nodesToResults(final Iterable<SNodeReference> nodes, final SRepository repository) {
+    return new _FunctionTypes._return_P0_E0<SearchResults<SNode>>() {
+      public SearchResults<SNode> invoke() {
+        final SearchResults<SNode> res = new SearchResults<SNode>();
+        Sequence.fromIterable(nodes).where(new IWhereFilter<SNodeReference>() {
+          public boolean accept(SNodeReference it) {
+            return check_1pinza_a0a0a0a0b0a0a91(it, repository) != null;
+          }
+        }).visitAll(new IVisitor<SNodeReference>() {
+          public void visit(SNodeReference it) {
+            res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0a0a91(it, repository), "usage"));
+          }
+        });
+        return res;
       }
-    }).visitAll(new IVisitor<SNodeReference>() {
-      public void visit(SNodeReference it) {
-        res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0t(it, repository), "usage"));
-      }
-    });
-    return res;
+    };
   }
 
-  public static SearchResults modelsToResults(Iterable<SModelReference> models, final SRepository repository) {
-    final SearchResults<SModel> res = new SearchResults<SModel>();
-    Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
-      public boolean accept(SModelReference it) {
-        return check_1pinza_a0a0a0a0b0v(it, repository) != null;
+  public static _FunctionTypes._return_P0_E0<? extends SearchResults> modelsToResults(final Iterable<SModelReference> models, final SRepository repository) {
+    return new _FunctionTypes._return_P0_E0<SearchResults<SModel>>() {
+      public SearchResults<SModel> invoke() {
+        final SearchResults<SModel> res = new SearchResults<SModel>();
+        Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
+          public boolean accept(SModelReference it) {
+            return check_1pinza_a0a0a0a0b0a0a12(it, repository) != null;
+          }
+        }).visitAll(new IVisitor<SModelReference>() {
+          public void visit(SModelReference it) {
+            res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0a0a12(it, repository), "usage"));
+          }
+        });
+        return res;
       }
-    }).visitAll(new IVisitor<SModelReference>() {
-      public void visit(SModelReference it) {
-        res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0v(it, repository), "usage"));
-      }
-    });
-    return res;
+    };
   }
 
-  public static SearchResults modulesToResults(Iterable<SModuleReference> modules, final SRepository repository) {
-    final SearchResults<SModule> res = new SearchResults<SModule>();
-    Sequence.fromIterable(modules).where(new IWhereFilter<SModuleReference>() {
-      public boolean accept(SModuleReference it) {
-        return check_1pinza_a0a0a0a0b0x(it, repository) != null;
+  public static _FunctionTypes._return_P0_E0<? extends SearchResults> modulesToResults(final Iterable<SModuleReference> modules, final SRepository repository) {
+    return new _FunctionTypes._return_P0_E0<SearchResults<SModule>>() {
+      public SearchResults<SModule> invoke() {
+        final SearchResults<SModule> res = new SearchResults<SModule>();
+        Sequence.fromIterable(modules).where(new IWhereFilter<SModuleReference>() {
+          public boolean accept(SModuleReference it) {
+            return check_1pinza_a0a0a0a0b0a0a32(it, repository) != null;
+          }
+        }).visitAll(new IVisitor<SModuleReference>() {
+          public void visit(SModuleReference it) {
+            res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0a0a32(it, repository), "usage"));
+          }
+        });
+        return res;
       }
-    }).visitAll(new IVisitor<SModuleReference>() {
-      public void visit(SModuleReference it) {
-        res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0x(it, repository), "usage"));
-      }
-    });
-    return res;
+    };
+
   }
 
   public static SNodeReference getNodeReference(SNode aNode) {
@@ -210,37 +223,37 @@ public class CommandUtil {
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0b0a0a91(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0a0b0a0a91(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0b0a0a12(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0a0b0a0a12(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0b0a0a32(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0a0b0a0a32(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
