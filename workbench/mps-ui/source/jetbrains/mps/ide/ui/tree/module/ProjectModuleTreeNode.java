@@ -50,6 +50,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
     myModule = module;
   }
 
+  @NotNull
   @Override
   public SModule getModule() {
     return myModule;
