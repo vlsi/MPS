@@ -48,7 +48,7 @@ public class PatternUtil {
   private static State appendNextChar(char c, State state, StringBuilder b, boolean useDots, boolean useStarAndQuestionMark) {
     if (state == State.SEQUENCE_LETTERS && Character.isUpperCase(c)) {
       b.append("[a-z0-9_]*");
-      b.append(c);
+      b.append("((").append(c).append(")|(\\s(\\s)*").append(Character.toLowerCase(c)).append("))");
       return State.SEQUENCE_LETTERS;
     }
     if (c == '*' || c == '?' || c == '.' || c == '@' || Character.isLetterOrDigit(c) || c == '_') {
@@ -111,8 +111,10 @@ public class PatternUtil {
         nextSubstring = new StringBuilder();
       } else if (useDots && c == '.' || c == '@' || Character.isUpperCase(c)) {
         if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+        String upperCase = new String(new char[]{c});
+        String spaceAndLowerCase = " " + Character.toLowerCase(c);
+        if (!addIndexes(matchingText, indexList, curIndex, upperCase) && !addIndexes(matchingText, indexList, curIndex, spaceAndLowerCase)) return new ArrayList<Integer>();
         nextSubstring = new StringBuilder();
-        if (!addIndexes(matchingText, indexList, curIndex, new String(new char[]{c}))) return new ArrayList<Integer>();
       } else {
         nextSubstring.append(c);
       }

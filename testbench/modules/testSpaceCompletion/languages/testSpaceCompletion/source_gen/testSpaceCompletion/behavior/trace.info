@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="ABCDEF_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABCDEF_BehaviorDescriptor" />
+    </file>
+    <file name="ABCDEG_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABCDEG_BehaviorDescriptor" />
+    </file>
+    <file name="ABCDE_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABCDE_BehaviorDescriptor" />
+    </file>
+    <file name="ABC_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABC_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,28,0" name="testSpaceCompletion.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
+</debug-info>
+
