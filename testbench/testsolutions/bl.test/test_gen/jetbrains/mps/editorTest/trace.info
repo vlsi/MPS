@@ -4945,6 +4945,77 @@
       <unit id="3543341247931728991" at="10,0,30,0" name="jetbrains.mps.editorTest.CreationStaticField2_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3586175963764966583">
+    <file name="CompletionSpace_Test.java">
+      <node id="3586175963764966583" at="17,55,18,107" concept="2" />
+      <node id="3586175963764966583" at="18,107,19,96" concept="2" />
+      <node id="3586175963764966583" at="26,51,27,63" concept="2" />
+      <node id="3586175963764966607" at="27,63,28,30" concept="2" />
+      <node id="3586175963764966608" at="28,30,29,91" concept="2" />
+      <node id="3586175963764966610" at="29,91,30,87" concept="2" />
+      <node id="3586175963764966612" at="30,87,31,0" concept="8" />
+      <node id="3586175963764966583" at="14,0,16,0" concept="1" trace="CompletionSpace_Test#()V" />
+      <node id="3586175963764966583" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="3586175963764966583" at="16,0,21,0" concept="5" trace="test_CompletionSpace#()V" />
+      <node id="3586175963764966583" at="25,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3586175963764966583" at="14,33,14,33" />
+      <scope id="3586175963764966583" at="23,23,23,23" />
+      <scope id="3586175963764966583" at="14,0,16,0" />
+      <scope id="3586175963764966583" at="17,55,19,96" />
+      <scope id="3586175963764966583" at="23,0,25,0" />
+      <scope id="3586175963764966583" at="16,0,21,0" />
+      <scope id="3586175963764966583" at="26,51,31,0" />
+      <scope id="3586175963764966583" at="25,0,33,0" />
+      <unit id="3586175963764966583" at="21,0,34,0" name="jetbrains.mps.editorTest.CompletionSpace_Test$TestBody" />
+      <unit id="3586175963764966583" at="12,0,35,0" name="jetbrains.mps.editorTest.CompletionSpace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3586175963765094833">
+    <file name="CompletionSpaceFirst_Test.java">
+      <node id="3586175963765094833" at="17,60,18,107" concept="2" />
+      <node id="3586175963765094833" at="18,107,19,101" concept="2" />
+      <node id="3586175963765094833" at="26,51,27,63" concept="2" />
+      <node id="3586175963765094856" at="27,63,28,31" concept="2" />
+      <node id="3586175963765094857" at="28,31,29,91" concept="2" />
+      <node id="3586175963765094833" at="14,0,16,0" concept="1" trace="CompletionSpaceFirst_Test#()V" />
+      <node id="3586175963765094833" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="3586175963765094833" at="16,0,21,0" concept="5" trace="test_CompletionSpaceFirst#()V" />
+      <node id="3586175963765094833" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3586175963765094833" at="14,38,14,38" />
+      <scope id="3586175963765094833" at="23,23,23,23" />
+      <scope id="3586175963765094833" at="14,0,16,0" />
+      <scope id="3586175963765094833" at="17,60,19,101" />
+      <scope id="3586175963765094833" at="23,0,25,0" />
+      <scope id="3586175963765094833" at="26,51,29,91" />
+      <scope id="3586175963765094833" at="16,0,21,0" />
+      <scope id="3586175963765094833" at="25,0,31,0" />
+      <unit id="3586175963765094833" at="21,0,32,0" name="jetbrains.mps.editorTest.CompletionSpaceFirst_Test$TestBody" />
+      <unit id="3586175963765094833" at="12,0,33,0" name="jetbrains.mps.editorTest.CompletionSpaceFirst_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3586175963765097035">
+    <file name="CompletionSpaceSecond_Test.java">
+      <node id="3586175963765097035" at="17,61,18,107" concept="2" />
+      <node id="3586175963765097035" at="18,107,19,102" concept="2" />
+      <node id="3586175963765097035" at="26,51,27,63" concept="2" />
+      <node id="3586175963765097057" at="27,63,28,31" concept="2" />
+      <node id="3586175963765097058" at="28,31,29,91" concept="2" />
+      <node id="3586175963765097035" at="14,0,16,0" concept="1" trace="CompletionSpaceSecond_Test#()V" />
+      <node id="3586175963765097035" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="3586175963765097035" at="16,0,21,0" concept="5" trace="test_CompletionSpaceSecond#()V" />
+      <node id="3586175963765097035" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3586175963765097035" at="14,39,14,39" />
+      <scope id="3586175963765097035" at="23,23,23,23" />
+      <scope id="3586175963765097035" at="14,0,16,0" />
+      <scope id="3586175963765097035" at="17,61,19,102" />
+      <scope id="3586175963765097035" at="23,0,25,0" />
+      <scope id="3586175963765097035" at="26,51,29,91" />
+      <scope id="3586175963765097035" at="16,0,21,0" />
+      <scope id="3586175963765097035" at="25,0,31,0" />
+      <unit id="3586175963765097035" at="21,0,32,0" name="jetbrains.mps.editorTest.CompletionSpaceSecond_Test$TestBody" />
+      <unit id="3586175963765097035" at="12,0,33,0" name="jetbrains.mps.editorTest.CompletionSpaceSecond_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3682190017634612695">
     <file name="FluentParens1_Test.java">
       <node id="3682190017634612695" at="15,53,16,107" concept="2" />

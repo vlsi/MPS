@@ -2935,6 +2935,15 @@
     <node concept="lpD6D" id="7Oax35P4k$z" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7Oax35P33Tr" resolve="CompletionStartsWithTest" />
     </node>
+    <node concept="lpD6D" id="374E0BAhv7b" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:374E0BAgkiR" resolve="CompletionSpace" />
+    </node>
+    <node concept="lpD6D" id="374E0BAhv_c" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:374E0BAgNAL" resolve="CompletionSpaceFirst" />
+    </node>
+    <node concept="lpD6D" id="374E0BAhvKu" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:374E0BAgO9b" resolve="CompletionSpaceSecond" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4jBMNo5VBVj" resolve="EditingNotEditableProperty" />
     </node>

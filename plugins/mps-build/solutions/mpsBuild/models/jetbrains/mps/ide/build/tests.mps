@@ -620,6 +620,42 @@
           <property role="2GAjPV" value="false" />
         </node>
       </node>
+      <node concept="1E1JtD" id="374E0BAhSlA" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="testSpaceCompletion" />
+        <property role="3LESm3" value="4dd3c558-f0fc-4807-bade-5d6bcad6b3f1" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="374E0BAhSlD" role="3LF7KH">
+          <node concept="2Ry0Ak" id="374E0BAhSwt" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="374E0BAhSAI" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="374E0BAhSLU" role="2Ry0An">
+                <property role="2Ry0Am" value="testSpaceCompletion" />
+                <node concept="2Ry0Ak" id="374E0BAhSP5" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="374E0BAhSPa" role="2Ry0An">
+                    <property role="2Ry0Am" value="testSpaceCompletion" />
+                    <node concept="2Ry0Ak" id="374E0BAhSPf" role="2Ry0An">
+                      <property role="2Ry0Am" value="testSpaceCompletion.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6H_1xKXj0bw" role="3bR37C">
+          <node concept="1Busua" id="6H_1xKXj0bx" role="1SiIV1">
+            <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+        <node concept="1yeLz9" id="6H_1xKXj0by" role="1TViLv">
+          <property role="TrG5h" value="testSpaceCompletion#3586175963764950873" />
+          <property role="3LESm3" value="5ceedee4-7379-4b2b-bf45-c7944360965d" />
+          <property role="2GAjPV" value="false" />
+        </node>
+      </node>
       <node concept="1E1JtD" id="33Dctpd0sbL" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.lang.editor.styleTests" />
@@ -895,6 +931,12 @@
             <ref role="3bR37D" node="4F_fjXJTfNV" resolve="testDefaultEditor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="374E0BAhS9e" role="3bR37C">
+          <node concept="3bR9La" id="374E0BAhS9f" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="374E0BAhSlA" resolve="testSpaceCompletion" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="4BLpc15ezHv" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -1011,6 +1053,9 @@
         </node>
         <node concept="L2wRC" id="2tTgVY$WWwl" role="39821P">
           <ref role="L2wRA" node="2tTgVY$TuKU" resolve="testMoveElements" />
+        </node>
+        <node concept="L2wRC" id="374E0BAhRos" role="39821P">
+          <ref role="L2wRA" node="374E0BAhSlA" resolve="testSpaceCompletion" />
         </node>
         <node concept="L2wRC" id="4BLpc15eFo5" role="39821P">
           <ref role="L2wRA" node="4BLpc15eBPf" resolve="jetbrains.mps.lang.editor.multiple.testLanguage" />
