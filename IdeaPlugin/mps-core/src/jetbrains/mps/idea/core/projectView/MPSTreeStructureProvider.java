@@ -95,7 +95,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         FolderDataSource currentDirectoryDataSource = null;
 
         if (treeNode instanceof PsiDirectoryNode) {
-          // let's if we have a model built from this dir, e.g. in per-root persistence
+          // let's see if we have a model built from this dir, e.g. in per-root persistence
           SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) treeNode).getVirtualFile()));
           if (sModel != null) {
             // adding root nodes (removing their corresponding files' nodes from the tree is further below)

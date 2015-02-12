@@ -260,6 +260,23 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     ((PsiManagerImpl) manager).childrenChanged(event);
   }
 
+  void notifyModelRenamed(MPSPsiModel model, String oldName, String newName) {
+    PsiManager manager = model.getManager();
+    if (manager == null || !(manager instanceof PsiManagerImpl)) return;
+
+    myModificationTracker.incCounter();
+
+    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
+    manager.dropResolveCaches();
+
+    PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+    event.setElement(model);
+    event.setPropertyName(PsiTreeChangeEvent.PROP_FILE_NAME);
+    event.setOldValue(oldName);
+    event.setNewValue(newName);
+    ((PsiManagerImpl) manager).propertyChanged(event);
+  }
+
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {
 
     @Nullable
