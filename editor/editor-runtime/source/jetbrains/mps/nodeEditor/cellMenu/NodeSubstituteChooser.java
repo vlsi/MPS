@@ -627,7 +627,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
       Dimension preferredSize = getPreferredSize();
-      if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150 && location.getY() - getPatternEditor().getHeight() / 2 > deviceBounds.y + deviceBounds.height / 2) {
+      if (getPosition() == PopupWindowPosition.BOTTOM && location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150 && location.getY() - getPatternEditor().getHeight() / 2 > deviceBounds.y + deviceBounds.height / 2) {
         setPosition(PopupWindowPosition.TOP);
       }
 
