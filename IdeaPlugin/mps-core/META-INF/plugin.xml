@@ -147,6 +147,7 @@
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
+    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.core.refactoring.PackageRenameListener"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
