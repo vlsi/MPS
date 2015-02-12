@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 
 public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
@@ -30,7 +31,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
-  protected ProjectDevKitTreeNode(DevKit devkit, Project project, boolean shortNameOnly) {
+  protected ProjectDevKitTreeNode(@NotNull DevKit devkit, Project project, boolean shortNameOnly) {
     super(devkit);
     myProject = project;
     myShortNameOnly = shortNameOnly;
@@ -44,6 +45,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return myInitialized;
   }
 
+  @NotNull
   @Override
   public DevKit getModule() {
     return (DevKit) super.getModule();

@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTreeNode {
@@ -43,6 +44,7 @@ public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTre
     }
   }
 
+  @NotNull
   @Override
   public SModule getModule() {
     return myModule;

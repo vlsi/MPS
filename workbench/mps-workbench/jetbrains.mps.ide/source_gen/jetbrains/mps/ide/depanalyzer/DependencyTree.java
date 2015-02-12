@@ -90,6 +90,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
         continue;
       }
       ModuleDependencyNode n = new ModuleDependencyNode(module, moduleDeps, false);
+      n.updateIcon(myModule.getRepository());
       final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
         public boolean met(DepLink dl) {
           return dl.role.isDependency();
@@ -120,6 +121,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
           continue;
         }
         ModuleDependencyNode n = new ModuleDependencyNode(module, usedLangDeps, true);
+        n.updateIcon(myModule.getRepository());
         final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
           public boolean met(DepLink dl) {
             return dl.role.isUsedLanguage();
@@ -152,22 +154,16 @@ public class DependencyTree extends MPSTree implements DataProvider {
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a51(getCurrentNode(), ModuleDependencyNode.class);
+    if (!(getCurrentNode() instanceof ModuleDependencyNode)) {
+      return null;
+    }
+    ModuleDependencyNode current = (ModuleDependencyNode) getCurrentNode();
     if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_he3vmc_a0a2a51(current);
+      return current.getModule().resolve(myModule.getRepository());
     }
     return null;
-  }
-  private static SModule check_he3vmc_a0a2a51(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static <T> T as_he3vmc_a0a0a51(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

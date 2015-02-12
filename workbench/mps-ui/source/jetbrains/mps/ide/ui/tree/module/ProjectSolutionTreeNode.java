@@ -21,13 +21,14 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
 
   private boolean myInitialized;
 
-  protected ProjectSolutionTreeNode(AbstractModule solution, Project project, boolean shortNameOnly) {
+  protected ProjectSolutionTreeNode(@NotNull AbstractModule solution, Project project, boolean shortNameOnly) {
     super(solution);
     myShortNameOnly = shortNameOnly;
 
