@@ -353,6 +353,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -363,6 +364,9 @@
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
@@ -406,9 +410,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -9694,12 +9695,12 @@
             </node>
           </node>
           <node concept="3y3z36" id="2Xh8b$ioe0h" role="3clFbw">
-            <node concept="3TUQnm" id="2Xh8b$ioe0l" role="3uHU7w">
-              <ref role="3TV0OU" to="tpee:fzclF8l" resolve="Statement" />
+            <node concept="35c_gC" id="1hnCKJ4WaX1" role="3uHU7w">
+              <ref role="35c_gD" to="tpee:fzclF8l" resolve="Statement" />
             </node>
             <node concept="2OqwBi" id="2Xh8b$ioe09" role="3uHU7B">
               <node concept="117lpO" id="2Xh8b$ioe08" role="2Oq$k0" />
-              <node concept="3NT_Vc" id="2Xh8b$ioe0d" role="2OqNvi" />
+              <node concept="2yIwOk" id="1hnCKJ4W9mx" role="2OqNvi" />
             </node>
           </node>
           <node concept="9aQIb" id="2Xh8b$ioe8$" role="9aQIa">

@@ -4,15 +4,14 @@ package jetbrains.mps.baseLanguage.actions;
 
 import jetbrains.mps.datatransfer.CopyPreProcessor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor {
   public SNode getApplicableConcept() {
-    return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference").getDeclarationNode();
   }
   public void preProcesNode(SNode copy, SNode original) {
     // todo: remove after MPS 3.0 
