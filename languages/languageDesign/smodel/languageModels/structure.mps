@@ -777,7 +777,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
-    <node concept="asaX9" id="4eGV4eC5kGm" role="lGtFl" />
+    <node concept="asaX9" id="4eGV4eC5kGm" role="lGtFl">
+      <property role="YLQ7P" value="Use ConceptIdRefExpression instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h4z$bTp">
     <property role="R5$K7" value="false" />
