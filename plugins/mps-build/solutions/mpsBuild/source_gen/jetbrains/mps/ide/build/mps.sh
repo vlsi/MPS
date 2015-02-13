@@ -37,7 +37,7 @@ else
 fi
 
 if [ -z "${MPS_VM_OPTIONS}" ]; then
-  MPS_VM_OPTIONS="${PROJECT_HOME}/bin/mps$BITS.vmoptions"
+  MPS_VM_OPTIONS="${PROJECT_HOME}/mps$BITS.vmoptions"
 else
   echo "$0 info: Using vmoptions defined in ${MPS_VM_OPTIONS}."
 fi
@@ -59,7 +59,6 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/extensions.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/trove4j.jar
 
 cd "${PROJECT_HOME}"
-cd bin
 if [ "${UNAME}" = "Darwin" ]; then
   if [ -z ${DYLD_LIBRARY_PATH} ]; then
     DYLD_LIBRARY_PATH=${PWD}

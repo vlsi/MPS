@@ -1009,7 +1009,7 @@
     </node>
     <node concept="2DRAP_" id="1w81suLSqoW" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSqp3" role="2DRAPQ">
-      <property role="2DPR8u" value="set PROJECT_HOME=%~dp0" />
+      <property role="2DPR8u" value="set PROJECT_HOME=%~dp0..\" />
     </node>
     <node concept="2DRAP_" id="1w81suLSqpb" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSqpk" role="2DRAPQ">
@@ -1434,7 +1434,7 @@
     </node>
     <node concept="2DRAP_" id="1w81suLSXU3" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSXVU" role="2DRAPQ">
-      <property role="2DPR8u" value="pushd " />
+      <property role="2DPR8u" value="pushd %PROJECT_HOME%" />
       <node concept="17Uvod" id="1w81suLSYW1" role="lGtFl">
         <property role="2qtEX9" value="text" />
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
@@ -1850,7 +1850,7 @@
       <property role="2DPR8u" value="if [ -z &quot;${MPS_VM_OPTIONS}&quot; ]; then" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAae7V" role="2DRAPQ">
-      <property role="2DPR8u" value="  MPS_VM_OPTIONS=&quot;${PROJECT_HOME}/bin/mps$BITS.vmoptions&quot;" />
+      <property role="2DPR8u" value="  MPS_VM_OPTIONS=&quot;${PROJECT_HOME}/mps$BITS.vmoptions&quot;" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAaeEa" role="2DRAPQ">
       <property role="2DPR8u" value="else" />
@@ -2051,9 +2051,6 @@
     <node concept="2DRAP_" id="3T7P3nAax98" role="2DRAPQ" />
     <node concept="2DRAP_" id="3T7P3nAaxbk" role="2DRAPQ">
       <property role="2DPR8u" value="cd &quot;${PROJECT_HOME}&quot;" />
-    </node>
-    <node concept="2DRAP_" id="3T7P3nAaxJH" role="2DRAPQ">
-      <property role="2DPR8u" value="cd bin" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAay32" role="2DRAPQ">
       <property role="2DPR8u" value="if [ &quot;${UNAME}&quot; = &quot;Darwin&quot; ]; then" />
