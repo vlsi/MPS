@@ -63,15 +63,21 @@ public class ClassLoadingBroadCaster {
   }
 
   public Collection<ReloadableModuleBase> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+    if (refsToUnload.isEmpty()) return Collections.emptySet();
+
     myModelAccess.checkWriteAccess();
-    if (refsToUnload.size() == 0) return Collections.emptySet();
     final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
     for (ReloadableModule loadedModule : myLoadedModules) {
       ReloadableModuleBase loadedModule1 = (ReloadableModuleBase) loadedModule;
       SModuleReference mRef = loadedModule1.getModuleReference();
-      if (refsToUnload.contains(mRef)) modulesToUnload.add(loadedModule1);
+      if (refsToUnload.contains(mRef)) {
+        modulesToUnload.add(loadedModule1);
+      }
     }
-    if (modulesToUnload.size() != refsToUnload.size()) throw new IllegalArgumentException("Loaded modules do not match given refs");
+    if (modulesToUnload.size() < refsToUnload.size()) {
+      LOG.error("", new IllegalArgumentException("Broken contract : some of the passed module references have not been loaded"));
+    }
+
     myLoadedModules.removeAll(modulesToUnload);
 
     for (MPSClassesListener listener : myClassesHandlers) {
@@ -82,8 +88,9 @@ public class ClassLoadingBroadCaster {
   }
 
   public void onLoad(Collection<? extends ReloadableModule> toLoad) {
+    if (toLoad.isEmpty()) return;
+
     myModelAccess.checkWriteAccess();
-    if (toLoad.size() == 0) return;
     final Set<ReloadableModuleBase> modulesToLoad = new LinkedHashSet<ReloadableModuleBase>(toLoad.size());
     for (ReloadableModule module : toLoad) modulesToLoad.add((ReloadableModuleBase) module);
     myLoadedModules.addAll(modulesToLoad);
@@ -94,9 +101,9 @@ public class ClassLoadingBroadCaster {
   }
 
   public void onReload(Collection<ReloadableModule> reloadedModules) {
-    myModelAccess.checkWriteAccess();
-    if (reloadedModules.size() == 0) return;
+    if (reloadedModules.isEmpty()) return;
 
+    myModelAccess.checkWriteAccess();
     final Set<ReloadableModuleBase> modulesToReload = new LinkedHashSet<ReloadableModuleBase>(reloadedModules.size());
     for (ReloadableModule module : reloadedModules) modulesToReload.add((ReloadableModuleBase) module);
 

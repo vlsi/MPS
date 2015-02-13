@@ -30,7 +30,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * This class stores a map SModuleReference->ModuleClassLoader
@@ -93,14 +95,13 @@ public class ClassLoadersHolder {
    * {@link ClassLoadingProgress} for the description of states and a typical lifecycle of module in a repository.
    */
   @NotNull
-  public ClassLoadingProgress getClassLoadingProgress(ReloadableModule module) {
-    SModuleReference mRef = module.getModuleReference();
-    return getClassLoadingProgress(mRef);
-  }
-
-  @NotNull
   public ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
     return myMPSClassLoadersRegistry.getClassLoadingProgress(mRef);
+  }
+
+  public void scheduleClassLoaderDisposeInEDT() {
+    LOG.debug("Scheduling ModuleClassLoader disposal");
+    myMPSClassLoadersRegistry.flushDisposeQueue();
   }
 
   /**
@@ -133,9 +134,10 @@ public class ClassLoadersHolder {
    * This class deals only with MPS-loadable modules
    * @see ClassLoaderManager#myMPSLoadableCondition
    */
-  class MPSClassLoadersRegistry {
+  private class MPSClassLoadersRegistry {
     private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
     private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
+    private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<ModuleClassLoader>();
 
     @Nullable
     private synchronized ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
@@ -183,7 +185,7 @@ public class ClassLoadersHolder {
           }
         }
       }
-      disposeClassLoadersInEDT(toDispose);
+      myDisposeQueue.addAll(toDispose);
       return unloaded;
     }
 
@@ -207,11 +209,14 @@ public class ClassLoadersHolder {
         monitor.start("Loading modules...", toLoad.size());
         for (ReloadableModule module : toLoad) {
           SModuleReference moduleReference = module.getModuleReference();
-          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. no listeners know about this module");
-          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.LOADED) continue;
-          ModuleClassLoader classLoader = createModuleClassLoader(module);
-          putClassLoader(moduleReference, classLoader);
-          onLoaded(moduleReference);
+          ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
+          if (progress == ClassLoadingProgress.UNLOADED) {
+            throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
+          } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
+            ModuleClassLoader classLoader = createModuleClassLoader(module);
+            putClassLoader(moduleReference, classLoader);
+            onLoaded(moduleReference);
+          }
           monitor.advance(1);
         }
       } finally {
@@ -243,11 +248,13 @@ public class ClassLoadersHolder {
      * Very quick action.
      * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
      */
-    private void disposeClassLoadersInEDT(final Iterable<ModuleClassLoader> toDispose) {
+    public void flushDisposeQueue() {
       myModelAccess.runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          for (ModuleClassLoader classLoader : toDispose) {
+          LOG.debug("Disposing " + myDisposeQueue.size() + " class loaders");
+          while (!myDisposeQueue.isEmpty()) {
+            ModuleClassLoader classLoader = myDisposeQueue.poll();
             classLoader.dispose();
           }
         }

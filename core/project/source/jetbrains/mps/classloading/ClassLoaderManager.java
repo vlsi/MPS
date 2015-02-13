@@ -472,8 +472,7 @@ public class ClassLoaderManager implements CoreComponent {
       Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
       for (SModule module : modules) {
         if (!(module instanceof TempModule) && module.getRepository() == null) {
-          throw new IllegalStateException(
-              String.format("Cannot reload the module %s which does not belong to a repository", module));
+          throw new IllegalStateException(String.format("Cannot reload the module %s which does not belong to a repository", module));
         }
         if (module instanceof ReloadableModule) {
           modulesToReload.add((ReloadableModule) module);
@@ -482,7 +481,7 @@ public class ClassLoaderManager implements CoreComponent {
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
       myModulesWatcher.updateModules(modulesToReload);
-      Collection<ReloadableModuleBase> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
+      Collection<? extends ReloadableModule> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
       Collection<ReloadableModule> loadedModules = preLoadModules(modulesToReload, monitor.subTask(1));
       myBroadCaster.onReload(loadedModules);
@@ -493,6 +492,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       return new LinkedHashSet<ReloadableModule>(loadedModules);
     } finally {
+      myClassLoadersHolder.scheduleClassLoaderDisposeInEDT();
       monitor.done();
     }
   }
@@ -593,7 +593,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Condition<ReloadableModule> myUnloadedCondition = new Condition<ReloadableModule>() {
     @Override
     public boolean met(ReloadableModule module) {
-      return myClassLoadersHolder.getClassLoadingProgress(module) == UNLOADED;
+      return myClassLoadersHolder.getClassLoadingProgress(module.getModuleReference()) == UNLOADED;
     }
   };
 
@@ -607,7 +607,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Condition<ReloadableModule> myLoadedCondition = new Condition<ReloadableModule>() {
     @Override
     public boolean met(ReloadableModule module) {
-      return myClassLoadersHolder.getClassLoadingProgress(module) == LOADED;
+      return myClassLoadersHolder.getClassLoadingProgress(module.getModuleReference()) == LOADED;
     }
   };
 }
