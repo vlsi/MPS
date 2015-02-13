@@ -36,7 +36,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,13 +45,20 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class DataTree implements IExternalizeable, IChangeListener {
   private DataNode myTreeRoot = build(new SearchResults(), null);
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
   private DataTreeChangesNotifier myChangesNotifier = new DataTreeChangesNotifier(this);
+
+  //this is only used in 3.2 to make rebuild faster in case of many nodes.
+  //in 3.3 it will be fixed by introducing path providers
+  //this cache is onlly alive during read action in build() method
+  private Map<Pair<DataNode, Object>, DataNode> myRebuildCache;
 
   public DataTree() {
   }
@@ -154,6 +160,8 @@ public class DataTree implements IExternalizeable, IChangeListener {
     return ModelAccess.instance().runReadAction(new Computable<DataNode>() {
       @Override
       public DataNode compute() {
+        myRebuildCache = new HashMap<Pair<DataNode, Object>, DataNode>();
+
         DataNode root = new DataNode(new MainNodeData(PathItemRole.ROLE_MAIN_ROOT));
 
         DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
@@ -168,6 +176,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
         }
         root.add(resultsRoot);
 
+        myRebuildCache = null;
         return root;
       }
     });
@@ -187,28 +196,14 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //the first argument's type is exact for performance reasons
   private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator,
-                              boolean results, SearchResult result) {
+      boolean results, SearchResult result) {
     DataNode next = null;
     PathItem currentPathItem = path.get(index);
     Object currentIdObject = currentPathItem.getIdObject();
 
-    for (DataNode child : root.getChildren()) {
-      if (currentIdObject instanceof String) {
-        if (EqualUtil.equals(currentIdObject, child.getData().getIdObject())) {
-          next = child;
-        }
-      } else if (currentIdObject instanceof Pair && child.getData() instanceof CategoryNodeData) {
-        Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
-        CategoryNodeData data = (CategoryNodeData) child.getData();
-        if (data.getCategoryKindName().equals(category.o1.getName())
-          && EqualUtil.equals(data.getIdObject(), category.o2)) {
-          next = child;
-        }
-      } else {
-        if (EqualUtil.equals(child.getData().getIdObject(), currentIdObject)) {
-          next = child;
-        }
-      }
+    DataNode child = myRebuildCache.get(new Pair<DataNode, Object>(root, currentIdObject));
+    if (child != null) {
+      next = child;
     }
 
     if (next == null) {
@@ -239,8 +234,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
         data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
 
+      assert data != null : currentIdObject;
+
       next = new DataNode(data);
       root.add(next);
+      myRebuildCache.put(new Pair<DataNode, Object>(root, data.getIdObject()), next);
     } else {
       adjustNode(next, path, index);
     }
