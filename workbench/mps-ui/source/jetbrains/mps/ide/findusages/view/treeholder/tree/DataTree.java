@@ -210,31 +210,31 @@ public class DataTree implements IExternalizeable, IChangeListener {
         }
       }
     }
+
     if (next == null) {
-      Object o = currentIdObject;
       PathItemRole creator = path.get(index).getRole();
       BaseNodeData data = null;
 
       boolean isResult = index == path.size() - 1;
-      if (o instanceof SModule) {
+      if (currentIdObject instanceof SModule) {
         if (result != null && isResult) {
           data = new ModuleNodeData(creator, result, true, nodeRepresentator, results);
         } else {
-          data = new ModuleNodeData(creator, (SModule) o, isResult, results);
+          data = new ModuleNodeData(creator, (SModule) currentIdObject, isResult, results);
         }
-      } else if (o instanceof SModelReference) {
+      } else if (currentIdObject instanceof SModelReference) {
         if (result != null && isResult) {
           data = new ModelNodeData(creator, result, true, nodeRepresentator, results);
         } else {
-          data = new ModelNodeData(creator, (SModelReference) o, isResult, results);
+          data = new ModelNodeData(creator, (SModelReference) currentIdObject, isResult, results);
         }
-      } else if (o instanceof SNode) {
+      } else if (currentIdObject instanceof SNode) {
         if (result != null && isResult) {
           data = new NodeNodeData(creator, result, isResult, nodeRepresentator, results);
         } else {
-          data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
+          data = new NodeNodeData(creator, (SNode) currentIdObject, isResult, nodeRepresentator, results);
         }
-      } else if (o instanceof Pair) {
+      } else if (currentIdObject instanceof Pair) {
         Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
         data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
