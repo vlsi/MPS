@@ -83,11 +83,10 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   public void projectOpened() {
-    final List<PluginContributor> loadedContributors = myPluginReloader.getLoadedContributors();
     StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
       @Override
       public void run() {
-        runStartupActivity(loadedContributors);
+        runStartupActivity(myPluginReloader.getLoadedContributors());
         myInitialized = true;
       }
     });
