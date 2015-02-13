@@ -11186,8 +11186,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/7246115176735615080">
     <file name="replace_withAnotherSequenceType.java">
       <node id="7246115176735615080" at="23,44,24,116" concept="9" />
-      <node id="3357971920377774942" at="29,120,30,505" concept="6" />
-      <node id="5686963296372576471" at="30,505,31,134" concept="6" />
+      <node id="3357971920377774942" at="29,120,30,773" concept="6" />
+      <node id="5686963296372576471" at="30,773,31,206" concept="6" />
       <node id="5686963296372870434" at="33,41,34,178" concept="7" />
       <node id="7246115176735615083" at="38,155,39,111" concept="7" />
       <node id="7246115176735615110" at="41,159,42,115" concept="7" />
@@ -11198,7 +11198,7 @@
       <node id="7246115176735615083" at="38,0,41,0" concept="5" trace="createReplacementNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7246115176735615083" at="41,0,44,0" concept="5" trace="createReplacementNode_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7246115176735615083" at="44,0,47,0" concept="5" trace="isReferentPresentation#()Z" />
-      <node id="5686963296372576461" at="31,134,36,64" concept="7" />
+      <node id="5686963296372576461" at="31,206,36,64" concept="7" />
       <node id="7246115176735615083" at="29,0,38,0" concept="5" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
       <scope id="7246115176735615083" at="27,52,27,52" />
       <scope id="7246115176735615080" at="23,44,24,116" />

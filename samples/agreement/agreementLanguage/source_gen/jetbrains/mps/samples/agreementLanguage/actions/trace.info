@@ -15,8 +15,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590407(jetbrains.mps.samples.agreementLanguage.actions)/1112119676621">
     <file name="QueriesGenerated.java">
       <node id="1112119679872" at="21,203,22,93" concept="4" />
-      <node id="1112119679872" at="23,5,24,132" concept="4" />
-      <node id="1112119679872" at="24,132,25,62" concept="4" />
+      <node id="1112119679872" at="23,5,24,199" concept="4" />
+      <node id="1112119679872" at="24,199,25,62" concept="4" />
       <node id="1197679562962" at="28,94,29,261" concept="4" />
       <node id="1197679576644" at="29,261,30,170" concept="1" />
       <node id="1197679162276" at="32,42,33,195" concept="1" />
@@ -30,8 +30,8 @@
       <node id="1197676859733" at="49,60,50,38" concept="5" />
       <node id="1197676839651" at="52,57,53,27" concept="5" />
       <node id="1112119679872" at="55,64,56,44" concept="5" />
-      <node id="1112119679872" at="61,5,62,132" concept="4" />
-      <node id="1112119679872" at="62,132,63,62" concept="4" />
+      <node id="1112119679872" at="61,5,62,199" concept="4" />
+      <node id="1112119679872" at="62,199,63,62" concept="4" />
       <node id="1197677258572" at="66,94,67,261" concept="4" />
       <node id="1197677346167" at="68,40,69,178" concept="1" />
       <node id="1197677378127" at="70,20,71,174" concept="1" />

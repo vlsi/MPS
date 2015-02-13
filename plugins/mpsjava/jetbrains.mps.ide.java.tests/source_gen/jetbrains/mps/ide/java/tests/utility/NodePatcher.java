@@ -110,7 +110,7 @@ public class NodePatcher {
   }
   public static void removeSModelAttrs(SNode node) {
     for (SNode attr : ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()))) {
-      if (SNodeOperations.getConceptDeclaration(attr) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")) {
+      if (SNodeOperations.getConceptDeclaration(attr) == MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports").getDeclarationNode()) {
         continue;
       }
       SNodeOperations.detachNode(attr);

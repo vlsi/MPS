@@ -26,7 +26,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -109,7 +108,7 @@ public class RunTestInMPS_Action extends BaseAction {
         @Override
         public void run() {
           try {
-            meth.invoke(testClass, className + "$" + NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))), testName, true);
+            meth.invoke(testClass, className + "$" + NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode())), testName, true);
           } catch (Throwable e) {
             e.printStackTrace();
           }

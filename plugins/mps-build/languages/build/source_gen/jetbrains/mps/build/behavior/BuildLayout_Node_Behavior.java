@@ -8,7 +8,6 @@ import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -32,7 +31,7 @@ public class BuildLayout_Node_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node")), thisNode, sb);
+    BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), thisNode, sb);
     return sb.toString();
   }
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
@@ -44,7 +43,7 @@ public class BuildLayout_Node_Behavior {
   public static void call_appendName_internal_1368030936106708110(SAbstractConcept thisConcept, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
     if (parent != null) {
-      BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node")), parent, sb);
+      BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), parent, sb);
     }
     BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
   }

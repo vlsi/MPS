@@ -133,7 +133,7 @@
         <var name="kind" id="5422656561918019648" />
         <var name="thisNode" id="5422656561918019432" />
       </scope>
-      <unit id="5422656561923468238" at="24,531,28,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior$1" />
+      <unit id="5422656561923468238" at="24,597,28,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior$1" />
       <unit id="5422656561923530141" at="28,20,32,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior$2" />
       <unit id="5422656561918019432" at="19,0,37,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior" />
     </file>

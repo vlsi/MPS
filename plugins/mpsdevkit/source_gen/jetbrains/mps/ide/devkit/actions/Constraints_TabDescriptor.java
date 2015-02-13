@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Constraints_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Constraint;
@@ -58,9 +57,9 @@ public class Constraints_TabDescriptor extends RelationDescriptor {
     return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints").getDeclarationNode());
   }
   public SNode createNode(final SNode node, final SNode concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.CONSTRAINTS, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.CONSTRAINTS, node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints").getDeclarationNode());
   }
 }

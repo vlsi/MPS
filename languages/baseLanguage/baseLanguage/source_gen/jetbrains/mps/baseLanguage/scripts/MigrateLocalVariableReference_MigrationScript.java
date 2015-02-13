@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MigrateLocalVariableReference_MigrationScript extends BaseMigrationScript {
   public MigrateLocalVariableReference_MigrationScript(IOperationContext operationContext) {
     super("Migrate LocalVariableReference to VariableReference");
-    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference").getDeclarationNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").getDeclarationNode())) {
       this.addRefactoring(refactoring);
     }
   }

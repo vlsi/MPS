@@ -6,10 +6,10 @@ import java.util.List;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -54,7 +54,7 @@ public class Migrations {
     return migrations;
   }
   public static AbstractMigrationRefactoring migrateIntentionCondition(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate intentions condition for " + config.getName();
@@ -77,7 +77,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateMigrationScriptPart(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f4f883L, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate migration script condition for " + config.getName();
@@ -100,7 +100,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrgetateNodeAttributes(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate node attributes for " + config.getName();
@@ -115,7 +115,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateInstanceOf(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, 0x1120c4c9bb4L, "conceptArgument")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, 0x1120c4c9bb4L, "conceptArgument")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, 0x1120c45d024L, "conceptDeclaration")) == config.sourceConcept;
@@ -130,7 +130,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateGetDescendant(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b73c3484L, "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
@@ -167,7 +167,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateCheckingRuleCondition(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164853e0faL, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate checking rules condition for " + config.getName();
@@ -186,7 +186,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateSNodeType(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate all SNodeTypes with " + SPropertyOperations.getString(config.sourceConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -202,7 +202,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateSNodeListType(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate all SNodeListTypes with " + SPropertyOperations.getString(config.sourceConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -218,7 +218,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateReplaceWithNewOperation(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, 0x109656cb789L, "concept")) == config.sourceConcept;
@@ -230,7 +230,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateCreateNewNodeOperation(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, 0x10a2e23ae30L, "concept")) == config.sourceConcept;
@@ -242,7 +242,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateAddNewChildOperation(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1093caead54L, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1093caead54L, 0x1096601f97fL, "concept")) == config.sourceConcept;
@@ -254,7 +254,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateSNodeTypeCastExpression(final MigrationConfig config) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), config) {
+    return new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x10975873562L, "concept")) == config.sourceConcept;
@@ -266,7 +266,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateMappingRuleCondition(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate mapping rules condition for " + config.getName();
@@ -292,7 +292,7 @@ public class Migrations {
     };
   }
   public static AbstractMigrationRefactoring migrateGeneratorTemplateDeclaration(final MigrationConfig config) {
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
+    return new SimpleMigration(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate generator template declarations for " + config.getName();

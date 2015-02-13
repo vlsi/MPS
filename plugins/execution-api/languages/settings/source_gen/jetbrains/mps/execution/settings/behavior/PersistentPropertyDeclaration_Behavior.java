@@ -7,7 +7,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -22,7 +21,7 @@ public class PersistentPropertyDeclaration_Behavior {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), _quotation_createNode_ex141d_b0a0a0());
   }
   public static String call_getAccessorName_946964771156066871(SNode thisNode) {
-    String name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    String name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
@@ -59,7 +58,7 @@ public class PersistentPropertyDeclaration_Behavior {
     return name;
   }
   public static String call_removeMyPrefix_946964771156066836(SAbstractConcept thisConcept, String name) {
-    name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), name);
+    name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
   private static SNode _quotation_createNode_ex141d_b0a0a0() {

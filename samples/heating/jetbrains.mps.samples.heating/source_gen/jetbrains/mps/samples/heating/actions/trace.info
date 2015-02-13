@@ -6,22 +6,22 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="26,49,45,5" name="jetbrains.mps.samples.heating.actions.QueriesGenerated$1" />
-      <unit at="23,0,52,0" name="jetbrains.mps.samples.heating.actions.QueriesGenerated" />
+      <unit at="25,49,44,5" name="jetbrains.mps.samples.heating.actions.QueriesGenerated$1" />
+      <unit at="22,0,51,0" name="jetbrains.mps.samples.heating.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/935069066462603543">
     <file name="QueriesGenerated.java">
-      <node id="935069066462973859" at="27,94,28,260" concept="1" />
-      <node id="935069066462974448" at="28,260,29,201" concept="0" />
-      <node id="935069066462977640" at="29,201,30,19" concept="2" />
-      <node id="935069066462604243" at="48,200,49,209" concept="2" />
-      <node id="935069066462603596" at="48,0,51,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="935069066462603597" at="48,200,49,209" />
-      <scope id="935069066462612053" at="27,94,30,19">
+      <node id="935069066462973859" at="26,94,27,260" concept="1" />
+      <node id="935069066462974448" at="27,260,28,201" concept="0" />
+      <node id="935069066462977640" at="28,201,29,19" concept="2" />
+      <node id="935069066462604243" at="47,200,48,209" concept="2" />
+      <node id="935069066462603596" at="47,0,50,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
+      <scope id="935069066462603597" at="47,200,48,209" />
+      <scope id="935069066462612053" at="26,94,29,19">
         <var name="ref" id="935069066462973860" />
       </scope>
-      <scope id="935069066462603596" at="48,0,51,0">
+      <scope id="935069066462603596" at="47,0,50,0">
         <var name="_context" id="935069066462603596" />
         <var name="operationContext" id="935069066462603596" />
       </scope>

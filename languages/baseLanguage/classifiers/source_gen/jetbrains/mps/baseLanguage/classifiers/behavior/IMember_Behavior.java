@@ -32,7 +32,7 @@ public class IMember_Behavior {
     return result;
   }
   public static SNode call_getContainer_1213877353020(SNode thisNode) {
-    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), thisNode);
+    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), thisNode);
   }
   public static boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
     return true;

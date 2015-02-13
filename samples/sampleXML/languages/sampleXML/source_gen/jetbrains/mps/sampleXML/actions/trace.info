@@ -16,8 +16,8 @@
   <root nodeRef="r:44e9683b-310f-4065-afe9-888581de42b4(jetbrains.mps.sampleXML.actions)/1225239967662">
     <file name="QueriesGenerated.java">
       <node id="1225239967663" at="25,202,26,93" concept="4" />
-      <node id="1225239967663" at="27,5,28,117" concept="4" />
-      <node id="1225239967663" at="28,117,29,62" concept="4" />
+      <node id="1225239967663" at="27,5,28,184" concept="4" />
+      <node id="1225239967663" at="28,184,29,62" concept="4" />
       <node id="1225239967668" at="32,94,33,229" concept="4" />
       <node id="1225239967689" at="33,229,34,201" concept="1" />
       <node id="1225239967697" at="34,201,35,24" concept="5" />
@@ -67,8 +67,8 @@
   <root nodeRef="r:44e9683b-310f-4065-afe9-888581de42b4(jetbrains.mps.sampleXML.actions)/1225239967703">
     <file name="QueriesGenerated.java">
       <node id="1225239967704" at="48,204,49,93" concept="4" />
-      <node id="1225239967704" at="50,5,51,112" concept="4" />
-      <node id="1225239967704" at="51,112,52,62" concept="4" />
+      <node id="1225239967704" at="50,5,51,179" concept="4" />
+      <node id="1225239967704" at="51,179,52,62" concept="4" />
       <node id="1225239967709" at="55,94,56,224" concept="4" />
       <node id="1225239967715" at="56,224,57,165" concept="1" />
       <node id="1225239967721" at="57,165,58,24" concept="5" />
@@ -131,7 +131,7 @@
       <node id="1225239967737" at="91,37,92,43" concept="4" />
       <node id="1225239967737" at="92,43,93,61" concept="4" />
       <node id="1225239967737" at="93,61,94,88" concept="4" />
-      <node id="1225239967737" at="94,88,95,360" concept="5" />
+      <node id="1225239967737" at="94,88,95,494" concept="5" />
       <node id="1225239967737" at="97,7,98,18" concept="5" />
       <node id="1225239967737" at="84,0,87,0" concept="3" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1225239967737" at="87,0,90,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -148,7 +148,7 @@
       <scope id="1225239967737" at="87,0,90,0">
         <var name="pattern" id="1225239967737" />
       </scope>
-      <scope id="1225239967737" at="91,37,95,360">
+      <scope id="1225239967737" at="91,37,95,494">
         <var name="containingLink" id="1225239967737" />
         <var name="parent" id="1225239967737" />
         <var name="sourceNode" id="1225239967737" />

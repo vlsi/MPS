@@ -15,9 +15,9 @@
   <root nodeRef="r:9e3cf32c-e5a6-495e-bbac-365ec913b4e2(jetbrains.mps.core.xml.sax.actions)/4720003541457430387">
     <file name="QueriesGenerated.java">
       <node id="4720003541457430440" at="24,218,25,93" concept="4" />
-      <node id="4720003541457430440" at="26,5,27,130" concept="4" />
-      <node id="4720003541457430440" at="27,130,28,62" concept="4" />
-      <node id="4720003541457430440" at="29,133,30,118" concept="4" />
+      <node id="4720003541457430440" at="26,5,27,201" concept="4" />
+      <node id="4720003541457430440" at="27,201,28,62" concept="4" />
+      <node id="4720003541457430440" at="29,133,30,184" concept="4" />
       <node id="4720003541457432975" at="32,105,33,245" concept="4" />
       <node id="4720003541457435152" at="33,245,34,186" concept="1" />
       <node id="4720003541457434848" at="34,186,35,23" concept="5" />
@@ -30,7 +30,7 @@
       <node id="4720003541457430440" at="37,0,40,0" concept="3" trace="returnSmallPart#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4720003541457430440" at="32,0,37,0" concept="3" trace="wrapNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4720003541457430440" at="40,0,46,0" concept="3" trace="doExecute#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4720003541457430440" at="30,118,46,10" concept="4" />
+      <node id="4720003541457430440" at="30,184,46,10" concept="4" />
       <node id="4720003541457430440" at="28,62,48,7" concept="2" />
       <node id="4720003541457430440" at="25,93,49,5" concept="0" />
       <node id="4720003541457430440" at="25,93,49,5" concept="0" />

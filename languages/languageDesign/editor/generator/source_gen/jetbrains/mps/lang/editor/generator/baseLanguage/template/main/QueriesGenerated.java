@@ -284,7 +284,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_2038074438869176261(final PropertyMacroContext _context) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, 0x1094c452c15L, "applicableConcept"));
-    return NameUtil.nodeFQName((applicableConcept != null ? applicableConcept : SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
+    return NameUtil.nodeFQName((applicableConcept != null ? applicableConcept : MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1184928403781(final PropertyMacroContext _context) {
     SNode keystroke = ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5877365L, 0x108b588a8bcL, "keystroke"))).first();
@@ -382,16 +382,16 @@ public class QueriesGenerated {
     return _context.createUniqueName("_StyleParameter_QueryFunction_", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4310268853399201395(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static Object propertyMacro_GetPropertyValue_4310268853399284478(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a195cc7c5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static Object propertyMacro_GetPropertyValue_4310268853399315575(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static Object propertyMacro_GetPropertyValue_4310268853399336824(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static Object propertyMacro_GetPropertyValue_1184249440571(final PropertyMacroContext _context) {
     return _context.createUniqueName("_Inline", _context.getNode());

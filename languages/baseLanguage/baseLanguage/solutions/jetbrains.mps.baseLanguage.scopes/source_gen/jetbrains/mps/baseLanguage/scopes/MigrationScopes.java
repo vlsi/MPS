@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.EmptyScope;
@@ -15,10 +15,10 @@ public class MigrationScopes {
   private MigrationScopes() {
   }
   public static Scope forVariables(SNode declarationConcept, SNode contextNode, String contextRole, int position) {
-    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")), declarationConcept);
+    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode()), declarationConcept);
   }
   public static Scope forMethods(SNode declarationConcept, SNode contextNode, String contextRole, int position) {
-    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration")), declarationConcept);
+    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration").getDeclarationNode()), declarationConcept);
   }
   private static Scope filterByConceptScope(@Nullable Scope innerScope, @NotNull SNode concept) {
     if (innerScope != null) {

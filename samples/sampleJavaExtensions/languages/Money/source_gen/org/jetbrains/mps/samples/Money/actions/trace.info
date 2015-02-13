@@ -31,7 +31,7 @@
       <node id="3607579524910547545" at="67,37,68,43" concept="5" />
       <node id="3607579524910547545" at="68,43,69,61" concept="5" />
       <node id="3607579524910547545" at="69,61,70,88" concept="5" />
-      <node id="3607579524910547545" at="70,88,71,382" concept="6" />
+      <node id="3607579524910547545" at="70,88,71,526" concept="6" />
       <node id="3607579524910547545" at="73,7,74,18" concept="6" />
       <node id="3607579524910560816" at="32,0,35,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="3607579524910567682" at="37,0,40,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -67,7 +67,7 @@
       <scope id="3607579524910547545" at="63,0,66,0">
         <var name="pattern" id="3607579524910547545" />
       </scope>
-      <scope id="3607579524910547545" at="67,37,71,382">
+      <scope id="3607579524910547545" at="67,37,71,526">
         <var name="containingLink" id="3607579524910547545" />
         <var name="parent" id="3607579524910547545" />
         <var name="sourceNode" id="3607579524910547545" />

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.util.UnpackHelper;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -39,11 +38,11 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
-    sb.append(BuildMpsLayout_PluginDescriptor_Behavior.call_pluginXml_978600701690250198(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
+    sb.append(BuildMpsLayout_PluginDescriptor_Behavior.call_pluginXml_978600701690250198(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
   }
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     String parentLocation = helper.contentLocations().get(helper.parent(thisNode));
-    helper.locations().put(thisNode, parentLocation + "/" + BuildMpsLayout_PluginDescriptor_Behavior.call_pluginXml_978600701690250198(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
+    helper.locations().put(thisNode, parentLocation + "/" + BuildMpsLayout_PluginDescriptor_Behavior.call_pluginXml_978600701690250198(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
   }
   public static String call_pluginXml_978600701690250198(SAbstractConcept thisConcept) {
     return "plugin.xml";

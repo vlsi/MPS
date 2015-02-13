@@ -209,7 +209,7 @@ public class BuildProject_Behavior {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")));
       }
-    }), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), child)));
+    }), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), child)));
 
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class)) {
       @Override

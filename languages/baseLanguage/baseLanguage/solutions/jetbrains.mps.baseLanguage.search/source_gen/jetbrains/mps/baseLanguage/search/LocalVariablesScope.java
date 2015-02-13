@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,23 +34,23 @@ public class LocalVariablesScope extends AbstractSearchScope {
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (this.myLocalVariables == null) {
       this.myLocalVariables = new ArrayList<SNode>();
-      SNode statementList = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElementList")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"));
+      SNode statementList = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList").getDeclarationNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"));
       if (statementList != null) {
-        SNode currentStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
+        SNode currentStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement").getDeclarationNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
         this._populateLocalVariables(statementList, currentStatement, this.myLocalVariables);
       }
       // specially process loop variables 
-      SNode loopStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
+      SNode loopStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
       if (loopStatement != null) {
         this._populateLocalVariables(loopStatement, this.myLocalVariables);
       }
       // specially process catch variables 
-      SNode catchClause = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"));
+      SNode catchClause = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"));
       if (catchClause != null) {
         this._populateLocalVariablesForCatch(catchClause, this.myLocalVariables);
       }
       // specially process variables in switch cases before current 
-      SNode switchStatement = SNodeOperations.as(findThisOrParent(myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
+      SNode switchStatement = SNodeOperations.as(findThisOrParent(myContextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
       while ((switchStatement != null)) {
         SNode caseStatement = getLastSourceNode(this.myContextNode, switchStatement);
         if (caseStatement != SLinkOperations.getTarget(switchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02ec241L, "expression")) && caseStatement != switchStatement) {
@@ -62,7 +61,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
             _populateLocalVariablesFromList(SLinkOperations.getTarget(caseClause, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d8048L, "body")), null, myLocalVariables);
           }
         }
-        switchStatement = SNodeOperations.as(findThisOrParent(SNodeOperations.getParent(switchStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
+        switchStatement = SNodeOperations.as(findThisOrParent(SNodeOperations.getParent(switchStatement), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
       }
       // filter nulls 
       List<SNode> tmp = new ArrayList<SNode>();
@@ -91,7 +90,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
     if (statementList != beforeStatement) {
       this._populateLocalVariablesFromList(statementList, beforeStatement, result);
     }
-    SNode containingStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(statementList, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
+    SNode containingStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(statementList, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement").getDeclarationNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
     if (containingStatement != null) {
       statementList = SNodeOperations.getNodeAncestor(containingStatement, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), false, false);
       this._populateLocalVariables(statementList, containingStatement, result);
@@ -143,7 +142,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       }
     }
 
-    SNode containingLoop = SNodeOperations.as(LocalVariablesScope.findThisOrParent(SNodeOperations.getParent(loopStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
+    SNode containingLoop = SNodeOperations.as(LocalVariablesScope.findThisOrParent(SNodeOperations.getParent(loopStatement), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
     if (containingLoop != null) {
       this._populateLocalVariables(containingLoop, result);
     }
@@ -153,14 +152,14 @@ public class LocalVariablesScope extends AbstractSearchScope {
     if (throwable != null) {
       result.add(throwable);
     }
-    SNode containingCatchClause = SNodeOperations.as(LocalVariablesScope.findThisOrParent(SNodeOperations.getParent(tryCatchStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"));
+    SNode containingCatchClause = SNodeOperations.as(LocalVariablesScope.findThisOrParent(SNodeOperations.getParent(tryCatchStatement), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause").getDeclarationNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"));
     if (containingCatchClause != null) {
       this._populateLocalVariablesForCatch(containingCatchClause, result);
     }
   }
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").getDeclarationNode())) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {

@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MigrateLocalStaticMethodCall_MigrationScript extends BaseMigrationScript {
   public MigrateLocalStaticMethodCall_MigrationScript(IOperationContext operationContext) {
     super("Migrate LocalStaticMethodCall to LocalMethodCall");
-    for (AbstractMigrationRefactoring refactoring : LocalMethodCallsMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+    for (AbstractMigrationRefactoring refactoring : LocalMethodCallsMigration.forConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e4207559L, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall").getDeclarationNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode())) {
       this.addRefactoring(refactoring);
     }
   }

@@ -16,8 +16,8 @@
   <root nodeRef="r:3c4a7381-bf37-4a8f-8776-247668cff8c1(jetbrains.mps.baseLanguage.checkedDots.actions)/2248628811136262597">
     <file name="QueriesGenerated.java">
       <node id="2248628811136262598" at="29,209,30,93" concept="4" />
-      <node id="2248628811136262598" at="31,5,32,121" concept="4" />
-      <node id="2248628811136262598" at="32,121,33,62" concept="4" />
+      <node id="2248628811136262598" at="31,5,32,197" concept="4" />
+      <node id="2248628811136262598" at="32,197,33,62" concept="4" />
       <node id="2248628811136263735" at="36,94,37,214" concept="4" />
       <node id="2248628811136263731" at="37,214,38,288" concept="4" />
       <node id="2248628811136263774" at="38,288,39,330" concept="1" />
@@ -104,7 +104,7 @@
       <node id="7404423900570111860" at="102,37,103,43" concept="4" />
       <node id="7404423900570111860" at="103,43,104,61" concept="4" />
       <node id="7404423900570111860" at="104,61,105,88" concept="4" />
-      <node id="7404423900570111860" at="105,88,106,412" concept="5" />
+      <node id="7404423900570111860" at="105,88,106,556" concept="5" />
       <node id="7404423900570111860" at="108,7,109,18" concept="5" />
       <node id="7404423900570111860" at="95,0,98,0" concept="3" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="7404423900570111860" at="98,0,101,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -121,7 +121,7 @@
       <scope id="7404423900570111860" at="98,0,101,0">
         <var name="pattern" id="7404423900570111860" />
       </scope>
-      <scope id="7404423900570111860" at="102,37,106,412">
+      <scope id="7404423900570111860" at="102,37,106,556">
         <var name="containingLink" id="7404423900570111860" />
         <var name="parent" id="7404423900570111860" />
         <var name="sourceNode" id="7404423900570111860" />
