@@ -92,7 +92,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
         EditorCell iconAnchorCell = BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(editorComponent.findNodeCell(debuggableOrTraceableCell.getSNode()));
         //  ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell" 
         //  (this cell will be marked with breakpoint icon in LeftEditorHighlighter) 
-        return (y >= iconAnchorCell.getY() && iconAnchorCell.getBaseline() >= y);
+        return iconAnchorCell != null && (y >= iconAnchorCell.getY() && iconAnchorCell.getBaseline() >= y);
       }
     });
     if (foundCell == null) {
