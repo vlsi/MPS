@@ -543,7 +543,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     return myCombinedErrorState;
   }
 
-  private void updateErrorState() {
+  protected void updateErrorState() {
     ErrorState state = ErrorState.NONE;
     if (propogateErrorUpwards()) {
       for (MPSTreeNode node : this) {
