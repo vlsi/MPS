@@ -141,7 +141,7 @@ public class ClassLoaderManager implements CoreComponent {
   public ClassLoaderManager(SRepository repository) {
     myRepository = repository;
     myModulesWatcher = new ModulesWatcher(myRepository, myWatchableCondition);
-    myClassLoadersHolder = new ClassLoadersHolder(myRepository.getModelAccess(), myModulesWatcher);
+    myClassLoadersHolder = new ClassLoadersHolder(myRepository, myModulesWatcher);
     myRepositoryListener = new ModuleEventsHandler(repository, myModulesWatcher);
     myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
   }
@@ -158,15 +158,19 @@ public class ClassLoaderManager implements CoreComponent {
   @Override
   public void init() {
     myRepository.getModelAccess().checkWriteAccess();
+
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
     myRepositoryListener.init(this);
+    myClassLoadersHolder.init();
     addDumbIdeaPluginFacetFactory(); // FIXME : it does not belong here
   }
 
   @Override
   public void dispose() {
     myRepository.getModelAccess().checkWriteAccess();
+
+    myClassLoadersHolder.dispose();
     myRepositoryListener.dispose();
     INSTANCE = null;
   }

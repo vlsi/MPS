@@ -23,6 +23,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
@@ -38,7 +41,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * This class stores a map SModuleReference->ModuleClassLoader
  *
  * Note: the actual dispose of ModuleClassLoaders happen asynchronously in the EDT
- * @see jetbrains.mps.classloading.ClassLoadersHolder.MPSClassLoadersRegistry#disposeClassLoadersInEDT
+ * @see jetbrains.mps.classloading.ClassLoadersHolder.MPSClassLoadersRegistry#flushDisposeQueue()
  *
  * @see ClassLoaderManager#myLoadableCondition
  */
@@ -48,10 +51,37 @@ public class ClassLoadersHolder {
   private final ModelAccess myModelAccess;
   private final ModulesWatcher myModulesWatcher;
   private final MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
+  private final SRepositoryListener myRepositoryListener = new SRepositoryListenerBase() {
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      checkPluginIsValid(module);
+    }
 
-  public ClassLoadersHolder(ModelAccess modelAccess, ModulesWatcher modulesWatcher) {
-    myModelAccess = modelAccess;
+    private void checkPluginIsValid(@NotNull SModule module) {
+      CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
+      if (customClassLoadingFacet != null) {
+        if (!customClassLoadingFacet.isValid()) {
+          LOG.warn("Facet of the module " + module + " is not valid --" +
+              " possibly the provided idea plugin (in the properties dialog/idea plugin facet tab) cannot be found among the bundled plugins");
+        }
+      }
+    }
+  };
+  private final SRepository myRepository;
+
+  public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher) {
+    myRepository = repository;
+    myModelAccess = repository.getModelAccess();
     myModulesWatcher = modulesWatcher;
+  }
+
+  public void init() {
+    myRepository.addRepositoryListener(myRepositoryListener);
+  }
+
+  public void dispose() {
+    myMPSClassLoadersRegistry.dispose();
+    myRepository.removeRepositoryListener(myRepositoryListener);
   }
 
   @Nullable
@@ -78,7 +108,6 @@ public class ClassLoadersHolder {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-        LOG.warn("Facet of the module " + module + " is not valid");
         return null;
       }
     }
@@ -259,6 +288,12 @@ public class ClassLoadersHolder {
           }
         }
       });
+    }
+
+    public void dispose() {
+      if (!myDisposeQueue.isEmpty()) {
+        flushDisposeQueue();
+      }
     }
   }
 

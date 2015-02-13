@@ -261,10 +261,13 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (ReloadableModule dep : mySupport.getCompileDependencies()) {
-      if (dep == mySupport.getModule()) continue;
-      ClassLoader classLoader = dep.getClassLoader();
-      if (classLoader == null) LOG.warn("The class loader dependency " + dep + " is not loaded");
-      classLoaders.add(classLoader);
+      if (dep != mySupport.getModule()) {
+        ClassLoader classLoader = dep.getClassLoader();
+        if (classLoader == null) {
+          LOG.debug("The class loader dependency " + dep + " is not loaded");
+        }
+        classLoaders.add(classLoader);
+      }
     }
     myDependenciesClassLoaders = classLoaders;
     return classLoaders;
