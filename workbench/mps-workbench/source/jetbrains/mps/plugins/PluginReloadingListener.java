@@ -19,10 +19,5 @@ import java.util.List;
 
 public interface PluginReloadingListener {
   void afterPluginsLoaded(List<PluginContributor> contributors);
-
-  void pluginsLoading(List<PluginContributor> contributors);
-
-  void pluginsUnloading(List<PluginContributor> contributors);
-
   void beforePluginsUnloaded(List<PluginContributor> contributors);
 }

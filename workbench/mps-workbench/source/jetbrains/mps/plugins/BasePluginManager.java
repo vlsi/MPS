@@ -29,27 +29,26 @@ import java.util.Map;
 /**
  * A parent class for ProjectPluginManager and ApplicationPluginManager.
  * Contains a {@link jetbrains.mps.plugins.PluginReloadingListener},
- * which is triggered by a {@link PluginReloader} component. It causes plugins to load [unload].
- * Note that a subclass chooses by himself when it is time to attach [detach] the listener ({@link #startListeningToReload()}.
+ * which is triggered by a {@link PluginLoaderRegistry} component. It causes plugins to load [unload].
+ * Note that a subclass chooses by himself when it is time to attach [detach] the listener ({@link #register()}.
  *
  * @param <T> -- is a class type of plugin.
  *           @see jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin
  *           @see jetbrains.mps.plugins.projectplugins.BaseProjectPlugin
  */
-public abstract class BasePluginManager<T> {
+public abstract class BasePluginManager<T> implements PluginLoader {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 
   protected final Object myPluginsLock = new Object();
   protected final SRepository myRepository;
-  protected final PluginReloader myPluginReloader;
-  private final PluginReloadingListener myReloadingListener = new MyPluginReloadingListener();
+  protected final PluginLoaderRegistry myPluginLoaderRegistry;
 
   private List<T> mySortedPlugins = new ArrayList<T>();
   private final Map<PluginContributor, T> myContributorToPlugin = new HashMap<PluginContributor, T>();
 
-  public BasePluginManager(@NotNull SRepository repository, PluginReloader pluginReloader) {
+  public BasePluginManager(@NotNull SRepository repository, PluginLoaderRegistry pluginLoaderRegistry) {
     myRepository = repository;
-    myPluginReloader = pluginReloader;
+    myPluginLoaderRegistry = pluginLoaderRegistry;
   }
 
   protected abstract T createPlugin(PluginContributor contributor);
@@ -60,16 +59,15 @@ public abstract class BasePluginManager<T> {
 
   protected abstract void disposePlugin(T plugin);
 
-  protected final void startListeningToReload() {
-    myPluginReloader.addReloadingListener(myReloadingListener);
+  protected final void register() {
+    myPluginLoaderRegistry.register(this);
   }
 
-  protected final void stopListeningToReload() {
-    myPluginReloader.removeReloadingListener(myReloadingListener);
+  protected final void unregister() {
+    myPluginLoaderRegistry.unregister(this);
   }
 
-  // plugins should be in load order
-  protected final void loadPlugins(final List<PluginContributor> contributors) {
+  public void loadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
       LOG.debug("Loading plugins from " + contributors.size() + " contributors");
       List<T> plugins = createPlugins(contributors);
@@ -77,8 +75,7 @@ public abstract class BasePluginManager<T> {
     }
   }
 
-  // plugins should be in unload order
-  protected final void unloadPlugins(final List<PluginContributor> contributors) {
+  public void unloadPlugins(final List<PluginContributor> contributors) {
     synchronized (myPluginsLock) {
       LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
       final List<T> plugins = new ArrayList<T>();
@@ -151,18 +148,6 @@ public abstract class BasePluginManager<T> {
   public List<T> getPlugins() {
     synchronized (myPluginsLock) {
       return new ArrayList<T>(mySortedPlugins);
-    }
-  }
-
-  private class MyPluginReloadingListener extends PluginReloadingListenerBase {
-    @Override
-    public void pluginsUnloading(List<PluginContributor> contributors) {
-      unloadPlugins(contributors);
-    }
-
-    @Override
-    public void pluginsLoading(List<PluginContributor> contributors) {
-      loadPlugins(contributors);
     }
   }
 }

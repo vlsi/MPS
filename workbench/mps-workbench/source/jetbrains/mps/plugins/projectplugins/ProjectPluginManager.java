@@ -28,7 +28,8 @@ import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
 import jetbrains.mps.plugins.BasePluginManager;
-import jetbrains.mps.plugins.PluginReloader;
+import jetbrains.mps.plugins.PluginLoaderRegistry;
+import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -48,6 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Is a {@link BasePluginManager} which is responsible for loading project plugins {@link BaseProjectPlugin};
@@ -73,9 +75,10 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private jetbrains.mps.project.Project myMpsProject;
   private FileEditorManager myManager;
   private boolean myInitialized = false;
+  private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<PluginReloadingListener>();
 
-  public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginReloader pluginReloader, StartupModuleMaker moduleMaker, FileEditorManager manager) {
-    super(mpsProject.getRepository(), pluginReloader);
+  public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+    super(mpsProject.getRepository(), pluginLoaderRegistry);
     myProject = project;
     myMpsProject = mpsProject;
     myManager = manager;
@@ -86,15 +89,15 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
       @Override
       public void run() {
-        runStartupActivity(myPluginReloader.getLoadedContributors());
+        runStartupActivity(myPluginLoaderRegistry.getLoadedContributors());
         myInitialized = true;
       }
     });
   }
 
   private void runStartupActivity(List<PluginContributor> loadedContributors) {
-    super.loadPlugins(loadedContributors);
-    super.startListeningToReload();
+    loadPlugins(loadedContributors);
+    register();
   }
 
   @Override
@@ -105,8 +108,8 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   private void runShutDownActivity() {
-    super.stopListeningToReload();
-    super.unloadPlugins(myPluginReloader.getLoadedContributors());
+    unregister();
+    unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
   }
 
   @Nullable
@@ -115,7 +118,9 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseGeneratedTool> tools = plugin.getTools();
         for (BaseGeneratedTool tool : tools) {
-          if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
+          if (tool.getClass().getName().equals(toolClass.getName())) {
+            return (T) tool;
+          }
         }
       }
       return null;
@@ -127,7 +132,9 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
-          if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
+          if (component.getClass().getName().equals(componentClass.getName())) {
+            return (T) component;
+          }
         }
       }
       return null;
@@ -148,13 +155,23 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
     List<RelationDescriptor> tabs = p.getComponent(ProjectPluginManager.class).getTabDescriptors();
     for (RelationDescriptor tab : tabs) {
-      if (!tab.isApplicable(node)) continue;
-      result.add(tab);
+      if (tab.isApplicable(node)) {
+        result.add(tab);
+      }
     }
     return result;
   }
 
   //----------------RELOAD STUFF---------------------
+
+  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
+    myReloadingListeners.add(listener);
+  }
+
+  public void removeReloadingListener(PluginReloadingListener listener) {
+    myReloadingListeners.remove(listener);
+  }
+
   @Override
   protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
     BaseProjectPlugin plugin = contributor.createProjectPlugin();
@@ -166,7 +183,33 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   private void checkProjectIsNotDisposed() {
-    if (myProject.isDisposed()) throw new IllegalStateException(String.format("The project '%s' is disposed", myProject));
+    if (myProject.isDisposed()) {
+      throw new IllegalStateException(String.format("The project '%s' is disposed", myProject));
+    }
+  }
+
+  @Override
+  public final void unloadPlugins(List<PluginContributor> contributors) {
+    fireBeforePluginsUnloaded(contributors);
+    super.unloadPlugins(contributors);
+  }
+
+  @Override
+  public final void loadPlugins(List<PluginContributor> contributors) {
+    super.loadPlugins(contributors);
+    fireAfterPluginsLoaded(contributors);
+  }
+
+  private void fireAfterPluginsLoaded(List<PluginContributor> contributors) {
+    for (PluginReloadingListener listener : myReloadingListeners) {
+      listener.afterPluginsLoaded(contributors);
+    }
+  }
+
+  private void fireBeforePluginsUnloaded(List<PluginContributor> contributors) {
+    for (PluginReloadingListener listener : myReloadingListeners) {
+      listener.beforePluginsUnloaded(contributors);
+    }
   }
 
   @Override
