@@ -167,10 +167,6 @@
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
-      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
-        <child id="1235573175711" name="elementType" index="2HTBi0" />
-        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
@@ -425,14 +421,17 @@
       <ref role="13i0hy" node="3J6h25QXCDW" resolve="getSupportedParameters" />
       <node concept="3Tm1VV" id="3J6h25QXOd8" role="1B3o_S" />
       <node concept="3clFbS" id="3J6h25QXOd9" role="3clF47">
-        <node concept="3cpWs6" id="4c815Y1hN4P" role="3cqZAp">
-          <node concept="2ShNRf" id="4c815Y1hNbt" role="3cqZAk">
-            <node concept="2HTt$P" id="4c815Y1hNmR" role="2ShVmc">
-              <node concept="3THzug" id="4c815Y1hNr3" role="2HTBi0">
+        <node concept="3cpWs6" id="30Cvt28KrLy" role="3cqZAp">
+          <node concept="2ShNRf" id="30Cvt28KrLz" role="3cqZAk">
+            <node concept="Tc6Ow" id="30Cvt28KrL$" role="2ShVmc">
+              <node concept="3THzug" id="30Cvt28KrL_" role="HW$YZ">
                 <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hN$_" role="2HTEbv">
+              <node concept="3TUQnm" id="30Cvt28KrLA" role="HW$Y0">
                 <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              </node>
+              <node concept="3TUQnm" id="30Cvt28KrLB" role="HW$Y0">
+                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
@@ -721,14 +720,17 @@
       <ref role="13i0hy" node="3J6h25QXCDW" resolve="getSupportedParameters" />
       <node concept="3Tm1VV" id="3J6h25QXKR5" role="1B3o_S" />
       <node concept="3clFbS" id="3J6h25QXKR6" role="3clF47">
-        <node concept="3cpWs6" id="4c815Y1hnKk" role="3cqZAp">
-          <node concept="2ShNRf" id="4c815Y1hnQW" role="3cqZAk">
-            <node concept="2HTt$P" id="4c815Y1hu$w" role="2ShVmc">
-              <node concept="3THzug" id="3J6h25QXKRa" role="2HTBi0">
+        <node concept="3cpWs6" id="30Cvt28KorI" role="3cqZAp">
+          <node concept="2ShNRf" id="30Cvt28KorJ" role="3cqZAk">
+            <node concept="Tc6Ow" id="30Cvt28KorK" role="2ShVmc">
+              <node concept="3THzug" id="30Cvt28KorL" role="HW$YZ">
                 <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="3J6h25QXKRe" role="2HTEbv">
+              <node concept="3TUQnm" id="30Cvt28KorM" role="HW$Y0">
                 <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              </node>
+              <node concept="3TUQnm" id="30Cvt28KorN" role="HW$Y0">
+                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
