@@ -326,6 +326,8 @@ public class CreateProjectWizard extends DialogWrapper {
 
   private void checkProjectPath(String newProjectPath) {
     final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(newProjectPath);
+    //refresh file to avoid cached deleted project with the same name affects on creating one
+    if (virtualFile != null) VirtualFileUtils.refreshSynchronouslyRecursively(virtualFile);
     //check if there is project in folder (both directory and file based)
     boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
     if(virtualFile != null && !isProjectPath) {

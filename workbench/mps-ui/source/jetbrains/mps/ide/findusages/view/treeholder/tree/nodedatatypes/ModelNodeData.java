@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 
-public class ModelNodeData extends BaseNodeData {
+public class ModelNodeData extends AbstractResultNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
@@ -71,7 +71,7 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   @Override
-  public Object getIdObject() {
+  protected String createIdObject() {
     return getModelReference().toString() + "/" + getPlainText();
   }
 

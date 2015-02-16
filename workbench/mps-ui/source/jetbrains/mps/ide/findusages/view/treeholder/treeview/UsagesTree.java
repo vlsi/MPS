@@ -704,6 +704,11 @@ public class UsagesTree extends MPSTree {
     }
 
     @Override
+    protected void updateErrorState() {
+      //disable for
+    }
+
+    @Override
     public int getToggleClickCount() {
       return isResult() ? -1 : 2;
     }

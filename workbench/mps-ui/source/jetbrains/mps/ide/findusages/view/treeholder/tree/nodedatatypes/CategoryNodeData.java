@@ -43,7 +43,7 @@ public class CategoryNodeData extends BaseNodeData {
 
   @Deprecated
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
-                          INodeRepresentator nodeRepresentator) {
+      INodeRepresentator nodeRepresentator) {
     super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
     myNodeRepresentator = nodeRepresentator;
@@ -54,7 +54,7 @@ public class CategoryNodeData extends BaseNodeData {
   }
 
   public CategoryNodeData(PathItemRole role, String categoryKindName, String category, boolean resultsSection,
-                          INodeRepresentator nodeRepresentator) {
+      INodeRepresentator nodeRepresentator) {
     super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategoryKindName = categoryKindName;
     myCategory = category;
@@ -76,7 +76,7 @@ public class CategoryNodeData extends BaseNodeData {
 
   @Override
   public Object getIdObject() {
-    return myCategory;
+    return myCategory + "!!!" + myCategoryKindName;
   }
 
   public String getCategoryKindName() {

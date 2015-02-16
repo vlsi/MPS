@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 
-public class ModuleNodeData extends BaseNodeData {
+public class ModuleNodeData extends AbstractResultNodeData {
   private static final String MODULE_REF = "module_ref";
 
   private SModuleReference myModuleReference = new jetbrains.mps.project.structure.modules.ModuleReference("");
@@ -86,7 +86,7 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   @Override
-  public Object getIdObject() {
+  public String createIdObject() {
     return getModuleReference().toString() + "/" + getPlainText();
   }
 

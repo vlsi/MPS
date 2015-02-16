@@ -812,9 +812,7 @@
       <node concept="37vLTG" id="3pzB6wMWAYo" role="3clF46">
         <property role="TrG5h" value="targetJavaVersion" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="3pzB6wMWAYp" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="70B3qCBD4_u" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="3pzB6wMWAYq" role="3clF47">
         <node concept="3clFbF" id="3pzB6wMWAYr" role="3cqZAp">

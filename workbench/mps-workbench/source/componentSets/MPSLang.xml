@@ -46,7 +46,6 @@
     <component>
       <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
       <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
-      <skipForDummyProject/>
     </component>
 
     <component>
@@ -95,7 +94,6 @@
       <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
       <headless-implementation-class>jetbrains.mps.MPSTestEditorManagerImpl</headless-implementation-class>
       <option name="workspace" value="true"/>
-      <skipForDummyProject/>
     </component>
 
     <component>
