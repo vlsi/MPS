@@ -10,11 +10,14 @@
     <file name="ABCDE_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABCDE_BehaviorDescriptor" />
     </file>
+    <file name="ABCEEG_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABCEEG_BehaviorDescriptor" />
+    </file>
     <file name="ABC_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="testSpaceCompletion.behavior.ABC_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="testSpaceCompletion.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,30,0" name="testSpaceCompletion.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

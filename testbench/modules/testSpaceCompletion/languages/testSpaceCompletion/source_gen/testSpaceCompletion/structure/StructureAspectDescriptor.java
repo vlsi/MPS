@@ -16,16 +16,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptABCDE = new ConceptDescriptorBuilder("testSpaceCompletion.structure.ABCDE", MetaIdFactory.conceptId(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e641174cL)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).alias("abc de", "").create();
   /*package*/ final ConceptDescriptor myConceptABCDEF = new ConceptDescriptorBuilder("testSpaceCompletion.structure.ABCDEF", MetaIdFactory.conceptId(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e6411758L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).alias("abc de f", "").create();
   /*package*/ final ConceptDescriptor myConceptABCDEG = new ConceptDescriptorBuilder("testSpaceCompletion.structure.ABCDEG", MetaIdFactory.conceptId(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e6411754L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).alias("abc de g", "").create();
+  /*package*/ final ConceptDescriptor myConceptABCEEG = new ConceptDescriptorBuilder("testSpaceCompletion.structure.ABCEEG", MetaIdFactory.conceptId(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x6a37442ca9969678L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).alias("abc Ee G", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptABC, myConceptABCDE, myConceptABCDEF, myConceptABCDEG);
+    return Arrays.asList(myConceptABC, myConceptABCDE, myConceptABCDEF, myConceptABCDEG, myConceptABCEEG);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
         return myConceptABC;
       case 1:
@@ -34,9 +35,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptABCDEF;
       case 3:
         return myConceptABCDEG;
+      case 4:
+        return myConceptABCEEG;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG"};
+  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG", "testSpaceCompletion.structure.ABCEEG"};
 }

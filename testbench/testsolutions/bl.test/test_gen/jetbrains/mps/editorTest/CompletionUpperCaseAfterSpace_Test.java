@@ -10,13 +10,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class CompletionSpaceFirst_Test extends BaseTransformationTest {
-  public CompletionSpaceFirst_Test() {
+public class CompletionUpperCaseAfterSpace_Test extends BaseTransformationTest {
+  public CompletionUpperCaseAfterSpace_Test() {
   }
   @Test
-  public void test_CompletionSpaceFirst() throws Throwable {
+  public void test_CompletionUpperCaseAfterSpace() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CompletionSpaceFirst_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.CompletionUpperCaseAfterSpace_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -24,8 +24,8 @@ public class CompletionSpaceFirst_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3586175963765094834", "3586175963765094844");
-      this.typeString("abcDeF");
+      initEditor("7653661050354104996", "7653661050354105006");
+      this.typeString("abcEG");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
     }
   }

@@ -7,7 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,36,0" name="testSpaceCompletion.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,38,0" name="testSpaceCompletion.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:06189444-c0d9-4e18-8ce5-a0f3e9b2c913(testSpaceCompletion.editor)/3586175963764954371">
@@ -328,6 +328,86 @@
         <var name="node" id="3586175963764955148" />
       </scope>
       <unit id="3586175963764955143" at="15,0,56,0" name="testSpaceCompletion.editor.ABCDEG_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:06189444-c0d9-4e18-8ce5-a0f3e9b2c913(testSpaceCompletion.editor)/7653661050353915554">
+    <file name="ABCEEG_Editor.java">
+      <node id="7653661050353915554" at="16,79,17,63" concept="4" />
+      <node id="7653661050353915554" at="19,89,20,96" concept="3" />
+      <node id="7653661050353915554" at="20,96,21,48" concept="1" />
+      <node id="7653661050353915554" at="21,48,22,28" concept="1" />
+      <node id="7653661050353915554" at="22,28,23,81" concept="0" />
+      <node id="7653661050353915554" at="22,28,23,81" concept="1" />
+      <node id="7653661050353915554" at="23,81,24,81" concept="0" />
+      <node id="7653661050353915554" at="23,81,24,81" concept="1" />
+      <node id="7653661050353915554" at="24,81,25,81" concept="0" />
+      <node id="7653661050353915554" at="24,81,25,81" concept="1" />
+      <node id="7653661050353915554" at="25,81,26,22" concept="4" />
+      <node id="7653661050353915606" at="28,88,29,92" concept="3" />
+      <node id="7653661050353915606" at="29,92,30,47" concept="1" />
+      <node id="7653661050353915606" at="30,47,31,34" concept="1" />
+      <node id="7653661050353915606" at="31,34,32,22" concept="4" />
+      <node id="7653661050353915607" at="34,88,35,87" concept="3" />
+      <node id="7653661050353915607" at="35,87,36,47" concept="1" />
+      <node id="7653661050353915607" at="36,47,37,34" concept="3" />
+      <node id="7653661050353915607" at="37,34,38,57" concept="1" />
+      <node id="7653661050353915607" at="38,57,39,63" concept="1" />
+      <node id="7653661050353915607" at="39,63,40,58" concept="1" />
+      <node id="7653661050353915607" at="40,58,41,40" concept="1" />
+      <node id="7653661050353915607" at="41,40,42,34" concept="1" />
+      <node id="7653661050353915607" at="42,34,43,22" concept="4" />
+      <node id="7653661050353915611" at="45,88,46,87" concept="3" />
+      <node id="7653661050353915611" at="46,87,47,47" concept="1" />
+      <node id="7653661050353915611" at="47,47,48,34" concept="3" />
+      <node id="7653661050353915611" at="48,34,49,57" concept="1" />
+      <node id="7653661050353915611" at="49,57,50,63" concept="1" />
+      <node id="7653661050353915611" at="50,63,51,40" concept="1" />
+      <node id="7653661050353915611" at="51,40,52,34" concept="1" />
+      <node id="7653661050353915611" at="52,34,53,22" concept="4" />
+      <node id="7653661050353915554" at="16,0,19,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7653661050353915606" at="28,0,34,0" concept="2" trace="createConstant_8j431v_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7653661050353915554" at="19,0,28,0" concept="2" trace="createCollection_8j431v_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7653661050353915611" at="45,0,55,0" concept="2" trace="createConstant_8j431v_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7653661050353915607" at="34,0,45,0" concept="2" trace="createConstant_8j431v_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="7653661050353915554" at="16,79,17,63" />
+      <scope id="7653661050353915554" at="22,28,23,81" />
+      <scope id="7653661050353915554" at="23,81,24,81" />
+      <scope id="7653661050353915554" at="24,81,25,81" />
+      <scope id="7653661050353915554" at="16,0,19,0">
+        <var name="editorContext" id="7653661050353915554" />
+        <var name="node" id="7653661050353915554" />
+      </scope>
+      <scope id="7653661050353915606" at="28,88,32,22">
+        <var name="editorCell" id="7653661050353915606" />
+      </scope>
+      <scope id="7653661050353915606" at="28,0,34,0">
+        <var name="editorContext" id="7653661050353915606" />
+        <var name="node" id="7653661050353915606" />
+      </scope>
+      <scope id="7653661050353915554" at="19,89,26,22">
+        <var name="editorCell" id="7653661050353915554" />
+      </scope>
+      <scope id="7653661050353915611" at="45,88,53,22">
+        <var name="editorCell" id="7653661050353915611" />
+        <var name="style" id="7653661050353915611" />
+      </scope>
+      <scope id="7653661050353915554" at="19,0,28,0">
+        <var name="editorContext" id="7653661050353915554" />
+        <var name="node" id="7653661050353915554" />
+      </scope>
+      <scope id="7653661050353915607" at="34,88,43,22">
+        <var name="editorCell" id="7653661050353915607" />
+        <var name="style" id="7653661050353915607" />
+      </scope>
+      <scope id="7653661050353915611" at="45,0,55,0">
+        <var name="editorContext" id="7653661050353915611" />
+        <var name="node" id="7653661050353915611" />
+      </scope>
+      <scope id="7653661050353915607" at="34,0,45,0">
+        <var name="editorContext" id="7653661050353915607" />
+        <var name="node" id="7653661050353915607" />
+      </scope>
+      <unit id="7653661050353915554" at="15,0,56,0" name="testSpaceCompletion.editor.ABCEEG_Editor" />
     </file>
   </root>
 </debug-info>

@@ -18,6 +18,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="testSpaceCompletion.behavior.ABCEEG_BehaviorDescriptor" file="ABCEEG_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="testSpaceCompletion.behavior.ABC_BehaviorDescriptor" file="ABC_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,6 +38,7 @@
     <classNode dependClassName="testSpaceCompletion.behavior.ABCDEF_BehaviorDescriptor" />
     <classNode dependClassName="testSpaceCompletion.behavior.ABCDEG_BehaviorDescriptor" />
     <classNode dependClassName="testSpaceCompletion.behavior.ABCDE_BehaviorDescriptor" />
+    <classNode dependClassName="testSpaceCompletion.behavior.ABCEEG_BehaviorDescriptor" />
     <classNode dependClassName="testSpaceCompletion.behavior.ABC_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>

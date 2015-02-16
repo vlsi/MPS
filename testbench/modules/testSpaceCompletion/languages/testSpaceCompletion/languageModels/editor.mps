@@ -158,5 +158,35 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="6CRh2MD_Dqy">
+    <ref role="1XX52x" to="pzbl:6CRh2MD_DpS" resolve="ABCEEG" />
+    <node concept="3EZMnI" id="6CRh2MD_Drk" role="2wV5jI">
+      <node concept="l2Vlx" id="6CRh2MD_Drl" role="2iSdaV" />
+      <node concept="3F0ifn" id="6CRh2MD_Drm" role="3EZMnx">
+        <property role="3F0ifm" value="ABCEEG" />
+      </node>
+      <node concept="3F0ifn" id="6CRh2MD_Drn" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <node concept="11L4FC" id="6CRh2MD_Dro" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="6CRh2MD_Drp" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+        <node concept="11LMrY" id="6CRh2MD_Drq" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6CRh2MD_Drr" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="11L4FC" id="6CRh2MD_Drs" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="6CRh2MD_Drt" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

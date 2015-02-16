@@ -497,6 +497,7 @@
       </concept>
     </language>
     <language id="4dd3c558-f0fc-4807-bade-5d6bcad6b3f1" name="testSpaceCompletion">
+      <concept id="7653661050353915512" name="testSpaceCompletion.structure.ABCEEG" flags="ng" index="33Ct9k" />
       <concept id="3586175963764954956" name="testSpaceCompletion.structure.ABCDE" flags="ng" index="3nxrX5" />
       <concept id="3586175963764954968" name="testSpaceCompletion.structure.ABCDEF" flags="ng" index="3nxrXh" />
       <concept id="3586175963764954964" name="testSpaceCompletion.structure.ABCDEG" flags="ng" index="3nxrXt" />
@@ -41908,7 +41909,7 @@
     </node>
     <node concept="3clFbS" id="374E0BAgNB7" role="LjaKd">
       <node concept="2TK7Tu" id="374E0BAgNB8" role="3cqZAp">
-        <property role="2TTd_B" value="abcDF" />
+        <property role="2TTd_B" value="abcDeF" />
       </node>
       <node concept="yd1bK" id="374E0BAgNB9" role="3cqZAp">
         <node concept="pLAjd" id="374E0BAgNBa" role="yd6KS">
@@ -41979,6 +41980,73 @@
       </node>
       <node concept="yd1bK" id="374E0BAgO9y" role="3cqZAp">
         <node concept="pLAjd" id="374E0BAgO9z" role="yd6KS">
+          <property role="pLAjc" value="ctrl" />
+          <property role="pLAjf" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6CRh2MDAnEz">
+    <property role="TrG5h" value="CompletionUpperCaseAfterSpace" />
+    <property role="3GE5qa" value="completion.space" />
+    <node concept="312cEu" id="6CRh2MDAnE$" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CompletionSpaceTest" />
+      <node concept="2YIFZL" id="6CRh2MDAnE_" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="6CRh2MDAnEA" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="6CRh2MDAnEB" role="1tU5fm">
+            <node concept="17QB3L" id="6CRh2MDAnEC" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="6CRh2MDAnED" role="3clF45" />
+        <node concept="3Tm1VV" id="6CRh2MDAnEE" role="1B3o_S" />
+        <node concept="3clFbS" id="6CRh2MDAnEF" role="3clF47">
+          <node concept="LIFWc" id="6CRh2MDAnEG" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_u338ov_a0a" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6CRh2MDAnEH" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="6CRh2MDAnEI" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CompletionSpaceTest" />
+      <node concept="2YIFZL" id="6CRh2MDAnEJ" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="6CRh2MDAnEK" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="6CRh2MDAnEL" role="1tU5fm">
+            <node concept="17QB3L" id="6CRh2MDAnEM" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="6CRh2MDAnEN" role="3clF45" />
+        <node concept="3Tm1VV" id="6CRh2MDAnEO" role="1B3o_S" />
+        <node concept="3clFbS" id="6CRh2MDAnEP" role="3clF47">
+          <node concept="33Ct9k" id="6CRh2MDAnPl" role="3cqZAp">
+            <node concept="LIFWc" id="6CRh2MDAnPG" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="6" />
+              <property role="p6zMs" value="6" />
+              <property role="LIFWd" value="Constant_8j431v_a0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6CRh2MDAnES" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="6CRh2MDAnET" role="LjaKd">
+      <node concept="2TK7Tu" id="6CRh2MDAnEU" role="3cqZAp">
+        <property role="2TTd_B" value="abcEG" />
+      </node>
+      <node concept="yd1bK" id="6CRh2MDAnEV" role="3cqZAp">
+        <node concept="pLAjd" id="6CRh2MDAnEW" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>

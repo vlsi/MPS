@@ -2944,6 +2944,9 @@
     <node concept="lpD6D" id="374E0BAhvKu" role="lpD6w">
       <ref role="lpD7u" to="ryl9:374E0BAgO9b" resolve="CompletionSpaceSecond" />
     </node>
+    <node concept="lpD6D" id="6CRh2MDBnnI" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:6CRh2MDAnEz" resolve="CompletionUpperCaseAfterSpace" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4jBMNo5VBVj" resolve="EditingNotEditableProperty" />
     </node>
