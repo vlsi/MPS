@@ -14,9 +14,9 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.depanalyzer.DependencyTree;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -69,7 +69,11 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
     try {
       ModuleDependencyNode treeNode = (ModuleDependencyNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       SModule top = ((DependencyTree) treeNode.getTree()).getModule();
-      DependenciesUtil.analyzeDependencies(top, treeNode.getModule(), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.isUsedLanguage(), true);
+      SModule to = treeNode.getModule().resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+      if (to == null) {
+        return;
+      }
+      DependenciesUtil.analyzeDependencies(top, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.isUsedLanguage(), true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);

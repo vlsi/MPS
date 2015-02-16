@@ -5,11 +5,14 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.icons.IconManager;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.icons.IconManager;
 import java.util.Iterator;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class ModuleDependencyNode extends MPSTreeNode {
   private boolean myInitialized;
@@ -21,12 +24,19 @@ public class ModuleDependencyNode extends MPSTreeNode {
     super(Sequence.fromIterable(relations).toListSequence());
     myModule = module;
     myIsUsedLang = isUsedLanguage;
-    setIcon(IconManager.getIconFor(getModule()));
     setText(module.getModuleName());
     setNodeIdentifier(module.getModuleName());
   }
-  public SModule getModule() {
-    return myModule.resolve(((DependencyTree) getTree()).getModule().getRepository());
+  /*package*/ void updateIcon(SRepository repo) {
+    SModule m = myModule.resolve(repo);
+    if (m == null) {
+      setIcon(IdeIcons.DEFAULT_ICON);
+    } else {
+      setIcon(IconManager.getIconFor(m));
+    }
+  }
+  public SModuleReference getModule() {
+    return myModule;
   }
   /**
    * Module associated with this node might be target of few dependencies of the initial module.
@@ -69,12 +79,15 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
   @Override
   public void doubleClick() {
-    ProjectPane.getInstance(check_lba8jw_a0a0a31(((DependencyTree) getTree()), this)).selectModule(getModule(), false);
-  }
-  private static Project check_lba8jw_a0a0a31(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getProject();
+    Project project = getProject();
+    SRepository r = ProjectHelper.getProjectRepository(project);
+    SModule m = (r == null ? null : myModule.resolve(r));
+    if (m == null) {
+      return;
     }
-    return null;
+    ProjectPane.getInstance(project).selectModule(m, false);
+  }
+  private Project getProject() {
+    return (getTree() == null ? null : ((DependencyTree) getTree()).getProject());
   }
 }
