@@ -45,6 +45,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     return "transient";
   }
 
+  @NotNull
   @Override
   public TransientModelsModule getModule() {
     return (TransientModelsModule) super.getModule();

@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import org.apache.tools.ant.BuildException;
 import org.jetbrains.annotations.NotNull;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.MalformedURLException;
+import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
 public class MPSClasspathUtil {
@@ -135,6 +138,12 @@ public class MPSClasspathUtil {
     }
     if (url == null) {
       throw new BuildException("cannot detect jar location; no resource `" + path + "'");
+    }
+    // try to decode non-latin characters in url (MPS-20091) 
+    try {
+      url = new URL(url.getProtocol(), url.getHost(), url.getPort(), URLDecoder.decode(url.getFile(), "UTF-8"));
+    } catch (MalformedURLException e) {
+    } catch (UnsupportedEncodingException e) {
     }
     return extractRoot(url, path);
   }

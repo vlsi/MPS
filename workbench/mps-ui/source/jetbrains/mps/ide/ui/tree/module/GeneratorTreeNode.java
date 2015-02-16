@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,19 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.NotNull;
 
 public class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvider {
   private boolean myInitialized;
 
-  public GeneratorTreeNode(Generator generator, Project project) {
+  public GeneratorTreeNode(@NotNull Generator generator, Project project) {
     super(generator);
     setNodeIdentifier(generator.getModuleName());
     setIcon(IdeIcons.GENERATOR_ICON);
     init();
   }
 
+  @NotNull
   @Override
   public Generator getModule() {
     return (Generator) super.getModule();
@@ -57,7 +58,7 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   }
 
   public String calculateText() {
-    String name = ((Generator) getModule()).getName();
+    String name = getModule().getModuleName();
     return "generator/" + (name == null ? "<no name>" : name);
   }
 
