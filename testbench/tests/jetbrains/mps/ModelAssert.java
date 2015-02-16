@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.smodel.ImplicitImportsLegacyHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
@@ -108,8 +109,12 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-    assertListsEqual(expectedModel.getImplicitImportsSupport().getAdditionalModelVersions(),
-        actualModel.getImplicitImportsSupport().getAdditionalModelVersions(), new Comparator<ImportElement>() {
+    final ImplicitImportsLegacyHolder is1 = expectedModel.getImplicitImportsSupport();
+    final ImplicitImportsLegacyHolder is2 = actualModel.getImplicitImportsSupport();
+    is1.calculateImplicitImports();
+    is2.calculateImplicitImports();
+    assertListsEqual(is1.getAdditionalModelVersions(),
+        is2.getAdditionalModelVersions(), new Comparator<ImportElement>() {
           @Override
           public int compare(ImportElement import1, ImportElement import2) {
             return import1.getModelReference().equals(import2.getModelReference()) ? 0 : 1;
@@ -211,7 +216,7 @@ public class ModelAssert {
     for (String key : propertes) {
       String expectedProperty = jetbrains.mps.util.SNodeOperations.getProperties(expectedNode).get(key);
       String actualProperty = jetbrains.mps.util.SNodeOperations.getProperties(actualNode).get(key);
-      assertEquals(getErrorString("property", expectedNode, actualNode), expectedProperty, actualProperty);
+      assertEquals(getErrorString("property " + key, expectedNode, actualNode), expectedProperty, actualProperty);
     }
   }
 
