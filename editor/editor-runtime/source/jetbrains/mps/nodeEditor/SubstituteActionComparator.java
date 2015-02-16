@@ -52,6 +52,10 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     return myPattern != null && getVisibleMatchingText(action).startsWith(myPattern);
   }
 
+  protected boolean startsWithLowerCase(SubstituteAction action) {
+    return myPattern != null && getVisibleMatchingText(action).toLowerCase().startsWith(myPattern.toLowerCase());
+  }
+
   private int compareByRate(SubstituteAction firstAction, SubstituteAction secondAction) {
     if (myPattern == null || myPattern.length() == 0) {
       return 0;
@@ -85,11 +89,28 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     return 0;
   }
 
+  private int compareByStartsWithLowerCase(SubstituteAction i1, SubstituteAction i2) {
+    boolean startsWithLowerCase1 = startsWithLowerCase(i1);
+    boolean startsWithLowerCase2 = startsWithLowerCase(i2);
+    if (startsWithLowerCase1 != startsWithLowerCase2) {
+      return startsWithLowerCase1 ? -1 : 1;
+    }
+    return 0;
+  }
 
   @Override
   public int compare(SubstituteAction action1, SubstituteAction action2) {
     int result = compareByStrictly(action1, action2);
     if (result != 0) return result;
+
+    String s1 = getVisibleMatchingText(action1);
+    String s2 = getVisibleMatchingText(action2);
+
+    boolean null_s1 = (s1 == null || s1.length() == 0);
+    boolean null_s2 = (s2 == null || s2.length() == 0);
+    if (null_s1 && null_s2) return compareByLocalPriority(action1, action2);
+    if (null_s1) return 1;
+    if (null_s2) return -1;
 
     result = compareByStartsWith(action1, action2);
     if (result != 0) return result;
@@ -100,15 +121,10 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     result = compareByLocalPriority(action1, action2);
     if (result != 0) return result;
 
-    String s1 = getVisibleMatchingText(action1);
-    String s2 = getVisibleMatchingText(action2);
-
-    boolean null_s1 = (s1 == null || s1.length() == 0);
-    boolean null_s2 = (s2 == null || s2.length() == 0);
-    if (null_s1 && null_s2) return 0;
-    if (null_s1) return 1;
-    if (null_s2) return -1;
-
+    if (getRate(action1) == SubstituteActionUtil.CAN_SUBSTITUTE_VIA_SEARCH && getRate(action2) == SubstituteActionUtil.CAN_SUBSTITUTE_VIA_SEARCH) {
+      result = compareByStartsWithLowerCase(action1, action2);
+      if (result != 0) return result;
+    }
 
     return s1.compareTo(s2);
   }

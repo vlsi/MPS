@@ -30,9 +30,9 @@ import java.util.List;
 import java.util.Map;
 
 public class SubstituteActionUtil {
-  private static final int CAN_SUBSTITUTE_VIA_PATTERN = 2;
-  private static final int CAN_SUBSTITUTE_VIA_SEARCH = 1;
-  private static final int CANT_SUBSTITUTE = 0;
+  static final int CAN_SUBSTITUTE_VIA_PATTERN = 2;
+  static final int CAN_SUBSTITUTE_VIA_SEARCH = 1;
+  static final int CANT_SUBSTITUTE = 0;
 
   //utility class
   private SubstituteActionUtil() {

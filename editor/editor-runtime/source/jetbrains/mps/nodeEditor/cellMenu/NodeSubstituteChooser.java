@@ -258,6 +258,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<SubstituteAction, String>();
           private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
           private Map<SubstituteAction, Boolean> myStartsWithMap = new HashMap<SubstituteAction, Boolean>();
+          private Map<SubstituteAction, Boolean> myStartsWithLowerCaseMap = new HashMap<SubstituteAction, Boolean>();
 
           @Override
           protected int getLocalSortPriority(SubstituteAction action) {
@@ -307,6 +308,16 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               myStartsWithMap.put(action, startsWith);
             }
             return startsWith;
+          }
+
+          @Override
+          protected boolean startsWithLowerCase(SubstituteAction action) {
+            Boolean startsWithLowerCase = myStartsWithLowerCaseMap.get(action);
+            if (startsWithLowerCase == null) {
+              startsWithLowerCase = super.startsWithLowerCase(action);
+              myStartsWithLowerCaseMap.put(action, startsWithLowerCase);
+            }
+            return startsWithLowerCase;
           }
         });
       }
