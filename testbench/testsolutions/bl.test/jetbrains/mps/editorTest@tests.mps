@@ -35805,6 +35805,11 @@
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
+      <node concept="yd1bK" id="71ebbjdu$M7" role="3cqZAp">
+        <node concept="pLAjd" id="71ebbjdu$M9" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
     </node>
     <node concept="9aQIb" id="5N$4gJrW6gR" role="LiRBU">
       <node concept="3clFbS" id="5N$4gJrW6gT" role="9aQI4">

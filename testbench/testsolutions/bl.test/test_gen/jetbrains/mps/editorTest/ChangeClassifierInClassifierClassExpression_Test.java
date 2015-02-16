@@ -27,6 +27,7 @@ public class ChangeClassifierInClassifierClassExpression_Test extends BaseTransf
       initEditor("6693493688811676727", "6693493688811710583");
       this.typeString("Double");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }
