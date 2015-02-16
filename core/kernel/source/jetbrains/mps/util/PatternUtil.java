@@ -48,7 +48,7 @@ public class PatternUtil {
   private static State appendNextChar(char c, State state, StringBuilder b, boolean useDots, boolean useStarAndQuestionMark) {
     if (state == State.SEQUENCE_LETTERS && Character.isUpperCase(c)) {
       b.append("[a-z0-9_]*");
-      b.append("((").append(c).append(")|(\\s(\\s)*").append(Character.toLowerCase(c)).append("))");
+      b.append("((").append(c).append(")|((\\s)+[").append(Character.toLowerCase(c)).append(c).append("]))");
       return State.SEQUENCE_LETTERS;
     }
     if (c == '*' || c == '?' || c == '.' || c == '@' || Character.isLetterOrDigit(c) || c == '_') {
