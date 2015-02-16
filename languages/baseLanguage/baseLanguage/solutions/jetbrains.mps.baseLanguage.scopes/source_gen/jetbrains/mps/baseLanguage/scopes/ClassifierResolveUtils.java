@@ -534,10 +534,10 @@ public class ClassifierResolveUtils {
     return models;
   }
   public static Iterable<SNode> staticImportedMethods(SNode imports) {
-    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports);
+    return staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode(), imports);
   }
   public static Iterable<SNode> staticImportedFields(SNode imports) {
-    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), imports);
+    return staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode(), imports);
   }
   /**
    * methodsOrFields: true for methods. false for fields

@@ -7,10 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class ConceptDeclarationExtendedConceptSearchScope extends DelegatingScope {
   public ConceptDeclarationExtendedConceptSearchScope(@Nullable final SNode concept, SNode contextNode) {
@@ -19,7 +18,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return;
     }
 
-    wrapped = new FilteringScope(new ConceptsScope(contextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+    wrapped = new FilteringScope(new ConceptsScope(contextNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode())) {
       @Override
       public boolean isExcluded(SNode node) {
         return node == concept || SModelUtil.isAssignableConcept(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), concept);

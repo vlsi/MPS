@@ -24,7 +24,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.DataTypeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.SModelLanguageUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

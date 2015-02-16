@@ -16,7 +16,6 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 @Deprecated
@@ -147,7 +146,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration").getDeclarationNode())) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
@@ -158,7 +157,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode())) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
@@ -169,7 +168,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration").getDeclarationNode())) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {

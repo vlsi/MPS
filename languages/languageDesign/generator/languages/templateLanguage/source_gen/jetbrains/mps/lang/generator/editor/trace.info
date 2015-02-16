@@ -15419,7 +15419,7 @@
       <node id="2265407187494399848" at="53,0,56,0" concept="7" trace="getMatchingText_internal#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2265407187494399848" at="56,0,59,0" concept="7" trace="getDescriptionText#(Ljava/lang/Object;)Ljava/lang/String;" />
       <node id="6819753748920080117" at="66,0,69,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
-      <node id="8399143188352920642" at="31,120,36,182" concept="9" />
+      <node id="8399143188352920642" at="31,120,36,249" concept="9" />
       <node id="6819753748919572615" at="59,70,64,7" concept="6" />
       <node id="2265407187494399848" at="41,0,47,0" concept="7" trace="handleAction_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2265407187494399848" at="31,0,38,0" concept="7" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
@@ -15463,7 +15463,7 @@
       <scope id="2265407187494399852" at="41,149,45,36">
         <var name="macro" id="2265407187494450834" />
       </scope>
-      <scope id="2265407187494399850" at="31,120,36,182" />
+      <scope id="2265407187494399850" at="31,120,36,249" />
       <scope id="2265407187494450815" at="59,70,64,7" />
       <scope id="2265407187494399848" at="41,0,47,0">
         <var name="editorContext" id="2265407187494399848" />
@@ -15480,7 +15480,7 @@
       <scope id="2265407187494399848" at="59,0,66,0">
         <var name="parameterObject" id="2265407187494399848" />
       </scope>
-      <unit id="8399143188353015585" at="32,210,36,7" name="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
+      <unit id="8399143188353015585" at="32,276,36,7" name="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
       <unit id="2265407187494399848" at="28,0,70,0" name="jetbrains.mps.lang.generator.editor.replace_node_macro$NodeMacro_generic_cellMenu_f12orh_a0" />
       <unit id="2265407187494399846" at="24,0,71,0" name="jetbrains.mps.lang.generator.editor.replace_node_macro" />
     </file>

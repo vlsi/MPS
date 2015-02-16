@@ -22,7 +22,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.console.base.util.SubconceptsScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
@@ -57,7 +56,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new SubconceptsScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), _context.getModel()) {
+            return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L, "jetbrains.mps.console.base.structure.ConsoleHelpProvider").getDeclarationNode(), _context.getModel()) {
               public String getName(SNode child) {
                 return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) child)), "virtual_getDisplayString_7006261637493126103", new Object[]{});
               }

@@ -16,8 +16,8 @@
   <root nodeRef="r:9693cb33-473b-4be0-90b5-49a4eae89013(jetbrains.mps.debugger.java.privateMembers.actions)/6113527081580345349">
     <file name="QueriesGenerated.java">
       <node id="6113527081580345350" at="26,209,27,93" concept="5" />
-      <node id="6113527081580345350" at="28,5,29,154" concept="5" />
-      <node id="6113527081580345350" at="29,154,30,62" concept="5" />
+      <node id="6113527081580345350" at="28,5,29,226" concept="5" />
+      <node id="6113527081580345350" at="29,226,30,62" concept="5" />
       <node id="6113527081580345361" at="33,44,34,141" concept="5" />
       <node id="6113527081580345371" at="34,141,35,92" concept="5" />
       <node id="6113527081580345380" at="35,92,36,61" concept="5" />

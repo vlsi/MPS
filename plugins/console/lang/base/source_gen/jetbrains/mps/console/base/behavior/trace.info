@@ -520,7 +520,7 @@
         <var name="context" id="473081947980702288" />
         <var name="thisNode" id="473081947980701637" />
       </scope>
-      <unit id="6928665434436790709" at="36,254,40,7" name="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$1" />
+      <unit id="6928665434436790709" at="36,334,40,7" name="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$1" />
       <unit id="6928665434441795895" at="40,18,44,7" name="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$2" />
       <unit id="6928665434441908595" at="44,28,48,7" name="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$3" />
       <unit id="5932042262275287360" at="48,28,52,7" name="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$4" />

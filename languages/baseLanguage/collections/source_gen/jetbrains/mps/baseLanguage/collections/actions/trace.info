@@ -519,8 +519,8 @@
       <node id="1228229512980" at="223,94,224,290" concept="7" />
       <node id="1228229514885" at="224,290,225,191" concept="2" />
       <node id="1228229527710" at="225,191,226,18" concept="8" />
-      <node id="1241361615878" at="247,196,248,503" concept="7" />
-      <node id="1241361675423" at="248,503,249,154" concept="8" />
+      <node id="1241361615878" at="247,196,248,771" concept="7" />
+      <node id="1241361675423" at="248,771,249,154" concept="8" />
       <node id="1228229429859" at="247,0,251,0" concept="9" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1228229429859#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <scope id="1228229429860" at="247,196,249,154">
         <var name="accepted" id="1241361615879" />
@@ -1202,12 +1202,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/8972923409032189328">
     <file name="QueriesGenerated.java">
       <node id="8972923409032189329" at="131,216,132,93" concept="7" />
-      <node id="8972923409032189329" at="133,5,134,140" concept="7" />
-      <node id="8972923409032189329" at="134,140,135,62" concept="7" />
+      <node id="8972923409032189329" at="133,5,134,207" concept="7" />
+      <node id="8972923409032189329" at="134,207,135,62" concept="7" />
       <node id="8972923409032189356" at="138,94,139,272" concept="7" />
       <node id="8972923409032199344" at="139,272,140,359" concept="2" />
       <node id="8972923409032199341" at="140,359,141,27" concept="8" />
-      <node id="8972923409032189339" at="143,57,144,295" concept="8" />
+      <node id="8972923409032189339" at="143,57,144,362" concept="8" />
       <node id="8972923409032189329" at="146,64,147,44" concept="8" />
       <node id="8972923409032189329" at="151,5,152,18" concept="8" />
       <node id="8972923409032189329" at="143,0,146,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -1218,7 +1218,7 @@
       <node id="8972923409032189329" at="132,93,151,5" concept="0" />
       <node id="8972923409032189329" at="132,93,151,5" concept="0" />
       <node id="8972923409032189329" at="131,0,154,0" concept="9" trace="nodeSubstituteActionsBuilder_ActionsFactory_LinkedListCreator_8972923409032189329#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="8972923409032189338" at="143,57,144,295" />
+      <scope id="8972923409032189338" at="143,57,144,362" />
       <scope id="8972923409032189329" at="146,64,147,44" />
       <scope id="8972923409032189334" at="138,94,141,27">
         <var name="creator" id="8972923409032189357" />

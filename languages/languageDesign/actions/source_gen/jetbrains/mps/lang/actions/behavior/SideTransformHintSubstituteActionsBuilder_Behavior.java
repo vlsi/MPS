@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +28,7 @@ public class SideTransformHintSubstituteActionsBuilder_Behavior {
     return "sideTransformHintSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondtion.getNodeId().toString();
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration")) {
+    if (kind == MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1a6565L, "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration").getDeclarationNode()) {
       if (ScopeUtils.comeFrom("precondition", thisNode, child)) {
         // all SideTransformVariables are invisible in precondition block 
         return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
@@ -43,7 +42,7 @@ public class SideTransformHintSubstituteActionsBuilder_Behavior {
         }
         ListSequence.fromList(result).addElement(nextVarDecl);
       }
-      return Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"), result, ScopeUtils.lazyParentScope(thisNode, kind));
+      return Scopes.forVariables(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1a6565L, "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration").getDeclarationNode(), result, ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }

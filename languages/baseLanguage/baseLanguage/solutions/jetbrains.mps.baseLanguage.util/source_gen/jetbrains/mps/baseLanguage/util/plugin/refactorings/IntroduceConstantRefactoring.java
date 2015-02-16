@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -39,7 +38,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   }
   @Override
   public void replaceNode(SNode node, SNode declaration) {
-    if (Scope.getScope(Scope.parent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(declaration)) {
+    if (Scope.getScope(Scope.parent(node), node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode()).contains(declaration)) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a3(declaration));
     } else {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a0d(this.myContainer, declaration));

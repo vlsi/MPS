@@ -86,7 +86,7 @@
       <node id="7446293342517448131" at="142,43,143,49" concept="5" />
       <node id="7446293342517448131" at="143,49,144,67" concept="5" />
       <node id="7446293342517448131" at="144,67,145,94" concept="5" />
-      <node id="7446293342517448131" at="145,94,146,388" concept="6" />
+      <node id="7446293342517448131" at="145,94,146,530" concept="6" />
       <node id="7446293342517448131" at="151,5,152,18" concept="6" />
       <node id="7060824959893164605" at="129,20,131,15" concept="0" />
       <node id="7446293342517448132" at="103,0,106,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_LogicalExpression_7446293342517448132#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
@@ -127,7 +127,7 @@
       <scope id="7446293342517448131" at="138,0,141,0">
         <var name="pattern" id="7446293342517448131" />
       </scope>
-      <scope id="7446293342517448131" at="142,43,146,388">
+      <scope id="7446293342517448131" at="142,43,146,530">
         <var name="containingLink" id="7446293342517448131" />
         <var name="parent" id="7446293342517448131" />
         <var name="sourceNode" id="7446293342517448131" />
@@ -173,7 +173,7 @@
       <node id="859008965969369894" at="170,37,171,43" concept="5" />
       <node id="859008965969369894" at="171,43,172,61" concept="5" />
       <node id="859008965969369894" at="172,61,173,88" concept="5" />
-      <node id="859008965969369894" at="173,88,174,370" concept="6" />
+      <node id="859008965969369894" at="173,88,174,512" concept="6" />
       <node id="859008965969369894" at="176,7,177,18" concept="6" />
       <node id="859008965969369894" at="163,0,166,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="859008965969369894" at="166,0,169,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -193,7 +193,7 @@
       <scope id="859008965969369902" at="157,94,161,184">
         <var name="ifNode" id="859008965969369934" />
       </scope>
-      <scope id="859008965969369894" at="170,37,174,370">
+      <scope id="859008965969369894" at="170,37,174,512">
         <var name="containingLink" id="859008965969369894" />
         <var name="parent" id="859008965969369894" />
         <var name="sourceNode" id="859008965969369894" />

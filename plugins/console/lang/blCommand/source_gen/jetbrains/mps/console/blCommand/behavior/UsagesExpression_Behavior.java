@@ -5,7 +5,7 @@ package jetbrains.mps.console.blCommand.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -13,7 +13,7 @@ public class UsagesExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"));
+    return Sequence.<SNode>singleton(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.console.blCommand.structure.QueryParameterScope").getDeclarationNode());
   }
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     return BehaviorReflection.invokeSuperStatic(String.class, SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getHelpPage_7006261637493125297", new Object[]{}) + "\nImplementation of this command uses the IDE indexes to speed up execution";
