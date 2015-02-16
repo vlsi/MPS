@@ -131,6 +131,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) return new IllegalConceptDescriptor(fqName);
+      assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
       conceptDescriptors.put(fqName, descriptor);
       return descriptor;
@@ -164,6 +165,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) return new IllegalConceptDescriptor(id);
+      assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
       conceptDescriptorsById.put(id, descriptor);
       return descriptor;

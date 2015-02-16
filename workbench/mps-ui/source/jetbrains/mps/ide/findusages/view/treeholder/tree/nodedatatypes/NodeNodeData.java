@@ -38,7 +38,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 import java.util.List;
 
-public class NodeNodeData extends BaseNodeData {
+public class NodeNodeData extends AbstractResultNodeData {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeNodeData.class));
 
   private static final String NODE = "node";
@@ -92,7 +92,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   @Override
-  public Object getIdObject() {
+  public String createIdObject() {
     return jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText();
   }
 
