@@ -136,42 +136,33 @@
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent
       </implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.HierarchyViewTool</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarksTool</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringView</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.project.ProjectLibraryManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarksUIComponent</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.vfs.DirectoryIndexExcludeUpdater</implementation-class>
@@ -180,11 +171,9 @@
     <!-- typesystem -->
     <component>
       <implementation-class>jetbrains.mps.typesystem.uiActions.SupertypesViewTool</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
-      <skipForDummyProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>

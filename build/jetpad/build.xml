@@ -14,8 +14,8 @@
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
   </target>
 
-  <target name="resolve" depends="install-ivy" description="--> Retreive dependencies with ivy if changed">
-    <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different" />
+  <target name="resolve" depends="install-ivy"  description="--> Retreive dependencies with ivy if changed">
+    <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
 </project>
