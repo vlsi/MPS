@@ -202,7 +202,10 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
       return;//todo
     }
     getTypechecking().reportTypeError(nodeWithError, errorReporter);
-    getTypechecking().addDependencyOnCurrent(nodeWithError, false);
+    // the following line messes up the typechecking even if the error is caused by a non-typechecking rule
+    // this further complicates incremental types calculation and produces unwanted results MPS-21481
+    // TODO: rethink the way errors affect the typechecking
+//    getTypechecking().addDependencyOnCurrent(nodeWithError, false);
   }
 
 
