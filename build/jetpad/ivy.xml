@@ -1,5 +1,5 @@
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="org.jetbrains.mps" module="mps"/>
+  <info organisation="jetbrains" module="jetpad"/>
 
   <dependencies>
     <dependency org="jetbrains.jetpad" name="grammar" rev="${jetpad.version}">
