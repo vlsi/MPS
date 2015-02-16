@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,7 +29,6 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -57,23 +57,29 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   public BaseEditorTestBody() {
   }
 
-  protected Editor initEditor(final String before, final String after) throws Exception {
+  protected Editor initEditor(final String before, final String after) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing editor");
     }
-    final Exception[] exception = new Exception[1];
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          BaseEditorTestBody.this.doInitEditor(before, after);
-        } catch (Exception e) {
-          exception[0] = e;
+    final Throwable[] throwable = new Throwable[1];
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            BaseEditorTestBody.this.doInitEditor(before, after);
+          } catch (Throwable e) {
+            throwable[0] = e;
+          }
         }
-      }
-    });
-    if (exception[0] != null) {
-      throw exception[0];
+      });
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException(e);
+    }
+    if (throwable[0] != null) {
+      throw new RuntimeException("Throwable while initializing the editor ", throwable[0]);
     }
     return this.myEditor;
   }
@@ -116,7 +122,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   protected void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
-    // <node> 
+    ModelAccess.instance().flushEventQueue();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {

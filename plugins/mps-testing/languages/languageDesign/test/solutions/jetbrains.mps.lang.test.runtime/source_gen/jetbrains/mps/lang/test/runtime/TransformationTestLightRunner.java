@@ -6,20 +6,24 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.MacrosFactory;
-import java.io.File;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.Computable;
+import java.util.Collection;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.ProjectManager;
-import java.io.IOException;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class TransformationTestLightRunner extends TransformationTestRunner {
 
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
-    final Project testProject = findProject(projectPath);
+    final Project testProject = findProject(modelName);
     doInitTest(test, testProject, modelName);
+    if (testProject == null) {
+      throw new IllegalStateException("Cannot execute test in-process : the context project containing the model " + modelName + " was not found");
+    }
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -29,33 +33,35 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
   }
 
   @Nullable
-  private Project findProject(@NotNull String projectPath) {
-    String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
-    File projectFile = new File(expandedProjectPath);
-    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-      if (TransformationTestLightRunner.projectHasPath(project, projectFile)) {
-        return project;
+  private Project findProject(String modelName) {
+    SModel contextModel = findModel(modelName);
+    final SModule contextModule = check_1frbnp_a0b0f(contextModel);
+    if (contextModule == null) {
+      return null;
+    }
+    return ModelAccess.instance().runReadAction(new Computable<Project>() {
+      public Project compute() {
+        Collection<SModule> runtimeDeps = new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
+        for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+          SRepository repo = project.getRepository();
+          boolean found = true;
+          for (SModule module : CollectionSequence.fromCollection(runtimeDeps)) {
+            if (repo.getModule(module.getModuleId()) == null) {
+              found = false;
+            }
+          }
+          if (found) {
+            return project;
+          }
+        }
+        return null;
       }
+    });
+  }
+  private static SModule check_1frbnp_a0b0f(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
     }
     return null;
   }
-
-  private static boolean projectHasPath(Project project, File path) {
-    File projectFile = project.getProjectFile();
-    if (projectFile == null) {
-      return false;
-    }
-    try {
-      String myProjectPath = projectFile.getCanonicalPath();
-      String newProjectPath = path.getCanonicalPath();
-      return myProjectPath.equals(newProjectPath);
-    } catch (IOException e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Cannot access the project file in container", e);
-      }
-    }
-    return false;
-  }
-
-  protected static Logger LOG = LogManager.getLogger(TransformationTestLightRunner.class);
 }
