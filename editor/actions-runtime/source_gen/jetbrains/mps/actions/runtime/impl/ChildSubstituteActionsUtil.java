@@ -5,18 +5,21 @@ package jetbrains.mps.actions.runtime.impl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.SNodeUtil;
 import java.util.List;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -39,16 +42,15 @@ public class ChildSubstituteActionsUtil {
   public ChildSubstituteActionsUtil() {
   }
   public static SNode getRefinedChildConcept(SNode currentChild) {
-    SNode childConcept = SNodeOperations.getConceptDeclaration(currentChild);
-    SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    if (SNodeOperations.isInstanceOf(childConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      SNode concreteChildConcept = SNodeOperations.cast(((SNode) childConcept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-      while ((SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) != null) && SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) != baseConcept) {
-        concreteChildConcept = SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
+    SAbstractConcept childConcept = SNodeOperations.getConcept(currentChild);
+    if (childConcept instanceof SConcept) {
+      SConcept sconcept = ((SConcept) childConcept);
+      while (sconcept.getSuperConcept() != null && sconcept.getSuperConcept() != SNodeUtil.concept_BaseConcept) {
+        sconcept = sconcept.getSuperConcept();
       }
-      childConcept = concreteChildConcept;
+      childConcept = sconcept;
     }
-    return childConcept;
+    return SNodeOperations.asNode(((SAbstractConcept) childConcept));
   }
   public static List<SNode> getActionsBuilders(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     SNode link = null;

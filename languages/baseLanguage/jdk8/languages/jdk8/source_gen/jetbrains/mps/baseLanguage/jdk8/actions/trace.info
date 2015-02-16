@@ -16,9 +16,9 @@
   <root nodeRef="r:b6a3ef4a-14b2-4baa-9b6f-37114521a57d(jetbrains.mps.baseLanguage.jdk8.actions)/6434457067211318206">
     <file name="QueriesGenerated.java">
       <node id="6434457067211318207" at="28,209,29,93" concept="5" />
-      <node id="6434457067211318207" at="30,5,31,140" concept="5" />
-      <node id="6434457067211318207" at="31,140,32,62" concept="5" />
-      <node id="8287904403590716438" at="35,44,36,201" concept="5" />
+      <node id="6434457067211318207" at="30,5,31,212" concept="5" />
+      <node id="6434457067211318207" at="31,212,32,62" concept="5" />
+      <node id="8287904403590716438" at="35,44,36,273" concept="5" />
       <node id="8287904403590724352" at="37,32,38,45" concept="6" />
       <node id="8287904403590778685" at="41,45,42,188" concept="6" />
       <node id="1177397398637" at="50,98,51,287" concept="5" />
@@ -28,7 +28,7 @@
       <node id="6434457067211318207" at="58,68,59,48" concept="6" />
       <node id="1215707195402" at="61,64,62,91" concept="6" />
       <node id="6434457067211318207" at="68,5,69,18" concept="6" />
-      <node id="8287904403590719877" at="36,201,39,13" concept="3" />
+      <node id="8287904403590719877" at="36,273,39,13" concept="3" />
       <node id="8287904403590775523" at="41,0,44,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6434457067211318207" at="55,0,58,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="6434457067211318207" at="58,0,61,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />

@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MigrateParameterReference_MigrationScript extends BaseMigrationScript {
   public MigrateParameterReference_MigrationScript(IOperationContext operationContext) {
     super("Migrate ParameterReference to VariableReference");
-    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference").getDeclarationNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration").getDeclarationNode())) {
       this.addRefactoring(refactoring);
     }
   }

@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
@@ -50,7 +49,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return NodesTestCase_Behavior.call_isIntentionApplicable_1217250498008(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")), node);
+    return NodesTestCase_Behavior.call_isIntentionApplicable_1217250498008(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()), node);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)", "7658393498702987309");

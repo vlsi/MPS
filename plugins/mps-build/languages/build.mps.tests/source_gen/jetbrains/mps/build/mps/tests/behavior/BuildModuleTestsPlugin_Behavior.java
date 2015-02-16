@@ -12,7 +12,6 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -30,7 +29,7 @@ public class BuildModuleTestsPlugin_Behavior {
     // find mps-test.jar 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
     SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
+    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", 0}).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((mpsTestModule != null)) {
       SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {

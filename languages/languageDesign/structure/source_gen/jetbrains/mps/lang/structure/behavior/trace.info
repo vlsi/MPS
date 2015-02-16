@@ -1193,7 +1193,7 @@
       <node id="7588821453558807959" at="26,102,27,33" concept="8" />
       <node id="7588821453558329411" at="27,33,28,267" concept="6" />
       <node id="7588821453559007486" at="29,32,30,18" concept="7" />
-      <node id="7588821453558377670" at="31,5,32,168" concept="6" />
+      <node id="7588821453558377670" at="31,5,32,234" concept="6" />
       <node id="7588821453558531993" at="34,37,35,189" concept="7" />
       <node id="7588821453558563196" at="38,39,39,81" concept="7" />
       <node id="7588821453559904611" at="42,39,43,43" concept="8" />
@@ -1237,7 +1237,7 @@
       <node id="7588821453550336013" at="65,0,76,0" concept="10" trace="getAttributeRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="7588821453551370266" at="81,0,92,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="7588821453551353672" at="79,5,96,7" concept="7" />
-      <node id="7588821453558496086" at="32,168,50,7" concept="7" />
+      <node id="7588821453558496086" at="32,234,50,7" concept="7" />
       <node id="7588821453550341773" at="76,0,98,0" concept="10" trace="getApplicableConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="7588821453558186462" at="26,0,52,0" concept="10" trace="getApplicableAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <scope id="7588821453558998809" at="29,32,30,18" />

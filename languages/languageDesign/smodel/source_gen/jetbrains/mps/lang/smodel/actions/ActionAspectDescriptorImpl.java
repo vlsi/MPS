@@ -20,35 +20,39 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
         case 1:
           return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_6955116391923862678());
         case 2:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1203553739270());
+          return Collections.<NodeFactory>singletonList(new ConceptRefFactories.NodeFactory_3634671212091137140());
         case 3:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1203553726914());
+          return Collections.<NodeFactory>singletonList(new ConceptRefFactories.NodeFactory_2356801005208152816());
         case 4:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829253());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1203553739270());
         case 5:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829632());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1203553726914());
         case 6:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829589());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829253());
         case 7:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829316());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829632());
         case 8:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1171415364777());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829589());
         case 9:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1207248813874());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829316());
         case 10:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829413());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1171415364777());
         case 11:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829507());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1207248813874());
         case 12:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829548());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829413());
         case 13:
-          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3602058458308809797());
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829507());
         case 14:
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3341893916018829548());
+        case 15:
+          return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_3602058458308809797());
+        case 16:
           return Collections.<NodeFactory>singletonList(new SModelLang_factories.NodeFactory_1205353787833());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CheckedModuleQualifiedName", "CheckedModuleReference", "Concept_IsSubConceptOfOperation", "Concept_IsSuperConceptOfOperation", "Concept_NewInstance", "LinkList_AddNewChildOperation", "Link_SetNewChildOperation", "Model_CreateNewNodeOperation", "Node_GetAncestorOperation", "Node_GetDescendantsOperation", "Node_InsertNewNextSiblingOperation", "Node_InsertNewPrevSiblingOperation", "Node_ReplaceWithNewOperation", "SNodeCreator", "SNodeListType"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CheckedModuleQualifiedName", "CheckedModuleReference", "ConceptIdRefExpression", "ConceptRefExpression", "Concept_IsSubConceptOfOperation", "Concept_IsSuperConceptOfOperation", "Concept_NewInstance", "LinkList_AddNewChildOperation", "Link_SetNewChildOperation", "Model_CreateNewNodeOperation", "Node_GetAncestorOperation", "Node_GetDescendantsOperation", "Node_InsertNewNextSiblingOperation", "Node_InsertNewPrevSiblingOperation", "Node_ReplaceWithNewOperation", "SNodeCreator", "SNodeListType"};
 }

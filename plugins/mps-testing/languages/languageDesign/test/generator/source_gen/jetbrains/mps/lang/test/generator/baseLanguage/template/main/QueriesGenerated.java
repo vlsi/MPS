@@ -15,7 +15,6 @@ import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -92,7 +91,7 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_1031873601093426077(final PropertyMacroContext _context) {
-    return TestInfo_Behavior.call_reOpenProject_1031873601093419509(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo")), SNodeOperations.getModel(_context.getNode()));
+    return TestInfo_Behavior.call_reOpenProject_1031873601093419509(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo").getDeclarationNode()), SNodeOperations.getModel(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1224603580889(final PropertyMacroContext _context) {
     return TestsUtil.getTestBodyClassName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}));
@@ -104,7 +103,7 @@ public class QueriesGenerated {
     return NodesTestCase_Behavior.call_needsWriteAction_6339244025081193722(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")));
   }
   public static Object propertyMacro_GetPropertyValue_1224603647998(final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")));
+    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1226937589842(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
@@ -149,7 +148,7 @@ public class QueriesGenerated {
     return TestsUtil.getTestBodyClassName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1229211902562(final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")));
+    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6270156512822429979(final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314b78e4L, "nodeToEdit")).getNodeId().toString();

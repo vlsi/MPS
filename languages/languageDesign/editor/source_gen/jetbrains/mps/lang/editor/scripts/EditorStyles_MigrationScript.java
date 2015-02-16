@@ -60,7 +60,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
         return true;
       }
       public void doUpdateInstanceNode(SNode node) {
-        as_n8en9w_a0a0a4a0a0a0a2a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
+        as_n8en9w_a0a0a4a0a0a0a2a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass").getDeclarationNode()));
         if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, 0x116fd682568L, "extendedClass")) != null)) {
           ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, 0x116fd682568L, "extendedClass")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fd64815dL, 0x116fd66bc9eL, "styleSheetClass"))));
           SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, 0x116fd682568L, "extendedClass"), null);

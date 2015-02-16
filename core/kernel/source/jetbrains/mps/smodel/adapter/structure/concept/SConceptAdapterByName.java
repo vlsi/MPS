@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -33,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
-     super(fqName);
+    super(fqName);
   }
 
   @Override
@@ -63,6 +62,13 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
 
   @Override
   protected SNode findInModel(SModel strucModel) {
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd != null) {
+      SNode node = strucModel.getNode(new Regular(cd.getId().getIdValue()));
+      if (node != null) {
+        return node;
+      }
+    }
     String shortName = NameUtil.shortNameFromLongName(myFqName);
     for (SNode root : strucModel.getRootNodes()) {
       if (shortName.equals(root.getProperty(SNodeUtil.property_INamedConcept_name))) return root;

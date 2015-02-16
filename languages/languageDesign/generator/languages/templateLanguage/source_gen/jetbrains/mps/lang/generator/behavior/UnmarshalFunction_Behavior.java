@@ -7,16 +7,16 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class UnmarshalFunction_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(list).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ExportLabelParameter_inputNode"));
-    ListSequence.fromList(list).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ExportLabelParameter_keeper"));
-    ListSequence.fromList(list).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ExportLabelParameter_outputNode"));
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41bdeL, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_inputNode").getDeclarationNode());
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499a77cc2L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_keeper").getDeclarationNode());
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f4e964L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_outputNode").getDeclarationNode());
     return list;
   }
 }

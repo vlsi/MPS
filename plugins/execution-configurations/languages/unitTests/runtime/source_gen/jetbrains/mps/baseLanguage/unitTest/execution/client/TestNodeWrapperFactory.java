@@ -33,7 +33,7 @@ public enum TestNodeWrapperFactory {
       return new LanguageTestWrapper(node);
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+      return MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").getDeclarationNode();
     }
     public boolean isRoot() {
       return true;
@@ -46,7 +46,7 @@ public enum TestNodeWrapperFactory {
       return new LanguageTestWrapper(node);
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+      return MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").getDeclarationNode();
     }
     public boolean isRoot() {
       return false;
@@ -75,7 +75,7 @@ public enum TestNodeWrapperFactory {
       return false;
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode();
     }
     public boolean isRoot() {
       return true;
@@ -91,7 +91,7 @@ public enum TestNodeWrapperFactory {
       return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit3MethodWrapper.isTestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").getDeclarationNode();
     }
     public boolean isRoot() {
       return false;
@@ -104,13 +104,13 @@ public enum TestNodeWrapperFactory {
       return new JUnit4TestWrapper(node);
     }
     public boolean canWrap(@NotNull SNode node) {
-      if (eq_kl7j79_a0a0b4(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      if (eq_kl7j79_a0a0b4(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode())) {
         return JUnit4TestWrapper.isJUnit4TestCase(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
       return false;
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode();
     }
     public boolean isRoot() {
       return true;
@@ -126,7 +126,7 @@ public enum TestNodeWrapperFactory {
       return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
     }
     public SNode getWrappedConcept() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").getDeclarationNode();
     }
     public boolean isRoot() {
       return false;

@@ -20,9 +20,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -108,12 +107,12 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_e8klwn_d0 extends DiagramCell {
     private DiagramCellImpl_e8klwn_d0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought"));
           SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "new thought");
         }
-      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, "jetbrains.mps.samples.mindmaps.structure.Relationship").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_e8klwn_a0a0a0a0d1a2a0a1a0i(from, to);
         }
@@ -128,7 +127,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought"));
           SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "new thought");
@@ -136,7 +135,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
       })};
     }
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, "jetbrains.mps.samples.mindmaps.structure.Relationship").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_e8klwn_a0a0a0a0d0a0a0d8(from, to);
         }
@@ -222,7 +221,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     private class DiagramPaletteImpl_e8klwn_a3a extends DiagramPalette {
       private DiagramPaletteImpl_e8klwn_a3a(DiagramCell diagramCell) {
         super(diagramCell);
-        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5d6L, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
           public void invoke(SNode node, Integer x, Integer y) {
             SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought"));
             SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "new thought");

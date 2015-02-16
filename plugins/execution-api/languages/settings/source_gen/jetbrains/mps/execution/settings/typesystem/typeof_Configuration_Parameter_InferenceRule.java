@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Configuration_Parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -20,7 +20,7 @@ public class typeof_Configuration_Parameter_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = configurationParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497142", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497147", true), (SNode) PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration")), configurationParameter), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497147", true), (SNode) PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration").getDeclarationNode()), configurationParameter), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.openapi.actionSystem.DataProvider;
 import java.awt.LayoutManager;
 import org.jetbrains.annotations.Nullable;
@@ -188,7 +188,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     final Wrappers._T<Language> lang = new Wrappers._T<Language>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        lang.value = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
+        lang.value = Language.getLanguageFor(SNodeOperations.getModel(MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").getDeclarationNode()));
       }
     });
     return lang.value;

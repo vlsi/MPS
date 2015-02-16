@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -51,7 +51,7 @@ public class InternalActionsUtils {
     final List<SNodeReference> concepts = ListSequence.fromList(new ArrayList<SNodeReference>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Object concept : FindUtils.getSearchResults(new EmptyProgressMonitor(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults()) {
+        for (Object concept : FindUtils.getSearchResults(new EmptyProgressMonitor(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults()) {
           ListSequence.fromList(concepts).addElement(new SNodePointer(((SearchResult<SNode>) concept).getObject()));
         }
       }

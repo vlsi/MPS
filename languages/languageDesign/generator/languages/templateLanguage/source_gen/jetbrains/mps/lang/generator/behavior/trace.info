@@ -2188,36 +2188,36 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2721957369897649363">
     <file name="VarMacro_Behavior.java">
-      <node id="2721957369897650613" at="18,73,19,174" concept="10" />
-      <node id="8247364127001656568" at="22,111,23,185" concept="10" />
-      <node id="8247364127001739383" at="26,52,27,167" concept="10" />
-      <node id="2721957369897649363" at="16,0,18,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2721957369897649363" at="18,0,21,0" concept="13" trace="call_getName_2721957369897649366#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8247364127001642492" at="21,101,24,5" concept="7" />
-      <node id="8247364127001732797" at="26,0,29,0" concept="8" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8247364127001656855" at="24,5,29,7" concept="10" />
-      <node id="2721957369897649363" at="21,0,31,0" concept="13" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="2721957369897649365" at="16,43,16,43" />
-      <scope id="2721957369897649369" at="18,73,19,174" />
-      <scope id="8247364127001642495" at="22,111,23,185" />
-      <scope id="8247364127001732805" at="26,52,27,167" />
-      <scope id="2721957369897649363" at="16,0,18,0">
+      <node id="2721957369897650613" at="17,73,18,174" concept="10" />
+      <node id="8247364127001656568" at="21,183,22,185" concept="10" />
+      <node id="8247364127001739383" at="25,52,26,167" concept="10" />
+      <node id="2721957369897649363" at="15,0,17,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2721957369897649363" at="17,0,20,0" concept="13" trace="call_getName_2721957369897649366#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8247364127001642492" at="20,101,23,5" concept="7" />
+      <node id="8247364127001732797" at="25,0,28,0" concept="8" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8247364127001656855" at="23,5,28,7" concept="10" />
+      <node id="2721957369897649363" at="20,0,30,0" concept="13" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="2721957369897649365" at="15,43,15,43" />
+      <scope id="2721957369897649369" at="17,73,18,174" />
+      <scope id="8247364127001642495" at="21,183,22,185" />
+      <scope id="8247364127001732805" at="25,52,26,167" />
+      <scope id="2721957369897649363" at="15,0,17,0">
         <var name="thisNode" id="2721957369897649363" />
       </scope>
-      <scope id="2721957369897649363" at="18,0,21,0">
+      <scope id="2721957369897649363" at="17,0,20,0">
         <var name="thisNode" id="2721957369897649363" />
       </scope>
-      <scope id="8247364127001732797" at="26,0,29,0">
+      <scope id="8247364127001732797" at="25,0,28,0">
         <var name="target" id="8247364127001732800" />
       </scope>
-      <scope id="8247364127001641215" at="21,101,29,7" />
-      <scope id="2721957369897649363" at="21,0,31,0">
+      <scope id="8247364127001641215" at="20,101,28,7" />
+      <scope id="2721957369897649363" at="20,0,30,0">
         <var name="child" id="8247364127001641218" />
         <var name="kind" id="8247364127001641216" />
         <var name="thisNode" id="2721957369897649363" />
       </scope>
-      <unit id="8247364127001732795" at="25,74,29,5" name="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior$1" />
-      <unit id="2721957369897649363" at="15,0,32,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior" />
+      <unit id="8247364127001732795" at="24,74,28,5" name="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior$1" />
+      <unit id="2721957369897649363" at="14,0,31,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2902001550281906068">
@@ -2592,9 +2592,9 @@
     <file name="MarshalFunction_Behavior.java">
       <node id="7325101476743226941" at="16,125,17,69" concept="9" />
       <node id="7325101476743055436" at="17,69,18,173" concept="4" />
-      <node id="7325101476743316120" at="18,173,19,160" concept="4" />
-      <node id="8915420221429815040" at="19,160,20,156" concept="4" />
-      <node id="7325101476743313957" at="20,156,21,16" concept="10" />
+      <node id="7325101476743316120" at="18,173,19,232" concept="4" />
+      <node id="8915420221429815040" at="19,232,20,228" concept="4" />
+      <node id="7325101476743313957" at="20,228,21,16" concept="10" />
       <node id="7325101476743014802" at="14,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7325101476743014802" at="16,0,23,0" concept="13" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <scope id="7325101476743014958" at="14,43,14,43" />
@@ -2613,10 +2613,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743439464">
     <file name="UnmarshalFunction_Behavior.java">
       <node id="7325101476743440215" at="15,125,16,69" concept="9" />
-      <node id="7325101476743499306" at="16,69,17,159" concept="4" />
-      <node id="8915420221429816300" at="17,159,18,156" concept="4" />
-      <node id="8915420221429816516" at="18,156,19,160" concept="4" />
-      <node id="7325101476743440288" at="19,160,20,16" concept="10" />
+      <node id="7325101476743499306" at="16,69,17,231" concept="4" />
+      <node id="8915420221429816300" at="17,231,18,228" concept="4" />
+      <node id="8915420221429816516" at="18,228,19,232" concept="4" />
+      <node id="7325101476743440288" at="19,232,20,16" concept="10" />
       <node id="7325101476743439464" at="13,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7325101476743439464" at="15,0,22,0" concept="13" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <scope id="7325101476743439466" at="13,43,13,43" />

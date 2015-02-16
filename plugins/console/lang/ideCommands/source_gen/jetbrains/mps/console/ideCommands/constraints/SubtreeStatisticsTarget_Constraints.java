@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescriptor {
@@ -30,7 +30,7 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
     return result;
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
-    return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeRefExpression");
+    return childConcept != MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression").getDeclarationNode();
   }
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636625783497");
 }

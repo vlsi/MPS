@@ -619,8 +619,8 @@
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/304895491241625072">
     <file name="MigrationScopes.java">
-      <node id="575279248907042611" at="17,115,18,207" concept="12" />
-      <node id="575279248907042619" at="20,113,21,205" concept="12" />
+      <node id="575279248907042611" at="17,115,18,273" concept="12" />
+      <node id="575279248907042619" at="20,113,21,277" concept="12" />
       <node id="575279248907042584" at="24,29,25,75" concept="12" />
       <node id="575279248907042605" at="26,12,27,30" concept="12" />
       <node id="304895491241626057" at="31,0,32,0" concept="6" trace="concept" />
@@ -637,8 +637,8 @@
       <node id="304895491241625098" at="32,0,37,0" concept="3" trace="FilterByConceptScope#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="575279248907028881" at="23,0,30,0" concept="16" trace="filterByConceptScope#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="304895491241625077" at="15,29,15,29" />
-      <scope id="304895491241625081" at="17,115,18,207" />
-      <scope id="575279248907028833" at="20,113,21,205" />
+      <scope id="304895491241625081" at="17,115,18,273" />
+      <scope id="575279248907028833" at="20,113,21,277" />
       <scope id="575279248907042578" at="24,29,25,75" />
       <scope id="575279248907042604" at="26,12,27,30" />
       <scope id="304895491241626049" at="38,43,39,88" />
@@ -1730,8 +1730,8 @@
       <node id="7723824291340600793" at="528,16,529,62" concept="5" />
       <node id="5484528884225219453" at="532,5,533,0" concept="14" />
       <node id="393217609402127137" at="533,0,534,18" concept="12" />
-      <node id="5574384225471556674" at="536,70,537,148" concept="12" />
-      <node id="7342593908118413445" at="539,69,540,147" concept="12" />
+      <node id="5574384225471556674" at="536,70,537,214" concept="12" />
+      <node id="7342593908118413445" at="539,69,540,213" concept="12" />
       <node id="5574384225470009445" at="545,96,546,71" concept="11" />
       <node id="1984323885301021896" at="546,71,547,67" concept="11" />
       <node id="1984323885301144749" at="547,67,548,87" concept="11" />
@@ -1983,8 +1983,8 @@
       <scope id="8504030010051008144" at="511,28,512,19" />
       <scope id="7723824291340559586" at="526,67,527,68" />
       <scope id="7723824291340599647" at="528,16,529,62" />
-      <scope id="5574384225470000149" at="536,70,537,148" />
-      <scope id="7342593908118413444" at="539,69,540,147" />
+      <scope id="5574384225470000149" at="536,70,537,214" />
+      <scope id="7342593908118413444" at="539,69,540,213" />
       <scope id="1984323885301719870" at="551,53,552,30" />
       <scope id="5574384225470059872" at="556,39,557,174" />
       <scope id="5574384225470678131" at="565,39,566,19" />
@@ -2740,114 +2740,114 @@
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/56048315080429580">
     <file name="InstanceMethodDeclarationScope.java">
-      <node id="8380510254989971565" at="25,100,26,156" concept="17" />
-      <node id="1427953202341198749" at="29,82,30,91" concept="12" />
-      <node id="9000162595163783090" at="34,124,35,21" concept="13" />
-      <node id="9000162595163784251" at="36,209,37,34" concept="13" />
-      <node id="9000162595163784266" at="37,34,38,505" concept="11" />
-      <node id="3161373106581140161" at="38,505,39,629" concept="11" />
-      <node id="3161373106581140169" at="39,629,40,94" concept="12" />
-      <node id="9000162595163784253" at="41,12,42,18" concept="13" />
-      <node id="9000162595163783066" at="42,18,43,99" concept="11" />
-      <node id="9000162595163784257" at="43,99,44,94" concept="12" />
-      <node id="4688468737501467403" at="48,87,49,34" concept="13" />
-      <node id="4688468737501467487" at="51,39,52,297" concept="12" />
-      <node id="4688468737501467498" at="55,37,56,194" concept="12" />
-      <node id="4688468737501467563" at="59,65,60,28" concept="13" />
-      <node id="4688468737501467549" at="62,41,63,209" concept="12" />
-      <node id="4688468737501467535" at="66,12,67,64" concept="12" />
-      <node id="4688468737501467533" at="66,10,68,5" concept="1" />
-      <node id="4688468737501467485" at="51,0,54,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4688468737501467496" at="55,0,58,0" concept="10" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4688468737501467547" at="62,0,65,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="56048315080429582" at="24,0,28,0" concept="3" trace="InstanceMethodDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Iterable;)V" />
-      <node id="8380510254989971509" at="28,0,32,0" concept="10" trace="getSignatureForOverriding#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="9000162595163784249" at="41,10,45,5" concept="1" />
-      <node id="4688468737501467541" at="60,28,65,10" concept="12" />
-      <node id="4688468737501467477" at="49,34,58,7" concept="11" />
-      <node id="9000162595163784216" at="35,21,45,5" concept="9" />
-      <node id="4688468737501467503" at="58,7,68,5" concept="9" />
-      <node id="9000162595163798328" at="32,0,47,0" concept="10" trace="resolveMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4688468737501467390" at="47,0,70,0" concept="10" trace="getMethodsFromGroup#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-      <scope id="56048315080429585" at="25,100,26,156" />
-      <scope id="8380510254989971516" at="29,82,30,91" />
-      <scope id="4688468737501467486" at="51,39,52,297" />
-      <scope id="4688468737501467497" at="55,37,56,194" />
-      <scope id="4688468737501467548" at="62,41,63,209" />
-      <scope id="4688468737501467534" at="66,12,67,64" />
-      <scope id="9000162595163784250" at="41,12,44,94">
+      <node id="8380510254989971565" at="24,100,25,222" concept="17" />
+      <node id="1427953202341198749" at="28,82,29,91" concept="12" />
+      <node id="9000162595163783090" at="33,124,34,21" concept="13" />
+      <node id="9000162595163784251" at="35,209,36,34" concept="13" />
+      <node id="9000162595163784266" at="36,34,37,505" concept="11" />
+      <node id="3161373106581140161" at="37,505,38,629" concept="11" />
+      <node id="3161373106581140169" at="38,629,39,94" concept="12" />
+      <node id="9000162595163784253" at="40,12,41,18" concept="13" />
+      <node id="9000162595163783066" at="41,18,42,99" concept="11" />
+      <node id="9000162595163784257" at="42,99,43,94" concept="12" />
+      <node id="4688468737501467403" at="47,87,48,34" concept="13" />
+      <node id="4688468737501467487" at="50,39,51,297" concept="12" />
+      <node id="4688468737501467498" at="54,37,55,194" concept="12" />
+      <node id="4688468737501467563" at="58,65,59,28" concept="13" />
+      <node id="4688468737501467549" at="61,41,62,209" concept="12" />
+      <node id="4688468737501467535" at="65,12,66,64" concept="12" />
+      <node id="4688468737501467533" at="65,10,67,5" concept="1" />
+      <node id="4688468737501467485" at="50,0,53,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4688468737501467496" at="54,0,57,0" concept="10" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4688468737501467547" at="61,0,64,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="56048315080429582" at="23,0,27,0" concept="3" trace="InstanceMethodDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Iterable;)V" />
+      <node id="8380510254989971509" at="27,0,31,0" concept="10" trace="getSignatureForOverriding#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="9000162595163784249" at="40,10,44,5" concept="1" />
+      <node id="4688468737501467541" at="59,28,64,10" concept="12" />
+      <node id="4688468737501467477" at="48,34,57,7" concept="11" />
+      <node id="9000162595163784216" at="34,21,44,5" concept="9" />
+      <node id="4688468737501467503" at="57,7,67,5" concept="9" />
+      <node id="9000162595163798328" at="31,0,46,0" concept="10" trace="resolveMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4688468737501467390" at="46,0,69,0" concept="10" trace="getMethodsFromGroup#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <scope id="56048315080429585" at="24,100,25,222" />
+      <scope id="8380510254989971516" at="28,82,29,91" />
+      <scope id="4688468737501467486" at="50,39,51,297" />
+      <scope id="4688468737501467497" at="54,37,55,194" />
+      <scope id="4688468737501467548" at="61,41,62,209" />
+      <scope id="4688468737501467534" at="65,12,66,64" />
+      <scope id="9000162595163784250" at="40,12,43,94">
         <var name="typeByTypeVar" id="9000162595163783067" />
       </scope>
-      <scope id="4688468737501467485" at="51,0,54,0">
+      <scope id="4688468737501467485" at="50,0,53,0">
         <var name="it" id="4688468737501467485" />
       </scope>
-      <scope id="4688468737501467496" at="55,0,58,0">
+      <scope id="4688468737501467496" at="54,0,57,0">
         <var name="it" id="4688468737501467496" />
       </scope>
-      <scope id="4688468737501467547" at="62,0,65,0">
+      <scope id="4688468737501467547" at="61,0,64,0">
         <var name="it" id="4688468737501467547" />
       </scope>
-      <scope id="56048315080429582" at="24,0,28,0">
+      <scope id="56048315080429582" at="23,0,27,0">
         <var name="classifierNode" id="8380510254989971569" />
         <var name="extendedClassifiers" id="8380510254989971573" />
       </scope>
-      <scope id="8380510254989971509" at="28,0,32,0">
+      <scope id="8380510254989971509" at="27,0,31,0">
         <var name="contextClassifier" id="8380510254989971514" />
         <var name="method" id="8380510254989971512" />
       </scope>
-      <scope id="9000162595163784217" at="36,209,40,94">
+      <scope id="9000162595163784217" at="35,209,39,94">
         <var name="instanceType" id="9000162595163784267" />
         <var name="typeByTypeVar" id="3161373106581140162" />
       </scope>
-      <scope id="4688468737501467504" at="59,65,65,10" />
-      <scope id="9000162595163798341" at="34,124,45,5" />
-      <scope id="9000162595163798328" at="32,0,47,0">
+      <scope id="4688468737501467504" at="58,65,64,10" />
+      <scope id="9000162595163798341" at="33,124,44,5" />
+      <scope id="9000162595163798328" at="31,0,46,0">
         <var name="actualArguments" id="9000162595163798337" />
         <var name="contextNode" id="9000162595163798332" />
         <var name="methods" id="9000162595163798339" />
         <var name="refText" id="9000162595163798334" />
       </scope>
-      <scope id="4688468737501467397" at="48,87,68,5">
+      <scope id="4688468737501467397" at="47,87,67,5">
         <var name="nonAbstractMethods" id="4688468737501467478" />
       </scope>
-      <scope id="4688468737501467390" at="47,0,70,0">
+      <scope id="4688468737501467390" at="46,0,69,0">
         <var name="groupWithEqualSignature" id="4688468737501467394" />
       </scope>
-      <unit id="4688468737501467485" at="50,98,54,5" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$1" />
-      <unit id="4688468737501467496" at="54,18,58,5" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$2" />
-      <unit id="4688468737501467547" at="61,144,65,7" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$3" />
-      <unit id="56048315080429580" at="22,0,71,0" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope" />
+      <unit id="4688468737501467485" at="49,98,53,5" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$1" />
+      <unit id="4688468737501467496" at="53,18,57,5" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$2" />
+      <unit id="4688468737501467547" at="60,144,64,7" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope$3" />
+      <unit id="56048315080429580" at="21,0,70,0" name="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope" />
     </file>
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/56048315080429586">
     <file name="StaticMethodDeclarationScope.java">
-      <node id="2428721740553107367" at="18,93,19,149" concept="17" />
-      <node id="274804607996650460" at="22,82,23,261" concept="12" />
-      <node id="3161373106581140289" at="27,124,28,97" concept="11" />
-      <node id="9000162595163782951" at="28,97,29,92" concept="12" />
-      <node id="56048315080429588" at="17,0,21,0" concept="3" trace="StaticMethodDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Iterable;)V" />
-      <node id="2428721740553107345" at="21,0,25,0" concept="10" trace="getSignatureForOverriding#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="9000162595163784553" at="25,0,31,0" concept="10" trace="resolveMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="56048315080429591" at="18,93,19,149" />
-      <scope id="2428721740553107352" at="22,82,23,261" />
-      <scope id="9000162595163784566" at="27,124,29,92">
+      <node id="2428721740553107367" at="17,93,18,215" concept="17" />
+      <node id="274804607996650460" at="21,82,22,261" concept="12" />
+      <node id="3161373106581140289" at="26,124,27,97" concept="11" />
+      <node id="9000162595163782951" at="27,97,28,92" concept="12" />
+      <node id="56048315080429588" at="16,0,20,0" concept="3" trace="StaticMethodDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Iterable;)V" />
+      <node id="2428721740553107345" at="20,0,24,0" concept="10" trace="getSignatureForOverriding#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="9000162595163784553" at="24,0,30,0" concept="10" trace="resolveMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="56048315080429591" at="17,93,18,215" />
+      <scope id="2428721740553107352" at="21,82,22,261" />
+      <scope id="9000162595163784566" at="26,124,28,92">
         <var name="typeByTypeVar" id="3161373106581140290" />
       </scope>
-      <scope id="56048315080429588" at="17,0,21,0">
+      <scope id="56048315080429588" at="16,0,20,0">
         <var name="classNode" id="2428721740553107353" />
         <var name="extendedClassifiers" id="2428721740553107357" />
       </scope>
-      <scope id="2428721740553107345" at="21,0,25,0">
+      <scope id="2428721740553107345" at="20,0,24,0">
         <var name="contextClassifier" id="2428721740553107350" />
         <var name="method" id="2428721740553107348" />
       </scope>
-      <scope id="9000162595163784553" at="25,0,31,0">
+      <scope id="9000162595163784553" at="24,0,30,0">
         <var name="actualArguments" id="9000162595163784562" />
         <var name="contextNode" id="9000162595163784557" />
         <var name="methods" id="9000162595163784564" />
         <var name="refText" id="9000162595163784559" />
       </scope>
-      <unit id="56048315080429586" at="15,0,32,0" name="jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope" />
+      <unit id="56048315080429586" at="14,0,31,0" name="jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope" />
     </file>
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/6320759254352298036">

@@ -23,11 +23,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
@@ -89,7 +88,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
-      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation").getDeclarationNode(), new AbstractChildNodeSetter() {
         @Override
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           SNode sourceNode = (SNode) oldChild;

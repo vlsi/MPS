@@ -5,11 +5,10 @@ package jetbrains.mps.generator.impl;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,15 +18,15 @@ public class TemplateModelScanner {
   private final SModel myTemplateModel;
   private final Set<String> myTargetLanguages;
   private final Set<String> myQueryLanguages;
-  private final SNode concept_IfMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro");
-  private final SNode concept_NodeMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro");
-  private final SNode concept_PropertyMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro");
-  private final SNode concept_ReferenceMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro");
-  private final SNode concept_TemplateFragment = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment");
-  private final SNode concept_RootTemplateAnnotation = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
-  private final SNode concept_rc_InlineTemplateWithContext = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
-  private final SNode concept_rc_InlineTemplate = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
-  private final SNode concept_rule_PatternReduction = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule");
+  private final SNode concept_IfMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro").getDeclarationNode();
+  private final SNode concept_NodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro").getDeclarationNode();
+  private final SNode concept_PropertyMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro").getDeclarationNode();
+  private final SNode concept_ReferenceMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro").getDeclarationNode();
+  private final SNode concept_TemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment").getDeclarationNode();
+  private final SNode concept_RootTemplateAnnotation = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation").getDeclarationNode();
+  private final SNode concept_rc_InlineTemplateWithContext = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence").getDeclarationNode();
+  private final SNode concept_rc_InlineTemplate = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence").getDeclarationNode();
+  private final SNode concept_rule_PatternReduction = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule").getDeclarationNode();
   public TemplateModelScanner(SModel model) {
     myTargetLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
     myQueryLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
@@ -35,19 +34,19 @@ public class TemplateModelScanner {
   }
   public void scan() {
     for (SNode root : myTemplateModel.getRootNodes()) {
-      if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
+      if (safeIsInstanceOf(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration").getDeclarationNode())) {
         scanControlNode(root);
-      } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
+      } else if (safeIsInstanceOf(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch").getDeclarationNode())) {
         scanControlNode(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch")));
-      } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
+      } else if (safeIsInstanceOf(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration").getDeclarationNode())) {
         scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode")));
         for (SNode n : SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))) {
           scanControlNode(n);
         }
-      } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript"))) {
+      } else if (safeIsInstanceOf(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, "jetbrains.mps.lang.generator.structure.MappingScript").getDeclarationNode())) {
         scanQueryNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, "jetbrains.mps.lang.generator.structure.MappingScript")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, 0x116596b2f70L, "codeBlock")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")));
       } else {
-        if ((safeNodeAttribute(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
+        if ((safeNodeAttribute(root, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation").getDeclarationNode()) != null)) {
           scanTemplateNode(root);
         }
       }

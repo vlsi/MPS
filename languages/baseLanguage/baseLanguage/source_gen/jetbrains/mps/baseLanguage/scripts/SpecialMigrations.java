@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -35,7 +34,7 @@ public class SpecialMigrations {
 
     List<AbstractMigrationRefactoring> migrations = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
-    ListSequence.fromList(migrations).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
+    ListSequence.fromList(migrations).addElement(new SimpleMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess").getDeclarationNode()) {
       @Override
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(config.sourceConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -50,7 +49,7 @@ public class SpecialMigrations {
         // <node> 
       }
     });
-    ListSequence.fromList(migrations).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), config) {
+    ListSequence.fromList(migrations).addElement(new SModelMethodMigration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32187d80f5b88800L, "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation").getDeclarationNode(), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         SNode qualifier = SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32187d80f5b88800L, 0x32187d80f5b89154L, "linkQualifier")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, 0x47bb2de70d00ff8dL, "linkQualifier"));

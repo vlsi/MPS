@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -30,7 +30,7 @@ public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
+        return new ConceptsScope(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration").getDeclarationNode());
       }
     };
   }

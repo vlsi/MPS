@@ -59,44 +59,44 @@
   </root>
   <root nodeRef="r:e6fa6600-76f8-4a95-9fda-01416b2cfa47(jetbrains.mps.transformation.test.inputLang.behavior)/3315811491560194603">
     <file name="RefTestClass_Behavior.java">
-      <node id="3315811491560226668" at="18,131,19,732" concept="1" />
-      <node id="3315811491560235354" at="20,5,21,16" concept="1" />
-      <node id="3315811491560194603" at="15,0,17,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3315811491560226657" at="17,101,20,5" concept="0" />
-      <node id="3315811491560194603" at="17,0,23,0" concept="2" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3315811491560194605" at="15,43,15,43" />
-      <scope id="3315811491560226659" at="18,131,19,732" />
-      <scope id="3315811491560194603" at="15,0,17,0">
+      <node id="3315811491560226668" at="17,203,18,732" concept="1" />
+      <node id="3315811491560235354" at="19,5,20,16" concept="1" />
+      <node id="3315811491560194603" at="14,0,16,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3315811491560226657" at="16,101,19,5" concept="0" />
+      <node id="3315811491560194603" at="16,0,22,0" concept="2" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="3315811491560194605" at="14,43,14,43" />
+      <scope id="3315811491560226659" at="17,203,18,732" />
+      <scope id="3315811491560194603" at="14,0,16,0">
         <var name="thisNode" id="3315811491560194603" />
       </scope>
-      <scope id="3315811491560226616" at="17,101,21,16" />
-      <scope id="3315811491560194603" at="17,0,23,0">
+      <scope id="3315811491560226616" at="16,101,20,16" />
+      <scope id="3315811491560194603" at="16,0,22,0">
         <var name="child" id="3315811491560226619" />
         <var name="kind" id="3315811491560226617" />
         <var name="thisNode" id="3315811491560194603" />
       </scope>
-      <unit id="3315811491560194603" at="14,0,24,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_Behavior" />
+      <unit id="3315811491560194603" at="13,0,23,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestClass_Behavior" />
     </file>
   </root>
   <root nodeRef="r:e6fa6600-76f8-4a95-9fda-01416b2cfa47(jetbrains.mps.transformation.test.inputLang.behavior)/3315811491560235390">
     <file name="RefTestMethod_Behavior.java">
-      <node id="3587601930838112664" at="16,130,17,226" concept="1" />
-      <node id="3315811491560235410" at="18,5,19,16" concept="1" />
-      <node id="3315811491560235390" at="13,0,15,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3315811491560235415" at="15,101,18,5" concept="0" />
-      <node id="3315811491560235390" at="15,0,21,0" concept="2" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3315811491560235392" at="13,43,13,43" />
-      <scope id="3315811491560235416" at="16,130,17,226" />
-      <scope id="3315811491560235390" at="13,0,15,0">
+      <node id="3587601930838112664" at="15,202,16,226" concept="1" />
+      <node id="3315811491560235410" at="17,5,18,16" concept="1" />
+      <node id="3315811491560235390" at="12,0,14,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3315811491560235415" at="14,101,17,5" concept="0" />
+      <node id="3315811491560235390" at="14,0,20,0" concept="2" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="3315811491560235392" at="12,43,12,43" />
+      <scope id="3315811491560235416" at="15,202,16,226" />
+      <scope id="3315811491560235390" at="12,0,14,0">
         <var name="thisNode" id="3315811491560235390" />
       </scope>
-      <scope id="3315811491560235395" at="15,101,19,16" />
-      <scope id="3315811491560235390" at="15,0,21,0">
+      <scope id="3315811491560235395" at="14,101,18,16" />
+      <scope id="3315811491560235390" at="14,0,20,0">
         <var name="child" id="3315811491560235398" />
         <var name="kind" id="3315811491560235396" />
         <var name="thisNode" id="3315811491560235390" />
       </scope>
-      <unit id="3315811491560235390" at="12,0,22,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_Behavior" />
+      <unit id="3315811491560235390" at="11,0,21,0" name="jetbrains.mps.transformation.test.inputLang.behavior.RefTestMethod_Behavior" />
     </file>
   </root>
 </debug-info>

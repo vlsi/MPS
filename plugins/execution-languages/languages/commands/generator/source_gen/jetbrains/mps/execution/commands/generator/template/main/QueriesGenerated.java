@@ -13,7 +13,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -32,6 +31,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -61,7 +61,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, command, "virtual_getFullName_946964771156905503", new Object[]{});
   }
   public static Object propertyMacro_GetPropertyValue_865001690840232894(final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration")));
+    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233190(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
@@ -79,16 +79,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233097(final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration")));
+    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233113(final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration")));
+    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233169(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6226796386650472933(final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.call_getGetDebuggerConfidurationMethodName_6226796386650472924(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration")));
+    return CommandDeclaration_Behavior.call_getGetDebuggerConfidurationMethodName_6226796386650472924(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233227(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")), MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -101,7 +101,7 @@ public class QueriesGenerated {
     return _context.createUniqueName("variable", SNodeOperations.getParent(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233529(final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration")));
+    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
   }
   public static Object propertyMacro_GetPropertyValue_865001690840233635(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getException_856705193941282181", new Object[]{}), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), "virtual_getFqName_1213877404258", new Object[]{});

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
@@ -26,7 +26,7 @@ public class SymbolClassPart_Behavior {
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")), c))) {
+          if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
             return null;
           }
           sb.append(c);

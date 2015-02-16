@@ -12,7 +12,6 @@ import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ public class ModuleReferenceExpression_Behavior {
   }
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
-    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
+    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression").getDeclarationNode()));
   }
   @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {

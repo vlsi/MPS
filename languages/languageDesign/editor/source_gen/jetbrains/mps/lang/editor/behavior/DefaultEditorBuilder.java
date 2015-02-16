@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -92,7 +91,7 @@ public class DefaultEditorBuilder {
           addRefNode(linkDeclaration);
         } else {
           addRefNodeList(linkDeclaration, null);
-          setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
+          setBooleanStyle(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem").getDeclarationNode());
         }
         indent();
         newLine();
@@ -217,16 +216,16 @@ public class DefaultEditorBuilder {
   }
   private void addPunctuation(String text) {
     addLabel(text);
-    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+    setBooleanStyle(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem").getDeclarationNode());
   }
   private void noSpace() {
-    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
+    setBooleanStyle(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem").getDeclarationNode());
   }
   private void indent() {
-    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
+    setBooleanStyle(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem").getDeclarationNode());
   }
   private void newLine() {
-    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
+    setBooleanStyle(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem").getDeclarationNode());
   }
   private void addEmptyLine() {
     addLabel(null);

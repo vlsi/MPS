@@ -11,7 +11,7 @@ import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
 import jetbrains.mps.lang.core.behavior.ExportScope_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,13 +29,13 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     if (ms == null || ms.isDisableCheckOpenAPI()) {
       return;
     }
-    String namespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), node);
+    String namespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
     // getModuleNamespace() doesn't work for transient models 
     if (namespace == null) {
       return;
     }
     // check concept of the node 
-    if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), true, SNodeOperations.getConceptDeclaration(node), namespace))) {
+    if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), true, SNodeOperations.getConceptDeclaration(node), namespace))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954469", null, errorTarget);
@@ -43,7 +43,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     }
     // check references 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-      if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), false, SLinkOperations.getTargetNode(ref), namespace))) {
+      if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), false, SLinkOperations.getTargetNode(ref), namespace))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));

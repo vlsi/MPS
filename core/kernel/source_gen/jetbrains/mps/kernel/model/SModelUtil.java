@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -130,7 +129,7 @@ public class SModelUtil {
     if (from == null || to == null) {
       return false;
     }
-    if (to == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (to == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
       return true;
     }
     return isAssignableConcept(NameUtil.nodeFQName(from), NameUtil.nodeFQName(to));

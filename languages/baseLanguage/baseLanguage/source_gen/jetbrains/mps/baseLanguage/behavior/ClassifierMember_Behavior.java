@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
@@ -30,7 +29,7 @@ public class ClassifierMember_Behavior {
     final Wrappers._T<SNode> _contextClassifier = new Wrappers._T<SNode>(contextClassifier);
     if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x427c475b3d6201deL, "jetbrains.mps.baseLanguage.structure.StaticKind"))) {
       // todo: read specification! 
-      _contextClassifier.value = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), thisNode);
+      _contextClassifier.value = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), thisNode);
     }
 
     // public 
@@ -44,7 +43,7 @@ public class ClassifierMember_Behavior {
     // default 
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(_contextClassifier.value);
-    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), thisNode));
+    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), thisNode));
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == null)) {
       return eq_i8o263_a0a0l0c(contextNodePackage, contextClassifierPackage);
     }

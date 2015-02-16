@@ -36,9 +36,9 @@
   <root nodeRef="r:955ebbcf-4887-40d1-b99b-8243cf12e6a2(jetbrains.mps.lang.editor.diagram.actions)/285670992217709791">
     <file name="QueriesGenerated.java">
       <node id="285670992217709792" at="63,214,64,93" concept="5" />
-      <node id="285670992217709792" at="65,5,66,130" concept="5" />
-      <node id="285670992217709792" at="66,130,67,62" concept="5" />
-      <node id="285670992217709815" at="70,44,71,216" concept="5" />
+      <node id="285670992217709792" at="65,5,66,201" concept="5" />
+      <node id="285670992217709792" at="66,201,67,62" concept="5" />
+      <node id="285670992217709815" at="70,44,71,282" concept="5" />
       <node id="285670992217709824" at="72,47,73,45" concept="6" />
       <node id="285670992217709838" at="76,45,77,194" concept="6" />
       <node id="285670992217709845" at="85,98,86,299" concept="5" />
@@ -48,9 +48,9 @@
       <node id="285670992217789913" at="92,125,93,28" concept="6" />
       <node id="285670992217709862" at="95,61,96,173" concept="6" />
       <node id="285670992217709792" at="98,68,99,48" concept="6" />
-      <node id="285670992217709792" at="106,5,107,134" concept="5" />
-      <node id="285670992217709792" at="107,134,108,62" concept="5" />
-      <node id="285670992217709887" at="111,44,112,224" concept="5" />
+      <node id="285670992217709792" at="106,5,107,205" concept="5" />
+      <node id="285670992217709792" at="107,205,108,62" concept="5" />
+      <node id="285670992217709887" at="111,44,112,290" concept="5" />
       <node id="285670992217709896" at="113,51,114,45" concept="6" />
       <node id="285670992217709910" at="117,45,118,198" concept="6" />
       <node id="285670992217709917" at="126,98,127,303" concept="5" />
@@ -60,19 +60,19 @@
       <node id="285670992217709949" at="133,125,134,28" concept="6" />
       <node id="285670992217709934" at="136,61,137,175" concept="6" />
       <node id="285670992217709792" at="139,68,140,48" concept="6" />
-      <node id="285670992217709792" at="147,5,148,133" concept="5" />
-      <node id="285670992217709792" at="148,133,149,62" concept="5" />
+      <node id="285670992217709792" at="147,5,148,204" concept="5" />
+      <node id="285670992217709792" at="148,204,149,62" concept="5" />
       <node id="285670992217709958" at="152,94,153,287" concept="6" />
       <node id="285670992217709968" at="156,121,157,121" concept="1" />
       <node id="285670992217709975" at="157,121,158,24" concept="6" />
       <node id="285670992217709792" at="160,57,161,35" concept="6" />
       <node id="285670992217709792" at="163,64,164,44" concept="6" />
       <node id="285670992217709792" at="168,5,169,18" concept="6" />
-      <node id="285670992217709822" at="71,216,74,13" concept="3" />
+      <node id="285670992217709822" at="71,282,74,13" concept="3" />
       <node id="285670992217709836" at="76,0,79,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="285670992217709792" at="95,0,98,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="285670992217709792" at="98,0,101,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="285670992217709894" at="112,224,115,13" concept="3" />
+      <node id="285670992217709894" at="112,290,115,13" concept="3" />
       <node id="285670992217709908" at="117,0,120,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="285670992217709792" at="136,0,139,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="285670992217709792" at="139,0,142,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -243,9 +243,9 @@
   <root nodeRef="r:955ebbcf-4887-40d1-b99b-8243cf12e6a2(jetbrains.mps.lang.editor.diagram.actions)/4088443785018002410">
     <file name="QueriesGenerated.java">
       <node id="4088443785018002411" at="35,214,36,93" concept="5" />
-      <node id="4088443785018002411" at="37,5,38,139" concept="5" />
-      <node id="4088443785018002411" at="38,139,39,62" concept="5" />
-      <node id="4088443785018002411" at="40,133,41,144" concept="5" />
+      <node id="4088443785018002411" at="37,5,38,210" concept="5" />
+      <node id="4088443785018002411" at="38,210,39,62" concept="5" />
+      <node id="4088443785018002411" at="40,133,41,215" concept="5" />
       <node id="4088443785018240608" at="43,105,44,266" concept="5" />
       <node id="4088443785018243319" at="44,266,45,198" concept="1" />
       <node id="4088443785018232844" at="45,198,46,35" concept="6" />
@@ -258,7 +258,7 @@
       <node id="4088443785018002411" at="48,0,51,0" concept="4" trace="returnSmallPart#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4088443785018002411" at="43,0,48,0" concept="4" trace="wrapNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4088443785018002411" at="51,0,57,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4088443785018002411" at="41,144,57,10" concept="5" />
+      <node id="4088443785018002411" at="41,215,57,10" concept="5" />
       <node id="4088443785018002411" at="39,62,59,7" concept="3" />
       <node id="4088443785018002411" at="36,93,60,5" concept="0" />
       <node id="4088443785018002411" at="36,93,60,5" concept="0" />
