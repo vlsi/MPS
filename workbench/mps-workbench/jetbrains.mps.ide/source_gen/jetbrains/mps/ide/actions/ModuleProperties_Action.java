@@ -10,12 +10,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -45,8 +47,12 @@ public class ModuleProperties_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
@@ -57,8 +63,13 @@ public class ModuleProperties_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      // save all is sort of hack - changes to a module might lead to module re-load 
+      // (happens for Generator) and close of all respective modified editors (and changes lost) 
+      // The best way to fix would be Generator module not changing its language (which in turn triggers  
+      // removal of all generator models), but preserving everything intact as it is for e.g. language module changes 
+      new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).execute();
+      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
         @Override
