@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorCellIdScope extends FilteringScope {
@@ -70,6 +70,6 @@ public class EditorCellIdScope extends FilteringScope {
       return true;
     }
     SNode conceptAspect = SNodeOperations.getNodeAncestor(editorCellId, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), false, false);
-    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(myConceptDeclaration), SNodeOperations.asSConcept(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
+    return conceptAspect == null || !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SNodeOperations.asNode(myConceptDeclaration), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{})));
   }
 }

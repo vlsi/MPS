@@ -33,8 +33,9 @@
     <import index="dt3s" ref="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <import index="pdak" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.messages(MPS.Platform/jetbrains.mps.ide.messages@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
+    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -263,13 +264,13 @@
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
-      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
-        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
-      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1394,10 +1395,10 @@
                                   </node>
                                   <node concept="2OqwBi" id="60B$833fxU$" role="3uHU7w">
                                     <node concept="2OqwBi" id="60B$833fmA3" role="2Oq$k0">
+                                      <node concept="FGMqu" id="60B$833fswd" role="2OqNvi" />
                                       <node concept="37vLTw" id="60B$833fjjw" role="2Oq$k0">
                                         <ref role="3cqZAo" node="60B$8338uAR" resolve="it" />
                                       </node>
-                                      <node concept="FGMqu" id="60B$833fswd" role="2OqNvi" />
                                     </node>
                                     <node concept="2qgKlT" id="60B$833fBQa" role="2OqNvi">
                                       <ref role="37wK5l" to="tpcn:6spw4TQeyqh" resolve="isDefaultSubstitutable" />
@@ -2103,15 +2104,18 @@
                         <node concept="3THzug" id="60B$833jzyg" role="10QFUM">
                           <ref role="3qa414" to="eynw:qgIopN3HO7" resolve="ConsoleHelpProvider" />
                         </node>
-                        <node concept="2OqwBi" id="60B$833jzyh" role="10QFUP">
-                          <node concept="2OqwBi" id="60B$833jzyi" role="2Oq$k0">
-                            <node concept="13iPFW" id="60B$833jzyj" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="60B$833jzyk" role="2OqNvi">
-                              <ref role="3Tt5mk" to="eynw:60B$832X1$F" />
+                        <node concept="10QFUN" id="1oFmEVzcYXC" role="10QFUP">
+                          <node concept="3THzug" id="1oFmEVzcZ_o" role="10QFUM" />
+                          <node concept="2OqwBi" id="60B$833jzyh" role="10QFUP">
+                            <node concept="2OqwBi" id="60B$833jzyi" role="2Oq$k0">
+                              <node concept="13iPFW" id="60B$833jzyj" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="60B$833jzyk" role="2OqNvi">
+                                <ref role="3Tt5mk" to="eynw:60B$832X1$F" />
+                              </node>
                             </node>
-                          </node>
-                          <node concept="3TrEf2" id="60B$833jzyl" role="2OqNvi">
-                            <ref role="3Tt5mk" to="eynw:60B$832WZzm" />
+                            <node concept="3TrEf2" id="60B$833jzyl" role="2OqNvi">
+                              <ref role="3Tt5mk" to="eynw:60B$832WZzm" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -2238,7 +2242,7 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="60B$833imMq" role="3eO9$A">
+            <node concept="2OqwBi" id="73yVtVlYM6Z" role="3eO9$A">
               <node concept="2OqwBi" id="60B$833imMr" role="2Oq$k0">
                 <node concept="2OqwBi" id="60B$833imMs" role="2Oq$k0">
                   <node concept="13iPFW" id="60B$833imMt" role="2Oq$k0" />
@@ -2250,9 +2254,10 @@
                   <ref role="3Tt5mk" to="eynw:60B$832WZzm" />
                 </node>
               </node>
-              <node concept="2Zo12i" id="60B$833imMw" role="2OqNvi">
-                <node concept="chp4Y" id="60B$833imMx" role="2Zo12j">
-                  <ref role="cht4Q" to="eynw:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+              <node concept="2qgKlT" id="73yVtVlYNf4" role="2OqNvi">
+                <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+                <node concept="3B5_sB" id="1oFmEVzcNlb" role="37wK5m">
+                  <ref role="3B5MYn" to="eynw:qgIopN3HO7" resolve="ConsoleHelpProvider" />
                 </node>
               </node>
             </node>

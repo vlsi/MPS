@@ -226,6 +226,7 @@ public class AbstractConceptDeclaration_Behavior {
     SNode p = SModelSearchUtil.findPropertyDeclaration(thisNode, name);
     return SNodeOperations.cast(p, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
+  @Deprecated
   public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {
     if (ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(thisNode)).contains(link) && !(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).contains(link))) {
       for (SNode linkDeclarationOfMine : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))) {
@@ -245,13 +246,19 @@ public class AbstractConceptDeclaration_Behavior {
     return null;
   }
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) thisNode)), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
+    return !(SNodeOperations.asSConcept(thisNode).isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(thisNode), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept) {
     if (AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(thisNode)) {
-      return SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(expectedConcept), SNodeOperations.asSConcept(thisNode));
+      return AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(thisNode, expectedConcept);
     }
     return false;
+  }
+  public static boolean call_isSubconceptOf_8134325418312549386(SNode thisNode, SNode superconcept) {
+    if (superconcept == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+      return true;
+    }
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(thisNode, true)).contains(superconcept);
   }
   public static Iterable<SNode> call_getAllSuperConcepts_2992811758677902956(SNode thisNode, boolean includeSelf) {
     Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());

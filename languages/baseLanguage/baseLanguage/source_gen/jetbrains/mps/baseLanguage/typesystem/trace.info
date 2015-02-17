@@ -10884,7 +10884,7 @@
       <node id="1228301715997" at="43,68,47,5" concept="1" />
       <node id="1228301999219" at="30,426,35,11" concept="1" />
       <node id="1228301715997" at="43,0,49,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1228301999219" at="27,491,36,9" concept="1" />
+      <node id="1228301999219" at="27,533,36,9" concept="1" />
       <node id="1228301887638" at="26,191,37,7" concept="10" />
       <node id="1228301831808" at="25,230,38,5" concept="10" />
       <node id="1228301715997" at="24,0,40,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -10908,7 +10908,7 @@
         <var name="_reporter_2309309498" id="1228301999219" />
         <var name="errorTarget" id="1228301999219" />
       </scope>
-      <scope id="1228301887639" at="27,491,36,9" />
+      <scope id="1228301887639" at="27,533,36,9" />
       <scope id="1228301831809" at="26,191,37,7" />
       <scope id="1228301715998" at="24,126,38,5">
         <var name="contentsType" id="1228301828607" />

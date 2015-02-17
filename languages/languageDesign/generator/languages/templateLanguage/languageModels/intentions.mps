@@ -2726,7 +2726,7 @@
                         <node concept="3clFbF" id="hQVVGSC" role="3cqZAp">
                           <node concept="2YIFZM" id="hQWhXGO" role="3clFbG">
                             <ref role="1Pybhc" to="msyo:~Comparing" resolve="Comparing" />
-                            <ref role="37wK5l" to="msyo:~Comparing.equal(java.lang.Object,java.lang.Object):boolean" resolve="equal" />
+                            <ref role="37wK5l" to="msyo:~Comparing.equal(java.lang.String,java.lang.String):boolean" resolve="equal" />
                             <node concept="2OqwBi" id="hQWhXGP" role="37wK5m">
                               <node concept="37vLTw" id="2BHiRxglp3G" role="2Oq$k0">
                                 <ref role="3cqZAo" node="hQVVGSK" resolve="it" />

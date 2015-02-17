@@ -31,7 +31,7 @@
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <import index="qe67" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" />
-    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
+    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -3088,10 +3088,8 @@
             <node concept="2OE7Q9" id="glcH4dN_7u" role="2OEWyd">
               <ref role="2OEe5H" to="tpc2:gXXX56I" />
             </node>
-            <node concept="2YIFZM" id="27AGqGE_2KJ" role="2MkoU_">
-              <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
-              <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
-              <node concept="2OqwBi" id="27AGqGE_2Lh" role="37wK5m">
+            <node concept="2OqwBi" id="73yVtVm029E" role="2MkoU_">
+              <node concept="2OqwBi" id="27AGqGE_2Lh" role="2Oq$k0">
                 <node concept="3TrEf2" id="27AGqGE_2Li" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpc2:gXXX56I" />
                 </node>
@@ -3099,8 +3097,11 @@
                   <ref role="1YBMHb" node="glcH4dL8dJ" resolve="editorComponentDeclaration" />
                 </node>
               </node>
-              <node concept="37vLTw" id="27AGqGE_2Zx" role="37wK5m">
-                <ref role="3cqZAo" node="glcH4dNyW6" resolve="overridenEditorConceptDeclaration" />
+              <node concept="2qgKlT" id="73yVtVm02st" role="2OqNvi">
+                <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+                <node concept="37vLTw" id="73yVtVm02Dc" role="37wK5m">
+                  <ref role="3cqZAo" node="glcH4dNyW6" resolve="overridenEditorConceptDeclaration" />
+                </node>
               </node>
             </node>
           </node>

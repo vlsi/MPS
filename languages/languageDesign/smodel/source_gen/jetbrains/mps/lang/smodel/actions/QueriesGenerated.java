@@ -22,6 +22,7 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -293,7 +294,7 @@ public class QueriesGenerated {
             IMatchingPattern pattern_e0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
             SNode coercedNode_e0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, pattern_e0a0a);
             if (coercedNode_e0a0a != null) {
-              return !((SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(coercedNode_e0a0a, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))));
+              return !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SLinkOperations.getTarget(coercedNode_e0a0a, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135")));
             } else {
               return false;
             }

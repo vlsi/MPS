@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -56,9 +56,8 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           }
         }
         if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null)) {
-          SNode c = concept;
-          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(c), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-            SpecificChecker.addIssue(results, c, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
+          if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_isSubconceptOf_8134325418312549386", new Object[]{SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468")})) {
+            SpecificChecker.addIssue(results, concept, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
           }
         }
       }

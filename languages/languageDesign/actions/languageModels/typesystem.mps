@@ -15,7 +15,8 @@
     <import index="tpdr" ref="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
+    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -28,9 +29,6 @@
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -649,14 +647,15 @@
           </node>
         </node>
         <node concept="3fqX7Q" id="hrCaBv5" role="3clFbw">
-          <node concept="2YIFZM" id="27AGqGE_2KJ" role="3fr31v">
-            <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
-            <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
-            <node concept="37vLTw" id="27AGqGE_jLr" role="37wK5m">
+          <node concept="2OqwBi" id="73yVtVlZOQv" role="3fr31v">
+            <node concept="37vLTw" id="27AGqGE_jLr" role="2Oq$k0">
               <ref role="3cqZAo" node="hrCaj2A" resolve="conceptToAdd" />
             </node>
-            <node concept="37vLTw" id="27AGqGE_jM7" role="37wK5m">
-              <ref role="3cqZAo" node="hrCawge" resolve="substituteConcept" />
+            <node concept="2qgKlT" id="73yVtVlZPjn" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+              <node concept="37vLTw" id="73yVtVlZPsS" role="37wK5m">
+                <ref role="3cqZAo" node="hrCawge" resolve="substituteConcept" />
+              </node>
             </node>
           </node>
         </node>
