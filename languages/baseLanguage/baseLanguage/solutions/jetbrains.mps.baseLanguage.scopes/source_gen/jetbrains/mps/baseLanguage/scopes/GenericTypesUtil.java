@@ -21,6 +21,10 @@ public class GenericTypesUtil {
     } else
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return GenericTypesUtil.createClassifierTypeWithResolvedTypeVars(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), typeByTypeVar);
+    } else if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
+      return GenericTypesUtil.createArrayTypeWithResolvedTypeVars(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")), typeByTypeVar);
+    } else if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"))) {
+      return GenericTypesUtil.createVariableArityTypeWithResolvedTypeVars(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType")), typeByTypeVar);
     }
     return type;
   }
@@ -66,6 +70,23 @@ public class GenericTypesUtil {
       return type;
     }
 
+    return SNodeOperations.cast(GenericTypesUtil.createTypeWithResolvedTypeVars(type, typeByTypeVar), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+  }
+  private static SNode createArrayTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
+    if (typeByTypeVar.isEmpty()) {
+      return type;
+    }
+
+    return SNodeOperations.cast(GenericTypesUtil.createTypeWithResolvedTypeVars(type, typeByTypeVar), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"));
+  }
+  private static SNode createVariableArityTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
+    if (typeByTypeVar.isEmpty()) {
+      return type;
+    }
+
+    return SNodeOperations.cast(GenericTypesUtil.createTypeWithResolvedTypeVars(type, typeByTypeVar), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"));
+  }
+  private static SNode createTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
     SNode typeCopy = SNodeOperations.copyNode(type);
     for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getNodeDescendants(typeCopy, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{}))) {
       SNode resolvedType = GenericTypesUtil.getTypeByTypeVariable(typeVariableRef, typeByTypeVar);
