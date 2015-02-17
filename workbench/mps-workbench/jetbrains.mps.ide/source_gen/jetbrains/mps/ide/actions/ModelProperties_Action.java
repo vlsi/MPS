@@ -11,10 +11,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
@@ -76,6 +77,8 @@ public class ModelProperties_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      // see ModuleProperties_Action for reason to save all models prior to property change 
+      new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()).execute();
       MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);

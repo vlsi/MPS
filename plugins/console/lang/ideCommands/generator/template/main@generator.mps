@@ -99,7 +99,6 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -494,13 +493,18 @@
     <node concept="23SHS2" id="4PRmqZe_SbJ" role="13RCb5">
       <ref role="23SHS1" to="tprs:hGANgqU" resolve="ModuleProperties" />
       <node concept="23SHS8" id="4PRmqZe_SbK" role="23SHS0">
-        <ref role="23SHS7" to="tprs:hHNVdI0" resolve="context" />
-        <node concept="2ShNRf" id="4PRmqZe_SbL" role="23SHS3">
-          <node concept="1pGfFk" id="4PRmqZe_SbM" role="2ShVmc">
-            <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-            <node concept="o6qdh" id="4PRmqZe_SbN" role="37wK5m">
-              <node concept="1dO9Bo" id="4PRmqZe_SbO" role="1dOa5D" />
-            </node>
+        <ref role="23SHS7" to="tprs:1ChIhDtQp1Q" resolve="mpsProject" />
+        <node concept="o6qdh" id="5uFqCDKorr8" role="23SHS3">
+          <node concept="1dO9Bo" id="5uFqCDKorra" role="1dOa5D" />
+        </node>
+      </node>
+      <node concept="23SHS8" id="5uFqCDKou0T" role="23SHS0">
+        <ref role="23SHS7" to="tprs:1ChIhDtSo7u" resolve="ideaProject" />
+        <node concept="2YIFZM" id="5uFqCDKounR" role="23SHS3">
+          <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+          <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+          <node concept="o6qdh" id="5uFqCDKounS" role="37wK5m">
+            <node concept="1dO9Bo" id="5uFqCDKounT" role="1dOa5D" />
           </node>
         </node>
       </node>
@@ -520,16 +524,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="23SHS6" id="4PRmqZe_SbY" role="23SHS0">
-        <ref role="23SHS5" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-        <node concept="2YIFZM" id="4PRmqZe_SbZ" role="23SHS3">
-          <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-          <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-          <node concept="o6qdh" id="4PRmqZe_Sc0" role="37wK5m">
-            <node concept="1dO9Bo" id="4PRmqZe_Sc1" role="1dOa5D" />
           </node>
         </node>
       </node>
