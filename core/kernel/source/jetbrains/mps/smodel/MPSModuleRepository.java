@@ -19,14 +19,13 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryBase;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -44,11 +43,12 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
+  private static final Logger LOG = LogManager.getLogger(MPSModuleRepository.class);
   private static MPSModuleRepository ourInstance;
 
   private final GlobalModelAccess myGlobalModelAccess;
 
+  @ToRemove(version=3.2)
   private final CommandListener myCommandListener = new CommandListener() {
     @Override
     public void commandStarted() {
@@ -115,7 +115,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     SModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleName();
 
-    assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + ((AbstractModule) module).getDescriptorFile();
+    AbstractModule aModule = (AbstractModule) module;
+    assert moduleId != null : "Module with null id is added to repository: fqName=" + moduleFqName + "; file=" + aModule.getDescriptorFile();
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
@@ -125,19 +126,16 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        SModule m = myFqNameToModulesMap.get(moduleFqName);
-        LOG.warning(
-            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + ((AbstractModule) m).getDescriptorFile() + " and " + ((AbstractModule) module).getDescriptorFile(),
-            m);
+        AbstractModule m = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
+        LOG.warn(String.format("Duplicate module name %s : module with the same UID exists at %s and %s", moduleFqName, m.getDescriptorFile(), aModule.getDescriptorFile()));
       }
-
       myFqNameToModulesMap.put(moduleFqName, module);
     }
 
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    ((AbstractModule) module).attach(this);
+    aModule.attach(this);
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);

@@ -157,7 +157,6 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      ClassLoaderManager.getInstance().getClassLoadingChecker().classLoaded(name, mySupport.getModule().getModuleReference());
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
     return null;
