@@ -763,7 +763,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       myEnv.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
       for (SNode inputChildNode : inputNode.getChildren()) {
-        String childRole = inputChildNode.getRoleInParent();
+        SContainmentLink childRole = inputChildNode.getContainmentLink();
         assert childRole != null;
 
         Collection<SNode> outputChildNodes = myEnv.tryToReduce(inputChildNode);
@@ -870,22 +870,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
         }
 
-        SNode inputTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
-        if (inputTargetNode == null) {
+        SNode refTarget = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
+        if (refTarget == null) {
           reportBrokenRef(inputNode, inputReference);
           continue;
         }
 
-        if (inputTargetNode.getModel() != null && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(inputTargetNode)) {
-          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-              inputReference.getRole(),
-              outputNode,
-              inputReference.getSourceNode(),
-              inputTargetNode);
-          PostponedReference reference = myEnv.getGenerator().register(new PostponedReference(refInfo));
-          reference.setReferenceInOutputSourceNode();
-        } else if (inputTargetNode.getModel() != null) {
-          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
+        if (refTarget.getModel() != null && refTarget.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(refTarget)) {
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
+          new PostponedReference(inputReference.getLink(), outputNode, refInfo).setAndRegister(myEnv.getGenerator());
+        } else if (refTarget.getModel() != null) {
+          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
         } else {
           reportBrokenRef(inputNode, inputReference);
         }

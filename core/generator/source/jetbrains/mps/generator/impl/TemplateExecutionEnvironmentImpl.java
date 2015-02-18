@@ -228,21 +228,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
-    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
-      outputNode,
-      role,
-      sourceNode,
-      templateNodeId,
-      resolveInfo,
-      context);
-    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
+    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
+    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
-    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
-    PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
-    postponedReference.setReferenceInOutputSourceNode();
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, context);
+    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
   }
 
   /*

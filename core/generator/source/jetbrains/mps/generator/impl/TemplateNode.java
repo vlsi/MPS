@@ -106,9 +106,8 @@ class TemplateNode {
     for (Map.Entry<SReferenceLink,MacroResolver> e : myMold.myMacroRefs.entrySet()) {
       final SReferenceLink refMacroRole = e.getKey();
       final MacroResolver mr = e.getValue();
-      ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
-      PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
-      postponedReference.setReferenceInOutputSourceNode();
+      ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, context);
+      new PostponedReference(refMacroRole, outputNode, refInfo).setAndRegister(generator);
     }
     for (RefInfo r : myMold.myStaticRefs) {
       // optimization for external static references (do not resolve them)
@@ -116,11 +115,8 @@ class TemplateNode {
       outputNode.setReference(r.role, newReference);
     }
     for (RefInfo r : myMold.myInnerRefs) {
-      // XXX it's not a nice idea to pass output node to ReferenceInfo, need refactoring
-      ReferenceInfo_Template refInfo = new ReferenceInfo_Template(outputNode, r.role, getTemplateNodeReference(),
-          GeneratorUtil.getTemplateNodeId(r.targetNode), r.resolveInfo, context);
-      PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
-      postponedReference.setReferenceInOutputSourceNode();
+      ReferenceInfo_Template refInfo = new ReferenceInfo_Template(getTemplateNodeReference(), GeneratorUtil.getTemplateNodeId(r.targetNode), r.resolveInfo, context);
+      new PostponedReference(r.role, outputNode, refInfo).setAndRegister(generator);
     }
     for (RefInfo r : myMold.myOtherRefs) {
       outputNode.setReferenceTarget(r.role, r.targetNode);
