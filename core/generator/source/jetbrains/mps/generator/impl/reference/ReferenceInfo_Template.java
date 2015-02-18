@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,10 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,6 +38,11 @@ public class ReferenceInfo_Template extends ReferenceInfo {
   private String myResolveInfo;
 
 
+  public ReferenceInfo_Template(@NotNull SNode outputSourceNode, SReferenceLink role, SNodeReference sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
+    this(outputSourceNode, role.getRoleName(), sourceNode, targetNodeId, resolveInfo, context);
+  }
+  @Deprecated
+  @ToRemove(version = 0)
   public ReferenceInfo_Template(@NotNull SNode outputSourceNode, String role, SNodeReference sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myContext = context;

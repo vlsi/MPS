@@ -56,6 +56,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -614,7 +615,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     SNode parent = placeholder.getParent();
     if (parent != null) {
       // check new child
-      String childRole = placeholder.getRoleInParent();
+      SContainmentLink childRole = placeholder.getContainmentLink();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
       if (status != null) {
         getLogger().warning(templateNode, status.getMessage("delayed changes"), status.describe(
@@ -846,12 +847,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               }
 
               SReference reference = new StaticReference(
-                  inputReference.getRole(),
+                  inputReference.getLink(),
                   outputNode,
                   targetModelReference,
                   inputReference.getTargetNodeId(),
                   ((StaticReference) inputReference).getResolveInfo());
-              outputNode.setReference(reference.getRole(), reference);
+              outputNode.setReference(reference.getLink(), reference);
             } else if (inputReference instanceof DynamicReference) {
               DynamicReference outputReference = new DynamicReference(
                   inputReference.getRole(),
@@ -859,7 +860,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                   targetModelReference,
                   ((DynamicReference) inputReference).getResolveInfo());
               outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-              outputNode.setReference(outputReference.getRole(), outputReference);
+              outputNode.setReference(outputReference.getLink(), outputReference);
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
@@ -891,7 +892,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
 
       for (SNode inputChildNode : inputNode.getChildren()) {
-        String childRole = inputChildNode.getRoleInParent();
+        SContainmentLink childRole = inputChildNode.getContainmentLink();
         assert childRole != null;
 
         Collection<SNode> outputChildNodes = myEnv.tryToReduce(inputChildNode);
