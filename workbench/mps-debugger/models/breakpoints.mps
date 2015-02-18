@@ -1383,32 +1383,40 @@
                             </node>
                           </node>
                           <node concept="3cpWs6" id="3SnNvqCbyYK" role="3cqZAp">
-                            <node concept="1eOMI4" id="3SnNvqCbyYL" role="3cqZAk">
-                              <node concept="1Wc70l" id="3SnNvqCbyYM" role="1eOMHV">
-                                <node concept="2d3UOw" id="3SnNvqCbyYN" role="3uHU7B">
-                                  <node concept="37vLTw" id="2BHiRxgmpKd" role="3uHU7B">
-                                    <ref role="3cqZAo" node="3SnNvqCbyLA" resolve="y" />
-                                  </node>
-                                  <node concept="2OqwBi" id="3SnNvqCbyYP" role="3uHU7w">
-                                    <node concept="37vLTw" id="3GM_nagTAwA" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3SnNvqCbyYB" resolve="iconAnchorCell" />
-                                    </node>
-                                    <node concept="liA8E" id="3SnNvqCbyYR" role="2OqNvi">
-                                      <ref role="37wK5l" to="nu8v:~EditorCell.getY():int" resolve="getY" />
-                                    </node>
-                                  </node>
+                            <node concept="1Wc70l" id="_hFHZw4OOf" role="3cqZAk">
+                              <node concept="3y3z36" id="_hFHZw4R6F" role="3uHU7B">
+                                <node concept="10Nm6u" id="_hFHZw4SxC" role="3uHU7w" />
+                                <node concept="37vLTw" id="_hFHZw4Ppe" role="3uHU7B">
+                                  <ref role="3cqZAo" node="3SnNvqCbyYB" resolve="iconAnchorCell" />
                                 </node>
-                                <node concept="2d3UOw" id="3SnNvqCbyYS" role="3uHU7w">
-                                  <node concept="2OqwBi" id="3SnNvqCbyYT" role="3uHU7B">
-                                    <node concept="37vLTw" id="3GM_nagT$M$" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3SnNvqCbyYB" resolve="iconAnchorCell" />
+                              </node>
+                              <node concept="1eOMI4" id="3SnNvqCbyYL" role="3uHU7w">
+                                <node concept="1Wc70l" id="3SnNvqCbyYM" role="1eOMHV">
+                                  <node concept="2d3UOw" id="3SnNvqCbyYN" role="3uHU7B">
+                                    <node concept="37vLTw" id="2BHiRxgmpKd" role="3uHU7B">
+                                      <ref role="3cqZAo" node="3SnNvqCbyLA" resolve="y" />
                                     </node>
-                                    <node concept="liA8E" id="3SnNvqCbyYV" role="2OqNvi">
-                                      <ref role="37wK5l" to="nu8v:~EditorCell.getBaseline():int" resolve="getBaseline" />
+                                    <node concept="2OqwBi" id="3SnNvqCbyYP" role="3uHU7w">
+                                      <node concept="37vLTw" id="3GM_nagTAwA" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="3SnNvqCbyYB" resolve="iconAnchorCell" />
+                                      </node>
+                                      <node concept="liA8E" id="3SnNvqCbyYR" role="2OqNvi">
+                                        <ref role="37wK5l" to="nu8v:~EditorCell.getY():int" resolve="getY" />
+                                      </node>
                                     </node>
                                   </node>
-                                  <node concept="37vLTw" id="2BHiRxglGdm" role="3uHU7w">
-                                    <ref role="3cqZAo" node="3SnNvqCbyLA" resolve="y" />
+                                  <node concept="2d3UOw" id="3SnNvqCbyYS" role="3uHU7w">
+                                    <node concept="2OqwBi" id="3SnNvqCbyYT" role="3uHU7B">
+                                      <node concept="37vLTw" id="3GM_nagT$M$" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="3SnNvqCbyYB" resolve="iconAnchorCell" />
+                                      </node>
+                                      <node concept="liA8E" id="3SnNvqCbyYV" role="2OqNvi">
+                                        <ref role="37wK5l" to="nu8v:~EditorCell.getBaseline():int" resolve="getBaseline" />
+                                      </node>
+                                    </node>
+                                    <node concept="37vLTw" id="2BHiRxglGdm" role="3uHU7w">
+                                      <ref role="3cqZAo" node="3SnNvqCbyLA" resolve="y" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

@@ -17,24 +17,11 @@ package jetbrains.mps.plugins;
 
 import java.util.List;
 
-public class PluginReloadingListenerBase implements PluginReloadingListener {
-  @Override
-  public void afterPluginsLoaded(List<PluginContributor> contributors) {
+/**
+ * Note: plugins must come in the right order
+ */
+public interface PluginLoader {
+  void loadPlugins(List<PluginContributor> contributors);
 
-  }
-
-  @Override
-  public void pluginsLoading(List<PluginContributor> contributors) {
-
-  }
-
-  @Override
-  public void pluginsUnloading(List<PluginContributor> contributors) {
-
-  }
-
-  @Override
-  public void beforePluginsUnloaded(List<PluginContributor> contributors) {
-
-  }
+  void unloadPlugins(List<PluginContributor> contributors);
 }

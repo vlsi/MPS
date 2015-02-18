@@ -27,6 +27,7 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(jetbrains.mps@java_stub)" />
+    <import index="hfw" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.projectplugins(MPS.Workbench/jetbrains.mps.plugins.projectplugins@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -96,7 +97,6 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
-        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -200,13 +200,13 @@
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -269,6 +269,9 @@
     <node concept="3uibUv" id="4tDMPuHd$Pz" role="EKbjA">
       <ref role="3uigEE" to="iiw6:~ProjectComponent" resolve="ProjectComponent" />
     </node>
+    <node concept="3uibUv" id="3L9OXzBsIt$" role="EKbjA">
+      <ref role="3uigEE" to="t6ll:~PluginReloadingListener" resolve="PluginReloadingListener" />
+    </node>
     <node concept="312cEg" id="4tDMPuHd$PD" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
@@ -278,11 +281,11 @@
       <node concept="3Tm6S6" id="4tDMPuHd$PF" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="1s_TLxa8SZ8" role="jymVt">
-      <property role="TrG5h" value="myPluginReloader" />
+      <property role="TrG5h" value="myProjectPluginManager" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1s_TLxa8SZ9" role="1B3o_S" />
-      <node concept="3uibUv" id="1s_TLxa8SZb" role="1tU5fm">
-        <ref role="3uigEE" to="t6ll:~PluginReloader" resolve="PluginReloader" />
+      <node concept="3uibUv" id="3L9OXzBsJMb" role="1tU5fm">
+        <ref role="3uigEE" to="hfw:~ProjectPluginManager" resolve="ProjectPluginManager" />
       </node>
     </node>
     <node concept="312cEg" id="7rvPfCBwHFd" role="jymVt">
@@ -304,9 +307,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="1s_TLxa8SUY" role="3clF46">
-        <property role="TrG5h" value="pluginReloader" />
-        <node concept="3uibUv" id="1s_TLxa8SZ7" role="1tU5fm">
-          <ref role="3uigEE" to="t6ll:~PluginReloader" resolve="PluginReloader" />
+        <property role="TrG5h" value="pluginManager" />
+        <node concept="3uibUv" id="3L9OXzBsRTP" role="1tU5fm">
+          <ref role="3uigEE" to="hfw:~ProjectPluginManager" resolve="ProjectPluginManager" />
         </node>
       </node>
       <node concept="3clFbS" id="4tDMPuHd$PT" role="3clF47">
@@ -323,10 +326,10 @@
         <node concept="3clFbF" id="1s_TLxa8SZd" role="3cqZAp">
           <node concept="37vLTI" id="1s_TLxa8SZf" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm6b$" role="37vLTx">
-              <ref role="3cqZAo" node="1s_TLxa8SUY" resolve="pluginReloader" />
+              <ref role="3cqZAo" node="1s_TLxa8SUY" resolve="pluginManager" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuTpa" role="37vLTJ">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myPluginReloader" />
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
             </node>
           </node>
         </node>
@@ -388,7 +391,73 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="4tfwdmbFVLt" role="jymVt" />
+    <node concept="2tJIrI" id="3L9OXzBsUPv" role="jymVt" />
+    <node concept="3clFb_" id="4tDMPuHd$V9" role="jymVt">
+      <property role="TrG5h" value="initComponent" />
+      <node concept="3Tm1VV" id="4tDMPuHd$Va" role="1B3o_S" />
+      <node concept="3cqZAl" id="4tDMPuHd$Vb" role="3clF45" />
+      <node concept="3clFbS" id="4tDMPuHd$Vc" role="3clF47">
+        <node concept="3clFbF" id="4tfwdmbHnog" role="3cqZAp">
+          <node concept="37vLTI" id="4tfwdmbHnxt" role="3clFbG">
+            <node concept="2ShNRf" id="4tfwdmbHnEu" role="37vLTx">
+              <node concept="1pGfFk" id="4tfwdmbH$0D" role="2ShVmc">
+                <ref role="37wK5l" node="7rvPfCBwHCw" resolve="RunConfigurationsStateManager.RunConfigurationsState" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4tfwdmbHnof" role="37vLTJ">
+              <ref role="3cqZAo" node="7rvPfCBwHFd" resolve="myState" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4tfwdmbHbdL" role="3cqZAp">
+          <node concept="2OqwBi" id="4tfwdmbHbmb" role="3clFbG">
+            <node concept="37vLTw" id="4tfwdmbHbdK" role="2Oq$k0">
+              <ref role="3cqZAo" node="7rvPfCBwHFd" resolve="myState" />
+            </node>
+            <node concept="liA8E" id="4tfwdmbHbxT" role="2OqNvi">
+              <ref role="37wK5l" node="4tfwdmbFHLk" resolve="saveState" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1s_TLxa97VP" role="3cqZAp">
+          <node concept="2OqwBi" id="1s_TLxa97VR" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeudDr" role="2Oq$k0">
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
+            </node>
+            <node concept="liA8E" id="1s_TLxa988o" role="2OqNvi">
+              <ref role="37wK5l" to="hfw:~ProjectPluginManager.addReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="addReloadingListener" />
+              <node concept="Xjq3P" id="4tfwdmbGgCW" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3tYsUK_U_dA" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4tfwdmbGhSm" role="jymVt" />
+    <node concept="3clFb_" id="4tDMPuHd$Vd" role="jymVt">
+      <property role="TrG5h" value="disposeComponent" />
+      <node concept="3Tm1VV" id="4tDMPuHd$Ve" role="1B3o_S" />
+      <node concept="3cqZAl" id="4tDMPuHd$Vf" role="3clF45" />
+      <node concept="3clFbS" id="4tDMPuHd$Vg" role="3clF47">
+        <node concept="3clFbF" id="1s_TLxa988q" role="3cqZAp">
+          <node concept="2OqwBi" id="1s_TLxa988s" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuTpZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
+            </node>
+            <node concept="liA8E" id="1s_TLxa988w" role="2OqNvi">
+              <ref role="37wK5l" to="hfw:~ProjectPluginManager.removeReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="removeReloadingListener" />
+              <node concept="Xjq3P" id="4tfwdmbGgEV" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3tYsUK_U_d_" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4tfwdmbGgGR" role="jymVt" />
     <node concept="3clFb_" id="4tDMPuHd$PY" role="jymVt">
       <property role="TrG5h" value="projectOpened" />
       <node concept="3Tm1VV" id="4tDMPuHd$PZ" role="1B3o_S" />
@@ -443,23 +512,7 @@
     <node concept="2tJIrI" id="4tfwdmbFNPW" role="jymVt" />
     <node concept="3clFb_" id="4tDMPuHd$R0" role="jymVt">
       <property role="TrG5h" value="disposeRunConfigurations" />
-      <node concept="P$JXv" id="2lLa9fBcbmI" role="lGtFl">
-        <node concept="TZ5HA" id="2lLa9fBcbnY" role="TZ5H$">
-          <node concept="1dT_AC" id="2lLa9fBcbnZ" role="1dT_Ay">
-            <property role="1dT_AB" value="not saving state at dispose, because we do not have the valid classes at this time" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="2lLa9fBcdOW" role="TZ5H$">
-          <node concept="1dT_AC" id="2lLa9fBcdOX" role="1dT_Ay">
-            <property role="1dT_AB" value="see @PluginReloader#schedulePluginsReload()" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="2lLa9fBce62" role="TZ5H$">
-          <node concept="1dT_AC" id="2lLa9fBce63" role="1dT_Ay">
-            <property role="1dT_AB" value="instead of that we have to saveState ocassionally using RunManagerListener (see below)" />
-          </node>
-        </node>
-      </node>
+      <property role="IEkAT" value="false" />
       <node concept="3cqZAl" id="4tDMPuHd$R1" role="3clF45" />
       <node concept="3clFbS" id="4tDMPuHd$R2" role="3clF47">
         <node concept="1gVbGN" id="4tDMPuHd$R3" role="3cqZAp">
@@ -471,6 +524,16 @@
               <node concept="liA8E" id="4tDMPuHd$R7" role="2OqNvi">
                 <ref role="37wK5l" to="iiw6:~ComponentManager.isDisposed():boolean" resolve="isDisposed" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3L9OXzBsY3x" role="3cqZAp">
+          <node concept="2OqwBi" id="3L9OXzBsY7F" role="3clFbG">
+            <node concept="37vLTw" id="3L9OXzBsY3v" role="2Oq$k0">
+              <ref role="3cqZAo" node="7rvPfCBwHFd" resolve="myState" />
+            </node>
+            <node concept="liA8E" id="3L9OXzBsYmA" role="2OqNvi">
+              <ref role="37wK5l" node="4tfwdmbFHLk" resolve="saveState" />
             </node>
           </node>
         </node>
@@ -829,7 +892,7 @@
         <node concept="1_o_46" id="3PIszklmnuh" role="3cqZAp">
           <node concept="1_o_bx" id="3PIszklmnui" role="1_o_by">
             <node concept="1_o_bG" id="3PIszklmntm" role="1_o_aQ">
-              <property role="TrG5h" value="d" />
+              <property role="TrG5h" value="descriptor" />
             </node>
             <node concept="2OqwBi" id="3PIszklmnuj" role="1_o_bz">
               <node concept="37vLTw" id="3GM_nagTsbG" role="2Oq$k0">
@@ -850,7 +913,7 @@
                     </node>
                     <node concept="TSZUe" id="3PIszklmnus" role="2OqNvi">
                       <node concept="3M$PaV" id="3PIszklmnut" role="25WWJ7">
-                        <ref role="3M$S_o" node="3PIszklmntm" resolve="d" />
+                        <ref role="3M$S_o" node="3PIszklmntm" resolve="descriptor" />
                       </node>
                     </node>
                   </node>
@@ -863,7 +926,7 @@
                 <node concept="3JPx81" id="3PIszklmnuw" role="2OqNvi">
                   <node concept="2OqwBi" id="3PIszklmnux" role="25WWJ7">
                     <node concept="3M$PaV" id="3PIszklmnuy" role="2Oq$k0">
-                      <ref role="3M$S_o" node="3PIszklmntm" resolve="d" />
+                      <ref role="3M$S_o" node="3PIszklmntm" resolve="descriptor" />
                     </node>
                     <node concept="liA8E" id="3PIszklmnuz" role="2OqNvi">
                       <ref role="37wK5l" to="l9cs:~RunContentDescriptor.getDisplayName():java.lang.String" resolve="getDisplayName" />
@@ -951,72 +1014,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4tfwdmbGj3K" role="jymVt" />
-    <node concept="3clFb_" id="4tDMPuHd$V9" role="jymVt">
-      <property role="TrG5h" value="initComponent" />
-      <node concept="3Tm1VV" id="4tDMPuHd$Va" role="1B3o_S" />
-      <node concept="3cqZAl" id="4tDMPuHd$Vb" role="3clF45" />
-      <node concept="3clFbS" id="4tDMPuHd$Vc" role="3clF47">
-        <node concept="3clFbF" id="4tfwdmbHnog" role="3cqZAp">
-          <node concept="37vLTI" id="4tfwdmbHnxt" role="3clFbG">
-            <node concept="2ShNRf" id="4tfwdmbHnEu" role="37vLTx">
-              <node concept="1pGfFk" id="4tfwdmbH$0D" role="2ShVmc">
-                <ref role="37wK5l" node="7rvPfCBwHCw" resolve="RunConfigurationsStateManager.RunConfigurationsState" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="4tfwdmbHnof" role="37vLTJ">
-              <ref role="3cqZAo" node="7rvPfCBwHFd" resolve="myState" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4tfwdmbHbdL" role="3cqZAp">
-          <node concept="2OqwBi" id="4tfwdmbHbmb" role="3clFbG">
-            <node concept="37vLTw" id="4tfwdmbHbdK" role="2Oq$k0">
-              <ref role="3cqZAo" node="7rvPfCBwHFd" resolve="myState" />
-            </node>
-            <node concept="liA8E" id="4tfwdmbHbxT" role="2OqNvi">
-              <ref role="37wK5l" node="4tfwdmbFHLk" resolve="saveState" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1s_TLxa97VP" role="3cqZAp">
-          <node concept="2OqwBi" id="1s_TLxa97VR" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeudDr" role="2Oq$k0">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myPluginReloader" />
-            </node>
-            <node concept="liA8E" id="1s_TLxa988o" role="2OqNvi">
-              <ref role="37wK5l" to="t6ll:~PluginReloader.addReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="addReloadingListener" />
-              <node concept="Xjq3P" id="4tfwdmbGgCW" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_U_dA" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4tfwdmbGhSm" role="jymVt" />
-    <node concept="3clFb_" id="4tDMPuHd$Vd" role="jymVt">
-      <property role="TrG5h" value="disposeComponent" />
-      <node concept="3Tm1VV" id="4tDMPuHd$Ve" role="1B3o_S" />
-      <node concept="3cqZAl" id="4tDMPuHd$Vf" role="3clF45" />
-      <node concept="3clFbS" id="4tDMPuHd$Vg" role="3clF47">
-        <node concept="3clFbF" id="1s_TLxa988q" role="3cqZAp">
-          <node concept="2OqwBi" id="1s_TLxa988s" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuTpZ" role="2Oq$k0">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myPluginReloader" />
-            </node>
-            <node concept="liA8E" id="1s_TLxa988w" role="2OqNvi">
-              <ref role="37wK5l" to="t6ll:~PluginReloader.removeReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="removeReloadingListener" />
-              <node concept="Xjq3P" id="4tfwdmbGgEV" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_U_d_" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4tfwdmbGgGR" role="jymVt" />
     <node concept="2YIFZL" id="4tDMPuHd$SP" role="jymVt">
       <property role="TrG5h" value="getConfigurationTypes" />
       <node concept="3Tm1VV" id="Fc1MGpTjcL" role="1B3o_S" />
@@ -1415,8 +1412,25 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="2dPl3A218xS" role="1zkMxy">
-      <ref role="3uigEE" to="t6ll:~PluginReloadingListenerBase" resolve="PluginReloadingListenerBase" />
+    <node concept="3UR2Jj" id="1mC8n7NOa9R" role="lGtFl">
+      <node concept="TZ5HA" id="1mC8n7NOadr" role="TZ5H$">
+        <node concept="1dT_AC" id="1mC8n7NOads" role="1dT_Ay">
+          <property role="1dT_AB" value="This component allows to create reloadable (!) run configurations within MPS." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1mC8n7NOfzl" role="TZ5H$">
+        <node concept="1dT_AC" id="1mC8n7NOfzm" role="1dT_Ay">
+          <property role="1dT_AB" value="It listens to the project plugins manager because we use custom project plugins to register custom 'before' tasks (like 'make' etc.)" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1mC8n7NOf$b" role="TZ5H$">
+        <node concept="1dT_AC" id="1mC8n7NOf$c" role="1dT_Ay">
+          <property role="1dT_AB" value="It saves all run configurations at the plugin unload and then restores them at the plugin load event" />
+        </node>
+        <node concept="1dT_AC" id="1mC8n7NObov" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="8ByOnNt3Hd">

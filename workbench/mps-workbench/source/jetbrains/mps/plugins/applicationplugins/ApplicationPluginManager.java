@@ -21,7 +21,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.ModulePluginContributor;
 import jetbrains.mps.plugins.PluginContributor;
-import jetbrains.mps.plugins.PluginReloader;
+import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -38,8 +38,8 @@ import java.util.*;
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
-  public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginReloader pluginReloader) {
-    super(coreComponents.getModuleRepository(), pluginReloader);
+  public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginLoaderRegistry pluginLoaderRegistry) {
+    super(coreComponents.getModuleRepository(), pluginLoaderRegistry);
   }
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
@@ -148,17 +148,17 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   public void initComponent() {
-    if (!myPluginReloader.getLoadedContributors().isEmpty()) {
+    if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
       LOG.warn("Some contributor plugins will not be loaded because of too late component initialization.");
     }
-    super.startListeningToReload();
+    register();
   }
 
   @Override
   public void disposeComponent() {
-    super.stopListeningToReload();
-    if (!myPluginReloader.getLoadedContributors().isEmpty()) {
-      super.unloadPlugins(myPluginReloader.getLoadedContributors());
+    unregister();
+    if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
+      unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
     }
   }
 }

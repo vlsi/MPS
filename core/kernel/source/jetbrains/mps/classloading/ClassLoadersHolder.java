@@ -23,6 +23,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
@@ -30,13 +33,15 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * This class stores a map SModuleReference->ModuleClassLoader
  *
  * Note: the actual dispose of ModuleClassLoaders happen asynchronously in the EDT
- * @see jetbrains.mps.classloading.ClassLoadersHolder.MPSClassLoadersRegistry#disposeClassLoadersInEDT
+ * @see jetbrains.mps.classloading.ClassLoadersHolder.MPSClassLoadersRegistry#flushDisposeQueue()
  *
  * @see ClassLoaderManager#myLoadableCondition
  */
@@ -46,10 +51,37 @@ public class ClassLoadersHolder {
   private final ModelAccess myModelAccess;
   private final ModulesWatcher myModulesWatcher;
   private final MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
+  private final SRepositoryListener myRepositoryListener = new SRepositoryListenerBase() {
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      checkPluginIsValid(module);
+    }
 
-  public ClassLoadersHolder(ModelAccess modelAccess, ModulesWatcher modulesWatcher) {
-    myModelAccess = modelAccess;
+    private void checkPluginIsValid(@NotNull SModule module) {
+      CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
+      if (customClassLoadingFacet != null) {
+        if (!customClassLoadingFacet.isValid()) {
+          LOG.warn("Facet of the module " + module + " is not valid --" +
+              " possibly the provided idea plugin (in the properties dialog/idea plugin facet tab) cannot be found among the bundled plugins");
+        }
+      }
+    }
+  };
+  private final SRepository myRepository;
+
+  public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher) {
+    myRepository = repository;
+    myModelAccess = repository.getModelAccess();
     myModulesWatcher = modulesWatcher;
+  }
+
+  public void init() {
+    myRepository.addRepositoryListener(myRepositoryListener);
+  }
+
+  public void dispose() {
+    myMPSClassLoadersRegistry.dispose();
+    myRepository.removeRepositoryListener(myRepositoryListener);
   }
 
   @Nullable
@@ -76,7 +108,6 @@ public class ClassLoadersHolder {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-        LOG.warn("Facet of the module " + module + " is not valid");
         return null;
       }
     }
@@ -93,14 +124,13 @@ public class ClassLoadersHolder {
    * {@link ClassLoadingProgress} for the description of states and a typical lifecycle of module in a repository.
    */
   @NotNull
-  public ClassLoadingProgress getClassLoadingProgress(ReloadableModule module) {
-    SModuleReference mRef = module.getModuleReference();
-    return getClassLoadingProgress(mRef);
-  }
-
-  @NotNull
   public ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
     return myMPSClassLoadersRegistry.getClassLoadingProgress(mRef);
+  }
+
+  public void scheduleClassLoaderDisposeInEDT() {
+    LOG.debug("Scheduling ModuleClassLoader disposal");
+    myMPSClassLoadersRegistry.flushDisposeQueue();
   }
 
   /**
@@ -133,9 +163,10 @@ public class ClassLoadersHolder {
    * This class deals only with MPS-loadable modules
    * @see ClassLoaderManager#myMPSLoadableCondition
    */
-  class MPSClassLoadersRegistry {
+  private class MPSClassLoadersRegistry {
     private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
     private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
+    private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<ModuleClassLoader>();
 
     @Nullable
     private synchronized ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
@@ -183,7 +214,7 @@ public class ClassLoadersHolder {
           }
         }
       }
-      disposeClassLoadersInEDT(toDispose);
+      myDisposeQueue.addAll(toDispose);
       return unloaded;
     }
 
@@ -207,11 +238,14 @@ public class ClassLoadersHolder {
         monitor.start("Loading modules...", toLoad.size());
         for (ReloadableModule module : toLoad) {
           SModuleReference moduleReference = module.getModuleReference();
-          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. no listeners know about this module");
-          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.LOADED) continue;
-          ModuleClassLoader classLoader = createModuleClassLoader(module);
-          putClassLoader(moduleReference, classLoader);
-          onLoaded(moduleReference);
+          ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
+          if (progress == ClassLoadingProgress.UNLOADED) {
+            throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
+          } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
+            ModuleClassLoader classLoader = createModuleClassLoader(module);
+            putClassLoader(moduleReference, classLoader);
+            onLoaded(moduleReference);
+          }
           monitor.advance(1);
         }
       } finally {
@@ -243,15 +277,23 @@ public class ClassLoadersHolder {
      * Very quick action.
      * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
      */
-    private void disposeClassLoadersInEDT(final Iterable<ModuleClassLoader> toDispose) {
+    public void flushDisposeQueue() {
       myModelAccess.runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          for (ModuleClassLoader classLoader : toDispose) {
+          LOG.debug("Disposing " + myDisposeQueue.size() + " class loaders");
+          while (!myDisposeQueue.isEmpty()) {
+            ModuleClassLoader classLoader = myDisposeQueue.poll();
             classLoader.dispose();
           }
         }
       });
+    }
+
+    public void dispose() {
+      if (!myDisposeQueue.isEmpty()) {
+        flushDisposeQueue();
+      }
     }
   }
 

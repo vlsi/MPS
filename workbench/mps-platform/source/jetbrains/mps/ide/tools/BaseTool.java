@@ -336,6 +336,11 @@ public abstract class BaseTool {
     return getToolWindow().getContentManager();
   }
 
+  @Override
+  public String toString() {
+    return "Tool " + this.getComponentName();
+  }
+
   protected Project getProject() {
     return myProject;
   }

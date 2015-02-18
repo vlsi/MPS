@@ -44,6 +44,7 @@
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="ierg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(jetbrains.mps.textgen.trace@java_stub)" />
     <import index="f2bq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.messages(MPS.IDEA/com.intellij.util.messages@java_stub)" />
+    <import index="86um" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(MPS.Platform/jetbrains.mps.ide@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3840,6 +3841,12 @@
       <node concept="3Tm1VV" id="3SnNvqCaJC4" role="1B3o_S" />
       <node concept="3cqZAl" id="3SnNvqCaJC5" role="3clF45" />
       <node concept="3clFbS" id="3SnNvqCaJC6" role="3clF47">
+        <node concept="3clFbF" id="_hFHZw5c9Z" role="3cqZAp">
+          <node concept="2YIFZM" id="_hFHZw5cNj" role="3clFbG">
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
+            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3SnNvqCaJC7" role="3cqZAp">
           <node concept="37vLTI" id="3SnNvqCaJC8" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuU00" role="37vLTJ">
@@ -3883,6 +3890,12 @@
       <node concept="3Tm1VV" id="3SnNvqCaJCm" role="1B3o_S" />
       <node concept="3cqZAl" id="3SnNvqCaJCn" role="3clF45" />
       <node concept="3clFbS" id="3SnNvqCaJCo" role="3clF47">
+        <node concept="3clFbF" id="_hFHZw5cYH" role="3cqZAp">
+          <node concept="2YIFZM" id="_hFHZw5cYI" role="3clFbG">
+            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="86um:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3SnNvqCaJCp" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCaJCq" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuyNe" role="2Oq$k0">

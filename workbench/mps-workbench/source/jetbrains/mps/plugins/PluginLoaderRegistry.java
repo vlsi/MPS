@@ -47,16 +47,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * TODO: currently it reloads only the ModulePluginContributors, need to work on AbstractPluginFactories also. Makes sense to remove this factories at all
  */
-public class PluginReloader implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PluginReloader.class);
+public class PluginLoaderRegistry implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(PluginLoaderRegistry.class);
 
   private ClassLoaderManager myClassLoaderManager;
   private MPSClassesListener myClassesListener = new MyReloadAdapter();
-  private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<PluginReloadingListener>();
+  private List<PluginContributor> myLoadedContributors = new ArrayList<PluginContributor>(); // modules
+  private final List<PluginLoader> myPluginLoaders = new CopyOnWriteArrayList<PluginLoader>(); // components
 
-  private List<PluginContributor> myLoadedContributors = new ArrayList<PluginContributor>();
-
-  public PluginReloader(MPSCoreComponents coreComponents) {
+  public PluginLoaderRegistry(MPSCoreComponents coreComponents) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
@@ -96,23 +95,23 @@ public class PluginReloader implements ApplicationComponent {
     return null;
   }
 
+  public void register(@NotNull PluginLoader loader) {
+    myPluginLoaders.add(loader);
+  }
+
+  public void unregister(@NotNull PluginLoader loader) {
+    myPluginLoaders.remove(loader);
+  }
+
   private void unloadPlugins(List<PluginContributor> contributors) {
-    List<PluginReloadingListener> reloadingListeners = new ArrayList<PluginReloadingListener>(myReloadingListeners);
-    for (PluginReloadingListener l : reloadingListeners) {
-      l.beforePluginsUnloaded(contributors);
-    }
-    for (PluginReloadingListener l : reloadingListeners) {
-      l.pluginsUnloading(contributors);
+    for (PluginLoader listener : myPluginLoaders) {
+      listener.unloadPlugins(contributors);
     }
   }
 
   private void loadPlugins(List<PluginContributor> contributors) {
-    List<PluginReloadingListener> reloadingListeners = new ArrayList<PluginReloadingListener>(myReloadingListeners);
-    for (PluginReloadingListener l : reloadingListeners) {
-      l.pluginsLoading(contributors);
-    }
-    for (PluginReloadingListener l : reloadingListeners) {
-      l.afterPluginsLoaded(contributors);
+    for (PluginLoader listener : myPluginLoaders) {
+      listener.loadPlugins(contributors);
     }
   }
 
@@ -139,22 +138,13 @@ public class PluginReloader implements ApplicationComponent {
     }
     return toLoadContributors;
   }
-
-  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
-    myReloadingListeners.add(listener);
-  }
-
-  public void removeReloadingListener(PluginReloadingListener listener) {
-    myReloadingListeners.remove(listener);
-  }
-
   //----------------COMPONENT STUFF---------------------
 
   @Override
   @NonNls
   @NotNull
   public String getComponentName() {
-    return PluginReloader.class.getName();
+    return PluginLoaderRegistry.class.getName();
   }
 
   @Override

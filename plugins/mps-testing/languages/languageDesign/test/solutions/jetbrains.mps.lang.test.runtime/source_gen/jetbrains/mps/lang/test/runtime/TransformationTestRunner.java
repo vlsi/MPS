@@ -23,7 +23,8 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.module.ReloadableModule;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -64,7 +65,7 @@ public class TransformationTestRunner implements TestRunner {
     readSystemMacro();
   }
 
-  protected void doInitTest(@NotNull final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
+  protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing test...");
     }
@@ -98,14 +99,6 @@ public class TransformationTestRunner implements TestRunner {
               test.init();
             }
 
-            private SModel findModel(final String modelName) {
-              SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
-
-              if (modelDescriptor == null) {
-                Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
-              }
-              return modelDescriptor;
-            }
           });
         }
       });
@@ -113,6 +106,16 @@ public class TransformationTestRunner implements TestRunner {
       TestModelSaver.getInstance().setTest(test);
     }
   }
+
+  protected SModel findModel(final String modelName) {
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
+
+    if (modelDescriptor == null) {
+      Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+    }
+    return modelDescriptor;
+  }
+
 
   protected Project openTestProject(String projectPathName, boolean reopenProject) {
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
@@ -154,38 +157,46 @@ public class TransformationTestRunner implements TestRunner {
       LOG.info("Running test " + methodName);
     }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
+    final Throwable[] error = new Throwable[1];
+
+    final SModule module = projectTest.getModelDescriptor().getModule();
+    if (!(module instanceof ReloadableModule)) {
+      throw new IllegalArgumentException("module " + module + " is not reloadable -- cannot run tests in it");
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
-        ClassLoader cLoader = check_ovzmet_a0b0a0a2a71(clazz.value);
-        assert cLoader != null : "Class is not found " + className;
-        String classLoader = cLoader.toString();
-        String module = projectTest.getModelDescriptor().getModule().getModuleName();
-        assert classLoader.contains(module) : "class: " + clazz.value + "; classLoader: " + classLoader + "; module: " + module;
+        try {
+          clazz.value = ((ReloadableModule) module).getOwnClass(className);
+        } catch (Throwable t) {
+          error[0] = t;
+        }
       }
     });
+    if (error[0] != null) {
+      throw error[0];
+    }
+
     final Object obj = clazz.value.newInstance();
     clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
     clazz.value.getField("myProject").set(obj, projectTest.getProject());
-    final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           projectTest.getProject().getModelAccess().executeCommand(new Runnable() {
             public void run() {
-              exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+              error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
             }
           });
         }
       });
     } else {
-      exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+      error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
     }
-    if (exception[0] != null) {
+    if (error[0] != null) {
       if (LOG.isInfoEnabled()) {
         LOG.info("Test failed");
       }
-      throw exception[0];
+      throw error[0];
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Test passed");
@@ -257,12 +268,6 @@ public class TransformationTestRunner implements TestRunner {
   private static SModelReference check_ovzmet_a0a6a11(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-  private static ClassLoader check_ovzmet_a0b0a0a2a71(Class checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassLoader();
     }
     return null;
   }
