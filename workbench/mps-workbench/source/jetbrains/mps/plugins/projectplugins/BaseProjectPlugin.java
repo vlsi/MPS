@@ -43,7 +43,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   private List<BaseGeneratedTool> myTools = new ArrayList<BaseGeneratedTool>();
   private EDTAccessor<List<BaseGeneratedTool>> myInitializedTools = new EDTAccessor<List<BaseGeneratedTool>>(new ArrayList<BaseGeneratedTool>());
-  private List<BaseCustomProjectPlugin> myCustomParts = new ArrayList<BaseCustomProjectPlugin>();
+  private List<BaseCustomProjectPlugin> myCustomPlugins = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<RelationDescriptor> myTabDescriptors = new ArrayList<RelationDescriptor>();
 
@@ -79,14 +79,46 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   public final void init(@NotNull final Project project) {
     myProject = project;
 
-    myCustomParts = initCustomParts(project);
-    myTabDescriptors = initTabbedEditors(project);
-    myTools = initAllTools(myProject);
-    myPrefsComponents = createPreferencesComponents(myProject);
-    queuePrefsAndToolsInit();
+    initCustomParts1(project);
+    initTabbedEditors1(project);
+    initTools1();
+    createPrefComponents1();
+    queuePrefsAndToolsRegistration();
   }
 
-  private void queuePrefsAndToolsInit() {
+  private void createPrefComponents1() {
+    try {
+      myPrefsComponents = createPreferencesComponents(myProject);
+    } catch (Throwable t) {
+      LOG.error("Exception on project preference components init:", t);
+    }
+  }
+
+  protected void initTools1() {
+    try {
+      myTools = initAllTools(myProject);
+    } catch (Throwable t) {
+      LOG.error("Exception on tools init:", t);
+    }
+  }
+
+  protected void initTabbedEditors1(Project project) {
+    try {
+      myTabDescriptors = initTabbedEditors(project);
+    } catch (Throwable t) {
+      LOG.error("Exception on tabbed editors init:", t);
+    }
+  }
+
+  protected void initCustomParts1(Project project) {
+    try {
+      myCustomPlugins = initCustomParts(project);
+    } catch (Throwable t) {
+      LOG.error("Exception on custom project plugins init:", t);
+    }
+  }
+
+  private void queuePrefsAndToolsRegistration() {
     final List<BaseGeneratedTool> toolsToInit = new ArrayList<BaseGeneratedTool>(myTools);
     final List<BaseProjectPrefsComponent> prefsToInit = new ArrayList<BaseProjectPrefsComponent>(myPrefsComponents);
 
@@ -114,7 +146,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   public final void dispose() {
     disposePrefsAndTools();
     disposeTabbedEditors();
-    disposeCustomParts();
+    disposeCustomPlugins();
   }
 
   private void disposeTabbedEditors() {
@@ -127,11 +159,12 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     myPrefsComponents.clear();
   }
 
-  private void disposeCustomParts() {
-    for (BaseCustomProjectPlugin customPart : myCustomParts) {
-      customPart.dispose();
+  private void disposeCustomPlugins() {
+    List<BaseCustomProjectPlugin> customPlugins = new ArrayList<BaseCustomProjectPlugin>(myCustomPlugins);
+    for (BaseCustomProjectPlugin customPlugin : customPlugins) {
+      customPlugin.dispose();
     }
-    myCustomParts.clear();
+    myCustomPlugins.clear();
   }
 
   private void queuePrefsAndToolsDispose() {
@@ -143,7 +176,11 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         if (myProject.isDisposed()) return;
 
         for (BaseProjectPrefsComponent component : prefsComponentsToDispose) {
-          component.dispose();
+          try {
+            component.dispose();
+          } catch (Throwable t) {
+            LOG.error("Exception on a project preference component dispose: " + component, t);
+          }
         }
 
         for (BaseGeneratedTool tool : toolsToDispose) {
@@ -151,9 +188,10 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
             try {
               tool.unregister();
               tool.dispose();
-              myInitializedTools.get().remove(tool);
             } catch (Throwable t) {
               LOG.error("Exception on a tool dispose: " + tool, t);
+            } finally {
+              myInitializedTools.get().remove(tool);
             }
           }
         }
