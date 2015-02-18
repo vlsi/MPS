@@ -28,10 +28,12 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -277,17 +279,18 @@ public class ClassLoadersHolder {
      * Very quick action.
      * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
      */
-    public void flushDisposeQueue() {
+    public synchronized void flushDisposeQueue() {
+      final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
       myModelAccess.runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          LOG.debug("Disposing " + myDisposeQueue.size() + " class loaders");
-          while (!myDisposeQueue.isEmpty()) {
-            ModuleClassLoader classLoader = myDisposeQueue.poll();
+          LOG.debug("Disposing " + toDispose.size() + " class loaders");
+          for (ModuleClassLoader classLoader : toDispose) {
             classLoader.dispose();
           }
         }
       });
+      myDisposeQueue.clear();
     }
 
     public void dispose() {
