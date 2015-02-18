@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -28,6 +29,8 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -43,6 +46,8 @@ import java.util.Map;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
+  private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteInfo.class);
+
   private static SModel ourModelForTypechecking = null;
 
   public static SModel getModelForTypechecking() {
@@ -124,15 +129,19 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
       if (inequalitiesSystem == null) return substituteActionList;
 
       List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-      for (SubstituteAction nodeSubstituteAction :   substituteActionList) {
-        SNode type = nodeSubstituteAction.getActionType(pattern);
-        if (type != null && inequalitiesSystem.satisfies(type)) {
-          result.add(nodeSubstituteAction);
+      for (SubstituteAction nodeSubstituteAction : substituteActionList) {
+        try {
+          SNode type = nodeSubstituteAction.getActionType(pattern);
+          if (type != null && inequalitiesSystem.satisfies(type)) {
+            result.add(nodeSubstituteAction);
+          }
+        } catch (Throwable th) {
+          LOG.error("Exception on checking smart matching conditions for action: " + (nodeSubstituteAction == null ? "null" : nodeSubstituteAction.getClass()),
+              th);
         }
       }
       return result;
-    }
-    finally {
+    } finally {
       TemporaryModels.getInstance().dispose(ourModelForTypechecking);
       ourModelForTypechecking = null;
     }
@@ -146,8 +155,12 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
         for (SubstituteAction item : actionsFromCache) {
-          if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
-            result.add(item);
+          try {
+            if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
+              result.add(item);
+            }
+          } catch (Throwable th) {
+            LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
           }
         }
         putActionsToCache(pattern, strictMatching, result);
@@ -159,12 +172,17 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
 
   private List<SubstituteAction> getActions() {
     if (myCachedActionList == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myCachedActionList = createActions();
-        }
-      });
+      try {
+        myCachedActionList = ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+          @Override
+          public List<SubstituteAction> compute() {
+            return createActions();
+          }
+        });
+      } catch (Throwable th) {
+        LOG.error("Exception while creating substitute actions in " + this.getClass(), th);
+        return new LinkedList<SubstituteAction>();
+      }
     }
     return myCachedActionList;
   }

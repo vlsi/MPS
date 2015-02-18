@@ -42,8 +42,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private Project myProject;
 
   private List<BaseGeneratedTool> myTools = new ArrayList<BaseGeneratedTool>();
-  private List<BaseGeneratedTool> myInitializedTools = new ArrayList<BaseGeneratedTool>();
-  private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
+  private EDTAccessor<List<BaseGeneratedTool>> myInitializedTools = new EDTAccessor<List<BaseGeneratedTool>>(new ArrayList<BaseGeneratedTool>());
+  private List<BaseCustomProjectPlugin> myCustomPlugins = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<RelationDescriptor> myTabDescriptors = new ArrayList<RelationDescriptor>();
 
@@ -69,37 +69,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return new ArrayList<BaseCustomProjectPlugin>();
   }
 
-  //------------------shared stuff-----------------------
-
-  public final void init(@NotNull final Project project) {
-    myProject = project;
-
-    myCustomPartsToDispose = initCustomParts(project);
-    myTabDescriptors = initTabbedEditors(project);
-    myTools = initAllTools(myProject);
-    myPrefsComponents = createPreferencesComponents(myProject);
-
-    getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (myProject.isDisposed()) return;
-
-        for (BaseGeneratedTool tool : myTools) {
-          try {
-            tool.init(myProject);
-            tool.register();
-          } catch (Throwable t) {
-            LOG.error("", t);
-          }
-          myInitializedTools.add(tool);
-        }
-        for (BaseProjectPrefsComponent component : myPrefsComponents) {
-          component.init();
-        }
-      }
-    });
-  }
-
   @NotNull
   private ModelAccess getModelAccess() {
     ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
@@ -107,8 +76,98 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return modelAccess;
   }
 
+  public final void init(@NotNull final Project project) {
+    myProject = project;
+
+    initCustomParts1(project);
+    initTabbedEditors1(project);
+    initTools1();
+    createPrefComponents1();
+    queuePrefsAndToolsRegistration();
+  }
+
+  private void createPrefComponents1() {
+    try {
+      myPrefsComponents = createPreferencesComponents(myProject);
+    } catch (Throwable t) {
+      LOG.error("Exception on project preference components init:", t);
+    }
+  }
+
+  protected void initTools1() {
+    try {
+      myTools = initAllTools(myProject);
+    } catch (Throwable t) {
+      LOG.error("Exception on tools init:", t);
+    }
+  }
+
+  protected void initTabbedEditors1(Project project) {
+    try {
+      myTabDescriptors = initTabbedEditors(project);
+    } catch (Throwable t) {
+      LOG.error("Exception on tabbed editors init:", t);
+    }
+  }
+
+  protected void initCustomParts1(Project project) {
+    try {
+      myCustomPlugins = initCustomParts(project);
+    } catch (Throwable t) {
+      LOG.error("Exception on custom project plugins init:", t);
+    }
+  }
+
+  private void queuePrefsAndToolsRegistration() {
+    final List<BaseGeneratedTool> toolsToInit = new ArrayList<BaseGeneratedTool>(myTools);
+    final List<BaseProjectPrefsComponent> prefsToInit = new ArrayList<BaseProjectPrefsComponent>(myPrefsComponents);
+
+    getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myProject.isDisposed()) return;
+
+        for (BaseGeneratedTool tool : toolsToInit) {
+          try {
+            tool.init(myProject);
+            tool.register();
+          } catch (Throwable t) {
+            LOG.error("Exception on a tool init: " + tool, t);
+          }
+          myInitializedTools.get().add(tool);
+        }
+        for (BaseProjectPrefsComponent component : prefsToInit) {
+          component.init();
+        }
+      }
+    });
+  }
+
   public final void dispose() {
-    final List<BaseGeneratedTool> initializedTools = new ArrayList<BaseGeneratedTool>(myInitializedTools);
+    disposePrefsAndTools();
+    disposeTabbedEditors();
+    disposeCustomPlugins();
+  }
+
+  private void disposeTabbedEditors() {
+    myTabDescriptors.clear();
+  }
+
+  private void disposePrefsAndTools() {
+    queuePrefsAndToolsDispose();
+    myTools.clear();
+    myPrefsComponents.clear();
+  }
+
+  private void disposeCustomPlugins() {
+    List<BaseCustomProjectPlugin> customPlugins = new ArrayList<BaseCustomProjectPlugin>(myCustomPlugins);
+    for (BaseCustomProjectPlugin customPlugin : customPlugins) {
+      customPlugin.dispose();
+    }
+    myCustomPlugins.clear();
+  }
+
+  private void queuePrefsAndToolsDispose() {
     final List<BaseGeneratedTool> toolsToDispose = new ArrayList<BaseGeneratedTool>(myTools);
     final List<BaseProjectPrefsComponent> prefsComponentsToDispose = new ArrayList<BaseProjectPrefsComponent>(myPrefsComponents);
     getModelAccess().runWriteInEDT(new Runnable() {
@@ -117,26 +176,27 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         if (myProject.isDisposed()) return;
 
         for (BaseProjectPrefsComponent component : prefsComponentsToDispose) {
-          component.dispose();
+          try {
+            component.dispose();
+          } catch (Throwable t) {
+            LOG.error("Exception on a project preference component dispose: " + component, t);
+          }
         }
 
         for (BaseGeneratedTool tool : toolsToDispose) {
-          if (initializedTools.contains(tool)) {
+          if (myInitializedTools.get().contains(tool)) {
             try {
+              tool.unregister();
               tool.dispose();
             } catch (Throwable t) {
-              LOG.error("", t);
+              LOG.error("Exception on a tool dispose: " + tool, t);
+            } finally {
+              myInitializedTools.get().remove(tool);
             }
           }
         }
       }
     });
-    myTools.clear();
-    myTabDescriptors.clear();
-
-    for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
-      customPart.dispose();
-    }
   }
   //------------------tools stuff-----------------------
 
@@ -151,8 +211,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   public List<RelationDescriptor> getTabDescriptors() {
     return Collections.unmodifiableList(myTabDescriptors);
   }
-  //----------------STATE STUFF------------------------
 
+  //----------------STATE STUFF------------------------
   @Override
   public PluginState getState() {
     PluginState state = new PluginState();
@@ -161,7 +221,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         Element componentState = component.getState();
         state.myComponentsState.add(new ComponentState(component.getClass().getName(), componentState));
       } catch (Throwable t) {
-        LOG.error(null, t);
+        LOG.error("", t);
       }
     }
     return state;
@@ -182,7 +242,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
           component.loadState(componentState.second);
         }
       } catch (Throwable t) {
-        LOG.error(null, t);
+        LOG.error("", t);
       }
     }
   }
@@ -202,6 +262,19 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     public ComponentState(String first, Element second) {
       this.first = first;
       this.second = second;
+    }
+  }
+
+  private static class EDTAccessor<T> {
+    private T myT;
+
+    public EDTAccessor(T t) {
+      myT = t;
+    }
+
+    public T get() {
+      ThreadUtils.assertEDT();
+      return myT;
     }
   }
 }

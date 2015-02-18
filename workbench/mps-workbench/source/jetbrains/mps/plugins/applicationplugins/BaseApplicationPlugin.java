@@ -34,7 +34,7 @@ import java.util.*;
 public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
 
-  private List<BaseCustomApplicationPlugin> myCustomParts;
+  private List<BaseCustomApplicationPlugin> myCustomPlugins;
   private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
   private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
   private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
@@ -110,7 +110,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   //----------custom parts----------
 
   public final void createCustomParts() {
-    myCustomParts = initCustomParts();
+    myCustomPlugins = initCustomParts();
   }
 
   protected List<BaseCustomApplicationPlugin> initCustomParts() {
@@ -135,7 +135,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   public final void dispose() {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
-    for (BaseCustomApplicationPlugin part : myCustomParts) {
+    for (BaseCustomApplicationPlugin part : myCustomPlugins) {
       part.dispose();
     }
 
