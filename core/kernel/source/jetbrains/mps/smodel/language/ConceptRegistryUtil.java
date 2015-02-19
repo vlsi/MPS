@@ -63,7 +63,7 @@ public class ConceptRegistryUtil {
     }
 
     if (concept instanceof SAbstractConceptAdapterById) {
-      return cr.getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
+      return cr.getConstraintsDescriptor(((SAbstractConceptAdapterById) concept).getId());
     }
     return cr.getConstraintsDescriptor(concept.getQualifiedName());
   }
