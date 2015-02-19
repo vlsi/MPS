@@ -19,8 +19,11 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
@@ -31,6 +34,7 @@ import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -45,6 +49,7 @@ public abstract class PropertySupport {
   /**
    * new validation method
    */
+  @Deprecated
   public boolean canSetValue(SNode node, String propertyName, String value, boolean nullsAlwaysAllowed) {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
@@ -58,13 +63,53 @@ public abstract class PropertySupport {
     return canSetValue(descriptor, node, propertyName, value);
   }
 
+  public boolean canSetValue(SNode node, SProperty property, String value, boolean nullsAlwaysAllowed) {
+    if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
+    if (value == null) value = "";
+    if (!canSetValue(value)) return false;
+    PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
+    if (descriptor == null) {
+      LOG.error("No property constraints are available for property " + property.getName() + " in node " + node.getPresentation());
+      return false;
+    }
+    return canSetValue(descriptor, node, property, value);
+  }
+
+  private PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
+    ConstraintsDescriptor constraintsDescriptor;
+    if (node.getConcept() instanceof SAbstractConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SAbstractConceptAdapterById) node.getConcept()).getId());
+    } else {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    }
+
+    PropertyConstraintsDescriptor descriptor;
+    if (property instanceof SPropertyAdapterById) {
+      descriptor = constraintsDescriptor.getProperty(((SPropertyAdapterById) property).getId());
+    } else {
+      descriptor = constraintsDescriptor.getProperty(property.getName());
+    }
+    return descriptor;
+  }
+
+  @Deprecated
   public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value) {
     if (value == null) value = "";
     return descriptor.validateValue(node, value);
   }
 
+  public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, SProperty property, String value) {
+    if (value == null) value = "";
+    return descriptor.validateValue(node, value);
+  }
+
+  @Deprecated
   public boolean canSetValue(SNode node, String propertyName, String value) {
     return canSetValue(node, propertyName, value, true);
+  }
+
+  public boolean canSetValue(SNode node, SProperty property, String value) {
+    return canSetValue(node, property, value, true);
   }
 
   /**
@@ -82,14 +127,25 @@ public abstract class PropertySupport {
 
   public static PropertySupport getPropertySupport(@NotNull final SProperty property) {
     SDataType dataType = property.getType();
-    if (dataType instanceof SPrimitiveDataType) {
-      switch (((SPrimitiveDataType) dataType).getType()) {
-        case SPrimitiveDataType.BOOL:
-        case SPrimitiveDataType.INT:
-        default:
+    if (dataType != null) {
+      if (dataType instanceof SPrimitiveDataType) {
+        switch (((SPrimitiveDataType) dataType).getType()) {
+          case SPrimitiveDataType.BOOL:
+            return BooleanPropertySupport.INSTANCE;
+          case SPrimitiveDataType.INT:
+            return IntegerPropertySupport.INSTANCE;
+          case SPrimitiveDataType.STRING:
+            return DefaultPropertySupport.INSTANCE;
+          default:
+            throw new RuntimeException("Unknown primitive type: " + dataType);
+        }
+      } else {
+        //todo: get real prop support
+        SNode declarationNode = property.getDeclarationNode();
+        return declarationNode != null ? getPropertySupport(declarationNode) : DefaultPropertySupport.INSTANCE;
       }
-
     }
+    return DefaultPropertySupport.INSTANCE;
   }
 
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
@@ -163,6 +219,8 @@ public abstract class PropertySupport {
   }
 
   private static class DefaultPropertySupport extends PropertySupport {
+    public static DefaultPropertySupport INSTANCE = new DefaultPropertySupport();
+
     @Override
     public boolean canSetValue(String value) {
       return true;
@@ -170,6 +228,7 @@ public abstract class PropertySupport {
   }
 
   private static class IntegerPropertySupport extends PropertySupport {
+    public static IntegerPropertySupport INSTANCE = new IntegerPropertySupport();
     @Override
     public boolean canSetValue(String value) {
       try {
@@ -183,6 +242,8 @@ public abstract class PropertySupport {
   }
 
   private static class BooleanPropertySupport extends PropertySupport {
+    public static BooleanPropertySupport INSTANCE = new BooleanPropertySupport();
+
     @Override
     public boolean canSetValue(String value) {
       return String.valueOf(value).equals("true") || String.valueOf(value).equals("false");

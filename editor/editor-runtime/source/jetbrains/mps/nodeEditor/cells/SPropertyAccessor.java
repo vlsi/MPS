@@ -15,23 +15,117 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.Hack;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 /**
  * User: shatalin
  * Date: 21/01/15
  */
 public class SPropertyAccessor implements ModelAccessor {
+
+  private final SProperty myProperty;
+  private final SNode myNode;
+  private boolean myReadOnly;
+  private boolean myAllowEmptyText;
+
+  public SPropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText) {
+    myNode = node;
+    myProperty = property;
+    myReadOnly = readOnly;
+    myAllowEmptyText = allowEmptyText;
+  }
+
   @Override
   public String getText() {
-    return null;
+    return fromInternal(doGetValue());
   }
 
   @Override
   public void setText(String text) {
-
+    if (!myReadOnly) {
+      isValidText(text);
+      if (text != null && text.length() == 0) {
+        text = null;
+      }
+      if (isValidText_internal(text)) {
+        doSetValue(toInternal(text));
+      }
+    }
   }
 
   @Override
+  @Hack
   public boolean isValidText(String text) {
-    return false;
+    return (isValidText_internal(text) && !isInvalidEmptyText(text));
   }
+
+
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public String getPropertyName() {
+    return myProperty.getName();
+  }
+
+
+
+  protected String doGetValue() {
+    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        if (myNode == null) {
+          return null;
+        }
+        return SNodeAccessUtil.getProperty(myNode, myProperty);
+      }
+    });
+  }
+
+  protected void doSetValue(String newText) {
+    SNodeAccessUtil.setProperty(myNode, myProperty, newText);
+  }
+
+
+  private boolean isValidText_internal(String text) {
+    if (text != null && text.length() == 0) {
+      text = null;
+    }
+
+    if (myReadOnly) {
+      String propertyValue = getText();
+      return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
+    }
+
+    PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
+    return propertySupport.canSetValue(myNode, myProperty, text);
+  }
+
+  @Hack
+  private boolean isInvalidEmptyText(String text) {
+    return !myAllowEmptyText && (text == null || text.length() == 0);
+  }
+
+  private String fromInternal(String value) {
+    PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
+    return propertySupport.fromInternalValue(value);
+  }
+
+  private String toInternal(String value) {
+    PropertySupport propertySupport = PropertySupport.getPropertySupport(myProperty);
+    return propertySupport.toInternalValue(value);
+  }
+
 }
