@@ -32,6 +32,7 @@ public class DataFlowUtil {
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     checkDataFlow(typeCheckingContext, statementList, false);
   }
+
   @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList, boolean checkReturns) {
     if (statementList == null) {
