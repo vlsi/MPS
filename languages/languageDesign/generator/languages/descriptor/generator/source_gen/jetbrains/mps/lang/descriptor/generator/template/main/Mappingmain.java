@@ -33,7 +33,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.runtime.CreateRootRuleBase;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 
@@ -382,7 +384,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return TemplateUtil.singletonList(tnode1);
     }
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -405,7 +407,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class RootMappingRule1 implements TemplateRootMappingRule {
+  public class RootMappingRule1 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule1() {
     }
     public SNodeReference getRuleNode() {
@@ -432,7 +434,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class CreateRootRule0 implements TemplateCreateRootRule {
+  public class CreateRootRule0 extends CreateRootRuleBase implements TemplateCreateRootRule {
     public CreateRootRule0() {
     }
     public SNodeReference getRuleNode() {

@@ -36,6 +36,8 @@ import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
+import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -666,7 +668,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -690,7 +692,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class WeavingRule0 implements TemplateWeavingRule {
+  public class WeavingRule0 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule0() {
     }
     public SNodeReference getRuleNode() {

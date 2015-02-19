@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
+import jetbrains.mps.generator.runtime.DropRootRuleBase;
 
 @Generated
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -316,7 +318,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -339,7 +341,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class DropRootRule0 implements TemplateDropRootRule {
+  public class DropRootRule0 extends DropRootRuleBase implements TemplateDropRootRule {
     public DropRootRule0() {
     }
     public SNodeReference getRuleNode() {
