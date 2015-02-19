@@ -24,21 +24,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
- * Encapsulates resolution logic for postponed references, i.e. implement algorithms of delayed reference resolution
+ * Encapsulates resolution logic for postponed references, i.e. implement algorithms of delayed reference resolution.
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
+ * @author Artem Tikhomirov
  */
 public abstract class ReferenceInfo {
 
   protected ReferenceInfo() {
-  }
-
-  private SModelReference getTargetModelReference(PostponedReference ref) {
-    final SNode outputSourceNode = ref.getSourceNode();
-    if (outputSourceNode != null && outputSourceNode.getModel() != null) {
-      return outputSourceNode.getModel().getReference();
-    }
-    return ref.getGenerator().getOutputModel().getReference();
   }
 
   @Nullable
@@ -52,11 +45,19 @@ public abstract class ReferenceInfo {
     return rv;
   }
 
+  /**
+   * @param ref reference to replace
+   * @param resolveInfo reference resolution information
+   * @param origin merely an indication where the reference comes from, optional
+   */
   @NotNull
   protected final SReference createDynamicReference(@NotNull PostponedReference ref, @NotNull String resolveInfo, @Nullable DynamicReferenceOrigin origin) {
-    // origin is merely an indication where the reference comes from
-    SModelReference targetModelRef = getTargetModelReference(ref);
-    final DynamicReference dr = new DynamicReference(ref.getLink(), ref.getSourceNode(), targetModelRef, resolveInfo);
+    // null for target model, as we expect resolveInfo to be created according to needs of the reference (i.e. include 'modelName' if needed)
+    // otherwise, attempt to use outputSourceNode's model and fallback to output model or null makes the code hard to understand and unpredictable.
+    // DR cons suggests it's relevant for links to classifiers only, and I don't want to guess here whether it's needed or not, let resolveInfo
+    // source to decide what to include there - it looks resolveInfo always comes as a result of a query to another node (i.e. not manually constructed),
+    // and thus we don't need to introduce anything extra here.
+    final DynamicReference dr = new DynamicReference(ref.getLink(), ref.getSourceNode(), null, resolveInfo);
     dr.setOrigin(origin);
     return dr;
   }

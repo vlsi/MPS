@@ -51,13 +51,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return createStaticReference(ref, myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      // It's not quite obvious whether dynamic references require null or non null - from DR cons it seems non-null
-      // is relevant for links to Classifiers.
-      // null is here as it the way it was prior to refactoring.
-      // FIXME looks like we shall always pass null and let resolveInfo to keep all the relevant information
-      DynamicReference dr = new DynamicReference(ref.getLink(), ref.getSourceNode(), null, myResolveInfoForDynamicResolve);
-      dr.setOrigin(new DynamicReferenceOrigin(getMacroNodeRef(), null));
-      return dr;
+      return createDynamicReference(ref, myResolveInfoForDynamicResolve, new DynamicReferenceOrigin(getMacroNodeRef(), null));
     }
     if (!ref.getLink().isOptional()) {
       return createInvalidReference(ref, myResolver.getDefaultResolveInfo());
