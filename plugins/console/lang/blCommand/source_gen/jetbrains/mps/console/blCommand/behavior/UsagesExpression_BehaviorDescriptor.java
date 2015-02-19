@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class UsagesExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
   public UsagesExpression_BehaviorDescriptor() {
   }
+  public String virtual_getDisplayString_6891027939994892943(SConcept thisConcept) {
+    return UsagesExpression_Behavior.virtual_getDisplayString_6891027939994892943(thisConcept);
+  }
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return UsagesExpression_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }

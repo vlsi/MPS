@@ -11,7 +11,7 @@ public class BLExpression_Behavior {
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "evaluate an expression and print its result";
   }
-  public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
+  public static String virtual_getShortDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
     return "<expression>";
   }
 }

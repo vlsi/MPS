@@ -9,5 +9,6 @@ public interface ConsoleHelpProvider_BehaviorDescriptor {
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept);
   public String virtual_getKind_7006261637493126084(SConcept thisConcept);
   public String virtual_getGroup_6928665434441162387(SConcept thisConcept);
-  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept);
+  public String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept);
+  public String virtual_getDisplayString_6891027939994892943(SConcept thisConcept);
 }

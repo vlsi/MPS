@@ -48,7 +48,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) _context.getParameterNode())), "virtual_getDisplayString_7006261637493126103", new Object[]{});
+            return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) _context.getParameterNode())), "virtual_getShortDisplayString_7006261637493126103", new Object[]{});
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -58,7 +58,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L, "jetbrains.mps.console.base.structure.ConsoleHelpProvider").getDeclarationNode(), _context.getModel()) {
               public String getName(SNode child) {
-                return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) child)), "virtual_getDisplayString_7006261637493126103", new Object[]{});
+                return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) child)), "virtual_getShortDisplayString_7006261637493126103", new Object[]{});
               }
             }) {
               @Override

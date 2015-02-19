@@ -28,4 +28,12 @@ public class QueryExpression_Behavior {
     }
     return result;
   }
+  public static String virtual_getDisplayString_6891027939994892943(SAbstractConcept thisConcept) {
+    String result = BehaviorReflection.invokeSuperStatic(String.class, SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.console.blCommand.structure.ConsoleExpression", "virtual_getShortDisplayString_7006261637493126103", new Object[]{});
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).isEmpty()) {
+      return result;
+    } else {
+      return result + "<parameters>";
+    }
+  }
 }

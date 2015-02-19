@@ -40,6 +40,7 @@
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
@@ -1593,7 +1594,7 @@
                                           <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
                                         </node>
                                         <node concept="2qgKlT" id="60B$8332SL0" role="2OqNvi">
-                                          <ref role="37wK5l" node="64VftqEenfn" resolve="getDisplayString" />
+                                          <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
                                         </node>
                                       </node>
                                       <node concept="2OqwBi" id="60B$8332SL4" role="HW$Y0">
@@ -1655,7 +1656,7 @@
                                                 <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
                                               </node>
                                               <node concept="2qgKlT" id="60B$8335NCH" role="2OqNvi">
-                                                <ref role="37wK5l" node="64VftqEenfn" resolve="getDisplayString" />
+                                                <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
                                               </node>
                                             </node>
                                             <node concept="Xl_RD" id="64VftqEzdqs" role="HW$Y0" />
@@ -2156,8 +2157,8 @@
                                 <node concept="37vLTw" id="1fzYukMhSeN" role="2Oq$k0">
                                   <ref role="3cqZAo" node="60B$833jyKx" resolve="chp" />
                                 </node>
-                                <node concept="2qgKlT" id="1fzYukMhSeO" role="2OqNvi">
-                                  <ref role="37wK5l" node="64VftqEenfn" resolve="getDisplayString" />
+                                <node concept="2qgKlT" id="25MaZwhh22l" role="2OqNvi">
+                                  <ref role="37wK5l" node="5YxQmqOFZEf" resolve="getDisplayString" />
                                 </node>
                               </node>
                               <node concept="Xl_RD" id="1fzYukMhSeP" role="3uHU7w">
@@ -2390,7 +2391,7 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="true" />
       <property role="2Ki8OM" value="true" />
-      <property role="TrG5h" value="getDisplayString" />
+      <property role="TrG5h" value="getShortDisplayString" />
       <node concept="3Tm1VV" id="64VftqEenfo" role="1B3o_S" />
       <node concept="17QB3L" id="64VftqEenfF" role="3clF45" />
       <node concept="3clFbS" id="64VftqEenfq" role="3clF47">
@@ -2437,6 +2438,21 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="5YxQmqOFZEf" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="true" />
+      <property role="2Ki8OM" value="true" />
+      <property role="TrG5h" value="getDisplayString" />
+      <node concept="3Tm1VV" id="5YxQmqOFZEg" role="1B3o_S" />
+      <node concept="17QB3L" id="5YxQmqOFZEh" role="3clF45" />
+      <node concept="3clFbS" id="5YxQmqOFZEi" role="3clF47">
+        <node concept="3cpWs6" id="5YxQmqOG04_" role="3cqZAp">
+          <node concept="BsUDl" id="5YxQmqOG06Y" role="3cqZAk">
+            <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
           </node>
         </node>
       </node>
