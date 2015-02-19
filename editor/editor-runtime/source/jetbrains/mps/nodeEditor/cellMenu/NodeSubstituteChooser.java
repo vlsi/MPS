@@ -249,78 +249,75 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       matchingActions = getMatchingActions(trimPattern, false);
     }
     try {
-      if (myIsSmart) {
-        sortSmartActions(matchingActions);
-      } else {
-        Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
-          private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<SubstituteAction, Integer>();
-          private Map<SubstituteAction, Integer> myRatesMap = new HashMap<SubstituteAction, Integer>();
-          private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<SubstituteAction, String>();
-          private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
-          private Map<SubstituteAction, Boolean> myStartsWithMap = new HashMap<SubstituteAction, Boolean>();
-          private Map<SubstituteAction, Boolean> myStartsWithLowerCaseMap = new HashMap<SubstituteAction, Boolean>();
+      Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
+        private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<SubstituteAction, Integer>();
+        private Map<SubstituteAction, Integer> myRatesMap = new HashMap<SubstituteAction, Integer>();
+        private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<SubstituteAction, String>();
+        private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
+        private Map<SubstituteAction, Boolean> myStartsWithMap = new HashMap<SubstituteAction, Boolean>();
+        private Map<SubstituteAction, Boolean> myStartsWithLowerCaseMap = new HashMap<SubstituteAction, Boolean>();
 
-          @Override
-          protected int getLocalSortPriority(SubstituteAction action) {
-            Integer priority = myLocalSortPrioritiesMap.get(action);
-            if (priority == null) {
-              priority = super.getLocalSortPriority(action);
-              myLocalSortPrioritiesMap.put(action, priority);
-            }
-            return priority;
+        @Override
+        protected int getLocalSortPriority(SubstituteAction action) {
+          Integer priority = myLocalSortPrioritiesMap.get(action);
+          if (priority == null) {
+            priority = super.getLocalSortPriority(action);
+            myLocalSortPrioritiesMap.put(action, priority);
           }
+          return priority;
+        }
 
-          @Override
-          protected String getVisibleMatchingText(SubstituteAction action) {
-            String visibleText = myVisibleMatchingTextsMap.get(action);
-            if (visibleText == null) {
-              visibleText = super.getVisibleMatchingText(action);
-              myVisibleMatchingTextsMap.put(action, visibleText);
-            }
-            return visibleText;
+        @Override
+        protected String getVisibleMatchingText(SubstituteAction action) {
+          String visibleText = myVisibleMatchingTextsMap.get(action);
+          if (visibleText == null) {
+            visibleText = super.getVisibleMatchingText(action);
+            myVisibleMatchingTextsMap.put(action, visibleText);
           }
+          return visibleText;
+        }
 
-          @Override
-          protected boolean canSubstituteStrictly(SubstituteAction action) {
-            Boolean canSubstituteStrictly = myCanSubstituteStrictlyMap.get(action);
-            if (canSubstituteStrictly == null) {
-              canSubstituteStrictly = super.canSubstituteStrictly(action);
-              myCanSubstituteStrictlyMap.put(action, canSubstituteStrictly);
-            }
-            return canSubstituteStrictly;
+        @Override
+        protected boolean canSubstituteStrictly(SubstituteAction action) {
+          Boolean canSubstituteStrictly = myCanSubstituteStrictlyMap.get(action);
+          if (canSubstituteStrictly == null) {
+            canSubstituteStrictly = super.canSubstituteStrictly(action);
+            myCanSubstituteStrictlyMap.put(action, canSubstituteStrictly);
           }
+          return canSubstituteStrictly;
+        }
 
-          @Override
-          protected int getRate(SubstituteAction action) {
-            Integer rate = myRatesMap.get(action);
-            if (rate == null) {
-              rate = super.getRate(action);
-              myRatesMap.put(action, rate);
-            }
-            return rate;
+        @Override
+        protected int getRate(SubstituteAction action) {
+          Integer rate = myRatesMap.get(action);
+          if (rate == null) {
+            rate = super.getRate(action);
+            myRatesMap.put(action, rate);
           }
+          return rate;
+        }
 
-          @Override
-          protected boolean startsWith(SubstituteAction action) {
-            Boolean startsWith = myStartsWithMap.get(action);
-            if (startsWith == null) {
-              startsWith = super.startsWith(action);
-              myStartsWithMap.put(action, startsWith);
-            }
-            return startsWith;
+        @Override
+        protected boolean startsWith(SubstituteAction action) {
+          Boolean startsWith = myStartsWithMap.get(action);
+          if (startsWith == null) {
+            startsWith = super.startsWith(action);
+            myStartsWithMap.put(action, startsWith);
           }
+          return startsWith;
+        }
 
-          @Override
-          protected boolean startsWithLowerCase(SubstituteAction action) {
-            Boolean startsWithLowerCase = myStartsWithLowerCaseMap.get(action);
-            if (startsWithLowerCase == null) {
-              startsWithLowerCase = super.startsWithLowerCase(action);
-              myStartsWithLowerCaseMap.put(action, startsWithLowerCase);
-            }
-            return startsWithLowerCase;
+        @Override
+        protected boolean startsWithLowerCase(SubstituteAction action) {
+          Boolean startsWithLowerCase = myStartsWithLowerCaseMap.get(action);
+          if (startsWithLowerCase == null) {
+            startsWithLowerCase = super.startsWithLowerCase(action);
+            myStartsWithLowerCaseMap.put(action, startsWithLowerCase);
           }
-        });
-      }
+          return startsWithLowerCase;
+        }
+      });
+
     } catch (Exception e) {
       LOG.error(e, e);
     }
@@ -349,10 +346,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     getPopupWindow().updateListDimension(getCellRenderer().getMaxDimension(mySubstituteActions));
     getPopupWindow().initListModel();
-  }
-
-  private void sortSmartActions(List<SubstituteAction> matchingActions) {
-    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
   }
 
   @Override

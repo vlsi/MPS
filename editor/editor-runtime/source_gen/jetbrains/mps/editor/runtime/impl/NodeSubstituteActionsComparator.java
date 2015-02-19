@@ -9,8 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 
+@Deprecated
 public class NodeSubstituteActionsComparator implements Comparator<SubstituteAction> {
   private SNode myContainingRoot;
+  @Deprecated
   public NodeSubstituteActionsComparator(SNode containingRoot) {
     myContainingRoot = containingRoot;
   }
