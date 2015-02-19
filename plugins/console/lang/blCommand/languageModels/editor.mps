@@ -485,6 +485,9 @@
             <ref role="Ul1FP" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
           </node>
         </node>
+        <node concept="VPRnO" id="5YxQmqOBk6e" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3EZMnI" id="3J6h25QFO5_" role="3EZMnx">
         <node concept="VPM3Z" id="3J6h25QFO5B" role="3F10Kt">
@@ -787,6 +790,19 @@
                   <ref role="3cqZAo" node="PtBTHLWMQp" resolve="blCommand" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="5YxQmqOF2S5" role="1h_SK8">
+      <property role="1hAc7j" value="backspace_action_id" />
+      <node concept="1hAIg9" id="5YxQmqOF2S6" role="1hA7z_">
+        <node concept="3clFbS" id="5YxQmqOF2S7" role="2VODD2">
+          <node concept="3clFbF" id="5YxQmqOF2UV" role="3cqZAp">
+            <node concept="2OqwBi" id="5YxQmqOF2Xs" role="3clFbG">
+              <node concept="0IXxy" id="5YxQmqOF2UU" role="2Oq$k0" />
+              <node concept="1PgB_6" id="5YxQmqOF3dx" role="2OqNvi" />
             </node>
           </node>
         </node>
