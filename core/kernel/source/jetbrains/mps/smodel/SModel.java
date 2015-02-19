@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -39,21 +37,16 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -63,8 +56,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -613,9 +604,7 @@ public class SModel implements SModelData {
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange_new(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
@@ -650,9 +639,7 @@ public class SModel implements SModelData {
   //devkit
 
   public void addLanguage(SLanguage id, int version) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange_new(myModelDescriptor);
-    }
+    assertLegalChange();
 
     Integer existingVersion = myLanguagesIds.get(id);
     if (existingVersion != null) {
@@ -853,7 +840,9 @@ public class SModel implements SModelData {
 
   private void assertLegalChange() {
     if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(this);
+      // FIXME in fact, all modification methods are accessed through SModelInternal iface, and SModelDescriptorStub shall
+      // check for legal write instead of SModel itself.
+      ModelChange.assertLegalChange_new(myModelDescriptor);
     }
   }
 

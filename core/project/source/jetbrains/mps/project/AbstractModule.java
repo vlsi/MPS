@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
@@ -115,13 +114,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //----reference
   @Override
   public SModuleId getModuleId() {
-    assertCanRead();
+//    assertCanRead(); @see getModuleReference()
     return getModuleReference().getModuleId();
   }
 
   @Override
   public String getModuleName() {
-    assertCanRead();
+//    assertCanRead(); @see getModuleReference()
     return getModuleReference().getModuleName();
   }
 
@@ -229,7 +228,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @NotNull
   //module reference is immutable, so we cn return original
   public SModuleReference getModuleReference() {
-    assertCanRead();
+//    assertCanRead(); ClassLoaderManager needs module reference. Do we need CLM to obtain read lock?
     return myModuleReference;
   }
 
@@ -531,6 +530,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<ModelRoot> getModelRoots() {
+    // We check read lock here because mySModelRoots is updated inside write.
     assertCanRead();
     return Collections.unmodifiableCollection(mySModelRoots);
   }
@@ -572,7 +572,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   protected void updateFacets() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) {
@@ -621,13 +621,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public boolean isReadOnly() {
-    assertCanRead();
+//    assertCanRead(); getModuleSourceDir() doesn't require read, why isPackaged() does?
     return isPackaged();
   }
 
   @Override
   public boolean isPackaged() {
-    assertCanRead();
+//    assertCanRead(); getModuleSourceDir() doesn't require read, why isPackaged() does?
     return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
@@ -643,7 +643,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public IFile getDescriptorFile() {
-    assertCanRead();
+//    assertCanRead();   if getModuleSourceDir doesn't require read, why getDescriptorFile does?
     return myDescriptorFile;
   }
 
@@ -760,7 +760,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   private void doUpdateModelsSet() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     Set<ModelRoot> toRemove = new HashSet<ModelRoot>(mySModelRoots);
     Set<ModelRoot> toUpdate = new HashSet<ModelRoot>(mySModelRoots);

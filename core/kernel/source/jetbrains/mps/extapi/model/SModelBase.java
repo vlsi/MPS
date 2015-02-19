@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -92,7 +91,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   public void detach() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     synchronized (REPO_LOCK) {
       if (getLoadingState() != ModelLoadingState.NOT_LOADED) {
         getSModelInternal().detachRoots();
@@ -133,32 +132,32 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   @NotNull
   public SModelReference getReference() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference;
   }
 
   @NotNull
   @Override
   public SModelId getModelId() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelId();
   }
 
   @Override
   public String getModelName() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelName();
   }
 
   @Override
   @NotNull
   public DataSource getSource() {
-    assertCanRead();
+//    assertCanRead(); Is source access truly read operation over model?
     return mySource;
   }
 
   public void setModule(SModule module) {
-    assertCanRead();
+    assertCanRead(); // FIXME why not write?
     myModule = module;
   }
 
@@ -168,7 +167,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   @Nullable
   public SModule getModule() {
-    assertCanRead();
+    // FIXME provided setModule() requires read lock, another read lock here doesn't prevent from
+    // myModule being modified in a parallel read, and the reason to have read check here eludes from me.
+    // Code like SModuleOperations.getOutputRoot(SModel) fails with assert enabled, and
+    // it's not obvious whether it's the client code to fix (to obtain read lock) or
+    // this method shall not check for read access at all.
+//    assertCanRead();
     return myModule;
   }
 
@@ -201,7 +205,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public boolean isReadOnly() {
-    assertCanRead();
+//    assertCanRead(); no apparent reason why we shall demand read lock here. Few subclasses, that override the method, do not check access at all.
     return true;
   }
 
@@ -372,21 +376,19 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   protected void assertCanRead() {
-//    if (myRepository == null) return;
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      myRepository.getModelAccess().checkReadAccess();
-//    }
+    final SRepository repo = myRepository;
+    if (repo != null) {
+      repo.getModelAccess().checkReadAccess();
+    }
   }
 
   protected void assertCanChange() {
-//    if (myRepository == null) return;
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      myRepository.getModelAccess().checkWriteAccess();
+    final SRepository repo = myRepository;
+    if (repo != null) {
+      repo.getModelAccess().checkWriteAccess();
+    }
 //      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
-//    }
   }
 }

@@ -105,7 +105,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void reloadFromSource() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     if (getSource().getTimestamp() == -1) {
       SModuleBase module = (SModuleBase) getModule();
@@ -122,7 +122,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void reloadFromDiskSafe() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     if (isChanged()) {
       resolveDiskConflict();
     } else {
