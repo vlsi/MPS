@@ -96,8 +96,7 @@ public class PatternUtil {
 
   public static List<Integer> getIndexes(@NotNull String pattern, boolean useDots, @NotNull String matchingText) {
     List<Integer> indexList = new ArrayList<Integer>();
-    int curIndex = 0;
-    if (addIndexes(matchingText, indexList, curIndex, pattern)) {
+    if (addIndexes(matchingText, indexList, pattern)) {
       return indexList;
     } else {
       indexList = new ArrayList<Integer>();
@@ -106,24 +105,24 @@ public class PatternUtil {
     for (int i = 0; i < pattern.length(); i++) {
       char c = pattern.charAt(i);
       if (c == '*' || c == '?') {
-        if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
-        curIndex += nextSubstring.length();
+        if (!addIndexes(matchingText, indexList, nextSubstring.toString())) return new ArrayList<Integer>();
         nextSubstring = new StringBuilder();
       } else if (useDots && c == '.' || c == '@' || Character.isUpperCase(c)) {
-        if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+        if (!addIndexes(matchingText, indexList, nextSubstring.toString())) return new ArrayList<Integer>();
         String upperCase = new String(new char[]{c});
         String spaceAndLowerCase = " " + Character.toLowerCase(c);
-        if (!addIndexes(matchingText, indexList, curIndex, upperCase) && !addIndexes(matchingText, indexList, curIndex, spaceAndLowerCase)) return new ArrayList<Integer>();
+        if (!addIndexes(matchingText, indexList, upperCase) && !addIndexes(matchingText, indexList, spaceAndLowerCase)) return new ArrayList<Integer>();
         nextSubstring = new StringBuilder();
       } else {
         nextSubstring.append(c);
       }
     }
-    if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+    if (!addIndexes(matchingText, indexList, nextSubstring.toString())) return new ArrayList<Integer>();
     return indexList;
   }
 
-  private static boolean addIndexes(String matchingText, List<Integer> indexList, int curIndex, String nextSubstring) {
+  private static boolean addIndexes(String matchingText, List<Integer> indexList, String nextSubstring) {
+    int curIndex = indexList.isEmpty() ? 0 : indexList.get(indexList.size() - 1) + 1;
     int indexOf = matchingText.indexOf(nextSubstring, curIndex);
     if (indexOf == -1) {
       return false;
