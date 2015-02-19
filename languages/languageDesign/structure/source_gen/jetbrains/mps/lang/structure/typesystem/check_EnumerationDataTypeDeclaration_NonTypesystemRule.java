@@ -7,44 +7,78 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_EnumerationDataTypeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumerationDataTypeDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (eq_t6q6ek_a0a0a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation") && ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null;
+      }
+    })) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(enumerationDataTypeDeclaration, "Member identifiers could be derived from internal values, since they are specified for all enumeration members", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809585273479", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.EnableDeriveFromInternalValues_QuickFix", false);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
+    }
+
     ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode member) {
-        final String memberValidId = NameUtil.toValidIdentifier(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(member));
-        if (ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
+        if (neq_t6q6ek_a0a0a0a0a0a2a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation") && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_t6q6ek_a0a0a0a0a0a1a0a0a0a0a1(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(member));
+            return eq_t6q6ek_a0a0a0a0a0a0a0a0a0a0c0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")));
           }
         }).isNotEmpty()) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Duplicate value of an identifier", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "7805928457373172301", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(member, "Duplicate value of a presentation value", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809584866838", null, errorTarget);
+          }
+        }
+
+        if (neq_t6q6ek_a0a0c0a0a0a0c0b(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value") && SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return eq_t6q6ek_a0a0a0a0a0a0c0a0a0a0c0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")));
+          }
+        }).isNotEmpty()) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Duplicate value of an internal value", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809584872588", null, errorTarget);
+          }
+        }
+
+        final String memberValidId = EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(member);
+        if (memberValidId == null) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "An identifier must not be null", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809585113262", null, errorTarget);
           }
         } else {
           if (ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_t6q6ek_a0a0a0a0a0a0a0b0a0a0a0a0b(NameUtil.toValidIdentifier(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")))), memberValidId);
+              return eq_t6q6ek_a0a0a0a0a0a0a0f0a0a0a0c0b(EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
             }
           }).isNotEmpty()) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Duplicate normalized value of an identifier - " + memberValidId + ". You may want to use a different strategy for 'member identifier'", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809583290065", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Cannot derive unique member identifier from the presentation value. Duplicate derived value of an identifier - " + memberValidId + ". You may consider using a different strategy for 'member identifier'", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809583290065", null, errorTarget);
             }
           }
         }
@@ -63,10 +97,22 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a1a0a0a0a0a1(Object a, Object b) {
+  private static boolean eq_t6q6ek_a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0b0a0a0a0a0b(Object a, Object b) {
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0a0a0a0c0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean neq_t6q6ek_a0a0a0a0a0a2a1(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean neq_t6q6ek_a0a0c0a0a0a0c0b(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0c0a0a0a0c0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0f0a0a0a0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
