@@ -25,7 +25,11 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   public check_EnumerationDataTypeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumerationDataTypeDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (eq_t6q6ek_a0a0a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation") && ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).all(new IWhereFilter<SNode>() {
+    final boolean deriveFromExternal = eq_t6q6ek_a0a0a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation");
+    final boolean deriveFromInternal = eq_t6q6ek_a0a1a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value");
+
+    // Suggest using internal values, if they are present in all members 
+    if (deriveFromExternal && ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null;
       }
@@ -42,9 +46,10 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
 
     ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode member) {
-        if (neq_t6q6ek_a0a0a0a0a0a2a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation") && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
+        // Warn about duplication in presentation 
+        if (!(deriveFromExternal) && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_t6q6ek_a0a0a0a0a0a0a0a0a0a0c0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")));
+            return eq_t6q6ek_a0a0a0a0a0a0b0a0a0a0g0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")));
           }
         }).isNotEmpty()) {
           {
@@ -53,9 +58,10 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
           }
         }
 
-        if (neq_t6q6ek_a0a0c0a0a0a0c0b(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value") && SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
+        // Report duplicate values 
+        if (!(deriveFromInternal) && SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_t6q6ek_a0a0a0a0a0a0c0a0a0a0c0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")));
+            return eq_t6q6ek_a0a0a0a0a0a0e0a0a0a0g0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")));
           }
         }).isNotEmpty()) {
           {
@@ -64,21 +70,23 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
           }
         }
 
+        // Report duplicate derived identifiers, be it presentation, internal value or java identifiers 
         final String memberValidId = EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(member);
         if (memberValidId == null) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "An identifier must not be null", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809585113262", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "A derived identifier is null", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809585113262", null, errorTarget);
           }
         } else {
           if (ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_t6q6ek_a0a0a0a0a0a0a0f0a0a0a0c0b(EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
+              return eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
             }
           }).isNotEmpty()) {
+            String msg = (deriveFromExternal ? "presentation value" : (deriveFromInternal ? "internal value" : "java identifier"));
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Cannot derive unique member identifier from the presentation value. Duplicate derived value of an identifier - " + memberValidId + ". You may consider using a different strategy for 'member identifier'", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809583290065", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Cannot derive unique member identifier from the " + msg + ". Duplicate derived value of an identifier - " + memberValidId + ". You may consider using a different strategy for 'member identifier'", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1447401809583290065", null, errorTarget);
             }
           }
         }
@@ -100,19 +108,16 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   private static boolean eq_t6q6ek_a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0a0a0a0c0b(Object a, Object b) {
+  private static boolean eq_t6q6ek_a0a1a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_t6q6ek_a0a0a0a0a0a2a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_t6q6ek_a0a0c0a0a0a0c0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0c0a0a0a0c0b(Object a, Object b) {
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0b0a0a0a0g0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0f0a0a0a0c0b(Object a, Object b) {
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0e0a0a0a0g0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

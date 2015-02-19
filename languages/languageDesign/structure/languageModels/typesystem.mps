@@ -77,7 +77,6 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -2725,6 +2724,52 @@
   <node concept="18kY7G" id="6LkeDcbPyMM">
     <property role="TrG5h" value="check_EnumerationDataTypeDeclaration" />
     <node concept="3clFbS" id="6LkeDcbPyMN" role="18ibNy">
+      <node concept="3cpWs8" id="3KCTwZFhPAw" role="3cqZAp">
+        <node concept="3cpWsn" id="3KCTwZFhPAx" role="3cpWs9">
+          <property role="TrG5h" value="deriveFromExternal" />
+          <node concept="10P_77" id="3KCTwZFhPAr" role="1tU5fm" />
+          <node concept="17R0WA" id="3KCTwZFhPAy" role="33vP2m">
+            <node concept="2OqwBi" id="3KCTwZFhPAz" role="3uHU7B">
+              <node concept="1YBJjd" id="3KCTwZFhPA$" role="2Oq$k0">
+                <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
+              </node>
+              <node concept="3TrcHB" id="3KCTwZFhPA_" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:hrlZH32" resolve="memberIdentifierPolicy" />
+              </node>
+            </node>
+            <node concept="3f7Wdw" id="3KCTwZFhPAA" role="3uHU7w">
+              <ref role="3f7u_j" to="tpce:hrlYF46" />
+              <ref role="3f7vo2" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3KCTwZFhQdE" role="3cqZAp">
+        <node concept="3cpWsn" id="3KCTwZFhQdF" role="3cpWs9">
+          <property role="TrG5h" value="deriveFromInternal" />
+          <node concept="10P_77" id="3KCTwZFhQdG" role="1tU5fm" />
+          <node concept="17R0WA" id="3KCTwZFhQdH" role="33vP2m">
+            <node concept="2OqwBi" id="3KCTwZFhQdI" role="3uHU7B">
+              <node concept="1YBJjd" id="3KCTwZFhQdJ" role="2Oq$k0">
+                <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
+              </node>
+              <node concept="3TrcHB" id="3KCTwZFhQdK" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:hrlZH32" resolve="memberIdentifierPolicy" />
+              </node>
+            </node>
+            <node concept="3f7Wdw" id="3KCTwZFhQdL" role="3uHU7w">
+              <ref role="3f7vo2" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
+              <ref role="3f7u_j" to="tpce:hrlZj6Q" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3KCTwZFhQk$" role="3cqZAp" />
+      <node concept="3SKdUt" id="3KCTwZFi5V0" role="3cqZAp">
+        <node concept="3SKdUq" id="3KCTwZFi5XJ" role="3SKWNk">
+          <property role="3SKdUp" value="Suggest using internal values, if they are present in all members" />
+        </node>
+      </node>
       <node concept="3clFbJ" id="1gmd4rN_x6s" role="3cqZAp">
         <node concept="3clFbS" id="1gmd4rN_x6u" role="3clFbx">
           <node concept="a7r0C" id="1gmd4rN_BE7" role="3cqZAp">
@@ -2773,19 +2818,8 @@
               </node>
             </node>
           </node>
-          <node concept="17R0WA" id="1gmd4rN_Bhk" role="3uHU7B">
-            <node concept="2OqwBi" id="1gmd4rN_Bab" role="3uHU7B">
-              <node concept="1YBJjd" id="1gmd4rN_Bac" role="2Oq$k0">
-                <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
-              </node>
-              <node concept="3TrcHB" id="1gmd4rN_Bad" role="2OqNvi">
-                <ref role="3TsBF5" to="tpce:hrlZH32" resolve="memberIdentifierPolicy" />
-              </node>
-            </node>
-            <node concept="3f7Wdw" id="1gmd4rN_Bae" role="3uHU7w">
-              <ref role="3f7u_j" to="tpce:hrlYF46" />
-              <ref role="3f7vo2" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
-            </node>
+          <node concept="37vLTw" id="3KCTwZFhPAB" role="3uHU7B">
+            <ref role="3cqZAo" node="3KCTwZFhPAx" resolve="deriveFromExternal" />
           </node>
         </node>
       </node>
@@ -2803,6 +2837,11 @@
           <node concept="2es0OD" id="6LkeDcbPD7U" role="2OqNvi">
             <node concept="1bVj0M" id="6LkeDcbPD7W" role="23t8la">
               <node concept="3clFbS" id="6LkeDcbPD7X" role="1bW5cS">
+                <node concept="3SKdUt" id="3KCTwZFi6kk" role="3cqZAp">
+                  <node concept="3SKdUq" id="3KCTwZFi6JB" role="3SKWNk">
+                    <property role="3SKdUp" value="Warn about duplication in presentation" />
+                  </node>
+                </node>
                 <node concept="3clFbJ" id="6LkeDcbPML9" role="3cqZAp">
                   <node concept="3clFbS" id="6LkeDcbPMLa" role="3clFbx">
                     <node concept="a7r0C" id="1gmd4rN$4om" role="3cqZAp">
@@ -2859,23 +2898,19 @@
                       </node>
                       <node concept="3GX2aA" id="6LkeDcbPO09" role="2OqNvi" />
                     </node>
-                    <node concept="17QLQc" id="1gmd4rN$IzE" role="3uHU7B">
-                      <node concept="2OqwBi" id="1gmd4rNzZPs" role="3uHU7B">
-                        <node concept="1YBJjd" id="1gmd4rNzZur" role="2Oq$k0">
-                          <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
-                        </node>
-                        <node concept="3TrcHB" id="1gmd4rN$0mh" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpce:hrlZH32" resolve="memberIdentifierPolicy" />
-                        </node>
-                      </node>
-                      <node concept="3f7Wdw" id="1gmd4rN$1uD" role="3uHU7w">
-                        <ref role="3f7vo2" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
-                        <ref role="3f7u_j" to="tpce:hrlYF46" />
+                    <node concept="3fqX7Q" id="3KCTwZFhSK2" role="3uHU7B">
+                      <node concept="37vLTw" id="3KCTwZFhTWy" role="3fr31v">
+                        <ref role="3cqZAo" node="3KCTwZFhPAx" resolve="deriveFromExternal" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbH" id="1gmd4rN$sZE" role="3cqZAp" />
+                <node concept="3SKdUt" id="3KCTwZFi9VA" role="3cqZAp">
+                  <node concept="3SKdUq" id="3KCTwZFiam5" role="3SKWNk">
+                    <property role="3SKdUp" value="Report duplicate values" />
+                  </node>
+                </node>
                 <node concept="3clFbJ" id="1gmd4rN$5M8" role="3cqZAp">
                   <node concept="3clFbS" id="1gmd4rN$5M9" role="3clFbx">
                     <node concept="2MkqsV" id="1gmd4rN$5Mc" role="3cqZAp">
@@ -2900,18 +2935,9 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="17QLQc" id="1gmd4rN$GVR" role="3uHU7B">
-                        <node concept="2OqwBi" id="1gmd4rN$G6d" role="3uHU7B">
-                          <node concept="1YBJjd" id="1gmd4rN$G6e" role="2Oq$k0">
-                            <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
-                          </node>
-                          <node concept="3TrcHB" id="1gmd4rN$G6f" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpce:hrlZH32" resolve="memberIdentifierPolicy" />
-                          </node>
-                        </node>
-                        <node concept="3f7Wdw" id="1gmd4rN$G6c" role="3uHU7w">
-                          <ref role="3f7vo2" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
-                          <ref role="3f7u_j" to="tpce:hrlZj6Q" />
+                      <node concept="3fqX7Q" id="3KCTwZFhUK3" role="3uHU7B">
+                        <node concept="37vLTw" id="3KCTwZFhV9I" role="3fr31v">
+                          <ref role="3cqZAo" node="3KCTwZFhQdF" resolve="deriveFromInternal" />
                         </node>
                       </node>
                     </node>
@@ -2962,6 +2988,11 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="1gmd4rN$svu" role="3cqZAp" />
+                <node concept="3SKdUt" id="3KCTwZFiekC" role="3cqZAp">
+                  <node concept="3SKdUq" id="3KCTwZFieJS" role="3SKWNk">
+                    <property role="3SKdUp" value="Report duplicate derived identifiers, be it presentation, internal value or java identifiers" />
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="6LkeDcbQ2m8" role="3cqZAp">
                   <node concept="3cpWsn" id="6LkeDcbQ2m9" role="3cpWs9">
                     <property role="TrG5h" value="memberValidId" />
@@ -2985,7 +3016,7 @@
                         <ref role="3cqZAo" node="6LkeDcbPD7Y" resolve="member" />
                       </node>
                       <node concept="Xl_RD" id="1gmd4rN_0V5" role="2MkJ7o">
-                        <property role="Xl_RC" value="An identifier must not be null" />
+                        <property role="Xl_RC" value="A derived identifier is null" />
                       </node>
                     </node>
                   </node>
@@ -2999,6 +3030,31 @@
                     <node concept="3clFbS" id="1gmd4rN_3vd" role="9aQI4">
                       <node concept="3clFbJ" id="1gmd4rNu3rf" role="3cqZAp">
                         <node concept="3clFbS" id="1gmd4rNu3rg" role="3clFbx">
+                          <node concept="3cpWs8" id="3KCTwZFhNHT" role="3cqZAp">
+                            <node concept="3cpWsn" id="3KCTwZFhNHW" role="3cpWs9">
+                              <property role="TrG5h" value="msg" />
+                              <node concept="17QB3L" id="3KCTwZFhNHR" role="1tU5fm" />
+                              <node concept="3K4zz7" id="3KCTwZFhOu7" role="33vP2m">
+                                <node concept="3K4zz7" id="3KCTwZFhYEO" role="3K4GZi">
+                                  <node concept="Xl_RD" id="3KCTwZFi1jm" role="3K4GZi">
+                                    <property role="Xl_RC" value="java identifier" />
+                                  </node>
+                                  <node concept="37vLTw" id="3KCTwZFhZ3A" role="3K4Cdx">
+                                    <ref role="3cqZAo" node="3KCTwZFhQdF" resolve="deriveFromInternal" />
+                                  </node>
+                                  <node concept="Xl_RD" id="3KCTwZFhZrV" role="3K4E3e">
+                                    <property role="Xl_RC" value="internal value" />
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="3KCTwZFhVzN" role="3K4Cdx">
+                                  <ref role="3cqZAo" node="3KCTwZFhPAx" resolve="deriveFromExternal" />
+                                </node>
+                                <node concept="Xl_RD" id="3KCTwZFhVWW" role="3K4E3e">
+                                  <property role="Xl_RC" value="presentation value" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="2MkqsV" id="1gmd4rNu3rh" role="3cqZAp">
                             <node concept="37vLTw" id="1gmd4rNu3ri" role="2OEOjV">
                               <ref role="3cqZAo" node="6LkeDcbPD7Y" resolve="member" />
@@ -3008,8 +3064,18 @@
                                 <property role="Xl_RC" value=". You may consider using a different strategy for 'member identifier'" />
                               </node>
                               <node concept="3cpWs3" id="1gmd4rNutqM" role="3uHU7B">
-                                <node concept="Xl_RD" id="1gmd4rNu3rj" role="3uHU7B">
-                                  <property role="Xl_RC" value="Cannot derive unique member identifier from the presentation value. Duplicate derived value of an identifier - " />
+                                <node concept="3cpWs3" id="3KCTwZFi2d7" role="3uHU7B">
+                                  <node concept="3cpWs3" id="3KCTwZFi37M" role="3uHU7B">
+                                    <node concept="Xl_RD" id="3KCTwZFi3qx" role="3uHU7B">
+                                      <property role="Xl_RC" value="Cannot derive unique member identifier from the " />
+                                    </node>
+                                    <node concept="37vLTw" id="3KCTwZFi2vG" role="3uHU7w">
+                                      <ref role="3cqZAo" node="3KCTwZFhNHW" resolve="msg" />
+                                    </node>
+                                  </node>
+                                  <node concept="Xl_RD" id="1gmd4rNu3rj" role="3uHU7w">
+                                    <property role="Xl_RC" value=". Duplicate derived value of an identifier - " />
+                                  </node>
                                 </node>
                                 <node concept="37vLTw" id="1gmd4rNutA7" role="3uHU7w">
                                   <ref role="3cqZAo" node="6LkeDcbQ2m9" resolve="memberValidId" />
