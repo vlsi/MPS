@@ -179,7 +179,8 @@ public class PsiChangeProcessor extends ReloadParticipant {
 
   /*package*/ void propertyChanged(@NotNull PsiTreeChangeEvent event) {
     if (!(event.getElement() instanceof PsiFileSystemItem
-      && event.getPropertyName().equals(PsiTreeChangeEvent.PROP_FILE_NAME))) {
+      && (PsiTreeChangeEvent.PROP_FILE_NAME.equals(event.getPropertyName())
+      || PsiTreeChangeEvent.PROP_DIRECTORY_NAME.equals(event.getPropertyName()))) ) {
       return;
     }
 

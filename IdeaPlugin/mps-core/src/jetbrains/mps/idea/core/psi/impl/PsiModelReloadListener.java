@@ -46,8 +46,18 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
   }
 
   @Override
-  public void modelReplaced(SModel sModel) {
-    notifyPsi(sModel);
+  public void modelReplaced(final SModel sModel) {
+    packRunnable(new Runnable() {
+      @Override
+      public void run() {
+        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
+        if (psiModel == null) {
+          return;
+        }
+        psiModel.reloadAll();
+        myPsiProvider.notifyPsiChanged(psiModel, null);
+      }
+    });
   }
 
   @Override
@@ -93,27 +103,16 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
 
   @Override
   public void modelRenamed(SModule sModule, final SModel sModel, final SModelReference sModelReference) {
-    final Application app = ApplicationManager.getApplication();
-    app.invokeLater(new Runnable() {
+    packRunnable(new Runnable() {
       @Override
       public void run() {
-        app.runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
-                if (psiModel == null) {
-                  return;
-                }
-                String oldName = sModelReference.getModelName();
-                String newName = sModel.getModelName();
-                myPsiProvider.notifyModelRenamed(psiModel, oldName, newName);
-              }
-            });
-          }
-        });
+        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
+        if (psiModel == null) {
+          return;
+        }
+        String oldName = sModelReference.getModelName();
+        String newName = sModel.getModelName();
+        myPsiProvider.notifyModelRenamed(psiModel, oldName, newName);
       }
     });
   }
@@ -143,7 +142,7 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
 
   }
 
-  private void notifyPsi(final SModel sModel) {
+  private void packRunnable(final Runnable runnable) {
     // the following mess is explained by this:
     // 1. we're most likely in MPS reload session, which calls MPS write action which is in intellij's read action
     // 2. to do notify psi change we need intellij write action
@@ -157,17 +156,7 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
         app.runWriteAction(new Runnable() {
           @Override
           public void run() {
-            ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
-                if (psiModel == null) {
-                  return;
-                }
-                psiModel.reloadAll();
-                myPsiProvider.notifyPsiChanged(psiModel, null);
-              }
-            });
+            ProjectHelper.getModelAccess(myProject).runReadAction(runnable);
           }
         });
       }
