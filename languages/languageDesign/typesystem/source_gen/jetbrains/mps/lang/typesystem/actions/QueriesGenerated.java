@@ -118,7 +118,7 @@ public class QueriesGenerated {
           List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").getDeclarationNode(), _context.getModel());
           return ListSequence.fromList(subconcepts).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(SNodeOperations.asNode(it), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").getDeclarationNode());
+              return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.asNode(it));
             }
           }).toListSequence();
         }

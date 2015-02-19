@@ -248,6 +248,7 @@ public class AbstractConceptDeclaration_Behavior {
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
     return !(SNodeOperations.asSConcept(thisNode).isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(thisNode), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
+  @Deprecated
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept) {
     if (AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(thisNode)) {
       return AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(thisNode, expectedConcept);
