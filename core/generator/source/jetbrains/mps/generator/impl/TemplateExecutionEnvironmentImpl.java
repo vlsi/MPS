@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
@@ -92,7 +90,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // I use getInstanceConcept because it doesn't return null for unknown concepts
     // Another alternative is to check getContainingConcept for null and instantiate BaseConcept then
     SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
-    return generator.getOutputModel().createNode(c);
+    return createOutputNode(c);
+  }
+
+  @NotNull
+  @Override
+  public SNode createOutputNode(@NotNull SConcept concept) {
+    return generator.getOutputModel().createNode(concept);
   }
 
   @NotNull
@@ -106,11 +110,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public GenerationTrace getTrace() {
     return generator.getTrace();
-  }
-
-  @Override
-  public IGenerationTracer getTracer() {
-    return new NullGenerationTracer();
   }
 
   @Override
@@ -372,10 +371,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (GenerationCanceledException ex) {
-      if (getTracer().isTracing() && getLogger().needsInfo()) {
-        getLogger().info("generation canceled when processing branch:");
-        GeneratorUtil.logCurrentGenerationBranch(getLogger(), getTracer(), false);
-      }
       throw ex;
     } catch (GenerationException ex) {
       // ignore
