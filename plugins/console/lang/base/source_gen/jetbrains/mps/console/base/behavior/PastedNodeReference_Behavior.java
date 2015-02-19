@@ -6,8 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
@@ -16,7 +17,9 @@ public class PastedNodeReference_Behavior {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
   }
   public static String call_getText_6888400917983823151(SAbstractConcept thisConcept, SNode targetNode) {
-    SNodeId targetNodeId = check_mc1kik_a0a0b(targetNode);
+    return PastedNodeReference_Behavior.call_getText_2410037095038717383(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), check_mc1kik_a0a0a1(targetNode));
+  }
+  public static String call_getText_2410037095038717383(SAbstractConcept thisConcept, SNodeId targetNodeId) {
     if (targetNodeId == null) {
       return "(deleted node)";
     }
@@ -24,12 +27,13 @@ public class PastedNodeReference_Behavior {
     return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return PastedNodeReference_Behavior.call_getText_6888400917983823151(SNodeOperations.asSConcept(SNodeOperations.getConcept(thisNode)), thisNode) + "(deleted node)";
+    SNodeId targetNodeId = thisNode.getReference(MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")).getTargetNodeId();
+    return PastedNodeReference_Behavior.call_getText_2410037095038717383(SNodeOperations.asSConcept(SNodeOperations.getConcept(thisNode)), targetNodeId) + "(deleted node)";
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return false;
   }
-  private static SNodeId check_mc1kik_a0a0b(SNode checkedDotOperand) {
+  private static SNodeId check_mc1kik_a0a0a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
