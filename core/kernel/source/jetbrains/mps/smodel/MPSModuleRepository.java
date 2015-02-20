@@ -109,14 +109,14 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //-----------------register/unregister-merge-----------
 
-  public <T extends SModule> T registerModule(T module, MPSModuleOwner owner) {
+  public <T extends SModule> T registerModule(T moduleToRegister, MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
-    SModuleId moduleId = module.getModuleReference().getModuleId();
-    String moduleFqName = module.getModuleName();
+    SModuleId moduleId = moduleToRegister.getModuleReference().getModuleId();
+    String moduleFqName = moduleToRegister.getModuleName();
 
-    AbstractModule aModule = (AbstractModule) module;
-    assert moduleId != null : "Module with null id is added to repository: fqName=" + moduleFqName + "; file=" + aModule.getDescriptorFile();
+    AbstractModule aModuleToRegister = (AbstractModule) moduleToRegister;
+    assert moduleId != null : "Module with null id is added to repository: fqName=" + moduleFqName + "; file=" + aModuleToRegister.getDescriptorFile();
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
@@ -126,20 +126,22 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        AbstractModule m = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
-        LOG.warn(String.format("Duplicate module name %s : module with the same UID exists at %s and %s", moduleFqName, m.getDescriptorFile(), aModule.getDescriptorFile()));
+        AbstractModule existingModule = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
+        LOG.warn(String.format("Will not register a module with the name %s at %s : module with the same name exists at %s, ", moduleFqName,
+            aModuleToRegister.getDescriptorFile(), existingModule.getDescriptorFile()));
+        return (T) existingModule;
       }
-      myFqNameToModulesMap.put(moduleFqName, module);
+      myFqNameToModulesMap.put(moduleFqName, moduleToRegister);
     }
 
-    myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
-    myModules.add(module);
+    myIdToModuleMap.put(moduleToRegister.getModuleId(), moduleToRegister);
+    myModules.add(moduleToRegister);
 
-    aModule.attach(this);
-    myModuleToOwners.addLink(module, owner);
+    aModuleToRegister.attach(this);
+    myModuleToOwners.addLink(moduleToRegister, owner);
     invalidateCaches();
-    fireModuleAdded(module);
-    return module;
+    fireModuleAdded(moduleToRegister);
+    return moduleToRegister;
   }
 
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
@@ -254,6 +256,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //--------------------------------------------------
 
+  // TODO: !!
+  // FIXME: we should invalidate caches only in specific modules
   public void invalidateCaches() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
@@ -261,7 +265,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
-        // FIXME: we should invalidate caches only in specific modules
         for (SModule m : getModules()) {
           SearchScope moduleScope = ((AbstractModule) m).getScope();
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
