@@ -362,6 +362,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100743722" name="jetbrains.mps.lang.smodel.structure.AbstractOperationParameter" flags="ng" index="1xHYGw" />
@@ -5577,8 +5578,11 @@
             </node>
             <node concept="2Zo12i" id="M1_F_cf4YL" role="2OqNvi">
               <node concept="25Kdxt" id="M1_F_cf4YN" role="2Zo12j">
-                <node concept="37vLTw" id="M1_F_cf4YQ" role="25KhWn">
-                  <ref role="3cqZAo" node="244SDGhDat9" resolve="targetConcept" />
+                <node concept="2OqwBi" id="61WV3F59KWN" role="25KhWn">
+                  <node concept="37vLTw" id="M1_F_cf4YQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="244SDGhDat9" resolve="targetConcept" />
+                  </node>
+                  <node concept="1rGIog" id="61WV3F59QOJ" role="2OqNvi" />
                 </node>
               </node>
             </node>
