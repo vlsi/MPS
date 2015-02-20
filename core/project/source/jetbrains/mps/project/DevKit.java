@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -41,19 +42,20 @@ public class DevKit extends AbstractModule {
   private DevkitDescriptor myDescriptor;
 
   /* TODO make package local, move to appropriate package */
-  public DevKit(DevkitDescriptor descriptor, IFile file) {
+  public DevKit(@NotNull DevkitDescriptor descriptor, IFile file) {
     super(file);
     myDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
 
   @Override
+  @NotNull
   public DevkitDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
 
   @Override
-  public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     myDescriptor = (DevkitDescriptor) moduleDescriptor;
 
     if (myDescriptor.getNamespace() != null) {
