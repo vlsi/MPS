@@ -127,7 +127,9 @@ public enum LanguageAspect {
   }
 
   public SModel createNew(final Language l, final boolean saveModel) {
-    assert get(l) == null;
+    if (get(l) != null) {
+      throw new IllegalArgumentException("The aspect model " + myName  + " of the language " + l + " is already registered in the SModelRepository");
+    }
 
     SModel structureModel = l.getStructureModelDescriptor();
     ModelRoot modelRoot;

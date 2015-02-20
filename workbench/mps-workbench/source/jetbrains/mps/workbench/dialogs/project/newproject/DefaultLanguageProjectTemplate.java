@@ -21,9 +21,11 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.DocumentationHelper;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,6 +34,8 @@ import javax.swing.JComponent;
 import java.io.IOException;
 
 public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
+
+  private static final Logger LOG = LogManager.getLogger(DefaultLanguageProjectTemplate.class);
 
   private NewLanguageSettings myLanguageSettings = new NewLanguageSettings();
 
@@ -71,26 +75,27 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
         StartupManager.getInstance(project.getProject()).registerPostStartupActivity(new Runnable() {
           @Override
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                                                             @Override
-                                                             public void run() {
-                                                               Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(),
-                                                                   project);
-                                                               project.addModule(language.getModuleReference());
+            project.getModelAccess().executeCommand(new Runnable() {
+                                                      @Override
+                                                      public void run() {
+                                                        Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(),
+                                                            project);
+                                                        project.addModule(language.getModuleReference());
 
-                                                               try {
-                                                                 if (myLanguageSettings.isRuntimeSolutionNeeded()) {
-                                                                   Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), project);
-                                                                   language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
-                                                                 }
-                                                                 if (myLanguageSettings.isSandboxSolutionNeeded()) {
-                                                                   NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), project);
-                                                                 }
-                                                               } catch (IOException e) {
-                                                                 // todo: !
-                                                               }
-                                                             }
-                                                           }
+                                                        try {
+                                                          if (myLanguageSettings.isRuntimeSolutionNeeded()) {
+                                                            Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), project);
+                                                            LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
+                                                            languageDescriptor.getRuntimeModules().add(runtimeSolution.getModuleReference());
+                                                          }
+                                                          if (myLanguageSettings.isSandboxSolutionNeeded()) {
+                                                            NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), project);
+                                                          }
+                                                        } catch (IOException e) {
+                                                          LOG.error("", e);
+                                                        }
+                                                      }
+                                                    }
             );
           }
         });

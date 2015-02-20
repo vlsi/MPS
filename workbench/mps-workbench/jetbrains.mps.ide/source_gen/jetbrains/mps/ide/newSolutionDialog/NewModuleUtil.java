@@ -155,7 +155,6 @@ public class NewModuleUtil {
       try {
         createMainLanguageAspects(language);
       } catch (IOException e) {
-        // todo: ??? 
         throw new RuntimeException(e);
       }
     }
@@ -163,9 +162,8 @@ public class NewModuleUtil {
     String templateModelsDir = descriptorFile.getParent().getPath() + File.separator + "generator" + File.separator + "template";
     try {
       VfsUtil.createDirectories(templateModelsDir);
-    } catch (IOException ioException) {
+    } catch (IOException ignored) {
     }
-
 
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
