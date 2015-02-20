@@ -431,4 +431,8 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
     return myEditorManager;
   }
+
+  void reset() {
+    myEditorManager = null;
+  }
 }
