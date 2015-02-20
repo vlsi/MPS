@@ -5484,7 +5484,7 @@
       <node id="8763293761094493027" at="68,241,73,7" concept="11" />
       <node id="481464699807406178" at="75,239,80,7" concept="11" />
       <node id="6376253365366201478" at="21,323,27,7" concept="11" />
-      <node id="1302191354694060445" at="47,429,53,7" concept="11" />
+      <node id="1302191354694060445" at="47,597,53,7" concept="11" />
       <node id="2350996240754976838" at="199,0,205,0" concept="18" trace="processRightTransform#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2350996240754963533" at="185,243,192,7" concept="11" />
       <node id="1302191354694000773" at="226,0,235,0" concept="4" trace="Precedence#()V" />
@@ -5573,7 +5573,7 @@
       <scope id="2643065713350887369" at="95,87,105,25">
         <var name="currentParent" id="2643065713350854731" />
       </scope>
-      <scope id="1302191354694000973" at="47,429,59,191" />
+      <scope id="1302191354694000973" at="47,597,59,191" />
       <scope id="2643065713350887368" at="95,0,107,0">
         <var name="instanceOfExpression" id="2643065713350887398" />
       </scope>

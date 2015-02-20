@@ -546,9 +546,6 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions">
-      <concept id="1192796902958" name="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" flags="nn" index="2Sf5sV" />
-    </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
@@ -25442,7 +25439,7 @@
             <node concept="2YIFZM" id="4C0k$GmgW_4" role="3clFbG">
               <ref role="37wK5l" to="fq2u:4C0k$GmgHnC" resolve="addJavadocLangIfMissing" />
               <ref role="1Pybhc" to="fq2u:4C0k$GmgHm_" resolve="DocCommentHelper" />
-              <node concept="2Sf5sV" id="4C0k$GmgYBf" role="37wK5m" />
+              <node concept="0IXxy" id="61WV3F594CR" role="37wK5m" />
             </node>
           </node>
           <node concept="3clFbH" id="7gdCoeq2Tcd" role="3cqZAp" />

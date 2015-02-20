@@ -36,6 +36,6 @@ public abstract class MigrationConfig {
     return condition;
   }
   public final boolean isPullUp() {
-    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(sourceConcept), SNodeOperations.asSConcept(targetConcept));
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(sourceConcept), SNodeOperations.asSConcept(SNodeOperations.asSConcept(targetConcept)));
   }
 }
