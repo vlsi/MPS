@@ -254,7 +254,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   // no notifications are sent
-  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     throw new UnsupportedOperationException();
   }
 

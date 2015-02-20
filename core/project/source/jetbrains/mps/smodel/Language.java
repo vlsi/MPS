@@ -79,7 +79,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   private ClassLoader myStubsLoader = new StubsClassLoader();
 
-  protected Language(LanguageDescriptor descriptor, IFile file) {
+  protected Language(@NotNull LanguageDescriptor descriptor, IFile file) {
     super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
@@ -191,12 +191,13 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
+  @NotNull
   public LanguageDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }
 
   @Override
-  public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof LanguageDescriptor;
     myLanguageDescriptor = (LanguageDescriptor) moduleDescriptor;
     SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());

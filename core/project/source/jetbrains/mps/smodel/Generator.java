@@ -32,6 +32,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -57,7 +58,7 @@ public class Generator extends ReloadableModuleBase {
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
-  public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
+  public Generator(Language sourceLanguage, @NotNull GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
 
@@ -93,6 +94,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
+  @NotNull
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -108,7 +110,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
-  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());

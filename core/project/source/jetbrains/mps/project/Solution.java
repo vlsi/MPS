@@ -33,6 +33,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -78,19 +79,21 @@ public class Solution extends ReloadableModuleBase {
   }
 
   /* TODO make package local, move to appropriate package */
-  public Solution(SolutionDescriptor descriptor, IFile file) {
+  public Solution(@NotNull SolutionDescriptor descriptor, IFile file) {
     super(file);
     mySolutionDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
 
   @Override
+  @NotNull
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
   @Override
-  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    assert moduleDescriptor instanceof SolutionDescriptor;
     mySolutionDescriptor = (SolutionDescriptor) moduleDescriptor;
     SModuleReference mp;
     if (mySolutionDescriptor.getNamespace() != null) {
