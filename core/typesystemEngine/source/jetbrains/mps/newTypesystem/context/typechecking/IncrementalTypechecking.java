@@ -404,6 +404,10 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     public void visitReferenceEvent(SModelReferenceEvent event) {
       SReference ref = event.getReference();
       markInvalid(ref.getSourceNode());
+      // A heuristic: always invalidate the node's parent (MPS-21481)
+      if (ref.getSourceNode().getParent() != null) {
+        markInvalid(ref.getSourceNode().getParent());
+      }
       if (!event.isAdded()) return;
       // MPS-18585 IncrementalTypecheking doesn't invalidate target nodes of dynamic refs if source node has been detached from model
       if (ref instanceof DynamicReference && ref.getSourceNode().getModel() == null) {
