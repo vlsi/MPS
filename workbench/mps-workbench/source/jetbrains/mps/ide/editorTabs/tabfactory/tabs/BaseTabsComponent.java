@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,9 @@ public abstract class BaseTabsComponent implements TabsComponent {
     for (RelationDescriptor d : myPossibleTabs) {
       MultiMap<SNodeReference, SNodeReference> topToUses = new MultiMap<SNodeReference, SNodeReference>();
       for (SNode n : d.getNodes(baseNode)) {
-        if (n == null) continue;
+        if (n == null || n.getModel() == null/* n.model == null is hack for MPS-21506*/) {
+          continue;
+        }
         topToUses.putValue(n.getContainingRoot().getReference(), n.getReference());
       }
       if (topToUses.isEmpty()) continue;
