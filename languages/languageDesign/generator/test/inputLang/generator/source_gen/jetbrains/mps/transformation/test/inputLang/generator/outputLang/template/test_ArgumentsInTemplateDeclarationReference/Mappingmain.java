@@ -30,6 +30,7 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 
 @Generated
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -172,7 +173,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {

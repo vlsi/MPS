@@ -17,11 +17,13 @@ import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 @Generated
@@ -70,7 +72,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   public boolean isTopPriority() {
     return false;
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -96,7 +98,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class WeavingRule0 implements TemplateWeavingRule {
+  public class WeavingRule0 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule0() {
     }
     public SNodeReference getRuleNode() {

@@ -6263,6 +6263,9 @@
           </node>
         </node>
       </node>
+      <node concept="3uibUv" id="6ZtaW$qQvEJ" role="1zkMxy">
+        <ref role="3uigEE" to="icf3:~TemplateDeclarationBase" resolve="TemplateDeclarationBase" />
+      </node>
     </node>
   </node>
   <node concept="13MO4I" id="4AiZljCBpIq">
@@ -10463,6 +10466,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="6ZtaW$qQL8k" role="1zkMxy">
+      <ref role="3uigEE" to="icf3:~TemplateDeclarationBase" resolve="TemplateDeclarationBase" />
     </node>
   </node>
   <node concept="312cEu" id="3PS6Lr5Deil">
@@ -21512,6 +21518,9 @@
       <node concept="3uibUv" id="1Gdr4uuqLQb" role="EKbjA">
         <ref role="3uigEE" to="icf3:~TemplateRootMappingRule" resolve="TemplateRootMappingRule" />
       </node>
+      <node concept="3uibUv" id="6erylPliV4u" role="1zkMxy">
+        <ref role="3uigEE" to="icf3:~MapRootRuleBase" resolve="MapRootRuleBase" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="1FI4YM67qmL">
@@ -22250,6 +22259,9 @@
     </node>
     <node concept="3uibUv" id="2Y497fxnon4" role="EKbjA">
       <ref role="3uigEE" to="icf3:~TemplateSwitchMapping" resolve="TemplateSwitchMapping" />
+    </node>
+    <node concept="3uibUv" id="6ZtaW$qQ_MM" role="1zkMxy">
+      <ref role="3uigEE" to="icf3:~TemplateSwitchBase" resolve="TemplateSwitchBase" />
     </node>
   </node>
   <node concept="13MO4I" id="7uR1UjChKGE">
@@ -24230,6 +24242,9 @@
           </node>
         </node>
       </node>
+      <node concept="3uibUv" id="6erylPli_uQ" role="1zkMxy">
+        <ref role="3uigEE" to="icf3:~CreateRootRuleBase" resolve="CreateRootRuleBase" />
+      </node>
     </node>
   </node>
   <node concept="13MO4I" id="ilNinXgikT">
@@ -24478,6 +24493,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="3uibUv" id="6erylPliE$n" role="1zkMxy">
+        <ref role="3uigEE" to="icf3:~DropRootRuleBase" resolve="DropRootRuleBase" />
       </node>
     </node>
   </node>
@@ -25309,6 +25327,9 @@
           </node>
         </node>
       </node>
+      <node concept="3uibUv" id="6erylPlj011" role="1zkMxy">
+        <ref role="3uigEE" to="icf3:~WeaveRuleBase" resolve="WeaveRuleBase" />
+      </node>
     </node>
   </node>
   <node concept="13MO4I" id="ilNinXginb">
@@ -25930,7 +25951,7 @@
     <node concept="3clFbW" id="2ELICwm$CKn" role="jymVt">
       <node concept="3clFbS" id="2ELICwm$CKq" role="3clF47">
         <node concept="XkiVB" id="2XRu$uixWTo" role="3cqZAp">
-          <ref role="37wK5l" to="icf3:~BaseTemplateModel.&lt;init&gt;(jetbrains.mps.generator.runtime.TemplateModule)" resolve="BaseTemplateModel" />
+          <ref role="37wK5l" to="icf3:~TemplateModelBase.&lt;init&gt;(jetbrains.mps.generator.runtime.TemplateModule)" resolve="TemplateModelBase" />
           <node concept="37vLTw" id="2XRu$uixYGK" role="37wK5m">
             <ref role="3cqZAo" node="6ctrts7Lj5f" resolve="module" />
           </node>
@@ -26562,8 +26583,8 @@
     <node concept="3uibUv" id="2ELICwm$CKs" role="EKbjA">
       <ref role="3uigEE" to="icf3:~TemplateModel" resolve="TemplateModel" />
     </node>
-    <node concept="3uibUv" id="1O_BC_pChq$" role="1zkMxy">
-      <ref role="3uigEE" to="icf3:~BaseTemplateModel" resolve="BaseTemplateModel" />
+    <node concept="3uibUv" id="6ZtaW$qQYqi" role="1zkMxy">
+      <ref role="3uigEE" to="icf3:~TemplateModelBase" resolve="TemplateModelBase" />
     </node>
   </node>
   <node concept="13MO4I" id="7gHSFcXreEF">
