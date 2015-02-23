@@ -9,8 +9,10 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultTemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.CreateRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.MapRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
@@ -118,6 +120,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" file="TemplateGenerator.java">
@@ -143,6 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" file="TemplateLanguage.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -177,6 +181,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />
@@ -197,8 +202,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.BaseTemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" file="Templatedescriptor.java">
     <classNode dependClassName="java.util.Collection" />
@@ -214,6 +219,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
 </dependenciesRoot>
 

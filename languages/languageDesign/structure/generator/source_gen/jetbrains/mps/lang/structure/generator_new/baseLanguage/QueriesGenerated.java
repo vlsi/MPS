@@ -15,9 +15,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SNodeId;
@@ -63,7 +63,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1174698110415(final PropertyMacroContext _context) {
     String identifier = EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(_context.getNode());
     if (IdentifierConstraintsUtil.isJavaReserved(identifier)) {
-      return "_" + identifier;
+      return _context.createUniqueName(identifier, SNodeOperations.getParent(_context.getNode()));
     } else {
       return identifier;
     }

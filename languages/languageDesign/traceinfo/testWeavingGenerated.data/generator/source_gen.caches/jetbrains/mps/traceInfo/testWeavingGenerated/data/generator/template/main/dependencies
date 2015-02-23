@@ -7,8 +7,10 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.DropRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.MapRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDropRootRule" />
@@ -19,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.WeaveRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.WeavingMappingRuleContext" />
@@ -66,8 +69,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.BaseTemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templatemap__RootConcept" file="Templatemap__RootConcept.java">
     <classNode dependClassName="java.util.Collection" />
@@ -85,6 +88,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeave" file="Templateweave__ChildConceptWeave.java">
     <classNode dependClassName="java.util.Collection" />
@@ -103,6 +107,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeaveMany" file="Templateweave__ChildConceptWeaveMany.java">
@@ -122,6 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
 </dependenciesRoot>

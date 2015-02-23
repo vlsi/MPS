@@ -9,8 +9,10 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultTemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.CreateRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.MapRootRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
@@ -101,6 +103,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateFinderClass" file="TemplateFinderClass.java">
     <classNode dependClassName="java.util.ArrayList" />
@@ -124,6 +127,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />
@@ -146,8 +150,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.BaseTemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__CheckCancelledStatusStatement" file="Templatereduce__CheckCancelledStatusStatement.java">
     <classNode dependClassName="java.util.Collection" />
@@ -163,6 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__ExecuteFinderExpression" file="Templatereduce__ExecuteFinderExpression.java">
@@ -184,6 +189,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__NodeStatement" file="Templatereduce__NodeStatement.java">
@@ -199,6 +205,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__ResultStatement" file="Templatereduce__ResultStatement.java">
@@ -214,6 +221,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
 </dependenciesRoot>

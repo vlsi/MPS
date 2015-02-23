@@ -25,6 +25,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 
 @Generated
@@ -88,7 +89,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {

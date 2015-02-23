@@ -67,8 +67,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.BaseTemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
 </dependenciesRoot>
 

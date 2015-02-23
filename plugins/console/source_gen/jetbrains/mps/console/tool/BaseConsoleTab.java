@@ -34,7 +34,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -48,12 +47,14 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.Project;
@@ -78,8 +79,6 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -186,7 +185,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   public void disposeConsoleTab() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    getProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         if (myEditor != null) {
           myEditor.dispose();
@@ -215,7 +214,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
 
     public void performPaste(@NotNull final DataContext context) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      getProject().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SNodeReference pastingNodeReference = null;
           try {
@@ -229,8 +228,9 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           } catch (IOException ignored) {
           }
           EditorCell currentCell = myEditor.getSelectedCell();
-          SNode referenceTarget = check_6q36mf_a0d0a0a5lb(pastingNodeReference);
-          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f73(check_6q36mf_a0a0e0a0a5lb(pastingNodeReference), myModel))) {
+          SRepository repository = getProject().getRepository();
+          SNode referenceTarget = check_6q36mf_a0e0a0a0a5lb(pastingNodeReference, repository);
+          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a5a0a0a0f73(check_6q36mf_a0a0f0a0a0a5lb(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")));
             SLinkOperations.setTarget(refContainer, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), referenceTarget);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
@@ -241,7 +241,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
             }
             TemporaryModels.getInstance().addMissingImports(myModel);
           } else {
-            check_6q36mf_a0a0e0a0a5lb_0(myDefaultPasteProvider, context);
+            check_6q36mf_a0a0f0a0a0a5lb_0(myDefaultPasteProvider, context);
           }
         }
       });
@@ -344,8 +344,17 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     registerShortcutSet(new BaseConsoleTab.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1)));
   }
 
+  @NotNull
+  private Project getProject() {
+    Project mpsProject = ProjectHelper.toMPSProject(this.getConsoleTool().getProject());
+    if (mpsProject == null) {
+      throw new IllegalStateException("Cannot convert idea project to the mps project");
+    }
+    return mpsProject;
+  }
+
   protected void initConsoleTab(@Nullable final String history) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    getProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         createConsoleModel();
         addBuiltInImports();
@@ -367,14 +376,14 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     this.add(toolbarComponent, BorderLayout.WEST);
     this.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
 
-    myHighlighter = check_6q36mf_a0o0ec(myTool.getProject());
+    myHighlighter = check_6q36mf_a0o0gc(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
   public void execute(@Nullable final SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
     myTool.selectTab(this);
     final SNode[] typedCommand = new SNode[1];
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    getProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         typedCommand[0] = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder")));
         if (command != null) {
@@ -386,20 +395,20 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     });
     BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")), "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        getProject().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, 0x63da33792b5df49aL, "item"))).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"))));
             SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-            check_6q36mf_a2a0a0a0a2a0d0gc(executeBefore);
+            check_6q36mf_a2a0a0a0a0a2a0d0ic(executeBefore);
           }
         });
       }
     }, new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        getProject().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SLinkOperations.getTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-            check_6q36mf_a1a0a0a0a3a0d0gc(executeAfter);
+            check_6q36mf_a1a0a0a0a0a3a0d0ic(executeAfter);
           }
         });
       }
@@ -465,25 +474,25 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
     return null;
   }
-  private static SNode check_6q36mf_a0d0a0a5lb(SNodeReference checkedDotOperand) {
+  private static SNode check_6q36mf_a0e0a0a0a5lb(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static boolean check_6q36mf_a0a4a0a0f73(SModelReference checkedDotOperand, SModel myModel) {
+  private static boolean check_6q36mf_a0a5a0a0a0f73(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myModel.getReference());
     }
     return false;
   }
-  private static SModelReference check_6q36mf_a0a0e0a0a5lb(SNodeReference checkedDotOperand) {
+  private static SModelReference check_6q36mf_a0a0f0a0a0a5lb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelReference();
     }
     return null;
   }
-  private static void check_6q36mf_a0a0e0a0a5lb_0(PasteProvider checkedDotOperand, DataContext context) {
+  private static void check_6q36mf_a0a0f0a0a0a5lb_0(PasteProvider checkedDotOperand, DataContext context) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performPaste(context);
     }
@@ -496,19 +505,19 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static Highlighter check_6q36mf_a0o0ec(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0o0gc(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
     return null;
   }
-  private static void check_6q36mf_a2a0a0a0a2a0d0gc(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a2a0a0a0a0a2a0d0ic(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-  private static void check_6q36mf_a1a0a0a0a3a0d0gc(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0a0a0a3a0d0ic(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }

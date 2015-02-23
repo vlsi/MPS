@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,15 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
- * @author Artem Tikhomirov
+ * @deprecated Use {@link jetbrains.mps.generator.runtime.TemplateModelBase}. Unfortunate naming.
  */
-public abstract class BaseTemplateModel implements TemplateModel {
-  private final TemplateModule myModule;
-
+@Deprecated
+@ToRemove(version = 3.2)
+public abstract class BaseTemplateModel extends TemplateModelBase {
   protected BaseTemplateModel(TemplateModule module) {
-    myModule = module;
-  }
-
-  @Override
-  public TemplateModule getModule() {
-    return myModule;
+    super(module);
   }
 }

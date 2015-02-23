@@ -309,6 +309,10 @@
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
+      <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
+        <child id="1218047638032" name="baseName" index="2piZGb" />
+        <child id="1218049772449" name="contextNode" index="2pr8EU" />
+      </concept>
       <concept id="2721957369897614808" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" flags="nn" index="1bhEwm">
         <reference id="2721957369897614810" name="varmacro" index="1bhEwk" />
       </concept>
@@ -1126,12 +1130,16 @@
             <node concept="3clFbJ" id="yuXZmMCY39" role="3cqZAp">
               <node concept="3clFbS" id="yuXZmMCY3b" role="3clFbx">
                 <node concept="3cpWs6" id="yuXZmMDuOG" role="3cqZAp">
-                  <node concept="3cpWs3" id="yuXZmMDvB5" role="3cqZAk">
-                    <node concept="Xl_RD" id="yuXZmMDvB6" role="3uHU7B">
-                      <property role="Xl_RC" value="_" />
-                    </node>
-                    <node concept="37vLTw" id="yuXZmMDvB7" role="3uHU7w">
-                      <ref role="3cqZAo" node="yuXZmMCW_m" resolve="identifier" />
+                  <node concept="2OqwBi" id="1gmd4rNvjIg" role="3cqZAk">
+                    <node concept="1iwH7S" id="1gmd4rNvjeb" role="2Oq$k0" />
+                    <node concept="2piZGk" id="1gmd4rNvk4w" role="2OqNvi">
+                      <node concept="37vLTw" id="1gmd4rNvkk2" role="2piZGb">
+                        <ref role="3cqZAo" node="yuXZmMCW_m" resolve="identifier" />
+                      </node>
+                      <node concept="2OqwBi" id="1gmd4rNvkDc" role="2pr8EU">
+                        <node concept="30H73N" id="1gmd4rNvkzk" role="2Oq$k0" />
+                        <node concept="1mfA1w" id="1gmd4rNvlKG" role="2OqNvi" />
+                      </node>
                     </node>
                   </node>
                 </node>
