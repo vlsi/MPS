@@ -98,6 +98,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -8080,6 +8081,57 @@
             </node>
           </node>
           <node concept="3cpWs3" id="6u1pduf9wSV" role="37wK5m">
+            <node concept="1W57fq" id="2$CGp_LLmcD" role="lGtFl">
+              <node concept="3IZrLx" id="2$CGp_LLmcF" role="3IZSJc">
+                <node concept="3clFbS" id="2$CGp_LLmcH" role="2VODD2">
+                  <node concept="3clFbF" id="2$CGp_LLE6r" role="3cqZAp">
+                    <node concept="17QLQc" id="2$CGp_LLRxr" role="3clFbG">
+                      <node concept="3B5_sB" id="2$CGp_LLRYt" role="3uHU7w">
+                        <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
+                      </node>
+                      <node concept="2OqwBi" id="2$CGp_LLPVp" role="3uHU7B">
+                        <node concept="2OqwBi" id="2$CGp_LLEjt" role="2Oq$k0">
+                          <node concept="30H73N" id="2$CGp_LLE6q" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="2$CGp_LLPuQ" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tp25:i3HcIAc" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="2$CGp_LLQWr" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:fKM4eW5" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="gft3U" id="2$CGp_LLSyy" role="UU_$l">
+                <node concept="Xl_RD" id="2$CGp_LLSSN" role="gfFT$">
+                  <property role="Xl_RC" value="value" />
+                  <node concept="29HgVG" id="2$CGp_LLSSO" role="lGtFl">
+                    <node concept="3NFfHV" id="2$CGp_LLSSP" role="3NFExx">
+                      <node concept="3clFbS" id="2$CGp_LLSSQ" role="2VODD2">
+                        <node concept="3clFbF" id="2$CGp_LLSSR" role="3cqZAp">
+                          <node concept="2OqwBi" id="2$CGp_LLSSS" role="3clFbG">
+                            <node concept="1PxgMI" id="2$CGp_LLSST" role="2Oq$k0">
+                              <ref role="1PxNhF" to="tp25:i3HdYpe" resolve="SEnum_MemberForValueOperation" />
+                              <node concept="2OqwBi" id="2$CGp_LLSSU" role="1PxMeX">
+                                <node concept="30H73N" id="2$CGp_LLSSV" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="2$CGp_LLSSW" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tp25:i3HdvpB" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="2$CGp_LLSSX" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp25:i3HdYpf" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="Xl_RD" id="6u1pduf9AWP" role="3uHU7B">
               <property role="Xl_RC" value="" />
             </node>
