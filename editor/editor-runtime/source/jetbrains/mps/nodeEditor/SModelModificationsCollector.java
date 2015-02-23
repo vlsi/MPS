@@ -60,32 +60,28 @@ public class SModelModificationsCollector extends SModelEventVisitorAdapter {
 
   @Override
   public void visitRootEvent(SModelRootEvent event) {
-    if (event.isAdded()) {
-      return;
-    }
-    addModification(event.getRoot(), event);
-    Queue<SNode> removedNodes = new LinkedList<SNode>();
-    removedNodes.add(event.getRoot());
-    while (!removedNodes.isEmpty()) {
-      SNode removedNode = removedNodes.remove();
-      for (SNode removedChild : removedNode.getChildren()) {
-        removedNodes.add(removedChild);
+    Queue<SNode> nodeQueue = new LinkedList<SNode>();
+    nodeQueue.add(event.getRoot());
+    while (!nodeQueue.isEmpty()) {
+      SNode nextNode = nodeQueue.remove();
+      for (SNode child : nextNode.getChildren()) {
+        nodeQueue.add(child);
       }
-      addModification(removedNode, event);
+      addModification(nextNode, event);
     }
   }
 
   @Override
   public void visitChildEvent(SModelChildEvent event) {
     addModification(event.getParent(), event);
-    Queue<SNode> removedNodes = new LinkedList<SNode>();
-    removedNodes.add(event.getChild());
-    while (!removedNodes.isEmpty()) {
-      SNode removedNode = removedNodes.remove();
-      for (SNode removedChild : removedNode.getChildren()) {
-        removedNodes.add(removedChild);
+    Queue<SNode> nodeQueue = new LinkedList<SNode>();
+    nodeQueue.add(event.getChild());
+    while (!nodeQueue.isEmpty()) {
+      SNode nextNode = nodeQueue.remove();
+      for (SNode child : nextNode.getChildren()) {
+        nodeQueue.add(child);
       }
-      addModification(removedNode, event);
+      addModification(nextNode, event);
     }
   }
 
