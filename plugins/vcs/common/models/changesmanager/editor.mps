@@ -275,6 +275,9 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1249,13 +1252,22 @@
                                                 </node>
                                               </node>
                                             </node>
-                                            <node concept="3clFbF" id="1KUoCipvEde" role="3cqZAp">
-                                              <node concept="2OqwBi" id="1KUoCipvEdf" role="3clFbG">
-                                                <node concept="37vLTw" id="2BHiRxeuqTg" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="K9wxfKEU8Z" resolve="myStripsPainter" />
-                                                </node>
-                                                <node concept="liA8E" id="1KUoCipvEdi" role="2OqNvi">
-                                                  <ref role="37wK5l" node="K9wxfKEv2W" resolve="relayout" />
+                                            <node concept="3SKdUt" id="4DCKBWQUAIQ" role="3cqZAp">
+                                              <node concept="3SKdUq" id="4DCKBWQUBIn" role="3SKWNk">
+                                                <property role="3SKdUp" value=".relayout() is called as a part of .addFoldingAreaPainter() method execution" />
+                                              </node>
+                                            </node>
+                                            <node concept="3SKdUt" id="4DCKBWQUv7t" role="3cqZAp">
+                                              <node concept="3SKWN0" id="4DCKBWQUv7u" role="3SKWNk">
+                                                <node concept="3clFbF" id="1KUoCipvEde" role="3SKWNf">
+                                                  <node concept="2OqwBi" id="1KUoCipvEdf" role="3clFbG">
+                                                    <node concept="37vLTw" id="2BHiRxeuqTg" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="K9wxfKEU8Z" resolve="myStripsPainter" />
+                                                    </node>
+                                                    <node concept="liA8E" id="1KUoCipvEdi" role="2OqNvi">
+                                                      <ref role="37wK5l" node="K9wxfKEv2W" resolve="relayout" />
+                                                    </node>
+                                                  </node>
                                                 </node>
                                               </node>
                                             </node>

@@ -2706,6 +2706,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * TODO: Check it and reduce visibility of this method.
    */
   public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    if (myEditorContext != null && myEditorContext.getModel() == model && myEditorContext.getRepository() == repository) {
+      myEditorContext.reset();
+      return;
+    }
     myEditorContext = createEditorContext(model, repository);
   }
 
