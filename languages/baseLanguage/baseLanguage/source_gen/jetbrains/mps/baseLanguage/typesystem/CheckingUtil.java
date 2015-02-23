@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class CheckingUtil {
   public CheckingUtil() {
@@ -74,7 +76,7 @@ public class CheckingUtil {
       return false;
     }
     try {
-      Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{expr.getModel().getModule()});
+      Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{check_36hle6_a0a0a0b0j(expr.getModel())});
       if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
         return false;
       }
@@ -100,4 +102,10 @@ public class CheckingUtil {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
+  private static SModule check_36hle6_a0a0a0b0j(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
 }
