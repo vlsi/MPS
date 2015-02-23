@@ -208,6 +208,7 @@
         <child id="1158701448518" name="setupFunction" index="37ZfLb" />
       </concept>
       <concept id="1158701162220" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction" flags="in" index="37Y9Zx" />
+      <concept id="1154465102724" name="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" flags="in" index="3buRE8" />
       <concept id="1154465273778" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" flags="nn" index="3bvxqY" />
       <concept id="1154622616118" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" flags="in" index="3kRJcU" />
       <concept id="5584396657084912703" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" flags="nn" index="1r4Lsj" />
@@ -224,6 +225,7 @@
         <property id="1158952412335" name="description" index="3mWAmy" />
         <reference id="1112058088712" name="applicableConcept" index="3FOWKa" />
         <child id="1177324142645" name="part" index="tZc4B" />
+        <child id="1154465386371" name="precondition" index="3bvWUf" />
         <child id="1178540170602" name="variable" index="1AtXLS" />
       </concept>
       <concept id="1138079221458" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" flags="ig" index="3UNGvq">
@@ -328,6 +330,20 @@
     <node concept="3FOIzC" id="g$eHQpw" role="3FOPby">
       <property role="3mWAmy" value="remove operations which are not appropriate for expression before'.'" />
       <ref role="3FOWKa" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+      <node concept="3buRE8" id="2$CGp_M2Ncx" role="3bvWUf">
+        <node concept="3clFbS" id="2$CGp_M2Ncy" role="2VODD2">
+          <node concept="3clFbF" id="2$CGp_M2NFc" role="3cqZAp">
+            <node concept="2OqwBi" id="2$CGp_M2NM0" role="3clFbG">
+              <node concept="3bvxqY" id="2$CGp_M2NFb" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="2$CGp_M2O2b" role="2OqNvi">
+                <node concept="chp4Y" id="2$CGp_M2OdR" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1At2My" id="hzxIy$8" role="1AtXLS">
         <property role="TrG5h" value="appTypesInfo" />
         <node concept="2t4xHI" id="hzxIy$9" role="2t5I6q">
@@ -2723,6 +2739,20 @@
     <property role="3GE5qa" value="substitute" />
     <node concept="3FOIzC" id="h$6BITZ" role="3FOPby">
       <ref role="3FOWKa" to="tp25:gDxHYCE" resolve="AbstractOperationParameter" />
+      <node concept="3buRE8" id="2$CGp_M4fb1" role="3bvWUf">
+        <node concept="3clFbS" id="2$CGp_M4fb2" role="2VODD2">
+          <node concept="3clFbF" id="2$CGp_M4flu" role="3cqZAp">
+            <node concept="2OqwBi" id="2$CGp_M4fxw" role="3clFbG">
+              <node concept="3bvxqY" id="2$CGp_M4flt" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="2$CGp_M4g72" role="2OqNvi">
+                <node concept="chp4Y" id="2$CGp_M4giI" role="cj9EA">
+                  <ref role="cht4Q" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="tYCnQ" id="h$6BV8Y" role="tZc4B">
         <ref role="uz4UX" to="tp25:gDxHYCE" resolve="AbstractOperationParameter" />
         <node concept="yp2kI" id="h$6C00i" role="uz6Si">
@@ -2939,6 +2969,20 @@
     <property role="3GE5qa" value="operation" />
     <node concept="3FOIzC" id="7U2DyFD5$XI" role="3FOPby">
       <ref role="3FOWKa" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+      <node concept="3buRE8" id="2$CGp_M2U8Q" role="3bvWUf">
+        <node concept="3clFbS" id="2$CGp_M2U8R" role="2VODD2">
+          <node concept="3clFbF" id="2$CGp_M2UhD" role="3cqZAp">
+            <node concept="2OqwBi" id="2$CGp_M2Uot" role="3clFbG">
+              <node concept="3bvxqY" id="2$CGp_M2UhC" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="2$CGp_M2UCC" role="2OqNvi">
+                <node concept="chp4Y" id="2$CGp_M2UIC" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="zlxcR" id="7U2DyFD5$XN" role="tZc4B">
         <node concept="zlMOO" id="7U2DyFD5$XO" role="zmozY">
           <node concept="3clFbS" id="7U2DyFD5$XP" role="2VODD2">
@@ -3100,6 +3144,20 @@
     <property role="TrG5h" value="sConceptOperation" />
     <node concept="3FOIzC" id="5XpkEY8lm6U" role="3FOPby">
       <ref role="3FOWKa" to="tp25:5XpkEY8gZFT" resolve="SConceptOperation" />
+      <node concept="3buRE8" id="2$CGp_M2VjE" role="3bvWUf">
+        <node concept="3clFbS" id="2$CGp_M2VjF" role="2VODD2">
+          <node concept="3clFbF" id="2$CGp_M2Vub" role="3cqZAp">
+            <node concept="2OqwBi" id="2$CGp_M2VEd" role="3clFbG">
+              <node concept="3bvxqY" id="2$CGp_M2Vua" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="2$CGp_M2W5K" role="2OqNvi">
+                <node concept="chp4Y" id="2$CGp_M2WTT" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="zlxcR" id="5XpkEY8lmpP" role="tZc4B">
         <node concept="zlMOO" id="5XpkEY8lmpQ" role="zmozY">
           <node concept="3clFbS" id="5XpkEY8lmpR" role="2VODD2">
