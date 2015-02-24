@@ -509,6 +509,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   void nodeRead() {
+    if (myModel != null && myModel.isUpdateMode()) return;
     assertCanRead();
     SModelBase md = getRealModel();
     if (md == null) return;
