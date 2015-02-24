@@ -77,6 +77,8 @@ import java.util.Map;
 public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
+  static final int MAX_LOOKUP_LIST_HEIGHT = 11;
+
   private PopupWindow myPopupWindow = null;
   private boolean myChooserActivated = false;
   private boolean myPopupActivated;
@@ -101,7 +103,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myPopupWindow;
   }
 
-  private PopupWindow getPopupWindow() {
+  PopupWindow getPopupWindow() {
     if (myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
@@ -150,12 +152,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   public void setNodeSubstituteInfo(SubstituteInfo nodeSubstituteInfo) {
+    assert !myChooserActivated;
     myNodeSubstituteInfo = nodeSubstituteInfo;
+    myCellRenderer = null;
+    myPopupWindow = null;
   }
 
   public void setPatternEditor(NodeSubstitutePatternEditor patternEditor) {
     myPatternEditor = patternEditor;
-    getCellRenderer().setPatternEditor(myPatternEditor);
   }
 
   public void setContextCell(EditorCell contextCell) {
@@ -175,7 +179,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   NodeItemCellRenderer getCellRenderer() {
     if (myCellRenderer == null) {
-      myCellRenderer = new NodeItemCellRenderer(getPatternEditor());
+      myCellRenderer = new NodeItemCellRenderer(this);
     }
     return myCellRenderer;
   }
@@ -209,6 +213,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           getPatternEditor().done();
         }
         myNodeSubstituteInfo.invalidateActions();
+        myCellRenderer = null;
+        myPopupWindow = null;
         myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
         myContextCell = null;
@@ -522,8 +528,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     TOP, BOTTOM
   }
 
-  private class PopupWindow extends JWindow {
-    private final int MAX_LOOKUP_LIST_HEIGHT = 11;
+  class PopupWindow extends JWindow {
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
     private final Color FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();

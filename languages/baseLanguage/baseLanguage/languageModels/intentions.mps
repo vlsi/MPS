@@ -445,6 +445,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -15921,13 +15922,16 @@
                 <ref role="cht4Q" to="tpee:gVK4zB9" resolve="TernaryOperatorExpression" />
               </node>
             </node>
-            <node concept="2OqwBi" id="7JhGHKoBeVQ" role="2Oq$k0">
-              <node concept="3TrEf2" id="7JhGHKoBhWu" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+            <node concept="2OqwBi" id="61WV3F59up_" role="2Oq$k0">
+              <node concept="2OqwBi" id="7JhGHKoBeVQ" role="2Oq$k0">
+                <node concept="3TrEf2" id="7JhGHKoBhWu" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                </node>
+                <node concept="37vLTw" id="7JhGHKoBeLE" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7JhGHKoA$fn" resolve="linkDeclaration" />
+                </node>
               </node>
-              <node concept="37vLTw" id="7JhGHKoBeLE" role="2Oq$k0">
-                <ref role="3cqZAo" node="7JhGHKoA$fn" resolve="linkDeclaration" />
-              </node>
+              <node concept="1rGIog" id="61WV3F59xbP" role="2OqNvi" />
             </node>
           </node>
         </node>

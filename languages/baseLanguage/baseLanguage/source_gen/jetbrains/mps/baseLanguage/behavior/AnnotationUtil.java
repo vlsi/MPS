@@ -55,7 +55,6 @@ public class AnnotationUtil {
     } else {
       return false;
     }
-
   }
   public static boolean acceptKind(SNode targetKind, SNode hasAnnotation) {
     SNode enumConst = SLinkOperations.getTarget(targetKind, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"));

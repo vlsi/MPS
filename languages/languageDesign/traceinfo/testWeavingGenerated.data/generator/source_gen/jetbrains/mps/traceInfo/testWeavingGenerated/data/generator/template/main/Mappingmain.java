@@ -17,10 +17,13 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.DropRootRuleBase;
+import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -74,7 +77,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   public boolean isTopPriority() {
     return false;
   }
-  public class RootMappingRule0 implements TemplateRootMappingRule {
+  public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -98,7 +101,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  public class DropRootRule0 implements TemplateDropRootRule {
+  public class DropRootRule0 extends DropRootRuleBase implements TemplateDropRootRule {
     public DropRootRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -111,7 +114,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return true;
     }
   }
-  public class WeavingRule0 implements TemplateWeavingRule {
+  public class WeavingRule0 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule0() {
     }
     public SNodeReference getRuleNode() {
@@ -146,7 +149,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  public class WeavingRule1 implements TemplateWeavingRule {
+  public class WeavingRule1 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule1() {
     }
     public SNodeReference getRuleNode() {
@@ -181,7 +184,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  public class WeavingRule2 implements TemplateWeavingRule {
+  public class WeavingRule2 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule2() {
     }
     public SNodeReference getRuleNode() {
@@ -216,7 +219,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  public class WeavingRule3 implements TemplateWeavingRule {
+  public class WeavingRule3 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule3() {
     }
     public SNodeReference getRuleNode() {

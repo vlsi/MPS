@@ -59,16 +59,18 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
   private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
   private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
-  private NodeSubstitutePatternEditor myPatternEditor;
   private int myOldStyle = Font.PLAIN;
   private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
   private CachingIconManager myIconManager = new CachingIconManager();
   private static final int MY_MIN_CELL_HEIGHT_TO_ADD = 2;
+  private final NodeSubstituteChooser mySubstituteChooser;
 
+  private int myMaxWidth = 0;
+  private int myMaxHeight = 0;
 
-  NodeItemCellRenderer(@NotNull NodeSubstitutePatternEditor patternEditor) {
-    myPatternEditor = patternEditor;
+  NodeItemCellRenderer(@NotNull NodeSubstituteChooser substituteChooser) {
+    mySubstituteChooser = substituteChooser;
     setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
     myLeft.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     myRight.setFont(EditorSettings.getInstance().getDefaultEditorFont());
@@ -87,27 +89,26 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     return this;
   }
 
-  void setPatternEditor(@NotNull NodeSubstitutePatternEditor patternEditor) {
-    myPatternEditor = patternEditor;
-  }
-
   @NotNull
   Dimension getMaxDimension(List<SubstituteAction> actions) {
-    int maxWidth = 0;
-    int maxHeight = 0;
-    myConceptIconMap.clear();
-    myNodeIconMap.clear();
-    myIconManager = new CachingIconManager();
+    int counter = 0;
+    myMaxHeight = 0;
+    myMaxWidth = 0;
     for (SubstituteAction action : actions) {
+      counter++;
       Dimension dimension = getDimension(action);
-      maxWidth = Math.max(maxWidth, dimension.width);
-      maxHeight = Math.max(maxHeight, dimension.height);
+      myMaxWidth = Math.max(myMaxWidth, dimension.width);
+      myMaxHeight = Math.max(myMaxHeight, dimension.height);
+      if (counter == NodeSubstituteChooser.MAX_LOOKUP_LIST_HEIGHT) {
+        break;
+      }
     }
-    return new Dimension(maxWidth, maxHeight);
+    return new Dimension(myMaxWidth, myMaxHeight);
   }
 
+  // TODO: use setupThis() & getPreferredSize() instead?
   private Dimension getDimension(SubstituteAction action) {
-    String pattern = myPatternEditor.getPattern();
+    String pattern = mySubstituteChooser.getPatternEditor().getPattern();
     String matchingText;
     try {
       matchingText = action.getVisibleMatchingText(pattern);
@@ -147,7 +148,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
   private void setupThis(JList list, Object value, boolean isSelected) {
     SubstituteAction action = (SubstituteAction) value;
-    String pattern = myPatternEditor.getPattern();
+    String pattern = mySubstituteChooser.getPatternEditor().getPattern();
 
     if (!myLightweightMode) {
       try {
@@ -206,6 +207,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     myLeft.setPreferredSize(null);
     Dimension oldPreferredSize = myLeft.getPreferredSize();
     myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
+
+    Dimension preferredSize = getPreferredSize();
+    if (myMaxHeight < preferredSize.height || myMaxWidth < preferredSize.width) {
+      myMaxWidth = Math.max(myMaxWidth, preferredSize.width);
+      myMaxHeight = Math.max(myMaxHeight, preferredSize.height);
+      mySubstituteChooser.getPopupWindow().updateListDimension(new Dimension(myMaxWidth, myMaxHeight));
+    }
   }
 
   private int getStyle(SubstituteAction action) {
