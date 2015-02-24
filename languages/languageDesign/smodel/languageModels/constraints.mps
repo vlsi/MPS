@@ -1187,13 +1187,24 @@
               <node concept="3Tqbb2" id="i3Huzcw" role="1tU5fm">
                 <ref role="ehGHo" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
               </node>
-              <node concept="2OqwBi" id="i3Huzcx" role="33vP2m">
-                <node concept="1PxgMI" id="i3Huzcy" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
-                  <node concept="21POm0" id="i3Huzcz" role="1PxMeX" />
+              <node concept="3K4zz7" id="2gfOp8jmDL_" role="33vP2m">
+                <node concept="10Nm6u" id="2gfOp8jmF73" role="3K4GZi" />
+                <node concept="2OqwBi" id="2gfOp8jmGtJ" role="3K4Cdx">
+                  <node concept="21POm0" id="2gfOp8jmFLQ" role="2Oq$k0" />
+                  <node concept="1mIQ4w" id="2gfOp8jmHh9" role="2OqNvi">
+                    <node concept="chp4Y" id="2gfOp8jmHVM" role="cj9EA">
+                      <ref role="cht4Q" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="3TrEf2" id="i3Huzc$" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:i3HcIAc" />
+                <node concept="2OqwBi" id="i3Huzcx" role="3K4E3e">
+                  <node concept="1PxgMI" id="i3Huzcy" role="2Oq$k0">
+                    <ref role="1PxNhF" to="tp25:i3HcIAb" resolve="SEnumOperationInvocation" />
+                    <node concept="21POm0" id="i3Huzcz" role="1PxMeX" />
+                  </node>
+                  <node concept="3TrEf2" id="i3Huzc$" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:i3HcIAc" />
+                  </node>
                 </node>
               </node>
             </node>
