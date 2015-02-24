@@ -117,7 +117,12 @@ public class ReferenceConceptUtil {
     SNode referentNode = node.getReferenceTarget(genuineRole);
     final String referentPresentation;
     if (referentNode != null) {
-      referentPresentation = referentNode.toString();
+      SNode targetConcept = referentNode.getConcept().getDeclarationNode();
+      if (targetConcept == null || getCharacteristicReference(targetConcept) != null) {
+        referentPresentation = referentNode.getConcept().getName();
+      } else {
+        referentPresentation = referentNode.toString();
+      }
     } else {
       referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
     }

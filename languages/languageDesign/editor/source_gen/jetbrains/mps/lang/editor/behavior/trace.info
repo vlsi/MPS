@@ -4900,7 +4900,7 @@
       <node id="4323500428151363032" at="67,41,68,196" concept="11" />
       <node id="4323500428151564638" at="69,31,70,18" concept="12" />
       <node id="4323500428151575040" at="71,5,72,246" concept="11" />
-      <node id="4323500428151580058" at="72,246,73,301" concept="12" />
+      <node id="4323500428151580058" at="72,246,73,311" concept="12" />
       <node id="2859854489140332472" at="37,0,40,0" concept="10" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="2859854489140557115" at="41,0,44,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="2859854489140047972" at="51,67,54,9" concept="9" />
@@ -4937,7 +4937,7 @@
       <scope id="2859854489140047956" at="49,55,55,7">
         <var name="extendedLangRef" id="2859854489140047960" />
       </scope>
-      <scope id="4323500428151282464" at="67,41,73,301">
+      <scope id="4323500428151282464" at="67,41,73,311">
         <var name="conceptAspect" id="4323500428151575041" />
         <var name="editorCellId" id="4323500428151363033" />
       </scope>
@@ -5318,7 +5318,7 @@
       <node id="7348800710868003985" at="39,47,40,107" concept="5" />
       <node id="878629418303342778" at="43,5,44,24" concept="12" />
       <node id="7348800710868357963" at="47,41,48,207" concept="11" />
-      <node id="7348800710868393474" at="48,207,49,513" concept="12" />
+      <node id="7348800710868393474" at="48,207,49,521" concept="12" />
       <node id="7348800710866892497" at="29,0,32,0" concept="3" trace="EditorComponentDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7348800710867980053" at="38,78,41,9" concept="9" />
       <node id="7348800710866951279" at="25,0,29,0" concept="3" trace="EditorComponentDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -5329,7 +5329,7 @@
       <scope id="7348800710866892501" at="29,70,30,211" />
       <scope id="7348800710867980056" at="39,47,40,107" />
       <scope id="7348800710866951283" at="25,89,27,46" />
-      <scope id="2467262375109764290" at="47,41,49,513">
+      <scope id="2467262375109764290" at="47,41,49,521">
         <var name="editorComponent" id="7348800710868357966" />
       </scope>
       <scope id="7348800710866892497" at="29,0,32,0">

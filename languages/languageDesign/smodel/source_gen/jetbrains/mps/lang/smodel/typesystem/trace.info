@@ -62,7 +62,7 @@
       <node id="7376433222636453313" at="132,5,133,12" concept="10" />
       <node id="1230333667606" at="134,20,135,58" concept="8" />
       <node id="1230333667606" at="135,58,136,256" concept="8" />
-      <node id="1179506467941" at="141,68,142,18" concept="9" />
+      <node id="1179506467941" at="141,110,142,18" concept="9" />
       <node id="1179506569646" at="144,5,145,58" concept="8" />
       <node id="1179506569646" at="145,58,146,582" concept="8" />
       <node id="1178287491768" at="147,5,148,17" concept="9" />
@@ -306,7 +306,7 @@
       <scope id="1186067358023" at="96,231,97,24" />
       <scope id="1205267191811" at="112,314,113,22" />
       <scope id="1230333667594" at="129,317,130,23" />
-      <scope id="1179506422620" at="141,68,142,18" />
+      <scope id="1179506422620" at="141,110,142,18" />
       <scope id="1178287491775" at="166,123,167,86" />
       <scope id="1226066977691" at="189,268,190,414" />
       <scope id="1226066977704" at="192,187,193,345" />
@@ -2430,7 +2430,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/1178287491408">
     <file name="supertypesOf_SConceptType_SNodeType_SubtypingRule.java">
       <node id="1180544752193" at="20,121,21,191" concept="8" />
-      <node id="1180545081632" at="23,199,24,55" concept="9" />
+      <node id="1180545081632" at="23,331,24,55" concept="9" />
       <node id="7376433222636453681" at="25,7,26,32" concept="10" />
       <node id="7376433222636454245" at="26,32,27,107" concept="10" />
       <node id="7376433222636453735" at="27,107,28,73" concept="10" />
@@ -2476,7 +2476,7 @@
       <node id="1180544724301" at="21,191,35,5" concept="6" />
       <node id="1178287491408" at="20,0,38,0" concept="7" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178287491408" at="18,62,18,62" />
-      <scope id="1180545047058" at="23,199,24,55" />
+      <scope id="1180545047058" at="23,331,24,55" />
       <scope id="1227611647414" at="31,211,32,58" />
       <scope id="1178287491408" at="38,46,39,62" />
       <scope id="1178287491408" at="47,27,48,16" />

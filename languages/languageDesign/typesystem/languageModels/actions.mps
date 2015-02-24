@@ -656,18 +656,15 @@
                         </node>
                         <node concept="3clFbS" id="hRzah3e" role="1bW5cS">
                           <node concept="3clFbF" id="hRzah3f" role="3cqZAp">
-                            <node concept="2OqwBi" id="1$sIUMYazEj" role="3clFbG">
+                            <node concept="2OqwBi" id="66k2xMoN1IT" role="3clFbG">
                               <node concept="2OqwBi" id="1$sIUMYazEg" role="2Oq$k0">
-                                <node concept="FGMqu" id="1$sIUMYazEh" role="2OqNvi" />
+                                <node concept="FGMqu" id="66k2xMoN0yG" role="2OqNvi" />
                                 <node concept="37vLTw" id="2BHiRxghf4p" role="2Oq$k0">
                                   <ref role="3cqZAo" node="hRzah3c" resolve="it" />
                                 </node>
                               </node>
-                              <node concept="2qgKlT" id="1$sIUMYazEk" role="2OqNvi">
-                                <ref role="37wK5l" to="tpcn:hEwILMy" resolve="isDefaultSubstitutableConcept" />
-                                <node concept="3TUQnm" id="1$sIUMYazEl" role="37wK5m">
-                                  <ref role="3TV0OU" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
-                                </node>
+                              <node concept="2qgKlT" id="66k2xMoNcMJ" role="2OqNvi">
+                                <ref role="37wK5l" to="tpcn:6spw4TQeyqh" resolve="isDefaultSubstitutable" />
                               </node>
                             </node>
                           </node>
