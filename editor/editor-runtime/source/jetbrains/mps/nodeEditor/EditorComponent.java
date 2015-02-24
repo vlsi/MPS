@@ -408,7 +408,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       @Override
       public void stateChanged(ChangeEvent e) {
-        deactivateSubstituteChooser();
+        Point point = getNodeSubstituteChooser().calcPatternEditorLocation();
+        Rectangle viewRect = getViewport().getViewRect();
+        if (point != null && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
+                          && point.getY() >= 0 && point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight()) {
+          getNodeSubstituteChooser().moveToRelative();
+        } else {
+          deactivateSubstituteChooser();
+        }
       }
     });
 
@@ -2543,7 +2550,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myNodeSubstituteChooser.setNodeSubstituteInfo(substituteInfo);
     myNodeSubstituteChooser.setPatternEditor(patternEditor);
-    myNodeSubstituteChooser.setLocationRelative(editorCell);
     myNodeSubstituteChooser.setIsSmart(isSmart);
     myNodeSubstituteChooser.setContextCell(editorCell);
     myNodeSubstituteChooser.setVisible(true);

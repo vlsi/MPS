@@ -22,7 +22,6 @@ import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -117,15 +116,37 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return (Window) component;
   }
 
-  public void setLocationRelative(EditorCell cell) {
-    if (myEditorComponent.isShowing()) {
-      Point anchor = myEditorComponent.getLocationOnScreen();
-      getPopupWindow().setRelativeCell(cell);
-      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInset(), anchor.y + cell.getY() + cell.getTopInset());
-      myPatternEditorSize = new Dimension(
-          cell.getWidth() - cell.getLeftInset() - cell.getRightInset() + 1,
-          cell.getHeight() - cell.getTopInset() - cell.getBottomInset() + 1);
+
+  public void moveToRelative() {
+    if (myContextCell == null) {
+      return;
     }
+    if (myPatternEditor.isActivated()) {
+      myPatternEditor.setLocation(calcPatternEditorLocation());
+      myPopupWindow.setLocation(myPatternEditor.getLeftBottomPosition());
+    }
+  }
+
+  private Dimension calcPatternEditorDimension() {
+    if (myContextCell == null) {
+      return null;
+    }
+    return new Dimension(
+        myContextCell.getWidth() - myContextCell.getLeftInset() - myContextCell.getRightInset() + 1,
+        myContextCell.getHeight() - myContextCell.getTopInset() - myContextCell.getBottomInset() + 1);
+  }
+
+  public Point calcPatternEditorLocation() {
+    if (myContextCell == null) {
+      return null;
+    }
+    Point anchor = myEditorComponent.getLocationOnScreen();
+    return new Point(anchor.x + myContextCell.getX() + myContextCell.getLeftInset(), anchor.y + myContextCell.getY() + myContextCell.getTopInset());
+  }
+
+  @Deprecated
+  public void setLocationRelative(EditorCell cell) {
+    myContextCell = cell;
   }
 
   public void setNodeSubstituteInfo(SubstituteInfo nodeSubstituteInfo) {
@@ -174,7 +195,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (visible) {
         myEditorComponent.pushKeyboardHandler(this);
         rebuildMenuEntries();
-        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
+        getPatternEditor().activate(getEditorWindow(), calcPatternEditorLocation(), calcPatternEditorDimension(), canShowPopup);
         getPopupWindow().setSelectionIndex(0);
         if (canShowPopup) {
           getPopupWindow().setVisible(true);
@@ -513,13 +534,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
         JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    private EditorCell myRelativeCell;
     ComponentAdapter myComponentListener = new ComponentAdapter() {
       @Override
       public void componentMoved(ComponentEvent e) {
-        if (myRelativeCell == null) return;
-        NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
-        getPatternEditor().setLocation(myPatternEditorLocation);
+        if (myEditorComponent.isShowing()) {
+          NodeSubstituteChooser.this.moveToRelative();
+        }
       }
     };
 
@@ -584,7 +604,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     public void done() {
-      setRelativeCell(null);
       setPosition(PopupWindowPosition.BOTTOM);
     }
 
@@ -601,11 +620,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       } else {
         return null;
       }
-    }
-
-
-    public void setRelativeCell(EditorCell cell) {
-      myRelativeCell = cell;
     }
 
     public int getSelectionIndex() {
