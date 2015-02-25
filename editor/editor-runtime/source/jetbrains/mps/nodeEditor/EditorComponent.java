@@ -1489,6 +1489,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
         add(component.getComponent());
       }
+      for (AdditionalPainter painter : getAdditionalPainters()) {
+        painter.onUpdate(this);
+      }
 
       getEditorContext().setMemento(memento);
     } finally {
