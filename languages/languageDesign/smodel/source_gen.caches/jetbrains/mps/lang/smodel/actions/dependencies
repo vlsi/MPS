@@ -52,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.ChildSubstituteActionsHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformActionsBuilderContext" />
