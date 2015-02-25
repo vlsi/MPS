@@ -1316,6 +1316,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } else {
       myFoldedCells.remove(cell);
     }
+    for (AdditionalPainter painter : getAdditionalPainters()) {
+      painter.onUpdate(this);
+    }
   }
 
   public Set<EditorCell> getFoldedCells() {

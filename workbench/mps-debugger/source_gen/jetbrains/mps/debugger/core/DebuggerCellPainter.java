@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -73,10 +73,14 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     paintStripeBackground(graphics, component);
     paintCellBackground(graphics, component);
   }
-  private void setComponentParameters(EditorComponent editorComponent) {
-    ModelAccess.assertLegalRead();
-    SNode node = getSNode();
-    MapSequence.fromMap(myCells).put(editorComponent, (node == null ? null : editorComponent.getBigValidCellForNode(node)));
+  private void setComponentParameters(final EditorComponent editorComponent) {
+    ModelAccess ma = editorComponent.getEditorContext().getRepository().getModelAccess();
+    ma.runReadAction(new Runnable() {
+      public void run() {
+        SNode node = getSNode();
+        MapSequence.fromMap(myCells).put(editorComponent, (node == null ? null : editorComponent.getBigValidCellForNode(node)));
+      }
+    });
   }
   private void resetComponentParameters(EditorComponent editorComponent) {
     MapSequence.fromMap(myCells).removeKey(editorComponent);
