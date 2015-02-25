@@ -2721,11 +2721,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return toSelect;
   }
 
-  /**
-   * Looks like the only reasons to make this method public is FakeEditorComponent class implementation.
-   * TODO: Check it and reduce visibility of this method.
-   */
-  public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+  private void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
     if (myEditorContext != null && myEditorContext.getModel() == model && myEditorContext.getRepository() == repository) {
       myEditorContext.reset();
       return;
