@@ -31,6 +31,12 @@ public abstract class AbstractAdditionalPainter<T> implements AdditionalPainter<
   }
 
   @Override
+  public void onUpdate(EditorComponent editorComponent) {
+    beforeRemoval(editorComponent);
+    afterAdding(editorComponent);
+  }
+
+  @Override
   public Color getCellsFontColor(EditorCell_Label cell) {
     return null;
   }
