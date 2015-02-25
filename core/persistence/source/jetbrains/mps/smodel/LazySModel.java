@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,17 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
+ * @deprecated This class has no additional value and therefore scheduled for removal
  * evgeny, 6/6/13
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public class LazySModel extends SModel {
-
-  private boolean fullLoadUpdateMode;
 
   public LazySModel(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     super(modelReference);
@@ -32,22 +34,5 @@ public class LazySModel extends SModel {
 
   public LazySModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     super(modelReference, map);
-  }
-
-  public void setUpdateMode(boolean value) {
-    // update mode means we are attaching newly loaded children
-    this.fullLoadUpdateMode = value;
-  }
-
-  @Override
-  public boolean isUpdateMode() {
-    return fullLoadUpdateMode;
-  }
-
-  @Override
-  protected void enforceFullLoad() {
-    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
-    if (!(md instanceof LazyEditableSModelBase)) return;
-    md.load();
   }
 }

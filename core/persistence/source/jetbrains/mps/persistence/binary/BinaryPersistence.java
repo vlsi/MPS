@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import jetbrains.mps.persistence.registry.IdInfoRegistry;
 import jetbrains.mps.persistence.registry.LangInfo;
 import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -238,14 +237,14 @@ public final class BinaryPersistence {
       mis = new ModelInputStream(ensureMarkSupported(is));
       SModelHeader modelHeader = loadHeader(mis);
 
-      LazySModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
+      DefaultSModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo() : mmiProvider, model);
       ReadHelper rh = bp.loadModelProperties(mis);
       rh.requestInterfaceOnly(interfaceOnly);
 
       NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, rh);
       reader.readNodesInto(model);
-      return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
     } finally {
       FileUtil.closeFileSafe(mis);
     }

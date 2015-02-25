@@ -2948,9 +2948,14 @@
               </node>
               <node concept="2ShNRf" id="4Kem6uXVniq" role="33vP2m">
                 <node concept="1pGfFk" id="4Kem6uXVnir" role="2ShVmc">
-                  <ref role="37wK5l" to="gznm:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.smodel.LazySModel,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
-                  <node concept="CQp63" id="4Kem6uXVnis" role="37wK5m">
-                    <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
+                  <ref role="37wK5l" to="gznm:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
+                  <node concept="10QFUN" id="gaxMNFNui1" role="37wK5m">
+                    <node concept="3uibUv" id="gaxMNFNuvJ" role="10QFUM">
+                      <ref role="3uigEE" to="cu2c:~SModel" resolve="SModel" />
+                    </node>
+                    <node concept="CQp63" id="4Kem6uXVnis" role="10QFUP">
+                      <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
+                    </node>
                   </node>
                   <node concept="Rm8GO" id="4Kem6uXVnit" role="37wK5m">
                     <ref role="Rm8GQ" to="gznm:~ModelLoadingState.NOT_LOADED" resolve="NOT_LOADED" />

@@ -86,6 +86,8 @@ public class SModel implements SModelData {
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
   private ImplicitImportsLegacyHolder myLegacyImplicitImports;
+  // when true, we are attaching newly loaded children to a model loaded partially
+  private boolean myIsFullLoadMode = false;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -266,6 +268,10 @@ public class SModel implements SModelData {
   }
 
   protected void enforceFullLoad() {
+    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
+    if (md != null) {
+      md.load();
+    }
   }
 
   private void fireModelNodesReadAccess() {
@@ -824,7 +830,12 @@ public class SModel implements SModelData {
   //aspects / additional
 
   public boolean isUpdateMode() {
-    return false;
+    return myIsFullLoadMode;
+  }
+
+  public void setUpdateMode(boolean value) {
+    // update mode means we are attaching newly loaded children
+    this.myIsFullLoadMode = value;
   }
 
   //to use only from SNode

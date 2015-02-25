@@ -207,7 +207,7 @@ public class ModelPersistence {
       IModelReader reader = mp.getModelReader();
       if (reader != null) {
         Document document = loadModelDocument(source);
-        return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult((SModel) reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
     String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";

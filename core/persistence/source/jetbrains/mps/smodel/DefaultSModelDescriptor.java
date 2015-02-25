@@ -71,7 +71,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       DefaultSModel model = new DefaultSModel(getReference(), myHeader);
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) model, ModelLoadingState.FULLY_LOADED);
     }
 
     ModelLoadResult result;
@@ -80,8 +80,8 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     } catch (ModelReadException e) {
       LOG.warning(String.format("Failed to load model %s: %s", getSource().getLocation(), e.toString()));
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
-      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
+      InvalidDefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
+      return new ModelLoadResult((SModel) newModel, ModelLoadingState.NOT_LOADED);
     }
 
     jetbrains.mps.smodel.SModel model = result.getModel();
@@ -230,7 +230,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   @Override
-  protected void replaceModel(LazySModel newModel, ModelLoadingState state) {
+  protected void replaceModel(SModel newModel, ModelLoadingState state) {
     super.replaceModel(newModel, state);
     myStructureModificationLog = null;
   }
