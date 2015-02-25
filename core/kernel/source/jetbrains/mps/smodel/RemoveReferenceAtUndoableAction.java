@@ -37,6 +37,6 @@ class RemoveReferenceAtUndoableAction extends SNodeUndoableAction {
 
   @Override
   protected void doRedo() {
-    SNodeAccessUtil.setReferenceTarget(getAffectedNode(), myRole, null);
+    getAffectedNode().setReference(myRole, null);
   }
 }
