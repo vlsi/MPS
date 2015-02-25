@@ -7,12 +7,15 @@ import java.awt.Color;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
+import java.util.Map;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import java.awt.Graphics;
@@ -22,7 +25,7 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
   @NotNull
   private final SNodeReference myNodePointer;
   private boolean myInvisible = false;
-  private Rectangle myCachedCoverageArea = null;
+  private Map<EditorComponent, Rectangle> myCachedCoverageAreas = MapSequence.fromMap(new HashMap<EditorComponent, Rectangle>());
   public CurrentLinePainter(SNodeReference pointer) {
     myNodePointer = pointer;
   }
@@ -56,11 +59,10 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
     if (myInvisible) {
       return null;
     }
-    if (myCachedCoverageArea != null) {
-      return myCachedCoverageArea;
+    if (!((MapSequence.fromMap(myCachedCoverageAreas).containsKey(editorComponent)))) {
+      MapSequence.fromMap(myCachedCoverageAreas).put(editorComponent, calculateCoverageArea(editorComponent));
     }
-    myCachedCoverageArea = calculateCoverageArea(editorComponent);
-    return myCachedCoverageArea;
+    return MapSequence.fromMap(myCachedCoverageAreas).get(editorComponent);
   }
   @Override
   public Color getCellsFontColor(EditorCell_Label cell) {
@@ -88,7 +90,7 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
   }
   public void setVisible(boolean visible) {
     myInvisible = !(visible);
-    myCachedCoverageArea = null;
+    MapSequence.fromMap(myCachedCoverageAreas).clear();
   }
   @Override
   public boolean paintsBackground() {
@@ -96,7 +98,7 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
   }
   @Override
   public void beforeRemoval(EditorComponent editorComponent) {
+    MapSequence.fromMap(myCachedCoverageAreas).clear();
     super.beforeRemoval(editorComponent);
-    myCachedCoverageArea = null;
   }
 }
