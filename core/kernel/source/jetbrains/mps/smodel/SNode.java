@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,7 +238,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     children_remove(wasChild);
-    wasChild.myRoleInParent = null;
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
@@ -976,7 +975,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
     if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
+      startUndoTracking(getContainingRoot(), schild.myRepository);
     }
 
     if (myModel == null) {
@@ -1068,7 +1067,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
     if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md;
+    EditableSModelBase emd = (EditableSModelBase) md; // FIXME WTF. I can modify any model, why cast here?
     emd.fireNodeAdded(this, l.getRoleName(), child);
   }
 

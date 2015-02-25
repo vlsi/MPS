@@ -16,29 +16,21 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.module.SRepositoryBase;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
+import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.module.RepositoryAccess;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-import java.util.ArrayDeque;
+import java.util.Iterator;
 
+import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 
@@ -50,54 +42,11 @@ import static org.hamcrest.Matchers.greaterThan;
  * @author Artem Tikhomirov
  */
 public class ModelListenerTest {
-  /*package*/ static SConcept ourConcept = BootstrapAdapterFactory.getConcept(1, 2, 3, "C");
-  /*package*/ static SContainmentLink ourRole = BootstrapAdapterFactory.getContainmentLink(1, 2, 3, 4, "L");
-
   @Rule
   public ErrorCollector myErrors = new ErrorCollector();
 
   private final TestModelAccess myTestModelAccess = new TestModelAccess();
   private final SRepository myTestRepo = new TestRepository(myTestModelAccess);
-
-  private org.jetbrains.mps.openapi.model.SModel createModel(int... nodesAtLevel) {
-    ArrayDeque<SNode> thisLevel = new ArrayDeque<SNode>();
-    ArrayDeque<SNode> nextLevel = new ArrayDeque<SNode>();
-    final SNode top = new SNode(ourConcept);
-    thisLevel.add(top);
-    for (int count : nodesAtLevel) {
-      while (!thisLevel.isEmpty()) {
-        SNode parent = thisLevel.removeFirst();
-        for (int i = 0; i < count; i++) {
-          SNode c = new SNode(ourConcept);
-          final String v = Integer.toString(i + 1);
-          c.setProperty(SNodeUtil.property_INamedConcept_name, v);
-          c.setProperty(SNodeUtil.property_BaseConcept_alias, v);
-          parent.addChild(ourRole, c);
-          nextLevel.add(c);
-        }
-      }
-      ArrayDeque<SNode> t = thisLevel;
-      thisLevel = nextLevel;
-      nextLevel = t;
-    }
-    final SModel modelData = new SModel(new SModelReference(new ModuleReference("M", ModuleId.regular()), SModelId.generate(), "m"));
-    for (SNode c : top.getChildren(ourRole)) {
-      modelData.addRootNode(c);
-    }
-    return new TestModelBase(modelData);
-  }
-
-  /*
-   * Blank SNode: 120 bytes (8-byte aligned. in fact, 116, as adding 1 extra field doesn't change its overall size)
-   * SNode with 1 property (name): 144 bytes
-   * SNode with 2 properties: 152 bytes
-   * Without REPO_LOCK: 88 bytes
-   *
-   * ==>
-   * 4 bytes per reference
-   * 16 bytes per object instance? <-- new Object() consumes 24 bytes!
-   * 16 bytes per new Object[0], 24 bytes for an Object[2] (if 4 bytes per ref is active).
-   */
 
 
   /**
@@ -105,7 +54,7 @@ public class ModelListenerTest {
    */
   @Test
   public void testNotifyReadListeners() {
-    org.jetbrains.mps.openapi.model.SModel m1 = createModel(3, 5, 2, 3);
+    SModel m1 = new TestModelFactory().createModel(3, 5, 2, 3);
     final int actualNodes = countTreeNodes(m1.getRootNodes());
 
     AccessCountListener1 cl1 = new AccessCountListener1();
@@ -167,28 +116,56 @@ public class ModelListenerTest {
    */
   @Test
   public void testSingleChildIteratorNotify() {
-    final org.jetbrains.mps.openapi.model.SModel m1 = createModel(1, 1, 1);
+    final SModel m1 = new TestModelFactory().createModel(1, 1, 1);
     myTestModelAccess.enableRead();
     ((SModelBase) m1).attach(myTestRepo);
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    final org.jetbrains.mps.openapi.model.SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1 = m1.getRootNodes().iterator().next();
     attachAccessListeners(m1, cl1, cl2, cl3);
-    final org.jetbrains.mps.openapi.model.SNode n1 = r1.getChildren().iterator().next();
+    final SNode n1 = r1.getChildren().iterator().next();
     Assert.assertNotNull(n1);
     // FIXME make sure we've got notification exactly for the node we're interested in (i.e. child of a root)
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
-    final org.jetbrains.mps.openapi.model.SNode n2 = r1.getChildren(ourRole).iterator().next();
+    final SNode n2 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see #testChildrenHasNextNotify(), note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertNotNull(n2);
     Assert.assertEquals(n1, n2);
+  }
+
+  /**
+   * Capture state of node read notifications as we iterate children of a given role.
+   */
+  @Test
+  public void testChildrenNextNotify() {
+    final SModel m1 = new TestModelFactory().createModel(1, 3, 1);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    // getChildren(role) is the one to check, as ChildrenIterator#getNext(node) calls for node.getContainmentLink(), which triggers another nodeRead
+    final Iterator<? extends SNode> childIterator = r1.getChildren(TestModelFactory.ourRole).iterator();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    final SNode n1 = childIterator.next();
+    final SNode n2 = childIterator.next();
+    final SNode n3 = childIterator.next();
+    detachAccessListeners(m1, cl1, cl2, cl3);
+    Assert.assertNotNull(n1);
+    Assert.assertNotNull(n2);
+    Assert.assertNotNull(n3);
+    // 3 for each node + 2 for getNext(node) calls
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(5)); // FIXME see #testChildrenHasNextNotify(), note (1)
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(3));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(3));
   }
 
   /**
@@ -201,8 +178,8 @@ public class ModelListenerTest {
    */
   @Test
   public void testChildrenHasNextNotify() {
-    final org.jetbrains.mps.openapi.model.SModel m1 = createModel(1, 1);
-    final org.jetbrains.mps.openapi.model.SModel m2 = createModel(1, 3);
+    final SModel m1 = new TestModelFactory().createModel(1, 1);
+    final SModel m2 = new TestModelFactory().createModel(1, 3);
     myTestModelAccess.enableRead();
     ((SModelBase) m1).attach(myTestRepo);
     ((SModelBase) m2).attach(myTestRepo);
@@ -212,7 +189,7 @@ public class ModelListenerTest {
     AccessCountListener3 cl3 = new AccessCountListener3();
     //
     // collection{single element}.hasNext
-    final org.jetbrains.mps.openapi.model.SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1 = m1.getRootNodes().iterator().next();
     attachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertTrue(r1.getChildren().iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
@@ -220,7 +197,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
     // just in case accessor with role is different
-    Assert.assertTrue(r1.getChildren(ourRole).iterator().hasNext());
+    Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
@@ -228,14 +205,14 @@ public class ModelListenerTest {
     //
     // collection{multiple elements}.hasNext
     cl1.reset(); cl2.reset(); cl3.reset();
-    final org.jetbrains.mps.openapi.model.SNode r2 = m2.getRootNodes().iterator().next();
+    final SNode r2 = m2.getRootNodes().iterator().next();
     attachAccessListeners(m2, cl1, cl2, cl3);
     Assert.assertTrue(r2.getChildren().iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
-    Assert.assertTrue(r2.getChildren(ourRole).iterator().hasNext());
+    Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
@@ -244,7 +221,7 @@ public class ModelListenerTest {
     //
     // collection{empty}.hasNext
     cl1.reset(); cl2.reset(); cl3.reset();
-    final org.jetbrains.mps.openapi.model.SNode n1 = r1.getChildren(ourRole).iterator().next();
+    final SNode n1 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
     // n1 is leaf node
     attachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertFalse(n1.getChildren().iterator().hasNext());
@@ -252,7 +229,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
-    Assert.assertFalse(n1.getChildren(ourRole).iterator().hasNext());
+    Assert.assertFalse(n1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
@@ -265,7 +242,7 @@ public class ModelListenerTest {
    */
   @Test
   public void testWalkTime() {
-    org.jetbrains.mps.openapi.model.SModel m1 = createModel(10, 25, 15, 5, 4);
+    SModel m1 = new TestModelFactory().createModel(10, 25, 15, 5, 4);
     final int actualNodes = countTreeNodes(m1.getRootNodes());
     // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model. I use twice as much time to account for slower build agents
     final long baselineMillis = 100;
@@ -288,31 +265,21 @@ public class ModelListenerTest {
     }
   }
 
-  private static void attachAccessListeners(org.jetbrains.mps.openapi.model.SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+  private static void attachAccessListeners(SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
     m.addAccessListener(l1);
     NodeReadEventsCaster.setNodesReadListener(l2);
     NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(l3);
   }
 
-  private void detachAccessListeners(org.jetbrains.mps.openapi.model.SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+  private void detachAccessListeners(SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
     NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
     NodeReadEventsCaster.removeNodesReadListener();
     m.removeAccessListener(l1);
   }
 
-  // doesn't trigger property/reference reads
-  private static int countTreeNodes(Iterable<? extends org.jetbrains.mps.openapi.model.SNode> nodes) {
-    int rv = 0;
-    for (org.jetbrains.mps.openapi.model.SNode n : nodes) {
-      rv++;
-      rv += countTreeNodes(n.getChildren());
-    }
-    return rv;
-  }
-
   // read every property and every reference of an each node in sub-tree
-  private static void readTreeNodes(Iterable<? extends org.jetbrains.mps.openapi.model.SNode> nodes) {
-    for (org.jetbrains.mps.openapi.model.SNode n : nodes) {
+  private static void readTreeNodes(Iterable<? extends SNode> nodes) {
+    for (SNode n : nodes) {
       for (SProperty p : n.getProperties()) { // 1 nodeRead
         n.getProperty(p);
       }
@@ -333,141 +300,18 @@ public class ModelListenerTest {
     }
 
     @Override
-    public void nodeRead(org.jetbrains.mps.openapi.model.SNode node) {
+    public void nodeRead(SNode node) {
       myVisitedNodes++;
     }
 
     @Override
-    public void propertyRead(org.jetbrains.mps.openapi.model.SNode node, String name) {
+    public void propertyRead(SNode node, String name) {
       myPropertiesRead++;
     }
 
     @Override
-    public void referenceRead(org.jetbrains.mps.openapi.model.SNode node, String role) {
+    public void referenceRead(SNode node, String role) {
       myReferencesRead++;
-    }
-  }
-
-  private static class TestRepository extends SRepositoryBase {
-    private final ModelAccess myModelAccess;
-
-    public TestRepository(ModelAccess ma) {
-      myModelAccess = ma;
-    }
-    @Override
-    public SModule getModule(SModuleId ref) {
-      return null;
-    }
-
-    @Override
-    public Iterable<SModule> getModules() {
-      return null;
-    }
-
-    @Override
-    public ModelAccess getModelAccess() {
-      return myModelAccess;
-    }
-
-    @Override
-    public RepositoryAccess getRepositoryAccess() {
-      return null;
-    }
-
-    @Override
-    public void saveAll() {
-      // no-op
-    }
-  }
-
-  private static class TestModelAccess extends ModelAccessBase {
-    private boolean myCanRead;
-    private boolean myCanWrite;
-    void disableRead() {
-      myCanRead = myCanWrite = false;
-    }
-    void enableRead() {
-      myCanRead = true;
-      myCanWrite = false;
-    }
-    void enableWrite() {
-      myCanRead = myCanWrite = true;
-    }
-
-    @Override
-    public boolean canRead() {
-      return myCanRead;
-    }
-
-    @Override
-    public void checkReadAccess() {
-      if (!canRead()) {
-        throw new IllegalModelAccessError("READ");
-      }
-    }
-
-    @Override
-    public boolean canWrite() {
-      return myCanWrite;
-    }
-
-    @Override
-    public void checkWriteAccess() {
-      if (!canWrite()) {
-        throw new IllegalModelAccessError("WRITE");
-      }
-    }
-
-    @Override
-    public void executeCommand(Runnable r) {
-      r.run();
-    }
-
-    @Override
-    public void executeCommandInEDT(Runnable r) {
-      r.run();
-    }
-
-    @Override
-    public void executeUndoTransparentCommand(Runnable r) {
-      r.run();
-    }
-
-    @Override
-    public boolean isCommandAction() {
-      return false;
-    }
-  }
-
-  private static class TestModelBase extends SModelBase {
-    private final SModel myModelData;
-
-    public TestModelBase(SModel modelData) {
-      super(modelData.getReference(), new NullDataSource());
-      myModelData = modelData;
-      myModelData.setModelDescriptor(this);
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
-    }
-
-    @Override
-    public SModel getSModelInternal() {
-      return myModelData;
-    }
-
-    @Nullable
-    @Override
-    protected SModel getCurrentModelInternal() {
-      return myModelData;
-    }
-
-    @Override
-    public boolean isLoaded() {
-      return true;
-    }
-
-    @Override
-    public void unload() {
-      // no-op
     }
   }
 
@@ -478,22 +322,22 @@ public class ModelListenerTest {
     public int myChildrenRead;
 
     @Override
-    public void nodeChildReadAccess(org.jetbrains.mps.openapi.model.SNode node, String childRole, org.jetbrains.mps.openapi.model.SNode child) {
+    public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
       myChildrenRead++;
     }
 
     @Override
-    public void nodePropertyReadAccess(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String value) {
+    public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       myPropertiesRead++;
     }
 
     @Override
-    public void nodeReferentReadAccess(org.jetbrains.mps.openapi.model.SNode node, String referentRole, org.jetbrains.mps.openapi.model.SNode referent) {
+    public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
       myReferencesRead++;
     }
 
     @Override
-    public void nodeUnclassifiedReadAccess(org.jetbrains.mps.openapi.model.SNode node) {
+    public void nodeUnclassifiedReadAccess(SNode node) {
       myVisitedNodes++;
     }
 
@@ -508,22 +352,22 @@ public class ModelListenerTest {
     public int myReferencesRead;
 
     @Override
-    public void nodePropertyReadAccess(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String value) {
+    public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       Assert.fail("NodeReadAccessCasterInEditor doesn't call this method from NodeReadAccessInEditorListener");
     }
 
     @Override
-    public void propertyDirtyReadAccess(org.jetbrains.mps.openapi.model.SNode node, String propertyName) {
+    public void propertyDirtyReadAccess(SNode node, String propertyName) {
       myPropertiesRead++;
     }
 
     @Override
-    public void nodeReferentReadAccess(org.jetbrains.mps.openapi.model.SNode node, String referentRole, org.jetbrains.mps.openapi.model.SNode referent) {
+    public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
       myReferencesRead++;
     }
 
     @Override
-    public void nodeUnclassifiedReadAccess(org.jetbrains.mps.openapi.model.SNode node) {
+    public void nodeUnclassifiedReadAccess(SNode node) {
       myVisitedNodes++;
     }
 
