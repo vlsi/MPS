@@ -1279,11 +1279,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1240931315602">
     <file name="SEnumOperation_Behavior.java">
-      <node id="1240931343819" at="13,66,14,379" concept="7" />
+      <node id="1240931343819" at="13,66,14,609" concept="7" />
       <node id="1240931315602" at="11,0,13,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1240931315602" at="13,0,16,0" concept="8" trace="call_getEnum_1240931322043#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1240931315604" at="11,43,11,43" />
-      <scope id="1240931322046" at="13,66,14,379" />
+      <scope id="1240931322046" at="13,66,14,609" />
       <scope id="1240931315602" at="11,0,13,0">
         <var name="thisNode" id="1240931315602" />
       </scope>
