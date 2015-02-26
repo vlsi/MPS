@@ -121,7 +121,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -8325,6 +8325,19 @@
         <node concept="3clFbS" id="i3Mok0a" role="2VODD2">
           <node concept="3clFbF" id="i3MopFn" role="3cqZAp">
             <node concept="1Wc70l" id="6u1pdufeK32" role="3clFbG">
+              <node concept="2OqwBi" id="i3MopFo" role="3uHU7B">
+                <node concept="2OqwBi" id="i3MopFp" role="2Oq$k0">
+                  <node concept="30H73N" id="i3MopFq" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="i3MopFr" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                  </node>
+                </node>
+                <node concept="1mIQ4w" id="i3MopFs" role="2OqNvi">
+                  <node concept="chp4Y" id="i3Moq__" role="cj9EA">
+                    <ref role="cht4Q" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
+                  </node>
+                </node>
+              </node>
               <node concept="17R0WA" id="6u1pdufeVQr" role="3uHU7w">
                 <node concept="3B5_sB" id="6u1pdufeWak" role="3uHU7w">
                   <ref role="3B5MYn" to="tpck:fKAOsGN" resolve="string" />
@@ -8332,6 +8345,7 @@
                 <node concept="2OqwBi" id="6u1pdufeQ7W" role="3uHU7B">
                   <node concept="2OqwBi" id="6u1pdufeO3Z" role="2Oq$k0">
                     <node concept="1PxgMI" id="6u1pdufeNxG" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
                       <ref role="1PxNhF" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
                       <node concept="2OqwBi" id="6u1pdufeMnp" role="1PxMeX">
                         <node concept="2OqwBi" id="6u1pdufeKnF" role="2Oq$k0">
@@ -8349,19 +8363,6 @@
                   </node>
                   <node concept="3TrEf2" id="6u1pdufeSde" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpce:fKM4eW5" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="i3MopFo" role="3uHU7B">
-                <node concept="2OqwBi" id="i3MopFp" role="2Oq$k0">
-                  <node concept="30H73N" id="i3MopFq" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="i3MopFr" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="i3MopFs" role="2OqNvi">
-                  <node concept="chp4Y" id="i3Moq__" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:i2ZYiQY" resolve="EnumMember_ValueOperation" />
                   </node>
                 </node>
               </node>
@@ -8383,6 +8384,7 @@
                 <node concept="2OqwBi" id="6u1pdufeWXh" role="3uHU7B">
                   <node concept="2OqwBi" id="6u1pdufeWXi" role="2Oq$k0">
                     <node concept="1PxgMI" id="6u1pdufeWXj" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
                       <ref role="1PxNhF" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
                       <node concept="2OqwBi" id="6u1pdufeWXk" role="1PxMeX">
                         <node concept="2OqwBi" id="6u1pdufeWXl" role="2Oq$k0">
@@ -8462,6 +8464,7 @@
                 <node concept="2OqwBi" id="6u1pdufeXEN" role="3uHU7B">
                   <node concept="2OqwBi" id="6u1pdufeXEO" role="2Oq$k0">
                     <node concept="1PxgMI" id="6u1pdufeXEP" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
                       <ref role="1PxNhF" to="tp25:i2ZThgx" resolve="SEnumMemberType" />
                       <node concept="2OqwBi" id="6u1pdufeXEQ" role="1PxMeX">
                         <node concept="2OqwBi" id="6u1pdufeXER" role="2Oq$k0">
