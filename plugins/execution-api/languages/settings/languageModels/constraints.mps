@@ -139,6 +139,7 @@
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
         <reference id="1140138128738" name="concept" index="1PxNhF" />
         <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
@@ -689,6 +690,7 @@
                 <node concept="2OqwBi" id="4DPUXm60GFg" role="1Ub_4B">
                   <node concept="2OqwBi" id="4DPUXm60GFc" role="2Oq$k0">
                     <node concept="1PxgMI" id="4DPUXm60GFd" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
                       <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="nLn13" id="4DPUXm60GFe" role="1PxMeX" />
                     </node>
