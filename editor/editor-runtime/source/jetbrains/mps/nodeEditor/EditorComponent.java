@@ -408,14 +408,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       @Override
       public void stateChanged(ChangeEvent e) {
+        if (!getNodeSubstituteChooser().isVisible()) {
+          return;
+        }
         Point point = getNodeSubstituteChooser().calcPatternEditorLocation();
         Rectangle viewRect = getViewport().getViewRect();
-        if (point != null && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
-                          && point.getY() >= 0 && point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight()) {
-          getNodeSubstituteChooser().moveToRelative();
+        if (isInsideEditor(point, viewRect)) {
+          getNodeSubstituteChooser().moveToContextCell();
         } else {
           deactivateSubstituteChooser();
         }
+      }
+
+      private boolean isInsideEditor(Point point, Rectangle viewRect) {
+        return isShowing() && point != null
+                            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
+                            && point.getY() >= 0 && point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
       }
     });
 
@@ -2502,7 +2510,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern,
       boolean isSmart) {
-    if (substituteInfo == null) {
+    if (editorCell == null || substituteInfo == null) {
       return false;
     }
 

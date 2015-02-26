@@ -42,6 +42,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WindowsUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -83,9 +84,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private boolean myChooserActivated = false;
   private boolean myPopupActivated;
 
-  private Point myPatternEditorLocation = new Point(10, 10);
-  private Dimension myPatternEditorSize = new Dimension(50, 50);
-
   private EditorCell myContextCell;
   private boolean myIsSmart = false;
   private EditorComponent myEditorComponent;
@@ -119,27 +117,33 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
 
-  public void moveToRelative() {
-    if (myContextCell == null) {
+  /**
+   * Changes the location of the chooser accordingly to the location of the context cell
+   * If containing component is not showings does nothing.
+   *
+   * @throws java.lang.IllegalStateException if the chooser is not visible
+   */
+  public void moveToContextCell() {
+    if (!isVisible()) {
+      throw (new IllegalStateException("NodeSubstituteChooser must be visible to change its location"));
+    }
+    Point location = calcPatternEditorLocation();
+    if (location == null) {
       return;
     }
-    if (myPatternEditor.isActivated()) {
-      myPatternEditor.setLocation(calcPatternEditorLocation());
-      myPopupWindow.setLocation(myPatternEditor.getLeftBottomPosition());
-    }
+    getPatternEditor().setLocation(location);
+    getPopupWindow().moveToPatternEditor();
   }
 
   private Dimension calcPatternEditorDimension() {
-    if (myContextCell == null) {
-      return null;
-    }
     return new Dimension(
         myContextCell.getWidth() - myContextCell.getLeftInset() - myContextCell.getRightInset() + 1,
         myContextCell.getHeight() - myContextCell.getTopInset() - myContextCell.getBottomInset() + 1);
   }
 
+  @Nullable
   public Point calcPatternEditorLocation() {
-    if (myContextCell == null) {
+    if (!myEditorComponent.isShowing()) {
       return null;
     }
     Point anchor = myEditorComponent.getLocationOnScreen();
@@ -147,11 +151,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   @Deprecated
-  public void setLocationRelative(EditorCell cell) {
+  public void setLocationRelative(@NotNull EditorCell cell) {
     myContextCell = cell;
   }
 
-  public void setNodeSubstituteInfo(SubstituteInfo nodeSubstituteInfo) {
+  public void setNodeSubstituteInfo(@NotNull SubstituteInfo nodeSubstituteInfo) {
     assert !myChooserActivated;
     myNodeSubstituteInfo = nodeSubstituteInfo;
     myCellRenderer = null;
@@ -162,7 +166,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myPatternEditor = patternEditor;
   }
 
-  public void setContextCell(EditorCell contextCell) {
+  public void setContextCell(@NotNull EditorCell contextCell) {
     myContextCell = contextCell;
   }
 
@@ -185,6 +189,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   public boolean isVisible() {
+    if (myChooserActivated) {
+      NodeSubstitutePatternEditor patternEditor = getPatternEditor();
+      assert patternEditor.isActivated();
+    }
     return myChooserActivated;
   }
 
@@ -199,7 +207,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (visible) {
         myEditorComponent.pushKeyboardHandler(this);
         rebuildMenuEntries();
-        getPatternEditor().activate(getEditorWindow(), calcPatternEditorLocation(), calcPatternEditorDimension(), canShowPopup);
+        Point location = calcPatternEditorLocation();
+        if (location == null){
+          location = new Point(10, 10);
+        }
+        getPatternEditor().activate(getEditorWindow(), location, calcPatternEditorDimension(), canShowPopup);
         getPopupWindow().setSelectionIndex(0);
         if (canShowPopup) {
           getPopupWindow().setVisible(true);
@@ -210,8 +222,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         if (canShowPopup) {
           getPopupWindow().setVisible(false);
           getPopupWindow().done();
-          getPatternEditor().done();
         }
+        getPatternEditor().done();
         myNodeSubstituteInfo.invalidateActions();
         myCellRenderer = null;
         myPopupWindow = null;
@@ -219,8 +231,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myEditorComponent.popKeyboardHandler();
         myContextCell = null;
       }
+      myChooserActivated = visible;
     }
-    myChooserActivated = visible;
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
@@ -487,12 +499,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private int getPageSize() {
-    return myPopupWindow.myList.getLastVisibleIndex() - myPopupWindow.myList.getFirstVisibleIndex();
+    return getPopupWindow().myList.getLastVisibleIndex() - getPopupWindow().myList.getFirstVisibleIndex();
   }
 
   private void doSubstituteSelection() {
     final String pattern = getPatternEditor().getPattern();
-    final SubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
+    final SubstituteAction action = mySubstituteActions.get(getPopupWindow().getSelectionIndex());
     setVisible(false);
     myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
       @Override
@@ -542,8 +554,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     ComponentAdapter myComponentListener = new ComponentAdapter() {
       @Override
       public void componentMoved(ComponentEvent e) {
-        if (myEditorComponent.isShowing()) {
-          NodeSubstituteChooser.this.moveToRelative();
+        if (NodeSubstituteChooser.this.isVisible()) {
+          NodeSubstituteChooser.this.moveToContextCell();
         }
       }
     };
@@ -640,12 +652,19 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectedIndex(index);
     }
 
+    public void moveToPatternEditor() {
+      Point location = getPatternEditor().getLeftBottomPosition();
+      if (getPosition() == PopupWindowPosition.TOP) {
+        location = new Point(location.x, location.y - getHeight() - getPatternEditor().getHeight());
+      }
+      setLocation(location);
+    }
 
     private void relayout() {
-      if (!myPatternEditor.isActivated()) {
+      if (!getPatternEditor().isActivated()) {
         return;
       }
-      Point location = myPatternEditor.getLeftBottomPosition();
+      Point location = getPatternEditor().getLeftBottomPosition();
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
