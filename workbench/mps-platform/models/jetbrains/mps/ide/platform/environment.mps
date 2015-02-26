@@ -29,6 +29,8 @@
     <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
+    <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
+    <import index="3df7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -372,6 +374,35 @@
             </node>
             <node concept="1rXfSq" id="6z7xhWkushs" role="37vLTx">
               <ref role="37wK5l" node="6z7xhWku8L1" resolve="createIdeaTestApp" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5tBfmt26pcD" role="3cqZAp">
+          <node concept="3SKdUq" id="5tBfmt26pml" role="3SKWNk">
+            <property role="3SKdUp" value="Necessary to listen for FS changes notifications &amp; notify MPS FS listeners to update reposotiry/.." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5tBfmt26BRK" role="3cqZAp">
+          <node concept="3SKdUq" id="5tBfmt26C1$" role="3SKWNk">
+            <property role="3SKdUp" value="this code will work if on executing tests with &quot;reuse caches&quot; option" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5tBfmt26pAU" role="3cqZAp">
+          <node concept="3SKdUq" id="5tBfmt26pKE" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)?" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5tBfmt26nDb" role="3cqZAp">
+          <node concept="2OqwBi" id="5tBfmt26o4Z" role="3clFbG">
+            <node concept="2YIFZM" id="5tBfmt26o1c" role="2Oq$k0">
+              <ref role="37wK5l" to="2eq1:7mrRUyVUvb7" resolve="instance" />
+              <ref role="1Pybhc" to="2eq1:7mrRUyVUv4e" resolve="FSChangesWatcher" />
+            </node>
+            <node concept="liA8E" id="5tBfmt26oj9" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:7mrRUyVUvcY" resolve="initComponent" />
+              <node concept="3clFbT" id="5tBfmt26ol0" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
             </node>
           </node>
         </node>
@@ -1770,6 +1801,27 @@
                                     <node concept="3cmrfG" id="_$UaLIE2S" role="AHEQo">
                                       <property role="3cmrfH" value="0" />
                                     </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="5tBfmt26B5o" role="3cqZAp">
+                                <node concept="3SKdUq" id="5tBfmt26Ces" role="3SKWNk">
+                                  <property role="3SKdUp" value="calling sync refresh for FS in order to update all modules/models loaded from the project" />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="5tBfmt26CoE" role="3cqZAp">
+                                <node concept="3SKdUq" id="5tBfmt26CQH" role="3SKWNk">
+                                  <property role="3SKdUp" value="if unit-test is executed with the &quot;reuse caches&quot; option." />
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="5tBfmt26$zg" role="3cqZAp">
+                                <node concept="2OqwBi" id="5tBfmt26_u1" role="3clFbG">
+                                  <node concept="2YIFZM" id="5tBfmt26_2$" role="2Oq$k0">
+                                    <ref role="37wK5l" to="3df7:~VirtualFileManager.getInstance():com.intellij.openapi.vfs.VirtualFileManager" resolve="getInstance" />
+                                    <ref role="1Pybhc" to="3df7:~VirtualFileManager" resolve="VirtualFileManager" />
+                                  </node>
+                                  <node concept="liA8E" id="5tBfmt26A4j" role="2OqNvi">
+                                    <ref role="37wK5l" to="3df7:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
                                   </node>
                                 </node>
                               </node>
