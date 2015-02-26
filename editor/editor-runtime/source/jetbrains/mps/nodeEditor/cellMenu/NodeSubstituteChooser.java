@@ -192,6 +192,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated) {
       NodeSubstitutePatternEditor patternEditor = getPatternEditor();
       assert patternEditor.isActivated();
+      assert myContextCell != null;
+      assert myNodeSubstituteInfo != null;
     }
     return myChooserActivated;
   }
@@ -201,14 +203,24 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
 
+  /**
+   * Makes the chooser visible or invisible.
+   *
+   * @param visible true to make the chooser visible; false to
+   *		make it invisible.
+   * @throws java.lang.IllegalStateException if making visible and context cell is null or substitute info is null
+   */
   public void setVisible(boolean visible) {
     if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
+        if (myContextCell == null || myNodeSubstituteInfo == null) {
+          throw new IllegalStateException("Context cell and substitute info must not be null to show the NodeSubstituteChooser");
+        }
         myEditorComponent.pushKeyboardHandler(this);
         rebuildMenuEntries();
         Point location = calcPatternEditorLocation();
-        if (location == null){
+        if (location == null) {
           location = new Point(10, 10);
         }
         getPatternEditor().activate(getEditorWindow(), location, calcPatternEditorDimension(), canShowPopup);
@@ -219,17 +231,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
         myPopupActivated = true;
       } else {
-        if (canShowPopup) {
-          getPopupWindow().setVisible(false);
-          getPopupWindow().done();
-        }
-        getPatternEditor().done();
+        dispose();
         myNodeSubstituteInfo.invalidateActions();
         myCellRenderer = null;
         myPopupWindow = null;
         myPopupActivated = false;
         myEditorComponent.popKeyboardHandler();
         myContextCell = null;
+        myNodeSubstituteInfo = null;
       }
       myChooserActivated = visible;
     }
@@ -524,15 +533,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public void dispose() {
     if (myPopupWindow != null) {
-      myPopupWindow.getParent().remove(myPopupWindow);
       myPopupWindow.dispose();
-      myPopupWindow = null;
+    }
+    if (myPatternEditor != null) {
+      myPatternEditor.done();
     }
   }
 
   public void clearContent() {
     setVisible(false);
-    setNodeSubstituteInfo(null);
     mySubstituteActions.clear();
   }
 
@@ -618,10 +627,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           relayout();
         }
       });
-    }
-
-    public void done() {
-      setPosition(PopupWindowPosition.BOTTOM);
     }
 
     @Override
