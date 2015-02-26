@@ -11,10 +11,17 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.Language;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
@@ -35,11 +42,24 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      SNode c = node;
-      SAbstractConcept concept = SNodeOperations.asSConcept(c);
+      SAbstractConcept concept = SNodeOperations.asSConcept(node);
       if (concept == null) {
-        // just in case, generally it shall not happen provided our concept (and descriptor) registries are correct 
-        // However, doesn't hurt to protect finder implementation from unexpected input 
+        // doesn't hurt to protect finder implementation from unexpected input 
+        StringBuilder sb = new StringBuilder();
+        sb.append("Concept is not found for concept declaration ");
+        sb.append(NameUtil.nodeFQName(node));
+        sb.append(" finder will return empty results. ");
+
+        SModule module = check_mbibnv_a0g0b0a(check_mbibnv_a0a6a1a0(node));
+        if (module != null) {
+          LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(((Language) module));
+          if (runtime != null) {
+            sb.append("Language runtime class is " + runtime.getClass().getName());
+          }
+        }
+        if (LOG_1127887887.isEnabledFor(Level.ERROR)) {
+          LOG_1127887887.error(sb.toString());
+        }
         return;
       }
       List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, monitor));
@@ -53,5 +73,18 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
+  }
+  protected static Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
+  private static SModule check_mbibnv_a0g0b0a(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModel check_mbibnv_a0a6a1a0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
   }
 }
