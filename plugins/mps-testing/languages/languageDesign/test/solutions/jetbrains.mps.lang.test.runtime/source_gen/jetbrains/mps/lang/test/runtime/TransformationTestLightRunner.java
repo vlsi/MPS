@@ -20,10 +20,10 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     final Project testProject = findProject(modelName);
-    doInitTest(test, testProject, modelName);
     if (testProject == null) {
       throw new IllegalStateException("Cannot execute test in-process : the context project containing the model " + modelName + " was not found");
     }
+    doInitTest(test, testProject, modelName);
     ModelAccess.instance().flushEventQueue();
   }
 
