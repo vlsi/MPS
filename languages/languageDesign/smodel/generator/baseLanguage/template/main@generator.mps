@@ -256,9 +256,6 @@
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
-      <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
-        <child id="8900764248744213871" name="contentNode" index="1Koe22" />
-      </concept>
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
       <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
         <child id="1194989344771" name="alternativeConsequence" index="UU_$l" />
@@ -8422,24 +8419,22 @@
           </node>
         </node>
       </node>
-      <node concept="1Koe21" id="6u1pdufeWXx" role="1lVwrX">
-        <node concept="gft3U" id="48WPkFI_PuV" role="1Koe22">
-          <node concept="2YIFZM" id="48WPkFI_Tp_" role="gfFT$">
-            <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-            <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
-            <node concept="2YIFZM" id="48WPkFI_PuW" role="37wK5m">
-              <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-              <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
-              <node concept="10Nm6u" id="48WPkFI_PuX" role="37wK5m">
-                <node concept="29HgVG" id="48WPkFI_PuY" role="lGtFl">
-                  <node concept="3NFfHV" id="48WPkFI_PuZ" role="3NFExx">
-                    <node concept="3clFbS" id="48WPkFI_Pv0" role="2VODD2">
-                      <node concept="3clFbF" id="48WPkFI_Pv1" role="3cqZAp">
-                        <node concept="2OqwBi" id="48WPkFI_Pv2" role="3clFbG">
-                          <node concept="30H73N" id="48WPkFI_Pv3" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="48WPkFI_Pv4" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
-                          </node>
+      <node concept="gft3U" id="3XaonnNOyHc" role="1lVwrX">
+        <node concept="2YIFZM" id="3XaonnNOz1h" role="gfFT$">
+          <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+          <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+          <node concept="2YIFZM" id="3XaonnNOz1i" role="37wK5m">
+            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+            <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
+            <node concept="10Nm6u" id="3XaonnNOz1j" role="37wK5m">
+              <node concept="29HgVG" id="3XaonnNOz1k" role="lGtFl">
+                <node concept="3NFfHV" id="3XaonnNOz1l" role="3NFExx">
+                  <node concept="3clFbS" id="3XaonnNOz1m" role="2VODD2">
+                    <node concept="3clFbF" id="3XaonnNOz1n" role="3cqZAp">
+                      <node concept="2OqwBi" id="3XaonnNOz1o" role="3clFbG">
+                        <node concept="30H73N" id="3XaonnNOz1p" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="3XaonnNOz1q" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                         </node>
                       </node>
                     </node>
@@ -8502,24 +8497,22 @@
           </node>
         </node>
       </node>
-      <node concept="1Koe21" id="6u1pdufeXF3" role="1lVwrX">
-        <node concept="gft3U" id="48WPkFI_T_j" role="1Koe22">
-          <node concept="2YIFZM" id="48WPkFI_TJn" role="gfFT$">
-            <ref role="37wK5l" to="e2lb:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-            <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
-            <node concept="2YIFZM" id="48WPkFI_TJo" role="37wK5m">
-              <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
-              <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
-              <node concept="10Nm6u" id="48WPkFI_TJp" role="37wK5m">
-                <node concept="29HgVG" id="48WPkFI_TJq" role="lGtFl">
-                  <node concept="3NFfHV" id="48WPkFI_TJr" role="3NFExx">
-                    <node concept="3clFbS" id="48WPkFI_TJs" role="2VODD2">
-                      <node concept="3clFbF" id="48WPkFI_TJt" role="3cqZAp">
-                        <node concept="2OqwBi" id="48WPkFI_TJu" role="3clFbG">
-                          <node concept="30H73N" id="48WPkFI_TJv" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="48WPkFI_TJw" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
-                          </node>
+      <node concept="gft3U" id="48WPkFI_T_j" role="1lVwrX">
+        <node concept="2YIFZM" id="48WPkFI_TJn" role="gfFT$">
+          <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="37wK5l" to="e2lb:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+          <node concept="2YIFZM" id="48WPkFI_TJo" role="37wK5m">
+            <ref role="37wK5l" to="i8bi:X9k2kW5hMk" resolve="getEnumMemberValue" />
+            <ref role="1Pybhc" to="i8bi:X9k2kW5hL5" resolve="SEnumOperations" />
+            <node concept="10Nm6u" id="48WPkFI_TJp" role="37wK5m">
+              <node concept="29HgVG" id="48WPkFI_TJq" role="lGtFl">
+                <node concept="3NFfHV" id="48WPkFI_TJr" role="3NFExx">
+                  <node concept="3clFbS" id="48WPkFI_TJs" role="2VODD2">
+                    <node concept="3clFbF" id="48WPkFI_TJt" role="3cqZAp">
+                      <node concept="2OqwBi" id="48WPkFI_TJu" role="3clFbG">
+                        <node concept="30H73N" id="48WPkFI_TJv" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="48WPkFI_TJw" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                         </node>
                       </node>
                     </node>
