@@ -2871,6 +2871,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     releaseTypeCheckingContext();
     if (myNodePointer != null) {
       myNode = myNodePointer.resolve(getRepository());
+      myEditorContext = createEditorContext(myNode == null ? null : myNode.getModel(), myRepository);
     }
     acquireTypeCheckingContext();
   }
