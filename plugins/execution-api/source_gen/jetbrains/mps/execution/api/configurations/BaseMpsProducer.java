@@ -46,6 +46,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   protected ConfigurationContext getContext() {
     return myContext;
   }
+  @Nullable
   @Override
   protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext context) {
     myContext = context;
@@ -72,6 +73,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, false);
   }
+  @Nullable
   protected abstract RunConfiguration doCreateConfiguration(T node);
   protected abstract boolean isApplicable(Object element);
   @Override

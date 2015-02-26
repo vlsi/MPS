@@ -14,7 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="10,0,85,0" name="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
+      <unit at="10,0,90,0" name="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/1048802521465134864">
@@ -299,6 +299,49 @@
         <var name="parentNode" id="5453800039284219777" />
       </scope>
       <unit id="5453800039284219777" at="18,0,48,0" name="jetbrains.mps.execution.configurations.constraints.GetProjectOperation_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/7667828742972475445">
+    <file name="ContextExpression_Constraints.java">
+      <node id="7667828742972475445" at="16,42,17,98" concept="11" />
+      <node id="7667828742972475445" at="20,43,21,16" concept="6" />
+      <node id="7667828742972475445" at="24,200,25,96" concept="5" />
+      <node id="7667828742972475445" at="25,96,26,0" concept="8" />
+      <node id="7667828742972475445" at="27,51,28,67" concept="2" />
+      <node id="7667828742972475445" at="29,5,30,0" concept="8" />
+      <node id="7667828742972475445" at="30,0,31,18" concept="6" />
+      <node id="7667828742972592150" at="33,148,34,247" concept="6" />
+      <node id="7667828742972475445" at="36,0,37,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="7667828742972475445" at="16,0,19,0" concept="1" trace="ContextExpression_Constraints#()V" />
+      <node id="7667828742972475445" at="26,0,29,5" concept="3" />
+      <node id="7667828742972475445" at="33,0,36,0" concept="10" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="7667828742972475445" at="19,0,23,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="7667828742972475445" at="23,0,33,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="7667828742972475445" at="16,42,17,98" />
+      <scope id="7667828742972475445" at="20,43,21,16" />
+      <scope id="7667828742972475445" at="27,51,28,67" />
+      <scope id="7667828742972475447" at="33,148,34,247" />
+      <scope id="7667828742972475445" at="16,0,19,0" />
+      <scope id="7667828742972475445" at="33,0,36,0">
+        <var name="childConcept" id="7667828742972475445" />
+        <var name="link" id="7667828742972475445" />
+        <var name="node" id="7667828742972475445" />
+        <var name="operationContext" id="7667828742972475445" />
+        <var name="parentNode" id="7667828742972475445" />
+      </scope>
+      <scope id="7667828742972475445" at="19,0,23,0" />
+      <scope id="7667828742972475445" at="24,200,31,18">
+        <var name="result" id="7667828742972475445" />
+      </scope>
+      <scope id="7667828742972475445" at="23,0,33,0">
+        <var name="checkingNodeContext" id="7667828742972475445" />
+        <var name="childConcept" id="7667828742972475445" />
+        <var name="link" id="7667828742972475445" />
+        <var name="node" id="7667828742972475445" />
+        <var name="operationContext" id="7667828742972475445" />
+        <var name="parentNode" id="7667828742972475445" />
+      </scope>
+      <unit id="7667828742972475445" at="15,0,38,0" name="jetbrains.mps.execution.configurations.constraints.ContextExpression_Constraints" />
     </file>
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/7806358006983673554">
