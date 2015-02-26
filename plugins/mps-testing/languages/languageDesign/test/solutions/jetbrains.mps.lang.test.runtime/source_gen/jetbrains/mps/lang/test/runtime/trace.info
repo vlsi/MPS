@@ -883,9 +883,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/5283973801935346081">
     <file name="TransformationTestLightRunner.java">
       <node id="8406928085288743292" at="21,151,22,55" concept="11" />
-      <node id="5283973801935401397" at="22,55,23,45" concept="6" />
-      <node id="6620883186955657391" at="24,30,25,147" concept="19" />
-      <node id="5283973801935401404" at="26,5,27,45" concept="6" />
+      <node id="6620883186955657391" at="23,30,24,147" concept="19" />
+      <node id="5283973801935401397" at="25,5,26,45" concept="6" />
+      <node id="5283973801935401404" at="26,45,27,45" concept="6" />
       <node id="7273600282893400458" at="31,152,32,68" concept="6" />
       <node id="6620883186955140264" at="36,49,37,47" concept="11" />
       <node id="6620883186955447188" at="37,47,38,67" concept="11" />
@@ -898,7 +898,7 @@
       <node id="6620883186955590879" at="56,9,57,20" concept="12" />
       <node id="6620883186955447190" at="62,36,63,43" concept="12" />
       <node id="6620883186955447190" at="64,5,65,16" concept="12" />
-      <node id="6620883186955654371" at="23,45,26,5" concept="9" />
+      <node id="6620883186955654371" at="22,55,25,5" concept="9" />
       <node id="6620883186955457916" at="38,67,41,5" concept="9" />
       <node id="5189733185936208109" at="48,81,51,13" concept="9" />
       <node id="5189733185936216045" at="52,11,55,11" concept="9" />
@@ -911,7 +911,7 @@
       <node id="5189733185936330192" at="43,0,59,0" concept="10" trace="compute#()Ljetbrains/mps/project/Project;" />
       <node id="5189733185936312813" at="41,5,59,7" concept="12" />
       <node id="8406928085288769261" at="35,0,61,0" concept="10" trace="findProject#(Ljava/lang/String;)Ljetbrains/mps/project/Project;" />
-      <scope id="6620883186955654373" at="24,30,25,147" />
+      <scope id="6620883186955654373" at="23,30,24,147" />
       <scope id="7273600282893400451" at="31,152,32,68" />
       <scope id="6620883186955457918" at="39,32,40,18" />
       <scope id="5189733185936208110" at="49,63,50,28" />

@@ -24,7 +24,7 @@
       <unit at="14,0,44,0" name="jetbrains.mps.execution.configurations.behavior.BeforeTask_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,80,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,82,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConfigurationFromExecutorReference_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_BehaviorDescriptor" />
@@ -34,6 +34,9 @@
     </file>
     <file name="ConsoleType_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.execution.configurations.behavior.ConsoleType_BehaviorDescriptor" />
+    </file>
+    <file name="ContextExpression_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.execution.configurations.behavior.ContextExpression_BehaviorDescriptor" />
     </file>
     <file name="Create_ConceptFunction_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.execution.configurations.behavior.Create_ConceptFunction_BehaviorDescriptor" />

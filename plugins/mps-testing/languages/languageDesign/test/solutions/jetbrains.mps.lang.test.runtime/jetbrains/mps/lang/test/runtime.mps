@@ -231,7 +231,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -8345,20 +8345,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4_ksyPqP76P" role="3cqZAp">
-          <node concept="1rXfSq" id="4_ksyPqP76Q" role="3clFbG">
-            <ref role="37wK5l" node="5sV3JxOSGjI" resolve="doInitTest" />
-            <node concept="37vLTw" id="4_ksyPqP76R" role="37wK5m">
-              <ref role="3cqZAo" node="4_ksyPqOXjZ" resolve="test" />
-            </node>
-            <node concept="37vLTw" id="7iFq8OZT0LG" role="37wK5m">
-              <ref role="3cqZAo" node="7iFq8OZSZ5U" resolve="testProject" />
-            </node>
-            <node concept="37vLTw" id="4_ksyPqP76T" role="37wK5m">
-              <ref role="3cqZAo" node="4_ksyPqOXk5" resolve="modelName" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="5Jy6yRTQhjz" role="3cqZAp">
           <node concept="3clFbS" id="5Jy6yRTQhj_" role="3clFbx">
             <node concept="YS8fn" id="5Jy6yRTQi2J" role="3cqZAp">
@@ -8386,6 +8372,20 @@
             <node concept="10Nm6u" id="5Jy6yRTQhFy" role="3uHU7w" />
             <node concept="37vLTw" id="5Jy6yRTQhsM" role="3uHU7B">
               <ref role="3cqZAo" node="7iFq8OZSZ5U" resolve="testProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4_ksyPqP76P" role="3cqZAp">
+          <node concept="1rXfSq" id="4_ksyPqP76Q" role="3clFbG">
+            <ref role="37wK5l" node="5sV3JxOSGjI" resolve="doInitTest" />
+            <node concept="37vLTw" id="4_ksyPqP76R" role="37wK5m">
+              <ref role="3cqZAo" node="4_ksyPqOXjZ" resolve="test" />
+            </node>
+            <node concept="37vLTw" id="7iFq8OZT0LG" role="37wK5m">
+              <ref role="3cqZAo" node="7iFq8OZSZ5U" resolve="testProject" />
+            </node>
+            <node concept="37vLTw" id="4_ksyPqP76T" role="37wK5m">
+              <ref role="3cqZAo" node="4_ksyPqOXk5" resolve="modelName" />
             </node>
           </node>
         </node>
