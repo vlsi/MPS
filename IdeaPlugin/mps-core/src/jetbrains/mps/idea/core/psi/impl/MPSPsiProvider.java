@@ -245,6 +245,8 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
   void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
 
+    if (!model.isValid()) return;
+
     PsiManager manager = model.getManager();
     if (manager == null || !(manager instanceof PsiManagerImpl)) return;
 

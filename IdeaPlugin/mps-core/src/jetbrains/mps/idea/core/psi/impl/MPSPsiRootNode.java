@@ -103,6 +103,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   public boolean isValid() {
+    if (!myModel.isValid() || mySeparateFile != null && !mySeparateFile.isValid()) return false;
     final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
     final Ref<Boolean> result = new Ref<Boolean>(false);
     final SNodeReference nodeRef = getSNodeReference();
@@ -262,7 +263,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     VirtualFile vFile = mySeparateFile != null ?
       mySeparateFile :
       myModel.getSourceVirtualFile();
-    return PsiManager.getInstance(getProject()).findFile(vFile);
+    return vFile.isValid() ? PsiManager.getInstance(getProject()).findFile(vFile) : null;
   }
 
   @Override

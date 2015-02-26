@@ -130,6 +130,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public boolean isValid() {
+    if (myPsiDirectory == null || !(myPsiDirectory.isValid())) return false;
     final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
     final Ref<Boolean> result = new Ref<Boolean>(false);
 
