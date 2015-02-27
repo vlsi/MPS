@@ -494,7 +494,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return persistentModel == null ? null : persistentModel.getModelDescriptor();
   }
 
-  void fireNodeRead(boolean needUnclassified) {
+  /*package*/ void fireNodeRead(boolean needUnclassified) {
     // nodeRead()
     if (myModel == null || !myModel.isUpdateMode()) {
       assertCanRead();
@@ -512,6 +512,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       // fireNodeUnclassifiedReadAccess()
       NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     }
+  }
+
+  /*package*/ void firePropertyRead(SProperty p, String value, boolean hasProperty) {
+    // propertyRead();
+    if (myModel == null || !myModel.isUpdateMode()) {
+      assertCanRead();
+      SModelBase md = getRealModel();
+      if (md != null) {
+        md.firePropertyRead(this, p.getName());
+      }
+    }
+    //firePropertyReadAccessInEditor();
+    //fireNodePropertyReadAccess();
+    if (myModel == null || !myModel.canFireReadEvent()) {
+      return;
+    }
+    final String propertyName = p.getName();
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, hasProperty);
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, value);
   }
 
   public SModel getPersistentModel() {
@@ -765,26 +784,26 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public boolean hasProperty(@NotNull SProperty property) {
-    propertyRead(property);
-    firePropertyReadAccessInEditor(property, true);
-    String val = getProperty(property);
+    String val = getPropertyImpl(property);
+    firePropertyRead(property, val, true);
     return !SModelUtil_new.isEmptyPropertyValue(val);
   }
 
   @Override
   public String getProperty(@NotNull SProperty property) {
-    propertyRead(property);
-    firePropertyReadAccessInEditor(property, false);
+    String value = getPropertyImpl(property);
+    firePropertyRead(property, value, false);
+    return value;
+  }
 
-    String value = null;
+  private String getPropertyImpl(SProperty property) {
     if (myProperties != null) {
       int index = getPropertyIndex(property);
       if (index != -1) {
-        value = (String) myProperties[index + 1];
+        return (String) myProperties[index + 1];
       }
     }
-    fireNodePropertyReadAccess(property, value);
-    return value;
+    return null;
   }
 
   @Override
@@ -1024,14 +1043,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     md.fireReferenceRead(this, l.getRoleName());
   }
 
-  private void propertyRead(SProperty p) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    assertCanRead();
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    md.firePropertyRead(this, p.getName());
-  }
-
   private void referenceChanged(SReferenceLink l, org.jetbrains.mps.openapi.model.SReference reference,
       org.jetbrains.mps.openapi.model.SReference newValue) {
     if (myModel != null && myModel.isUpdateMode()) return;
@@ -1065,19 +1076,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     emd.fireNodeRemoved(this, role.getRoleName(), child);
   }
 
-  private void fireNodePropertyReadAccess(SProperty p, String propertyValue) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadEventsCaster.fireNodePropertyReadAccess(this, p.getName(), propertyValue);
-  }
-
   private void fireNodeReferentReadAccess(SReferenceLink l, SNode referent) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodeReferentReadAccess(this, l.getRoleName(), referent);
-  }
-
-  private void firePropertyReadAccessInEditor(SProperty p, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, p.getName(), propertyExistenceCheck);
   }
 
   @Deprecated

@@ -271,9 +271,9 @@ public class ModelListenerTest {
     // hasProperty
     boolean shouldHave = r1.hasProperty(SNodeUtil.property_INamedConcept_name);
     myErrors.checkThat(shouldHave, equalTo(true));
-    myErrors.checkThat(cl1.myPropertiesRead, equalTo(2));
+    myErrors.checkThat(cl1.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
-    myErrors.checkThat(cl3.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl3.myPropertiesRead, equalTo(0));
     myErrors.checkThat(cl3.getExistenceReadAccessProperties().size(), equalTo(1));
     //
     // getProperty
