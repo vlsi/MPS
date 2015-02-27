@@ -306,6 +306,9 @@ public class ModelListenerTest {
     //
     // getReference()
     final SReference ref1 = r1.getReference(ourRef);
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl1.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
     // no NodeEditorCasterInEditor update, it is notified from StaticReference#getTargetNode_internal
@@ -315,8 +318,11 @@ public class ModelListenerTest {
     // getReferenceTarget()
     cl1.reset(); cl2.reset(); cl3.reset();
     final SNode t = r1.getReferenceTarget(ourRef);
-    myErrors.checkThat(cl1.myReferencesRead, equalTo(2)); // one in getReferenceTarget, another in getReference
-    myErrors.checkThat(cl2.myReferencesRead, equalTo(2)); // fireNodeReferentReadAccess, --"--
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // 1 for source, 1 for target node
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1)); // StaticReference.getTargetNode_internal
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(2)); // StaticReference.getTargetNode_internal + 1 for source node
+    myErrors.checkThat(cl1.myReferencesRead, equalTo(1));
+    myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0)); // see getReference() part, above
     myErrors.checkThat(t, equalTo(r2c1));
     detachAccessListeners(m1, cl1, cl2, cl3);
