@@ -154,9 +154,9 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
     final SNode n2 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see #testChildrenHasNextNotify(), note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertNotNull(n2);
     Assert.assertEquals(n1, n2);
@@ -185,18 +185,14 @@ public class ModelListenerTest {
     Assert.assertNotNull(n2);
     Assert.assertNotNull(n3);
     // 3 for each node + 2 for getNext(node) calls
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(5)); // FIXME see #testChildrenHasNextNotify(), note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(3));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(3));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(3+2));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(3));
   }
 
   /**
    * Explicitly state convention whether node.children.isEmpty/isNotEmpty which ends up with children.iterator.hasNext() shall
    * trigger model read event for the first child.
-   * NOTES:
-   * (1) getChildren() and getChildren(role): latter triggers additional event, as child.getContainmentLink call
-   * sends out one more node read. The call is there to check for role match.
-   * FIXME use internal method instead of getContainmentLink which doesn't send out notification
    */
   @Test
   public void testChildrenHasNextNotify() {
@@ -220,9 +216,9 @@ public class ModelListenerTest {
     cl1.reset(); cl2.reset(); cl3.reset();
     // just in case accessor with role is different
     Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m1, cl1, cl2, cl3);
     //
     // collection{multiple elements}.hasNext
@@ -235,9 +231,9 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
     Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m2, cl1, cl2, cl3);
 
     //
@@ -371,7 +367,7 @@ public class ModelListenerTest {
   /**
    * Explicitly state convention that access to node's meta-model or auxiliary features doesn't trigger read events
    * {@link org.jetbrains.mps.openapi.model.SNode#getConcept()},
-   * {@link org.jetbrains.mps.openapi.model.SNode#getContainmentLink()}   FIXME
+   * {@link org.jetbrains.mps.openapi.model.SNode#getContainmentLink()}
    * {@link org.jetbrains.mps.openapi.model.SNode#getReference()}}
    *
    * FIXME what about read notifications from toString() and getName()?
@@ -407,9 +403,9 @@ public class ModelListenerTest {
     cl1.reset(); cl2.reset(); cl3.reset();
     final SContainmentLink roleInParent = r1c1.getContainmentLink();
     myErrors.checkThat(roleInParent, equalTo(ourRole));
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     detachAccessListeners(m1, cl1, cl2, cl3);
   }
 

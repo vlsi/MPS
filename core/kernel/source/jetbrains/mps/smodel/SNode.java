@@ -503,15 +503,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         md.fireNodeRead(this);
       }
     }
-    // fireNodeReadAccess()
-    if (myModel != null && myModel.canFireReadEvent()) {
-      NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+    if (myModel == null || !myModel.canFireEvent()) {
+      return;
     }
+    // fireNodeReadAccess()
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
     if (needUnclassified) {
       // fireNodeUnclassifiedReadAccess()
-      if (myModel != null && myModel.canFireReadEvent()) {
-        NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-      }
+      NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
     }
   }
 
@@ -761,7 +760,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SContainmentLink getContainmentLink() {
-    fireNodeRead(false);
     return myRoleInParent;
   }
 
@@ -1273,7 +1271,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     private class ChildrenIterator extends AbstractSequentialIterator<SNode> {
       @Nullable
-      private SContainmentLink myRole;
+      private final SContainmentLink myRole;
 
       public ChildrenIterator(@NotNull SNode first, @Nullable SContainmentLink role) {
         super(first);
@@ -1282,27 +1280,35 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
       @Override
       protected SNode getNext(SNode node) {
-        if (myRole == null) return node.treeNext();
+        if (myRole == null) {
+          return node.treeNext();
+        }
 
         do {
           node = node.treeNext();
-        } while (node != null && !node.getContainmentLink().equals(myRole));
+        } while (node != null && !myRole.equals(node.getContainmentLink()));
         return node;
       }
 
       @Override
       protected SNode getPrev(SNode node) {
-        if (node.treeParent() == null) return null;
+        if (node.treeParent() == null) {
+          return null;
+        }
         SNode fc = node.treeParent().firstChild();
 
-        if (node == fc) return null;
-        if (myRole == null) return node.treePrevious();
+        if (node == fc) {
+          return null;
+        }
+        if (myRole == null) {
+          return node.treePrevious();
+        }
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !node.getContainmentLink().equals(myRole));
+        } while (node != fc && !myRole.equals(node.getContainmentLink()));
 
-        return node.getContainmentLink().equals(myRole) ? node : null;
+        return myRole.equals(node.getContainmentLink()) ? node : null;
       }
 
       @Override
