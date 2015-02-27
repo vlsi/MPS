@@ -34,7 +34,6 @@ import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
@@ -55,6 +54,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * As a tribute to legacy code, we do allow access to constant and meta-info objects of a node without read access.
+ * It's not encouraged for a new code, though, and might change in future, that's why it's stated here and not in openapi.SNode
+ */
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode, SReferenceLinkAdapterProvider {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
@@ -98,7 +101,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-//    assertCanRead(); FIXME uncomment once we get rid of legacy code that keeps SNode (not pointers thereto) and accesses concept (e.g. fqn) without explicit model access
+    // deliberately no assertCanRead(). It's constance field and meta-info.
     return myConcept;
   }
 
@@ -158,7 +161,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SNodeId getNodeId() {
-    assertCanRead(); // FIXME is it necessary to have assertCanRead here? It's constant value, after all?
+    // deliberately no assertCanRead. It's constant field and sort of meta-info, why to constraint to read access?
     return myId;
   }
 
@@ -275,26 +278,22 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getPresentation() {
     if (!getConcept().isValid()) {
-      String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
+      String persistentName = findProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
-        String conceptName = myConcept.getQualifiedName();
-        return "?" + (conceptName == null ? myConcept.toString() : NameUtil.shortNameFromLongName(conceptName)) + "?";
+        String conceptName = myConcept.getName();
+        persistentName = (conceptName == null ? myConcept.toString() : conceptName);
       }
       return "?" + persistentName + "?";
     }
 
-    return "" + SNodeUtil.getPresentation(this);
+    return SNodeUtil.getPresentation(this);
   }
 
   @Override
   public String toString() {
-    // deliberately no assertCanRead. And pending removal of fire events as toString is not part of OpenAPI
-    // Perhaps, shall use findProperty instead of getProperty here?
-    fireNodeRead(false);
-
     String s = null;
     try {
-      s = getProperty(SNodeUtil.property_BaseConcept_alias);
+      s = findProperty(SNodeUtil.property_BaseConcept_alias);
       if (s == null) {
         s = getPresentation();
       }

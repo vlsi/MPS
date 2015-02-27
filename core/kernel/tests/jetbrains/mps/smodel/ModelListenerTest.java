@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -375,8 +376,10 @@ public class ModelListenerTest {
    * {@link org.jetbrains.mps.openapi.model.SNode#getConcept()},
    * {@link org.jetbrains.mps.openapi.model.SNode#getContainmentLink()}
    * {@link org.jetbrains.mps.openapi.model.SNode#getReference()}}
+   * {@link org.jetbrains.mps.openapi.model.SNode#getNodeId()}
+   * {@link org.jetbrains.mps.openapi.model.SNode#toString()}}
    *
-   * FIXME what about read notifications from toString() and getName()?
+   * FIXME what about read notifications from getName() and getPresentation()?
    */
   @Test
   public void testNoReadNotifyForMeta() {
@@ -409,6 +412,22 @@ public class ModelListenerTest {
     cl1.reset(); cl2.reset(); cl3.reset();
     final SContainmentLink roleInParent = r1c1.getContainmentLink();
     myErrors.checkThat(roleInParent, equalTo(ourRole));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // getNodeId()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    SNodeId nid = r1c1.getNodeId();
+    myErrors.checkThat(nid, notNullValue());
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // toString()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    String presentation = r1c1.toString();
+    myErrors.checkThat(presentation, notNullValue());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
