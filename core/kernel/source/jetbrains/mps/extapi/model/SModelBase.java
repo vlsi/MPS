@@ -70,7 +70,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public SRepository getRepository() {
-    assertCanRead();
+//    assertCanRead(); we don't require write lock when myRepo is assigned, why would require read to get?
     return myRepository;
   }
 

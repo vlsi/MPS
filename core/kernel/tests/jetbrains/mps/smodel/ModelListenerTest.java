@@ -16,23 +16,38 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
+import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
+import static jetbrains.mps.smodel.TestModelFactory.ourRef;
+import static jetbrains.mps.smodel.TestModelFactory.ourRole;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.notNullValue;
 
 /**
  * Check contemporary and legacy model listener approaches, ensure they (not) get notified as expected.
@@ -48,12 +63,19 @@ public class ModelListenerTest {
   private final TestModelAccess myTestModelAccess = new TestModelAccess();
   private final SRepository myTestRepo = new TestRepository(myTestModelAccess);
 
+  @Before
+  public void setUp() {
+    TestUndoHandler uh = new TestUndoHandler();
+    uh.needsUndo(false); // undo is not our focus here, we merely need to avoid NPE from ModelAccess.instance().isInsideCommand()
+    UndoHelper.getInstance().setUndoHandler(uh);
+  }
+
 
   /**
    * Check all three model notification approaches work.
    */
   @Test
-  public void testNotifyReadListeners() {
+  public void testNodeReadNotify() {
     SModel m1 = new TestModelFactory().createModel(3, 5, 2, 3);
     final int actualNodes = countTreeNodes(m1.getRootNodes());
 
@@ -132,7 +154,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
     final SNode n2 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see #testChildrenHasNextNotify(), note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m1, cl1, cl2, cl3);
@@ -163,7 +185,7 @@ public class ModelListenerTest {
     Assert.assertNotNull(n2);
     Assert.assertNotNull(n3);
     // 3 for each node + 2 for getNext(node) calls
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(5)); // FIXME see #testChildrenHasNextNotify(), note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(3));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(3));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(3));
   }
@@ -171,10 +193,6 @@ public class ModelListenerTest {
   /**
    * Explicitly state convention whether node.children.isEmpty/isNotEmpty which ends up with children.iterator.hasNext() shall
    * trigger model read event for the first child.
-   * NOTES:
-   * (1) getChildren() and getChildren(role): latter triggers additional event, as child.getContainmentLink call
-   * sends out one more node read. The call is there to check for role match.
-   * FIXME use internal method instead of getContainmentLink which doesn't send out notification
    */
   @Test
   public void testChildrenHasNextNotify() {
@@ -198,7 +216,7 @@ public class ModelListenerTest {
     cl1.reset(); cl2.reset(); cl3.reset();
     // just in case accessor with role is different
     Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m1, cl1, cl2, cl3);
@@ -213,7 +231,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
     Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     detachAccessListeners(m2, cl1, cl2, cl3);
@@ -230,6 +248,161 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
     Assert.assertFalse(n1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    detachAccessListeners(m1, cl1, cl2, cl3);
+  }
+
+  /**
+   * Read notifications of SNode.getProperty() and SNode.hasProperty()
+   */
+  @Test
+  public void testPropertyReadNotify() {
+    SModel m1 = new TestModelFactory().createModel(3, 5);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    //
+    // hasProperty
+    boolean shouldHave = r1.hasProperty(SNodeUtil.property_INamedConcept_name);
+    myErrors.checkThat(shouldHave, equalTo(true));
+    myErrors.checkThat(cl1.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl3.myPropertiesRead, equalTo(0));
+    myErrors.checkThat(cl3.getExistenceReadAccessProperties().size(), equalTo(1));
+    //
+    // getProperty
+    cl1.reset(); cl2.reset(); cl3.reset(); cl3.getExistenceReadAccessProperties().clear();
+    r1.getProperty(SNodeUtil.property_INamedConcept_name);
+    myErrors.checkThat(cl1.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl3.myPropertiesRead, equalTo(1));
+    myErrors.checkThat(cl3.getExistenceReadAccessProperties().size(), equalTo(0));
+    detachAccessListeners(m1, cl1, cl2, cl3);
+  }
+
+  /**
+   * Read notifications of SNode.getProperty() and SNode.hasProperty()
+   */
+  @Test
+  public void testReferenceReadNotify() {
+    SModel m1 = new TestModelFactory().createModel(3, 5);
+    final Iterator<SNode> roots = m1.getRootNodes().iterator();
+    final SNode r1 = roots.next();
+    final SNode r2c1 = roots.next().getFirstChild();
+    r1.setReferenceTarget(ourRef, r2c1);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    //
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    //
+    // getReference()
+    final SReference ref1 = r1.getReference(ourRef);
+    myErrors.checkThat(cl1.myReferencesRead, equalTo(1));
+    myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
+    // no NodeEditorCasterInEditor update, it is notified from StaticReference#getTargetNode_internal
+    myErrors.checkThat(cl3.myReferencesRead, equalTo(0));
+    myErrors.checkThat(ref1.getTargetNode(), equalTo(r2c1));
+    //
+    // getReferenceTarget()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SNode t = r1.getReferenceTarget(ourRef);
+    myErrors.checkThat(cl1.myReferencesRead, equalTo(2)); // one in getReferenceTarget, another in getReference
+    myErrors.checkThat(cl2.myReferencesRead, equalTo(2)); // fireNodeReferentReadAccess, --"--
+    myErrors.checkThat(cl3.myReferencesRead, equalTo(0)); // see getReference() part, above
+    myErrors.checkThat(t, equalTo(r2c1));
+    detachAccessListeners(m1, cl1, cl2, cl3);
+  }
+
+  /**
+   * Test notifications around add/remove of a child node
+   */
+  @Test
+  public void testNodeAddRemoveNotify() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    myTestModelAccess.enableWrite();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode c = new TestModelFactory().createNode();
+
+    ChangeListener1 cl1 = new ChangeListener1();
+    ChangeListener2 cl2 = new ChangeListener2();
+    ((SModelInternal) m1).addModelListener(cl1);
+    ((EditableSModel) m1).addChangeListener(cl2);
+    r1.addChild(ourRole, c);
+    myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
+    myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
+    myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
+    //
+    cl1.reset(); cl2.reset();
+    r1.removeChild(c);
+    myErrors.checkThat(cl1.myRemoved.size(), equalTo(1));
+    myErrors.checkThat(cl1.myBeforeRemoved.size(), equalTo(1));
+    myErrors.checkThat(cl2.myRemoved.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemoved.contains(c), equalTo(true));
+    myErrors.checkThat(cl1.myBeforeRemoved.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
+    //
+    cl1.reset(); cl2.reset();
+    final SNode anchor = r1.getFirstChild();
+    r1.insertChildBefore(ourRole, c, anchor);
+    myErrors.checkThat(c.getNextSibling(), equalTo(anchor));
+    myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
+    myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
+    myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
+    ((SModelInternal) m1).removeModelListener(cl1);
+    ((EditableSModel) m1).removeChangeListener(cl2);
+  }
+
+  /**
+   * Explicitly state convention that access to node's meta-model or auxiliary features doesn't trigger read events
+   * {@link org.jetbrains.mps.openapi.model.SNode#getConcept()},
+   * {@link org.jetbrains.mps.openapi.model.SNode#getContainmentLink()}
+   * {@link org.jetbrains.mps.openapi.model.SNode#getReference()}}
+   *
+   * FIXME what about read notifications from toString() and getName()?
+   */
+  @Test
+  public void testNoReadNotifyForMeta() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1c1 = r1.getFirstChild();
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    //
+    // getConcept()
+    SConcept c = r1.getConcept();
+    myErrors.checkThat(c, equalTo(ourConcept));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // SNodePointer:getReference()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SNodeReference ptr = r1.getReference();
+    myErrors.checkThat(ptr, notNullValue());
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // getContainmentLink()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SContainmentLink roleInParent = r1c1.getContainmentLink();
+    myErrors.checkThat(roleInParent, equalTo(ourRole));
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
@@ -373,6 +546,66 @@ public class ModelListenerTest {
 
     public void reset() {
       myVisitedNodes = myPropertiesRead = myReferencesRead = 0;
+    }
+  }
+
+  private static class ChangeListener1 extends SModelAdapter {
+    public final Set<SNode> myAdded = new HashSet<SNode>();
+    public final Set<SNode> myRemoved = new HashSet<SNode>();
+    public final Set<SNode> myBeforeRemoved = new HashSet<SNode>();
+
+    @Override
+    public void childAdded(SModelChildEvent event) {
+      myAdded.add(event.getChild());
+    }
+
+    @Override
+    public void childRemoved(SModelChildEvent event) {
+      myRemoved.add(event.getChild());
+    }
+
+    @Override
+    public void beforeChildRemoved(SModelChildEvent event) {
+      myBeforeRemoved.add(event.getChild());
+    }
+
+    /*package*/ void reset() {
+      myAdded.clear();
+      myRemoved.clear();
+      myBeforeRemoved.clear();
+    }
+  }
+  private static class ChangeListener2 implements SModelChangeListener {
+    public final Set<SNode> myAdded = new HashSet<SNode>();
+    public final Set<SNode> myRemoved = new HashSet<SNode>();
+    public final Set<String> myChangedProperties = new HashSet<String>();
+    public final Set<String> myChangedReferences = new HashSet<String>();
+
+    @Override
+    public void nodeAdded(SModel model, SNode parent, String role, SNode child) {
+      myAdded.add(child);
+    }
+
+    @Override
+    public void nodeRemoved(SModel model, SNode parent, String role, SNode child) {
+      myRemoved.add(child);
+    }
+
+    @Override
+    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+      myChangedProperties.add(propertyName);
+    }
+
+    @Override
+    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
+      myChangedReferences.add(role);
+    }
+
+    /*package*/ void reset() {
+      myAdded.clear();
+      myRemoved.clear();
+      myChangedProperties.clear();
+      myChangedReferences.clear();
     }
   }
 }
