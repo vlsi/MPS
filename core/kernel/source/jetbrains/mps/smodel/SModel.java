@@ -135,10 +135,7 @@ public class SModel implements SModelData {
           public org.jetbrains.mps.openapi.model.SNode next() {
             SNode res = myIterator.next();
             if (res != null) {
-              res.nodeRead();
-
-              res.fireNodeReadAccess();
-              res.fireNodeUnclassifiedReadAccess();
+              res.fireNodeRead(true);
             }
 
             return res;
@@ -216,10 +213,7 @@ public class SModel implements SModelData {
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     SNode res = getNode_(nodeId);
     if (res != null) {
-      res.nodeRead();
-
-      res.fireNodeReadAccess();
-      res.fireNodeUnclassifiedReadAccess();
+      res.fireNodeRead(true);
     }
     return res;
   }
@@ -443,8 +437,6 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------fast node finder--------
-
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
@@ -457,8 +449,6 @@ public class SModel implements SModelData {
       }
     }
   }
-
-  //---------node id--------
 
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;

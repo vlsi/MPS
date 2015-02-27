@@ -20,12 +20,15 @@ import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
@@ -39,10 +42,12 @@ import java.util.Iterator;
 import java.util.Set;
 
 import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
+import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.notNullValue;
 
 /**
  * Check contemporary and legacy model listener approaches, ensure they (not) get notified as expected.
@@ -151,7 +156,7 @@ public class ModelListenerTest {
     final SNode n2 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see #testChildrenHasNextNotify(), note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
     detachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertNotNull(n2);
     Assert.assertEquals(n1, n2);
@@ -182,7 +187,7 @@ public class ModelListenerTest {
     // 3 for each node + 2 for getNext(node) calls
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(5)); // FIXME see #testChildrenHasNextNotify(), note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(3));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(3));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(3+2));
   }
 
   /**
@@ -217,7 +222,7 @@ public class ModelListenerTest {
     Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
     detachAccessListeners(m1, cl1, cl2, cl3);
     //
     // collection{multiple elements}.hasNext
@@ -232,7 +237,7 @@ public class ModelListenerTest {
     Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // FIXME see method javadoc, note (1)
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1+1));
     detachAccessListeners(m2, cl1, cl2, cl3);
 
     //
@@ -361,6 +366,51 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
     ((SModelInternal) m1).removeModelListener(cl1);
     ((EditableSModel) m1).removeChangeListener(cl2);
+  }
+
+  /**
+   * Explicitly state convention that access to node's meta-model or auxiliary features doesn't trigger read events
+   * {@link org.jetbrains.mps.openapi.model.SNode#getConcept()},
+   * {@link org.jetbrains.mps.openapi.model.SNode#getContainmentLink()}   FIXME
+   * {@link org.jetbrains.mps.openapi.model.SNode#getReference()}}
+   *
+   * FIXME what about read notifications from toString() and getName()?
+   */
+  @Test
+  public void testNoReadNotifyForMeta() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1c1 = r1.getFirstChild();
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    //
+    // getConcept()
+    SConcept c = r1.getConcept();
+    myErrors.checkThat(c, equalTo(ourConcept));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // SNodePointer:getReference()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SNodeReference ptr = r1.getReference();
+    myErrors.checkThat(ptr, notNullValue());
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
+    //
+    // getContainmentLink()
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SContainmentLink roleInParent = r1c1.getContainmentLink();
+    myErrors.checkThat(roleInParent, equalTo(ourRole));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    detachAccessListeners(m1, cl1, cl2, cl3);
   }
 
   /**

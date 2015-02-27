@@ -173,8 +173,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (current.treeParent() == null) return current;
 
       current = current.treeParent();
-      current.nodeRead();
-      current.fireNodeReadAccess();
+      current.fireNodeRead(false);
     }
   }
 
@@ -183,7 +182,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
       return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
     } else {
-      fireNodeReadAccess();
+      fireNodeRead(false);
       return null;
     }
   }
@@ -206,9 +205,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SNode parent = treeParent();
 
     if (parent != null) {
-      parent.nodeRead();
-      parent.fireNodeReadAccess();
-      parent.fireNodeUnclassifiedReadAccess();
+      parent.fireNodeRead(true);
     }
     return parent;
   }
@@ -289,9 +286,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String toString() {
-    nodeRead();
-
-    fireNodeReadAccess();
+    fireNodeRead(false);
 
     String s = null;
     try {
@@ -320,8 +315,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SNodeReference getReference() {
-    nodeRead();
-
     return new jetbrains.mps.smodel.SNodePointer(this);
   }
 
@@ -392,10 +385,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public List<jetbrains.mps.smodel.SReference> getReferences() {
-    nodeRead();
+    fireNodeRead(true);
 
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
     return Arrays.asList(myReferences);
   }
 
@@ -405,8 +396,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode child = firstChild();
     if (child != null) {
-      child.nodeRead();
-      child.fireNodeReadAccess();
+      child.fireNodeRead(false);
     }
     return child;
   }
@@ -418,8 +408,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode lc = fc.treePrevious();
     if (lc != null) {
-      lc.nodeRead();
-      lc.fireNodeReadAccess();
+      lc.fireNodeRead(false);
     }
     return lc;
   }
@@ -440,8 +429,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SNode tp = treePrevious();
     SNode ps = tp.next == null ? null : tp;
     if (ps != null) {
-      ps.nodeRead();
-      ps.fireNodeReadAccess();
+      ps.fireNodeRead(false);
     }
     return ps;
   }
@@ -455,8 +443,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode tn = treeNext();
     if (tn != null) {
-      tn.nodeRead();
-      tn.fireNodeReadAccess();
+      tn.fireNodeRead(false);
     }
     return tn;
   }
@@ -507,12 +494,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return persistentModel == null ? null : persistentModel.getModelDescriptor();
   }
 
-  void nodeRead() {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    assertCanRead();
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireNodeRead(this);
+  void fireNodeRead(boolean needUnclassified) {
+    // nodeRead()
+    if (myModel == null || !myModel.isUpdateMode()) {
+      assertCanRead();
+      SModelBase md = getRealModel();
+      if (md != null) {
+        md.fireNodeRead(this);
+      }
+    }
+    // fireNodeReadAccess()
+    if (myModel != null && myModel.canFireReadEvent()) {
+      NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+    }
+    if (needUnclassified) {
+      // fireNodeUnclassifiedReadAccess()
+      if (myModel != null && myModel.canFireReadEvent()) {
+        NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
+      }
+    }
   }
 
   public SModel getPersistentModel() {
@@ -670,16 +670,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-  }
-
-  void fireNodeReadAccess() {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
-  }
-
   protected SNode firstChild() {
     if (first == null) return null;
     if (myRepository != null && first.myRepository == null) {
@@ -771,7 +761,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SContainmentLink getContainmentLink() {
-    nodeRead();
+    fireNodeRead(false);
     return myRoleInParent;
   }
 
@@ -846,10 +836,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public Iterable<SProperty> getProperties() {
-    nodeRead();
+    fireNodeRead(true);
 
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
     if (myProperties == null) return new EmptyIterable<SProperty>();
     List<SProperty> result = new ArrayList<SProperty>(myProperties.length / 2);
     for (int i = 0; i < myProperties.length; i += 2) {
@@ -903,7 +891,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanRead();
 
     referenceRead(role);
-    fireNodeReadAccess();
+    fireNodeRead(false);
 
     SReference result = null;
     for (SReference reference : myReferences) {
@@ -1329,9 +1317,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
       private SNode readNode(SNode node) {
         if (node != null) {
-          node.nodeRead();
-          node.fireNodeReadAccess();
-          node.fireNodeUnclassifiedReadAccess();
+          node.fireNodeRead(true);
         }
         return node;
       }
