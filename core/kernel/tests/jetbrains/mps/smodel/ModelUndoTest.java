@@ -180,12 +180,13 @@ public class ModelUndoTest {
     Assert.assertEquals(expectedNodeCount, countTreeNodes(m1.getRootNodes()));
   }
 
-  private static class TestUndoHandler implements UndoHandler {
+  /*package*/ static class TestUndoHandler implements UndoHandler {
     private final Deque<SNodeUndoableAction> myActions = new ArrayDeque<SNodeUndoableAction>();
     public final Deque<UndoUnit> myUndoStack = new ArrayDeque<UndoUnit>();
     // to keep tests simple, assume model modifications run inside a command.
     private boolean myIsInsideCommand = true;
     private boolean myIsUndoBlocked = false;
+    private boolean myNeedUndo = true;
 
     @Override
     public void addUndoableAction(SNodeUndoableAction action) {
@@ -205,7 +206,7 @@ public class ModelUndoTest {
 
     @Override
     public boolean needRegisterUndo() {
-      return isInsideUndoableCommand();
+      return myNeedUndo && isInsideUndoableCommand();
     }
 
     @Override
@@ -235,6 +236,14 @@ public class ModelUndoTest {
 
     /*package*/ int actualUndoActionCount() {
       return myActions.size();
+    }
+
+    /*package*/ void needsUndo(boolean needsUndo) {
+      myNeedUndo = needsUndo;
+    }
+
+    /*package*/ void setInsideCommand(boolean insideCommand) {
+      myIsInsideCommand = insideCommand;
     }
   }
 

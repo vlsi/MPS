@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -40,6 +41,7 @@ import java.util.ArrayDeque;
 final class TestModelFactory {
   /*package*/ static SConcept ourConcept = BootstrapAdapterFactory.getConcept(1, 2, 3, "C");
   /*package*/ static SContainmentLink ourRole = BootstrapAdapterFactory.getContainmentLink(1, 2, 3, 4, "L");
+  /*package*/ static SReferenceLink ourRef = BootstrapAdapterFactory.getReferenceLink(1, 2, 3, 5, "R");
 
   /*
    * Blank SNode: 120 bytes (8-byte aligned. in fact, 116, as adding 1 extra field doesn't change its overall size)
