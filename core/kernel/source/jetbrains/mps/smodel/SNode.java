@@ -135,7 +135,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  protected void assertCanRead() {
+  protected final void assertCanRead() {
     final SRepository repo = myRepository;
     if (repo == null) return;
     repo.getModelAccess().checkReadAccess();
@@ -158,7 +158,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SNodeId getNodeId() {
-    assertCanRead();
+    assertCanRead(); // FIXME is it necessary to have assertCanRead here? It's constant value, after all?
     return myId;
   }
 
@@ -179,6 +179,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String getName() {
+    assertCanRead();
+
     if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
       return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
     } else {
@@ -286,6 +288,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String toString() {
+    // deliberately no assertCanRead. And pending removal of fire events as toString is not part of OpenAPI
+    // Perhaps, shall use findProperty instead of getProperty here?
     fireNodeRead(false);
 
     String s = null;
@@ -385,6 +389,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public List<jetbrains.mps.smodel.SReference> getReferences() {
+    assertCanRead();
+
     fireNodeRead(true);
 
     return Arrays.asList(myReferences);
@@ -403,8 +409,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getLastChild() {
+    assertCanRead();
+
     SNode fc = firstChild();
-    if (fc == null) return null;
+    if (fc == null) {
+      return null;
+    }
 
     SNode lc = fc.treePrevious();
     if (lc != null) {
@@ -423,8 +433,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode getPrevSibling() {
     assertCanRead();
 
+    // REVISIT: does assertCanRead once again, and triggers read notification. Is that what we really want here?
+    // Javadoc doesn't state parent read. However, need tests first
     SNode p = getParent();
-    if (p == null) return null;
+    if (p == null) {
+      return null;
+    }
 
     SNode tp = treePrevious();
     SNode ps = tp.next == null ? null : tp;
@@ -497,7 +511,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   /*package*/ void fireNodeRead(boolean needUnclassified) {
     // nodeRead()
     if (myModel == null || !myModel.isUpdateMode()) {
-      assertCanRead();
       SModelBase md = getRealModel();
       if (md != null) {
         md.fireNodeRead(this);
@@ -517,7 +530,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   /*package*/ void firePropertyRead(SProperty p, String value, boolean hasProperty) {
     // propertyRead();
     if (myModel == null || !myModel.isUpdateMode()) {
-      assertCanRead();
       SModelBase md = getRealModel();
       if (md != null) {
         md.firePropertyRead(this, p.getName());
@@ -541,7 +553,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeRead(false);
     // referenceRead()
     if (myModel == null || !myModel.isUpdateMode()) {
-      assertCanRead(); // FIXME (a) there's one in fireNodeRead (b) assertCanRead shall not be part of notify, rather the caller
       SModelBase md = getRealModel();
       if (md != null) {
         md.fireReferenceRead(this, link.getRoleName());
@@ -804,6 +815,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public boolean hasProperty(@NotNull SProperty property) {
+    assertCanRead();
+
     String val = findProperty(property);
     firePropertyRead(property, val, true);
     return !SModelUtil_new.isEmptyPropertyValue(val);
@@ -811,6 +824,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String getProperty(@NotNull SProperty property) {
+    assertCanRead();
+
     String value = findProperty(property);
     firePropertyRead(property, value, false);
     return value;
@@ -876,6 +891,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public Iterable<SProperty> getProperties() {
+    assertCanRead();
+
     fireNodeRead(true);
 
     if (myProperties == null) return new EmptyIterable<SProperty>();
@@ -1289,6 +1306,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
       @Override
       protected SNode getNext(SNode node) {
+        node.assertCanRead();
+
         if (myRole == null) {
           return node.treeNext();
         }
@@ -1301,6 +1320,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
       @Override
       protected SNode getPrev(SNode node) {
+        node.assertCanRead();
+
         if (node.treeParent() == null) {
           return null;
         }

@@ -135,6 +135,7 @@ public class SModel implements SModelData {
           public org.jetbrains.mps.openapi.model.SNode next() {
             SNode res = myIterator.next();
             if (res != null) {
+              res.assertCanRead();
               res.fireNodeRead(true);
             }
 
@@ -213,6 +214,7 @@ public class SModel implements SModelData {
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     SNode res = getNode_(nodeId);
     if (res != null) {
+      res.assertCanRead();
       res.fireNodeRead(true);
     }
     return res;
