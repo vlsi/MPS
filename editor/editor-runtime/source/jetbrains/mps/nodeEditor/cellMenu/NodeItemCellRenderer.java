@@ -203,11 +203,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       myRight.setForeground(list.getForeground());
     }
 
-    //todo hack
-    myLeft.setPreferredSize(null);
-    Dimension oldPreferredSize = myLeft.getPreferredSize();
-    myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
-
     Dimension preferredSize = getPreferredSize();
     if (myMaxHeight < preferredSize.height || myMaxWidth < preferredSize.width) {
       myMaxWidth = Math.max(myMaxWidth, preferredSize.width);
