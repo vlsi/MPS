@@ -499,23 +499,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    return myModel == null ? null : myModel.getModelDescriptor();
+    return getRealModel();
   }
 
   private SModelBase getRealModel() {
-    SModel persistentModel = getPersistentModel();
+    final SModel persistentModel = myModel;
     return persistentModel == null ? null : persistentModel.getModelDescriptor();
   }
 
   /*package*/ void fireNodeRead(boolean needUnclassified) {
     // nodeRead()
-    if (myModel == null || !myModel.isUpdateMode()) {
-      SModelBase md = getRealModel();
-      if (md != null) {
-        md.fireNodeRead(this);
-      }
+    if (myModel == null || myModel.isUpdateMode()) {
+      return;
     }
-    if (myModel == null || !myModel.canFireEvent()) {
+    SModelBase md = getRealModel();
+    if (md != null) {
+      md.fireNodeRead(this);
+    }
+    if (!myModel.canFireReadEvent()) {
       return;
     }
     // fireNodeReadAccess()
@@ -528,15 +529,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   /*package*/ void firePropertyRead(SProperty p, String value, boolean hasProperty) {
     // propertyRead();
-    if (myModel == null || !myModel.isUpdateMode()) {
-      SModelBase md = getRealModel();
-      if (md != null) {
-        md.firePropertyRead(this, p.getName());
-      }
+    if (myModel == null || myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md != null) {
+      md.firePropertyRead(this, p.getName());
     }
     //firePropertyReadAccessInEditor();
     //fireNodePropertyReadAccess();
-    if (myModel == null || !myModel.canFireReadEvent()) {
+    if (!myModel.canFireReadEvent()) {
       return;
     }
     final String propertyName = p.getName();
@@ -551,20 +553,17 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void fireReferenceRead(SReferenceLink link, SNode target) {
     fireNodeRead(false);
     // referenceRead()
-    if (myModel == null || !myModel.isUpdateMode()) {
-      SModelBase md = getRealModel();
-      if (md != null) {
-        md.fireReferenceRead(this, link.getRoleName());
-      }
+    if (myModel == null || myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md != null) {
+      md.fireReferenceRead(this, link.getRoleName());
     }
     // fireNodeReferentReadAccess();
-    if (myModel != null && myModel.canFireReadEvent()) {
+    if (myModel.canFireReadEvent()) {
       NodeReadEventsCaster.fireNodeReferentReadAccess(this, link.getRoleName(), target);
     }
-  }
-
-  public SModel getPersistentModel() {
-    return myModel;
   }
 
   //----------------------------------------------------------
