@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -47,7 +48,6 @@ import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.notNullValue;
 
 /**
@@ -79,6 +79,7 @@ public class ModelListenerTest {
   public void testNodeReadNotify() {
     SModel m1 = new TestModelFactory().createModel(3, 5, 2, 3);
     final int actualNodes = countTreeNodes(m1.getRootNodes());
+    final int rootsCount = IterableUtil.asCollection(m1.getRootNodes()).size();
 
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
@@ -87,7 +88,7 @@ public class ModelListenerTest {
 
     readTreeNodes(m1.getRootNodes());
 
-    Assert.assertTrue(actualNodes * 3 < cl1.myVisitedNodes);
+    Assert.assertEquals(actualNodes * 3, cl1.myVisitedNodes);
     Assert.assertEquals(actualNodes * 2, cl1.myPropertiesRead);
     Assert.assertEquals(0, cl1.myReferencesRead);
 
@@ -110,22 +111,26 @@ public class ModelListenerTest {
     cl3.reset();
     myTestModelAccess.enableRead();
     ((SModelBase) m1).attach(myTestRepo);
+    // readTreeNodes notifies 1 read per iteration over child, +1 for getProperties, +1 for getReferences()
     readTreeNodes(m1.getRootNodes());
+    // for a model attached to a repository, there's extra iteration over roots
+    // to attach them to the model's repository, hence +rootsCount;
+    final int expectedNodeReadCount = actualNodes * 3 + rootsCount;
     //
     // SModelAccessListener
-    myErrors.checkThat(cl1.myVisitedNodes, greaterThan(actualNodes * 3));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(expectedNodeReadCount));
     myErrors.checkThat(cl1.myPropertiesRead, equalTo(actualNodes * 2));
     myErrors.checkThat(cl1.myReferencesRead, equalTo(0));
     //
     // NodeReadEventsCaster
-    myErrors.checkThat(cl2.myVisitedNodes, greaterThan(actualNodes * 3));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(expectedNodeReadCount));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(cl1.myVisitedNodes));
     myErrors.checkThat(cl2.myPropertiesRead, equalTo(actualNodes * 2));
     myErrors.checkThat(cl2.myReferencesRead, equalTo(0));
     myErrors.checkThat("NodeReadEventsCaster.fireNodeChildReadAccess is never used", cl2.myChildrenRead, equalTo(0));
     //
     // NodeReadAccessCasterInEditor
-    myErrors.checkThat(cl3.myVisitedNodes, greaterThan(actualNodes * 3));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(expectedNodeReadCount));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(cl1.myVisitedNodes));
     myErrors.checkThat(cl3.myPropertiesRead, equalTo(actualNodes * 2));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0));
@@ -211,15 +216,15 @@ public class ModelListenerTest {
     final SNode r1 = m1.getRootNodes().iterator().next();
     attachAccessListeners(m1, cl1, cl2, cl3);
     Assert.assertTrue(r1.getChildren().iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
     // just in case accessor with role is different
     Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     detachAccessListeners(m1, cl1, cl2, cl3);
     //
     // collection{multiple elements}.hasNext
@@ -227,14 +232,14 @@ public class ModelListenerTest {
     final SNode r2 = m2.getRootNodes().iterator().next();
     attachAccessListeners(m2, cl1, cl2, cl3);
     Assert.assertTrue(r2.getChildren().iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
     Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     detachAccessListeners(m2, cl1, cl2, cl3);
 
     //
@@ -477,7 +482,7 @@ public class ModelListenerTest {
 
   // read every property and every reference of an each node in sub-tree
   private static void readTreeNodes(Iterable<? extends SNode> nodes) {
-    for (SNode n : nodes) {
+    for (SNode n : nodes) { // 1 nodeRead per next()
       for (SProperty p : n.getProperties()) { // 1 nodeRead
         n.getProperty(p);
       }

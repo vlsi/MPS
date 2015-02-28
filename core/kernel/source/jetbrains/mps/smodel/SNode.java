@@ -1341,16 +1341,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
 
       @Override
-      protected SNode getCurrent() {
-        return readNode(super.getCurrent());
-      }
-
-      @Override
-      protected SNode getPrev() {
-        return readNode(super.getPrev());
-      }
-
-      private SNode readNode(SNode node) {
+      public SNode next() {
+        final SNode node = super.next();
         if (node != null) {
           node.fireNodeRead(true);
         }
