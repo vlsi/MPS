@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,12 +44,17 @@ import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
 import com.intellij.util.SystemProperties;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import junit.framework.Assert;
 import org.apache.log4j.BasicConfigurator;
+import org.jetbrains.annotations.NotNull;
+
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -160,6 +165,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   }
 
   protected void preConfigureFacet(MPSFacetConfiguration configuration) {
+  }
+
+  /**
+   * Execute Runnable with MPS read lock
+   */
+  protected final void runModelRead(@NotNull Runnable r) {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myModule.getProject());
+    mpsProject.getModelAccess().runReadAction(r);
+  }
+
+  protected final <T> T runModelRead(@NotNull Computable<T> c) {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myModule.getProject())).runReadAction(c);
   }
 
   public static class CustomJavaModuleFixtureBuilder extends JavaTestFixtureFactoryImpl.MyJavaModuleFixtureBuilderImpl {

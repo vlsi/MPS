@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@ package jetbrains.mps.smodel;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-
 class PropertyChangeUndoableAction extends SNodeUndoableAction {
-  private SProperty myProperty;
-  private String myOldValue;
-  private String myNewValue;
+  private final SProperty myProperty;
+  private final String myOldValue;
+  private final String myNewValue;
 
   PropertyChangeUndoableAction(SNode node, SProperty property, String oldValue, String newValue) {
     super(node);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
@@ -92,7 +90,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // I use getInstanceConcept because it doesn't return null for unknown concepts
     // Another alternative is to check getContainingConcept for null and instantiate BaseConcept then
     SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
-    return generator.getOutputModel().createNode(c);
+    return createOutputNode(c);
+  }
+
+  @NotNull
+  @Override
+  public SNode createOutputNode(@NotNull SConcept concept) {
+    return generator.getOutputModel().createNode(concept);
   }
 
   @NotNull
@@ -106,11 +110,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public GenerationTrace getTrace() {
     return generator.getTrace();
-  }
-
-  @Override
-  public IGenerationTracer getTracer() {
-    return new NullGenerationTracer();
   }
 
   @Override
@@ -228,21 +227,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
-    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
-      outputNode,
-      role,
-      sourceNode,
-      templateNodeId,
-      resolveInfo,
-      context);
-    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
+    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
+    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
-    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
-    PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
-    postponedReference.setReferenceInOutputSourceNode();
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, context);
+    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
   }
 
   /*
@@ -379,10 +371,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (GenerationCanceledException ex) {
-      if (getTracer().isTracing() && getLogger().needsInfo()) {
-        getLogger().info("generation canceled when processing branch:");
-        GeneratorUtil.logCurrentGenerationBranch(getLogger(), getTracer(), false);
-      }
       throw ex;
     } catch (GenerationException ex) {
       // ignore

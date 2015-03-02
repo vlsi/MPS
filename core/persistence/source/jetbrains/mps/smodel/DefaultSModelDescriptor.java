@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
@@ -56,7 +55,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public void replace(SModelData modelData) {
-    assertLegalWrite();
+    assertCanChange();
 
     if (!(modelData instanceof DefaultSModel)) {
       throw new IllegalArgumentException();
@@ -72,7 +71,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       DefaultSModel model = new DefaultSModel(getReference(), myHeader);
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) model, ModelLoadingState.FULLY_LOADED);
     }
 
     ModelLoadResult result;
@@ -81,8 +80,8 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     } catch (ModelReadException e) {
       LOG.warning(String.format("Failed to load model %s: %s", getSource().getLocation(), e.toString()));
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
-      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
+      InvalidDefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
+      return new ModelLoadResult((SModel) newModel, ModelLoadingState.NOT_LOADED);
     }
 
     jetbrains.mps.smodel.SModel model = result.getModel();
@@ -190,7 +189,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public void setDoNotGenerate(boolean value) {
-    assertLegalWrite();
+    assertCanChange();
 
     getModelHeader().setDoNotGenerate(value);
     setChanged(true);
@@ -208,7 +207,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public void setVersion(int newVersion) {
-    assertLegalWrite();
+    assertCanChange();
 
     getModelHeader().setVersion(newVersion);
     setChanged(true);
@@ -231,7 +230,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   @Override
-  protected void replaceModel(LazySModel newModel, ModelLoadingState state) {
+  protected void replaceModel(SModel newModel, ModelLoadingState state) {
     super.replaceModel(newModel, state);
     myStructureModificationLog = null;
   }
@@ -251,14 +250,5 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   public SModelHeader getHeaderCopy() {
     return myHeader.createCopy();
-  }
-
-  // FIXME there's assertCanChange() in the superclass, with similar implementation commented out. Why?
-  private void assertLegalWrite() {
-    // unless the model is in the repository, we can do whatever we want to.
-    final SRepository repo = getRepository();
-    if (repo != null) {
-      repo.getModelAccess().checkWriteAccess();
-    }
   }
 }

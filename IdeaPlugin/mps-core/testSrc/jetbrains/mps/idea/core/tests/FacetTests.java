@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,13 +35,14 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
+import java.lang.Override;
+import java.lang.Runnable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -61,19 +62,24 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     assertTrue(myFacet.wasInitialized());
 
-    // Default Solution settings
-    Solution solution = myFacet.getSolution();
-    assertFalse(solution.getModelRoots().iterator().hasNext());
-    // JDK solution should be always returned as module dependencies for now
-    // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment
+    runModelRead(new Runnable() {
+      @Override
+      public void run() {
+        // Default Solution settings
+        Solution solution = myFacet.getSolution();
+        assertFalse(solution.getModelRoots().iterator().hasNext());
+        // JDK solution should be always returned as module dependencies for now
+        // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment
 //    assertEquals(1, solution.getDependencies().size());
-    assertEmpty(solution.getUsedLanguagesReferences());
+        assertEmpty(solution.getUsedLanguagesReferences());
 
-    assertEquals(getModuleHome() + "/src_gen", solution.getGeneratorOutputPath());
+        assertEquals(getModuleHome() + "/src_gen", solution.getGeneratorOutputPath());
 
-    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solution.getModuleReference(), Solution.class);
-    assertEquals(solution, repositorySolution);
-    assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
+        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solution.getModuleReference(), Solution.class);
+        assertEquals(solution, repositorySolution);
+        assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
+      }
+    });
   }
 
   public void testSolutionRemovedOnFacetDeletion() {
@@ -113,7 +119,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     @NonNls final File modelRootDir = new File(getModuleHome(), "modelRoot");
     assertTrue(modelRootDir.mkdir());
 
-    SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+    final SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
@@ -124,22 +130,33 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
-    assertEquals(myFacet.getSolution(), repositorySolution);
-    Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
+    runModelRead(new Runnable() {
+      @Override
+      public void run() {
+        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
+        assertEquals(myFacet.getSolution(), repositorySolution);
+        Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
 
-    Iterator<ModelRoot> iterator = modelRoots.iterator();
-    assertTrue(iterator.hasNext());
-    ModelRoot theModelRoot = iterator.next();
-    assertFalse(iterator.hasNext());
-    assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
+        Iterator<ModelRoot> iterator = modelRoots.iterator();
+        assertTrue(iterator.hasNext());
+        ModelRoot theModelRoot = iterator.next();
+        assertFalse(iterator.hasNext());
+        assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
+      }
+    });
 
     configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
+    runModelRead(new Runnable() {
+      @Override
+      public void run() {
+        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
+        assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
+      }
+    });
   }
 
   public void testAddRemoveUsedLanguage() throws InterruptedException {
@@ -149,28 +166,38 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     assertNotNull(editorLanguage);
 
     String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
-    Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
+    final Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
 
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setUsedLanguages(usedLanguageStrings);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    Collection<SModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
-    Set<Language> solutionUsedLanguages = new HashSet<Language>();
-    for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
-      solutionUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(solutionUsedLanguageRef, Language.class));
-    }
-    assertEquals(usedLanguages.length, solutionUsedLanguages.size());
-    for (Language usedLanguage : usedLanguages) {
-      assertTrue(solutionUsedLanguages.contains(usedLanguage));
-    }
+    runModelRead(new Runnable() {
+      @Override
+      public void run() {
+        Collection<SModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+        Set<Language> solutionUsedLanguages = new HashSet<Language>();
+        for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
+          solutionUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(solutionUsedLanguageRef, Language.class));
+        }
+        assertEquals(usedLanguages.length, solutionUsedLanguages.size());
+        for (Language usedLanguage : usedLanguages) {
+          assertTrue(solutionUsedLanguages.contains(usedLanguage));
+        }
+      }
+    });
 
     configurationBean.setUsedLanguages(new String[0]);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertEmpty(myFacet.getSolution().getUsedLanguagesReferences());
+    runModelRead(new Runnable() {
+      @Override
+      public void run() {
+        assertEmpty(myFacet.getSolution().getUsedLanguagesReferences());
+      }
+    });
   }
 
   public void testSetGeneratorOutputPath() throws InterruptedException {
@@ -193,7 +220,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
     final MPSFacet mpsFacet2 = addMPSFacet(module2);
 
-    int originalDependCount = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+    int originalDependCount = runModelRead(new Computable<Integer>() {
       @Override
       public Integer compute() {
         return mpsFacet2.getSolution().getDependencies().size();
@@ -211,7 +238,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     flushEDT();
 
     // todo: should be one big ModelAccess.runWriteAction() ?
-    List<Dependency> solution2Dependencies = ModelAccess.instance().runReadAction(new Computable<List<Dependency>>() {
+    List<Dependency> solution2Dependencies = runModelRead(new Computable<List<Dependency>>() {
       @Override
       public List<Dependency> compute() {
         return mpsFacet2.getSolution().getDependencies();
@@ -243,7 +270,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
     flushEDT();
 
-    int finalDependenciesCount = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+    int finalDependenciesCount = runModelRead(new Computable<Integer>() {
       @Override
       public Integer compute() {
         return mpsFacet2.getSolution().getDependencies().size();

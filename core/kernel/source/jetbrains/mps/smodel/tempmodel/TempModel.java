@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
@@ -50,9 +49,10 @@ class TempModel extends EditableSModelBase {
       if (mySModel == null) {
         mySModel = new jetbrains.mps.smodel.SModel(getReference()) {
           @Override
-          protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
-            if (!myTrackUndo) return;
-            super.performUndoableAction(action);
+          protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
+            if (myTrackUndo) {
+              super.performUndoableAction(action);
+            }
           }
         };
         mySModel.setModelDescriptor(this);

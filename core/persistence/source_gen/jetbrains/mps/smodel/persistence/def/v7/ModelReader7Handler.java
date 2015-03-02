@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
@@ -151,7 +152,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new ReadHelper(my_modelField.getReference());
       my_linkMapField = new ModelLinkMap(my_modelField);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {

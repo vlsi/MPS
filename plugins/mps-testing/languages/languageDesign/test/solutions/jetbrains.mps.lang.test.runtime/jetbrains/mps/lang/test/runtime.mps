@@ -231,7 +231,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -5334,72 +5334,92 @@
           </node>
         </node>
         <node concept="3clFbH" id="4w5CHoiIGJB" role="3cqZAp" />
-        <node concept="3cpWs8" id="4w5CHoiIkXO" role="3cqZAp">
-          <node concept="3cpWsn" id="4w5CHoiIkXP" role="3cpWs9">
-            <property role="TrG5h" value="module" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="4w5CHoiIkXK" role="1tU5fm">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-            </node>
-            <node concept="2OqwBi" id="4w5CHoiIkXQ" role="33vP2m">
-              <node concept="liA8E" id="4w5CHoiIkXR" role="2OqNvi">
-                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-              </node>
-              <node concept="2OqwBi" id="4w5CHoiIkXS" role="2Oq$k0">
-                <node concept="37vLTw" id="4w5CHoiIkXT" role="2Oq$k0">
+        <node concept="3clFbF" id="1KUoCipvy0k" role="3cqZAp">
+          <node concept="2OqwBi" id="1KUoCipvy0l" role="3clFbG">
+            <node concept="2OqwBi" id="5c4dSFNsz8t" role="2Oq$k0">
+              <node concept="2OqwBi" id="5c4dSFNsywy" role="2Oq$k0">
+                <node concept="37vLTw" id="5c4dSFNsy2X" role="2Oq$k0">
                   <ref role="3cqZAo" node="6azle7m3uK2" resolve="projectTest" />
                 </node>
-                <node concept="liA8E" id="4w5CHoiIkXU" role="2OqNvi">
-                  <ref role="37wK5l" node="e$hNri9ceN" resolve="getModelDescriptor" />
+                <node concept="liA8E" id="5c4dSFNsyYV" role="2OqNvi">
+                  <ref role="37wK5l" node="e$hNri9cbB" resolve="getProject" />
                 </node>
               </node>
+              <node concept="liA8E" id="5c4dSFNs$FN" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4w5CHoiIo2F" role="3cqZAp">
-          <node concept="3clFbS" id="4w5CHoiIo2H" role="3clFbx">
-            <node concept="YS8fn" id="4w5CHoiIs7f" role="3cqZAp">
-              <node concept="2ShNRf" id="4w5CHoiIs9Q" role="YScLw">
-                <node concept="1pGfFk" id="4w5CHoiIt4X" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                  <node concept="3cpWs3" id="4w5CHoiItJn" role="37wK5m">
-                    <node concept="Xl_RD" id="4w5CHoiItKj" role="3uHU7w">
-                      <property role="Xl_RC" value=" is not reloadable -- cannot run tests in it" />
-                    </node>
-                    <node concept="3cpWs3" id="4w5CHoiItyj" role="3uHU7B">
-                      <node concept="Xl_RD" id="4w5CHoiIt7o" role="3uHU7B">
-                        <property role="Xl_RC" value="module " />
+            <node concept="liA8E" id="1KUoCipvy0n" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="1bVj0M" id="1KUoCipvy0o" role="37wK5m">
+                <node concept="3clFbS" id="1KUoCipvy0p" role="1bW5cS">
+                  <node concept="3cpWs8" id="4w5CHoiIkXO" role="3cqZAp">
+                    <node concept="3cpWsn" id="4w5CHoiIkXP" role="3cpWs9">
+                      <property role="TrG5h" value="module" />
+                      <property role="3TUv4t" value="true" />
+                      <node concept="3uibUv" id="4w5CHoiIkXK" role="1tU5fm">
+                        <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                       </node>
-                      <node concept="37vLTw" id="4w5CHoiItAs" role="3uHU7w">
-                        <ref role="3cqZAo" node="4w5CHoiIkXP" resolve="module" />
+                      <node concept="2OqwBi" id="4w5CHoiIkXQ" role="33vP2m">
+                        <node concept="liA8E" id="4w5CHoiIkXR" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                        </node>
+                        <node concept="2OqwBi" id="4w5CHoiIkXS" role="2Oq$k0">
+                          <node concept="37vLTw" id="4w5CHoiIkXT" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6azle7m3uK2" resolve="projectTest" />
+                          </node>
+                          <node concept="liA8E" id="4w5CHoiIkXU" role="2OqNvi">
+                            <ref role="37wK5l" node="e$hNri9ceN" resolve="getModelDescriptor" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="4w5CHoiIrvW" role="3clFbw">
-            <node concept="2ZW3vV" id="4w5CHoiIrvY" role="3fr31v">
-              <node concept="3uibUv" id="4w5CHoiIrvZ" role="2ZW6by">
-                <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
-              </node>
-              <node concept="37vLTw" id="4w5CHoiIrw0" role="2ZW6bz">
-                <ref role="3cqZAo" node="4w5CHoiIkXP" resolve="module" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1KUoCipvy0k" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCipvy0l" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvy0m" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="1KUoCipvy0n" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="1KUoCipvy0o" role="37wK5m">
-                <node concept="3clFbS" id="1KUoCipvy0p" role="1bW5cS">
+                  <node concept="3clFbJ" id="4w5CHoiIo2F" role="3cqZAp">
+                    <node concept="3clFbS" id="4w5CHoiIo2H" role="3clFbx">
+                      <node concept="3clFbF" id="5c4dSFNsIsX" role="3cqZAp">
+                        <node concept="37vLTI" id="5c4dSFNsJu2" role="3clFbG">
+                          <node concept="2ShNRf" id="5c4dSFNsL7U" role="37vLTx">
+                            <node concept="1pGfFk" id="5c4dSFNtg_e" role="2ShVmc">
+                              <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                              <node concept="3cpWs3" id="5c4dSFNtjqS" role="37wK5m">
+                                <node concept="Xl_RD" id="5c4dSFNtjYs" role="3uHU7w">
+                                  <property role="Xl_RC" value=" is not reloadable -- cannot run tests in it" />
+                                </node>
+                                <node concept="3cpWs3" id="5c4dSFNtiBP" role="3uHU7B">
+                                  <node concept="Xl_RD" id="5c4dSFNth3L" role="3uHU7B">
+                                    <property role="Xl_RC" value="module" />
+                                  </node>
+                                  <node concept="37vLTw" id="5c4dSFNtj2A" role="3uHU7w">
+                                    <ref role="3cqZAo" node="4w5CHoiIkXP" resolve="module" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="AH0OO" id="5c4dSFNsIGN" role="37vLTJ">
+                            <node concept="3cmrfG" id="5c4dSFNsJ5z" role="AHEQo">
+                              <property role="3cmrfH" value="0" />
+                            </node>
+                            <node concept="37vLTw" id="5c4dSFNsIsV" role="AHHXb">
+                              <ref role="3cqZAo" node="6azle7m3uLt" resolve="error" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs6" id="5c4dSFNtocA" role="3cqZAp" />
+                    </node>
+                    <node concept="3fqX7Q" id="4w5CHoiIrvW" role="3clFbw">
+                      <node concept="2ZW3vV" id="4w5CHoiIrvY" role="3fr31v">
+                        <node concept="3uibUv" id="4w5CHoiIrvZ" role="2ZW6by">
+                          <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
+                        </node>
+                        <node concept="37vLTw" id="4w5CHoiIrw0" role="2ZW6bz">
+                          <ref role="3cqZAo" node="4w5CHoiIkXP" resolve="module" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="SfApY" id="4w5CHoiI_ZX" role="3cqZAp">
                     <node concept="3clFbS" id="4w5CHoiI_ZZ" role="SfCbr">
                       <node concept="3clFbF" id="1KUoCipvy0q" role="3cqZAp">

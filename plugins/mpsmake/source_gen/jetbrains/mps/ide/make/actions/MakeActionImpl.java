@@ -5,8 +5,11 @@ package jetbrains.mps.ide.make.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,15 +45,16 @@ public class MakeActionImpl {
     if (ModelAccess.instance().isInsideCommand()) {
       throw new IllegalStateException();
     }
-    final Iterable<? extends IResource> inputRes = myParams.collectInput();
-
-    // save all before launching make 
     final Project project = myParams.getProject();
-    project.getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        project.getRepository().saveAll();
+    // save all before launching make 
+    new SaveRepositoryCommand(project.getRepository()).execute();
+
+    final Iterable<IResource> inputRes = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
+      public Iterable<IResource> compute() {
+        return myParams.collectInput();
       }
     });
+
 
     final List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes));
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake()) {
@@ -70,7 +74,7 @@ public class MakeActionImpl {
       IMakeService.INSTANCE.get().make(session, inputRes);
     }
   }
-  private Iterable<SModel> selectModels(Iterable<? extends IResource> inputRes) {
+  private Iterable<SModel> selectModels(Iterable<IResource> inputRes) {
     return Sequence.fromIterable(inputRes).translate(new ITranslator2<IResource, SModel>() {
       public Iterable<SModel> translate(IResource it) {
         return ((MResource) it).models();

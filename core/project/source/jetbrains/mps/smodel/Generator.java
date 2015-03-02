@@ -73,8 +73,6 @@ public class Generator extends ReloadableModuleBase {
     }
     SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
-
-    reloadAfterDescriptorChange();
   }
 
   @Override

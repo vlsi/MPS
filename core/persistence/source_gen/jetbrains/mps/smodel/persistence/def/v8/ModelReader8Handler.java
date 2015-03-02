@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -161,7 +162,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       my_hasSkippedNodesField = false;
       my_helperField = new ReadHelper(my_modelField.getReference());
       my_linkMapField = new ModelLinkMap(my_modelField);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {

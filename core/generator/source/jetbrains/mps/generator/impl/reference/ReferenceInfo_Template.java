@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,17 +28,17 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
+ * Restore a reference originally between template nodes
  * Evgeny Gryaznov, 11/19/10
  */
 public class ReferenceInfo_Template extends ReferenceInfo {
-  private SNodeReference myTemplateSourceNode;
-  private String myTemplateTargetNode;
-  private TemplateContext myContext;
-  private String myResolveInfo;
+  private final SNodeReference myTemplateSourceNode;
+  private final String myTemplateTargetNode;
+  private final TemplateContext myContext;
+  private final String myResolveInfo;
 
 
-  public ReferenceInfo_Template(@NotNull SNode outputSourceNode, String role, SNodeReference sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
-    super(outputSourceNode, role, context.getInput());
+  public ReferenceInfo_Template(SNodeReference sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
     myContext = context;
     myTemplateSourceNode = sourceNode;
     myTemplateTargetNode = targetNodeId;
@@ -46,44 +47,47 @@ public class ReferenceInfo_Template extends ReferenceInfo {
 
   @Nullable
   @Override
-  public SReference create(@NotNull TemplateGenerator generator) {
-    SNode outputTargetNode = doResolve_Straightforward(generator);
+  public SReference create(@NotNull PostponedReference ref) {
+    SNode outputTargetNode = doResolve_Straightforward(ref);
     if (outputTargetNode != null) {
-      return createStaticReference(outputTargetNode);
+      return createStaticReference(ref, outputTargetNode);
     }
     if (myResolveInfo != null) {
-      return createDynamicReference(myResolveInfo, getTargetModelReference(generator), myTemplateSourceNode);
+      return createDynamicReference(ref, myResolveInfo, new DynamicReferenceOrigin(myTemplateSourceNode, myContext.getInput().getReference()));
     }
-    return createInvalidReference(generator, null);
+    return createInvalidReference(ref, null);
   }
 
-  private SNode doResolve_Straightforward(TemplateGenerator generator) {
+  private SNode doResolve_Straightforward(PostponedReference ref) {
+    final TemplateGenerator generator = ref.getGenerator();
     // try to find for the same inputNode
-    SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
+    SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(myContext.getInput(), myTemplateTargetNode);
     if (outputTargetNode != null) {
-      checkCrossRootTemplateReference(outputTargetNode, generator);
+      checkCrossRootTemplateReference(outputTargetNode, ref);
       return outputTargetNode;
     }
 
     // if template has been applied exactly once, then we have unique output node for each template node
     outputTargetNode = generator.findOutputNodeByTemplateNodeUnique(myTemplateTargetNode);
     if (outputTargetNode != null) {
-      checkCrossRootTemplateReference(outputTargetNode, generator);
+      checkCrossRootTemplateReference(outputTargetNode, ref);
       return outputTargetNode;
     }
 
     // try to find for indirect input nodes
+    // XXX likely, myContext.getInput() we've checked already above, would come here again.
     for (SNode historyInputNode : myContext.getInputHistory()) {
       outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
       if (outputTargetNode != null) {
-        checkCrossRootTemplateReference(outputTargetNode, generator);
+        checkCrossRootTemplateReference(outputTargetNode, ref);
         return outputTargetNode;
       }
     }
     return null;
   }
 
-  private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, TemplateGenerator generator) {
+  private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, PostponedReference ref) {
+    final TemplateGenerator generator = ref.getGenerator();
     if (!generator.isStrict() || !generator.isIncremental()) {
       return;
     }
@@ -94,7 +98,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     // There are, however, legitimate references like this when target is known to be regenerated regardless of incremental
     // mode (e.g. QueriesGenerated in generator) - target being a "common" dependency, the one that is affected by any model change.
     SNode outputTargetRoot = outputTarget.getContainingRoot();
-    SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
+    SNode outputSourceRoot = ref.getSourceNode().getContainingRoot();
     SModel model = outputTargetRoot.getModel();
     if (model == null || outputTargetRoot.getParent() != null) {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
@@ -103,7 +107,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
         generator.getLogger().warning(myTemplateSourceNode, "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
             "source root: " + (inputSourceRoot == null ? "<conditional root>" : SNodeOperations.getDebugText(inputSourceRoot)) +
             ", target root: " + (inputTargetRoot == null ? "<conditional root>" : SNodeOperations.getDebugText(inputTargetRoot)),
-            GeneratorUtil.describeIfExists(getOutputSourceNode(), "source"),
+            GeneratorUtil.describeIfExists(ref.getSourceNode(), "source"),
             GeneratorUtil.describeIfExists(outputTarget, "target"));
       }
     }
