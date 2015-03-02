@@ -527,6 +527,49 @@ public class ModelListenerTest {
   }
 
   /**
+   * Node could get attached to a repository in two cases - when a repository is available
+   * the moment node is added to model, and another case is when model got attached to a repository
+   * later and nodes get to know their repository the moment they are accessed from the model.
+   *
+   * There's a flaw in the second scenario:
+   * Node is attached to a repository, and its children are attached the moment we iterate over them.
+   * However, if we get a non-root node from a model by id, and then obtain its parent, the parent node
+   * won't be attached to a repository.
+   *
+   * I use ModelAccess.disableRead() here just to discover the fact SNode.myRepository field is null. Indeed,
+   * real code won't mess with non-read model activities.
+   */
+  @Test
+  public void testNodeHierarchyAttach() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final Iterator<SNode> roots = m1.getRootNodes().iterator();
+    roots.next();
+    final SNodeId r2c1 = roots.next().getFirstChild().getNodeId();
+    ((SModelBase) m1).attach(myTestRepo);
+    myTestModelAccess.enableRead();
+    final SNode notRoot = m1.getNode(r2c1);
+    // [sanity] - check that disabled read indeed triggers IMAE
+    myTestModelAccess.disableRead();
+    boolean gotAccessError = false;
+    try {
+      notRoot.getProperty(SNodeUtil.property_INamedConcept_name);
+    } catch (IllegalModelAccessError e) {
+      // expected, ignored
+      gotAccessError = true;
+    }
+    Assert.assertTrue("Model belongs to a repository, SNode.getProperty without read access shall fail", gotAccessError);
+    myTestModelAccess.enableRead();
+    SNode parent = notRoot.getParent();
+    myTestModelAccess.disableRead();
+    try {
+      parent.getProperty(SNodeUtil.property_INamedConcept_name);
+      Assert.fail("getParent() for a node, which is obtained through model.getNodeId(), shall get SRepository and fully-functional checkModelRead");
+    } catch (IllegalModelAccessError e) {
+      // expected, ignored
+    }
+  }
+
+  /**
    * Just a quick check iteration time over a model doesn't deviate significantly due to
    * changes in SModel/SNode implementation.
    */

@@ -137,7 +137,7 @@ public class SModel implements SModelData {
             SNode res = myIterator.next();
             if (res != null) {
               res.assertCanRead();
-              res.fireNodeRead(true);
+              res.getNodeOwner().fireNodeRead(res, true);
             }
 
             return res;
@@ -178,7 +178,7 @@ public class SModel implements SModelData {
 
     SNode sn = (SNode) node;
     myRoots.add(sn);
-    sn.registerInModel(this);
+    sn.attach(new AttachedNodeOwner(this));
     performUndoableAction(new AddRootUndoableAction(node));
     fireRootAddedEvent(sn);
   }
@@ -194,7 +194,7 @@ public class SModel implements SModelData {
       fireBeforeRootRemovedEvent(node);
       myRoots.remove(node);
       SNode sn = (SNode) node;
-      sn.unRegisterFromModel();
+      sn.detach(new DetachedNodeOwner(this));
       performUndoableAction(new RemoveRootUndoableAction(node, myModelDescriptor));
       fireRootRemovedEvent(sn);
     }
@@ -206,7 +206,7 @@ public class SModel implements SModelData {
     SNode res = getNode_(nodeId);
     if (res != null) {
       res.assertCanRead();
-      res.fireNodeRead(true);
+      res.getNodeOwner().fireNodeRead(res, true);
     }
     return res;
   }

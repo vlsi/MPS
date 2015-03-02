@@ -937,8 +937,8 @@
                     <node concept="37vLTw" id="tajkkrJ6sU" role="2Oq$k0">
                       <ref role="3cqZAo" node="tajkkrJ3SA" resolve="node" />
                     </node>
-                    <node concept="n0Ref" id="2yCvSeNKOOf" role="2OqNvi">
-                      <ref role="2Oxat5" to="cu2c:~SNode.myModel" resolve="myModel" />
+                    <node concept="liA8E" id="647MIFZIikv" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
                     </node>
                   </node>
                 </node>

@@ -63,7 +63,8 @@ public class InterfaceSNode extends SNode {
   }
 
   public void skipRole(SContainmentLink role) {
-    if (myModel != null) {
+    final SModel model = getNodeOwner().getModel();
+    if (model != null) {
       throw new IllegalStateException();
     }
     if (skippedRolesIds == null) {
@@ -74,7 +75,8 @@ public class InterfaceSNode extends SNode {
 
   @Deprecated
   public void skipRole(String role) {
-    if (myModel != null) {
+    final SModel model = getNodeOwner().getModel();
+    if (model != null) {
       throw new IllegalStateException();
     }
     if (skippedRoles == null) {
@@ -88,7 +90,8 @@ public class InterfaceSNode extends SNode {
   }
 
   public void cleanSkippedRoles() {
-    if (myModel == null || !myModel.isUpdateMode()) {
+    final SModel model = getNodeOwner().getModel();
+    if (model == null || !model.isUpdateMode()) {
       throw new IllegalStateException();
     }
     skippedRoles = null;
@@ -96,7 +99,8 @@ public class InterfaceSNode extends SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null) return;
-    myModel.enforceFullLoad();
+    final SModel model = getNodeOwner().getModel();
+    if (model == null) return;
+    model.enforceFullLoad();
   }
 }

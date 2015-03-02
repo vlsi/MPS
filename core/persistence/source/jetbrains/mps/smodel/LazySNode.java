@@ -45,8 +45,9 @@ public final class LazySNode extends SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null || treeParent() != null) return;
-    if (!myModel.isRoot(this)) return;
-    myModel.enforceFullLoad();
+    final SModel model = getNodeOwner().getModel();
+    if (model == null || treeParent() != null) return;
+    if (!model.isRoot(this)) return;
+    model.enforceFullLoad();
   }
 }
