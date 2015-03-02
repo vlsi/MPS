@@ -235,7 +235,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    if (needFireEvent()) {
+    if (!noModelOrInsideUpdate()) {
       myModel.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
@@ -251,10 +251,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     });
 
     fireNodeRemove(wasRole, child, anchor);
-  }
-
-  private boolean needFireEvent() {
-    return myModel != null && myModel.getModelDescriptor() != null && myModel.canFireEvent();
   }
 
   /**
@@ -506,7 +502,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   /*package*/ void fireNodeRead(boolean needUnclassified) {
     // nodeRead()
-    if (myModel == null || myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
     SModelBase md = getRealModel();
@@ -526,7 +522,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   /*package*/ void firePropertyRead(SProperty p, String value, boolean hasProperty) {
     // propertyRead();
-    if (myModel == null || myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
     SModelBase md = getRealModel();
@@ -548,11 +544,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @param target may be null
    */
   private void fireReferenceRead(SReferenceLink link, SNode target) {
-    fireNodeRead(false); // FIXME getProperty doesn't trigger node read, why getReference does?
-    // referenceRead()
-    if (myModel == null || myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
+    fireNodeRead(false); // FIXME getProperty doesn't trigger node read, why getReference does?
+    // referenceRead()
     SModelBase md = getRealModel();
     if (md != null) {
       md.fireReferenceRead(this, link.getRoleName());
@@ -564,13 +560,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void firePropertyChange(SProperty property, String oldValue, String newValue) {
-    if (needFireEvent()) {
-      myModel.firePropertyChangedEvent(this, property.getName(), oldValue, newValue);
-    }
-    //propertyChanged(property, oldValue, newValue);
-    if (myModel != null && myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
+    myModel.firePropertyChangedEvent(this, property, oldValue, newValue);
+    //propertyChanged(property, oldValue, newValue);
     SModelBase md = getRealModel();
     if (md instanceof EditableSModelBase) {
       EditableSModelBase emd = (EditableSModelBase) md;
@@ -579,16 +573,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void fireReferenceChange(SReferenceLink l, org.jetbrains.mps.openapi.model.SReference oldRef, org.jetbrains.mps.openapi.model.SReference newRef) {
-    if (oldRef != null && needFireEvent()) {
+    if (noModelOrInsideUpdate()) {
+      return;
+    }
+    if (oldRef != null) {
       myModel.fireReferenceRemovedEvent(oldRef);
     }
-    if (newRef != null && needFireEvent()) {
+    if (newRef != null) {
       myModel.fireReferenceAddedEvent(newRef);
     }
     // referenceChanged(l, oldRef, newRef);
-    if (myModel != null && myModel.isUpdateMode()) {
-      return;
-    }
     SModelBase md = getRealModel();
     if (md instanceof EditableSModelBase) {
       EditableSModelBase emd = (EditableSModelBase) md;
@@ -597,14 +591,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void fireNodeAdd(SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (needFireEvent()) {
-      // FIXME fireChildAddedEvent shall not take smodel.SNode, rather openapi.SNode
-      myModel.fireChildAddedEvent(this, role.getRole(), (SNode) child, ((SNode) anchor));
-    }
-    //nodeAdded(role, child);
-    if (myModel != null && myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
+    myModel.fireChildAddedEvent(this, role, child, anchor);
+    //nodeAdded(role, child);
     SModelBase md = getRealModel();
     if (md instanceof EditableSModelBase) {
       EditableSModelBase emd = (EditableSModelBase) md;
@@ -613,19 +604,20 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void fireNodeRemove(SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (needFireEvent()) {
-      // FIXME fireChildRemovedEvent shall not take smodel.SNode, rather openapi.SNode
-      myModel.fireChildRemovedEvent(this, role, (SNode) child, (SNode) anchor);
-    }
-    //nodeRemoved(child, role);
-    if (myModel != null && myModel.isUpdateMode()) {
+    if (noModelOrInsideUpdate()) {
       return;
     }
+    myModel.fireChildRemovedEvent(this, role, child, anchor);
+    //nodeRemoved(child, role);
     SModelBase md = getRealModel();
     if (md instanceof EditableSModelBase) {
       EditableSModelBase emd = (EditableSModelBase) md;
       emd.fireNodeRemoved(this, role.getRoleName(), child);
     }
+  }
+
+  private boolean noModelOrInsideUpdate() {
+    return myModel == null || myModel.isUpdateMode();
   }
 
   //----------------------------------------------------------

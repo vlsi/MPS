@@ -345,6 +345,9 @@ public class ModelListenerTest {
 
   /**
    * Test notifications around add/remove of a child node
+   *
+   * FWIW, might be interesting to look at node read notifications - SModel.fireChildRemovedEvent() does an
+   * extra children walk (to find out index of anchor), thus triggering superfluous node read notifications
    */
   @Test
   public void testNodeAddRemoveNotify() {

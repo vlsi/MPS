@@ -44,6 +44,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -404,7 +405,9 @@ public class SModel implements SModelData {
   }
 
   private void fireRootRemovedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -416,7 +419,9 @@ public class SModel implements SModelData {
   }
 
   private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), node, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -427,8 +432,10 @@ public class SModel implements SModelData {
     }
   }
 
-  void firePropertyChangedEvent(@NotNull SNode node, @NotNull String property, @Nullable String oldValue, @Nullable String newValue) {
-    if (!canFireEvent()) return;
+  void firePropertyChangedEvent(@NotNull SNode node, @NotNull SProperty property, @Nullable String oldValue, @Nullable String newValue) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelPropertyEvent event = new SModelPropertyEvent(getModelDescriptor(), property, node, oldValue, newValue);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -439,8 +446,10 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), true, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
@@ -452,10 +461,12 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.childRemoved(event);
@@ -465,10 +476,12 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.beforeChildRemoved(event);
@@ -479,7 +492,9 @@ public class SModel implements SModelData {
   }
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -491,7 +506,9 @@ public class SModel implements SModelData {
   }
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
