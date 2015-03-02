@@ -250,10 +250,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (needFireEvent()) {
-      myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
-    }
-    nodeRemoved(child, wasRole);
+    fireNodeRemove(wasRole, child, anchor);
   }
 
   private boolean needFireEvent() {
@@ -551,7 +548,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @param target may be null
    */
   private void fireReferenceRead(SReferenceLink link, SNode target) {
-    fireNodeRead(false);
+    fireNodeRead(false); // FIXME getProperty doesn't trigger node read, why getReference does?
     // referenceRead()
     if (myModel == null || myModel.isUpdateMode()) {
       return;
@@ -596,6 +593,38 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (md instanceof EditableSModelBase) {
       EditableSModelBase emd = (EditableSModelBase) md;
       emd.fireReferenceChanged(this, l.getRoleName(), oldRef, newRef);
+    }
+  }
+
+  private void fireNodeAdd(SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (needFireEvent()) {
+      // FIXME fireChildAddedEvent shall not take smodel.SNode, rather openapi.SNode
+      myModel.fireChildAddedEvent(this, role.getRole(), (SNode) child, ((SNode) anchor));
+    }
+    //nodeAdded(role, child);
+    if (myModel != null && myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md instanceof EditableSModelBase) {
+      EditableSModelBase emd = (EditableSModelBase) md;
+      emd.fireNodeAdded(this, role.getRoleName(), child);
+    }
+  }
+
+  private void fireNodeRemove(SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (needFireEvent()) {
+      // FIXME fireChildRemovedEvent shall not take smodel.SNode, rather openapi.SNode
+      myModel.fireChildRemovedEvent(this, role, (SNode) child, (SNode) anchor);
+    }
+    //nodeRemoved(child, role);
+    if (myModel != null && myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md instanceof EditableSModelBase) {
+      EditableSModelBase emd = (EditableSModelBase) md;
+      emd.fireNodeRemoved(this, role.getRoleName(), child);
     }
   }
 
@@ -1061,10 +1090,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (needFireEvent()) {
-      myModel.fireChildAddedEvent(this, role.getRole(), schild, ((SNode) anchor));
-    }
-    nodeAdded(role, child);
+    fireNodeAdd(role, schild, anchor);
   }
 
   @Override
@@ -1096,22 +1122,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (id.equals(myProperties[i])) return i;
     }
     return -1;
-  }
-
-  private void nodeAdded(SContainmentLink l, org.jetbrains.mps.openapi.model.SNode child) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md; // FIXME WTF. I can modify any model, why cast here?
-    emd.fireNodeAdded(this, l.getRoleName(), child);
-  }
-
-  private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, SContainmentLink role) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md;
-    emd.fireNodeRemoved(this, role.getRoleName(), child);
   }
 
   @Deprecated

@@ -280,6 +280,9 @@ public class ModelListenerTest {
     // hasProperty
     boolean shouldHave = r1.hasProperty(SNodeUtil.property_INamedConcept_name);
     myErrors.checkThat(shouldHave, equalTo(true));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1)); // cl3.propertyExistenceAccess() dispatches unclassifiedNodeRead
     myErrors.checkThat(cl1.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl3.myPropertiesRead, equalTo(0));
@@ -288,6 +291,9 @@ public class ModelListenerTest {
     // getProperty
     cl1.reset(); cl2.reset(); cl3.reset(); cl3.getExistenceReadAccessProperties().clear();
     r1.getProperty(SNodeUtil.property_INamedConcept_name);
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl1.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl3.myPropertiesRead, equalTo(1));
