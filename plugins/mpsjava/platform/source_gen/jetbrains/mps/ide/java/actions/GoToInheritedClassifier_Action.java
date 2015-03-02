@@ -35,9 +35,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.editor.util.GoToHelper;
+import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -114,6 +116,10 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
@@ -164,7 +170,9 @@ public class GoToInheritedClassifier_Action extends BaseAction {
           });
         }
       });
-      GoToHelper.showInheritedClassesMenu(nodes, GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
+      String title = "Choose inherited class to navigate to";
+      GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, nodes, new DefaultNodeRenderer(), relativePoint);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
