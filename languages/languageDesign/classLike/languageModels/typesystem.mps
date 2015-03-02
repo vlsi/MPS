@@ -10,9 +10,9 @@
     <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
-    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
+    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -38,9 +38,6 @@
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -311,10 +308,8 @@
           </node>
         </node>
         <node concept="3fqX7Q" id="ilX9hHjOOr" role="3clFbw">
-          <node concept="2YIFZM" id="27AGqGE_10c" role="3fr31v">
-            <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
-            <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
-            <node concept="2OqwBi" id="ilX9hHjC69" role="37wK5m">
+          <node concept="2OqwBi" id="73yVtVlZPX9" role="3fr31v">
+            <node concept="2OqwBi" id="ilX9hHjC69" role="2Oq$k0">
               <node concept="1YBJjd" id="ilX9hHjC4B" role="2Oq$k0">
                 <ref role="1YBMHb" node="ilX9hHjC42" resolve="customMemberDeclaration" />
               </node>
@@ -322,8 +317,11 @@
                 <ref role="3Tt5mk" to="oubp:7aMlq14w5Qv" />
               </node>
             </node>
-            <node concept="3B5_sB" id="27AGqGE_1bl" role="37wK5m">
-              <ref role="3B5MYn" to="tpee:h9ngReX" resolve="ClassifierMember" />
+            <node concept="2qgKlT" id="73yVtVlZQej" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+              <node concept="3B5_sB" id="27AGqGE_1bl" role="37wK5m">
+                <ref role="3B5MYn" to="tpee:h9ngReX" resolve="ClassifierMember" />
+              </node>
             </node>
           </node>
         </node>

@@ -331,6 +331,9 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
+      </concept>
       <concept id="2580416627845338977" name="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" flags="ng" index="1SXeKx" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -10177,105 +10180,127 @@
                                 </node>
                               </node>
                               <node concept="3clFbS" id="6PFAMA5lss_" role="2LFqv$">
-                                <node concept="1DcWWT" id="6PFAMA5lssA" role="3cqZAp">
-                                  <node concept="uiWXb" id="6PFAMA5lssB" role="1DdaDG">
-                                    <ref role="uiZuM" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                <node concept="3SKdUt" id="2d0tGgRWKaW" role="3cqZAp">
+                                  <node concept="3SKdUq" id="2d0tGgRWKi$" role="3SKWNk">
+                                    <property role="3SKdUp" value="TODO: uncomment this for &amp; properly support Disk-memory conflict handling on file deletion/model modification" />
                                   </node>
-                                  <node concept="3cpWsn" id="6PFAMA5lssC" role="1Duv9x">
-                                    <property role="TrG5h" value="dm" />
-                                    <property role="3TUv4t" value="false" />
-                                    <node concept="3uibUv" id="6PFAMA5lssD" role="1tU5fm">
-                                      <ref role="3uigEE" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                </node>
+                                <node concept="3SKdUt" id="2d0tGgRWEnS" role="3cqZAp">
+                                  <node concept="3SKWN0" id="2d0tGgRWEnT" role="3SKWNk">
+                                    <node concept="1DcWWT" id="6PFAMA5lssA" role="3SKWNf">
+                                      <node concept="uiWXb" id="6PFAMA5lssB" role="1DdaDG">
+                                        <ref role="uiZuM" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                      </node>
+                                      <node concept="3cpWsn" id="6PFAMA5lssC" role="1Duv9x">
+                                        <property role="TrG5h" value="dm" />
+                                        <property role="3TUv4t" value="false" />
+                                        <node concept="3uibUv" id="6PFAMA5lssD" role="1tU5fm">
+                                          <ref role="3uigEE" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbS" id="6PFAMA5lssE" role="2LFqv$" />
                                     </node>
                                   </node>
-                                  <node concept="3clFbS" id="6PFAMA5lssE" role="2LFqv$">
-                                    <node concept="1DcWWT" id="6PFAMA5lssF" role="3cqZAp">
-                                      <node concept="uiWXb" id="6PFAMA5lssG" role="1DdaDG">
-                                        <ref role="uiZuM" node="6m1MVDkUPWW" resolve="DiskMemoryConflictsTest.VersionToChoose" />
+                                </node>
+                                <node concept="3cpWs8" id="2d0tGgRWKu3" role="3cqZAp">
+                                  <node concept="3cpWsn" id="2d0tGgRWKu6" role="3cpWs9">
+                                    <property role="TrG5h" value="dm" />
+                                    <property role="3TUv4t" value="false" />
+                                    <node concept="3uibUv" id="2d0tGgRWKu7" role="1tU5fm">
+                                      <ref role="3uigEE" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                    </node>
+                                    <node concept="Rm8GO" id="2d0tGgRWKYW" role="33vP2m">
+                                      <ref role="Rm8GQ" node="6m1MVDkUPXd" resolve="MODIFY" />
+                                      <ref role="1Px2BO" node="6m1MVDkUPWV" resolve="DiskMemoryConflictsTest.DiskModification" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="1DcWWT" id="6PFAMA5lssF" role="3cqZAp">
+                                  <node concept="uiWXb" id="6PFAMA5lssG" role="1DdaDG">
+                                    <ref role="uiZuM" node="6m1MVDkUPWW" resolve="DiskMemoryConflictsTest.VersionToChoose" />
+                                  </node>
+                                  <node concept="3cpWsn" id="6PFAMA5lssH" role="1Duv9x">
+                                    <property role="TrG5h" value="v" />
+                                    <property role="3TUv4t" value="false" />
+                                    <node concept="3uibUv" id="6PFAMA5lssI" role="1tU5fm">
+                                      <ref role="3uigEE" node="6m1MVDkUPWW" resolve="DiskMemoryConflictsTest.VersionToChoose" />
+                                    </node>
+                                  </node>
+                                  <node concept="3clFbS" id="6PFAMA5lssJ" role="2LFqv$">
+                                    <node concept="3clFbF" id="6PFAMA5lssv" role="3cqZAp">
+                                      <node concept="1rXfSq" id="4hiugqyyRpU" role="3clFbG">
+                                        <ref role="37wK5l" node="6m1MVDkUQ5M" resolve="checkInitialState" />
                                       </node>
-                                      <node concept="3cpWsn" id="6PFAMA5lssH" role="1Duv9x">
-                                        <property role="TrG5h" value="v" />
-                                        <property role="3TUv4t" value="false" />
-                                        <node concept="3uibUv" id="6PFAMA5lssI" role="1tU5fm">
-                                          <ref role="3uigEE" node="6m1MVDkUPWW" resolve="DiskMemoryConflictsTest.VersionToChoose" />
+                                    </node>
+                                    <node concept="3clFbH" id="2S8Sbq5Nujb" role="3cqZAp" />
+                                    <node concept="3clFbF" id="6PFAMA5lssK" role="3cqZAp">
+                                      <node concept="37vLTI" id="6PFAMA5lssL" role="3clFbG">
+                                        <node concept="AH0OO" id="6PFAMA5lssM" role="37vLTJ">
+                                          <node concept="37vLTw" id="3GM_nagTxta" role="AHHXb">
+                                            <ref role="3cqZAo" node="6m1MVDkUPYh" resolve="startedAction" />
+                                          </node>
+                                          <node concept="3cmrfG" id="6PFAMA5lssO" role="AHEQo">
+                                            <property role="3cmrfH" value="0" />
+                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="3GM_nagTyfx" role="37vLTx">
+                                          <ref role="3cqZAo" node="6PFAMA5lssz" resolve="a" />
                                         </node>
                                       </node>
-                                      <node concept="3clFbS" id="6PFAMA5lssJ" role="2LFqv$">
-                                        <node concept="3clFbF" id="6PFAMA5lssv" role="3cqZAp">
-                                          <node concept="1rXfSq" id="4hiugqyyRpU" role="3clFbG">
-                                            <ref role="37wK5l" node="6m1MVDkUQ5M" resolve="checkInitialState" />
+                                    </node>
+                                    <node concept="3clFbF" id="6PFAMA5lssQ" role="3cqZAp">
+                                      <node concept="37vLTI" id="6PFAMA5lssR" role="3clFbG">
+                                        <node concept="AH0OO" id="6PFAMA5lssS" role="37vLTJ">
+                                          <node concept="37vLTw" id="3GM_nagTxG$" role="AHHXb">
+                                            <ref role="3cqZAo" node="6m1MVDkUPYz" resolve="startedVersion" />
+                                          </node>
+                                          <node concept="3cmrfG" id="6PFAMA5lssU" role="AHEQo">
+                                            <property role="3cmrfH" value="0" />
                                           </node>
                                         </node>
-                                        <node concept="3clFbH" id="2S8Sbq5Nujb" role="3cqZAp" />
-                                        <node concept="3clFbF" id="6PFAMA5lssK" role="3cqZAp">
-                                          <node concept="37vLTI" id="6PFAMA5lssL" role="3clFbG">
-                                            <node concept="AH0OO" id="6PFAMA5lssM" role="37vLTJ">
-                                              <node concept="37vLTw" id="3GM_nagTxta" role="AHHXb">
-                                                <ref role="3cqZAo" node="6m1MVDkUPYh" resolve="startedAction" />
-                                              </node>
-                                              <node concept="3cmrfG" id="6PFAMA5lssO" role="AHEQo">
-                                                <property role="3cmrfH" value="0" />
-                                              </node>
-                                            </node>
-                                            <node concept="37vLTw" id="3GM_nagTyfx" role="37vLTx">
-                                              <ref role="3cqZAo" node="6PFAMA5lssz" resolve="a" />
-                                            </node>
+                                        <node concept="37vLTw" id="3GM_nagT_Pi" role="37vLTx">
+                                          <ref role="3cqZAo" node="6PFAMA5lssH" resolve="v" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="6PFAMA5lssW" role="3cqZAp">
+                                      <node concept="37vLTI" id="6PFAMA5lssX" role="3clFbG">
+                                        <node concept="AH0OO" id="6PFAMA5lssY" role="37vLTJ">
+                                          <node concept="37vLTw" id="3GM_nagTwD6" role="AHHXb">
+                                            <ref role="3cqZAo" node="6m1MVDkUPYq" resolve="startedDiskModification" />
+                                          </node>
+                                          <node concept="3cmrfG" id="6PFAMA5lst0" role="AHEQo">
+                                            <property role="3cmrfH" value="0" />
                                           </node>
                                         </node>
-                                        <node concept="3clFbF" id="6PFAMA5lssQ" role="3cqZAp">
-                                          <node concept="37vLTI" id="6PFAMA5lssR" role="3clFbG">
-                                            <node concept="AH0OO" id="6PFAMA5lssS" role="37vLTJ">
-                                              <node concept="37vLTw" id="3GM_nagTxG$" role="AHHXb">
-                                                <ref role="3cqZAo" node="6m1MVDkUPYz" resolve="startedVersion" />
-                                              </node>
-                                              <node concept="3cmrfG" id="6PFAMA5lssU" role="AHEQo">
-                                                <property role="3cmrfH" value="0" />
-                                              </node>
-                                            </node>
-                                            <node concept="37vLTw" id="3GM_nagT_Pi" role="37vLTx">
-                                              <ref role="3cqZAo" node="6PFAMA5lssH" resolve="v" />
-                                            </node>
-                                          </node>
+                                        <node concept="37vLTw" id="3GM_nagTsG7" role="37vLTx">
+                                          <ref role="3cqZAo" node="2d0tGgRWKu6" resolve="dm" />
                                         </node>
-                                        <node concept="3clFbF" id="6PFAMA5lssW" role="3cqZAp">
-                                          <node concept="37vLTI" id="6PFAMA5lssX" role="3clFbG">
-                                            <node concept="AH0OO" id="6PFAMA5lssY" role="37vLTJ">
-                                              <node concept="37vLTw" id="3GM_nagTwD6" role="AHHXb">
-                                                <ref role="3cqZAo" node="6m1MVDkUPYq" resolve="startedDiskModification" />
-                                              </node>
-                                              <node concept="3cmrfG" id="6PFAMA5lst0" role="AHEQo">
-                                                <property role="3cmrfH" value="0" />
-                                              </node>
-                                            </node>
-                                            <node concept="37vLTw" id="3GM_nagTsG7" role="37vLTx">
-                                              <ref role="3cqZAo" node="6PFAMA5lssC" resolve="dm" />
-                                            </node>
-                                          </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbH" id="3rTF030X6XA" role="3cqZAp" />
+                                    <node concept="3clFbF" id="6PFAMA5lst2" role="3cqZAp">
+                                      <node concept="1rXfSq" id="4hiugqyyYtZ" role="3clFbG">
+                                        <ref role="37wK5l" node="6m1MVDkUQ6s" resolve="provokeAndCheckConflict" />
+                                        <node concept="37vLTw" id="3GM_nagTr7t" role="37wK5m">
+                                          <ref role="3cqZAo" node="6PFAMA5lssz" resolve="a" />
                                         </node>
-                                        <node concept="3clFbH" id="3rTF030X6XA" role="3cqZAp" />
-                                        <node concept="3clFbF" id="6PFAMA5lst2" role="3cqZAp">
-                                          <node concept="1rXfSq" id="4hiugqyyYtZ" role="3clFbG">
-                                            <ref role="37wK5l" node="6m1MVDkUQ6s" resolve="provokeAndCheckConflict" />
-                                            <node concept="37vLTw" id="3GM_nagTr7t" role="37wK5m">
-                                              <ref role="3cqZAo" node="6PFAMA5lssz" resolve="a" />
-                                            </node>
-                                            <node concept="37vLTw" id="3GM_nagTA9K" role="37wK5m">
-                                              <ref role="3cqZAo" node="6PFAMA5lssC" resolve="dm" />
-                                            </node>
-                                            <node concept="37vLTw" id="3GM_nagTvw1" role="37wK5m">
-                                              <ref role="3cqZAo" node="6PFAMA5lssH" resolve="v" />
-                                            </node>
-                                          </node>
+                                        <node concept="37vLTw" id="3GM_nagTA9K" role="37wK5m">
+                                          <ref role="3cqZAo" node="2d0tGgRWKu6" resolve="dm" />
                                         </node>
-                                        <node concept="3clFbF" id="6PFAMA5lst7" role="3cqZAp">
-                                          <node concept="1rXfSq" id="4hiugqyz5K6" role="3clFbG">
-                                            <ref role="37wK5l" node="6m1MVDkUQa2" resolve="restoreAndCheckOriginalState" />
-                                          </node>
+                                        <node concept="37vLTw" id="3GM_nagTvw1" role="37wK5m">
+                                          <ref role="3cqZAo" node="6PFAMA5lssH" resolve="v" />
                                         </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="6PFAMA5lst7" role="3cqZAp">
+                                      <node concept="1rXfSq" id="4hiugqyz5K6" role="3clFbG">
+                                        <ref role="37wK5l" node="6m1MVDkUQa2" resolve="restoreAndCheckOriginalState" />
                                       </node>
                                     </node>
                                   </node>
                                 </node>
+                                <node concept="3clFbH" id="2d0tGgRWDFZ" role="3cqZAp" />
                               </node>
                             </node>
                             <node concept="3clFbF" id="6PFAMA5lst9" role="3cqZAp">

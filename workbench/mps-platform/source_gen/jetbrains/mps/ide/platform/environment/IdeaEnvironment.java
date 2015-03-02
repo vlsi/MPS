@@ -12,6 +12,7 @@ import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentUtils;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
@@ -33,6 +34,7 @@ import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -56,6 +58,10 @@ public class IdeaEnvironment implements Environment {
     EnvironmentUtils.setIdeaPluginsToLoad(config);
 
     myIdeaApplication = createIdeaTestApp();
+    // Necessary to listen for FS changes notifications & notify MPS FS listeners to update reposotiry/.. 
+    // this code will work if on executing tests with "reuse caches" option 
+    // TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)? 
+    FSChangesWatcher.instance().initComponent(true);
     initLibraries(config);
     initMacros(config);
   }
@@ -245,6 +251,9 @@ public class IdeaEnvironment implements Environment {
               LOG.info("Load and open the project with path '" + filePath + "'");
             }
             project[0] = projectManager.loadAndOpenProject(filePath);
+            // calling sync refresh for FS in order to update all modules/models loaded from the project 
+            // if unit-test is executed with the "reuse caches" option. 
+            VirtualFileManager.getInstance().syncRefresh();
           } catch (Exception e) {
             exc[0] = e;
           }

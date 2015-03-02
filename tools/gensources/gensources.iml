@@ -133,7 +133,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/source_gen" isTestSource="false" />
@@ -293,7 +292,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/util/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/classes_gen" />
@@ -618,6 +616,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/source_gen" isTestSource="false" />
@@ -737,6 +738,9 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/classes_gen" />

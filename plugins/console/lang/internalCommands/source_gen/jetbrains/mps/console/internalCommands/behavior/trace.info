@@ -11,7 +11,7 @@
       <unit at="10,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
     </file>
     <file name="InternalMode_BehaviorDescriptor.java">
-      <unit at="12,0,41,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
+      <unit at="12,0,44,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
     </file>
     <file name="ReloadClassesCommand_BehaviorDescriptor.java">
       <unit at="11,0,25,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />

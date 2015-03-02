@@ -21,6 +21,8 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="f8sb" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.runners(MPS.IDEA/com.intellij.execution.runners@java_stub)" />
     <import index="jgti" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
+    <import index="j7qt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="86gq" ref="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1053,6 +1055,38 @@
     <node concept="1YaCAy" id="a4sarQU2Ap" role="1YuTPh">
       <property role="TrG5h" value="executor_Parameter" />
       <ref role="1YaFvo" to="uhxm:a4sarQTYiu" resolve="Executor_Parameter" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="6DDApQBrc1n">
+    <property role="TrG5h" value="typeof_ContextExpression" />
+    <property role="3GE5qa" value="producer" />
+    <node concept="3clFbS" id="6DDApQBrc1o" role="18ibNy">
+      <node concept="1Z5TYs" id="5qZfoDoCcSL" role="3cqZAp">
+        <node concept="mw_s8" id="5qZfoDoCcSO" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5qZfoDoCcQa" role="mwGJk">
+            <node concept="1YBJjd" id="5qZfoDoCcQT" role="1Z2MuG">
+              <ref role="1YBMHb" node="6DDApQBrc1q" resolve="contextExpression" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5qZfoDoCcMH" role="1ZfhKB">
+          <node concept="2pJPEk" id="5qZfoDoCcMD" role="mwGJk">
+            <node concept="2pJPED" id="5qZfoDoCcMY" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="5qZfoDoCcP9" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="5qZfoDoCcPH" role="2pJxcZ">
+                  <ref role="36bGnp" to="j7qt:~ConfigurationContext" resolve="ConfigurationContext" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6DDApQBrc1q" role="1YuTPh">
+      <property role="TrG5h" value="contextExpression" />
+      <ref role="1YaFvo" to="uhxm:6DDApQBpy$f" resolve="ContextExpression" />
     </node>
   </node>
 </model>

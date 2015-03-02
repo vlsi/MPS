@@ -35,6 +35,7 @@ public interface AdditionalPainter<Item> {
 
   public void afterAdding(EditorComponent editorComponent);
   public void beforeRemoval(EditorComponent editorComponent);
+  public void onUpdate(EditorComponent editorComponent);
 
   public Color getCellsFontColor(EditorCell_Label cell);
   public Rectangle getCoverageArea(EditorComponent editorComponent);

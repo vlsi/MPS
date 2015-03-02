@@ -59,8 +59,8 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <import index="ff4b" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
-    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
     <import index="i119" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -18772,10 +18772,8 @@
       <node concept="3clFbJ" id="hRWvCU0" role="3cqZAp">
         <node concept="3clFbS" id="hRWvCU1" role="3clFbx">
           <node concept="3clFbJ" id="hRWvQym" role="3cqZAp">
-            <node concept="2YIFZM" id="27AGqGE_2KJ" role="3clFbw">
-              <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
-              <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
-              <node concept="2OqwBi" id="hRWvX4H" role="37wK5m">
+            <node concept="2OqwBi" id="73yVtVm3nIk" role="3clFbw">
+              <node concept="2OqwBi" id="hRWvX4H" role="2Oq$k0">
                 <node concept="1PxgMI" id="hRWvU3D" role="2Oq$k0">
                   <ref role="1PxNhF" to="tp25:gzTqbfa" resolve="SNodeType" />
                   <node concept="37vLTw" id="3GM_nagTsS5" role="1PxMeX">
@@ -18786,8 +18784,11 @@
                   <ref role="3Tt5mk" to="tp25:g$ehGDh" />
                 </node>
               </node>
-              <node concept="3B5_sB" id="27AGqGE_F$G" role="37wK5m">
-                <ref role="3B5MYn" to="tpee:g7pOWCK" resolve="Classifier" />
+              <node concept="2qgKlT" id="73yVtVm3olX" role="2OqNvi">
+                <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+                <node concept="3B5_sB" id="27AGqGE_F$G" role="37wK5m">
+                  <ref role="3B5MYn" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
               </node>
             </node>
             <node concept="3clFbS" id="hRWvQyn" role="3clFbx">
@@ -32217,7 +32218,7 @@
                   </node>
                   <node concept="2qgKlT" id="5BkXEADISls" role="2OqNvi">
                     <ref role="37wK5l" to="tpek:i1LP2xI" resolve="getCompileTimeConstantValue" />
-                    <node concept="2OqwBi" id="5BkXEAEqswL" role="37wK5m">
+                    <node concept="2EnYce" id="6MS5tc3X5X4" role="37wK5m">
                       <node concept="2OqwBi" id="5BkXEAEqqU5" role="2Oq$k0">
                         <node concept="2JrnkZ" id="5BkXEAEqqcs" role="2Oq$k0">
                           <node concept="37vLTw" id="5BkXEAEqpqR" role="2JrQYb">

@@ -126,7 +126,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/sharedConcepts/jetbrains.mps.lang.sharedConcepts.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/solutions/samples/jetbrains.mps.samples.smodelLanguage-samples.msd" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/solutions/util/jetbrains.mps.lang.smodel.util.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" folder="core.aspects.structure" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" folder="core.aspects.textgen" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" folder="core.languages.smodel" />
@@ -286,6 +285,8 @@
       <modulePath path="$PROJECT_DIR$/samples/lambda/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/jetbrains.mps.samples.languagePatterns.Basic.mpl" folder="samples.languagePatterns" />
+      <modulePath path="$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/jetbrains.mps.samples.languagePatterns.Basic.sandbox.msd" folder="samples.languagePatterns" />
       <modulePath path="$PROJECT_DIR$/samples/math/jetbrains.mps.baseLanguage.math.mpl" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" folder="samples.math" />

@@ -46,7 +46,6 @@ public enum JUnitRunTypes {
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, Project project) {
-      // kinda hoping it takes no time 
       if (project == null) {
         return false;
       }

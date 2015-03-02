@@ -88,7 +88,7 @@ public interface SNode {
 
   /**
    * For instances of INamedConcept concepts retrieves "name" property
-   * @return null if concept is not null
+   * @return null if node is not instance of INamedConcept
    */
   @Nullable
   String getName();

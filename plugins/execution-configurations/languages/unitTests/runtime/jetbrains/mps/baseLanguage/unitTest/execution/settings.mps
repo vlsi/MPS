@@ -3235,11 +3235,6 @@
           </node>
         </node>
         <node concept="3clFbS" id="3vnmwWFD1rG" role="3clF47">
-          <node concept="3SKdUt" id="3vnmwWFD2Di" role="3cqZAp">
-            <node concept="3SKdUq" id="3vnmwWFD2FN" role="3SKWNk">
-              <property role="3SKdUp" value="kinda hoping it takes no time" />
-            </node>
-          </node>
           <node concept="3clFbJ" id="3vnmwWFGBy5" role="3cqZAp">
             <node concept="3clFbS" id="3vnmwWFGBy8" role="3clFbx">
               <node concept="3cpWs6" id="3vnmwWFGC9H" role="3cqZAp">

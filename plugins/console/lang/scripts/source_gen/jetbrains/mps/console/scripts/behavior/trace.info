@@ -16,7 +16,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
     </file>
     <file name="RefactorOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
+      <unit at="11,0,37,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">

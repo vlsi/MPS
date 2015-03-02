@@ -176,6 +176,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
@@ -235,6 +236,9 @@
       </concept>
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -1370,6 +1374,12 @@
             <ref role="3uigEE" to="f8sb:~ExecutionEnvironment" resolve="ExecutionEnvironment" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="5qZfoDoEnYO" role="3acgRq">
+      <ref role="30HIoZ" to="uhxm:6DDApQBpy$f" resolve="ContextExpression" />
+      <node concept="j$656" id="5qZfoDoEpNf" role="1lVwrX">
+        <ref role="v9R2y" node="5qZfoDoEpNd" resolve="reduce_ContextExpression" />
       </node>
     </node>
   </node>
@@ -6854,6 +6864,36 @@
         <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
       </node>
       <node concept="raruj" id="a4sarQURyd" role="lGtFl" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="5qZfoDoEpNd">
+    <property role="TrG5h" value="reduce_ContextExpression" />
+    <ref role="3gUMe" to="uhxm:6DDApQBpy$f" resolve="ContextExpression" />
+    <node concept="312cEu" id="5qZfoDoEpNB" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="MpsProducer" />
+      <property role="1sVAO0" value="true" />
+      <node concept="3clFb_" id="5qZfoDoEpUt" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="doCreateConfiguration" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="5qZfoDoEpUw" role="3clF47">
+          <node concept="3clFbF" id="5qZfoDoEpYh" role="3cqZAp">
+            <node concept="1rXfSq" id="5qZfoDoEpYg" role="3clFbG">
+              <ref role="37wK5l" to="eibu:7pREJKpbIh$" resolve="getContext" />
+              <node concept="raruj" id="5qZfoDoEpYY" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="5qZfoDoEpRo" role="1B3o_S" />
+        <node concept="3cqZAl" id="5qZfoDoEpUp" role="3clF45" />
+      </node>
+      <node concept="3Tm1VV" id="5qZfoDoEpNC" role="1B3o_S" />
+      <node concept="3uibUv" id="5qZfoDoEpO3" role="1zkMxy">
+        <ref role="3uigEE" to="eibu:7pREJKpbIgR" resolve="BaseMpsProducer" />
+      </node>
     </node>
   </node>
 </model>

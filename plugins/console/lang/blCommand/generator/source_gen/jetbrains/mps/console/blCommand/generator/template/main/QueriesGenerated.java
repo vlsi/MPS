@@ -138,10 +138,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_9010839353953082327(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.console.blCommand.structure.BLCommand"), false, false), "contextParameter");
   }
-  public static Object referenceMacro_GetReferent_3501374812262460162(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1597470200014435793(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.console.blCommand.structure.BLCommand"), false, false), "contextParameter");
   }
-  public static Object referenceMacro_GetReferent_9010839353952599835(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1597470200014435807(final ReferenceMacroContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a1a52())) {
       return SNodeOperations.getNode("r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)", "1125969196844631948");

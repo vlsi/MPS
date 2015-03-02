@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root>
     <file name="AbsractMake_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" />
     </file>
     <file name="ActionCallDeclaredParameter_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter_BehaviorDescriptor" />
@@ -31,7 +31,7 @@
       <unit at="9,0,60,0" name="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CallActionExpression_BehaviorDescriptor.java">
-      <unit at="11,0,37,0" name="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
+      <unit at="11,0,40,0" name="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
     </file>
     <file name="Clean_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.ideCommands.behavior.Clean_BehaviorDescriptor" />
@@ -67,7 +67,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
     </file>
     <file name="OfAspectOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_BehaviorDescriptor" />
+      <unit at="11,0,37,0" name="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_BehaviorDescriptor" />
     </file>
     <file name="ProjectStatisticsTarget_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
@@ -213,18 +213,24 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984889709">
     <file name="AbsractMake_Behavior.java">
-      <node id="2840424593984890715" at="11,114,12,16" concept="10" />
-      <node id="2840424593984889709" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2840424593984889709" at="11,0,14,0" concept="12" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
-      <scope id="2840424593984889711" at="9,43,9,43" />
-      <scope id="2840424593984890714" at="11,114,12,16" />
-      <scope id="2840424593984889709" at="9,0,11,0">
+      <node id="2840424593984890715" at="14,114,15,16" concept="10" />
+      <node id="2410037095038457147" at="17,99,18,236" concept="10" />
+      <node id="2840424593984889709" at="12,0,14,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2840424593984889709" at="14,0,17,0" concept="12" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
+      <node id="2840424593984889709" at="17,0,20,0" concept="12" trace="virtual_getDisplayString_6891027939994892943#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="2840424593984889711" at="12,43,12,43" />
+      <scope id="2840424593984890714" at="14,114,15,16" />
+      <scope id="2410037095038399921" at="17,99,18,236" />
+      <scope id="2840424593984889709" at="12,0,14,0">
         <var name="thisNode" id="2840424593984889709" />
       </scope>
-      <scope id="2840424593984889709" at="11,0,14,0">
+      <scope id="2840424593984889709" at="14,0,17,0">
         <var name="thisConcept" id="2840424593984889709" />
       </scope>
-      <unit id="2840424593984889709" at="8,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
+      <scope id="2840424593984889709" at="17,0,20,0">
+        <var name="thisConcept" id="2840424593984889709" />
+      </scope>
+      <unit id="2840424593984889709" at="11,0,21,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
     </file>
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">

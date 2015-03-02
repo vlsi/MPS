@@ -16,7 +16,7 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.util.concept.ConceptHierarchyUtil;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -138,7 +138,7 @@ public class RulesUtil {
   }
   @CheckingMethod
   public static boolean checkAssignableConcept(final TypeCheckingContext typeCheckingContext, SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
-    if (ConceptHierarchyUtil.isSubconcept(fromConcept, toConcept)) {
+    if (AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(fromConcept, toConcept)) {
       return true;
     }
     {
