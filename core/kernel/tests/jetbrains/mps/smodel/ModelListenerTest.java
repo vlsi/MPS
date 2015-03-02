@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -39,9 +42,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.List;
 
 import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
 import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
@@ -347,8 +350,7 @@ public class ModelListenerTest {
 
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    ((SModelInternal) m1).addModelListener(cl1);
-    ((EditableSModel) m1).addChangeListener(cl2);
+    attachChangeListeners(m1, cl1, cl2);
     r1.addChild(ourRole, c);
     myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
@@ -372,8 +374,84 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
-    ((SModelInternal) m1).removeModelListener(cl1);
-    ((EditableSModel) m1).removeChangeListener(cl2);
+    detachChangeListeners(m1, cl1, cl2);
+  }
+
+  @Test
+  public void testPropertyChangeNotify() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    myTestModelAccess.enableWrite();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+
+    ChangeListener1 cl1 = new ChangeListener1();
+    ChangeListener2 cl2 = new ChangeListener2();
+    attachChangeListeners(m1, cl1, cl2);
+    final String newValue = "XXX";
+    r1.setProperty(SNodeUtil.property_INamedConcept_name, newValue);
+    detachChangeListeners(m1, cl1, cl2);
+    Assert.assertEquals(newValue, r1.getProperty(SNodeUtil.property_INamedConcept_name));
+    myErrors.checkThat(cl1.myChangedProperties.size(), equalTo(1));
+    myErrors.checkThat(cl1.myChangedProperties.contains(SNodeUtil.property_INamedConcept_name.getName()), equalTo(true));
+    myErrors.checkThat(cl2.myChangedProperties.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedProperties.contains(SNodeUtil.property_INamedConcept_name.getName()), equalTo(true));
+  }
+
+  @Test
+  public void testReferenceChangeNotify() {
+    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final Iterator<SNode> roots = m1.getRootNodes().iterator();
+    final SNode r1 = roots.next();
+    final SNode r2c1 = roots.next().getFirstChild();
+    final SNode r3c2 = roots.next().getFirstChild().getNextSibling();
+    myTestModelAccess.enableWrite();
+    ((SModelBase) m1).attach(myTestRepo);
+
+    ChangeListener1 cl1 = new ChangeListener1();
+    ChangeListener2 cl2 = new ChangeListener2();
+    attachChangeListeners(m1, cl1, cl2);
+    // create, with setReferenceTarget()
+    r1.setReferenceTarget(ourRef, r2c1);
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(0));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    // create, with setReference()
+    cl1.reset(); cl2.reset();
+    r2c1.setReference(ourRef, jetbrains.mps.smodel.SReference.create(ourRef, r2c1, r3c2));
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(0));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    // change, with setReference
+    cl1.reset(); cl2.reset();
+    r1.setReference(ourRef, jetbrains.mps.smodel.SReference.create(ourRef, r1, r3c2));
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    // change, with setReferenceTarget
+    cl1.reset(); cl2.reset();
+    r2c1.setReferenceTarget(ourRef, r1);
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    // delete, with setReference()
+    cl1.reset(); cl2.reset();
+    r2c1.setReference(ourRef, null);
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(0));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    // delete, with setReferenceTarget()
+    cl1.reset(); cl2.reset();
+    r1.setReferenceTarget(ourRef, null);
+    myErrors.checkThat(cl1.myAddedRef.size(), equalTo(0));
+    myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
+    myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
+    detachChangeListeners(m1, cl1, cl2);
   }
 
   /**
@@ -480,6 +558,16 @@ public class ModelListenerTest {
     m.removeAccessListener(l1);
   }
 
+  private static void attachChangeListeners(SModel m, SModelListener l1, SModelChangeListener l2) {
+    ((SModelInternal) m).addModelListener(l1);
+    ((EditableSModel) m).addChangeListener(l2);
+  }
+
+  private static void detachChangeListeners(SModel m, SModelListener l1, SModelChangeListener l2) {
+    ((SModelInternal) m).removeModelListener(l1);
+    ((EditableSModel) m).removeChangeListener(l2);
+  }
+
   // read every property and every reference of an each node in sub-tree
   private static void readTreeNodes(Iterable<? extends SNode> nodes) {
     for (SNode n : nodes) { // 1 nodeRead per next()
@@ -580,9 +668,12 @@ public class ModelListenerTest {
   }
 
   private static class ChangeListener1 extends SModelAdapter {
-    public final Set<SNode> myAdded = new HashSet<SNode>();
-    public final Set<SNode> myRemoved = new HashSet<SNode>();
-    public final Set<SNode> myBeforeRemoved = new HashSet<SNode>();
+    public final List<SNode> myAdded = new ArrayList<SNode>();
+    public final List<SNode> myRemoved = new ArrayList<SNode>();
+    public final List<SNode> myBeforeRemoved = new ArrayList<SNode>();
+    public final List<String> myChangedProperties = new ArrayList<String>();
+    public final List<SReference> myAddedRef = new ArrayList<SReference>();
+    public final List<SReference> myRemovedRef = new ArrayList<SReference>();
 
     @Override
     public void childAdded(SModelChildEvent event) {
@@ -599,17 +690,37 @@ public class ModelListenerTest {
       myBeforeRemoved.add(event.getChild());
     }
 
+    @Override
+    public void propertyChanged(SModelPropertyEvent event) {
+      myChangedProperties.add(event.getPropertyName());
+    }
+
+    @Override
+    public void referenceAdded(SModelReferenceEvent event) {
+      myAddedRef.add(event.getReference());
+    }
+
+    @Override
+    public void referenceRemoved(SModelReferenceEvent event) {
+      myRemovedRef.add(event.getReference());
+    }
+
     /*package*/ void reset() {
       myAdded.clear();
       myRemoved.clear();
       myBeforeRemoved.clear();
+      myChangedProperties.clear();
+      myAddedRef.clear();
+      myRemovedRef.clear();
     }
   }
+
   private static class ChangeListener2 implements SModelChangeListener {
-    public final Set<SNode> myAdded = new HashSet<SNode>();
-    public final Set<SNode> myRemoved = new HashSet<SNode>();
-    public final Set<String> myChangedProperties = new HashSet<String>();
-    public final Set<String> myChangedReferences = new HashSet<String>();
+    // use list, not set to check for number of events, even if they come for the same object, to notice excessive notifications
+    public final List<SNode> myAdded = new ArrayList<SNode>();
+    public final List<SNode> myRemoved = new ArrayList<SNode>();
+    public final List<String> myChangedProperties = new ArrayList<String>();
+    public final List<String> myChangedReferences = new ArrayList<String>();
 
     @Override
     public void nodeAdded(SModel model, SNode parent, String role, SNode child) {

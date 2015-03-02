@@ -566,6 +566,39 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
+  private void firePropertyChange(SProperty property, String oldValue, String newValue) {
+    if (needFireEvent()) {
+      myModel.firePropertyChangedEvent(this, property.getName(), oldValue, newValue);
+    }
+    //propertyChanged(property, oldValue, newValue);
+    if (myModel != null && myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md instanceof EditableSModelBase) {
+      EditableSModelBase emd = (EditableSModelBase) md;
+      emd.firePropertyChanged(this, property.getName(), oldValue, newValue);
+    }
+  }
+
+  private void fireReferenceChange(SReferenceLink l, org.jetbrains.mps.openapi.model.SReference oldRef, org.jetbrains.mps.openapi.model.SReference newRef) {
+    if (oldRef != null && needFireEvent()) {
+      myModel.fireReferenceRemovedEvent(oldRef);
+    }
+    if (newRef != null && needFireEvent()) {
+      myModel.fireReferenceAddedEvent(newRef);
+    }
+    // referenceChanged(l, oldRef, newRef);
+    if (myModel != null && myModel.isUpdateMode()) {
+      return;
+    }
+    SModelBase md = getRealModel();
+    if (md instanceof EditableSModelBase) {
+      EditableSModelBase emd = (EditableSModelBase) md;
+      emd.fireReferenceChanged(this, l.getRoleName(), oldRef, newRef);
+    }
+  }
+
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -667,6 +700,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
+  // perform inner structures update, doesn't dispatch any events
   private void addReferenceInternal(final SReference reference) {
     int oldLen = myReferences.length;
     jetbrains.mps.smodel.SReference[] newArray = new jetbrains.mps.smodel.SReference[oldLen + 1];
@@ -680,12 +714,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         return new InsertReferenceAtUndoableAction(SNode.this, reference);
       }
     });
-
-    if (needFireEvent()) {
-      myModel.fireReferenceAddedEvent(reference);
-    }
   }
 
+  // perform inner structures update, doesn't dispatch any events
   private void removeReferenceInternal(final SReference ref) {
     int index = -1;
     for (int i = 0; i < myReferences.length; i++) {
@@ -711,10 +742,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         return new RemoveReferenceAtUndoableAction(SNode.this, ref);
       }
     });
-
-    if (needFireEvent()) {
-      myModel.fireReferenceRemovedEvent(ref);
-    }
   }
 
   protected SNode firstChild() {
@@ -880,10 +907,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (needFireEvent()) {
-      myModel.firePropertyChangedEvent(this, property.getName(), oldValue, propertyValue);
-    }
-    propertyChanged(property, oldValue, propertyValue);
+    firePropertyChange(property, oldValue, propertyValue);
   }
 
   @NotNull
@@ -924,7 +948,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       addReferenceInternal(newValue);
     }
 
-    referenceChanged(role, toDelete, newValue);
+    fireReferenceChange(role, toDelete, newValue);
   }
 
   @Override
@@ -958,8 +982,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return null;
   }
 
+  // FIXME odd to have role parameter, while SReference.getLink gives exactly what's needed (and doesn't violate consistency)
+  // to clear reference, one could use setReferenceTarget(). Alternatively, SReference shall not keep
+  // the meta-object, and query its source node for role instead (as a free-floating Reference shall not answer its SReferenceLink).
   @Override
-  public void setReference(@NotNull SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
+  public void setReference(@NotNull SReferenceLink role, org.jetbrains.mps.openapi.model.SReference toAdd) {
     assertCanChange();
 
     SReference toRemove = null;
@@ -973,12 +1000,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       removeReferenceInternal(toRemove);
     }
 
-    if (reference != null) {
-      assert reference.getSourceNode() == this;
-      addReferenceInternal((SReference) reference);
+    if (toAdd != null) {
+      assert toAdd.getSourceNode() == this;
+      addReferenceInternal((SReference) toAdd);
     }
 
-    referenceChanged(role, toRemove, reference);
+    fireReferenceChange(role, toRemove, toAdd);
   }
 
   public void insertChildBefore(@NotNull final SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
@@ -1069,23 +1096,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (id.equals(myProperties[i])) return i;
     }
     return -1;
-  }
-
-  private void referenceChanged(SReferenceLink l, org.jetbrains.mps.openapi.model.SReference reference,
-      org.jetbrains.mps.openapi.model.SReference newValue) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md;
-    emd.fireReferenceChanged(this, l.getRoleName(), reference, newValue);
-  }
-
-  private void propertyChanged(SProperty p, String oldValue, String newValue) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md;
-    emd.firePropertyChanged(this, p.getName(), oldValue, newValue);
   }
 
   private void nodeAdded(SContainmentLink l, org.jetbrains.mps.openapi.model.SNode child) {
