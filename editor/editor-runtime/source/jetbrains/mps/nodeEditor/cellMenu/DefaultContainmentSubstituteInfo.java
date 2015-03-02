@@ -26,16 +26,25 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildSetter;
+import jetbrains.mps.smodel.action.DefaultChildSubstituteAction;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -68,12 +77,34 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
 
   @Override
   public List<SubstituteAction> createActions() {
-    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(myParentNode, myCurrentChild,
-      SModelUtil.getLinkDeclarationTarget(myLinkDeclaration),
-      createDefaultNodeSetter(),
-      getOperationContext());
-    return actions;
+    return createDefaultSubstituteActions(myLink.getTargetConcept(), myParentNode, myCurrentChild, new DefaultChildSetter(myLink));
   }
+
+  private List<SubstituteAction> createDefaultSubstituteActions(@NotNull SAbstractConcept applicableConcept, SNode parentNode, SNode currentChild,
+      IChildNodeSetter setter) {
+    String conceptFqName = NameUtil.nodeFQName(applicableConcept.getDeclarationNode());
+    SContainmentLink link = null;
+    if (setter instanceof DefaultChildSetter) {
+      DefaultChildSetter defaultSetter = (DefaultChildSetter) setter;
+      link = defaultSetter.getLink();
+    }
+
+    //todo: get rid of declaration node
+    if (!ModelConstraints.canBeChild(conceptFqName, parentNode, link.getDeclarationNode(), null, null)) {
+      return Collections.emptyList();
+    }
+    if (applicableConcept instanceof SConcept) {
+      SReferenceLink smartRef = ReferenceConceptUtil.getCharacteristicReference(((SConcept) applicableConcept));
+      if (smartRef != null) {
+        //todo add smart actions
+        return Collections.emptyList();
+      }
+    }
+
+    //todo add constraits
+    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, null, parentNode, currentChild, setter));
+  }
+
 
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {

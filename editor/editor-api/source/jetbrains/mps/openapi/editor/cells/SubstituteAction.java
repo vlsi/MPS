@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**

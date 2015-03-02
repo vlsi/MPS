@@ -21,6 +21,8 @@ import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -32,6 +34,7 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
   private SNode myOldChild;
   private IChildNodeSetter mySetter;
+  private SAbstractConcept myConcept;
 
   /**
    * To be used from generated code.  There is no output concept specified here. Subclasses should implement createChildNode() method.
@@ -43,18 +46,9 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
     mySetter = setter;
   }
 
-  /**
-   * @param concept instanceof AbstractConceptDeclaration
-   */
-  public DefaultChildSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
-    super(concept, concept, parentNode);
-    myCurrentChild = currentChild;
-    setupOldChild();
-    mySetter = setter;
-  }
-
-  public DefaultChildSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
-    super(outputConcept, parameterObject, parentNode);
+  public DefaultChildSubstituteAction(SAbstractConcept outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
+    super(outputConcept.getDeclarationNode(), parameterObject, parentNode);
+    myConcept = outputConcept;
     myCurrentChild = currentChild;
     myOldChild = myCurrentChild;
     mySetter = setter;
@@ -92,7 +86,7 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
     if (conceptDeclaration == null) {
       throw new RuntimeException("Couldn't create child node. Concept declaration was not specified. Parameter object: " + getParameterObject());
     }
-    return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model);
+    return NodeFactoryManager.createNode(myConcept, myOldChild, getSourceNode(), model);
   }
 
   @Override

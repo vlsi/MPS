@@ -396,19 +396,19 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private void addChildCellForNonNullConcept(SContainmentLink link) {
     EditorCell editorCell;
-
     if (link.isMultiple()) {
-      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
-      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
-      editorCell.setRole(handler.getElementRole());
-      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+//      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
+//      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
+//      editorCell.setRole(handler.getElementRole());
+//      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
     } else {
-      CellProviderWithRole provider;
-      provider = new RefNodeCellProvider(mySNode, myEditorContext);
-      provider.setRole(role);
-      provider.setNoTargetText("<no " + role + ">");
-      editorCell = provider.createEditorCell(myEditorContext);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+
+//      CellProviderWithRole provider;
+//      provider = new RefNodeCellProvider(mySNode, myEditorContext);
+//      provider.setRole(role);
+//      provider.setNoTargetText("<no " + role + ">");
+//      editorCell = provider.createEditorCell(myEditorContext);
+//      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     }
     setIndent(editorCell);
     addCell(editorCell);
