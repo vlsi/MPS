@@ -14,10 +14,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -31,17 +35,27 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
   }
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
-    SNode classifier = SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+    final SNode classifier = SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
-      Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
-      Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode m) {
-          return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && SPropertyOperations.getBoolean(m, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+
+      Tuples._2<Boolean, SNode> fromCache = RepositoryStateCacheUtils.getFromCache("supertypesOf_ClassifierType", classifier, new _FunctionTypes._return_P0_E0<Tuples._2<Boolean, SNode>>() {
+        public Tuples._2<Boolean, SNode> invoke() {
+          Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
+          Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode m) {
+              return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && SPropertyOperations.getBoolean(m, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+            }
+          });
+          Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
+          SNode mtd = (it.hasNext() ? it.next() : null);
+          return MultiTuple.<Boolean,SNode>from(!(it.hasNext()) && (mtd != null), mtd);
         }
       });
-      Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
-      SNode mtd = (it.hasNext() ? it.next() : null);
-      if (!(it.hasNext()) && (mtd != null)) {
+
+      boolean aFunctionInterface = (boolean) fromCache._0();
+      SNode mtd = fromCache._1();
+
+      if (aFunctionInterface) {
         List<SNode> paramTypes = new ArrayList<SNode>();
 
         Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -59,7 +73,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         if (SNodeOperations.isInstanceOf(rt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
           rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
         }
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0b(paramTypes, rt));
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0g0c0b(paramTypes, rt));
       }
     }
     return supertypes;
@@ -76,7 +90,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
   public boolean isWeak() {
     return true;
   }
-  private static SNode _quotation_createNode_qen718_a0a0j0e0c0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_qen718_a0a0j0g0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
