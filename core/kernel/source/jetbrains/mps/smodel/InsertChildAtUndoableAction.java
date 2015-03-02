@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 class InsertChildAtUndoableAction extends SNodeUndoableAction {
-  private SNode myAnchor;
-  private String myRole;
-  private SNode myChild;
+  private final SNode myAnchor;
+  private final SContainmentLink myRole;
+  private final SNode myChild;
 
-  public InsertChildAtUndoableAction(SNode node, SNode anchor, String role, SNode child) {
+  public InsertChildAtUndoableAction(SNode node, SNode anchor, SContainmentLink role, SNode child) {
     super(node);
     myAnchor = anchor;
     myRole = role;

@@ -179,12 +179,7 @@ public class SModel implements SModelData {
     SNode sn = (SNode) node;
     myRoots.add(sn);
     sn.registerInModel(this);
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new AddRootUndoableAction(node);
-      }
-    });
+    performUndoableAction(new AddRootUndoableAction(node));
     fireRootAddedEvent(sn);
   }
 
@@ -200,12 +195,7 @@ public class SModel implements SModelData {
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.unRegisterFromModel();
-      performUndoableAction(new Computable<SNodeUndoableAction>() {
-        @Override
-        public SNodeUndoableAction compute() {
-          return new RemoveRootUndoableAction(node, myModelDescriptor);
-        }
-      });
+      performUndoableAction(new RemoveRootUndoableAction(node, myModelDescriptor));
       fireRootRemovedEvent(sn);
     }
   }
@@ -280,13 +270,28 @@ public class SModel implements SModelData {
 
 //---------listeners--------
 
+  /**
+   * Use {@link #performUndoableAction(SNodeUndoableAction)} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo()) return;
-    UndoHelper.getInstance().addUndoableAction(action.compute());
+    performUndoableAction(action.compute());
   }
 
-  //todo code in the following methods should be written w/o duplication
+  protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
+    if (!canFireEvent()) {
+      return;
+    }
+    final UndoHelper uh = UndoHelper.getInstance();
+    if (uh.needRegisterUndo()) {
+      uh.addUndoableAction(action);
+    }
+  }
+
+    //todo code in the following methods should be written w/o duplication
 
   public boolean canFireEvent() {
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();

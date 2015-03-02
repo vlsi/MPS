@@ -192,14 +192,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  private void performUndoableAction(Computable<SNodeUndoableAction> computable) {
+  private void performUndoableAction(SNodeUndoableAction action) {
     if (myModelForUndo != null) {
-      myModelForUndo.performUndoableAction(computable);
+      myModelForUndo.performUndoableAction(action);
     } else {
       if (!UndoHelper.getInstance().needRegisterUndo()) return;
       if (!UnregisteredNodes.instance().contains(this)) return;
 
-      UndoHelper.getInstance().addUndoableAction(computable.compute());
+      UndoHelper.getInstance().addUndoableAction(action);
     }
   }
 
@@ -243,12 +243,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new RemoveChildUndoableAction(SNode.this, anchor, wasRole.getRoleName(), wasChild);
-      }
-    });
+    performUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
 
     fireNodeRemove(wasRole, child, anchor);
   }
@@ -299,13 +294,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return s;
   }
 
-  private void startUndoTracking(SNode root, SRepository repo) {
+  private void startUndoTracking(SNode root) {
     for (SNode child : root.getChildren()) {
-      startUndoTracking(child, repo);
+      startUndoTracking(child);
     }
     if (UnregisteredNodes.instance().contains(root)) return;
     UnregisteredNodes.instance().put(root);
-    root.myRepository = repo;
   }
 
   @NotNull
@@ -729,12 +723,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     newArray[oldLen] = reference;
     myReferences = newArray;
 
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new InsertReferenceAtUndoableAction(SNode.this, reference);
-      }
-    });
+    performUndoableAction(new InsertReferenceAtUndoableAction(this, reference));
   }
 
   // perform inner structures update, doesn't dispatch any events
@@ -757,12 +746,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
     myReferences = newArray;
 
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new RemoveReferenceAtUndoableAction(SNode.this, ref);
-      }
-    });
+    performUndoableAction(new RemoveReferenceAtUndoableAction(this, ref));
   }
 
   protected SNode firstChild() {
@@ -920,13 +904,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       myProperties[index + 1] = propertyValue;
     }
 
-    final String finalPropertyValue = propertyValue;
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new PropertyChangeUndoableAction(SNode.this, property, oldValue, finalPropertyValue);
-      }
-    });
+    performUndoableAction(new PropertyChangeUndoableAction(this, property, oldValue, propertyValue));
 
     firePropertyChange(property, oldValue, propertyValue);
   }
@@ -1064,7 +1042,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
     if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getContainingRoot(), schild.myRepository);
+      startUndoTracking(getContainingRoot());
     }
 
     if (myModel == null) {
@@ -1075,12 +1053,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       schild.registerInModel(myModel);
     }
 
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new InsertChildAtUndoableAction(SNode.this, anchor, role.getRole(), schild);
-      }
-    });
+    performUndoableAction(new InsertChildAtUndoableAction(this, anchor, role, child));
 
     fireNodeAdd(role, schild, anchor);
   }
