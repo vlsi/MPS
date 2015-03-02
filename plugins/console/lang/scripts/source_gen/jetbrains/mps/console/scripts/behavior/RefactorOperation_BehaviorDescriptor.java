@@ -11,8 +11,8 @@ import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior;
 public class RefactorOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements ConsoleOperation_BehaviorDescriptor {
   public RefactorOperation_BehaviorDescriptor() {
   }
-  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
-    return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
+  public String virtual_getDisplayString_6891027939994892943(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getDisplayString_6891027939994892943(thisConcept);
   }
   public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
@@ -22,6 +22,9 @@ public class RefactorOperation_BehaviorDescriptor extends InternalSequenceOperat
   }
   public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
     return ConsoleOperation_Behavior.virtual_getKind_7006261637493126084(thisConcept);
+  }
+  public String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(thisConcept);
   }
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return RefactorOperation_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);

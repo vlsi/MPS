@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class ConsoleHelpProvider_Behavior {
   public static void init(SNode thisNode) {
@@ -21,12 +22,15 @@ public class ConsoleHelpProvider_Behavior {
   public static String virtual_getGroup_6928665434441162387(SAbstractConcept thisConcept) {
     return SNodeOperations.getModel(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))).getModule().getModuleName();
   }
-  public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
+  public static String virtual_getShortDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
     String alias = SPropertyOperations.getString(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
     if ((alias != null && alias.length() > 0)) {
       return alias;
     } else {
       return SPropertyOperations.getString(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
+  }
+  public static String virtual_getDisplayString_6891027939994892943(SAbstractConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(SConceptRepository.getInstance().getConcept("jetbrains.mps.console.base.structure.ConsoleHelpProvider"));
   }
 }

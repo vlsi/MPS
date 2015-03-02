@@ -19,4 +19,7 @@ public class UsagesExpression_Behavior {
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     return BehaviorReflection.invokeSuperStatic(String.class, SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getHelpPage_7006261637493125297", new Object[]{}) + "\nImplementation of this command uses the IDE indexes to speed up execution";
   }
+  public static String virtual_getDisplayString_6891027939994892943(SAbstractConcept thisConcept) {
+    return BehaviorReflection.invokeSuperStatic(String.class, SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getDisplayString_6891027939994892943", new Object[]{}) + "(node)";
+  }
 }
