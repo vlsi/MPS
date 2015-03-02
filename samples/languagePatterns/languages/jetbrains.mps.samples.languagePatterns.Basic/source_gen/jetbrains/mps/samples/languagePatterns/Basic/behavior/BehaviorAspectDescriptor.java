@@ -11,29 +11,29 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 7:
+      case 11:
         return new FruitPlate_BehaviorDescriptor();
       case 0:
         return new Apple_BehaviorDescriptor();
-      case 8:
+      case 14:
         return new Orange_BehaviorDescriptor();
       case 5:
         return new Concert_BehaviorDescriptor();
-      case 13:
+      case 19:
         return new Singer_BehaviorDescriptor();
-      case 10:
+      case 16:
         return new Performance_BehaviorDescriptor();
       case 2:
         return new CombinedPerformance_BehaviorDescriptor();
-      case 9:
+      case 15:
         return new Participant_BehaviorDescriptor();
-      case 11:
+      case 17:
         return new PerformanceWithTitle_BehaviorDescriptor();
-      case 12:
+      case 18:
         return new RaceParticipant_BehaviorDescriptor();
       case 1:
         return new Car_BehaviorDescriptor();
-      case 14:
+      case 21:
         return new Truck_BehaviorDescriptor();
       case 6:
         return new Container_BehaviorDescriptor();
@@ -41,9 +41,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Component_BehaviorDescriptor();
       case 4:
         return new ComponentUsage_BehaviorDescriptor();
+      case 13:
+        return new ListOfDrawCommands_BehaviorDescriptor();
+      case 10:
+        return new EmptyLine_BehaviorDescriptor();
+      case 8:
+        return new DrawLine_BehaviorDescriptor();
+      case 9:
+        return new DrawRect_BehaviorDescriptor();
+      case 20:
+        return new SolidLine_BehaviorDescriptor();
+      case 7:
+        return new DottedLine_BehaviorDescriptor();
+      case 12:
+        return new IncompleteCommand_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"};
 }
