@@ -71,17 +71,13 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModel().addRootNode(node);
-    fireNodeAdded(null, null, node);
-    setChanged(true);
+    getModelData().addRootNode(node);
   }
 
   @Override
   public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModel().removeRootNode(node);
-    fireNodeRemoved(null, null, node);
-    setChanged(true);
+    getModelData().removeRootNode(node);
   }
 
   @Override

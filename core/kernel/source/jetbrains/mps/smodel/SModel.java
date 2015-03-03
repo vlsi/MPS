@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.ModuleId;
@@ -83,12 +84,15 @@ public class SModel implements SModelData {
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
-  private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
+  private INodeIdToNodeMap myIdToNodeMap;
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
   private ImplicitImportsLegacyHolder myLegacyImplicitImports;
   // when true, we are attaching newly loaded children to a model loaded partially
   private boolean myIsFullLoadMode = false;
+  // nodes from this model communicate with it through this owner instance.
+  @NotNull
+  private final AttachedNodeOwner myNodeOwner;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -97,6 +101,7 @@ public class SModel implements SModelData {
   public SModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     myReference = modelReference;
     myIdToNodeMap = map;
+    myNodeOwner = new AttachedNodeOwner(this);
   }
 
   static void resetIdCounter() {
@@ -165,8 +170,12 @@ public class SModel implements SModelData {
       ModelChange.assertLegalNodeRegistration(this, node);
     }
     enforceFullLoad();
-    if (myRoots.contains(node)) return;
+    if (myRoots.contains(node)) {
+      // why not warn?
+      return;
+    }
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
+    // FIXME why on earth we remove new root from original location, but don't do the same for insertChild?
     if (model != null && model != myModelDescriptor && node.getParent() == null) {
       model.removeRootNode(node);
     } else {
@@ -178,7 +187,7 @@ public class SModel implements SModelData {
 
     SNode sn = (SNode) node;
     myRoots.add(sn);
-    sn.attach(new AttachedNodeOwner(this));
+    sn.attach(myNodeOwner);
     performUndoableAction(new AddRootUndoableAction(node));
     fireRootAddedEvent(sn);
   }
@@ -398,7 +407,15 @@ public class SModel implements SModelData {
   }
 
   private void fireRootAddedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+    // IMPORTANT: SModelChangeListener events shall get dispatches regardless of model's registered state (as in canFireEvent)
+    // e.g. TransientModelNodeFinder relies on change events coming for transient models that are not in a repo.
+    // FIXME move to SNodeOwner. Document SModelChangeListener is notified even for unregistered models, tests for that.
+    if (myModelDescriptor instanceof EditableSModelBase) {
+      ((EditableSModelBase) myModelDescriptor).fireNodeAdded(null, null, root);
+    }
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -410,6 +427,10 @@ public class SModel implements SModelData {
   }
 
   private void fireRootRemovedEvent(@NotNull SNode root) {
+    // FIXME move to SNodeOwner
+    if (myModelDescriptor instanceof EditableSModelBase) {
+      ((EditableSModelBase) myModelDescriptor).fireNodeRemoved(null, null, root);
+    }
     if (!canFireEvent()) {
       return;
     }
@@ -529,10 +550,6 @@ public class SModel implements SModelData {
   }
 
   //---------node registration--------
-
-  protected final INodeIdToNodeMap createNodeIdMap() {
-    return new UniversalOptimizedNodeIdMap();
-  }
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();

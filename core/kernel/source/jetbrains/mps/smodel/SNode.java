@@ -215,7 +215,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (p != null) {
       p.removeChild(this);
     } else if (myOwner.getModel() != null) {
-      myOwner.getModel().getModelDescriptor().removeRootNode(this);
+      myOwner.getModel().removeRootNode(this);
     }
   }
 
@@ -357,12 +357,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return lc;
   }
 
-  //-------------------------------------------------------
-  //-----------TO IMPLEMENT VIA OTHER METHODS--------------
-  //-------------------------------------------------------
-
-  //----root, deleted, etc.---
-
   @Override
   public SNode getPrevSibling() {
     assertCanRead();
@@ -427,10 +421,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     };
   }
-
-  //----------------------------------------------------------
-  //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
-  //----------------------------------------------------------
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -365,8 +366,10 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
+    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
+    ((EditableSModel)m1).setChanged(false);
     r1.removeChild(c);
     myErrors.checkThat(cl1.myRemoved.size(), equalTo(1));
     myErrors.checkThat(cl1.myBeforeRemoved.size(), equalTo(1));
@@ -374,15 +377,69 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl1.myBeforeRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
+    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
     final SNode anchor = r1.getFirstChild();
+    ((EditableSModel)m1).setChanged(false);
     r1.insertChildBefore(ourRole, c, anchor);
     myErrors.checkThat(c.getNextSibling(), equalTo(anchor));
     myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
+    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    detachChangeListeners(m1, cl1, cl2);
+  }
+
+  /**
+   * addRootNode/removeRootNode used to dispatch events and update setChanged
+   * in a way different from add/remove of an ordinary node
+   */
+  @Test
+  public void testRootAddRemoveNotify() {
+    SModel m1 = new TestModelFactory().createModel(2, 2);
+    myTestModelAccess.enableWrite();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode c = new TestModelFactory().createNode();
+    ChangeListener1 cl1 = new ChangeListener1();
+    ChangeListener2 cl2 = new ChangeListener2();
+    attachChangeListeners(m1, cl1, cl2);
+    //
+    m1.addRootNode(c);
+    myErrors.checkThat(cl1.myAddedRoots.size(), equalTo(1));
+    myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
+    myErrors.checkThat(cl1.myAddedRoots.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
+    myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(3));
+    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    //
+    cl1.reset(); cl2.reset();
+    ((EditableSModel)m1).setChanged(false);
+    m1.removeRootNode(c);
+    myErrors.checkThat(cl1.myRemovedRoots.size(), equalTo(1));
+    myErrors.checkThat(cl1.myBeforeRemovedRoots.size(), equalTo(1));
+    myErrors.checkThat(cl2.myRemoved.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRoots.contains(c), equalTo(true));
+    myErrors.checkThat(cl1.myBeforeRemovedRoots.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
+    myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(2));
+    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    //
+    // use SNode.delete
+    m1.addRootNode(c);
+    Assert.assertEquals(3, IterableUtil.asCollection(m1.getRootNodes()).size());
+    cl1.reset(); cl2.reset();
+    ((EditableSModel)m1).setChanged(false);
+    c.delete();
+    myErrors.checkThat(cl1.myRemovedRoots.size(), equalTo(1));
+    myErrors.checkThat(cl1.myBeforeRemovedRoots.size(), equalTo(1));
+    myErrors.checkThat(cl2.myRemoved.size(), equalTo(1));
+    myErrors.checkThat(cl1.myRemovedRoots.contains(c), equalTo(true));
+    myErrors.checkThat(cl1.myBeforeRemovedRoots.contains(c), equalTo(true));
+    myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
+    myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(2));
+    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
     detachChangeListeners(m1, cl1, cl2);
   }
 
@@ -786,8 +843,11 @@ public class ModelListenerTest {
 
   private static class ChangeListener1 extends SModelAdapter {
     public final List<SNode> myAdded = new ArrayList<SNode>();
+    public final List<SNode> myAddedRoots = new ArrayList<SNode>();
     public final List<SNode> myRemoved = new ArrayList<SNode>();
+    public final List<SNode> myRemovedRoots = new ArrayList<SNode>();
     public final List<SNode> myBeforeRemoved = new ArrayList<SNode>();
+    public final List<SNode> myBeforeRemovedRoots = new ArrayList<SNode>();
     public final List<String> myChangedProperties = new ArrayList<String>();
     public final List<SReference> myAddedRef = new ArrayList<SReference>();
     public final List<SReference> myRemovedRef = new ArrayList<SReference>();
@@ -822,6 +882,21 @@ public class ModelListenerTest {
       myRemovedRef.add(event.getReference());
     }
 
+    @Override
+    public void rootAdded(SModelRootEvent event) {
+      myAddedRoots.add(event.getRoot());
+    }
+
+    @Override
+    public void rootRemoved(SModelRootEvent event) {
+      myRemovedRoots.add(event.getRoot());
+    }
+
+    @Override
+    public void beforeRootRemoved(SModelRootEvent event) {
+      myBeforeRemovedRoots.add(event.getRoot());
+    }
+
     /*package*/ void reset() {
       myAdded.clear();
       myRemoved.clear();
@@ -829,6 +904,9 @@ public class ModelListenerTest {
       myChangedProperties.clear();
       myAddedRef.clear();
       myRemovedRef.clear();
+      myAddedRoots.clear();
+      myRemovedRoots.clear();
+      myBeforeRemovedRoots.clear();
     }
   }
 
