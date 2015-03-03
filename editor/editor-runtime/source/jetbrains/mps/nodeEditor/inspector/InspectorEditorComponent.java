@@ -15,11 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.inspector;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.fileEditor.FileEditor;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.InspectorEditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,6 +72,15 @@ public class InspectorEditorComponent extends EditorComponent {
 
   public EditorCell createEmptyCell() {
     return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
+  }
+
+  @Override
+  public ITypeContextOwner getTypecheckingContextOwner() {
+    FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(DataManager.getInstance().getDataContext((this)));
+    if (fileEditor instanceof MPSFileNodeEditor) {
+      return (ITypeContextOwner) ((MPSFileNodeEditor) fileEditor).getNodeEditor().getCurrentEditorComponent();
+    }
+    return this;
   }
 
   protected boolean updateContainingRoot(SNode node) {

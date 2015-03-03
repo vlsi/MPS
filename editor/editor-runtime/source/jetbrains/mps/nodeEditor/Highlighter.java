@@ -379,7 +379,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       if (myStopThread || myCancellable.isCancelled()) {
         return;
       }
-      TypeContextManager.getInstance().runTypecheckingAction(editorComponent, new Runnable() {
+      TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), new Runnable() {
         @Override
         public void run() {
           if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false, essentialOnly)) {
@@ -395,7 +395,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
       final EditorComponent finalInspector = myInspectorTool.getInspector();
-      TypeContextManager.getInstance().runTypecheckingAction(finalInspector, new Runnable() {
+      TypeContextManager.getInstance().runTypecheckingAction(myInspectorTool.getInspector().getTypecheckingContextOwner(), new Runnable() {
         @Override
         public void run() {
           updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly);

@@ -39,16 +39,16 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new IResource_subtypeOf_ResourceType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new resource_supertypes_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       ComparisonRule_Runtime comparisonRule = new ResourceType_comparableWith_IResource_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new IResource_subtypeOf_ResourceType_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new resource_subtypeOf_resource_InequationReplacementRule();

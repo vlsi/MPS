@@ -217,7 +217,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -53380,22 +53380,40 @@
           </node>
         </node>
       </node>
-      <node concept="3cpWs8" id="7juMyjb$gYj" role="3cqZAp">
-        <node concept="3cpWsn" id="7juMyjb$gYk" role="3cpWs9">
+      <node concept="3clFbH" id="1TyKSmlKLDG" role="3cqZAp" />
+      <node concept="3cpWs8" id="1TyKSmlKXKC" role="3cqZAp">
+        <node concept="3cpWsn" id="1TyKSmlKXKD" role="3cpWs9">
           <property role="TrG5h" value="depManager" />
-          <node concept="3uibUv" id="7juMyjb$gYl" role="1tU5fm">
+          <node concept="3uibUv" id="1TyKSmlKXK_" role="1tU5fm">
             <ref role="3uigEE" to="gqu6:~GlobalModuleDependenciesManager" resolve="GlobalModuleDependenciesManager" />
           </node>
-          <node concept="2ShNRf" id="7juMyjb$h6J" role="33vP2m">
-            <node concept="1pGfFk" id="7juMyjb$kqI" role="2ShVmc">
-              <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
-              <node concept="37vLTw" id="7juMyjb$p9E" role="37wK5m">
-                <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
+          <node concept="2YIFZM" id="1TyKSmlKXKE" role="33vP2m">
+            <ref role="37wK5l" to="fnmy:_HxOdnhk$K" resolve="getFromCache" />
+            <ref role="1Pybhc" to="fnmy:47AFxFGR3kx" resolve="RepositoryStateCacheUtils" />
+            <node concept="Xl_RD" id="1TyKSmlKXKF" role="37wK5m">
+              <property role="Xl_RC" value="CheckExtendedClassIsImported" />
+            </node>
+            <node concept="37vLTw" id="1TyKSmlKXKG" role="37wK5m">
+              <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
+            </node>
+            <node concept="1bVj0M" id="1TyKSmlKXKH" role="37wK5m">
+              <node concept="3clFbS" id="1TyKSmlKXKI" role="1bW5cS">
+                <node concept="3clFbF" id="1TyKSmlKXKJ" role="3cqZAp">
+                  <node concept="2ShNRf" id="1TyKSmlKXKK" role="3clFbG">
+                    <node concept="1pGfFk" id="1TyKSmlKXKL" role="2ShVmc">
+                      <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
+                      <node concept="37vLTw" id="1TyKSmlKXKM" role="37wK5m">
+                        <ref role="3cqZAo" node="7juMyjb$kLV" resolve="module" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
         </node>
       </node>
+      <node concept="3clFbH" id="1TyKSmlKLGp" role="3cqZAp" />
       <node concept="3cpWs8" id="220qeVzXLRz" role="3cqZAp">
         <node concept="3cpWsn" id="220qeVzXLR$" role="3cpWs9">
           <property role="TrG5h" value="deps" />
@@ -53407,7 +53425,7 @@
           </node>
           <node concept="2OqwBi" id="220qeVzXLRB" role="33vP2m">
             <node concept="37vLTw" id="220qeVzXLRC" role="2Oq$k0">
-              <ref role="3cqZAo" node="7juMyjb$gYk" resolve="depManager" />
+              <ref role="3cqZAo" node="1TyKSmlKXKD" resolve="depManager" />
             </node>
             <node concept="liA8E" id="220qeVzXLRD" role="2OqNvi">
               <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.getModules(jetbrains.mps.project.dependency.GlobalModuleDependenciesManager$Deptype):java.util.Collection" resolve="getModules" />
