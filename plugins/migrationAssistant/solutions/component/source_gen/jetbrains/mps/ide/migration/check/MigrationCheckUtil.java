@@ -28,12 +28,17 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SDependency;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.MPSExtentions;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -49,6 +54,14 @@ public class MigrationCheckUtil {
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModuleProblems));
 
     maxErrors -= CollectionSequence.fromCollection(badModuleProblems).count();
+    if (maxErrors == 0) {
+      return result;
+    }
+
+    Collection<BinaryModelProblem> badModelProblems = findBinaryModels(modules, maxErrors);
+    ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModelProblems));
+
+    maxErrors -= CollectionSequence.fromCollection(badModelProblems).count();
     if (maxErrors == 0) {
       return result;
     }
@@ -161,6 +174,41 @@ public class MigrationCheckUtil {
       }
     });
     return ListSequence.fromList(rv).take(maxErrors).toListSequence();
+  }
+
+  private static Collection<BinaryModelProblem> findBinaryModels(Iterable<SModule> modules, int maxErrors) {
+    return Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(it.isPackaged());
+      }
+    }).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, BinaryModelProblem>() {
+      public Iterable<BinaryModelProblem> translate(AbstractModule it) {
+        return getBinaryModelsUnder(it);
+      }
+    }).take(maxErrors).toListSequence();
+  }
+
+  public static Collection<BinaryModelProblem> getBinaryModelsUnder(final AbstractModule module) {
+    List<BinaryModelProblem> rv = ListSequence.fromList(new ArrayList<BinaryModelProblem>());
+
+    IFile moduleFile = module.getDescriptorFile();
+    if (moduleFile == null) {
+      return rv;
+    }
+
+    List<IFile> allFiles = IFileUtils.getAllFiles(moduleFile.getParent());
+    Iterable<IFile> binFiles = ListSequence.fromList(allFiles).where(new IWhereFilter<IFile>() {
+      public boolean accept(IFile it) {
+        return FileUtil.getExtension(it.getName()).equals(MPSExtentions.MODEL_BINARY);
+      }
+    });
+    ListSequence.fromList(rv).addSequence(Sequence.fromIterable(binFiles).select(new ISelector<IFile, BinaryModelProblem>() {
+      public BinaryModelProblem select(IFile it) {
+        return new BinaryModelProblem(module, String.format("Can't load binary model: module %s, file %s. Binary models must be converted prior to migration. See https://youtrack.jetbrains.com/issue/MPS-21587", module.getModuleName(), it.getPath()));
+      }
+    }));
+
+    return rv;
   }
 
   private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors) {
