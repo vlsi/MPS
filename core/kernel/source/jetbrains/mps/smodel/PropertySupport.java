@@ -16,7 +16,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ModuleReloadListener;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.util.Computable;
@@ -28,11 +31,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class PropertySupport {
   private static final Logger LOG = LogManager.getLogger(PropertySupport.class);
-
-  protected static final String PROPERTY_SUPPORT = "propertySupport";
+  private static PropertySupportCache ourPropertySupportCache;
 
   /**
    * new validation method
@@ -43,8 +48,8 @@ public abstract class PropertySupport {
     if (!canSetValue(value)) return false;
     PropertyConstraintsDescriptor descriptor =
         ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(propertyName);
-    if (descriptor==null){
-      LOG.error("No property constraints are available for property "+propertyName+" in node "+ node.getPresentation());
+    if (descriptor == null) {
+      LOG.error("No property constraints are available for property " + propertyName + " in node " + node.getPresentation());
       return false;
     }
     return canSetValue(descriptor, node, propertyName, value);
@@ -78,10 +83,11 @@ public abstract class PropertySupport {
       public PropertySupport compute() {
         SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
         if (dataType != null) {
-          PropertySupport propertySupport = (PropertySupport) dataType.getUserObject(PROPERTY_SUPPORT);
+          PropertySupport propertySupport = ourPropertySupportCache.get(dataType);
           if (propertySupport != null) {
             return propertySupport;
           }
+
           if (SNodeUtil.isInstanceOfPrimitiveDataTypeDeclaration(dataType)) {
             String dataTypeName = dataType.getName();
             if (Primitives.STRING_TYPE.equals(dataTypeName)) {
@@ -100,7 +106,8 @@ public abstract class PropertySupport {
           if (propertySupport == null) {
             propertySupport = new DefaultPropertySupport();
           }
-          dataType.putUserObject(PROPERTY_SUPPORT, propertySupport);
+          ourPropertySupportCache.put(dataType, propertySupport);
+
           return propertySupport;
         }
         return new DefaultPropertySupport();
@@ -180,6 +187,45 @@ public abstract class PropertySupport {
         return value;
       }
       return null;
+    }
+  }
+
+  /**
+   * TODO: remove in 3.3, replace with some generated code, probably in the StructureAspectDescriptor.
+   * Preserving the cache, but starting to listen to the reloading events to keep the cache up-to-date
+   * @deprecated
+   */
+  @Deprecated
+  public static class PropertySupportCache implements CoreComponent, ModuleReloadListener {
+    private final Map<SNode, PropertySupport> myMap = new ConcurrentHashMap<SNode, PropertySupport>();
+    private final ClassLoaderManager myCLM;
+
+    public PropertySupportCache(ClassLoaderManager clm) {
+      myCLM = clm;
+    }
+
+    public void put(SNode key, PropertySupport cache) {
+      myMap.put(key, cache);
+    }
+
+    public PropertySupport get(SNode key) {
+      return myMap.get(key);
+    }
+
+    @Override
+    public void modulesReloaded(Set<ReloadableModuleBase> modules) {
+      myMap.clear();
+    }
+
+    @Override
+    public void init() {
+      myCLM.addReloadListener(this);
+      PropertySupport.ourPropertySupportCache = this;
+    }
+
+    @Override
+    public void dispose() {
+      myCLM.removeReloadListener(this);
     }
   }
 }

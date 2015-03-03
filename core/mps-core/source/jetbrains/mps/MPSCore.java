@@ -45,6 +45,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -128,6 +129,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new ValidationSettings());
 
     init(new BootstrapMakeFacets());
+    init(new PropertySupportCache(classLoaderManager));
   }
 
   /**
