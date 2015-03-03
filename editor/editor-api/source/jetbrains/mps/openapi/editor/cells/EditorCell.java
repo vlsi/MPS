@@ -32,10 +32,22 @@ public interface EditorCell {
 
   int getX();
 
+  /**
+   * Set X position of the cell without any additional actions. Should be mostly used from cell layout process.
+   * <p/>
+   * This method Will not affect child cell positions (if any). This method will not call trigger cell re-layout
+   * process (by calling {@link #requestRelayout()})
+   */
   void setX(int x);
 
   int getY();
 
+  /**
+   * Set Y position of the cell without any additional actions. Should be mostly used from cell layout process.
+   * <p/>
+   * This method Will not affect child cell positions (if any). This method will not call trigger cell re-layout
+   * process (by calling {@link #requestRelayout()})
+   */
   void setY(int y);
 
   int getWidth();
@@ -77,6 +89,21 @@ public interface EditorCell {
 
   int getRightGap();
 
+  /**
+   * Move cell to the specified location. In contrast with {@link #setX(int)}/{@link #setY(int)} methods, this method will re-position
+   * complete cell structure: this cell together with all child cells. For {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   * this method can trigger re-layout process for some child cells by calling {@link #requestRelayout()} method on corresponding cells.
+   * <p/>
+   * For example, if wrapping (indent) layout is attached to this {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}, then
+   * layout logic uses X coordinate of first (or parent) cell to determine cell wrapping position. As a result of {@link #moveTo(int, int)}
+   * request, complete re-layout for cell subtree should be triggered to determine new wrapping position.
+   * <p/>
+   * In case of {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection} this method will delegate all layout-specific cell processing
+   * to the corresponding {@link jetbrains.mps.openapi.editor.cells.CellLayout}
+   *
+   * @param x new X-coordinate
+   * @param y new Y-coordinate
+   */
   void moveTo(int x, int y);
 
   void setSelected(boolean isSelected);
