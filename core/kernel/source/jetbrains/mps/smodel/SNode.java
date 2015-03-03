@@ -51,6 +51,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import static jetbrains.mps.util.SNodeOperations.getDebugText;
+
 /**
  * As a tribute to legacy code, we do allow access to constant and meta-info objects of a node without read access.
  * It's not encouraged for a new code, though, and might change in future, that's why it's stated here and not in openapi.SNode
@@ -445,7 +447,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (myOwner.getModel() == null) {
       myId = ((SNodeId) id);
     } else {
-      LOG.error("can't set id to registered node " + SNodeOperations.getDebugText(this), new Throwable());
+      LOG.error("can't set id to registered node " + getDebugText(this), new Throwable());
     }
   }
 
@@ -479,6 +481,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myOwner = detachedOwner;
   }
 
+  @NotNull
   /*package*/ SNodeOwner getNodeOwner() {
     // FIXME for consistency, shall use same approach to dispatch events from e.g. getParent(), where I use
     // owner of the child node (in assumption owner is identical for the whole tree) myOwner.fireNodeRead(parent, true);
@@ -803,24 +806,31 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SNode schild = (SNode) child;
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(
-          SNodeOperations.getDebugText(
-              schild) + " already has parent: " + SNodeOperations.getDebugText(
-              parentOfChild) + "\n" +
-              "Couldn't add it to: " + SNodeOperations.getDebugText(this)
-      );
+      final String fmt = "%s already has parent: %s\nCouldn't add it to: %s";
+      final String m = String.format(fmt, getDebugText(schild), getDebugText(parentOfChild), getDebugText(this));
+      throw new IllegalModelAccessException(m);
+    }
+    final SModel childModel = schild.getNodeOwner().getModel();
+    if (childModel != null) {
+      if (childModel.isRoot(schild)) {
+        final String fmt = "Attempt to add root %s from model %s to node %s.";
+        throw new IllegalModelAccessException(String.format(fmt, getDebugText(schild), childModel, getDebugText(this)));
+      } else {
+        final String fmt = "Node to add (%s) belongs to a model. Couldn't add it to %s. Shall detach it/remove from the model %s first.";
+        throw new IllegalModelAccessException(String.format(fmt, getDebugText(schild), getDebugText(this), childModel));
+      }
     }
 
     if (getContainingRoot() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
+      throw new IllegalModelAccessException("Trying to create a cyclic tree");
     }
 
     if (anchor != null) {
       if (anchor.getParent() != this) {
-        throw new RuntimeException(
+        throw new IllegalModelAccessException(
             "anchor is not a child of this node" + " | " +
-                "this: " + SNodeOperations.getDebugText(this) + " | " +
-                "anchor: " + SNodeOperations.getDebugText(anchor)
+                "this: " + getDebugText(this) + " | " +
+                "anchor: " + getDebugText(anchor)
         );
       }
     }
@@ -835,7 +845,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       myOwner.startUndoTracking(getContainingRoot());
     }
 
-    assert schild.getNodeOwner().getModel() == null : "Otherwise we shall detach it first, to unregister node from its original model. However, not clear how come we insert an attached node";
     schild.attach(myOwner);
 
     myOwner.performUndoableAction(this, new InsertChildAtUndoableAction(this, anchor, role, child));

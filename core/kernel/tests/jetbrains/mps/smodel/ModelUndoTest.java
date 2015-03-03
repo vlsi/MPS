@@ -180,6 +180,31 @@ public class ModelUndoTest {
     Assert.assertEquals(expectedNodeCount, countTreeNodes(m1.getRootNodes()));
   }
 
+  /**
+   * With SNodeOwner, we need to make sure owner of a child removed from a detached tree is the one that is fine with undo
+   * Tree A->B->C. First, remove B, then remove C from B.
+   */
+  @Test
+  public void testRemoveChildOfRemoved() {
+    SModel m1 = new TestModelFactory().createModel(1, 1, 1);
+    myModelAccess.enableWrite();
+    ((SModelBase) m1).attach(myRepo);
+    SNode r1 = m1.getRootNodes().iterator().next();
+    SNode r1c1 = r1.getFirstChild();
+    r1.removeChild(r1c1);
+    final SNode c = r1c1.getFirstChild();
+    r1c1.removeChild(c);
+    myUndo.flushCommand(null);
+    Assert.assertEquals(1, countTreeNodes(m1.getRootNodes()));
+
+    final UndoUnit undoElement = myUndo.myUndoStack.peek();
+    undoElement.undo();
+    Assert.assertEquals(3, countTreeNodes(m1.getRootNodes()));
+
+    undoElement.redo();
+    Assert.assertEquals(1, countTreeNodes(m1.getRootNodes()));
+  }
+
   /*package*/ static class TestUndoHandler implements UndoHandler {
     private final Deque<SNodeUndoableAction> myActions = new ArrayDeque<SNodeUndoableAction>();
     public final Deque<UndoUnit> myUndoStack = new ArrayDeque<UndoUnit>();
