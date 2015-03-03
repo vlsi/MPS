@@ -19,7 +19,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * FIXME tell about myRepository not being cleared for detached nodes (cleared *after* command end, in UnregisteredNodes)
+ * This is a state nodes being removed from a model get.
+ *
+ * No events are fired. Primary activity is to record undo actions for a detached node in case the node got back in the model.
+ * However, it's not clear if approach of {@link jetbrains.mps.smodel.FreeFloatNodeOwner} wouldn't be better here. Use of
+ * recorded model is the way it was the moment refactoring has been started.
+ *
+ * Note, significant difference is that myRepository field for detached nodes has been cleared *after* command end, in UnregisteredNodes,
+ * while this class doesn't track SRepository for detached nodes at all.
+ * Thus, detached nodes used to check read/write model access, while nodes with this owner do not. As I don't see too much difference
+ * between free-floating and detached nodes, there seems to be no justification for access checks for detached nodes.
+ *
  * @author Artem Tikhomirov
  */
 final class DetachedNodeOwner extends SNodeOwner {

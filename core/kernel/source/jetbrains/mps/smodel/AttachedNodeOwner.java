@@ -25,6 +25,10 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
+ * Normal state of any node, being part of a model.
+ *
+ * Events are dispatched, model access ensured.
+ *
  * @author Artem Tikhomirov
  */
 final class AttachedNodeOwner extends SNodeOwner {
@@ -37,6 +41,7 @@ final class AttachedNodeOwner extends SNodeOwner {
 
   @Override
   public void assertLegalRead() {
+    // FIXME explicit attach to set repository? So that it behaves exactly as it was prior to SNodeOwner?
     final SRepository repo = myModel.getRepository();
     if (repo != null) {
       repo.getModelAccess().checkReadAccess();
@@ -67,7 +72,7 @@ final class AttachedNodeOwner extends SNodeOwner {
   @Override
   public void registerNode(SNode node) {
     myModel.registerNode(node);
-    // REVISIT: why UnregisteredNodes.put in SNode#unRegisterFromModel (#detach(SNodeOwner)) us conditioned with !isUpdateMode(), and this one is not?
+    // FIXME why UnregisteredNodes.put in SNode#unRegisterFromModel (#detach(SNodeOwner)) us conditioned with !isUpdateMode(), and this one is not?
     UnregisteredNodes.instance().remove(node);
   }
 

@@ -18,6 +18,13 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 
 /**
+ * State of a node not being added to any model yet.
+ * This is the state any node has at creation time.
+ *
+ * No events are dispatched, no model access checks.
+ * Primary activity is support for undo, particularly in cases when a node is constructed in the air and later
+ * added to a model.
+ *
  * @author Artem Tikhomirov
  */
 final class FreeFloatNodeOwner extends SNodeOwner {
@@ -29,12 +36,23 @@ final class FreeFloatNodeOwner extends SNodeOwner {
   }
 
   @Override
-  public void startUndoTracking(SNode root) {
-    for (SNode child : root.getChildren()) {
-      startUndoTracking(child);
+  public void startUndoTracking(SNode parent, SNode child) {
+    //if child is in unregistered nodes, while this node is a brand-new, free-floating node,
+    // add it too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && !un.contains(parent)) {
+      trackUndo(parent.getContainingRoot());
     }
-    if (UnregisteredNodes.instance().contains(root)) return;
-    UnregisteredNodes.instance().put(root);
+  }
+
+  public void trackUndo(SNode root) {
+    for (SNode child : root.getChildren()) {
+      trackUndo(child);
+    }
+    final UnregisteredNodes un = UnregisteredNodes.instance();
+    if (!un.contains(root)) {
+      un.put(root);
+    }
   }
 
   @Override

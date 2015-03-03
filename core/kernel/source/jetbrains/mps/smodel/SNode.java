@@ -26,12 +26,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -63,6 +61,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private static final Object USER_OBJECT_LOCK = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
+  /**
+   * inv: all children of a node, inclusive, have the same owner
+   */
   @NotNull
   private SNodeOwner myOwner = FreeFloatNodeOwner.INSTANCE;
   private SContainmentLink myRoleInParent;
@@ -728,7 +729,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         break;
       }
     }
-    if (toDelete == null && target == null) return;
+    if (toDelete == null && target == null) {
+      return;
+    }
 
     if (toDelete != null) {
       removeReferenceInternal(toDelete);
@@ -838,12 +841,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     schild.myRoleInParent = role;
     children_insertBefore(((SNode) anchor), schild);
 
-    //if child is in unregistered nodes, while this node is a brand-new, free-floating node,
-    // add it too to track undo for it
-    UnregisteredNodes un = UnregisteredNodes.instance();
-    if (un.contains(child) && !un.contains(this)) {
-      myOwner.startUndoTracking(getContainingRoot());
-    }
+    myOwner.startUndoTracking(this, schild);
 
     schild.attach(myOwner);
 
