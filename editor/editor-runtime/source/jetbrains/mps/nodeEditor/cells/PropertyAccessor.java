@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SModelOperations;
@@ -26,6 +25,7 @@ import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class PropertyAccessor implements ModelAccessor {
   private SNode myNode;
@@ -33,6 +33,7 @@ public class PropertyAccessor implements ModelAccessor {
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private final SNodeReference myPropertyDeclaration;
+  private final SRepository myRepository;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
@@ -46,6 +47,7 @@ public class PropertyAccessor implements ModelAccessor {
         return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
       }
     });
+    myRepository = editorContext.getRepository();
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
@@ -60,6 +62,7 @@ public class PropertyAccessor implements ModelAccessor {
         return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
       }
     });
+    myRepository = context.getProject().getRepository();
   }
 
   public SNode getNode() {
@@ -155,7 +158,7 @@ public class PropertyAccessor implements ModelAccessor {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(MPSModuleRepository.getInstance()) : null;
+        return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(myRepository) : null;
       }
     });
   }
