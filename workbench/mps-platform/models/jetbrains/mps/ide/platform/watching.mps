@@ -7,6 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
   <imports>
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
@@ -39,6 +40,7 @@
     <import index="vft3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="ierg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
+    <import index="s4r" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.fs(MPS.Core/jetbrains.mps.fs@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -248,6 +250,7 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -293,6 +296,18 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
         <property id="1167228628751" name="hasException" index="34fQS0" />
@@ -302,6 +317,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -6476,6 +6494,860 @@
       <node concept="3cqZAl" id="4SUKy4FU8kC" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="491od_XJZer" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="501K0YLMPSm">
+    <property role="TrG5h" value="WatchedRoots" />
+    <node concept="312cEg" id="501K0YLMPSn" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myGlobalRequests" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="501K0YLMPSo" role="1B3o_S" />
+      <node concept="3uibUv" id="501K0YLMPSp" role="1tU5fm">
+        <ref role="3uigEE" to="k7g3:~Map" resolve="Map" />
+        <node concept="3uibUv" id="501K0YLMPSq" role="11_B2D">
+          <ref role="3uigEE" to="s4r:~WatchRequestor" resolve="WatchRequestor" />
+        </node>
+        <node concept="3uibUv" id="501K0YLMPSr" role="11_B2D">
+          <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="501K0YLMPSs" role="33vP2m">
+        <node concept="1pGfFk" id="501K0YLMPSt" role="2ShVmc">
+          <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+          <node concept="3uibUv" id="501K0YLMPSu" role="1pMfVU">
+            <ref role="3uigEE" to="s4r:~WatchRequestor" resolve="WatchRequestor" />
+          </node>
+          <node concept="3uibUv" id="501K0YLMPSv" role="1pMfVU">
+            <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="501K0YLMPSw" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myOtherRequests" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="501K0YLMPSx" role="1B3o_S" />
+      <node concept="3uibUv" id="501K0YLMPSy" role="1tU5fm">
+        <ref role="3uigEE" to="k7g3:~Map" resolve="Map" />
+        <node concept="17QB3L" id="501K0YLMPSz" role="11_B2D" />
+        <node concept="3uibUv" id="501K0YLMPS$" role="11_B2D">
+          <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="501K0YLMPS_" role="33vP2m">
+        <node concept="1pGfFk" id="501K0YLMPSA" role="2ShVmc">
+          <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+          <node concept="17QB3L" id="501K0YLMPSB" role="1pMfVU" />
+          <node concept="3uibUv" id="501K0YLMPSC" role="1pMfVU">
+            <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="501K0YLMPSD" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myRequestedPaths" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="501K0YLMPSE" role="1B3o_S" />
+      <node concept="3uibUv" id="501K0YLMPSF" role="1tU5fm">
+        <ref role="3uigEE" to="k7g3:~Map" resolve="Map" />
+        <node concept="17QB3L" id="501K0YLMPSG" role="11_B2D" />
+        <node concept="3uibUv" id="501K0YLMPSH" role="11_B2D">
+          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="501K0YLMPSI" role="33vP2m">
+        <node concept="1pGfFk" id="501K0YLMPSJ" role="2ShVmc">
+          <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+          <node concept="17QB3L" id="501K0YLMPSK" role="1pMfVU" />
+          <node concept="3uibUv" id="501K0YLMPSL" role="1pMfVU">
+            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="501K0YLMPSM" role="jymVt">
+      <property role="TrG5h" value="myLocalFileSystem" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="501K0YLMPSN" role="1tU5fm">
+        <ref role="3uigEE" to="3df7:~LocalFileSystem" resolve="LocalFileSystem" />
+      </node>
+      <node concept="3Tm6S6" id="501K0YLMPSO" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="501K0YLMPSP" role="jymVt" />
+    <node concept="3clFbW" id="501K0YLMPSQ" role="jymVt">
+      <node concept="3cqZAl" id="501K0YLMPSR" role="3clF45" />
+      <node concept="3clFbS" id="501K0YLMPSS" role="3clF47">
+        <node concept="3clFbF" id="501K0YLMPST" role="3cqZAp">
+          <node concept="37vLTI" id="501K0YLMPSU" role="3clFbG">
+            <node concept="37vLTw" id="501K0YLMPSV" role="37vLTx">
+              <ref role="3cqZAo" node="501K0YLMPSY" resolve="lfs" />
+            </node>
+            <node concept="37vLTw" id="501K0YLMPSW" role="37vLTJ">
+              <ref role="3cqZAo" node="501K0YLMPSM" resolve="myLocalFileSystem" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="501K0YLMPSX" role="1B3o_S" />
+      <node concept="37vLTG" id="501K0YLMPSY" role="3clF46">
+        <property role="TrG5h" value="lfs" />
+        <node concept="3uibUv" id="501K0YLMPSZ" role="1tU5fm">
+          <ref role="3uigEE" to="3df7:~LocalFileSystem" resolve="LocalFileSystem" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="501K0YLMPT0" role="jymVt" />
+    <node concept="3clFb_" id="501K0YLMPT1" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="initComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="501K0YLMPT2" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPT3" role="3clF45" />
+      <node concept="3clFbS" id="501K0YLMPT4" role="3clF47">
+        <node concept="3clFbF" id="501K0YLMPT5" role="3cqZAp">
+          <node concept="2YIFZM" id="501K0YLMPT6" role="3clFbG">
+            <ref role="37wK5l" to="s4r:~MPSDirectoryWatcher.setInstance(jetbrains.mps.fs.MPSDirectoryWatcher):void" resolve="setInstance" />
+            <ref role="1Pybhc" to="s4r:~MPSDirectoryWatcher" resolve="MPSDirectoryWatcher" />
+            <node concept="Xjq3P" id="501K0YLMPT7" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="501K0YLMPT8" role="jymVt" />
+    <node concept="3clFb_" id="501K0YLMPT9" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="disposeComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="501K0YLMPTa" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPTb" role="3clF45" />
+      <node concept="3clFbS" id="501K0YLMPTc" role="3clF47">
+        <node concept="3clFbF" id="501K0YLMPTd" role="3cqZAp">
+          <node concept="2YIFZM" id="501K0YLMPTe" role="3clFbG">
+            <ref role="37wK5l" to="s4r:~MPSDirectoryWatcher.setInstance(jetbrains.mps.fs.MPSDirectoryWatcher):void" resolve="setInstance" />
+            <ref role="1Pybhc" to="s4r:~MPSDirectoryWatcher" resolve="MPSDirectoryWatcher" />
+            <node concept="10Nm6u" id="501K0YLMPTf" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="501K0YLMPTg" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getComponentName" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="501K0YLMPTh" role="1B3o_S" />
+      <node concept="3uibUv" id="501K0YLMPTi" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="501K0YLMPTj" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
+      </node>
+      <node concept="2AHcQZ" id="501K0YLMPTk" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3clFbS" id="501K0YLMPTl" role="3clF47">
+        <node concept="3clFbF" id="501K0YLMPTm" role="3cqZAp">
+          <node concept="Xl_RD" id="501K0YLMPTn" role="3clFbG">
+            <property role="Xl_RC" value="Watched Roots" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="501K0YLMPTo" role="jymVt" />
+    <node concept="3clFb_" id="501K0YLMPTp" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="addGlobalWatch" />
+      <property role="od$2w" value="true" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="501K0YLMPTq" role="3clF47">
+        <node concept="3cpWs8" id="501K0YLMPTr" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPTs" role="3cpWs9">
+            <property role="TrG5h" value="request" />
+            <node concept="3uibUv" id="501K0YLMPTt" role="1tU5fm">
+              <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+            </node>
+            <node concept="2OqwBi" id="501K0YLMPTu" role="33vP2m">
+              <node concept="37vLTw" id="501K0YLMPTv" role="2Oq$k0">
+                <ref role="3cqZAo" node="501K0YLMPSM" resolve="myLocalFileSystem" />
+              </node>
+              <node concept="liA8E" id="501K0YLMPTw" role="2OqNvi">
+                <ref role="37wK5l" to="3df7:~LocalFileSystem.addRootToWatch(java.lang.String,boolean):com.intellij.openapi.vfs.LocalFileSystem$WatchRequest" resolve="addRootToWatch" />
+                <node concept="2OqwBi" id="501K0YLMPTx" role="37wK5m">
+                  <node concept="37vLTw" id="501K0YLMPTy" role="2Oq$k0">
+                    <ref role="3cqZAo" node="501K0YLMPTN" resolve="req" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPTz" role="2OqNvi">
+                    <ref role="37wK5l" to="s4r:~WatchRequestor.getDirectory():java.lang.String" resolve="getDirectory" />
+                  </node>
+                </node>
+                <node concept="3clFbT" id="501K0YLMPT$" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="501K0YLMPT_" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPTA" role="3clFbx">
+            <node concept="3cpWs6" id="501K0YLMPTB" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="501K0YLMPTC" role="3clFbw">
+            <node concept="10Nm6u" id="501K0YLMPTD" role="3uHU7w" />
+            <node concept="37vLTw" id="501K0YLMPTE" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPTs" resolve="request" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="501K0YLMPTF" role="3cqZAp">
+          <node concept="2OqwBi" id="501K0YLMPTG" role="3clFbG">
+            <node concept="37vLTw" id="501K0YLMPTH" role="2Oq$k0">
+              <ref role="3cqZAo" node="501K0YLMPSn" resolve="myGlobalRequests" />
+            </node>
+            <node concept="liA8E" id="501K0YLMPTI" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <node concept="37vLTw" id="501K0YLMPTJ" role="37wK5m">
+                <ref role="3cqZAo" node="501K0YLMPTN" resolve="req" />
+              </node>
+              <node concept="37vLTw" id="501K0YLMPTK" role="37wK5m">
+                <ref role="3cqZAo" node="501K0YLMPTs" resolve="request" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="501K0YLMPTL" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPTM" role="3clF45" />
+      <node concept="37vLTG" id="501K0YLMPTN" role="3clF46">
+        <property role="TrG5h" value="req" />
+        <node concept="3uibUv" id="501K0YLMPTO" role="1tU5fm">
+          <ref role="3uigEE" to="s4r:~WatchRequestor" resolve="WatchRequestor" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="501K0YLMPTP" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="501K0YLMPTQ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="removeGlobalWatch" />
+      <property role="od$2w" value="true" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="501K0YLMPTR" role="3clF47">
+        <node concept="3cpWs8" id="501K0YLMPTS" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPTT" role="3cpWs9">
+            <property role="TrG5h" value="request" />
+            <node concept="3uibUv" id="501K0YLMPTU" role="1tU5fm">
+              <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+            </node>
+            <node concept="2OqwBi" id="501K0YLMPTV" role="33vP2m">
+              <node concept="37vLTw" id="501K0YLMPTW" role="2Oq$k0">
+                <ref role="3cqZAo" node="501K0YLMPSn" resolve="myGlobalRequests" />
+              </node>
+              <node concept="liA8E" id="501K0YLMPTX" role="2OqNvi">
+                <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <node concept="37vLTw" id="501K0YLMPTY" role="37wK5m">
+                  <ref role="3cqZAo" node="501K0YLMPV2" resolve="requestor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="501K0YLMPTZ" role="3cqZAp">
+          <node concept="2OqwBi" id="501K0YLMPU0" role="3clFbG">
+            <node concept="37vLTw" id="501K0YLMPU1" role="2Oq$k0">
+              <ref role="3cqZAo" node="501K0YLMPSn" resolve="myGlobalRequests" />
+            </node>
+            <node concept="liA8E" id="501K0YLMPU2" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Map.remove(java.lang.Object):java.lang.Object" resolve="remove" />
+              <node concept="37vLTw" id="501K0YLMPU3" role="37wK5m">
+                <ref role="3cqZAo" node="501K0YLMPV2" resolve="requestor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="501K0YLMPU4" role="3cqZAp" />
+        <node concept="3clFbJ" id="501K0YLMPU5" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPU6" role="3clFbx">
+            <node concept="3clFbF" id="501K0YLMPU7" role="3cqZAp">
+              <node concept="2OqwBi" id="501K0YLMPU8" role="3clFbG">
+                <node concept="37vLTw" id="501K0YLMPU9" role="2Oq$k0">
+                  <ref role="3cqZAo" node="501K0YLMPSM" resolve="myLocalFileSystem" />
+                </node>
+                <node concept="liA8E" id="501K0YLMPUa" role="2OqNvi">
+                  <ref role="37wK5l" to="3df7:~LocalFileSystem.removeWatchedRoot(com.intellij.openapi.vfs.LocalFileSystem$WatchRequest):void" resolve="removeWatchedRoot" />
+                  <node concept="37vLTw" id="501K0YLMPUb" role="37wK5m">
+                    <ref role="3cqZAo" node="501K0YLMPTT" resolve="request" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="501K0YLMPUc" role="3clFbw">
+            <node concept="10Nm6u" id="501K0YLMPUd" role="3uHU7w" />
+            <node concept="37vLTw" id="501K0YLMPUe" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPTT" resolve="request" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="501K0YLMPUf" role="3cqZAp" />
+        <node concept="3SKdUt" id="501K0YLMPUg" role="3cqZAp">
+          <node concept="3SKdUq" id="501K0YLMPUh" role="3SKWNk">
+            <property role="3SKdUp" value="handle the case when something from project A added fs listener (=&gt; a watch) under a dir of project B" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="501K0YLMPUi" role="3cqZAp" />
+        <node concept="3cpWs8" id="501K0YLMPUj" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPUk" role="3cpWs9">
+            <property role="TrG5h" value="pathsToWatch" />
+            <node concept="_YKpA" id="501K0YLMPUl" role="1tU5fm">
+              <node concept="17QB3L" id="501K0YLMPUm" role="_ZDj9" />
+            </node>
+            <node concept="2ShNRf" id="501K0YLMPUn" role="33vP2m">
+              <node concept="Tc6Ow" id="501K0YLMPUo" role="2ShVmc">
+                <node concept="17QB3L" id="501K0YLMPUp" role="HW$YZ" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="501K0YLMPUq" role="3cqZAp">
+          <node concept="2GrKxI" id="501K0YLMPUr" role="2Gsz3X">
+            <property role="TrG5h" value="path" />
+          </node>
+          <node concept="2OqwBi" id="501K0YLMPUs" role="2GsD0m">
+            <node concept="37vLTw" id="501K0YLMPUt" role="2Oq$k0">
+              <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+            </node>
+            <node concept="liA8E" id="501K0YLMPUu" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Map.keySet():java.util.Set" resolve="keySet" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="501K0YLMPUv" role="2LFqv$">
+            <node concept="3clFbJ" id="501K0YLMPUw" role="3cqZAp">
+              <node concept="3clFbS" id="501K0YLMPUx" role="3clFbx">
+                <node concept="3N13vt" id="501K0YLMPUy" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="501K0YLMPUz" role="3clFbw">
+                <node concept="2YIFZM" id="501K0YLMPU$" role="3fr31v">
+                  <ref role="37wK5l" to="msyo:~FileUtil.isSubPath(java.lang.String,java.lang.String):boolean" resolve="isSubPath" />
+                  <ref role="1Pybhc" to="msyo:~FileUtil" resolve="FileUtil" />
+                  <node concept="2OqwBi" id="501K0YLMPU_" role="37wK5m">
+                    <node concept="37vLTw" id="501K0YLMPUA" role="2Oq$k0">
+                      <ref role="3cqZAo" node="501K0YLMPV2" resolve="requestor" />
+                    </node>
+                    <node concept="liA8E" id="501K0YLMPUB" role="2OqNvi">
+                      <ref role="37wK5l" to="s4r:~WatchRequestor.getDirectory():java.lang.String" resolve="getDirectory" />
+                    </node>
+                  </node>
+                  <node concept="2GrUjf" id="501K0YLMPUC" role="37wK5m">
+                    <ref role="2Gs0qQ" node="501K0YLMPUr" resolve="path" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="501K0YLMPUD" role="3cqZAp">
+              <node concept="3clFbS" id="501K0YLMPUE" role="3clFbx">
+                <node concept="3clFbF" id="501K0YLMPUF" role="3cqZAp">
+                  <node concept="2OqwBi" id="501K0YLMPUG" role="3clFbG">
+                    <node concept="37vLTw" id="501K0YLMPUH" role="2Oq$k0">
+                      <ref role="3cqZAo" node="501K0YLMPUk" resolve="pathsToWatch" />
+                    </node>
+                    <node concept="TSZUe" id="501K0YLMPUI" role="2OqNvi">
+                      <node concept="2GrUjf" id="501K0YLMPUJ" role="25WWJ7">
+                        <ref role="2Gs0qQ" node="501K0YLMPUr" resolve="path" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="501K0YLMPUK" role="3clFbw">
+                <node concept="2OqwBi" id="501K0YLMPUL" role="3fr31v">
+                  <node concept="37vLTw" id="501K0YLMPUM" role="2Oq$k0">
+                    <ref role="3cqZAo" node="501K0YLMPSw" resolve="myOtherRequests" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPUN" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+                    <node concept="2GrUjf" id="501K0YLMPUO" role="37wK5m">
+                      <ref role="2Gs0qQ" node="501K0YLMPUr" resolve="path" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="501K0YLMPUP" role="3cqZAp">
+          <node concept="2OqwBi" id="501K0YLMPUQ" role="3clFbG">
+            <node concept="37vLTw" id="501K0YLMPUR" role="2Oq$k0">
+              <ref role="3cqZAo" node="501K0YLMPUk" resolve="pathsToWatch" />
+            </node>
+            <node concept="2es0OD" id="501K0YLMPUS" role="2OqNvi">
+              <node concept="1bVj0M" id="501K0YLMPUT" role="23t8la">
+                <node concept="3clFbS" id="501K0YLMPUU" role="1bW5cS">
+                  <node concept="3clFbF" id="501K0YLMPUV" role="3cqZAp">
+                    <node concept="1rXfSq" id="501K0YLMPUW" role="3clFbG">
+                      <ref role="37wK5l" node="501K0YLMPVE" resolve="maybeAddWatchRequest" />
+                      <node concept="37vLTw" id="501K0YLMPUX" role="37wK5m">
+                        <ref role="3cqZAo" node="501K0YLMPUY" resolve="it" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="501K0YLMPUY" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="501K0YLMPUZ" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="501K0YLMPV0" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPV1" role="3clF45" />
+      <node concept="37vLTG" id="501K0YLMPV2" role="3clF46">
+        <property role="TrG5h" value="requestor" />
+        <node concept="3uibUv" id="501K0YLMPV3" role="1tU5fm">
+          <ref role="3uigEE" to="s4r:~WatchRequestor" resolve="WatchRequestor" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="501K0YLMPV4" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="501K0YLMPV5" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="addWatchRequest" />
+      <property role="od$2w" value="true" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="501K0YLMPV6" role="3clF47">
+        <node concept="3cpWs8" id="501K0YLMPV7" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPV8" role="3cpWs9">
+            <property role="TrG5h" value="count" />
+            <node concept="3uibUv" id="501K0YLMPV9" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            </node>
+            <node concept="2OqwBi" id="501K0YLMPVa" role="33vP2m">
+              <node concept="37vLTw" id="501K0YLMPVb" role="2Oq$k0">
+                <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+              </node>
+              <node concept="liA8E" id="501K0YLMPVc" role="2OqNvi">
+                <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <node concept="37vLTw" id="501K0YLMPVd" role="37wK5m">
+                  <ref role="3cqZAo" node="501K0YLMPVC" resolve="path" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="501K0YLMPVe" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPVf" role="3clFbx">
+            <node concept="3clFbF" id="501K0YLMPVg" role="3cqZAp">
+              <node concept="2OqwBi" id="501K0YLMPVh" role="3clFbG">
+                <node concept="37vLTw" id="501K0YLMPVi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+                </node>
+                <node concept="liA8E" id="501K0YLMPVj" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                  <node concept="37vLTw" id="501K0YLMPVk" role="37wK5m">
+                    <ref role="3cqZAo" node="501K0YLMPVC" resolve="path" />
+                  </node>
+                  <node concept="3cpWs3" id="501K0YLMPVl" role="37wK5m">
+                    <node concept="3cmrfG" id="501K0YLMPVm" role="3uHU7w">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                    <node concept="37vLTw" id="501K0YLMPVn" role="3uHU7B">
+                      <ref role="3cqZAo" node="501K0YLMPV8" resolve="count" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="501K0YLMPVo" role="3clFbw">
+            <node concept="37vLTw" id="501K0YLMPVp" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPV8" resolve="count" />
+            </node>
+            <node concept="10Nm6u" id="501K0YLMPVq" role="3uHU7w" />
+          </node>
+          <node concept="9aQIb" id="501K0YLMPVr" role="9aQIa">
+            <node concept="3clFbS" id="501K0YLMPVs" role="9aQI4">
+              <node concept="3clFbF" id="501K0YLMPVt" role="3cqZAp">
+                <node concept="2OqwBi" id="501K0YLMPVu" role="3clFbG">
+                  <node concept="37vLTw" id="501K0YLMPVv" role="2Oq$k0">
+                    <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPVw" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                    <node concept="37vLTw" id="501K0YLMPVx" role="37wK5m">
+                      <ref role="3cqZAo" node="501K0YLMPVC" resolve="path" />
+                    </node>
+                    <node concept="3cmrfG" id="501K0YLMPVy" role="37wK5m">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="501K0YLMPVz" role="3cqZAp">
+                <node concept="1rXfSq" id="501K0YLMPV$" role="3clFbG">
+                  <ref role="37wK5l" node="501K0YLMPVE" resolve="maybeAddWatchRequest" />
+                  <node concept="37vLTw" id="501K0YLMPV_" role="37wK5m">
+                    <ref role="3cqZAo" node="501K0YLMPVC" resolve="path" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="501K0YLMPVA" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPVB" role="3clF45" />
+      <node concept="37vLTG" id="501K0YLMPVC" role="3clF46">
+        <property role="TrG5h" value="path" />
+        <node concept="17QB3L" id="501K0YLMPVD" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="501K0YLMPVE" role="jymVt">
+      <property role="TrG5h" value="maybeAddWatchRequest" />
+      <node concept="3cqZAl" id="501K0YLMPVF" role="3clF45" />
+      <node concept="3Tm6S6" id="501K0YLMPVG" role="1B3o_S" />
+      <node concept="3clFbS" id="501K0YLMPVH" role="3clF47">
+        <node concept="3cpWs8" id="501K0YLMPVI" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPVJ" role="3cpWs9">
+            <property role="TrG5h" value="alreadyCovered" />
+            <node concept="10P_77" id="501K0YLMPVK" role="1tU5fm" />
+            <node concept="3clFbT" id="501K0YLMPVL" role="33vP2m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="501K0YLMPVM" role="3cqZAp" />
+        <node concept="2Gpval" id="501K0YLMPVN" role="3cqZAp">
+          <node concept="2GrKxI" id="501K0YLMPVO" role="2Gsz3X">
+            <property role="TrG5h" value="watch" />
+          </node>
+          <node concept="2OqwBi" id="501K0YLMPVP" role="2GsD0m">
+            <node concept="37vLTw" id="501K0YLMPVQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="501K0YLMPSn" resolve="myGlobalRequests" />
+            </node>
+            <node concept="liA8E" id="501K0YLMPVR" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Map.values():java.util.Collection" resolve="values" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="501K0YLMPVS" role="2LFqv$">
+            <node concept="3cpWs8" id="501K0YLMPVT" role="3cqZAp">
+              <node concept="3cpWsn" id="501K0YLMPVU" role="3cpWs9">
+                <property role="TrG5h" value="watchPath" />
+                <node concept="17QB3L" id="501K0YLMPVV" role="1tU5fm" />
+                <node concept="2OqwBi" id="501K0YLMPVW" role="33vP2m">
+                  <node concept="2GrUjf" id="501K0YLMPVX" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="501K0YLMPVO" resolve="watch" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPVY" role="2OqNvi">
+                    <ref role="37wK5l" to="3df7:~LocalFileSystem$WatchRequest.getRootPath():java.lang.String" resolve="getRootPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="501K0YLMPVZ" role="3cqZAp">
+              <node concept="3clFbS" id="501K0YLMPW0" role="3clFbx">
+                <node concept="3clFbF" id="501K0YLMPW1" role="3cqZAp">
+                  <node concept="37vLTI" id="501K0YLMPW2" role="3clFbG">
+                    <node concept="3clFbT" id="501K0YLMPW3" role="37vLTx">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="37vLTw" id="501K0YLMPW4" role="37vLTJ">
+                      <ref role="3cqZAo" node="501K0YLMPVJ" resolve="alreadyCovered" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="501K0YLMPW5" role="3cqZAp" />
+              </node>
+              <node concept="2YIFZM" id="501K0YLMPW6" role="3clFbw">
+                <ref role="37wK5l" to="msyo:~FileUtil.isSubPath(java.lang.String,java.lang.String):boolean" resolve="isSubPath" />
+                <ref role="1Pybhc" to="msyo:~FileUtil" resolve="FileUtil" />
+                <node concept="37vLTw" id="501K0YLMPW7" role="37wK5m">
+                  <ref role="3cqZAo" node="501K0YLMPVU" resolve="watchPath" />
+                </node>
+                <node concept="37vLTw" id="501K0YLMPW8" role="37wK5m">
+                  <ref role="3cqZAo" node="501K0YLMPWw" resolve="path" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="501K0YLMPW9" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPWa" role="3clFbx">
+            <node concept="3cpWs8" id="501K0YLMPWb" role="3cqZAp">
+              <node concept="3cpWsn" id="501K0YLMPWc" role="3cpWs9">
+                <property role="TrG5h" value="request" />
+                <node concept="3uibUv" id="501K0YLMPWd" role="1tU5fm">
+                  <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+                </node>
+                <node concept="2OqwBi" id="501K0YLMPWe" role="33vP2m">
+                  <node concept="37vLTw" id="501K0YLMPWf" role="2Oq$k0">
+                    <ref role="3cqZAo" node="501K0YLMPSM" resolve="myLocalFileSystem" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPWg" role="2OqNvi">
+                    <ref role="37wK5l" to="3df7:~LocalFileSystem.addRootToWatch(java.lang.String,boolean):com.intellij.openapi.vfs.LocalFileSystem$WatchRequest" resolve="addRootToWatch" />
+                    <node concept="37vLTw" id="501K0YLMPWh" role="37wK5m">
+                      <ref role="3cqZAo" node="501K0YLMPWw" resolve="path" />
+                    </node>
+                    <node concept="3clFbT" id="501K0YLMPWi" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="501K0YLMPWj" role="3cqZAp">
+              <node concept="3clFbS" id="501K0YLMPWk" role="3clFbx">
+                <node concept="3clFbF" id="501K0YLMPWl" role="3cqZAp">
+                  <node concept="2OqwBi" id="501K0YLMPWm" role="3clFbG">
+                    <node concept="37vLTw" id="501K0YLMPWn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="501K0YLMPSw" resolve="myOtherRequests" />
+                    </node>
+                    <node concept="liA8E" id="501K0YLMPWo" role="2OqNvi">
+                      <ref role="37wK5l" to="k7g3:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                      <node concept="37vLTw" id="501K0YLMPWp" role="37wK5m">
+                        <ref role="3cqZAo" node="501K0YLMPWw" resolve="path" />
+                      </node>
+                      <node concept="37vLTw" id="501K0YLMPWq" role="37wK5m">
+                        <ref role="3cqZAo" node="501K0YLMPWc" resolve="request" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="501K0YLMPWr" role="3clFbw">
+                <node concept="37vLTw" id="501K0YLMPWs" role="3uHU7B">
+                  <ref role="3cqZAo" node="501K0YLMPWc" resolve="request" />
+                </node>
+                <node concept="10Nm6u" id="501K0YLMPWt" role="3uHU7w" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="501K0YLMPWu" role="3clFbw">
+            <node concept="37vLTw" id="501K0YLMPWv" role="3fr31v">
+              <ref role="3cqZAo" node="501K0YLMPVJ" resolve="alreadyCovered" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="501K0YLMPWw" role="3clF46">
+        <property role="TrG5h" value="path" />
+        <node concept="17QB3L" id="501K0YLMPWx" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="501K0YLMPWy" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="removeWatchRequest" />
+      <property role="od$2w" value="true" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="501K0YLMPWz" role="3clF47">
+        <node concept="3cpWs8" id="501K0YLMPW$" role="3cqZAp">
+          <node concept="3cpWsn" id="501K0YLMPW_" role="3cpWs9">
+            <property role="TrG5h" value="count" />
+            <node concept="3uibUv" id="501K0YLMPWA" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            </node>
+            <node concept="2OqwBi" id="501K0YLMPWB" role="33vP2m">
+              <node concept="37vLTw" id="501K0YLMPWC" role="2Oq$k0">
+                <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+              </node>
+              <node concept="liA8E" id="501K0YLMPWD" role="2OqNvi">
+                <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <node concept="37vLTw" id="501K0YLMPWE" role="37wK5m">
+                  <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="501K0YLMPWF" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPWG" role="3clFbx">
+            <node concept="3cpWs6" id="501K0YLMPWH" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="501K0YLMPWI" role="3clFbw">
+            <node concept="37vLTw" id="501K0YLMPWJ" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+            </node>
+            <node concept="10Nm6u" id="501K0YLMPWK" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="1gVbGN" id="501K0YLMPWL" role="3cqZAp">
+          <node concept="3eOSWO" id="501K0YLMPWM" role="1gVkn0">
+            <node concept="3cmrfG" id="501K0YLMPWN" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="501K0YLMPWO" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="501K0YLMPWP" role="3cqZAp">
+          <node concept="37vLTI" id="501K0YLMPWQ" role="3clFbG">
+            <node concept="3cpWsd" id="501K0YLMPWR" role="37vLTx">
+              <node concept="3cmrfG" id="501K0YLMPWS" role="3uHU7w">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="37vLTw" id="501K0YLMPWT" role="3uHU7B">
+                <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="501K0YLMPWU" role="37vLTJ">
+              <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="501K0YLMPWV" role="3cqZAp">
+          <node concept="3clFbS" id="501K0YLMPWW" role="3clFbx">
+            <node concept="3clFbF" id="501K0YLMPWX" role="3cqZAp">
+              <node concept="2OqwBi" id="501K0YLMPWY" role="3clFbG">
+                <node concept="37vLTw" id="501K0YLMPWZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+                </node>
+                <node concept="liA8E" id="501K0YLMPX0" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                  <node concept="37vLTw" id="501K0YLMPX1" role="37wK5m">
+                    <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
+                  </node>
+                  <node concept="37vLTw" id="501K0YLMPX2" role="37wK5m">
+                    <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3eOSWO" id="501K0YLMPX3" role="3clFbw">
+            <node concept="3cmrfG" id="501K0YLMPX4" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="501K0YLMPX5" role="3uHU7B">
+              <ref role="3cqZAo" node="501K0YLMPW_" resolve="count" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="501K0YLMPX6" role="9aQIa">
+            <node concept="3clFbS" id="501K0YLMPX7" role="9aQI4">
+              <node concept="3clFbF" id="501K0YLMPX8" role="3cqZAp">
+                <node concept="2OqwBi" id="501K0YLMPX9" role="3clFbG">
+                  <node concept="37vLTw" id="501K0YLMPXa" role="2Oq$k0">
+                    <ref role="3cqZAo" node="501K0YLMPSD" resolve="myRequestedPaths" />
+                  </node>
+                  <node concept="liA8E" id="501K0YLMPXb" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Map.remove(java.lang.Object):java.lang.Object" resolve="remove" />
+                    <node concept="37vLTw" id="501K0YLMPXc" role="37wK5m">
+                      <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="501K0YLMPXd" role="3cqZAp">
+                <node concept="3cpWsn" id="501K0YLMPXe" role="3cpWs9">
+                  <property role="TrG5h" value="req" />
+                  <node concept="3uibUv" id="501K0YLMPXf" role="1tU5fm">
+                    <ref role="3uigEE" to="3df7:~LocalFileSystem$WatchRequest" resolve="LocalFileSystem.WatchRequest" />
+                  </node>
+                  <node concept="2OqwBi" id="501K0YLMPXg" role="33vP2m">
+                    <node concept="37vLTw" id="501K0YLMPXh" role="2Oq$k0">
+                      <ref role="3cqZAo" node="501K0YLMPSw" resolve="myOtherRequests" />
+                    </node>
+                    <node concept="liA8E" id="501K0YLMPXi" role="2OqNvi">
+                      <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="37vLTw" id="501K0YLMPXj" role="37wK5m">
+                        <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="501K0YLMPXk" role="3cqZAp">
+                <node concept="3clFbS" id="501K0YLMPXl" role="3clFbx">
+                  <node concept="3clFbF" id="501K0YLMPXm" role="3cqZAp">
+                    <node concept="2OqwBi" id="501K0YLMPXn" role="3clFbG">
+                      <node concept="37vLTw" id="501K0YLMPXo" role="2Oq$k0">
+                        <ref role="3cqZAo" node="501K0YLMPSM" resolve="myLocalFileSystem" />
+                      </node>
+                      <node concept="liA8E" id="501K0YLMPXp" role="2OqNvi">
+                        <ref role="37wK5l" to="3df7:~LocalFileSystem.removeWatchedRoot(com.intellij.openapi.vfs.LocalFileSystem$WatchRequest):void" resolve="removeWatchedRoot" />
+                        <node concept="37vLTw" id="501K0YLMPXq" role="37wK5m">
+                          <ref role="3cqZAo" node="501K0YLMPXe" resolve="req" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="501K0YLMPXr" role="3cqZAp">
+                    <node concept="2OqwBi" id="501K0YLMPXs" role="3clFbG">
+                      <node concept="37vLTw" id="501K0YLMPXt" role="2Oq$k0">
+                        <ref role="3cqZAo" node="501K0YLMPSw" resolve="myOtherRequests" />
+                      </node>
+                      <node concept="liA8E" id="501K0YLMPXu" role="2OqNvi">
+                        <ref role="37wK5l" to="k7g3:~Map.remove(java.lang.Object):java.lang.Object" resolve="remove" />
+                        <node concept="37vLTw" id="501K0YLMPXv" role="37wK5m">
+                          <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3y3z36" id="501K0YLMPXw" role="3clFbw">
+                  <node concept="10Nm6u" id="501K0YLMPXx" role="3uHU7w" />
+                  <node concept="37vLTw" id="501K0YLMPXy" role="3uHU7B">
+                    <ref role="3cqZAo" node="501K0YLMPXe" resolve="req" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="501K0YLMPXz" role="1B3o_S" />
+      <node concept="3cqZAl" id="501K0YLMPX$" role="3clF45" />
+      <node concept="37vLTG" id="501K0YLMPX_" role="3clF46">
+        <property role="TrG5h" value="path" />
+        <node concept="17QB3L" id="501K0YLMPXA" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="501K0YLMPXB" role="jymVt" />
+    <node concept="3Tm1VV" id="501K0YLMPXC" role="1B3o_S" />
+    <node concept="3uibUv" id="501K0YLMPXD" role="EKbjA">
+      <ref role="3uigEE" to="iiw6:~ApplicationComponent" resolve="ApplicationComponent" />
+    </node>
+    <node concept="3UR2Jj" id="501K0YLMPXE" role="lGtFl">
+      <node concept="TZ5HA" id="501K0YLMPXF" role="TZ5H$">
+        <node concept="1dT_AC" id="501K0YLMPXG" role="1dT_Ay">
+          <property role="1dT_AB" value="Component that lets you add watch requests." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="501K0YLMPXH" role="TZ5H$">
+        <node concept="1dT_AC" id="501K0YLMPXI" role="1dT_Ay">
+          <property role="1dT_AB" value="It also lets you maintain big umbrella watched paths, like a whole project dir." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="501K0YLMPXJ" role="TZ5H$">
+        <node concept="1dT_AC" id="501K0YLMPXK" role="1dT_Ay">
+          <property role="1dT_AB" value="This saves us a lot of other watch request creation, if they are under project dir, which is often the case." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="501K0YLMPXL" role="TZ5H$">
+        <node concept="1dT_AC" id="501K0YLMPXM" role="1dT_Ay">
+          <property role="1dT_AB" value="The thing is our module structure is opaque (arbitrary model roots, data sources, etc, all of them" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="501K0YLMPXN" role="TZ5H$">
+        <node concept="1dT_AC" id="501K0YLMPXO" role="1dT_Ay">
+          <property role="1dT_AB" value="adding fs listeners on some dirs/files), unlike idea's where there is a known structure: modules, source roots." />
+        </node>
+      </node>
+    </node>
+    <node concept="3uibUv" id="501K0YLMPXP" role="1zkMxy">
+      <ref role="3uigEE" to="s4r:~MPSDirectoryWatcher" resolve="MPSDirectoryWatcher" />
+    </node>
   </node>
 </model>
 

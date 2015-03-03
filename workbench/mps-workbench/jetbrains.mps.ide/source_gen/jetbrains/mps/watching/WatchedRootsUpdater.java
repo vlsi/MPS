@@ -10,6 +10,7 @@ import java.util.Map;
 import jetbrains.mps.library.Library;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import java.util.HashMap;
+import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
