@@ -687,10 +687,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public void moveToPatternEditor() {
       Point location = getPatternEditor().getLeftBottomPosition();
-      if (getPosition() == PopupWindowPosition.TOP) {
-        location = new Point(location.x, location.y - getHeight() - getPatternEditor().getHeight());
-      }
-      setLocation(location);
+      Point newLocation = getLocationWithRespectToScreenBounds(location, WindowsUtil.findDeviceBoundsAt(location));
+      setLocation(newLocation);
     }
 
     private void relayout() {
@@ -726,25 +724,29 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         setSize(preferredSize);
       }
 
-      Point newLocation = location;
-
-      if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - getPatternEditor().getHeight());
-      }
-
-
-      if (newLocation.x < deviceBounds.x) {
-        newLocation.x = deviceBounds.x;
-      }
-
-      if (getWidth() + newLocation.x > deviceBounds.width + deviceBounds.x) {
-        newLocation = new Point(deviceBounds.width + deviceBounds.x - getWidth(), newLocation.y);
-      }
+      Point newLocation = getLocationWithRespectToScreenBounds(location, deviceBounds);
 
       setLocation(newLocation);
 
       myScroller.setSize(getSize());
       myScroller.validate();
+    }
+
+    private Point getLocationWithRespectToScreenBounds(Point location, Rectangle deviceBounds) {
+
+      if (getPosition() == PopupWindowPosition.TOP) {
+        location = new Point(location.x, location.y - getHeight() - getPatternEditor().getHeight());
+      }
+
+
+      if (location.x < deviceBounds.x) {
+        location.x = deviceBounds.x;
+      }
+
+      if (getWidth() + location.x > deviceBounds.width + deviceBounds.x) {
+        location = new Point(deviceBounds.width + deviceBounds.x - getWidth(), location.y);
+      }
+      return location;
     }
 
     public void updateListDimension(Dimension dimension) {
