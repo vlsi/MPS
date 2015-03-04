@@ -21,9 +21,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ABCDEF_BehaviorDescriptor();
       case 4:
         return new ABCEEG_BehaviorDescriptor();
+      case 5:
+        return new BAC_BehaviorDescriptor();
+      case 6:
+        return new BCA_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG", "testSpaceCompletion.structure.ABCEEG"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG", "testSpaceCompletion.structure.ABCEEG", "testSpaceCompletion.structure.BAC", "testSpaceCompletion.structure.BCA"};
 }
