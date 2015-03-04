@@ -29,6 +29,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
  *
  * Events are dispatched, model access ensured.
  *
+ * IMPORTANT: property/reference access shall not trigger node read. Node read is triggered once the node is obtained from the model,
+ * either as children, sibling or any other navigation means.
+ *
  * @author Artem Tikhomirov
  */
 final class AttachedNodeOwner extends SNodeOwner {
@@ -139,7 +142,6 @@ final class AttachedNodeOwner extends SNodeOwner {
     if (myModel.isUpdateMode()) {
       return;
     }
-    fireNodeRead(node, false); // FIXME getProperty doesn't trigger node read, why getReference does?
     // referenceRead()
     SModelBase md = getRealModel();
     if (md != null) {

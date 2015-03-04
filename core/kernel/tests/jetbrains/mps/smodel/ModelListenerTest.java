@@ -322,9 +322,9 @@ public class ModelListenerTest {
     //
     // getReference()
     final SReference ref1 = r1.getReference(ourRef);
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl1.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
     // no NodeEditorCasterInEditor update, it is notified from StaticReference#getTargetNode_internal
@@ -334,9 +334,9 @@ public class ModelListenerTest {
     // getReferenceTarget()
     cl1.reset(); cl2.reset(); cl3.reset();
     final SNode t = r1.getReferenceTarget(ourRef);
-    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2)); // 1 for source, 1 for target node
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1)); // 1 for target node
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1)); // StaticReference.getTargetNode_internal
-    myErrors.checkThat(cl3.myVisitedNodes, equalTo(2)); // StaticReference.getTargetNode_internal + 1 for source node
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1)); // StaticReference.getTargetNode_internal
     myErrors.checkThat(cl1.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0)); // see getReference() part, above
@@ -377,7 +377,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl1.myBeforeRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
-    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
     final SNode anchor = r1.getFirstChild();
@@ -424,7 +424,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myBeforeRemovedRoots.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(2));
-    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
     //
     // use SNode.delete
     m1.addRootNode(c);
@@ -624,6 +624,77 @@ public class ModelListenerTest {
     } catch (IllegalModelAccessError e) {
       // expected, ignored
     }
+  }
+
+  /**
+   * SNode.getNextSibling() and getPrevSibling() shall dispatch read notification for node's parent
+   * and for the sibling node.
+   * Reason to dispatch parent read is that sibling change (change in result of node.getSibling())
+   * occurs through change in parent (i.e. addition/removal of a node)
+   *
+   * Reason to dispatch sibling read is that we notify node read on first access to node, and do not notify node read
+   * or property/reference access.
+   */
+  @Test
+  public void testSiblingReadNotify() {
+    SModel m1 = new TestModelFactory().createModel(2, 3);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1c1 = r1.getFirstChild();
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+    final SNode r1c2 = r1c1.getNextSibling();
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(2));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(2));
+
+    cl1.reset(); cl2.reset(); cl3.reset();
+    final SNode ps = r1c2.getPrevSibling();
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(2));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(2));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(2));
+    Assert.assertSame(r1c1, ps);
+
+    detachAccessListeners(m1, cl1, cl2, cl3);
+  }
+
+  /**
+   * Capture read notifications of
+   * {@link SModel#getNode(org.jetbrains.mps.openapi.model.SNodeId)},
+   * {@link org.jetbrains.mps.openapi.model.SNode#getParent()}
+   */
+  @Test
+  public void testReadNotifyOther() {
+    SModel m1 = new TestModelFactory().createModel(2, 3, 2);
+    myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
+    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1c2 = r1.getFirstChild().getNextSibling();
+    final SNodeId r1c2c1 = r1c2.getFirstChild().getNodeId();
+
+    AccessCountListener1 cl1 = new AccessCountListener1();
+    AccessCountListener2 cl2 = new AccessCountListener2();
+    AccessCountListener3 cl3 = new AccessCountListener3();
+    attachAccessListeners(m1, cl1, cl2, cl3);
+
+    SNode n = m1.getNode(r1c2c1);
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    Assert.assertNotNull(n);
+    Assert.assertSame(r1c2c1, n.getNodeId());
+
+    cl1.reset(); cl2.reset(); cl3.reset();
+    SNode p = n.getParent();
+    myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
+    myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
+    Assert.assertSame(r1c2, p);
+
+    detachAccessListeners(m1, cl1, cl2, cl3);
   }
 
   /**

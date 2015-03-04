@@ -215,7 +215,7 @@ public class SModel implements SModelData {
     SNode res = getNode_(nodeId);
     if (res != null) {
       res.assertCanRead();
-      res.getNodeOwner().fireNodeRead(res, true);
+      myNodeOwner.fireNodeRead(res, true);
     }
     return res;
   }

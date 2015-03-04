@@ -280,19 +280,19 @@
   </void>
   <void method="put">
    <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(java.lang.String)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
-   <int>9</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference)</string>
-   <int>9</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.isAncestorOf(jetbrains.mps.smodel.SNode)</string>
@@ -492,11 +492,11 @@
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(java.lang.String)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptShortName()</string>

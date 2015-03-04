@@ -364,17 +364,17 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode getPrevSibling() {
     assertCanRead();
 
-    // REVISIT: does assertCanRead once again, and triggers read notification. Is that what we really want here?
-    // Javadoc doesn't state parent read. However, need tests first
-    SNode p = getParent();
+    SNode p = treeParent();
     if (p == null) {
       return null;
     }
 
+    myOwner.fireNodeRead(p, true);
+
     SNode tp = treePrevious();
     SNode ps = tp.next == null ? null : tp;
     if (ps != null) {
-      myOwner.fireNodeRead(ps, false);
+      myOwner.fireNodeRead(ps, true);
     }
     return ps;
   }
@@ -383,12 +383,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode getNextSibling() {
     assertCanRead();
 
-    SNode p = getParent();
-    if (p == null) return null;
+    SNode p = treeParent();
+    if (p == null) {
+      return null;
+    }
+
+    myOwner.fireNodeRead(p, true);
 
     SNode tn = treeNext();
     if (tn != null) {
-      myOwner.fireNodeRead(tn, false);
+      myOwner.fireNodeRead(tn, true); // although it used to send 2, not 3 notification, don't see any reason to have it different for parent and sibling
     }
     return tn;
   }
