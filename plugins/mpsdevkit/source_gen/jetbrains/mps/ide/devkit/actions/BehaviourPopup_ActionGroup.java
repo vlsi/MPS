@@ -14,7 +14,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToOverridingMethod_Action");
+      BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToOverridingBehaviorMethod_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -23,7 +23,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -98,19 +97,11 @@ public class NodeEditorComponent extends EditorComponent {
     getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, getUpdater().getInitialEditorHints());
   }
 
-  protected boolean isValidEditor() {
-    SNode node = getEditedNode();
-    if (node == null) return false;
-    SModel model = node.getModel();
-    if (model != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return false;
-    return true;
-  }
-
   @Override
   public void rebuildEditorContent() {
-    if (isValidEditor()) {
-      super.rebuildEditorContent();
-    }
+    SNode editedNode = getEditedNode();
+    if (editedNode == null || !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, getEditorContext().getRepository())) return;
+    super.rebuildEditorContent();
   }
 
   public EditorComponent getInspector() {

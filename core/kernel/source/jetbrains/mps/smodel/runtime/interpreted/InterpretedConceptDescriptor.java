@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -92,7 +93,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
   private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
-  InterpretedConceptDescriptor(final SNode declaration, SConceptId id, final String qualifiedName) {
+  InterpretedConceptDescriptor(final SNode declaration, @NotNull SConceptId id, @NotNull final String qualifiedName) {
     myId = id;
     myQualifiedName = qualifiedName;
 
@@ -425,6 +426,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     return helpURL;
   }
 
+  @NotNull
   @Override
   public SConceptId getId() {
     return myId;

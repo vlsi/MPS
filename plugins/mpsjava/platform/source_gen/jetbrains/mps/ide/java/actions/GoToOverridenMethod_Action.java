@@ -26,11 +26,15 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import java.awt.event.InputEvent;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -106,6 +110,10 @@ public class GoToOverridenMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
@@ -124,11 +132,16 @@ public class GoToOverridenMethod_Action extends BaseAction {
           });
         }
       });
-      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
+      EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
+      InputEvent inputEvent = event.getInputEvent();
+      List<SNodeReference> methods = SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
         public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
+      }).toListSequence();
+      RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
+      String title = "Choose super method of" + methodName[0] + "()";
+      GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(), relativePoint);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);

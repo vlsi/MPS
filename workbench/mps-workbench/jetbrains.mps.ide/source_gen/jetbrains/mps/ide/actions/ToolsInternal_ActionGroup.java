@@ -16,6 +16,7 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     try {
       ToolsInternal_ActionGroup.this.addSeparator();
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ForcedSaveAll_Action");
+      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action");
       ToolsInternal_ActionGroup.this.addSeparator();
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CalcSNodeStatistic_Action");

@@ -144,12 +144,15 @@ public abstract class DefaultScope extends BaseScope {
 
       myInitializationInProgress = true;
 
-      Set<SModule> initialModules = getInitialModules();
-      fillInDevkits(initialModules);
-      fillInLanguages();
-      fillInVisible(initialModules);
+      try {
+        Set<SModule> initialModules = getInitialModules();
+        fillInDevkits(initialModules);
+        fillInLanguages();
+        fillInVisible(initialModules);
+      } finally {
+        myInitializationInProgress = false;
+      }
 
-      myInitializationInProgress = false;
       myInitialized = true;
     }
   }

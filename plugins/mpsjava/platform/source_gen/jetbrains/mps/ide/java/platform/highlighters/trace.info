@@ -883,14 +883,14 @@
       <node id="8432634623182579872" at="17,32,18,33" concept="4" />
       <node id="8432634623182690087" at="21,25,22,190" concept="11" />
       <node id="8432634623182579896" at="25,63,26,16" concept="11" />
-      <node id="4519712202472261630" at="29,36,30,126" concept="11" />
+      <node id="4519712202472261630" at="29,36,30,131" concept="11" />
       <node id="8432634623182579856" at="16,0,20,0" concept="2" trace="OverridenMethodEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;Z)V" />
       <node id="8432634623182579879" at="20,0,24,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="8432634623182579892" at="24,0,28,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
       <node id="8432634623182579898" at="28,0,32,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
       <scope id="8432634623182579882" at="21,25,22,190" />
       <scope id="8432634623182579895" at="25,63,26,16" />
-      <scope id="8432634623182579901" at="29,36,30,126" />
+      <scope id="8432634623182579901" at="29,36,30,131" />
       <scope id="8432634623182579867" at="16,112,18,33" />
       <scope id="8432634623182579856" at="16,0,20,0">
         <var name="node" id="8432634623182579857" />

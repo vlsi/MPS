@@ -935,9 +935,6 @@
       <node concept="tCFHf" id="hGnoTz2" role="ftvYc">
         <ref role="tCJdB" node="hGnoi8Q" resolve="FixModuleImports" />
       </node>
-      <node concept="tCFHf" id="7Wr4mzS59PZ" role="ftvYc">
-        <ref role="tCJdB" node="63zBYr2_jo0" resolve="ConvertToBinaryPersistence" />
-      </node>
       <node concept="tCFHf" id="38LNA6Kd9E2" role="ftvYc">
         <ref role="tCJdB" node="38LNA6KbjqB" resolve="ConvertToFilePerRootPersistence" />
       </node>
@@ -22092,6 +22089,9 @@
       <node concept="2a7GMi" id="3CJp_Ok4eRq" role="ftvYc" />
       <node concept="tCFHf" id="2cEqqWVRq5p" role="ftvYc">
         <ref role="tCJdB" node="2cEqqWVQVCm" resolve="ForcedSaveAll" />
+      </node>
+      <node concept="tCFHf" id="31MkvTuChKF" role="ftvYc">
+        <ref role="tCJdB" node="63zBYr2_jo0" resolve="ConvertToBinaryPersistence" />
       </node>
       <node concept="2a7GMi" id="2cEqqWVRq5r" role="ftvYc" />
       <node concept="tCFHf" id="4lvnFqUUUhS" role="ftvYc">

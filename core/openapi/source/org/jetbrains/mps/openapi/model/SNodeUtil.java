@@ -59,6 +59,7 @@ public class SNodeUtil {
     return model.getModule() == inRepository.getModule(model.getModule().getModuleId());
   }
 
+  //todo move to snode class
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
     if (node == null) return false;
     SConcept c = node.getConcept();
