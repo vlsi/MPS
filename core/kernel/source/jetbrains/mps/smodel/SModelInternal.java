@@ -35,12 +35,21 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   ModelDependenciesManager getModelDepsManager();
 
+  /**
+   * @deprecated use #importedLanguageIds instead
+   */
   @Deprecated
   List<SModuleReference> importedLanguages();
 
+  /**
+   * @deprecated use #deleteLanguageId instead
+   */
   @Deprecated
   void deleteLanguage(@NotNull SModuleReference ref);
 
+  /**
+   * @deprecated use #addLanguageId instead
+   */
   @Deprecated
   void addLanguage(SModuleReference ref);
 
