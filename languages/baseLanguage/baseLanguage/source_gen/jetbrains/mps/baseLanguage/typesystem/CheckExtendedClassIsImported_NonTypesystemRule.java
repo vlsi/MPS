@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -28,8 +30,14 @@ public class CheckExtendedClassIsImported_NonTypesystemRule extends AbstractNonT
     if (classifier == null) {
       return;
     }
-    SModule module = classifierType.getModel().getModule();
-    GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
+    final SModule module = classifierType.getModel().getModule();
+
+    GlobalModuleDependenciesManager depManager = RepositoryStateCacheUtils.getFromCache("CheckExtendedClassIsImported", module, new _FunctionTypes._return_P0_E0<GlobalModuleDependenciesManager>() {
+      public GlobalModuleDependenciesManager invoke() {
+        return new GlobalModuleDependenciesManager(module);
+      }
+    });
+
     Collection<SModule> deps = depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
     for (SNode extendedClassifierType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
       SNode extendedClassifier = SLinkOperations.getTarget(extendedClassifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

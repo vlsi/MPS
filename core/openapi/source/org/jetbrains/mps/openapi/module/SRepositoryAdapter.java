@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
  * @deprecated Bad name (not an adapter for a repository), use {@link org.jetbrains.mps.openapi.module.SRepositoryListenerBase} instead.
  * Will be removed after 3.2.
  */
+@Deprecated
 public class SRepositoryAdapter implements SRepositoryListener {
 
   @Override

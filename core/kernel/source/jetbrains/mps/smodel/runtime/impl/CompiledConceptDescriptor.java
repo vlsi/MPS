@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -81,8 +82,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, LinkDescriptor> linksByName;
   private volatile boolean myInitialized = false;
 
-  CompiledConceptDescriptor(SConceptId id,
-      String conceptFqName,
+  CompiledConceptDescriptor(@NotNull SConceptId id,
+      @NotNull String conceptFqName,
       @Nullable SConceptId superConceptId,
       @Nullable String superConcept,
       boolean interfaceConcept,
@@ -347,6 +348,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     return myHelpUrl;
   }
 
+  @NotNull
   @Override
   public SConceptId getId() {
     return myId;

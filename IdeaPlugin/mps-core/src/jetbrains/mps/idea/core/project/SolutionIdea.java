@@ -41,6 +41,7 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
+import jetbrains.mps.idea.core.psi.impl.PsiModelReloadListener;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -94,6 +95,7 @@ public class SolutionIdea extends Solution {
       }
     });
     projectLibraryTable.addListener(myLibrariesListener);
+    addModuleListener(myModule.getProject().getComponent(PsiModelReloadListener.class));
   }
 
   @Override

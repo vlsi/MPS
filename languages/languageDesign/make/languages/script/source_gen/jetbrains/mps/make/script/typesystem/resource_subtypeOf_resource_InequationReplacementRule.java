@@ -27,7 +27,7 @@ public class resource_subtypeOf_resource_InequationReplacementRule extends Abstr
     if (rightCT == null) {
       rightCT = _quotation_createNode_em7qpx_a0a0d0b();
     }
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(leftCT, rightCT, false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(leftCT, rightCT);
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
   }

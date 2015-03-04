@@ -26,7 +26,7 @@
     <action id="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" class="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl U" keymap="$default" />
     </action>
-    <action id="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action" class="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action">
+    <action id="jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action" class="jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethod_Action" class="jetbrains.mps.ide.java.actions.ImplementMethod_Action">
@@ -110,7 +110,7 @@
       <reference ref="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" />
     </group>
     <group id="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup">
-      <reference ref="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action" />
+      <reference ref="jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.ShowMembers_Action" />

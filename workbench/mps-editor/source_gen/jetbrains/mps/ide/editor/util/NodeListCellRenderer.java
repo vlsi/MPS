@@ -18,7 +18,9 @@ import java.awt.Color;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Font;
 
+@Deprecated
 public abstract class NodeListCellRenderer<T> extends JPanel implements ListCellRenderer {
+  @Deprecated
   protected NodeListCellRenderer() {
     super(new BorderLayout());
   }

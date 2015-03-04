@@ -52,6 +52,8 @@ public class MPSModelsIndexer implements ApplicationComponent {
     // Unless we throw old indexing mechanism away, leave custom indexer for .mps models
 
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MPS_FILE_TYPE, new DefaultModelIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE, new DefaultModelIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE, new DefaultModelIdIndexer());
     for (String ext : myPersistenceRegistry.getModelFactoryExtensions()) {
       final ModelFactory mf = myPersistenceRegistry.getModelFactory(ext);
       if (false == mf instanceof IndexAwareModelFactory) {

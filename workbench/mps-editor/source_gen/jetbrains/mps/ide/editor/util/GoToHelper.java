@@ -45,7 +45,9 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+@Deprecated
 public class GoToHelper {
+  @Deprecated
   public GoToHelper() {
   }
   public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {

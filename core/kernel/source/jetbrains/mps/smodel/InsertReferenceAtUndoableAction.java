@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 class InsertReferenceAtUndoableAction extends SNodeUndoableAction {
   private String myRole;
@@ -32,7 +30,7 @@ class InsertReferenceAtUndoableAction extends SNodeUndoableAction {
 
   @Override
   protected void doUndo() {
-    SNodeAccessUtil.setReferenceTarget(getAffectedNode(), myRole, null);
+    getAffectedNode().setReference(myRole, null);
   }
 
   @Override

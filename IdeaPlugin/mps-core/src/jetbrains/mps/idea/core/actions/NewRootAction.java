@@ -285,8 +285,11 @@ public class NewRootAction extends AnAction {
     if(psiElement instanceof MPSPsiModel) {
       isUnderSourceRoot = true;
     } else {
-      Module m = e.getData(LangDataKeys.MODULE);
-      VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
+      Module module = e.getData(LangDataKeys.MODULE);
+      if (module == null) {
+        return false;
+      }
+      VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots(true);
       for (VirtualFile root : sourceRoots) {
         if (targetDir.getPath().equals(root.getPath())) {
           //Can't be source or test folder
