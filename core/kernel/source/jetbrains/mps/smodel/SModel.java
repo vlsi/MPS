@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.ModuleId;
@@ -189,7 +188,7 @@ public class SModel implements SModelData {
     myRoots.add(sn);
     sn.attach(myNodeOwner);
     performUndoableAction(new AddRootUndoableAction(node));
-    fireRootAddedEvent(sn);
+    myNodeOwner.fireNodeAdd(null, null, sn, null);
   }
 
   @Override
@@ -200,12 +199,12 @@ public class SModel implements SModelData {
     }
     enforceFullLoad();
     if (myRoots.contains(node)) {
-      fireBeforeRootRemovedEvent(node);
+      myNodeOwner.fireBeforeNodeRemove(null, null, (SNode) node, null);
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.detach(new DetachedNodeOwner(this));
       performUndoableAction(new RemoveRootUndoableAction(node, myModelDescriptor));
-      fireRootRemovedEvent(sn);
+      myNodeOwner.fireNodeRemove(null, null, sn, null);
     }
   }
 
@@ -406,13 +405,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireRootAddedEvent(@NotNull SNode root) {
-    // IMPORTANT: SModelChangeListener events shall get dispatches regardless of model's registered state (as in canFireEvent)
-    // e.g. TransientModelNodeFinder relies on change events coming for transient models that are not in a repo.
-    // FIXME move to SNodeOwner. Document SModelChangeListener is notified even for unregistered models, tests for that.
-    if (myModelDescriptor instanceof EditableSModelBase) {
-      ((EditableSModelBase) myModelDescriptor).fireNodeAdded(null, null, root);
-    }
+  /*package*/ void fireRootAddedEvent(@NotNull SNode root) {
     if (!canFireEvent()) {
       return;
     }
@@ -426,11 +419,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireRootRemovedEvent(@NotNull SNode root) {
-    // FIXME move to SNodeOwner
-    if (myModelDescriptor instanceof EditableSModelBase) {
-      ((EditableSModelBase) myModelDescriptor).fireNodeRemoved(null, null, root);
-    }
+  /*package*/ void fireRootRemovedEvent(@NotNull SNode root) {
     if (!canFireEvent()) {
       return;
     }
@@ -444,7 +433,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
+  /*package*/ void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
     if (!canFireEvent()) {
       return;
     }

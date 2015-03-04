@@ -698,6 +698,38 @@ public class ModelListenerTest {
   }
 
   /**
+   * {@link org.jetbrains.mps.openapi.model.SModelChangeListener} shall dispatch events for unregistered models as well.
+   * {@link jetbrains.mps.smodel.event.SModelListener} DOES NOT dispatch events for unregistered models.
+   */
+  @Test
+  public void testChangeNotifyNoRepo() {
+    SModel m1 = new TestModelFactory().createModel(2, 3);
+    myTestModelAccess.enableRead();
+    final SNode r1 = m1.getRootNodes().iterator().next();
+
+    Assert.assertNull(m1.getRepository());
+    ChangeListener1 cl1 = new ChangeListener1();
+    ChangeListener2 cl2 = new ChangeListener2();
+    attachChangeListeners(m1, cl1, cl2);
+
+    SNode c = new TestModelFactory().createNode();
+    r1.addChild(ourRole, c);
+    myErrors.checkThat(cl1.myAdded.size(), equalTo(0));
+    myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
+    //
+    cl1.reset(); cl2.reset();
+    c.setProperty(SNodeUtil.property_INamedConcept_name, "XXX");
+    myErrors.checkThat(cl1.myChangedProperties.size(), equalTo(0));
+    myErrors.checkThat(cl2.myChangedProperties.size(), equalTo(1));
+    //
+    cl1.reset(); cl2.reset();
+    c.delete();
+    myErrors.checkThat(cl1.myRemoved.size(), equalTo(0));
+    myErrors.checkThat(cl2.myRemoved.size(), equalTo(1));
+    detachChangeListeners(m1, cl1, cl2);
+  }
+
+  /**
    * Just a quick check iteration time over a model doesn't deviate significantly due to
    * changes in SModel/SNode implementation.
    */

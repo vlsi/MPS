@@ -188,6 +188,15 @@ final class AttachedNodeOwner extends SNodeOwner {
 
   @Override
   /*package*/ void fireNodeAdd(SNode node, SContainmentLink role, SNode child, SNode anchor) {
+    if (node == null && role == null) {
+      // root
+      SModelBase md = getRealModel();
+      if (md instanceof EditableSModelBase) {
+        ((EditableSModelBase) md).fireNodeAdded(null, null, child);
+      }
+      myModel.fireRootAddedEvent(child);
+      return;
+    }
     if (myModel.isUpdateMode()) {
       return;
     }
@@ -202,11 +211,23 @@ final class AttachedNodeOwner extends SNodeOwner {
 
   @Override
   void fireBeforeNodeRemove(SNode node, SContainmentLink role, SNode child, SNode anchor) {
-    myModel.fireBeforeChildRemovedEvent(node, role, child, anchor);
+    if (node == null && role == null) {
+      myModel.fireBeforeRootRemovedEvent(child);
+    } else {
+      myModel.fireBeforeChildRemovedEvent(node, role, child, anchor);
+    }
   }
 
   @Override
   /*package*/ void fireNodeRemove(SNode node, SContainmentLink role, SNode child, SNode anchor) {
+    if (node == null && role == null) {
+      SModelBase md = getRealModel();
+      if (md instanceof EditableSModelBase) {
+        ((EditableSModelBase) md).fireNodeRemoved(null, null, child);
+      }
+      myModel.fireRootRemovedEvent(child);
+      return;
+    }
     if (myModel.isUpdateMode()) {
       return;
     }
