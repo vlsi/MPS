@@ -874,12 +874,6 @@ public class SModel implements SModelData {
     return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
   }
 
-  public void detachRoots() {
-    for (SNode node : myRoots) {
-      node.detach();
-    }
-  }
-
   private void assertLegalChange() {
     if (myModelDescriptor != null) {
       // FIXME in fact, all modification methods are accessed through SModelInternal iface, and SModelDescriptorStub shall

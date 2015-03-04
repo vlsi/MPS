@@ -119,7 +119,7 @@ public class ModelListenerTest {
     readTreeNodes(m1.getRootNodes());
     // for a model attached to a repository, there's extra iteration over roots
     // to attach them to the model's repository, hence +rootsCount;
-    final int expectedNodeReadCount = actualNodes * 3 + rootsCount;
+    final int expectedNodeReadCount = actualNodes * 3;
     //
     // SModelAccessListener
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(expectedNodeReadCount));
@@ -602,8 +602,8 @@ public class ModelListenerTest {
     final Iterator<SNode> roots = m1.getRootNodes().iterator();
     roots.next();
     final SNodeId r2c1 = roots.next().getFirstChild().getNodeId();
-    ((SModelBase) m1).attach(myTestRepo);
     myTestModelAccess.enableRead();
+    ((SModelBase) m1).attach(myTestRepo);
     final SNode notRoot = m1.getNode(r2c1);
     // [sanity] - check that disabled read indeed triggers IMAE
     myTestModelAccess.disableRead();

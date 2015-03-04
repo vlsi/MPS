@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.smodel.IllegalModelAccessException;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -59,7 +60,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   private ModelRoot myModelRoot;
 
-  private final Object REPO_LOCK = new Object();
   private SModule myModule;
   private volatile SRepository myRepository = null;
 
@@ -79,25 +79,21 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return new jetbrains.mps.smodel.SNode(concept);
   }
 
-  public void attach(SRepository repo) {
-    if (myRepository == repo) return;
-    synchronized (REPO_LOCK) {
-      if (myRepository == repo) return;
-      if (myRepository != null) {
-        throw new IllegalStateException("trying to attach a node from a repository to some other repository");
-      }
-      myRepository = repo;
+  public void attach(@NotNull SRepository repo) {
+    if (myRepository == repo) {
+      // warn? why it's ok to attach model several times, isn't it an error?
+      return;
     }
+    if (myRepository != null) {
+      throw new IllegalModelAccessException("Model is already attached to a repository, can't attach to another one");
+    }
+    repo.getModelAccess().checkReadAccess();
+    myRepository = repo;
   }
 
   public void detach() {
     assertCanChange();
-    synchronized (REPO_LOCK) {
-      if (getLoadingState() != ModelLoadingState.NOT_LOADED) {
-        getSModelInternal().detachRoots();
-      }
-      myRepository = null;
-    }
+    myRepository = null;
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {
@@ -109,23 +105,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public Iterable<SNode> getRootNodes() {
     assertCanRead();
-    Iterable<SNode> roots = getSModelInternal().getRootNodes();
-    if (myRepository != null) {
-      for (SNode r : roots) {
-        ((SNodeBase) r).attach(myRepository);
-      }
-    }
-    return roots;
+    return getModelData().getRootNodes();
   }
 
   @Override
   public SNode getNode(SNodeId id) {
-    jetbrains.mps.smodel.SNode node = getSModelInternal().getNode(id);
-    if (node == null) return null;
-    if (myRepository != null) {
-      node.attach(myRepository);
-    }
-    return node;
+    assertCanRead();
+    return getModelData().getNode(id);
   }
 
 

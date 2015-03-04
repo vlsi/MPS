@@ -111,12 +111,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void attach(@NotNull SRepository repo) {
-    repo.getModelAccess().checkReadAccess();
+  public final void attach(@NotNull SRepository repo) {
+    // final to prevent accidental dependencies to SNodeBase which is scheduled for removal
+    // no-op, its functionality is handles by SNodeOwner
   }
 
   @Override
-  public void detach() {
+  public final void detach() {
+    // final to prevent accidental dependencies to SNodeBase which is scheduled for removal
+    // no-op, its functionality is handles by SNodeOwner
   }
 
   protected final void assertCanRead() {
