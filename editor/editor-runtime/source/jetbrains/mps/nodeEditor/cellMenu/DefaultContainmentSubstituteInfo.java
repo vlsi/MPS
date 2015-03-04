@@ -102,7 +102,7 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
     }
 
     //todo add constraits
-    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, null, parentNode, currentChild, setter));
+    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, currentChild, parentNode, currentChild, setter));
   }
 
 
@@ -135,11 +135,6 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
 
   protected SContainmentLink getLink() {
     return myLink;
-  }
-
-  public static boolean isNotAggregation(SNode linkDeclaration) {
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration);
   }
 
 }
