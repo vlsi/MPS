@@ -373,33 +373,37 @@ public class SNodeOperations {
     return isInstanceOf(node, stringToConcept(conceptFQName));
   }
   public static SNode getNextSibling(SNode node) {
-    SNode p = node.getParent();
-    if (p == null) {
+    if (node == null) {
+      return null;
+    }
+    if (node.getParent() == null) {
       return null;
     }
     SNode current = node;
-    String currentRole = node.getRoleInParent();
+    SContainmentLink currentRole = node.getContainmentLink();
     assert currentRole != null : "role must be not null";
-    while (current.getNextSibling() != null) {
-      current = current.getNextSibling();
-      if (current.getRoleInParent().equals(currentRole)) {
+    while ((current = current.getNextSibling()) != null) {
+      if (currentRole.equals(current.getContainmentLink())) {
         return current;
       }
     }
     return null;
   }
   public static SNode getPrevSibling(SNode node) {
+    if (node == null) {
+      return null;
+    }
     SNode p = node.getParent();
     if (p == null) {
       return null;
     }
     SNode current = node;
-    String currentRole = node.getRoleInParent();
+    SContainmentLink currentRole = node.getContainmentLink();
     assert currentRole != null : "role must be not null";
     SNode fc = p.getFirstChild();
     while (current != fc) {
       current = current.getPrevSibling();
-      if (current.getRoleInParent().equals(currentRole)) {
+      if (currentRole.equals(current.getContainmentLink())) {
         return current;
       }
     }
@@ -485,7 +489,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert parent != null && role != null;
-    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
+    parent.insertChildBefore(role, newChild, node.getNextSibling());
     return newChild;
   }
   @Deprecated
@@ -502,7 +506,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert parent != null && role != null;
-    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
+    parent.insertChildBefore(role, newChild, node.getNextSibling());
     return newChild;
   }
   public static SNode insertNewPrevSiblingChild(SNode node, SConcept concept) {
@@ -556,7 +560,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert role != null;
-    jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node);
+    nodeParent.insertChildBefore(role, siblingNode, node.getNextSibling());
     return siblingNode;
   }
   public static SNode insertPrevSiblingChild(SNode node, SNode siblingNode) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,7 +250,7 @@ public class SNodeFactoryOperations {
     SNode newChild = NodeFactoryManager.createNode(concept, null, parent, node.getModel());
     if (newChild == null) return null;
     SContainmentLink role = node.getContainmentLink();
-    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
+    parent.insertChildBefore(role, newChild, node.getNextSibling());
     return newChild;
   }
 

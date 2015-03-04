@@ -137,7 +137,9 @@ public class SNodeOperations {
   }
   /**
    * todo rewrite the code via snode methods
+   * @deprecated Use OpenAPI methods directly
    */
+  @Deprecated
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
     if (before) {
       parent.insertChildBefore(role, child, anchor);
@@ -159,15 +161,15 @@ public class SNodeOperations {
     parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
   }
   /**
+   * Insert a child *after* specified anchor, or to the head of children list if anchor is null
    * todo rewrite the code via snode methods
    */
   public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
     if (anchor != null) {
-      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      parent.insertChildBefore(role, child, anchor.getNextSibling());
       return;
     }
-    Iterator<? extends SNode> it = parent.getChildren().iterator();
-    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
+    parent.insertChildBefore(role, child, parent.getFirstChild());
   }
   /**
    * todo KILL IT! should not be used since nodes are not passed between read actions

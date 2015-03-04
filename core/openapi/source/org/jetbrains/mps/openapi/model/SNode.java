@@ -101,12 +101,13 @@ public interface SNode {
   void addChild(@NotNull SContainmentLink role, @NotNull SNode child);
 
   /**
-   * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
+   * Inserts the given node as a child of the current node of the specified role right in front of the anchor node.<br/>
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
-   *               a new child is inserted as a last child
+   *               a new child is inserted as a last child. If anchor is the first child element, newly added
+   *               child becomes head of collection
    */
   void insertChildBefore(@NotNull SContainmentLink role, @NotNull SNode child, @Nullable SNode anchor);
 
