@@ -301,5 +301,113 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="34YubGAngvA">
+    <property role="TrG5h" value="ListOfDrawCommands" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="paint commands" />
+    <property role="3GE5qa" value="fluent-editing" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="34YubGAnh0z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="commands" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="34YubGAnh0y" resolve="DrawCommand" />
+    </node>
+    <node concept="PrWs8" id="34YubGAnh0w" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="34YubGAnh0y">
+    <property role="TrG5h" value="DrawCommand" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="fluent-editing" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="34YubGApK4D" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="lineStyle" />
+      <ref role="20lvS9" node="34YubGApJLk" resolve="LineStyle" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="34YubGAnhCF">
+    <property role="3GE5qa" value="fluent-editing" />
+    <property role="TrG5h" value="EmptyLine" />
+    <property role="34LRSv" value="&lt;empty line&gt;" />
+    <ref role="1TJDcQ" node="34YubGAnh0y" resolve="DrawCommand" />
+    <node concept="PrWs8" id="34YubGAnhCG" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="34YubGAnqRw">
+    <property role="3GE5qa" value="fluent-editing" />
+    <property role="TrG5h" value="DrawLine" />
+    <property role="34LRSv" value="line" />
+    <ref role="1TJDcQ" node="34YubGAnh0y" resolve="DrawCommand" />
+    <node concept="1TJgyi" id="34YubGAnqRx" role="1TKVEl">
+      <property role="TrG5h" value="x1" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAnqRz" role="1TKVEl">
+      <property role="TrG5h" value="y1" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAnqRA" role="1TKVEl">
+      <property role="TrG5h" value="x2" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAnqRE" role="1TKVEl">
+      <property role="TrG5h" value="y2" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="34YubGAp7ig">
+    <property role="3GE5qa" value="fluent-editing" />
+    <property role="TrG5h" value="DrawRect" />
+    <property role="34LRSv" value="rectangle" />
+    <ref role="1TJDcQ" node="34YubGAnh0y" resolve="DrawCommand" />
+    <node concept="1TJgyi" id="34YubGAp7k7" role="1TKVEl">
+      <property role="TrG5h" value="upperLeftX" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAp7k9" role="1TKVEl">
+      <property role="TrG5h" value="upperLeftY" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAp7kc" role="1TKVEl">
+      <property role="TrG5h" value="lowerRightX" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="34YubGAp7kg" role="1TKVEl">
+      <property role="TrG5h" value="lowerRightY" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="34YubGApJLk">
+    <property role="3GE5qa" value="fluent-editing.lineStyle" />
+    <property role="TrG5h" value="LineStyle" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="34YubGApJLl">
+    <property role="3GE5qa" value="fluent-editing.lineStyle" />
+    <property role="TrG5h" value="SolidLine" />
+    <property role="34LRSv" value="solid" />
+    <ref role="1TJDcQ" node="34YubGApJLk" resolve="LineStyle" />
+  </node>
+  <node concept="1TIwiD" id="34YubGApJYm">
+    <property role="3GE5qa" value="fluent-editing.lineStyle" />
+    <property role="TrG5h" value="DottedLine" />
+    <property role="34LRSv" value="dotted" />
+    <ref role="1TJDcQ" node="34YubGApJLk" resolve="LineStyle" />
+  </node>
+  <node concept="1TIwiD" id="7O9XACj05gg">
+    <property role="3GE5qa" value="fluent-editing" />
+    <property role="TrG5h" value="IncompleteCommand" />
+    <ref role="1TJDcQ" node="34YubGAnh0y" resolve="DrawCommand" />
+    <node concept="PrWs8" id="7O9XACj05gh" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

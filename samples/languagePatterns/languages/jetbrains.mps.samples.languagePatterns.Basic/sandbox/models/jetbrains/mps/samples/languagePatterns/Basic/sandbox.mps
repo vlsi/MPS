@@ -8,6 +8,7 @@
   <imports />
   <registry>
     <language id="7a6f7ef7-3988-464b-8cc5-1182671c136e" name="jetbrains.mps.samples.languagePatterns.Basic">
+      <concept id="3548406301612378086" name="jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands" flags="ng" index="noRXt" />
       <concept id="3803436373353520197" name="jetbrains.mps.samples.languagePatterns.Basic.structure.Concert" flags="ng" index="3jgt_Z">
         <child id="3803436373353520393" name="performances" index="3jgtwN" />
         <child id="3803436373353520267" name="performers" index="3jgtAL" />
@@ -243,6 +244,10 @@
     <property role="3GE5qa" value="custom-presentation" />
     <property role="TrG5h" value="Calculation3" />
     <ref role="3YvCF5" node="4Vpsm2KE9Te" resolve="insertion" />
+  </node>
+  <node concept="noRXt" id="34YubGAolS0">
+    <property role="TrG5h" value="My Painting" />
+    <property role="3GE5qa" value="fluent-editing" />
   </node>
 </model>
 

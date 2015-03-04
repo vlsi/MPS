@@ -29,18 +29,30 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 6:
         return Collections.<ConceptEditor>singletonList(new Container_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new FruitPlate_Editor());
+        return Collections.<ConceptEditor>singletonList(new DrawLine_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new Orange_Editor());
+        return Collections.<ConceptEditor>singletonList(new DrawRect_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new Participant_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new Performance_Editor());
+        return Collections.<ConceptEditor>singletonList(new FruitPlate_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor());
+        return Collections.<ConceptEditor>singletonList(new IncompleteCommand_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor());
+        return Collections.<ConceptEditor>singletonList(new LineStyle_Editor());
       case 13:
+        return Collections.<ConceptEditor>singletonList(new ListOfDrawCommands_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new Orange_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Participant_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new Performance_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor());
+      case 19:
         return Collections.<ConceptEditor>singletonList(new Singer_Editor());
       default:
     }
@@ -69,6 +81,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"};
 }

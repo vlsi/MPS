@@ -10,7 +10,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,50,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,64,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Car_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" />
@@ -30,11 +30,35 @@
     <file name="Container_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Container_BehaviorDescriptor" />
     </file>
+    <file name="DottedLine_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DottedLine_BehaviorDescriptor" />
+    </file>
+    <file name="DrawCommand_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawCommand_BehaviorDescriptor" />
+    </file>
+    <file name="DrawLine_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawLine_BehaviorDescriptor" />
+    </file>
+    <file name="DrawRect_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawRect_BehaviorDescriptor" />
+    </file>
+    <file name="EmptyLine_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" />
+    </file>
     <file name="FruitPlate_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" />
     </file>
     <file name="Fruit_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Fruit_BehaviorDescriptor" />
+    </file>
+    <file name="IncompleteCommand_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.IncompleteCommand_BehaviorDescriptor" />
+    </file>
+    <file name="LineStyle_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.LineStyle_BehaviorDescriptor" />
+    </file>
+    <file name="ListOfDrawCommands_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ListOfDrawCommands_BehaviorDescriptor" />
     </file>
     <file name="Orange_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Orange_BehaviorDescriptor" />
@@ -53,6 +77,9 @@
     </file>
     <file name="Singer_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" />
+    </file>
+    <file name="SolidLine_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" />
     </file>
     <file name="Truck_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" />
