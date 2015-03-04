@@ -106,6 +106,7 @@
                     serviceImplementation="jetbrains.mps.idea.java.psi.impl.ForeignIdReferenceCacheImpl"/>
     <findUsagesHandlerFactory implementation="jetbrains.mps.idea.java.usages.MPSFindUsagesHandlerFactory" id="mps"
                               order="before java"/>
+    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.PackageRenameListener"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

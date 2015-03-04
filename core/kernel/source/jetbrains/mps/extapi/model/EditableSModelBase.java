@@ -212,10 +212,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void rename(String newModelName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
-    if (changeFile && !(getSource() instanceof FileDataSource)) {
-      throw new UnsupportedOperationException("cannot change model file on non-file data source");
-    }
-
     SModelReference oldName = getReference();
     fireBeforeModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
 
@@ -230,6 +226,10 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (!changeFile) {
       save();
     } else {
+      if (changeFile && !(getSource() instanceof FileDataSource)) {
+        throw new UnsupportedOperationException("cannot change model file on non-file data source");
+      }
+
       IFile oldFile = ((FileDataSource) getSource()).getFile();
       ModelRoot root = ModelRootUtil.getModelRoot(this);
       if (root instanceof DefaultModelRoot) {

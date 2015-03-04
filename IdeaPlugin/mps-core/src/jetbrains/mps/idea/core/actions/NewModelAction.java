@@ -259,8 +259,11 @@ public class NewModelAction extends AnAction {
     }
     VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    Module m = e.getData(LangDataKeys.MODULE);
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
+    Module module = e.getData(LangDataKeys.MODULE);
+    if (module == null) {
+      return false;
+    }
+    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots(true);
     boolean isUnderSourceRoot = false;
     for (VirtualFile root : sourceRoots) {
       isUnderSourceRoot = isUnderSourceRoot

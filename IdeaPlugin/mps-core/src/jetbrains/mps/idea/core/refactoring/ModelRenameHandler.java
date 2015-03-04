@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Editor;
@@ -27,11 +28,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.JavaDirectoryService;
+import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiManager;
 import com.intellij.refactoring.rename.RenameHandler;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
@@ -55,9 +62,17 @@ public class ModelRenameHandler implements RenameHandler {
   @Override
   public boolean isAvailableOnDataContext(DataContext dataContext) {
     IFile modelFile = getModelFile(dataContext);
-    if (modelFile == null) return false;
-    SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
-    return (descriptor instanceof EditableSModel);
+    PsiElement psiElement = PlatformDataKeys.PSI_ELEMENT.getData(dataContext);
+    if (modelFile == null || psiElement == null) return false;
+    SModel model = SModelFileTracker.getInstance().findModel(modelFile);
+    return (model instanceof EditableSModel && !(isJavaPackage(modelFile, psiElement.getProject())));
+  }
+
+  private boolean isJavaPackage(IFile dir, Project project) {
+    if (!dir.isDirectory()) return false;
+    VirtualFile vFile = VirtualFileUtils.getVirtualFile(dir);
+    PsiDirectory psiDir = PsiManager.getInstance(project).findDirectory(vFile);
+    return JavaDirectoryService.getInstance().getPackage(psiDir) != null;
   }
 
   @Override

@@ -26,6 +26,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.PsiTreeChangeEvent;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
@@ -201,6 +202,11 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         models.put(modelRef, result);
         model.getModule().addModuleListener(new SModuleAdapter() {
           @Override
+          public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
+            models.remove(model.getReference());
+          }
+
+          @Override
           public void beforeModelRemoved(SModule module, SModel removedModel) {
             if (removedModel != model) return;
             models.remove(modelRef);
@@ -239,6 +245,8 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
   void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
 
+    if (!model.isValid()) return;
+
     PsiManager manager = model.getManager();
     if (manager == null || !(manager instanceof PsiManagerImpl)) return;
 
@@ -252,6 +260,23 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     event.setGenericChange(false);
 
     ((PsiManagerImpl) manager).childrenChanged(event);
+  }
+
+  void notifyModelRenamed(MPSPsiModel model, String oldName, String newName) {
+    PsiManager manager = model.getManager();
+    if (manager == null || !(manager instanceof PsiManagerImpl)) return;
+
+    myModificationTracker.incCounter();
+
+    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
+    manager.dropResolveCaches();
+
+    PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+    event.setElement(model);
+    event.setPropertyName(PsiTreeChangeEvent.PROP_FILE_NAME);
+    event.setOldValue(oldName);
+    event.setNewValue(newName);
+    ((PsiManagerImpl) manager).propertyChanged(event);
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {

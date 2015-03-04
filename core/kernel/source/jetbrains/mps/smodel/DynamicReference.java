@@ -54,6 +54,15 @@ public class DynamicReference extends SReferenceBase {
       return new HashSet<DynamicReference>();
     }
   };
+  // we also keep track of references for which we call reportErrorWithOrigin
+  // we need this because it will call source node's getPresentation() which in turn might resolve us again
+  // we don't want to report loop in this case, rather just return null
+  private static final ThreadLocal<Set<DynamicReference>> currentlySourceNodeLogged = new ThreadLocal<Set<DynamicReference>>() {
+    @Override
+    protected Set<DynamicReference> initialValue() {
+      return new HashSet<DynamicReference>();
+    }
+  };
 
   private boolean myHasBeenResolve;
   private SNode myCachedTargetNode;
@@ -132,9 +141,13 @@ public class DynamicReference extends SReferenceBase {
 
 
     final Set<DynamicReference> currentRefs = currentlyResolved.get();
+    final Set<DynamicReference> loggedRefs = currentlySourceNodeLogged.get();
     if (currentRefs.contains(this)) {
       // loop detected!
-      LOG.errorWithTrace("Loop detected in dynamic references (number of current dyn. refs: " + currentRefs.size() + ")");
+      if (!loggedRefs.contains(this)) {
+        // it's not spurious loop, via logging. it's real, let's complain
+        LOG.errorWithTrace("Loop detected in dynamic references (number of current dyn. refs: " + currentRefs.size() + ")");
+      }
       return null;
     }
 
@@ -168,6 +181,7 @@ public class DynamicReference extends SReferenceBase {
       }
 
       if (targetNode == null) {
+
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
       }
 
@@ -182,20 +196,26 @@ public class DynamicReference extends SReferenceBase {
   }
 
   private void reportErrorWithOrigin(String message) {
-    if (myOrigin != null) {
-      List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
-      if (myOrigin.getInputNode() != null) {
-        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().toString()));
+    Set<DynamicReference> refs = currentlySourceNodeLogged.get();
+    try {
+      refs.add(this);
+      if (myOrigin != null) {
+        List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
+        if (myOrigin.getInputNode() != null) {
+          result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().toString()));
+        }
+        if (myOrigin.getTemplate() != null) {
+          result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
+        }
+        if (result.size() > 0) {
+          error(message, result.toArray(new ProblemDescription[result.size()]));
+          return;
+        }
       }
-      if (myOrigin.getTemplate() != null) {
-        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
-      }
-      if (result.size() > 0) {
-        error(message, result.toArray(new ProblemDescription[result.size()]));
-        return;
-      }
+      error(message);
+    } finally {
+      refs.remove(this);
     }
-    error(message);
   }
 
   @Override
