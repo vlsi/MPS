@@ -155,6 +155,8 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/solutions/samples/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/solutions/samples/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/solutions/util/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/solutions/util/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/smodel/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/structure/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/structure/source_gen" includeSubdirectories="true" />
@@ -407,14 +409,6 @@
       <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/math/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/decl/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/decl/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/declarations/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/declarations/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/ref/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/ref/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/references/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/references/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/source_gen" includeSubdirectories="true" />
@@ -423,8 +417,6 @@
       <directory url="file://$PROJECT_DIR$/samples/money/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/money/solutions/jetbrains.mps.baseLanguage.money.sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/money/solutions/jetbrains.mps.baseLanguage.money.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/money/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.requestTracking/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.requestTracking/source_gen" includeSubdirectories="true" />
@@ -517,8 +509,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testPrimitiveType/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testPrimitiveType/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testSubtypingA/generator/source_gen" includeSubdirectories="true" />
@@ -590,6 +580,18 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceInfo.testWeaving/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/decl/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/decl/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/ref/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/ref/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/declarations/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/declarations/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/references/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/migrations/languages/references/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/solutions/jetbrains.mps.baseLanguage.money.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/solutions/jetbrains.mps.baseLanguage.money.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/test_gen" includeSubdirectories="true" />

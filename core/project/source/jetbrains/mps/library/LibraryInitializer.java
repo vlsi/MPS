@@ -136,9 +136,6 @@ public class LibraryInitializer implements CoreComponent {
 
         for (SLibrary loadLib : toLoadList) {
           loadLib.attach(refreshFiles);
-          // Analogous to what idea does at the start: asynchronous refresh of project dir.
-          // Here we do asynchronous refresh of library root
-          FileSystem.getInstance().refresh(loadLib.getFile());
         }
       }
     });
