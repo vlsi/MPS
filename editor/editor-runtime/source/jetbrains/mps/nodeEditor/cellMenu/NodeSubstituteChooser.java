@@ -92,6 +92,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
   private boolean myMenuEmpty;
   private NodeItemCellRenderer myCellRenderer;
+  private boolean myUserChoseItem;
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -240,6 +241,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myContextCell = null;
         myNodeSubstituteInfo = null;
       }
+      setUserChoseItem(false);
       myChooserActivated = visible;
     }
   }
@@ -396,16 +398,43 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     getPopupWindow().initListModel();
   }
 
-  @Override
-  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    if (getPatternEditor().processKeyPressed(keyEvent)) {
-      if (myPopupActivated) {
-        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
-        rebuildMenuEntries();
-        getPopupWindow().scrollToAction(actionToSelect);
+  private void setUserChoseItem(boolean chose) {
+    myUserChoseItem = chose;
+  }
+
+  private void processKeyEventInternal() {
+    if (myPopupActivated) {
+      SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
+      rebuildMenuEntries();
+      selectPreviouslySelectedAction(actionToSelect);
+      getPopupWindow().scrollToSelection();
+      if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
         getPopupWindow().pack();
         getPopupWindow().repaint();
       }
+    }
+  }
+  private void selectPreviouslySelectedAction(SubstituteAction actionToSelect) {
+    if (myUserChoseItem && actionToSelect != null) {
+      int indexOfPreviouslySelectedAction = mySubstituteActions.indexOf(actionToSelect);
+      if (indexOfPreviouslySelectedAction == -1) {
+        setUserChoseItem(false);
+        getPopupWindow().setSelectionIndex(0);
+      } else {
+        getPopupWindow().setSelectionIndex(indexOfPreviouslySelectedAction);
+      }
+    } else {
+      getPopupWindow().setSelectionIndex(0);
+    }
+  }
+  @Override
+  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
+    String oldPattern = getPatternEditor().getPattern();
+    if (getPatternEditor().processKeyPressed(keyEvent)) {
+      if (oldPattern.length() > getPatternEditor().getPattern().length()) {
+        setUserChoseItem(false);
+      }
+      processKeyEventInternal();
       return true;
     }
 
@@ -427,15 +456,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   @Override
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
-      if (myPopupActivated) {
-        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
-        rebuildMenuEntries();
-        getPopupWindow().scrollToAction(actionToSelect);
-        if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
-          getPopupWindow().pack();
-          getPopupWindow().repaint();
-        }
-      }
+      processKeyEventInternal();
       return true;
     }
 
@@ -469,31 +490,37 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - getPageSize());
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + getPageSize());
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
       getPopupWindow().setSelectionIndex(0);
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
       getPopupWindow().setSelectionIndex(mySubstituteActions.size() - 1);
+      setUserChoseItem(true);
       repaintPopupMenu();
       return true;
     }
@@ -584,6 +611,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.addMouseListener(new MouseAdapter() {
         @Override
         public void mousePressed(MouseEvent e) {
+          setUserChoseItem(true);
           repaintPopupMenu();
         }
 
@@ -717,18 +745,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       myScroller.setSize(getSize());
       myScroller.validate();
-    }
-
-    public void scrollToAction(SubstituteAction action) {
-      int oldIndex = 0;
-      if (action != null) {
-        int newIndexOfLastSelectedAction = mySubstituteActions.indexOf(action);
-        if (newIndexOfLastSelectedAction != -1) {
-          oldIndex = newIndexOfLastSelectedAction;
-        }
-      }
-      setSelectionIndex(oldIndex);
-      scrollToSelection();
     }
 
     public void updateListDimension(Dimension dimension) {

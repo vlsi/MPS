@@ -19,6 +19,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPanel;
 import javax.swing.JWindow;
@@ -117,6 +118,7 @@ public class NodeSubstitutePatternEditor {
     return false;
   }
 
+  @NotNull
   public String getPattern() {
     if (myEditorActivated) {
       TextLine textLine = myEditorWindow.myTextLine;
@@ -126,7 +128,7 @@ public class NodeSubstitutePatternEditor {
     }
 
     if (myCachedText == null) {
-      return null;
+      return "";
     }
     int caretPos = Math.min(myCachedText.length(), Math.max(myCachedCaretPosition, 0));
     return myCachedText.substring(0, caretPos);
