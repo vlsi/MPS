@@ -13,7 +13,7 @@ public class MigrationErrorStep_Pre extends MigrationErrorStep {
   }
 
   protected String getText() {
-    return "Migration Assistant found that some languages used in this project are missing.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problem nodes will be shown in Usages tool after the project is loaded.";
+    return "Migration Assistant found that some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Usages tool when the project is loaded.";
   }
 
   public _FunctionTypes._void_P0_E0 afterProjectInitialized() {
