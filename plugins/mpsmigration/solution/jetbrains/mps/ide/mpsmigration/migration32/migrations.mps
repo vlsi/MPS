@@ -151,7 +151,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -372,6 +372,32 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7ScOZyr27iw" role="jymVt" />
+    <node concept="3clFb_" id="6EjSNQP53sg" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="forceExecutionNextTime" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="6EjSNQP53sh" role="1B3o_S" />
+      <node concept="3cqZAl" id="6EjSNQP53sj" role="3clF45" />
+      <node concept="3clFbS" id="6EjSNQP53sn" role="3clF47">
+        <node concept="3clFbF" id="6EjSNQP54Ia" role="3cqZAp">
+          <node concept="1rXfSq" id="6EjSNQP54I9" role="3clFbG">
+            <ref role="37wK5l" to="bco1:~BaseProjectMigration.setExecuted(jetbrains.mps.project.Project,boolean):void" resolve="setExecuted" />
+            <node concept="37vLTw" id="6EjSNQP57dw" role="37wK5m">
+              <ref role="3cqZAo" node="6EjSNQP56zj" resolve="p" />
+            </node>
+            <node concept="3clFbT" id="6EjSNQP54Lf" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6EjSNQP56zj" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="6EjSNQP56Kl" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6EjSNQP54Sp" role="jymVt" />
     <node concept="3clFb_" id="6vz$DjulWQM" role="jymVt">
       <property role="TrG5h" value="getDescription" />
       <property role="DiZV1" value="false" />
@@ -2522,6 +2548,34 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3UghWjE0SV5" role="jymVt" />
+    <node concept="3clFb_" id="6EjSNQP58pt" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="forceExecutionNextTime" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="6EjSNQP58pu" role="1B3o_S" />
+      <node concept="3cqZAl" id="6EjSNQP58pw" role="3clF45" />
+      <node concept="37vLTG" id="6EjSNQP58px" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="6EjSNQP58py" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6EjSNQP58p_" role="3clF47">
+        <node concept="3clFbF" id="6EjSNQP58zL" role="3cqZAp">
+          <node concept="1rXfSq" id="6EjSNQP58zK" role="3clFbG">
+            <ref role="37wK5l" to="bco1:~BaseProjectMigration.setExecuted(jetbrains.mps.project.Project,boolean):void" resolve="setExecuted" />
+            <node concept="37vLTw" id="6EjSNQP58_M" role="37wK5m">
+              <ref role="3cqZAo" node="6EjSNQP58px" resolve="project" />
+            </node>
+            <node concept="3clFbT" id="6EjSNQP58DZ" role="37wK5m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6EjSNQP58uH" role="jymVt" />
     <node concept="3clFb_" id="3UghWjE0SV6" role="jymVt">
       <property role="TrG5h" value="doExecute" />
       <property role="DiZV1" value="false" />
