@@ -1308,7 +1308,29 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7BBl3KI$QtF" role="3cqZAp" />
+        <node concept="3clFbJ" id="7Yjh9RQYovj" role="3cqZAp">
+          <node concept="3clFbS" id="7Yjh9RQYovl" role="3clFbx">
+            <node concept="3cpWs6" id="7Yjh9RQYuTn" role="3cqZAp">
+              <node concept="37vLTw" id="7Yjh9RQYvZy" role="3cqZAk">
+                <ref role="3cqZAo" node="7BBl3KI$P2v" resolve="language" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="7Yjh9RQYtBl" role="3clFbw">
+            <node concept="37vLTw" id="7Yjh9RQYuJn" role="3uHU7w">
+              <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
+            </node>
+            <node concept="2OqwBi" id="7Yjh9RQYrql" role="3uHU7B">
+              <node concept="37vLTw" id="7Yjh9RQYq3X" role="2Oq$k0">
+                <ref role="3cqZAo" node="7BBl3KI$P2v" resolve="language" />
+              </node>
+              <node concept="liA8E" id="7Yjh9RQYtt8" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="7Yjh9RQYlPY" role="3cqZAp" />
         <node concept="3clFbJ" id="7BBl3KI$VN8" role="3cqZAp">
           <node concept="37vLTw" id="7BBl3KI$W1Z" role="3clFbw">
             <ref role="3cqZAo" node="7BBl3KIwkDm" resolve="createMainAspectModels" />
@@ -1612,7 +1634,7 @@
         <node concept="3clFbF" id="3J$DPqOjaU1" role="3cqZAp">
           <node concept="2OqwBi" id="3J$DPqOjbao" role="3clFbG">
             <node concept="liA8E" id="3J$DPqOjdhM" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor):void" resolve="setLanguageDescriptor" />
+              <ref role="37wK5l" to="vsqj:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
               <node concept="37vLTw" id="3J$DPqOje8y" role="37wK5m">
                 <ref role="3cqZAo" node="1Yd98ZZnqH$" resolve="descriptor" />
               </node>

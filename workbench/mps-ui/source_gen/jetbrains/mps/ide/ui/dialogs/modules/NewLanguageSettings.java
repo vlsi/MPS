@@ -23,7 +23,6 @@ import java.awt.Dimension;
 import javax.swing.JComponent;
 
 public class NewLanguageSettings extends JPanel {
-
   private String myProjectPath;
   private JTextField myLanguageName;
   private JTextField myLanguageLocation;

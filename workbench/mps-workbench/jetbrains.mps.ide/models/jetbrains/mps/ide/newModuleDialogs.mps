@@ -199,7 +199,6 @@
   </registry>
   <node concept="312cEu" id="3pY4pKeOHoN">
     <property role="TrG5h" value="NewSolutionDialog" />
-    <node concept="2tJIrI" id="3pY4pKePtzK" role="jymVt" />
     <node concept="312cEg" id="Ecfd3cMwd2" role="jymVt">
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProject" />
@@ -487,6 +486,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1KsZD$cR$Gs" role="jymVt" />
     <node concept="3clFb_" id="1ULwsKEKzNP" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -495,17 +495,6 @@
       <node concept="3Tmbuc" id="1ULwsKEKzNQ" role="1B3o_S" />
       <node concept="3cqZAl" id="1ULwsKEKzNS" role="3clF45" />
       <node concept="3clFbS" id="1ULwsKEKzNT" role="3clF47">
-        <node concept="3clFbJ" id="6AYu2TP2$Vg" role="3cqZAp">
-          <node concept="3fqX7Q" id="Se$IPQXp6Q" role="3clFbw">
-            <node concept="1rXfSq" id="Se$IPQXp6S" role="3fr31v">
-              <ref role="37wK5l" node="Se$IPQX15o" resolve="check" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="6AYu2TP2$Vh" role="3clFbx">
-            <node concept="3cpWs6" id="6AYu2TP2$Vk" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="6AYu2TP2$Vo" role="3cqZAp" />
         <node concept="3clFbF" id="1ULwsKEKzNW" role="3cqZAp">
           <node concept="3nyPlj" id="1ULwsKEKzNV" role="3clFbG">
             <ref role="37wK5l" to="810:~DialogWrapper.doOKAction():void" resolve="doOKAction" />
@@ -588,6 +577,7 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1KsZD$cR_Uh" role="jymVt" />
     <node concept="3clFb_" id="60EFvKOypdn" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -635,6 +625,7 @@
         <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1KsZD$cRB86" role="jymVt" />
     <node concept="3clFb_" id="Se$IPQWc0D" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -653,6 +644,31 @@
         <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1KsZD$cRBZI" role="jymVt" />
+    <node concept="3clFb_" id="1KsZD$cRCRq" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doValidate" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tmbuc" id="1KsZD$cRCRr" role="1B3o_S" />
+      <node concept="3uibUv" id="1KsZD$cRCRt" role="3clF45">
+        <ref role="3uigEE" to="810:~ValidationInfo" resolve="ValidationInfo" />
+      </node>
+      <node concept="2AHcQZ" id="1KsZD$cRCRu" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3clFbS" id="1KsZD$cRCRv" role="3clF47">
+        <node concept="3clFbF" id="1KsZD$cRCRy" role="3cqZAp">
+          <node concept="3nyPlj" id="1KsZD$cRCRx" role="3clFbG">
+            <ref role="37wK5l" to="810:~DialogWrapper.doValidate():com.intellij.openapi.ui.ValidationInfo" resolve="doValidate" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1KsZD$cRCRw" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1KsZD$cRDLa" role="jymVt" />
     <node concept="3clFb_" id="Se$IPQX15o" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -713,7 +729,6 @@
   </node>
   <node concept="312cEu" id="7iZR6YlW8ti">
     <property role="TrG5h" value="NewLanguageDialog" />
-    <node concept="2tJIrI" id="7iZR6YlWmND" role="jymVt" />
     <node concept="312cEg" id="7iZR6YlWmMJ" role="jymVt">
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProject" />
@@ -943,47 +958,6 @@
                         <node concept="10Nm6u" id="577ABRc5zTp" role="3uHU7w" />
                         <node concept="37vLTw" id="577ABRc5zTq" role="3uHU7B">
                           <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="4Y3WKnTTZne" role="3cqZAp">
-              <node concept="2OqwBi" id="4Y3WKnTTZJZ" role="3clFbG">
-                <node concept="37vLTw" id="4Y3WKnTTZnd" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7iZR6YlWp$F" resolve="myLanguageSettings" />
-                </node>
-                <node concept="liA8E" id="4Y3WKnTU1v9" role="2OqNvi">
-                  <ref role="37wK5l" to="lz1h:4Y3WKnTTKUN" resolve="setListener" />
-                  <node concept="2ShNRf" id="4Y3WKnTU1vf" role="37wK5m">
-                    <node concept="YeOm9" id="4Y3WKnTU4qP" role="2ShVmc">
-                      <node concept="1Y3b0j" id="4Y3WKnTU4qS" role="YeSDq">
-                        <property role="2bfB8j" value="true" />
-                        <ref role="1Y3XeK" to="lz1h:4Y3WKnTTxIl" resolve="NewLanguageSettings.LangSettingsChangedListener" />
-                        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                        <node concept="3Tm1VV" id="4Y3WKnTU4qT" role="1B3o_S" />
-                        <node concept="3clFb_" id="4Y3WKnTU4qU" role="jymVt">
-                          <property role="1EzhhJ" value="false" />
-                          <property role="TrG5h" value="changed" />
-                          <node concept="3cqZAl" id="4Y3WKnTU4qV" role="3clF45" />
-                          <node concept="3Tm1VV" id="4Y3WKnTU4qW" role="1B3o_S" />
-                          <node concept="3clFbS" id="4Y3WKnTU4qY" role="3clF47">
-                            <node concept="3clFbF" id="4Y3WKnTU5f_" role="3cqZAp">
-                              <node concept="2OqwBi" id="4Y3WKnTU5lV" role="3clFbG">
-                                <node concept="Xjq3P" id="4Y3WKnTU5f$" role="2Oq$k0">
-                                  <ref role="1HBi2w" node="7iZR6YlW8ti" resolve="NewLanguageDialog" />
-                                </node>
-                                <node concept="liA8E" id="4Y3WKnTU87F" role="2OqNvi">
-                                  <ref role="37wK5l" node="7iZR6YlWSAA" resolve="check" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2AHcQZ" id="3SrrN$wgdnN" role="2AJF6D">
-                            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                          </node>
                         </node>
                       </node>
                     </node>

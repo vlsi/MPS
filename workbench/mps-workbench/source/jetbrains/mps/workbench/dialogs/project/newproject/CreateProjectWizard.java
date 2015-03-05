@@ -24,6 +24,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.ValidationInfo;
 import com.intellij.openapi.ui.popup.ListItemDescriptor;
 import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.SystemInfo;
@@ -114,7 +115,7 @@ public class CreateProjectWizard extends DialogWrapper {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    if(myPanel == null){
+    if (myPanel == null) {
       myPanel = new JPanel(new GridLayoutManager(1,1, JBInsets.NONE, -1, -1));
 
       initLeftPanel();
@@ -260,26 +261,21 @@ public class CreateProjectWizard extends DialogWrapper {
     myRightPanel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5,5,5,0), -1, -1));
 
     //-----Project panel-----
-
     myProjectPanel = new JPanel(new GridLayoutManager(2, 2, new JBInsets(0,0,5,0), -1, -1));
-
     myProjectPanel.add(new JLabel("Project name:"),
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
     myProjectName = new JTextField(getDefaultProjectName());
     myProjectPanel.add(myProjectName,
         new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
     myProjectPanel.add(new JLabel("Project location:"),
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
     myProjectPath = new PathField();
     myProjectPath.addPropertyChangeListener("path", new PropertyChangeListener() {
       @Override
       public void propertyChange(PropertyChangeEvent evt) {
         String newProjectPath = (String) evt.getNewValue();
         fireProjectPathChanged(newProjectPath);
-        checkProjectPath(newProjectPath);
+//        checkProjectPath(newProjectPath);
       }
     });
     myProjectName.addCaretListener(new CaretListener() {
@@ -324,13 +320,14 @@ public class CreateProjectWizard extends DialogWrapper {
         new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_SOUTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
   }
 
-  private void checkProjectPath(String newProjectPath) {
+  @Nullable
+  private ValidationInfo checkProjectPath(String newProjectPath) {
     final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(newProjectPath);
     //refresh file to avoid cached deleted project with the same name affects on creating one
     if (virtualFile != null) VirtualFileUtils.refreshSynchronouslyRecursively(virtualFile);
     //check if there is project in folder (both directory and file based)
     boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
-    if(virtualFile != null && !isProjectPath) {
+    if (virtualFile != null && !isProjectPath) {
       for (VirtualFile child : virtualFile.getChildren()) {
         if (OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(child)) {
           isProjectPath = true;
@@ -338,13 +335,15 @@ public class CreateProjectWizard extends DialogWrapper {
         }
       }
     }
-    if(isProjectPath){
+    if (isProjectPath) {
       //show error and disable apply
-      setErrorText("Project under this path already exists!");
-      getOKAction().setEnabled(false);
+      return new ValidationInfo("Project under this path already exists");
+//      setErrorText("Project under this path already exists!");
+//      getOKAction().setEnabled(false);
     } else {
-      setErrorText(null);
-      getOKAction().setEnabled(true);
+      return null;
+//      setErrorText(null);
+//      getOKAction().setEnabled(true);
     }
   }
 
@@ -366,13 +365,14 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void fireProjectPathChanged(String newValue) {
-    if(myCurrentTemplateItem != null)
+    if (myCurrentTemplateItem != null) {
       myCurrentTemplateItem.setNewProjectPath(newValue);
+    }
   }
 
   private void updateRightPanel() {
     setOKActionEnabled(myCurrentTemplateItem != null);
-    checkProjectPath(myProjectPath.getPath());
+//    checkProjectPath(myProjectPath.getPath());
 
     String description = myCurrentTemplateItem != null ? myCurrentTemplateItem.getDescription() : null;
     if (StringUtil.isNotEmpty(description)) {
@@ -380,20 +380,19 @@ public class CreateProjectWizard extends DialogWrapper {
       sb.append(SystemInfo.isMac ? "" : "size=\"-1\"").append('>');
       sb.append(description).append("</font></body></html>");
       description = sb.toString();
-
     }
     myDescriptionPane.setText(description);
     myDescriptionPanel.setVisible(description != null);
 
     JComponent component = myCurrentTemplateItem != null ? myCurrentTemplateItem.getSettings() : null;
     myTemplateSettings.removeAll();
-    if(component != null) {
+    if (component != null) {
       myTemplateSettings.add(component,
           new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
       myTemplateSettings.add(myProjectFormatPanel.getPanel(),
           new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1));
     }
-    if(myCurrentTemplateItem != null) myCurrentTemplateItem.setNewProjectPath(myProjectPath.getPath());
+    if (myCurrentTemplateItem != null) myCurrentTemplateItem.setNewProjectPath(myProjectPath.getPath());
     myTemplateSettingsHolder.setVisible(component != null);
   }
 
@@ -407,6 +406,12 @@ public class CreateProjectWizard extends DialogWrapper {
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myList;
+  }
+
+  @Nullable
+  @Override
+  protected ValidationInfo doValidate() {
+    return (checkProjectPath(myProjectPath.getPath()));
   }
 
   @Override
@@ -428,7 +433,7 @@ public class CreateProjectWizard extends DialogWrapper {
     myOptions.setCreateNewSolution(false);
     myOptions.setStorageScheme(myProjectFormatPanel.isDefault());
 
-    //invoke later is for plugins to be ready
+    // invoke later is for plugins to be ready
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {

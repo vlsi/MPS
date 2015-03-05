@@ -51,7 +51,6 @@ public class FileUtil {
     File tmp = getTempDir();
     int i = 0;
     while (true) {
-
       if (!new File(tmp, "mpstemp" + i).exists()) {
         break;
       }

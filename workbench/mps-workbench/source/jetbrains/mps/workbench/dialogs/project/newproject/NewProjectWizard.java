@@ -28,6 +28,11 @@ import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Please use {@link jetbrains.mps.workbench.dialogs.project.newproject.CreateProjectWizard} instead
+ * @deprecated
+ */
+@Deprecated
 public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private List<String> myHelpIDs = new ArrayList<String>();
   private ProjectOptions myOptions = new ProjectOptions();

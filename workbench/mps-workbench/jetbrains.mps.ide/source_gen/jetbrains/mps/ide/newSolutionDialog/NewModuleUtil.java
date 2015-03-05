@@ -150,11 +150,15 @@ public class NewModuleUtil {
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     Language language = (Language) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    if (language.getDescriptorFile() != descriptorFile) {
+      return language;
+    }
 
     if (createMainAspectModels) {
       try {
         createMainLanguageAspects(language);
       } catch (IOException e) {
+        // todo: ??? 
         throw new RuntimeException(e);
       }
     }
@@ -162,8 +166,9 @@ public class NewModuleUtil {
     String templateModelsDir = descriptorFile.getParent().getPath() + File.separator + "generator" + File.separator + "template";
     try {
       VfsUtil.createDirectories(templateModelsDir);
-    } catch (IOException ignored) {
+    } catch (IOException ioException) {
     }
+
 
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
@@ -176,7 +181,7 @@ public class NewModuleUtil {
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"));
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
     descriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(descriptor);
+    language.setModuleDescriptor(descriptor);
     language.save();
 
     final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());

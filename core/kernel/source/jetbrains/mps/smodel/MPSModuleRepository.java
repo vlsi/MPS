@@ -127,7 +127,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
         AbstractModule existingModule = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
-        LOG.warn(String.format("Will not register a module with the name %s at %s : module with the same name exists at %s, ", moduleFqName,
+        LOG.warn(String.format("Will not register a module with the name %s at the %s : module with the same name exists at the %s, ", moduleFqName,
             aModuleToRegister.getDescriptorFile(), existingModule.getDescriptorFile()));
         return (T) existingModule;
       }

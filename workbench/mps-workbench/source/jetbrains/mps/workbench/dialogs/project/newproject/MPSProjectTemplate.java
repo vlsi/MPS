@@ -21,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
+/**
+ * Represents
+ */
 public interface MPSProjectTemplate {
 
   @Nullable

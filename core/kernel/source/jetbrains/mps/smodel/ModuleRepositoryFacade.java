@@ -22,6 +22,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
@@ -32,7 +33,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -170,10 +170,17 @@ public class ModuleRepositoryFacade implements CoreComponent {
     }
   }
 
-  private static Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
+  private static <T extends ModuleDescriptor> T getDescriptorChecked(ModuleHandle handle, Class<T> descriptorClass) {
+    ModuleDescriptor descriptor = handle.getDescriptor();
     assert descriptor != null;
     assert descriptor.getId() != null;
+    assert descriptorClass.isInstance(descriptor);
+
+    return descriptorClass.cast(descriptor);
+  }
+
+  private static Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    LanguageDescriptor descriptor = getDescriptorChecked(handle, LanguageDescriptor.class);
 
     Language newLanguage = new Language(descriptor, handle.getFile());
     Language language = registerModule(newLanguage, moduleOwner);
@@ -184,21 +191,16 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
-    assert descriptor != null;
-    assert descriptor.getId() != null;
-
+    SolutionDescriptor descriptor = getDescriptorChecked(handle, SolutionDescriptor.class);
     return registerModule(new Solution(descriptor, handle.getFile()), moduleOwner);
   }
 
   private static DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
-    assert descriptor != null;
-    assert descriptor.getId() != null;
+    DevkitDescriptor descriptor = getDescriptorChecked(handle, DevkitDescriptor.class);
     return registerModule(new DevKit(descriptor, handle.getFile()), moduleOwner);
   }
 
   private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    return MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
+    return ModuleRepositoryFacade.getInstance().REPO.registerModule(module, moduleOwner);
   }
 }
