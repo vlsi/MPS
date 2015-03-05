@@ -27,6 +27,10 @@ public class CleanObsoletePropertiesMigration extends BaseProjectMigration imple
     return "Cleanup obsolete editor properties";
   }
 
+  public void forceExecutionNextTime(Project project) {
+    setExecuted(project, false);
+  }
+
   @Override
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();

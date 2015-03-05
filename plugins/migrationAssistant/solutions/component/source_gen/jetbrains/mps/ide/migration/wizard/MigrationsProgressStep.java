@@ -22,6 +22,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import java.util.Map;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -99,7 +102,18 @@ public class MigrationsProgressStep extends MigrationStep {
     setFraction(progress, 0);
 
     boolean cleanNotification = false;
-    while (executeSingleStep(myManager.nextProjectStep(options, true))) {
+    List<MigrationManager.MigrationStep> cleanupMigrations = ListSequence.fromList(new ArrayList<MigrationManager.MigrationStep>());
+    while (true) {
+      MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
+      if (step == null) {
+        break;
+      }
+
+      ListSequence.fromList(cleanupMigrations).addElement(step);
+      if (!(executeSingleStep(step))) {
+        break;
+      }
+
       if (!(cleanNotification)) {
         cleanNotification = true;
         addElementToMigrationList("Cleaning project... Please wait.");
@@ -143,6 +157,11 @@ public class MigrationsProgressStep extends MigrationStep {
           postProblems.value = MigrationCheckUtil.haveProblems(modules);
         }
       });
+    } else {
+      // start cleanup migrations next time migration is started 
+      for (MigrationManager.MigrationStep cleanupMigration : ListSequence.fromList(cleanupMigrations)) {
+        cleanupMigration.forceExecutionNextTime();
+      }
     }
 
     myFinishedState = new MigrationsProgressStep.FinishedState(preProblems.value, myNoErrors && !(myManager.isMigrationRequired()), postProblems.value);

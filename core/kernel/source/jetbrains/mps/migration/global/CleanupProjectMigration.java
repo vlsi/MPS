@@ -15,5 +15,8 @@
  */
 package jetbrains.mps.migration.global;
 
+import jetbrains.mps.project.Project;
+
 public interface CleanupProjectMigration {
+  void forceExecutionNextTime(Project p);
 }

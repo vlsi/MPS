@@ -278,6 +278,13 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         }
         return true;
       }
+
+      public void forceExecutionNextTime() {
+        if (!((cc instanceof CleanupProjectMigration))) {
+          throw new UnsupportedOperationException("only supported for cleanup project migrations");
+        }
+        ((CleanupProjectMigration) cc).forceExecutionNextTime(mpsProject);
+      }
     };
   }
 
@@ -379,6 +386,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                       }
                     });
                     return res.value;
+                  }
+                  public void forceExecutionNextTime() {
+                    throw new UnsupportedOperationException("not supported for language migrations");
                   }
                 };
                 return true;
