@@ -16,8 +16,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
@@ -149,7 +149,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       my_referenceDescriptorsField = new ArrayList<IReferencePersister>();
       my_visibleModelElementsField = new SAXVisibleModelElements();
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.FULLY_LOADED);
     }
     @Override
     protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {

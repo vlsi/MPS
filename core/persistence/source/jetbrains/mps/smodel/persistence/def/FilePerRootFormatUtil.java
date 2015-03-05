@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -114,7 +112,7 @@ public class FilePerRootFormatUtil {
           headerHandler.getResult().setState(ModelLoadingState.INTERFACE_LOADED);
         }
         int count = 0;
-        LazySModel model = rootHandler.getResult().getModel();
+        SModel model = rootHandler.getResult().getModel();
         model.setUpdateMode(true);
         for (SNode rootNode : model.getRootNodes()) {
           if (count != 0) {

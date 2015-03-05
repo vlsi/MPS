@@ -12,6 +12,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -163,7 +164,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);
       my_importHelperField = new ImportsHelper(ref);
-      ModelLoadResult result = new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      ModelLoadResult result = new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
       result.setState((my_readHelperParam.isRequestedInterfaceOnly() ? ModelLoadingState.INTERFACE_LOADED : ((my_readHelperParam.isRequestedStripImplementation() ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
       return result;
     }

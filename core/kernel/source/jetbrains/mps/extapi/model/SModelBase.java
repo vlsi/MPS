@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.smodel.IllegalModelAccessException;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -60,7 +60,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   private ModelRoot myModelRoot;
 
-  private final Object REPO_LOCK = new Object();
   private SModule myModule;
   private volatile SRepository myRepository = null;
 
@@ -71,7 +70,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public SRepository getRepository() {
-    assertCanRead();
+//    assertCanRead(); we don't require write lock when myRepo is assigned, why would require read to get?
     return myRepository;
   }
 
@@ -80,25 +79,21 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return new jetbrains.mps.smodel.SNode(concept);
   }
 
-  public void attach(SRepository repo) {
-    if (myRepository == repo) return;
-    synchronized (REPO_LOCK) {
-      if (myRepository == repo) return;
-      if (myRepository != null) {
-        throw new IllegalStateException("trying to attach a node from a repository to some other repository");
-      }
-      myRepository = repo;
+  public void attach(@NotNull SRepository repo) {
+    if (myRepository == repo) {
+      // warn? why it's ok to attach model several times, isn't it an error?
+      return;
     }
+    if (myRepository != null) {
+      throw new IllegalModelAccessException("Model is already attached to a repository, can't attach to another one");
+    }
+    repo.getModelAccess().checkReadAccess();
+    myRepository = repo;
   }
 
   public void detach() {
-    ModelAccess.assertLegalWrite();
-    synchronized (REPO_LOCK) {
-      if (getLoadingState() != ModelLoadingState.NOT_LOADED) {
-        getSModelInternal().detachRoots();
-      }
-      myRepository = null;
-    }
+    assertCanChange();
+    myRepository = null;
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {
@@ -110,55 +105,45 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public Iterable<SNode> getRootNodes() {
     assertCanRead();
-    Iterable<SNode> roots = getSModelInternal().getRootNodes();
-    if (myRepository != null) {
-      for (SNode r : roots) {
-        ((SNodeBase) r).attach(myRepository);
-      }
-    }
-    return roots;
+    return getModelData().getRootNodes();
   }
 
   @Override
   public SNode getNode(SNodeId id) {
-    jetbrains.mps.smodel.SNode node = getSModelInternal().getNode(id);
-    if (node == null) return null;
-    if (myRepository != null) {
-      node.attach(myRepository);
-    }
-    return node;
+    assertCanRead();
+    return getModelData().getNode(id);
   }
 
 
   @Override
   @NotNull
   public SModelReference getReference() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference;
   }
 
   @NotNull
   @Override
   public SModelId getModelId() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelId();
   }
 
   @Override
   public String getModelName() {
-    assertCanRead();
+//    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelName();
   }
 
   @Override
   @NotNull
   public DataSource getSource() {
-    assertCanRead();
+//    assertCanRead(); Is source access truly read operation over model?
     return mySource;
   }
 
   public void setModule(SModule module) {
-    assertCanRead();
+    assertCanRead(); // FIXME why not write?
     myModule = module;
   }
 
@@ -168,7 +153,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   @Nullable
   public SModule getModule() {
-    assertCanRead();
+    // FIXME provided setModule() requires read lock, another read lock here doesn't prevent from
+    // myModule being modified in a parallel read, and the reason to have read check here eludes from me.
+    // Code like SModuleOperations.getOutputRoot(SModel) fails with assert enabled, and
+    // it's not obvious whether it's the client code to fix (to obtain read lock) or
+    // this method shall not check for read access at all.
+//    assertCanRead();
     return myModule;
   }
 
@@ -201,7 +191,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public boolean isReadOnly() {
-    assertCanRead();
+//    assertCanRead(); no apparent reason why we shall demand read lock here. Few subclasses, that override the method, do not check access at all.
     return true;
   }
 
@@ -372,21 +362,19 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   protected void assertCanRead() {
-//    if (myRepository == null) return;
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      myRepository.getModelAccess().checkReadAccess();
-//    }
+    final SRepository repo = myRepository;
+    if (repo != null) {
+      repo.getModelAccess().checkReadAccess();
+    }
   }
 
   protected void assertCanChange() {
-//    if (myRepository == null) return;
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      myRepository.getModelAccess().checkWriteAccess();
+    final SRepository repo = myRepository;
+    if (repo != null) {
+      repo.getModelAccess().checkWriteAccess();
+    }
 //      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
-//    }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ public interface SModule {
   @Nullable
   <T extends SModuleFacet> T getFacet(Class<T> clazz);
 
+  // FIXME document whether read lock is required to access roots
   Iterable<ModelRoot> getModelRoots();
 
   /**

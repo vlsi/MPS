@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SNodeUndoableAction {
-  private SNode myAffectedNode = null;
+  private final SNode myAffectedNode;
 
   protected SNodeUndoableAction(SNode affectedNode) {
     myAffectedNode = affectedNode;

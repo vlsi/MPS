@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -39,21 +37,17 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -63,8 +57,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -91,10 +83,15 @@ public class SModel implements SModelData {
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
-  private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
+  private INodeIdToNodeMap myIdToNodeMap;
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
   private ImplicitImportsLegacyHolder myLegacyImplicitImports;
+  // when true, we are attaching newly loaded children to a model loaded partially
+  private boolean myIsFullLoadMode = false;
+  // nodes from this model communicate with it through this owner instance.
+  @NotNull
+  private final AttachedNodeOwner myNodeOwner;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -103,6 +100,7 @@ public class SModel implements SModelData {
   public SModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     myReference = modelReference;
     myIdToNodeMap = map;
+    myNodeOwner = new AttachedNodeOwner(this);
   }
 
   static void resetIdCounter() {
@@ -142,10 +140,8 @@ public class SModel implements SModelData {
           public org.jetbrains.mps.openapi.model.SNode next() {
             SNode res = myIterator.next();
             if (res != null) {
-              res.nodeRead();
-
-              res.fireNodeReadAccess();
-              res.fireNodeUnclassifiedReadAccess();
+              res.assertCanRead();
+              res.getNodeOwner().fireNodeRead(res, true);
             }
 
             return res;
@@ -173,8 +169,12 @@ public class SModel implements SModelData {
       ModelChange.assertLegalNodeRegistration(this, node);
     }
     enforceFullLoad();
-    if (myRoots.contains(node)) return;
+    if (myRoots.contains(node)) {
+      // why not warn?
+      return;
+    }
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
+    // FIXME why on earth we remove new root from original location, but don't do the same for insertChild?
     if (model != null && model != myModelDescriptor && node.getParent() == null) {
       model.removeRootNode(node);
     } else {
@@ -186,14 +186,9 @@ public class SModel implements SModelData {
 
     SNode sn = (SNode) node;
     myRoots.add(sn);
-    sn.registerInModel(this);
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new AddRootUndoableAction(node);
-      }
-    });
-    fireRootAddedEvent(sn);
+    sn.attach(myNodeOwner);
+    performUndoableAction(new AddRootUndoableAction(node));
+    myNodeOwner.fireNodeAdd(null, null, sn, null);
   }
 
   @Override
@@ -204,17 +199,12 @@ public class SModel implements SModelData {
     }
     enforceFullLoad();
     if (myRoots.contains(node)) {
-      fireBeforeRootRemovedEvent(node);
+      myNodeOwner.fireBeforeNodeRemove(null, null, (SNode) node, null);
       myRoots.remove(node);
       SNode sn = (SNode) node;
-      sn.unRegisterFromModel();
-      performUndoableAction(new Computable<SNodeUndoableAction>() {
-        @Override
-        public SNodeUndoableAction compute() {
-          return new RemoveRootUndoableAction(node, myModelDescriptor);
-        }
-      });
-      fireRootRemovedEvent(sn);
+      sn.detach(new DetachedNodeOwner(this));
+      performUndoableAction(new RemoveRootUndoableAction(node, myModelDescriptor));
+      myNodeOwner.fireNodeRemove(null, null, sn, null);
     }
   }
 
@@ -223,10 +213,8 @@ public class SModel implements SModelData {
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     SNode res = getNode_(nodeId);
     if (res != null) {
-      res.nodeRead();
-
-      res.fireNodeReadAccess();
-      res.fireNodeUnclassifiedReadAccess();
+      res.assertCanRead();
+      myNodeOwner.fireNodeRead(res, true);
     }
     return res;
   }
@@ -275,6 +263,10 @@ public class SModel implements SModelData {
   }
 
   protected void enforceFullLoad() {
+    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
+    if (md != null) {
+      md.load();
+    }
   }
 
   private void fireModelNodesReadAccess() {
@@ -286,13 +278,28 @@ public class SModel implements SModelData {
 
 //---------listeners--------
 
+  /**
+   * Use {@link #performUndoableAction(SNodeUndoableAction)} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo()) return;
-    UndoHelper.getInstance().addUndoableAction(action.compute());
+    performUndoableAction(action.compute());
   }
 
-  //todo code in the following methods should be written w/o duplication
+  protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
+    if (!canFireEvent()) {
+      return;
+    }
+    final UndoHelper uh = UndoHelper.getInstance();
+    if (uh.needRegisterUndo()) {
+      uh.addUndoableAction(action);
+    }
+  }
+
+    //todo code in the following methods should be written w/o duplication
 
   public boolean canFireEvent() {
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
@@ -398,8 +405,10 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireRootAddedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+  /*package*/ void fireRootAddedEvent(@NotNull SNode root) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -410,8 +419,10 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireRootRemovedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+  /*package*/ void fireRootRemovedEvent(@NotNull SNode root) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), root, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -422,8 +433,10 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
-    if (!canFireEvent()) return;
+  /*package*/ void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelRootEvent event = new SModelRootEvent(getModelDescriptor(), node, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -434,8 +447,10 @@ public class SModel implements SModelData {
     }
   }
 
-  void firePropertyChangedEvent(@NotNull SNode node, @NotNull String property, @Nullable String oldValue, @Nullable String newValue) {
-    if (!canFireEvent()) return;
+  void firePropertyChangedEvent(@NotNull SNode node, @NotNull SProperty property, @Nullable String oldValue, @Nullable String newValue) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelPropertyEvent event = new SModelPropertyEvent(getModelDescriptor(), property, node, oldValue, newValue);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -446,10 +461,10 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------fast node finder--------
-
-  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), true, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
@@ -461,12 +476,12 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------node id--------
-
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.childRemoved(event);
@@ -476,10 +491,12 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (!canFireEvent()) {
+      return;
+    }
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.beforeChildRemoved(event);
@@ -490,7 +507,9 @@ public class SModel implements SModelData {
   }
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -502,7 +521,9 @@ public class SModel implements SModelData {
   }
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelReferenceEvent event = new SModelReferenceEvent(getModelDescriptor(), reference, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -518,10 +539,6 @@ public class SModel implements SModelData {
   }
 
   //---------node registration--------
-
-  protected final INodeIdToNodeMap createNodeIdMap() {
-    return new UniversalOptimizedNodeIdMap();
-  }
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
@@ -613,9 +630,7 @@ public class SModel implements SModelData {
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange_new(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
@@ -650,9 +665,7 @@ public class SModel implements SModelData {
   //devkit
 
   public void addLanguage(SLanguage id, int version) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange_new(myModelDescriptor);
-    }
+    assertLegalChange();
 
     Integer existingVersion = myLanguagesIds.get(id);
     if (existingVersion != null) {
@@ -837,7 +850,12 @@ public class SModel implements SModelData {
   //aspects / additional
 
   public boolean isUpdateMode() {
-    return false;
+    return myIsFullLoadMode;
+  }
+
+  public void setUpdateMode(boolean value) {
+    // update mode means we are attaching newly loaded children
+    this.myIsFullLoadMode = value;
   }
 
   //to use only from SNode
@@ -845,15 +863,11 @@ public class SModel implements SModelData {
     return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
   }
 
-  public void detachRoots() {
-    for (SNode node : myRoots) {
-      node.detach();
-    }
-  }
-
   private void assertLegalChange() {
     if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(this);
+      // FIXME in fact, all modification methods are accessed through SModelInternal iface, and SModelDescriptorStub shall
+      // check for legal write instead of SModel itself.
+      ModelChange.assertLegalChange_new(myModelDescriptor);
     }
   }
 

@@ -9,8 +9,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /*package*/ abstract class AbstractSNodeList<LinkType> extends ArrayList<SNode> {
@@ -161,7 +161,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       if (node.getParent() != null) {
         node.getParent().removeChild(node);
       }
-      SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
+      myReferenceContainer.insertChildBefore(myRole, node, (anchorNode == null ? myReferenceContainer.getFirstChild() : anchorNode.getNextSibling()));
     }
   }
   @Deprecated

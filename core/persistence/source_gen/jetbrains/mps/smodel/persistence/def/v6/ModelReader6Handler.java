@@ -13,6 +13,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.smodel.LazySNode;
@@ -144,7 +145,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new VersionUtil(my_modelField.getReference());
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {

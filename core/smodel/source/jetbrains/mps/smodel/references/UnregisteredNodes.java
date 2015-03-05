@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.references;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.util.PairMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -65,12 +64,6 @@ public class UnregisteredNodes {
 
   public void clear() {
     synchronized (myLock) {
-      for (SNode node : myMap.values()) {
-        ((SNodeBase) node).detach();
-      }
-      for (SNode node : myNodesWithoutRefs) {
-        ((SNodeBase) node).detach();
-      }
       myMap.clear();
       myNodesWithoutRefs.clear();
     }
