@@ -204,7 +204,7 @@ public class MigrationCheckUtil {
     });
     ListSequence.fromList(rv).addSequence(Sequence.fromIterable(binFiles).select(new ISelector<IFile, BinaryModelProblem>() {
       public BinaryModelProblem select(IFile it) {
-        return new BinaryModelProblem(module, String.format("Can't load binary model: module %s, file %s. Binary models must be converted prior to migration. See https://youtrack.jetbrains.com/issue/MPS-21587", module.getModuleName(), it.getPath()));
+        return new BinaryModelProblem(module, String.format("Can't load binary model: module %s, file %s. Convert the model in MPS 3.1 or remove the model file before migrating. See https://youtrack.jetbrains.com/issue/MPS-21587", module.getModuleName(), it.getPath()));
       }
     }));
 

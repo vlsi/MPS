@@ -1667,7 +1667,7 @@
                               <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                               <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                               <node concept="Xl_RD" id="4pxnC9gxWxJ" role="37wK5m">
-                                <property role="Xl_RC" value="Can't load binary model: module %s, file %s. Binary models must be converted prior to migration. See https://youtrack.jetbrains.com/issue/MPS-21587" />
+                                <property role="Xl_RC" value="Can't load binary model: module %s, file %s. Convert the model in MPS 3.1 or remove the model file before migrating. See https://youtrack.jetbrains.com/issue/MPS-21587" />
                               </node>
                               <node concept="2OqwBi" id="4pxnC9gxWxK" role="37wK5m">
                                 <node concept="37vLTw" id="4pxnC9gxWxL" role="2Oq$k0">
