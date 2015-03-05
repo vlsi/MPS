@@ -25,7 +25,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ import java.util.List;
 
 import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 /**
  * Test undo/redo for model modifications.
@@ -47,6 +50,8 @@ import static jetbrains.mps.smodel.TestModelFactory.ourRole;
  * @author Artem Tikhomirov
  */
 public class ModelUndoTest {
+  @Rule
+  public ErrorCollector myErrors = new ErrorCollector();
 
   private final TestModelAccess myModelAccess = new TestModelAccess();
   private final TestRepository myRepo = new TestRepository(myModelAccess);
@@ -210,6 +215,47 @@ public class ModelUndoTest {
     Assert.assertEquals(1, m1f.countModelNodes());
   }
 
+  /**
+   * RemoveChildUndoableAction used to rely on SModelOperations' insertAfter operation.
+   * OpenAPI SNode provides only insertAfter. The test ensures transition is ok.
+   */
+  @Test
+  public void testRemoveChildAnchor() {
+    final TestModelFactory m1f = new TestModelFactory();
+    m1f.createModel(3, 3);
+    final int initialNodeCount = m1f.countModelNodes();
+    myModelAccess.enableWrite();
+    m1f.attachTo(myRepo);
+    // one with anchor == null
+    SNode r1c1 = m1f.getRoot(1).getFirstChild();
+    // one with anchor != null
+    SNode r2c2 = m1f.getRoot(2).getFirstChild().getNextSibling();
+    // one with anchor == last element in the list
+    SNode r3c3 = m1f.getRoot(3).getLastChild();
+
+    r1c1.delete();
+    myUndo.flushCommand(null);
+
+    r2c2.delete();
+    myUndo.flushCommand(null);
+
+    r3c3.delete();
+    myUndo.flushCommand(null);
+    Assert.assertEquals(3, myUndo.actualStackSize());
+    Assert.assertEquals(initialNodeCount - 3, m1f.countModelNodes()); // -number of deleted nodes
+
+    myUndo.myUndoStack.pop().undo();
+    myUndo.myUndoStack.pop().undo();
+    myUndo.myUndoStack.pop().undo();
+
+    myErrors.checkThat(m1f.getRoot(1).getFirstChild(), equalTo(r1c1));
+    myErrors.checkThat(m1f.getRoot(2).getFirstChild().getNextSibling(), equalTo(r2c2));
+    myErrors.checkThat(m1f.getRoot(3).getLastChild(), equalTo(r3c3));
+
+    Assert.assertEquals(initialNodeCount, m1f.countModelNodes());
+  }
+
+
   /*package*/ static class TestUndoHandler implements UndoHandler {
     private final Deque<SNodeUndoableAction> myActions = new ArrayDeque<SNodeUndoableAction>();
     public final Deque<UndoUnit> myUndoStack = new ArrayDeque<UndoUnit>();
@@ -266,6 +312,10 @@ public class ModelUndoTest {
 
     /*package*/ int actualUndoActionCount() {
       return myActions.size();
+    }
+
+    /*package*/ int actualStackSize() {
+      return myUndoStack.size();
     }
 
     /*package*/ void needsUndo(boolean needsUndo) {

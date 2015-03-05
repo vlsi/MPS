@@ -23,6 +23,13 @@ class RemoveChildUndoableAction extends SNodeUndoableAction {
   private final SContainmentLink myRole;
   private final SNode myChild;
 
+  /**
+   *
+   * @param node modified parent
+   * @param anchor node <em>next</em> to removed one, or <code>null</code> if removed node is the last one
+   * @param role containment of a child
+   * @param child removed child
+   */
   RemoveChildUndoableAction(SNode node, SNode anchor, SContainmentLink role, SNode child) {
     super(node);
     myAnchor = anchor;
@@ -32,7 +39,7 @@ class RemoveChildUndoableAction extends SNodeUndoableAction {
 
   @Override
   protected void doUndo() {
-    jetbrains.mps.util.SNodeOperations.insertChild(getAffectedNode(), myRole, myChild, myAnchor);
+    getAffectedNode().insertChildBefore(myRole, myChild, myAnchor);
   }
 
   @Override

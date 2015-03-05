@@ -192,10 +192,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     final SNode wasChild = (SNode) child;
     final SContainmentLink wasRole = wasChild.getContainmentLink();
-    final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
+    final SNode anchorPrev = firstChild() == wasChild ? null : wasChild.treePrevious();
+    final SNode anchorNext = wasChild.treeNext();
 
     assert wasRole != null;
-    myOwner.fireBeforeNodeRemove(this, wasRole, wasChild, anchor);
+    myOwner.fireBeforeNodeRemove(this, wasRole, wasChild, anchorPrev);
 
     children_remove(wasChild);
     wasChild.myRoleInParent = null;
@@ -203,8 +204,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     // FIXME what if myOwner is DetachedNodeOwner - shall we make node free-floating or leave it as detached?
     wasChild.detach(model == null ? myOwner : new DetachedNodeOwner(model));
 
-    myOwner.performUndoableAction(this, new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
-    myOwner.fireNodeRemove(this, wasRole, wasChild, anchor);
+    myOwner.performUndoableAction(this, new RemoveChildUndoableAction(this, anchorNext, wasRole, wasChild));
+    myOwner.fireNodeRemove(this, wasRole, wasChild, anchorPrev);
   }
 
   /**
