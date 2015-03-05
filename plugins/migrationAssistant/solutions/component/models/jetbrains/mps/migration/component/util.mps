@@ -2119,6 +2119,62 @@
                     </node>
                   </node>
                 </node>
+                <node concept="2tJIrI" id="6EjSNQP68C$" role="jymVt" />
+                <node concept="3clFb_" id="6EjSNQP69Id" role="jymVt">
+                  <property role="1EzhhJ" value="false" />
+                  <property role="2aFKle" value="false" />
+                  <property role="TrG5h" value="forceExecutionNextTime" />
+                  <node concept="3Tm1VV" id="6EjSNQP69If" role="1B3o_S" />
+                  <node concept="3cqZAl" id="6EjSNQP69Ig" role="3clF45" />
+                  <node concept="3clFbS" id="6EjSNQP69Ii" role="3clF47">
+                    <node concept="3clFbJ" id="6EjSNQP6aTA" role="3cqZAp">
+                      <node concept="3clFbS" id="6EjSNQP6aTB" role="3clFbx">
+                        <node concept="YS8fn" id="6EjSNQP6b4a" role="3cqZAp">
+                          <node concept="2ShNRf" id="6EjSNQP6b5o" role="YScLw">
+                            <node concept="1pGfFk" id="6EjSNQP6bCm" role="2ShVmc">
+                              <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+                              <node concept="Xl_RD" id="6EjSNQP6bDx" role="37wK5m">
+                                <property role="Xl_RC" value="only supported for cleanup project migrations" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3fqX7Q" id="6EjSNQP6aV$" role="3clFbw">
+                        <node concept="1eOMI4" id="6EjSNQP6aVA" role="3fr31v">
+                          <node concept="2ZW3vV" id="6EjSNQP6b0Z" role="1eOMHV">
+                            <node concept="3uibUv" id="6EjSNQP6b2q" role="2ZW6by">
+                              <ref role="3uigEE" to="bco1:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
+                            </node>
+                            <node concept="37vLTw" id="6EjSNQP6aX5" role="2ZW6bz">
+                              <ref role="3cqZAo" node="25gV4LswPWK" resolve="cc" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="6EjSNQP6bSX" role="3cqZAp">
+                      <node concept="2OqwBi" id="6EjSNQP6bYQ" role="3clFbG">
+                        <node concept="1eOMI4" id="6EjSNQP6bUW" role="2Oq$k0">
+                          <node concept="10QFUN" id="6EjSNQP6bUX" role="1eOMHV">
+                            <node concept="37vLTw" id="6EjSNQP6bUV" role="10QFUP">
+                              <ref role="3cqZAo" node="25gV4LswPWK" resolve="cc" />
+                            </node>
+                            <node concept="3uibUv" id="6EjSNQP6bW1" role="10QFUM">
+                              <ref role="3uigEE" to="bco1:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6EjSNQP6cb1" role="2OqNvi">
+                          <ref role="37wK5l" to="bco1:~CleanupProjectMigration.forceExecutionNextTime(jetbrains.mps.project.Project):void" resolve="forceExecutionNextTime" />
+                          <node concept="37vLTw" id="6EjSNQP6cdt" role="37wK5m">
+                            <ref role="3cqZAo" node="1hucSHYkqjq" resolve="mpsProject" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2872,6 +2928,25 @@
                                                 <node concept="3cpWs6" id="1UUjsc5fS_G" role="3cqZAp">
                                                   <node concept="37vLTw" id="1UUjsc5fYu_" role="3cqZAk">
                                                     <ref role="3cqZAo" node="5jxf_spQPZx" resolve="res" />
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                            <node concept="3clFb_" id="6EjSNQP64d4" role="jymVt">
+                                              <property role="1EzhhJ" value="false" />
+                                              <property role="2aFKle" value="false" />
+                                              <property role="TrG5h" value="forceExecutionNextTime" />
+                                              <node concept="3Tm1VV" id="6EjSNQP64d6" role="1B3o_S" />
+                                              <node concept="3cqZAl" id="6EjSNQP64d7" role="3clF45" />
+                                              <node concept="3clFbS" id="6EjSNQP64d9" role="3clF47">
+                                                <node concept="YS8fn" id="6EjSNQP64Qf" role="3cqZAp">
+                                                  <node concept="2ShNRf" id="6EjSNQP64Rt" role="YScLw">
+                                                    <node concept="1pGfFk" id="6EjSNQP68s6" role="2ShVmc">
+                                                      <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+                                                      <node concept="Xl_RD" id="6EjSNQP68tg" role="37wK5m">
+                                                        <property role="Xl_RC" value="not supported for language migrations" />
+                                                      </node>
+                                                    </node>
                                                   </node>
                                                 </node>
                                               </node>

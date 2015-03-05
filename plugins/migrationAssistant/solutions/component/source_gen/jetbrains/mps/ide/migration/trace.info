@@ -62,6 +62,7 @@
       <node id="6781485246382121738" at="16,0,17,0" concept="4" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
       <node id="6781485246382121695" at="19,0,20,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
       <node id="6781485246382121699" at="20,0,21,0" concept="4" trace="execute#()Z" />
+      <node id="7679731643767593888" at="21,0,22,0" concept="4" trace="forceExecutionNextTime#()V" />
       <scope id="6781485246382121734" at="8,0,9,0" />
       <scope id="8570387127138876086" at="10,0,11,0" />
       <scope id="2400678414100434057" at="12,0,13,0">
@@ -72,8 +73,9 @@
       <scope id="6781485246382121738" at="16,0,17,0" />
       <scope id="6781485246382121695" at="19,0,20,0" />
       <scope id="6781485246382121699" at="20,0,21,0" />
-      <unit id="6781485246382121691" at="18,0,22,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationStep" />
-      <unit id="6781485246382121685" at="7,0,23,0" name="jetbrains.mps.ide.migration.MigrationManager" />
+      <scope id="7679731643767593888" at="21,0,22,0" />
+      <unit id="6781485246382121691" at="18,0,23,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationStep" />
+      <unit id="6781485246382121685" at="7,0,24,0" name="jetbrains.mps.ide.migration.MigrationManager" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121891">
