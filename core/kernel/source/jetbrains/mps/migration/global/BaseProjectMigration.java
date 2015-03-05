@@ -41,8 +41,13 @@ public abstract class BaseProjectMigration implements ProjectMigration {
 
   public abstract boolean doExecute(Project p);
 
+  @Deprecated
   public final void setExecuted(Project p) {
-    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
+    setExecuted(p, true);
+  }
+
+  public final void setExecuted(Project p, boolean executed) {
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, executed ? EXECUTED_VALUE : null);
   }
 
   @Override
