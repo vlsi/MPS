@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ModuleDependencyUtils {
   /*package*/ static void addDependencyOnJDKIfMissing(SModule currentModule) {
@@ -13,6 +15,16 @@ public class ModuleDependencyUtils {
       SModuleReference reference = PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
       if (reference != null) {
         ((AbstractModule) currentModule).addDependency(reference, false);
+      }
+    }
+  }
+  public static void addDependencyOnJavaDocIfMissing(SModel currentModel) {
+    SModule currentModule = currentModel.getModule();
+    if (currentModule instanceof AbstractModule) {
+      SModuleReference reference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
+      if (reference != null) {
+        ((SModelInternal) currentModel).addLanguage(reference);
+        ((AbstractModule) currentModule).addUsedLanguage(reference);
       }
     }
   }
