@@ -14,7 +14,12 @@
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
   </target>
 
+  <condition property="offline" value="false" else="true">
+    <isreachable url="http://repository.jetbrains.com/repo" />
+  </condition>
+
   <target name="resolve" depends="install-ivy"  description="--> Retreive dependencies with ivy if changed">
+    <ivy:resolve file="ivy.xml" usecacheonly="${offline}" validate="false"/>
     <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
