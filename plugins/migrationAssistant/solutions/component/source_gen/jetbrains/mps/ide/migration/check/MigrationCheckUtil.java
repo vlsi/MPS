@@ -32,8 +32,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -199,7 +199,7 @@ public class MigrationCheckUtil {
     List<IFile> allFiles = IFileUtils.getAllFiles(moduleFile.getParent());
     Iterable<IFile> binFiles = ListSequence.fromList(allFiles).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile it) {
-        return FileUtil.getExtension(it.getName()).equals(MPSExtentions.MODEL_BINARY);
+        return MPSExtentions.MODEL_BINARY.equals(FileUtil.getExtension(it.getName()));
       }
     });
     ListSequence.fromList(rv).addSequence(Sequence.fromIterable(binFiles).select(new ISelector<IFile, BinaryModelProblem>() {
