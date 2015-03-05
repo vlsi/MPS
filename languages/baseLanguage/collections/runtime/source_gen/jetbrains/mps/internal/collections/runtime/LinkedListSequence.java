@@ -16,11 +16,15 @@ import java.util.Arrays;
 
 public class LinkedListSequence<T> extends AbstractListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T>, Serializable {
   private static final long serialVersionUID = 3534032475696821184L;
+  @Deprecated
   protected LinkedListSequence(LinkedList<T> list) {
     super(list);
   }
   protected LinkedListSequence(LinkedListSequence<T> other) {
     super(other);
+  }
+  private LinkedListSequence(java.util.LinkedList<T> list, int dummy) {
+    super(list);
   }
   @Override
   public void addFirst(T t) {
@@ -163,7 +167,9 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
   }
   @Override
   public Deque<T> toDeque() {
-    return getList();
+    LinkedList<T> rv = new LinkedList<T>();
+    rv.addAll(getList());
+    return rv;
   }
   @Override
   public LinkedListSequence<T> asUnmodifiable() {
@@ -204,20 +210,28 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     return new ListSequence<T>(getList().subList(fromIdx, getList().size()));
   }
   @Override
-  protected LinkedList<T> getList() {
-    return (LinkedList<T>) super.getList();
+  protected java.util.LinkedList<T> getList() {
+    return (java.util.LinkedList<T>) super.getList();
   }
+  /**
+   * 
+   * 
+
+   * @deprecated use {@link jetbrains.mps.internal.collections.runtime.LinkedListSequence#fromLinkedListNew(java.util.Deque<U>) }
+   */
+  @Deprecated
   public static <U> ILinkedListSequence<U> fromLinkedList(Deque<U> list) {
-    if (Sequence.USE_NULL_SEQUENCE) {
-      if (list == null) {
-        return NullLinkedListSequence.instance();
-      }
-    }
+    return fromLinkedListNew(list);
+  }
+  public static <U> ILinkedListSequence<U> fromLinkedListNew(java.util.Deque<U> list) {
     if (list instanceof ILinkedListSequence<?>) {
       return (ILinkedListSequence<U>) list;
     }
-    if (list instanceof LinkedList) {
-      return new LinkedListSequence<U>((LinkedList) list);
+    if (list == null && Sequence.USE_NULL_SEQUENCE) {
+      return NullLinkedListSequence.instance();
+    }
+    if (list instanceof java.util.LinkedList) {
+      return new LinkedListSequence<U>((java.util.LinkedList<U>) list, 0);
     }
     return LinkedListSequence.fromIterable(list);
   }
@@ -230,7 +244,7 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     if (it instanceof ILinkedListSequence<?>) {
       return (ILinkedListSequence<U>) it;
     }
-    LinkedList<U> list = new LinkedList<U>();
+    java.util.LinkedList<U> list = new java.util.LinkedList<U>();
     if (Sequence.IGNORE_NULL_VALUES) {
       for (U u : it) {
         if (u != null) {
@@ -245,9 +259,19 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
         list.add(u);
       }
     }
-    return new LinkedListSequence<U>(list);
+    return new LinkedListSequence<U>(list, 0);
   }
+  /**
+   * 
+   * 
+
+   * @deprecated 
+   */
+  @Deprecated
   public static <U> ILinkedListSequence<U> fromListAndArray(LinkedList<U> list, U... array) {
+    return fromListAndArrayNew(list, array);
+  }
+  public static <U> ILinkedListSequence<U> fromListAndArrayNew(java.util.LinkedList<U> list, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
         array = (U[]) Sequence.nullSingletonArray();
@@ -258,13 +282,13 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
         return NullLinkedListSequence.instance();
       } else
       if (list == null) {
-        list = new LinkedList<U>();
+        list = new java.util.LinkedList<U>();
       } else
       if (array == null) {
         if (list instanceof IListSequence<?>) {
           return (ILinkedListSequence<U>) list;
         }
-        return new LinkedListSequence<U>(list);
+        return new LinkedListSequence<U>(list, 0);
       }
     }
     List<U> input = Arrays.asList(array);
@@ -280,19 +304,29 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     if (list instanceof ILinkedListSequence<?>) {
       return (ILinkedListSequence<U>) list;
     }
-    return new LinkedListSequence<U>(list);
+    return new LinkedListSequence<U>(list, 0);
   }
+  /**
+   * 
+   * 
+
+   * @deprecated use {@link jetbrains.mps.internal.collections.runtime.LinkedListSequence#fromListWithValuesNew(java.util.LinkedList<U>, Iterable<? extends U>) }
+   */
+  @Deprecated
   public static <U> ILinkedListSequence<U> fromListWithValues(LinkedList<U> list, Iterable<? extends U> it) {
-    LinkedList<U> tmp = list;
+    return fromListWithValuesNew(list, it);
+  }
+  public static <U> ILinkedListSequence<U> fromListWithValuesNew(java.util.LinkedList<U> list, Iterable<? extends U> it) {
+    java.util.LinkedList<U> tmp = list;
     if (Sequence.USE_NULL_SEQUENCE) {
       if (list == null && it == null) {
         return NullLinkedListSequence.instance();
       } else
       if (list == null) {
-        tmp = new LinkedList<U>();
+        tmp = new java.util.LinkedList<U>();
       } else
       if (it == null) {
-        return LinkedListSequence.fromLinkedList(list);
+        return LinkedListSequence.fromLinkedListNew(list);
       }
     }
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -312,6 +346,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     if (tmp instanceof ILinkedListSequence<?>) {
       return (ILinkedListSequence<U>) tmp;
     }
-    return new LinkedListSequence<U>(tmp);
+    return new LinkedListSequence<U>(tmp, 0);
   }
 }

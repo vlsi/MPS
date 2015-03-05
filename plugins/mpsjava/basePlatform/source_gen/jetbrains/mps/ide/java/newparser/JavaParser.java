@@ -39,9 +39,9 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DynamicReference;
 
@@ -351,13 +351,13 @@ public class JavaParser {
     }
   }
   public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
-    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
-    DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));
+    Deque<SNode> stack = DequeSequence.fromDequeNew(new LinkedList<SNode>());
+    DequeSequence.fromDequeNew(stack).addSequence(Sequence.fromIterable(nodes));
 
-    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
-      SNode node = DequeSequence.fromDeque(stack).popElement();
+    while (DequeSequence.fromDequeNew(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDequeNew(stack).popElement();
       SModel ourModel = node.getModel();
-      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+      DequeSequence.fromDequeNew(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
       Iterable<? extends SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {

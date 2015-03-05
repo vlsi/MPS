@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Comparator;
 import javax.swing.Icon;

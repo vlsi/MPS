@@ -13,9 +13,9 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.Taxable" file="Taxable.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.Taxable_PropertySupport" file="Taxable_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -26,9 +26,9 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.Unit" file="Unit.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.Unit_PropertySupport" file="Unit_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -39,9 +39,9 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.ValueType" file="ValueType.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.structure.ValueType_PropertySupport" file="ValueType_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />

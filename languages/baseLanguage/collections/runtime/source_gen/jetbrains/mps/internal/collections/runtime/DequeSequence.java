@@ -7,15 +7,19 @@ import java.io.Serializable;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence;
 import java.util.Collection;
 import java.util.List;
 import java.util.Arrays;
 
 public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {
   private static final long serialVersionUID = 6994676498844479086L;
+  @Deprecated
   protected DequeSequence(Deque<T> deque) {
+    super(deque);
+  }
+  private DequeSequence(java.util.Deque<T> deque, int dummy) {
     super(deque);
   }
   @Override
@@ -143,24 +147,44 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   public IDequeSequence<T> asSynchronized() {
     throw new UnsupportedOperationException();
   }
+  /**
+   * 
+   * 
+
+   * @deprecated 
+   * @return compatibility collection
+   */
   @Override
+  @Deprecated
   public Deque<T> toDeque() {
-    return this;
+    LinkedList<T> rv = new LinkedList<T>();
+    rv.addAll(this);
+    return rv;
   }
-  protected Deque<T> getDeque() {
-    return (Deque<T>) getQueue();
+  protected java.util.Deque<T> getDeque() {
+    return (java.util.Deque<T>) getQueue();
   }
+  /**
+   * 
+   * 
+
+   * @deprecated regenerate to get rid of this method The method will be removed after 3.3
+   */
+  @Deprecated
   public static <U> IDequeSequence<U> fromDeque(Deque<U> deque) {
-    if (Sequence.USE_NULL_SEQUENCE) {
-      if (deque == null) {
-        return NullDequeSequence.instance();
-      }
-    }
+    return fromDequeNew(deque);
+  }
+
+  public static <U> IDequeSequence<U> fromDequeNew(java.util.Deque<U> deque) {
     if (deque instanceof IDequeSequence) {
       return (IDequeSequence<U>) deque;
     }
-    return new DequeSequence<U>(deque);
+    if (deque == null && Sequence.USE_NULL_SEQUENCE) {
+      return NullDequeSequence.instance();
+    }
+    return new DequeSequence<U>(deque, 0);
   }
+
   public static <U> IDequeSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -170,7 +194,7 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     if (it instanceof IDequeSequence) {
       return (IDequeSequence<U>) it;
     }
-    Deque<U> deque = new LinkedList<U>();
+    java.util.Deque<U> deque = new java.util.LinkedList<U>();
     if (Sequence.IGNORE_NULL_VALUES) {
       for (U u : it) {
         if (u != null) {
@@ -185,9 +209,20 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
         deque.add(u);
       }
     }
-    return new DequeSequence<U>(deque);
+    return new DequeSequence<U>(deque, 0);
   }
+  /**
+   * 
+   * 
+
+   * @deprecated regenerate to get rid of this method The method will be removed after 3.3
+   */
+  @Deprecated
   public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
+    return fromDequeAndArrayNew(deque, array);
+  }
+
+  public static <U> IDequeSequence<U> fromDequeAndArrayNew(java.util.Deque<U> deque, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
         array = (U[]) Sequence.nullSingletonArray();
@@ -198,13 +233,13 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
         return NullDequeSequence.instance();
       } else
       if (deque == null) {
-        deque = new LinkedList<U>();
+        deque = new java.util.LinkedList<U>();
       } else
       if (array == null) {
         if (deque instanceof IDequeSequence) {
           return (IDequeSequence<U>) deque;
         }
-        return new DequeSequence<U>(deque);
+        return new DequeSequence<U>(deque, 0);
       }
     }
     List<U> input = Arrays.asList(array);
@@ -220,19 +255,29 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     if (deque instanceof IDequeSequence) {
       return (IDequeSequence<U>) deque;
     }
-    return new DequeSequence<U>(deque);
+    return new DequeSequence<U>(deque, 0);
   }
+  /**
+   * 
+   * 
+
+   * @deprecated regenerate to get rid of this method. The method will be removed after 3.3
+   */
+  @Deprecated
   public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
-    Deque<U> tmp = deque;
+    return fromDequeWithValuesNew(deque, it);
+  }
+  public static <U> IDequeSequence<U> fromDequeWithValuesNew(java.util.Deque<U> deque, Iterable<? extends U> it) {
+    java.util.Deque<U> tmp = deque;
     if (Sequence.USE_NULL_SEQUENCE) {
       if (deque == null && it == null) {
         return NullDequeSequence.instance();
       } else
       if (deque == null) {
-        tmp = new LinkedList<U>();
+        tmp = new java.util.LinkedList<U>();
       } else
       if (it == null) {
-        return DequeSequence.fromDeque(deque);
+        return DequeSequence.fromDequeNew(deque);
       }
     }
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -252,6 +297,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     if (tmp instanceof IDequeSequence) {
       return (IDequeSequence<U>) tmp;
     }
-    return new DequeSequence<U>(tmp);
+    return new DequeSequence<U>(tmp, 0);
   }
 }

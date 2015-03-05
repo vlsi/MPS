@@ -4,10 +4,10 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.nodeEditor.Highlighter;
 import org.jetbrains.annotations.NonNls;
@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class JavaHighlighters implements ProjectComponent {
   private Project myProject;
-  private Deque<BaseEditorChecker> myCheckers = DequeSequence.fromDeque(new LinkedList<BaseEditorChecker>());
+  private Deque<BaseEditorChecker> myCheckers = DequeSequence.fromDequeNew(new LinkedList<BaseEditorChecker>());
   public JavaHighlighters(Project project, MPSCoreComponents coreComponents) {
     myProject = project;
   }
@@ -28,15 +28,15 @@ public class JavaHighlighters implements ProjectComponent {
   @Override
   public void initComponent() {
     Highlighter highlighter = getHighlighter();
-    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new OverrideMethodsChecker()));
-    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new ToDoHighlighter()));
-    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new MethodDeclarationsFixer()));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new OverrideMethodsChecker()));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new ToDoHighlighter()));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new MethodDeclarationsFixer()));
   }
   @Override
   public void disposeComponent() {
     Highlighter highlighter = getHighlighter();
-    while (DequeSequence.fromDeque(myCheckers).isNotEmpty()) {
-      BaseEditorChecker checker = DequeSequence.fromDeque(myCheckers).popElement();
+    while (DequeSequence.fromDequeNew(myCheckers).isNotEmpty()) {
+      BaseEditorChecker checker = DequeSequence.fromDequeNew(myCheckers).popElement();
       highlighter.removeChecker(checker);
       checker.dispose();
     }

@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -38,6 +37,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 

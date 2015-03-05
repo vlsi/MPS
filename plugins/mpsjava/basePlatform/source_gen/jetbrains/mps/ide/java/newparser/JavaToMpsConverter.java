@@ -52,9 +52,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -832,12 +832,12 @@ public class JavaToMpsConverter {
     boolean dynRefsPresent = false;
     Set<SNode> retain = SetSequence.fromSet(new HashSet<SNode>());
 
-    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
-    DequeSequence.fromDeque(stack).pushElement(root);
+    Deque<SNode> stack = DequeSequence.fromDequeNew(new LinkedList<SNode>());
+    DequeSequence.fromDequeNew(stack).pushElement(root);
 
-    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
-      SNode node = DequeSequence.fromDeque(stack).popElement();
-      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+    while (DequeSequence.fromDequeNew(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDequeNew(stack).popElement();
+      DequeSequence.fromDequeNew(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"))) {
         unknownPresent = true;
