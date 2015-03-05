@@ -24,6 +24,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ABCDEG_Editor());
       case 4:
         return Collections.<ConceptEditor>singletonList(new ABCEEG_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new BAC_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BCA_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -33,5 +37,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG", "testSpaceCompletion.structure.ABCEEG"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testSpaceCompletion.structure.ABC", "testSpaceCompletion.structure.ABCDE", "testSpaceCompletion.structure.ABCDEF", "testSpaceCompletion.structure.ABCDEG", "testSpaceCompletion.structure.ABCEEG", "testSpaceCompletion.structure.BAC", "testSpaceCompletion.structure.BCA"};
 }

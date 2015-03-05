@@ -232,6 +232,7 @@
       </concept>
       <concept id="7024111702304501418" name="jetbrains.mps.baseLanguage.structure.AndAssignmentExpression" flags="nn" index="3vZ8ra" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -304,6 +305,9 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
@@ -319,7 +323,12 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
         <child id="4611582986551314344" name="requestedType" index="UnYnz" />
       </concept>
@@ -1538,8 +1547,85 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6EjSNQP6eWf" role="3cqZAp">
+          <node concept="3cpWsn" id="6EjSNQP6eWi" role="3cpWs9">
+            <property role="TrG5h" value="cleanupMigrations" />
+            <node concept="_YKpA" id="6EjSNQP6eWb" role="1tU5fm">
+              <node concept="3uibUv" id="6EjSNQP6hka" role="_ZDj9">
+                <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="6EjSNQP6hpi" role="33vP2m">
+              <node concept="Tc6Ow" id="6EjSNQP6hpe" role="2ShVmc">
+                <node concept="3uibUv" id="6EjSNQP6hpf" role="HW$YZ">
+                  <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2$JKZl" id="2pwkv5pjIUn" role="3cqZAp">
           <node concept="3clFbS" id="2pwkv5pjIUo" role="2LFqv$">
+            <node concept="3cpWs8" id="6EjSNQP6ita" role="3cqZAp">
+              <node concept="3cpWsn" id="6EjSNQP6itb" role="3cpWs9">
+                <property role="TrG5h" value="step" />
+                <node concept="3uibUv" id="6EjSNQP6isU" role="1tU5fm">
+                  <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+                </node>
+                <node concept="2OqwBi" id="6EjSNQP6itc" role="33vP2m">
+                  <node concept="37vLTw" id="6EjSNQP6itd" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+                  </node>
+                  <node concept="liA8E" id="6EjSNQP6ite" role="2OqNvi">
+                    <ref role="37wK5l" to="bim2:25gV4LspSM9" resolve="nextProjectStep" />
+                    <node concept="37vLTw" id="6EjSNQP6itf" role="37wK5m">
+                      <ref role="3cqZAo" node="6vz$DjuiXSc" resolve="options" />
+                    </node>
+                    <node concept="3clFbT" id="6EjSNQP6itg" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="5_TW4Q3_SnH" role="3cqZAp">
+              <node concept="3clFbS" id="5_TW4Q3_SnJ" role="3clFbx">
+                <node concept="3zACq4" id="5_TW4Q3_SSV" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="5_TW4Q3_SQf" role="3clFbw">
+                <node concept="10Nm6u" id="5_TW4Q3_SRb" role="3uHU7w" />
+                <node concept="37vLTw" id="5_TW4Q3_Swy" role="3uHU7B">
+                  <ref role="3cqZAo" node="6EjSNQP6itb" resolve="step" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="5_TW4Q3_SSY" role="3cqZAp" />
+            <node concept="3clFbF" id="6EjSNQP6iVU" role="3cqZAp">
+              <node concept="2OqwBi" id="6EjSNQP6jhd" role="3clFbG">
+                <node concept="37vLTw" id="6EjSNQP6iVS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6EjSNQP6eWi" resolve="cleanupMigrations" />
+                </node>
+                <node concept="TSZUe" id="6EjSNQP6kK6" role="2OqNvi">
+                  <node concept="37vLTw" id="6EjSNQP6kLS" role="25WWJ7">
+                    <ref role="3cqZAo" node="6EjSNQP6itb" resolve="step" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="6EjSNQP6ida" role="3cqZAp">
+              <node concept="3clFbS" id="6EjSNQP6idc" role="3clFbx">
+                <node concept="3zACq4" id="6EjSNQP6irj" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="6EjSNQP6ijM" role="3clFbw">
+                <node concept="1rXfSq" id="2pwkv5pjIU$" role="3fr31v">
+                  <ref role="37wK5l" node="25gV4LszgYY" resolve="executeSingleStep" />
+                  <node concept="37vLTw" id="6EjSNQP6ith" role="37wK5m">
+                    <ref role="3cqZAo" node="6EjSNQP6itb" resolve="step" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="6EjSNQP6iGP" role="3cqZAp" />
             <node concept="3clFbJ" id="5DhNxihi0r3" role="3cqZAp">
               <node concept="3clFbS" id="5DhNxihi0r6" role="3clFbx">
                 <node concept="3clFbF" id="5DhNxihi0Dw" role="3cqZAp">
@@ -1594,22 +1680,8 @@
               </node>
             </node>
           </node>
-          <node concept="1rXfSq" id="2pwkv5pjIU$" role="2$JKZa">
-            <ref role="37wK5l" node="25gV4LszgYY" resolve="executeSingleStep" />
-            <node concept="2OqwBi" id="2pwkv5pjIU_" role="37wK5m">
-              <node concept="37vLTw" id="2pwkv5pjIUA" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
-              </node>
-              <node concept="liA8E" id="2pwkv5pjIUB" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:25gV4LspSM9" resolve="nextProjectStep" />
-                <node concept="37vLTw" id="2pwkv5pjNl_" role="37wK5m">
-                  <ref role="3cqZAo" node="6vz$DjuiXSc" resolve="options" />
-                </node>
-                <node concept="3clFbT" id="2pwkv5pjPXV" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
+          <node concept="3clFbT" id="6EjSNQP6hSr" role="2$JKZa">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
         <node concept="3clFbH" id="2pwkv5pjI1l" role="3cqZAp" />
@@ -1922,6 +1994,35 @@
           <node concept="3fqX7Q" id="6Sxc5MiByfc" role="3clFbw">
             <node concept="37vLTw" id="6Sxc5MiByfe" role="3fr31v">
               <ref role="3cqZAo" node="6Sxc5MiBujE" resolve="preProblems" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="f09V9Iqy8h" role="9aQIa">
+            <node concept="3clFbS" id="f09V9Iqy8i" role="9aQI4">
+              <node concept="3SKdUt" id="6EjSNQP4pLM" role="3cqZAp">
+                <node concept="3SKdUq" id="6EjSNQP4pLP" role="3SKWNk">
+                  <property role="3SKdUp" value="start cleanup migrations next time migration is started" />
+                </node>
+              </node>
+              <node concept="2Gpval" id="6EjSNQP5Y3c" role="3cqZAp">
+                <node concept="2GrKxI" id="6EjSNQP5Y3e" role="2Gsz3X">
+                  <property role="TrG5h" value="cleanupMigration" />
+                </node>
+                <node concept="3clFbS" id="6EjSNQP5Y3g" role="2LFqv$">
+                  <node concept="3clFbF" id="6EjSNQP5Y6z" role="3cqZAp">
+                    <node concept="2OqwBi" id="6EjSNQP5Y7o" role="3clFbG">
+                      <node concept="2GrUjf" id="6EjSNQP5Y6y" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="6EjSNQP5Y3e" resolve="cleanupMigration" />
+                      </node>
+                      <node concept="liA8E" id="6EjSNQP6l0F" role="2OqNvi">
+                        <ref role="37wK5l" to="bim2:6EjSNQP61Iw" resolve="forceExecutionNextTime" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6EjSNQP6kO4" role="2GsD0m">
+                  <ref role="3cqZAo" node="6EjSNQP6eWi" resolve="cleanupMigrations" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -4679,7 +4780,7 @@
               <node concept="3cpWs3" id="6Sxc5MiyEuf" role="3uHU7B">
                 <node concept="3cpWs3" id="6Sxc5MiyCRh" role="3uHU7B">
                   <node concept="Xl_RD" id="6Sxc5MiyCRn" role="3uHU7B">
-                    <property role="Xl_RC" value="Migration Assistant found that some languages used in this project are missing.&lt;br&gt;&lt;br&gt;" />
+                    <property role="Xl_RC" value="Migration Assistant found that some problems that prevent this project from being migrated.&lt;br&gt;&lt;br&gt;" />
                   </node>
                   <node concept="Xl_RD" id="6Sxc5MiyEul" role="3uHU7w">
                     <property role="Xl_RC" value="Try running migrations after correcting your project and/or adding necessary libraries.&lt;br&gt;" />
@@ -4694,7 +4795,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="6Sxc5MiyXpZ" role="3uHU7w">
-              <property role="Xl_RC" value="Problem nodes will be shown in Usages tool after the project is loaded." />
+              <property role="Xl_RC" value="Problems will be shown in Usages tool when the project is loaded." />
             </node>
           </node>
         </node>

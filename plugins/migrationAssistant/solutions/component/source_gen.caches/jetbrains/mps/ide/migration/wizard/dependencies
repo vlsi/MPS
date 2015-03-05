@@ -144,8 +144,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.BorderFactory" />
@@ -162,6 +164,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsListRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

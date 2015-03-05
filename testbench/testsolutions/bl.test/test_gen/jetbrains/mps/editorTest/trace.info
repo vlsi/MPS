@@ -14001,6 +14001,113 @@
       <unit id="8777381699079423280" at="10,0,33,0" name="jetbrains.mps.editorTest.AddStatementToBlock_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659160147">
+    <file name="JustTypeCompletion_Test.java">
+      <node id="8933061889659160147" at="17,58,18,107" concept="2" />
+      <node id="8933061889659160147" at="18,107,19,99" concept="2" />
+      <node id="8933061889659160147" at="26,51,27,63" concept="2" />
+      <node id="8933061889659392596" at="27,63,28,91" concept="2" />
+      <node id="8933061889659393174" at="28,91,29,28" concept="2" />
+      <node id="8933061889659393680" at="29,28,30,87" concept="2" />
+      <node id="8933061889659160147" at="14,0,16,0" concept="1" trace="JustTypeCompletion_Test#()V" />
+      <node id="8933061889659160147" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="8933061889659160147" at="16,0,21,0" concept="5" trace="test_JustTypeCompletion#()V" />
+      <node id="8933061889659160147" at="25,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8933061889659160147" at="14,36,14,36" />
+      <scope id="8933061889659160147" at="23,23,23,23" />
+      <scope id="8933061889659160147" at="14,0,16,0" />
+      <scope id="8933061889659160147" at="17,58,19,99" />
+      <scope id="8933061889659160147" at="23,0,25,0" />
+      <scope id="8933061889659160147" at="26,51,30,87" />
+      <scope id="8933061889659160147" at="16,0,21,0" />
+      <scope id="8933061889659160147" at="25,0,32,0" />
+      <unit id="8933061889659160147" at="21,0,33,0" name="jetbrains.mps.editorTest.JustTypeCompletion_Test$TestBody" />
+      <unit id="8933061889659160147" at="12,0,34,0" name="jetbrains.mps.editorTest.JustTypeCompletion_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659393807">
+    <file name="TypeAndChooseCompletion_Test.java">
+      <node id="8933061889659393807" at="17,63,18,107" concept="2" />
+      <node id="8933061889659393807" at="18,107,19,104" concept="2" />
+      <node id="8933061889659393807" at="26,51,27,63" concept="2" />
+      <node id="8933061889659393830" at="27,63,28,91" concept="2" />
+      <node id="8933061889659393832" at="28,91,29,28" concept="2" />
+      <node id="8933061889659412052" at="29,28,30,86" concept="2" />
+      <node id="8933061889659412085" at="30,86,31,86" concept="2" />
+      <node id="8933061889659813859" at="31,86,32,27" concept="2" />
+      <node id="8933061889659393833" at="32,27,33,87" concept="2" />
+      <node id="8933061889659393807" at="14,0,16,0" concept="1" trace="TypeAndChooseCompletion_Test#()V" />
+      <node id="8933061889659393807" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="8933061889659393807" at="16,0,21,0" concept="5" trace="test_TypeAndChooseCompletion#()V" />
+      <node id="8933061889659393807" at="25,0,35,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8933061889659393807" at="14,41,14,41" />
+      <scope id="8933061889659393807" at="23,23,23,23" />
+      <scope id="8933061889659393807" at="14,0,16,0" />
+      <scope id="8933061889659393807" at="17,63,19,104" />
+      <scope id="8933061889659393807" at="23,0,25,0" />
+      <scope id="8933061889659393807" at="16,0,21,0" />
+      <scope id="8933061889659393807" at="26,51,33,87" />
+      <scope id="8933061889659393807" at="25,0,35,0" />
+      <unit id="8933061889659393807" at="21,0,36,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test$TestBody" />
+      <unit id="8933061889659393807" at="12,0,37,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659412223">
+    <file name="DeleteCompletion_Test.java">
+      <node id="8933061889659412223" at="17,56,18,107" concept="2" />
+      <node id="8933061889659412223" at="18,107,19,97" concept="2" />
+      <node id="8933061889659412223" at="26,51,27,63" concept="2" />
+      <node id="8933061889659412245" at="27,63,28,91" concept="2" />
+      <node id="8933061889659412247" at="28,91,29,29" concept="2" />
+      <node id="8933061889659412248" at="29,29,30,92" concept="2" />
+      <node id="8933061889659412250" at="30,92,31,92" concept="2" />
+      <node id="8933061889659445409" at="31,92,32,92" concept="2" />
+      <node id="8933061889659446096" at="32,92,33,29" concept="2" />
+      <node id="8933061889659412252" at="33,29,34,87" concept="2" />
+      <node id="8933061889659412223" at="14,0,16,0" concept="1" trace="DeleteCompletion_Test#()V" />
+      <node id="8933061889659412223" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="8933061889659412223" at="16,0,21,0" concept="5" trace="test_DeleteCompletion#()V" />
+      <node id="8933061889659412223" at="25,0,36,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8933061889659412223" at="14,34,14,34" />
+      <scope id="8933061889659412223" at="23,23,23,23" />
+      <scope id="8933061889659412223" at="14,0,16,0" />
+      <scope id="8933061889659412223" at="17,56,19,97" />
+      <scope id="8933061889659412223" at="23,0,25,0" />
+      <scope id="8933061889659412223" at="16,0,21,0" />
+      <scope id="8933061889659412223" at="26,51,34,87" />
+      <scope id="8933061889659412223" at="25,0,36,0" />
+      <unit id="8933061889659412223" at="21,0,37,0" name="jetbrains.mps.editorTest.DeleteCompletion_Test$TestBody" />
+      <unit id="8933061889659412223" at="12,0,38,0" name="jetbrains.mps.editorTest.DeleteCompletion_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659446776">
+    <file name="ChooseAndDeleteCompletion_Test.java">
+      <node id="8933061889659446776" at="17,65,18,107" concept="2" />
+      <node id="8933061889659446776" at="18,107,19,106" concept="2" />
+      <node id="8933061889659446776" at="26,51,27,63" concept="2" />
+      <node id="8933061889659446799" at="27,63,28,91" concept="2" />
+      <node id="8933061889659446801" at="28,91,29,29" concept="2" />
+      <node id="8933061889659463264" at="29,29,30,86" concept="2" />
+      <node id="8933061889659664478" at="30,86,31,92" concept="2" />
+      <node id="8933061889659664501" at="31,92,32,92" concept="2" />
+      <node id="8933061889659446808" at="32,92,33,28" concept="2" />
+      <node id="8933061889659446809" at="33,28,34,87" concept="2" />
+      <node id="8933061889659446776" at="14,0,16,0" concept="1" trace="ChooseAndDeleteCompletion_Test#()V" />
+      <node id="8933061889659446776" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="8933061889659446776" at="16,0,21,0" concept="5" trace="test_ChooseAndDeleteCompletion#()V" />
+      <node id="8933061889659446776" at="25,0,36,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8933061889659446776" at="14,43,14,43" />
+      <scope id="8933061889659446776" at="23,23,23,23" />
+      <scope id="8933061889659446776" at="14,0,16,0" />
+      <scope id="8933061889659446776" at="17,65,19,106" />
+      <scope id="8933061889659446776" at="23,0,25,0" />
+      <scope id="8933061889659446776" at="16,0,21,0" />
+      <scope id="8933061889659446776" at="26,51,34,87" />
+      <scope id="8933061889659446776" at="25,0,36,0" />
+      <unit id="8933061889659446776" at="21,0,37,0" name="jetbrains.mps.editorTest.ChooseAndDeleteCompletion_Test$TestBody" />
+      <unit id="8933061889659446776" at="12,0,38,0" name="jetbrains.mps.editorTest.ChooseAndDeleteCompletion_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8976921645732250110">
     <file name="PerformLeftTransformWithNoLeftTransformActions_Test.java">
       <node id="8976921645732250110" at="15,86,16,107" concept="2" />

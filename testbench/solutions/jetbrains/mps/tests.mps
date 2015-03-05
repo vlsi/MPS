@@ -2977,6 +2977,18 @@
     <node concept="lpD6D" id="3FJ0r$qO3cS" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hZ88umP" resolve="ComplexTransformTest" />
     </node>
+    <node concept="lpD6D" id="7JSB7mhKNVE" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7JSB7mhIMnS" resolve="ChooseAndDeleteCompletion" />
+    </node>
+    <node concept="lpD6D" id="7JSB7mhKOjv" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7JSB7mhIDVZ" resolve="DeleteCompletion" />
+    </node>
+    <node concept="lpD6D" id="7JSB7mhKP2y" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7JSB7mhHGpj" resolve="JustTypeCompletion" />
+    </node>
+    <node concept="lpD6D" id="7JSB7mhKPq5" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7JSB7mhI_sf" resolve="TypeAndChooseCompletion" />
+    </node>
     <node concept="lpD6D" id="7Oax35P4k$z" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7Oax35P33Tr" resolve="CompletionStartsWithTest" />
     </node>

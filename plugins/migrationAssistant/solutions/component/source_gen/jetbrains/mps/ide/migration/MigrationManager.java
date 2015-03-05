@@ -18,5 +18,6 @@ public interface MigrationManager {
   public static interface MigrationStep {
     public String getDescription();
     public boolean execute();
+    public void forceExecutionNextTime();
   }
 }

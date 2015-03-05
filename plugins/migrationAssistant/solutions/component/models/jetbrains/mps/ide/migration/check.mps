@@ -1612,24 +1612,24 @@
                   <node concept="3clFbS" id="4pxnC9g$0q$" role="1bW5cS">
                     <node concept="3clFbF" id="4pxnC9g$0q_" role="3cqZAp">
                       <node concept="2OqwBi" id="4pxnC9g$0qA" role="3clFbG">
-                        <node concept="2YIFZM" id="4pxnC9g$0qB" role="2Oq$k0">
-                          <ref role="37wK5l" to="msyo:~FileUtil.getExtension(java.lang.String):java.lang.String" resolve="getExtension" />
-                          <ref role="1Pybhc" to="msyo:~FileUtil" resolve="FileUtil" />
-                          <node concept="2OqwBi" id="4pxnC9g$0qC" role="37wK5m">
-                            <node concept="37vLTw" id="4pxnC9g$0qD" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4pxnC9g$0qH" resolve="it" />
-                            </node>
-                            <node concept="liA8E" id="4pxnC9g$0qE" role="2OqNvi">
-                              <ref role="37wK5l" to="59et:~IFile.getName():java.lang.String" resolve="getName" />
+                        <node concept="liA8E" id="4pxnC9g$0qF" role="2OqNvi">
+                          <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                          <node concept="2YIFZM" id="4pxnC9g$0qB" role="37wK5m">
+                            <ref role="37wK5l" to="msyo:~FileUtil.getExtension(java.lang.String):java.lang.String" resolve="getExtension" />
+                            <ref role="1Pybhc" to="msyo:~FileUtil" resolve="FileUtil" />
+                            <node concept="2OqwBi" id="4pxnC9g$0qC" role="37wK5m">
+                              <node concept="37vLTw" id="4pxnC9g$0qD" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4pxnC9g$0qH" resolve="it" />
+                              </node>
+                              <node concept="liA8E" id="4pxnC9g$0qE" role="2OqNvi">
+                                <ref role="37wK5l" to="59et:~IFile.getName():java.lang.String" resolve="getName" />
+                              </node>
                             </node>
                           </node>
                         </node>
-                        <node concept="liA8E" id="4pxnC9g$0qF" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                          <node concept="10M0yZ" id="4pxnC9g$0qG" role="37wK5m">
-                            <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                            <ref role="3cqZAo" to="vsqj:~MPSExtentions.MODEL_BINARY" resolve="MODEL_BINARY" />
-                          </node>
+                        <node concept="10M0yZ" id="4pxnC9g$0qG" role="2Oq$k0">
+                          <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
+                          <ref role="3cqZAo" to="vsqj:~MPSExtentions.MODEL_BINARY" resolve="MODEL_BINARY" />
                         </node>
                       </node>
                     </node>
@@ -1667,7 +1667,7 @@
                               <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                               <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                               <node concept="Xl_RD" id="4pxnC9gxWxJ" role="37wK5m">
-                                <property role="Xl_RC" value="Can't load binary model: module %s, file %s. Binary models must be converted prior to migration. See https://youtrack.jetbrains.com/issue/MPS-21587" />
+                                <property role="Xl_RC" value="Can't load binary model: module %s, file %s. Convert the model in MPS 3.1 or remove the model file before migrating. See https://youtrack.jetbrains.com/issue/MPS-21587" />
                               </node>
                               <node concept="2OqwBi" id="4pxnC9gxWxK" role="37wK5m">
                                 <node concept="37vLTw" id="4pxnC9gxWxL" role="2Oq$k0">
