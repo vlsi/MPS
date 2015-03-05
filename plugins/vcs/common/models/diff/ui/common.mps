@@ -89,6 +89,7 @@
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <import index="e1oh" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.editor.colors(MPS.IDEA/com.intellij.openapi.editor.colors@java_stub)" />
     <import index="dibr" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.actions(MPS.IDEA/com.intellij.ide.actions@java_stub)" />
+    <import index="225l" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui.update(MPS.IDEA/com.intellij.util.ui.update@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -15862,6 +15863,25 @@
         <ref role="3uigEE" to="9a8:~MessagesGutter" resolve="MessagesGutter" />
       </node>
     </node>
+    <node concept="312cEg" id="26fDspGS_UN" role="jymVt">
+      <property role="TrG5h" value="myUpdateQueue" />
+      <node concept="3Tm6S6" id="26fDspGS_UO" role="1B3o_S" />
+      <node concept="3uibUv" id="26fDspGSAtq" role="1tU5fm">
+        <ref role="3uigEE" to="225l:~MergingUpdateQueue" resolve="MergingUpdateQueue" />
+      </node>
+    </node>
+    <node concept="312cEg" id="26fDspGSCEo" role="jymVt">
+      <property role="TrG5h" value="myUpdateIdentity" />
+      <node concept="3Tm6S6" id="26fDspGSCEp" role="1B3o_S" />
+      <node concept="3uibUv" id="26fDspGSD1h" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+      </node>
+      <node concept="2ShNRf" id="26fDspGSDNL" role="33vP2m">
+        <node concept="1pGfFk" id="26fDspGSDNK" role="2ShVmc">
+          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+        </node>
+      </node>
+    </node>
     <node concept="3clFbW" id="D356mG1lCH" role="jymVt">
       <node concept="37vLTG" id="D356mG1lCM" role="3clF46">
         <property role="TrG5h" value="layout" />
@@ -15894,6 +15914,35 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="26fDspGSWjv" role="3cqZAp">
+          <node concept="3cpWsn" id="26fDspGSWjw" role="3cpWs9">
+            <property role="TrG5h" value="editorComponent" />
+            <node concept="3uibUv" id="26fDspGSWjp" role="1tU5fm">
+              <ref role="3uigEE" to="9a8:~EditorComponent" resolve="EditorComponent" />
+            </node>
+            <node concept="3K4zz7" id="26fDspGSWjx" role="33vP2m">
+              <node concept="2OqwBi" id="26fDspGSWjy" role="3K4GZi">
+                <node concept="37vLTw" id="26fDspGSWjz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="D356mG1l9Q" resolve="myLayout" />
+                </node>
+                <node concept="liA8E" id="26fDspGSWj$" role="2OqNvi">
+                  <ref role="37wK5l" node="42hl10VHaiu" resolve="getRightComponent" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="26fDspGSWj_" role="3K4E3e">
+                <node concept="liA8E" id="26fDspGSWjA" role="2OqNvi">
+                  <ref role="37wK5l" node="42hl10VHail" resolve="getLeftComponent" />
+                </node>
+                <node concept="37vLTw" id="26fDspGSWjB" role="2Oq$k0">
+                  <ref role="3cqZAo" node="D356mG1l9Q" resolve="myLayout" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="26fDspGSWjC" role="3K4Cdx">
+                <ref role="3cqZAo" node="D356mG1lCV" resolve="left" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="D356mG1n6i" role="3cqZAp">
           <node concept="37vLTI" id="D356mG1n6j" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuNVb" role="37vLTJ">
@@ -15901,30 +15950,54 @@
             </node>
             <node concept="2OqwBi" id="D356mG1n6n" role="37vLTx">
               <node concept="1eOMI4" id="D356mG1n6$" role="2Oq$k0">
-                <node concept="3K4zz7" id="D356mG1n6J" role="1eOMHV">
-                  <node concept="2OqwBi" id="D356mG1n6N" role="3K4GZi">
-                    <node concept="37vLTw" id="2BHiRxeuuTe" role="2Oq$k0">
-                      <ref role="3cqZAo" node="D356mG1l9Q" resolve="myLayout" />
-                    </node>
-                    <node concept="liA8E" id="D356mG1n6P" role="2OqNvi">
-                      <ref role="37wK5l" node="42hl10VHaiu" resolve="getRightComponent" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="D356mG1n6K" role="3K4E3e">
-                    <node concept="liA8E" id="D356mG1n6M" role="2OqNvi">
-                      <ref role="37wK5l" node="42hl10VHail" resolve="getLeftComponent" />
-                    </node>
-                    <node concept="37vLTw" id="2BHiRxeunoc" role="2Oq$k0">
-                      <ref role="3cqZAo" node="D356mG1l9Q" resolve="myLayout" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxgllm9" role="3K4Cdx">
-                    <ref role="3cqZAo" node="D356mG1lCV" resolve="left" />
-                  </node>
+                <node concept="37vLTw" id="26fDspGSWjD" role="1eOMHV">
+                  <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
                 </node>
               </node>
               <node concept="liA8E" id="D356mG1n6p" role="2OqNvi">
                 <ref role="37wK5l" to="9a8:~EditorComponent.getMessagesGutter():jetbrains.mps.nodeEditor.MessagesGutter" resolve="getMessagesGutter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="26fDspGSDWo" role="3cqZAp">
+          <node concept="37vLTI" id="26fDspGSEoI" role="3clFbG">
+            <node concept="2ShNRf" id="26fDspGSEqY" role="37vLTx">
+              <node concept="1pGfFk" id="26fDspGSEq$" role="2ShVmc">
+                <ref role="37wK5l" to="225l:~MergingUpdateQueue.&lt;init&gt;(java.lang.String,int,boolean,javax.swing.JComponent,com.intellij.openapi.Disposable,javax.swing.JComponent,boolean)" resolve="MergingUpdateQueue" />
+                <node concept="Xl_RD" id="26fDspGSEsw" role="37wK5m">
+                  <property role="Xl_RC" value="ChangeGroupMessages" />
+                </node>
+                <node concept="3cmrfG" id="26fDspGSEy_" role="37wK5m">
+                  <property role="3cmrfH" value="500" />
+                </node>
+                <node concept="3clFbT" id="26fDspGSEBP" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="37vLTw" id="26fDspGSWre" role="37wK5m">
+                  <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
+                </node>
+                <node concept="10Nm6u" id="26fDspGSWvL" role="37wK5m" />
+                <node concept="10Nm6u" id="26fDspGSW$8" role="37wK5m" />
+                <node concept="3clFbT" id="26fDspGT00p" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="26fDspGSDWm" role="37vLTJ">
+              <ref role="3cqZAo" node="26fDspGS_UN" resolve="myUpdateQueue" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="26fDspGT0qT" role="3cqZAp">
+          <node concept="2OqwBi" id="26fDspGT0xT" role="3clFbG">
+            <node concept="37vLTw" id="26fDspGT0qR" role="2Oq$k0">
+              <ref role="3cqZAo" node="26fDspGS_UN" resolve="myUpdateQueue" />
+            </node>
+            <node concept="liA8E" id="26fDspGT0VN" role="2OqNvi">
+              <ref role="37wK5l" to="225l:~MergingUpdateQueue.setRestartTimerOnAdd(boolean):com.intellij.util.ui.update.MergingUpdateQueue" resolve="setRestartTimerOnAdd" />
+              <node concept="3clFbT" id="26fDspGT0WV" role="37wK5m">
+                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
@@ -15943,15 +16016,38 @@
               <ref role="37wK5l" node="42hl10VHamL" resolve="addInvalidateListener" />
               <node concept="1bVj0M" id="542heu5cZOs" role="37wK5m">
                 <node concept="3clFbS" id="542heu5cZOt" role="1bW5cS">
-                  <node concept="3clFbF" id="542heu5cZOu" role="3cqZAp">
-                    <node concept="2YIFZM" id="542heu5cZOo" role="3clFbG">
-                      <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-                      <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                      <node concept="1bVj0M" id="7ZcurAIp8z9" role="37wK5m">
-                        <node concept="3clFbS" id="7ZcurAIp8za" role="1bW5cS">
-                          <node concept="3clFbF" id="D356mG1n71" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyyYnq" role="3clFbG">
-                              <ref role="37wK5l" node="D356mG1lD4" resolve="rebuildGutterMessages" />
+                  <node concept="3clFbF" id="26fDspGT12m" role="3cqZAp">
+                    <node concept="2OqwBi" id="26fDspGT16A" role="3clFbG">
+                      <node concept="37vLTw" id="26fDspGT12k" role="2Oq$k0">
+                        <ref role="3cqZAo" node="26fDspGS_UN" resolve="myUpdateQueue" />
+                      </node>
+                      <node concept="liA8E" id="26fDspGT1xr" role="2OqNvi">
+                        <ref role="37wK5l" to="225l:~MergingUpdateQueue.queue(com.intellij.util.ui.update.Update):void" resolve="queue" />
+                        <node concept="2ShNRf" id="26fDspGT1$s" role="37wK5m">
+                          <node concept="YeOm9" id="26fDspGTjoY" role="2ShVmc">
+                            <node concept="1Y3b0j" id="26fDspGTjp1" role="YeSDq">
+                              <property role="2bfB8j" value="true" />
+                              <ref role="1Y3XeK" to="225l:~Update" resolve="Update" />
+                              <ref role="37wK5l" to="225l:~Update.&lt;init&gt;(java.lang.Object)" resolve="Update" />
+                              <node concept="3Tm1VV" id="26fDspGTjp2" role="1B3o_S" />
+                              <node concept="3clFb_" id="26fDspGTjp7" role="jymVt">
+                                <property role="1EzhhJ" value="false" />
+                                <property role="TrG5h" value="run" />
+                                <property role="DiZV1" value="false" />
+                                <property role="IEkAT" value="false" />
+                                <node concept="3Tm1VV" id="26fDspGTjp8" role="1B3o_S" />
+                                <node concept="3cqZAl" id="26fDspGTjpa" role="3clF45" />
+                                <node concept="3clFbS" id="26fDspGTjpb" role="3clF47">
+                                  <node concept="3clFbF" id="D356mG1n71" role="3cqZAp">
+                                    <node concept="1rXfSq" id="4hiugqyyYnq" role="3clFbG">
+                                      <ref role="37wK5l" node="D356mG1lD4" resolve="rebuildGutterMessages" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="26fDspGTjxY" role="37wK5m">
+                                <ref role="3cqZAo" node="26fDspGSCEo" resolve="myUpdateIdentity" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -15974,6 +16070,16 @@
       <node concept="3Tm1VV" id="76itSV98wSD" role="1B3o_S" />
       <node concept="3cqZAl" id="76itSV98wSC" role="3clF45" />
       <node concept="3clFbS" id="76itSV98wSE" role="3clF47">
+        <node concept="3clFbF" id="26fDspGTjP3" role="3cqZAp">
+          <node concept="2OqwBi" id="26fDspGTjSw" role="3clFbG">
+            <node concept="37vLTw" id="26fDspGTjP1" role="2Oq$k0">
+              <ref role="3cqZAo" node="26fDspGS_UN" resolve="myUpdateQueue" />
+            </node>
+            <node concept="liA8E" id="26fDspGTkiK" role="2OqNvi">
+              <ref role="37wK5l" to="225l:~MergingUpdateQueue.dispose():void" resolve="dispose" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="76itSV98wSF" role="3cqZAp">
           <node concept="2OqwBi" id="76itSV98wSH" role="3clFbG">
             <node concept="liA8E" id="76itSV98wSL" role="2OqNvi">
