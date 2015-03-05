@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -28,7 +26,6 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
@@ -47,7 +44,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
 import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
@@ -81,14 +77,14 @@ public class ModelListenerTest {
    */
   @Test
   public void testNodeReadNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 5, 2, 3);
-    final int actualNodes = countTreeNodes(m1.getRootNodes());
-    final int rootsCount = IterableUtil.asCollection(m1.getRootNodes()).size();
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 5, 2, 3);
+    final int actualNodes = m1f.countModelNodes();
 
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
 
     readTreeNodes(m1.getRootNodes());
 
@@ -114,7 +110,7 @@ public class ModelListenerTest {
     cl2.reset();
     cl3.reset();
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     // readTreeNodes notifies 1 read per iteration over child, +1 for getProperties, +1 for getReferences()
     readTreeNodes(m1.getRootNodes());
     // for a model attached to a repository, there's extra iteration over roots
@@ -139,7 +135,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myPropertiesRead, equalTo(actualNodes * 2));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0));
 
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -148,14 +144,15 @@ public class ModelListenerTest {
    */
   @Test
   public void testSingleChildIteratorNotify() {
-    final SModel m1 = new TestModelFactory().createModel(1, 1, 1);
+    final TestModelFactory m1f = new TestModelFactory();
+    final SModel m1 = m1f.createModel(1, 1, 1);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    final SNode r1 = m1.getRootNodes().iterator().next();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    final SNode r1 = m1f.getRoot(1);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     final SNode n1 = r1.getChildren().iterator().next();
     Assert.assertNotNull(n1);
     // FIXME make sure we've got notification exactly for the node we're interested in (i.e. child of a root)
@@ -163,11 +160,11 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     cl1.reset(); cl2.reset(); cl3.reset();
-    final SNode n2 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
+    final SNode n2 = r1.getChildren(ourRole).iterator().next();
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(1));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
     Assert.assertNotNull(n2);
     Assert.assertEquals(n1, n2);
   }
@@ -177,20 +174,21 @@ public class ModelListenerTest {
    */
   @Test
   public void testChildrenNextNotify() {
-    final SModel m1 = new TestModelFactory().createModel(1, 3, 1);
+    final TestModelFactory m1f = new TestModelFactory();
+    final SModel m1 = m1f.createModel(1, 3, 1);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1 = m1f.getRoot(1);
     // getChildren(role) is the one to check, as ChildrenIterator#getNext(node) calls for node.getContainmentLink(), which triggers another nodeRead
-    final Iterator<? extends SNode> childIterator = r1.getChildren(TestModelFactory.ourRole).iterator();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    final Iterator<? extends SNode> childIterator = r1.getChildren(ourRole).iterator();
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     final SNode n1 = childIterator.next();
     final SNode n2 = childIterator.next();
     final SNode n3 = childIterator.next();
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
     Assert.assertNotNull(n1);
     Assert.assertNotNull(n2);
     Assert.assertNotNull(n3);
@@ -206,62 +204,64 @@ public class ModelListenerTest {
    */
   @Test
   public void testChildrenHasNextNotify() {
-    final SModel m1 = new TestModelFactory().createModel(1, 1);
-    final SModel m2 = new TestModelFactory().createModel(1, 3);
+    final TestModelFactory m1f = new TestModelFactory();
+    final TestModelFactory m2f = new TestModelFactory();
+    final SModel m1 = m1f.createModel(1, 1);
+    final SModel m2 = m2f.createModel(1, 3);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
-    ((SModelBase) m2).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
+    m2f.attachTo(myTestRepo);
 
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
     //
     // collection{single element}.hasNext
-    final SNode r1 = m1.getRootNodes().iterator().next();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    final SNode r1 = m1f.getRoot(1);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     Assert.assertTrue(r1.getChildren().iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
     // just in case accessor with role is different
-    Assert.assertTrue(r1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
+    Assert.assertTrue(r1.getChildren(ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
     //
     // collection{multiple elements}.hasNext
     cl1.reset(); cl2.reset(); cl3.reset();
-    final SNode r2 = m2.getRootNodes().iterator().next();
-    attachAccessListeners(m2, cl1, cl2, cl3);
+    final SNode r2 = m2f.getRoot(1);
+    m2f.attachAccessListeners(cl1, cl2, cl3);
     Assert.assertTrue(r2.getChildren().iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
-    Assert.assertTrue(r2.getChildren(TestModelFactory.ourRole).iterator().hasNext());
+    Assert.assertTrue(r2.getChildren(ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
-    detachAccessListeners(m2, cl1, cl2, cl3);
+    m2f.detachAccessListeners(cl1, cl2, cl3);
 
     //
     // collection{empty}.hasNext
     cl1.reset(); cl2.reset(); cl3.reset();
-    final SNode n1 = r1.getChildren(TestModelFactory.ourRole).iterator().next();
+    final SNode n1 = r1.getChildren(ourRole).iterator().next();
     // n1 is leaf node
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     Assert.assertFalse(n1.getChildren().iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
     cl1.reset(); cl2.reset(); cl3.reset();
-    Assert.assertFalse(n1.getChildren(TestModelFactory.ourRole).iterator().hasNext());
+    Assert.assertFalse(n1.getChildren(ourRole).iterator().hasNext());
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -269,14 +269,15 @@ public class ModelListenerTest {
    */
   @Test
   public void testPropertyReadNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 5);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 5);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    final SNode r1 = m1.getRootNodes().iterator().next();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    final SNode r1 = m1f.getRoot(1);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     //
     // hasProperty
     boolean shouldHave = r1.hasProperty(SNodeUtil.property_INamedConcept_name);
@@ -299,7 +300,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl3.myPropertiesRead, equalTo(1));
     myErrors.checkThat(cl3.getExistenceReadAccessProperties().size(), equalTo(0));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -307,18 +308,18 @@ public class ModelListenerTest {
    */
   @Test
   public void testReferenceReadNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 5);
-    final Iterator<SNode> roots = m1.getRootNodes().iterator();
-    final SNode r1 = roots.next();
-    final SNode r2c1 = roots.next().getFirstChild();
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 5);
+    final SNode r1 = m1f.getRoot(1);
+    final SNode r2c1 = m1f.getRoot(2).getFirstChild();
     r1.setReferenceTarget(ourRef, r2c1);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     //
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     //
     // getReference()
     final SReference ref1 = r1.getReference(ourRef);
@@ -341,7 +342,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl2.myReferencesRead, equalTo(1));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0)); // see getReference() part, above
     myErrors.checkThat(t, equalTo(r2c1));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -352,24 +353,25 @@ public class ModelListenerTest {
    */
   @Test
   public void testNodeAddRemoveNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
-    final SNode c = new TestModelFactory().createNode();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
+    final SNode c = m1f.createNode();
 
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    attachChangeListeners(m1, cl1, cl2);
+    m1f.attachChangeListeners(cl1, cl2);
     r1.addChild(ourRole, c);
     myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
-    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
-    ((EditableSModel)m1).setChanged(false);
+    m1f.clearEditableChanged();
     r1.removeChild(c);
     myErrors.checkThat(cl1.myRemoved.size(), equalTo(1));
     myErrors.checkThat(cl1.myBeforeRemoved.size(), equalTo(1));
@@ -377,19 +379,19 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl1.myBeforeRemoved.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
-    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
     final SNode anchor = r1.getFirstChild();
-    ((EditableSModel)m1).setChanged(false);
+    m1f.clearEditableChanged();
     r1.insertChildBefore(ourRole, c, anchor);
     myErrors.checkThat(c.getNextSibling(), equalTo(anchor));
     myErrors.checkThat(cl1.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
     myErrors.checkThat(cl1.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
-    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
-    detachChangeListeners(m1, cl1, cl2);
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
+    m1f.detachChangeListeners(cl1, cl2);
   }
 
   /**
@@ -398,13 +400,14 @@ public class ModelListenerTest {
    */
   @Test
   public void testRootAddRemoveNotify() {
-    SModel m1 = new TestModelFactory().createModel(2, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 2);
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode c = new TestModelFactory().createNode();
+    m1f.attachTo(myTestRepo);
+    final SNode c = m1f.createNode();
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    attachChangeListeners(m1, cl1, cl2);
+    m1f.attachChangeListeners(cl1, cl2);
     //
     m1.addRootNode(c);
     myErrors.checkThat(cl1.myAddedRoots.size(), equalTo(1));
@@ -412,10 +415,10 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myAddedRoots.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myAdded.contains(c), equalTo(true));
     myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(3));
-    myErrors.checkThat(((EditableSModel)m1).isChanged(), equalTo(true));
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
     //
     cl1.reset(); cl2.reset();
-    ((EditableSModel)m1).setChanged(false);
+    m1f.clearEditableChanged();
     m1.removeRootNode(c);
     myErrors.checkThat(cl1.myRemovedRoots.size(), equalTo(1));
     myErrors.checkThat(cl1.myBeforeRemovedRoots.size(), equalTo(1));
@@ -424,13 +427,13 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myBeforeRemovedRoots.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(2));
-    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
     //
     // use SNode.delete
     m1.addRootNode(c);
     Assert.assertEquals(3, IterableUtil.asCollection(m1.getRootNodes()).size());
     cl1.reset(); cl2.reset();
-    ((EditableSModel)m1).setChanged(false);
+    m1f.clearEditableChanged();
     c.delete();
     myErrors.checkThat(cl1.myRemovedRoots.size(), equalTo(1));
     myErrors.checkThat(cl1.myBeforeRemovedRoots.size(), equalTo(1));
@@ -439,23 +442,24 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myBeforeRemovedRoots.contains(c), equalTo(true));
     myErrors.checkThat(cl2.myRemoved.contains(c), equalTo(true));
     myErrors.checkThat(IterableUtil.asCollection(m1.getRootNodes()).size(), equalTo(2));
-    myErrors.checkThat(((EditableSModel) m1).isChanged(), equalTo(true));
-    detachChangeListeners(m1, cl1, cl2);
+    myErrors.checkThat(m1f.isEditableChanged(), equalTo(true));
+    m1f.detachChangeListeners(cl1, cl2);
   }
 
   @Test
   public void testPropertyChangeNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
 
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    attachChangeListeners(m1, cl1, cl2);
+    m1f.attachChangeListeners(cl1, cl2);
     final String newValue = "XXX";
     r1.setProperty(SNodeUtil.property_INamedConcept_name, newValue);
-    detachChangeListeners(m1, cl1, cl2);
+    m1f.detachChangeListeners(cl1, cl2);
     Assert.assertEquals(newValue, r1.getProperty(SNodeUtil.property_INamedConcept_name));
     myErrors.checkThat(cl1.myChangedProperties.size(), equalTo(1));
     myErrors.checkThat(cl1.myChangedProperties.contains(SNodeUtil.property_INamedConcept_name.getName()), equalTo(true));
@@ -465,17 +469,17 @@ public class ModelListenerTest {
 
   @Test
   public void testReferenceChangeNotify() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
-    final Iterator<SNode> roots = m1.getRootNodes().iterator();
-    final SNode r1 = roots.next();
-    final SNode r2c1 = roots.next().getFirstChild();
-    final SNode r3c2 = roots.next().getFirstChild().getNextSibling();
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
+    final SNode r1 = m1f.getRoot(1);
+    final SNode r2c1 = m1f.getRoot(2).getFirstChild();
+    final SNode r3c2 = m1f.getRoot(3).getFirstChild().getNextSibling();
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
 
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    attachChangeListeners(m1, cl1, cl2);
+    m1f.attachChangeListeners(cl1, cl2);
     // create, with setReferenceTarget()
     r1.setReferenceTarget(ourRef, r2c1);
     myErrors.checkThat(cl1.myAddedRef.size(), equalTo(1));
@@ -517,7 +521,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myRemovedRef.size(), equalTo(1));
     myErrors.checkThat(cl2.myChangedReferences.size(), equalTo(1));
     myErrors.checkThat(cl2.myChangedReferences.contains(ourRef.getRoleName()), equalTo(true));
-    detachChangeListeners(m1, cl1, cl2);
+    m1f.detachChangeListeners(cl1, cl2);
   }
 
   /**
@@ -532,15 +536,16 @@ public class ModelListenerTest {
    */
   @Test
   public void testNoReadNotifyForMeta() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
     final SNode r1c1 = r1.getFirstChild();
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     //
     // getConcept()
     SConcept c = r1.getConcept();
@@ -580,7 +585,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(0));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(0));
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -598,12 +603,11 @@ public class ModelListenerTest {
    */
   @Test
   public void testNodeHierarchyAttach() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
-    final Iterator<SNode> roots = m1.getRootNodes().iterator();
-    roots.next();
-    final SNodeId r2c1 = roots.next().getFirstChild().getNodeId();
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
+    final SNodeId r2c1 = m1f.getRoot(2).getFirstChild().getNodeId();
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
+    m1f.attachTo(myTestRepo);
     final SNode notRoot = m1.getNode(r2c1);
     // [sanity] - check that disabled read indeed triggers IMAE
     myTestModelAccess.disableRead();
@@ -637,15 +641,16 @@ public class ModelListenerTest {
    */
   @Test
   public void testSiblingReadNotify() {
-    SModel m1 = new TestModelFactory().createModel(2, 3);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 3);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
     final SNode r1c1 = r1.getFirstChild();
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
     final SNode r1c2 = r1c1.getNextSibling();
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(2));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(2));
@@ -658,7 +663,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(2));
     Assert.assertSame(r1c1, ps);
 
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -668,17 +673,18 @@ public class ModelListenerTest {
    */
   @Test
   public void testReadNotifyOther() {
-    SModel m1 = new TestModelFactory().createModel(2, 3, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 3, 2);
     myTestModelAccess.enableRead();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
     final SNode r1c2 = r1.getFirstChild().getNextSibling();
     final SNodeId r1c2c1 = r1c2.getFirstChild().getNodeId();
 
     AccessCountListener1 cl1 = new AccessCountListener1();
     AccessCountListener2 cl2 = new AccessCountListener2();
     AccessCountListener3 cl3 = new AccessCountListener3();
-    attachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.attachAccessListeners(cl1, cl2, cl3);
 
     SNode n = m1.getNode(r1c2c1);
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(1));
@@ -694,7 +700,7 @@ public class ModelListenerTest {
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(1));
     Assert.assertSame(r1c2, p);
 
-    detachAccessListeners(m1, cl1, cl2, cl3);
+    m1f.detachAccessListeners(cl1, cl2, cl3);
   }
 
   /**
@@ -703,16 +709,17 @@ public class ModelListenerTest {
    */
   @Test
   public void testChangeNotifyNoRepo() {
-    SModel m1 = new TestModelFactory().createModel(2, 3);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 3);
     myTestModelAccess.enableRead();
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1 = m1f.getRoot(1);
 
     Assert.assertNull(m1.getRepository());
     ChangeListener1 cl1 = new ChangeListener1();
     ChangeListener2 cl2 = new ChangeListener2();
-    attachChangeListeners(m1, cl1, cl2);
+    m1f.attachChangeListeners(cl1, cl2);
 
-    SNode c = new TestModelFactory().createNode();
+    SNode c = m1f.createNode();
     r1.addChild(ourRole, c);
     myErrors.checkThat(cl1.myAdded.size(), equalTo(0));
     myErrors.checkThat(cl2.myAdded.size(), equalTo(1));
@@ -726,7 +733,7 @@ public class ModelListenerTest {
     c.delete();
     myErrors.checkThat(cl1.myRemoved.size(), equalTo(0));
     myErrors.checkThat(cl2.myRemoved.size(), equalTo(1));
-    detachChangeListeners(m1, cl1, cl2);
+    m1f.detachChangeListeners(cl1, cl2);
   }
 
   /**
@@ -735,8 +742,9 @@ public class ModelListenerTest {
    */
   @Test
   public void testWalkTime() {
-    SModel m1 = new TestModelFactory().createModel(10, 25, 15, 5, 4);
-    final int actualNodes = countTreeNodes(m1.getRootNodes());
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(10, 25, 15, 5, 4);
+    final int actualNodes = m1f.countModelNodes();
     // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model. I use twice as much time to account for slower build agents
     final long baselineMillis = 100;
     final int testRuns = 5;
@@ -766,12 +774,12 @@ public class ModelListenerTest {
    */
   @Test
   public void testRootInsertedAsChild_sameModel() {
-    SModel m1 = new TestModelFactory().createModel(2, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 2);
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
-    final Iterator<SNode> roots = m1.getRootNodes().iterator();
-    final SNode r1 = roots.next();
-    final SNode r2 = roots.next();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
+    final SNode r2 = m1f.getRoot(2);
     final SNodeId r1id = r1.getNodeId();
     Assert.assertEquals(2, IterableUtil.asCollection(m1.getRootNodes()).size());
     Assert.assertEquals(2, IterableUtil.asCollection(r2.getChildren()).size());
@@ -800,11 +808,12 @@ public class ModelListenerTest {
    */
   @Test
   public void testRootInsertedAsChild_otherModel() {
-    SModel m1 = new TestModelFactory().createModel(2, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(2, 2);
     myTestModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myTestRepo);
-    final SNode r1 = m1.getRootNodes().iterator().next();
-    final SNode ffn = new TestModelFactory().createNode();
+    m1f.attachTo(myTestRepo);
+    final SNode r1 = m1f.getRoot(1);
+    final SNode ffn = m1f.createNode();
     final SNodeId r1id = r1.getNodeId();
     Assert.assertEquals(2, IterableUtil.asCollection(m1.getRootNodes()).size());
     Assert.assertEquals(2, IterableUtil.asCollection(r1.getChildren()).size());
@@ -821,28 +830,6 @@ public class ModelListenerTest {
     } catch (IllegalModelAccessException ignored) {
       // expected
     }
-  }
-
-  private static void attachAccessListeners(SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
-    m.addAccessListener(l1);
-    NodeReadEventsCaster.setNodesReadListener(l2);
-    NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(l3);
-  }
-
-  private void detachAccessListeners(SModel m, SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
-    NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
-    NodeReadEventsCaster.removeNodesReadListener();
-    m.removeAccessListener(l1);
-  }
-
-  private static void attachChangeListeners(SModel m, SModelListener l1, SModelChangeListener l2) {
-    ((SModelInternal) m).addModelListener(l1);
-    ((EditableSModel) m).addChangeListener(l2);
-  }
-
-  private static void detachChangeListeners(SModel m, SModelListener l1, SModelChangeListener l2) {
-    ((SModelInternal) m).removeModelListener(l1);
-    ((EditableSModel) m).removeChangeListener(l2);
   }
 
   // read every property and every reference of an each node in sub-tree

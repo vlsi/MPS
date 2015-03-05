@@ -16,18 +16,28 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
@@ -47,13 +57,26 @@ final class TestModelFactory {
    * Blank SNode: 120 bytes (8-byte aligned. in fact, 116, as adding 1 extra field doesn't change its overall size)
    * SNode with 1 property (name): 144 bytes
    * SNode with 2 properties: 152 bytes
-   * Without REPO_LOCK: 88 bytes
-   *
+   * Without REPO_LOCK: 88 bytes  (-32 bytes: 1 field + 16 bytes Object
+   * SNodeId: 24 bytes
+   * Now SNode is 80 bytes (including those 24 of SNodeId, and it's exactly that - adding 1 more field makes it 88)
+   * There are 11 fields in the class, 4*11 + 12 == 56?
    * ==>
    * 4 bytes per reference
-   * 16 bytes per object instance? <-- new Object() consumes 24 bytes!
+   * 16 bytes per object instance - actually 12 as adding 1 field doesn't change the size.
    * 16 bytes per new Object[0], 24 bytes for an Object[2] (if 4 bytes per ref is active).
    */
+
+  private final boolean myNeedEditableModel;
+  private int myIssuedNodes = 0;
+  private SModel myModel;
+
+  public TestModelFactory() {
+    this(true);
+  }
+  private TestModelFactory(boolean editable) {
+    myNeedEditableModel = editable;
+  }
 
   /**
    * Create a model with a tree of nodes.
@@ -63,19 +86,20 @@ final class TestModelFactory {
    *
    * @param nodesAtLevel number of child elements for each parent (i.e. of previous level) element. Each node at level i has nodesAtLevel[i] children
    */
-  public org.jetbrains.mps.openapi.model.SModel createModel(@Nullable int... nodesAtLevel) {
+  public SModel createModel(@Nullable int... nodesAtLevel) {
     final SNode top = createNode(nodesAtLevel);
-    final SModel modelData = new SModel(new SModelReference(new ModuleReference("M", ModuleId.regular()), SModelId.generate(), "m"));
+    final jetbrains.mps.smodel.SModel modelData = new jetbrains.mps.smodel.SModel(new SModelReference(new ModuleReference("M", ModuleId.regular()), SModelId.generate(), "m"));
     for (SNode c : top.getChildren(ourRole)) {
       modelData.addRootNode(c);
     }
-    return new TestModelBase(modelData);
+    assert myNeedEditableModel;
+    return myModel = new TestModelBase(modelData);
   }
 
   public SNode createNode(@Nullable int... childrenAtLevel) {
     ArrayDeque<SNode> thisLevel = new ArrayDeque<SNode>();
     ArrayDeque<SNode> nextLevel = new ArrayDeque<SNode>();
-    final SNode top = new SNode(ourConcept);
+    final SNode top = new jetbrains.mps.smodel.SNode(ourConcept);
     thisLevel.add(top);
     if (childrenAtLevel == null || childrenAtLevel.length == 0) {
       return top;
@@ -84,8 +108,8 @@ final class TestModelFactory {
       while (!thisLevel.isEmpty()) {
         SNode parent = thisLevel.removeFirst();
         for (int i = 0; i < count; i++) {
-          SNode c = new SNode(ourConcept);
-          final String v = Integer.toString(i + 1);
+          SNode c = new jetbrains.mps.smodel.SNode(ourConcept);
+          final String v = nextNodeName(i + 1);
           c.setProperty(SNodeUtil.property_INamedConcept_name, v);
           c.setProperty(SNodeUtil.property_BaseConcept_alias, v);
           parent.addChild(ourRole, c);
@@ -97,6 +121,80 @@ final class TestModelFactory {
       nextLevel = t;
     }
     return top;
+  }
+
+  public org.jetbrains.mps.openapi.model.SModel getModel() {
+    assert myModel != null : "call createModel() first";
+    return myModel;
+  }
+
+  public void attachTo(SRepository repo) {
+    assert myModel != null : "call createModel() first";
+    ((SModelBase) myModel).attach(repo);
+  }
+
+  public SModelData getModelData() {
+    assert myModel != null : "call createModel() first";
+    return ((SModelBase) myModel).getModelData();
+  }
+
+  public org.jetbrains.mps.openapi.model.SNode getRoot(int oneBasedIndex) {
+    assert myModel != null : "call createModel() first";
+    for (SNode r : myModel.getRootNodes()) {
+      if (--oneBasedIndex > 0) {
+        continue;
+      }
+      return r;
+    }
+    throw new IllegalArgumentException(Integer.toString(IterableUtil.asCollection(myModel.getRootNodes()).size()));
+  }
+
+  public int countModelNodes() {
+    return countTreeNodes(myModel.getRootNodes());
+  }
+
+  void attachAccessListeners(SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+    assert myModel != null : "call createModel() first";
+    myModel.addAccessListener(l1);
+    NodeReadEventsCaster.setNodesReadListener(l2);
+    NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(l3);
+  }
+
+  void detachAccessListeners(SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+    assert myModel != null : "call createModel() first";
+    NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
+    NodeReadEventsCaster.removeNodesReadListener();
+    myModel.removeAccessListener(l1);
+  }
+
+  public void clearEditableChanged() {
+    assert myNeedEditableModel;
+    assert myModel != null : "call createModel() first";
+    ((EditableSModel) myModel).setChanged(false);
+  }
+
+  public boolean isEditableChanged() {
+    assert myNeedEditableModel;
+    assert myModel != null : "call createModel() first";
+    return ((EditableSModel) myModel).isChanged();
+  }
+
+  void attachChangeListeners(SModelListener l1, SModelChangeListener l2) {
+    assert myNeedEditableModel;
+    assert myModel != null : "call createModel() first";
+    ((SModelInternal) myModel).addModelListener(l1);
+    ((EditableSModel) myModel).addChangeListener(l2);
+  }
+
+  void detachChangeListeners(SModelListener l1, SModelChangeListener l2) {
+    assert myNeedEditableModel;
+    assert myModel != null : "call createModel() first";
+    ((SModelInternal) myModel).removeModelListener(l1);
+    ((EditableSModel) myModel).removeChangeListener(l2);
+  }
+
+  private String nextNodeName(int i) {
+    return String.format("%d-n%d", i, myIssuedNodes++);
   }
 
   // doesn't trigger property/reference reads
@@ -111,9 +209,9 @@ final class TestModelFactory {
 
   // FIXME once node add/remove operations won't require EditableSModelBase to dispatch events, we may get back SModelBase as superclass
   private static class TestModelBase extends EditableSModelBase {
-    private final SModel myModelData;
+    private final jetbrains.mps.smodel.SModel myModelData;
 
-    public TestModelBase(SModel modelData) {
+    public TestModelBase(jetbrains.mps.smodel.SModel modelData) {
       super(modelData.getReference(), new NullDataSource());
       myModelData = modelData;
       myModelData.setModelDescriptor(this);
@@ -121,13 +219,13 @@ final class TestModelFactory {
     }
 
     @Override
-    public SModel getSModelInternal() {
+    public jetbrains.mps.smodel.SModel getSModelInternal() {
       return myModelData;
     }
 
     @Nullable
     @Override
-    protected SModel getCurrentModelInternal() {
+    protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
       return myModelData;
     }
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
@@ -35,6 +34,7 @@ import java.util.Deque;
 import java.util.List;
 
 import static jetbrains.mps.smodel.TestModelFactory.countTreeNodes;
+import static jetbrains.mps.smodel.TestModelFactory.ourRole;
 
 /**
  * Test undo/redo for model modifications.
@@ -65,34 +65,35 @@ public class ModelUndoTest {
    */
   @Test
   public void testChangeFreeNodeChangedWithDetached() {
-    SModel m1 = new TestModelFactory().createModel(3, 2);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 2);
     myModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myRepo);
-    final int initialNodeCount = countTreeNodes(m1.getRootNodes());
+    m1f.attachTo(myRepo);
+    final int initialNodeCount = m1f.countModelNodes();
     //
     UnregisteredNodes.instance().enable(); // mimic beforeCommand listener behavior
-    final SNode r1 = m1.getRootNodes().iterator().next();
+    final SNode r1 = m1f.getRoot(1);
     final SNode r1c2 = r1.getChildren().iterator().next().getNextSibling();
-    final jetbrains.mps.smodel.SNode freeFloatNode = new TestModelFactory().createNode();
+    final SNode freeFloatNode = m1f.createNode();
     // detach r1c2 from its parent
     r1c2.delete();
     Assert.assertEquals(1, myUndo.actualUndoActionCount());
-    freeFloatNode.addChild(TestModelFactory.ourRole, r1c2);
+    freeFloatNode.addChild(ourRole, r1c2);
     Assert.assertEquals(2, myUndo.actualUndoActionCount());
-    r1.addChild(TestModelFactory.ourRole, freeFloatNode);
+    r1.addChild(ourRole, freeFloatNode);
     Assert.assertEquals(3, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     UnregisteredNodes.instance().disable(); // mimic afterCommand listener behavior
-    Assert.assertEquals(initialNodeCount + 1, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(initialNodeCount + 1, m1f.countModelNodes());
     Assert.assertNotNull(m1.getNode(freeFloatNode.getNodeId()));
     //
     Assert.assertEquals(1, myUndo.myUndoStack.size()); // 1 command
     final UndoUnit undoElement = myUndo.myUndoStack.peek();
     undoElement.undo();
-    Assert.assertEquals(initialNodeCount, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(initialNodeCount, m1f.countModelNodes());
     Assert.assertNull(m1.getNode(freeFloatNode.getNodeId()));
     undoElement.redo();
-    Assert.assertEquals(initialNodeCount + 1, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(initialNodeCount + 1, m1f.countModelNodes());
     Assert.assertNotNull(m1.getNode(freeFloatNode.getNodeId()));
     Assert.assertEquals(2, countTreeNodes(Collections.singleton(freeFloatNode)));
   }
@@ -102,21 +103,22 @@ public class ModelUndoTest {
    */
   @Test
   public void testNoUndoDuringModelConstruction() {
-    SModel m1 = new TestModelFactory().createModel(3, 1);
+    final TestModelFactory m1f = new TestModelFactory();
+    SModel m1 = m1f.createModel(3, 1);
     myModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myRepo);
-    final jetbrains.mps.smodel.SModel modelData = (jetbrains.mps.smodel.SModel) ((SModelBase) m1).getModelData();
+    m1f.attachTo(myRepo);
+    final jetbrains.mps.smodel.SModel modelData = (jetbrains.mps.smodel.SModel) m1f.getModelData();
     final SNode r1 = m1.getRootNodes().iterator().next();
     modelData.setUpdateMode(true);
     // update mode is on, add 1+3 nodes, observe no undo
-    r1.addChild(TestModelFactory.ourRole, new TestModelFactory().createNode(3));
+    r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     Assert.assertEquals(0, myUndo.myUndoStack.size());
     Assert.assertEquals(6 + 4, countTreeNodes(m1.getRootNodes()));
     modelData.setUpdateMode(false);
     // update is over, modify and see undo/redo commands do get collected
-    r1.addChild(TestModelFactory.ourRole, new TestModelFactory().createNode(3));
+    r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(1, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     Assert.assertEquals(1, myUndo.myUndoStack.size());
@@ -130,13 +132,14 @@ public class ModelUndoTest {
   public void testNoUndoForFreeNode() {
     myModelAccess.disableRead();
     // create a free-floating node
-    SNode n = new TestModelFactory().createNode(3);
+    final TestModelFactory m1f = new TestModelFactory();
+    SNode n = m1f.createNode(3);
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     Assert.assertEquals(0, myUndo.myUndoStack.size());
     // modify free-floating further
     n.setProperty(SNodeUtil.property_INamedConcept_name, "XXX");
-    n.addChild(TestModelFactory.ourRole, new TestModelFactory().createNode(5));
+    n.addChild(ourRole, m1f.createNode(5));
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     Assert.assertEquals(0, myUndo.myUndoStack.size());
@@ -148,13 +151,14 @@ public class ModelUndoTest {
    */
   @Test
   public void testNodeDeleteUndoRedo() {
-    SModel m1 = new TestModelFactory().createModel(3, 5, 2, 3);
+    final TestModelFactory m1f = new TestModelFactory();
+    m1f.createModel(3, 5, 2, 3);
     myModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myRepo);
+    m1f.attachTo(myRepo);
 
-    final int initialNodeCount = countTreeNodes(m1.getRootNodes());
+    final int initialNodeCount = m1f.countModelNodes();
 
-    SNode r1c2 = m1.getRootNodes().iterator().next().getFirstChild().getNextSibling();
+    SNode r1c2 = m1f.getRoot(1).getFirstChild().getNextSibling();
     Assert.assertEquals(2, IterableUtil.asCollection(r1c2.getChildren()).size());
     // remove one of two nodes under second child of the first root. Deleted node has 3 children, total number of removed nodes is 4.
     final SNode toRemove = r1c2.getChildren().iterator().next();
@@ -166,18 +170,18 @@ public class ModelUndoTest {
     Assert.assertEquals(1, myUndo.myUndoStack.size()); // 1 command
     final UndoUnit undoElement = myUndo.myUndoStack.peek();
     Assert.assertEquals(1, undoElement.myActions.size()); // with 1 undo action in there
-    final int withRemovedNodeCount = countTreeNodes(m1.getRootNodes());
+    final int withRemovedNodeCount = m1f.countModelNodes();
     Assert.assertEquals(expectedNodeCount, withRemovedNodeCount);
     //
     undoElement.undo();
     Assert.assertEquals(1, myUndo.myUndoStack.size()); // still 1 command
     Assert.assertEquals(2, IterableUtil.asCollection(r1c2.getChildren()).size());
-    Assert.assertEquals(initialNodeCount, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(initialNodeCount, m1f.countModelNodes());
     //
     undoElement.redo();
     Assert.assertEquals(1, myUndo.myUndoStack.size()); // still 1 command
     Assert.assertEquals(1, IterableUtil.asCollection(r1c2.getChildren()).size());
-    Assert.assertEquals(expectedNodeCount, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(expectedNodeCount, m1f.countModelNodes());
   }
 
   /**
@@ -186,23 +190,24 @@ public class ModelUndoTest {
    */
   @Test
   public void testRemoveChildOfRemoved() {
-    SModel m1 = new TestModelFactory().createModel(1, 1, 1);
+    final TestModelFactory m1f = new TestModelFactory();
+    m1f.createModel(1, 1, 1);
     myModelAccess.enableWrite();
-    ((SModelBase) m1).attach(myRepo);
-    SNode r1 = m1.getRootNodes().iterator().next();
+    m1f.attachTo(myRepo);
+    SNode r1 = m1f.getRoot(1);
     SNode r1c1 = r1.getFirstChild();
     r1.removeChild(r1c1);
     final SNode c = r1c1.getFirstChild();
     r1c1.removeChild(c);
     myUndo.flushCommand(null);
-    Assert.assertEquals(1, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(1, m1f.countModelNodes());
 
     final UndoUnit undoElement = myUndo.myUndoStack.peek();
     undoElement.undo();
-    Assert.assertEquals(3, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(3, m1f.countModelNodes());
 
     undoElement.redo();
-    Assert.assertEquals(1, countTreeNodes(m1.getRootNodes()));
+    Assert.assertEquals(1, m1f.countModelNodes());
   }
 
   /*package*/ static class TestUndoHandler implements UndoHandler {
