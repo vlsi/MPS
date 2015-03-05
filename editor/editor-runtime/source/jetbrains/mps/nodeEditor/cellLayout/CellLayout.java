@@ -40,5 +40,24 @@ public interface CellLayout extends jetbrains.mps.openapi.editor.cells.CellLayou
   @Nullable
   List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells);
 
+  /**
+   * Used to notify {@link jetbrains.mps.nodeEditor.cellLayout.CellLayout} that re-layout of corresponding
+   * {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection} was requested.
+   * <p/>
+   * Can be used to include additional (child) cells into re-layout process by calling
+   * {@link jetbrains.mps.openapi.editor.cells.EditorCell#requestRelayout()} method on corresponding cells.
+   *
+   * @param editorCells EditorCell_Collection to re-layout
+   */
   void requestRelayout(EditorCell_Collection editorCells);
+
+  /**
+   * Used to notify {@link jetbrains.mps.nodeEditor.cellLayout.CellLayout} that {@link jetbrains.mps.openapi.editor.cells.EditorCell#moveTo(int, int)}
+   * of corresponding {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection} was performed.
+   * <p/>
+   * Can be used to trigger re-layout for some child cells if layout logic depends on cell x/y coordinates.
+   *
+   * @param editorCells EditorCell_Collection to re-layout
+   */
+  void move(EditorCell_Collection editorCells);
 }

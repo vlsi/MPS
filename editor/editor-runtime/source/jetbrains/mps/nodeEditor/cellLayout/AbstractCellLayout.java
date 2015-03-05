@@ -68,4 +68,8 @@ public abstract class AbstractCellLayout implements CellLayout {
   @Override
   public void requestRelayout(EditorCell_Collection editorCells) {
   }
+
+  @Override
+  public void move(EditorCell_Collection editorCells) {
+  }
 }

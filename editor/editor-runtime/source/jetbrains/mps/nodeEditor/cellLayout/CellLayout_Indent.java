@@ -116,6 +116,18 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   @Override
+  public void move(EditorCell_Collection editorCells) {
+    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
+      return;
+    }
+    // Triggering re-layout process for top-level EditorCell_Collection with indent layout on move.
+    // Necessary to recalculate cell wrapping on moving EditorCell_Collection with indent layout enclosed
+    // inside another (non-indent layout) cell. Such move can be performed as a part of layout process for
+    // top-level cell with indent layout.
+    editorCells.requestRelayout();
+  }
+
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
       return;
@@ -200,9 +212,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private static void collectCells(
-    EditorCell_Collection current,
-    List<EditorCell> frontier,
-    List<EditorCell_Collection> collections) {
+      EditorCell_Collection current,
+      List<EditorCell> frontier,
+      List<EditorCell_Collection> collections) {
 
     for (EditorCell child : current) {
       if (child instanceof EditorCell_Collection) {
@@ -321,12 +333,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
       boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
 
       int indent = hasIndent && hasAnchor ? currentIndent() + myIndentSize :
-        hasIndent ? myCurrentIndent + myIndentSize :
-          hasAnchor ? currentIndent() + getFirstChildLeftGap(collection)
-            : myCurrentIndent;
+          hasIndent ? myCurrentIndent + myIndentSize :
+              hasAnchor ? currentIndent() + getFirstChildLeftGap(collection)
+                  : myCurrentIndent;
       int wrapIndent = hasWrapAnchor ? currentIndent() + getFirstChildLeftGap(collection) :
-        (hasAnchor || hasIndent) ? indent + 2 * myIndentSize
-          : myCurrentIndentAfterWrap;
+          (hasAnchor || hasIndent) ? indent + 2 * myIndentSize
+              : myCurrentIndentAfterWrap;
 
       withIndent(indent, wrapIndent, new Runnable() {
         @Override
@@ -461,7 +473,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         EditorCell unitStart = expandToUnitStart(indentLeaf);
 
         if (myLineContent.contains(unitStart) && isOnRightSide(unitStart) &&
-          cellRangeFitsOnOneLine(unitStart, lastCell)) {
+            cellRangeFitsOnOneLine(unitStart, lastCell)) {
 
           result = indentLeaf;
           current = current.getParent();
@@ -514,7 +526,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private boolean cellRangeFitsOnOneLine(EditorCell firstCell, EditorCell lastCell) {
       return lastCell.getX() + lastCell.getWidth() - firstCell.getX() <
-        myMaxWidth - myX - myCurrentIndentAfterWrap;
+          myMaxWidth - myX - myCurrentIndentAfterWrap;
     }
 
     private boolean isOnRightSide(EditorCell cell) {
