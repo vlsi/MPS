@@ -28,7 +28,6 @@ import com.intellij.openapi.ui.popup.ListItemDescriptor;
 import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.HideableDecorator;
@@ -43,10 +42,9 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.JBInsets;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,6 +67,7 @@ import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -325,17 +324,18 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void checkProjectPath(String newProjectPath) {
-    final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(newProjectPath);
-    //refresh file to avoid cached deleted project with the same name affects on creating one
-    if (virtualFile != null) VirtualFileUtils.refreshSynchronouslyRecursively(virtualFile);
-    //check if there is project in folder (both directory and file based)
-    boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
-    if(virtualFile != null && !isProjectPath) {
-      for (VirtualFile child : virtualFile.getChildren()) {
-        if (OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(child)) {
-          isProjectPath = true;
-          break;
-        }
+    boolean isProjectPath = false;
+    File file = new File(newProjectPath);
+    if(file.exists()){
+      if (file.getParent() == null || !file.isDirectory())
+        isProjectPath = false;
+      else {
+        isProjectPath = file.listFiles(new FilenameFilter() {
+          @Override
+          public boolean accept(File dir, String name) {
+            return Project.DIRECTORY_STORE_FOLDER.equals(name) || name.toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
+          }
+        }).length == 1;
       }
     }
     if(isProjectPath){

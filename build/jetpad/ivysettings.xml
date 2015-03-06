@@ -5,7 +5,6 @@
   <resolvers>
     <url name="public" m2compatible="true">
       <artifact pattern="http://repository.jetbrains.com/repo/[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]" />
-      <ivy pattern="http://repository.jetbrains.com/repo/[organization]/[module]/[revision]/[module]-[revision].pom" />
     </url>
   </resolvers>
 </ivy-settings>
