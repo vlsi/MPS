@@ -8,8 +8,6 @@ import java.util.ListIterator;
 
 /**
  * 
- * 
-
  * @deprecated use {@link java.util.LinkedList } instead
  */
 @Deprecated

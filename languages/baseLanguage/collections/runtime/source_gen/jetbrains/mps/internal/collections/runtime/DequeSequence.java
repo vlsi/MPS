@@ -149,8 +149,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
-   * 
-
    * @deprecated 
    * @return compatibility collection
    */
@@ -166,8 +164,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
-   * 
-
    * @deprecated regenerate to get rid of this method The method will be removed after 3.3
    */
   @Deprecated
@@ -213,8 +209,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
-   * 
-
    * @deprecated regenerate to get rid of this method The method will be removed after 3.3
    */
   @Deprecated
@@ -259,8 +253,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
-   * 
-
    * @deprecated regenerate to get rid of this method. The method will be removed after 3.3
    */
   @Deprecated
