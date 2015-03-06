@@ -12,11 +12,18 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -57,13 +64,46 @@ public class NamedTupleDeclaration_Behavior {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))));
     return result;
   }
+  public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, final SNode nodeToCompare, Set<SNode> visited) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
+      return true;
+    }
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("circular hierarchy in class " + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}));
+      }
+      return false;
+    }
+    if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
+      return true;
+    }
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")) == null) && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))).isEmpty()) {
+      return false;
+    }
+    SetSequence.fromSet(visited).addElement(thisNode);
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), "virtual_isDescendant_checkLoops_7165541881557222950", new Object[]{nodeToCompare, visited})) {
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(nodeToCompare, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode ct) {
+          return SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+        }
+      }).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode ifc) {
+          return BehaviorReflection.invokeVirtual(Boolean.TYPE, ifc, "virtual_isDescendant_7165541881557222913", new Object[]{nodeToCompare});
+        }
+      });
+    }
+    return false;
+  }
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode tvr) {
-        return _quotation_createNode_ds5lpv_a0a0a0a3(tvr);
+        return _quotation_createNode_ds5lpv_a0a0a0a4(tvr);
       }
     };
-    return _quotation_createNode_ds5lpv_a1a3(thisNode, ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).select(tvd2tvr).toListSequence());
+    return _quotation_createNode_ds5lpv_a1a4(thisNode, ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).select(tvd2tvr).toListSequence());
   }
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
@@ -94,14 +134,15 @@ public class NamedTupleDeclaration_Behavior {
   public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
     return ")";
   }
-  private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
+  protected static Logger LOG = LogManager.getLogger(NamedTupleDeclaration_Behavior.class);
+  private static SNode _quotation_createNode_ds5lpv_a0a0a0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ds5lpv_a1a3(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ds5lpv_a1a4(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
