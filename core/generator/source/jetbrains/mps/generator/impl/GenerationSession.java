@@ -213,7 +213,7 @@ class GenerationSession {
           if (mappingConfigurations.size() >= 1) {
             final TemplateMappingConfiguration first = mappingConfigurations.get(0);
             String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
-            monitor.step(String.format("step %d (%s#%s%s)", myMajorStep, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
+            monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
           }
 
           if (myLogger.needsInfo()) {
