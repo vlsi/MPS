@@ -166,10 +166,10 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   private void addActionsForRoots(SLanguage from, SModel target, DefaultActionGroup group) {
     for (SAbstractConcept c : from.getConcepts()) {
-      if (ModelConstraints.canBeRoot(c, target)) {
-        group.add(new NewRootNodeAction(c, target, myPackage));
-      }
+      if (!ModelConstraints.canBeRoot(c, target)) continue;
+      if (CreateRootFilterEP.getInstance().shouldBeRemoved(c)) continue;
+
+      group.add(new NewRootNodeAction(c, target, myPackage));
     }
   }
-
 }
