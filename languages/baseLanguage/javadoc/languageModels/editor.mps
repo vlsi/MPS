@@ -837,6 +837,7 @@
     <node concept="3EZMnI" id="7lVCwDcxZ_B" role="2wV5jI">
       <node concept="3F0ifn" id="7lVCwDcxZ_E" role="3EZMnx">
         <property role="3F0ifm" value="@deprecated" />
+        <ref role="1k5W1q" node="6nHreUlWi7H" resolve="CommentTag" />
       </node>
       <node concept="3F1sOY" id="2k6csr8mu4p" role="3EZMnx">
         <property role="1cu_pB" value="3" />
