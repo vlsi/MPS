@@ -22,31 +22,31 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildSetter;
 import jetbrains.mps.smodel.action.DefaultChildSubstituteAction;
-import jetbrains.mps.smodel.action.IChildNodeSetter;
-import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultContainmentSubstituteInfo.class));
@@ -54,6 +54,8 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
   private SNode myParentNode;
   private SNode myCurrentChild;
   private SContainmentLink myLink;
+  private SAbstractConcept myTargetConcept;
+  private DefaultChildSetter mySetter;
 
   public DefaultContainmentSubstituteInfo(final SNode sourceNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
@@ -66,6 +68,8 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });
+    myTargetConcept = link.getTargetConcept();
+    mySetter = new DefaultChildSetter(myLink);
   }
 
   public DefaultContainmentSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SContainmentLink link, final EditorContext editorContext) {
@@ -73,32 +77,41 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
     myParentNode = parentNode;
     myCurrentChild = currChildNode;
     myLink = link;
+    myTargetConcept = link.getTargetConcept();
+    mySetter = new DefaultChildSetter(myLink);
   }
 
   @Override
   public List<SubstituteAction> createActions() {
-    return createDefaultSubstituteActions(myLink.getTargetConcept(), myParentNode, myCurrentChild, new DefaultChildSetter(myLink));
-  }
-
-  private List<SubstituteAction> createDefaultSubstituteActions(@NotNull SAbstractConcept applicableConcept, SNode parentNode, SNode currentChild,
-      DefaultChildSetter setter) {
-    String conceptFqName = NameUtil.nodeFQName(applicableConcept.getDeclarationNode());
-    SContainmentLink link = setter.getLink();
+    String conceptFqName = NameUtil.nodeFQName(myTargetConcept.getDeclarationNode());
+    SContainmentLink link = mySetter.getLink();
 
     //todo: get rid of declaration node
-    if (!ModelConstraints.canBeChild(conceptFqName, parentNode, link.getDeclarationNode(), null, null)) {
+    if (!ModelConstraints.canBeChild(conceptFqName, myParentNode, link.getDeclarationNode(), null, null)) {
       return Collections.emptyList();
     }
-    if (applicableConcept instanceof SConcept) {
-      SReferenceLink smartRef = ReferenceConceptUtil.getCharacteristicReference(((SConcept) applicableConcept));
+    if (myTargetConcept instanceof SConcept) {
+      SReferenceLink smartRef = ReferenceConceptUtil.getCharacteristicReference(((SConcept) myTargetConcept));
       if (smartRef != null) {
         //todo add smart actions
         return Collections.emptyList();
       }
     }
 
-    //todo add constraits
-    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, applicableConcept, parentNode, currentChild, setter));
+    Set<SAbstractConcept> concepts = new HashSet<SAbstractConcept>();
+    for (SLanguage language : SModelOperations.getSLanguages(this.myParentNode.getModel())) {
+      for (SAbstractConcept concept : language.getConcepts()) {
+        if (concept.isSubConceptOf(this.myTargetConcept)) {
+          concepts.add(concept);
+        }
+      }
+    }
+    ArrayList<SubstituteAction> substituteActions = new ArrayList<SubstituteAction>();
+    for (SAbstractConcept concept : concepts) {
+      //todo add constraits
+      substituteActions.add(new DefaultChildSubstituteAction(concept, concept, myParentNode, myCurrentChild, mySetter));
+    }
+    return substituteActions;
   }
 
 

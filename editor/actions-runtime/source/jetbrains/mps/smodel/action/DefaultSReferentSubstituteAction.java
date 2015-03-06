@@ -105,7 +105,6 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode sourceNodePeer = getSourceNode();
     CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
-    String role = "rrrr";//SModelUtil.getGenuineLinkRole(myLink);
     SNode sourceNode = mapping.get(sourceNodePeer);
     SNode nodeToEquatePeer = sourceNodePeer;
     TypeChecker typeChecker = TypeChecker.getInstance();
@@ -120,7 +119,7 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
     if (parent == null) {
       return null;
     }
-    SNodeAccessUtil.setReferenceTarget(sourceNode, role, (SNode) getParameterObject());
+    SNodeAccessUtil.setReferenceTarget(sourceNode, myLink, (SNode) getParameterObject());
     SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
     return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
   }
