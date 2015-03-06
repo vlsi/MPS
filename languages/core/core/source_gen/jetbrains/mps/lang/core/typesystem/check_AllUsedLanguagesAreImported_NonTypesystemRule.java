@@ -12,9 +12,10 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -36,16 +37,21 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
     importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
-    for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{}))) {
+    final SAbstractConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
+    final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+
+    HashSet<SLanguage> reported = new HashSet<SLanguage>();
+    for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, null, true, new SAbstractConcept[]{}))) {
       SConcept concept = node.getConcept();
-      if (concept.equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo")) && "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(node))) {
+      if (concept.equals(C) && L.equals(node.getContainmentLink())) {
         continue;
       }
 
-      if (!(importedLanguages.contains(concept.getLanguage()))) {
+      SLanguage language = concept.getLanguage();
+      if (!(importedLanguages.contains(language)) && reported.add(language)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, concept.getLanguage().getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, language.getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix", false);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
