@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -33,6 +34,7 @@ public interface SAbstractConcept {
   /**
    * The language that defines the concept
    */
+  @NotNull
   SLanguage getLanguage();
 
   /**

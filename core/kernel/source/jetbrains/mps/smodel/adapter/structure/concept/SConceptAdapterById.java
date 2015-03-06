@@ -75,6 +75,7 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
     return myConceptId;
   }
 
+  @NotNull
   @Override
   public SLanguage getLanguage() {
     return MetaAdapterFactory.getLanguage(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));

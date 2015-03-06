@@ -47,6 +47,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
     return ConceptRegistryUtil.getConceptDescriptor(myFqName);
   }
 
+  @NotNull
   @Override
   public SLanguage getLanguage() {
     ConceptDescriptor cd = getConceptDescriptor();
