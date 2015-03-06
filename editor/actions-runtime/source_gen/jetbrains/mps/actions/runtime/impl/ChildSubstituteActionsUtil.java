@@ -45,7 +45,7 @@ public class ChildSubstituteActionsUtil {
     SAbstractConcept childConcept = SNodeOperations.getConcept(currentChild);
     if (childConcept instanceof SConcept) {
       SConcept sconcept = ((SConcept) childConcept);
-      while (sconcept.getSuperConcept() != null && sconcept.getSuperConcept() != SNodeUtil.concept_BaseConcept) {
+      while (sconcept.getSuperConcept() != null && !(sconcept.getSuperConcept().equals(SNodeUtil.concept_BaseConcept))) {
         sconcept = sconcept.getSuperConcept();
       }
       childConcept = sconcept;

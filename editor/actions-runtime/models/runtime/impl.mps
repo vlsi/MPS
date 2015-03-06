@@ -463,18 +463,23 @@
                   </node>
                   <node concept="10Nm6u" id="6CIUA$QFwgz" role="3uHU7w" />
                 </node>
-                <node concept="3y3z36" id="6CIUA$QFwCJ" role="3uHU7w">
-                  <node concept="2OqwBi" id="6CIUA$QFwzU" role="3uHU7B">
-                    <node concept="37vLTw" id="6CIUA$QFwzV" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6CIUA$QF8GG" resolve="sconcept" />
+                <node concept="3fqX7Q" id="6rwvxcxLwa_" role="3uHU7w">
+                  <node concept="2OqwBi" id="6rwvxcxLwaA" role="3fr31v">
+                    <node concept="2OqwBi" id="6rwvxcxLwaB" role="2Oq$k0">
+                      <node concept="37vLTw" id="6rwvxcxLwaC" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6CIUA$QF8GG" resolve="sconcept" />
+                      </node>
+                      <node concept="liA8E" id="6rwvxcxLwaD" role="2OqNvi">
+                        <ref role="37wK5l" to="t3eg:~SConcept.getSuperConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getSuperConcept" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="6CIUA$QFwzW" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SConcept.getSuperConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getSuperConcept" />
+                    <node concept="liA8E" id="6rwvxcxLwaE" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="10M0yZ" id="6rwvxcxLwaF" role="37wK5m">
+                        <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                        <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
+                      </node>
                     </node>
-                  </node>
-                  <node concept="10M0yZ" id="6CIUA$QFwLc" role="3uHU7w">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
                   </node>
                 </node>
               </node>

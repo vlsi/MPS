@@ -33,6 +33,10 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     super(CleanSourcesMigration.ID);
   }
 
+  public void forceExecutionNextTime(Project p) {
+    setExecuted(p, false);
+  }
+
   @Override
   public String getDescription() {
     return "Clean Generated " + ((mySources ? "Sources" : "Classes"));
@@ -82,7 +86,7 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_jwqyzj_a0b0a0a0a71(it.getFacet(TestsFacet.class));
+        IFile testDir = check_jwqyzj_a0b0a0a0a91(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           refreshAndDelete(outputDir);
@@ -100,7 +104,7 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
   private static void removeClassesGen(Project p) {
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
-        IFile classesGen = check_jwqyzj_a0a0a0a0a91(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_jwqyzj_a0a0a0a0a12(it.getFacet(JavaModuleFacet.class));
         refreshAndDelete(classesGen);
       }
     });
@@ -123,13 +127,13 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     }
     f.delete();
   }
-  private static IFile check_jwqyzj_a0b0a0a0a71(TestsFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0b0a0a0a91(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_jwqyzj_a0a0a0a0a91(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0a0a0a0a12(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
