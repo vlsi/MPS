@@ -157,8 +157,6 @@ public final class IconManager {
   }
   /**
    * 
-   * 
-
    * @deprecated use#getIcon(SAbstractConcept) instead
    */
   @Deprecated

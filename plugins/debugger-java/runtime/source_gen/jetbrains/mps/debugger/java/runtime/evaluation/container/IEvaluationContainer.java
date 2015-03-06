@@ -14,8 +14,6 @@ public interface IEvaluationContainer {
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException;
   /**
    * 
-   * 
-
    * @deprecated does nothing, the listener supplied is ignored
    */
   @Deprecated

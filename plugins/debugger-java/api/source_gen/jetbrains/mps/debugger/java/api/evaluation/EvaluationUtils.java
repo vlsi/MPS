@@ -146,20 +146,20 @@ public abstract class EvaluationUtils {
     }
     return failure;
   }
-  public   /**
+  /**
    * Something that can throw one of jdi exceptions or EvaluationException
    * 
    * @param T result
    */
-static interface Invocatable<T> {
+  public static interface Invocatable<T> {
     public T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
-  public   /**
+  /**
    * Something that can throw EvaluationException
    * 
    * @param T result
    */
-static interface EvaluationInvocatable<T> {
+  public static interface EvaluationInvocatable<T> {
     public T invoke() throws EvaluationException;
   }
   /**
