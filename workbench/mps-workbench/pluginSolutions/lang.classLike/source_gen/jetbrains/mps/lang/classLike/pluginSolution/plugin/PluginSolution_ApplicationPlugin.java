@@ -5,6 +5,7 @@ package jetbrains.mps.lang.classLike.pluginSolution.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelNewActions_ActionGroup;
+import jetbrains.mps.ide.actions.PackageNewActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.classLike.pluginSolution");
@@ -20,5 +21,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ClassLikes_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
+    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
   }
 }
