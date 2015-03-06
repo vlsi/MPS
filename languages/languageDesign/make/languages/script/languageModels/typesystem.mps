@@ -821,5 +821,25 @@
       <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
     </node>
   </node>
+  <node concept="2sgARr" id="5_MlBAZRELQ">
+    <property role="3GE5qa" value="job" />
+    <property role="TrG5h" value="supertypesOf_IResource" />
+    <property role="2RFo0w" value="true" />
+    <node concept="3clFbS" id="5_MlBAZRELR" role="2sgrp5">
+      <node concept="3clFbF" id="5_MlBAZS2rR" role="3cqZAp">
+        <node concept="2c44tf" id="5_MlBAZS2rP" role="3clFbG">
+          <node concept="El1HU" id="5_MlBAZS2sf" role="2c44tc" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Yb3XT" id="5_MlBAZRFfy" role="1YuTPh">
+      <property role="TrG5h" value="classifierType" />
+      <node concept="2DMOqp" id="5_MlBAZS0Yx" role="1YbcFS">
+        <node concept="3uibUv" id="5_MlBAZS0Yy" role="2DMOqq">
+          <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

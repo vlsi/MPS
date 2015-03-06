@@ -3155,112 +3155,120 @@
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/739457190729175664">
     <file name="ChangeGroupMessages.java">
-      <node id="3477558405266089730" at="17,0,18,0" concept="16" trace="ourOwner" />
-      <node id="739457190729175670" at="18,0,19,0" concept="7" trace="myLayout" />
-      <node id="739457190729177641" at="19,0,20,0" concept="7" trace="myLeft" />
-      <node id="739457190729183631" at="20,0,21,0" concept="7" trace="myGutter" />
-      <node id="739457190729177652" at="21,70,22,22" concept="6" />
-      <node id="739457190729177661" at="22,22,23,18" concept="6" />
-      <node id="739457190729183634" at="23,18,24,105" concept="6" />
-      <node id="739457190729183681" at="30,29,31,36" concept="6" />
-      <node id="8183734928029126187" at="37,25,38,38" concept="6" />
-      <node id="739457190729177712" at="40,40,41,38" concept="6" />
-      <node id="739457190729183622" at="43,41,44,71" concept="6" />
-      <node id="8183734928029126204" at="48,65,49,62" concept="6" />
-      <node id="8183734928029126214" at="49,62,50,61" concept="6" />
-      <node id="739457190729183550" at="53,0,54,0" concept="7" trace="myChangeGroup" />
-      <node id="739457190729183561" at="54,59,55,34" concept="6" />
-      <node id="3477558405266190225" at="58,42,59,42" concept="13" />
-      <node id="739457190729183572" at="62,29,63,61" concept="13" />
-      <node id="739457190729183548" at="66,32,67,18" concept="13" />
-      <node id="739457190729183599" at="70,52,71,59" concept="13" />
-      <node id="739457190729183586" at="74,53,75,54" concept="13" />
-      <node id="6917262932196000862" at="80,38,81,30" concept="13" />
-      <node id="8096027575999506486" at="83,28,84,18" concept="13" />
-      <node id="8096027575999589948" at="86,56,87,76" concept="13" />
-      <node id="8096027575999586335" at="89,30,90,15" concept="13" />
-      <node id="8096027575999546812" at="92,35,93,19" concept="13" />
-      <node id="9208869176467556553" at="30,0,33,0" concept="11" trace="run#()V" />
-      <node id="8183734928029126183" at="37,0,40,0" concept="11" trace="dispose#()V" />
-      <node id="739457190729183618" at="43,0,46,0" concept="11" trace="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-      <node id="739457190729183554" at="54,0,57,0" concept="3" trace="MyChangeGroupMessage#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-      <node id="6917262932195989047" at="80,0,83,0" concept="11" trace="getStatus#()Ljetbrains/mps/errors/MessageStatus;" />
-      <node id="8096027575999506480" at="83,0,86,0" concept="11" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8096027575999586230" at="86,0,89,0" concept="11" trace="sameAs#(Ljetbrains/mps/openapi/editor/message/SimpleEditorMessage;)Z" />
-      <node id="8096027575999548864" at="89,0,92,0" concept="11" trace="getPriority#()I" />
-      <node id="8096027575999546806" at="92,0,95,0" concept="11" trace="showInGutter#()Z" />
-      <node id="1995253788898151248" at="48,0,52,0" concept="17" trace="startMaintaining#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
-      <node id="739457190729183520" at="57,0,61,0" concept="11" trace="getOwner#()Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;" />
-      <node id="739457190729183524" at="61,0,65,0" concept="11" trace="getColor#()Ljava/awt/Color;" />
-      <node id="739457190729183528" at="65,0,69,0" concept="11" trace="getMessage#()Ljava/lang/String;" />
-      <node id="739457190729183538" at="69,0,73,0" concept="11" trace="getStart#(Ljetbrains/mps/openapi/editor/EditorComponent;)I" />
-      <node id="739457190729183532" at="73,0,77,0" concept="11" trace="getHeight#(Ljetbrains/mps/openapi/editor/EditorComponent;)I" />
-      <node id="739457190729177645" at="21,0,26,0" concept="3" trace="ChangeGroupMessages#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)V" />
-      <node id="5837303828188495134" at="28,45,33,11" concept="6" />
-      <node id="739457190729183609" at="41,38,46,7" concept="6" />
-      <node id="5837303828188495132" at="28,0,35,0" concept="11" trace="changeGroupsInvalidated#()V" />
-      <node id="739457190729177668" at="40,0,48,0" concept="11" trace="rebuildGutterMessages#()V" />
-      <node id="739457190729183672" at="26,34,35,7" concept="6" />
-      <node id="739457190729189660" at="26,0,37,0" concept="11" trace="startMaintaining#()V" />
-      <scope id="9208869176467556554" at="30,29,31,36" />
-      <scope id="8183734928029126186" at="37,25,38,38" />
-      <scope id="739457190729183619" at="43,41,44,71" />
-      <scope id="739457190729183558" at="54,59,55,34" />
-      <scope id="739457190729183523" at="58,42,59,42" />
-      <scope id="739457190729183527" at="62,29,63,61" />
-      <scope id="739457190729183531" at="66,32,67,18" />
-      <scope id="739457190729183543" at="70,52,71,59" />
-      <scope id="739457190729183537" at="74,53,75,54" />
-      <scope id="6917262932195989051" at="80,38,81,30" />
-      <scope id="8096027575999506484" at="83,28,84,18" />
-      <scope id="8096027575999586236" at="86,56,87,76" />
-      <scope id="8096027575999548868" at="89,30,90,15" />
-      <scope id="8096027575999546810" at="92,35,93,19" />
-      <scope id="1995253788898151251" at="48,65,50,61" />
-      <scope id="739457190729177649" at="21,70,24,105" />
-      <scope id="9208869176467556553" at="30,0,33,0" />
-      <scope id="8183734928029126183" at="37,0,40,0" />
-      <scope id="739457190729183618" at="43,0,46,0">
+      <node id="3477558405266089730" at="18,0,19,0" concept="16" trace="ourOwner" />
+      <node id="739457190729175670" at="19,0,20,0" concept="7" trace="myLayout" />
+      <node id="739457190729177641" at="20,0,21,0" concept="7" trace="myLeft" />
+      <node id="739457190729183631" at="21,0,22,0" concept="7" trace="myGutter" />
+      <node id="2418333796570128051" at="22,0,23,0" concept="7" trace="myUpdateQueue" />
+      <node id="2418333796570139288" at="23,0,24,0" concept="7" trace="myUpdateIdentity" />
+      <node id="739457190729177652" at="24,70,25,22" concept="6" />
+      <node id="739457190729177661" at="25,22,26,18" concept="6" />
+      <node id="2418333796570219743" at="26,18,27,106" concept="12" />
+      <node id="739457190729183634" at="27,106,28,53" concept="6" />
+      <node id="2418333796570144536" at="28,53,29,112" concept="6" />
+      <node id="2418333796570236601" at="29,112,30,45" concept="6" />
+      <node id="739457190729183681" at="36,29,37,36" concept="6" />
+      <node id="2418333796570316099" at="43,25,44,28" concept="6" />
+      <node id="8183734928029126187" at="44,28,45,38" concept="6" />
+      <node id="739457190729177712" at="47,40,48,38" concept="6" />
+      <node id="739457190729183622" at="50,41,51,71" concept="6" />
+      <node id="8183734928029126204" at="55,65,56,62" concept="6" />
+      <node id="8183734928029126214" at="56,62,57,61" concept="6" />
+      <node id="739457190729183550" at="60,0,61,0" concept="7" trace="myChangeGroup" />
+      <node id="739457190729183561" at="61,59,62,34" concept="6" />
+      <node id="3477558405266190225" at="65,42,66,42" concept="13" />
+      <node id="739457190729183572" at="69,29,70,61" concept="13" />
+      <node id="739457190729183548" at="73,32,74,18" concept="13" />
+      <node id="739457190729183599" at="77,81,78,59" concept="13" />
+      <node id="739457190729183586" at="81,82,82,54" concept="13" />
+      <node id="6917262932196000862" at="87,38,88,30" concept="13" />
+      <node id="8096027575999506486" at="90,28,91,18" concept="13" />
+      <node id="8096027575999589948" at="93,56,94,76" concept="13" />
+      <node id="8096027575999586335" at="96,30,97,15" concept="13" />
+      <node id="8096027575999546812" at="99,35,100,19" concept="13" />
+      <node id="2418333796570314311" at="36,0,39,0" concept="11" trace="run#()V" />
+      <node id="739457190729183618" at="50,0,53,0" concept="11" trace="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+      <node id="739457190729183554" at="61,0,64,0" concept="3" trace="MyChangeGroupMessage#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+      <node id="6917262932195989047" at="87,0,90,0" concept="11" trace="getStatus#()Ljetbrains/mps/errors/MessageStatus;" />
+      <node id="8096027575999506480" at="90,0,93,0" concept="11" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8096027575999586230" at="93,0,96,0" concept="11" trace="sameAs#(Ljetbrains/mps/openapi/editor/message/SimpleEditorMessage;)Z" />
+      <node id="8096027575999548864" at="96,0,99,0" concept="11" trace="getPriority#()I" />
+      <node id="8096027575999546806" at="99,0,102,0" concept="11" trace="showInGutter#()Z" />
+      <node id="8183734928029126183" at="43,0,47,0" concept="11" trace="dispose#()V" />
+      <node id="1995253788898151248" at="55,0,59,0" concept="17" trace="startMaintaining#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
+      <node id="739457190729183520" at="64,0,68,0" concept="11" trace="getOwner#()Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;" />
+      <node id="739457190729183524" at="68,0,72,0" concept="11" trace="getColor#()Ljava/awt/Color;" />
+      <node id="739457190729183528" at="72,0,76,0" concept="11" trace="getMessage#()Ljava/lang/String;" />
+      <node id="739457190729183538" at="76,0,80,0" concept="11" trace="getStart#(Ljetbrains/mps/openapi/editor/EditorComponent;)I" />
+      <node id="739457190729183532" at="80,0,84,0" concept="11" trace="getHeight#(Ljetbrains/mps/openapi/editor/EditorComponent;)I" />
+      <node id="2418333796570239126" at="34,45,39,11" concept="6" />
+      <node id="739457190729183609" at="48,38,53,7" concept="6" />
+      <node id="5837303828188495132" at="34,0,41,0" concept="11" trace="changeGroupsInvalidated#()V" />
+      <node id="739457190729177645" at="24,0,32,0" concept="3" trace="ChangeGroupMessages#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)V" />
+      <node id="739457190729177668" at="47,0,55,0" concept="11" trace="rebuildGutterMessages#()V" />
+      <node id="739457190729183672" at="32,34,41,7" concept="6" />
+      <node id="739457190729189660" at="32,0,43,0" concept="11" trace="startMaintaining#()V" />
+      <scope id="2418333796570314315" at="36,29,37,36" />
+      <scope id="739457190729183619" at="50,41,51,71" />
+      <scope id="739457190729183558" at="61,59,62,34" />
+      <scope id="739457190729183523" at="65,42,66,42" />
+      <scope id="739457190729183527" at="69,29,70,61" />
+      <scope id="739457190729183531" at="73,32,74,18" />
+      <scope id="739457190729183543" at="77,81,78,59" />
+      <scope id="739457190729183537" at="81,82,82,54" />
+      <scope id="6917262932195989051" at="87,38,88,30" />
+      <scope id="8096027575999506484" at="90,28,91,18" />
+      <scope id="8096027575999586236" at="93,56,94,76" />
+      <scope id="8096027575999548868" at="96,30,97,15" />
+      <scope id="8096027575999546810" at="99,35,100,19" />
+      <scope id="8183734928029126186" at="43,25,45,38" />
+      <scope id="1995253788898151251" at="55,65,57,61" />
+      <scope id="2418333796570314311" at="36,0,39,0" />
+      <scope id="739457190729183618" at="50,0,53,0">
         <var name="cg" id="739457190729183618" />
       </scope>
-      <scope id="739457190729183554" at="54,0,57,0">
+      <scope id="739457190729183554" at="61,0,64,0">
         <var name="changeGroup" id="739457190729183559" />
       </scope>
-      <scope id="6917262932195989047" at="80,0,83,0" />
-      <scope id="8096027575999506480" at="83,0,86,0" />
-      <scope id="8096027575999586230" at="86,0,89,0">
+      <scope id="6917262932195989047" at="87,0,90,0" />
+      <scope id="8096027575999506480" at="90,0,93,0" />
+      <scope id="8096027575999586230" at="93,0,96,0">
         <var name="message" id="8096027575999586234" />
       </scope>
-      <scope id="8096027575999548864" at="89,0,92,0" />
-      <scope id="8096027575999546806" at="92,0,95,0" />
-      <scope id="1995253788898151248" at="48,0,52,0">
+      <scope id="8096027575999548864" at="96,0,99,0" />
+      <scope id="8096027575999546806" at="99,0,102,0" />
+      <scope id="8183734928029126183" at="43,0,47,0" />
+      <scope id="1995253788898151248" at="55,0,59,0">
         <var name="layout" id="1995253788898151259" />
       </scope>
-      <scope id="739457190729183520" at="57,0,61,0" />
-      <scope id="739457190729183524" at="61,0,65,0" />
-      <scope id="739457190729183528" at="65,0,69,0" />
-      <scope id="739457190729183538" at="69,0,73,0">
+      <scope id="739457190729183520" at="64,0,68,0" />
+      <scope id="739457190729183524" at="68,0,72,0" />
+      <scope id="739457190729183528" at="72,0,76,0" />
+      <scope id="739457190729183538" at="76,0,80,0">
         <var name="component" id="739457190729183541" />
       </scope>
-      <scope id="739457190729183532" at="73,0,77,0">
+      <scope id="739457190729183532" at="80,0,84,0">
         <var name="component" id="739457190729183535" />
       </scope>
-      <scope id="739457190729177645" at="21,0,26,0">
+      <scope id="5837303828188495133" at="34,45,39,11" />
+      <scope id="739457190729177649" at="24,70,30,45">
+        <var name="editorComponent" id="2418333796570219744" />
+      </scope>
+      <scope id="739457190729177671" at="47,40,53,7" />
+      <scope id="5837303828188495132" at="34,0,41,0" />
+      <scope id="739457190729177645" at="24,0,32,0">
         <var name="layout" id="739457190729177650" />
         <var name="left" id="739457190729177659" />
       </scope>
-      <scope id="5837303828188495133" at="28,45,33,11" />
-      <scope id="739457190729177671" at="40,40,46,7" />
-      <scope id="5837303828188495132" at="28,0,35,0" />
-      <scope id="739457190729177668" at="40,0,48,0" />
-      <scope id="739457190729189663" at="26,34,35,7" />
-      <scope id="739457190729189660" at="26,0,37,0" />
-      <unit id="3477558405266190215" at="17,56,17,79" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$1" />
-      <unit id="9208869176467556553" at="29,39,33,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
-      <unit id="739457190729183618" at="42,67,46,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
-      <unit id="5837303828188495132" at="27,39,35,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
-      <unit id="739457190729183512" at="52,0,96,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
-      <unit id="739457190729175664" at="16,0,97,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
+      <scope id="739457190729177668" at="47,0,55,0" />
+      <scope id="739457190729189663" at="32,34,41,7" />
+      <scope id="739457190729189660" at="32,0,43,0" />
+      <unit id="3477558405266190215" at="18,56,18,79" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$1" />
+      <unit id="2418333796570314305" at="35,32,39,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
+      <unit id="739457190729183618" at="49,67,53,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
+      <unit id="5837303828188495132" at="33,39,41,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
+      <unit id="739457190729183512" at="59,0,103,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
+      <unit id="739457190729175664" at="17,0,104,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
     </file>
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/8733553229778921962">

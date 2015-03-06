@@ -4,12 +4,13 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.MessagesGutter;
-import javax.swing.SwingUtilities;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import java.awt.Color;
-import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -18,15 +19,20 @@ public class ChangeGroupMessages {
   private ChangeGroupLayout myLayout;
   private boolean myLeft;
   private MessagesGutter myGutter;
+  private MergingUpdateQueue myUpdateQueue;
+  private Object myUpdateIdentity = new Object();
   public ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
     myLayout = layout;
     myLeft = left;
-    myGutter = ((left ? myLayout.getLeftComponent() : myLayout.getRightComponent())).getMessagesGutter();
+    EditorComponent editorComponent = (left ? myLayout.getLeftComponent() : myLayout.getRightComponent());
+    myGutter = (editorComponent).getMessagesGutter();
+    myUpdateQueue = new MergingUpdateQueue("ChangeGroupMessages", 500, true, editorComponent, null, null, true);
+    myUpdateQueue.setRestartTimerOnAdd(true);
   }
   public void startMaintaining() {
     myLayout.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
-        SwingUtilities.invokeLater(new Runnable() {
+        myUpdateQueue.queue(new Update(myUpdateIdentity) {
           public void run() {
             rebuildGutterMessages();
           }
@@ -35,6 +41,7 @@ public class ChangeGroupMessages {
     });
   }
   public void dispose() {
+    myUpdateQueue.dispose();
     myGutter.removeMessages(ourOwner);
   }
   private void rebuildGutterMessages() {
@@ -67,11 +74,11 @@ public class ChangeGroupMessages {
       return null;
     }
     @Override
-    public int getStart(EditorComponent component) {
+    public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
       return (int) myChangeGroup.getBounds(myLeft).start();
     }
     @Override
-    public int getHeight(EditorComponent component) {
+    public int getHeight(jetbrains.mps.openapi.editor.EditorComponent component) {
       return myChangeGroup.getBounds(myLeft).length();
     }
 
