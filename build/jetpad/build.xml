@@ -18,7 +18,12 @@
     <isreachable url="http://repository.jetbrains.com/repo" />
   </condition>
 
-  <target name="resolve" depends="install-ivy"  description="--> Retreive dependencies with ivy if changed">
+  <!--To clean ivy cache for MPS-21549-->
+  <target name="cleanCache" unless="${offline}" if="${mps.isTCBuild}">
+    <ivy:cleancache/>
+  </target>
+
+  <target name="resolve" depends="install-ivy, cleanCache"  description="--> Retreive dependencies with ivy if changed">
     <ivy:resolve file="ivy.xml" usecacheonly="${offline}" validate="false"/>
     <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
