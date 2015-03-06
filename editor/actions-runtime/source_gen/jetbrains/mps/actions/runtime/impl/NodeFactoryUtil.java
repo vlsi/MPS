@@ -23,8 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /**
  * 
- * 
-
  * @deprecated since MPS 3.2 ActionAspectDescriptor is completely generated, so this class should be removed after MPS 3.2
  */
 @Deprecated

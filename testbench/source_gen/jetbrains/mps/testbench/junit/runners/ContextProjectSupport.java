@@ -30,7 +30,6 @@ public class ContextProjectSupport {
 
   /**
    * 
-   * 
    * @return compiled and reloaded context mps project
    */
   @NotNull

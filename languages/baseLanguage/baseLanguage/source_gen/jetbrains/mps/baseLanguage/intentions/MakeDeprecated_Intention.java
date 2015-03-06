@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeDeprecated_Intention implements IntentionFactory {
@@ -65,6 +67,7 @@ public class MakeDeprecated_Intention implements IntentionFactory {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
         BehaviorReflection.invokeVirtual(Void.class, node, "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
       } else {
+        ModuleDependencyUtils.addDependencyOnJavaDocIfMissing(SNodeOperations.getModel(node));
         BehaviorReflection.invokeVirtual(Void.class, node, "virtual_markDeprecated_7983358747957651026", new Object[]{});
       }
     }

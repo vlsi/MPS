@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CommentLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    // first line in tags needs to stay on the same line with the tag, DocComments prepend a new line explicitly 
     if (SNodeOperations.getIndexInParent(node) != 0) {
       this.appendNewLine();
       DocCommentTextGen.javadocIndent(this);
