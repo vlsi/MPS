@@ -142,16 +142,16 @@ public class ProjectPaneActionGroups {
     return null;
   }
 
-  public static ActionGroup getQuickCreateGroup(MPSTreeNode treeNode, boolean plain) {
+  public static ActionGroup getQuickCreateGroup(MPSTreeNode treeNode) {
     if (treeNode instanceof TextTreeNode) {
       if (treeNode instanceof ProjectTreeNode) {
         return ActionUtils.getGroup(PROJECT_NEW_ACTIONS);
       } else if (treeNode instanceof PackageNode) {
-        return new CreateRootNodeGroup(plain);
+        return new CreateRootNodeGroup();
       }
     }
     if (treeNode instanceof SModelTreeNode) {
-      return new CreateRootNodeGroup(plain);
+      return new CreateRootNodeGroup();
     }
     if (treeNode instanceof ProjectModuleTreeNode) {
       if (treeNode instanceof ProjectSolutionTreeNode) {

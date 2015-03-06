@@ -46,21 +46,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @author Kostik
- */
 public class CreateRootNodeGroup extends BaseGroup {
   private String myPackage;
-  private boolean myPlain = false;
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
     setPopup(false);
-  }
-
-  public CreateRootNodeGroup(boolean plain) {
-    this();
-    myPlain = plain;
   }
 
   @Override
@@ -147,7 +138,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
     }
 
-    final boolean plain = myPlain || (byLanguage.size() == 1 && aspect == null);
+    final boolean plain = byLanguage.size() == 1 && aspect == null;
 
     for (DefaultActionGroup g : byLanguage) {
       if (plain) {
