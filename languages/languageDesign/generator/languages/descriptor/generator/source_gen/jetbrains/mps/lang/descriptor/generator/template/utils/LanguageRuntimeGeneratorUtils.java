@@ -24,8 +24,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 public class LanguageRuntimeGeneratorUtils {
   /**
    * 
-   * 
-
    * @deprecated since MPS 3.2 use isAspectOfLanguage(..., concept ... rootConcepts);
    */
   @Deprecated

@@ -62,7 +62,6 @@ public class MpsTestsSupport {
 
   /**
    * 
-   * 
    * @return created environment iff there is no active environment currently, do not forget dispose created environment in this case!, null if active environment is satisfies condition
    */
   public static Environment initEnv(boolean withIdea, EnvironmentConfig config) {

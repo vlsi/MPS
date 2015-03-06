@@ -1,16 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-927x6cbmo6c87s4zwkc0jan0eem964r">
-  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-cakz83badnn39d5z68rtqauwxp4rcy8" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="clelklcyyrltwc0s7skmek9f9pkvicn" />
-  <common hash="dxxefeql9w8r2kn8qeoaaqnuu56adg5" dependsOnNodes="true">
-    <dep root="3432969378036014082" />
-    <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="IconContainer.java" />
-  </common>
-  <source id="3432969378036014082" name="Icons" hash="nixh6t60jutq95bsvsql7qy2lejdmh">
-    <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
-    <file name="Icons.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-927x6cbmo6c87s4zwkc0jan0eem964r" />
 

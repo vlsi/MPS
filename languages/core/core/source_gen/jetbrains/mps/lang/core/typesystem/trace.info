@@ -710,75 +710,84 @@
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/6268689888338066042">
     <file name="check_AllUsedLanguagesAreImported_NonTypesystemRule.java">
-      <node id="6268689888338114628" at="29,58,30,13" concept="8" />
-      <node id="6399148743916629763" at="32,49,33,13" concept="8" />
-      <node id="6268689888338233304" at="34,5,35,64" concept="7" />
-      <node id="4391055162404185309" at="35,64,36,113" concept="9" />
-      <node id="4681074014967032001" at="36,113,37,105" concept="3" />
-      <node id="4681074014967043968" at="37,105,38,0" concept="10" />
-      <node id="935439722421237473" at="39,258,40,43" concept="7" />
-      <node id="935439722421256890" at="41,248,42,17" concept="2" />
-      <node id="935439722421239572" at="43,7,44,0" concept="10" />
-      <node id="6268689888338468534" at="46,9,47,62" concept="7" />
-      <node id="6268689888338468534" at="47,62,48,273" concept="7" />
-      <node id="6268689888338468534" at="49,11,50,151" concept="7" />
-      <node id="6268689888338468534" at="50,151,51,73" concept="3" />
-      <node id="6268689888338066042" at="57,46,58,59" concept="8" />
-      <node id="6268689888338066042" at="61,5,62,130" concept="7" />
-      <node id="6268689888338066042" at="62,130,63,45" concept="8" />
-      <node id="6268689888338066042" at="66,30,67,17" concept="8" />
-      <node id="6268689888338066042" at="26,0,28,0" concept="1" trace="check_AllUsedLanguagesAreImported_NonTypesystemRule#()V" />
-      <node id="6268689888338069369" at="28,117,31,5" concept="5" />
-      <node id="6399148743916623078" at="31,5,34,5" concept="5" />
-      <node id="935439722421239914" at="40,43,43,7" concept="5" />
-      <node id="6268689888338066042" at="57,0,60,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="6268689888338066042" at="66,0,69,0" concept="6" trace="overrides#()Z" />
-      <node id="6268689888338468534" at="48,273,52,11" concept="0" />
-      <node id="6268689888338066042" at="60,68,64,5" concept="0" />
-      <node id="6268689888338066042" at="60,0,66,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6268689888338468534" at="45,65,53,9" concept="0" />
-      <node id="6268689888338404642" at="44,0,54,7" concept="5" />
-      <node id="6268689888338383204" at="38,0,55,5" concept="4" />
-      <node id="6268689888338066042" at="28,0,57,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="6268689888338066042" at="26,64,26,64" />
-      <scope id="6268689888338069370" at="29,58,30,13" />
-      <scope id="6399148743916623081" at="32,49,33,13" />
-      <scope id="935439722421239917" at="41,248,42,17" />
-      <scope id="6268689888338066042" at="57,46,58,59" />
-      <scope id="6268689888338066042" at="66,30,67,17" />
-      <scope id="6268689888338066042" at="26,0,28,0" />
-      <scope id="6268689888338468534" at="49,11,51,73">
+      <node id="6268689888338114628" at="30,58,31,13" concept="8" />
+      <node id="6399148743916629763" at="33,49,34,13" concept="8" />
+      <node id="6268689888338233304" at="35,5,36,64" concept="7" />
+      <node id="4391055162404185309" at="36,64,37,113" concept="9" />
+      <node id="4681074014967032001" at="37,113,38,105" concept="3" />
+      <node id="4681074014967043968" at="38,105,39,0" concept="10" />
+      <node id="9048093554329923982" at="39,0,40,178" concept="7" />
+      <node id="9048093554329923987" at="40,178,41,167" concept="7" />
+      <node id="9048093554329922511" at="41,167,42,0" concept="10" />
+      <node id="9048093554329934507" at="42,0,43,59" concept="7" />
+      <node id="935439722421237473" at="44,126,45,43" concept="7" />
+      <node id="935439722421256890" at="46,69,47,17" concept="2" />
+      <node id="935439722421239572" at="48,7,49,0" concept="10" />
+      <node id="9048093554329972623" at="49,0,50,49" concept="7" />
+      <node id="6268689888338468534" at="52,9,53,62" concept="7" />
+      <node id="6268689888338468534" at="53,62,54,260" concept="7" />
+      <node id="6268689888338468534" at="55,11,56,151" concept="7" />
+      <node id="6268689888338468534" at="56,151,57,73" concept="3" />
+      <node id="6268689888338066042" at="63,46,64,59" concept="8" />
+      <node id="6268689888338066042" at="67,5,68,130" concept="7" />
+      <node id="6268689888338066042" at="68,130,69,45" concept="8" />
+      <node id="6268689888338066042" at="72,30,73,17" concept="8" />
+      <node id="6268689888338066042" at="27,0,29,0" concept="1" trace="check_AllUsedLanguagesAreImported_NonTypesystemRule#()V" />
+      <node id="6268689888338069369" at="29,117,32,5" concept="5" />
+      <node id="6399148743916623078" at="32,5,35,5" concept="5" />
+      <node id="935439722421239914" at="45,43,48,7" concept="5" />
+      <node id="6268689888338066042" at="63,0,66,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="6268689888338066042" at="72,0,75,0" concept="6" trace="overrides#()Z" />
+      <node id="6268689888338468534" at="54,260,58,11" concept="0" />
+      <node id="6268689888338066042" at="66,68,70,5" concept="0" />
+      <node id="6268689888338066042" at="66,0,72,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="6268689888338468534" at="51,78,59,9" concept="0" />
+      <node id="6268689888338404642" at="50,49,60,7" concept="5" />
+      <node id="6268689888338383204" at="43,59,61,5" concept="4" />
+      <node id="6268689888338066042" at="29,0,63,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="6268689888338066042" at="27,64,27,64" />
+      <scope id="6268689888338069370" at="30,58,31,13" />
+      <scope id="6399148743916623081" at="33,49,34,13" />
+      <scope id="935439722421239917" at="46,69,47,17" />
+      <scope id="6268689888338066042" at="63,46,64,59" />
+      <scope id="6268689888338066042" at="72,30,73,17" />
+      <scope id="6268689888338066042" at="27,0,29,0" />
+      <scope id="6268689888338468534" at="55,11,57,73">
         <var name="intentionProvider" id="6268689888338468534" />
       </scope>
-      <scope id="6268689888338066042" at="61,5,63,45">
+      <scope id="6268689888338066042" at="67,5,69,45">
         <var name="b" id="6268689888338066042" />
       </scope>
-      <scope id="6268689888338066042" at="57,0,60,0" />
-      <scope id="6268689888338066042" at="66,0,69,0" />
-      <scope id="6268689888338066042" at="60,68,64,5" />
-      <scope id="6268689888338468534" at="46,9,52,11">
+      <scope id="6268689888338066042" at="63,0,66,0" />
+      <scope id="6268689888338066042" at="72,0,75,0" />
+      <scope id="6268689888338066042" at="66,68,70,5" />
+      <scope id="6268689888338468534" at="52,9,58,11">
         <var name="_reporter_2309309498" id="6268689888338468534" />
         <var name="errorTarget" id="6268689888338468534" />
       </scope>
-      <scope id="6268689888338066042" at="60,0,66,0">
+      <scope id="6268689888338066042" at="66,0,72,0">
         <var name="argument" id="6268689888338066042" />
       </scope>
-      <scope id="6268689888338404643" at="45,65,53,9" />
-      <scope id="6268689888338383210" at="39,258,54,7">
+      <scope id="6268689888338404643" at="51,78,59,9" />
+      <scope id="6268689888338383210" at="44,126,60,7">
         <var name="concept" id="935439722421237474" />
+        <var name="language" id="9048093554329972624" />
       </scope>
-      <scope id="6268689888338383204" at="38,0,55,5">
+      <scope id="6268689888338383204" at="43,59,61,5">
         <var name="node" id="6268689888338383206" />
       </scope>
-      <scope id="6268689888338066501" at="28,117,55,5">
+      <scope id="6268689888338066501" at="29,117,61,5">
+        <var name="C" id="9048093554329923985" />
+        <var name="L" id="9048093554329923990" />
         <var name="importedLanguages" id="6268689888338233305" />
+        <var name="reported" id="9048093554329934508" />
       </scope>
-      <scope id="6268689888338066042" at="28,0,57,0">
+      <scope id="6268689888338066042" at="29,0,63,0">
         <var name="root" id="6268689888338066042" />
         <var name="status" id="6268689888338066042" />
         <var name="typeCheckingContext" id="6268689888338066042" />
       </scope>
-      <unit id="6268689888338066042" at="25,0,70,0" name="jetbrains.mps.lang.core.typesystem.check_AllUsedLanguagesAreImported_NonTypesystemRule" />
+      <unit id="6268689888338066042" at="26,0,76,0" name="jetbrains.mps.lang.core.typesystem.check_AllUsedLanguagesAreImported_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/6268689888341989285">

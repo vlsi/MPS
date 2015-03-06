@@ -7843,6 +7843,18 @@
           </node>
           <node concept="9aQIb" id="hNB98nd" role="9aQIa">
             <node concept="3clFbS" id="hNB98ne" role="9aQI4">
+              <node concept="3clFbF" id="6BkpuGOYpVI" role="3cqZAp">
+                <node concept="2YIFZM" id="6BkpuGP23TV" role="3clFbG">
+                  <ref role="37wK5l" to="tpcz:6BkpuGOYpXd" resolve="addDependencyOnJavaDocIfMissing" />
+                  <ref role="1Pybhc" to="tpcz:v01Wj46Dq4" resolve="ModuleDependencyUtils" />
+                  <node concept="2JrnkZ" id="6BkpuGP26Cf" role="37wK5m">
+                    <node concept="2OqwBi" id="6BkpuGP26gf" role="2JrQYb">
+                      <node concept="2Sf5sV" id="6BkpuGP26dm" role="2Oq$k0" />
+                      <node concept="I4A8Y" id="6BkpuGP26rd" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="6Va_BJeCSTY" role="3cqZAp">
                 <node concept="2OqwBi" id="6Va_BJeCSZp" role="3clFbG">
                   <node concept="2Sf5sV" id="6Va_BJeCSTW" role="2Oq$k0" />
