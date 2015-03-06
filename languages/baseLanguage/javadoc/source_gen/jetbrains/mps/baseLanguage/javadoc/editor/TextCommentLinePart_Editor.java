@@ -16,6 +16,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 
 public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -53,6 +58,12 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ModelAccess_x1gmbt_a0");
     TextCommentLinePart_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TextCommentLinePart_Editor.ApplySideTransforms_left_cellMenu_x1gmbt_a0a0()}));
     return editorCell;
+  }
+  public static class ApplySideTransforms_left_cellMenu_x1gmbt_a0a0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_left_cellMenu_x1gmbt_a0a0() {
+      super(CellSide.LEFT, "");
+    }
   }
 }
