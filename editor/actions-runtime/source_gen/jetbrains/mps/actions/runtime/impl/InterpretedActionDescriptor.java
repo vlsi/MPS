@@ -19,8 +19,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  * 
- * 
-
  * @deprecated since MPS 3.2 ActionAspectDescriptor is completely generated, so this class should be removed after MPS 3.2
  */
 @Deprecated

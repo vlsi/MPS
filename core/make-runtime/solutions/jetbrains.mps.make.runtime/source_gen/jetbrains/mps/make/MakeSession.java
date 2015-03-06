@@ -19,8 +19,6 @@ public class MakeSession {
   private final boolean myIsSticky;
   /**
    * 
-   * 
-
    * @deprecated use constructor with {@link jetbrains.mps.project.Project } instead
    */
   @Deprecated
@@ -30,8 +28,6 @@ public class MakeSession {
   }
   /**
    * 
-   * 
-
    * @deprecated use constructor with {@link jetbrains.mps.project.Project } instead
    */
   @Deprecated
@@ -41,8 +37,6 @@ public class MakeSession {
   }
   /**
    * 
-   * 
-
    * @deprecated use constructor with {@link jetbrains.mps.project.Project } instead
    */
   @Deprecated
@@ -73,8 +67,6 @@ public class MakeSession {
   }
   /**
    * 
-   * 
-
    * @deprecated use {@link jetbrains.mps.make.MakeSession#getProject() }
    */
   @Deprecated
@@ -94,8 +86,6 @@ public class MakeSession {
   }
   /**
    * 
-   * 
-
    * @deprecated according to Fedor, obsolete functionality
    */
   @Deprecated

@@ -86,6 +86,12 @@
         <child id="1144231399730" name="condition" index="1Dwp0S" />
         <child id="1144231408325" name="iteration" index="1Dwrff" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen">
@@ -765,6 +771,11 @@
     <ref role="WuzLi" to="m373:7lVCwDcxZ_G" resolve="CommentLine" />
     <node concept="11bSqf" id="3veQ_zQyFo5" role="11c4hB">
       <node concept="3clFbS" id="3veQ_zQyFo6" role="2VODD2">
+        <node concept="3SKdUt" id="6BkpuGOIxhM" role="3cqZAp">
+          <node concept="3SKdUq" id="6BkpuGOIxiU" role="3SKWNk">
+            <property role="3SKdUp" value="first line in tags needs to stay on the same line with the tag, DocComments prepend a new line explicitly" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="1OzlC1cRljY" role="3cqZAp">
           <node concept="3clFbS" id="1OzlC1cRljZ" role="3clFbx">
             <node concept="lc7rE" id="1OzlC1cRlkm" role="3cqZAp">
@@ -822,25 +833,45 @@
           </node>
         </node>
         <node concept="3clFbH" id="1Jj8OtqUc99" role="3cqZAp" />
-        <node concept="lc7rE" id="1Jj8OtqUc9a" role="3cqZAp">
-          <node concept="l8MVK" id="1Jj8OtqUc9b" role="lcghm" />
-          <node concept="1bDJIP" id="1Jj8OtqUc9c" role="lcghm">
-            <ref role="1rvKf6" node="4Kyo7tsjX13" resolve="javadocIndent" />
-          </node>
-        </node>
-        <node concept="lc7rE" id="1Jj8OtqUc9d" role="3cqZAp">
-          <node concept="l9S2W" id="1Jj8OtqUc9e" role="lcghm">
-            <node concept="2OqwBi" id="1Jj8OtqUc9f" role="lbANJ">
-              <node concept="37vLTw" id="2BHiRxgm8pr" role="2Oq$k0">
-                <ref role="3cqZAo" node="1Jj8OtqUc92" resolve="node" />
+        <node concept="3clFbJ" id="6BkpuGOGZZW" role="3cqZAp">
+          <node concept="3clFbS" id="6BkpuGOGZZX" role="3clFbx">
+            <node concept="lc7rE" id="1Jj8OtqUc9a" role="3cqZAp">
+              <node concept="l8MVK" id="1Jj8OtqUc9b" role="lcghm" />
+              <node concept="1bDJIP" id="1Jj8OtqUc9c" role="lcghm">
+                <ref role="1rvKf6" node="4Kyo7tsjX13" resolve="javadocIndent" />
               </node>
-              <node concept="3Tsc0h" id="1Jj8OtqUc9h" role="2OqNvi">
-                <ref role="3TtcxE" to="m373:7lVCwDcxZ_I" />
+            </node>
+            <node concept="lc7rE" id="1Jj8OtqUc9d" role="3cqZAp">
+              <node concept="l9S2W" id="1Jj8OtqUc9e" role="lcghm">
+                <node concept="2OqwBi" id="1Jj8OtqUc9f" role="lbANJ">
+                  <node concept="37vLTw" id="2BHiRxgm8pr" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1Jj8OtqUc92" resolve="node" />
+                  </node>
+                  <node concept="3Tsc0h" id="1Jj8OtqUc9h" role="2OqNvi">
+                    <ref role="3TtcxE" to="m373:7lVCwDcxZ_I" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="6BkpuGOHb4_" role="3clFbw">
+            <node concept="2OqwBi" id="6BkpuGOH0pp" role="2Oq$k0">
+              <node concept="37vLTw" id="6BkpuGOH02z" role="2Oq$k0">
+                <ref role="3cqZAo" node="1Jj8OtqUc92" resolve="node" />
+              </node>
+              <node concept="3Tsc0h" id="6BkpuGOHakx" role="2OqNvi">
+                <ref role="3TtcxE" to="m373:7lVCwDcxZ_I" />
+              </node>
+            </node>
+            <node concept="3GX2aA" id="6BkpuGOHdte" role="2OqNvi" />
+          </node>
         </node>
         <node concept="3clFbH" id="1Jj8OtqUc9i" role="3cqZAp" />
+        <node concept="3SKdUt" id="6BkpuGOHdES" role="3cqZAp">
+          <node concept="3SKdUq" id="6BkpuGOHdH_" role="3SKWNk">
+            <property role="3SKdUp" value="A separator between text and tags" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="1Jj8OtqUc9j" role="3cqZAp">
           <node concept="3clFbS" id="1Jj8OtqUc9k" role="3clFbx">
             <node concept="lc7rE" id="1Jj8OtqUc9l" role="3cqZAp">
@@ -912,9 +943,6 @@
         </node>
         <node concept="3clFbJ" id="6XG5GAtrbNb" role="3cqZAp">
           <node concept="3clFbS" id="6XG5GAtrbNe" role="3clFbx">
-            <node concept="lc7rE" id="6XG5GAtrmJb" role="3cqZAp">
-              <node concept="l8MVK" id="6XG5GAtrmJq" role="lcghm" />
-            </node>
             <node concept="lc7rE" id="6Ie7LH5PX75" role="3cqZAp">
               <node concept="l9hG8" id="6Ie7LH5PX7Q" role="lcghm">
                 <node concept="2OqwBi" id="6Ie7LH5PXbT" role="lb14g">

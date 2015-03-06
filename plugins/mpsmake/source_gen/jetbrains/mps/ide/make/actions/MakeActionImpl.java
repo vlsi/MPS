@@ -27,8 +27,6 @@ public class MakeActionImpl {
   private MakeActionParameters myParams;
   /**
    * 
-   * 
-
    * @deprecated  use single argument constructor (the one with sole MakeActionParameters) instead
    */
   @Deprecated

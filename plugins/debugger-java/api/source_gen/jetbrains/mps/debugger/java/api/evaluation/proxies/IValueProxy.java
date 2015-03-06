@@ -5,13 +5,13 @@ package jetbrains.mps.debugger.java.api.evaluation.proxies;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 
-public /**
+/**
  * Proxy for jdi values that allows to do operations with it.
  * 
  * some meaningless comment from old times:
  * This solution was introduced as the easiest of the two adequate solutions of MPS-9041
  */
-interface IValueProxy {
+public interface IValueProxy {
   @Nullable
   public Value getJDIValue();
   @Nullable

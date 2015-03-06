@@ -13,11 +13,11 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-@Deprecated
-public /**
+/**
  * @Deprecated
  */
-interface ISearchScope {
+@Deprecated
+public interface ISearchScope {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition);
   public boolean isInScope(SNode node);
