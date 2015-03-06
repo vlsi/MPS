@@ -142,7 +142,7 @@ public class DefaultEditor extends DefaultNodeEditor {
       addProperties();
       addLabel("");
       addNewLine();
-//      addChildren();
+      addChildren();
       popCollection();
       addLabel("}");
       addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
@@ -389,12 +389,17 @@ public class DefaultEditor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(mySNode, property));
 
     SDataType type = property.getType();
-    if (type instanceof SPrimitiveDataType && ((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
-      editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(mySNode, property, myEditorContext));
-    }
-    if (type instanceof SEnumeration) {
+    if (type instanceof SPrimitiveDataType) {
+      if (((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
+        editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(mySNode, property, myEditorContext));
+      }
+    } else {
       editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(mySNode, property, myEditorContext));
     }
+    //todo generate property data type
+//    if (type instanceof SEnumeration) {
+//      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(mySNode, property, myEditorContext));
+//    }
     addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(mySNode, property)), AttributeKind.Property.class, editorCell);
   }
 
@@ -435,16 +440,16 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addChildren() {
-//    for (String role : myChildrenNames) {
-//      addRoleLabel(role, "link");
-//      addNewLine();
-//      if (myNullConcept) {
-//        addChildCellForNullConcept(role);
-//
-//      } else {
-//        addChildCellForNonNullConcept(role);
-//      }
-//    }
+    for (SContainmentLink link : myContainmentLinks) {
+      addRoleLabel(link.getRoleName(), "link");
+      addNewLine();
+      if (myNullConcept) {
+        addChildCellForNullConcept(link);
+
+      } else {
+        addChildCellForNonNullConcept(link);
+      }
+    }
   }
 
   private void addChildCellForNonNullConcept(SContainmentLink link) {
@@ -454,7 +459,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 //      editorCell.setRole(handler.getElementRole());
 //      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
     } else {
-      Iterator<? extends SNode> childIterator = mySNode.getChildren().iterator();
+      Iterator<? extends SNode> childIterator = mySNode.getChildren(link).iterator();
       SNode child = childIterator.hasNext() ? childIterator.next() : null;
       if (child == null) {
         String noTargetText = "<no " + link.getRoleName() + ">";

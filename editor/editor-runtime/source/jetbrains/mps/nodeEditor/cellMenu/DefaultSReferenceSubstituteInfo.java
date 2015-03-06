@@ -93,8 +93,8 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
       LOG.error("Couldn't build actions : couldn't get reference in " + concept.getName() + " for link " + myLink.getRoleName());
       return Collections.emptyList();
     }
-
-    return createActions(reference, refDescriptor);
+    return new ArrayList<SubstituteAction>();
+//    return createActions(reference, refDescriptor);
   }
 
   private List<SubstituteAction> createActions(SReference reference , jetbrains.mps.smodel.constraints.ReferenceDescriptor descriptor) {

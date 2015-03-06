@@ -81,13 +81,9 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
   }
 
   private List<SubstituteAction> createDefaultSubstituteActions(@NotNull SAbstractConcept applicableConcept, SNode parentNode, SNode currentChild,
-      IChildNodeSetter setter) {
+      DefaultChildSetter setter) {
     String conceptFqName = NameUtil.nodeFQName(applicableConcept.getDeclarationNode());
-    SContainmentLink link = null;
-    if (setter instanceof DefaultChildSetter) {
-      DefaultChildSetter defaultSetter = (DefaultChildSetter) setter;
-      link = defaultSetter.getLink();
-    }
+    SContainmentLink link = setter.getLink();
 
     //todo: get rid of declaration node
     if (!ModelConstraints.canBeChild(conceptFqName, parentNode, link.getDeclarationNode(), null, null)) {
@@ -102,7 +98,7 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
     }
 
     //todo add constraits
-    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, currentChild, parentNode, currentChild, setter));
+    return Collections.<SubstituteAction>singletonList(new DefaultChildSubstituteAction(applicableConcept, applicableConcept, parentNode, currentChild, setter));
   }
 
 

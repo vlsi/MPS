@@ -80,11 +80,11 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
   public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {
-      SNode linkDeclaration = myLink;
-      if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
-        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(parameterNode));
-      }
-      SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
+      SReferenceLink linkDeclaration = myLink;
+//      if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
+//        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(parameterNode));
+//      }
+//      SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
 
       if (editorContext != null) {
         // put caret at the end of text, TODO use editorContext.select(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), -1 /* end */);
@@ -105,7 +105,7 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode sourceNodePeer = getSourceNode();
     CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
-    String role = SModelUtil.getGenuineLinkRole(myLink);
+    String role = "rrrr";//SModelUtil.getGenuineLinkRole(myLink);
     SNode sourceNode = mapping.get(sourceNodePeer);
     SNode nodeToEquatePeer = sourceNodePeer;
     TypeChecker typeChecker = TypeChecker.getInstance();

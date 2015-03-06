@@ -26,10 +26,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * Igor Alshannikov
- * Mar 29, 2005
- */
 public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
   private SNode myOldChild;
@@ -54,6 +50,8 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
     mySetter = setter;
   }
 
+
+  //todo do we need this?
   private void setupOldChild() {
     if (myCurrentChild != null && myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION) != null) {
       myOldChild = (SNode) myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
@@ -77,6 +75,19 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
     return null;
   }
 
+  protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
+    if (getParameterObject() != null && getParameterObject() instanceof SConcept) {
+      return ((SConcept) getParameterObject()).getName();
+    }
+    return "" + getParameterObject();
+  }
+
+  protected String getDescriptionText(String pattern, boolean referent_presentation) {
+    if (getParameterObject() != null && getParameterObject() instanceof SConcept) {
+      return ((SConcept) getParameterObject()).getLanguage().getQualifiedName();
+    }
+    return "" + getParameterObject();
+  }
   protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
     return createdNode;
   }

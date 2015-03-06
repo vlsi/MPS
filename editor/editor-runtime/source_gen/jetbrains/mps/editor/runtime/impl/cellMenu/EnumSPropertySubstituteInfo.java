@@ -24,6 +24,7 @@ public class EnumSPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SProperty myProperty;
   public EnumSPropertySubstituteInfo(SNode node, SProperty propertyDeclaration, EditorContext editorContext) {
     super(editorContext);
+    myNode = node;
     myProperty = propertyDeclaration;
   }
   @Override
