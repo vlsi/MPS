@@ -124,7 +124,10 @@ public class OptimizeImportsHelper {
       //this is a temp code to fix http://youtrack.jetbrains.com/issue/MPS-19621
       //we should re-save models and make them findModules through modules, not just by ID
       //this code is supposed to be deleted after 3.1 release
-      if (result.myUsedModels.contains(model.resolve(MPSModuleRepository.getInstance()).getReference())) continue;
+      SModel md = model.resolve(MPSModuleRepository.getInstance());
+      if (md == null) continue;
+
+      if (result.myUsedModels.contains(md.getReference())) continue;
       //end of tmp code
 
       unusedModels.add(model);
@@ -288,7 +291,7 @@ public class OptimizeImportsHelper {
 
   private Set<SModuleReference> findModules(Collection<SLanguage> languages) {
     HashSet<SModuleReference> rv = new HashSet<SModuleReference>();
-    for(SLanguage l : languages) {
+    for (SLanguage l : languages) {
       final Language language = ModuleRepositoryFacade.getInstance().getModule(l.getQualifiedName(), Language.class);
       if (language != null) {
         rv.add(language.getModuleReference());
