@@ -5070,6 +5070,21 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6J7GhdRUwdS" role="3cqZAp">
+          <node concept="3cpWsn" id="6J7GhdRUwdQ" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="useStaticRefs" />
+            <node concept="10P_77" id="6J7GhdRUwrR" role="1tU5fm" />
+            <node concept="2OqwBi" id="6J7GhdRUwz$" role="33vP2m">
+              <node concept="37vLTw" id="6J7GhdRUwxB" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XB5puvnQMU" resolve="gp" />
+              </node>
+              <node concept="liA8E" id="6J7GhdRUwGP" role="2OqNvi">
+                <ref role="37wK5l" to="asz6:6J7GhdRTvgx" resolve="isCreateStaticRefs" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="KL8Aqll4nL" role="3cqZAp">
           <node concept="2OqwBi" id="KL8Aqll4nM" role="3clFbG">
             <node concept="37vLTw" id="2XB5puvoi4A" role="2Oq$k0">
@@ -5168,6 +5183,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6J7GhdRU_2v" role="3cqZAp">
+          <node concept="2OqwBi" id="6J7GhdRU_h9" role="3clFbG">
+            <node concept="37vLTw" id="6J7GhdRU_2t" role="2Oq$k0">
+              <ref role="3cqZAo" node="2XB5puvoi4y" resolve="settings" />
+            </node>
+            <node concept="liA8E" id="6J7GhdRU__s" role="2OqNvi">
+              <ref role="37wK5l" to="y5px:~IModifiableGenerationSettings.setCreateStaticReferences(boolean):void" resolve="setCreateStaticReferences" />
+              <node concept="37vLTw" id="6J7GhdRU_Cy" role="37wK5m">
+                <ref role="3cqZAo" node="6J7GhdRUwdQ" resolve="useStaticRefs" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3SKdUt" id="3V8BOlbnoHM" role="3cqZAp">
           <node concept="3SKdUq" id="3V8BOlbnp9t" role="3SKWNk">
             <property role="3SKdUp" value="incremental generation for Ant build doesn't make sense as we have no way to ensure 'unchanged' artifacts are still there" />
@@ -5219,7 +5247,7 @@
               <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
               <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
               <node concept="Xl_RD" id="KL8Aqll4os" role="37wK5m">
-                <property role="Xl_RC" value="Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s" />
+                <property role="Xl_RC" value="Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s, static references to replace dynamic is %s" />
               </node>
               <node concept="AH0OO" id="2XB5puvuU6e" role="37wK5m">
                 <node concept="3K4zz7" id="2XB5puvuYam" role="AHEQo">
@@ -5293,6 +5321,22 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="3qD9ch0pdUM" role="AHHXb">
+                  <ref role="3cqZAo" node="2XB5puvuxk3" resolve="onoff" />
+                </node>
+              </node>
+              <node concept="AH0OO" id="6J7GhdRUxf7" role="37wK5m">
+                <node concept="3K4zz7" id="6J7GhdRUxIa" role="AHEQo">
+                  <node concept="3cmrfG" id="6J7GhdRUxXm" role="3K4GZi">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="3cmrfG" id="6J7GhdRUxPV" role="3K4E3e">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="37vLTw" id="6J7GhdRUxoW" role="3K4Cdx">
+                    <ref role="3cqZAo" node="6J7GhdRUwdQ" resolve="useStaticRefs" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6J7GhdRUx2U" role="AHHXb">
                   <ref role="3cqZAo" node="2XB5puvuxk3" resolve="onoff" />
                 </node>
               </node>

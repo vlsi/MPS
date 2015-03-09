@@ -19,7 +19,7 @@ public class GenerateTask extends MpsLoadTask {
   private final JavaCompilerProperties myJavaCompilerProperties;
   public GenerateTask() {
     myGenProps = new GeneratorProperties(myWhatToDo);
-    myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false);
+    myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false).setCreateStaticRefs(true);
     myJavaCompilerProperties = new JavaCompilerProperties(myWhatToDo);
   }
   @Override
@@ -49,6 +49,9 @@ public class GenerateTask extends MpsLoadTask {
   }
   public void setHideWarnings(boolean hideWarnings) {
     myGenProps.setHideWarnings(hideWarnings);
+  }
+  public void setCreateStaticRefs(boolean useStaticRefs) {
+    myGenProps.setCreateStaticRefs(useStaticRefs);
   }
   public void addConfiguredPlugin(Plugin plugin) {
     String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);

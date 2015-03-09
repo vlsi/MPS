@@ -31,6 +31,7 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.reference.DynamicReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -109,6 +110,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private WeavingProcessor myWeavingProcessor;
   private TemplateProcessor myTemplateProcessor;
   private final PostponedReferenceUpdate myPostponedRefs;
+  private final DynamicReferenceUpdate myDynamicRefs;
   private final GenerationTrace myNewTrace;
 
   static final class StepArguments {
@@ -138,6 +140,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;
     myPostponedRefs = new PostponedReferenceUpdate(this);
+    myDynamicRefs = new DynamicReferenceUpdate(this);
     myNewTrace = stepArgs.genTrace;
   }
 
@@ -215,9 +218,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // replace reference placeholders (PostponedReference) with resolved
-    if (!myPostponedRefs.isEmpty()) {
+    if (!myPostponedRefs.isEmpty() || !myDynamicRefs.isEmpty()) {
       ttrace.push("restoring references", false);
       myPostponedRefs.replace();
+      myDynamicRefs.replace();
       ttrace.pop();
     }
 
@@ -582,6 +586,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public PostponedReference register(@NotNull PostponedReference ref) {
     myPostponedRefs.add(ref);
     return ref;
+  }
+
+  /**
+   * Let generator know about dynamic references produced during generation.
+   * We might handle {@link jetbrains.mps.smodel.DynamicReference} in a special way as long as there's evading reason to
+   * keep references dynamic during generation (as it only slows down model access due to ongoing scope use.
+   * @param dr DynamicReference instance
+   */
+  public void registerDynamicReference(@NotNull SReference dr) {
+    myDynamicRefs.add(dr);
   }
 
   void setChanged() {

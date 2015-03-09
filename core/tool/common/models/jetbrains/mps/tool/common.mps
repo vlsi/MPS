@@ -57,6 +57,9 @@
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
         <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
+        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -6509,32 +6512,6 @@
         <property role="Xl_RC" value="COMPILE" />
       </node>
     </node>
-    <node concept="Wx3nA" id="6R7vamttDE9" role="jymVt">
-      <property role="TrG5h" value="STRICT_MODE" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="6R7vamttDEa" role="1B3o_S" />
-      <node concept="17QB3L" id="6R7vamttDEb" role="1tU5fm" />
-      <node concept="10M0yZ" id="2XB5puvkfDZ" role="33vP2m">
-        <ref role="1PxDUh" node="2XB5puvk9rk" resolve="GeneratorProperties" />
-        <ref role="3cqZAo" node="2XB5puvkfx9" resolve="STRICT_MODE" />
-      </node>
-      <node concept="2AHcQZ" id="2XB5puvkfJk" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="6R7vamttDHh" role="jymVt">
-      <property role="TrG5h" value="PARALLEL_MODE" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="6R7vamttDHi" role="1B3o_S" />
-      <node concept="17QB3L" id="6R7vamttDHj" role="1tU5fm" />
-      <node concept="10M0yZ" id="2XB5puvkfHk" role="33vP2m">
-        <ref role="1PxDUh" node="2XB5puvk9rk" resolve="GeneratorProperties" />
-        <ref role="3cqZAo" node="2XB5puvkfxd" resolve="PARALLEL_MODE" />
-      </node>
-      <node concept="2AHcQZ" id="2XB5puvkfPD" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="QkG2t1bArt" role="jymVt">
       <property role="TrG5h" value="PLUGIN_PATHS" />
       <property role="3TUv4t" value="true" />
@@ -8623,22 +8600,12 @@
     <node concept="Wx3nA" id="2XB5puvkfx9" role="jymVt">
       <property role="TrG5h" value="STRICT_MODE" />
       <property role="3TUv4t" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="17QB3L" id="2XB5puvkfxb" role="1tU5fm" />
       <node concept="Xl_RD" id="2XB5puvkfxc" role="33vP2m">
         <property role="Xl_RC" value="STRICT_MODE" />
       </node>
-      <node concept="z59LJ" id="2XB5puvmYwx" role="lGtFl">
-        <node concept="TZ5HA" id="2XB5puvmYwy" role="TZ5H$">
-          <node concept="1dT_AC" id="2XB5puvmYwz" role="1dT_Ay">
-            <property role="1dT_AB" value="package visibility is just for the sake of deprecated fields in ScriptProperties" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="2XB5puvmYNj" role="TZ5H$">
-          <node concept="1dT_AC" id="2XB5puvmYNk" role="1dT_Ay">
-            <property role="1dT_AB" value="Once they are gone, these shall be private." />
-          </node>
-        </node>
-      </node>
+      <node concept="3Tm6S6" id="6J7GhdRTqZ0" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="2XB5puvkfxd" role="jymVt">
       <property role="TrG5h" value="PARALLEL_MODE" />
@@ -8646,6 +8613,23 @@
       <node concept="17QB3L" id="2XB5puvkfxf" role="1tU5fm" />
       <node concept="Xl_RD" id="2XB5puvkfxg" role="33vP2m">
         <property role="Xl_RC" value="PARALLEL_MODE" />
+      </node>
+      <node concept="3Tm6S6" id="6J7GhdRTr6I" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="6J7GhdRTreu" role="jymVt">
+      <property role="TrG5h" value="USE_STATIC_REFS" />
+      <property role="3TUv4t" value="true" />
+      <node concept="17QB3L" id="6J7GhdRTrev" role="1tU5fm" />
+      <node concept="Xl_RD" id="6J7GhdRTrew" role="33vP2m">
+        <property role="Xl_RC" value="use-static-refs" />
+      </node>
+      <node concept="3Tm6S6" id="6J7GhdRTrex" role="1B3o_S" />
+      <node concept="z59LJ" id="6J7GhdRTygm" role="lGtFl">
+        <node concept="TZ5HA" id="6J7GhdRTygn" role="TZ5H$">
+          <node concept="1dT_AC" id="6J7GhdRTygo" role="1dT_Ay">
+            <property role="1dT_AB" value="Counterpart for IGenerationSettings#createStaticReferences()" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="2XB5puvmQ8d" role="jymVt" />
@@ -8996,6 +8980,66 @@
                 <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
                 <node concept="37vLTw" id="3qD9ch0sU6q" role="37wK5m">
                   <ref role="3cqZAo" node="3qD9ch0p4sQ" resolve="NO_WARNINGS" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6J7GhdRTuSs" role="jymVt">
+      <property role="TrG5h" value="setCreateStaticRefs" />
+      <node concept="3uibUv" id="6J7GhdRTF_U" role="3clF45">
+        <ref role="3uigEE" node="2XB5puvk9rk" resolve="GeneratorProperties" />
+      </node>
+      <node concept="3Tm1VV" id="6J7GhdRTuSv" role="1B3o_S" />
+      <node concept="3clFbS" id="6J7GhdRTuSw" role="3clF47">
+        <node concept="3clFbF" id="6J7GhdRTFQ1" role="3cqZAp">
+          <node concept="2OqwBi" id="6J7GhdRTFYj" role="3clFbG">
+            <node concept="37vLTw" id="6J7GhdRTFPZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2XB5puvmPVf" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="6J7GhdRTG2F" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="6J7GhdRTG4_" role="37wK5m">
+                <ref role="3cqZAo" node="6J7GhdRTreu" resolve="USE_STATIC_REFS" />
+              </node>
+              <node concept="2YIFZM" id="6J7GhdRTG7F" role="37wK5m">
+                <ref role="37wK5l" to="e2lb:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+                <node concept="37vLTw" id="6J7GhdRTG9q" role="37wK5m">
+                  <ref role="3cqZAo" node="6J7GhdRTFut" resolve="useStaticFefs" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6J7GhdRTFHL" role="3cqZAp">
+          <node concept="Xjq3P" id="6J7GhdRTFI1" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6J7GhdRTFut" role="3clF46">
+        <property role="TrG5h" value="useStaticFefs" />
+        <node concept="10P_77" id="6J7GhdRTFus" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="6J7GhdRTvgx" role="jymVt">
+      <property role="TrG5h" value="isCreateStaticRefs" />
+      <node concept="10P_77" id="6J7GhdRTvsE" role="3clF45" />
+      <node concept="3Tm1VV" id="6J7GhdRTvg$" role="1B3o_S" />
+      <node concept="3clFbS" id="6J7GhdRTvg_" role="3clF47">
+        <node concept="3cpWs6" id="6J7GhdRTGb0" role="3cqZAp">
+          <node concept="2YIFZM" id="6J7GhdRTGrK" role="3cqZAk">
+            <ref role="37wK5l" to="e2lb:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+            <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+            <node concept="2OqwBi" id="6J7GhdRTGH_" role="37wK5m">
+              <node concept="37vLTw" id="6J7GhdRTG$F" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XB5puvmPVf" resolve="myScript" />
+              </node>
+              <node concept="liA8E" id="6J7GhdRTHxu" role="2OqNvi">
+                <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+                <node concept="37vLTw" id="6J7GhdRTHFn" role="37wK5m">
+                  <ref role="3cqZAo" node="6J7GhdRTreu" resolve="USE_STATIC_REFS" />
                 </node>
               </node>
             </node>

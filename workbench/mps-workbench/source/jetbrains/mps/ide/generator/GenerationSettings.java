@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
     myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
     myState.enableInplaceTransformations(state.myActiveInplaceTransform);
+    myState.setCreateStaticReferences(state.myUseStaticRefs);
     GenTraceSettings gts = new GenTraceSettings();
     gts.setCompactTemplates(state.myTraceCompactTemplates);
     gts.setGroupByStep(state.myTraceGroupSteps);
@@ -130,6 +131,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myShowBadChildWarning;
     public boolean myDebugIncrementalDependencies;
     public boolean myActiveInplaceTransform;
+    public boolean myUseStaticRefs;
     public boolean myTraceGroupSteps;
     public boolean myTraceCompactTemplates;
     public boolean myTraceShowEmptySteps;
@@ -159,6 +161,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myShowBadChildWarning = s.isShowBadChildWarning();
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransformations();
+      myUseStaticRefs = s.createStaticReferences();
       GenTraceSettings gts = s.getTraceSettings();
       myTraceCompactTemplates = gts.isCompactTemplates();
       myTraceGroupSteps = gts.isGroupByStep();

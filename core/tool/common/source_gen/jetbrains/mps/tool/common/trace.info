@@ -63,7 +63,8 @@
       <node id="3415722583340934659" at="10,0,11,0" concept="14" trace="TRANSFORM_IN_PLACE" />
       <node id="4297162197629917442" at="11,0,12,0" concept="14" trace="THREAD_COUNT" />
       <node id="3938719774424713014" at="12,0,13,0" concept="14" trace="NO_WARNINGS" />
-      <node id="3415722583340939341" at="18,0,19,0" concept="14" trace="PARALLEL_MODE" />
+      <node id="3415722583340939337" at="13,0,14,0" concept="14" trace="STRICT_MODE" />
+      <node id="3415722583340939341" at="14,0,15,0" concept="14" trace="PARALLEL_MODE" />
       <node id="3415722583341620943" at="20,0,21,0" concept="5" trace="myScript" />
       <node id="3415722583341620947" at="22,45,23,22" concept="4" />
       <node id="5682549678865142920" at="25,64,26,68" concept="4" />
@@ -82,17 +83,22 @@
       <node id="3938719774424675047" at="57,63,58,65" concept="4" />
       <node id="3938719774424675053" at="58,65,59,16" concept="11" />
       <node id="3938719774424675065" at="61,35,62,67" concept="11" />
+      <node id="7766370779597815169" at="64,73,65,75" concept="4" />
+      <node id="7766370779597814641" at="65,75,66,16" concept="11" />
+      <node id="7766370779597816512" at="68,39,69,71" concept="11" />
       <node id="3415722583341620826" at="22,0,25,0" concept="3" trace="GeneratorProperties#(Ljetbrains/mps/tool/common/Script;)V" />
       <node id="5682549678865142936" at="29,0,32,0" concept="9" trace="isStrictMode#()Z" />
       <node id="5682549678865142980" at="36,0,39,0" concept="9" trace="isParallelMode#()Z" />
       <node id="3415722583341320045" at="54,0,57,0" concept="9" trace="isInplaceTransform#()Z" />
       <node id="3938719774424675061" at="61,0,64,0" concept="9" trace="isHideWarnings#()Z" />
+      <node id="7766370779597763617" at="68,0,71,0" concept="9" trace="isCreateStaticRefs#()Z" />
+      <node id="7766370779597747102" at="15,0,19,0" concept="14" trace="USE_STATIC_REFS" />
       <node id="5682549678865142914" at="25,0,29,0" concept="9" trace="setStrictMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="5682549678865142958" at="32,0,36,0" concept="9" trace="setParallelMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="4297162197629886268" at="39,0,43,0" concept="9" trace="setParallelThreads#(I)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="3415722583341225070" at="50,0,54,0" concept="9" trace="setInplaceTransform#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="3938719774424675043" at="57,0,61,0" concept="9" trace="setHideWarnings#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
-      <node id="3415722583340939337" at="13,0,18,0" concept="14" trace="STRICT_MODE" />
+      <node id="7766370779597762076" at="64,0,68,0" concept="9" trace="setCreateStaticRefs#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="4297162197629942116" at="43,35,48,5" concept="18" />
       <node id="4297162197629902829" at="43,0,50,0" concept="9" trace="getParallelThreads#()I" />
       <scope id="3415722583341620830" at="22,45,23,22" />
@@ -105,11 +111,13 @@
       <scope id="4297162197629942125" at="46,40,47,15" />
       <scope id="3415722583341320049" at="54,39,55,74" />
       <scope id="3938719774424675064" at="61,35,62,67" />
+      <scope id="7766370779597763621" at="68,39,69,71" />
       <scope id="5682549678865142919" at="25,64,27,16" />
       <scope id="5682549678865142963" at="32,68,34,16" />
       <scope id="4297162197629886272" at="39,67,41,16" />
       <scope id="3415722583341225074" at="50,74,52,16" />
       <scope id="3938719774424675046" at="57,63,59,16" />
+      <scope id="7766370779597762080" at="64,73,66,16" />
       <scope id="3415722583341620826" at="22,0,25,0">
         <var name="script" id="3415722583341620871" />
       </scope>
@@ -117,6 +125,7 @@
       <scope id="5682549678865142980" at="36,0,39,0" />
       <scope id="3415722583341320045" at="54,0,57,0" />
       <scope id="3938719774424675061" at="61,0,64,0" />
+      <scope id="7766370779597763617" at="68,0,71,0" />
       <scope id="5682549678865142914" at="25,0,29,0">
         <var name="strictMode" id="5682549678865142917" />
       </scope>
@@ -132,9 +141,12 @@
       <scope id="3938719774424675043" at="57,0,61,0">
         <var name="enabled" id="3938719774424675055" />
       </scope>
+      <scope id="7766370779597762076" at="64,0,68,0">
+        <var name="useStaticFefs" id="7766370779597813661" />
+      </scope>
       <scope id="4297162197629902833" at="43,35,48,5" />
       <scope id="4297162197629902829" at="43,0,50,0" />
-      <unit id="3415722583340914388" at="6,0,65,0" name="jetbrains.mps.tool.common.GeneratorProperties" />
+      <unit id="3415722583340914388" at="6,0,72,0" name="jetbrains.mps.tool.common.GeneratorProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3919148072087678241">
@@ -266,18 +278,16 @@
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252780319">
     <file name="ScriptProperties.java">
       <node id="7910428321252809155" at="8,0,9,0" concept="14" trace="COMPILE" />
-      <node id="978600701690013405" at="13,0,14,0" concept="14" trace="PLUGIN_PATHS" />
-      <node id="1365200781785207595" at="15,0,16,0" concept="14" trace="INVOKE_TESTS" />
-      <node id="1365200781785216423" at="16,0,17,0" concept="14" trace="SAVE_ON_DISK" />
-      <node id="1365200781785216925" at="17,0,18,0" concept="14" trace="SHOW_DIFF" />
-      <node id="1365200781785217431" at="18,0,19,0" concept="14" trace="WHOLE_PROJECT" />
-      <node id="1365200781785228053" at="20,0,21,0" concept="14" trace="GENERATE_PERFORMANCE_REPORT" />
-      <node id="7910428321252809353" at="9,0,11,0" concept="14" trace="STRICT_MODE" />
-      <node id="7910428321252809553" at="11,0,13,0" concept="14" trace="PARALLEL_MODE" />
-      <node id="7910428321252780321" at="22,0,24,0" concept="3" trace="ScriptProperties#()V" />
-      <scope id="7910428321252780324" at="22,30,22,30" />
-      <scope id="7910428321252780321" at="22,0,24,0" />
-      <unit id="7910428321252780319" at="6,0,25,0" name="jetbrains.mps.tool.common.ScriptProperties" />
+      <node id="978600701690013405" at="9,0,10,0" concept="14" trace="PLUGIN_PATHS" />
+      <node id="1365200781785207595" at="11,0,12,0" concept="14" trace="INVOKE_TESTS" />
+      <node id="1365200781785216423" at="12,0,13,0" concept="14" trace="SAVE_ON_DISK" />
+      <node id="1365200781785216925" at="13,0,14,0" concept="14" trace="SHOW_DIFF" />
+      <node id="1365200781785217431" at="14,0,15,0" concept="14" trace="WHOLE_PROJECT" />
+      <node id="1365200781785228053" at="16,0,17,0" concept="14" trace="GENERATE_PERFORMANCE_REPORT" />
+      <node id="7910428321252780321" at="18,0,20,0" concept="3" trace="ScriptProperties#()V" />
+      <scope id="7910428321252780324" at="18,30,18,30" />
+      <scope id="7910428321252780321" at="18,0,20,0" />
+      <unit id="7910428321252780319" at="6,0,21,0" name="jetbrains.mps.tool.common.ScriptProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/878521226297927156">

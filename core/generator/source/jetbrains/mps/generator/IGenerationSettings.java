@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,15 @@ public interface IGenerationSettings {
   boolean isSaveTransientModels();
 
   boolean useInplaceTransformations();
+
+  /**
+   * For references we've got resolve info only, we can create either a dynamic reference and let it get resolved by name through scope, or we can resolve
+   * it right away (or on the first read) and keep it static.
+   * It looks that use of dynamic references by default wasn't sensible decision at the first place, as resolution of dynamic reference
+   * requires scope each time reference is accessed. It didn't induce any issue unless we got thousands of DynamicReferences, and their resolution
+   * became nightmare. However, it's not obvious we do need dynamic references in the first place, for any node we refer to by name.
+   */
+  boolean createStaticReferences();
 
   /**
    * Presentation options of the new generation tracer. At the moment, they affect the way trace is represented, not collected, and as such

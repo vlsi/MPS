@@ -52,7 +52,9 @@ public class ReferenceInfo_Template extends ReferenceInfo {
       return createStaticReference(outputTargetNode);
     }
     if (myResolveInfo != null) {
-      return createDynamicReference(myResolveInfo, getTargetModelReference(generator), myTemplateSourceNode);
+      final SReference dr = createDynamicReference(myResolveInfo, getTargetModelReference(generator), myTemplateSourceNode);
+      generator.registerDynamicReference(dr);
+      return dr;
     }
     return createInvalidReference(generator, null);
   }
