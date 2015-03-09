@@ -15,7 +15,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -33,32 +34,45 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     if (SNodeOperations.getModel(root) == null) {
       return;
     }
-    Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
+    final Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
     importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
-    final SAbstractConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
-    final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
-
-    HashSet<SLanguage> reported = new HashSet<SLanguage>();
-    for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, null, true, new SAbstractConcept[]{}))) {
-      SConcept concept = node.getConcept();
-      if (concept.equals(C) && L.equals(node.getContainmentLink())) {
-        continue;
+    // need to recurse the tree, to report missing language once per sub-tree (starting from the first node with missing language encountered) 
+    // Iterative alternative would be more complicated, and there are no utility methods in the rules nor we support inner classes, hence the trick with Runnable 
+    new Runnable() {
+      private final SAbstractConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
+      private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+      public void run() {
+        final Set<SLanguage> emptySet = Collections.emptySet();
+        findMissing(Collections.singleton(root), emptySet);
       }
-
-      SLanguage language = concept.getLanguage();
-      if (!(importedLanguages.contains(language)) && reported.add(language)) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, language.getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
-          {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix", false);
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
+      public void findMissing(Iterable<? extends SNode> level, Set<SLanguage> parentReported) {
+        boolean parentReportedSetChanged = false;
+        for (SNode node : Sequence.fromIterable(level)) {
+          HashSet<SLanguage> reported = new HashSet<SLanguage>(parentReported);
+          SConcept concept = node.getConcept();
+          if (concept.equals(C) && L.equals(node.getContainmentLink())) {
+            continue;
           }
+
+          SLanguage language = concept.getLanguage();
+          boolean notYetReported = reported.add(language);
+          parentReportedSetChanged |= notYetReported;
+          if (!(importedLanguages.contains(language)) && notYetReported) {
+            {
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, language.getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8941604747782182081", null, errorTarget);
+              {
+                BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix", false);
+                _reporter_2309309498.addIntentionProvider(intentionProvider);
+              }
+            }
+          }
+          findMissing(node.getChildren(), (parentReportedSetChanged ? reported : parentReported));
         }
       }
-    }
+    }.run();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
