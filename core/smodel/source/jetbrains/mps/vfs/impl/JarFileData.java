@@ -126,7 +126,7 @@ class JarFileData extends AbstractJarFileData {
           ZipEntry entry = entries.nextElement();
           if (entry.isDirectory()) {
             String name = entry.getName();
-            if (name.endsWith("/")) {
+            while (name.endsWith("/")) {
               name = name.substring(0, name.length() - 1);
             }
 

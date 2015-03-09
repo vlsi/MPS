@@ -30,6 +30,8 @@ import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
@@ -256,21 +258,25 @@ public class MethodResolveUtil {
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
         typeByTypeVar.put(tvd, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))));
       }
-      SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
-      if ((typeOfParam == null)) {
+      final Wrappers._T<SNode> typeOfParam = new Wrappers._T<SNode>((varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+      if ((typeOfParam.value == null) || ListSequence.fromList(SNodeOperations.getNodeDescendants(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getParent(it) != typeOfParam.value;
+        }
+      })) {
         continue;
       }
-      typeOfParam = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam, typeByTypeVar);
+      typeOfParam.value = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam.value, typeByTypeVar);
       ListSequence.fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
         public void visit(SNode tvd) {
           typeByTypeVar.remove(tvd);
         }
       });
-      if (subtypingManager.isSubtype(typeOfArg, typeOfParam, isWeak)) {
-        Set<SNode> methods = typesOfParamToMethods.get(typeOfParam);
+      if (subtypingManager.isSubtype(typeOfArg, typeOfParam.value, isWeak)) {
+        Set<SNode> methods = typesOfParamToMethods.get(typeOfParam.value);
         if (methods == null) {
           methods = new HashSet<SNode>();
-          typesOfParamToMethods.put(typeOfParam, methods);
+          typesOfParamToMethods.put(typeOfParam.value, methods);
         }
         methods.add(candidate);
         result.add(candidate);

@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,6 +31,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Mar 29, 2005
  */
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
+  private static final Logger LOG = LogManager.getLogger(DefaultChildNodeSubstituteAction.class);
+
   private SNode myCurrentChild;
   private SNode myOldChild;
   private IChildNodeSetter mySetter;
@@ -99,6 +103,9 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), AbstractNodeSubstituteInfo.getModelForTypechecking(), pattern);
     if (node == null) return null;
+    if (node.getParent() != null) {
+      LOG.warn("Node, created by " + this.getClass() + " action already has parent node.", new Throwable());
+    }
     if (ActionsUtil.isInstanceOfIType(node)) return node;
 
     //the following is for smart-type completion

@@ -26,6 +26,8 @@
     <import index="g3cv" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.ref(MPS.Core/jetbrains.mps.smodel.adapter.structure.ref@java_stub)" />
     <import index="z9ce" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.link(MPS.Core/jetbrains.mps.smodel.adapter.structure.link@java_stub)" />
     <import index="gct0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(MPS.Core/jetbrains.mps.smodel.adapter.structure.concept@java_stub)" />
+    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="r9fo" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -61,6 +63,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -84,7 +87,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -206,7 +209,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1960721196051541146" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" flags="nn" index="13GOg" />
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
@@ -216,10 +218,6 @@
       </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
-      </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
@@ -236,11 +234,18 @@
       <concept id="4124388153790980106" name="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" flags="nn" index="2ZHEkA" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -248,9 +253,6 @@
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
-      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
-        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
-      </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
       </concept>
@@ -1318,22 +1320,62 @@
         </node>
       </node>
       <node concept="3clFbH" id="43Qx0f_r1u0" role="3cqZAp" />
-      <node concept="2Gpval" id="5rYR3Qhvx5$" role="3cqZAp">
-        <node concept="2GrKxI" id="5rYR3Qhvx5A" role="2Gsz3X">
-          <property role="TrG5h" value="node" />
+      <node concept="3cpWs8" id="7Qhiioolz6e" role="3cqZAp">
+        <node concept="3cpWsn" id="7Qhiioolz6h" role="3cpWs9">
+          <property role="TrG5h" value="C" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3bZ5Sz" id="7Qhiiook5Tp" role="1tU5fm">
+            <ref role="3bZ5Sy" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
+          </node>
+          <node concept="35c_gC" id="7QhiioolzeU" role="33vP2m">
+            <ref role="35c_gD" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
+          </node>
         </node>
+      </node>
+      <node concept="3cpWs8" id="7Qhiioolz6j" role="3cqZAp">
+        <node concept="3cpWsn" id="7Qhiioolz6m" role="3cpWs9">
+          <property role="TrG5h" value="L" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="7QhiiookgoU" role="1tU5fm">
+            <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+          </node>
+          <node concept="359W_D" id="7Qhiioolzff" role="33vP2m">
+            <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+            <ref role="359W_F" to="tpck:4uZwTti3__2" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="7QhiioolyJf" role="3cqZAp" />
+      <node concept="3cpWs8" id="7Qhiiool_EF" role="3cqZAp">
+        <node concept="3cpWsn" id="7Qhiiool_EG" role="3cpWs9">
+          <property role="TrG5h" value="reported" />
+          <node concept="3uibUv" id="7Qhiiool_ED" role="1tU5fm">
+            <ref role="3uigEE" to="k7g3:~HashSet" resolve="HashSet" />
+            <node concept="3uibUv" id="7Qhiiool_RX" role="11_B2D">
+              <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+            </node>
+          </node>
+          <node concept="2ShNRf" id="7Qhiiool_T7" role="33vP2m">
+            <node concept="1pGfFk" id="7QhiioolAbW" role="2ShVmc">
+              <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+              <node concept="3uibUv" id="7QhiioolAdm" role="1pMfVU">
+                <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="5rYR3Qhvx5$" role="3cqZAp">
         <node concept="2OqwBi" id="5rYR3Qhv_zF" role="2GsD0m">
           <node concept="1YBJjd" id="5rYR3QhvxlG" role="2Oq$k0">
             <ref role="1YBMHb" node="5rYR3Qhukgo" resolve="root" />
           </node>
           <node concept="2Rf3mk" id="5rYR3QhvA95" role="2OqNvi">
             <node concept="1xIGOp" id="6mkfbxmy$mx" role="1xVPHs" />
-            <node concept="1xMEDy" id="5rYR3QhvA97" role="1xVPHs">
-              <node concept="chp4Y" id="5rYR3QhvA9q" role="ri$Ld">
-                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
-              </node>
-            </node>
           </node>
+        </node>
+        <node concept="2GrKxI" id="5rYR3Qhvx5A" role="2Gsz3X">
+          <property role="TrG5h" value="node" />
         </node>
         <node concept="3clFbS" id="5rYR3Qhvx5E" role="2LFqv$">
           <node concept="3cpWs8" id="NVmnyFHjrx" role="3cqZAp">
@@ -1365,29 +1407,48 @@
                 </node>
                 <node concept="liA8E" id="NVmnyFHld2" role="2OqNvi">
                   <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="35c_gC" id="NVmnyFHneJ" role="37wK5m">
-                    <ref role="35c_gD" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <node concept="37vLTw" id="7QhiioolAoB" role="37wK5m">
+                    <ref role="3cqZAo" node="7Qhiioolz6h" resolve="C" />
                   </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="5hkhCOa4_C2" role="3uHU7w">
-                <node concept="prKvN" id="5hkhCOa4bZ2" role="2Oq$k0">
-                  <ref role="prhl4" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="prhl7" to="tpck:4uZwTti3__2" />
+                <node concept="37vLTw" id="7QhiioolAsG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7Qhiioolz6m" resolve="L" />
                 </node>
                 <node concept="liA8E" id="5hkhCOa4AuZ" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="2OqwBi" id="5hkhCOa4AJS" role="37wK5m">
-                    <node concept="2GrUjf" id="5hkhCOa4AB$" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="5rYR3Qhvx5A" resolve="node" />
+                    <node concept="2JrnkZ" id="7QhiioolIh2" role="2Oq$k0">
+                      <node concept="2GrUjf" id="5hkhCOa4AB$" role="2JrQYb">
+                        <ref role="2Gs0qQ" node="5rYR3Qhvx5A" resolve="node" />
+                      </node>
                     </node>
-                    <node concept="13GOg" id="5hkhCOa4B7E" role="2OqNvi" />
+                    <node concept="liA8E" id="7QhiioolIDP" role="2OqNvi">
+                      <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
           <node concept="3clFbH" id="NVmnyFHjWk" role="3cqZAp" />
+          <node concept="3cpWs8" id="7QhiioolIYf" role="3cqZAp">
+            <node concept="3cpWsn" id="7QhiioolIYg" role="3cpWs9">
+              <property role="TrG5h" value="language" />
+              <node concept="3uibUv" id="7QhiioolIXr" role="1tU5fm">
+                <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+              </node>
+              <node concept="2OqwBi" id="7QhiioolIYh" role="33vP2m">
+                <node concept="37vLTw" id="7QhiioolIYi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="NVmnyFHjry" resolve="concept" />
+                </node>
+                <node concept="liA8E" id="7QhiioolIYj" role="2OqNvi">
+                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbJ" id="5rYR3QhvAky" role="3cqZAp">
             <node concept="3clFbS" id="5rYR3QhvAkz" role="3clFbx">
               <node concept="2MkqsV" id="5rYR3QhvPUQ" role="3cqZAp">
@@ -1396,13 +1457,8 @@
                     <property role="Xl_RC" value=" is not imported" />
                   </node>
                   <node concept="2OqwBi" id="5rYR3QhvRAj" role="3uHU7B">
-                    <node concept="2OqwBi" id="5rYR3QhvQTs" role="2Oq$k0">
-                      <node concept="37vLTw" id="NVmnyFHjrC" role="2Oq$k0">
-                        <ref role="3cqZAo" node="NVmnyFHjry" resolve="concept" />
-                      </node>
-                      <node concept="liA8E" id="5rYR3QhvQTx" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SAbstractConcept.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                      </node>
+                    <node concept="37vLTw" id="7QhiioolIYl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7QhiioolIYg" resolve="language" />
                     </node>
                     <node concept="liA8E" id="5rYR3QhvThR" role="2OqNvi">
                       <ref role="37wK5l" to="t3eg:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
@@ -1417,19 +1473,27 @@
                 </node>
               </node>
             </node>
-            <node concept="3fqX7Q" id="5rYR3QhvA_4" role="3clFbw">
-              <node concept="2OqwBi" id="5rYR3QhvBxw" role="3fr31v">
-                <node concept="37vLTw" id="5rYR3QhvAJ0" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5rYR3QhuWvp" resolve="importedLanguages" />
+            <node concept="1Wc70l" id="7QhiioolJhQ" role="3clFbw">
+              <node concept="2OqwBi" id="7QhiioolJHT" role="3uHU7w">
+                <node concept="37vLTw" id="7QhiioolJo9" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7Qhiiool_EG" resolve="reported" />
                 </node>
-                <node concept="liA8E" id="5rYR3QhvGY2" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
-                  <node concept="2OqwBi" id="5rYR3QhvNeR" role="37wK5m">
-                    <node concept="37vLTw" id="NVmnyFHjrB" role="2Oq$k0">
-                      <ref role="3cqZAo" node="NVmnyFHjry" resolve="concept" />
-                    </node>
-                    <node concept="liA8E" id="5rYR3QhvP1N" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                <node concept="liA8E" id="7QhiioolMfP" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~HashSet.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="7QhiioolMnQ" role="37wK5m">
+                    <ref role="3cqZAo" node="7QhiioolIYg" resolve="language" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="5rYR3QhvA_4" role="3uHU7B">
+                <node concept="2OqwBi" id="5rYR3QhvBxw" role="3fr31v">
+                  <node concept="37vLTw" id="5rYR3QhvAJ0" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5rYR3QhuWvp" resolve="importedLanguages" />
+                  </node>
+                  <node concept="liA8E" id="5rYR3QhvGY2" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                    <node concept="37vLTw" id="7QhiioolIYk" role="37wK5m">
+                      <ref role="3cqZAo" node="7QhiioolIYg" resolve="language" />
                     </node>
                   </node>
                 </node>
