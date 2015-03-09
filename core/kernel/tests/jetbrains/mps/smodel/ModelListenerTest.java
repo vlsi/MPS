@@ -52,6 +52,8 @@ import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.notNullValue;
 
 /**
@@ -740,16 +742,24 @@ public class ModelListenerTest {
 
   /**
    * Ensure parallel reads are viable.
-   * FIXME measure execution time, compare against baseline
+   * <p>
+   * Execution time, justification for baseline value
+   * Detached model, no listeners: 1 thread = 200 ms; 4 threads = ~265 ms per thread
+   * Attached model, no listeners: 1 thread = 270 ms; 4 threads = ~330 ms (300 - 420)
+   * Attached model,  3 listeners: 1 thread = 340 ms; 4 threads = 510 ms (500-540)
+   * </p>
+   * Note, though average time in testWalkTime for slightly smaller model is 50ms, it's rather 200, 75, 25, 20, 20,
+   * i.e. each thread in parallel mode is executed as a 'fresh' run, so it looks like JIT optimizes per thread?
    */
   @Test
   public void testParallelRead() throws Exception {
     final TestModelFactory m1f = new TestModelFactory();
-    m1f.createModel(20, 100, 10, 5);
+    m1f.createModel(20, 100, 10, 5); // ~120k nodes
     final int initialNodeCount = m1f.countModelNodes();
     myTestModelAccess.enableRead();
     m1f.attachTo(myTestRepo);
 
+    final long baselineMillis = 500 * 2; // Use twice as much time to account for slow build agents
     final int parallelThreads = 4;
     final CountDownLatch stopLatch = new CountDownLatch(3); // 1 for thread start sync, 1 for results ready sync, 1 for thread stop sync
     CyclicBarrier b = new CyclicBarrier(parallelThreads, new Runnable() {
@@ -770,6 +780,8 @@ public class ModelListenerTest {
         myErrors.checkThat(threads[i].getName(), threads[i].getAllThreadListenerCount(), equalTo(expectedNodeCount * parallelThreads));
         myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount1(), equalTo(expectedNodeCount));
         myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount2(), equalTo(expectedNodeCount));
+        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), lessThan(baselineMillis));
+        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), greaterThan(baselineMillis / 4));
       }
       return;
     }
@@ -792,7 +804,7 @@ public class ModelListenerTest {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(10, 25, 15, 5, 4);
     final int actualNodes = m1f.countModelNodes();
-    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model. I use twice as much time to account for slower build agents
+    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use twice as much time to account for slower build agents
     final long baselineMillis = 100;
     final int testRuns = 5;
     long elapsed = 0;
@@ -1086,6 +1098,7 @@ public class ModelListenerTest {
     private final CyclicBarrier myBarrier;
     private final TestModelFactory myModel;
     private int myCountL1, myCountL2, myCountL3;
+    private long myElapsedMillis;
 
     public ModelReadThread(CyclicBarrier barrier, TestModelFactory mf) {
       myBarrier = barrier;
@@ -1100,16 +1113,21 @@ public class ModelListenerTest {
       myModel.attachAccessListeners(cl1, cl2, cl3);
       try {
         myBarrier.await();
+        final long s = System.nanoTime();
         readTreeNodes(myModel.getModel().getRootNodes());
+        final long e = System.nanoTime();
         myBarrier.await();
         myCountL1 = cl1.myVisitedNodes;
         myCountL2 = cl2.myVisitedNodes;
         myCountL3 = cl3.myVisitedNodes;
+        myElapsedMillis = (e - s) / 1000000;
         myBarrier.await();
       } catch (InterruptedException e) {
         e.printStackTrace();
+        throw new RuntimeException(e);
       } catch (BrokenBarrierException e) {
         e.printStackTrace();
+        throw new RuntimeException(e);
       } finally {
         myModel.detachAccessListeners(cl1, cl2, cl3);
       }
@@ -1124,6 +1142,10 @@ public class ModelListenerTest {
     }
     public int getThisThreadCount2() {
       return myCountL3;
+    }
+
+    public long getElapsedMillis() {
+      return myElapsedMillis;
     }
   }
 }
