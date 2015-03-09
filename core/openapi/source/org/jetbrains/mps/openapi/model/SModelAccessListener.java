@@ -27,6 +27,7 @@ package org.jetbrains.mps.openapi.model;
  * Note: in MPS read actions can occur in multiple threads in parallel. It is highly recommended to use
  * thread-local storage or accept notifications from one thread only. Explicit synchronization may be
  * harmful to the performance of the whole application.
+ * FIXME need better wording to stress events may come from multiple threads, perhaps some sync examples or single-thread listener classes to re-use?
  */
 public interface SModelAccessListener {
 

@@ -43,6 +43,10 @@ import org.junit.rules.ErrorCollector;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
 
 import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
@@ -113,8 +117,6 @@ public class ModelListenerTest {
     m1f.attachTo(myTestRepo);
     // readTreeNodes notifies 1 read per iteration over child, +1 for getProperties, +1 for getReferences()
     readTreeNodes(m1.getRootNodes());
-    // for a model attached to a repository, there's extra iteration over roots
-    // to attach them to the model's repository, hence +rootsCount;
     final int expectedNodeReadCount = actualNodes * 3;
     //
     // SModelAccessListener
@@ -737,6 +739,51 @@ public class ModelListenerTest {
   }
 
   /**
+   * Ensure parallel reads are viable.
+   * FIXME measure execution time, compare against baseline
+   */
+  @Test
+  public void testParallelRead() throws Exception {
+    final TestModelFactory m1f = new TestModelFactory();
+    m1f.createModel(20, 100, 10, 5);
+    final int initialNodeCount = m1f.countModelNodes();
+    myTestModelAccess.enableRead();
+    m1f.attachTo(myTestRepo);
+
+    final int parallelThreads = 4;
+    final CountDownLatch stopLatch = new CountDownLatch(3); // 1 for thread start sync, 1 for results ready sync, 1 for thread stop sync
+    CyclicBarrier b = new CyclicBarrier(parallelThreads, new Runnable() {
+      @Override
+      public void run() {
+        stopLatch.countDown();
+      }
+    });
+    ModelReadThread[] threads = new ModelReadThread[parallelThreads];
+    for (int i = 0; i < parallelThreads; i++) {
+      threads[i] = new ModelReadThread(b, m1f);
+      threads[i].start();
+    }
+    boolean finishOk = stopLatch.await(10, TimeUnit.SECONDS);
+    if (finishOk) {
+      final int expectedNodeCount = 3 * initialNodeCount;
+      for (int i = 0; i < parallelThreads; i++) {
+        myErrors.checkThat(threads[i].getName(), threads[i].getAllThreadListenerCount(), equalTo(expectedNodeCount * parallelThreads));
+        myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount1(), equalTo(expectedNodeCount));
+        myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount2(), equalTo(expectedNodeCount));
+      }
+      return;
+    }
+    for (int i = 0; i < parallelThreads; i++) {
+      if (threads[i].isAlive()) {
+        Throwable th = new Throwable("Hanging thread " + threads[i].getName());
+        th.setStackTrace(threads[i].getStackTrace());
+        myErrors.addError(th);
+        threads[i].interrupt();
+      }
+    }
+  }
+
+  /**
    * Just a quick check iteration time over a model doesn't deviate significantly due to
    * changes in SModel/SNode implementation.
    */
@@ -833,7 +880,7 @@ public class ModelListenerTest {
   }
 
   // read every property and every reference of an each node in sub-tree
-  private static void readTreeNodes(Iterable<? extends SNode> nodes) {
+  /*package*/ static void readTreeNodes(Iterable<? extends SNode> nodes) {
     for (SNode n : nodes) { // 1 nodeRead per next()
       for (SProperty p : n.getProperties()) { // 1 nodeRead
         n.getProperty(p);
@@ -855,7 +902,7 @@ public class ModelListenerTest {
     }
 
     @Override
-    public void nodeRead(SNode node) {
+    public synchronized void nodeRead(SNode node) {
       myVisitedNodes++;
     }
 
@@ -1032,6 +1079,51 @@ public class ModelListenerTest {
       myRemoved.clear();
       myChangedProperties.clear();
       myChangedReferences.clear();
+    }
+  }
+
+  private static class ModelReadThread extends Thread {
+    private final CyclicBarrier myBarrier;
+    private final TestModelFactory myModel;
+    private int myCountL1, myCountL2, myCountL3;
+
+    public ModelReadThread(CyclicBarrier barrier, TestModelFactory mf) {
+      myBarrier = barrier;
+      myModel = mf;
+    }
+
+    @Override
+    public void run() {
+      AccessCountListener1 cl1 = new AccessCountListener1();
+      AccessCountListener2 cl2 = new AccessCountListener2();
+      AccessCountListener3 cl3 = new AccessCountListener3();
+      myModel.attachAccessListeners(cl1, cl2, cl3);
+      try {
+        myBarrier.await();
+        readTreeNodes(myModel.getModel().getRootNodes());
+        myBarrier.await();
+        myCountL1 = cl1.myVisitedNodes;
+        myCountL2 = cl2.myVisitedNodes;
+        myCountL3 = cl3.myVisitedNodes;
+        myBarrier.await();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      } catch (BrokenBarrierException e) {
+        e.printStackTrace();
+      } finally {
+        myModel.detachAccessListeners(cl1, cl2, cl3);
+      }
+    }
+
+    public int getAllThreadListenerCount() {
+      return myCountL1;
+    }
+
+    public int getThisThreadCount1() {
+      return myCountL2;
+    }
+    public int getThisThreadCount2() {
+      return myCountL3;
     }
   }
 }
