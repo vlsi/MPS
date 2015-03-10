@@ -83,8 +83,9 @@ public class SubtypingResolver {
     if (TypesUtil.match(subType, superType, myMatchingPairs)) {
       return true;
     }
-    if (TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(subType, superType, myWeak)) {
-      return addToCache(subType, superType, true, myWeak);
+    Pair<Boolean, Boolean> byReplacementRules = TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRulesAuth(subType, superType, myWeak);
+    if (byReplacementRules.o2) {
+      return addToCache(subType, superType, byReplacementRules.o1, myWeak);
     }
     if (meetsAndJoins(subType, superType, myWeak)) {
       return addToCache(subType, superType, true, myWeak);

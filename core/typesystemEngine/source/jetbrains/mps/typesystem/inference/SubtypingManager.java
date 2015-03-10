@@ -16,6 +16,7 @@
 package jetbrains.mps.typesystem.inference;
 
 
+import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,6 +38,8 @@ public abstract class SubtypingManager {
   public abstract boolean isSubtype(SNode subType, SNode superType, boolean isWeak);
 
   public abstract boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak);
+
+  public abstract Pair<Boolean, Boolean> isSubTypeByReplacementRulesAuth(SNode subType, SNode superType, boolean isWeak);
 
   public abstract boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes);
 
