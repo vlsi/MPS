@@ -53,7 +53,9 @@ public class ReferenceInfo_Template extends ReferenceInfo {
       return createStaticReference(ref, outputTargetNode);
     }
     if (myResolveInfo != null) {
-      return createDynamicReference(ref, myResolveInfo, new DynamicReferenceOrigin(myTemplateSourceNode, myContext.getInput().getReference()));
+      final SReference dr = createDynamicReference(ref, myResolveInfo, new DynamicReferenceOrigin(myTemplateSourceNode, myContext.getInput().getReference()));
+      ref.getGenerator().registerDynamicReference(dr);
+      return dr; 
     }
     return createInvalidReference(ref, null);
   }

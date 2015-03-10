@@ -51,7 +51,9 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return createStaticReference(ref, myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      return createDynamicReference(ref, myResolveInfoForDynamicResolve, new DynamicReferenceOrigin(getMacroNodeRef(), null));
+      final SReference dr = createDynamicReference(ref, myResolveInfoForDynamicResolve, new DynamicReferenceOrigin(getMacroNodeRef(), null));
+      ref.getGenerator().registerDynamicReference(dr);
+      return dr; 
     }
     if (!ref.getLink().isOptional()) {
       return createInvalidReference(ref, myResolver.getDefaultResolveInfo());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,16 +49,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 class GenerationSettingsPreferencesPage implements SearchableConfigurable {
-  private JPanel myPage;
-  private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
-  private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
-  private JCheckBox myStrictMode = new JCheckBox("Strict mode");
-  private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
-  private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
-  private JCheckBox myIncremental = new JCheckBox("Incremental generation");
-  private JCheckBox myIncrementalCache = new JCheckBox("Cache intermediate models");
-  private JCheckBox myInplaceTransform = new JCheckBox("Apply transformations in place");
-  private JCheckBox myDebugIncrementalDependencies = new JCheckBox("Debug generation dependencies");
+  private final JPanel myPage;
+  private final JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
+  private final JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
+  private final JCheckBox myStrictMode = new JCheckBox("Strict mode");
+  private final JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
+  private final JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
+  private final JCheckBox myIncremental = new JCheckBox("Incremental generation");
+  private final JCheckBox myIncrementalCache = new JCheckBox("Cache intermediate models");
+  private final JCheckBox myInplaceTransform = new JCheckBox("Apply transformations in place");
+  private final JCheckBox myDebugIncrementalDependencies = new JCheckBox("Debug generation dependencies");
+  private final JCheckBox myAvoidDynamicRefs = new JCheckBox("Resort to static references");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
   private JRadioButton myTraceSteps = new JRadioButton("Generation steps only");
@@ -91,6 +92,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     reset();
     myPage = createPage();
     myButtonState.reset();
+    myAvoidDynamicRefs.setToolTipText("Best effort to use static references, not dynamic, when target is referenced by name/resolveInfo");
   }
 
   public String getName() {
@@ -158,7 +160,10 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     c.insets.left = 0;
     optionsPanel.add(myInplaceTransform, c);
 
+    optionsPanel.add(myAvoidDynamicRefs, c);
+
     myButtonState.track(mySaveTransientModelsCheckBox, myCheckModelsBeforeGenerationCheckBox, myStrictMode, myInplaceTransform);
+    myButtonState.track(myAvoidDynamicRefs);
     myButtonState.track(myDebugIncrementalDependencies, myIncremental, myIncrementalCache);
 
     final ChangeListener listener = new ChangeListener() {
@@ -315,6 +320,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
       myGenerationSettings.setDebugIncrementalDependencies(myDebugIncrementalDependencies.isSelected());
     }
     myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
+    myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
   }
@@ -355,6 +361,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
       myDebugIncrementalDependencies.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
     }
     myInplaceTransform.setSelected(myGenerationSettings.useInplaceTransformations());
+    myAvoidDynamicRefs.setSelected(myGenerationSettings.createStaticReferences());
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myGenerateDebugInfo = true;
   private boolean myShowBadChildWarning = true;
   private boolean myActiveInplaceTransform = true;
+  private boolean myCreateStaticRefs = true;
   private GenTraceSettings myTraceSettings = new GenTraceSettings();
 
   @Override
@@ -205,6 +206,16 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   @Override
   public boolean useInplaceTransformations() {
     return myActiveInplaceTransform;
+  }
+
+  @Override
+  public void setCreateStaticReferences(boolean createStaticRefs) {
+    myCreateStaticRefs = createStaticRefs;
+  }
+
+  @Override
+  public boolean createStaticReferences() {
+    return myCreateStaticRefs;
   }
 
   @Override
