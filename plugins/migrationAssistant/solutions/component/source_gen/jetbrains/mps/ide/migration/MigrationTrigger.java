@@ -108,7 +108,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
               boolean finished = wizard.showAndGet();
               restoreTipsState();
-
               if (!(finished)) {
                 return;
               }
@@ -120,7 +119,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorStep lastStep = as_feb5zp_a0a0a0j0a0a0a1a0a0a0a1a0a0q(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+                MigrationErrorStep lastStep = as_feb5zp_a0a0a0i0a0a0a1a0a0a0a1a0a0q(wizard.getCurrentStepObject(), MigrationErrorStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -247,6 +246,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public synchronized void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
 
+    saveAnsSetTipsState();
+
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
@@ -254,6 +255,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration Required", "Migrate", "Postpone", null);
+            restoreTipsState();
             if (result == Messages.NO) {
               return;
             }
@@ -345,7 +347,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0j0a0a0a1a0a0a0a1a0a0q(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0i0a0a0a1a0a0a0a1a0a0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

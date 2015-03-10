@@ -713,8 +713,8 @@
           </node>
           <node concept="9aQIb" id="7lByCvUz4lW" role="9aQIa">
             <node concept="3clFbS" id="7lByCvUz4lX" role="9aQI4">
-              <node concept="3clFbF" id="7lByCvUzmBn" role="3cqZAp">
-                <node concept="1rXfSq" id="7lByCvUzmBm" role="3clFbG">
+              <node concept="3clFbF" id="5hQ0M3VpfzM" role="3cqZAp">
+                <node concept="1rXfSq" id="5hQ0M3VpfzK" role="3clFbG">
                   <ref role="37wK5l" node="7lByCvUzmBj" resolve="saveAnsSetTipsState" />
                 </node>
               </node>
@@ -854,12 +854,11 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3clFbF" id="7lByCvU_EhN" role="3cqZAp">
-                                  <node concept="1rXfSq" id="7lByCvU_EhL" role="3clFbG">
+                                <node concept="3clFbF" id="5hQ0M3VpfQ0" role="3cqZAp">
+                                  <node concept="1rXfSq" id="5hQ0M3VpfPY" role="3clFbG">
                                     <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
                                   </node>
                                 </node>
-                                <node concept="3clFbH" id="7lByCvU_O0C" role="3cqZAp" />
                                 <node concept="3clFbJ" id="5n1niCbzSMy" role="3cqZAp">
                                   <node concept="3clFbS" id="5n1niCbzSM_" role="3clFbx">
                                     <node concept="3cpWs6" id="5n1niCb$2wl" role="3cqZAp" />
@@ -1665,6 +1664,12 @@
           </node>
         </node>
         <node concept="3clFbH" id="1AzqgyAhkBU" role="3cqZAp" />
+        <node concept="3clFbF" id="7lByCvUzmBn" role="3cqZAp">
+          <node concept="1rXfSq" id="7lByCvUzmBm" role="3clFbG">
+            <ref role="37wK5l" node="7lByCvUzmBj" resolve="saveAnsSetTipsState" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="74bMoPcGnVj" role="3cqZAp" />
         <node concept="3SKdUt" id="1AzqgyAfnWu" role="3cqZAp">
           <node concept="3SKdUq" id="1AzqgyAfnY6" role="3SKWNk">
             <property role="3SKdUp" value="wait until project is fully loaded (if not yet)" />
@@ -1722,6 +1727,11 @@
                                   </node>
                                   <node concept="10Nm6u" id="7ScOZyr1J$1" role="37wK5m" />
                                 </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="74bMoPcGplJ" role="3cqZAp">
+                              <node concept="1rXfSq" id="74bMoPcGplH" role="3clFbG">
+                                <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
                               </node>
                             </node>
                             <node concept="3clFbJ" id="1AzqgyAiJyJ" role="3cqZAp">
