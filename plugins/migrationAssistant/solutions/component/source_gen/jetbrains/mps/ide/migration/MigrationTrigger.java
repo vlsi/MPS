@@ -14,9 +14,9 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ModalityState;
@@ -96,54 +96,53 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             public void run() {
               VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
               VirtualFileManager.getInstance().syncRefresh();
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  ReloadManager.getInstance().flush();
-                  ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
-
-                  myState.migrationRequired = false;
-
-                  final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
-                  // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
-                  boolean finished = wizard.showAndGet();
-                  if (!(finished)) {
-                    return;
-                  }
-
-                  if (wizard.isFinishSuccessfull()) {
-                    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                      public void run() {
-                        ProjectManagerEx.getInstance().reloadProject(myProject);
-                      }
-                    });
-                    return;
-                  }
-
-                  MigrationErrorStep lastStep = as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0b0a0a61(wizard.getCurrentStepObject(), MigrationErrorStep.class);
-                  if (lastStep == null) {
-                    return;
-                  }
-
-                  final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
-                  if (afterProjectInitialized == null) {
-                    return;
-                  }
-
-                  StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-                    public void run() {
-                      ApplicationManager.getApplication().invokeLater(new Runnable() {
-                        public void run() {
-                          afterProjectInitialized.invoke();
-                        }
-                      }, ModalityState.NON_MODAL);
-
-                    }
-                  });
-                }
-              });
+              ReloadManager.getInstance().flush();
+              ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
             }
           });
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              myState.migrationRequired = false;
 
+              final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
+              // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
+              boolean finished = wizard.showAndGet();
+              restoreTipsState();
+
+              if (!(finished)) {
+                return;
+              }
+
+              if (wizard.isFinishSuccessfull()) {
+                ApplicationManager.getApplication().runWriteAction(new Runnable() {
+                  public void run() {
+                    ProjectManagerEx.getInstance().reloadProject(myProject);
+                  }
+                });
+              } else {
+                MigrationErrorStep lastStep = as_feb5zp_a0a0a0j0a0a0a1a0a0a0a1a0a0q(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+                if (lastStep == null) {
+                  return;
+                }
+
+                final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
+                if (afterProjectInitialized == null) {
+                  return;
+                }
+
+                StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+                  public void run() {
+                    ApplicationManager.getApplication().invokeLater(new Runnable() {
+                      public void run() {
+                        afterProjectInitialized.invoke();
+                      }
+                    }, ModalityState.NON_MODAL);
+
+                  }
+                });
+              }
+            }
+          });
         }
       });
     }
@@ -339,7 +338,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public boolean tips = false;
   }
-  private static <T> T as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0b0a0a61(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0j0a0a0a1a0a0a0a1a0a0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
