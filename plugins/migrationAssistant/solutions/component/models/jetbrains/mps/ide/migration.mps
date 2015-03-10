@@ -42,6 +42,7 @@
     <import index="1y3e" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.migration.global(MPS.Workbench/jetbrains.mps.migration.global@java_stub)" />
     <import index="p7r7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.vfs(MPS.Platform/jetbrains.mps.ide.vfs@java_stub)" />
     <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
+    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -87,9 +88,7 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
-        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
-      </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -217,9 +216,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -549,6 +545,17 @@
         <property role="3clFbU" value="false" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7lByCvUxOz7" role="jymVt" />
+    <node concept="312cEg" id="7lByCvUxRC$" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myProperties" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="7lByCvUxQwk" role="1B3o_S" />
+      <node concept="3uibUv" id="7lByCvUxR_Q" role="1tU5fm">
+        <ref role="3uigEE" to="1y3e:~ProjectMigrationProperties" resolve="ProjectMigrationProperties" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3gptLqNJql_" role="jymVt" />
     <node concept="312cEg" id="1AzqgyAfyJP" role="jymVt">
       <property role="TrG5h" value="myRepoListener" />
@@ -589,6 +596,17 @@
       </node>
       <node concept="3Tm6S6" id="2Om_nYXquPL" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="7lByCvUxXzX" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myListenersAdded" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="7lByCvUxWqT" role="1B3o_S" />
+      <node concept="10P_77" id="7lByCvUxXxg" role="1tU5fm" />
+      <node concept="3clFbT" id="7lByCvUxYEa" role="33vP2m">
+        <property role="3clFbU" value="false" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="1AzqgyAfbQd" role="jymVt" />
     <node concept="3clFbW" id="1AzqgyAfaNk" role="jymVt">
       <node concept="3cqZAl" id="1AzqgyAfaNl" role="3clF45" />
@@ -620,6 +638,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="7lByCvUxT1x" role="3cqZAp">
+          <node concept="37vLTI" id="7lByCvUxTci" role="3clFbG">
+            <node concept="37vLTw" id="7lByCvUxTjx" role="37vLTx">
+              <ref role="3cqZAo" node="7lByCvUxST5" resolve="props" />
+            </node>
+            <node concept="37vLTw" id="7lByCvUxT1v" role="37vLTJ">
+              <ref role="3cqZAo" node="7lByCvUxRC$" resolve="myProperties" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="3gptLqNJbqi" role="3clF46">
         <property role="TrG5h" value="ideaProject" />
@@ -640,6 +668,12 @@
           <ref role="3uigEE" node="5SsFeroaabl" resolve="MigrationManager" />
         </node>
       </node>
+      <node concept="37vLTG" id="7lByCvUxST5" role="3clF46">
+        <property role="TrG5h" value="props" />
+        <node concept="3uibUv" id="7lByCvUxSXU" role="1tU5fm">
+          <ref role="3uigEE" to="1y3e:~ProjectMigrationProperties" resolve="ProjectMigrationProperties" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3gptLqNJD1v" role="jymVt" />
     <node concept="3clFb_" id="1AzqgyAfalq" role="jymVt">
@@ -655,6 +689,16 @@
             <node concept="1QHqEK" id="3gptLqNHH8o" role="3cqZAp">
               <node concept="1QHqEC" id="3gptLqNHH8p" role="1QHqEI">
                 <node concept="3clFbS" id="3gptLqNHH8q" role="1bW5cS">
+                  <node concept="3clFbF" id="7lByCvUy19Z" role="3cqZAp">
+                    <node concept="37vLTI" id="7lByCvUy1oX" role="3clFbG">
+                      <node concept="3clFbT" id="7lByCvUy1th" role="37vLTx">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="37vLTw" id="7lByCvUy19X" role="37vLTJ">
+                        <ref role="3cqZAo" node="7lByCvUxXzX" resolve="myListenersAdded" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="3gptLqNHH8r" role="3cqZAp">
                     <node concept="2OqwBi" id="3gptLqNHH8s" role="3clFbG">
                       <node concept="liA8E" id="3gptLqNHH8u" role="2OqNvi">
@@ -691,26 +735,13 @@
                   </node>
                   <node concept="3clFbF" id="2Om_nYXqzqW" role="3cqZAp">
                     <node concept="2OqwBi" id="2Om_nYXqzqX" role="3clFbG">
-                      <node concept="2OqwBi" id="2Om_nYXqzrg" role="2Oq$k0">
-                        <node concept="37vLTw" id="2Om_nYXqzrf" role="2Oq$k0">
-                          <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
-                        </node>
-                        <node concept="liA8E" id="2Om_nYXqzrh" role="2OqNvi">
-                          <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                          <node concept="3VsKOn" id="2Om_nYXqzr0" role="37wK5m">
-                            <ref role="3VsUkX" to="1y3e:~ProjectMigrationProperties" resolve="ProjectMigrationProperties" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="7lByCvUxTLe" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7lByCvUxRC$" resolve="myProperties" />
                       </node>
                       <node concept="liA8E" id="2Om_nYXqzr1" role="2OqNvi">
                         <ref role="37wK5l" to="1y3e:~ProjectMigrationProperties.addListener(jetbrains.mps.migration.global.ProjectMigrationProperties$MigrationPropertiesReloadListener):void" resolve="addListener" />
-                        <node concept="2OqwBi" id="2Om_nYXqzr2" role="37wK5m">
-                          <node concept="Xjq3P" id="2Om_nYXqzr3" role="2Oq$k0">
-                            <ref role="1HBi2w" node="5SsFeroaajZ" resolve="MigrationTrigger" />
-                          </node>
-                          <node concept="2OwXpG" id="2Om_nYXqzr5" role="2OqNvi">
-                            <ref role="2Oxat5" node="2Om_nYXquPH" resolve="myPropertiesListener" />
-                          </node>
+                        <node concept="37vLTw" id="7lByCvUxVdI" role="37wK5m">
+                          <ref role="3cqZAo" node="2Om_nYXquPH" resolve="myPropertiesListener" />
                         </node>
                       </node>
                     </node>
@@ -783,6 +814,7 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="5SsFeroaakK" role="3clFbx">
+                      <node concept="3clFbH" id="7lByCvUxO61" role="3cqZAp" />
                       <node concept="3cpWs6" id="5SsFeroaakJ" role="3cqZAp" />
                     </node>
                   </node>
@@ -892,6 +924,29 @@
         <node concept="1QHqEK" id="3gptLqNHJ3I" role="3cqZAp">
           <node concept="1QHqEC" id="3gptLqNHJ3J" role="1QHqEI">
             <node concept="3clFbS" id="3gptLqNHJ3K" role="1bW5cS">
+              <node concept="3clFbJ" id="7lByCvUy1D6" role="3cqZAp">
+                <node concept="3clFbS" id="7lByCvUy1D8" role="3clFbx">
+                  <node concept="3cpWs6" id="7lByCvUy1Ug" role="3cqZAp" />
+                </node>
+                <node concept="3fqX7Q" id="7lByCvUy1HY" role="3clFbw">
+                  <node concept="37vLTw" id="7lByCvUy1MB" role="3fr31v">
+                    <ref role="3cqZAo" node="7lByCvUxXzX" resolve="myListenersAdded" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="7lByCvUxTVC" role="3cqZAp">
+                <node concept="2OqwBi" id="7lByCvUxU5u" role="3clFbG">
+                  <node concept="37vLTw" id="7lByCvUxTVA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7lByCvUxRC$" resolve="myProperties" />
+                  </node>
+                  <node concept="liA8E" id="7lByCvUxUIX" role="2OqNvi">
+                    <ref role="37wK5l" to="1y3e:~ProjectMigrationProperties.removeListener(jetbrains.mps.migration.global.ProjectMigrationProperties$MigrationPropertiesReloadListener):void" resolve="removeListener" />
+                    <node concept="37vLTw" id="7lByCvUxUQf" role="37wK5m">
+                      <ref role="3cqZAo" node="2Om_nYXquPH" resolve="myPropertiesListener" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="3gptLqNHJ3L" role="3cqZAp">
                 <node concept="2OqwBi" id="3gptLqNHJ3M" role="3clFbG">
                   <node concept="liA8E" id="3gptLqNHJ3O" role="2OqNvi">

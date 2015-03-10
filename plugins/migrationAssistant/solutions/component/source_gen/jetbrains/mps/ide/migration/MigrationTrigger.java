@@ -8,10 +8,10 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -66,23 +66,28 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
   private boolean myMigrationQueued = false;
 
+  private ProjectMigrationProperties myProperties;
+
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
+  private boolean myListenersAdded = false;
 
-  public MigrationTrigger(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager migrationManager) {
+  public MigrationTrigger(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager migrationManager, ProjectMigrationProperties props) {
     super(ideaProject);
     myMpsProject = p;
     myMigrationManager = migrationManager;
+    myProperties = props;
   }
 
   public void projectOpened() {
     if (!(myState.migrationRequired)) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          myListenersAdded = true;
           MPSModuleRepository.getInstance().addRepositoryListener(MigrationTrigger.this.myRepoListener);
           ClassLoaderManager.getInstance().addClassesHandler(MigrationTrigger.this.myClassesListener);
-          myProject.getComponent(ProjectMigrationProperties.class).addListener(MigrationTrigger.this.myPropertiesListener);
+          myProperties.addListener(myPropertiesListener);
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -99,6 +104,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // with the solution to migrate, and in this case classes of this language will be cleared, but after 
         // they are compiled at startup, they are only reloaded in a pre-startup activity 
         if (!(myMigrationManager.isMigrationRequired())) {
+
           return;
         }
 
@@ -126,6 +132,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     // these listeners can be not registered at the time 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (!(myListenersAdded)) {
+          return;
+        }
+        myProperties.removeListener(myPropertiesListener);
         ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
         MPSModuleRepository.getInstance().removeRepositoryListener(MigrationTrigger.this.myRepoListener);
       }
@@ -310,7 +320,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    MigrationErrorStep lastStep = as_feb5zp_a0a9a53(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+    MigrationErrorStep lastStep = as_feb5zp_a0a9a83(wizard.getCurrentStepObject(), MigrationErrorStep.class);
     if (lastStep == null) {
       return;
     }
@@ -346,7 +356,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static <T> T as_feb5zp_a0a9a53(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a9a83(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
