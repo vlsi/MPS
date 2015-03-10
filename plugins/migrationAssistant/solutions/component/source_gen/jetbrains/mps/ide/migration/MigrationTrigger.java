@@ -10,8 +10,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -19,6 +17,8 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -82,64 +82,70 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   public void projectOpened() {
     if (!(myState.migrationRequired)) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myListenersAdded = true;
-          MPSModuleRepository.getInstance().addRepositoryListener(MigrationTrigger.this.myRepoListener);
-          ClassLoaderManager.getInstance().addClassesHandler(MigrationTrigger.this.myClassesListener);
-          myProperties.addListener(myPropertiesListener);
-        }
-      });
+      addListeners();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           tryMigratingProject();
         }
       });
-      return;
-    }
-
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        // this line should be executed in post-startup activity as we can have language in the same project 
-        // with the solution to migrate, and in this case classes of this language will be cleared, but after 
-        // they are compiled at startup, they are only reloaded in a pre-startup activity 
-        if (!(myMigrationManager.isMigrationRequired())) {
-
-          return;
-        }
-
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
-            VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
-              public void run() {
-                SwingUtilities.invokeLater(new Runnable() {
-                  public void run() {
-                    ReloadManager.getInstance().flush();
-                    ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
-                    executeWizard();
-                  }
-                });
-              }
-            });
+    } else {
+      StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+        public void run() {
+          // this line should be executed in post-startup activity as we can have language in the same project 
+          // with the solution to migrate, and in this case classes of this language will be cleared, but after 
+          // they are compiled at startup, they are only reloaded in a pre-startup activity 
+          if (!(myMigrationManager.isMigrationRequired())) {
+            return;
           }
-        });
+
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
+              VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
+                public void run() {
+                  SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                      ReloadManager.getInstance().flush();
+                      ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
+                      executeWizard();
+                    }
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  }
+
+  public void projectClosed() {
+    removeListeners();
+  }
+
+  private void addListeners() {
+    myListenersAdded = true;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().addRepositoryListener(MigrationTrigger.this.myRepoListener);
+        ClassLoaderManager.getInstance().addClassesHandler(MigrationTrigger.this.myClassesListener);
+        myProperties.addListener(myPropertiesListener);
       }
     });
   }
 
-  public void projectClosed() {
-    // these listeners can be not registered at the time 
+  private boolean removeListeners() {
+    if (!(myListenersAdded)) {
+      return true;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (!(myListenersAdded)) {
-          return;
-        }
         myProperties.removeListener(myPropertiesListener);
         ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
         MPSModuleRepository.getInstance().removeRepositoryListener(MigrationTrigger.this.myRepoListener);
       }
     });
+    return false;
   }
 
   @NonNls
@@ -320,7 +326,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    MigrationErrorStep lastStep = as_feb5zp_a0a9a83(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+    MigrationErrorStep lastStep = as_feb5zp_a0a9a24(wizard.getCurrentStepObject(), MigrationErrorStep.class);
     if (lastStep == null) {
       return;
     }
@@ -356,7 +362,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static <T> T as_feb5zp_a0a9a83(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a9a24(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
