@@ -20,6 +20,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
@@ -88,6 +89,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       });
     } else {
+      saveTipsState();
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -117,7 +119,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                     return;
                   }
 
-                  MigrationErrorStep lastStep = as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0a0a0a61(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+                  MigrationErrorStep lastStep = as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0b0a0a61(wizard.getCurrentStepObject(), MigrationErrorStep.class);
                   if (lastStep == null) {
                     return;
                   }
@@ -149,6 +151,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   public void projectClosed() {
     removeListeners();
+  }
+
+  private void saveTipsState() {
+    myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
+  }
+
+  private void restoreTipsState() {
+    GeneralSettings.getInstance().setShowTipsOnStartup(myState.tips);
   }
 
   private void addListeners() {
@@ -228,7 +238,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     postponeMigration();
   }
 
-  public void postponeMigration() {
+  public synchronized void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
 
     // wait until project is fully loaded (if not yet) 
@@ -327,8 +337,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   public static class MyState {
     public boolean migrationRequired = false;
+    public boolean tips = false;
   }
-  private static <T> T as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0a0a0a61(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a21a0a0a0c0a0a0a0a0a0a0a0b0a0a61(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

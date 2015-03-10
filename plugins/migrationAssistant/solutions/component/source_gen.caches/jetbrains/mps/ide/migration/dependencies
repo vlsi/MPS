@@ -35,6 +35,7 @@
     <classNode dependClassName="java.util.Map" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationTrigger" file="MigrationTrigger.java">
+    <classNode dependClassName="com.intellij.ide.GeneralSettings" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
