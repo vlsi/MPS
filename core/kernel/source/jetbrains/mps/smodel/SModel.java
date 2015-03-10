@@ -258,8 +258,10 @@ public class SModel implements SModelData {
     return myModelDescriptor;
   }
 
+  // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     myModelDescriptor = ((SModelBase) modelDescriptor);
+    myNodeOwner.setEventDispatch(modelDescriptor == null ? null : myModelDescriptor.getEventDispatch());
   }
 
   protected void enforceFullLoad() {

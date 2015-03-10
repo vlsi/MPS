@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -37,9 +38,20 @@ import org.jetbrains.mps.openapi.module.SRepository;
 final class AttachedNodeOwner extends SNodeOwner {
 
   private final SModel myModel;
+  // can be null
+  private ModelEventDispatch myEventDispatch;
 
   public AttachedNodeOwner(@NotNull SModel model) {
     myModel = model;
+  }
+
+  /*package*/ void setEventDispatch(ModelEventDispatch dispatch) {
+    // the reason why I don't care to make myEventDispatch immediately visible
+    // in a multi-thread environment (i.e. one thread reads model and dispatches notifications
+    // while another attaches the model to model descriptor and updates myEventDispatch) as there's
+    // no contract whatsoever about what happens in this case. In a single-thread, this assignment would
+    // 'happen-before' any subsequent read and we are all set.
+    myEventDispatch = dispatch;
   }
 
   @Override
@@ -98,7 +110,7 @@ final class AttachedNodeOwner extends SNodeOwner {
     if (myModel.isUpdateMode()) {
       return;
     }
-    SModelBase md = getRealModel();
+    final ModelEventDispatch md = myEventDispatch;
     if (md != null) {
       md.fireNodeRead(node);
     }
@@ -119,9 +131,9 @@ final class AttachedNodeOwner extends SNodeOwner {
     if (myModel.isUpdateMode()) {
       return;
     }
-    SModelBase md = getRealModel();
+    final ModelEventDispatch md = myEventDispatch;
     if (md != null) {
-      md.firePropertyRead(node, p.getName());
+      md.firePropertyRead(node, p);
     }
     //firePropertyReadAccessInEditor();
     //fireNodePropertyReadAccess();
@@ -143,9 +155,9 @@ final class AttachedNodeOwner extends SNodeOwner {
       return;
     }
     // referenceRead()
-    SModelBase md = getRealModel();
+    final ModelEventDispatch md = myEventDispatch;
     if (md != null) {
-      md.fireReferenceRead(node, link.getRoleName());
+      md.fireReferenceRead(node, link);
     }
     // fireNodeReferentReadAccess();
     if (myModel.canFireReadEvent()) {

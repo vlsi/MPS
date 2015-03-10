@@ -19,18 +19,24 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.IllegalModelAccessException;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessListener;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -50,7 +56,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
   private static Logger LOG = LogManager.getLogger(SModelBase.class);
 
-  private final List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
+  private final ModelEventDispatch myEventDispatch = new ModelEventDispatch();
   private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 
   @NotNull
@@ -237,30 +243,54 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void addAccessListener(SModelAccessListener l) {
-    myAccessListeners.add(l);
+    myEventDispatch.addAccessListener(l);
   }
 
   @Override
   public void removeAccessListener(SModelAccessListener l) {
-    myAccessListeners.remove(l);
+    myEventDispatch.removeAccessListener(l);
   }
 
+  @Override
+  public void addAccessListener(SNodeAccessListener l) {
+    myEventDispatch.addAccessListener(l);
+  }
+
+  @Override
+  public void removeAccessListener(SNodeAccessListener l) {
+    myEventDispatch.removeAccessListener(l);
+  }
+
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void fireNodeRead(jetbrains.mps.smodel.SNode node) {
-    for (SModelAccessListener l : myAccessListeners) {
-      l.nodeRead(node);
-    }
+    myEventDispatch.fireNodeRead(node);
   }
 
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void fireReferenceRead(jetbrains.mps.smodel.SNode node, String role) {
-    for (SModelAccessListener l : myAccessListeners) {
-      l.referenceRead(node, role);
-    }
+    SReferenceLink ref = MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role);
+    myEventDispatch.fireReferenceRead(node, ref);
   }
 
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void firePropertyRead(jetbrains.mps.smodel.SNode node, String propertyName) {
-    for (SModelAccessListener l : myAccessListeners) {
-      l.propertyRead(node, propertyName);
-    }
+    SProperty prop = MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), propertyName);
+    myEventDispatch.firePropertyRead(node, prop);
   }
 
   protected final void fireBeforeModelRenamed(SModelReference newName) {
@@ -376,5 +406,19 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 //      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
+  }
+
+  /**
+   * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries.
+   * FIXME This is a hack. We shall pass myEventDispatch the moment internal model is initialized.
+   * However, it's tricky to find out exact moment with present approach (getSModelInternal() either
+   * returns existing or creates new), fireModeStateChanged is feasible option, but misguiding as well.
+   * Refactoring required to split access to SModel internal from initialization.
+   * To put event dispatch into smodel.SModel doesn't seem to be an option as we need to add listeners without
+   * loading whole model.
+   */
+  @NotNull
+  public ModelEventDispatch getEventDispatch() {
+    return myEventDispatch;
   }
 }

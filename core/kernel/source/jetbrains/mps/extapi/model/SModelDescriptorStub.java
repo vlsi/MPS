@@ -53,6 +53,8 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   /**
    * Migration to 3.0. Loads and returns model data.
    * @deprecated use {@link SModelBase#getModelData()} or {@link #getSModel()}
+   * FIXME  there's implicit convention that smodel.SModel has this openapi.SModel (aka descriptor) assigned once
+   * this method returns
    */
   @Deprecated
   public abstract jetbrains.mps.smodel.SModel getSModelInternal();

@@ -16,6 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 /**
+ * DON'T USE THIS INTERFACE AS IT'S SCHEDULED FOR REMOVAL IN THE UPCOMING MPS RELEASE
+ *
  * This interface can be implemented to track read access of individual nodes in the model.
  * It can be used to build dependencies of the "pure" functions, i.e. functions whose result value
  * depends only on the nodes in the repository. For a "pure" function we guarantee that while all
@@ -28,7 +30,9 @@ package org.jetbrains.mps.openapi.model;
  * thread-local storage or accept notifications from one thread only. Explicit synchronization may be
  * harmful to the performance of the whole application.
  * FIXME need better wording to stress events may come from multiple threads, perhaps some sync examples or single-thread listener classes to re-use?
+ * @deprecated use {@link org.jetbrains.mps.openapi.model.SNodeAccessListener} instead
  */
+@Deprecated
 public interface SModelAccessListener {
 
   void nodeRead(SNode node);

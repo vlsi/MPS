@@ -68,6 +68,7 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
       return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
     }
     synchronized (myModel) {
+      // FIXME how come myModel may be instance of InvalidSModel?
       if (myModel instanceof InvalidSModel) return myModel.getModel(null);
 
       oldState = myModel.getState();

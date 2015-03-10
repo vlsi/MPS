@@ -125,9 +125,31 @@ public interface SModel {
 
   void removeModelListener(SModelListener l);
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link #addAccessListener(SNodeAccessListener)}
+   */
+  @Deprecated
   void addAccessListener(SModelAccessListener l);
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link #removeAccessListener(SNodeAccessListener)}
+   */
+  @Deprecated
   void removeAccessListener(SModelAccessListener l);
+
+  /**
+   * @param l listener to add, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void addAccessListener(SNodeAccessListener l);
+
+  /**
+   * @param l listener to remove, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void removeAccessListener(SNodeAccessListener l);
 
   /**
    * Represents a problem with the persitence.
