@@ -42,6 +42,7 @@
     <import index="1y3e" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.migration.global(MPS.Workbench/jetbrains.mps.migration.global@java_stub)" />
     <import index="p7r7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.vfs(MPS.Platform/jetbrains.mps.ide.vfs@java_stub)" />
     <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
+    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -743,6 +744,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="3gptLqNJxpy" role="3cqZAp" />
+        <node concept="3clFbF" id="6mQmA0u8nBg" role="3cqZAp">
+          <node concept="1rXfSq" id="6mQmA0u8nBe" role="3clFbG">
+            <ref role="37wK5l" node="7lByCvUzmBj" resolve="saveAnsSetTipsState" />
+          </node>
+        </node>
         <node concept="3clFbF" id="5SsFeroaakL" role="3cqZAp">
           <node concept="2OqwBi" id="5SsFeroaakM" role="3clFbG">
             <node concept="2YIFZM" id="5SsFeroaaQN" role="2Oq$k0">
@@ -783,6 +789,11 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="5SsFeroaakK" role="3clFbx">
+                      <node concept="3clFbF" id="6mQmA0u8nX0" role="3cqZAp">
+                        <node concept="1rXfSq" id="6mQmA0u8nWY" role="3clFbG">
+                          <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
+                        </node>
+                      </node>
                       <node concept="3cpWs6" id="5SsFeroaakJ" role="3cqZAp" />
                     </node>
                   </node>
@@ -953,6 +964,121 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1AzqgyAfcsp" role="jymVt" />
+    <node concept="3clFb_" id="7lByCvUzmBj" role="jymVt">
+      <property role="TrG5h" value="saveAnsSetTipsState" />
+      <node concept="3Tm6S6" id="7lByCvUzmBk" role="1B3o_S" />
+      <node concept="3cqZAl" id="7lByCvUzmBl" role="3clF45" />
+      <node concept="3clFbS" id="7lByCvUzmB8" role="3clF47">
+        <node concept="3clFbJ" id="3$kW492NHBB" role="3cqZAp">
+          <node concept="3clFbS" id="3$kW492NHBD" role="3clFbx">
+            <node concept="3clFbF" id="7lByCvUzmB9" role="3cqZAp">
+              <node concept="37vLTI" id="7lByCvUzmBa" role="3clFbG">
+                <node concept="2OqwBi" id="7lByCvUzmBb" role="37vLTx">
+                  <node concept="2YIFZM" id="7lByCvUzmBc" role="2Oq$k0">
+                    <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+                    <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+                  </node>
+                  <node concept="liA8E" id="7lByCvUzmBd" role="2OqNvi">
+                    <ref role="37wK5l" to="4xk:~GeneralSettings.showTipsOnStartup():boolean" resolve="showTipsOnStartup" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="6mQmA0u8mna" role="37vLTJ">
+                  <node concept="37vLTw" id="6mQmA0u8mnb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+                  </node>
+                  <node concept="2OwXpG" id="6mQmA0u8mnc" role="2OqNvi">
+                    <ref role="2Oxat5" node="7lByCvUzkrn" resolve="tips" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3$kW492NUTs" role="3clFbw">
+            <node concept="2OqwBi" id="3$kW492NIy5" role="3uHU7B">
+              <node concept="37vLTw" id="6mQmA0u8lK5" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="6mQmA0u8mlf" role="2OqNvi">
+                <ref role="2Oxat5" node="7lByCvUzkrn" resolve="tips" />
+              </node>
+            </node>
+            <node concept="10Nm6u" id="3$kW492NIW8" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3$kW492NLyK" role="3cqZAp">
+          <node concept="2OqwBi" id="3$kW492NLE9" role="3clFbG">
+            <node concept="2YIFZM" id="3$kW492NL$I" role="2Oq$k0">
+              <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+              <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="3$kW492NMcu" role="2OqNvi">
+              <ref role="37wK5l" to="4xk:~GeneralSettings.setShowTipsOnStartup(boolean):void" resolve="setShowTipsOnStartup" />
+              <node concept="3clFbT" id="3$kW492NMdP" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7lByCvUzua4" role="jymVt" />
+    <node concept="3clFb_" id="7lByCvUzt18" role="jymVt">
+      <property role="TrG5h" value="restoreTipsState" />
+      <node concept="3Tm6S6" id="7lByCvUzt19" role="1B3o_S" />
+      <node concept="3cqZAl" id="7lByCvUzt1a" role="3clF45" />
+      <node concept="3clFbS" id="7lByCvUzt1b" role="3clF47">
+        <node concept="3clFbJ" id="3$kW492NJmL" role="3cqZAp">
+          <node concept="3clFbS" id="3$kW492NJmM" role="3clFbx">
+            <node concept="3cpWs6" id="3$kW492NJmN" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="3$kW492NJud" role="3clFbw">
+            <node concept="10Nm6u" id="3$kW492NJmP" role="3uHU7w" />
+            <node concept="2OqwBi" id="6mQmA0u8mst" role="3uHU7B">
+              <node concept="37vLTw" id="6mQmA0u8msu" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="6mQmA0u8msv" role="2OqNvi">
+                <ref role="2Oxat5" node="7lByCvUzkrn" resolve="tips" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7lByCvUzt1c" role="3cqZAp">
+          <node concept="2OqwBi" id="7lByCvUzt1e" role="3clFbG">
+            <node concept="2YIFZM" id="7lByCvUzt1f" role="2Oq$k0">
+              <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+              <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+            </node>
+            <node concept="liA8E" id="7lByCvUzt1g" role="2OqNvi">
+              <ref role="37wK5l" to="4xk:~GeneralSettings.setShowTipsOnStartup(boolean):void" resolve="setShowTipsOnStartup" />
+              <node concept="2OqwBi" id="6mQmA0u8mCH" role="37wK5m">
+                <node concept="37vLTw" id="6mQmA0u8mCI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+                </node>
+                <node concept="2OwXpG" id="6mQmA0u8mCJ" role="2OqNvi">
+                  <ref role="2Oxat5" node="7lByCvUzkrn" resolve="tips" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3$kW492NJAd" role="3cqZAp">
+          <node concept="37vLTI" id="3$kW492NK73" role="3clFbG">
+            <node concept="10Nm6u" id="3$kW492NK9p" role="37vLTx" />
+            <node concept="2OqwBi" id="6mQmA0u8mxy" role="37vLTJ">
+              <node concept="37vLTw" id="6mQmA0u8mxz" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="6mQmA0u8mx$" role="2OqNvi">
+                <ref role="2Oxat5" node="7lByCvUzkrn" resolve="tips" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6mQmA0u8h2d" role="jymVt" />
+    <node concept="2tJIrI" id="6mQmA0u8hdc" role="jymVt" />
     <node concept="3clFb_" id="285c2S_X7aX" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="tryMigratingProjectNoQueue" />
@@ -1389,6 +1515,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="1AzqgyAhkBU" role="3cqZAp" />
+        <node concept="3clFbF" id="6mQmA0u8mS$" role="3cqZAp">
+          <node concept="1rXfSq" id="6mQmA0u8mSy" role="3clFbG">
+            <ref role="37wK5l" node="7lByCvUzmBj" resolve="saveAnsSetTipsState" />
+          </node>
+        </node>
         <node concept="3SKdUt" id="1AzqgyAfnWu" role="3cqZAp">
           <node concept="3SKdUq" id="1AzqgyAfnY6" role="3SKWNk">
             <property role="3SKdUp" value="wait until project is fully loaded (if not yet)" />
@@ -1446,6 +1577,11 @@
                                   </node>
                                   <node concept="10Nm6u" id="7ScOZyr1J$1" role="37wK5m" />
                                 </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="6mQmA0u8ndQ" role="3cqZAp">
+                              <node concept="1rXfSq" id="6mQmA0u8ndO" role="3clFbG">
+                                <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
                               </node>
                             </node>
                             <node concept="3clFbJ" id="1AzqgyAiJyJ" role="3cqZAp">
@@ -1932,6 +2068,11 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6mQmA0u8og1" role="3cqZAp">
+          <node concept="1rXfSq" id="6mQmA0u8ofZ" role="3clFbG">
+            <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="5n1niCbzSMy" role="3cqZAp">
           <node concept="3clFbS" id="5n1niCbzSM_" role="3clFbx">
             <node concept="3cpWs6" id="5n1niCb$2wl" role="3cqZAp" />
@@ -2167,6 +2308,16 @@
           <property role="3clFbU" value="false" />
         </node>
         <node concept="3Tm1VV" id="5SsFeroaak9" role="1B3o_S" />
+      </node>
+      <node concept="312cEg" id="7lByCvUzkrn" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="tips" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm1VV" id="7lByCvUzjDP" role="1B3o_S" />
+        <node concept="3uibUv" id="3$kW492NJ2T" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
       </node>
     </node>
     <node concept="3UR2Jj" id="3gptLqNJJLQ" role="lGtFl">
