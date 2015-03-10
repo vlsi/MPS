@@ -24,16 +24,21 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class SPropertySubstituteAction extends AbstractNodeSubstituteAction {
+public class SPropertySubstituteAction extends AbstractSubstituteAction {
   private SProperty myProperty;
   private String myPropertyValue;
   private PropertySupport myPropertySupport;
 
   public SPropertySubstituteAction(SNode sourceNode, SProperty property, String propertyValue) {
-    super(null, null, sourceNode);
+    super(sourceNode);
     myPropertySupport = PropertySupport.getPropertySupport(property);
     myProperty = property;
     myPropertyValue = propertyValue;
+  }
+
+  @Override
+  public String getDescriptionText(String pattern) {
+    return null;
   }
 
   @Override
@@ -47,7 +52,7 @@ public class SPropertySubstituteAction extends AbstractNodeSubstituteAction {
   }
 
   @Override
-  public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+  protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNodeAccessUtil.setProperty(getSourceNode(), myProperty, myPropertyValue);
 
     if (editorContext != null) {

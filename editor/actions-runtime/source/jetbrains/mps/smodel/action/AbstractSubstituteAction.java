@@ -43,6 +43,21 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
   }
 
   @Override
+  public SNode getIconNode(String pattern) {
+    return null;
+  }
+
+  @Override
+  public Object getParameterObject() {
+    return null;
+  }
+
+  @Override
+  public SNode getOutputConcept() {
+    return null;
+  }
+
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }

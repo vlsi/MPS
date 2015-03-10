@@ -63,7 +63,7 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
 
   @Override
   public String getMatchingText(String pattern) {
-    final String text = myRefDescriptor.getReferencePresentation((SNode) getParameterObject(), false, false, false);
+    final String text = myRefDescriptor.getReferencePresentation(myTargetNode, false, false, false);
     if (text != null) {
       return text;
     }
@@ -127,7 +127,7 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
     if (parent == null) {
       return null;
     }
-    SNodeAccessUtil.setReferenceTarget(sourceNode, myLink, (SNode) getParameterObject());
+    SNodeAccessUtil.setReferenceTarget(sourceNode, myLink, myTargetNode);
     SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
     return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
   }

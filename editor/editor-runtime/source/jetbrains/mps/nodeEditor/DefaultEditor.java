@@ -319,6 +319,7 @@ public class DefaultEditor extends DefaultNodeEditor {
       noRefCell.setRole(link.getRoleName());
       noRefCell.setReferenceCell(true);
       noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
+      noRefCell.setRole(link.getRoleName());
       setIndent(noRefCell);
       addCell(noRefCell);
     } else {
@@ -342,6 +343,7 @@ public class DefaultEditor extends DefaultNodeEditor {
         cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
         cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
         cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
+        cell.setRole(link.getRoleName());
         //todo attributes
         addCell(cell);
       }
@@ -666,40 +668,6 @@ public class DefaultEditor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  private static class MyAbstractCellProvider extends AbstractCellProvider {
-
-    private final String myRole;
-
-    public MyAbstractCellProvider(String role) {
-      myRole = role;
-    }
-
-    @Override
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      EditorCell_Property result = EditorCell_Property.create(editorContext, new ModelAccessor() {
-        public String getText() {
-          String name = getSNode().getName();
-          if (name != null) {
-            return name;
-          }
-          return getSNode().getPresentation();
-        }
-
-        public void setText(String s) {
-        }
-
-        public boolean isValidText(String s) {
-          return EqualUtil.equals(s, getText());
-        }
-      }, getSNode());
-      if (result.getRole() != null) {
-        result.setRole(myRole);
-      }
-
-      return result;
     }
   }
 }
