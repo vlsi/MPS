@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
@@ -32,6 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
@@ -118,7 +120,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
-//    addReferences();
+    addReferences();
     addPropertiesAndChildren();
     popCollection();
     return mainCellCollection;
@@ -128,7 +130,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void addPropertiesAndChildren() {
     boolean addPropertiesOrChild = false;
     if (myNullConcept) {
-      addPropertiesOrChild = mySNode.getChildren().iterator().hasNext() || mySNode.getPropertyNames().iterator().hasNext();
+      addPropertiesOrChild = mySNode.getChildren().iterator().hasNext() || mySNode.getProperties().iterator().hasNext();
     } else {
       addPropertiesOrChild = !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
     }
@@ -238,65 +240,71 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addReferences() {
-//    for (String reference : myReferencesNames) {
-//      addRoleLabel(reference, "reference");
-//      if (myNullConcept) {
-//        addRefCellForNullConcept(reference);
-//      } else {
-//        addRefCellForNonNullConcept(reference);
-//      }
-//    }
+    for (SReferenceLink reference : myReferenceLinks) {
+      addRoleLabel(reference.getRoleName(), "reference");
+      if (myNullConcept) {
+        addRefCellForNullConcept(reference);
+      } else {
+        addRefCellForNonNullConcept(reference);
+      }
+    }
   }
 
 
-  protected void addRefCellForNullConcept(String role) {
-    SNode referentNode = null;
-
-    SReference reference = mySNode.getReference(role);
-    String myErrorText;
-    if (reference != null) {
-      referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
-        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-        myErrorText = rinfo != null ? rinfo : "?" + role + "?";
-        addErrorCell(myErrorText);
-        return;
-      }
-    }
-    if (referentNode == null) {
+  protected void addRefCellForNullConcept(final SReferenceLink link) {
+    SReference reference = mySNode.getReference(link);
+    if (reference == null) {
       addLabel("<no target>");
       return;
     }
-    final AbstractCellProvider inlineComponent = new MyAbstractCellProvider(role);
-    inlineComponent.setSNode(referentNode);
-
+    final SNode referentNode = reference.getTargetNode();
+    if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
+      String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+      String myErrorText = resolveInfo != null ? resolveInfo : "?" + link.getRoleName() + "?";
+      addErrorCell(myErrorText);
+      return;
+    }
     EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
       @Override
       public EditorCell compute() {
-        return inlineComponent.createEditorCell(myEditorContext);
+        return createReferentEditorCell(myEditorContext, link, referentNode);
       }
-    }, referentNode, role);
+    }, referentNode, link.getRoleName());
     setSemanticNodeToCells(cell, mySNode);
     if (cell.getRole() == null) {
-      cell.setRole(role);
+      cell.setRole(link.getRoleName());
       cell.setReferenceCell(true);
     }
     addCell(cell);
   }
 
-  private void addRefCellForNonNullConcept(SReferenceLink link) {
-    SNode referentNode = null;
-    SReference reference = mySNode.getReference(link);
-    if (reference != null) {
-      referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(),referentNode.getModel())) {
-        //todo do we need this?
-        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-        addCell(createErrorCell(rinfo != null ? rinfo : "?" + link.getRoleName() + "?", link));
+  private EditorCell createReferentEditorCell(EditorContext editorContext, SReferenceLink link, final SNode targetNode) {
+    EditorCell_Property result = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        String name = targetNode.getName();
+        if (name != null) {
+          return name;
+        }
+        return targetNode.getPresentation();
       }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, targetNode);
+    if (result.getRole() != null) {
+      result.setRole(link.getRoleName());
     }
 
-    if (referentNode == null) {
+    return result;
+  }
+
+  private void addRefCellForNonNullConcept(final SReferenceLink link) {
+    SReference reference = mySNode.getReference(link);
+    if (reference == null) {
       String noTargetText = "<no " + link.getRoleName() + ">";
       jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = link.isOptional() ?
           new EditorCell_Constant(myEditorContext, mySNode, "") : new EditorCell_Error(myEditorContext, mySNode, noTargetText);
@@ -313,21 +321,32 @@ public class DefaultEditor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
       setIndent(noRefCell);
       addCell(noRefCell);
+    } else {
+      final SNode referentNode = reference.getTargetNode();
+      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
+        //todo do we need this?
+        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+        addCell(createErrorCell(rinfo != null ? rinfo : "?" + link.getRoleName() + "?", link));
+      } else {
+        EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          @Override
+          public EditorCell compute() {
+            return createReferentEditorCell(myEditorContext, link, referentNode);
+          }
+        }, referentNode, link.getRoleName());
+        //todo what is that?
+        CellUtil.setupIDeprecatableStyles(referentNode, cell);
+        setSemanticNodeToCells(cell, mySNode);
+
+        //todo rewrite cell actions
+        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
+        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
+        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
+        //todo attributes
+        addCell(cell);
+      }
     }
-//    CellProviderWithRole provider = new RefCellCellProvider(mySNode, myEditorContext);
-//    provider.setAuxiliaryCellProvider(new MyAbstractCellProvider(role));
-//    provider.setRole(role);
-//    provider.setNoTargetText("<no " + role + ">");
-//    EditorCell editorCell = provider.createEditorCell(myEditorContext);
-//    if (editorCell.getRole() == null) {
-//      editorCell.setRole(role);
-//      editorCell.setReferenceCell(true);
-//    }
-//    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-//    if (editorCell.getCellId() == null) {
-//      editorCell.setCellId("reference_" + role);
-//    }
-//    addCellWithRole(provider, editorCell);
+
   }
 
   protected EditorCell createErrorCell(String error, SReferenceLink link) {

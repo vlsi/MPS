@@ -25,19 +25,25 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: 2/15/13
  */
 public interface SubstituteAction {
+  // get icon
   SNode getIconNode(String pattern);
 
+  //not used
   boolean isReferentPresentation();
 
   SNode getSourceNode();
 
+  //extract
   Object getParameterObject();
 
   SNode getOutputConcept();
 
+  //extract
   SNode getActionType(String pattern);
 
   SNode getActionType(String pattern, EditorCell contextCell);
+
+
 
   String getMatchingText(String pattern);
 

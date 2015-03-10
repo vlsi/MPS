@@ -26,24 +26,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
+public class DefaultChildSubstituteAction extends AbstractSubstituteAction {
   private SNode myCurrentChild;
   private SNode myOldChild;
   private IChildNodeSetter mySetter;
   private SAbstractConcept myConcept;
 
-  /**
-   * To be used from generated code.  There is no output concept specified here. Subclasses should implement createChildNode() method.
-   */
-  protected DefaultChildSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
-    super(null, parameterObject, parentNode);
-    myCurrentChild = currentChild;
-    setupOldChild();
-    mySetter = setter;
-  }
-
-  public DefaultChildSubstituteAction(SAbstractConcept outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
-    super(outputConcept.getDeclarationNode(), parameterObject, parentNode);
+  public DefaultChildSubstituteAction(SAbstractConcept outputConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
+    super(parentNode);
     myConcept = outputConcept;
     myCurrentChild = currentChild;
     myOldChild = myCurrentChild;
@@ -63,7 +53,7 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
   @Override
   public final SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parentNode = getSourceNode();
-    SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
+    SNode newChild = createChildNode(parentNode.getModel());
     if (newChild != null) {
       SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, editorContext);
       if (result != newChild) {
@@ -75,44 +65,57 @@ public class DefaultChildSubstituteAction extends AbstractNodeSubstituteAction {
     return null;
   }
 
-  protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
-    if (getParameterObject() != null && getParameterObject() instanceof SConcept) {
-      return ((SConcept) getParameterObject()).getName();
-    }
-    return "" + getParameterObject();
+  private SNode createChildNode(SModel model) {
+    return NodeFactoryManager.createNode(myConcept, myOldChild, getSourceNode(), model);
   }
 
-  protected String getDescriptionText(String pattern, boolean referent_presentation) {
-    if (getParameterObject() != null && getParameterObject() instanceof SConcept) {
-      return ((SConcept) getParameterObject()).getLanguage().getQualifiedName();
-    }
-    return "" + getParameterObject();
-  }
   protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
     return createdNode;
   }
 
-  public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-    SNode conceptDeclaration = getOutputConcept();
-    if (conceptDeclaration == null) {
-      throw new RuntimeException("Couldn't create child node. Concept declaration was not specified. Parameter object: " + getParameterObject());
-    }
-    return NodeFactoryManager.createNode(myConcept, myOldChild, getSourceNode(), model);
+  @Override
+  public Object getParameterObject() {
+    return myConcept.getDeclarationNode();
+  }
+
+  @Override
+  public SNode getOutputConcept() {
+    return myConcept.getDeclarationNode();
+  }
+
+  @Override
+  public SNode getIconNode(String pattern) {
+    return getOutputConcept();
   }
 
   @Override
   public SNode getActionType(String pattern) {
-    SNode node = createChildNode(getParameterObject(), AbstractNodeSubstituteInfo.getModelForTypechecking(), pattern);
+    SNode node = createChildNode(AbstractNodeSubstituteInfo.getModelForTypechecking());
     if (node == null) return null;
     if (ActionsUtil.isInstanceOfIType(node)) return node;
 
     //the following is for smart-type completion
 
+    //todo add own model for typecheck
     AbstractNodeSubstituteInfo.getModelForTypechecking().addRootNode(node);
     try {
       return TypeChecker.getInstance().getTypeOf(node);
     } finally {
       AbstractNodeSubstituteInfo.getModelForTypechecking().removeRootNode(node);
     }
+  }
+
+  @Override
+  public String getMatchingText(String pattern) {
+    String conceptAlias = myConcept.getConceptAlias();
+    if (conceptAlias != null && !conceptAlias.isEmpty()) {
+      return conceptAlias;
+    }
+    return myConcept.getName();
+  }
+
+  @Override
+  public String getDescriptionText(String pattern) {
+    return myConcept.getLanguage().getQualifiedName();
   }
 }

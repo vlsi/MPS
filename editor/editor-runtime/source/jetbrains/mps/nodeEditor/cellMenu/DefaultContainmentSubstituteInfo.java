@@ -109,7 +109,7 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
     ArrayList<SubstituteAction> substituteActions = new ArrayList<SubstituteAction>();
     for (SAbstractConcept concept : concepts) {
       //todo add constraits
-      substituteActions.add(new DefaultChildSubstituteAction(concept, concept, myParentNode, myCurrentChild, mySetter));
+      substituteActions.add(new DefaultChildSubstituteAction(concept, myParentNode, myCurrentChild, mySetter));
     }
     return substituteActions;
   }

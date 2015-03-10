@@ -89,28 +89,24 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
       return Collections.emptyList();
     }
     SReference reference = mySourceNode.getReference(myLink);
-    if (reference == null) {
-      LOG.error("Couldn't build actions : couldn't get reference in " + concept.getName() + " for link " + myLink.getRoleName());
-      return Collections.emptyList();
-    }
-    return new ArrayList<SubstituteAction>();
-//    return createActions(reference, refDescriptor);
+    return createActions(reference == null ? null : reference.getTargetNode());
   }
 
-  private List<SubstituteAction> createActions(SReference reference , jetbrains.mps.smodel.constraints.ReferenceDescriptor descriptor) {
+  private List<SubstituteAction> createActions(SNode targetNode) {
 
     final SAbstractConcept referentConcept = myLink.getTargetConcept();
     if (referentConcept == null) {
       return Collections.emptyList();
     }
-    Iterable<SNode> nodes = myLink.getScope(mySourceNode).getAvailableElements(null);
+    //todo use myLink.getScope
+    //Iterable<SNode> nodes = myLink.getScope(mySourceNode).getAvailableElements(null);
+    Iterable<SNode> nodes = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink.getRoleName()).getScope().getAvailableElements(null);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
       if (node == null || !node.getConcept().isSubConceptOf(referentConcept)) {
         continue;
       }
-      SNode targetNode = reference.getTargetNode();
-      actions.add(new DefaultSReferentSubstituteAction(node, mySourceNode, targetNode, myLink, descriptor));
+      actions.add(new DefaultSReferentSubstituteAction(node, mySourceNode, targetNode, myLink));
     }
     return actions;
   }

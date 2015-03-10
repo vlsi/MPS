@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,17 +32,33 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteAction {
+public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
   private final SNode myCurrentReferent;
   private final SReferenceLink myLink;
   private final ReferenceDescriptor myRefDescriptor;
+  private final SNode myTargetNode;
 
-  public DefaultSReferentSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, SReferenceLink link,
-      @NotNull ReferenceDescriptor descriptor) {
-    super(null, parameterNode, referenceNode);
+  public DefaultSReferentSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
+    super(sourceNode);
+    myTargetNode = targetNode;
     myCurrentReferent = currentReferent;
     myLink = link;
-    myRefDescriptor = descriptor;
+    myRefDescriptor = ModelConstraints.getReferenceDescriptor(sourceNode, link.getRoleName());
+  }
+
+  @Override
+  public SNode getIconNode(String pattern) {
+    return myTargetNode;
+  }
+
+  @Override
+  public Object getParameterObject() {
+    return myTargetNode;
+  }
+
+  @Override
+  public SNode getOutputConcept() {
+    return myLink.getTargetConcept().getDeclarationNode();
   }
 
   @Override
@@ -52,23 +67,18 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
     if (text != null) {
       return text;
     }
-
-    return getMatchingText(pattern, true, false);
+    return myTargetNode.getConcept().getName();
   }
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    final String text = myRefDescriptor.getReferencePresentation((SNode) getParameterObject(), true, false, false);
-    if (text != null) {
-      return text;
-    }
-
-    return getMatchingText(pattern, true, true);
+    return getMatchingText(pattern);
   }
 
   @Override
   public String getDescriptionText(String pattern) {
-    return getDescriptionText(pattern, true);
+    //todo implement here
+    return NodePresentationUtil.descriptionText(myTargetNode);
   }
 
   @Override
@@ -78,13 +88,11 @@ public class DefaultSReferentSubstituteAction extends AbstractNodeSubstituteActi
 
   @Override
   public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-    SNode parameterNode = (SNode) getParameterObject();
-    if (myCurrentReferent != parameterNode) {
-      SReferenceLink linkDeclaration = myLink;
-//      if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
-//        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(parameterNode));
-//      }
-//      SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
+    if (myCurrentReferent != myTargetNode) {
+      if (!myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept())) {
+        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(myTargetNode));
+      }
+      SNodeAccessUtil.setReferenceTarget(getSourceNode(), myLink, myTargetNode);
 
       if (editorContext != null) {
         // put caret at the end of text, TODO use editorContext.select(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), -1 /* end */);
