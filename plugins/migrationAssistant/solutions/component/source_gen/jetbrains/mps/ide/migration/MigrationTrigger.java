@@ -89,7 +89,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       });
     } else {
-      saveTipsState();
+      saveAnsSetTipsState();
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -152,12 +152,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     removeListeners();
   }
 
-  private void saveTipsState() {
-    myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
+  private void saveAnsSetTipsState() {
+    if (myState.tips == null) {
+      myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
+    }
+    GeneralSettings.getInstance().setShowTipsOnStartup(false);
   }
 
   private void restoreTipsState() {
+    if (myState.tips == null) {
+      return;
+    }
     GeneralSettings.getInstance().setShowTipsOnStartup(myState.tips);
+    myState.tips = null;
   }
 
   private void addListeners() {
@@ -336,7 +343,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   public static class MyState {
     public boolean migrationRequired = false;
-    public boolean tips = false;
+    public Boolean tips;
   }
   private static <T> T as_feb5zp_a0a0a0j0a0a0a1a0a0a0a1a0a0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
