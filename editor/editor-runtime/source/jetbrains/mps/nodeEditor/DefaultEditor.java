@@ -86,321 +86,30 @@ import java.util.Stack;
  * Semen Alperovich
  * 04 04, 2013
  */
-public class DefaultEditor extends DefaultNodeEditor {
-
-
-  private static final String NAME_NAME = "name";
-  private static final int NAME_PRIORITY = 10000;
-  private static final String IDENTIFIER_NAME = "identifier";
-  private static final int IDENTIFIER_PRIORITY = 1700;
-  private static final int NAME_ADD_PRIORITY = 1000;
-  private static final String QUALIFIED_NAME = "qualified";
-  private static final int QUALIFIED_PRIORITY = 200;
-  private SNode mySNode;
-
-  private EditorContext myEditorContext;
-  private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
-  private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
-  private BigInteger currentConstantIdNumber = BigInteger.ZERO;
-  private ConceptDescriptor myConceptDescriptor;
-  private boolean myNullConcept;
-
-  private SConcept myConcept;
-  private SProperty myNameProperty;
-  private Collection<SProperty> myProperties = new ArrayList<SProperty>();
-  private Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
-  private Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
+public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
-  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    cacheParameters(node, editorContext);
-    EditorCell_Collection mainCellCollection = pushCollection();
-    mainCellCollection.setBig(true);
-    addLabel(camelToLabel(myConcept.getName()));
-    if (myNameProperty != null) {
-      addPropertyCell(myNameProperty);
+  protected void cacheParametersInternal() {
+    for (SProperty sProperty : myConcept.getProperties()) {
+      myProperties.add(sProperty);
     }
-    addReferences();
-    addPropertiesAndChildren();
-    popCollection();
-    return mainCellCollection;
+    // TODO: add other SProperties declared in this node, not declared in the concept
 
-  }
-
-  private void addPropertiesAndChildren() {
-    boolean addPropertiesOrChild = false;
-    if (myNullConcept) {
-      addPropertiesOrChild = mySNode.getChildren().iterator().hasNext() || mySNode.getProperties().iterator().hasNext();
-    } else {
-      addPropertiesOrChild = !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
+    for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
+      myReferenceLinks.add(sReferenceLink);
     }
+    // TODO: add other SReferenceLinks declared in this node, not declared in the concept
 
-    if (addPropertiesOrChild) {
-      addLabel("{");
-      addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
-      addNewLine();
-      pushCollection();
-      setIndent(collectionStack.peek());
-      addProperties();
-      addLabel("");
-      addNewLine();
-      addChildren();
-      popCollection();
-      addLabel("}");
-      addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
+    for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
+      myContainmentLinks.add(sContainmentLink);
     }
   }
-
-  private void cacheParameters(SNode node, EditorContext editorContext) {
-    myEditorContext = editorContext;
-    mySNode = node;
-    myConcept = node.getConcept();
-    myNullConcept = ((SAbstractConceptAdapter) myConcept).getConceptDescriptor() == null;
-
-    if (!myNullConcept) {
-      for (SProperty sProperty : myConcept.getProperties()) {
-        myProperties.add(sProperty);
-      }
-      // TODO: add other SProperties declared in this node, not declared in the concept
-
-      for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
-        myReferenceLinks.add(sReferenceLink);
-      }
-      // TODO: add other SReferenceLinks declared in this node, not declared in the concept
-
-      for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
-        myContainmentLinks.add(sContainmentLink);
-      }
-      // TODO: add other SContainmentLinks declared in this node, not declared in the concept
-    } else {
-      for (SProperty sProperty : mySNode.getProperties()) {
-        myProperties.add(sProperty);
-      }
-
-      for (SReference sReference : mySNode.getReferences()) {
-        SReferenceLink link = sReference.getLink();
-        assert link != null : "Null meta-link from node: " + mySNode + ", role: " + sReference.getRole();
-        myReferenceLinks.add(link);
-      }
-
-      for (SNode child : mySNode.getChildren()) {
-        SContainmentLink containmentLink = child.getContainmentLink();
-        assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + mySNode + ", child: " + child;
-        myContainmentLinks.add(containmentLink);
-      }
-    }
-
-    SConcept baseConcept = SNodeUtil.concept_BaseConcept;
-    for (SProperty sProperty : baseConcept.getProperties()) {
-      sProperty.getName();
-      myProperties.remove(sProperty);
-    }
-
-    for (SReferenceLink sReferenceLink : baseConcept.getReferenceLinks()) {
-      myReferenceLinks.remove(sReferenceLink);
-    }
-
-    for (SContainmentLink sContainmentLink : baseConcept.getContainmentLinks()) {
-      myContainmentLinks.remove(sContainmentLink);
-    }
-
-    cacheNameProperty();
+  @Override
+  protected boolean needToAddPropertiesOrChildren() {
+    return !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
   }
-
-  private void cacheNameProperty() {
-    int maxPriority = -1;
-    for (SProperty property : myProperties) {
-      String propertyName = property.getName();
-      if (propertyName == null) {
-        continue;
-      }
-      int propertyPriority = getPropertyPriority(propertyName);
-      if (maxPriority < propertyPriority) {
-        maxPriority = propertyPriority;
-        myNameProperty = property;
-      }
-    }
-  }
-
-  private int getPropertyPriority(@NotNull String propertyName) {
-    if (NAME_NAME.equals(propertyName)) {
-      return NAME_PRIORITY;
-    }
-    int priority = 0;
-    if (propertyName.toLowerCase().contains(IDENTIFIER_NAME)) {
-      priority += IDENTIFIER_PRIORITY;
-    }
-    if (propertyName.toLowerCase().contains(NAME_NAME)) {
-      priority += NAME_ADD_PRIORITY;
-    }
-    if (propertyName.toLowerCase().contains(QUALIFIED_NAME)) {
-      priority += QUALIFIED_PRIORITY;
-    }
-    return priority;
-  }
-
-  private void addReferences() {
-    for (SReferenceLink reference : myReferenceLinks) {
-      addRoleLabel(reference.getRoleName(), "reference");
-      if (myNullConcept) {
-        addRefCellForNullConcept(reference);
-      } else {
-        addRefCellForNonNullConcept(reference);
-      }
-    }
-  }
-
-
-  protected void addRefCellForNullConcept(final SReferenceLink link) {
-    SReference reference = mySNode.getReference(link);
-    if (reference == null) {
-      addLabel("<no target>");
-      return;
-    }
-    final SNode referentNode = reference.getTargetNode();
-    if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
-      String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-      String myErrorText = resolveInfo != null ? resolveInfo : "?" + link.getRoleName() + "?";
-      addErrorCell(myErrorText);
-      return;
-    }
-    EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        return createReferentEditorCell(myEditorContext, link, referentNode);
-      }
-    }, referentNode, link.getRoleName());
-    setSemanticNodeToCells(cell, mySNode);
-    if (cell.getRole() == null) {
-      cell.setRole(link.getRoleName());
-      cell.setReferenceCell(true);
-    }
-    addCell(cell);
-  }
-
-  private EditorCell createReferentEditorCell(EditorContext editorContext, SReferenceLink link, final SNode targetNode) {
-    EditorCell_Property result = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        String name = targetNode.getName();
-        if (name != null) {
-          return name;
-        }
-        return targetNode.getPresentation();
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, targetNode);
-    if (result.getRole() != null) {
-      result.setRole(link.getRoleName());
-    }
-
-    return result;
-  }
-
-  private void addRefCellForNonNullConcept(final SReferenceLink link) {
-    SReference reference = mySNode.getReference(link);
-    if (reference == null) {
-      String noTargetText = "<no " + link.getRoleName() + ">";
-      jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = link.isOptional() ?
-          new EditorCell_Constant(myEditorContext, mySNode, "") : new EditorCell_Error(myEditorContext, mySNode, noTargetText);
-      noRefCell.setText("");
-      noRefCell.setEditable(true);
-      noRefCell.setDefaultText(noTargetText);
-
-      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(mySNode));
-      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(mySNode));
-
-      noRefCell.setCellId("empty_" + link.getRoleName());
-      noRefCell.setRole(link.getRoleName());
-      noRefCell.setReferenceCell(true);
-      noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
-      noRefCell.setRole(link.getRoleName());
-      setIndent(noRefCell);
-      addCell(noRefCell);
-    } else {
-      final SNode referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
-        //todo do we need this?
-        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-        addCell(createErrorCell(rinfo != null ? rinfo : "?" + link.getRoleName() + "?", link));
-      } else {
-        EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-          @Override
-          public EditorCell compute() {
-            return createReferentEditorCell(myEditorContext, link, referentNode);
-          }
-        }, referentNode, link.getRoleName());
-        //todo what is that?
-        CellUtil.setupIDeprecatableStyles(referentNode, cell);
-        setSemanticNodeToCells(cell, mySNode);
-
-        //todo rewrite cell actions
-        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
-        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, link.getRoleName()));
-        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, link, myEditorContext));
-        cell.setRole(link.getRoleName());
-        //todo attributes
-        addCell(cell);
-      }
-    }
-
-  }
-
-  protected EditorCell createErrorCell(String error, SReferenceLink link) {
-    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error, true);
-    if (!link.isOptional()) {
-      if (ReferenceConceptUtil.getCharacteristicReference(mySNode.getConcept()) != null) {
-        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(mySNode));
-        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(mySNode));
-        return errorCell;
-      }
-    }
-
-    //todo rewrite cell actions
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(mySNode, link.getRoleName()));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(mySNode, link.getRoleName()));
-    return errorCell;
-  }
-
-  private void setSemanticNodeToCells(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, SNode semanticNode) {
-    if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
-      return;
-    }
-    ((EditorCell_Basic) rootCell).setSNode(semanticNode);
-    if (rootCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      for (EditorCell child : ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell)) {
-        setSemanticNodeToCells(child, semanticNode);
-      }
-    }
-  }
-
-
-  private void addProperties() {
-    for (SProperty property : myProperties) {
-      if (property.equals(myNameProperty)) {
-        continue;
-      }
-      addRoleLabel(property.getName(), "property");
-      addPropertyCell(property);
-      addNewLine();
-    }
-  }
-
-
-  private void addPropertyCell(final SProperty property) {
-    if (myNullConcept) {
-      addPropertyCellForNullConcept(property);
-    } else {
-      addPropertyCellForNonNullConcept(property);
-    }
-  }
-
-  private void addPropertyCellForNonNullConcept(SProperty property) {
+  @Override
+  protected void addPropertyCell(SProperty property) {
     EditorCell_Property editorCell = EditorCell_Property.create(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
@@ -423,57 +132,8 @@ public class DefaultEditor extends DefaultNodeEditor {
 //    }
     addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(mySNode, property)), AttributeKind.Property.class, editorCell);
   }
-
-  private void addCellWithRole(SNode attributeConcept, Class attributeKind, EditorCell editorCell) {
-    EditorCell roleAttributeCell = createRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    if (roleAttributeCell != null) {
-      addCell(roleAttributeCell);
-    } else {
-      addCell(editorCell);
-    }
-  }
-
-  private EditorCell createRoleAttributeCell(SNode attributeConcept, Class attributeKind, EditorCell editorCell) {
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
-      if (manager != null) {
-        return manager.createNodeRoleAttributeCell(myEditorContext, attributeConcept, attributeKind, editorCell);
-      }
-    }
-    return null;
-  }
-
-  private void addPropertyCellForNullConcept(final SProperty property) {
-    EditorCell_Property cell = EditorCell_Property.create(myEditorContext, new ModelAccessor() {
-      public String getText() {
-        return mySNode.getProperty(property);
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, mySNode);
-    cell.setEditable(false);
-    addCell(cell);
-  }
-
-  private void addChildren() {
-    for (SContainmentLink link : myContainmentLinks) {
-      addRoleLabel(link.getRoleName(), "link");
-      addNewLine();
-      if (myNullConcept) {
-        addChildCellForNullConcept(link);
-
-      } else {
-        addChildCellForNonNullConcept(link);
-      }
-    }
-  }
-
-  private void addChildCellForNonNullConcept(SContainmentLink link) {
+  @Override
+  protected void addChildCell(SContainmentLink link) {
     if (link.isMultiple()) {
 //      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
 //      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
@@ -510,130 +170,94 @@ public class DefaultEditor extends DefaultNodeEditor {
         editorCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(mySNode, child, link, myEditorContext));
         addCell(editorCell);
       }
-//      CellProviderWithRole provider;
-//      provider = new RefNodeCellProvider(mySNode, myEditorContext);
-//      provider.setRole(role);
-//      provider.setNoTargetText("<no " + role + ">");
-//      editorCell = provider.createEditorCell(myEditorContext);
-//      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    }
-    addNewLine();
-  }
-
-  private void addChildCellForNullConcept(SContainmentLink link) {
-    for (SNode child : mySNode.getChildren(link)) {
-      EditorCell nodeCell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
-      addCell(nodeCell);
-      setIndent(nodeCell);
-      addNewLine();
     }
   }
+  @Override
+  protected void addReferenceCell(final SReferenceLink referenceLink) {
+    SReference reference = mySNode.getReference(referenceLink);
+    if (reference == null) {
+      String noTargetText = "<no " + referenceLink.getRoleName() + ">";
+      jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = referenceLink.isOptional() ?
+          new EditorCell_Constant(myEditorContext, mySNode, "") : new EditorCell_Error(myEditorContext, mySNode, noTargetText);
+      noRefCell.setText("");
+      noRefCell.setEditable(true);
+      noRefCell.setDefaultText(noTargetText);
 
-  private String camelToLabel(String text) {
-    StringBuilder sb = new StringBuilder();
-    char[] cs = text.toCharArray();
-    for (int i = 0; i < cs.length; i++) {
-      if (Character.isUpperCase(cs[i])) {
-        if (sb.length() > 0) {
-          sb.append(' ');
-        }
-        if (i + 1 < cs.length && Character.isLowerCase(cs[i + 1])) {
-          sb.append(Character.toLowerCase(cs[i]));
-          continue;
-        }
-        while (i + 1 < cs.length && !(Character.isLowerCase(cs[i + 1]))) {
-          sb.append(cs[i]);
-          i++;
-        }
-        if (i + 1 < cs.length) {
-          i--;
-          continue;
-        }
+      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(mySNode));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(mySNode));
+
+      noRefCell.setCellId("empty_" + referenceLink.getRoleName());
+      noRefCell.setRole(referenceLink.getRoleName());
+      noRefCell.setReferenceCell(true);
+      noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
+      noRefCell.setRole(referenceLink.getRoleName());
+      setIndent(noRefCell);
+      addCell(noRefCell);
+    } else {
+      final SNode referentNode = reference.getTargetNode();
+      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
+        //todo do we need this?
+        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+        addCell(createErrorCell(rinfo != null ? rinfo : "?" + referenceLink.getRoleName() + "?", referenceLink));
+      } else {
+        EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          @Override
+          public EditorCell compute() {
+            return createReferentEditorCell(myEditorContext, referenceLink, referentNode);
+          }
+        }, referentNode, referenceLink.getRoleName());
+        //todo what is that?
+        CellUtil.setupIDeprecatableStyles(referentNode, cell);
+        setSemanticNodeToCells(cell, mySNode);
+
+        //todo rewrite cell actions
+        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
+        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
+        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
+        cell.setRole(referenceLink.getRoleName());
+        //todo attributes
+        addCell(cell);
       }
-      sb.append(cs[i]);
     }
-    return sb.toString();
+
   }
 
-  private void addRoleLabel(String role, String type) {
-    if (role == null) {
-      role = "<no " + type + ">";
+
+  protected EditorCell createErrorCell(String error, SReferenceLink link) {
+    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error, true);
+    if (!link.isOptional()) {
+      if (ReferenceConceptUtil.getCharacteristicReference(mySNode.getConcept()) != null) {
+        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(mySNode));
+        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(mySNode));
+        return errorCell;
+      }
     }
-    addLabel(camelToLabel(role));
-    addLabel(":");
+
+    //todo rewrite cell actions
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(mySNode, link.getRoleName()));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(mySNode, link.getRoleName()));
+    return errorCell;
   }
 
-  private void addLabel(String label) {
-    addLabel(label, false);
-  }
-
-  private void addLabel(String label, boolean editable) {
-    EditorCell_Collection cellCollection = collectionStack.peek();
-    EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, editable);
-    childLabel.setCellId("constant_" + currentConstantIdNumber.toString());
-    currentConstantIdNumber = currentConstantIdNumber.add(BigInteger.ONE);
-    cellCollection.addEditorCell(childLabel);
-  }
-
-  protected void addErrorCell(String error) {
-    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error);
-    addCell(errorCell);
-  }
-
-  private void setIndent(EditorCell cell) {
-    addStyle(cell, StyleAttributes.INDENT_LAYOUT_INDENT);
-  }
-
-  private void addNewLine() {
-    addStyle(getLastCell(), StyleAttributes.INDENT_LAYOUT_NEW_LINE);
-  }
-
-  private EditorCell getLastCell() {
-    EditorCell_Collection collection = collectionStack.peek();
-    EditorCell lastCell = collection;
-    if (collection.getChildCount() > 0) {
-      lastCell = collection.lastCell();
+  private void addCellWithRole(SNode attributeConcept, Class attributeKind, EditorCell editorCell) {
+    EditorCell roleAttributeCell = createRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    if (roleAttributeCell != null) {
+      addCell(roleAttributeCell);
+    } else {
+      addCell(editorCell);
     }
-    return lastCell;
   }
 
-  private <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
-    Style style = new StyleImpl();
-    style.set(attribute, value);
-    cell.getStyle().putAll(style);
-  }
-
-  private <T> void addStyle(StyleAttribute<T> attribute, T value) {
-    addStyle(getLastCell(), attribute, value);
-  }
-
-  private void addStyle(EditorCell cell, StyleAttribute<Boolean> attribute) {
-    addStyle(cell, attribute, true);
-  }
-
-  private void addCell(EditorCell cell) {
-    collectionStack.peek().addEditorCell(cell);
-  }
-
-  private EditorCell_Collection pushCollection() {
-    EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(myEditorContext, mySNode);
-    collectionStack.push(newCollection);
-    currentCollectionIdNumber = currentCollectionIdNumber.add(BigInteger.ONE);
-    return newCollection;
-  }
-
-  private EditorCell_Collection popCollection() {
-    if (collectionStack.empty()) {
-      return null;
+  private EditorCell createRoleAttributeCell(SNode attributeConcept, Class attributeKind, EditorCell editorCell) {
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
+      if (manager != null) {
+        return manager.createNodeRoleAttributeCell(myEditorContext, attributeConcept, attributeKind, editorCell);
+      }
     }
-    EditorCell_Collection result = collectionStack.pop();
-    result.setCellId("collection_" + currentCollectionIdNumber.toString());
-    currentCollectionIdNumber = currentCollectionIdNumber.subtract(BigInteger.ONE);
-    if (!collectionStack.empty()) {
-      collectionStack.peek().addEditorCell(result);
-    }
-    return result;
+    return null;
   }
+
 
   private static class ListHandler extends RefNodeListHandler {
     public ListHandler(SNode ownerNode, String childRole, EditorContext context) {
