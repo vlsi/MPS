@@ -67,6 +67,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
   private BigInteger currentConstantIdNumber = BigInteger.ZERO;
+
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     cacheParameters(node, editorContext);
@@ -154,9 +155,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addLabel("}");
     addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
   }
+
   protected abstract boolean needToAddPropertiesOrChildren();
+
   protected abstract void addPropertyCell(final SProperty property);
+
   protected abstract void addChildCell(final SContainmentLink referenceLink);
+
   protected abstract void addReferenceCell(final SReferenceLink referenceLink);
 
   private void addProperties() {
@@ -176,6 +181,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       addReferenceCell(reference);
     }
   }
+
   private void addChildren() {
     for (SContainmentLink link : myContainmentLinks) {
       addRoleLabel(link.getRoleName(), "link");
@@ -184,6 +190,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       addNewLine();
     }
   }
+
   private void addRoleLabel(String role, String type) {
     if (role == null) {
       role = "<no " + type + ">";
@@ -290,6 +297,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     }
     return result;
   }
+
   protected void addNewLine() {
     addStyle(getLastCell(), StyleAttributes.INDENT_LAYOUT_NEW_LINE);
   }
@@ -312,11 +320,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addStyle(cell, StyleAttributes.INDENT_LAYOUT_INDENT);
   }
 
-  protected  <T> void addStyle(StyleAttribute<T> attribute, T value) {
+  protected <T> void addStyle(StyleAttribute<T> attribute, T value) {
     addStyle(getLastCell(), attribute, value);
   }
 
-  protected  <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
+  protected <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
     Style style = new StyleImpl();
     style.set(attribute, value);
     cell.getStyle().putAll(style);

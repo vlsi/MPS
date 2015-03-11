@@ -49,7 +49,6 @@ import java.util.List;
 import java.util.Set;
 
 public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultContainmentSubstituteInfo.class));
 
   private SNode myParentNode;
   private SNode myCurrentChild;
