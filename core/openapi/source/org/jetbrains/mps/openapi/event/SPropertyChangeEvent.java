@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -27,16 +28,22 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Immutable
 public final class SPropertyChangeEvent {
+  private final SModel myModel;
   private final SNode myNode;
   private final SProperty myProperty;
   private final String myOldValue;
   private final String myNewValue;
 
-  public SPropertyChangeEvent(@NotNull SNode node, @NotNull SProperty property, String oldValue, String newValue) {
+  public SPropertyChangeEvent(@NotNull SModel model, @NotNull SNode node, @NotNull SProperty property, String oldValue, String newValue) {
+    myModel = model;
     myNode = node;
     myProperty = property;
     myOldValue = oldValue;
     myNewValue = newValue;
+  }
+
+  public SModel getModel() {
+    return myModel;
   }
 
   @NotNull

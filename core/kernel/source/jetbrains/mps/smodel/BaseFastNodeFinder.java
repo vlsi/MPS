@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,14 @@ package jetbrains.mps.smodel;
 import gnu.trove.THashMap;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -245,6 +250,34 @@ public class BaseFastNodeFinder implements FastNodeFinder {
 
     public void clear() {
       myNodes.clear();
+    }
+  }
+
+  /**
+   * Handy, ready-to use listener implementation to use.
+   * BaseFastNodeFinder itself doesn't track model changes, it's up to subclass to decide whether change tracking is vital.
+   */
+  protected class ChangeTracker implements SNodeChangeListener {
+    public ChangeTracker() {
+    }
+    @Override
+    public void nodeAdded(@NotNull SNodeAddEvent event) {
+      added(event.getChild());
+    }
+
+    @Override
+    public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+      removed(event.getChild());
+    }
+
+    @Override
+    public void propertyChanged(@NotNull SPropertyChangeEvent event) {
+      // no-op
+    }
+
+    @Override
+    public void referenceChanged(@NotNull SReferenceChangeEvent event) {
+      // no-op, FNF doesn't depend on references, structure only
     }
   }
 }

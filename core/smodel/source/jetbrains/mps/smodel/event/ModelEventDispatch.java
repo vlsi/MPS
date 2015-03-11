@@ -177,7 +177,7 @@ public final class ModelEventDispatch {
     if (myChangeListeners.isEmpty()) {
       return;
     }
-    final SReferenceChangeEvent event = new SReferenceChangeEvent(node, role, oldValue, newValue);
+    final SReferenceChangeEvent event = new SReferenceChangeEvent(myModel, node, role, oldValue, newValue);
     for (SNodeChangeListener l : myChangeListeners) {
       l.referenceChanged(event);
     }
@@ -187,7 +187,7 @@ public final class ModelEventDispatch {
     if (myChangeListeners.isEmpty()) {
       return;
     }
-    final SPropertyChangeEvent event = new SPropertyChangeEvent(node, property, oldValue, newValue);
+    final SPropertyChangeEvent event = new SPropertyChangeEvent(myModel, node, property, oldValue, newValue);
     for (SNodeChangeListener l : myChangeListeners) {
       l.propertyChanged(event);
     }
