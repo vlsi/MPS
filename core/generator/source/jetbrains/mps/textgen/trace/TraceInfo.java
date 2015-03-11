@@ -29,19 +29,19 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class TraceInfo {
-  public static boolean hasTrace(SModel model) {
+  public static boolean hasTrace(@Nullable SModel model) {
     return model != null && null != TraceInfoCache.getInstance().get(model);
   }
 
-  public static boolean hasTrace(SNode node) {
+  public static boolean hasTrace(@Nullable SNode node) {
     if (node == null) {
       return false;
     }
-    return hasTrace(node.getModel());
+    return getPositionForNode(node) != null;
   }
 
   @Nullable
-  public static TraceablePositionInfo getPositionForNode(SNode node) {
+  public static TraceablePositionInfo getPositionForNode(@Nullable SNode node) {
     if (node == null || node.getModel() == null) {
       return null;
     }
