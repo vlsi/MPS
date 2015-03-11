@@ -1681,6 +1681,12 @@
     <node concept="lpD6D" id="4$ezt8ZmxE8" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1vCYg$WzArM" resolve="AddVolatileInFieldLeftOfType" />
     </node>
+    <node concept="lpD6D" id="7NKeCbZDaPd" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZD2vL" resolve="BackspaceToUnwrapArrayTypeInFieldDeclaration" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZDb0S" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZDao4" resolve="BackspaceToUnwrapArrayTypeInStaticFieldDeclaration" />
+    </node>
     <node concept="lpD6D" id="5Jf1oRj7b0w" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2o160AxalE9" resolve="RemoveFinalInStaticFieldBackspace" />
     </node>
@@ -1822,6 +1828,9 @@
     <node concept="lpD6D" id="2TdQhrRPT5e" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5py1MO3oEXi" resolve="AbstractStatic" />
     </node>
+    <node concept="lpD6D" id="7NKeCbZDbdc" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2msP5$jFKOQ" resolve="BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT5f" role="lpD6w">
       <ref role="lpD7u" to="ryl9:fNOVZ7DIxJ" resolve="BasicFieldDefinition" />
     </node>
@@ -1932,6 +1941,9 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT6M" role="lpD6w">
       <ref role="lpD7u" to="ryl9:fNOVZ6meOS" resolve="VoidMethodDefinition3" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZDlqy" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZDkX2" resolve="WrapIncompleteMemberDeclarationWithArrayType" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3ck" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hT_dk6D" resolve="BadCodeInTheLeftTest" />
@@ -2929,6 +2941,15 @@
     <node concept="lpD6D" id="3fsGbyalL7k" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyagtiQ" resolve="BS_OnInitializerAssignment" />
     </node>
+    <node concept="lpD6D" id="2msP5$jFzp8" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2msP5$jFmcY" resolve="BackspaceToUnwrapArrayTypeInLocalVariable1" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZD21C" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZCU02" resolve="BackspaceToUnwrapArrayTypeInLocalVariable2" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZD2dh" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZD1wf" resolve="BackspaceToUnwrapArrayTypeInLocalVariable3" />
+    </node>
     <node concept="lpD6D" id="2ISwQnyeuM8" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnxDGW_" resolve="CreateByTyping" />
     </node>
@@ -2947,8 +2968,17 @@
     <node concept="lpD6D" id="3fsGbyaHTry" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyasiYf" resolve="Del_InNameEndWithInitializer" />
     </node>
-    <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
+    <node concept="lpD6D" id="7NKeCbZDbpi" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyakZet" resolve="Del_OnInitializerAssignment" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZDjQ2" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZDjJG" resolve="WrapLocalVariableWithArrayType" />
+    </node>
+    <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2msP5$jF_90" resolve="BackspaceToUnwrapArrayTypeInParam" />
+    </node>
+    <node concept="lpD6D" id="7NKeCbZDk23" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7NKeCbZDj3_" resolve="WrapParamWithArrayType" />
     </node>
     <node concept="lpD6D" id="64WA21bXcJY" role="lpD6w">
       <ref role="lpD7u" to="ryl9:64WA21bWWIA" resolve="AddFirstStaticFieldToInterface" />
