@@ -119,7 +119,6 @@
   <dependency className="jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest" file="DiskMemoryConflictsTest.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.ui.TestDialog" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -163,7 +162,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
+    <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.WorkbenchMpsTest" />
   </dependency>

@@ -205,6 +205,7 @@
     <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

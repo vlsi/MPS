@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -152,8 +154,12 @@ public abstract class ModelRootBase implements ModelRoot {
     while (it.hasNext()) {
       SModel model = it.next();
       if (loaded.contains(model.getModelId())) continue;
-      module.unregisterModel((SModelBase) model);
-      it.remove();
+      if (model instanceof EditableSModelBase && ((EditableSModelBase) model).isChanged()) {
+        ((EditableSModelBase) model).resolveDiskConflict();
+      } else {
+        module.unregisterModel((SModelBase) model);
+        it.remove();
+      }
     }
   }
 }

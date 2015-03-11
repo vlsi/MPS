@@ -9,6 +9,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import com.intellij.openapi.ui.TestDialog;
+import org.junit.Before;
+import jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener;
+import org.junit.After;
 import org.junit.Test;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.smodel.ModelAccess;
@@ -28,9 +32,6 @@ import java.util.regex.Matcher;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.ui.TestDialog;
-import jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -60,13 +61,30 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private Solution myModule;
   private SModel myModelBackup;
   private EditableSModel myModel;
+  private DiskMemoryConflictsTest.TestDialogImpl myMockDialog = null;
+  private TestDialog myOriginalDialog;
+
   public DiskMemoryConflictsTest() {
   }
+
+  @Before
+  public void beforeTest() {
+    myOriginalDialog = ModelStorageProblemsListener.setTestDialog(myMockDialog = new DiskMemoryConflictsTest.TestDialogImpl());
+  }
+
+  @After
+  public void afterTest() {
+    ModelStorageProblemsListener.setTestDialog(myOriginalDialog);
+    myMockDialog = null;
+  }
+
   @Test
   public void testDiskMemoryConflicts() {
     final DiskMemoryConflictsTest.Action[] startedAction = new DiskMemoryConflictsTest.Action[1];
     final DiskMemoryConflictsTest.DiskModification[] startedDiskModification = new DiskMemoryConflictsTest.DiskModification[1];
     final DiskMemoryConflictsTest.VersionToChoose[] startedVersion = new DiskMemoryConflictsTest.VersionToChoose[1];
+
+
     final boolean result = ProjectTestsSupport.testOnProjectCopy(DiskMemoryConflictsTest.PROJECT_ARCHIVE, DiskMemoryConflictsTest.DESTINATION_PROJECT_DIR, DiskMemoryConflictsTest.PROJECT_FILE, new ProjectTestsSupport.ProjectRunnable() {
       @Override
       public boolean execute(final Project project) {
@@ -81,22 +99,20 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
             }
           });
           for (DiskMemoryConflictsTest.Action a : DiskMemoryConflictsTest.Action.values()) {
-            // TODO: uncomment this for & properly support Disk-memory conflict handling on file deletion/model modification 
-            // <node> 
-            DiskMemoryConflictsTest.DiskModification dm = DiskMemoryConflictsTest.DiskModification.MODIFY;
-            for (DiskMemoryConflictsTest.VersionToChoose v : DiskMemoryConflictsTest.VersionToChoose.values()) {
-              checkInitialState();
+            for (DiskMemoryConflictsTest.DiskModification dm : DiskMemoryConflictsTest.DiskModification.values()) {
+              for (DiskMemoryConflictsTest.VersionToChoose v : DiskMemoryConflictsTest.VersionToChoose.values()) {
+                checkInitialState();
 
-              startedAction[0] = a;
-              startedVersion[0] = v;
-              startedDiskModification[0] = dm;
+                startedAction[0] = a;
+                startedVersion[0] = v;
+                startedDiskModification[0] = dm;
 
-              provokeAndCheckConflict(a, dm, v);
-              restoreAndCheckOriginalState();
+                provokeAndCheckConflict(a, dm, v);
+                restoreAndCheckOriginalState();
+                resultArr[0] = true;
+              }
             }
-
           }
-          resultArr[0] = true;
         } catch (Throwable e) {
           e.printStackTrace();
           return false;
@@ -104,6 +120,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         return resultArr[0];
       }
     });
+
     if (!(result)) {
       Assert.fail("Last started check action=" + startedAction[0] + ", disk modification=" + startedDiskModification[0] + ", version=" + startedVersion[0]);
     }
@@ -205,6 +222,15 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       Assert.assertFalse(myModel.isChanged());
     }
   }
+
+  private int getShowCode(DiskMemoryConflictsTest.DiskModification diskModification, DiskMemoryConflictsTest.VersionToChoose versionToChoose) {
+    if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
+      return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 0 : 1);
+    } else {
+      return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 1 : 0);
+    }
+  }
+
   private void provokeAndCheckConflict(DiskMemoryConflictsTest.Action action, final DiskMemoryConflictsTest.DiskModification diskModification, final DiskMemoryConflictsTest.VersionToChoose versionToChoose) {
     setFieldNameInModel(DiskMemoryConflictsTest.FIELD_NAME_IN_MODEL);
     if (DiskMemoryConflictsTest.DiskModification.MODIFY == diskModification) {
@@ -212,30 +238,9 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     } else {
       DiskMemoryConflictsTest.delete();
     }
+    myMockDialog.waitForShow(getShowCode(diskModification, versionToChoose));
+
     refreshVfs();
-    final boolean[] dialogWasInvoked = new boolean[1];
-    Messages.setTestDialog(new TestDialog() {
-      @Override
-      public int show(String message) {
-        dialogWasInvoked[0] = true;
-        if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 0 : 1);
-        } else {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 1 : 0);
-        }
-      }
-    });
-    ModelStorageProblemsListener.setTestDialog(new TestDialog() {
-      @Override
-      public int show(String message) {
-        dialogWasInvoked[0] = true;
-        if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 0 : 1);
-        } else {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 1 : 0);
-        }
-      }
-    });
 
     if (DiskMemoryConflictsTest.Action.SAVE == action) {
       //  save conflicting model 
@@ -255,7 +260,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       });
     }
     waitEDT();
-    Assert.assertTrue(dialogWasInvoked[0]);
+    Assert.assertTrue(myMockDialog.wasExecuted());
     String expectedFieldName;
     if (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose) {
       expectedFieldName = DiskMemoryConflictsTest.FIELD_NAME_IN_MODEL;
@@ -381,6 +386,26 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     DELETE();
 
     DiskModification() {
+    }
+  }
+
+  private class TestDialogImpl implements TestDialog {
+    private boolean myExecuted;
+    private int myReturnValue;
+
+    public int show(String string) {
+      assert !(myExecuted);
+      myExecuted = true;
+      return myReturnValue;
+    }
+
+    public boolean wasExecuted() {
+      return myExecuted;
+    }
+
+    public void waitForShow(int nextShowValue) {
+      myReturnValue = nextShowValue;
+      myExecuted = false;
     }
   }
 }
