@@ -16,11 +16,15 @@
 package org.jetbrains.mps.openapi.model;
 
 /**
+ * DON'T USE THIS INTERFACE AS IT'S SCHEDULED FOR REMOVAL IN THE UPCOMING MPS RELEASE
+ *
  * This interface can be implemented to track write access of individual nodes in the model.
  * <p/>
  * Change listeners get notified regardless of model being attached to a repository. If, however, model
  * is attached to a repository, all notifications are delivered inside a write lock on the repository <b>after</b> a real change.
+ * @deprecated use {@link org.jetbrains.mps.openapi.model.SNodeChangeListener} instead.
  */
+@Deprecated
 public interface SModelChangeListener {
 
   void nodeAdded(SModel model, SNode parent, String role, SNode child);

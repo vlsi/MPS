@@ -254,6 +254,9 @@ public class SModel implements SModelData {
     getModelDescriptor().removeModelListener(listener);
   }
 
+  /**
+   * FIXME it looks we can use openapi.SModel as return value now (i.e. not to restrain to SModelBase use)
+   */
   public SModelBase getModelDescriptor() {
     return myModelDescriptor;
   }

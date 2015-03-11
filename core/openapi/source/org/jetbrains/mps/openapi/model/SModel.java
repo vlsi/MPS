@@ -152,6 +152,26 @@ public interface SModel {
   void removeAccessListener(SNodeAccessListener l);
 
   /**
+   * As {@link org.jetbrains.mps.openapi.model.SNode} API suggests, any model could be modified. However, it's up to model's
+   * implementation to decide whether to send notifications about changes or not.
+   * Attaching a change listener to a model doesn't guarantee changes get dispatched to the listener,
+   * unless it's a model that explicitly states that as part of its contract (e.g. {@link org.jetbrains.mps.openapi.model.EditableSModel}).
+   *
+   * Note, there's no guarantee about listener uniqueness, i.e. it's unspecified what happens if the same listener instance is added twice.
+   *
+   * @param l listener to add, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void addChangeListener(SNodeChangeListener l);
+
+  /**
+   * @param l listener to remove, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void removeChangeListener(SNodeChangeListener l);
+
+
+  /**
    * Represents a problem with the persitence.
    */
   interface Problem {

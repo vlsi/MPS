@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +27,14 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * Normal state of any node, being part of a model.
  *
  * Events are dispatched, model access ensured.
- *
+ * <p>
+ * OpenAPI listeners ({@link org.jetbrains.mps.openapi.model.SNodeAccessListener}, {@link org.jetbrains.mps.openapi.model.SModelChangeListener},
+ * {@link org.jetbrains.mps.openapi.model.SModelAccessListener}) are notified through {@link jetbrains.mps.smodel.event.ModelEventDispatch},
+ * this class shall not depend on particular openapi.SModel implementation (e.g. SModelBase or EditableSModelBase).
+ * <p>
+ * Legacy listeners ({@link jetbrains.mps.smodel.event.SModelListener}, {@link jetbrains.mps.smodel.NodeReadEventsCaster} and
+ * {@link jetbrains.mps.smodel.NodeReadAccessCasterInEditor} are handled here.
+ * <p>
  * IMPORTANT: property/reference access shall not trigger node read. Node read is triggered once the node is obtained from the model,
  * either as children, sibling or any other navigation means.
  *
@@ -172,10 +177,9 @@ final class AttachedNodeOwner extends SNodeOwner {
     }
     myModel.firePropertyChangedEvent(node, property, oldValue, newValue);
     //propertyChanged(property, oldValue, newValue);
-    SModelBase md = getRealModel();
-    if (md instanceof EditableSModelBase) {
-      EditableSModelBase emd = (EditableSModelBase) md;
-      emd.firePropertyChanged(node, property.getName(), oldValue, newValue);
+    final ModelEventDispatch md = myEventDispatch;
+    if (md != null) {
+      md.firePropertyChange(node, property, oldValue, newValue);
     }
   }
 
@@ -191,10 +195,9 @@ final class AttachedNodeOwner extends SNodeOwner {
       myModel.fireReferenceAddedEvent(newRef);
     }
     // referenceChanged(l, oldRef, newRef);
-    SModelBase md = getRealModel();
-    if (md instanceof EditableSModelBase) {
-      EditableSModelBase emd = (EditableSModelBase) md;
-      emd.fireReferenceChanged(node, l.getRoleName(), oldRef, newRef);
+    final ModelEventDispatch md = myEventDispatch;
+    if (md != null) {
+      md.fireReferenceChange(node, l, oldRef, newRef);
     }
   }
 
@@ -202,9 +205,9 @@ final class AttachedNodeOwner extends SNodeOwner {
   /*package*/ void fireNodeAdd(SNode node, SContainmentLink role, SNode child, SNode anchor) {
     if (node == null && role == null) {
       // root
-      SModelBase md = getRealModel();
-      if (md instanceof EditableSModelBase) {
-        ((EditableSModelBase) md).fireNodeAdded(null, null, child);
+      final ModelEventDispatch md = myEventDispatch;
+      if (md != null) {
+        md.fireNodeAdd(null, null, child);
       }
       myModel.fireRootAddedEvent(child);
       return;
@@ -214,10 +217,9 @@ final class AttachedNodeOwner extends SNodeOwner {
     }
     myModel.fireChildAddedEvent(node, role, child, anchor);
     //nodeAdded(role, child);
-    SModelBase md = getRealModel();
-    if (md instanceof EditableSModelBase) {
-      EditableSModelBase emd = (EditableSModelBase) md;
-      emd.fireNodeAdded(node, role.getRoleName(), child);
+    final ModelEventDispatch md = myEventDispatch;
+    if (md != null) {
+      md.fireNodeAdd(node, role, child);
     }
   }
 
@@ -233,9 +235,9 @@ final class AttachedNodeOwner extends SNodeOwner {
   @Override
   /*package*/ void fireNodeRemove(SNode node, SContainmentLink role, SNode child, SNode anchor) {
     if (node == null && role == null) {
-      SModelBase md = getRealModel();
-      if (md instanceof EditableSModelBase) {
-        ((EditableSModelBase) md).fireNodeRemoved(null, null, child);
+      final ModelEventDispatch md = myEventDispatch;
+      if (md != null) {
+        md.fireNodeRemove(null, null, child);
       }
       myModel.fireRootRemovedEvent(child);
       return;
@@ -245,15 +247,9 @@ final class AttachedNodeOwner extends SNodeOwner {
     }
     myModel.fireChildRemovedEvent(node, role, child, anchor);
     //nodeRemoved(child, role);
-    SModelBase md = getRealModel();
-    if (md instanceof EditableSModelBase) {
-      EditableSModelBase emd = (EditableSModelBase) md;
-      emd.fireNodeRemoved(node, role.getRoleName(), child);
+    final ModelEventDispatch md = myEventDispatch;
+    if (md != null) {
+      md.fireNodeRemove(node, role, child);
     }
   }
-
-  private SModelBase getRealModel() {
-    return myModel.getModelDescriptor();
-  }
-
 }

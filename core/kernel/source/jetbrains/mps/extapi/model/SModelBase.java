@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -56,7 +57,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
   private static Logger LOG = LogManager.getLogger(SModelBase.class);
 
-  private final ModelEventDispatch myEventDispatch = new ModelEventDispatch();
+  private final ModelEventDispatch myEventDispatch;
   private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 
   @NotNull
@@ -72,6 +73,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
+    myEventDispatch = new ModelEventDispatch(this);
   }
 
   @Override
@@ -262,6 +264,22 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   /**
+   * This class doesn't dispatch change events, no listeners are tracked.
+   */
+  @Override
+  public void addChangeListener(SNodeChangeListener l) {
+    // intentionally no-op
+  }
+
+  /**
+   * This class doesn't dispatch change events, no listeners are tracked.
+   */
+  @Override
+  public void removeChangeListener(SNodeChangeListener l) {
+    // intentionally no-op
+  }
+
+  /**
    * It's unlikely subclasses or clients of the class shall forcefully fire events.
    * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
    */
@@ -418,7 +436,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * loading whole model.
    */
   @NotNull
-  public ModelEventDispatch getEventDispatch() {
+  public final ModelEventDispatch getEventDispatch() {
     return myEventDispatch;
   }
 }

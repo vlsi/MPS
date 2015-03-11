@@ -33,6 +33,8 @@ import org.jetbrains.mps.openapi.event.SReferenceReadEvent;
  * You may want to use thread-local storage, primitives from {@linkplain java.util.concurrent} or accept notifications from single thread only.
  * Explicit synchronization may be harmful to the performance of the whole application.
  * FIXME need better wording to stress events may come from multiple threads, perhaps some sync examples or single-thread listener classes to re-use?
+ *
+ * @see SModel#addAccessListener(SNodeAccessListener)
  * @since 3.3
  * @author Artem Tikhomirov
  */
