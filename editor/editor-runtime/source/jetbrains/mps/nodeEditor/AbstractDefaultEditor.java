@@ -303,12 +303,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return lastCell;
   }
 
-  private <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
-    Style style = new StyleImpl();
-    style.set(attribute, value);
-    cell.getStyle().putAll(style);
-  }
-
   protected void addErrorCell(String error) {
     EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error);
     addCell(errorCell);
@@ -318,13 +312,17 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addStyle(cell, StyleAttributes.INDENT_LAYOUT_INDENT);
   }
 
-
-
-  private <T> void addStyle(StyleAttribute<T> attribute, T value) {
+  protected  <T> void addStyle(StyleAttribute<T> attribute, T value) {
     addStyle(getLastCell(), attribute, value);
   }
 
-  private void addStyle(EditorCell cell, StyleAttribute<Boolean> attribute) {
+  protected  <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
+    Style style = new StyleImpl();
+    style.set(attribute, value);
+    cell.getStyle().putAll(style);
+  }
+
+  protected void addStyle(EditorCell cell, StyleAttribute<Boolean> attribute) {
     addStyle(cell, attribute, true);
   }
 

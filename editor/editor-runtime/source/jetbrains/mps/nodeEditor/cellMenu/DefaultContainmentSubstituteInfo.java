@@ -57,14 +57,14 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
   private SAbstractConcept myTargetConcept;
   private DefaultChildSetter mySetter;
 
-  public DefaultContainmentSubstituteInfo(final SNode sourceNode, final SContainmentLink link, final EditorContext editorContext) {
+  public DefaultContainmentSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
     myLink = link;
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        myParentNode = sourceNode;
-        Iterable<? extends SNode> ch = sourceNode.getChildren(myLink);
+        myParentNode = parentNode;
+        Iterable<? extends SNode> ch = parentNode.getChildren(myLink);
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });

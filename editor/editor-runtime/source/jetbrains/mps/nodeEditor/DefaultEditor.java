@@ -25,6 +25,7 @@ import jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.lang.editor.cellProviders.ChildListHandler;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -135,10 +136,12 @@ public class DefaultEditor extends AbstractDefaultEditor {
   @Override
   protected void addChildCell(SContainmentLink link) {
     if (link.isMultiple()) {
-//      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
-//      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
-//      editorCell.setRole(handler.getElementRole());
-//      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+      AbstractCellListHandler handler = new ListHandler(mySNode, link, myEditorContext);
+      EditorCell editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
+      editorCell.setRole(handler.getElementRole());
+      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+      setIndent(editorCell);
+      addCell(editorCell);
     } else {
       Iterator<? extends SNode> childIterator = mySNode.getChildren(link).iterator();
       SNode child = childIterator.hasNext() ? childIterator.next() : null;
@@ -168,6 +171,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(mySNode, link.getDeclarationNode(), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(mySNode, link.getDeclarationNode(), child));
         editorCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(mySNode, child, link, myEditorContext));
+        setIndent(editorCell);
         addCell(editorCell);
       }
     }
@@ -259,9 +263,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
   }
 
 
-  private static class ListHandler extends RefNodeListHandler {
-    public ListHandler(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+  private static class ListHandler extends ChildListHandler {
+    public ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
+      super(ownerNode, link, context, false);
     }
 
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -289,7 +293,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+          elementCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(listOwner, elementNode, myLink, editorContext));
         }
       }
     }
