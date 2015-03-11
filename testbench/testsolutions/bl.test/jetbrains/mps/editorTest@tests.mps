@@ -37220,13 +37220,21 @@
     </node>
     <node concept="9aQIb" id="3fsGbya$CpN" role="LiZbd">
       <node concept="3clFbS" id="3fsGbya$CpO" role="9aQI4">
-        <node concept="3cpWs8" id="3fsGbya$CpP" role="3cqZAp">
-          <node concept="LIFWc" id="3fsGbyaERJm" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="empty_localVariableDeclaration" />
+        <node concept="3cpWs8" id="65qDENxSG1H" role="3cqZAp">
+          <node concept="3cpWsn" id="65qDENxSG1K" role="3cpWs9">
+            <property role="TrG5h" value="i" />
+            <node concept="10Oyi0" id="65qDENxSG1L" role="1tU5fm">
+              <node concept="LIFWc" id="65qDENxSG2l" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="3" />
+                <property role="p6zMs" value="3" />
+                <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="65qDENxSG1M" role="33vP2m">
+              <property role="3cmrfH" value="1" />
+            </node>
           </node>
         </node>
       </node>
@@ -43575,7 +43583,15 @@
     <node concept="312cEu" id="7NKeCbZDkX8" role="LiRBU">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Foo" />
-      <node concept="2tJIrI" id="7NKeCbZDl9T" role="jymVt" />
+      <node concept="2tJIrI" id="7NKeCbZDl9T" role="jymVt">
+        <node concept="LIFWc" id="65qDENwLAdT" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_s96plr_a" />
+        </node>
+      </node>
       <node concept="3Tm1VV" id="7NKeCbZDkXe" role="1B3o_S" />
     </node>
     <node concept="312cEu" id="7NKeCbZDkXf" role="LiZbd">
