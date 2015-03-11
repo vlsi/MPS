@@ -2688,6 +2688,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteFinalInField" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteTransient" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteVolatile" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Name_Actions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -2719,6 +2720,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Name_Actions" file="FieldDeclaration_Name_Actions.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap" file="FieldDeclaration_keyMap.java">
     <classNode dependClassName="java.lang.Object" />
@@ -3095,12 +3106,9 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
@@ -3110,12 +3118,9 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
@@ -3157,6 +3162,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.IncompleteMemberBackspaceInName" file="IncompleteMemberBackspaceInName.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.IncompleteMemberDeclaration_Editor" file="IncompleteMemberDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
@@ -3168,6 +3183,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteTransientInIncompleteMember" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteVolatileInIncompleteMember" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IgnoreRightSquareBrackedInIncompleteMember" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IncompleteMemberBackspaceInName" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -3694,6 +3710,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Name_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -3724,11 +3741,11 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Name_Actions" file="ParameterDeclaration_Name_Actions.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -4151,6 +4168,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteStaticInField" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteStaticTransient" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteStaticVolatile" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.StaticFieldDeclaration_Name_Actions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -4183,6 +4201,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.StaticFieldDeclaration_Name_Actions" file="StaticFieldDeclaration_Name_Actions.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Actions" file="StaticFieldReference_Actions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />

@@ -166,6 +166,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
+    FieldDeclaration_Name_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
   private EditorCell createCollection_2sbeba_i0(EditorContext editorContext, SNode node) {
