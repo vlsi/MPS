@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
@@ -217,7 +218,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ttrace.pop();
     }
 
+    if (myChanged) {
+      // Unless we manage to update set of used languages along with changes being generated,
+      // we shall maintain set of used languages prior to any attempt to resolve references, as they might
+      // be using model scopes and TypeSystem, and latter is quite picky about imports.
+      SModelOperations.validateLanguagesAndImports(getOutputModel(), false, false);
+    }
+
     // replace reference placeholders (PostponedReference) with resolved
+    // replace DynamicReference with StaticReference, if needed
     if (!myPostponedRefs.isEmpty() || !myDynamicRefs.isEmpty()) {
       ttrace.push("restoring references", false);
       myPostponedRefs.replace();
