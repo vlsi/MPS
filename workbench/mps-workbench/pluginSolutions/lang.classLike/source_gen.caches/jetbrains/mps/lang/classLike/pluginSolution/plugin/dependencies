@@ -112,8 +112,7 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikes_ActionGroup" />

@@ -528,7 +528,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" file="CreateRootNode_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.actions.CreateRootNodeAdapter_ActionGroup" file="CreateRootNodeAdapter_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="java.lang.String" />
@@ -548,6 +548,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" file="CreateRootNode_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.CutNode_Action" file="CutNode_Action.java">
@@ -1717,6 +1727,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNodeName_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CreateRootNodeAdapter_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CutNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />

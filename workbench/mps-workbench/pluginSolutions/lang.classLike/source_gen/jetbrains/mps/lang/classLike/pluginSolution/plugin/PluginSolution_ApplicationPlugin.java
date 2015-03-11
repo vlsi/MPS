@@ -4,8 +4,7 @@ package jetbrains.mps.lang.classLike.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.ModelNewActions_ActionGroup;
-import jetbrains.mps.ide.actions.PackageNewActions_ActionGroup;
+import jetbrains.mps.ide.actions.CreateRootNode_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,8 +23,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ClassLikes_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
-    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, CreateRootNode_ActionGroup.ID, CreateRootNode_ActionGroup.LABEL_ID_newRoot);
   }
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());

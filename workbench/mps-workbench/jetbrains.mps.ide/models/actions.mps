@@ -12872,16 +12872,13 @@
     </node>
   </node>
   <node concept="tC5Ba" id="2tI2dcwuChG">
-    <property role="TrG5h" value="CreateRootNode" />
+    <property role="TrG5h" value="CreateRootNodeAdapter" />
     <property role="2f7twF" value="Root Node" />
     <property role="3GE5qa" value="Menu.ProjectPane.Packages" />
     <property role="1XlLyE" value="false" />
     <node concept="tT9cl" id="2agGplWKVRp" role="2f5YQi">
-      <ref role="tU$_T" node="1ePK2dvwrNv" resolve="ModelNewActions" />
-      <ref role="2f8Tey" node="2agGplWKVRl" resolve="newRoot" />
-    </node>
-    <node concept="tT9cl" id="5tc$o3kzWsr" role="2f5YQi">
-      <ref role="tU$_T" node="5tc$o3kzWsk" resolve="PackageNewActions" />
+      <ref role="tU$_T" node="1wNvKTcoaln" resolve="CreateRootNode" />
+      <ref role="2f8Tey" node="1wNvKTcoals" resolve="newRoot" />
     </node>
     <node concept="2OiAzN" id="1E2sZkYLkWI" role="ftER_">
       <node concept="2OiTZ2" id="1E2sZkYLkWJ" role="2Oj6PV">
@@ -37478,6 +37475,22 @@
     <node concept="ftmFs" id="5_Vx0VjPbCw" role="ftER_" />
     <node concept="Xl_RD" id="5_Vx0VjPjxE" role="3mKD$K">
       <property role="Xl_RC" value="jetbrains.mps.ide.java.workbench.actions.AnalyzeJavaActions_ActionGroup" />
+    </node>
+  </node>
+  <node concept="tC5Ba" id="1wNvKTcoaln">
+    <property role="3GE5qa" value="Menu.ProjectPane.Packages" />
+    <property role="TrG5h" value="CreateRootNode" />
+    <node concept="tT9cl" id="1wNvKTcoc84" role="2f5YQi">
+      <ref role="tU$_T" node="1ePK2dvwrNv" resolve="ModelNewActions" />
+      <ref role="2f8Tey" node="2agGplWKVRl" resolve="newRoot" />
+    </node>
+    <node concept="tT9cl" id="1wNvKTcoknn" role="2f5YQi">
+      <ref role="tU$_T" node="5tc$o3kzWsk" resolve="PackageNewActions" />
+    </node>
+    <node concept="ftmFs" id="1wNvKTcoalp" role="ftER_">
+      <node concept="10WQ6h" id="1wNvKTcoals" role="ftvYc">
+        <property role="TrG5h" value="newRoot" />
+      </node>
     </node>
   </node>
 </model>
