@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -128,11 +128,16 @@ public class NodePresentationUtil {
       return shortDescription;
     }
 
-    if (node.getModel() != null && node.getParent() == null) {
-      return node.getConcept().getName() + " (" + NameUtil.compactModelName(node.getModel().getReference()) + ")";
+    if (node.getParent() == null) {
+      if (node.getModel() != null) {
+        return node.getConcept().getName() + " (" + NameUtil.compactModelName(node.getModel().getReference()) + ")";
+      } else {
+        return node.getConcept().getName();
+      }
     }
-
-    return node.getContainmentLink().getRoleName() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
+    SContainmentLink containmentLink = node.getContainmentLink();
+    assert containmentLink != null;
+    return containmentLink.getRoleName() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {
