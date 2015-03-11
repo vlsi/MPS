@@ -48,7 +48,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -454,7 +453,6 @@ class GenerationSession {
     }
     if (hasChanges) {
       SModel realOutputModel = tg.getOutputModel();
-      SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
       myDependenciesBuilder.updateModel(realOutputModel);
     } else {
       // nothing has been generated
