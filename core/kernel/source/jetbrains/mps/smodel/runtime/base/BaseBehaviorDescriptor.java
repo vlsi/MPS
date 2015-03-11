@@ -92,7 +92,10 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         List<Method> methodsToCall = new ArrayList<Method>();
         Set<SNode> processed = new HashSet<SNode>();
 
-        List<SNode> concepts = Collections.singletonList(SConceptOperations.findConceptDeclaration(conceptFqName));
+        SNode concept = SConceptOperations.findConceptDeclaration(conceptFqName);
+        if (concept == null) return methodsToCall;
+
+        List<SNode> concepts = Collections.singletonList(concept);
         while (!concepts.isEmpty()) {
           List<SNode> newFrontier = new ArrayList<SNode>();
           for (SNode currentConcept : concepts) {
@@ -145,5 +148,5 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       return null;
     }
     return ClassLoaderManager.getInstance().getOwnClass(language, className);
-  } 
+  }
 }
