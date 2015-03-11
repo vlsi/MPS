@@ -52,6 +52,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     if (renderingCondition_j36akn_a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
+    editorCell.addKeyMap(new IgnoreRightSquareBracketInVariableName());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_j36akn_a0a(), new VariableDeclaration_NameCellComponent.ApplySideTransforms_null_cellMenu_j36akn_b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

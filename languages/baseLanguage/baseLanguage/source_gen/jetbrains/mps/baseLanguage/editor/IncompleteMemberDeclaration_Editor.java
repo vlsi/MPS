@@ -205,6 +205,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
+    editorCell.addKeyMap(new IgnoreRightSquareBrackedInIncompleteMember());
     editorCell.setDefaultText("<no name>");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncompleteMemberDeclaration_Editor.ApplySideTransforms_null_cellMenu_imlbz9_a0j0(), new IncompleteMemberDeclaration_Editor.ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0()}));
     return editorCell;
