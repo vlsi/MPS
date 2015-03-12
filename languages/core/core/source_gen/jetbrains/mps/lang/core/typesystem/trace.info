@@ -252,7 +252,7 @@
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/1556973682253870204">
     <file name="RemoveUnknownChildren_QuickFix.java">
-      <node id="1556973682253870214" at="14,44,15,141" concept="9" />
+      <node id="1556973682253870214" at="14,44,15,148" concept="9" />
       <node id="1556973682253873262" at="19,124,20,42" concept="3" />
       <node id="1556973682253870204" at="12,0,14,0" concept="1" trace="RemoveUnknownChildren_QuickFix#()V" />
       <node id="1556973682253870204" at="14,0,17,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -260,7 +260,7 @@
       <node id="1556973682253873222" at="17,35,22,5" concept="5" />
       <node id="1556973682253870204" at="17,0,24,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1556973682253870204" at="12,43,12,43" />
-      <scope id="1556973682253870211" at="14,44,15,141" />
+      <scope id="1556973682253870211" at="14,44,15,148" />
       <scope id="1556973682253873232" at="19,124,20,42" />
       <scope id="1556973682253870204" at="12,0,14,0" />
       <scope id="1556973682253870204" at="14,0,17,0">
@@ -279,13 +279,13 @@
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/1556973682253873271">
     <file name="RemoveUnknownReference_QuickFix.java">
-      <node id="1556973682253873279" at="13,44,14,144" concept="9" />
+      <node id="1556973682253873279" at="13,44,14,151" concept="9" />
       <node id="1556973682253873308" at="16,35,17,128" concept="3" />
       <node id="1556973682253873271" at="11,0,13,0" concept="1" trace="RemoveUnknownReference_QuickFix#()V" />
       <node id="1556973682253873271" at="13,0,16,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1556973682253873271" at="16,0,19,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1556973682253873271" at="11,44,11,44" />
-      <scope id="1556973682253873278" at="13,44,14,144" />
+      <scope id="1556973682253873278" at="13,44,14,151" />
       <scope id="1556973682253873273" at="16,35,17,128" />
       <scope id="1556973682253873271" at="11,0,13,0" />
       <scope id="1556973682253873271" at="13,0,16,0">
