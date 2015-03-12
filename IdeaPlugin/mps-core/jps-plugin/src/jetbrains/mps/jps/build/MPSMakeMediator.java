@@ -18,6 +18,7 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.io.FileUtil;
 import gnu.trove.THashSet;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -47,6 +48,7 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -62,6 +64,7 @@ import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
+import org.jetbrains.jps.incremental.fs.CompilationRound;
 import org.jetbrains.jps.incremental.java.JavaBuilder;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
@@ -74,13 +77,16 @@ import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
 import org.jetbrains.jps.util.JpsPathUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -164,15 +170,7 @@ public class MPSMakeMediator {
     });
 
     BuildMakeService bms = new BuildMakeService();
-    MakeSession ms = new MakeSession(myProject, myMessageHandler, true) {
-      @Override
-      public IScript toScript(ScriptBuilder scriptBuilder) {
-        scriptBuilder.withFacetNames(
-          new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"),
-          new IFacet.Name("jetbrains.mps.make.reduced.CollectHashes"));
-        return scriptBuilder.toScript();
-      }
-    };
+    MakeSession ms = createCleanMakeSession();
 
     ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
       myRedirects, !JavaBuilderUtil.isCompileJavaIncrementally(myContext), new Stub(), new IJobMonitor.Stub() {
@@ -189,14 +187,26 @@ public class MPSMakeMediator {
       success = res.get().isSucessful();
       success = processFiles(success, makeFacetConfiguration);
     } catch (InterruptedException e) {
-      reportError(e);
+      reportError("Error while make", e);
       success = false;
     } catch (ExecutionException e) {
-      reportError(e);
+      reportError("Error while make", e);
       success = false;
     }
 
     return success;
+  }
+
+  private MakeSession createCleanMakeSession() {
+    return new MakeSession(myProject, myMessageHandler, true) {
+      @Override
+      public IScript toScript(ScriptBuilder scriptBuilder) {
+        scriptBuilder.withFacetNames(
+          new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"),
+          new IFacet.Name("jetbrains.mps.make.reduced.CollectHashes"));
+        return scriptBuilder.toScript();
+      }
+    };
   }
 
   private boolean isGenOutputUnderSourceRoot(ModuleBuildTarget target, JpsMPSModuleExtension mpsModule) {
@@ -214,7 +224,7 @@ public class MPSMakeMediator {
     if (logger.isEnabled()) {
       try {
         logger.logCompiledPaths(makeFacetConfiguration.getWrittenFiles(), MPSMakeConstants.BUILDER_ID, "Written files:");
-      } catch (IOException ignore) {
+      } catch (IOException ignored) {
       }
     }
 
@@ -223,12 +233,30 @@ public class MPSMakeMediator {
       ModuleBuildTarget target = myToMake.get(source);
       File file = new File(writtenFile);
 
-      if (JavaBuilder.JAVA_SOURCES_FILTER.accept(file)) {
+      if (source != null) {
+        DataSource dataSource = source.getSource();
+        // FIXME: FileSystemBasedDataSource needs to have method declared which returns the description of its contents (e.g. file or set of files)
+        if (!(dataSource instanceof FileDataSource || dataSource instanceof FilePerRootDataSource)) {
+          throw new IllegalArgumentException("MPS Idea plugin does not support the data source root formats other than FileDataSource and FilePerRootDataSource");
+        }
+        // all written java files need to be registered as output for the model files to get recompiled in the case of models' change
+        if (isJava(file)) {
+          String location = dataSource.getLocation();
+          try {
+            myOutputConsumer.registerOutputFile(target, file, Arrays.asList(location));
+          } catch (IOException e) {
+            reportError("IO problem while registering output for source", e);
+            success = false;
+          }
+        }
+      }
+
+      if (isJava(file)) {
         // all written java files need to be marked as dirty to get compiled by the JavaBuilder
         try {
-          FSOperations.markDirty(myContext, new File(writtenFile));
+          FSOperations.markDirty(myContext, CompilationRound.CURRENT, new File(writtenFile));
         } catch (IOException e) {
-          reportError(e);
+          reportError("IO problem while marking java sources dirty", e);
           success = false;
         }
       } else {
@@ -237,7 +265,7 @@ public class MPSMakeMediator {
           try {
             copyResource(target, file);
           } catch (IOException e) {
-            myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+            reportError("IO problem during resources copying", e);
             success = false;
           }
         }
@@ -245,29 +273,40 @@ public class MPSMakeMediator {
 
       myRefreshComponent.refresh(writtenFile);
     }
+
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
-      try {
-        FSOperations.markDirty(myContext, new File(keptFile));
-      } catch (IOException e) {
-        reportError(e);
-        success = false;
+      File file = new File(keptFile);
+      // all kept java files need to be marked as dirty to get compiled by the JavaBuilder
+      // (e.g. scenario: removed output folder, src_gen persists)
+      if (isJava(file)) {
+        try {
+          FSOperations.markDirty(myContext, CompilationRound.CURRENT, file);
+        } catch (IOException e) {
+          reportError("IO problem during marking kept java sources dirty", e);
+          success = false;
+        }
       }
     }
 
+    List<String> deletedFiles = makeFacetConfiguration.getDeletedFiles();
     if (logger.isEnabled()) {
-      logger.logDeletedFiles(makeFacetConfiguration.getDeletedFiles());
+      logger.logDeletedFiles(deletedFiles);
     }
 
-    for (String deletedFile : makeFacetConfiguration.getDeletedFiles()) {
+    for (String deletedFile : deletedFiles) {
       try {
         FSOperations.markDeleted(myContext, new File(deletedFile));
       } catch (IOException e) {
-        reportError(e);
+        reportError("IO problem while deleting files with FS", e);
         success = false;
       }
     }
-    myRefreshComponent.removed(makeFacetConfiguration.getDeletedFiles());
+    myRefreshComponent.removed(deletedFiles);
     return success;
+  }
+
+  private boolean isJava(File file) {
+    return JavaBuilder.JAVA_SOURCES_FILTER.accept(file);
   }
 
   private void copyResource(ModuleBuildTarget target, File file) throws IOException {
@@ -283,9 +322,9 @@ public class MPSMakeMediator {
     FileUtil.copyContent(file, targetFile);
   }
 
-  private void reportError(Throwable e) {
+  private void reportError(String msg, Throwable e) {
     myContext.processMessage(
-      new CompilerMessage(MPSMakeConstants.BUILDER_ID,
+      new CompilerMessage(msg,
         Kind.ERROR, e.getMessage()));
   }
 
@@ -362,11 +401,8 @@ public class MPSMakeMediator {
 
     public MyForeignRootPaths(Iterable<String> foreignRoots) {
       this.rootPaths = Sequence.fromIterable(foreignRoots).select(new ISelector<String, String>() {
-        private String myDir;
-
         @Override
         public String select(String dir) {
-          myDir = dir;
           return DirUtil.normalizeAsDir(dir);
         }
       }).sort(new ISelector<String, String>() {

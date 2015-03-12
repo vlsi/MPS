@@ -125,10 +125,10 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
             inScope = true;
             break;
           }
-          if (!inScope) {
-            sourceGenNotInScope = true;
-            break;
-          }
+        }
+        if (!inScope) {
+          sourceGenNotInScope = true;
+          break;
         }
       }
 
@@ -172,7 +172,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         if (solution == null) return true;
 
         String suffix = FileUtil.getExtension(file.getName());
-        if(!suffix.equals("model")) {
+        if (!suffix.equals("model")) {
           ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
           if (modelFactory == null) return true;
         }
