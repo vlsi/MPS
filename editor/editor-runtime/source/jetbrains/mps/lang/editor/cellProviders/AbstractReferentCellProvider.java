@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
@@ -70,7 +71,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
+        myLinkDeclaration = new SNodeLegacy(getSNode()).getLinkDeclaration(role.toString());
         if (myLinkDeclaration == null) {
           myErrorText = "?" + role.toString() + "?";
           LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());

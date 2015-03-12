@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
@@ -51,7 +52,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
+        return new SNodeLegacy(getSNode()).getPropertyDeclaration(myPropertyName);
       }
     });
     if (myPropertyDeclaration == null) {

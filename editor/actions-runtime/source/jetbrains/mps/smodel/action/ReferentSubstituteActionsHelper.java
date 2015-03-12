@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -39,7 +40,7 @@ import java.util.List;
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
     // proceed with custom builders
-    SNode referenceNodeConcept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
+    SNode referenceNodeConcept = new SNodeLegacy(referenceNode).getConceptDeclarationNode();
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + SNodeOperations.getDebugText(referenceNodeConcept));

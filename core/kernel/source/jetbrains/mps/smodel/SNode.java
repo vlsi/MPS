@@ -26,10 +26,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -489,29 +489,20 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return myOwner;
   }
 
+  /**
+   * @deprecated use <code>getConcept().getDeclarationNode()</code> instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public org.jetbrains.mps.openapi.model.SNode getConceptDeclarationNode() {
     return getConcept().getDeclarationNode();
   }
 
-  public SNode getPropertyDeclaration(String propertyName) {
-    return (SNode) SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
-  }
-
-  //--------private-------
-
-  public SNode getLinkDeclaration(String role) {
-    return (SNode) SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
-  }
-
-  public SNode getRoleLink() {
-    if (getRoleInParent() == null) return null;
-    if (getParent() == null) return null;
-    return getParent().getLinkDeclaration(getRoleInParent());
-  }
-
-  //---------tree structure-------------
-
-  //remove method after 3.2
+  /**
+   * @deprecated remove method after 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setConceptFqName(String conceptFQName) {
     if (myConcept.getQualifiedName().equals(conceptFQName)) return;
     setConcept(MetaAdapterFactoryByName.getConcept(conceptFQName));
@@ -519,6 +510,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());
   }
+
+  //--------private-------
 
   // perform inner structures update, doesn't dispatch any events
   private void addReferenceInternal(final SReference reference) {
