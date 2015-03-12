@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
-public class MigrationScript_0 extends MigrationScriptBase {
+public class BuildJavaVersionMigration extends MigrationScriptBase {
   public String getCaption() {
     return "set java target version to 1.6 to build scripts where it was not specified";
   }

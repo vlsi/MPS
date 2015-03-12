@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
-public class MigrationScript_0 extends MigrationScriptBase {
+public class PropertyAttributeId extends MigrationScriptBase {
   public String getCaption() {
     return "add id to property/link attributes";
   }

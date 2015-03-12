@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class MigrationScript_1 extends MigrationScriptBase {
+public class SampleDeclMigration extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using smodel API";
   }
@@ -49,7 +49,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
     // for each old instance create a new one 
     Sequence.fromIterable(components).visitAll(new IVisitor<SNode>() {
       public void visit(SNode oldNode) {
-        SNode newNode = _quotation_createNode_zc5nt1_a0a0a0a8a1(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        SNode newNode = _quotation_createNode_i4ro0d_a0a0a0a8a1(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         // add it to the model 
         SModelOperations.addRootNode(SNodeOperations.getModel(oldNode), newNode);
 
@@ -75,7 +75,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1);
   }
-  private static SNode _quotation_createNode_zc5nt1_a0a0a0a8a1(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_i4ro0d_a0a0a0a8a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

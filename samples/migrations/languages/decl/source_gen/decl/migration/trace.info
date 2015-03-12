@@ -15,7 +15,7 @@
     </file>
   </root>
   <root nodeRef="r:95faf3fd-a89c-4a10-a7cd-04dccacd63bd(decl.migration)/1986963296982667681">
-    <file name="MigrationScript_1.java">
+    <file name="SampleDeclMigration.java">
       <node id="1986963296982667681" at="30,30,31,55" concept="5" />
       <node id="1986963296984174199" at="33,61,34,57" concept="6" />
       <node id="5321427680537310017" at="36,40,37,50" concept="5" />
@@ -65,7 +65,7 @@
       <node id="1986963296983872657" at="81,30,89,5" concept="0" />
       <node id="1986963296983871141" at="51,0,63,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1986963296983827761" at="49,46,63,7" concept="1" />
-      <node id="1986963296983872657" at="78,0,92,0" concept="8" trace="_quotation_createNode_zc5nt1_a0a0a0a8a1#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1986963296983872657" at="78,0,92,0" concept="8" trace="_quotation_createNode_i4ro0d_a0a0a0a8a1#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1986963296982667681" at="33,0,75,0" concept="3" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/DataCollector;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1986963296982667681" at="30,30,31,55" />
       <scope id="5321427680537308264" at="36,40,37,50" />
@@ -117,11 +117,11 @@
         <var name="collector_" id="1986963296982667681" />
         <var name="m" id="1986963296982667681" />
       </scope>
-      <unit id="5321427680537308263" at="35,98,39,5" name="decl.migration.MigrationScript_1$1" />
-      <unit id="1986963296983815969" at="40,103,44,5" name="decl.migration.MigrationScript_1$2" />
-      <unit id="1986963296984118739" at="66,51,70,5" name="decl.migration.MigrationScript_1$4" />
-      <unit id="1986963296983871141" at="50,51,63,5" name="decl.migration.MigrationScript_1$3" />
-      <unit id="1986963296982667681" at="29,0,93,0" name="decl.migration.MigrationScript_1" />
+      <unit id="5321427680537308263" at="35,98,39,5" name="decl.migration.SampleDeclMigration$1" />
+      <unit id="1986963296983815969" at="40,103,44,5" name="decl.migration.SampleDeclMigration$2" />
+      <unit id="1986963296984118739" at="66,51,70,5" name="decl.migration.SampleDeclMigration$4" />
+      <unit id="1986963296983871141" at="50,51,63,5" name="decl.migration.SampleDeclMigration$3" />
+      <unit id="1986963296982667681" at="29,0,93,0" name="decl.migration.SampleDeclMigration" />
     </file>
   </root>
 </debug-info>

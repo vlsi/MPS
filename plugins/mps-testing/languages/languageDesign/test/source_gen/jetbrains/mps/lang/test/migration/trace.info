@@ -14,13 +14,13 @@
     </file>
   </root>
   <root nodeRef="r:d23dfab6-8d89-4872-a030-483768adf2c0(jetbrains.mps.lang.test.migration)/3022023529957940386">
-    <file name="MigrationScript_0.java">
+    <file name="RemoveUITestPropertyFromTestInfo.java">
       <node id="3022023529957961099" at="71,9,71,9" concept="0" />
       <node id="3022023529957940386" at="25,30,26,72" concept="6" />
       <node id="3022023529957961098" at="30,51,31,182" concept="6" />
       <node id="3022023529957961098" at="34,38,35,20" concept="6" />
       <node id="3022023529957961098" at="38,39,39,96" concept="6" />
-      <node id="3022023529957961098" at="42,35,43,103" concept="5" />
+      <node id="3022023529957961098" at="42,35,43,118" concept="5" />
       <node id="3022023529957961098" at="44,35,45,17" concept="6" />
       <node id="3022023529957961098" at="46,9,47,0" concept="7" />
       <node id="3022023529957963321" at="50,45,51,47" concept="2" />
@@ -32,14 +32,14 @@
       <node id="3022023529957961099" at="72,7,73,18" concept="6" />
       <node id="3022023529957961099" at="75,40,76,19" concept="6" />
       <node id="3022023529957961099" at="80,51,81,18" concept="6" />
-      <node id="3022023529957961099" at="64,0,66,0" concept="1" trace="Pattern_zc5nt1_a0a0a0a0a0a0a1#()V" />
+      <node id="3022023529957961099" at="64,0,66,0" concept="1" trace="Pattern_vbjplg_a0a0a0a0a0a0a1#()V" />
       <node id="3022023529957961099" at="78,0,80,0" concept="4" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="3022023529957961099" at="83,0,85,0" concept="4" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="3022023529957940386" at="25,0,28,0" concept="4" trace="getCaption#()Ljava/lang/String;" />
       <node id="3022023529957961098" at="30,0,33,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
       <node id="3022023529957961098" at="34,0,37,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3022023529957961098" at="38,0,41,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
-      <node id="3022023529957961098" at="43,103,46,9" concept="3" />
+      <node id="3022023529957961098" at="43,118,46,9" concept="3" />
       <node id="3022023529957940386" at="60,0,63,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
       <node id="3022023529957961099" at="68,59,71,9" concept="0" />
       <node id="3022023529957961099" at="68,59,71,9" concept="3" />
@@ -94,7 +94,7 @@
         <var name="node" id="3022023529957961284" />
       </scope>
       <scope id="3022023529957961099" at="67,7,71,9">
-        <var name="nodeToMatch_zc5nt1_a0a0a0a0a0b" id="3022023529957961099" />
+        <var name="nodeToMatch_vbjplg_a0a0a0a0a0b" id="3022023529957961099" />
       </scope>
       <scope id="3022023529957961098" at="48,9,54,23">
         <var name="migratedNode" id="3022023529957961098" />
@@ -114,13 +114,13 @@
         <var name="collector_" id="3022023529957940386" />
         <var name="m" id="3022023529957940386" />
       </scope>
-      <unit id="3022023529957961098" at="29,124,33,5" name="jetbrains.mps.lang.test.migration.MigrationScript_0$1" />
-      <unit id="3022023529957961098" at="33,159,37,5" name="jetbrains.mps.lang.test.migration.MigrationScript_0$2" />
-      <unit id="3022023529957961098" at="37,16,41,5" name="jetbrains.mps.lang.test.migration.MigrationScript_0$3" />
-      <unit id="3022023529957961284" at="49,35,54,11" name="jetbrains.mps.lang.test.migration.MigrationScript_0$5" />
-      <unit id="3022023529957961098" at="41,27,57,5" name="jetbrains.mps.lang.test.migration.MigrationScript_0$4" />
-      <unit id="3022023529957961099" at="63,0,86,0" name="jetbrains.mps.lang.test.migration.MigrationScript_0$Pattern_zc5nt1_a0a0a0a0a0a0a1" />
-      <unit id="3022023529957940386" at="24,0,87,0" name="jetbrains.mps.lang.test.migration.MigrationScript_0" />
+      <unit id="3022023529957961098" at="29,124,33,5" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$1" />
+      <unit id="3022023529957961098" at="33,159,37,5" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$2" />
+      <unit id="3022023529957961098" at="37,16,41,5" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$3" />
+      <unit id="3022023529957961284" at="49,35,54,11" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$5" />
+      <unit id="3022023529957961098" at="41,27,57,5" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$4" />
+      <unit id="3022023529957961099" at="63,0,86,0" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$Pattern_vbjplg_a0a0a0a0a0a0a1" />
+      <unit id="3022023529957940386" at="24,0,87,0" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo" />
     </file>
   </root>
 </debug-info>

@@ -13,7 +13,7 @@
     </file>
   </root>
   <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/7498587351967223969">
-    <file name="MigrationScript_0.java">
+    <file name="BuildJavaVersionMigration.java">
       <node id="7498587351967223969" at="24,30,25,88" concept="5" />
       <node id="7498587351967112028" at="27,61,28,44" concept="4" />
       <node id="7498587351967182278" at="30,54,31,196" concept="5" />
@@ -96,10 +96,10 @@
         <var name="collector_" id="7498587351967223969" />
         <var name="m" id="7498587351967223969" />
       </scope>
-      <unit id="7498587351967182276" at="29,75,33,5" name="jetbrains.mps.build.mps.migration.MigrationScript_0$1" />
-      <unit id="4806800680213258572" at="34,77,38,5" name="jetbrains.mps.build.mps.migration.MigrationScript_0$2" />
-      <unit id="7498587351967542209" at="40,409,44,7" name="jetbrains.mps.build.mps.migration.MigrationScript_0$3" />
-      <unit id="7498587351967223969" at="23,0,73,0" name="jetbrains.mps.build.mps.migration.MigrationScript_0" />
+      <unit id="7498587351967182276" at="29,75,33,5" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration$1" />
+      <unit id="4806800680213258572" at="34,77,38,5" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration$2" />
+      <unit id="7498587351967542209" at="40,409,44,7" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration$3" />
+      <unit id="7498587351967223969" at="23,0,73,0" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration" />
     </file>
   </root>
 </debug-info>
