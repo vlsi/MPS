@@ -116,8 +116,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   @Override
-  public void move(EditorCell_Collection editorCells) {
-    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
+  public void move(EditorCell_Collection editorCells, int deltaX, int deltaY) {
+    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent || deltaX == 0) {
       return;
     }
     // Triggering re-layout process for top-level EditorCell_Collection with indent layout on move.
@@ -437,6 +437,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       for (EditorCell cell : myLineContent) {
         cell.setBaseline(baseLine);
+        cell.relayout();
       }
 
       myWidth = Math.max(myWidth, myLineWidth);
