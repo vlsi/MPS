@@ -1057,8 +1057,8 @@
       <node id="1917749888334820899" at="168,119,171,5" concept="9" />
       <node id="1917749888334820936" at="176,49,179,7" concept="9" />
       <node id="1917749888335174992" at="189,0,192,0" concept="16" trace="createNewNode#(Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6870613620391276219" at="197,55,200,5" concept="9" />
-      <node id="6870613620391272508" at="203,59,206,5" concept="9" />
+      <node id="6870613620391276219" at="197,63,200,5" concept="9" />
+      <node id="6870613620391272508" at="203,67,206,5" concept="9" />
       <node id="6599163591527270837" at="84,0,88,0" concept="16" trace="getDirectSuperConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="6599163591527270897" at="94,105,98,5" concept="9" />
       <node id="1917749888332991823" at="105,79,109,5" concept="9" />
@@ -1070,8 +1070,8 @@
       <node id="7453996997714432958" at="60,0,66,0" concept="16" trace="isSuperConceptOf#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="1461238478128512590" at="75,0,81,0" concept="16" trace="isSubConceptOf#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="6599163591527271107" at="183,0,189,0" concept="16" trace="createNewNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6870613620391276217" at="197,0,203,0" concept="16" trace="conceptAlias#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-      <node id="6870613620391195154" at="203,0,209,0" concept="16" trace="shortDescription#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+      <node id="6870613620391276217" at="197,0,203,0" concept="16" trace="conceptAlias#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="6870613620391195154" at="203,0,209,0" concept="16" trace="shortDescription#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="6599163591527270753" at="44,0,51,0" concept="16" trace="isAssignableFrom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6599163591527270964" at="136,0,143,0" concept="16" trace="getConceptHierarchy#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="6599163591527271039" at="158,48,165,5" concept="8" />
@@ -1139,8 +1139,8 @@
         <var name="conceptDeclarationNode" id="6599163591527270841" />
       </scope>
       <scope id="6599163591527270970" at="137,79,141,77" />
-      <scope id="6870613620391276218" at="197,55,201,37" />
-      <scope id="6870613620391195157" at="203,59,207,41" />
+      <scope id="6870613620391276218" at="197,63,201,37" />
+      <scope id="6870613620391195157" at="203,67,207,41" />
       <scope id="6599163591527270785" at="53,87,58,80">
         <var name="superConceptFQName" id="6599163591527270794" />
       </scope>
