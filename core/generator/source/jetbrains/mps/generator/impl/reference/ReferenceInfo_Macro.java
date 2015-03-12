@@ -57,7 +57,9 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       // It's not quite obvious whether dynamic references require null or non null - from DR cons it seems non-null
       // is relevant for links to Classifiers.
       // null is here as it the way it was prior to refactoring.
-      return createDynamicReference(myResolveInfoForDynamicResolve, null, getMacroNodeRef());
+      final SReference dr = createDynamicReference(myResolveInfoForDynamicResolve, null, getMacroNodeRef());
+      generator.registerDynamicReference(dr);
+      return dr;
     }
     if (isRequired(generator.getLogger())) {
       return createInvalidReference(generator, myResolver.getDefaultResolveInfo());

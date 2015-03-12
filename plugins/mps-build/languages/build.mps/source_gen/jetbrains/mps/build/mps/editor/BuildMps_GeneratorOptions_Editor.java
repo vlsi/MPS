@@ -79,6 +79,8 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_aauy4y_g2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aauy4y_h2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aauy4y_i2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_aauy4y_j2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_aauy4y_k2a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_aauy4y_a2a(EditorContext editorContext, SNode node) {
@@ -222,6 +224,34 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_hideWarnings");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createConstant_aauy4y_j2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resort to static references");
+    editorCell.setCellId("Constant_aauy4y_j2a");
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_aauy4y_k2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("createStaticRefs");
+    provider.setNoTargetText("");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_createStaticRefs");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.reference.DynamicReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -47,6 +48,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
@@ -109,6 +111,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private WeavingProcessor myWeavingProcessor;
   private TemplateProcessor myTemplateProcessor;
   private final PostponedReferenceUpdate myPostponedRefs;
+  private final DynamicReferenceUpdate myDynamicRefs;
   private final GenerationTrace myNewTrace;
 
   static final class StepArguments {
@@ -138,6 +141,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;
     myPostponedRefs = new PostponedReferenceUpdate(this);
+    myDynamicRefs = new DynamicReferenceUpdate(this);
     myNewTrace = stepArgs.genTrace;
   }
 
@@ -214,10 +218,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ttrace.pop();
     }
 
+    if (myChanged) {
+      // Unless we manage to update set of used languages along with changes being generated,
+      // we shall maintain set of used languages prior to any attempt to resolve references, as they might
+      // be using model scopes and TypeSystem, and latter is quite picky about imports.
+      SModelOperations.validateLanguagesAndImports(getOutputModel(), false, false);
+    }
+
     // replace reference placeholders (PostponedReference) with resolved
-    if (!myPostponedRefs.isEmpty()) {
+    // replace DynamicReference with StaticReference, if needed
+    if (!myPostponedRefs.isEmpty() || !myDynamicRefs.isEmpty()) {
       ttrace.push("restoring references", false);
       myPostponedRefs.replace();
+      myDynamicRefs.replace();
       ttrace.pop();
     }
 
@@ -582,6 +595,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public PostponedReference register(@NotNull PostponedReference ref) {
     myPostponedRefs.add(ref);
     return ref;
+  }
+
+  /**
+   * Let generator know about dynamic references produced during generation.
+   * We might handle {@link jetbrains.mps.smodel.DynamicReference} in a special way as long as there's evading reason to
+   * keep references dynamic during generation (as it only slows down model access due to ongoing scope use.
+   * @param dr DynamicReference instance
+   */
+  public void registerDynamicReference(@NotNull SReference dr) {
+    myDynamicRefs.add(dr);
   }
 
   void setChanged() {

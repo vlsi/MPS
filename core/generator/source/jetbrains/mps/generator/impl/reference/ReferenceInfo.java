@@ -81,7 +81,8 @@ public abstract class ReferenceInfo {
   }
 
   @NotNull
-  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SModelReference targetModelRef, @Nullable SNodeReference templateNode) {
+  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SModelReference targetModelRef,
+      @Nullable SNodeReference templateNode) {
     final DynamicReference dr =
         new DynamicReference(getReferenceRole(), getOutputSourceNode(), targetModelRef, resolveInfo);
     final SNodeReference inputRef = getInputNodeReference();

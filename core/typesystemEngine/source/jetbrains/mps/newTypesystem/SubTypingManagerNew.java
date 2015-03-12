@@ -71,19 +71,32 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   @Override
   public boolean isSubTypeByReplacementRules(final SNode subType, final SNode superType, final boolean isWeak) {
+    return isSubTypeByReplacementRulesAuth(subType, superType, isWeak).o1;
+  }
+
+  /**
+   * Affirmative: true iff is subtype.
+   * Authoritative: true iff can answer yes or no.
+   * Affirmative implies Authoritative.
+   * @return a pair of booleans: affirmative and authoritative
+   */
+  @Override
+  public Pair<Boolean, Boolean> isSubTypeByReplacementRulesAuth(final SNode subType, final SNode superType, final boolean isWeak) {
     return LanguageScopeExecutor.execWithMultiLanguageScope(
         collectLanguagesRecursively(subType, superType),
-        new Computable<Boolean>() {
+        // two booleans:  affirmative, authoritative
+        new Computable<Pair<Boolean, Boolean>>() {
           @Override
-          public Boolean compute() {
-            for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-              if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
-                return true;
-              }
+          public Pair<Boolean, Boolean> compute() {
+            for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> pair : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+              InequationReplacementRule_Runtime rule = pair.o1;
+              IsApplicable2Status status = pair.o2;
+              boolean affirmative = rule.checkInequation(subType, superType, new EquationInfo(null, null), status, isWeak);
+              return new Pair<Boolean, Boolean>(affirmative, true);
             }
-            return false;
-        }
-      });
+            return new Pair<Boolean, Boolean>(false, false);
+          }
+        });
   }
 
   @Override

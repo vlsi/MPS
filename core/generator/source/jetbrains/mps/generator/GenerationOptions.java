@@ -39,6 +39,7 @@ public class GenerationOptions {
   private final boolean myActiveInplaceTransform;
   private final boolean myStrictMode;
   private final boolean myRebuildAll;
+  private final boolean myUseDynamicRefs;
 
   private final IncrementalGenerationStrategy myIncrementalStrategy;
   private final GenerationParametersProvider myParametersProvider;
@@ -60,7 +61,7 @@ public class GenerationOptions {
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean useInplaceTransformations,
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                            IncrementalGenerationStrategy incrementalStrategy,
+                            boolean useDynamicRefs, IncrementalGenerationStrategy incrementalStrategy,
                             GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
                             Map<SModel, ModelGenerationPlan> customPlans,
                             boolean debugIncrementalDependencies) {
@@ -81,6 +82,7 @@ public class GenerationOptions {
     myShowBadChildWarning = showBadChildWarning;
     myCustomPlans = customPlans;
     myDebugIncrementalDependencies = debugIncrementalDependencies;
+    myUseDynamicRefs = useDynamicRefs;
   }
 
   public boolean isSaveTransientModels() {
@@ -158,7 +160,8 @@ public class GenerationOptions {
       useInplaceTransformations(settings.useInplaceTransformations()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
       reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
-      showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies());
+      showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies()).
+      useDynamicReferences(!settings.createStaticReferences());
   }
 
 
@@ -170,6 +173,12 @@ public class GenerationOptions {
     return myDebugIncrementalDependencies;
   }
 
+  /**
+   * @see jetbrains.mps.generator.IGenerationSettings#createStaticReferences()
+   */
+  public boolean useDynamicReferences() {
+    return myUseDynamicRefs;
+  }
   /**
    * Options builder
    * Usage:
@@ -198,6 +207,7 @@ public class GenerationOptions {
     private boolean myKeepOutputModel;
     private boolean myDebugIncrementalDependencies = false;
     private boolean myUseInplace;
+    private boolean myUseDynamicRefs = false;
 
     private OptionsBuilder() {
     }
@@ -209,7 +219,7 @@ public class GenerationOptions {
 
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
-        myKeepModelsWithWarnings, myNumberOfModelsToKeep,
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myUseDynamicRefs,
         myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
         myCustomPlans, myDebugIncrementalDependencies);
     }
@@ -275,6 +285,11 @@ public class GenerationOptions {
 
     public OptionsBuilder keepOutputModel(boolean keepOutputModel) {
       myKeepOutputModel = keepOutputModel;
+      return this;
+    }
+
+    public OptionsBuilder useDynamicReferences(boolean useDynamicRefs) {
+      myUseDynamicRefs = useDynamicRefs;
       return this;
     }
 

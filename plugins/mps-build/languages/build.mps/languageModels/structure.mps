@@ -1012,6 +1012,10 @@
       <property role="TrG5h" value="hideWarnings" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="5EKZnAKZFdP" role="1TKVEl">
+      <property role="TrG5h" value="createStaticRefs" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="3Iy_$1rs43y" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>

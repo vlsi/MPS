@@ -171,7 +171,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true" targetJavaVersion="1.6">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
       <library file="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
       <library file="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <library file="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />

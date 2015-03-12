@@ -3694,6 +3694,17 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="5EKZnAKZGYD" role="3EZMnx">
+          <property role="3F0ifm" value="resort to static references" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0A7n" id="5EKZnAKZGYB" role="3EZMnx">
+          <property role="39s7Ar" value="true" />
+          <ref role="1NtTu8" to="kdzh:5EKZnAKZFdP" resolve="createStaticRefs" />
+          <node concept="ljvvj" id="5EKZnAKZGYC" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="3Iy_$1rw17p" role="3EZMnx">
         <node concept="ljvvj" id="3Iy_$1rw1lH" role="3F10Kt">

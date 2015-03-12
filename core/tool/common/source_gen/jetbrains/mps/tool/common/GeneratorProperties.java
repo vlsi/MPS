@@ -10,12 +10,12 @@ public final class GeneratorProperties {
   private static final String TRANSFORM_IN_PLACE = "in-place";
   private static final String THREAD_COUNT = "parallel.threads";
   private static final String NO_WARNINGS = "noWarnings";
+  private static final String STRICT_MODE = "STRICT_MODE";
+  private static final String PARALLEL_MODE = "PARALLEL_MODE";
   /**
-   * package visibility is just for the sake of deprecated fields in ScriptProperties
-   * Once they are gone, these shall be private.
+   * Counterpart for IGenerationSettings#createStaticReferences()
    */
-  /*package*/ static final String STRICT_MODE = "STRICT_MODE";
-  /*package*/ static final String PARALLEL_MODE = "PARALLEL_MODE";
+  private static final String USE_STATIC_REFS = "use-static-refs";
 
   private Script myScript;
 
@@ -60,5 +60,12 @@ public final class GeneratorProperties {
   }
   public boolean isHideWarnings() {
     return Boolean.parseBoolean(myScript.getProperty(NO_WARNINGS));
+  }
+  public GeneratorProperties setCreateStaticRefs(boolean useStaticFefs) {
+    myScript.putProperty(USE_STATIC_REFS, Boolean.toString(useStaticFefs));
+    return this;
+  }
+  public boolean isCreateStaticRefs() {
+    return Boolean.parseBoolean(myScript.getProperty(USE_STATIC_REFS));
   }
 }

@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
 import java.util.Map;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
@@ -49,6 +50,9 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
   }
   public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return AnonymousClass_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
+  }
+  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    return AnonymousClass_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
   }
   public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);

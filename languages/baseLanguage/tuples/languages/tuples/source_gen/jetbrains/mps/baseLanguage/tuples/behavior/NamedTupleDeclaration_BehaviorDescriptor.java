@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_BehaviorDescriptor {
@@ -25,6 +26,9 @@ public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_Behavio
   }
   public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getThisType_3305065273710880775(thisNode);
+  }
+  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    return NamedTupleDeclaration_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
   }
   public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     NamedTupleDeclaration_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);

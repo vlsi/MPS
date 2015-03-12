@@ -13,11 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -66,6 +68,21 @@ public class AnonymousClass_Behavior {
       }).indexOf(thisNode) + 1;
     }
     return index;
+  }
+  public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
+      return true;
+    }
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("circular hierarchy in class " + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}));
+      }
+      return false;
+    }
+    if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
+      return true;
+    }
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")), "virtual_isDescendant_checkLoops_7165541881557222950", new Object[]{nodeToCompare, visited});
   }
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);

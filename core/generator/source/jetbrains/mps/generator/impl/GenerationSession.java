@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -467,7 +466,6 @@ class GenerationSession {
     }
     if (hasChanges) {
       SModel realOutputModel = tg.getOutputModel();
-      SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
       myDependenciesBuilder.updateModel(realOutputModel);
     } else {
       // nothing has been generated
