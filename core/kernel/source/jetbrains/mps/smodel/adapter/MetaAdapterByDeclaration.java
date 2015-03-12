@@ -66,9 +66,6 @@ public class MetaAdapterByDeclaration {
   }
 
   public static SConcept asInstanceConcept(SAbstractConcept abstractConcept) {
-    if (abstractConcept == null) {
-      return null;
-    }
     if (abstractConcept instanceof SConcept) {
       return (SConcept) abstractConcept;
     }

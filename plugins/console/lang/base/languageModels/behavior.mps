@@ -40,6 +40,7 @@
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
@@ -2495,11 +2496,8 @@
       <node concept="17QB3L" id="5YxQmqOFZEh" role="3clF45" />
       <node concept="3clFbS" id="5YxQmqOFZEi" role="3clF47">
         <node concept="3cpWs6" id="5YxQmqOG04_" role="3cqZAp">
-          <node concept="2OqwBi" id="5wP$jrOyy8L" role="3cqZAk">
-            <node concept="13iPFW" id="5wP$jrOyy5p" role="2Oq$k0" />
-            <node concept="2qgKlT" id="5wP$jrOyyx1" role="2OqNvi">
-              <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
-            </node>
+          <node concept="BsUDl" id="5YxQmqOG06Y" role="3cqZAk">
+            <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
           </node>
         </node>
       </node>

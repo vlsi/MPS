@@ -235,11 +235,11 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">
     <file name="RemoveGenSources_Behavior.java">
-      <node id="2840424593984900922" at="11,94,12,69" concept="10" />
+      <node id="2840424593984900922" at="11,94,12,82" concept="10" />
       <node id="2840424593984900719" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2840424593984900719" at="11,0,14,0" concept="12" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="2840424593984900721" at="9,43,9,43" />
-      <scope id="2840424593984900726" at="11,94,12,69" />
+      <scope id="2840424593984900726" at="11,94,12,82" />
       <scope id="2840424593984900719" at="9,0,11,0">
         <var name="thisNode" id="2840424593984900719" />
       </scope>

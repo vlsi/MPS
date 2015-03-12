@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class ConsoleHelpProvider_Behavior {
   public static void init(SNode thisNode) {
@@ -31,6 +31,6 @@ public class ConsoleHelpProvider_Behavior {
     }
   }
   public static String virtual_getDisplayString_6891027939994892943(SAbstractConcept thisConcept) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "virtual_getShortDisplayString_7006261637493126103", new Object[]{});
+    return ConsoleHelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(SConceptRepository.getInstance().getConcept("jetbrains.mps.console.base.structure.ConsoleHelpProvider"));
   }
 }
