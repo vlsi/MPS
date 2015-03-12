@@ -25,7 +25,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -49,21 +48,18 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
-import jetbrains.mps.tool.builder.paths.IRedirects;
 import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
-import jetbrains.mps.tool.builder.paths.OutputPathRedirects;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.jps.builders.BuildRootIndex;
+import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
 import org.jetbrains.jps.builders.logging.ProjectBuilderLogger;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
+import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
@@ -82,12 +78,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -102,17 +96,17 @@ public class MPSMakeMediator {
   private final JpsMPSProject myProject;
   private Map<SModel, ModuleBuildTarget> myToMake;
   private Map<ModuleBuildTarget, File> myOutputRootsPerTarget = new HashMap<ModuleBuildTarget, File>();
-  private final MPSCompilerContext myContext;
+  private final CompileContext myContext;
   private MPSIdeaRefreshComponent myRefreshComponent;
   private OutputConsumer myOutputConsumer;
 
   private MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final MessageFeedbackStrategy myMessageFeedbackStrategy = new MessageFeedbackStrategy(myMessageHandler);
 
-  private MyRedirects myRedirects;
+  private JpsRedirects myRedirects;
   private MyForeignRootPaths myForeignRootPaths;
 
-  public MPSMakeMediator(JpsMPSProject project, Map<SModel, ModuleBuildTarget> toMake, MPSCompilerContext context, MPSIdeaRefreshComponent refreshComponent, OutputConsumer outputConsumer) {
+  public MPSMakeMediator(JpsMPSProject project, Map<SModel, ModuleBuildTarget> toMake, CompileContext context, MPSIdeaRefreshComponent refreshComponent, OutputConsumer outputConsumer) {
     myProject = project;
     myToMake = toMake;
     myContext = context;
@@ -125,6 +119,7 @@ public class MPSMakeMediator {
 
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(myToMake.keySet())).toListSequence();
     ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
+      @Override
       public SModule select(IMResource r) {
         return r.module();
       }
@@ -132,7 +127,7 @@ public class MPSMakeMediator {
     ModuleOutputPaths outputPaths = new ModuleOutputPaths(mpsModules);
     myForeignRootPaths = new MyForeignRootPaths(outputPaths.getOutputPaths());
 
-    myRedirects = new MyRedirects();
+    myRedirects = new JpsRedirects();
     Set<ModuleBuildTarget> processed = new HashSet<ModuleBuildTarget>();
     for (ModuleBuildTarget target : myToMake.values()) {
       if (processed.contains(target)) continue;
@@ -141,33 +136,31 @@ public class MPSMakeMediator {
       JpsMPSModuleExtension mpsModule = JpsMPSExtensionService.getInstance().getExtension(target.getModule());
       if (mpsModule == null) continue;
 
-      File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
-      File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
+      File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
+      File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
       boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
       myRedirects.addRedirects(outputPaths, outputTmpRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
 
-      File generatorOutputRoot = new File (mpsModule.getConfiguration().getGeneratorOutputPath());
+      File generatorOutputRoot = new File(mpsModule.getConfiguration().getGeneratorOutputPath());
       File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
       myOutputRootsPerTarget.put(target, outputRoot);
 
       if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
-        BuildRootIndex buildRootIndex = myContext.getCompileContext().getProjectDescriptor().getBuildRootIndex();
-        buildRootIndex.associateTempRoot(myContext.getCompileContext(), target,
-          new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
+        BuildRootIndex buildRootIndex = myContext.getProjectDescriptor().getBuildRootIndex();
+        buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
       }
     }
 
     GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
+      @Override
       public IFile redirectTo(IFile outputPath) {
         return myRedirects.getRedirect(outputPath.getPath());
       }
     });
     GeneratorPathsComponent.getInstance().registerForeignPathsProvider(new ForeignPathsProvider() {
+      @Override
       public String belongsToForeignPath(IFile path) {
-        return (myForeignRootPaths != null ?
-          myForeignRootPaths.findForeignPrefix(path.getPath()) :
-          null
-        );
+        return myForeignRootPaths != null ? myForeignRootPaths.findForeignPrefix(path.getPath()) : null;
       }
     });
 
@@ -185,7 +178,7 @@ public class MPSMakeMediator {
     };
 
     ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
-      myRedirects, !myContext.getCompileContext().isMake(), new Stub(), new IJobMonitor.Stub() {
+      myRedirects, !JavaBuilderUtil.isCompileJavaIncrementally(myContext), new Stub(), new IJobMonitor.Stub() {
       @Override
       public void reportFeedback(IFeedback fdbk) {
         myMessageFeedbackStrategy.reportFeedback(fdbk);
@@ -195,8 +188,12 @@ public class MPSMakeMediator {
     boolean success;
 
     try {
-      res = bms.make(ms, resources, null, scriptCtl);
-      success = res.get().isSucessful();
+      if (myToMake.isEmpty()) {
+        success = true;
+      } else {
+        res = bms.make(ms, resources, null, scriptCtl);
+        success = res.get().isSucessful();
+      }
 
       success = processFiles(success, makeFacetConfiguration);
 
@@ -225,16 +222,17 @@ public class MPSMakeMediator {
   }
 
   private boolean processFiles(boolean success, ReducedMakeFacetConfiguration makeFacetConfiguration) {
-    ProjectBuilderLogger logger = myContext.getCompileContext().getLoggingManager().getProjectBuilderLogger();
+    ProjectBuilderLogger logger = myContext.getLoggingManager().getProjectBuilderLogger();
     if (logger.isEnabled()) {
       try {
         logger.logCompiledPaths(makeFacetConfiguration.getWrittenFiles(), MPSMakeConstants.BUILDER_ID, "Written files:");
-      } catch (IOException ignore) {}
+      } catch (IOException ignore) {
+      }
     }
 
     for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
       // TODO: this seems unnecessary
-      myContext.getCompileContext().processMessage(new FileGeneratedEvent());
+      myContext.processMessage(new FileGeneratedEvent());
 
       try {
         SModel source = makeFacetConfiguration.getSource(writtenFile);
@@ -245,22 +243,18 @@ public class MPSMakeMediator {
           myOutputConsumer.registerOutputFile(
             target,
             file,
-            Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
+            Collections.singletonList((source.getSource()).getLocation()));
         }
 
         // all non-java files got to be copied
         if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file) && !myRedirects.isInCacheOutput(writtenFile)) {
           try {
             copyResource(target, file);
-          }
-          catch (IOException e) {
-            myContext.getCompileContext().processMessage(
-              new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+          } catch (IOException e) {
+            myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
             success = false;
           }
         }
-
-        FSOperations.markDirty(myContext.getCompileContext(), file);
 
         myRefreshComponent.refresh(writtenFile);
 
@@ -271,7 +265,7 @@ public class MPSMakeMediator {
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
       try {
-        FSOperations.markDirty(myContext.getCompileContext(), new File(keptFile));
+        FSOperations.markDirty(myContext, new File(keptFile));
       } catch (IOException e) {
         reportError(e);
         success = false;
@@ -283,7 +277,7 @@ public class MPSMakeMediator {
           myOutputConsumer.registerOutputFile(
             myToMake.get(source),
             new File(keptFile),
-            Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
+            Collections.singletonList((source.getSource()).getLocation()));
         }
         catch (IOException e) {
           reportError(e);
@@ -298,7 +292,7 @@ public class MPSMakeMediator {
 
     for (String deletedFile : makeFacetConfiguration.getDeletedFiles()) {
       try {
-        FSOperations.markDeleted(myContext.getCompileContext(), new File(deletedFile));
+        FSOperations.markDeleted(myContext, new File(deletedFile));
       } catch (IOException e) {
         reportError(e);
         success = false;
@@ -323,7 +317,7 @@ public class MPSMakeMediator {
   }
 
   private void reportError(Throwable e) {
-    myContext.getCompileContext().processMessage(
+    myContext.processMessage(
       new CompilerMessage(MPSMakeConstants.BUILDER_ID,
         Kind.ERROR, e.getMessage()));
   }
@@ -357,30 +351,30 @@ public class MPSMakeMediator {
   }
 
   private class MyMessageHandler implements IMessageHandler {
-
+    @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           // We need to report the problem twice:
           // -- once for the build process to recognize the error
           // -- once for the MPSCompilerComponent to recognize and display a reference to the model
-          myContext.getCompileContext().processMessage(
+          myContext.processMessage(
             new CompilerMessage(MPSMakeConstants.BUILDER_ID,
               Kind.ERROR,
               msg.getText()));
-          myContext.getCompileContext().processMessage(
+          myContext.processMessage(
             new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
               MPSCustomMessages.MSG_ERROR,
               msg.getText()));
           break;
         case WARNING:
-          myContext.getCompileContext().processMessage(
+          myContext.processMessage(
             new CompilerMessage(MPSMakeConstants.BUILDER_ID,
               Kind.WARNING,
               msg.getText()));
           break;
         case INFORMATION:
-          myContext.getCompileContext().processMessage(
+          myContext.processMessage(
             new CompilerMessage(MPSMakeConstants.BUILDER_ID,
               Kind.INFO,
               msg.getText()));
@@ -389,6 +383,7 @@ public class MPSMakeMediator {
       }
     }
 
+    @Override
     public void clear() {
     }
   }
@@ -398,10 +393,15 @@ public class MPSMakeMediator {
 
     public MyForeignRootPaths(Iterable<String> foreignRoots) {
       this.rootPaths = Sequence.fromIterable(foreignRoots).select(new ISelector<String, String>() {
+        private String myDir;
+
+        @Override
         public String select(String dir) {
+          myDir = dir;
           return DirUtil.normalizeAsDir(dir);
         }
       }).sort(new ISelector<String, String>() {
+        @Override
         public String select(String dir) {
           return dir;
         }
@@ -410,37 +410,8 @@ public class MPSMakeMediator {
 
     public String findForeignPrefix(String path) {
       int idx = DirUtil.findPrefixAsDir(path, rootPaths);
-      return (idx >= 0 ?
-        rootPaths[idx] :
-        null
-      );
+      return idx >= 0 ? rootPaths[idx] : null;
     }
   }
 
-  public static class MyRedirects implements IRedirects {
-    private List<OutputPathRedirects> myOutputRedirects = new ArrayList<OutputPathRedirects>();
-
-    public OutputPathRedirects addRedirects (ModuleOutputPaths moduleOutputPaths, String outputRoot, String cachesOutputRoot, boolean useTransientOutputFolder) {
-      OutputPathRedirects redirects = new OutputPathRedirects(moduleOutputPaths, outputRoot, cachesOutputRoot, useTransientOutputFolder);
-      myOutputRedirects.add(redirects);
-      return redirects;
-    }
-
-    public IFile getRedirect(String path) {
-      for (OutputPathRedirects redirects : myOutputRedirects) {
-        IFile file = redirects.getRedirect(path);
-        if (file != null) {
-          return file;
-        }
-      }
-      return null;
-    }
-
-    public boolean isInCacheOutput(String fullPath) {
-      for (OutputPathRedirects redirects : myOutputRedirects) {
-        if (redirects.isInCacheOutput(fullPath)) return true;
-      }
-      return false;
-    }
-  }
 }
