@@ -313,7 +313,6 @@ public class MPSMakeMediator {
 
     final File targetFile = new File(targetPath).getCanonicalFile();
     FileUtil.copyContent(file, targetFile);
-    myOutputConsumer.registerOutputFile(target, targetFile, Collections.singletonList(file.getPath()));
   }
 
   private void reportError(Throwable e) {
