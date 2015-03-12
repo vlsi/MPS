@@ -99,11 +99,11 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                         final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
-      final List<ModuleBuildTarget> targets = new ArrayList<ModuleBuildTarget>();
+      final Set<ModuleBuildTarget> targets = new HashSet<ModuleBuildTarget>();
       dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
         @Override
         public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor javaSourceRootDescriptor) throws IOException {
-          LOG.debug("TARGETS " + target + " file " + file);
+          LOG.debug("Dirty file " + file + " in the target " + target);
           targets.add(target);
           return true;
         }
@@ -144,6 +144,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
       final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
       if (toMake.isEmpty()) {
+        LOG.debug("Nothing to do");
         return status;
       }
 

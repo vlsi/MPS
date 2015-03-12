@@ -188,8 +188,6 @@ public class MPSMakeMediator {
       Future<IResult> res = bms.make(ms, resources, null, scriptCtl);
       success = res.get().isSucessful();
       success = processFiles(success, makeFacetConfiguration);
-
-
     } catch (InterruptedException e) {
       reportError(e);
       success = false;
@@ -221,19 +219,27 @@ public class MPSMakeMediator {
     }
 
     for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
-      myContext.processMessage(new FileGeneratedEvent());
-
       SModel source = makeFacetConfiguration.getSource(writtenFile);
       ModuleBuildTarget target = myToMake.get(source);
       File file = new File(writtenFile);
 
-      // all non-java files got to be copied
-      if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file) && !myRedirects.isInCacheOutput(writtenFile)) {
+      if (JavaBuilder.JAVA_SOURCES_FILTER.accept(file)) {
+        // all written java files need to be marked as dirty to get compiled by the JavaBuilder
         try {
-          copyResource(target, file);
+          FSOperations.markDirty(myContext, new File(writtenFile));
         } catch (IOException e) {
-          myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+          reportError(e);
           success = false;
+        }
+      } else {
+        // all non-java files got to be copied (which are not in the caches folder)
+        if (!myRedirects.isInCacheOutput(writtenFile)) {
+          try {
+            copyResource(target, file);
+          } catch (IOException e) {
+            myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+            success = false;
+          }
         }
       }
 
