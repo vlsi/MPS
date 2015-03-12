@@ -4176,8 +4176,8 @@
       </node>
       <node concept="37vLTG" id="5XpkEY8ouV8" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3uibUv" id="5XpkEY8ouV9" role="1tU5fm">
-          <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="5_JO0PsHoAU" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
     </node>
@@ -4217,8 +4217,8 @@
       </node>
       <node concept="37vLTG" id="5XpkEY8obB$" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3uibUv" id="5XpkEY8obBz" role="1tU5fm">
-          <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="5_JO0PsHqOc" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
     </node>
