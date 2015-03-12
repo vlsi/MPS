@@ -1687,6 +1687,12 @@
     <node concept="lpD6D" id="7NKeCbZDb0S" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7NKeCbZDao4" resolve="BackspaceToUnwrapArrayTypeInStaticFieldDeclaration" />
     </node>
+    <node concept="lpD6D" id="2x0Kh20ZDmh" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2x0Kh20U4Dd" resolve="FieldTypeCellEditing1" />
+    </node>
+    <node concept="lpD6D" id="2x0Kh215aNE" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2x0Kh20ZG9m" resolve="FieldTypeCellEditing2" />
+    </node>
     <node concept="lpD6D" id="5Jf1oRj7b0w" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2o160AxalE9" resolve="RemoveFinalInStaticFieldBackspace" />
     </node>
@@ -1944,6 +1950,9 @@
     </node>
     <node concept="lpD6D" id="7NKeCbZDlqy" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7NKeCbZDkX2" resolve="WrapIncompleteMemberDeclarationWithArrayType" />
+    </node>
+    <node concept="lpD6D" id="2x0Kh20qARP" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2x0Kh20nCqY" resolve="WrapIncompleteMemberDeclarationWithGenericType" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3ck" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hT_dk6D" resolve="BadCodeInTheLeftTest" />
@@ -2974,11 +2983,17 @@
     <node concept="lpD6D" id="7NKeCbZDjQ2" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7NKeCbZDjJG" resolve="WrapLocalVariableWithArrayType" />
     </node>
+    <node concept="lpD6D" id="2x0Kh20qBKY" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2x0Kh20qBCe" resolve="WrapLocalVariableWithGenericType" />
+    </node>
     <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2msP5$jF_90" resolve="BackspaceToUnwrapArrayTypeInParam" />
     </node>
     <node concept="lpD6D" id="7NKeCbZDk23" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7NKeCbZDj3_" resolve="WrapParamWithArrayType" />
+    </node>
+    <node concept="lpD6D" id="2x0Kh20qBs5" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2x0Kh20qBn4" resolve="WrapParamWithGenericType" />
     </node>
     <node concept="lpD6D" id="64WA21bXcJY" role="lpD6w">
       <ref role="lpD7u" to="ryl9:64WA21bWWIA" resolve="AddFirstStaticFieldToInterface" />
