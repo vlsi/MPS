@@ -133,8 +133,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   protected abstract void reloadContents();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + myTimestampTracker.getTimestamp(),
-        new Throwable());  // more information
     fireConflictDetected();
   }
 
