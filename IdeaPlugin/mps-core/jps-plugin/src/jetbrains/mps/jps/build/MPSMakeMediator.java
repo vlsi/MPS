@@ -18,7 +18,6 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.io.FileUtil;
 import gnu.trove.THashSet;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -90,9 +89,9 @@ import java.util.concurrent.Future;
 /**
  * User: fyodor
  * Date: 12/19/12
+ * TODO do something with {@link jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism
  */
 public class MPSMakeMediator {
-
   private final JpsMPSProject myProject;
   private Map<SModel, ModuleBuildTarget> myToMake;
   private Map<ModuleBuildTarget, File> myOutputRootsPerTarget = new HashMap<ModuleBuildTarget, File>();
@@ -164,8 +163,6 @@ public class MPSMakeMediator {
       }
     });
 
-    Future<IResult> res;
-
     BuildMakeService bms = new BuildMakeService();
     MakeSession ms = new MakeSession(myProject, myMessageHandler, true) {
       @Override
@@ -188,17 +185,10 @@ public class MPSMakeMediator {
     boolean success;
 
     try {
-      if (myToMake.isEmpty()) {
-        success = true;
-      } else {
-        res = bms.make(ms, resources, null, scriptCtl);
-        success = res.get().isSucessful();
-      }
-
+      Future<IResult> res = bms.make(ms, resources, null, scriptCtl);
+      success = res.get().isSucessful();
       success = processFiles(success, makeFacetConfiguration);
 
-      final Map<String, String> fileHashes = makeFacetConfiguration.getFileHashes();
-      // TODO do something with these
 
     } catch (InterruptedException e) {
       reportError(e);
@@ -231,37 +221,23 @@ public class MPSMakeMediator {
     }
 
     for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
-      // TODO: this seems unnecessary
       myContext.processMessage(new FileGeneratedEvent());
 
-      try {
-        SModel source = makeFacetConfiguration.getSource(writtenFile);
-        ModuleBuildTarget target = myToMake.get(source);
-        File file = new File(writtenFile);
+      SModel source = makeFacetConfiguration.getSource(writtenFile);
+      ModuleBuildTarget target = myToMake.get(source);
+      File file = new File(writtenFile);
 
-        if (source != null && source.getSource() instanceof FileDataSource) {
-          myOutputConsumer.registerOutputFile(
-            target,
-            file,
-            Collections.singletonList((source.getSource()).getLocation()));
+      // all non-java files got to be copied
+      if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file) && !myRedirects.isInCacheOutput(writtenFile)) {
+        try {
+          copyResource(target, file);
+        } catch (IOException e) {
+          myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+          success = false;
         }
-
-        // all non-java files got to be copied
-        if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file) && !myRedirects.isInCacheOutput(writtenFile)) {
-          try {
-            copyResource(target, file);
-          } catch (IOException e) {
-            myContext.processMessage(new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
-            success = false;
-          }
-        }
-
-        myRefreshComponent.refresh(writtenFile);
-
-      } catch (IOException e) {
-        reportError(e);
-        success = false;
       }
+
+      myRefreshComponent.refresh(writtenFile);
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
       try {
@@ -269,20 +245,6 @@ public class MPSMakeMediator {
       } catch (IOException e) {
         reportError(e);
         success = false;
-      }
-
-      SModel source = makeFacetConfiguration.getSource(keptFile);
-      if (source != null && source.getSource() instanceof FileDataSource) {
-        try {
-          myOutputConsumer.registerOutputFile(
-            myToMake.get(source),
-            new File(keptFile),
-            Collections.singletonList((source.getSource()).getLocation()));
-        }
-        catch (IOException e) {
-          reportError(e);
-          success = false;
-        }
       }
     }
 
@@ -339,10 +301,12 @@ public class MPSMakeMediator {
 
   private Iterable<IMResource> collectResources(Collection<SModel> models) {
     return Sequence.fromIterable(new ModelsToResources(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      @Override
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
     })).resources(false)).select(new ISelector<IResource, IMResource>() {
+      @Override
       public IMResource select(IResource r) {
         return (IMResource) r;
       }

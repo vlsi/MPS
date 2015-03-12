@@ -103,7 +103,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
         @Override
         public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor javaSourceRootDescriptor) throws IOException {
-          LOG.info("TARGETS " + target + " file " + file);
+          LOG.debug("TARGETS " + target + " file " + file);
           targets.add(target);
           return true;
         }
@@ -143,13 +143,15 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       JpsMPSRepositoryFacade.getInstance().init(compileContext);
 
       final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
+      if (toMake.isEmpty()) {
+        return status;
+      }
 
       MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, compileContext, refreshComponent, outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
         status = ExitCode.OK;
       }
-
     } catch (Exception ex) {
       throw new ProjectBuildException(ex);
     }
