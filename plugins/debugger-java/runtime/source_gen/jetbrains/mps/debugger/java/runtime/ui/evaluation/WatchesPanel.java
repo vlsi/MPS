@@ -27,8 +27,8 @@ public class WatchesPanel extends EvaluationUi {
           @Override
           public void run() {
             myTree.addModel(model);
-            evaluate(model);
             myTree.rebuildEvaluationTreeNowIfNotDisposed();
+            evaluate(model);
           }
         });
       }
