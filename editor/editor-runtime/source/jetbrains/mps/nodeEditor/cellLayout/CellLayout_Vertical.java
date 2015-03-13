@@ -46,8 +46,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     boolean usesBraces = editorCells.usesBraces();
     if (usesBraces) {
       closingBrace.relayout();
-      openingBrace.relayout();
       openingBrace.moveTo(editorCells.getX(), editorCells.getY());
+      openingBrace.relayout();
     }
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
@@ -81,7 +81,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       } else if (cellAlign == CellAlign.RIGHT && !myGridLayout) {
         newCellX = cellX + width - editorCell.getWidth();
       }
-      if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
+      if (newCellX != cellX) {
+        editorCell.moveTo(newCellX, cellY);
+        editorCell.relayout();
+      }
     }
 
     editorCells.setArtificialBracesIndent(braceIndent);
@@ -90,7 +93,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellY = editorCell.getY();
       int indent = getBracesIndent(editorCell);
       int newCellX = cellX - indent + braceIndent;
-      if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
+      if (newCellX != cellX) {
+        editorCell.moveTo(newCellX, cellY);
+        editorCell.relayout();
+      }
     }
 
     if (myGridLayout) {
@@ -111,6 +117,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
               if (i < editorCellCollection.getCellsCount()) {
                 EditorCell cell = editorCellCollection.getCellAt(i);
                 cell.moveTo(x0, cell.getY());
+                editorCell.relayout();
                 maxWidth = Math.max(maxWidth, cell.getWidth());
                 maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
               }
@@ -141,6 +148,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       height = 0;
       for (EditorCell editorCell : cells) {
         editorCell.moveTo(editorCell.getX(), y + height);
+        editorCell.relayout();
         int deltaHeight = maxHeights[j];
         editorCell.setHeight(deltaHeight);
         height += deltaHeight;
