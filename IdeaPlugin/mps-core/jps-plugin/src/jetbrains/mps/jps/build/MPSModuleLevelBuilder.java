@@ -118,17 +118,20 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
           continue;
         }
         isMPSChunk = true;
-        boolean inScope = false;
-        for (ModuleBuildTarget target : targets) {
-          if (compileContext.getScope().isAffected(target, new File(extension.getConfiguration().getGeneratorOutputPath()))) {
-            // at least one build target has it in scope
-            inScope = true;
+        if (!targets.isEmpty()) {
+          boolean inScope = false;
+          for (ModuleBuildTarget target : targets) {
+            File generatorOutputFile = new File(extension.getConfiguration().getGeneratorOutputPath());
+            if (compileContext.getScope().isAffected(target, generatorOutputFile)) {
+              // at least one build target has it in scope
+              inScope = true;
+              break;
+            }
+          }
+          if (!inScope) {
+            sourceGenNotInScope = true;
             break;
           }
-        }
-        if (!inScope) {
-          sourceGenNotInScope = true;
-          break;
         }
       }
 
