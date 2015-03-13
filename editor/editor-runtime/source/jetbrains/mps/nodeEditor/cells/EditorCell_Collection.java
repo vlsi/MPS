@@ -42,6 +42,8 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -67,6 +69,8 @@ import java.util.Queue;
  * Created Sep 14, 2003
  */
 public class EditorCell_Collection extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Collection, SynchronizeableEditorCell {
+  private static Logger LOG = LogManager.getLogger(EditorCell_Collection.class);
+
   public static final String FOLDED_TEXT = "...";
   private static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
@@ -478,6 +482,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     myCellLayout.doLayout(this);
     myAscent = myCellLayout.getAscent(this);
     myDescent = myCellLayout.getDescent(this);
+    for (EditorCell childCell : this) {
+      if (childCell.wasRelayoutRequested()) {
+        LOG.error("Some child cells of " + this + " cell with the layout: " + myCellLayout + " still needs re-layout", new Throwable());
+        return;
+      }
+    }
   }
 
 

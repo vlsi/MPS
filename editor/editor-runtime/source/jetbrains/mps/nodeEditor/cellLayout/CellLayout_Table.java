@@ -124,13 +124,9 @@ public class CellLayout_Table extends AbstractCellLayout {
       }
       int deltaY = currentHeight;
 
-      childCell.setX(x + tc.getX(deltaX, deltaY));
-      childCell.setY(y + tc.getY(deltaX, deltaY));
+      childCell.moveTo(x + tc.getX(deltaX, deltaY), y + tc.getY(deltaX, deltaY));
+      childCell.relayout();
       currentHeight += tc.getX(childCell.getHeight(), childCell.getWidth());
-    }
-
-    for (EditorCell c : editorCells) {
-      c.relayout();
     }
 
     editorCells.setWidth(tc.getX(currentWidth, currentHeight));

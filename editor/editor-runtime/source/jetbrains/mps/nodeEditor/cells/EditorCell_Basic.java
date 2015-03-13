@@ -1341,6 +1341,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myIsNeedRelayout;
   }
 
+  @Override
+  public boolean wasRelayoutRequested() {
+    return myIsNeedRelayout;
+  }
+
   public void unrequestLayout() {
     myIsNeedRelayout = false;
   }

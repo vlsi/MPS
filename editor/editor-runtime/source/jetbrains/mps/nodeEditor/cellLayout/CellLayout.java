@@ -58,6 +58,8 @@ public interface CellLayout extends jetbrains.mps.openapi.editor.cells.CellLayou
    * Can be used to trigger re-layout for some child cells if layout logic depends on cell x/y coordinates.
    *
    * @param editorCells EditorCell_Collection to re-layout
+   * @param deltaX      change of X-coordinate (newX - oldX) for <code>editorCells</code>
+   * @param deltaY      change of Y-coordinate (newY - oldY) for <code>editorCells</code>
    */
   void move(EditorCell_Collection editorCells, int deltaX, int deltaY);
 }
