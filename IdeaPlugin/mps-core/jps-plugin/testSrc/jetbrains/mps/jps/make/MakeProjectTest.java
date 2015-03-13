@@ -86,14 +86,11 @@ public class MakeProjectTest extends MpsJpsBuildTestCase {
     doBuild(CompileScopeTestBuilder.make().all());
 
     assertGenerated(
-      "models/Manifest.java",
-      "models/manifest.xml",
       "models/trace.info",
       "mps-make/makeTests/source_gen.caches/code/dependencies",
       "mps-make/makeTests/source_gen.caches/code/generated",
       "mps-make/makeTests/source_gen.caches/data/dependencies",
       "mps-make/makeTests/source_gen.caches/data/generated",
-      "src/code/Test.java",
       "src/code/trace.info");
 
   }

@@ -18,13 +18,13 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
@@ -34,7 +34,6 @@ import org.jetbrains.jps.incremental.*;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
-import org.jetbrains.jps.incremental.messages.ProgressMessage;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -48,6 +47,12 @@ import java.util.*;
  * evgeny, 11/30/12
  */
 public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
+  private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSModuleLevelBuilder.class);
+
+  private static final String JAVA_EXTENSION = "java";
+  static final String MODEL_EXTENSION = "model";
+  static final String MPSR_EXTENSION = "mpsr";
+  static final String MPS_MODEL_EXTENSION = "mps";
 
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
 
@@ -94,11 +99,11 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                         final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
-
-      final List<ModuleBuildTarget> targets = new ArrayList<ModuleBuildTarget>(3);
+      final Set<ModuleBuildTarget> targets = new HashSet<ModuleBuildTarget>();
       dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
         @Override
         public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor javaSourceRootDescriptor) throws IOException {
+          LOG.debug("Dirty file " + file + " in the target " + target);
           targets.add(target);
           return true;
         }
@@ -113,12 +118,15 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
           continue;
         }
         isMPSChunk = true;
-        boolean inScope = false;
-        for (ModuleBuildTarget target : targets) {
-          if (compileContext.getScope().isAffected(target, new File(extension.getConfiguration().getGeneratorOutputPath()))) {
-            // at least one build target has it in scope
-            inScope = true;
-            break;
+        if (!targets.isEmpty()) {
+          boolean inScope = false;
+          for (ModuleBuildTarget target : targets) {
+            File generatorOutputFile = new File(extension.getConfiguration().getGeneratorOutputPath());
+            if (compileContext.getScope().isAffected(target, generatorOutputFile)) {
+              // at least one build target has it in scope
+              inScope = true;
+              break;
+            }
           }
           if (!inScope) {
             sourceGenNotInScope = true;
@@ -139,38 +147,15 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
       final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
       if (toMake.isEmpty()) {
+        LOG.debug("Nothing to do");
         return status;
       }
 
-      Collection<SModel> sModels = new ArrayList<SModel>(toMake.keySet());
-      MPSCompilerContext context = new MPSCompilerContext(compileContext) {
-        @Override
-        public void fileCreated(File newFile, SModel sourceModel, boolean isUnchanged) throws IOException {
-          assert sourceModel.getSource() instanceof FileDataSource;
-          final String sourcePath = FileUtil.toSystemIndependentName(((FileDataSource) sourceModel.getSource()).getFile().getPath());
-          if (!isUnchanged) {
-            // mark dirty to re-compile
-            FSOperations.markDirty(compileContext, newFile);
-
-            // refresh virtual file in IDEA
-            refreshComponent.refresh(newFile.getPath());
-          }
-          outputConsumer.registerOutputFile(toMake.get(sourceModel), newFile, Collections.singletonList(sourcePath));
-        }
-
-        @Override
-        public void reportProgress(String message) {
-          compileContext.processMessage(new ProgressMessage(message));
-        }
-      };
-
-//      MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
-      MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, context, refreshComponent, outputConsumer);
+      MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, compileContext, refreshComponent, outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
-        status = ExitCode.ADDITIONAL_PASS_REQUIRED;
+        status = ExitCode.OK;
       }
-
     } catch (Exception ex) {
       throw new ProjectBuildException(ex);
     }
@@ -184,12 +169,13 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   private Map<SModel, ModuleBuildTarget> collectChangedModels(final CompileContext compileContext, DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder) throws IOException {
     final Map<SModel, ModuleBuildTarget> toCompile = new LinkedHashMap<SModel, ModuleBuildTarget>();
     dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
+      @Override
       public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor sourceRoot) throws IOException {
         JpsSolutionIdea solution = JpsMPSRepositoryFacade.getInstance().getSolution(target.getModule());
         if (solution == null) return true;
 
         String suffix = FileUtil.getExtension(file.getName());
-        if(!suffix.equals("model")) {
+        if (!suffix.equals("model")) {
           ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
           if (modelFactory == null) return true;
         }
@@ -206,5 +192,10 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       }
     });
     return toCompile;
+  }
+
+  @Override
+  public List<String> getCompilableFileExtensions() {
+    return Arrays.asList(JAVA_EXTENSION, MPSR_EXTENSION, MODEL_EXTENSION, MPS_MODEL_EXTENSION);
   }
 }

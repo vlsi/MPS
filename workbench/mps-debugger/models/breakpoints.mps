@@ -46,6 +46,7 @@
       </concept>
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -966,6 +967,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMLHX" role="jymVt" />
     <node concept="3clFb_" id="2meLaIF5ltE" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getBreakpointsForComponent" />
@@ -986,6 +988,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMKNm" role="jymVt" />
     <node concept="3clFb_" id="2meLaIF5lzN" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createPainter" />
@@ -1004,6 +1007,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMJO5" role="jymVt" />
     <node concept="3clFb_" id="2meLaIF5lzX" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createRenderrer" />
@@ -1028,6 +1032,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMIOP" role="jymVt" />
     <node concept="3clFb_" id="2meLaIF5lA2" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="toggleBreakpoint" />
@@ -1039,6 +1044,7 @@
       <node concept="3Tmbuc" id="2meLaIF5myu" role="1B3o_S" />
       <node concept="3clFbS" id="2meLaIF5lA5" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="tiZvgWMHPA" role="jymVt" />
     <node concept="3clFb_" id="2meLaIF5lB7" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="findDebuggableOrTraceableCell" />
@@ -1054,6 +1060,7 @@
         <ref role="3uigEE" to="nu8v:~EditorCell" resolve="EditorCell" />
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMGQo" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyKT" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toggleBreakpoint" />
@@ -1108,6 +1115,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMFRC" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyLf" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isDebuggable" />
@@ -1135,6 +1143,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMMHg" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyNm" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findTraceableCell" />
@@ -1188,26 +1197,16 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="3SnNvqCbyNJ" role="3cqZAp">
-              <node concept="3y3z36" id="3SnNvqCbyNK" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTxiT" role="3uHU7B">
+            <node concept="3clFbJ" id="3SnNvqCbyNZ" role="3cqZAp">
+              <node concept="2YIFZM" id="6BpUUXXqJNu" role="3clFbw">
+                <ref role="37wK5l" to="ierg:~TraceInfo.hasTrace(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="hasTrace" />
+                <ref role="1Pybhc" to="ierg:~TraceInfo" resolve="TraceInfo" />
+                <node concept="37vLTw" id="6BpUUXXqJNv" role="37wK5m">
                   <ref role="3cqZAo" node="3SnNvqCbyNE" resolve="node" />
                 </node>
-                <node concept="10Nm6u" id="3SnNvqCbyNM" role="3uHU7w" />
               </node>
-              <node concept="3clFbS" id="3SnNvqCbyNN" role="3clFbx">
-                <node concept="3clFbJ" id="3SnNvqCbyNZ" role="3cqZAp">
-                  <node concept="2YIFZM" id="7IAaM8axjjo" role="3clFbw">
-                    <ref role="37wK5l" to="ierg:~TraceInfo.hasTrace(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="hasTrace" />
-                    <ref role="1Pybhc" to="ierg:~TraceInfo" resolve="TraceInfo" />
-                    <node concept="37vLTw" id="7IAaM8axjkP" role="37wK5m">
-                      <ref role="3cqZAo" node="3SnNvqCbyNE" resolve="node" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="3SnNvqCbyOc" role="3clFbx">
-                    <node concept="3zACq4" id="3SnNvqCbyOd" role="3cqZAp" />
-                  </node>
-                </node>
+              <node concept="3clFbS" id="3SnNvqCbyOc" role="3clFbx">
+                <node concept="3zACq4" id="3SnNvqCbyOd" role="3cqZAp" />
               </node>
             </node>
             <node concept="3clFbF" id="3SnNvqCbyOe" role="3cqZAp">
@@ -1234,6 +1233,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMPQc" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyLv" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findDebuggableNode" />
@@ -1487,6 +1487,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMQPz" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyJl" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="editorComponentCreated" />
@@ -1629,6 +1630,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMSxV" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyKg" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="editorComponentDisposed" />
@@ -1731,6 +1733,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tiZvgWMTxk" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbyRq" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addLocationBreakpoint" />
