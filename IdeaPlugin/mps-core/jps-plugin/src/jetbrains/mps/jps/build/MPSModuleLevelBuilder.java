@@ -18,7 +18,6 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.util.io.FileUtilRt;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
@@ -51,9 +50,10 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSModuleLevelBuilder.class);
 
   private static final String JAVA_EXTENSION = "java";
-  private static final String MODEL_EXTENSION = "model";
-  private static final String MPSR_EXTENSION = "mpsr";
-  private static final String MPS_MODEL_EXTENSION = "mps";
+  static final String MODEL_EXTENSION = "model";
+  static final String MPSR_EXTENSION = "mpsr";
+  static final String MPS_MODEL_EXTENSION = "mps";
+
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
 
   protected MPSModuleLevelBuilder() {

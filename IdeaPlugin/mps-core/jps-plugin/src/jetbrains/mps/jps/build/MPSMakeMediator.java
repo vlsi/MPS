@@ -19,6 +19,7 @@ package jetbrains.mps.jps.build;
 import com.intellij.openapi.util.io.FileUtil;
 import gnu.trove.THashSet;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -81,6 +82,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -235,15 +237,15 @@ public class MPSMakeMediator {
 
       if (source != null) {
         DataSource dataSource = source.getSource();
-        // FIXME: FileSystemBasedDataSource needs to have method declared which returns the description of its contents (e.g. file or set of files)
-        if (!(dataSource instanceof FileDataSource || dataSource instanceof FilePerRootDataSource)) {
-          throw new IllegalArgumentException("MPS Idea plugin does not support the data source root formats other than FileDataSource and FilePerRootDataSource");
-        }
         // all written java files need to be registered as output for the model files to get recompiled in the case of models' change
         if (isJava(file)) {
-          String location = dataSource.getLocation();
+          List<String> modelSourceFiles = getFilesFromDataSource(dataSource);
           try {
-            myOutputConsumer.registerOutputFile(target, file, Arrays.asList(location));
+            // that is a lame place -- we registering a mapping from a model file in the src folder to some java file in the (!) temporary idea root of the src_gen folder
+            // we hope that idea will notice that the model has changed and removes the file from the src_gen folder.
+            // after that the MPS must regenerate the changed models
+            // probably the whole idea of using the temporary source roots here needs to be revised.
+            myOutputConsumer.registerOutputFile(target, file, modelSourceFiles);
           } catch (IOException e) {
             reportError("IO problem while registering output for source", e);
             success = false;
@@ -303,6 +305,28 @@ public class MPSMakeMediator {
     }
     myRefreshComponent.removed(deletedFiles);
     return success;
+  }
+
+  // FIXME: FileSystemBasedDataSource#getAffectedFiles() needs to be rewritten in a way, where it gives no directories only files
+  private List<String> getFilesFromDataSource(DataSource dataSource) {
+    if (!(dataSource instanceof FileSystemBasedDataSource)) {
+      throw new IllegalArgumentException("MPS Idea plugin does not support the data source root formats other than FileDataSource and FilePerRootDataSource");
+    }
+    List<String> result = new ArrayList<String>();
+    Collection<IFile> affectedFiles = ((FileSystemBasedDataSource) dataSource).getAffectedFiles();
+    for (IFile file : affectedFiles) {
+      if (!file.isDirectory()) {
+        result.add(file.getPath());
+      } else {
+        for (IFile child : file.getChildren()) {
+          if (FileUtil.extensionEquals(child.getName(), MPSModuleLevelBuilder.MODEL_EXTENSION)
+            || FileUtil.extensionEquals(child.getName(), MPSModuleLevelBuilder.MPSR_EXTENSION)) {
+            result.add(child.getPath());
+          }
+        }
+      }
+    }
+    return result;
   }
 
   private boolean isJava(File file) {
