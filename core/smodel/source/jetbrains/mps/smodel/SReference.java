@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -46,10 +47,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
     mySourceNode = sourceNode;
-    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
-      throw new IllegalStateException();
-    }
-    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(sourceNode.getConcept().getQualifiedName(), role);
+    assert sourceNode != null;
+    myRoleId = ((ConceptMetaInfoConverter) sourceNode.getConcept()).convertAssociation(role);
   }
 
   protected SReference(SReferenceLink role, SNode sourceNode) {
@@ -126,10 +125,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   @ToRemove(version = 3.2)
   public void setRole(String newRole) {
-    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
-      throw new IllegalStateException();
-    }
-    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(mySourceNode.getConcept().getQualifiedName(), newRole);
+    myRoleId = ((ConceptMetaInfoConverter) mySourceNode.getConcept()).convertAssociation(newRole);
   }
 
   @Override
