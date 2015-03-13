@@ -35,12 +35,13 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.model.SModelBase;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
@@ -179,9 +180,10 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
         }
         assert SNodeOperations.isModelDisposed(model) == false;
 
+        final boolean contentConflict = file.exists();
         boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
           public Boolean compute() {
-            if (file.exists()) {
+            if (contentConflict) {
               return showDiskMemoryQuestion(file, model, backupFile);
             } else {
               return showDeletedFromDiskQuestion(model, backupFile);
@@ -196,11 +198,19 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
             }
           });
         } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              model.reloadFromSource();
-            }
-          });
+          if (contentConflict) {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                model.reloadFromSource();
+              }
+            });
+          } else {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                ((SModuleBase) model.getModule()).unregisterModel((SModelBase) model);
+              }
+            });
+          }
         }
       }
     });

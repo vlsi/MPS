@@ -193,8 +193,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
             alignLine();
             nextLine();
           }
-          cell.relayout();
           cell.moveTo(myEditorCells.getX(), myY);
+          cell.relayout();
           myY += cell.getHeight();
           myMaxRightX = Math.max(myMaxRightX, cell.getX() + cell.getWidth());
         } else
@@ -316,7 +316,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     LOG.assertLog(getFlowLayout(editorCells) == this, "Assertion failed.");
     List<Rectangle> result = new ArrayList<Rectangle>();
     for (EditorCell cell : editorCells) {
-      result.add(GeometryUtil.getBounds(editorCells));
+      result.add(GeometryUtil.getBounds(cell));
     }
     return result;
   }

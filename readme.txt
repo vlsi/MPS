@@ -3,17 +3,20 @@ JETBRAINS MPS $version$ README FILE
 Thank you for downloading JetBrains MPS!
 
 CONTENTS
+    _CodeSignature/     configuration directory for Mac OS X (in Mac Os X distributions only)
 	bin/                startup files
-	Contents/           configuration directory for Mac OS X (in Mac Os X distributions only)
 	help/               help files
 	languages/          packaged languages
 	lib/                libraries
 	license/            license files
+	MacOS/              configuration directory for Mac OS X (in Mac Os X distributions only)
 	plugin/             JetBrains MPS plugin for IntelliJ IDEA
 	plugins/            plugins for JetBrains MPS
+	Resources/          configuration directory for Mac OS X (in Mac Os X distributions only)
 	about.txt           software included in JetBrains MPS
 	build.number        information about current build
 	build.properties    properties of current build
+	Info.plist          configuration file for Mac OS X (in Mac Os X distributions only)
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file
@@ -21,7 +24,7 @@ CONTENTS
 	samples.zip         sample projects (see at http://confluence.jetbrains.com/display/MPSD32/Fast+Track+to+MPS)
 
 SYSTEM REQUIREMENTS
-    To run JetBrains MPS you need JDK 6.0.
+    To run JetBrains MPS you need JDK 6.0 or JDK 8.0.
 
 HOW TO START
     1. Unpack the JetBrains MPS distribution file to whenever you wish to install the program.

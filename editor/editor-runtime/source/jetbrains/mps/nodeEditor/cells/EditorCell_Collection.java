@@ -703,7 +703,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     for (jetbrains.mps.nodeEditor.cells.EditorCell myEditorCell : getCells()) {
       myEditorCell.moveTo(myEditorCell.getX() + x - xOld, myEditorCell.getY() + y - yOld);
     }
-    getCellLayout().move(this);
+    getCellLayout().move(this, x - xOld, y - yOld);
   }
 
   @Override

@@ -59,5 +59,5 @@ public interface CellLayout extends jetbrains.mps.openapi.editor.cells.CellLayou
    *
    * @param editorCells EditorCell_Collection to re-layout
    */
-  void move(EditorCell_Collection editorCells);
+  void move(EditorCell_Collection editorCells, int deltaX, int deltaY);
 }

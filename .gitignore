@@ -33,3 +33,4 @@ plugins/svn4idea/lib
 plugins/mps-testing/lib
 lib/*
 .mps/workspace.xml
+testbench/modules/simpleProject/.mps/workspace.xml
