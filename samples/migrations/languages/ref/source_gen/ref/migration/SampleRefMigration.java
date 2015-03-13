@@ -5,7 +5,6 @@ package ref.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -32,8 +31,8 @@ public class SampleRefMigration extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector_) {
-    final Map<SModule, SNode> declData = collector_.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
+  public SNode execute(SModule m) {
+    final Map<SModule, SNode> declData = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 
     final Map<SModule, SNode> requiredData = declData;
 
