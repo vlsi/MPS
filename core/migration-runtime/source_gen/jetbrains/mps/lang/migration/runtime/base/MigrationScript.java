@@ -11,6 +11,17 @@ public interface MigrationScript {
   public MigrationScriptReference getDescriptor();
   public Iterable<MigrationScriptReference> executeAfter();
   public Iterable<MigrationScriptReference> requiresData();
+
+  public void setDataCollector(DataCollector dataCollector);
   @Nullable
+  public SNode execute(SModule module);
+
+
+  /**
+   * 
+   * @deprecated use setDataCollector+execute methods. This was deprecated before 3.2, can be removed after 3.2. Left for compatibility in projects that were already migrated 
+   */
+  @Nullable
+  @Deprecated
   public SNode execute(SModule moduleToMigrate, DataCollector dataCollector);
 }
