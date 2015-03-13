@@ -18,7 +18,6 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.io.FileUtil;
 import gnu.trove.THashSet;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
@@ -49,7 +48,6 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -70,7 +68,6 @@ import org.jetbrains.jps.incremental.java.JavaBuilder;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
-import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.module.JpsModule;
@@ -83,7 +80,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -97,7 +93,7 @@ import java.util.concurrent.Future;
 /**
  * User: fyodor
  * Date: 12/19/12
- * TODO do something with {@link jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism
+ * TODO Something with {@link ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism.
  */
 public class MPSMakeMediator {
   private final JpsMPSProject myProject;
