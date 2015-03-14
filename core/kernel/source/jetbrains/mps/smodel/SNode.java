@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.EqualUtil;
@@ -85,15 +84,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    // deliberately no assertCanRead(). It's constance field and meta-info.
+    // deliberately no assertCanRead(). It's constant field and meta-info.
     return myConcept;
   }
 
-  public void setConcept(@NotNull SConcept concept) {
+  /*package*/ void setConcept(@NotNull SConcept concept) {
     //remove method after 3.2
     myConcept = concept;
-    //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(getModel());
   }
 
   @Override
@@ -482,19 +479,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @ToRemove(version = 3.3)
   public org.jetbrains.mps.openapi.model.SNode getConceptDeclarationNode() {
     return getConcept().getDeclarationNode();
-  }
-
-  /**
-   * @deprecated remove method after 3.2
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setConceptFqName(String conceptFQName) {
-    if (myConcept.getQualifiedName().equals(conceptFQName)) return;
-    setConcept(MetaAdapterFactoryByName.getConcept(conceptFQName));
-
-    //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(getModel());
   }
 
   //--------private-------

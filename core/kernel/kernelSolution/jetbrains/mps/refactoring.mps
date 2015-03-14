@@ -2088,25 +2088,21 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="2QRUVPkgw8A" role="3cqZAp">
-                    <node concept="2OqwBi" id="2QRUVPkhpCs" role="3clFbG">
-                      <node concept="1eOMI4" id="2zPaT$XQ1q3" role="2Oq$k0">
-                        <node concept="10QFUN" id="2zPaT$XQ1q4" role="1eOMHV">
-                          <node concept="2JrnkZ" id="2zPaT$XQ1q1" role="10QFUP">
-                            <node concept="37vLTw" id="2zPaT$XQ1q2" role="2JrQYb">
-                              <ref role="3cqZAo" node="2ofzwvFuVfj" resolve="node" />
-                            </node>
-                          </node>
-                          <node concept="3uibUv" id="2zPaT$XQ1Ne" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                  <node concept="3clFbF" id="4OWCAYL4$PM" role="3cqZAp">
+                    <node concept="2OqwBi" id="4OWCAYL4FY7" role="3clFbG">
+                      <node concept="2ShNRf" id="4OWCAYL4$PI" role="2Oq$k0">
+                        <node concept="1pGfFk" id="4OWCAYL4EJo" role="2ShVmc">
+                          <ref role="37wK5l" to="cu2c:~SNodeLegacy.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeLegacy" />
+                          <node concept="37vLTw" id="4OWCAYL4F2l" role="37wK5m">
+                            <ref role="3cqZAo" node="2ofzwvFuVfj" resolve="node" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="2QRUVPkhLqt" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~SNode.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
+                      <node concept="liA8E" id="4OWCAYL4GiN" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~SNodeLegacy.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
                         <node concept="2YIFZM" id="6GifuFjXxtY" role="37wK5m">
-                          <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
                           <ref role="37wK5l" to="msyo:~NameUtil.longNameFromNamespaceAndShortName(java.lang.String,java.lang.String):java.lang.String" resolve="longNameFromNamespaceAndShortName" />
+                          <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
                           <node concept="37vLTw" id="3GM_nagT_ud" role="37wK5m">
                             <ref role="3cqZAo" node="2ofzwvFuVfn" resolve="modelName" />
                           </node>
@@ -2481,22 +2477,18 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="2QRUVPkkEYD" role="3cqZAp">
-                    <node concept="2OqwBi" id="2QRUVPkkF2V" role="3clFbG">
-                      <node concept="1eOMI4" id="2zPaT$XPWpy" role="2Oq$k0">
-                        <node concept="10QFUN" id="2zPaT$XPWpz" role="1eOMHV">
-                          <node concept="2JrnkZ" id="2zPaT$XPWpw" role="10QFUP">
-                            <node concept="37vLTw" id="2zPaT$XPWpx" role="2JrQYb">
-                              <ref role="3cqZAo" node="2ofzwvFuVjx" resolve="node" />
-                            </node>
-                          </node>
-                          <node concept="3uibUv" id="2zPaT$XQ1oH" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                  <node concept="3clFbF" id="4OWCAYL4H93" role="3cqZAp">
+                    <node concept="2OqwBi" id="4OWCAYL4HUW" role="3clFbG">
+                      <node concept="2ShNRf" id="4OWCAYL4H8Z" role="2Oq$k0">
+                        <node concept="1pGfFk" id="4OWCAYL4HB5" role="2ShVmc">
+                          <ref role="37wK5l" to="cu2c:~SNodeLegacy.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeLegacy" />
+                          <node concept="37vLTw" id="4OWCAYL4HN9" role="37wK5m">
+                            <ref role="3cqZAo" node="2ofzwvFuVjx" resolve="node" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="2QRUVPkrBA2" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~SNode.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
+                      <node concept="liA8E" id="4OWCAYL4If6" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~SNodeLegacy.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
                         <node concept="2YIFZM" id="2ofzwvFuVjT" role="37wK5m">
                           <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
                           <ref role="37wK5l" to="msyo:~NameUtil.conceptFQNameFromNamespaceAndShortName(java.lang.String,java.lang.String):java.lang.String" resolve="conceptFQNameFromNamespaceAndShortName" />
@@ -3160,22 +3152,18 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3clFbF" id="2QRUVPjVH$x" role="3cqZAp">
-                            <node concept="2OqwBi" id="2QRUVPjVHYJ" role="3clFbG">
-                              <node concept="1eOMI4" id="2zPaT$XQ3eE" role="2Oq$k0">
-                                <node concept="10QFUN" id="2zPaT$XQ3eF" role="1eOMHV">
-                                  <node concept="2JrnkZ" id="2zPaT$XQ3eC" role="10QFUP">
-                                    <node concept="37vLTw" id="2zPaT$XQ3eD" role="2JrQYb">
-                                      <ref role="3cqZAo" node="5ynHkrz_LKx" resolve="node" />
-                                    </node>
-                                  </node>
-                                  <node concept="3uibUv" id="2zPaT$XQ5Lb" role="10QFUM">
-                                    <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
+                          <node concept="3clFbF" id="4OWCAYL4Jjc" role="3cqZAp">
+                            <node concept="2OqwBi" id="4OWCAYL4KRG" role="3clFbG">
+                              <node concept="2ShNRf" id="4OWCAYL4Jj8" role="2Oq$k0">
+                                <node concept="1pGfFk" id="4OWCAYL4JYZ" role="2ShVmc">
+                                  <ref role="37wK5l" to="cu2c:~SNodeLegacy.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeLegacy" />
+                                  <node concept="37vLTw" id="4OWCAYL4Kuj" role="37wK5m">
+                                    <ref role="3cqZAo" node="5ynHkrz_LKx" resolve="node" />
                                   </node>
                                 </node>
                               </node>
-                              <node concept="liA8E" id="2QRUVPkd9YC" role="2OqNvi">
-                                <ref role="37wK5l" to="cu2c:~SNode.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
+                              <node concept="liA8E" id="4OWCAYL4LrP" role="2OqNvi">
+                                <ref role="37wK5l" to="cu2c:~SNodeLegacy.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
                                 <node concept="2YIFZM" id="ZXlW4emFXy" role="37wK5m">
                                   <ref role="37wK5l" to="msyo:~NameUtil.longNameFromNamespaceAndShortName(java.lang.String,java.lang.String):java.lang.String" resolve="longNameFromNamespaceAndShortName" />
                                   <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
