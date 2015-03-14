@@ -53,33 +53,40 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   public void dispose() {
     myMessageBusConnection.disconnect();
   }
+
   protected abstract Set<L> getBreakpointsForComponent(@NotNull EditorComponent component);
+
   protected abstract BreakpointPainterEx<L> createPainter(L breakpoint);
+
   protected abstract BreakpointIconRenderrerEx<L> createRenderrer(L breakpoint, EditorComponent component);
+
   protected abstract void toggleBreakpoint(SNode node);
+
   protected abstract EditorCell findDebuggableOrTraceableCell(EditorCell cell);
+
   public void toggleBreakpoint(EditorCell cell) {
     EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
       toggleBreakpoint(debuggableCell.getSNode());
     }
   }
+
   public boolean isDebuggable(EditorCell cell) {
     return findDebuggableOrTraceableCell(cell) != null;
   }
+
   protected EditorCell findTraceableCell(EditorCell foundCell) {
     EditorCell cell = foundCell;
     while (cell != null) {
       SNode node = cell.getSNode();
-      if (node != null) {
-        if (TraceInfo.hasTrace(node)) {
-          break;
-        }
+      if (TraceInfo.hasTrace(node)) {
+        break;
       }
       cell = cell.getParent();
     }
     return cell;
   }
+
   private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
     EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<jetbrains.mps.nodeEditor.cells.EditorCell>() {
       @Override
@@ -104,6 +111,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     return cell.getSNode();
   }
+
   protected void editorComponentCreated(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) {
       return;
@@ -118,6 +126,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     editorComponent.repaintExternalComponent();
   }
+
   protected void editorComponentDisposed(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) {
       return;
@@ -129,6 +138,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrerEx.TYPE);
   }
+
   protected void addLocationBreakpoint(L breakpoint, SNode node) {
     List<EditorComponent> editorComponents = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
     for (EditorComponent editorComponent : editorComponents) {
