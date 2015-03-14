@@ -120,12 +120,15 @@
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompiler" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptions" />
