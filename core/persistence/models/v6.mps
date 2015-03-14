@@ -19,6 +19,7 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
+    <import index="eyn9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence(MPS.Core/jetbrains.mps.smodel.persistence@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -953,23 +954,18 @@
       </node>
       <node concept="CQp6c" id="6mjRS6akOVu" role="CQp6k">
         <node concept="3clFbS" id="6mjRS6akOVv" role="2VODD2">
-          <node concept="3clFbF" id="6mjRS6akQ25" role="3cqZAp">
-            <node concept="2ShNRf" id="6mjRS6akQ26" role="3clFbG">
-              <node concept="1pGfFk" id="3x0OQtFcCVM" role="2ShVmc">
-                <ref role="37wK5l" to="cu2c:~LazySNode.&lt;init&gt;(java.lang.String)" resolve="LazySNode" />
-                <node concept="2YIFZM" id="3x0OQtFcCVN" role="37wK5m">
-                  <ref role="37wK5l" to="msyo:~InternUtil.intern(java.lang.String):java.lang.String" resolve="intern" />
-                  <ref role="1Pybhc" to="msyo:~InternUtil" resolve="InternUtil" />
-                  <node concept="2OqwBi" id="3x0OQtFcCVO" role="37wK5m">
-                    <node concept="CQp63" id="3x0OQtFcCVP" role="2Oq$k0">
-                      <ref role="CQp62" node="7N7Uqc9IEQX" resolve="helper" />
-                    </node>
-                    <node concept="liA8E" id="3x0OQtFcCVQ" role="2OqNvi">
-                      <ref role="37wK5l" to="fo6q:~VersionUtil.readType(java.lang.String):java.lang.String" resolve="readType" />
-                      <node concept="CQp6E" id="3x0OQtFcCVR" role="37wK5m">
-                        <ref role="CQp6D" node="6mjRS6akOUR" resolve="type" />
-                      </node>
-                    </node>
+          <node concept="3cpWs6" id="4OWCAYL3JCl" role="3cqZAp">
+            <node concept="2YIFZM" id="4OWCAYL3JMz" role="3cqZAk">
+              <ref role="37wK5l" to="eyn9:~SNodeFactory.newLazy(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newLazy" />
+              <ref role="1Pybhc" to="eyn9:~SNodeFactory" resolve="SNodeFactory" />
+              <node concept="2OqwBi" id="3x0OQtFcCVO" role="37wK5m">
+                <node concept="CQp63" id="3x0OQtFcCVP" role="2Oq$k0">
+                  <ref role="CQp62" node="7N7Uqc9IEQX" resolve="helper" />
+                </node>
+                <node concept="liA8E" id="3x0OQtFcCVQ" role="2OqNvi">
+                  <ref role="37wK5l" to="fo6q:~VersionUtil.readType(java.lang.String):java.lang.String" resolve="readType" />
+                  <node concept="CQp6E" id="3x0OQtFcCVR" role="37wK5m">
+                    <ref role="CQp6D" node="6mjRS6akOUR" resolve="type" />
                   </node>
                 </node>
               </node>

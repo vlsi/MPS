@@ -78,13 +78,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myId = SModel.generateUniqueId();
   }
 
-  //-------------old methods working by name---------------
-  @Deprecated//since 3.1, remove after next release
-  public SNode(@NotNull String conceptFqName) {
-    myConcept = MetaAdapterFactoryByName.getConcept(conceptFqName);
-    myId = SModel.generateUniqueId();
-  }
-
   public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }

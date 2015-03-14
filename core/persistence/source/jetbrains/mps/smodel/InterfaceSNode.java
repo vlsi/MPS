@@ -32,10 +32,6 @@ public class InterfaceSNode extends SNode {
     super(concept);
   }
 
-  public InterfaceSNode(@NotNull String conceptFqName) {
-    super(conceptFqName);
-  }
-
   @Override
   protected SNode firstChild() {
     if (skippedRoles != null || skippedRolesIds != null) {

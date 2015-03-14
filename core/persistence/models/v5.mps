@@ -19,6 +19,7 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
+    <import index="eyn9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence(MPS.Core/jetbrains.mps.smodel.persistence@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1072,16 +1073,11 @@
               <node concept="3uibUv" id="6FRttwSjy_j" role="1tU5fm">
                 <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
               </node>
-              <node concept="2ShNRf" id="6FRttwSjy_l" role="33vP2m">
-                <node concept="1pGfFk" id="3x0OQtFcCVG" role="2ShVmc">
-                  <ref role="37wK5l" to="cu2c:~SNode.&lt;init&gt;(java.lang.String)" resolve="SNode" />
-                  <node concept="2YIFZM" id="3x0OQtFcCVH" role="37wK5m">
-                    <ref role="37wK5l" to="msyo:~InternUtil.intern(java.lang.String):java.lang.String" resolve="intern" />
-                    <ref role="1Pybhc" to="msyo:~InternUtil" resolve="InternUtil" />
-                    <node concept="37vLTw" id="3GM_nagTtJ0" role="37wK5m">
-                      <ref role="3cqZAo" node="6FRttwSjy_a" resolve="conceptFQName" />
-                    </node>
-                  </node>
+              <node concept="2YIFZM" id="4OWCAYL3Hzt" role="33vP2m">
+                <ref role="37wK5l" to="eyn9:~SNodeFactory.newRegular(java.lang.String):jetbrains.mps.smodel.SNode" resolve="newRegular" />
+                <ref role="1Pybhc" to="eyn9:~SNodeFactory" resolve="SNodeFactory" />
+                <node concept="37vLTw" id="4OWCAYL3H_9" role="37wK5m">
+                  <ref role="3cqZAo" node="6FRttwSjy_a" resolve="conceptFQName" />
                 </node>
               </node>
             </node>

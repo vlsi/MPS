@@ -16,8 +16,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.smodel.LazySNode;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.apache.log4j.Level;
@@ -315,7 +314,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
-      return new LazySNode(InternUtil.intern(my_helperField.readType(attrs.getValue("type"))));
+      return SNodeFactory.newLazy(my_helperField.readType(attrs.getValue("type")));
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {

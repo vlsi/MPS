@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -207,7 +208,7 @@ public class ModelReader4 implements IModelReader {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
-    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = SNodeFactory.newRegular(conceptFqName);
     VersionUtil.fetchConceptVersion(rawFqName, node, versionsInfo);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);

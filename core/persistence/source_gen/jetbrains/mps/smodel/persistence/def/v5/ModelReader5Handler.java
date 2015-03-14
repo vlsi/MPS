@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
@@ -312,7 +312,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) throws SAXException {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
+      SNode node = SNodeFactory.newRegular(conceptFQName);
       VersionUtil.fetchConceptVersion(rawFqName, node, my_versionsInfoField);
       return node;
     }
