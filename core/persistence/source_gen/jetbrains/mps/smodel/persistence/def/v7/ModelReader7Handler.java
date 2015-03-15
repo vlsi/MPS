@@ -16,6 +16,7 @@ import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -231,7 +232,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addLanguage(child);
+      new SModelLegacy(my_modelField).addLanguage(child);
     }
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

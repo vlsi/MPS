@@ -349,11 +349,16 @@
           <node concept="3clFbS" id="1YV9CnIzGfO" role="2VODD2">
             <node concept="3clFbF" id="1YV9CnIzGfP" role="3cqZAp">
               <node concept="2OqwBi" id="1YV9CnIzGfR" role="3clFbG">
-                <node concept="CQp63" id="5WIcYaGhykF" role="2Oq$k0">
-                  <ref role="CQp62" node="3vSwQtv$CKJ" resolve="model" />
+                <node concept="2ShNRf" id="Y8tANVNd5t" role="2Oq$k0">
+                  <node concept="1pGfFk" id="Y8tANVNkO$" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~SModelLegacy.&lt;init&gt;(jetbrains.mps.smodel.SModel)" resolve="SModelLegacy" />
+                    <node concept="CQp63" id="Y8tANVNkPx" role="37wK5m">
+                      <ref role="CQp62" node="3vSwQtv$CKJ" resolve="model" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="liA8E" id="1YV9CnIzGfV" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
+                  <ref role="37wK5l" to="cu2c:~SModelLegacy.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
                   <node concept="2OqwBi" id="625yo8RO1j9" role="37wK5m">
                     <node concept="2YIFZM" id="625yo8RO1ja" role="2Oq$k0">
                       <ref role="37wK5l" to="qx6n:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />

@@ -18,13 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -78,7 +73,6 @@ public class SModel implements SModelData {
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
   private boolean myDisposed;
-  private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
@@ -362,8 +356,10 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireLanguageAddedEvent(@NotNull SModuleReference ref) {
-    if (!canFireEvent()) return;
+  private void fireLanguageAddedEvent(@NotNull SLanguage ref) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelLanguageEvent event = new SModelLanguageEvent(getModelDescriptor(), ref, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -374,8 +370,10 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireLanguageRemovedEvent(@NotNull SModuleReference ref) {
-    if (!canFireEvent()) return;
+  private void fireLanguageRemovedEvent(@NotNull SLanguage ref) {
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelLanguageEvent event = new SModelLanguageEvent(getModelDescriptor(), ref, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -600,13 +598,13 @@ public class SModel implements SModelData {
     return myModelDependenciesManager;
   }
 
-  //language
-
   private void invalidateModelDepsManager() {
     if (myModelDependenciesManager != null) {
       myModelDependenciesManager.invalidate();
     }
   }
+
+  //language
 
   public Collection<SLanguage> usedLanguages() {
     return Collections.unmodifiableSet(myLanguagesIds.keySet());
@@ -618,20 +616,17 @@ public class SModel implements SModelData {
 
   @Deprecated
   public List<SModuleReference> importedLanguages() {
-    return Collections.unmodifiableList(myLanguages);
-  }
-
-  @Deprecated
-  public void deleteLanguage(@NotNull SModuleReference ref) {
-    assertLegalChange();
-
-    if (myLanguages.remove(ref)) {
-      invalidateModelDepsManager();
-      fireLanguageRemovedEvent(ref);
-      markChanged();
+    // FIXME this stupid code is for compatibility only. We shall decide what to use for used language -
+    // FIXME SLanguage, SModuleReference or anything completely different, and refactor the code (including legacy uses) accordingly
+    // Likely, we'll need SModelLegacy (similar to SNodeLegacy) to keep this transformation for uses from old persistence implementations
+    ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(myLanguagesIds.size());
+    for (SLanguage l : myLanguagesIds.keySet()) {
+      final SModule sourceModule = l.getSourceModule();
+      if (sourceModule != null) {
+        rv.add(sourceModule.getModuleReference());
+      }
     }
-
-    deleteLanguage(MetaIdByDeclaration.ref2Id(ref));
+    return rv;
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
@@ -639,35 +634,10 @@ public class SModel implements SModelData {
 
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
-      fireLanguageRemovedEvent(convertLanguageRef(id));
+      fireLanguageRemovedEvent(id);
       markChanged();
     }
   }
-
-  @Deprecated
-  public void addLanguage(SModuleReference ref) {
-    assertLegalChange();
-
-    if (importedLanguages().contains(ref)) return;
-
-    if (ref.getModuleId() == null) {
-      LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + ref);
-    }
-
-    if (myLanguages.add(ref)) {
-      invalidateModelDepsManager();
-      fireLanguageAddedEvent(ref);
-      markChanged();
-    }
-
-    addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
-  }
-
-  public void addLanguage(Language language) {
-    addLanguage(MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
-  }
-
-  //devkit
 
   public void addLanguage(SLanguage id, int version) {
     assertLegalChange();
@@ -686,11 +656,11 @@ public class SModel implements SModelData {
 
     myLanguagesIds.put(id, version);
     invalidateModelDepsManager();
-    fireLanguageAddedEvent(convertLanguageRef(id));
+    fireLanguageAddedEvent(id);
     markChanged();
-
-    addLanguage(convertLanguageRef(id));
   }
+
+  //devkit
 
   public List<SModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
@@ -706,8 +676,6 @@ public class SModel implements SModelData {
     }
   }
 
-  //model
-
   public void deleteDevKit(@NotNull SModuleReference ref) {
     assertLegalChange();
 
@@ -717,6 +685,8 @@ public class SModel implements SModelData {
       markChanged();
     }
   }
+
+  //model
 
   public List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
@@ -822,24 +792,6 @@ public class SModel implements SModelData {
     }
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  private ModuleReference convertLanguageRef(final SLanguage ref) {
-    final ModuleReference[] result = new ModuleReference[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (ref instanceof SLanguageAdapterById) {
-          //this hack is needed while we have 2 types of language adapters for ConvertModelToBinary ant task to work
-          result[0] = new ModuleReference(ref.getQualifiedName(), ModuleId.regular(((SLanguageAdapterById) ref).getId().getIdValue()));
-        } else {
-          result[0] = (ModuleReference) ref.getSourceModule().getModuleReference();
-        }
-      }
-    });
-    return result[0];
-  }
-
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
     assertLegalChange();
 
@@ -908,10 +860,7 @@ public class SModel implements SModelData {
     enforceFullLoad();
 
     boolean changed = false;
-    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
-      // TODO SNode cast
-      if (!(n instanceof SNode)) continue;
-      SNode node = (SNode) n;
+    for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
@@ -948,11 +897,6 @@ public class SModel implements SModelData {
     if (updateRefs(myDevKits)) {
       changed = true;
     }
-
-    if (updateRefs(myLanguages)) {
-      changed = true;
-    }
-
     if (updateRefs(myLanguagesEngagedOnGeneration)) {
       changed = true;
     }
@@ -964,10 +908,7 @@ public class SModel implements SModelData {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
-    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
-      // TODO SNode cast
-      if (!(n instanceof SNode)) continue;
-      SNode node = (SNode) n;
+    for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);

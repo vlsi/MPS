@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -29,8 +32,8 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -202,12 +205,15 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void deleteLanguage(@NotNull SModuleReference ref) {
-    getSModelInternal().deleteLanguage(ref);
+    getSModelInternal().deleteLanguage(MetaIdByDeclaration.ref2Id(ref));
   }
 
   @Override
   public final void addLanguage(SModuleReference ref) {
-    getSModelInternal().addLanguage(ref);
+    // Identical to SModelLegacy.addLanguage(SModuleReference). Refactor uses of this method and drop it,
+    // while SModelLegacy may need to survive few releases as it deals with smodel.SModel instances directly.
+    // Users of this class, however, have access to full power of SModel and therefore much more freedom what to do.
+    getSModelInternal().addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
   }
 
   @Override
@@ -227,7 +233,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public void addLanguage(Language language) {
-    getSModelInternal().addLanguage(language);
+    getSModelInternal().addLanguage(MetaAdapterByDeclaration.getLanguage(language), language.getLanguageVersion());
   }
 
   @Override

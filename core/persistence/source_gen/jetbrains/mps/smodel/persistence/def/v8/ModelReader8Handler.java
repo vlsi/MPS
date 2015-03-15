@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
@@ -260,7 +261,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addLanguage(child);
+      new SModelLegacy(my_modelField).addLanguage(child);
     }
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
@@ -70,7 +71,7 @@ public class ModelReader4 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
+      new SModelLegacy(model).addLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
