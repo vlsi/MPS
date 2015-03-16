@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

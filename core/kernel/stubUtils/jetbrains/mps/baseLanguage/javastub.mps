@@ -15,7 +15,6 @@
     <import index="45y3" ref="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="n13f" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(MPS.Core/jetbrains.mps.reloading@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="fhgm" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs.javastub.classpath(MPS.Core/jetbrains.mps.stubs.javastub.classpath@java_stub)" />
@@ -29,6 +28,7 @@
     <import index="bc3y" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.org.objectweb.asm(MPS.Core/org.jetbrains.org.objectweb.asm@java_stub)" />
     <import index="7loe" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.org.objectweb.asm.tree(MPS.Core/org.jetbrains.org.objectweb.asm.tree@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="rsdz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.javastub(MPS.Core/jetbrains.mps.baseLanguage.javastub@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -8996,12 +8996,12 @@
           <node concept="3cpWsn" id="6rvCQQWRzs8" role="3cpWs9">
             <property role="TrG5h" value="possibleModels" />
             <node concept="2OqwBi" id="6rvCQQWRzs9" role="33vP2m">
-              <node concept="2YIFZM" id="6rvCQQWRzsa" role="2Oq$k0">
-                <ref role="1Pybhc" to="vsqj:~StubModelsResolver" resolve="StubModelsResolver" />
-                <ref role="37wK5l" to="vsqj:~StubModelsResolver.getInstance():jetbrains.mps.project.StubModelsResolver" resolve="getInstance" />
+              <node concept="2YIFZM" id="5K0slA68nrR" role="2Oq$k0">
+                <ref role="37wK5l" to="rsdz:~StubModelsResolver.getInstance():jetbrains.mps.baseLanguage.javastub.StubModelsResolver" resolve="getInstance" />
+                <ref role="1Pybhc" to="rsdz:~StubModelsResolver" resolve="StubModelsResolver" />
               </node>
               <node concept="liA8E" id="6rvCQQWRzsb" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~StubModelsResolver.resolveModel(org.jetbrains.mps.openapi.module.SModule,java.lang.String,org.jetbrains.mps.openapi.model.SNodeId):java.util.Set" resolve="resolveModel" />
+                <ref role="37wK5l" to="rsdz:~StubModelsResolver.resolveModel(org.jetbrains.mps.openapi.module.SModule,java.lang.String,org.jetbrains.mps.openapi.model.SNodeId):java.util.Set" resolve="resolveModel" />
                 <node concept="37vLTw" id="2BHiRxeuv1_" role="37wK5m">
                   <ref role="3cqZAo" node="4H5njqSynmt" resolve="module" />
                 </node>

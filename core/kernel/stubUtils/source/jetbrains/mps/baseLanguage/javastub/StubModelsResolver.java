@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
-public class StubModelsResolver {
+/*package*/ class StubModelsResolver {
   private static StubModelsResolver ourInstance;
 
   public static StubModelsResolver getInstance() {
