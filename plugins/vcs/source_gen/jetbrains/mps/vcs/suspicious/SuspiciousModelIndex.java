@@ -27,9 +27,10 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.LinkedList;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
@@ -78,12 +79,12 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   public void disposeComponent() {
     myTaskQueue.dispose();
   }
-  public void mergeModelsLater(List<Conflictable> models) {
+  public void mergeLater(List<Conflictable> tasks) {
     final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
     final Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
     final Set<Conflictable> toReload = new HashSet<Conflictable>();
 
-    ListSequence.fromList(models).visitAll(new IVisitor<Conflictable>() {
+    ListSequence.fromList(tasks).visitAll(new IVisitor<Conflictable>() {
       public void visit(Conflictable it) {
         IFile ifile = it.getFile();
         if (isInConflict(ifile)) {
@@ -109,6 +110,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
     final Computable<Object> conflictableReload = new Computable<Object>() {
       public Object compute() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            // see MPS-18743 
+            MPSModuleRepository.getInstance().saveAll();
+          }
+        });
+
+
         for (final Project project : toMerge.keySet()) {
           List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
           virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
@@ -172,7 +181,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     @Override
     protected void processTask(final List<Conflictable> tasks) {
-      mergeModelsLater(tasks);
+      mergeLater(tasks);
     }
   }
 }
