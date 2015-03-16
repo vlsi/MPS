@@ -4610,6 +4610,31 @@
                   <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                   <node concept="1bVj0M" id="1KUoCiqb5UY" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCiqb5UZ" role="1bW5cS">
+                      <node concept="1gVbGN" id="dM2t63Ml9R" role="3cqZAp">
+                        <node concept="2OqwBi" id="dM2t63Mmbw" role="1gVkn0">
+                          <node concept="2YIFZM" id="dM2t63Mm77" role="2Oq$k0">
+                            <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                            <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+                          </node>
+                          <node concept="liA8E" id="dM2t63MmrQ" role="2OqNvi">
+                            <ref role="37wK5l" to="yla8:~Application.isWriteAccessAllowed():boolean" resolve="isWriteAccessAllowed" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="dM2t63Mm_p" role="1gVpfI">
+                          <property role="Xl_RC" value="Platform write access not allowed: execute from EDT or under progress" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="dM2t63Mnw_" role="3cqZAp">
+                        <node concept="2OqwBi" id="dM2t63Mn_X" role="3clFbG">
+                          <node concept="2YIFZM" id="dM2t63Mnzt" role="2Oq$k0">
+                            <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                            <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                          </node>
+                          <node concept="liA8E" id="dM2t63MnL1" role="2OqNvi">
+                            <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                          </node>
+                        </node>
+                      </node>
                       <node concept="1DcWWT" id="1KUoCiqb5V4" role="3cqZAp">
                         <node concept="3clFbS" id="1KUoCiqb5V5" role="2LFqv$">
                           <node concept="3clFbF" id="1KUoCiqb5V6" role="3cqZAp">
