@@ -135,15 +135,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.SReferenceHandler" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.SReferenceHandler" file="SReferenceHandler.java">

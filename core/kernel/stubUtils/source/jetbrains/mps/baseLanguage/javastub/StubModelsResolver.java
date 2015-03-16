@@ -20,37 +20,39 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Look up models with same name among all visible models for a given module.
  * Has nothing to do with stubs except for the fact its only use is in java stub resolution mechanism.
+ * Model name is qualified name including stereotype (if any).
  */
 /*package*/ class StubModelsResolver {
   private final SModule myModule;
 
-  private final Map<String, List<SModel>> myName2Models = new HashMap<String, List<SModel>>();
+  private final Map<String, List<SModelReference>> myName2Models = new HashMap<String, List<SModelReference>>();
 
   public StubModelsResolver(@NotNull SModule module) {
     myModule = module;
   }
 
-  public Set<SModel> resolveModel(@NotNull String modelName) {
+  public Collection<SModelReference> resolveModel(@NotNull String modelName) {
     if (myName2Models.isEmpty()) {
       ensureInitialized();
     }
-    final List<SModel> rv = myName2Models.get(modelName);
-    return rv == null ? Collections.<SModel>emptySet() : new HashSet<SModel>(rv);
+    final List<SModelReference> rv = myName2Models.get(modelName);
+    return rv == null ? Collections.<SModelReference>emptyList() : Collections.unmodifiableList(rv);
   }
+
 
   private void ensureInitialized() {
     LinkedHashSet<SModel> visibleModels = new LinkedHashSet<SModel>();
@@ -59,12 +61,13 @@ import java.util.Set;
     }
 
     for (SModel model : visibleModels) {
-      final String modelName = model.getReference().getModelName();
-      List<SModel> modelsFromCache = myName2Models.get(modelName);
+      final SModelReference modelRef = model.getReference();
+      final String modelName = modelRef.getModelName();
+      List<SModelReference> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
-        myName2Models.put(modelName, modelsFromCache = new ArrayList<SModel>(3));
+        myName2Models.put(modelName, modelsFromCache = new ArrayList<SModelReference>(3));
       }
-      modelsFromCache.add(model);
+      modelsFromCache.add(modelRef);
     }
   }
 }
