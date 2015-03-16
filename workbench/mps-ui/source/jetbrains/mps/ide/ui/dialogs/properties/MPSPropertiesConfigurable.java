@@ -190,6 +190,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
+        //see MPS-18743
+        MPSModuleRepository.getInstance().saveAll();
         for (Tab tab : myTabs) {
           tab.apply();
         }

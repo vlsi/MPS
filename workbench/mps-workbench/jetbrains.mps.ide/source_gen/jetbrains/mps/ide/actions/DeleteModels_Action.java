@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -73,6 +74,8 @@ public class DeleteModels_Action extends BaseAction {
       ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
+          // see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
           for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
             if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
               continue;

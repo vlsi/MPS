@@ -27,6 +27,7 @@ import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -135,6 +136,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
+    for (org.jetbrains.mps.openapi.model.SModel model:aModule.getModels()){
+      if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()){
+        LOG.error("Added a module with unsaved model to a repository. This can cause data loss, see MPS-18743. Modify models that are not added to a module or modify them when they are in repo already");
+        break;
+      }
+    }
     aModule.attach(this);
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();

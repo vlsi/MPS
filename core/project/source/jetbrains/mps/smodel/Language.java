@@ -233,12 +233,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
-  public void rename(String newNamespace) {
-    LanguageDescriptor languageDescriptor = getModuleDescriptor();
-    languageDescriptor.setNamespace(newNamespace);
-    setLanguageDescriptor(languageDescriptor);
-  }
-
   public List<SNode> getConceptDeclarations() {
     SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();

@@ -26,6 +26,7 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
@@ -34,7 +35,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -136,6 +136,8 @@ public class NewGeneratorDialog extends DialogWrapper {
     NewModuleUtil.runModuleCreation(project, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         try {
+          // see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
           VfsUtil.createDirectories(templateModelsPath);
           newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
           adjustTemplateModel(mySourceLanguage, newGenerator.value);
