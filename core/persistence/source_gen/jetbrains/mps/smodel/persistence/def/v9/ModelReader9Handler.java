@@ -235,7 +235,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_8237920533349931271(Object resultObject, Object value) throws SAXException {
       Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
       SConcept concept = child._1();
-      if (my_readHelperParam.isImplementationWithStab(concept)) {
+      if (my_readHelperParam.isImplementationWithStub(concept)) {
         SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
         my_modelField.addRootNode(new SNode(stubConcept));
       }
@@ -519,7 +519,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
       SContainmentLink link = child._0();
       SConcept concept = child._1();
-      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementationWithStab(concept)) {
+      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementationWithStub(concept)) {
         SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
         SNode childNode = new SNode(stubConcept);
         result._0().addChild(link, childNode);

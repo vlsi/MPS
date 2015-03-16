@@ -946,7 +946,7 @@
                   <ref role="CQp62" node="4Kem6uXVngW" resolve="readHelper" />
                 </node>
                 <node concept="liA8E" id="79iYhgAe1$A" role="2OqNvi">
-                  <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.isImplementationWithStab(org.jetbrains.mps.openapi.language.SConcept):boolean" resolve="isImplementationWithStab" />
+                  <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.isImplementationWithStub(org.jetbrains.mps.openapi.language.SConcept):boolean" resolve="isImplementationWithStub" />
                   <node concept="37vLTw" id="79iYhgAe1$B" role="37wK5m">
                     <ref role="3cqZAo" node="79iYhgAe1$a" resolve="concept" />
                   </node>
@@ -2026,7 +2026,7 @@
                     <ref role="CQp62" node="4Kem6uXVngW" resolve="readHelper" />
                   </node>
                   <node concept="liA8E" id="4Kem6uXVnqZ" role="2OqNvi">
-                    <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.isImplementationWithStab(org.jetbrains.mps.openapi.language.SConcept):boolean" resolve="isImplementationWithStab" />
+                    <ref role="37wK5l" to="fo6t:~IdInfoReadHelper.isImplementationWithStub(org.jetbrains.mps.openapi.language.SConcept):boolean" resolve="isImplementationWithStub" />
                     <node concept="37vLTw" id="4Kem6uXYw5E" role="37wK5m">
                       <ref role="3cqZAo" node="4Kem6uXYw5A" resolve="concept" />
                     </node>
