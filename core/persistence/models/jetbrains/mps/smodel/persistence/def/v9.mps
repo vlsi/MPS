@@ -1739,12 +1739,14 @@
                     <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
                   </node>
                   <node concept="liA8E" id="1AqOJyntwLY" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~SModel.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
-                    <node concept="37vLTw" id="1AqOJyntwSt" role="37wK5m">
-                      <ref role="3cqZAo" node="1AqOJyntrjT" resolve="modelRef" />
-                    </node>
-                    <node concept="3clFbT" id="1AqOJyntA18" role="37wK5m">
-                      <property role="3clFbU" value="true" />
+                    <ref role="37wK5l" to="cu2c:~SModel.addModelImport(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addModelImport" />
+                    <node concept="2ShNRf" id="74TEfsYqzop" role="37wK5m">
+                      <node concept="1pGfFk" id="74TEfsYqGVD" role="2ShVmc">
+                        <ref role="37wK5l" to="cu2c:~SModel$ImportElement.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel.ImportElement" />
+                        <node concept="37vLTw" id="74TEfsYqGXH" role="37wK5m">
+                          <ref role="3cqZAo" node="1AqOJyntrjT" resolve="modelRef" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

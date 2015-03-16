@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
@@ -42,5 +46,21 @@ public final class SModelLegacy {
 
   public void addLanguage(SModuleReference ref) {
     myModel.addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
+  }
+
+  public void addModelImport(org.jetbrains.mps.openapi.model.SModelReference ref, boolean firstVersion) {
+    ImportElement importElement = SModelOperations.getImportElement(myModel, ref);
+    if (importElement != null) {
+      return;
+    }
+    org.jetbrains.mps.openapi.model.SModel modelDescriptor =
+        RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(ref);
+    int usedVersion = -1;
+    if (modelDescriptor instanceof RefactorableSModelDescriptor) {
+      usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
+    }
+    importElement = new ImportElement(ref, -1, firstVersion ? -1 : usedVersion);
+
+    myModel.addModelImport(importElement);
   }
 }

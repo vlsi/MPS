@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
@@ -263,7 +264,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    getSModelInternal().addModelImport(modelReference, firstVersion);
+    new SModelLegacy(getSModelInternal()).addModelImport(modelReference, firstVersion);
   }
 
   @Override

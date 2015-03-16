@@ -14,6 +14,7 @@ import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -46,7 +47,7 @@ public class SReferenceCreator implements SReferenceHandler {
     Set<SModelReference> toImport = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), possibleModels);
     SetSequence.fromSet(toImport).removeElement(model.getReference());
     for (SModelReference m : toImport) {
-      model.addModelImport(m, false);
+      new SModelLegacy(model).addModelImport(m, false);
     }
 
     if (SetSequence.fromSet(possibleModels).count() > 1) {

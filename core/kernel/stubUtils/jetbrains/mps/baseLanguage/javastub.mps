@@ -9106,13 +9106,16 @@
           <node concept="3clFbS" id="2TighhGHd0T" role="2LFqv$">
             <node concept="3clFbF" id="2TighhGHd0Z" role="3cqZAp">
               <node concept="2OqwBi" id="4WsV6X000Qj" role="3clFbG">
-                <node concept="2JrnkZ" id="5WIcYaGhxS9" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxeud_R" role="2JrQYb">
-                    <ref role="3cqZAo" node="4H5njqSynV3" resolve="model" />
+                <node concept="2ShNRf" id="6i6eUIXJSds" role="2Oq$k0">
+                  <node concept="1pGfFk" id="6i6eUIXJZv7" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~SModelLegacy.&lt;init&gt;(jetbrains.mps.smodel.SModel)" resolve="SModelLegacy" />
+                    <node concept="37vLTw" id="6i6eUIXJZxe" role="37wK5m">
+                      <ref role="3cqZAo" node="4H5njqSynV3" resolve="model" />
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="4WsV6X000Qn" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                  <ref role="37wK5l" to="cu2c:~SModelLegacy.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
                   <node concept="37vLTw" id="3GM_nagTrnX" role="37wK5m">
                     <ref role="3cqZAo" node="2TighhGHd0V" resolve="m" />
                   </node>

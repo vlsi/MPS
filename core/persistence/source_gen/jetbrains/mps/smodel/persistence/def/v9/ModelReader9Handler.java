@@ -425,7 +425,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
       if (!(Boolean.parseBoolean(attrs.getValue("implicit")))) {
-        my_modelField.addModelImport(modelRef, true);
+        my_modelField.addModelImport(new SModel.ImportElement(modelRef));
       }
       return null;
     }

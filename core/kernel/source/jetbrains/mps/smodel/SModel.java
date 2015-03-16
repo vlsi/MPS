@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
@@ -690,29 +688,6 @@ public class SModel implements SModelData {
 
   public List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
-  }
-
-  public void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    assertLegalChange();
-
-    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
-    if (importElement != null) {
-      return;
-    }
-    if (myLegacyImplicitImports != null) {
-      importElement = myLegacyImplicitImports.find(modelReference);
-    }
-    if (importElement == null) {
-      org.jetbrains.mps.openapi.model.SModel modelDescriptor =
-          RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
-      int usedVersion = -1;
-      if (modelDescriptor instanceof RefactorableSModelDescriptor) {
-        usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
-      }
-      importElement = new ImportElement(modelReference, -1, firstVersion ? -1 : usedVersion);
-    }
-
-    addModelImport(importElement);
   }
 
   public void addModelImport(ImportElement importElement) {
