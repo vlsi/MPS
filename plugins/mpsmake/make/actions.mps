@@ -66,6 +66,8 @@
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="eunx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" />
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
+    <import index="lphm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.ui(MPS.IDEA/com.intellij.ide.ui@java_stub)" />
+    <import index="18oi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.beans(JDK/java.beans@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
@@ -6359,6 +6361,40 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1Q7UogT4gly" role="3cqZAp" />
+        <node concept="3SKdUt" id="1Q7UogT4zEa" role="3cqZAp">
+          <node concept="3SKdUq" id="1Q7UogT4$ND" role="3SKWNk">
+            <property role="3SKdUp" value="Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Q7UogT4gz0" role="3cqZAp">
+          <node concept="2OqwBi" id="1Q7UogT4gz1" role="3clFbG">
+            <node concept="2YIFZM" id="1Q7UogT4qv4" role="2Oq$k0">
+              <ref role="1Pybhc" to="lphm:~UISettings" resolve="UISettings" />
+              <ref role="37wK5l" to="lphm:~UISettings.getInstance():com.intellij.ide.ui.UISettings" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="1Q7UogT4gz3" role="2OqNvi">
+              <ref role="37wK5l" to="lphm:~UISettings.addUISettingsListener(com.intellij.ide.ui.UISettingsListener,com.intellij.openapi.Disposable):void" resolve="addUISettingsListener" />
+              <node concept="Xjq3P" id="1Q7UogT4gz4" role="37wK5m" />
+              <node concept="Xjq3P" id="1Q7UogT4gz5" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Q7UogT4gz6" role="3cqZAp">
+          <node concept="2OqwBi" id="1Q7UogT4gz7" role="3clFbG">
+            <node concept="2YIFZM" id="1Q7UogT4qv7" role="2Oq$k0">
+              <ref role="1Pybhc" to="1t7x:~KeyboardFocusManager" resolve="KeyboardFocusManager" />
+              <ref role="37wK5l" to="1t7x:~KeyboardFocusManager.getCurrentKeyboardFocusManager():java.awt.KeyboardFocusManager" resolve="getCurrentKeyboardFocusManager" />
+            </node>
+            <node concept="liA8E" id="1Q7UogT4gz9" role="2OqNvi">
+              <ref role="37wK5l" to="1t7x:~KeyboardFocusManager.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener):void" resolve="addPropertyChangeListener" />
+              <node concept="Xl_RD" id="1Q7UogT4gza" role="37wK5m">
+                <property role="Xl_RC" value="focusOwner" />
+              </node>
+              <node concept="Xjq3P" id="1Q7UogT4gzb" role="37wK5m" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="hP8D6fqe6O" role="jymVt">
@@ -6964,6 +7000,64 @@
     </node>
     <node concept="3uibUv" id="1$ZRmkX9bYN" role="EKbjA">
       <ref role="3uigEE" to="82u:~StatusBarWidget$WidgetPresentation" resolve="StatusBarWidget.WidgetPresentation" />
+    </node>
+    <node concept="3uibUv" id="2LX1rHNIXCu" role="EKbjA">
+      <ref role="3uigEE" to="lphm:~UISettingsListener" resolve="UISettingsListener" />
+    </node>
+    <node concept="3uibUv" id="1tWJVfj_YDg" role="EKbjA">
+      <ref role="3uigEE" to="18oi:~PropertyChangeListener" resolve="PropertyChangeListener" />
+    </node>
+    <node concept="3clFb_" id="2LX1rHNIXRt" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="uiSettingsChanged" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="2LX1rHNIXRu" role="1B3o_S" />
+      <node concept="3cqZAl" id="2LX1rHNIXRw" role="3clF45" />
+      <node concept="37vLTG" id="2LX1rHNIXRx" role="3clF46">
+        <property role="TrG5h" value="settings" />
+        <node concept="3uibUv" id="2LX1rHNIXRy" role="1tU5fm">
+          <ref role="3uigEE" to="lphm:~UISettings" resolve="UISettings" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="2LX1rHNIXRA" role="3clF47">
+        <node concept="3clFbF" id="2LX1rHNJ28g" role="3cqZAp">
+          <node concept="2OqwBi" id="2LX1rHNJ2Jj" role="3clFbG">
+            <node concept="37vLTw" id="2LX1rHNJ28f" role="2Oq$k0">
+              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+            </node>
+            <node concept="liA8E" id="2LX1rHNJ4XW" role="2OqNvi">
+              <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1tWJVfj_YVe" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="propertyChange" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="1tWJVfj_YVf" role="1B3o_S" />
+      <node concept="3cqZAl" id="1tWJVfj_YVh" role="3clF45" />
+      <node concept="37vLTG" id="1tWJVfj_YVi" role="3clF46">
+        <property role="TrG5h" value="event" />
+        <node concept="3uibUv" id="1tWJVfj_YVj" role="1tU5fm">
+          <ref role="3uigEE" to="18oi:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1tWJVfj_YVo" role="3clF47">
+        <node concept="3clFbF" id="1tWJVfjA0V_" role="3cqZAp">
+          <node concept="2OqwBi" id="1tWJVfjA1TN" role="3clFbG">
+            <node concept="37vLTw" id="1tWJVfjA0V$" role="2Oq$k0">
+              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+            </node>
+            <node concept="liA8E" id="1tWJVfjA49w" role="2OqNvi">
+              <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="4_qBpm$bmFj">

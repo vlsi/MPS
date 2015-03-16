@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.generator;
 
+import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.IdeBorderFactory;
@@ -323,6 +324,10 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
+
+    myButtonState.reset(); // memorize the new state
+
+    UISettings.getInstance().fireUISettingsChanged();
   }
 
   private int getTracingLevel() {
