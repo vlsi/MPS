@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,84 +17,54 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+/**
+ * Look up models with same name among all visible models for a given module.
+ * Has nothing to do with stubs except for the fact its only use is in java stub resolution mechanism.
+ */
 /*package*/ class StubModelsResolver {
-  private static StubModelsResolver ourInstance;
+  private final SModule myModule;
 
-  public static StubModelsResolver getInstance() {
-    if (ourInstance == null) {
-      ourInstance = new StubModelsResolver();
+  private final Map<String, List<SModel>> myName2Models = new HashMap<String, List<SModel>>();
+
+  public StubModelsResolver(@NotNull SModule module) {
+    myModule = module;
+  }
+
+  public Set<SModel> resolveModel(@NotNull String modelName) {
+    if (myName2Models.isEmpty()) {
+      ensureInitialized();
     }
-    return ourInstance;
+    final List<SModel> rv = myName2Models.get(modelName);
+    return rv == null ? Collections.<SModel>emptySet() : new HashSet<SModel>(rv);
   }
 
-  private Map<Pair<SModuleReference, String>, Set<SModelReference>> myStubModulesCache = new HashMap<Pair<SModuleReference, String>, Set<SModelReference>>();
-
-  private StubModelsResolver() {
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
-      @Override
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        //make it more optimal
-        myStubModulesCache.clear();
-      }
-    });
-  }
-
-  public synchronized Set<SModelReference> resolveModel(SModule module, String name, @Nullable SNodeId nodeId) {
-    Pair<SModuleReference, String> key = new Pair<SModuleReference, String>(module.getModuleReference(), name);
-    ensureInitialized(key);
-
-    Set<SModelReference> models = myStubModulesCache.get(key);
-    if (nodeId == null) return new HashSet<SModelReference>(models);
-
-    Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SModelReference ref : models) {
-      SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
-      if (m.getNode(nodeId) != null) {
-        result.add(ref);
-      }
-    }
-
-    return result;
-  }
-
-  private void ensureInitialized(Pair<SModuleReference, String> key) {
-    if (myStubModulesCache.containsKey(key)) return;
-
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
-
-    Set<SModel> visibleModels = new HashSet<SModel>();
-    for (SModule visibleModule : new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE)) {
+  private void ensureInitialized() {
+    LinkedHashSet<SModel> visibleModels = new LinkedHashSet<SModel>();
+    for (SModule visibleModule : new GlobalModuleDependenciesManager(myModule).getModules(Deptype.VISIBLE)) {
       visibleModels.addAll(IterableUtil.asCollection(visibleModule.getModels()));
     }
 
-    fillCacheWithModels(key, visibleModels);
-  }
-
-  private void fillCacheWithModels(Pair<SModuleReference, String> key, Iterable<SModel> models) {
-    if (!myStubModulesCache.containsKey(key)) {
-      myStubModulesCache.put(key, new HashSet<SModelReference>());
-    }
-
-    for (SModel model : models) {
-      if (!model.getReference().getModelName().equals(key.o2)) continue;
-      Set<SModelReference> modelsFromCache = myStubModulesCache.get(key);
-      modelsFromCache.add(model.getReference());
+    for (SModel model : visibleModels) {
+      final String modelName = model.getReference().getModelName();
+      List<SModel> modelsFromCache = myName2Models.get(modelName);
+      if (modelsFromCache == null) {
+        myName2Models.put(modelName, modelsFromCache = new ArrayList<SModel>(3));
+      }
+      modelsFromCache.add(model);
     }
   }
 }
