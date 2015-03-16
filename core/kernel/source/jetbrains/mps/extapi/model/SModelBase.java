@@ -84,7 +84,17 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public SNode createNode(SConcept concept) {
-    return new jetbrains.mps.smodel.SNode(concept);
+    // nodeId should be model's responsibility, not SNode's as we shall migrate towards model-local node ids, preferably int instead of long,
+    // and at least not random
+    return new jetbrains.mps.smodel.SNode(concept, jetbrains.mps.smodel.SModel.generateUniqueId());
+  }
+
+  @Override
+  public SNode createNode(@NotNull SConcept concept, @Nullable SNodeId nodeId) {
+    if (nodeId == null) {
+      nodeId = jetbrains.mps.smodel.SModel.generateUniqueId();
+    }
+    return new jetbrains.mps.smodel.SNode(concept, nodeId);
   }
 
   public void attach(@NotNull SRepository repo) {

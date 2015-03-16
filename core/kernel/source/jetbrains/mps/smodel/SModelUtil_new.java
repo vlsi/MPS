@@ -78,27 +78,23 @@ public class SModelUtil_new {
       }
     }
 
-    if (!(concept instanceof SConcept)){
-      concept = MetaAdapterByDeclaration.asInstanceConcept(concept);
-    }
+    SConcept concreteConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
 
-    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(((SConcept) concept));
-    if (nodeId != null) {
-      newNode.setId(nodeId);
-    }
+    jetbrains.mps.smodel.SNode newNode = nodeId == null ? new jetbrains.mps.smodel.SNode(concreteConcept) : new jetbrains.mps.smodel.SNode(concreteConcept, nodeId);
     // create the node structure
     if (fullNodeStructure &&
         isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      createNodeStructure(((SConcept) concept), newNode, model);
+      createNodeStructure(concreteConcept, newNode, model);
     }
     return newNode;
   }
 
-  private static void createNodeStructure(SConcept concept,
-      SNode newNode, SModel model) {
+  private static void createNodeStructure(SConcept concept, SNode newNode, SModel model) {
     for (SContainmentLink linkDeclaration : concept.getContainmentLinks()) {
-      if (linkDeclaration.isOptional()) continue;
+      if (linkDeclaration.isOptional()) {
+        continue;
+      }
 
       SAbstractConcept target = linkDeclaration.getTargetConcept();
       LOG.assertLog(target != null, "link target is null");

@@ -20,11 +20,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Pair;
 
@@ -441,12 +441,13 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       if (my_readHelperParam.isRequestedInterfaceOnly()) {
         interfaceNode = (my_readHelperParam.isInterface(concept) || attrs.getValue("role") == null);
       }
-      SNode result = (interfaceNode ? new InterfaceSNode(concept) : new SNode(concept));
+      SNodeId nodeId;
       try {
-        result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
+        nodeId = my_idEncoderField.parseNodeId(attrs.getValue("id"));
       } catch (IdEncoder.EncodingException e) {
         throw new IllegalArgumentException(e);
       }
+      SNode result = (interfaceNode ? new InterfaceSNode(concept, nodeId) : new SNode(concept, nodeId));
       // can be root 
       return MultiTuple.<org.jetbrains.mps.openapi.model.SNode,SContainmentLink>from(((org.jetbrains.mps.openapi.model.SNode) result), my_readHelperParam.readAggregation(attrs.getValue("role")));
     }

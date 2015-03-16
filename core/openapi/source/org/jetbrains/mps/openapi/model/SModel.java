@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -61,7 +62,13 @@ public interface SModel {
   /**
    * Instantiates an SNode of the given concept, suitable for use in this model.
    */
-  SNode createNode(SConcept concept);
+  SNode createNode(@NotNull SConcept concept);
+
+  /**
+   * Instantiates an SNode of the given concept, suitable for use in this model, optionally specifying an id for the node.
+   * If no <code>nodeId</code> was supplied, the call is identical to {@link #createNode(org.jetbrains.mps.openapi.language.SConcept)}
+   */
+  SNode createNode(@NotNull SConcept concept, @Nullable SNodeId nodeId);
 
   /**
    * Adds the node as a root to this model.

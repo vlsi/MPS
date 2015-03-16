@@ -546,7 +546,7 @@ public class SModel implements SModelData {
     if (myDisposed) return;
 
     enforceFullLoad();
-    SNodeId id = node.getNodeId();
+    org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
     if (id == null) {
       assignNewId(node);
       return;
@@ -579,7 +579,7 @@ public class SModel implements SModelData {
     checkNotDisposed();
 
     enforceFullLoad();
-    SNodeId id = node.getNodeId();
+    org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }

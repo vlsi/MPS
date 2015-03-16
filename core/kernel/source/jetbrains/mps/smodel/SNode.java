@@ -61,7 +61,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SContainmentLink myRoleInParent;
   private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
   private Object[] myProperties = null;
-  private SNodeId myId;
+  private org.jetbrains.mps.openapi.model.SNodeId myId;
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
   private SConcept myConcept; //todo make final after 3.2
   private SNode parent;
@@ -73,11 +73,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SNode prev;  // notNull, myFirstChild.myLeftSibling = the last child
 
   public SNode(@NotNull SConcept concept) {
-    myConcept = concept;
-    myId = SModel.generateUniqueId();
+    this(concept, SModel.generateUniqueId());
   }
 
-  public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
+  public SNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
+    myConcept = concept;
+    myId = id;
+  }
+
+    public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
 
@@ -114,7 +118,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SNodeId getNodeId() {
+  public org.jetbrains.mps.openapi.model.SNodeId getNodeId() {
     // deliberately no assertCanRead. It's constant field and sort of meta-info, why to constraint to read access?
     return myId;
   }
@@ -427,7 +431,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (EqualUtil.equals(id, myId)) return;
 
     if (myOwner.getModel() == null) {
-      myId = ((SNodeId) id);
+      myId = id;
     } else {
       LOG.error("can't set id to registered node " + getDebugText(this), new Throwable());
     }

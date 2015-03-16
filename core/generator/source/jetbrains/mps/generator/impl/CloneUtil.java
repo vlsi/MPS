@@ -159,10 +159,7 @@ public class CloneUtil {
 
     @Override
     public SNode create(SNode prototype) {
-      final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(prototype.getConcept());
-
-      outputNode.setId(prototype.getNodeId());
-      return outputNode;
+      return new jetbrains.mps.smodel.SNode(prototype.getConcept(), prototype.getNodeId());
     }
 
     @Override
