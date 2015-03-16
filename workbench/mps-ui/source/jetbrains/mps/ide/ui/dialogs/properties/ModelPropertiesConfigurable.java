@@ -66,6 +66,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
@@ -74,6 +75,7 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.NotCondition;
+import jetbrains.mps.util.annotation.Hack;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -111,10 +113,16 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     this(modelDescriptor, project, false);
   }
 
-  public ModelPropertiesConfigurable(SModel modelDescriptor, Project project, boolean inPlugin) {
+  public ModelPropertiesConfigurable(final SModel modelDescriptor, Project project, boolean inPlugin) {
     super(project);
     myModelDescriptor = modelDescriptor;
-    myModelProperties = new ModelProperties(modelDescriptor);
+    // readAction here is a hack, rather action shall do read. Alas, there are few places to get fixed, can't do it right now.
+    myModelProperties = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<ModelProperties>() {
+      @Override
+      public ModelProperties compute() {
+        return new ModelProperties(modelDescriptor);
+      }
+    });
     myInPlugin = inPlugin;
 
     //addTab(new ModelCommonTab());
