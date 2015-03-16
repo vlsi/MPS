@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.tree;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Tree elements that are capable to acept visitor shall implement this interface.
+ * Tree elements that are capable to accept visitor shall implement this interface.
  * @author Artem Tikhomirov
  */
 public interface TreeElement {

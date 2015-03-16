@@ -10,8 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 
 public class FileSystemListenersContainer {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
@@ -100,19 +98,24 @@ public class FileSystemListenersContainer {
   private static class Node {
     private List<FileSystemListener> listeners;
     private final String pathPart;
-    private final Map<String, FileSystemListenersContainer.Node> children = new HashMap<String, FileSystemListenersContainer.Node>(8);
+    private final List<FileSystemListenersContainer.Node> children = new ArrayList<FileSystemListenersContainer.Node>(4);
     private final FileSystemListenersContainer.Node parent;
     /*package*/ Node(String pathPart, FileSystemListenersContainer.Node parent) {
       this.parent = parent;
       this.pathPart = pathPart;
     }
     /*package*/ FileSystemListenersContainer.Node child(String part, boolean create) {
-      FileSystemListenersContainer.Node child = children.get(part);
-      if (child == null && create) {
-        child = new FileSystemListenersContainer.Node(part, this);
-        children.put(part, child);
+      // we keep children list sorted and use binary search 
+      int index = childIndex(part);
+      if (index >= 0) {
+        return children.get(index);
       }
-      return child;
+      if (create) {
+        FileSystemListenersContainer.Node child = new FileSystemListenersContainer.Node(part, this);
+        children.add(-index - 1, child);
+        return child;
+      }
+      return null;
     }
     private void deleteIfEmpty() {
       if (parent == null || !(children.isEmpty())) {
@@ -123,8 +126,25 @@ public class FileSystemListenersContainer {
       }
 
       listeners = null;
-      parent.children.remove(pathPart);
+      parent.children.remove(this);
       parent.deleteIfEmpty();
+    }
+    private int childIndex(String pathPart) {
+      int low = 0;
+      int high = children.size() - 1;
+      while (low <= high) {
+        int mid = (low + high) >>> 1;
+        FileSystemListenersContainer.Node c = children.get(mid);
+        int cmp = pathPart.compareTo(c.pathPart);
+        if (cmp < 0) {
+          high = mid - 1;
+        } else if (cmp > 0) {
+          low = mid + 1;
+        } else {
+          return mid;
+        }
+      }
+      return -(low + 1);
     }
     /*package*/ void storeListeners(List<FileSystemListener> result) {
       if (listeners != null) {
@@ -133,7 +153,7 @@ public class FileSystemListenersContainer {
     }
     /*package*/ void addListener(FileSystemListener l) {
       if (listeners == null) {
-        listeners = new ArrayList<FileSystemListener>(5);
+        listeners = new ArrayList<FileSystemListener>(4);
       }
       listeners.add(l);
     }
