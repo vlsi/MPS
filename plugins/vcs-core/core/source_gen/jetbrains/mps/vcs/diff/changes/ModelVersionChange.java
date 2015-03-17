@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.diff.changes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.model.SModelBase;
 
 public class ModelVersionChange extends MetadataChange {
   public ModelVersionChange(@NotNull ChangeSet changeSet) {
@@ -13,7 +12,6 @@ public class ModelVersionChange extends MetadataChange {
   }
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    ((SModelBase) model).setVersion((as_7exgcv_a0a0a0a0b(getChangeSet().getNewModel(), SModelBase.class)).getVersion());
   }
   @NotNull
   @Override
@@ -28,8 +26,5 @@ public class ModelVersionChange extends MetadataChange {
   @Override
   public String toString() {
     return "Change Model Version";
-  }
-  private static <T> T as_7exgcv_a0a0a0a0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

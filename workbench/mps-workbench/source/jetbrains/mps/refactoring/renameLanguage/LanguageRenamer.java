@@ -23,8 +23,6 @@ import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
-import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -42,7 +40,6 @@ public class LanguageRenamer {
   public LanguageRenamer(Project project, Language language, String newName) {
     myLanguage = language;
     myNewName = newName;
-    myContext = new RefactoringContext(project, OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
     myProject = project;
   }
 
@@ -71,7 +68,6 @@ public class LanguageRenamer {
 
       if (sm.getReference().getModelName().startsWith(oldFqName + ".")) {
         String suffix = sm.getReference().getModelName().substring(oldFqName.length());
-        myContext.changeModelName(((EditableSModel) sm), myNewName + suffix);
       }
     }
 
@@ -96,7 +92,6 @@ public class LanguageRenamer {
 
         if (sm.getReference().getModelName().startsWith(oldFqName + ".")) {
           String suffix = sm.getReference().getModelName().substring(oldFqName.length());
-          myContext.changeModelName(((EditableSModel) sm), newPrefix + suffix);
         }
       }
     }
@@ -106,7 +101,6 @@ public class LanguageRenamer {
 
   public void update() {
     updateReferences(myProject);
-    RefactoringAccess.getInstance().getRefactoringFacade().updateLoadedModels(myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -114,15 +108,4 @@ public class LanguageRenamer {
     ReferenceUpdater.getInstance().updateModelAndModuleReferences(project);
   }
 
-  public static class MyRefactoring extends AbstractLoggableRefactoring {
-    @Override
-    public boolean doesUpdateModel() {
-      return true;
-    }
-
-    @Override
-    public void updateModel(SModel model, RefactoringContext refactoringContext) {
-      refactoringContext.updateByDefault(model);
-    }
-  }
 }
