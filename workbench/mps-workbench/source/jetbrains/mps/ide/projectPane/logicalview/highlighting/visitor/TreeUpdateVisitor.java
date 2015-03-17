@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.Executor;
@@ -57,12 +58,7 @@ public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
   }
 
   protected final void scheduleModelRead(final MPSTreeNode node, final Runnable readAction) {
-    schedule(node, new Runnable() {
-      @Override
-      public void run() {
-        myProject.getModelAccess().runReadAction(readAction);
-      }
-    });
+    schedule(node, new ModelReadRunnable(myProject.getModelAccess(), readAction));
   }
   protected final void schedule(final MPSTreeNode node, final Runnable runnable) {
     final Executor ex = myExecutor;

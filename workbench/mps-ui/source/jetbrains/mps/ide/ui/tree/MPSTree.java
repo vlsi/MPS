@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -371,6 +371,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     scrollRowToVisible(getRowForPath(path));
   }
 
+  // FIXME perhaps, shall be protected, rebuildAction is sort of implementation detail when there are rebuildNow() and rebuildLater()
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
     if (RuntimeFlags.isTestMode()) {
       return;
@@ -382,43 +383,32 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     myLoadingDisabled = true;
     try {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          final List<String> expansion = getExpandedPaths();
-          final List<String> selection = getSelectedPaths();
-          rebuildAction.run();
-          if (saveExpansion) {
-            runWithoutExpansion(new Runnable() {
-              @Override
-              public void run() {
-                expandPaths(expansion);
-                selectPaths(selection);
-              }
-            });
+      Runnable restoreExpansion = null;
+      if (saveExpansion) {
+        final List<String> expansion = getExpandedPaths();
+        final List<String> selection = getSelectedPaths();
+        restoreExpansion = new Runnable() {
+          @Override
+          public void run() {
+            expandPaths(expansion);
+            selectPaths(selection);
           }
-        }
-      });
+        };
+      }
+      ModelAccess.instance().runReadAction(rebuildAction);
+      if (restoreExpansion != null) {
+          runWithoutExpansion(restoreExpansion);
+      }
     } finally {
       myLoadingDisabled = false;
     }
-
-  }
-
-  public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        runRebuildAction(rebuildAction, saveExpansion);
-      }
-    });
   }
 
   public void rebuildLater() {
     myQueue.queue(new Update(myUpdateId) {
       @Override
       public void run() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
+        ThreadUtils.runInUIThreadNoWait(new Runnable() {
           @Override
           public void run() {
             if (MPSTree.this.isDisposed()) return;

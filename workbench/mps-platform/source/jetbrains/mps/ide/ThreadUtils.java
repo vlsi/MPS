@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,44 +15,80 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import org.apache.log4j.Logger;
+import com.intellij.openapi.application.ModalityState;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 
+/**
+ * Interface to platform-specific access to Event Dispatch Thread.
+ * For IDEA, use <code>ApplicationManager.getApplication()</code>
+ */
 public class ThreadUtils {
-  private static final Logger LOG = LogManager.getLogger(ThreadUtils.class);
 
   public static boolean runInUIThreadAndWait(Runnable r) {
-    if (SwingUtilities.isEventDispatchThread()) {
-      try {
-        r.run();
-      } catch (Exception e) {
-        LOG.error(null, e);
-        return false;
-      }
+    LogExceptionsRunnable wrap = new LogExceptionsRunnable(LogManager.getLogger(ThreadUtils.class), r);
+    if (ApplicationManager.getApplication() != null) {
+      // Application#invokeAndWait() executes runnable immediately if in EDT thread (well, at least it is stated in javadoc)
+      ApplicationManager.getApplication().invokeAndWait(wrap, ModalityState.any());
     } else {
-      try {
-        SwingUtilities.invokeAndWait(r);
-      } catch (Exception e) {
-        LOG.error(null, e);
-        return false;
+      if (isInEDT()) {
+        wrap.run();
+      } else {
+        try {
+          SwingUtilities.invokeAndWait(wrap);
+        } catch (InterruptedException e) {
+          LogManager.getLogger(ThreadUtils.class).error(e.getMessage(), e);
+          return false;
+        } catch (InvocationTargetException e) {
+          LogManager.getLogger(ThreadUtils.class).error(e.getMessage(), e);
+          return false;
+        }
       }
     }
-    return true;
+    return wrap.getException() == null;
   }
 
   public static void runInUIThreadNoWait(Runnable r) {
-    if (SwingUtilities.isEventDispatchThread()) {
-      r.run();
+    LogExceptionsRunnable wrap = new LogExceptionsRunnable(LogManager.getLogger(ThreadUtils.class), r);
+    if (isInEDT()) {
+      wrap.run();
     } else {
-      try {
-        SwingUtilities.invokeLater(r);
-      } catch (Exception e) {
-        LOG.error(null, e);
+      if (ApplicationManager.getApplication() != null) {
+        ApplicationManager.getApplication().invokeLater(wrap);
+      } else {
+        SwingUtilities.invokeLater(wrap);
       }
+    }
+  }
+
+  private static class LogExceptionsRunnable implements Runnable {
+    private final Logger myLog;
+    private final Runnable myDelegate;
+    private Exception myException;
+
+    public LogExceptionsRunnable(Logger log, Runnable delegate) {
+      myLog = log;
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() {
+      try {
+        myDelegate.run();
+      } catch (Exception e) {
+        myLog.error(ThreadUtils.class.getName(), e);
+        myException = e;
+      }
+    }
+
+    public Exception getException() {
+      return myException;
     }
   }
 
@@ -88,10 +124,19 @@ public class ThreadUtils {
   }
 
   public static boolean isInEDT() {
-    return ApplicationManager.getApplication().isDispatchThread();
+    final Application ideaApp = ApplicationManager.getApplication();
+    return ideaApp == null ? SwingUtilities.isEventDispatchThread() : ideaApp.isDispatchThread();
   }
 
   public static void assertEDT() {
-    ApplicationManager.getApplication().assertIsDispatchThread();
+    final Application ideaApp = ApplicationManager.getApplication();
+    if (ideaApp != null) {
+      ideaApp.assertIsDispatchThread();
+    } else {
+      if (!SwingUtilities.isEventDispatchThread()) {
+        LogManager.getLogger(ThreadUtils.class).error("NOT EDT THREAD", new Throwable());
+      }
+      assert false;
+    }
   }
 }
