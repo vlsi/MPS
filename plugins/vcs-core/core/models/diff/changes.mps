@@ -27,10 +27,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
-        <child id="1224071154657" name="classifierType" index="0kSFW" />
-        <child id="1224071154656" name="expression" index="0kSFX" />
-      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -6474,47 +6470,7 @@
           <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3clFbS" id="3DFYCjfl467" role="3clF47">
-        <node concept="3clFbF" id="7BQNkbM6G9M" role="3cqZAp">
-          <node concept="2OqwBi" id="7BQNkbM6Gtn" role="3clFbG">
-            <node concept="1eOMI4" id="5WIcYaGhyZQ" role="2Oq$k0">
-              <node concept="10QFUN" id="5WIcYaGhyZR" role="1eOMHV">
-                <node concept="2JrnkZ" id="5WIcYaGhyZT" role="10QFUP">
-                  <node concept="37vLTw" id="5WIcYaGhyZU" role="2JrQYb">
-                    <ref role="3cqZAo" node="3DFYCjfl461" resolve="model" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="1BY2K4dQswR" role="10QFUM">
-                  <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="7BQNkbM6Hcm" role="2OqNvi">
-              <ref role="37wK5l" to="51te:~SModelDescriptorStub.setVersion(int):void" resolve="setVersion" />
-              <node concept="2OqwBi" id="7BQNkbM6ILh" role="37wK5m">
-                <node concept="1eOMI4" id="5WIcYaGh$h_" role="2Oq$k0">
-                  <node concept="0kSF2" id="1BY2K4dQs4i" role="1eOMHV">
-                    <node concept="3uibUv" id="1BY2K4dQsg6" role="0kSFW">
-                      <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                    </node>
-                    <node concept="2OqwBi" id="5WIcYaGh$hD" role="0kSFX">
-                      <node concept="liA8E" id="5WIcYaGh$hE" role="2OqNvi">
-                        <ref role="37wK5l" to="bfxj:3kRMfhMv9u8" resolve="getNewModel" />
-                      </node>
-                      <node concept="1rXfSq" id="5WIcYaGh$hF" role="2Oq$k0">
-                        <ref role="37wK5l" node="5x0q8wkvS4u" resolve="getChangeSet" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="7BQNkbM6IVM" role="2OqNvi">
-                  <ref role="37wK5l" to="51te:~SModelDescriptorStub.getVersion():int" resolve="getVersion" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="3clFbS" id="3DFYCjfl467" role="3clF47" />
       <node concept="2AHcQZ" id="3tYsUK_SkSZ" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>

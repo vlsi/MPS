@@ -137,7 +137,6 @@
       <concept id="1200932465350" name="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" flags="in" index="2t9MJh" />
       <concept id="1682834381185132063" name="jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause" flags="in" index="P00rF" />
       <concept id="2058726427123891188" name="jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause" flags="in" index="YZUGN" />
-      <concept id="1197382578687" name="jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation" flags="nn" index="39$33D" />
       <concept id="1199619425400" name="jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression" flags="nn" index="1eSWlJ">
         <child id="1199619459779" name="destination" index="1eT4Jk" />
         <child id="1199619459778" name="whatToMove" index="1eT4Jl" />
@@ -152,7 +151,6 @@
         <property id="6895093993902236371" name="userFriendlyName" index="3SMaAB" />
         <child id="616550569928923871" name="modelsToGenerateBlock" index="28Zu_" />
         <child id="1347577327951503399" name="affectedNodesBlock" index="2LmeTn" />
-        <child id="1347577327951503400" name="updateModelBlock" index="2LmeTo" />
         <child id="2058726427123891193" name="doWhenDoneBlock" index="YZUGY" />
         <child id="5497648299878741976" name="initBlock" index="1M1Ino" />
         <child id="6895093993902236381" name="doRefactorBlock" index="3SMaAD" />
@@ -172,7 +170,6 @@
         <reference id="6895093993902496263" name="refactoringParameter" index="3SN95N" />
       </concept>
       <concept id="1189694053795" name="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" flags="in" index="3ZiDMR" />
-      <concept id="1189694434958" name="jetbrains.mps.lang.refactoring.structure.UpdateModelClause" flags="in" index="3Zk6Yq" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
@@ -896,11 +893,6 @@
             <ref role="3cqZAo" node="65fYhwGpOX4" resolve="searchResults" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="3Zk6Yq" id="65fYhwGpOZq" role="2LmeTo">
-      <node concept="3clFbS" id="65fYhwGpOZr" role="2VODD2">
-        <node concept="39$33D" id="65fYhwGpOZ$" role="3cqZAp" />
       </node>
     </node>
     <node concept="YZUGN" id="65fYhwGpOZH" role="YZUGY">

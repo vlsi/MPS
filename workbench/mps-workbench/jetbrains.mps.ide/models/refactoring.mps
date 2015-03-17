@@ -62,9 +62,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
-      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
-        <child id="1082485599096" name="statements" index="9aQI4" />
-      </concept>
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -186,7 +183,6 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
@@ -1664,24 +1660,6 @@
         <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
-    <node concept="312cEg" id="29N7xYwTFXc" role="jymVt">
-      <property role="TrG5h" value="myGenerateModelsCheckbox" />
-      <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="29N7xYwTFXd" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~JCheckBox" resolve="JCheckBox" />
-      </node>
-      <node concept="3Tm6S6" id="29N7xYwTFXe" role="1B3o_S" />
-    </node>
-    <node concept="312cEg" id="29N7xYwTFXf" role="jymVt">
-      <property role="TrG5h" value="myIsLocalCheckbox" />
-      <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="29N7xYwTFXg" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~JCheckBox" resolve="JCheckBox" />
-      </node>
-      <node concept="3Tm6S6" id="29N7xYwTFXh" role="1B3o_S" />
-    </node>
     <node concept="3clFbW" id="29N7xYwTFXi" role="jymVt">
       <node concept="3Tm1VV" id="29N7xYwTFXj" role="1B3o_S" />
       <node concept="3cqZAl" id="29N7xYwTFXk" role="3clF45" />
@@ -2196,24 +2174,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="29N7xYwTFZX" role="3cqZAp">
-          <node concept="3y3z36" id="29N7xYwTFZY" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuMy2" role="3uHU7B">
-              <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-            </node>
-            <node concept="10Nm6u" id="29N7xYwTG00" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="29N7xYwTG01" role="3clFbx">
-            <node concept="3clFbF" id="29N7xYwTG02" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqyyYh$" role="3clFbG">
-                <ref role="37wK5l" node="29N7xYwTG0w" resolve="addCheckboxes" />
-                <node concept="37vLTw" id="2BHiRxgm$Ez" role="37wK5m">
-                  <ref role="3cqZAo" node="29N7xYwTFY6" resolve="hasModelsToGenerate" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="29N7xYwTG05" role="3cqZAp">
           <node concept="2OqwBi" id="29N7xYwTG06" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuq43" role="2Oq$k0">
@@ -2290,149 +2250,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="29N7xYwTG0w" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addCheckboxes" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm6S6" id="29N7xYwTG0x" role="1B3o_S" />
-      <node concept="3cqZAl" id="29N7xYwTG0y" role="3clF45" />
-      <node concept="37vLTG" id="29N7xYwTG0z" role="3clF46">
-        <property role="TrG5h" value="hasModelsToGenerate" />
-        <property role="3TUv4t" value="false" />
-        <node concept="10P_77" id="29N7xYwTG0$" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="29N7xYwTG0_" role="3clF47">
-        <node concept="3clFbJ" id="29N7xYwTG0A" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxgm95C" role="3clFbw">
-            <ref role="3cqZAo" node="29N7xYwTG0z" resolve="hasModelsToGenerate" />
-          </node>
-          <node concept="3clFbS" id="29N7xYwTG0C" role="3clFbx">
-            <node concept="3clFbF" id="29N7xYwTG0D" role="3cqZAp">
-              <node concept="37vLTI" id="29N7xYwTG0E" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuvyF" role="37vLTJ">
-                  <ref role="3cqZAo" node="29N7xYwTFXc" resolve="myGenerateModelsCheckbox" />
-                </node>
-                <node concept="2ShNRf" id="29N7xYwTG0G" role="37vLTx">
-                  <node concept="1pGfFk" id="29N7xYwTG0H" role="2ShVmc">
-                    <ref role="37wK5l" to="dbrf:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
-                    <node concept="Xl_RD" id="29N7xYwTG0I" role="37wK5m">
-                      <property role="Xl_RC" value="rebuild models" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="29N7xYwTG0J" role="3cqZAp">
-              <node concept="2OqwBi" id="29N7xYwTG0K" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeut4o" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTFXc" resolve="myGenerateModelsCheckbox" />
-                </node>
-                <node concept="liA8E" id="29N7xYwTG0M" role="2OqNvi">
-                  <ref role="37wK5l" to="dbrf:~AbstractButton.setSelected(boolean):void" resolve="setSelected" />
-                  <node concept="3clFbT" id="29N7xYwTG0N" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="29N7xYwTG0O" role="3cqZAp">
-              <node concept="2OqwBi" id="29N7xYwTG0P" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeu_8Z" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTFWY" resolve="myButtonsPanel" />
-                </node>
-                <node concept="liA8E" id="29N7xYwTG0R" role="2OqNvi">
-                  <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
-                  <node concept="37vLTw" id="2BHiRxeuklc" role="37wK5m">
-                    <ref role="3cqZAo" node="29N7xYwTFXc" resolve="myGenerateModelsCheckbox" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="29N7xYwTGsw" role="3cqZAp">
-          <node concept="3SKdUq" id="29N7xYwTGsx" role="3SKWNk">
-            <property role="3SKdUp" value="noinspection ConstantConditions" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="29N7xYwTG0T" role="3cqZAp">
-          <node concept="2ZW3vV" id="29N7xYwTG0U" role="3clFbw">
-            <node concept="2OqwBi" id="29N7xYwTG0V" role="2ZW6bz">
-              <node concept="37vLTw" id="2BHiRxeuL5H" role="2Oq$k0">
-                <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-              </node>
-              <node concept="liA8E" id="29N7xYwTG0X" role="2OqNvi">
-                <ref role="37wK5l" to="ge2m:4a0HOMfn9t2" resolve="getRefactoring" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="29N7xYwTG0Y" role="2ZW6by">
-              <ref role="3uigEE" to="ge2m:4a0HOMfn6Vq" resolve="ILoggableRefactoring" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="29N7xYwTG0Z" role="3clFbx">
-            <node concept="3clFbF" id="29N7xYwTG10" role="3cqZAp">
-              <node concept="37vLTI" id="29N7xYwTG11" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeundt" role="37vLTJ">
-                  <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
-                </node>
-                <node concept="2ShNRf" id="29N7xYwTG13" role="37vLTx">
-                  <node concept="1pGfFk" id="29N7xYwTG14" role="2ShVmc">
-                    <ref role="37wK5l" to="dbrf:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
-                    <node concept="Xl_RD" id="29N7xYwTG15" role="37wK5m">
-                      <property role="Xl_RC" value="is local" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="29N7xYwTG16" role="3cqZAp">
-              <node concept="2OqwBi" id="29N7xYwTG17" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeucS$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
-                </node>
-                <node concept="liA8E" id="29N7xYwTG19" role="2OqNvi">
-                  <ref role="37wK5l" to="dbrf:~AbstractButton.setSelected(boolean):void" resolve="setSelected" />
-                  <node concept="2OqwBi" id="EzjDPXjl0W" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxeuMMY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-                    </node>
-                    <node concept="liA8E" id="EzjDPXjl10" role="2OqNvi">
-                      <ref role="37wK5l" to="ge2m:4a0HOMfn97p" resolve="isLocal" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="7prs2iANQSV" role="3cqZAp">
-              <node concept="2OqwBi" id="7prs2iANRnT" role="3clFbG">
-                <node concept="37vLTw" id="7prs2iANQST" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
-                </node>
-                <node concept="liA8E" id="7prs2iANTgi" role="2OqNvi">
-                  <ref role="37wK5l" to="dbrf:~AbstractButton.setEnabled(boolean):void" resolve="setEnabled" />
-                  <node concept="3clFbT" id="7prs2iAO6Ms" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="29N7xYwTG1b" role="3cqZAp">
-              <node concept="2OqwBi" id="29N7xYwTG1c" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeu_BE" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTFWY" resolve="myButtonsPanel" />
-                </node>
-                <node concept="liA8E" id="29N7xYwTG1e" role="2OqNvi">
-                  <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
-                  <node concept="37vLTw" id="2BHiRxeuhSL" role="37wK5m">
-                    <ref role="3cqZAo" node="29N7xYwTFXf" resolve="myIsLocalCheckbox" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="29N7xYwTG1g" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponent" />
@@ -2488,71 +2305,6 @@
       <node concept="3Tm6S6" id="29N7xYwTG1K" role="1B3o_S" />
       <node concept="3cqZAl" id="29N7xYwTG1L" role="3clF45" />
       <node concept="3clFbS" id="29N7xYwTG1M" role="3clF47">
-        <node concept="3clFbJ" id="29N7xYwTG1N" role="3cqZAp">
-          <node concept="3y3z36" id="29N7xYwTG1O" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeukt3" role="3uHU7B">
-              <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-            </node>
-            <node concept="10Nm6u" id="29N7xYwTG1Q" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="29N7xYwTG1R" role="3clFbx">
-            <node concept="3clFbJ" id="29N7xYwTG26" role="3cqZAp">
-              <node concept="3y3z36" id="29N7xYwTG27" role="3clFbw">
-                <node concept="37vLTw" id="2BHiRxeuHqo" role="3uHU7B">
-                  <ref role="3cqZAo" node="29N7xYwTFXc" resolve="myGenerateModelsCheckbox" />
-                </node>
-                <node concept="10Nm6u" id="29N7xYwTG29" role="3uHU7w" />
-              </node>
-              <node concept="9aQIb" id="29N7xYwTG2a" role="9aQIa">
-                <node concept="3clFbS" id="29N7xYwTG2b" role="9aQI4">
-                  <node concept="3SKdUt" id="29N7xYwTGsC" role="3cqZAp">
-                    <node concept="3SKdUq" id="29N7xYwTGsD" role="3SKWNk">
-                      <property role="3SKdUp" value="noinspection ConstantConditions" />
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="29N7xYwTG2c" role="3cqZAp">
-                    <node concept="2OqwBi" id="29N7xYwTG2d" role="3clFbG">
-                      <node concept="37vLTw" id="2BHiRxeudz8" role="2Oq$k0">
-                        <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-                      </node>
-                      <node concept="liA8E" id="29N7xYwTG2f" role="2OqNvi">
-                        <ref role="37wK5l" to="ge2m:4a0HOMfn9yl" resolve="setDoesGenerateModels" />
-                        <node concept="3clFbT" id="29N7xYwTG2g" role="37wK5m">
-                          <property role="3clFbU" value="false" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="29N7xYwTG2h" role="3clFbx">
-                <node concept="3SKdUt" id="29N7xYwTGsA" role="3cqZAp">
-                  <node concept="3SKdUq" id="29N7xYwTGsB" role="3SKWNk">
-                    <property role="3SKdUp" value="noinspection ConstantConditions" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="29N7xYwTG2i" role="3cqZAp">
-                  <node concept="2OqwBi" id="29N7xYwTG2j" role="3clFbG">
-                    <node concept="37vLTw" id="2BHiRxeufD3" role="2Oq$k0">
-                      <ref role="3cqZAo" node="29N7xYwTFX7" resolve="myRefactoringContext" />
-                    </node>
-                    <node concept="liA8E" id="29N7xYwTG2l" role="2OqNvi">
-                      <ref role="37wK5l" to="ge2m:4a0HOMfn9yl" resolve="setDoesGenerateModels" />
-                      <node concept="2OqwBi" id="29N7xYwTG2m" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxeufPG" role="2Oq$k0">
-                          <ref role="3cqZAo" node="29N7xYwTFXc" resolve="myGenerateModelsCheckbox" />
-                        </node>
-                        <node concept="liA8E" id="29N7xYwTG2o" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~AbstractButton.isSelected():boolean" resolve="isSelected" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="29N7xYwTG2p" role="3cqZAp">
           <node concept="2OqwBi" id="29N7xYwTG2q" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeujVe" role="2Oq$k0">
@@ -5860,56 +5612,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S676" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="5me42Ng7ppm" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="showRefactoringDialog" />
-      <node concept="10P_77" id="5me42Ng7LdT" role="3clF45" />
-      <node concept="3Tm1VV" id="5me42Ng7ppo" role="1B3o_S" />
-      <node concept="37vLTG" id="5me42Ng7LdV" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="2A7o4JNmR_v" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5me42Ng7LdY" role="3clF46">
-        <property role="TrG5h" value="refactoringContext" />
-        <node concept="3uibUv" id="5me42Ng7Le0" role="1tU5fm">
-          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5me42Ng7Liq" role="3clF46">
-        <property role="TrG5h" value="refactoring" />
-        <node concept="3uibUv" id="5me42Ng7Liw" role="1tU5fm">
-          <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5me42Ng7ppp" role="3clF46">
-        <property role="TrG5h" value="hasModelsToGenerate" />
-        <node concept="10P_77" id="5me42Ng7ppq" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="5me42Ng7ppr" role="3clF47">
-        <node concept="3clFbF" id="5me42Ng7Lk7" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyz1mP" role="3clFbG">
-            <ref role="37wK5l" to="u42p:5me42Ng7LjN" resolve="showRefactoringDialogBase" />
-            <node concept="37vLTw" id="2BHiRxglEQU" role="37wK5m">
-              <ref role="3cqZAo" node="5me42Ng7LdV" resolve="project" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgleoZ" role="37wK5m">
-              <ref role="3cqZAo" node="5me42Ng7LdY" resolve="refactoringContext" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxglG6C" role="37wK5m">
-              <ref role="3cqZAo" node="5me42Ng7Liq" resolve="refactoring" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxglwuH" role="37wK5m">
-              <ref role="3cqZAo" node="5me42Ng7ppp" resolve="hasModelsToGenerate" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_S671" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
