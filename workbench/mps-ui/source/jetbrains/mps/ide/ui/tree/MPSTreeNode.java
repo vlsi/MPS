@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,24 +139,6 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     return false;
   }
 
-  /**
-   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
-   * see ProjectPaneActionGroups.getActionGroup()
-   */
-  @Deprecated
-  public final ActionGroup getActionGroup() {
-    return null;
-  }
-
-  /**
-   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
-   * see ProjectPaneActionGroups.getQuickCreateGroup()
-   */
-  @Deprecated
-  public final ActionGroup getQuickCreateGroup(boolean plain) {
-    return null;
-  }
-
   public void doubleClick() {
   }
 
@@ -173,15 +155,8 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     if (isInitialized()) {
       return;
     }
-
-    MPSTree tree = ModelAccess.instance().runReadAction(new Computable<MPSTree>() {
-      @Override
-      public MPSTree compute() {
-        doInit();
-        return getTree();
-      }
-    });
-
+    doInit();
+    MPSTree tree = getTree();
     if (tree != null) {
       ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
     }

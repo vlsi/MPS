@@ -45,7 +45,6 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myProject = project;
     setNodeIdentifier(language.getModuleReference().toString());
     setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
-    init();
   }
 
   @Override
@@ -54,7 +53,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  public void init() {
+  protected void doInit() {
     populate();
     myInitialized = true;
   }

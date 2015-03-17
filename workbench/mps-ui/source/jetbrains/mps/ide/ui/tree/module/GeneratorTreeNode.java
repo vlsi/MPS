@@ -28,7 +28,6 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
     super(generator);
     setNodeIdentifier(generator.getModuleName());
     setIcon(IdeIcons.GENERATOR_ICON);
-    init();
   }
 
   @NotNull
@@ -48,13 +47,9 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   }
 
   @Override
-  public void init() {
-    populate();
-    myInitialized = true;
-  }
-
-  private void populate() {
+  protected void doInit() {
     SModelsSubtree.create(this, getModule());
+    myInitialized = true;
   }
 
   public String calculateText() {
