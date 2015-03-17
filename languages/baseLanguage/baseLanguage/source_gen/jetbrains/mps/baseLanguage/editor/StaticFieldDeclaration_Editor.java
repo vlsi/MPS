@@ -194,6 +194,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
+    StaticFieldDeclaration_Name_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
   private EditorCell createCollection_t6d1qn_j0(EditorContext editorContext, SNode node) {

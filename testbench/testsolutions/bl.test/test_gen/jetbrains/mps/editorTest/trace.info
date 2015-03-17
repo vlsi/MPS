@@ -2178,6 +2178,75 @@
       <unit id="2707740038604155061" at="10,0,31,0" name="jetbrains.mps.editorTest.DeleteIfPossibleMethod_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2710274554817504062">
+    <file name="BackspaceToUnwrapArrayTypeInLocalVariable1_Test.java">
+      <node id="2710274554817504062" at="15,82,16,107" concept="2" />
+      <node id="2710274554817504062" at="16,107,17,123" concept="2" />
+      <node id="2710274554817504062" at="24,51,25,63" concept="2" />
+      <node id="2710274554817544766" at="25,63,26,77" concept="2" />
+      <node id="2710274554817544775" at="26,77,27,77" concept="2" />
+      <node id="2710274554817504062" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInLocalVariable1_Test#()V" />
+      <node id="2710274554817504062" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2710274554817504062" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInLocalVariable1#()V" />
+      <node id="2710274554817504062" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2710274554817504062" at="12,60,12,60" />
+      <scope id="2710274554817504062" at="21,23,21,23" />
+      <scope id="2710274554817504062" at="12,0,14,0" />
+      <scope id="2710274554817504062" at="15,82,17,123" />
+      <scope id="2710274554817504062" at="21,0,23,0" />
+      <scope id="2710274554817504062" at="24,51,27,77" />
+      <scope id="2710274554817504062" at="14,0,19,0" />
+      <scope id="2710274554817504062" at="23,0,29,0" />
+      <unit id="2710274554817504062" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable1_Test$TestBody" />
+      <unit id="2710274554817504062" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2710274554817565248">
+    <file name="BackspaceToUnwrapArrayTypeInParam_Test.java">
+      <node id="2710274554817565248" at="15,73,16,107" concept="2" />
+      <node id="2710274554817565248" at="16,107,17,114" concept="2" />
+      <node id="2710274554817565248" at="24,51,25,63" concept="2" />
+      <node id="2710274554817565263" at="25,63,26,77" concept="2" />
+      <node id="2710274554817565265" at="26,77,27,77" concept="2" />
+      <node id="2710274554817565248" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInParam_Test#()V" />
+      <node id="2710274554817565248" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2710274554817565248" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInParam#()V" />
+      <node id="2710274554817565248" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2710274554817565248" at="12,51,12,51" />
+      <scope id="2710274554817565248" at="21,23,21,23" />
+      <scope id="2710274554817565248" at="12,0,14,0" />
+      <scope id="2710274554817565248" at="15,73,17,114" />
+      <scope id="2710274554817565248" at="21,0,23,0" />
+      <scope id="2710274554817565248" at="24,51,27,77" />
+      <scope id="2710274554817565248" at="14,0,19,0" />
+      <scope id="2710274554817565248" at="23,0,29,0" />
+      <unit id="2710274554817565248" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInParam_Test$TestBody" />
+      <unit id="2710274554817565248" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInParam_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2710274554817613110">
+    <file name="BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration_Test.java">
+      <node id="2710274554817613110" at="15,95,16,107" concept="2" />
+      <node id="2710274554817613110" at="16,107,17,136" concept="2" />
+      <node id="2710274554817613110" at="24,51,25,63" concept="2" />
+      <node id="2710274554817613125" at="25,63,26,77" concept="2" />
+      <node id="2710274554817613127" at="26,77,27,77" concept="2" />
+      <node id="2710274554817613110" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration_Test#()V" />
+      <node id="2710274554817613110" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2710274554817613110" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration#()V" />
+      <node id="2710274554817613110" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2710274554817613110" at="12,73,12,73" />
+      <scope id="2710274554817613110" at="21,23,21,23" />
+      <scope id="2710274554817613110" at="12,0,14,0" />
+      <scope id="2710274554817613110" at="15,95,17,136" />
+      <scope id="2710274554817613110" at="21,0,23,0" />
+      <scope id="2710274554817613110" at="24,51,27,77" />
+      <scope id="2710274554817613110" at="14,0,19,0" />
+      <scope id="2710274554817613110" at="23,0,29,0" />
+      <unit id="2710274554817613110" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration_Test$TestBody" />
+      <unit id="2710274554817613110" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInIncompleteMemberDeclaration_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478053219702">
     <file name="RemoveStaticInStaticFieldBackspace1_Test.java">
       <node id="2738496478053219702" at="15,75,16,107" concept="2" />
@@ -2799,6 +2868,118 @@
       <scope id="2870455723671254292" at="23,0,28,0" />
       <unit id="2870455723671254292" at="19,0,29,0" name="jetbrains.mps.editorTest.AddNodeAttribute_Test$TestBody" />
       <unit id="2870455723671254292" at="10,0,30,0" name="jetbrains.mps.editorTest.AddNodeAttribute_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2900530436643915454">
+    <file name="WrapIncompleteMemberDeclarationWithGenericType_Test.java">
+      <node id="2900530436643915454" at="15,86,16,107" concept="2" />
+      <node id="2900530436643915454" at="16,107,17,127" concept="2" />
+      <node id="2900530436643915454" at="24,51,25,63" concept="2" />
+      <node id="2900530436643915456" at="25,63,26,39" concept="2" />
+      <node id="2900530436643915454" at="12,0,14,0" concept="1" trace="WrapIncompleteMemberDeclarationWithGenericType_Test#()V" />
+      <node id="2900530436643915454" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2900530436643915454" at="14,0,19,0" concept="5" trace="test_WrapIncompleteMemberDeclarationWithGenericType#()V" />
+      <node id="2900530436643915454" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2900530436643915454" at="12,64,12,64" />
+      <scope id="2900530436643915454" at="21,23,21,23" />
+      <scope id="2900530436643915454" at="12,0,14,0" />
+      <scope id="2900530436643915454" at="15,86,17,127" />
+      <scope id="2900530436643915454" at="21,0,23,0" />
+      <scope id="2900530436643915454" at="24,51,26,39" />
+      <scope id="2900530436643915454" at="14,0,19,0" />
+      <scope id="2900530436643915454" at="23,0,28,0" />
+      <unit id="2900530436643915454" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithGenericType_Test$TestBody" />
+      <unit id="2900530436643915454" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithGenericType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2900530436644697540">
+    <file name="WrapParamWithGenericType_Test.java">
+      <node id="2900530436644697540" at="15,64,16,107" concept="2" />
+      <node id="2900530436644697540" at="16,107,17,105" concept="2" />
+      <node id="2900530436644697540" at="24,51,25,63" concept="2" />
+      <node id="2900530436644697547" at="25,63,26,39" concept="2" />
+      <node id="2900530436644697540" at="12,0,14,0" concept="1" trace="WrapParamWithGenericType_Test#()V" />
+      <node id="2900530436644697540" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2900530436644697540" at="14,0,19,0" concept="5" trace="test_WrapParamWithGenericType#()V" />
+      <node id="2900530436644697540" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2900530436644697540" at="12,42,12,42" />
+      <scope id="2900530436644697540" at="21,23,21,23" />
+      <scope id="2900530436644697540" at="12,0,14,0" />
+      <scope id="2900530436644697540" at="15,64,17,105" />
+      <scope id="2900530436644697540" at="21,0,23,0" />
+      <scope id="2900530436644697540" at="24,51,26,39" />
+      <scope id="2900530436644697540" at="14,0,19,0" />
+      <scope id="2900530436644697540" at="23,0,28,0" />
+      <unit id="2900530436644697540" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapParamWithGenericType_Test$TestBody" />
+      <unit id="2900530436644697540" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapParamWithGenericType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2900530436644698638">
+    <file name="WrapLocalVariableWithGenericType_Test.java">
+      <node id="2900530436644698638" at="15,72,16,107" concept="2" />
+      <node id="2900530436644698638" at="16,107,17,113" concept="2" />
+      <node id="2900530436644698638" at="24,51,25,63" concept="2" />
+      <node id="2900530436644698645" at="25,63,26,32" concept="2" />
+      <node id="2900530436644698638" at="12,0,14,0" concept="1" trace="WrapLocalVariableWithGenericType_Test#()V" />
+      <node id="2900530436644698638" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2900530436644698638" at="14,0,19,0" concept="5" trace="test_WrapLocalVariableWithGenericType#()V" />
+      <node id="2900530436644698638" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2900530436644698638" at="12,50,12,50" />
+      <scope id="2900530436644698638" at="21,23,21,23" />
+      <scope id="2900530436644698638" at="12,0,14,0" />
+      <scope id="2900530436644698638" at="15,72,17,113" />
+      <scope id="2900530436644698638" at="21,0,23,0" />
+      <scope id="2900530436644698638" at="24,51,26,32" />
+      <scope id="2900530436644698638" at="14,0,19,0" />
+      <scope id="2900530436644698638" at="23,0,28,0" />
+      <unit id="2900530436644698638" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapLocalVariableWithGenericType_Test$TestBody" />
+      <unit id="2900530436644698638" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapLocalVariableWithGenericType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2900530436652943949">
+    <file name="FieldTypeCellEditing1_Test.java">
+      <node id="2900530436652943949" at="15,61,16,107" concept="2" />
+      <node id="2900530436652943949" at="16,107,17,102" concept="2" />
+      <node id="2900530436652943949" at="24,51,25,63" concept="2" />
+      <node id="2900530436652945553" at="25,63,26,37" concept="2" />
+      <node id="2900530436652943949" at="12,0,14,0" concept="1" trace="FieldTypeCellEditing1_Test#()V" />
+      <node id="2900530436652943949" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2900530436652943949" at="14,0,19,0" concept="5" trace="test_FieldTypeCellEditing1#()V" />
+      <node id="2900530436652943949" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2900530436652943949" at="12,39,12,39" />
+      <scope id="2900530436652943949" at="21,23,21,23" />
+      <scope id="2900530436652943949" at="12,0,14,0" />
+      <scope id="2900530436652943949" at="15,61,17,102" />
+      <scope id="2900530436652943949" at="21,0,23,0" />
+      <scope id="2900530436652943949" at="24,51,26,37" />
+      <scope id="2900530436652943949" at="14,0,19,0" />
+      <scope id="2900530436652943949" at="23,0,28,0" />
+      <unit id="2900530436652943949" at="19,0,29,0" name="jetbrains.mps.editorTest.FieldTypeCellEditing1_Test$TestBody" />
+      <unit id="2900530436652943949" at="10,0,30,0" name="jetbrains.mps.editorTest.FieldTypeCellEditing1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2900530436654416470">
+    <file name="FieldTypeCellEditing2_Test.java">
+      <node id="2900530436654416470" at="15,61,16,107" concept="2" />
+      <node id="2900530436654416470" at="16,107,17,102" concept="2" />
+      <node id="2900530436654416470" at="24,51,25,63" concept="2" />
+      <node id="2900530436655546744" at="25,63,26,35" concept="2" />
+      <node id="2900530436655548578" at="26,35,27,77" concept="2" />
+      <node id="2900530436655547578" at="27,77,28,28" concept="2" />
+      <node id="2900530436654416470" at="12,0,14,0" concept="1" trace="FieldTypeCellEditing2_Test#()V" />
+      <node id="2900530436654416470" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2900530436654416470" at="14,0,19,0" concept="5" trace="test_FieldTypeCellEditing2#()V" />
+      <node id="2900530436654416470" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2900530436654416470" at="12,39,12,39" />
+      <scope id="2900530436654416470" at="21,23,21,23" />
+      <scope id="2900530436654416470" at="12,0,14,0" />
+      <scope id="2900530436654416470" at="15,61,17,102" />
+      <scope id="2900530436654416470" at="21,0,23,0" />
+      <scope id="2900530436654416470" at="24,51,28,28" />
+      <scope id="2900530436654416470" at="14,0,19,0" />
+      <scope id="2900530436654416470" at="23,0,30,0" />
+      <unit id="2900530436654416470" at="19,0,31,0" name="jetbrains.mps.editorTest.FieldTypeCellEditing2_Test$TestBody" />
+      <unit id="2900530436654416470" at="10,0,32,0" name="jetbrains.mps.editorTest.FieldTypeCellEditing2_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2907839077756756657">
@@ -14128,6 +14309,167 @@
       <scope id="8976921645732250110" at="23,0,28,0" />
       <unit id="8976921645732250110" at="19,0,29,0" name="jetbrains.mps.editorTest.PerformLeftTransformWithNoLeftTransformActions_Test$TestBody" />
       <unit id="8976921645732250110" at="10,0,30,0" name="jetbrains.mps.editorTest.PerformLeftTransformWithNoLeftTransformActions_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422694402">
+    <file name="BackspaceToUnwrapArrayTypeInLocalVariable2_Test.java">
+      <node id="9002759989422694402" at="15,82,16,107" concept="2" />
+      <node id="9002759989422694402" at="16,107,17,123" concept="2" />
+      <node id="9002759989422694402" at="24,51,25,63" concept="2" />
+      <node id="9002759989422694417" at="25,63,26,77" concept="2" />
+      <node id="9002759989422694419" at="26,77,27,77" concept="2" />
+      <node id="9002759989422725117" at="27,77,28,77" concept="2" />
+      <node id="9002759989422725125" at="28,77,29,77" concept="2" />
+      <node id="9002759989422694402" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInLocalVariable2_Test#()V" />
+      <node id="9002759989422694402" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422694402" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInLocalVariable2#()V" />
+      <node id="9002759989422694402" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422694402" at="12,60,12,60" />
+      <scope id="9002759989422694402" at="21,23,21,23" />
+      <scope id="9002759989422694402" at="12,0,14,0" />
+      <scope id="9002759989422694402" at="15,82,17,123" />
+      <scope id="9002759989422694402" at="21,0,23,0" />
+      <scope id="9002759989422694402" at="14,0,19,0" />
+      <scope id="9002759989422694402" at="24,51,29,77" />
+      <scope id="9002759989422694402" at="23,0,31,0" />
+      <unit id="9002759989422694402" at="19,0,32,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable2_Test$TestBody" />
+      <unit id="9002759989422694402" at="10,0,33,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422725135">
+    <file name="BackspaceToUnwrapArrayTypeInLocalVariable3_Test.java">
+      <node id="9002759989422725135" at="15,82,16,107" concept="2" />
+      <node id="9002759989422725135" at="16,107,17,123" concept="2" />
+      <node id="9002759989422725135" at="24,51,25,63" concept="2" />
+      <node id="9002759989422725150" at="25,63,26,77" concept="2" />
+      <node id="9002759989422725152" at="26,77,27,77" concept="2" />
+      <node id="9002759989422725250" at="27,77,28,77" concept="2" />
+      <node id="9002759989422725135" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInLocalVariable3_Test#()V" />
+      <node id="9002759989422725135" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422725135" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInLocalVariable3#()V" />
+      <node id="9002759989422725135" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422725135" at="12,60,12,60" />
+      <scope id="9002759989422725135" at="21,23,21,23" />
+      <scope id="9002759989422725135" at="12,0,14,0" />
+      <scope id="9002759989422725135" at="15,82,17,123" />
+      <scope id="9002759989422725135" at="21,0,23,0" />
+      <scope id="9002759989422725135" at="24,51,28,77" />
+      <scope id="9002759989422725135" at="14,0,19,0" />
+      <scope id="9002759989422725135" at="23,0,30,0" />
+      <unit id="9002759989422725135" at="19,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable3_Test$TestBody" />
+      <unit id="9002759989422725135" at="10,0,32,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInLocalVariable3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422729201">
+    <file name="BackspaceToUnwrapArrayTypeInFieldDeclaration_Test.java">
+      <node id="9002759989422729201" at="15,84,16,107" concept="2" />
+      <node id="9002759989422729201" at="16,107,17,125" concept="2" />
+      <node id="9002759989422729201" at="24,51,25,63" concept="2" />
+      <node id="9002759989422729203" at="25,63,26,77" concept="2" />
+      <node id="9002759989422729205" at="26,77,27,77" concept="2" />
+      <node id="9002759989422729201" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInFieldDeclaration_Test#()V" />
+      <node id="9002759989422729201" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422729201" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInFieldDeclaration#()V" />
+      <node id="9002759989422729201" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422729201" at="12,62,12,62" />
+      <scope id="9002759989422729201" at="21,23,21,23" />
+      <scope id="9002759989422729201" at="12,0,14,0" />
+      <scope id="9002759989422729201" at="15,84,17,125" />
+      <scope id="9002759989422729201" at="21,0,23,0" />
+      <scope id="9002759989422729201" at="24,51,27,77" />
+      <scope id="9002759989422729201" at="14,0,19,0" />
+      <scope id="9002759989422729201" at="23,0,29,0" />
+      <unit id="9002759989422729201" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInFieldDeclaration_Test$TestBody" />
+      <unit id="9002759989422729201" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInFieldDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422761476">
+    <file name="BackspaceToUnwrapArrayTypeInStaticFieldDeclaration_Test.java">
+      <node id="9002759989422761476" at="15,90,16,107" concept="2" />
+      <node id="9002759989422761476" at="16,107,17,131" concept="2" />
+      <node id="9002759989422761476" at="24,51,25,63" concept="2" />
+      <node id="9002759989422761478" at="25,63,26,77" concept="2" />
+      <node id="9002759989422761480" at="26,77,27,77" concept="2" />
+      <node id="9002759989422761476" at="12,0,14,0" concept="1" trace="BackspaceToUnwrapArrayTypeInStaticFieldDeclaration_Test#()V" />
+      <node id="9002759989422761476" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422761476" at="14,0,19,0" concept="5" trace="test_BackspaceToUnwrapArrayTypeInStaticFieldDeclaration#()V" />
+      <node id="9002759989422761476" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422761476" at="12,68,12,68" />
+      <scope id="9002759989422761476" at="21,23,21,23" />
+      <scope id="9002759989422761476" at="12,0,14,0" />
+      <scope id="9002759989422761476" at="15,90,17,131" />
+      <scope id="9002759989422761476" at="21,0,23,0" />
+      <scope id="9002759989422761476" at="24,51,27,77" />
+      <scope id="9002759989422761476" at="14,0,19,0" />
+      <scope id="9002759989422761476" at="23,0,29,0" />
+      <unit id="9002759989422761476" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInStaticFieldDeclaration_Test$TestBody" />
+      <unit id="9002759989422761476" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceToUnwrapArrayTypeInStaticFieldDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422797029">
+    <file name="WrapParamWithArrayType_Test.java">
+      <node id="9002759989422797029" at="15,62,16,107" concept="2" />
+      <node id="9002759989422797029" at="16,107,17,103" concept="2" />
+      <node id="9002759989422797029" at="24,51,25,63" concept="2" />
+      <node id="9002759989422799834" at="25,63,26,35" concept="2" />
+      <node id="9002759989422797029" at="12,0,14,0" concept="1" trace="WrapParamWithArrayType_Test#()V" />
+      <node id="9002759989422797029" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422797029" at="14,0,19,0" concept="5" trace="test_WrapParamWithArrayType#()V" />
+      <node id="9002759989422797029" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422797029" at="12,40,12,40" />
+      <scope id="9002759989422797029" at="21,23,21,23" />
+      <scope id="9002759989422797029" at="12,0,14,0" />
+      <scope id="9002759989422797029" at="15,62,17,103" />
+      <scope id="9002759989422797029" at="21,0,23,0" />
+      <scope id="9002759989422797029" at="24,51,26,35" />
+      <scope id="9002759989422797029" at="14,0,19,0" />
+      <scope id="9002759989422797029" at="23,0,28,0" />
+      <unit id="9002759989422797029" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapParamWithArrayType_Test$TestBody" />
+      <unit id="9002759989422797029" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapParamWithArrayType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422799852">
+    <file name="WrapLocalVariableWithArrayType_Test.java">
+      <node id="9002759989422799852" at="15,70,16,107" concept="2" />
+      <node id="9002759989422799852" at="16,107,17,111" concept="2" />
+      <node id="9002759989422799852" at="24,51,25,63" concept="2" />
+      <node id="9002759989422799859" at="25,63,26,35" concept="2" />
+      <node id="9002759989422799852" at="12,0,14,0" concept="1" trace="WrapLocalVariableWithArrayType_Test#()V" />
+      <node id="9002759989422799852" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422799852" at="14,0,19,0" concept="5" trace="test_WrapLocalVariableWithArrayType#()V" />
+      <node id="9002759989422799852" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422799852" at="12,48,12,48" />
+      <scope id="9002759989422799852" at="21,23,21,23" />
+      <scope id="9002759989422799852" at="12,0,14,0" />
+      <scope id="9002759989422799852" at="15,70,17,111" />
+      <scope id="9002759989422799852" at="21,0,23,0" />
+      <scope id="9002759989422799852" at="24,51,26,35" />
+      <scope id="9002759989422799852" at="14,0,19,0" />
+      <scope id="9002759989422799852" at="23,0,28,0" />
+      <unit id="9002759989422799852" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapLocalVariableWithArrayType_Test$TestBody" />
+      <unit id="9002759989422799852" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapLocalVariableWithArrayType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9002759989422804802">
+    <file name="WrapIncompleteMemberDeclarationWithArrayType_Test.java">
+      <node id="9002759989422804802" at="15,84,16,107" concept="2" />
+      <node id="9002759989422804802" at="16,107,17,125" concept="2" />
+      <node id="9002759989422804802" at="24,51,25,63" concept="2" />
+      <node id="9002759989422805924" at="25,63,26,45" concept="2" />
+      <node id="9002759989422804802" at="12,0,14,0" concept="1" trace="WrapIncompleteMemberDeclarationWithArrayType_Test#()V" />
+      <node id="9002759989422804802" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="9002759989422804802" at="14,0,19,0" concept="5" trace="test_WrapIncompleteMemberDeclarationWithArrayType#()V" />
+      <node id="9002759989422804802" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="9002759989422804802" at="12,62,12,62" />
+      <scope id="9002759989422804802" at="21,23,21,23" />
+      <scope id="9002759989422804802" at="12,0,14,0" />
+      <scope id="9002759989422804802" at="15,84,17,125" />
+      <scope id="9002759989422804802" at="21,0,23,0" />
+      <scope id="9002759989422804802" at="24,51,26,45" />
+      <scope id="9002759989422804802" at="14,0,19,0" />
+      <scope id="9002759989422804802" at="23,0,28,0" />
+      <unit id="9002759989422804802" at="19,0,29,0" name="jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithArrayType_Test$TestBody" />
+      <unit id="9002759989422804802" at="10,0,30,0" name="jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithArrayType_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9010159352460099163">

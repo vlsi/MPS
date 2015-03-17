@@ -13,17 +13,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class ParameterDeclaration_Name_Actions {
+public class FieldDeclaration_Name_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.BACKSPACE, new ParameterDeclaration_Name_Actions.ParameterDeclaration_Name_Actions_BACKSPACE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new FieldDeclaration_Name_Actions.FieldDeclaration_Name_Actions_BACKSPACE(node));
   }
-  public static class ParameterDeclaration_Name_Actions_BACKSPACE extends AbstractCellAction {
+  public static class FieldDeclaration_Name_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public ParameterDeclaration_Name_Actions_BACKSPACE(SNode node) {
+    public FieldDeclaration_Name_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
-    }
-    public String getDescriptionText() {
-      return "backspace";
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
