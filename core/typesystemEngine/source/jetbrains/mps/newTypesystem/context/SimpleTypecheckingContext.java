@@ -243,13 +243,24 @@ public abstract class SimpleTypecheckingContext<
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      checkRoot(refreshTypes);
-      //non-typesystem checks
-      applyNonTypesystemRules();
-      final Set<Pair<SNode, List<IErrorReporter>>> nodesWithErrors = getTypechecking().getNodesWithErrors(true);
-      final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(nodesWithErrors);
-      result.addAll(getTypechecking().getNodesWithErrors(false));
-      return result;
+      // recursion guard
+      if (myCurrentlyChecking) Collections.emptyList();
+
+      try {
+        this.myCurrentlyChecking = true;
+
+        checkRoot(refreshTypes);
+        //non-typesystem checks
+        applyNonTypesystemRules();
+        final Set<Pair<SNode, List<IErrorReporter>>> nodesWithErrors = getTypechecking().getNodesWithErrors(true);
+        final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(nodesWithErrors);
+        result.addAll(getTypechecking().getNodesWithErrors(false));
+        return result;
+
+      }
+      finally {
+        this.myCurrentlyChecking = false;
+      }
     }
   }
 
