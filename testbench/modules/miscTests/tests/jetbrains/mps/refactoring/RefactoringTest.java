@@ -26,8 +26,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.After;

@@ -17,9 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
@@ -75,9 +73,4 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
     return propertyDeclaration == null ? null : propertyDeclaration.getReference();
   }
 
-  @Override
-  public int getModelVersion(SModelReference ref) {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
-    return modelDescriptor instanceof RefactorableSModelDescriptor ? ((RefactorableSModelDescriptor) modelDescriptor).getVersion() : -1;
-  }
 }

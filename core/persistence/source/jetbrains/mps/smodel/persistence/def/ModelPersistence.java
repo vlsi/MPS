@@ -174,12 +174,6 @@ public class ModelPersistence {
     if (result.getPersistenceVersion() < 7 && source instanceof FileDataSource) {
       Map<String, String> metadata = loadMetadata(((FileDataSource) source).getFile());
       if (metadata != null) {
-        if (metadata.containsKey(SModelHeader.VERSION)) {
-          try {
-            result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
-          } catch (NumberFormatException ignored) {
-          }
-        }
         if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
           result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
         }
@@ -446,13 +440,10 @@ public class ModelPersistence {
             myResult.setUID(value);
           } else if (ModelPersistence9.REF.equals(name)) {
             myResult.setUID(value);
-          } else if (SModelHeader.VERSION.equals(name)) {
-            try {
-              myResult.setVersion(Integer.parseInt(value));
-            } catch (NumberFormatException ignored) {
-            }
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
+          } else if ("version".equals(name)) {
+            //old model version
           } else {
             myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
           }

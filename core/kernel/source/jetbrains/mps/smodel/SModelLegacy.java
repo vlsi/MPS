@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
@@ -53,12 +50,7 @@ public final class SModelLegacy {
     if (importElement != null) {
       return;
     }
-    org.jetbrains.mps.openapi.model.SModel modelDescriptor =
-        RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(ref);
     int usedVersion = -1;
-    if (modelDescriptor instanceof RefactorableSModelDescriptor) {
-      usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
-    }
     importElement = new ImportElement(ref, -1, firstVersion ? -1 : usedVersion);
 
     myModel.addModelImport(importElement);

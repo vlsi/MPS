@@ -811,32 +811,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public int getVersion() {
-    return -1;
-  }
-
   //---------refactorings--------
-
-  public void setVersion(int version) {
-
-  }
-
-  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    assertLegalChange();
-
-    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement == null && myLegacyImplicitImports != null) {
-      importElement = myLegacyImplicitImports.find(sModelReference);
-    }
-
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    } else {
-      if (myLegacyImplicitImports != null) {
-        myLegacyImplicitImports.addAdditionalModelVersion(sModelReference, currentVersion);
-      }
-    }
-  }
 
   public boolean updateSModelReferences() {
     assertLegalChange();
@@ -936,7 +911,6 @@ public class SModel implements SModelData {
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
-    to.setVersion(getVersion());
   }
 
   public static class ImportElement {

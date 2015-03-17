@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.refactoring.renameLanguage;
 
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
@@ -29,6 +27,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class LanguageRenamer {
@@ -37,9 +36,12 @@ public class LanguageRenamer {
   private RefactoringContext myContext;
   private Project myProject;
 
-  public LanguageRenamer(Project project, Language language, String newName) {
+  public LanguageRenamer(Project project, final Language language, String newName) {
     myLanguage = language;
     myNewName = newName;
+
+    //todo
+    myContext = new RefactoringContext(project, null);
     myProject = project;
   }
 

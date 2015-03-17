@@ -58,10 +58,6 @@ public class ModelWriter7 implements IModelWriter {
   }
 
   protected void saveHeader(SModel sourceModel, Element rootElement) {
-    int version = sourceModel.getVersion();
-    if (version >= 0) {
-      rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
-    }
     if (myModelHeader != null) {
       if (myModelHeader.isDoNotGenerate()) {
         rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, Boolean.TRUE.toString());
