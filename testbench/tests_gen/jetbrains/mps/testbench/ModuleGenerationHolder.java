@@ -15,7 +15,6 @@ import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
@@ -45,6 +44,7 @@ import jetbrains.mps.util.FileUtil;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
@@ -103,7 +103,6 @@ public class ModuleGenerationHolder {
     }
 
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
-    ModelAccess.instance().flushEventQueue();
     final Exception[] exceptions = new Exception[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -134,7 +133,6 @@ public class ModuleGenerationHolder {
         }
       }
     });
-    ModelAccess.instance().flushEventQueue();
     if (exceptions[0] != null) {
       throw exceptions[0];
     }
