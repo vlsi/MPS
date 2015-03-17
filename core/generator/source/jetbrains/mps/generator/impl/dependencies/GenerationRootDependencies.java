@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * FIXME if we'd like to keep using this object, shall refactor all storage from string to native objects (e.g. SModelReference, SNodeId, etc)
+ * Strings consume quite a lot of memory on startup
  * Evgeny Gryaznov, Jun 1, 2010
  */
 public class GenerationRootDependencies {
@@ -137,29 +139,32 @@ public class GenerationRootDependencies {
     return attr == null ? null : attr.getValue();
   }
 
-  public static GenerationRootDependencies fromXml(Element element, boolean isCommon) {
-    String rootId = isCommon ? null : getValue(element, ATTR_ID);
+  public static GenerationRootDependencies fromXml(Element element, boolean isCommon, Intern intern) {
+    String rootId = isCommon ? null : intern.value(getValue(element, ATTR_ID));
     String rootName = getValue(element, ATTR_NAME);
     String rootHash = getValue(element, ATTR_HASH);
     boolean dependsOnConditionals = "true".equals(getValue(element, ATTR_DEPENDS_ON_CONDITIONALS));
     boolean dependsOnNodes = "true".equals(getValue(element, ATTR_DEPENDS_ON_NODES));
-    List<String> local = new ArrayList<String>();
-    List<String> external = new ArrayList<String>();
-    List<String> files = new ArrayList<String>();
-    for (Element e : ((List<Element>) element.getChildren(NODE_DEPENDS_ON))) {
+    ArrayList<String> local = new ArrayList<String>();
+    ArrayList<String> external = new ArrayList<String>();
+    ArrayList<String> files = new ArrayList<String>();
+    for (Element e : element.getChildren(NODE_DEPENDS_ON)) {
       Attribute attr = e.getAttribute(ATTR_ROOT_ID);
       if (attr != null) {
-        local.add(attr.getValue());
+        local.add(intern.value(attr.getValue()));
       } else if ((attr = e.getAttribute(ATTR_MODEL_ID)) != null) {
-        external.add(attr.getValue());
+        external.add(intern.value(attr.getValue()));
       }
     }
-    for (Element e : ((List<Element>) element.getChildren(NODE_FILE))) {
+    for (Element e : element.getChildren(NODE_FILE)) {
       String v = getValue(e, ATTR_NAME);
       if (v != null) {
-        files.add(v);
+        files.add(intern.value(v));
       }
     }
+    local.trimToSize();
+    external.trimToSize();
+    files.trimToSize();
     return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, dependsOnNodes, local, external, files);
   }
 
