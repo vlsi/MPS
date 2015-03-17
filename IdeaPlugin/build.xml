@@ -178,7 +178,7 @@
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="false">
       <jvmarg value="-ea"/>
@@ -217,7 +217,7 @@
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="false">
       <jvmarg value="-ea"/>
@@ -254,7 +254,7 @@
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="true">
       <jvmarg value="-ea"/>
