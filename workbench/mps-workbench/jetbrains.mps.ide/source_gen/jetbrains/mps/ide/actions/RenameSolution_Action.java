@@ -8,10 +8,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
-import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
+import jetbrains.mps.ide.refactoring.RenameModuleDialog;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -19,7 +19,7 @@ import org.apache.log4j.LogManager;
 public class RenameSolution_Action extends BaseAction {
   private static final Icon ICON = null;
   public RenameSolution_Action() {
-    super("Rename Solution", "", ICON);
+    super("Rename Module", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -28,7 +28,7 @@ public class RenameSolution_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Solution;
+    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -63,7 +63,7 @@ public class RenameSolution_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((SModule) MapSequence.fromMap(_params).get("module"))), ((MPSProject) MapSequence.fromMap(_params).get("project"))).show();
+      new RenameModuleDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);

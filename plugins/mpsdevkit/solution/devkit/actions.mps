@@ -690,80 +690,6 @@
       <concept id="5686963296372475025" name="jetbrains.mps.baseLanguage.collections.structure.QueueType" flags="in" index="3O6Q9H" />
     </language>
   </registry>
-  <node concept="sE7Ow" id="7sF2r9CilGp">
-    <property role="fJN8o" value="false" />
-    <property role="TrG5h" value="RenameLanguage" />
-    <property role="72QZ$" value="true" />
-    <property role="3GE5qa" value="Refactoring" />
-    <property role="2uzpH1" value="Rename Language" />
-    <node concept="tnohg" id="7sF2r9CilGq" role="tncku">
-      <node concept="3clFbS" id="7sF2r9CilGr" role="2VODD2">
-        <node concept="3clFbF" id="7sF2r9CilGs" role="3cqZAp">
-          <node concept="2OqwBi" id="7sF2r9CilGt" role="3clFbG">
-            <node concept="2ShNRf" id="7sF2r9CilGu" role="2Oq$k0">
-              <node concept="1pGfFk" id="7sF2r9CilGv" role="2ShVmc">
-                <ref role="37wK5l" to="o2jy:29N7xYwTFPl" resolve="RenameLanguageDialog" />
-                <node concept="2OqwBi" id="7sF2r9CilGz" role="37wK5m">
-                  <node concept="2WthIp" id="7sF2r9CilG$" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7sF2r9CilG_" role="2OqNvi">
-                    <ref role="2WH_rO" node="7sF2r9CilGH" resolve="project" />
-                  </node>
-                </node>
-                <node concept="1eOMI4" id="7sF2r9CilGA" role="37wK5m">
-                  <node concept="10QFUN" id="7sF2r9CilGB" role="1eOMHV">
-                    <node concept="2OqwBi" id="7sF2r9CilGC" role="10QFUP">
-                      <node concept="2WthIp" id="7sF2r9CilGD" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="7sF2r9CilGE" role="2OqNvi">
-                        <ref role="2WH_rO" node="7sF2r9CilGJ" resolve="module" />
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="7sF2r9CilGF" role="10QFUM">
-                      <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="7sF2r9CilGG" role="2OqNvi">
-              <ref role="37wK5l" to="810:~DialogWrapper.show():void" resolve="show" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1DS2jV" id="7sF2r9CilGH" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7HZe2EwZDlR" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="7sF2r9CilGI" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="7HZe2EwZDlV" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="7sF2r9CilGJ" role="1NuT2Z">
-      <property role="TrG5h" value="module" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
-      <node concept="1oajcY" id="7HZe2EwZDnn" role="1oa70y" />
-    </node>
-    <node concept="2ScWuX" id="7sF2r9CilGK" role="tmbBb">
-      <node concept="3clFbS" id="7sF2r9CilGL" role="2VODD2">
-        <node concept="3clFbF" id="7sF2r9CilGM" role="3cqZAp">
-          <node concept="2ZW3vV" id="7sF2r9CilGN" role="3clFbG">
-            <node concept="3uibUv" id="7sF2r9CilGO" role="2ZW6by">
-              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
-            </node>
-            <node concept="2OqwBi" id="7sF2r9CilGP" role="2ZW6bz">
-              <node concept="2WthIp" id="7sF2r9CilGQ" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7sF2r9CilGR" role="2OqNvi">
-                <ref role="2WH_rO" node="7sF2r9CilGJ" resolve="module" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="tC5Ba" id="7sF2r9CilGS">
     <property role="TrG5h" value="LanguageRefactoring" />
     <property role="3GE5qa" value="Refactoring.Group" />
@@ -773,8 +699,8 @@
       <ref role="2f8Tey" to="tprs:miYJQAr2UA" resolve="refactoring" />
     </node>
     <node concept="ftmFs" id="7sF2r9CilGT" role="ftER_">
-      <node concept="tCFHf" id="7sF2r9CilGU" role="ftvYc">
-        <ref role="tCJdB" node="7sF2r9CilGp" resolve="RenameLanguage" />
+      <node concept="tCFHf" id="7msLDqMFe8Y" role="ftvYc">
+        <ref role="tCJdB" to="tprs:3fhZBTge84q" resolve="RenameSolution" />
       </node>
     </node>
   </node>
@@ -819,13 +745,6 @@
       <node concept="pLAjd" id="7uxtv5_tYmN" role="Zd501">
         <property role="pLAjf" value="VK_E" />
         <property role="pLAjc" value="alt+shift" />
-      </node>
-    </node>
-    <node concept="Zd509" id="7sF2r9CilGX" role="Zd508">
-      <ref role="1bYAoF" node="7sF2r9CilGp" resolve="RenameLanguage" />
-      <node concept="pLAjd" id="7sF2r9CilGY" role="Zd501">
-        <property role="pLAjf" value="VK_F6" />
-        <property role="pLAjc" value="shift" />
       </node>
     </node>
     <node concept="Zd509" id="gXLcbBbpLI" role="Zd508">

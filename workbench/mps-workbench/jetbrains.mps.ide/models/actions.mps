@@ -12515,7 +12515,7 @@
   <node concept="sE7Ow" id="3fhZBTge84q">
     <property role="TrG5h" value="RenameSolution" />
     <property role="72QZ$" value="true" />
-    <property role="2uzpH1" value="Rename Solution" />
+    <property role="2uzpH1" value="Rename Module" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Solution.Actions" />
     <node concept="tnohg" id="3fhZBTge84r" role="tncku">
       <node concept="3clFbS" id="3fhZBTge84s" role="2VODD2">
@@ -12523,7 +12523,7 @@
           <node concept="2OqwBi" id="3fhZBTgeaEY" role="3clFbG">
             <node concept="2ShNRf" id="3fhZBTgeaEI" role="2Oq$k0">
               <node concept="1pGfFk" id="3fhZBTgeaEK" role="2ShVmc">
-                <ref role="37wK5l" to="o2jy:29N7xYwTGoY" resolve="RenameSolutionDialog" />
+                <ref role="37wK5l" to="o2jy:29N7xYwTGoY" resolve="RenameModuleDialog" />
                 <node concept="2OqwBi" id="50dRo6PLHen" role="37wK5m">
                   <node concept="2OqwBi" id="50dRo6PLHdb" role="2Oq$k0">
                     <node concept="2WthIp" id="50dRo6PLHcQ" role="2Oq$k0" />
@@ -12543,15 +12543,9 @@
                         <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
                       </node>
                     </node>
-                    <node concept="3uibUv" id="3fhZBTgeaEX" role="10QFUM">
-                      <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+                    <node concept="3uibUv" id="7msLDqMFFbR" role="10QFUM">
+                      <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                     </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="3_F3cCEG_S" role="37wK5m">
-                  <node concept="2WthIp" id="3_F3cCEG_V" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="3_F3cCEG_X" role="2OqNvi">
-                    <ref role="2WH_rO" node="cvGLnZnRlO" resolve="project" />
                   </node>
                 </node>
               </node>
@@ -12582,8 +12576,8 @@
       <node concept="3clFbS" id="3fhZBTge84w" role="2VODD2">
         <node concept="3clFbF" id="3fhZBTgeaEz" role="3cqZAp">
           <node concept="2ZW3vV" id="3fhZBTgeaEB" role="3clFbG">
-            <node concept="3uibUv" id="3fhZBTgeaEE" role="2ZW6by">
-              <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+            <node concept="3uibUv" id="7msLDqMFEUL" role="2ZW6by">
+              <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
             </node>
             <node concept="2OqwBi" id="3fhZBTgeaE$" role="2ZW6bz">
               <node concept="2WthIp" id="3fhZBTgeaE_" role="2Oq$k0" />
