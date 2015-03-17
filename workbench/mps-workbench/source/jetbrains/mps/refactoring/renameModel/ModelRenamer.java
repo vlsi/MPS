@@ -36,7 +36,7 @@ public class ModelRenamer {
 
   public void updateReferencesIfNeeded(Project project) {
     if (!myLazy) {
-      ReferenceUpdater.getInstance().updateModelAndModuleReferences(project);
+      ReferenceUpdater.updateModelAndModuleReferences(project);
     }
   }
 }

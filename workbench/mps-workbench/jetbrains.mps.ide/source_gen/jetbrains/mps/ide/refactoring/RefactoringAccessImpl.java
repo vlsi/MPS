@@ -5,7 +5,6 @@ package jetbrains.mps.ide.refactoring;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.refactoring.framework.IRefactoring;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
@@ -46,7 +45,6 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
     RefactoringView refactoringView = project.getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
   }
-
   @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);

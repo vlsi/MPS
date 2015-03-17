@@ -107,7 +107,6 @@ public class LanguageRenamer {
   }
 
   private void updateReferences(Project project) {
-    ReferenceUpdater.getInstance().updateModelAndModuleReferences(project);
+    ReferenceUpdater.updateModelAndModuleReferences(project);
   }
-
 }
