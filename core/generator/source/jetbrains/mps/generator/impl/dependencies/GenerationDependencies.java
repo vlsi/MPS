@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ public class GenerationDependencies {
     this.myModelHash = modelHash;
     this.myParametersHash = parametersHash;
     this.myUnchanged = unchanged;
-    this.myUsedModelsHashes = externalHashes;
+    this.myUsedModelsHashes = externalHashes.isEmpty() ? Collections.<String, String>emptyMap() : externalHashes;
     for (GenerationRootDependencies rd : data) {
       String id = rd.getRootId();
       myRootDependenciesMap.put(id == null ? GeneratableSModel.HEADER : id, rd);
@@ -185,20 +185,22 @@ public class GenerationDependencies {
       /* regenerate all */
       return null;
     }
+    // XXX Might be worth sharing intern with other reads/files, but this would take another refactoring round
+    Intern intern = new Intern();
     Map<String, String> externalHashes = new HashMap<String, String>();
-    for (Element e : ((List<Element>) root.getChildren(NODE_MODEL))) {
+    for (Element e : root.getChildren(NODE_MODEL)) {
       String modelReference = GenerationRootDependencies.getValue(e, ATTR_MODEL_ID);
       String rootHash = GenerationRootDependencies.getValue(e, ATTR_HASH);
       if (modelReference != null) {
-        externalHashes.put(modelReference, rootHash);
+        externalHashes.put(intern.value(modelReference), rootHash);
       }
     }
     List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
-    for (Element e : ((List<Element>) root.getChildren(NODE_COMMON))) {
-      data.add(GenerationRootDependencies.fromXml(e, true));
+    for (Element e : root.getChildren(NODE_COMMON)) {
+      data.add(GenerationRootDependencies.fromXml(e, true, intern));
     }
-    for (Element e : ((List<Element>) root.getChildren(NODE_ROOT))) {
-      data.add(GenerationRootDependencies.fromXml(e, false));
+    for (Element e : root.getChildren(NODE_ROOT)) {
+      data.add(GenerationRootDependencies.fromXml(e, false, intern));
     }
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
     String paramsHash = GenerationRootDependencies.getValue(root, ATTR_PARAMS_HASH);
