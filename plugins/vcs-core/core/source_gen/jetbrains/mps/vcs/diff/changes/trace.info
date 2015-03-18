@@ -499,35 +499,6 @@
       <unit id="2732852465125672459" at="24,0,219,0" name="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     </file>
   </root>
-  <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4209733725028893042">
-    <file name="ModelVersionChange.java">
-      <node id="4209733725028893049" at="10,59,11,21" concept="16" />
-      <node id="4209733725028893089" at="18,48,19,73" concept="12" />
-      <node id="4209733725028893100" at="23,31,24,29" concept="12" />
-      <node id="4209733725028893107" at="27,28,28,34" concept="12" />
-      <node id="4209733725028893045" at="10,0,13,0" concept="2" trace="ModelVersionChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
-      <node id="4209733725028893054" at="13,0,16,0" concept="10" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
-      <node id="4209733725028893102" at="26,0,30,0" concept="10" trace="toString#()Ljava/lang/String;" />
-      <node id="4209733725028893084" at="16,0,21,0" concept="10" trace="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-      <node id="4209733725028893095" at="21,0,26,0" concept="10" trace="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-      <scope id="4209733725028893063" at="14,76,14,76" />
-      <scope id="4209733725028893048" at="10,59,11,21" />
-      <scope id="4209733725028893088" at="18,48,19,73" />
-      <scope id="4209733725028893099" at="23,31,24,29" />
-      <scope id="4209733725028893106" at="27,28,28,34" />
-      <scope id="4209733725028893045" at="10,0,13,0">
-        <var name="changeSet" id="4209733725028893051" />
-      </scope>
-      <scope id="4209733725028893054" at="13,0,16,0">
-        <var name="model" id="4209733725028893057" />
-        <var name="nodeCopier" id="4209733725028893060" />
-      </scope>
-      <scope id="4209733725028893102" at="26,0,30,0" />
-      <scope id="4209733725028893084" at="16,0,21,0" />
-      <scope id="4209733725028893095" at="21,0,26,0" />
-      <unit id="4209733725028893042" at="9,0,31,0" name="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
-    </file>
-  </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4972886494893223485">
     <file name="NodeGroupChange.java">
       <node id="4972886494893223503" at="28,0,29,0" concept="6" trace="myParentNodeId" />

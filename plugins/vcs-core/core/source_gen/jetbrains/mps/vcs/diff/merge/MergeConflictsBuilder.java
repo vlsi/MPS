@@ -32,7 +32,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
-import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -214,16 +213,6 @@ public class MergeConflictsBuilder {
       }
     }, ModuleDependencyChange.class);
   }
-  private void collectModelVersionConflicts() {
-    Tuples._2<Map<ModelVersionChange, ModelVersionChange>, Map<ModelVersionChange, ModelVersionChange>> arranged = this.<ModelVersionChange,ModelVersionChange>arrangeChanges(new _FunctionTypes._return_P1_E0<ModelVersionChange, ModelVersionChange>() {
-      public ModelVersionChange invoke(ModelVersionChange mvc) {
-        return mvc;
-      }
-    }, ModelVersionChange.class);
-    if (MapSequence.fromMap(arranged._0()).count() == 1 && MapSequence.fromMap(arranged._1()).count() == 1) {
-      addPossibleConflict(SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).first(), SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()).first());
-    }
-  }
   private void collectConflicts() {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> mineGroupChanges = arrangeNodeGroupChanges(myMineChangeSet);
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> repositoryGroupChanges = arrangeNodeGroupChanges(myRepositoryChangeSet);
@@ -258,7 +247,6 @@ public class MergeConflictsBuilder {
 
     collectSymmetricImportedModelChanges();
     collectSymmetricModuleDependencyChanges();
-    collectModelVersionConflicts();
   }
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> nodeRoleToGroupChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<NodeGroupChange>>());
