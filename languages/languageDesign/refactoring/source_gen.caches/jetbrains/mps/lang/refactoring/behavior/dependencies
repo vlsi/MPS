@@ -560,16 +560,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringAction_BehaviorDescriptor" file="RefactoringAction_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringArgumentReference_BehaviorDescriptor" file="RefactoringArgumentReference_BehaviorDescriptor.java" />
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_Behavior" file="RefactoringArgument_Behavior.java">
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.Refactoring_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_BehaviorDescriptor" file="RefactoringArgument_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" file="RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
