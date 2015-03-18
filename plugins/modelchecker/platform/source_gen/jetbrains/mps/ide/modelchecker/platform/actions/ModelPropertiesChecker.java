@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.project.validation.ValidationProblem;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
@@ -20,14 +21,14 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    ValidationUtil.validateModel(model, new Consumer<>() {
-      public void consume(final  problem) {
-        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, problem.???(), new IModelCheckerFix() {
+    ValidationUtil.validateModel(model, new Consumer<ValidationProblem>() {
+      public void consume(final ValidationProblem problem) {
+        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, problem.getMessage(), new IModelCheckerFix() {
           public boolean doFix() {
-            if (!(problem.???())) {
+            if (!(problem.canFix())) {
               return false;
             }
-            problem.???();
+            problem.fix();
             return true;
           }
         }, ModelChecker.SEVERITY_ERROR, "Model properties"));

@@ -70,7 +70,6 @@
     <import index="oxmj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.content.tabs(MPS.IDEA/com.intellij.ui.content.tabs@java_stub)" />
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="zofw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(MPS.Core/jetbrains.mps.smodel.persistence.def@java_stub)" />
-    <import index="6vul" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.validation.problem(MPS.Core/jetbrains.mps.project.validation.problem@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4693,7 +4692,7 @@
                       <property role="TrG5h" value="problem" />
                       <property role="3TUv4t" value="true" />
                       <node concept="3uibUv" id="1HWKBfG$8sT" role="1tU5fm">
-                        <ref role="3uigEE" to="6vul:~ValidationProblem" resolve="ValidationProblem" />
+                        <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="1HWKBfG$8lA" role="3clF47">
@@ -4714,7 +4713,7 @@
                                   <ref role="3cqZAo" node="1HWKBfG$8l$" resolve="problem" />
                                 </node>
                                 <node concept="liA8E" id="1HWKBfG$ehg" role="2OqNvi">
-                                  <ref role="37wK5l" to="6vul:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
+                                  <ref role="37wK5l" to="6k24:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
                                 </node>
                               </node>
                               <node concept="2ShNRf" id="1HWKBfG$fsM" role="37wK5m">
@@ -4744,7 +4743,7 @@
                                                 <ref role="3cqZAo" node="1HWKBfG$8l$" resolve="problem" />
                                               </node>
                                               <node concept="liA8E" id="1HWKBfG$iwb" role="2OqNvi">
-                                                <ref role="37wK5l" to="6vul:~ValidationProblem.canFix():boolean" resolve="canFix" />
+                                                <ref role="37wK5l" to="6k24:~ValidationProblem.canFix():boolean" resolve="canFix" />
                                               </node>
                                             </node>
                                           </node>
@@ -4755,7 +4754,7 @@
                                               <ref role="3cqZAo" node="1HWKBfG$8l$" resolve="problem" />
                                             </node>
                                             <node concept="liA8E" id="1HWKBfG$gTg" role="2OqNvi">
-                                              <ref role="37wK5l" to="6vul:~ValidationProblem.fix():void" resolve="fix" />
+                                              <ref role="37wK5l" to="6k24:~ValidationProblem.fix():void" resolve="fix" />
                                             </node>
                                           </node>
                                         </node>
@@ -4783,7 +4782,7 @@
                     </node>
                   </node>
                   <node concept="3uibUv" id="1HWKBfG$8qr" role="2Ghqu4">
-                    <ref role="3uigEE" to="6vul:~ValidationProblem" resolve="ValidationProblem" />
+                    <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
                   </node>
                 </node>
               </node>
