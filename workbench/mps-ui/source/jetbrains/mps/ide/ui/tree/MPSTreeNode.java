@@ -91,10 +91,6 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     myOperationContext = operationContext;
   }
 
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
-  }
-
   @Override
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {

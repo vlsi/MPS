@@ -416,10 +416,10 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Inferred Type" />
-    <node concept="1DS2jV" id="4vCqlNf_CuY" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="4vCqlNf_CuZ" role="1oa70y" />
+    <node concept="1DS2jV" id="3U4Yh9n6y5f" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3U4Yh9n6y5g" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4vCqlNf_Cv0" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
@@ -443,12 +443,19 @@
         </node>
         <node concept="3clFbF" id="1KUoCipvCdF" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCipvCdG" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvCdH" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="3U4Yh9n6yUt" role="2Oq$k0">
+              <node concept="2OqwBi" id="3U4Yh9n6yh_" role="2Oq$k0">
+                <node concept="2WthIp" id="3U4Yh9n6yhC" role="2Oq$k0" />
+                <node concept="1DTwFV" id="3U4Yh9n6yhE" role="2OqNvi">
+                  <ref role="2WH_rO" node="3U4Yh9n6y5f" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3U4Yh9n6zUK" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="1KUoCipvCdI" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="1KUoCipvCdJ" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCipvCdK" role="1bW5cS">
                   <node concept="3clFbF" id="1KUoCipvCdL" role="3cqZAp">
@@ -516,11 +523,11 @@
           <node concept="37vLTI" id="4vCqlNf_Cv_" role="3clFbG">
             <node concept="2ShNRf" id="4vCqlNf_CvA" role="37vLTx">
               <node concept="1pGfFk" id="4vCqlNf_CvB" role="2ShVmc">
-                <ref role="37wK5l" to="7kbf:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
-                <node concept="2OqwBi" id="4vCqlNf_CvC" role="37wK5m">
-                  <node concept="2WthIp" id="4vCqlNf_CvD" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="4vCqlNf_CvE" role="2OqNvi">
-                    <ref role="2WH_rO" node="4vCqlNf_CuY" resolve="context" />
+                <ref role="37wK5l" to="7kbf:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
+                <node concept="2OqwBi" id="3U4Yh9n6$C1" role="37wK5m">
+                  <node concept="2WthIp" id="3U4Yh9n6$C4" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3U4Yh9n6$C6" role="2OqNvi">
+                    <ref role="2WH_rO" node="3U4Yh9n6y5f" resolve="mpsProject" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4vCqlNf_CvF" role="37wK5m">
@@ -559,10 +566,10 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Expected Type" />
-    <node concept="1DS2jV" id="4vCqlNf_CvQ" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="4vCqlNf_CvR" role="1oa70y" />
+    <node concept="1DS2jV" id="3U4Yh9n6v7g" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3U4Yh9n6v7h" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4vCqlNf_CvS" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
@@ -586,12 +593,19 @@
         </node>
         <node concept="3clFbF" id="1KUoCipvyJX" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCipvyJY" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvyJZ" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="3U4Yh9n6wIr" role="2Oq$k0">
+              <node concept="2OqwBi" id="3U4Yh9n6w5l" role="2Oq$k0">
+                <node concept="2WthIp" id="3U4Yh9n6w5o" role="2Oq$k0" />
+                <node concept="1DTwFV" id="3U4Yh9n6w5q" role="2OqNvi">
+                  <ref role="2WH_rO" node="3U4Yh9n6v7g" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3U4Yh9n6xKu" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="1KUoCipvyK0" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="1KUoCipvyK1" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCipvyK2" role="1bW5cS">
                   <node concept="3clFbF" id="1KUoCipvyK3" role="3cqZAp">
@@ -667,11 +681,11 @@
           <node concept="37vLTI" id="4vCqlNf_Cww" role="3clFbG">
             <node concept="2ShNRf" id="4vCqlNf_Cwx" role="37vLTx">
               <node concept="1pGfFk" id="4vCqlNf_Cwy" role="2ShVmc">
-                <ref role="37wK5l" to="7kbf:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
-                <node concept="2OqwBi" id="4vCqlNf_Cwz" role="37wK5m">
-                  <node concept="2WthIp" id="4vCqlNf_Cw$" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="4vCqlNf_Cw_" role="2OqNvi">
-                    <ref role="2WH_rO" node="4vCqlNf_CvQ" resolve="context" />
+                <ref role="37wK5l" to="7kbf:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
+                <node concept="2OqwBi" id="3U4Yh9n6vY7" role="37wK5m">
+                  <node concept="2WthIp" id="3U4Yh9n6vYa" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3U4Yh9n6vYc" role="2OqNvi">
+                    <ref role="2WH_rO" node="3U4Yh9n6v7g" resolve="mpsProject" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4vCqlNf_CwA" role="37wK5m">

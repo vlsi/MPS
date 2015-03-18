@@ -3026,12 +3026,12 @@
             <node concept="2OqwBi" id="hGAoUk0" role="33vP2m">
               <node concept="2OqwBi" id="hGAoSX2" role="2Oq$k0">
                 <node concept="2WthIp" id="hGAoSX3" role="2Oq$k0" />
-                <node concept="1DTwFV" id="hHNVd$C" role="2OqNvi">
-                  <ref role="2WH_rO" node="hHNVd$B" resolve="context" />
+                <node concept="1DTwFV" id="3U4Yh9n4UcI" role="2OqNvi">
+                  <ref role="2WH_rO" node="3U4Yh9n4RUn" resolve="mpsProject" />
                 </node>
               </node>
               <node concept="liA8E" id="hGAoWrj" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="jrbx:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="4KO4I2pqNcM" role="37wK5m">
                   <ref role="3VsUkX" to="rl1i:51NkKCgB3lM" resolve="BaseLanguageHierarchyViewTool" />
                 </node>
@@ -3045,15 +3045,9 @@
               <ref role="3cqZAo" node="hGAoHk$" resolve="tool" />
             </node>
             <node concept="liA8E" id="hGAp22C" role="2OqNvi">
-              <ref role="37wK5l" to="rl1i:51NkKCgB3hW" resolve="showItemInHierarchy" />
+              <ref role="37wK5l" to="rl1i:3U4Yh9n2qoi" resolve="showItemInHierarchy" />
               <node concept="37vLTw" id="3GM_nagTueE" role="37wK5m">
                 <ref role="3cqZAo" node="hGAoxuh" resolve="classNode" />
-              </node>
-              <node concept="2OqwBi" id="hGAp5ug" role="37wK5m">
-                <node concept="2WthIp" id="hGAp5uh" role="2Oq$k0" />
-                <node concept="1DTwFV" id="hHNVd$S" role="2OqNvi">
-                  <ref role="2WH_rO" node="hHNVd$B" resolve="context" />
-                </node>
               </node>
             </node>
           </node>
@@ -3088,10 +3082,10 @@
         </node>
       </node>
     </node>
-    <node concept="1DS2jV" id="hHNVd$B" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDlM" role="1oa70y" />
+    <node concept="1DS2jV" id="3U4Yh9n4RUn" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3U4Yh9n4RUo" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="AMutgwlBFI" role="1NuT2Z">
       <property role="TrG5h" value="editorCell" />

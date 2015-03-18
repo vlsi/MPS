@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -88,8 +86,6 @@ public class MPSProject extends Project implements ProjectComponent {
   }
 
   @Override
-  @Deprecated
-  // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
   }
