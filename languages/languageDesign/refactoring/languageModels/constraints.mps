@@ -14,7 +14,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -38,11 +37,8 @@
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
       <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
-      <concept id="1203001236505" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" flags="nn" index="otxO1" />
-      <concept id="7855321458717464197" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor" flags="in" index="Um2eU" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
-        <child id="7852712695066883424" name="canBeAncestor" index="1kkKnR" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213106463729" name="canBeChild" index="1MLUbF" />
       </concept>
@@ -70,9 +66,6 @@
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
-      </concept>
-      <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
-        <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <reference id="1140138128738" name="concept" index="1PxNhF" />
@@ -110,30 +103,6 @@
               </node>
             </node>
             <node concept="3x8VRR" id="2NZZazZelX2" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1M2fIO" id="5YKiRiBuwp1">
-    <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <ref role="1M2myG" to="tp1h:hr9$37Z" resolve="UpdateModelByDefaultOperation" />
-    <node concept="nKS2y" id="5YKiRiBuwp2" role="1MLUbF">
-      <node concept="3clFbS" id="5YKiRiBuwp3" role="2VODD2">
-        <node concept="3clFbF" id="5YKiRiBuwp4" role="3cqZAp">
-          <node concept="2OqwBi" id="5YKiRiBuwph" role="3clFbG">
-            <node concept="2OqwBi" id="5YKiRiBuwp6" role="2Oq$k0">
-              <node concept="nLn13" id="5YKiRiBuwp5" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="5YKiRiBuwpa" role="2OqNvi">
-                <node concept="1xIGOp" id="5YKiRiBuwpg" role="1xVPHs" />
-                <node concept="1xMEDy" id="5YKiRiBuwpb" role="1xVPHs">
-                  <node concept="chp4Y" id="5YKiRiBuwpe" role="ri$Ld">
-                    <ref role="cht4Q" to="tp1h:hjZk6Ue" resolve="UpdateModelClause" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3x8VRR" id="5YKiRiBuwpl" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -253,34 +222,6 @@
               </node>
             </node>
             <node concept="3x8VRR" id="3LlWHEPrkgS" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1M2fIO" id="1UIzTM99vm6">
-    <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <ref role="1M2myG" to="tp1h:hjZk6Ue" resolve="UpdateModelClause" />
-    <node concept="Um2eU" id="1UIzTM99vm7" role="1kkKnR">
-      <node concept="3clFbS" id="1UIzTM99vm8" role="2VODD2">
-        <node concept="3clFbF" id="1UIzTM99vm9" role="3cqZAp">
-          <node concept="22lmx$" id="1UIzTM99vmi" role="3clFbG">
-            <node concept="2OqwBi" id="1UIzTM99vmv" role="3uHU7w">
-              <node concept="otxO1" id="1UIzTM99vml" role="2Oq$k0" />
-              <node concept="3O6GUB" id="1UIzTM99vmz" role="2OqNvi">
-                <node concept="chp4Y" id="1UIzTM99vm_" role="3QVz_e">
-                  <ref role="cht4Q" to="tp1h:hr9$37Z" resolve="UpdateModelByDefaultOperation" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1UIzTM9aaTu" role="3uHU7B">
-              <node concept="otxO1" id="1UIzTM99vma" role="2Oq$k0" />
-              <node concept="3O6GUB" id="1UIzTM9aaTy" role="2OqNvi">
-                <node concept="chp4Y" id="1UIzTM9aaT$" role="3QVz_e">
-                  <ref role="cht4Q" to="tpee:fzclF80" resolve="StatementList" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>

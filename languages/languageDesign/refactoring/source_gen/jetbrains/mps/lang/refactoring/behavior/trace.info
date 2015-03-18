@@ -20,10 +20,7 @@
       <unit at="10,0,27,0" name="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,114,0" name="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ChangeFeatureNameExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_BehaviorDescriptor" />
+      <unit at="9,0,104,0" name="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_Model_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model_BehaviorDescriptor" />
@@ -45,9 +42,6 @@
     </file>
     <file name="CreateRefactoringContext_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.refactoring.behavior.CreateRefactoringContext_BehaviorDescriptor" />
-    </file>
-    <file name="DeleteFeatureExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.refactoring.behavior.DeleteFeatureExpression_BehaviorDescriptor" />
     </file>
     <file name="DoRefactorClause_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause_BehaviorDescriptor" />
@@ -78,9 +72,6 @@
     </file>
     <file name="MainProjectOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MergeNodeWithAnotherNodeExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.refactoring.behavior.MergeNodeWithAnotherNodeExpression_BehaviorDescriptor" />
     </file>
     <file name="ModelDescriptorOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_BehaviorDescriptor" />
@@ -162,12 +153,6 @@
     </file>
     <file name="ScopeOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="UpdateModelByDefaultOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.refactoring.behavior.UpdateModelByDefaultOperation_BehaviorDescriptor" />
-    </file>
-    <file name="UpdateModelClause_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.refactoring.behavior.UpdateModelClause_BehaviorDescriptor" />
     </file>
     <file name="UpdateModelProcedure_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.refactoring.behavior.UpdateModelProcedure_BehaviorDescriptor" />
@@ -377,22 +362,6 @@
       <unit id="1262430001741643032" at="16,0,38,0" name="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741647085">
-    <file name="DeleteFeatureExpression_Behavior.java">
-      <node id="1262430001741647083" at="11,100,12,16" concept="4" />
-      <node id="1262430001741647085" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741647085" at="11,0,14,0" concept="5" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <scope id="1262430001741647087" at="9,43,9,43" />
-      <scope id="1262430001741647082" at="11,100,12,16" />
-      <scope id="1262430001741647085" at="9,0,11,0">
-        <var name="thisNode" id="1262430001741647085" />
-      </scope>
-      <scope id="1262430001741647085" at="11,0,14,0">
-        <var name="thisConcept" id="1262430001741647085" />
-      </scope>
-      <unit id="1262430001741647085" at="8,0,15,0" name="jetbrains.mps.lang.refactoring.behavior.DeleteFeatureExpression_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741647148">
     <file name="IsApplicableToModuleClause_Behavior.java">
       <node id="1262430001741647146" at="18,92,19,16" concept="4" />
@@ -438,52 +407,6 @@
       <unit id="1262430001741647148" at="15,0,36,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741647634">
-    <file name="UpdateModelClause_Behavior.java">
-      <node id="1262430001741647632" at="18,92,19,16" concept="4" />
-      <node id="3044950653914723179" at="21,125,22,289" concept="3" />
-      <node id="3044950653914723194" at="22,289,23,171" concept="1" />
-      <node id="3044950653914723199" at="23,171,24,177" concept="1" />
-      <node id="3044950653914723203" at="24,177,25,18" concept="4" />
-      <node id="658365993681975721" at="27,83,28,47" concept="4" />
-      <node id="658365993681975717" at="30,60,31,63" concept="3" />
-      <node id="658365993681975717" at="31,63,32,30" concept="3" />
-      <node id="658365993681975717" at="32,30,33,220" concept="0" />
-      <node id="658365993681975717" at="32,30,33,220" concept="0" />
-      <node id="658365993681975717" at="32,30,33,220" concept="1" />
-      <node id="658365993681975717" at="33,220,34,24" concept="4" />
-      <node id="1262430001741647634" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741647634" at="18,0,21,0" concept="5" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1262430001741647634" at="27,0,30,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1262430001741647634" at="21,0,27,0" concept="5" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="658365993681975717" at="30,0,36,0" concept="5" trace="_quotation_createNode_vkl7zl_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1262430001741647636" at="16,43,16,43" />
-      <scope id="1262430001741647631" at="18,92,19,16" />
-      <scope id="658365993681975720" at="27,83,28,47" />
-      <scope id="658365993681975717" at="32,30,33,220" />
-      <scope id="1262430001741647634" at="16,0,18,0">
-        <var name="thisNode" id="1262430001741647634" />
-      </scope>
-      <scope id="1262430001741647634" at="18,0,21,0">
-        <var name="thisConcept" id="1262430001741647634" />
-      </scope>
-      <scope id="1262430001741647634" at="27,0,30,0">
-        <var name="thisNode" id="1262430001741647634" />
-      </scope>
-      <scope id="3044950653914723178" at="21,125,25,18">
-        <var name="result" id="3044950653914723180" />
-      </scope>
-      <scope id="658365993681975717" at="30,60,34,24">
-        <var name="facade" id="658365993681975717" />
-        <var name="quotedNode_1" id="658365993681975717" />
-      </scope>
-      <scope id="1262430001741647634" at="21,0,27,0">
-        <var name="thisConcept" id="1262430001741647634" />
-      </scope>
-      <scope id="658365993681975717" at="30,0,36,0" />
-      <unit id="1262430001741647634" at="15,0,37,0" name="jetbrains.mps.lang.refactoring.behavior.UpdateModelClause_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741703647">
     <file name="IsApplicableToModelClause_Behavior.java">
       <node id="1262430001741703645" at="18,92,19,16" concept="4" />
@@ -527,22 +450,6 @@
       </scope>
       <scope id="658365993682017366" at="29,0,35,0" />
       <unit id="1262430001741703647" at="15,0,36,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741704603">
-    <file name="ChangeFeatureNameExpression_Behavior.java">
-      <node id="1262430001741704601" at="11,100,12,16" concept="4" />
-      <node id="1262430001741704603" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741704603" at="11,0,14,0" concept="5" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <scope id="1262430001741704605" at="9,43,9,43" />
-      <scope id="1262430001741704600" at="11,100,12,16" />
-      <scope id="1262430001741704603" at="9,0,11,0">
-        <var name="thisNode" id="1262430001741704603" />
-      </scope>
-      <scope id="1262430001741704603" at="11,0,14,0">
-        <var name="thisConcept" id="1262430001741704603" />
-      </scope>
-      <unit id="1262430001741704603" at="8,0,15,0" name="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741704647">
