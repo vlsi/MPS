@@ -8,25 +8,32 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.validation.ModelValidator;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.project.validation.problem.ValidationProblem;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
   }
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("model properties", 1);
 
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    ModelValidator validator = new ModelValidator(model);
-    validator.validate(((SModel) model).getRepository());
-    for (String error : validator.errors()) {
-      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, error, null, ModelChecker.SEVERITY_ERROR, "Model properties"));
-    }
-    for (String w : validator.warnings()) {
-      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, w, null, ModelChecker.SEVERITY_WARNING, "Model properties"));
-    }
+    ValidationUtil.validateModel(model, new Consumer<ValidationProblem>() {
+      public void consume(final ValidationProblem problem) {
+        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, problem.getMessage(), new IModelCheckerFix() {
+          public boolean doFix() {
+            if (!(problem.canFix())) {
+              return false;
+            }
+            problem.fix();
+            return true;
+          }
+        }, ModelChecker.SEVERITY_ERROR, "Model properties"));
+      }
+    });
     monitor.done();
     return results;
   }

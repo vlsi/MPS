@@ -22,15 +22,19 @@ import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.problem.ValidationProblem;
+import jetbrains.mps.project.validation.problem.ValidationProblem.Severity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,9 +53,20 @@ public class ErrorChecker extends TreeUpdateVisitor {
         if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
           return;
         }
-        final ModelValidator mv = new ModelValidator(modelDescriptor);
-        mv.validate(myProject.getRepository());
-        schedule(node, new ErrorReport(node, mv.errors(), mv.warnings()));
+
+        final List<String> errors = new ArrayList<String>();
+        final List<String> warnings = new ArrayList<String>();
+        ValidationUtil.validateModel(modelDescriptor, new Consumer<ValidationProblem>() {
+          @Override
+          public void consume(ValidationProblem problem) {
+            if (problem.getSeverity()== Severity.ERROR){
+              errors.add(problem.getMessage());
+            } else {
+              warnings.add(problem.getMessage());
+            }
+          }
+        });
+        schedule(node, new ErrorReport(node, errors, warnings));
       }
     });
   }

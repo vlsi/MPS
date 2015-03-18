@@ -28,9 +28,12 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.validation.ModelValidator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.project.validation.problem.ValidationProblem;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 
 public class CheckingTestsUtil {
@@ -225,20 +228,24 @@ public class CheckingTestsUtil {
     }
   }
   private static StringBuilder checkModel(final SModel sm) {
-    StringBuilder errorMessages = new StringBuilder();
-    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return new ModelValidator(sm).validate();
+    final StringBuilder errorMessages = new StringBuilder();
+    errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+    final Wrappers._boolean withErrors = new Wrappers._boolean(false);
+
+    // todo why read here and no read when accessing nodes? 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ValidationUtil.validateModel(sm, new Consumer<ValidationProblem>() {
+          public void consume(ValidationProblem problem) {
+            if (problem.getSeverity() != ValidationProblem.Severity.ERROR) {
+              return;
+            }
+            withErrors.value = true;
+            errorMessages.append("\t").append(problem.getMessage()).append("\n");
+          }
+        });
       }
     });
-    if (!(validationResult.isEmpty())) {
-      errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
-      for (String item : validationResult) {
-        errorMessages.append("\t");
-        errorMessages.append(item);
-        errorMessages.append("\n");
-      }
-    }
     for (SNode node : SNodeUtil.getDescendants(sm)) {
       // Testbench.LOG.debug("Checking node " + node); 
       if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()) == null) {
