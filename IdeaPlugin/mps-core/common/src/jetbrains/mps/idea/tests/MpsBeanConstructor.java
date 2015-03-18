@@ -50,11 +50,15 @@ public class MpsBeanConstructor<T extends MpsBean> {
 
   private void fillFieldsFromFile(File file, List<Field> filteredFields, MpsBean bean) throws FileNotFoundException, ParseException {
     MpsTestDataParser dataParser = new MpsTestDataParser(file);
-    for (Field field : filteredFields) {
-      Class<? extends Entry> entryClass = Entry.getEntryfromClass(field.getType());
-      Entry entry = dataParser.nextToken(entryClass);
-      checkFieldNameMatchesEntry(field, entry);
-      setFieldFromEntry(bean, field, entry);
+    try {
+      for (Field field : filteredFields) {
+        Class<? extends Entry> entryClass = Entry.getEntryfromClass(field.getType());
+        Entry entry = dataParser.nextToken(entryClass);
+        checkFieldNameMatchesEntry(field, entry);
+        setFieldFromEntry(bean, field, entry);
+      }
+    } finally {
+      dataParser.close();
     }
   }
 

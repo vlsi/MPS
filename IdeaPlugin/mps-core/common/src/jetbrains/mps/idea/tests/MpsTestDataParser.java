@@ -16,30 +16,39 @@
 
 package jetbrains.mps.idea.tests;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class MpsTestDataParser implements EntryDataParser {
-  private final InnerDataParser myParser;
+  private final static Logger LOG = LogManager.getLogger(MpsTestDataParser.class);
+  private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSBundle");
   private final static String DELIMITERS = "\n\t\f\r;";
+
+  private final FileDataParser myParser;
 
   public MpsTestDataParser(@NotNull File file) throws FileNotFoundException {
     myParser = new FileDataParser(file, DELIMITERS);
+  }
+
+  public void close() {
+    myParser.close();
   }
 
   @Override
   public Entry nextToken(Class<? extends Entry> aClass) throws ParseException {
     try {
       Entry result = aClass.newInstance();
-      String token = myParser.nextToken(DELIMITERS);
-      if (token == null) {
-        throw new ParseException("Next token cannot be read.");
-      }
+      String token = nextTokenChecked();
       result.parse(new LineDataParser(token));
       return result;
     } catch (InstantiationException e) {
@@ -47,6 +56,15 @@ public class MpsTestDataParser implements EntryDataParser {
     } catch (IllegalAccessException e) {
       throw new ParseException(e);
     }
+  }
+
+  @NotNull
+  private String nextTokenChecked() throws ParseException {
+    String token = myParser.nextToken(DELIMITERS);
+    if (token == null) {
+      throw new ParseException("Next token cannot be read.");
+    }
+    return token;
   }
 
   @Override
@@ -101,8 +119,15 @@ public class MpsTestDataParser implements EntryDataParser {
     private LineDataParser myParser = null;
 
     private FileDataParser(File file, String delimiters) throws FileNotFoundException {
-      myScanner = new Scanner(file);
+      myScanner = new Scanner(new BufferedReader(new FileReader(file)));
       myDelimiters = delimiters;
+    }
+
+    public void close() {
+      if (myScanner.hasNext()) {
+        LOG.warn(BUNDLE.getString("closing.stream.while.there.are.unread.tokens"));
+      }
+      myScanner.close();
     }
 
     private boolean initDataParserIfNeeded() {
