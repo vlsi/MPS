@@ -22,11 +22,10 @@ import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.validation.ModuleValidator;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.MessageCollectConsumer;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.project.validation.problem.ValidationProblem;
-import jetbrains.mps.project.validation.problem.ValidationProblem.Severity;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -59,7 +58,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
         ValidationUtil.validateModel(modelDescriptor, new Consumer<ValidationProblem>() {
           @Override
           public void consume(ValidationProblem problem) {
-            if (problem.getSeverity()== Severity.ERROR){
+            if (problem.getSeverity() == Severity.ERROR) {
               errors.add(problem.getMessage());
             } else {
               warnings.add(problem.getMessage());
@@ -78,15 +77,12 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         SModule module = mr.resolve(myProject.getRepository());
-        final List<String> errors, warnings;
-        if (module == null) {
-          errors = warnings = Collections.emptyList();
-        } else {
-          ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
-          errors = validator.getErrors();
-          warnings = validator.getWarnings();
+
+        MessageCollectConsumer collector = new MessageCollectConsumer();
+        if (module != null) {
+          ValidationUtil.validateModule(module, collector);
         }
-        schedule(node, new ErrorReport(node, errors, warnings));
+        schedule(node, new ErrorReport(node, collector.getErrors(), collector.getWarnings()));
       }
     });
 

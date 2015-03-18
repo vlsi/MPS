@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.project.validation.problem.ValidationProblem;
+import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;

@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.project.validation.problem.ValidationProblem;
+import jetbrains.mps.project.validation.ValidationProblem;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {

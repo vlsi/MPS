@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,35 @@
  */
 package jetbrains.mps.project.validation;
 
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
-public interface ModuleValidator {
-  List<String> getErrors();
+public class ValidationProblem {
+  private String myMessage;
+  private Severity mySeverity;
 
-  List<String> getWarnings();
+  public ValidationProblem(Severity severity, String message) {
+    mySeverity = severity;
+    myMessage = message;
+  }
 
-  public boolean isValid();
+  public boolean canFix(){
+    return false;
+  }
+
+  public void fix(){
+
+  }
+
+  public String getMessage() {
+    return myMessage;
+  }
+
+  @NotNull
+  public Severity getSeverity() {
+    return mySeverity;
+  }
+
+  public enum Severity{
+    ERROR, WARNING
+  }
 }

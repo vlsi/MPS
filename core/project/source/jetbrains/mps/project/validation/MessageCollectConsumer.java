@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,30 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.project.validation.ValidationProblem.Severity;
+import org.jetbrains.mps.openapi.util.Consumer;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmptyValidator implements ModuleValidator {
-  @Override
-  public List<String> getErrors() {
-    return new ArrayList<String>();
-  }
+public class MessageCollectConsumer implements Consumer<ValidationProblem> {
+  private List<String> myWarnings = new ArrayList<String>(1);
+  private List<String> myErrors = new ArrayList<String>(1);
 
   @Override
+  public void consume(ValidationProblem problem) {
+    if (problem.getSeverity()== Severity.ERROR){
+      myErrors.add(problem.getMessage());
+    } else{
+      myWarnings.add(problem.getMessage());
+    }
+  }
+
   public List<String> getWarnings() {
-    return new ArrayList<String>();
+    return myWarnings;
   }
 
-  @Override
-  public boolean isValid() {
-    return true;
+  public List<String> getErrors() {
+    return myErrors;
   }
 }

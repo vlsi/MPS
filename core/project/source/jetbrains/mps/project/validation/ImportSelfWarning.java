@@ -13,28 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.validation.problem;
+package jetbrains.mps.project.validation;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
-public class ModelValidationProblem extends ValidationProblem {
+class ImportSelfWarning extends ValidationProblem {
   private final SModel myModel;
-  private final Severity mySeverity;
+  private final SModelReference myReference;
 
-  public ModelValidationProblem(SModel model, Severity severity, String message) {
-    super(message);
+  public ImportSelfWarning(SModel model, SModelReference reference) {
+    super(Severity.WARNING, "Model should not import itself");
     myModel = model;
-    mySeverity = severity;
+    myReference = reference;
   }
 
-  public SModel getModel() {
-    return myModel;
-  }
-
-  @NotNull
   @Override
-  public Severity getSeverity() {
-    return mySeverity;
+  public boolean canFix() {
+    return true;
+  }
+
+  @Override
+  public void fix() {
+    ((SModelInternal) myModel).deleteModelImport(myReference);
   }
 }
