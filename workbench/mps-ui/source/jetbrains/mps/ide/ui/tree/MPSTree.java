@@ -102,8 +102,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     registerKeyboardAction(new MyRefreshAction(), KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
+  /**
+   * Initialization node common for each node initialized in the tree.
+   * Shall invoke {@link MPSTreeNode#doInit()} to perform actual initialization.
+   * May add extra utility stuff, as model read or progress indication (hence left protected for subclasses).
+   * Despite being accessible to subclasses, not deemed to be invoked by anything but {@link MPSTreeNode#init()} method.
+   */
   protected void doInit(final MPSTreeNode node) {
-    if (myExpandingNodes.contains(node)) return;
+    assert ThreadUtils.isInEDT();
+    if (myExpandingNodes.contains(node)) {
+      return;
+    }
 
     myExpandingNodes.add(node);
     try {
@@ -121,9 +130,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          node.init();
+          node.doInit();
         }
       });
+      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
 
       if (!myLoadingDisabled && node.isLoadingEnabled() && node.hasChild(progressNode)) { //node.init() might remove all the children
         node.remove(progressNode);
@@ -325,9 +335,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   public void expandRoot() {
     expandPath(new TreePath(new Object[]{getRootNode()}));
-    if (!getRootNode().isInitialized()) {
-      getRootNode().init();
-    }
+    getRootNode().init();
   }
 
   public void expandAll(MPSTreeNode node) {
@@ -510,9 +518,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = getRootNode();
 
-    if (!current.isInitialized()) {
-      current.init();
-    }
+    current.init();
 
     path.add(current);
 
@@ -553,9 +559,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private void ensurePathInitialized(TreePath path) {
     for (Object item : path.getPath()) {
       MPSTreeNode node = (MPSTreeNode) item;
-      if (!node.isInitialized()) {
-        node.init();
-      }
+      node.init();
     }
   }
 
@@ -657,9 +661,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       TreePath path = event.getPath();
       Object node = path.getLastPathComponent();
       MPSTreeNode treeNode = (MPSTreeNode) node;
-      if (!treeNode.isInitialized()) {
-        doInit(treeNode);
-      }
+      treeNode.init();
     }
 
     @Override

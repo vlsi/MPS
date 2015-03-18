@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,9 @@ public class CellExplorerView extends BaseProjectTool {
   private UpdaterListener mySynchronizationListener = new UpdaterListenerAdapter() {
     @Override
     public void cellSynchronizedWithModel(EditorCell cell) {
-      if (cell == null) return;
+      if (cell == null) {
+        return;
+      }
       CellTreeNode cellTreeNode;
       if (myCashedPropertyCellTreeNode != null && cell == myCashedPropertyCellTreeNode.getUserObject()) {
         cellTreeNode = myCashedPropertyCellTreeNode;
@@ -91,9 +93,10 @@ public class CellExplorerView extends BaseProjectTool {
         cellTreeNode = (CellTreeNode) findCellTreeNode(cell);
         myCashedPropertyCellTreeNode = cellTreeNode;
       }
-      if (cellTreeNode == null) return;
+      if (cellTreeNode == null) {
+        return;
+      }
       cellTreeNode.init();
-      ((DefaultTreeModel) myTree.getModel()).nodeChanged(cellTreeNode);
       myTree.repaint();
     }
   };
