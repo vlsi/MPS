@@ -342,12 +342,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     boolean wasLoadingDisabled = myLoadingDisabled;
     myLoadingDisabled = true;
     try {
-      expandPath(new TreePath(node.getPath()));
-      for (int i = 0; i < node.getChildCount(); i++) {
-        expandAll((MPSTreeNode) node.getChildAt(i));
-      }
+      expandAllImpl(node);
     } finally {
       myLoadingDisabled = wasLoadingDisabled;
+    }
+  }
+  private void expandAllImpl(MPSTreeNode node) {
+    expandPath(new TreePath(node.getPath()));
+    for (MPSTreeNode c : node) {
+      expandAllImpl(c);
     }
   }
 
@@ -355,15 +358,18 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     boolean wasAutoExpandEnabled = myAutoExpandEnabled;
     try {
       myAutoExpandEnabled = false;
-      for (int i = 0; i < node.getChildCount(); i++) {
-        collapseAll((MPSTreeNode) node.getChildAt(i));
-      }
-
-      if (node.isInitialized()) {
-        super.collapsePath(new TreePath(node.getPath()));
-      }
+      collapseAllImpl(node);
     } finally {
       myAutoExpandEnabled = wasAutoExpandEnabled;
+    }
+  }
+
+  private void collapseAllImpl(MPSTreeNode node) {
+    for (MPSTreeNode c : node) {
+      collapseAllImpl(c);
+    }
+    if (node.isInitialized()) {
+      super.collapsePath(new TreePath(node.getPath()));
     }
   }
 
