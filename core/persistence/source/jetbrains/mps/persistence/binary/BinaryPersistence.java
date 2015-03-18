@@ -428,13 +428,13 @@ public final class BinaryPersistence {
   }
 
   private void saveUsedLanguages(ModelOutputStream os) throws IOException {
-    Map<SLanguage, Integer> refs = myModelData.usedLanguagesWithVersions();
+    Collection<SLanguage> refs = myModelData.usedLanguages();
     os.writeShort(refs.size());
-    for (Entry<SLanguage, Integer> e : refs.entrySet()) {
+    for (SLanguage l : refs) {
       // id, name, version
-      os.writeUUID(IdHelper.getLanguageId(e.getKey()).getIdValue());
-      os.writeString(e.getKey().getQualifiedName());
-      os.writeInt(e.getValue());
+      os.writeUUID(IdHelper.getLanguageId(l).getIdValue());
+      os.writeString(l.getQualifiedName());
+      os.writeInt(l.getLanguageVersion());
     }
   }
 

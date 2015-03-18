@@ -94,7 +94,6 @@ public class SModelOperations {
         continue;
       }
       SModuleReference ref = lang.getModuleReference();
-      int version = lang.getLanguageVersion();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
           if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
@@ -103,7 +102,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(MetaIdByDeclaration.ref2Id(ref), version);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(MetaIdByDeclaration.ref2Id(ref));
       }
     }
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {

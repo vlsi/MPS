@@ -76,14 +76,11 @@ public class CloneUtil {
     for (ImportElement model : inputModel.importedModels()) {
       outputModel.addModelImport(model.getModelReference(), false);
     }
-    for (SModuleReference lang : inputModel.importedLanguages()) {
-      outputModel.addLanguage(lang);
-    }
     for (SModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);
     }
-    for (Entry<SLanguage, Integer> lang : inputModel.importedLanguageIdsWithVersions().entrySet()) {
-      outputModel.addLanguageId(lang.getKey(), lang.getValue());
+    for (SLanguage lang : inputModel.importedLanguageIds()) {
+      outputModel.addLanguage(lang);
     }
   }
 

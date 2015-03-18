@@ -42,6 +42,7 @@
     <import index="3sib" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options.ex(MPS.IDEA/com.intellij.openapi.options.ex@java_stub)" />
     <import index="byws" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.lang.model(JDK/javax.lang.model@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="oj8w" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
@@ -3038,14 +3039,14 @@
                                 </node>
                               </node>
                               <node concept="liA8E" id="1NKXwjPTqRN" role="2OqNvi">
-                                <ref role="37wK5l" to="cu2c:~SModelInternal.importedLanguages():java.util.List" resolve="importedLanguages" />
+                                <ref role="37wK5l" to="cu2c:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
                               </node>
                             </node>
                             <node concept="3cpWsn" id="1NKXwjPRacJ" role="1Duv9x">
                               <property role="3TUv4t" value="false" />
                               <property role="TrG5h" value="ref" />
-                              <node concept="3uibUv" id="1NKXwjPRacL" role="1tU5fm">
-                                <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
+                              <node concept="3uibUv" id="2$XMij87rHX" role="1tU5fm">
+                                <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="1NKXwjPRacA" role="2LFqv$">
@@ -3062,7 +3063,7 @@
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="1NKXwjPRacH" role="2OqNvi">
-                                    <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
+                                    <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
                                     <node concept="37vLTw" id="1NKXwjPRacI" role="37wK5m">
                                       <ref role="3cqZAo" node="1NKXwjPRacJ" resolve="ref" />
                                     </node>

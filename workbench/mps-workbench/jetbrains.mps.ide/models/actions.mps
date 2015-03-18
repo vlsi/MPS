@@ -18843,7 +18843,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="GXFKfGswgw" role="2OqNvi">
-                            <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
+                            <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
                             <node concept="37vLTw" id="3GM_nagTvlh" role="37wK5m">
                               <ref role="3cqZAo" node="3_6qVY6xiyL" resolve="importedLanguage" />
                             </node>
@@ -18863,13 +18863,13 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="3_6qVY6xiz2" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~SModelInternal.importedLanguages():java.util.List" resolve="importedLanguages" />
+                        <ref role="37wK5l" to="cu2c:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
                       </node>
                     </node>
                     <node concept="3cpWsn" id="3_6qVY6xiyL" role="1Duv9x">
                       <property role="TrG5h" value="importedLanguage" />
-                      <node concept="3uibUv" id="3_6qVY6xizm" role="1tU5fm">
-                        <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
+                      <node concept="3uibUv" id="2$XMij85SPs" role="1tU5fm">
+                        <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
                       </node>
                     </node>
                   </node>

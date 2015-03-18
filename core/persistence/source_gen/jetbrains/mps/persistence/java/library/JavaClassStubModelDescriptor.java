@@ -72,7 +72,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   private SModel createModel() {
     SModel model = new SModel(getReference(), new ForeignNodeIdMap());
     for (SLanguage l : getLanguagesToImport()) {
-      model.addLanguage(l, -1);
+      model.addLanguage(l);
     }
     new ASMModelLoader(myModelRoot.getModule(), getSource().getPaths(), model, false).updateModel();
     return model;

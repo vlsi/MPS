@@ -637,6 +637,14 @@ public class SModel implements SModelData {
     }
   }
 
+  public void addLanguage(@NotNull SLanguage language) {
+    addLanguage(language, language.getLanguageVersion());
+  }
+
+  /**
+   * @deprecated  use #addLanguage(SLanguage) instead
+   */
+  @Deprecated
   public void addLanguage(SLanguage id, int version) {
     assertLegalChange();
 
@@ -922,8 +930,8 @@ public class SModel implements SModelData {
     for (SModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (Entry<SLanguage, Integer> mr : usedLanguagesWithVersions().entrySet()) {
-      to.addLanguage(mr.getKey(), mr.getValue());
+    for (SLanguage lang : usedLanguages()) {
+      to.addLanguage(lang);
     }
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);

@@ -137,9 +137,6 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
-      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
-        <property id="1068580320021" name="value" index="3cmrfH" />
-      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -655,12 +652,9 @@
                   <ref role="3cqZAo" node="5JsnGMj1qem" resolve="model" />
                 </node>
                 <node concept="liA8E" id="5JsnGMj1qe_" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="addLanguage" />
+                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
                   <node concept="37vLTw" id="LlD8Ew9E93" role="37wK5m">
                     <ref role="3cqZAo" node="5JsnGMj1qev" resolve="l" />
-                  </node>
-                  <node concept="3cmrfG" id="LlD8Ew9EbG" role="37wK5m">
-                    <property role="3cmrfH" value="-1" />
                   </node>
                 </node>
               </node>

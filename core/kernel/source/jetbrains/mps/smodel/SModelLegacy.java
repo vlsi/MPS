@@ -45,7 +45,7 @@ public final class SModelLegacy {
   }
 
   public void addLanguage(SModuleReference ref) {
-    myModel.addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
+    myModel.addLanguage(MetaIdByDeclaration.ref2Id(ref));
   }
 
   public void addModelImport(org.jetbrains.mps.openapi.model.SModelReference ref, boolean firstVersion) {

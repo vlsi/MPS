@@ -214,7 +214,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     // Identical to SModelLegacy.addLanguage(SModuleReference). Refactor uses of this method and drop it,
     // while SModelLegacy may need to survive few releases as it deals with smodel.SModel instances directly.
     // Users of this class, however, have access to full power of SModel and therefore much more freedom what to do.
-    getSModelInternal().addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
+    getSModelInternal().addLanguage(MetaIdByDeclaration.ref2Id(ref));
   }
 
   @Override
@@ -223,18 +223,18 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public Map<SLanguage, Integer> importedLanguageIdsWithVersions() {
-    return getSModelInternal().usedLanguagesWithVersions();
-  }
-
-  @Override
   public void deleteLanguageId(@NotNull SLanguage ref) {
-    getSModelInternal().deleteLanguage(ref);
+    getSModel().deleteLanguage(ref);
   }
 
   @Override
   public void addLanguage(Language language) {
-    getSModelInternal().addLanguage(MetaAdapterByDeclaration.getLanguage(language), language.getLanguageVersion());
+    getSModel().addLanguage(MetaAdapterByDeclaration.getLanguage(language));
+  }
+
+  @Override
+  public void addLanguage(@NotNull SLanguage language) {
+    getSModel().addLanguage(language);
   }
 
   @Override

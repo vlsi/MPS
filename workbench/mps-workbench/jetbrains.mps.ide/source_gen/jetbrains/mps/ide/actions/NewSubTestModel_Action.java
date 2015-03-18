@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -94,7 +95,7 @@ public class NewSubTestModel_Action extends BaseAction {
           for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
             ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
           }
-          for (SModuleReference importedLanguage : ((SModelInternal) sourceModel).importedLanguages()) {
+          for (SLanguage importedLanguage : ((SModelInternal) sourceModel).importedLanguageIds()) {
             ((SModelInternal) createdModel).addLanguage(importedLanguage);
           }
           for (SModuleReference devKit : ((SModelInternal) sourceModel).importedDevkits()) {
