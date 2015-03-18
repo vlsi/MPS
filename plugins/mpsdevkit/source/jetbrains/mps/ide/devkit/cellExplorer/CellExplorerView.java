@@ -237,7 +237,7 @@ public class CellExplorerView extends BaseProjectTool {
     private boolean myInitialized = false;
 
     public CellTreeNode(EditorCell cell) {
-      super(cell, null);
+      super(cell);
       myCell = cell;
       setNodeIdentifier(calculateNodeIdentifier());
       setToggleClickCount(-1);
@@ -371,7 +371,6 @@ public class CellExplorerView extends BaseProjectTool {
 
   private class KeyMapTreeNode extends MPSTreeNode {
     public KeyMapTreeNode(KeyMap keyMap) {
-      super(null);
       setNodeIdentifier("KeyMaps");
 
       List<ActionKey> actionKeys = new ArrayList<ActionKey>(keyMap.getActionKeys());

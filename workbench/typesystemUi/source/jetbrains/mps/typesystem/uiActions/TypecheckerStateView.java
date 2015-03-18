@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
-import jetbrains.mps.project.ProjectOperationContext;
 
 import javax.swing.JComponent;
 
@@ -37,6 +36,6 @@ public class TypecheckerStateView extends BaseProjectTool {
 
   @Override
   protected void createTool() {
-    this.myComponent = new TypecheckerStateViewComponent(new ProjectOperationContext(ProjectHelper.toMPSProject(getProject())));
+    this.myComponent = new TypecheckerStateViewComponent(ProjectHelper.toMPSProject(getProject()));
   }
 }

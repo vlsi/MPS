@@ -1786,10 +1786,10 @@
         <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ViewBreakpoints" resolve="ViewBreakpoints" />
       </node>
     </node>
-    <node concept="1DS2jV" id="68aArIS9HKq" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDm2" role="1oa70y" />
+    <node concept="1DS2jV" id="4_scbGUJDhJ" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="4_scbGUJDhK" role="1oa70y" />
     </node>
     <node concept="tnohg" id="68aArIS9HKr" role="tncku">
       <node concept="3clFbS" id="68aArIS9HKs" role="2VODD2">
@@ -1805,8 +1805,8 @@
                 <ref role="37wK5l" to="qst8:3SnNvqCbyh1" resolve="BreakpointsBrowserDialog" />
                 <node concept="2OqwBi" id="68aArIS9HKy" role="37wK5m">
                   <node concept="2WthIp" id="68aArIS9HKz" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="68aArIS9HK$" role="2OqNvi">
-                    <ref role="2WH_rO" node="68aArIS9HKq" resolve="context" />
+                  <node concept="1DTwFV" id="4_scbGUJDTf" role="2OqNvi">
+                    <ref role="2WH_rO" node="4_scbGUJDhJ" resolve="mpsProject" />
                   </node>
                 </node>
               </node>

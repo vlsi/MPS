@@ -19,6 +19,7 @@ import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +48,6 @@ import java.util.Set;
 public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
-  private IOperationContext myOperationContext;
   private MPSTree myTree;
   private boolean myAdded;
 
@@ -68,30 +68,26 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private int myToggleClickCount = 2;
 
   public MPSTreeNode() {
-    this(null, null);
+    super(null);
   }
 
   public MPSTreeNode(Object userObject) {
-    this(userObject, null);
+    super(userObject);
   }
 
   /**
    * @deprecated use cons without IOperationContext parameter
+   * @param userObject
+   * @param operationContext <em>ignored</em>
    */
   @Deprecated
-  public MPSTreeNode(IOperationContext operationContext) {
-    myOperationContext = operationContext;
-  }
-  /**
-   * @deprecated use cons without IOperationContext parameter
-   */
-  @Deprecated
+  @ToRemove(version = 3.3)
   public MPSTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject);
-    myOperationContext = operationContext;
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
       return Collections.<MPSTreeNode>emptySet().iterator();
@@ -109,13 +105,18 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   /**
    *  returns the closest ancestor (nodes or the containing tree) which implements the given class
    */
+  @SuppressWarnings("unchecked")
   public <T> T getAncestor(@Nullable Class<T> cls) {
     TreeNode parent = getParent();
     while (parent != null) {
-      if (cls.isInstance(parent)) return (T) parent;
+      if (cls.isInstance(parent)) {
+        return (T) parent;
+      }
       parent = parent.getParent();
     }
-    if (myTree != null && cls.isInstance(myTree)) return (T) myTree;
+    if (myTree != null && cls.isInstance(myTree)) {
+      return (T) myTree;
+    }
     return null;
   }
 
