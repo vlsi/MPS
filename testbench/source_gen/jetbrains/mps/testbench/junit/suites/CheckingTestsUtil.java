@@ -33,8 +33,7 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.MessageCollectConsumer;
 
 public class CheckingTestsUtil {
   public CheckingTestsUtil() {
@@ -191,9 +190,9 @@ public class CheckingTestsUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModule sm : modules) {
-          StringBuilder errorMessages = CheckingTestsUtil.checkModuleInternal(sm);
-          if (errorMessages.length() > 0) {
-            errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+          String error = CheckingTestsUtil.checkModuleInternal(sm);
+          if (error != null) {
+            errors.add("Error in module " + sm.getModuleName() + ": " + error);
           }
         }
       }
@@ -266,20 +265,21 @@ public class CheckingTestsUtil {
     }
     return errorMessages;
   }
-  private static StringBuilder checkModuleInternal(final SModule module) {
-    StringBuilder errorMessages = new StringBuilder();
-    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return ModuleValidatorFactory.createValidator(module).getErrors();
+  private static String checkModuleInternal(final SModule module) {
+    final MessageCollectConsumer consumer = new MessageCollectConsumer();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ValidationUtil.validateModule(module, consumer);
       }
     });
-    if (!(validationResult.isEmpty())) {
-      for (String item : validationResult) {
-        errorMessages.append("\t");
-        errorMessages.append(item);
-        errorMessages.append("\n");
-      }
+    if (consumer.getErrors().isEmpty()) {
+      return null;
     }
-    return errorMessages;
+
+    StringBuilder errorMessages = new StringBuilder();
+    for (String item : consumer.getErrors()) {
+      errorMessages.append("\t").append(item).append("\n");
+    }
+    return errorMessages.toString();
   }
 }
