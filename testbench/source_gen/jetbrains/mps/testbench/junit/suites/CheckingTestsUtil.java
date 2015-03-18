@@ -176,9 +176,9 @@ public class CheckingTestsUtil {
           if (!(SModelStereotype.isUserModel(sm))) {
             continue;
           }
-          StringBuilder errorMessages = CheckingTestsUtil.checkModel(sm);
-          if (errorMessages.length() > 0) {
-            errors.add("Broken References: " + errorMessages.toString());
+          String errorsMsgs = CheckingTestsUtil.checkModel(sm);
+          if (errorsMsgs != null) {
+            errors.add("Broken References: " + errorsMsgs);
           }
         }
       }
@@ -226,7 +226,7 @@ public class CheckingTestsUtil {
       }
     }
   }
-  private static StringBuilder checkModel(final SModel sm) {
+  private static String checkModel(final SModel sm) {
     final StringBuilder errorMessages = new StringBuilder();
     errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
     final Wrappers._boolean withErrors = new Wrappers._boolean(false);
@@ -245,9 +245,11 @@ public class CheckingTestsUtil {
         });
       }
     });
+
     for (SNode node : SNodeUtil.getDescendants(sm)) {
       // Testbench.LOG.debug("Checking node " + node); 
       if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()) == null) {
+        withErrors.value = true;
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConcept().getQualifiedName());
         errorMessages.append("\n");
@@ -258,12 +260,16 @@ public class CheckingTestsUtil {
         if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }
-        if (SNodeOperations.getTargetNodeSilently(ref) == null) {
-          errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
+        if (SNodeOperations.getTargetNodeSilently(ref) != null) {
+          continue;
         }
+
+        withErrors.value = true;
+        errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
       }
     }
-    return errorMessages;
+
+    return (withErrors.value ? errorMessages.toString() : null);
   }
   private static String checkModuleInternal(final SModule module) {
     final MessageCollectConsumer consumer = new MessageCollectConsumer();
