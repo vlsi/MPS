@@ -1607,20 +1607,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="1TclyuNTOvM" role="jymVt">
-      <property role="TrG5h" value="onGenerationFinished" />
-      <node concept="3cqZAl" id="1TclyuNTOvN" role="3clF45" />
-      <node concept="3Tm6S6" id="1TclyuNTOvO" role="1B3o_S" />
-      <node concept="3clFbS" id="1TclyuNTOvP" role="3clF47">
-        <node concept="3clFbF" id="1TclyuNTOvQ" role="3cqZAp">
-          <node concept="2YIFZM" id="1TclyuNTOvR" role="3clFbG">
-            <ref role="1Pybhc" to="cu2c:~SNode" resolve="SNode" />
-            <ref role="37wK5l" to="cu2c:~SNode.setNodeMemberAccessModifier(jetbrains.mps.smodel.NodeMemberAccessModifier):void" resolve="setNodeMemberAccessModifier" />
-            <node concept="10Nm6u" id="1TclyuNTOvS" role="37wK5m" />
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="1t_LRy89k3m">
     <property role="TrG5h" value="RefactoringDialog" />

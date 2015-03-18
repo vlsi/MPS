@@ -24,7 +24,6 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 
 public class RefactoringFacadeImpl implements RefactoringFacade {
   protected Logger myLog = LogManager.getLogger(this.getClass());
@@ -72,20 +71,18 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       findUsagesAndRun(refactoringContext);
     }
   }
-
   private void findUsagesAndRun(final RefactoringContext refactoringContext) {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        ProgressManager.getInstance().run(
-            new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
-              @Override
-              public void run(@NotNull ProgressIndicator indicator) {
-                indicator.setIndeterminate(true);
-                SearchResults usages = findUsagesSimple(refactoringContext);
-                showConfirmDialogAndExecuteInUI(usages, refactoringContext);
-              }
-            });
+        ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
+          @Override
+          public void run(@NotNull ProgressIndicator indicator) {
+            indicator.setIndeterminate(true);
+            SearchResults usages = findUsagesSimple(refactoringContext);
+            showConfirmDialogAndExecuteInUI(usages, refactoringContext);
+          }
+        });
 
       }
     });
@@ -115,8 +112,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       SwingUtilities.invokeLater(new Runnable() {
         @Override
         public void run() {
-          int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()),
-              "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+          int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
           if (promptResult == JOptionPane.YES_OPTION) {
             executeInUI(new SearchResults(), refactoringContext);
           }
@@ -165,8 +161,5 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     }
 
     return result;
-  }
-  private void onGenerationFinished() {
-    SNode.setNodeMemberAccessModifier(null);
   }
 }
