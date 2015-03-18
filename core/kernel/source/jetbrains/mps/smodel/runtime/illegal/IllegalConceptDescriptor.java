@@ -119,12 +119,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public boolean hasProperty(String name) {
-    reportWarn();
-    return false;
-  }
-
-  @Override
   public Set<SReferenceLinkId> getReferenceIds() {
     reportWarn();
     return Collections.emptySet();
@@ -161,12 +155,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public boolean hasReference(String name) {
-    reportWarn();
-    return false;
-  }
-
-  @Override
   public Set<SContainmentLinkId> getLinkIds() {
     reportWarn();
     return Collections.emptySet();
@@ -182,24 +170,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public Set<String> getChildrenNames() {
     reportWarn();
     return Collections.emptySet();
-  }
-
-  @Override
-  public boolean isUnorderedChild(String name) {
-    reportWarn();
-    return false;
-  }
-
-  @Override
-  public Set<String> getUnorderedChildrenNames() {
-    reportWarn();
-    return Collections.emptySet();
-  }
-
-  @Override
-  public boolean hasChild(String name) {
-    reportWarn();
-    return false;
   }
 
   @Override

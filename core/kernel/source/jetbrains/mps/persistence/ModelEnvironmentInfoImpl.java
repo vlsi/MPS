@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,11 +65,8 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
 
   @Override
   public boolean isInUnorderedRole(SNode node) {
-    SNode parent = node.getParent();
-    if (parent == null) return false;
-    String roleInParent = node.getRoleInParent();
-    return ConceptRegistry.getInstance().getConceptDescriptor(parent.getConcept().getQualifiedName()).isUnorderedChild(
-        roleInParent);
+    final SContainmentLink roleInParent = node.getContainmentLink();
+    return roleInParent != null && roleInParent.isUnordered();
   }
 
   @Override
