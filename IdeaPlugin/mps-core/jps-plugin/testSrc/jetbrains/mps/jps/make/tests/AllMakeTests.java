@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.jps.make;
+package jetbrains.mps.jps.make.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

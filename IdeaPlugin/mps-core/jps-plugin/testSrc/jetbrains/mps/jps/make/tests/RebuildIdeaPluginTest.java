@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.jps.make;
+package jetbrains.mps.jps.make.tests;
 
-import jetbrains.mps.idea.core.make.MPSMakeConstants;
+import com.intellij.openapi.application.PathManager;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkProperties;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkType;
 import org.jetbrains.jps.model.JpsDummyElement;
@@ -31,26 +31,25 @@ import org.jetbrains.jps.util.JpsPathUtil;
 import java.io.File;
 import java.io.IOException;
 import java.lang.NumberFormatException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * danilla 11/29/13
- */
 
 public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
-
   private String ideaHome;
   private String pluginsPath;
   private String javaHome;
 
   @Override
+  protected String getTestDataRootPath() {
+    return null;
+  }
+
+  @Override
   protected void setUp() throws Exception {
     super.setUp();
-    ideaHome = System.getProperty("idea.home.path");
-    pluginsPath = System.getProperty("idea.plugins.path");
+    ideaHome = PathManager.getHomePath();
+    pluginsPath = PathManager.getPluginsPath();
     javaHome = System.getProperty("jdk.home.path");
     if (javaHome == null) {
       javaHome = System.getenv("JAVA_HOME");
@@ -58,7 +57,6 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
   }
 
   public void testRebuildIdeaPlugin() throws IOException {
-
     assert ideaHome != null;
     assert pluginsPath != null;
     assert javaHome != null;
@@ -72,21 +70,12 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
     copyFromUserDirToProject("../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
     copyFromUserDirToProject("../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
 
-    // load project
-    Map<String, String> buildParams = new HashMap<String, String>();
-    // This is currently needed for building because we compile against the distribution of plugin
-    // (classes and solutions are taken from there)
-    buildParams.put("PLUGINS_PATH", pluginsPath);
+    addBuildParameter("PLUGINS_PATH", pluginsPath);
+//    addBuildParameter(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
-    loadProject(projectDir, buildParams);
+    loadProject(projectDir);
 
-    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk("1.6", javaHome, "1.6", JpsJavaSdkType.INSTANCE);
-    if (isAppleJDK()) {
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "../Classes/classes.jar"), JpsOrderRootType.COMPILED);
-    } else {
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/jre/lib/rt.jar"), JpsOrderRootType.COMPILED);
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/lib/tools.jar"), JpsOrderRootType.COMPILED);
-    }
+    setUpJdk();
 
     JpsSimpleElement<JpsIdeaSdkProperties> props = new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(ideaHome, "1.6"));
     JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk = myModel.getGlobal().addSdk("IDEA IC", ideaHome, "1.6", JpsIdeaSdkType.INSTANCE, props);
@@ -96,8 +85,17 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
       ideaSdk.addRoot(JpsPathUtil.pathToUrl(jar.getPath()), JpsOrderRootType.COMPILED);
     }
 
-    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
     rebuildAll();
+  }
+
+  private void setUpJdk() {
+    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk("1.6", javaHome, "1.6", JpsJavaSdkType.INSTANCE);
+    if (isAppleJDK()) {
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "../Classes/classes.jar"), JpsOrderRootType.COMPILED);
+    } else {
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/jre/lib/rt.jar"), JpsOrderRootType.COMPILED);
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/lib/tools.jar"), JpsOrderRootType.COMPILED);
+    }
   }
 
   private boolean isAppleJDK() {
