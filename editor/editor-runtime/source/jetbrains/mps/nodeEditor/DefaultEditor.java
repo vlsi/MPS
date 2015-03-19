@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -134,7 +135,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     //todo: remove getDeclarationNode() check when editor doesn't need concept node
     if (myConceptDescriptor instanceof IllegalConceptDescriptor ||
-        !(mySNode instanceof jetbrains.mps.smodel.SNode) || ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null) {
+        !(mySNode instanceof jetbrains.mps.smodel.SNode) || new SNodeLegacy(mySNode).getConceptDeclarationNode() == null) {
       myNullConcept = true;
     }
 

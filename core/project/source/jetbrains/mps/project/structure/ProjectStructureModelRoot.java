@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,7 +126,6 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     private jetbrains.mps.smodel.SModel createModel() {
       final jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference());
-      model.addLanguage(BootstrapLanguages.projectLanguageRef());
       final IFile file = getSource().getFile();
 
       final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);
@@ -163,6 +162,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       if (myModel == null) {
         myModel = createModel();
         myModel.setModelDescriptor(this);
+        addLanguage(BootstrapLanguages.projectLanguageRef());
         fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
       }
       return myModel;
@@ -175,7 +175,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     @Override
     public void unload() {
-      ModelAccess.assertLegalWrite();
+      assertCanChange();
 
       jetbrains.mps.smodel.SModel oldModel = myModel;
       if (oldModel != null) {

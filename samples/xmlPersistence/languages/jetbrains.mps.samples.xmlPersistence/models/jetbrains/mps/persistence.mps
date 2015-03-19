@@ -1884,9 +1884,16 @@
                   <ref role="3cqZAo" node="6otXYHBgt39" resolve="sModel" />
                 </node>
                 <node concept="liA8E" id="6otXYHBgt8j" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-                  <node concept="2L6k_Z" id="3ua3KnoP6Q9" role="37wK5m">
-                    <property role="2L6k_S" value="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
+                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="addLanguage" />
+                  <node concept="2YIFZM" id="LlD8EwaxaM" role="37wK5m">
+                    <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.ref2Id(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.language.SLanguage" resolve="ref2Id" />
+                    <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
+                    <node concept="2L6k_Z" id="3ua3KnoP6Q9" role="37wK5m">
+                      <property role="2L6k_S" value="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="LlD8Ewaxh1" role="37wK5m">
+                    <property role="3cmrfH" value="-1" />
                   </node>
                 </node>
               </node>

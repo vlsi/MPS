@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -79,27 +78,23 @@ public class SModelUtil_new {
       }
     }
 
-    if (!(concept instanceof SConcept)){
-      concept = MetaAdapterByDeclaration.asInstanceConcept(concept);
-    }
+    SConcept concreteConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
 
-    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(((SConcept) concept));
-    if (nodeId != null) {
-      newNode.setId(nodeId);
-    }
+    jetbrains.mps.smodel.SNode newNode = nodeId == null ? new jetbrains.mps.smodel.SNode(concreteConcept) : new jetbrains.mps.smodel.SNode(concreteConcept, nodeId);
     // create the node structure
     if (fullNodeStructure &&
         isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      createNodeStructure(((SConcept) concept), newNode, model);
+      createNodeStructure(concreteConcept, newNode, model);
     }
     return newNode;
   }
 
-  private static void createNodeStructure(SConcept concept,
-      SNode newNode, SModel model) {
+  private static void createNodeStructure(SConcept concept, SNode newNode, SModel model) {
     for (SContainmentLink linkDeclaration : concept.getContainmentLinks()) {
-      if (linkDeclaration.isOptional()) continue;
+      if (linkDeclaration.isOptional()) {
+        continue;
+      }
 
       SAbstractConcept target = linkDeclaration.getTargetConcept();
       LOG.assertLog(target != null, "link target is null");
@@ -111,7 +106,7 @@ public class SModelUtil_new {
   }
 
   public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
-    SNode conceptDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
+    SNode conceptDeclaration = new SNodeLegacy(sourceNode).getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
       LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + SNodeOperations.getDebugText(conceptDeclaration),

@@ -8049,21 +8049,19 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3clFbF" id="2QRUVPkzk$q" role="3cqZAp">
-                                <node concept="2OqwBi" id="2QRUVPkzkC$" role="3clFbG">
-                                  <node concept="1eOMI4" id="5XZc116mSYU" role="2Oq$k0">
-                                    <node concept="10QFUN" id="5XZc116mSYV" role="1eOMHV">
-                                      <node concept="37vLTw" id="5XZc116mSYT" role="10QFUP">
+                              <node concept="3clFbF" id="4OWCAYL520Y" role="3cqZAp">
+                                <node concept="2OqwBi" id="4OWCAYL52ND" role="3clFbG">
+                                  <node concept="2ShNRf" id="4OWCAYL520U" role="2Oq$k0">
+                                    <node concept="1pGfFk" id="4OWCAYL52ML" role="2ShVmc">
+                                      <ref role="37wK5l" to="cu2c:~SNodeLegacy.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeLegacy" />
+                                      <node concept="37vLTw" id="4OWCAYL52Na" role="37wK5m">
                                         <ref role="3cqZAo" node="4a0HOMfn9kr" resolve="node" />
-                                      </node>
-                                      <node concept="3uibUv" id="5XZc116n5uV" role="10QFUM">
-                                        <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="liA8E" id="2QRUVPkzxzL" role="2OqNvi">
-                                    <ref role="37wK5l" to="cu2c:~SNode.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
-                                    <node concept="37vLTw" id="2QRUVPkzWBu" role="37wK5m">
+                                  <node concept="liA8E" id="4OWCAYL530X" role="2OqNvi">
+                                    <ref role="37wK5l" to="cu2c:~SNodeLegacy.setConceptFqName(java.lang.String):void" resolve="setConceptFqName" />
+                                    <node concept="37vLTw" id="4OWCAYL534K" role="37wK5m">
                                       <ref role="3cqZAo" node="4a0HOMfn9lf" resolve="newConceptFQName" />
                                     </node>
                                   </node>

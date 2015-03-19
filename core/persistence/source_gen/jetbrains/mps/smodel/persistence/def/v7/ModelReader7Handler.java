@@ -14,13 +14,14 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.smodel.LazySNode;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
@@ -151,7 +152,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new ReadHelper(my_modelField.getReference());
       my_linkMapField = new ModelLinkMap(my_modelField);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
@@ -231,7 +232,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addLanguage(child);
+      new SModelLegacy(my_modelField).addLanguage(child);
     }
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
@@ -362,8 +363,8 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
       boolean needLazy = my_toStateParam != ModelLoadingState.FULLY_LOADED;
-      String readType = InternUtil.intern(my_helperField.readType(attrs.getValue("type")));
-      return (needLazy ? new LazySNode(readType) : new jetbrains.mps.smodel.SNode(readType));
+      String readType = my_helperField.readType(attrs.getValue("type"));
+      return (needLazy ? SNodeFactory.newLazy(readType) : SNodeFactory.newRegular(readType));
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {

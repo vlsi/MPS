@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
-import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.CheckingRuleSet;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.DoubleRuleSet;
@@ -184,15 +183,6 @@ public class RulesManager {
 
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
-    /* List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
-          new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
-        Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
-        for (NonTypesystemRule_Runtime rule : ruleSet) {
-          IsApplicableStatus status = rule.isApplicableAndPattern(node);
-          if (status.isApplicable()) {
-            result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
-          }
-        }        */
     return myRulesManagerNew.getNonTypesystemRules(node);
   }
 
@@ -260,16 +250,6 @@ public class RulesManager {
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
     ensureAllRulesLoaded();
     return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer);
-  }
-
-  @Deprecated
-  public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
-    return null;
-  }
-
-  @Deprecated
-  public boolean isBlockingDependentComputationNode(SNode node) {
-    return false;
   }
 }
 

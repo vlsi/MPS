@@ -32,7 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {

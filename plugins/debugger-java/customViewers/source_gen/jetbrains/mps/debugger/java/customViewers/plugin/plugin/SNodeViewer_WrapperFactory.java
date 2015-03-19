@@ -66,7 +66,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
 
       result.add(new SNodeWatchables.MyWatchable_text(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
-      result.add(new SNodeWatchables.MyWatchable_model(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
+      result.add(new SNodeWatchables.MyWatchable_model(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.invokeMethod("getModel", "()Lorg/jetbrains/mps/openapi/model/SModel;", getThreadReference())).getJDIValue(), getThreadReference()), "model"));
       result.add(new SNodeWatchables.MyWatchable_concept(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myConcept")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "concept"));
       if (!(ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null))) {
         result.add(new SNodeWatchables.MyWatchable_parent(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));

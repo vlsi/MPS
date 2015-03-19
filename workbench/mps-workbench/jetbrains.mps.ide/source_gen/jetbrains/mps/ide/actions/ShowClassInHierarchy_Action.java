@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -52,8 +52,8 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("editorCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
@@ -74,8 +74,8 @@ public class ShowClassInHierarchy_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier(_params);
-      BaseLanguageHierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(BaseLanguageHierarchyViewTool.class);
-      tool.showItemInHierarchy(classNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      BaseLanguageHierarchyViewTool tool = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getComponent(BaseLanguageHierarchyViewTool.class);
+      tool.showItemInHierarchy(classNode);
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

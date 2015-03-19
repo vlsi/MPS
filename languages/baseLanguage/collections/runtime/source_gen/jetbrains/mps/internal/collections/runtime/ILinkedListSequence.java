@@ -16,6 +16,7 @@ public interface ILinkedListSequence<T> extends IListSequence<T>, Queue<T>, Dequ
   public T peekElement();
   public T popElement();
   public T pushElement(T t);
+  @Deprecated
   public Deque<T> toDeque();
   public ILinkedListSequence<T> addSequence(ISequence<? extends T> seq);
   public ILinkedListSequence<T> removeSequence(ISequence<? extends T> seq);

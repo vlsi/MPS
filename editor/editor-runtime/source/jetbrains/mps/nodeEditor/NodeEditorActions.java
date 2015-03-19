@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection.SideSelectDirection;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -601,7 +602,7 @@ public class NodeEditorActions {
     }
 
     private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
-      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(((jetbrains.mps.smodel.SNode) childNode).getRoleLink())) {
+      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(new SNodeLegacy(childNode).getRoleLink())) {
         childNode = childNode.getParent();
       }
       return childNode;

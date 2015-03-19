@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,13 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class LazySNode extends SNode {
 
-  public LazySNode(@NotNull String conceptFqName) {
-    super(conceptFqName);
+  public LazySNode(@NotNull SConcept concept) {
+    super(concept);
   }
 
   @Override
@@ -45,8 +46,9 @@ public final class LazySNode extends SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null || treeParent() != null) return;
-    if (!myModel.isRoot(this)) return;
-    myModel.enforceFullLoad();
+    final SModel model = getNodeOwner().getModel();
+    if (model == null || treeParent() != null) return;
+    if (!model.isRoot(this)) return;
+    model.enforceFullLoad();
   }
 }

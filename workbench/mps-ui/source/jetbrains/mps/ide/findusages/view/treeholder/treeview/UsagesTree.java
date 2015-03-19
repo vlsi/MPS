@@ -35,8 +35,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
@@ -262,11 +260,10 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    final IOperationContext operationContext = new ProjectOperationContext(myProject);
     ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<UsagesTreeNode>(new Computable<UsagesTreeNode>() {
       @Override
       public UsagesTreeNode compute() {
-        UsagesTreeNode root = new UsagesTreeNode(operationContext);
+        UsagesTreeNode root = new UsagesTreeNode();
         if (myShowSearchedNodes) {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
@@ -286,9 +283,9 @@ public class UsagesTree extends MPSTree {
           } else {
             searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
           }
-          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider, operationContext));
+          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
         }
-        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider, operationContext));
+        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
 
         return root;
       }
@@ -299,8 +296,8 @@ public class UsagesTree extends MPSTree {
 
   //this is not recursive
   //use only for top-level nodes
-  private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories, IOperationContext ctx) {
-    List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories, ctx);
+  private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories) {
+    List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories);
     assert children.size() == 1;
 
     UsagesTreeNode child = children.get(0);
@@ -342,15 +339,15 @@ public class UsagesTree extends MPSTree {
     }
   }
 
-  private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories, IOperationContext ctx) {
+  private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
     for (DataNode child : root.getChildren()) {
-      children.addAll(buildSubtreeStructure(child, nodeCategories, ctx));
+      children.addAll(buildSubtreeStructure(child, nodeCategories));
     }
 
     BaseNodeData data = root.getData();
     if (nodeCategories.contains(data.getRole()) || data.isResultNode()) {
-      UsagesTreeNode node = new UsagesTreeNode(root, ctx);
+      UsagesTreeNode node = new UsagesTreeNode(root);
 
       for (UsagesTreeNode child : children) {
         node.add(child);
@@ -691,13 +688,12 @@ public class UsagesTree extends MPSTree {
   public class UsagesTreeNode extends MPSTreeNode {
     private int mySubresultsCount = 0;
 
-    public UsagesTreeNode(IOperationContext ctx) {
-      super(ctx);
+    public UsagesTreeNode() {
       setNodeIdentifier("");
     }
 
-    public UsagesTreeNode(DataNode userObj, IOperationContext ctx) {
-      super(userObj, ctx);
+    public UsagesTreeNode(DataNode userObj) {
+      super(userObj);
       if (userObj != null) {
         setNodeIdentifier(userObj.getData().getPlainText());
       }

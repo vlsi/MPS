@@ -182,11 +182,11 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.EditorUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />

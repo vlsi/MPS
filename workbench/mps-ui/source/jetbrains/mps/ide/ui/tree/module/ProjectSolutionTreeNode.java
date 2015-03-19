@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -36,7 +35,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     String id = descriptorFile == null ? solution.getModuleName() : descriptorFile.getPath();
     setNodeIdentifier(id);
     setIcon(IdeIcons.SOLUTION_ICON);
-    init();
   }
 
   @Override
@@ -59,12 +57,9 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  public void init() {
-    populate();
+  protected void doInit() {
+    SModelsSubtree.create(this, getModule());
     myInitialized = true;
   }
 
-  private void populate() {
-    SModelsSubtree.create(this, getModule());
-  }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,13 +80,8 @@ public class ChildAdopter {
       // reference to input model - illegal
       if (inputModelRef.equals(ref.getTargetSModelReference())) {
         // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            ref.getRole(),
-            ref.getSourceNode(), // XXX shall I use 'node' here?
-            inputNode,
-            ref.getTargetNode());
-        PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
-        postponedReference.setReferenceInOutputSourceNode();
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, ref.getTargetNode());
+        new PostponedReference(ref.getLink(), node, refInfo).setAndRegister(myGenerator);
       }
     }
     for (SNode child : node.getChildren()) {

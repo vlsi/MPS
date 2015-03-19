@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -66,10 +66,10 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    if (new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        return hierarchyTreeNode.getNode().getModel() == null;
+        return hierarchyTreeNode.getNodeReference().resolve(myProject.getRepository()) == null;
       }
     })) {
       return false;

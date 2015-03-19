@@ -229,7 +229,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       SNode xmlFile = XmlConverter.convertDocument(name, document);
 
       jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
-      sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
+      sModel.addLanguage(MetaIdByDeclaration.ref2Id(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)")), -1);
       sModel.addRootNode(xmlFile);
       return sModel;
     } catch (JDOMException e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.StaticReference;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -96,21 +97,21 @@ public class VersionUtil {
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode(), node.getConcept().getQualifiedName(), false);
+    return genReferenceString(new SNodeLegacy(node).getConceptDeclarationNode(), node.getConcept().getQualifiedName(), false);
   }
 
   public String genRole(@NotNull SNode node) {
     return node.getRoleInParent() == null ? null :
-        genReferenceString(AttributeOperations.isAttribute(node) ? null : ((jetbrains.mps.smodel.SNode) node).getRoleLink(), node.getRoleInParent(),
+        genReferenceString(AttributeOperations.isAttribute(node) ? null : new SNodeLegacy(node).getRoleLink(), node.getRoleInParent(),
             true);
   }
 
   public String genRole(@NotNull SReference ref) {
-    return genReferenceString(((jetbrains.mps.smodel.SNode) ref.getSourceNode()).getLinkDeclaration(ref.getRole()), ref.getRole(), true);
+    return genReferenceString(new SNodeLegacy(ref.getSourceNode()).getLinkDeclaration(ref.getRole()), ref.getRole(), true);
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(prop), prop, true);
+    return genReferenceString(new SNodeLegacy(node).getPropertyDeclaration(prop), prop, true);
   }
 
   public String genTarget(@NotNull SReference ref) {

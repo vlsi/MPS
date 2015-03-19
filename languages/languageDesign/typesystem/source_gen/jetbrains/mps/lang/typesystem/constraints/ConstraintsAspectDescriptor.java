@@ -12,53 +12,47 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 24:
+      case 21:
         return new WhenConcreteVariableReference_Constraints();
-      case 15:
+      case 12:
         return new PropertyPatternVariableReference_Constraints();
-      case 9:
+      case 7:
         return new LinkPatternVariableReference_Constraints();
-      case 13:
+      case 10:
         return new PatternVariableReference_Constraints();
-      case 20:
+      case 17:
         return new TypeVarReference_Constraints();
-      case 4:
+      case 3:
         return new ConceptReference_Constraints();
       case 0:
         return new ApplicableNodeReference_Constraints();
-      case 21:
+      case 18:
         return new TypesystemIntentionArgument_Constraints();
-      case 16:
+      case 13:
         return new QuickFixArgumentReference_Constraints();
-      case 8:
+      case 6:
         return new InferenceRule_Constraints();
       case 2:
         return new ComparisonRule_Constraints();
-      case 22:
-        return new TypesystemQuickFix_Constraints();
-      case 7:
-        return new InequationReplacementRule_Constraints();
-      case 11:
-        return new NonTypesystemRule_Constraints();
       case 19:
-        return new SubtypingRule_Constraints();
-      case 14:
-        return new PropertyMessageTarget_Constraints();
-      case 18:
-        return new ReferenceMessageTarget_Constraints();
+        return new TypesystemQuickFix_Constraints();
       case 5:
-        return new ConceptTypeClause_Constraints();
-      case 3:
-        return new ConceptClauseLinkInfo_Constraints();
-      case 10:
+        return new InequationReplacementRule_Constraints();
+      case 9:
+        return new NonTypesystemRule_Constraints();
+      case 16:
+        return new SubtypingRule_Constraints();
+      case 11:
+        return new PropertyMessageTarget_Constraints();
+      case 15:
+        return new ReferenceMessageTarget_Constraints();
+      case 8:
         return new MessageStatement_Constraints();
-      case 12:
-        return new OperationContextExpression_Constraints();
-      case 6:
+      case 4:
         return new InequationReference_Constraints();
-      case 17:
+      case 14:
         return new QuickFixFieldReference_Constraints();
-      case 23:
+      case 20:
         return new WasSelectedNodeOperation_Constraints();
       case 1:
         return new CaretPositionOperation_Constraints();
@@ -119,17 +113,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x11db4a87c94L) {
       return new ReferenceMessageTarget_Constraints();
     }
-    if (id == 0x120c8f6ee52L) {
-      return new ConceptTypeClause_Constraints();
-    }
-    if (id == 0x120c8f8641eL) {
-      return new ConceptClauseLinkInfo_Constraints();
-    }
     if (id == 0x11db4aad802L) {
       return new MessageStatement_Constraints();
-    }
-    if (id == 0x4e07dbbbb735115aL) {
-      return new OperationContextExpression_Constraints();
     }
     if (id == 0x42501924d0bd1913L) {
       return new InequationReference_Constraints();
@@ -145,5 +130,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
 }

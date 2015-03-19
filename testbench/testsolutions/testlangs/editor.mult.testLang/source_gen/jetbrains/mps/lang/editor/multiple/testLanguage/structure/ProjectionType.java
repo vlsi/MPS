@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.multiple.testLanguage.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum ProjectionType {
   defaultEditor("defaultEditor", null),

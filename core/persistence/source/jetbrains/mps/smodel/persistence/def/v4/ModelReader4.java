@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelLegacy;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -69,7 +71,7 @@ public class ModelReader4 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
+      new SModelLegacy(model).addLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -207,7 +209,7 @@ public class ModelReader4 implements IModelReader {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
-    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = SNodeFactory.newRegular(conceptFqName);
     VersionUtil.fetchConceptVersion(rawFqName, node, versionsInfo);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);

@@ -6,7 +6,7 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -221,7 +221,7 @@ public class List_Test extends Util_Test {
   public void test__toString() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Assert.assertEquals("[1, 2, 3, 4, 5]", String.valueOf(test));
-    List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), LinkedListSequence.fromListAndArray(new LinkedList<Integer>(), 2));
+    List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), LinkedListSequence.fromListAndArrayNew(new LinkedList<Integer>(), 2));
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
   public void test_mps5845() throws Exception {
@@ -346,8 +346,8 @@ __switch__:
     Assert.assertNotNull(Collections.synchronizedSet(SetSequence.fromSet(new HashSet())));
   }
   public void test_linkedlist() throws Exception {
-    Deque<Integer> ll = LinkedListSequence.fromLinkedList(new LinkedList<Integer>());
-    Assert.assertTrue(LinkedListSequence.fromLinkedList(ll).isEmpty());
+    Deque<Integer> ll = LinkedListSequence.fromLinkedListNew(new LinkedList<Integer>());
+    Assert.assertTrue(LinkedListSequence.fromLinkedListNew(ll).isEmpty());
   }
   public void test_collection() throws Exception {
     List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");

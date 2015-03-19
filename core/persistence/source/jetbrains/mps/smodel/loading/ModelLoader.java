@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.InterfaceSNode;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -29,14 +31,16 @@ import java.util.Iterator;
 
 public class ModelLoader {
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModelLoader.class));
+  private static final Logger LOG = LogManager.getLogger(ModelLoader.class);
 
-  private LazySModel myModel;
-  private LazySModel myFullModel;
+  private SModelData myModel;
+  private SModelData myFullModel;
+  private final SModel myDataOwner;
 
-  public ModelLoader(LazySModel model, LazySModel fullModel) {
+  public ModelLoader(@NotNull SModelData model, @NotNull SModelData fullModel, @NotNull SModel dataOwner) {
     myModel = model;
     myFullModel = fullModel;
+    myDataOwner = dataOwner;
   }
 
   public void update() {
@@ -57,14 +61,13 @@ public class ModelLoader {
 
   private void update(InterfaceSNode node) {
     if (node.hasSkippedChildren()) {
-      jetbrains.mps.smodel.SNode fullNode = myFullModel.getNode(node.getNodeId());
+      SNode fullNode = myFullModel.getNode(node.getNodeId());
       if (fullNode == null) {
-        LOG.error("model " + myModel.getReference().getModelName()
-            + ": no peer node in full model for " + node.getNodeId()
-            + " (in " + (myModel.getModelDescriptor().getSource()).getLocation() + ")");
+        final String m = "model %s: no peer node in full model for %s (in %s)";
+        LOG.error(String.format(m, myModel.getReference().getModelName(), node.getNodeId(), myDataOwner.getSource().getLocation()));
         return;
       }
-      Iterator<jetbrains.mps.smodel.SNode> it = fullNode.getChildren().iterator();
+      Iterator<? extends SNode> it = fullNode.getChildren().iterator();
       SNode curr = it.hasNext() ? it.next() : null;
 
       for (SNode child : node.getChildren()) {

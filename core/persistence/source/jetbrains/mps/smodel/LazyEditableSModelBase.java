@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,19 +31,19 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 public abstract class LazyEditableSModelBase extends EditableSModelBase {
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable LazySModel current) {
-      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
+      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult((SModel) null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.INTERFACE_LOADED) {
         ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
         processLoadedModel(result.getModel());
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
-        LazySModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
+        SModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
         fullModel.setUpdateMode(true);
-        new ModelLoader(current, fullModel).update();
+        new ModelLoader(current, fullModel, LazyEditableSModelBase.this).update();
         current.setUpdateMode(false);  //enable events
         return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
       }
@@ -62,16 +62,17 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   }
 
   @Override
-  public final LazySModel getSModelInternal() {
+  public final SModel getSModelInternal() {
     ModelLoadingState oldState = myModel.getState();
     if (oldState.ordinal() >= ModelLoadingState.INTERFACE_LOADED.ordinal()) {
       return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
     }
     synchronized (myModel) {
+      // FIXME how come myModel may be instance of InvalidSModel?
       if (myModel instanceof InvalidSModel) return myModel.getModel(null);
 
       oldState = myModel.getState();
-      LazySModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+      SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
       if (res == null) return null; // this is when we are in recursion
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);
@@ -93,14 +94,14 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   }
 
   @Override
-  protected final LazySModel getCurrentModelInternal() {
+  protected final SModel getCurrentModelInternal() {
     return myModel.getModel(null);
   }
 
 
   @Override
   protected void doUnload() {
-    final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
+    final SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
@@ -115,7 +116,7 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
 
   protected abstract void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel);
 
-  protected void replaceModel(final LazySModel newModel, final ModelLoadingState state) {
+  protected void replaceModel(final SModel newModel, final ModelLoadingState state) {
     if (newModel == getCurrentModelInternal()) return;
     setChanged(false);
     final SModel oldModel = getCurrentModelInternal();

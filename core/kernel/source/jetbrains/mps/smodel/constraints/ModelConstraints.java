@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 /**
- * Api for model constraints
+ * API for model constraints
  * All methods require read action
  * If you don't need breaking node set checkingNodeContext parameter to null
  * <p/>
@@ -68,7 +68,7 @@ public class ModelConstraints {
     assert parent != null;
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
 
-    return canBeParent(parent, concept, ((jetbrains.mps.smodel.SNode) node).getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
+    return canBeParent(parent, concept, new SNodeLegacy(node).getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
   }
 
   // canBe* section
@@ -165,7 +165,7 @@ public class ModelConstraints {
 
     return new OkReferenceDescriptor(
       concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
-      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), ((jetbrains.mps.smodel.SNode) referenceNode).getRoleLink(), // parameters
+      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), new SNodeLegacy(referenceNode).getRoleLink(), // parameters
       reference // reference
     );
   }
@@ -178,7 +178,7 @@ public class ModelConstraints {
     if (smartReference == null) {
       return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
     }
-    SNode linkDeclaration = role != null ? ((jetbrains.mps.smodel.SNode) enclosingNode).getLinkDeclaration(role) : null;
+    SNode linkDeclaration = role != null ? new SNodeLegacy(enclosingNode).getLinkDeclaration(role) : null;
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
       return new ErrorReferenceDescriptor("for reference role smartConcept should be null");
     }

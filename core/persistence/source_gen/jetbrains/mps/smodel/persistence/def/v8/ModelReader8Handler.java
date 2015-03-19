@@ -14,16 +14,18 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.InterfaceSNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
@@ -161,7 +163,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       my_hasSkippedNodesField = false;
       my_helperField = new ReadHelper(my_modelField.getReference());
       my_linkMapField = new ModelLinkMap(my_modelField);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
@@ -259,7 +261,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addLanguage(child);
+      new SModelLegacy(my_modelField).addLanguage(child);
     }
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
@@ -284,7 +286,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (my_helperField.isImplementationWithStubNode(child._1())) {
         String stubConcept = my_helperField.getStubConceptQualifiedName(child._2());
         if (stubConcept != null) {
-          my_modelField.addRootNode(new jetbrains.mps.smodel.SNode(InternUtil.intern(stubConcept)));
+          my_modelField.addRootNode(SNodeFactory.newRegular(stubConcept));
         }
       }
       my_hasSkippedNodesField = true;
@@ -357,8 +359,8 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
           interfaceNode = (parsed._0() == ConceptKind.INTERFACE || attrs.getValue("role") == null);
         }
       }
-      String conceptName = InternUtil.intern(my_helperField.readType(attrs.getValue("type")));
-      jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(conceptName) : new jetbrains.mps.smodel.SNode(conceptName));
+      String conceptName = my_helperField.readType(attrs.getValue("type"));
+      jetbrains.mps.smodel.SNode result = (interfaceNode ? SNodeFactory.newInterface(conceptName) : SNodeFactory.newRegular(conceptName));
       my_linkMapField.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
       return result;
     }
@@ -473,7 +475,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (my_stripImplementationParam && my_helperField.isImplementationWithStubNode(child._1())) {
         String stubConcept = my_helperField.getStubConceptQualifiedName(child._2());
         if (stubConcept != null) {
-          jetbrains.mps.smodel.SNode childNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(stubConcept));
+          jetbrains.mps.smodel.SNode childNode = SNodeFactory.newRegular(stubConcept);
           result.addChild(child._0(), childNode);
           return;
         }

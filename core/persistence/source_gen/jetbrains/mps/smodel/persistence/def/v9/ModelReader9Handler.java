@@ -12,6 +12,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -19,11 +20,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Pair;
 
@@ -163,7 +164,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);
       my_importHelperField = new ImportsHelper(ref);
-      ModelLoadResult result = new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      ModelLoadResult result = new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
       result.setState((my_readHelperParam.isRequestedInterfaceOnly() ? ModelLoadingState.INTERFACE_LOADED : ((my_readHelperParam.isRequestedStripImplementation() ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
       return result;
     }
@@ -234,7 +235,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_8237920533349931271(Object resultObject, Object value) throws SAXException {
       Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
       SConcept concept = child._1();
-      if (my_readHelperParam.isImplementationWithStab(concept)) {
+      if (my_readHelperParam.isImplementationWithStub(concept)) {
         SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
         my_modelField.addRootNode(new SNode(stubConcept));
       }
@@ -424,7 +425,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
       if (!(Boolean.parseBoolean(attrs.getValue("implicit")))) {
-        my_modelField.addModelImport(modelRef, true);
+        my_modelField.addModelImport(new SModel.ImportElement(modelRef));
       }
       return null;
     }
@@ -440,12 +441,13 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       if (my_readHelperParam.isRequestedInterfaceOnly()) {
         interfaceNode = (my_readHelperParam.isInterface(concept) || attrs.getValue("role") == null);
       }
-      SNode result = (interfaceNode ? new InterfaceSNode(concept) : new SNode(concept));
+      SNodeId nodeId;
       try {
-        result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
+        nodeId = my_idEncoderField.parseNodeId(attrs.getValue("id"));
       } catch (IdEncoder.EncodingException e) {
         throw new IllegalArgumentException(e);
       }
+      SNode result = (interfaceNode ? new InterfaceSNode(concept, nodeId) : new SNode(concept, nodeId));
       // can be root 
       return MultiTuple.<org.jetbrains.mps.openapi.model.SNode,SContainmentLink>from(((org.jetbrains.mps.openapi.model.SNode) result), my_readHelperParam.readAggregation(attrs.getValue("role")));
     }
@@ -517,7 +519,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
       SContainmentLink link = child._0();
       SConcept concept = child._1();
-      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementationWithStab(concept)) {
+      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementationWithStub(concept)) {
         SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
         SNode childNode = new SNode(stubConcept);
         result._0().addChild(link, childNode);

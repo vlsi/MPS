@@ -5,10 +5,10 @@ package jetbrains.mps.internal.make.runtime.backports;
 import jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -17,7 +17,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private static final int MAXWORK = 10000;
   @NotNull
   private ProgressMonitor monitor;
-  private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDeque(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());
+  private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDequeNew(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());
   private boolean isInitialized;
   private int done;
   public ProgressMonitorProgressStrategy() {
@@ -26,7 +26,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   }
   public void reset(ProgressMonitor monitor) {
     this.monitor = (monitor != null ? monitor : new EmptyProgressMonitor());
-    DequeSequence.fromDeque(monitorWorkStack).clear();
+    DequeSequence.fromDequeNew(monitorWorkStack).clear();
     this.done = 0;
     this.isInitialized = false;
   }
@@ -41,25 +41,25 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   }
   public ProgressMonitor getProgressMonitor() {
     initializeIfNeeded();
-    return (DequeSequence.fromDeque(monitorWorkStack).isEmpty() ? monitor : DequeSequence.fromDeque(monitorWorkStack).peekElement()._0());
+    return (DequeSequence.fromDequeNew(monitorWorkStack).isEmpty() ? monitor : DequeSequence.fromDequeNew(monitorWorkStack).peekElement()._0());
   }
   @Override
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
     ProgressMonitor submon;
-    if (DequeSequence.fromDeque(monitorWorkStack).isEmpty()) {
+    if (DequeSequence.fromDequeNew(monitorWorkStack).isEmpty()) {
       submon = monitor.subTask((int) Math.floor(wrk.prevWorkRatio() * MAXWORK));
     } else {
-      submon = DequeSequence.fromDeque(monitorWorkStack).peekElement()._0().subTask(wrk.prevWork());
+      submon = DequeSequence.fromDequeNew(monitorWorkStack).peekElement()._0().subTask(wrk.prevWork());
     }
     submon.start(wrk.name(), wrk.workLeft());
-    DequeSequence.fromDeque(monitorWorkStack).pushElement(MultiTuple.<ProgressMonitor,AbstractProgressStrategy.Work>from(submon, wrk));
+    DequeSequence.fromDequeNew(monitorWorkStack).pushElement(MultiTuple.<ProgressMonitor,AbstractProgressStrategy.Work>from(submon, wrk));
   }
   @Override
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
-    if (wrk == DequeSequence.fromDeque(monitorWorkStack).peekElement()._1()) {
-      ProgressMonitor mon = DequeSequence.fromDeque(monitorWorkStack).peekElement()._0();
+    if (wrk == DequeSequence.fromDequeNew(monitorWorkStack).peekElement()._1()) {
+      ProgressMonitor mon = DequeSequence.fromDequeNew(monitorWorkStack).peekElement()._0();
       mon.advance(wrk.workDone());
       mon.step(wrk.comment());
     }
@@ -70,11 +70,11 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
     popMatchingMonitor(wrk).done();
   }
   private ProgressMonitor popMatchingMonitor(AbstractProgressStrategy.Work work) {
-    while (DequeSequence.fromDeque(monitorWorkStack).isNotEmpty()) {
-      if (DequeSequence.fromDeque(monitorWorkStack).peekElement()._1() == work) {
-        return DequeSequence.fromDeque(monitorWorkStack).popElement()._0();
+    while (DequeSequence.fromDequeNew(monitorWorkStack).isNotEmpty()) {
+      if (DequeSequence.fromDequeNew(monitorWorkStack).peekElement()._1() == work) {
+        return DequeSequence.fromDequeNew(monitorWorkStack).popElement()._0();
       }
-      DequeSequence.fromDeque(monitorWorkStack).popElement()._0().done();
+      DequeSequence.fromDequeNew(monitorWorkStack).popElement()._0().done();
     }
     return monitor;
   }

@@ -141,14 +141,6 @@
       <concept id="1177458061340" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" flags="in" index="_Y34e" />
       <concept id="1177458237937" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" flags="nn" index="_YI3z" />
       <concept id="1177458491964" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" flags="in" index="_ZGcI" />
-      <concept id="2598676492883244606" name="jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart" flags="lg" index="1opIMY" />
-      <concept id="5434557751112207651" name="jetbrains.mps.lang.script.structure.DirectClassifierSpecification" flags="ng" index="1x2e1o">
-        <reference id="5434557751112207965" name="classifier" index="1x2ecA" />
-      </concept>
-      <concept id="6655357163912246425" name="jetbrains.mps.lang.script.structure.ExtractInterfaceMigration" flags="lg" index="1$2U2d">
-        <reference id="6655357163912246427" name="newClassifier" index="1$2U2f" />
-        <child id="5434557751112108415" name="oldClassifier" index="1x2mg4" />
-      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -1573,61 +1565,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="_UgoZ" id="1llssPS4O$z">
-    <property role="2BwPSy" value="migration" />
-    <property role="TrG5h" value="ISNode" />
-    <property role="2BwPS$" value="MPS 3.0" />
-    <property role="_Wzho" value="Migrate SNode to ISNode" />
-    <node concept="1$2U2d" id="1llssPS4YqD" role="_YvDr">
-      <ref role="1$2U2f" to="ec5l:~SNode" resolve="SNode" />
-      <node concept="1x2e1o" id="1llssPS4YqH" role="1x2mg4">
-        <ref role="1x2ecA" to="cu2c:~SNode" resolve="SNode" />
-      </node>
-    </node>
-    <node concept="1$2U2d" id="1llssPS6pQ8" role="_YvDr">
-      <ref role="1$2U2f" to="ec5l:~SNodeReference" resolve="SNodeReference" />
-      <node concept="1x2e1o" id="1llssPS6pQe" role="1x2mg4">
-        <ref role="1x2ecA" to="cu2c:~SNodePointer" resolve="SNodePointer" />
-      </node>
-    </node>
-    <node concept="1$2U2d" id="1llssPS6G59" role="_YvDr">
-      <ref role="1$2U2f" to="ec5l:~SReference" resolve="SReference" />
-      <node concept="1x2e1o" id="1llssPS6G5i" role="1x2mg4">
-        <ref role="1x2ecA" to="cu2c:~SReference" resolve="SReference" />
-      </node>
-    </node>
-    <node concept="1opIMY" id="1llssPS6G53" role="_YvDr" />
-  </node>
-  <node concept="_UgoZ" id="1llssPS5O40">
-    <property role="2BwPSy" value="migration" />
-    <property role="TrG5h" value="ISModel" />
-    <property role="2BwPS$" value="MPS 3.0" />
-    <property role="_Wzho" value="Migrate SModel to ISModel" />
-    <node concept="1$2U2d" id="1llssPS5O41" role="_YvDr">
-      <ref role="1$2U2f" to="ec5l:~SModel" resolve="SModel" />
-      <node concept="1x2e1o" id="1llssPS5Obv" role="1x2mg4">
-        <ref role="1x2ecA" to="cu2c:~SModel" resolve="SModel" />
-      </node>
-    </node>
-    <node concept="1$2U2d" id="1llssPS6pQg" role="_YvDr">
-      <ref role="1$2U2f" to="ec5l:~SModelReference" resolve="SModelReference" />
-      <node concept="1x2e1o" id="1llssPS6pQo" role="1x2mg4">
-        <ref role="1x2ecA" to="cu2c:~SModelReference" resolve="SModelReference" />
-      </node>
-    </node>
-  </node>
-  <node concept="_UgoZ" id="1llssPS6pNj">
-    <property role="2BwPSy" value="migration" />
-    <property role="TrG5h" value="ISModule" />
-    <property role="2BwPS$" value="MPS 3.0" />
-    <property role="_Wzho" value="Migrate IModule to SModule" />
-    <node concept="1$2U2d" id="1llssPS6pQq" role="_YvDr">
-      <ref role="1$2U2f" to="88zw:~SModuleReference" resolve="SModuleReference" />
-      <node concept="1x2e1o" id="1llssPS6pQw" role="1x2mg4">
-        <ref role="1x2ecA" to="kqhl:~ModuleReference" resolve="ModuleReference" />
       </node>
     </node>
   </node>

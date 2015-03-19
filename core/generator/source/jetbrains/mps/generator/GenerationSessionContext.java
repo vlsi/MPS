@@ -332,16 +332,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return set;
   }
 
-  /**
-   * @deprecated
-   * @return always NullGenerationTracer
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public IGenerationTracer getGenerationTracer() {
-    return new NullGenerationTracer();
-  }
-
   public void disposeQueryProvider() {
     myQueryProviders.dispose();
   }

@@ -13,10 +13,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.smodel.LazySNode;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.apache.log4j.Level;
@@ -144,7 +145,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new VersionUtil(my_modelField.getReference());
-      return new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
     protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
@@ -210,7 +211,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_7319439566871678401(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      my_modelField.addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
+      new SModelLegacy(my_modelField).addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_7319439566871678410(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
@@ -314,7 +315,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
-      return new LazySNode(InternUtil.intern(my_helperField.readType(attrs.getValue("type"))));
+      return SNodeFactory.newLazy(my_helperField.readType(attrs.getValue("type")));
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {

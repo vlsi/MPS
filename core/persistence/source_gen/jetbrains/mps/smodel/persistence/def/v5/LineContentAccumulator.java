@@ -6,10 +6,10 @@ import java.util.List;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
@@ -17,16 +17,16 @@ import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 
 public class LineContentAccumulator {
   private List<LineContent> myLineToContentMap = ListSequence.fromList(new ArrayList<LineContent>());
-  private Deque<SNodeId> myNodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
+  private Deque<SNodeId> myNodeIdStack = DequeSequence.fromDequeNew(new LinkedList<SNodeId>());
   public LineContentAccumulator() {
   }
   public void pushNode(SNodeId nodeId, Locator locator) {
-    DequeSequence.fromDeque(myNodeIdStack).pushElement(nodeId);
+    DequeSequence.fromDequeNew(myNodeIdStack).pushElement(nodeId);
     saveNode(locator);
   }
   public void popNode(Locator locator) {
     saveNode(locator);
-    DequeSequence.fromDeque(myNodeIdStack).popElement();
+    DequeSequence.fromDequeNew(myNodeIdStack).popElement();
   }
   private void saveElement(int index, LineContent lineContent) {
     while (index >= ListSequence.fromList(myLineToContentMap).count()) {
@@ -38,18 +38,18 @@ public class LineContentAccumulator {
     saveElement(locator.getLineNumber() - 1, lineContent);
   }
   private void saveNode(Locator locator) {
-    saveElement(locator, new NodeLineContent(DequeSequence.fromDeque(myNodeIdStack).peekElement()));
+    saveElement(locator, new NodeLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement()));
   }
   public void saveProperty(String name, Locator locator) {
-    saveElement(locator, new PropertyLineContent(DequeSequence.fromDeque(myNodeIdStack).peekElement(), name));
+    saveElement(locator, new PropertyLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), name));
   }
   public void saveReference(String role, Locator locator) {
-    saveElement(locator, new ReferenceLineContent(DequeSequence.fromDeque(myNodeIdStack).peekElement(), role));
+    saveElement(locator, new ReferenceLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement(), role));
   }
   public void processText(String text, Locator locator) {
     LineContent lineContent = null;
-    if (DequeSequence.fromDeque(myNodeIdStack).isNotEmpty()) {
-      lineContent = new NodeLineContent(DequeSequence.fromDeque(myNodeIdStack).peekElement());
+    if (DequeSequence.fromDequeNew(myNodeIdStack).isNotEmpty()) {
+      lineContent = new NodeLineContent(DequeSequence.fromDequeNew(myNodeIdStack).peekElement());
     }
     while (locator.getLineNumber() - 1 > ListSequence.fromList(myLineToContentMap).count()) {
       ListSequence.fromList(myLineToContentMap).addElement(lineContent);

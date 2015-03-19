@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -343,7 +344,7 @@ public class RefactoringContext {
               node.delete();
             } else {
               String newConceptFQName = newConceptFeature.getConceptFQName();
-              ((jetbrains.mps.smodel.SNode) node).setConceptFqName(newConceptFQName);
+              new SNodeLegacy(node).setConceptFqName(newConceptFQName);
             }
           }
         }

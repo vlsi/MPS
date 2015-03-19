@@ -520,24 +520,19 @@
   </root>
   <root nodeRef="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)/6426754448685220027">
     <file name="HierarchyFeatureExtractor.java">
-      <node id="6426754448685222897" at="20,48,21,60" concept="9" />
-      <node id="6426754448685223780" at="22,25,23,55" concept="10" />
-      <node id="6426754448685220052" at="25,5,26,16" concept="10" />
-      <node id="6426754448685220029" at="15,0,17,0" concept="2" trace="HierarchyFeatureExtractor#()V" />
-      <node id="6426754448685222908" at="21,60,24,7" concept="7" />
-      <node id="6426754448685220044" at="19,60,25,5" concept="7" />
-      <node id="6426754448685220034" at="17,0,28,0" concept="8" trace="getFeature#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <scope id="6426754448685220032" at="15,38,15,38" />
-      <scope id="6426754448685222909" at="22,25,23,55" />
-      <scope id="6426754448685220029" at="15,0,17,0" />
-      <scope id="6426754448685220046" at="20,48,24,7">
-        <var name="node" id="6426754448685222898" />
-      </scope>
-      <scope id="6426754448685220041" at="19,60,26,16" />
-      <scope id="6426754448685220034" at="17,0,28,0">
+      <node id="6426754448685223780" at="18,48,19,80" concept="10" />
+      <node id="6426754448685220052" at="20,5,21,16" concept="10" />
+      <node id="6426754448685220029" at="13,0,15,0" concept="2" trace="HierarchyFeatureExtractor#()V" />
+      <node id="6426754448685220044" at="17,60,20,5" concept="7" />
+      <node id="6426754448685220034" at="15,0,23,0" concept="8" trace="getFeature#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <scope id="6426754448685220032" at="13,38,13,38" />
+      <scope id="6426754448685220046" at="18,48,19,80" />
+      <scope id="6426754448685220029" at="13,0,15,0" />
+      <scope id="6426754448685220041" at="17,60,21,16" />
+      <scope id="6426754448685220034" at="15,0,23,0">
         <var name="treeNode" id="6426754448685220035" />
       </scope>
-      <unit id="6426754448685220027" at="14,0,29,0" name="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" />
+      <unit id="6426754448685220027" at="12,0,24,0" name="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" />
     </file>
   </root>
   <root nodeRef="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)/6940763585259488666">

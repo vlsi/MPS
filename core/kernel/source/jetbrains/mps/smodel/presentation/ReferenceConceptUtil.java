@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,17 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -106,7 +109,7 @@ public class ReferenceConceptUtil {
   }
 
   public static String getPresentation(SNode node) {
-    SNode nodeConcept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
+    SNode nodeConcept = new SNodeLegacy(node).getConceptDeclarationNode();
     SNode characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
     String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);

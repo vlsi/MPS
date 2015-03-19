@@ -95,6 +95,9 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -338,7 +341,6 @@
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
-      <concept id="1175845471038" name="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" flags="nn" index="35Qw8J" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
@@ -2163,32 +2165,95 @@
             <node concept="3Tqbb2" id="2W$ok$XXIeM" role="1tU5fm" />
           </node>
         </node>
+        <node concept="3clFbJ" id="3qaUGgZZV3c" role="3cqZAp">
+          <node concept="3clFbS" id="3qaUGgZZV3e" role="3clFbx">
+            <node concept="3SKdUt" id="3LC5F5NmkCF" role="3cqZAp">
+              <node concept="3SKdUq" id="3LC5F5NmkCO" role="3SKWNk">
+                <property role="3SKdUp" value="can't use anchor.next-sibling here as it looks for sibling with respect to node's containment role" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3LC5F5NmkDy" role="3cqZAp">
+              <node concept="3SKdUq" id="3LC5F5NmkDH" role="3SKWNk">
+                <property role="3SKdUp" value="while there are tests (MergeCoreTest) that expect ordering according overall children list" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="3qaUGgZZVVz" role="3cqZAp">
+              <node concept="37vLTI" id="3qaUGgZZW42" role="3clFbG">
+                <node concept="2OqwBi" id="3qaUGgZZW6H" role="37vLTx">
+                  <node concept="2JrnkZ" id="3LC5F5Nml23" role="2Oq$k0">
+                    <node concept="37vLTw" id="3qaUGgZZW5d" role="2JrQYb">
+                      <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3LC5F5NmlA6" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="3qaUGgZZVVx" role="37vLTJ">
+                  <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="3qaUGgZZVJv" role="3clFbw">
+            <node concept="10Nm6u" id="3qaUGgZZVUJ" role="3uHU7w" />
+            <node concept="37vLTw" id="3qaUGgZZVxt" role="3uHU7B">
+              <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="1oJRhVR8$ZN" role="9aQIa">
+            <node concept="3clFbS" id="1oJRhVR8$ZO" role="9aQI4">
+              <node concept="3SKdUt" id="1oJRhVR8QGI" role="3cqZAp">
+                <node concept="3SKdUq" id="1oJRhVR8QQQ" role="3SKWNk">
+                  <property role="3SKdUp" value="MergeCoreTest expects nodes without anchor to go first" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="1oJRhVR8AFm" role="3cqZAp">
+                <node concept="37vLTI" id="1oJRhVR8B33" role="3clFbG">
+                  <node concept="2OqwBi" id="1oJRhVR8CFS" role="37vLTx">
+                    <node concept="2JrnkZ" id="1oJRhVR8Puo" role="2Oq$k0">
+                      <node concept="37vLTw" id="1oJRhVR8CEn" role="2JrQYb">
+                        <ref role="3cqZAo" node="2W$ok$XXIeL" resolve="parent" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1oJRhVR8Q2I" role="2OqNvi">
+                      <ref role="37wK5l" to="ec5l:~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode" resolve="getFirstChild" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="1oJRhVR8AFl" role="37vLTJ">
+                    <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2Gpval" id="2W$ok$XXIic" role="3cqZAp">
           <node concept="2GrKxI" id="2W$ok$XXIid" role="2Gsz3X">
             <property role="TrG5h" value="newNode" />
           </node>
-          <node concept="2OqwBi" id="2W$ok$XXIih" role="2GsD0m">
-            <node concept="37vLTw" id="3GM_nagTzAP" role="2Oq$k0">
-              <ref role="3cqZAo" node="2W$ok$XXIgr" resolve="nodesToAdd" />
-            </node>
-            <node concept="35Qw8J" id="2W$ok$XXIil" role="2OqNvi" />
+          <node concept="37vLTw" id="3GM_nagTzAP" role="2GsD0m">
+            <ref role="3cqZAo" node="2W$ok$XXIgr" resolve="nodesToAdd" />
           </node>
           <node concept="3clFbS" id="2W$ok$XXIif" role="2LFqv$">
-            <node concept="3clFbF" id="2EkHBjgkb0b" role="3cqZAp">
-              <node concept="2YIFZM" id="58$PzbkaNVG" role="3clFbG">
-                <ref role="37wK5l" to="msyo:~SNodeOperations.insertChild(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChild" />
-                <ref role="1Pybhc" to="msyo:~SNodeOperations" resolve="SNodeOperations" />
-                <node concept="37vLTw" id="58$PzbkaNVH" role="37wK5m">
-                  <ref role="3cqZAo" node="2W$ok$XXIeL" resolve="parent" />
+            <node concept="3clFbF" id="3qaUGgZZSZW" role="3cqZAp">
+              <node concept="2OqwBi" id="3qaUGgZZT9d" role="3clFbG">
+                <node concept="2JrnkZ" id="3qaUGgZZTxi" role="2Oq$k0">
+                  <node concept="37vLTw" id="3qaUGgZZSZU" role="2JrQYb">
+                    <ref role="3cqZAo" node="2W$ok$XXIeL" resolve="parent" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="58$PzbkaNVI" role="37wK5m">
-                  <ref role="3cqZAo" node="4k3fuHGsETj" resolve="myRole" />
-                </node>
-                <node concept="2GrUjf" id="58$PzbkaNVJ" role="37wK5m">
-                  <ref role="2Gs0qQ" node="2W$ok$XXIid" resolve="newNode" />
-                </node>
-                <node concept="37vLTw" id="58$PzbkaNVK" role="37wK5m">
-                  <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+                <node concept="liA8E" id="3qaUGgZZTBF" role="2OqNvi">
+                  <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                  <node concept="37vLTw" id="3qaUGgZZTCS" role="37wK5m">
+                    <ref role="3cqZAo" node="4k3fuHGsETj" resolve="myRole" />
+                  </node>
+                  <node concept="2GrUjf" id="3qaUGgZZTHo" role="37wK5m">
+                    <ref role="2Gs0qQ" node="2W$ok$XXIid" resolve="newNode" />
+                  </node>
+                  <node concept="37vLTw" id="3qaUGgZZWwJ" role="37wK5m">
+                    <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -6961,24 +7026,16 @@
           </node>
           <node concept="9aQIb" id="69abr3GmYqa" role="9aQIa">
             <node concept="3clFbS" id="69abr3GmYqb" role="9aQI4">
-              <node concept="3SKdUt" id="69abr3GmYqc" role="3cqZAp">
-                <node concept="3SKdUq" id="69abr3GmYqd" role="3SKWNk">
-                  <property role="3SKdUp" value="hardcoded to get rid of dependency on core language" />
-                </node>
-              </node>
               <node concept="3cpWs8" id="69abr3GmYqe" role="3cqZAp">
                 <node concept="3cpWsn" id="69abr3GmYqf" role="3cpWs9">
                   <property role="TrG5h" value="stubNode" />
                   <node concept="3Tqbb2" id="69abr3GmYqg" role="1tU5fm" />
                   <node concept="2ShNRf" id="69abr3GmYqh" role="33vP2m">
                     <node concept="1pGfFk" id="3x0OQtFcCVD" role="2ShVmc">
-                      <ref role="37wK5l" to="cu2c:~SNode.&lt;init&gt;(java.lang.String)" resolve="SNode" />
-                      <node concept="2YIFZM" id="3x0OQtFcCVE" role="37wK5m">
-                        <ref role="37wK5l" to="msyo:~InternUtil.intern(java.lang.String):java.lang.String" resolve="intern" />
-                        <ref role="1Pybhc" to="msyo:~InternUtil" resolve="InternUtil" />
-                        <node concept="Xl_RD" id="3x0OQtFcCVF" role="37wK5m">
-                          <property role="Xl_RC" value="jetbrains.mps.lang.core.structure.BaseConcept" />
-                        </node>
+                      <ref role="37wK5l" to="cu2c:~SNode.&lt;init&gt;(org.jetbrains.mps.openapi.language.SConcept)" resolve="SNode" />
+                      <node concept="10M0yZ" id="1RQQO7DXQ7g" role="37wK5m">
+                        <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                        <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
                       </node>
                     </node>
                   </node>

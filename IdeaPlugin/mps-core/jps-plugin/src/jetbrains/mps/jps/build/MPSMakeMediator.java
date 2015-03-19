@@ -48,12 +48,14 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
 import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.jps.builders.BuildRootIndex;
 import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
@@ -79,6 +81,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.Iterable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -120,39 +123,45 @@ public class MPSMakeMediator {
   public boolean build() {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(myToMake.keySet())).toListSequence();
-    ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
+    Iterable<IMResource> resources = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Iterable<IMResource>>() {
       @Override
-      public SModule select(IMResource r) {
-        return r.module();
+      public Iterable<IMResource> compute() {
+        Iterable<IMResource> resources = Sequence.fromIterable(collectResources(myToMake.keySet())).toListSequence();
+        ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
+          @Override
+          public SModule select(IMResource r) {
+            return r.module();
+          }
+        });
+        ModuleOutputPaths outputPaths = new ModuleOutputPaths(mpsModules);
+        myForeignRootPaths = new MyForeignRootPaths(outputPaths.getOutputPaths());
+
+        myRedirects = new JpsRedirects();
+        Set<ModuleBuildTarget> processed = new HashSet<ModuleBuildTarget>();
+        for (ModuleBuildTarget target : myToMake.values()) {
+          if (processed.contains(target)) continue;
+          processed.add(target);
+
+          JpsMPSModuleExtension mpsModule = JpsMPSExtensionService.getInstance().getExtension(target.getModule());
+          if (mpsModule == null) continue;
+
+          File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
+          File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
+          boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
+          myRedirects.addRedirects(outputPaths, outputTmpRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
+
+          File generatorOutputRoot = new File(mpsModule.getConfiguration().getGeneratorOutputPath());
+          File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
+          myOutputRootsPerTarget.put(target, outputRoot);
+
+          if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
+            BuildRootIndex buildRootIndex = myContext.getProjectDescriptor().getBuildRootIndex();
+            buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
+          }
+        }
+        return resources;
       }
     });
-    ModuleOutputPaths outputPaths = new ModuleOutputPaths(mpsModules);
-    myForeignRootPaths = new MyForeignRootPaths(outputPaths.getOutputPaths());
-
-    myRedirects = new JpsRedirects();
-    Set<ModuleBuildTarget> processed = new HashSet<ModuleBuildTarget>();
-    for (ModuleBuildTarget target : myToMake.values()) {
-      if (processed.contains(target)) continue;
-      processed.add(target);
-
-      JpsMPSModuleExtension mpsModule = JpsMPSExtensionService.getInstance().getExtension(target.getModule());
-      if (mpsModule == null) continue;
-
-      File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
-      File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getProjectDescriptor().dataManager);
-      boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
-      myRedirects.addRedirects(outputPaths, outputTmpRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
-
-      File generatorOutputRoot = new File(mpsModule.getConfiguration().getGeneratorOutputPath());
-      File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
-      myOutputRootsPerTarget.put(target, outputRoot);
-
-      if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
-        BuildRootIndex buildRootIndex = myContext.getProjectDescriptor().getBuildRootIndex();
-        buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
-      }
-    }
 
     GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
       @Override

@@ -9,8 +9,7 @@ public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
   protected final N myData;
   private boolean myIsChecked = false;
   public CheckBoxNode(N rootNode, boolean createChildren) {
-    super(null);
-    this.setUserObject(rootNode);
+    super(rootNode);
     this.myData = rootNode;
     if (createChildren) {
       this.createChildren();

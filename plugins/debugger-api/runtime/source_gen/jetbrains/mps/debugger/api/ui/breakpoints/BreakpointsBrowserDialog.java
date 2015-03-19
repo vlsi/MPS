@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.actionSystem.DataProvider;
 import javax.swing.JPanel;
 import javax.swing.JComponent;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import javax.swing.JScrollPane;
@@ -40,7 +40,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -54,7 +53,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
   private final JPanel myMainPanel;
   private JComponent myPropertiesEditorPanel;
-  private final IOperationContext myContext;
+  private final Project myProject;
   private final BreakpointManagerComponent myBreakpointsManager;
   private final BreakpointProvidersManager myProvidersManager;
   private final BreakpointsUiComponent myBreakpointsUi;
@@ -69,18 +68,17 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
       breakpointSelected(bp);
     }
   };
-  public BreakpointsBrowserDialog(IOperationContext context) {
-    super(ProjectHelper.toIdeaProject(context.getProject()));
+  public BreakpointsBrowserDialog(Project mpsProject) {
+    super(ProjectHelper.toIdeaProject(mpsProject));
     setTitle("Breakpoints");
     setModal(false);
     this.setOKButtonText("Close");
-
-    myContext = context;
-    myBreakpointsManager = BreakpointManagerComponent.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
-    myBreakpointsUi = BreakpointsUiComponent.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
+    myProject = mpsProject;
+    myBreakpointsManager = BreakpointManagerComponent.getInstance(ProjectHelper.toIdeaProject(mpsProject));
+    myBreakpointsUi = BreakpointsUiComponent.getInstance(ProjectHelper.toIdeaProject(mpsProject));
     myProvidersManager = BreakpointProvidersManager.getInstance();
-    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
-    myViews = new BreakpointsView[]{new BreakpointsTable(myContext, myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
+    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(mpsProject).getViewIndex();
+    myViews = new BreakpointsView[]{new BreakpointsTable(mpsProject, myBreakpointsManager), new BreakpointsTree(mpsProject, myBreakpointsManager)};
     myMainPanel = new JPanel(new BorderLayout());
     myBreakpointsScrollPane = ScrollPaneFactory.createScrollPane(myViews[myCurrentViewIndex].getMainComponent());
     myBreakpointsScrollPane.getViewport().setBackground(UIManager.getColor("Table.background"));
@@ -96,7 +94,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
     init();
   }
   private void saveState() {
-    if (myContext.getProject().isDisposed()) {
+    if (myProject.isDisposed()) {
       return;
     }
     for (BreakpointsView view : myViews) {
@@ -290,7 +288,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
   }
   private void switchView() {
     myCurrentViewIndex = 1 - myCurrentViewIndex;
-    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setViewIndex(myCurrentViewIndex);
+    BreakpointViewSettingsComponent.getInstance(myProject).setViewIndex(myCurrentViewIndex);
     myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
   protected AbstractAction createWrapper(final AnAction action) {
@@ -330,18 +328,17 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
     return new AnActionEvent(null, DataManager.getInstance().getDataContext(this.getContentPane()), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
   }
   private void openNode(final IBreakpoint breakpoint, final boolean focus, final boolean select) {
-    final Project project = myContext.getProject();
     if (!((breakpoint instanceof ILocationBreakpoint))) {
       return;
     }
-    project.getModelAccess().executeCommand(new Runnable() {
+    myProject.getModelAccess().executeCommand(new Runnable() {
       @Override
       public void run() {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
         if (node == null) {
           return;
         }
-        NavigationSupport.getInstance().openNode(myContext, node, focus, select);
+        NavigationSupport.getInstance().openNode(myProject, node, focus, select);
       }
     });
   }

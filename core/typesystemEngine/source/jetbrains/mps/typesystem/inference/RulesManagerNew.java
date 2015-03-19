@@ -17,10 +17,10 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
@@ -33,7 +33,6 @@ public class RulesManagerNew {
 
   public RulesManagerNew(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
-    //myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       @Override
       public void modelRemoved(SModel modelDescriptor) {
