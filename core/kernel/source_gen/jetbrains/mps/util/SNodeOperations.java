@@ -18,7 +18,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-
+import jetbrains.mps.util.annotation.ToRemove;
+import java.util.Iterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -172,14 +173,22 @@ public class SNodeOperations {
     if (before) {
       parent.insertChildBefore(role, child, anchor);
     } else {
-      if (anchor != null) {
-        parent.insertChildBefore(role, child, anchor.getNextSibling());
-      }else{
-        parent.insertChildBefore(role, child, parent.getFirstChild());
-      }
+      insertChild(parent, role, child, anchor);
     }
   }
-
+  /**
+   * todo rewrite the code via snode methods
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
+    if (anchor != null) {
+      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      return;
+    }
+    Iterator<? extends SNode> it = parent.getChildren().iterator();
+    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
+  }
   /**
    * Insert a child *after* specified anchor, or to the head of children list if anchor is null
    * todo rewrite the code via snode methods
@@ -361,7 +370,6 @@ public class SNodeOperations {
    * Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage.
    * Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway.
    * 
-   * @deprecated If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()
    */
   @Deprecated
   @ToRemove(version = 3.3)
