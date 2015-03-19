@@ -293,7 +293,7 @@ class IntelligentNodeMover {
   private void addAtBoundary(SNode result) {
     myParent.removeChild(myCurrent);
     if (forward()) {
-      jetbrains.mps.util.SNodeOperations.insertChild(result, myRole, myCurrent, null);
+      result.insertChildBefore(myRole, myCurrent, result.getFirstChild());
     } else {
       result.addChild(myRole, myCurrent);
     }
