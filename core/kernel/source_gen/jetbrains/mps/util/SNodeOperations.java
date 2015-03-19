@@ -286,6 +286,12 @@ public class SNodeOperations {
   public static String getModelLongName(SModel model) {
     return NameUtil.getModelLongName(model);
   }
+  /**
+   * 
+   * @deprecated there are no uses of this method. If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds().Besides, SNodeOperations was bad location anyway
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static List<SModuleReference> getUsedLanguages(SModel model) {
     Iterable<SModuleReference> languages = ((SModelInternal) model).importedLanguages();
     return Sequence.fromIterable(languages).toListSequence();

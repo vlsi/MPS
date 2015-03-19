@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.extapi.model.SModelBase;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -79,7 +79,7 @@ public class Utils {
       SNode result = SNodeOperations.cast(res.get(0), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       SModelOperations.addRootNode(mdl, result);
       if (mdl instanceof SModelBase && SNodeOperations.getModel(expected) instanceof SModelBase) {
-        for (SModuleReference langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguages()) {
+        for (SLanguage langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguageIds()) {
           ((SModelBase) mdl).addLanguage(langref);
         }
       }
