@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LanguageRefExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />

@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1772,7 +1772,8 @@
     <property role="TrG5h" value="LanguageReferenceExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference.module" />
-    <property role="34LRSv" value="language" />
+    <property role="34LRSv" value="language-module" />
+    <property role="R4oN_" value="Access Language module instance" />
     <ref role="1TJDcQ" node="3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
   </node>
   <node concept="1TIwiD" id="v3WHCwUiHy">
@@ -2061,6 +2062,25 @@
     <property role="TrG5h" value="ConceptShortDescriptionOperation" />
     <property role="34LRSv" value="shortDescrption" />
     <ref role="1TJDcQ" node="5XpkEY8gZFT" resolve="SConceptOperation" />
+  </node>
+  <node concept="1TIwiD" id="3TEgbCBRn3N">
+    <property role="3GE5qa" value="reference.module" />
+    <property role="TrG5h" value="LanguageRefExpression" />
+    <property role="34LRSv" value="language" />
+    <property role="R4oN_" value="Reference to a run-time language" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyi" id="3TEgbCBRn3O" role="1TKVEl">
+      <property role="TrG5h" value="namespace" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="3TEgbCBRn3Q" role="1TKVEl">
+      <property role="TrG5h" value="languageId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="3TEgbCBRn3T" role="1TKVEl">
+      <property role="TrG5h" value="version" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
 </model>
 
