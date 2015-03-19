@@ -62,6 +62,7 @@
     <import index="y596" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" />
     <import index="n55e" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
     <import index="4lbv" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.update(MPS.Editor/jetbrains.mps.openapi.editor.update@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -416,7 +417,6 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -441,7 +441,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -1108,7 +1107,7 @@
                 </node>
                 <node concept="3cpWs8" id="3M9DpEEa3$6" role="3cqZAp">
                   <node concept="3cpWsn" id="3M9DpEEa3$7" role="3cpWs9">
-                    <property role="TrG5h" value="role" />
+                    <property role="TrG5h" value="link" />
                     <node concept="2OqwBi" id="6lZ8OoRvh49" role="33vP2m">
                       <node concept="2JrnkZ" id="6lZ8OoRvh4a" role="2Oq$k0">
                         <node concept="37vLTw" id="3GM_nagTAj9" role="2JrQYb">
@@ -1116,45 +1115,11 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="6lZ8OoRvh4c" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                        <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                       </node>
                     </node>
-                    <node concept="17QB3L" id="3M9DpEEa3$8" role="1tU5fm" />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="3M9DpEEa3$d" role="3cqZAp">
-                  <node concept="3cpWsn" id="3M9DpEEa3$e" role="3cpWs9">
-                    <property role="TrG5h" value="link" />
-                    <node concept="2OqwBi" id="1$sIUMYazQe" role="33vP2m">
-                      <node concept="2OqwBi" id="1$sIUMYazQ9" role="2Oq$k0">
-                        <node concept="FGMqu" id="1$sIUMYazQa" role="2OqNvi" />
-                        <node concept="2OqwBi" id="1$sIUMYazQb" role="2Oq$k0">
-                          <node concept="37vLTw" id="3GM_nagTxgC" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3M9DpEEa3$1" resolve="parent" />
-                          </node>
-                          <node concept="3NT_Vc" id="1$sIUMYazQd" role="2OqNvi" />
-                        </node>
-                      </node>
-                      <node concept="2qgKlT" id="1$sIUMYazQf" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcn:hEwILKz" resolve="findLinkDeclaration" />
-                        <node concept="37vLTw" id="3GM_nagTrmv" role="37wK5m">
-                          <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="role" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3Tqbb2" id="3M9DpEEa3$f" role="1tU5fm">
-                      <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="3M9DpEEa3$m" role="3cqZAp">
-                  <node concept="3clFbS" id="3M9DpEEa3$n" role="3clFbx">
-                    <node concept="3cpWs6" id="3M9DpEEa3$o" role="3cqZAp" />
-                  </node>
-                  <node concept="3clFbC" id="3M9DpEEa3$p" role="3clFbw">
-                    <node concept="10Nm6u" id="3M9DpEEa3$q" role="3uHU7w" />
-                    <node concept="37vLTw" id="3GM_nagTyD_" role="3uHU7B">
-                      <ref role="3cqZAo" node="3M9DpEEa3$e" resolve="link" />
+                    <node concept="3uibUv" id="1Oj45PFeMkQ" role="1tU5fm">
+                      <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
                     </node>
                   </node>
                 </node>
@@ -1172,21 +1137,31 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbF" id="2EkHBjghb9Y" role="3cqZAp">
-                      <node concept="2YIFZM" id="2EkHBjghbUt" role="3clFbG">
-                        <ref role="37wK5l" to="unno:1gGGYgrvrl_" resolve="insertChild" />
-                        <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                        <node concept="37vLTw" id="2EkHBjghbWv" role="37wK5m">
-                          <ref role="3cqZAo" node="3M9DpEEa3$1" resolve="parent" />
+                    <node concept="3clFbF" id="1Oj45PFeRzq" role="3cqZAp">
+                      <node concept="2OqwBi" id="1Oj45PFeRHl" role="3clFbG">
+                        <node concept="2JrnkZ" id="1Oj45PFeS28" role="2Oq$k0">
+                          <node concept="37vLTw" id="1Oj45PFeRzo" role="2JrQYb">
+                            <ref role="3cqZAo" node="3M9DpEEa3$1" resolve="parent" />
+                          </node>
                         </node>
-                        <node concept="37vLTw" id="2EkHBjghc0t" role="37wK5m">
-                          <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="role" />
-                        </node>
-                        <node concept="37vLTw" id="2EkHBjghc60" role="37wK5m">
-                          <ref role="3cqZAo" node="3M9DpEEa3$v" resolve="copy" />
-                        </node>
-                        <node concept="37vLTw" id="2EkHBjghcc8" role="37wK5m">
-                          <ref role="3cqZAo" node="3M9DpEEa3zR" resolve="nodeToCopy" />
+                        <node concept="liA8E" id="1Oj45PFeSa_" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                          <node concept="37vLTw" id="1Oj45PFeSbs" role="37wK5m">
+                            <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
+                          </node>
+                          <node concept="37vLTw" id="1Oj45PFeTrp" role="37wK5m">
+                            <ref role="3cqZAo" node="3M9DpEEa3$v" resolve="copy" />
+                          </node>
+                          <node concept="2OqwBi" id="1Oj45PFeTvK" role="37wK5m">
+                            <node concept="2JrnkZ" id="1Oj45PFfq_h" role="2Oq$k0">
+                              <node concept="37vLTw" id="1Oj45PFeTtJ" role="2JrQYb">
+                                <ref role="3cqZAo" node="3M9DpEEa3zR" resolve="nodeToCopy" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="1Oj45PFfqIn" role="2OqNvi">
+                              <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -1240,14 +1215,12 @@
                     </node>
                     <node concept="3cpWs6" id="3M9DpEEa3$W" role="3cqZAp" />
                   </node>
-                  <node concept="3fqX7Q" id="3M9DpEEa3$X" role="3clFbw">
-                    <node concept="2OqwBi" id="3M9DpEEa3$Y" role="3fr31v">
-                      <node concept="37vLTw" id="3GM_nagT$u7" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3M9DpEEa3$e" resolve="link" />
-                      </node>
-                      <node concept="2qgKlT" id="3M9DpEEa3_0" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcn:hEwIfAt" resolve="isSingular" />
-                      </node>
+                  <node concept="2OqwBi" id="3M9DpEEa3$Y" role="3clFbw">
+                    <node concept="37vLTw" id="1Oj45PFeNqB" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
+                    </node>
+                    <node concept="liA8E" id="1Oj45PFeNL2" role="2OqNvi">
+                      <ref role="37wK5l" to="t3eg:~SContainmentLink.isMultiple():boolean" resolve="isMultiple" />
                     </node>
                   </node>
                 </node>
@@ -1329,10 +1302,12 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="6lZ8OoRvh1Q" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                      <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                     </node>
                   </node>
-                  <node concept="17QB3L" id="3M9DpEEa3__" role="1tU5fm" />
+                  <node concept="3uibUv" id="1Oj45PFgHW4" role="1tU5fm">
+                    <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+                  </node>
                 </node>
               </node>
               <node concept="3cpWs8" id="3M9DpEEa3_E" role="3cqZAp">
@@ -1344,42 +1319,6 @@
                       <ref role="3cqZAo" node="3M9DpEEa3_k" resolve="firstNode" />
                     </node>
                     <node concept="1mfA1w" id="3M9DpEEa3_J" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="3M9DpEEa3_K" role="3cqZAp">
-                <node concept="3cpWsn" id="3M9DpEEa3_L" role="3cpWs9">
-                  <property role="TrG5h" value="link" />
-                  <node concept="2OqwBi" id="1$sIUMYazNN" role="33vP2m">
-                    <node concept="2OqwBi" id="1$sIUMYazNI" role="2Oq$k0">
-                      <node concept="FGMqu" id="1$sIUMYazNJ" role="2OqNvi" />
-                      <node concept="2OqwBi" id="1$sIUMYazNK" role="2Oq$k0">
-                        <node concept="37vLTw" id="3GM_nagT$7w" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3M9DpEEa3_F" resolve="parent" />
-                        </node>
-                        <node concept="3NT_Vc" id="1$sIUMYazNM" role="2OqNvi" />
-                      </node>
-                    </node>
-                    <node concept="2qgKlT" id="1$sIUMYazNO" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcn:hEwILKz" resolve="findLinkDeclaration" />
-                      <node concept="37vLTw" id="3GM_nagTuL1" role="37wK5m">
-                        <ref role="3cqZAo" node="3M9DpEEa3_$" resolve="role" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3Tqbb2" id="3M9DpEEa3_M" role="1tU5fm">
-                    <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbJ" id="3M9DpEEa3_T" role="3cqZAp">
-                <node concept="3clFbS" id="3M9DpEEa3_U" role="3clFbx">
-                  <node concept="3cpWs6" id="3M9DpEEa3_V" role="3cqZAp" />
-                </node>
-                <node concept="3clFbC" id="3M9DpEEa3_W" role="3clFbw">
-                  <node concept="10Nm6u" id="3M9DpEEa3_X" role="3uHU7w" />
-                  <node concept="37vLTw" id="3GM_nagTyMc" role="3uHU7B">
-                    <ref role="3cqZAo" node="3M9DpEEa3_L" resolve="link" />
                   </node>
                 </node>
               </node>
@@ -1397,24 +1336,34 @@
                   <node concept="35Qw8J" id="3M9DpEEa3A5" role="2OqNvi" />
                 </node>
                 <node concept="3clFbS" id="3M9DpEEa3A6" role="2LFqv$">
-                  <node concept="3clFbF" id="2EkHBjghdeg" role="3cqZAp">
-                    <node concept="2YIFZM" id="2EkHBjghdj3" role="3clFbG">
-                      <ref role="37wK5l" to="unno:1gGGYgrvrl_" resolve="insertChild" />
-                      <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                      <node concept="37vLTw" id="2EkHBjghdkf" role="37wK5m">
-                        <ref role="3cqZAo" node="3M9DpEEa3_F" resolve="parent" />
-                      </node>
-                      <node concept="37vLTw" id="2EkHBjghdnP" role="37wK5m">
-                        <ref role="3cqZAo" node="3M9DpEEa3_$" resolve="role" />
-                      </node>
-                      <node concept="2OqwBi" id="2EkHBjghdPZ" role="37wK5m">
-                        <node concept="2GrUjf" id="2EkHBjghdqi" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="3M9DpEEa3A0" resolve="node" />
+                  <node concept="3clFbF" id="1Oj45PFgI9e" role="3cqZAp">
+                    <node concept="2OqwBi" id="1Oj45PFgIb9" role="3clFbG">
+                      <node concept="2JrnkZ" id="1Oj45PFgIzq" role="2Oq$k0">
+                        <node concept="37vLTw" id="1Oj45PFgI9c" role="2JrQYb">
+                          <ref role="3cqZAo" node="3M9DpEEa3_F" resolve="parent" />
                         </node>
-                        <node concept="1$rogu" id="2EkHBjghe_j" role="2OqNvi" />
                       </node>
-                      <node concept="37vLTw" id="2EkHBjgheCb" role="37wK5m">
-                        <ref role="3cqZAo" node="3M9DpEEa3_s" resolve="lastNode" />
+                      <node concept="liA8E" id="1Oj45PFgIFQ" role="2OqNvi">
+                        <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                        <node concept="37vLTw" id="1Oj45PFgIGH" role="37wK5m">
+                          <ref role="3cqZAo" node="3M9DpEEa3_$" resolve="role" />
+                        </node>
+                        <node concept="2OqwBi" id="1Oj45PFgIJq" role="37wK5m">
+                          <node concept="2GrUjf" id="1Oj45PFgIId" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="3M9DpEEa3A0" resolve="node" />
+                          </node>
+                          <node concept="1$rogu" id="1Oj45PFgJbA" role="2OqNvi" />
+                        </node>
+                        <node concept="2OqwBi" id="1Oj45PFgJm5" role="37wK5m">
+                          <node concept="2JrnkZ" id="1Oj45PFgJyG" role="2Oq$k0">
+                            <node concept="37vLTw" id="1Oj45PFgJi7" role="2JrQYb">
+                              <ref role="3cqZAo" node="3M9DpEEa3_s" resolve="lastNode" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="1Oj45PFgJHX" role="2OqNvi">
+                            <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

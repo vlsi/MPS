@@ -14115,16 +14115,21 @@
                     </node>
                     <node concept="liA8E" id="2Jvt1sWfvFM" role="2OqNvi">
                       <ref role="37wK5l" to="k7g3:~List.addAll(java.util.Collection):boolean" resolve="addAll" />
-                      <node concept="2YIFZM" id="7LmwlFdThX8" role="37wK5m">
-                        <ref role="1Pybhc" to="msyo:~SNodeOperations" resolve="SNodeOperations" />
-                        <ref role="37wK5l" to="msyo:~SNodeOperations.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition):java.util.List" resolve="getDescendants" />
-                        <node concept="2JrnkZ" id="7LmwlFdThX9" role="37wK5m">
-                          <node concept="37vLTw" id="3GM_nagTBu5" role="2JrQYb">
+                      <node concept="2YIFZM" id="1Oj45PFe7ZU" role="37wK5m">
+                        <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
+                        <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
+                        <node concept="2YIFZM" id="5YcedGY4wHa" role="37wK5m">
+                          <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
+                          <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition,boolean):java.lang.Iterable" resolve="getDescendants" />
+                          <node concept="37vLTw" id="1Oj45PFe5Fu" role="37wK5m">
                             <ref role="3cqZAo" node="2Jvt1sWfvFx" resolve="classifier" />
                           </node>
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxgm$CC" role="37wK5m">
-                          <ref role="3cqZAo" node="2Jvt1sWfv_A" resolve="condition" />
+                          <node concept="37vLTw" id="5YcedGY4x6p" role="37wK5m">
+                            <ref role="3cqZAo" node="2Jvt1sWfv_A" resolve="condition" />
+                          </node>
+                          <node concept="3clFbT" id="5YcedGY4xm_" role="37wK5m">
+                            <property role="3clFbU" value="false" />
+                          </node>
                         </node>
                       </node>
                     </node>

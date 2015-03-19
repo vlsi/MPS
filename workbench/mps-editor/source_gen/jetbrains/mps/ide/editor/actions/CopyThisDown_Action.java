@@ -20,7 +20,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -94,14 +94,10 @@ public class CopyThisDown_Action extends BaseAction {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
-          String role = nodeToCopy.getRoleInParent();
-          SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(parent)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
-          if (link == null) {
-            return;
-          }
-          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{}))) {
+          SContainmentLink link = nodeToCopy.getContainmentLink();
+          if (link.isMultiple()) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            jetbrains.mps.util.SNodeOperations.insertChild(parent, role, copy, nodeToCopy);
+            parent.insertChildBefore(link, copy, nodeToCopy.getNextSibling());
             EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
             editorContext.selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
@@ -112,14 +108,10 @@ public class CopyThisDown_Action extends BaseAction {
       } else {
         SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
-        String role = firstNode.getRoleInParent();
+        SContainmentLink role = firstNode.getContainmentLink();
         SNode parent = SNodeOperations.getParent(firstNode);
-        SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(parent)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
-        if (link == null) {
-          return;
-        }
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          jetbrains.mps.util.SNodeOperations.insertChild(parent, role, SNodeOperations.copyNode(node), lastNode);
+          parent.insertChildBefore(role, SNodeOperations.copyNode(node), lastNode.getNextSibling());
         }
         EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
         editorContext.selectRange(firstNode, lastNode);

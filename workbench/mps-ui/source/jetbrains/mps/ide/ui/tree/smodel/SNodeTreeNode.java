@@ -22,11 +22,13 @@ import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -156,7 +158,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
-    if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
+    if (n == null || !SNodeUtil.isAccessible(n, MPSModuleRepository.getInstance())) return;
 
     NodeChildrenProvider provider = getAncestor(NodeChildrenProvider.class);
     if (provider != null) {

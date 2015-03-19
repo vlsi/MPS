@@ -206,7 +206,8 @@ public class TabbedEditor extends BaseNodeEditor {
 
       SModel md = node.getModel();
       SModule module = md.getModule();
-      assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
+      assert module != null : md.getReference().toString() + "; node is disposed = " + !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node,
+          MPSModuleRepository.getInstance());
       SNodeReference selection = select ? nodeRef : null;
       if (myTabsComponent.getCurrentTabAspect() != null) {
         Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);

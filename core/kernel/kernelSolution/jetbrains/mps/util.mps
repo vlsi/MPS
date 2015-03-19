@@ -3318,60 +3318,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="1NYD3hytmTS" role="jymVt">
-      <property role="TrG5h" value="getDescendants" />
-      <node concept="3uibUv" id="1NYD3hytmTT" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-        <node concept="3uibUv" id="3SfeoxXfB40" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1NYD3hytmTV" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmTW" role="3clF47">
-        <node concept="3SKdUt" id="4bu8cw970MI" role="3cqZAp">
-          <node concept="3SKdUq" id="4bu8cw970QL" role="3SKWNk">
-            <property role="3SKdUp" value="Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="4bu8cw9731j" role="3cqZAp">
-          <node concept="2YIFZM" id="4bu8cw973bN" role="3cqZAk">
-            <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-            <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition,boolean):java.lang.Iterable" resolve="getDescendants" />
-            <node concept="37vLTw" id="4bu8cw973gh" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUc" resolve="node" />
-            </node>
-            <node concept="37vLTw" id="4bu8cw973wk" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUe" resolve="cond" />
-            </node>
-            <node concept="37vLTw" id="4bu8cw973IL" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUh" resolve="includeFirst" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUc" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1NYD3hytmUd" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUe" role="3clF46">
-        <property role="TrG5h" value="cond" />
-        <node concept="3uibUv" id="1NYD3hytmUf" role="1tU5fm">
-          <ref role="3uigEE" to="r9fo:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="3SfeoxXfB4n" role="11_B2D">
-            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUh" role="3clF46">
-        <property role="TrG5h" value="includeFirst" />
-        <node concept="10P_77" id="1NYD3hytmUi" role="1tU5fm" />
-      </node>
-      <node concept="2AHcQZ" id="4bu8cw96Rzy" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="2YIFZL" id="1NYD3hytmUm" role="jymVt">
       <property role="TrG5h" value="findParent" />
       <property role="IEkAT" value="true" />
@@ -3595,61 +3541,6 @@
         <node concept="3uibUv" id="1NYD3hytmUU" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1NYD3hytmUY" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="TrG5h" value="getDescendants" />
-      <node concept="3uibUv" id="5T4fSAVSVze" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-        <node concept="3uibUv" id="3SfeoxXfB4o" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1NYD3hytmV0" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmV1" role="3clF47">
-        <node concept="3SKdUt" id="5YcedGY4xUQ" role="3cqZAp">
-          <node concept="3SKdUq" id="5YcedGY4xYY" role="3SKWNk">
-            <property role="3SKdUp" value="Deprecated: use openapi.model.SNodeUtil.getDescendants() instead" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5YcedGY4wqW" role="3cqZAp">
-          <node concept="2YIFZM" id="5YcedGY4w$g" role="3cqZAk">
-            <ref role="37wK5l" to="msyo:~IterableUtil.asList(java.lang.Iterable):java.util.List" resolve="asList" />
-            <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
-            <node concept="2YIFZM" id="5YcedGY4wHa" role="37wK5m">
-              <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-              <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition,boolean):java.lang.Iterable" resolve="getDescendants" />
-              <node concept="37vLTw" id="5YcedGY4wNc" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmVa" resolve="node" />
-              </node>
-              <node concept="37vLTw" id="5YcedGY4x6p" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmVc" resolve="condition" />
-              </node>
-              <node concept="3clFbT" id="5YcedGY4xm_" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmVa" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1_FiQN2lP6H" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmVc" role="3clF46">
-        <property role="TrG5h" value="condition" />
-        <node concept="3uibUv" id="1NYD3hytmVd" role="1tU5fm">
-          <ref role="3uigEE" to="r9fo:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="3SfeoxXfB41" role="11_B2D">
-            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5YcedGY4x_y" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="1NYD3hytmVk" role="jymVt">
@@ -4456,49 +4347,6 @@
         <node concept="3uibUv" id="3YzxW_BCQB0" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1NYD3hytmVT" role="jymVt">
-      <property role="TrG5h" value="isDisposed" />
-      <node concept="10P_77" id="1NYD3hytmVU" role="3clF45" />
-      <node concept="3Tm1VV" id="1NYD3hytmVV" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmVW" role="3clF47">
-        <node concept="3cpWs6" id="1NYD3hytmVX" role="3cqZAp">
-          <node concept="3fqX7Q" id="2R7EsbQQlc0" role="3cqZAk">
-            <node concept="2YIFZM" id="2R7EsbQQleQ" role="3fr31v">
-              <ref role="37wK5l" to="ec5l:~SNodeUtil.isAccessible(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository):boolean" resolve="isAccessible" />
-              <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-              <node concept="37vLTw" id="2R7EsbQQlfV" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmW4" resolve="node" />
-              </node>
-              <node concept="2YIFZM" id="2R7EsbQQlkm" role="37wK5m">
-                <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmW4" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1NYD3hytmW5" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="1NYD3hytmW6" role="lGtFl">
-        <node concept="TZ5HA" id="1NYD3hytmW7" role="TZ5H$">
-          <node concept="1dT_AC" id="1NYD3hytmW8" role="1dT_Ay">
-            <property role="1dT_AB" value="todo KILL IT! should not be used since nodes are not passed between read actions" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="1NYD3hytmW9" role="TZ5H$">
-          <node concept="1dT_AC" id="1NYD3hytmWa" role="1dT_Ay">
-            <property role="1dT_AB" value="todo after killing it, correct migration script to return false instead" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1NYD3hytmWb" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="7U87j6$6ALH" role="jymVt">
