@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -55,16 +56,23 @@ public abstract class MetaAdapterFactory {
       new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
 
   @NotNull
-  public static SLanguage getLanguage(SLanguageId id, String langName) {
+  public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
     return getLanguage(id, langName, -1);
   }
 
   @NotNull
-  public static SLanguage getLanguage(SLanguageId id, String langName, int version) {
+  public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName, int version) {
     SLanguageAdapterById l = new SLanguageAdapterById(id, langName, version);
     LangKey p = new LangKey(id, langName, version);
     ourLanguageIds.putIfAbsent(p, l);
     return ourLanguageIds.get(p);
+  }
+
+  public static SLanguage getLanguage(@NotNull SLanguage original, int anotherVersion) {
+    if (original.getLanguageVersion() == anotherVersion) {
+      return original;
+    }
+    return getLanguage(IdHelper.getLanguageId(original), original.getQualifiedName(), anotherVersion);
   }
 
   @NotNull

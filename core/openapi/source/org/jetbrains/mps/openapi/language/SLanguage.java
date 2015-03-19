@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -26,22 +27,26 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
  * Besides, {@link #getLanguageVersion()} might be sensible as well, depending on source
  * SLanguage instance comes from (e.g. if it's an used/imported language of a model, then
  * version value indicates actual value at the time import was added/updated).
+ * <p>
+ * At the moment, equality of instances this class doesn't respect version. This might get changed.
  */
 public interface SLanguage {
 
   /**
    * The namespace of the language.
    */
+  @NotNull
   String getQualifiedName();
 
   /**
-   * All concepts defined in the language
+   * All concepts defined in the language, empty if the language is invalid (missing).
    */
   Iterable<SAbstractConcept> getConcepts();
 
   /**
    * All the runtime dependencies that a language needs after generation to run the generated code.
    * These will be resolved from the user repository.
+   * Empty sequence in case language is invalid/missing.
    */
   Iterable<SModuleReference> getLanguageRuntimes();
 
@@ -54,9 +59,8 @@ public interface SLanguage {
   SModule getSourceModule();
 
   /**
-   * Returns the version of this language.
-   * Version is an integer indicating the state which language is currently in.
-   * Version of a language changes when the structure of this language changes.
+   * Version of the referenced language.
+   * Version is an integer indicating state of a language. It is changed when the structure of this language changes.
    * Typically this means that if some module uses an older version of a language, it should be updated before the user
    * will be able to work with it. E.g. generator can fail on generation of such a model.
    *
