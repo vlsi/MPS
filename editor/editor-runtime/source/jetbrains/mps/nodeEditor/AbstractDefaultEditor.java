@@ -41,7 +41,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * Created by simon on 11/03/15.
@@ -64,7 +65,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
   protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
-  private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
+  private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
   private BigInteger currentConstantIdNumber = BigInteger.ZERO;
 
@@ -286,13 +287,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   }
 
   private EditorCell_Collection popCollection() {
-    if (collectionStack.empty()) {
+    if (collectionStack.isEmpty()) {
       return null;
     }
     EditorCell_Collection result = collectionStack.pop();
     result.setCellId("collection_" + currentCollectionIdNumber.toString());
     currentCollectionIdNumber = currentCollectionIdNumber.subtract(BigInteger.ONE);
-    if (!collectionStack.empty()) {
+    if (!collectionStack.isEmpty()) {
       collectionStack.peek().addEditorCell(result);
     }
     return result;
