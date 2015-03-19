@@ -1,0 +1,7 @@
+modelsLocation ../../tests/blProject/models;
+modelsToCopy main.mps;
+modelsDirName models;
+moduleName main;
+generatorOutputPath source_gen;
+useModuleSourceFolder true;
+useTransientOutputFolder false;

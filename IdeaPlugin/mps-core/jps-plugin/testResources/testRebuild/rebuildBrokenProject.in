@@ -1,0 +1,7 @@
+modelsLocation ../../tests/makeTestBroken/models;
+modelsToCopy broken.mps;
+modelsDirName models;
+moduleName makeTestBroken;
+generatorOutputPath source_gen;
+useModuleSourceFolder false;
+useTransientOutputFolder false;
