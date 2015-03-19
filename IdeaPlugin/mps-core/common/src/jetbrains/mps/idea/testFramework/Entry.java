@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.tests;
+package jetbrains.mps.idea.testFramework;
 
-import jetbrains.mps.idea.tests.MpsTestDataParser.InnerDataParser;
+import jetbrains.mps.idea.testFramework.MpsTestDataParser.InnerDataParser;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

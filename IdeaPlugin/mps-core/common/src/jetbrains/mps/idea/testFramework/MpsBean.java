@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.tests;
+package jetbrains.mps.idea.testFramework;
 
-public interface EntryDataParser {
-  Entry nextToken(Class<? extends Entry> aClass) throws ParseException;
-  boolean hasMoreTokens();
+/**
+ * This is a marker interface for a Beans which are // todo
+ */
+public interface MpsBean {
 }

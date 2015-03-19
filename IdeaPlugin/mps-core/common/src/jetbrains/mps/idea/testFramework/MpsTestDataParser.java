@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.tests;
+package jetbrains.mps.idea.testFramework;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -31,7 +31,7 @@ import java.util.StringTokenizer;
 
 public class MpsTestDataParser implements EntryDataParser {
   private final static Logger LOG = LogManager.getLogger(MpsTestDataParser.class);
-  private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSBundle");
+  private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
   private final static String DELIMITERS = "\n\t\f\r;";
 
   private final FileDataParser myParser;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.tests;
+package jetbrains.mps.idea.testFramework;
 
 import java.io.IOException;
 

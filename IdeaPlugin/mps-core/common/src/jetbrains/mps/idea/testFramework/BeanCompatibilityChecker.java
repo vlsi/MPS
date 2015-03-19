@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.tests;
+package jetbrains.mps.idea.testFramework;
 
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.idea.tests.MpsBeanConstructor.IllegalBeanFormatException;
+import jetbrains.mps.idea.testFramework.MpsBeanConstructor.IllegalBeanFormatException;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.annotation.Annotation;
