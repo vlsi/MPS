@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -43,7 +44,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public abstract class MetaAdapterFactory {
-  private static final ConcurrentMap<Pair<SLanguageId, String>, SLanguage> ourLanguageIds = new ConcurrentHashMap<Pair<SLanguageId, String>, SLanguage>();
+  private static final ConcurrentMap<LangKey, SLanguage> ourLanguageIds = new ConcurrentHashMap<LangKey, SLanguage>();
   private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
   private static final ConcurrentMap<Pair<SConceptId, String>, SInterfaceConcept> ourIntfcConceptIds =
       new ConcurrentHashMap<Pair<SConceptId, String>, SInterfaceConcept>();
@@ -55,8 +56,13 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SLanguage getLanguage(SLanguageId id, String langName) {
-    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
-    Pair<SLanguageId, String> p = new Pair<SLanguageId, String>(id, langName);
+    return getLanguage(id, langName, -1);
+  }
+
+  @NotNull
+  public static SLanguage getLanguage(SLanguageId id, String langName, int version) {
+    SLanguageAdapterById l = new SLanguageAdapterById(id, langName, version);
+    LangKey p = new LangKey(id, langName, version);
     ourLanguageIds.putIfAbsent(p, l);
     return ourLanguageIds.get(p);
   }
@@ -173,6 +179,33 @@ public abstract class MetaAdapterFactory {
       return getInterfaceConcept(descriptor.getId(), descriptor.getConceptFqName());
     } else {
       return getConcept(descriptor.getId(), descriptor.getConceptFqName());
+    }
+  }
+
+  @Immutable
+  private static class LangKey {
+    private final SLanguageId myId;
+    private final String myName;
+    private final int myVersion;
+
+    public LangKey(SLanguageId id, String name, int version) {
+      myId = id;
+      myName = name;
+      myVersion = version;
+    }
+
+    @Override
+    public int hashCode() {
+      return myId.hashCode() * 31 + myName.hashCode() + myVersion;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj instanceof LangKey) {
+        LangKey o = (LangKey) obj;
+        return myVersion == o.myVersion && myId.equals(o.myId) && myName.equals(o.myName);
+      }
+      return false;
     }
   }
 }

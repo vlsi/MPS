@@ -391,7 +391,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       SLanguageId langId = my_idEncoderField.parseLanguageId(attrs.getValue("id"));
       int langVersion = Integer.parseInt(attrs.getValue("version"));
-      my_modelField.addLanguage(my_readHelperParam.getLanguage(langId, attrs.getValue("name")), langVersion);
+      my_modelField.addLanguage(my_readHelperParam.getLanguage(langId, attrs.getValue("name"), langVersion));
       return null;
     }
   }

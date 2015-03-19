@@ -180,11 +180,11 @@ class IdInfoReadHelper {
     return MetaAdapterFactory.getConcept(stub, ci.constructStubConceptName());
   }
 
-  public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName) {
+  public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName, int version) {
     // used languages is a subset of languages detected for meta-registry, don't want to use
     // set of languages available from myInfoCollector, which might not be yet ready, unless we ensure
     // proper read order (first registry, then used languages). It's even more complicated for per-root
     // persistence, where usedLanguages are kept in a header file only, while registry spans few.
-    return MetaAdapterFactory.getLanguage(langId, langName);
+    return MetaAdapterFactory.getLanguage(langId, langName, version);
   }
 }

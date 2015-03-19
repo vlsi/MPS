@@ -32,6 +32,9 @@ public class MetaAdapterFactoryByName {
   public static SLanguage getLanguage(String langName) {
     return new SLanguageAdapterByName(langName);
   }
+  public static SLanguage getLanguage(String langName, int version) {
+    return new SLanguageAdapterByName(langName, version);
+  }
 
   public static SConcept getConcept(String conceptName) {
     return new SConceptAdapterByName(conceptName);

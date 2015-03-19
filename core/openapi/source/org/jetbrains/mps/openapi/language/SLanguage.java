@@ -20,7 +20,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
- * Represents a deployed language
+ * Reference to a deployed/run-time language.
+ * If the specified language is missing in the current MPS instance, only
+ * {@link #getQualifiedName() qualified name} is guaranteed to return meaningful value.
+ * Besides, {@link #getLanguageVersion()} might be sensible as well, depending on source
+ * SLanguage instance comes from (e.g. if it's an used/imported language of a model, then
+ * version value indicates actual value at the time import was added/updated).
  */
 public interface SLanguage {
 
@@ -56,6 +61,7 @@ public interface SLanguage {
    * will be able to work with it. E.g. generator can fail on generation of such a model.
    *
    * In MPS 3.2, version is changed only by adding language migrations.
+   * @return version of the language, or -1 the version could not be deduced.
    */
   int getLanguageVersion();
 }
