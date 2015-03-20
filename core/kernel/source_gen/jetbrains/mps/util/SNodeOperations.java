@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
