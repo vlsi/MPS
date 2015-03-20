@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.InstanceOfCondition;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -246,11 +246,6 @@ public class SNodeOperations {
       return getNodeDescendantsWhereConceptInList(node, descendantConcepts, inclusion);
     }
     return descendantsAsList(node, inclusion, new InstanceOfCondition(descendantConcepts), new InstanceOfCondition(stopConcepts));
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
-    return getNodeDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion, stringArrayToConceptArray(stopConceptFqNames));
   }
   private static List<SNode> descendantsAsList(SNode node, boolean inclusion, Condition<SNode> condition, Condition<SNode> stopCondition) {
     // can't use TreeFilterIterator as nodes that match both condition and stopCondition are proper return values 
