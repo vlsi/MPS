@@ -331,6 +331,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
+  public void removeUsedLanguage(SLanguage lang) {
+    // FIXME SLanguage->SModuleReference transition
+    removeUsedLanguage(lang.getSourceModule().getModuleReference());
+  }
+
   public void removeUsedLanguage(SModuleReference langRef) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();

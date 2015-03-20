@@ -5549,11 +5549,21 @@
         <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
           <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
             <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
-              <property role="1dT_AB" value="there are no uses of this method. If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()." />
+              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
             </node>
             <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
-              <property role="1dT_AB" value="Besides, SNodeOperations was bad location anyway" />
+              <property role="1dT_AB" value="" />
             </node>
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
+            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
+            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
           </node>
         </node>
       </node>

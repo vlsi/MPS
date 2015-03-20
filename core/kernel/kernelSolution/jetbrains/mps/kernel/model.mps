@@ -2,11 +2,11 @@
 <model ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -2221,19 +2221,11 @@
           <node concept="2YIFZM" id="1rN1WcMHc8O" role="1DdaDG">
             <ref role="37wK5l" to="msyo:~CollectionUtil.union(java.util.List...):java.util.List" resolve="union" />
             <ref role="1Pybhc" to="msyo:~CollectionUtil" resolve="CollectionUtil" />
-            <node concept="2OqwBi" id="1rN1WcMHc8P" role="37wK5m">
-              <node concept="1eOMI4" id="1rN1WcMHc8Q" role="2Oq$k0">
-                <node concept="10QFUN" id="1rN1WcMHc8R" role="1eOMHV">
-                  <node concept="3uibUv" id="1rN1WcMHc8S" role="10QFUM">
-                    <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
-                  </node>
-                  <node concept="37vLTw" id="1rN1WcMHc8T" role="10QFUP">
-                    <ref role="3cqZAo" node="3CM_lYGZkvx" resolve="myModel" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="1rN1WcMHc8U" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~SModelInternal.importedLanguages():java.util.List" resolve="importedLanguages" />
+            <node concept="2YIFZM" id="419l6RFrCiv" role="37wK5m">
+              <ref role="37wK5l" to="msyo:~SNodeOperations.getUsedLanguages(org.jetbrains.mps.openapi.model.SModel):java.util.List" resolve="getUsedLanguages" />
+              <ref role="1Pybhc" to="msyo:~SNodeOperations" resolve="SNodeOperations" />
+              <node concept="37vLTw" id="419l6RFrCqS" role="37wK5m">
+                <ref role="3cqZAo" node="3CM_lYGZkvx" resolve="myModel" />
               </node>
             </node>
             <node concept="2OqwBi" id="1rN1WcMHc8V" role="37wK5m">

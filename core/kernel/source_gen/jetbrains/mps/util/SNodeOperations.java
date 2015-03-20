@@ -287,8 +287,10 @@ public class SNodeOperations {
     return NameUtil.getModelLongName(model);
   }
   /**
+   * Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage.
+   * Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway.
    * 
-   * @deprecated there are no uses of this method. If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds().Besides, SNodeOperations was bad location anyway
+   * @deprecated If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()
    */
   @Deprecated
   @ToRemove(version = 3.3)

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
@@ -85,7 +86,7 @@ public class MissingDependenciesFixer {
 
   private void fixLangs(@NotNull AbstractModule module) {
     SearchScope moduleScope = module.getScope();
-    for (SModuleReference namespace : CollectionUtil.union(((SModelInternal) myModel).importedLanguages(), ((SModelInternal) myModel).engagedOnGenerationLanguages())) {
+    for (SModuleReference namespace : CollectionUtil.union(SNodeOperations.getUsedLanguages(myModel), ((SModelInternal) myModel).engagedOnGenerationLanguages())) {
       if (moduleScope.resolve(namespace) instanceof Language) {
         continue;
       }

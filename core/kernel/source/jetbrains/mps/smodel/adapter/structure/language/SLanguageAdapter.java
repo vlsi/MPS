@@ -85,7 +85,9 @@ public abstract class SLanguageAdapter implements SLanguage {
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
     Language sourceModule = getSourceModule();
-    assert sourceModule != null;
+    if (sourceModule == null) {
+      return Collections.emptyList();
+    }
     for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
       // GeneratesInto doesn't qualify as 'true' language runtime, it's rather generator aspect, however, for the time being,
