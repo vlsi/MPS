@@ -1145,22 +1145,15 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="1Oj45PFeSa_" role="2OqNvi">
-                          <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                          <ref role="37wK5l" to="ec5l:~SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildAfter" />
                           <node concept="37vLTw" id="1Oj45PFeSbs" role="37wK5m">
                             <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
                           </node>
                           <node concept="37vLTw" id="1Oj45PFeTrp" role="37wK5m">
                             <ref role="3cqZAo" node="3M9DpEEa3$v" resolve="copy" />
                           </node>
-                          <node concept="2OqwBi" id="1Oj45PFeTvK" role="37wK5m">
-                            <node concept="2JrnkZ" id="1Oj45PFfq_h" role="2Oq$k0">
-                              <node concept="37vLTw" id="1Oj45PFeTtJ" role="2JrQYb">
-                                <ref role="3cqZAo" node="3M9DpEEa3zR" resolve="nodeToCopy" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="1Oj45PFfqIn" role="2OqNvi">
-                              <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
-                            </node>
+                          <node concept="37vLTw" id="1Oj45PFeTtJ" role="37wK5m">
+                            <ref role="3cqZAo" node="3M9DpEEa3zR" resolve="nodeToCopy" />
                           </node>
                         </node>
                       </node>
@@ -1344,7 +1337,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="1Oj45PFgIFQ" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                        <ref role="37wK5l" to="ec5l:~SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildAfter" />
                         <node concept="37vLTw" id="1Oj45PFgIGH" role="37wK5m">
                           <ref role="3cqZAo" node="3M9DpEEa3_$" resolve="role" />
                         </node>
@@ -1354,15 +1347,8 @@
                           </node>
                           <node concept="1$rogu" id="1Oj45PFgJbA" role="2OqNvi" />
                         </node>
-                        <node concept="2OqwBi" id="1Oj45PFgJm5" role="37wK5m">
-                          <node concept="2JrnkZ" id="1Oj45PFgJyG" role="2Oq$k0">
-                            <node concept="37vLTw" id="1Oj45PFgJi7" role="2JrQYb">
-                              <ref role="3cqZAo" node="3M9DpEEa3_s" resolve="lastNode" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="1Oj45PFgJHX" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
-                          </node>
+                        <node concept="37vLTw" id="1Oj45PFgJi7" role="37wK5m">
+                          <ref role="3cqZAo" node="3M9DpEEa3_s" resolve="lastNode" />
                         </node>
                       </node>
                     </node>

@@ -141,7 +141,7 @@ public class SNodeFactoryOperations {
     SNode newChild = NodeFactoryManager.createNode(concept, null, parent, node.getModel());
     if (newChild == null) return null;
     SContainmentLink role = node.getContainmentLink();
-    parent.insertChildBefore(role, newChild, node.getNextSibling());
+    parent.insertChildAfter(role, newChild, node);
     return newChild;
   }
 

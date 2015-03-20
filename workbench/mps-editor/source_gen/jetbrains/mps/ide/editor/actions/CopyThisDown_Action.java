@@ -97,7 +97,7 @@ public class CopyThisDown_Action extends BaseAction {
           SContainmentLink link = nodeToCopy.getContainmentLink();
           if (link.isMultiple()) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            parent.insertChildBefore(link, copy, nodeToCopy.getNextSibling());
+            parent.insertChildAfter(link, copy, nodeToCopy);
             EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
             editorContext.selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
@@ -111,7 +111,7 @@ public class CopyThisDown_Action extends BaseAction {
         SContainmentLink role = firstNode.getContainmentLink();
         SNode parent = SNodeOperations.getParent(firstNode);
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          parent.insertChildBefore(role, SNodeOperations.copyNode(node), lastNode.getNextSibling());
+          parent.insertChildAfter(role, SNodeOperations.copyNode(node), lastNode);
         }
         EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
         editorContext.selectRange(firstNode, lastNode);

@@ -2161,69 +2161,6 @@
             <node concept="3Tqbb2" id="2W$ok$XXIeM" role="1tU5fm" />
           </node>
         </node>
-        <node concept="3clFbJ" id="3qaUGgZZV3c" role="3cqZAp">
-          <node concept="3clFbS" id="3qaUGgZZV3e" role="3clFbx">
-            <node concept="3SKdUt" id="3LC5F5NmkCF" role="3cqZAp">
-              <node concept="3SKdUq" id="3LC5F5NmkCO" role="3SKWNk">
-                <property role="3SKdUp" value="can't use anchor.next-sibling here as it looks for sibling with respect to node's containment role" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="3LC5F5NmkDy" role="3cqZAp">
-              <node concept="3SKdUq" id="3LC5F5NmkDH" role="3SKWNk">
-                <property role="3SKdUp" value="while there are tests (MergeCoreTest) that expect ordering according overall children list" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="3qaUGgZZVVz" role="3cqZAp">
-              <node concept="37vLTI" id="3qaUGgZZW42" role="3clFbG">
-                <node concept="2OqwBi" id="3qaUGgZZW6H" role="37vLTx">
-                  <node concept="2JrnkZ" id="3LC5F5Nml23" role="2Oq$k0">
-                    <node concept="37vLTw" id="3qaUGgZZW5d" role="2JrQYb">
-                      <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="3LC5F5NmlA6" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="3qaUGgZZVVx" role="37vLTJ">
-                  <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="3qaUGgZZVJv" role="3clFbw">
-            <node concept="10Nm6u" id="3qaUGgZZVUJ" role="3uHU7w" />
-            <node concept="37vLTw" id="3qaUGgZZVxt" role="3uHU7B">
-              <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
-            </node>
-          </node>
-          <node concept="9aQIb" id="1oJRhVR8$ZN" role="9aQIa">
-            <node concept="3clFbS" id="1oJRhVR8$ZO" role="9aQI4">
-              <node concept="3SKdUt" id="1oJRhVR8QGI" role="3cqZAp">
-                <node concept="3SKdUq" id="1oJRhVR8QQQ" role="3SKWNk">
-                  <property role="3SKdUp" value="MergeCoreTest expects nodes without anchor to go first" />
-                </node>
-              </node>
-              <node concept="3clFbF" id="1oJRhVR8AFm" role="3cqZAp">
-                <node concept="37vLTI" id="1oJRhVR8B33" role="3clFbG">
-                  <node concept="2OqwBi" id="1oJRhVR8CFS" role="37vLTx">
-                    <node concept="2JrnkZ" id="1oJRhVR8Puo" role="2Oq$k0">
-                      <node concept="37vLTw" id="1oJRhVR8CEn" role="2JrQYb">
-                        <ref role="3cqZAo" node="2W$ok$XXIeL" resolve="parent" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1oJRhVR8Q2I" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode" resolve="getFirstChild" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="1oJRhVR8AFl" role="37vLTJ">
-                    <ref role="3cqZAo" node="2W$ok$XXIeF" resolve="anchor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="2Gpval" id="2W$ok$XXIic" role="3cqZAp">
           <node concept="2GrKxI" id="2W$ok$XXIid" role="2Gsz3X">
             <property role="TrG5h" value="newNode" />
@@ -2240,7 +2177,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3qaUGgZZTBF" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
+                  <ref role="37wK5l" to="ec5l:~SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildAfter" />
                   <node concept="37vLTw" id="3qaUGgZZTCS" role="37wK5m">
                     <ref role="3cqZAo" node="4k3fuHGsETj" resolve="myRole" />
                   </node>

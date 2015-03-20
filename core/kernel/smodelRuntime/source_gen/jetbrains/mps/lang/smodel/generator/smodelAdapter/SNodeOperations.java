@@ -489,7 +489,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert parent != null && role != null;
-    parent.insertChildBefore(role, newChild, node.getNextSibling());
+    parent.insertChildAfter(role, newChild, node);
     return newChild;
   }
   @Deprecated
@@ -506,7 +506,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert parent != null && role != null;
-    parent.insertChildBefore(role, newChild, node.getNextSibling());
+    parent.insertChildAfter(role, newChild, node);
     return newChild;
   }
   public static SNode insertNewPrevSiblingChild(SNode node, SConcept concept) {
@@ -560,7 +560,7 @@ public class SNodeOperations {
     }
     SContainmentLink role = node.getContainmentLink();
     assert role != null;
-    nodeParent.insertChildBefore(role, siblingNode, node.getNextSibling());
+    nodeParent.insertChildAfter(role, siblingNode, node);
     return siblingNode;
   }
   public static SNode insertPrevSiblingChild(SNode node, SNode siblingNode) {

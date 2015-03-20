@@ -4244,61 +4244,21 @@
       <node concept="3cqZAl" id="3YzxW_BCQA8" role="3clF45" />
       <node concept="3Tm1VV" id="3YzxW_BCQA9" role="1B3o_S" />
       <node concept="3clFbS" id="3YzxW_BCQAa" role="3clF47">
-        <node concept="3clFbJ" id="3YzxW_BCQAb" role="3cqZAp">
-          <node concept="3y3z36" id="3YzxW_BCQAc" role="3clFbw">
-            <node concept="37vLTw" id="3YzxW_BCQAd" role="3uHU7B">
-              <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
-            </node>
-            <node concept="10Nm6u" id="3YzxW_BCQAe" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="3YzxW_BCQAf" role="3clFbx">
-            <node concept="3clFbF" id="3YzxW_BCQAg" role="3cqZAp">
-              <node concept="2OqwBi" id="3YzxW_BCQAh" role="3clFbG">
-                <node concept="37vLTw" id="3YzxW_BCQAi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
-                </node>
-                <node concept="liA8E" id="3YzxW_BCQAj" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
-                  <node concept="37vLTw" id="3YzxW_BCQAk" role="37wK5m">
-                    <ref role="3cqZAo" node="3YzxW_BCQAV" resolve="role" />
-                  </node>
-                  <node concept="37vLTw" id="3YzxW_BCQAl" role="37wK5m">
-                    <ref role="3cqZAo" node="3YzxW_BCQAX" resolve="child" />
-                  </node>
-                  <node concept="2OqwBi" id="3YzxW_BCQAm" role="37wK5m">
-                    <node concept="37vLTw" id="3qaUGgZW$Vr" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
-                    </node>
-                    <node concept="liA8E" id="3YzxW_BCQAr" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="3YzxW_BCQAs" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="3YzxW_BCQAB" role="3cqZAp">
-          <node concept="2OqwBi" id="3YzxW_BCQAC" role="3clFbG">
-            <node concept="37vLTw" id="3YzxW_BCQAD" role="2Oq$k0">
+        <node concept="3clFbF" id="3YzxW_BCQAg" role="3cqZAp">
+          <node concept="2OqwBi" id="3YzxW_BCQAh" role="3clFbG">
+            <node concept="37vLTw" id="3YzxW_BCQAi" role="2Oq$k0">
               <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
             </node>
-            <node concept="liA8E" id="3YzxW_BCQAE" role="2OqNvi">
-              <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
-              <node concept="37vLTw" id="3YzxW_BCQAF" role="37wK5m">
+            <node concept="liA8E" id="3YzxW_BCQAj" role="2OqNvi">
+              <ref role="37wK5l" to="ec5l:~SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildAfter" />
+              <node concept="37vLTw" id="3YzxW_BCQAk" role="37wK5m">
                 <ref role="3cqZAo" node="3YzxW_BCQAV" resolve="role" />
               </node>
-              <node concept="37vLTw" id="3YzxW_BCQAG" role="37wK5m">
+              <node concept="37vLTw" id="3YzxW_BCQAl" role="37wK5m">
                 <ref role="3cqZAo" node="3YzxW_BCQAX" resolve="child" />
               </node>
-              <node concept="2OqwBi" id="3qaUGgZW_qn" role="37wK5m">
-                <node concept="37vLTw" id="3qaUGgZW_4J" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
-                </node>
-                <node concept="liA8E" id="3qaUGgZW_BY" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode" resolve="getFirstChild" />
-                </node>
+              <node concept="37vLTw" id="3qaUGgZW$Vr" role="37wK5m">
+                <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
               </node>
             </node>
           </node>

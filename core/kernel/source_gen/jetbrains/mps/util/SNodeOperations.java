@@ -198,11 +198,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
-    if (anchor != null) {
-      parent.insertChildBefore(role, child, anchor.getNextSibling());
-      return;
-    }
-    parent.insertChildBefore(role, child, parent.getFirstChild());
+    parent.insertChildAfter(role, child, anchor);
   }
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
