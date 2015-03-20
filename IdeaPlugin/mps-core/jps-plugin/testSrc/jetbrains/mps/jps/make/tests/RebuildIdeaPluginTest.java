@@ -17,6 +17,11 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.openapi.application.PathManager;
+import com.intellij.testFramework.TestDataPath;
+import jetbrains.mps.jps.make.testEnvironment.SimpleJpsEnvironment;
+import jetbrains.mps.jps.make.testEnvironment.SimpleJpsTestBean;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkProperties;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkType;
 import org.jetbrains.jps.model.JpsDummyElement;
@@ -34,58 +39,67 @@ import java.lang.NumberFormatException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
+@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testRebuildIdeaPlugin")
+public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithBean<SimpleJpsTestBean, SimpleJpsEnvironment> {
+  static {
+    new RebuildIdeaPluginTest();
+  }
+  @NonNls
+  private static final String JAVA_HOME = "JAVA_HOME";
+  @NonNls
+  private static final String JAR_EXT = ".jar";
   private String ideaHome;
   private String pluginsPath;
   private String javaHome;
 
+  @NotNull
   @Override
   protected String getTestDataRootPath() {
-    return null;
+    return "testResources/testRebuildIdeaPlugin";
   }
 
-  @Override
-  protected void setUp() throws Exception {
-    super.setUp();
-    ideaHome = PathManager.getHomePath();
+  private void setUpParameters() {
+    ideaHome = PathManager.getHomePathFor(PathManager.class);
     pluginsPath = PathManager.getPluginsPath();
     javaHome = System.getProperty("jdk.home.path");
     if (javaHome == null) {
-      javaHome = System.getenv("JAVA_HOME");
+      javaHome = System.getenv(JAVA_HOME);
     }
-  }
-
-  public void testRebuildIdeaPlugin() throws IOException {
     assert ideaHome != null;
     assert pluginsPath != null;
     assert javaHome != null;
+  }
 
-    String projectDir = copyFromUserDirToProject("", "IdeaPlugin");
+  public void testRebuildIdeaPlugin() throws IOException {
+    setUpParameters();
+    setUpTest(new SimpleJpsTestBean(), new SimpleJpsEnvironment(this), "test.in");
+
+    String projectDir = copyToProject("../../", "IdeaPlugin");
+
     // unfortunately we now depend on generated java sources of MPS in a couple of places
-    copyFromUserDirToProject("../plugins/vcs-core/core/source_gen", "plugins/vcs-core/core/source_gen");
-    copyFromUserDirToProject("../plugins/vcs/common/source_gen", "plugins/vcs/common/source_gen");
-    copyFromUserDirToProject("../plugins/vcs/common/source", "plugins/vcs/common/source");
-    copyFromUserDirToProject("../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
-    copyFromUserDirToProject("../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
-    copyFromUserDirToProject("../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
-
+    copyToProject("../../../plugins/vcs-core/core/source_gen", "plugins/vcs-core/core/source_gen");
+    copyToProject("../../../plugins/vcs/common/source_gen", "plugins/vcs/common/source_gen");
+    copyToProject("../../../plugins/vcs/common/source", "plugins/vcs/common/source");
+    copyToProject("../../../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
+    copyToProject("../../../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
+    copyToProject("../../../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
     addBuildParameter("PLUGINS_PATH", pluginsPath);
-//    addBuildParameter(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
-
     loadProject(projectDir);
-
     setUpJdk();
+    setUpIdeaSdk();
+    rebuildAll();
+  }
 
+  private void setUpIdeaSdk() {
     JpsSimpleElement<JpsIdeaSdkProperties> props = new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(ideaHome, "1.6"));
-    JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk = myModel.getGlobal().addSdk("IDEA IC", ideaHome, "1.6", JpsIdeaSdkType.INSTANCE, props);
+    JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk;
+    ideaSdk = myModel.getGlobal().addSdk("IDEA IC", ideaHome, "1.6", JpsIdeaSdkType.INSTANCE, props);
 
-    for (File jar : new File(ideaHome + "/lib").listFiles()) {
-      if (!jar.getName().endsWith(".jar")) continue;
+    File[] files = new File(ideaHome, "lib").listFiles();
+    for (File jar : files) {
+      if (!jar.getName().endsWith(JAR_EXT)) continue;
       ideaSdk.addRoot(JpsPathUtil.pathToUrl(jar.getPath()), JpsOrderRootType.COMPILED);
     }
-
-    rebuildAll();
   }
 
   private void setUpJdk() {
@@ -108,7 +122,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
     if (matcher.matches()) {
       try {
         return Integer.parseInt(matcher.group(1)) < 7;
-      } catch (NumberFormatException e) {
+      } catch (NumberFormatException ignored) {
       }
     }
     return false;

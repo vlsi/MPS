@@ -23,29 +23,18 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
 import java.util.List;
 
-public class MpsBeanConstructor<T extends MpsBean> {
-  private Class<? extends MpsBean> myClass;
+public class MpsBeanAdjuster<B extends MpsBean> {
+  private final B myBean;
 
-  public MpsBeanConstructor(Class<T> tClass) {
-    myClass = tClass;
+  public MpsBeanAdjuster(@NotNull B emptyBean) {
+    myBean = emptyBean;
   }
 
   @NotNull
-  public T constructBeanFromFile(@NotNull File file) throws FileNotFoundException, ParseException {
-    List<Field> fields = new BeanCompatibilityChecker(myClass).checkAndReturnFields();
-    T bean = createBean();
-    fillFieldsFromFile(file, fields, bean);
-    return bean;
-  }
-
-  private T createBean() {
-    try {
-      return (T) myClass.newInstance();
-    } catch (InstantiationException e) {
-      throw new RuntimeException(e);
-    } catch (IllegalAccessException e) {
-      throw new RuntimeException(e);
-    }
+  public B constructBeanFromFile(@NotNull File file) throws FileNotFoundException, ParseException {
+    List<Field> fields = new BeanCompatibilityChecker(myBean.getClass()).checkAndReturnFields();
+    fillFieldsFromFile(file, fields, myBean);
+    return myBean;
   }
 
   private void fillFieldsFromFile(File file, List<Field> filteredFields, MpsBean bean) throws FileNotFoundException, ParseException {

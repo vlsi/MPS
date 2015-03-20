@@ -17,14 +17,13 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.testFramework.TestDataPath;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestEnvironment;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MakeProjectTest extends MpsJpsBuildTestCaseWithEnvironment {
-  protected JpsTestEnvironment myJpsTestEnvironment;
-
+public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
+  @NotNull
   @NonNls
   @Override
   protected String getTestDataRootPath() {

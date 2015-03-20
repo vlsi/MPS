@@ -17,8 +17,8 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.testFramework.TestDataFile;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestEnvironment;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestEnvironmentConstructor;
+import jetbrains.mps.jps.make.testEnvironment.JpsTestModelsEnvironment;
+import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -27,9 +27,7 @@ import org.jetbrains.jps.builders.CompileScopeTestBuilder;
 
 import java.io.File;
 
-public abstract class MpsJpsBuildTestCaseWithEnvironment extends MpsJpsBuildTestCase {
-  protected JpsTestEnvironment myJpsTestEnvironment;
-
+public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithBean<JpsTestBean, JpsTestModelsEnvironment> {
   private String getTestDataFilePath(String testName, @NonNls String ext) {
     return getTestDataRootPath() + File.separator + testName + "." + ext;
   }
@@ -38,34 +36,34 @@ public abstract class MpsJpsBuildTestCaseWithEnvironment extends MpsJpsBuildTest
     return getTestDataFilePath(testName, "out");
   }
 
-  private String getInFilePath(String testName) {
-    return getTestDataFilePath(testName, "in");
-  }
-
   private String getGenFilePath(String testName) {
     return getTestDataFilePath(testName, "gen");
   }
 
-  protected void doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestName) {
-    String testName = FileUtil.getNameWithoutExtension(inputTestName);
-    myJpsTestEnvironment = new JpsTestEnvironmentConstructor(this, getInFilePath(testName)).construct();
-    rebuildAll();
-    checkGenerated(testName);
-    checkOutput(testName);
-  }
-
-  protected BuildResult doRebuild(@NonNls @NotNull @TestDataFile String inputTestName, boolean rebuild) {
-    String testName = FileUtil.getNameWithoutExtension(inputTestName);
-    myJpsTestEnvironment = new JpsTestEnvironmentConstructor(this, getInFilePath(testName)).construct();
-    CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
-    return doBuild(builder.all());
-  }
-
   protected void checkOutput(String testName) {
-    assertOutput(myJpsTestEnvironment.getModule(), getOutFilePath(testName));
+    assertOutput(getEnvironment().getModule(), getOutFilePath(testName));
   }
 
   protected void checkGenerated(String testName) {
     assertGenerated(getGenFilePath(testName));
+  }
+
+  protected void doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestName) {
+    setUpEnvironment(inputTestName);
+    rebuildAll();
+
+    String testName = FileUtil.getNameWithoutExtension(inputTestName);
+    checkGenerated(testName);
+    checkOutput(testName);
+  }
+
+  protected BuildResult doTestRebuildResult(@NonNls @NotNull @TestDataFile String inputTestName, boolean rebuild) {
+    setUpEnvironment(inputTestName);
+    CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
+    return doBuild(builder.all());
+  }
+
+  private void setUpEnvironment(String inputTestName) {
+    setUpTest(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
   }
 }

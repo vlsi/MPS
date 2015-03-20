@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.testFramework;
+package jetbrains.mps.jps.make.testEnvironment;
 
-/**
- * This is a marker interface for a bean class which represents the format we use to parse text data (for configurations,
- * generated data, etc.)
- */
-public interface MpsBean {
+import jetbrains.mps.idea.testFramework.MpsBean;
+
+public class SimpleJpsTestBean implements MpsBean {
 }

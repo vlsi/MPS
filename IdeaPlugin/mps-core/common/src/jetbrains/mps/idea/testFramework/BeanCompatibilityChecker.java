@@ -17,7 +17,7 @@
 package jetbrains.mps.idea.testFramework;
 
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.idea.testFramework.MpsBeanConstructor.IllegalBeanFormatException;
+import jetbrains.mps.idea.testFramework.MpsBeanAdjuster.IllegalBeanFormatException;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.annotation.Annotation;

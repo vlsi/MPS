@@ -16,6 +16,8 @@
 
 package jetbrains.mps.jps.make.tests;
 
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
@@ -24,12 +26,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.JpsBuildTestCase;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.serialization.JpsProjectLoader;
+import org.jetbrains.jps.model.serialization.PathMacroUtil;
 import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
+  @NotNull
   @NonNls
   @Override
   protected abstract String getTestDataRootPath();
@@ -81,5 +89,23 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     myBuildParams.clear();
+  }
+
+  /**
+   * resolving strange behaviour at the parent implementation, which dependes on test data root
+   */
+  @Override
+  protected void loadProject(String projectPath, Map<String, String> pathVariables) {
+    try {
+      String fullProjectPath = FileUtil.toSystemDependentName(projectPath);
+      Map<String, String> allPathVariables = new HashMap<String, String>(pathVariables.size() + 1);
+      allPathVariables.putAll(pathVariables);
+      allPathVariables.put(PathMacroUtil.APPLICATION_HOME_DIR, PathManager.getHomePath());
+      allPathVariables.putAll(getAdditionalPathVariables());
+      JpsProjectLoader.loadProject(myProject, allPathVariables, fullProjectPath);
+    }
+    catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }

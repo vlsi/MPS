@@ -16,9 +16,12 @@
 
 package jetbrains.mps.idea.testFramework;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * This is a marker interface for a bean class which represents the format we use to parse text data (for configurations,
- * generated data, etc.)
+ * Represents an object which tunes the test environment given the bean {@link B}.
+ * @param <B> class describes the bean format one wants to use in his mps test configuration (input) data
  */
-public interface MpsBean {
+public interface TestEnvironment<B extends MpsBean> {
+  void setUpWithBean(@NotNull B bean);
 }

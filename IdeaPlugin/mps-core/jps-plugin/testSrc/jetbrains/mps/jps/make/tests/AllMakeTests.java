@@ -24,6 +24,9 @@ import org.junit.runners.Suite;
  * Date: 1/15/13
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({RebuildProjectTest.class, MakeProjectTest.class, RebuildIdeaPluginTest.class})
+@Suite.SuiteClasses({RebuildIdeaPluginTest.class})
 public class AllMakeTests {
+  static {
+    new RebuildIdeaPluginTest();
+  }
 }
