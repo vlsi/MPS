@@ -630,11 +630,6 @@ public class SNodeOperations {
     }
     return node;
   }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode cast(SNode node, String castTo) {
-    return cast(node, stringToConcept(castTo));
-  }
   public static SNode as(SNode node, SAbstractConcept castTo) {
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       return null;
