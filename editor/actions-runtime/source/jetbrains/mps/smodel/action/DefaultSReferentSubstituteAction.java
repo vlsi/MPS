@@ -89,6 +89,7 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
   @Override
   public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     if (myCurrentReferent != myTargetNode) {
+      //todo assert in constructor
       if (!myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept())) {
         throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(myTargetNode));
       }

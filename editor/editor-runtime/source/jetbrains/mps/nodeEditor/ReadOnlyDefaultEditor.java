@@ -93,6 +93,8 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       return;
     }
     final SNode referentNode = reference.getTargetNode();
+    //todo remove visibility util
+    //todo if model == null log.error
     if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getRoleName() + "?";
