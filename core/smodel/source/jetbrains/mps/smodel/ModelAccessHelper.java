@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.*;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -29,7 +30,10 @@ public final class ModelAccessHelper {
 
   private final ModelAccess myModelAccess;
 
-  public ModelAccessHelper(org.jetbrains.mps.openapi.module.ModelAccess modelAccess) {
+  public ModelAccessHelper(@NotNull SRepository repository) {
+    this(repository.getModelAccess());
+  }
+  public ModelAccessHelper(@NotNull org.jetbrains.mps.openapi.module.ModelAccess modelAccess) {
     myModelAccess = modelAccess;
   }
 

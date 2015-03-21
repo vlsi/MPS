@@ -19,20 +19,22 @@ import com.intellij.util.ui.ItemRemovable;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 
 import javax.swing.table.AbstractTableModel;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class SimpleTableModel<T> extends AbstractTableModel implements ItemRemovable,Modifiable {
 
-  protected final List<T> myTableItems = new LinkedList<T>();
+  protected final List<T> myTableItems = new ArrayList<T>();
 
+  // caller is responsible to send table model notifications, as appropriate
   public void addItem(T item) {
-    if(myTableItems.contains(item))
+    if(myTableItems.contains(item)) {
       return;
+    }
     myTableItems.add(item);
-    fireTableDataChanged();
   }
 
+  // caller is responsible to send table model notifications, as appropriate
   @Override
   public void removeRow(int idx) {
     myTableItems.remove(idx);

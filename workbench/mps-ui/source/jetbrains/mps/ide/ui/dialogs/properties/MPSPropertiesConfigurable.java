@@ -28,7 +28,6 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.BooleanTableCellRenderer;
-import com.intellij.ui.EnumComboBoxModel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.SpeedSearchComparator;
@@ -46,9 +45,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
-import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
@@ -60,22 +58,24 @@ import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
-import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeListener;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -347,20 +347,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(tableDepend);
-      decorator.setAddAction(getAnActionButtonRunnable()).setRemoveAction(new AnActionButtonRunnable() {
+      decorator.setAddAction(getAnActionButtonRunnable()).setRemoveAction(new RemoveEntryAction(tableDepend) {
         @Override
-        public void run(AnActionButton anActionButton) {
-          int first = tableDepend.getSelectionModel().getMinSelectionIndex();
-          int last = tableDepend.getSelectionModel().getMaxSelectionIndex();
-          for (int i : tableDepend.getSelectedRows()) {
-            if (!confirmRemove(myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex()))) {
-              return;
-            }
-          }
-          TableUtil.removeSelectedItems(tableDepend);
-          myDependTableModel.fireTableRowsDeleted(first, last);
-          first = Math.max(0, first - 1);
-          tableDepend.getSelectionModel().setSelectionInterval(first, first);
+        protected boolean confirmRemove(int row) {
+          return DependenciesTab.this.confirmRemove(myDependTableModel.getValueAt(row, myDependTableModel.getItemColumnIndex()));
         }
       });
       FindAnActionButton findAnActionButton = getFindAnAction(tableDepend);
@@ -375,47 +365,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       setTabComponent(dependenciesTab);
 
-      new SpeedSearchBase<JBTable>(tableDepend) {
-        @Override
-        public int getSelectedIndex() {
-          return tableDepend.getSelectedRow();
-        }
-
-        @Override
-        protected int convertIndexToModel(int viewIndex) {
-          return tableDepend.convertRowIndexToModel(viewIndex);
-        }
-
-        @Override
-        public Object[] getAllElements() {
-          final int count = myDependTableModel.getRowCount();
-          Object[] elements = new Object[count];
-          for (int idx = 0; idx < count; idx++) {
-            elements[idx] = myDependTableModel.getValueAt(idx);
-          }
-          return elements;
-        }
-
-        @Override
-        public String getElementText(Object element) {
-          if(!(element instanceof DependenciesTableItem))
-            return "";
-          return ((DependenciesTableItem)element).getItem().toString();
-        }
-
-        @Override
-        public void selectElement(Object element, String selectedText) {
-          final int count = myDependTableModel.getRowCount();
-          for (int row = 0; row < count; row++) {
-            if (element.equals(myDependTableModel.getValueAt(row))) {
-              final int viewRow = tableDepend.convertRowIndexToView(row);
-              tableDepend.getSelectionModel().setSelectionInterval(viewRow, viewRow);
-              TableUtil.scrollSelectionToVisible(tableDepend);
-              break;
-            }
-          }
-        }
-      }.setComparator(new SpeedSearchComparator(false, true));
+      new TableColumnSearch(tableDepend, myDependTableModel.getItemColumnIndex()).setComparator(new SpeedSearchComparator(false, true));
     }
 
     /*CellRenderer for module column, actual value supplied to renderer is DependenciesTableItem instance */
@@ -469,17 +419,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       myUsedLangsTableModel = getUsedLangsTableModel();
       usedLangsTable.setModel(myUsedLangsTableModel);
 
-      usedLangsTable.setDefaultRenderer(SModuleReference.class, getTableCellRender());
-
-      JComboBox roleEditor = new JComboBox(new EnumComboBoxModel<DependenciesTableItemRole>(DependenciesTableItemRole.class));
-      usedLangsTable.setDefaultEditor(DependenciesTableItemRole.class, new DefaultCellEditor(roleEditor));
-      usedLangsTable.setDefaultRenderer(DependenciesTableItemRole.class,
-          new ComboBoxTableRenderer<DependenciesTableItemRole>(DependenciesTableItemRole.values()) {
-            @Override
-            protected String getTextFor(@NotNull final DependenciesTableItemRole value) {
-              return value.toString();
-            }
-          });
+      usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, getTableCellRender());
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(usedLangsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -493,19 +433,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
           for (SModuleReference reference : list) {
             myUsedLangsTableModel.addItem(reference);
           }
+          myUsedLangsTableModel.fireTableDataChanged();
         }
-      }).setRemoveAction(new AnActionButtonRunnable() {
+      }).setRemoveAction(new RemoveEntryAction(usedLangsTable) {
         @Override
-        public void run(AnActionButton anActionButton) {
-          int first = usedLangsTable.getSelectionModel().getMinSelectionIndex();
-          int last = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
-          for (int i : usedLangsTable.getSelectedRows()) {
-            if (!confirmRemove(myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN))) return;
-          }
-          TableUtil.removeSelectedItems(usedLangsTable);
-          myUsedLangsTableModel.fireTableRowsDeleted(first, last);
-          first = Math.max(0, first - 1);
-          usedLangsTable.getSelectionModel().setSelectionInterval(first, first);
+        protected boolean confirmRemove(int row) {
+          return UsedLanguagesTab.this.confirmRemove(myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN));
         }
       });
 
@@ -521,54 +454,13 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       setTabComponent(usedLangsTab);
 
-      new SpeedSearchBase<JBTable>(usedLangsTable) {
-        @Override
-        public int getSelectedIndex() {
-          return usedLangsTable.getSelectedRow();
-        }
-
-        @Override
-        protected int convertIndexToModel(int viewIndex) {
-          return usedLangsTable.convertRowIndexToModel(viewIndex);
-        }
-
-        @Override
-        public Object[] getAllElements() {
-          final int count = myUsedLangsTableModel.getRowCount();
-          Object[] elements = new Object[count];
-          for (int idx = 0; idx < count; idx++) {
-            elements[idx] = myUsedLangsTableModel.getValueAt(idx, UsedLangsTableModel.ITEM_COLUMN);
-          }
-          return elements;
-        }
-
-        @Override
-        public String getElementText(Object element) {
-          if(!(element instanceof SModuleReference))
-            return "";
-          return ((SModuleReference)element).getModuleName();
-        }
-
-        @Override
-        public void selectElement(Object element, String selectedText) {
-          final int count = myUsedLangsTableModel.getRowCount();
-          for (int row = 0; row < count; row++) {
-            if (element.equals(myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN))) {
-              final int viewRow = usedLangsTable.convertRowIndexToView(row);
-              usedLangsTable.getSelectionModel().setSelectionInterval(viewRow, viewRow);
-              TableUtil.scrollSelectionToVisible(usedLangsTable);
-              break;
-            }
-          }
-        }
-      }.setComparator(new SpeedSearchComparator(false, true));
+      new TableColumnSearch(usedLangsTable, UsedLangsTableModel.ITEM_COLUMN).setComparator(new SpeedSearchComparator(false, true));
     }
+
 
     protected TableCellRenderer getTableCellRender() {
-      return new ModuleTableCellRender(myProject.getRepository());
+      return new LanguageTableCellRenderer(myProject.getRepository());
     }
-
-    protected void findUsages(Object value) {}
 
     @Nullable
     protected FindAnActionButton getFindAnAction(JBTable table) {
@@ -582,11 +474,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     @Override
     public boolean isModified() {
       return myUsedLangsTableModel.isModified();
-    }
-
-    @Override
-    public void apply() {
-      myUsedLangsTableModel.apply();
     }
   }
 
@@ -608,6 +495,98 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     @Override
     public ShortcutSet getShortcut() {
       return CommonShortcuts.getFind();
+    }
+  }
+
+  /**
+   * Search in a single column of a table.
+   *
+   * To extract text, recognizes SModelReference, SModuleReference as column values, otherwise resort to Object.toString(). Please
+   * refactor instead sub-classing if different behavior is desired.
+   *
+   * Might use com.intellij.ui.TableSpeedSearch instead, if there would be any explanation about what to override there.
+   */
+  protected static class TableColumnSearch extends SpeedSearchBase<JBTable> {
+    private final int myColumnIndex;
+
+    public TableColumnSearch(JBTable table, int columnIndex) {
+      super(table);
+      myColumnIndex = columnIndex;
+    }
+
+    @Override
+    public int getSelectedIndex() {
+      return myComponent.getSelectedRow();
+    }
+
+    @Override
+    protected int convertIndexToModel(int viewIndex) {
+      return myComponent.convertRowIndexToModel(viewIndex);
+    }
+
+    @Override
+    public Object[] getAllElements() {
+      final TableModel tableModel = myComponent.getModel();
+      final int count = tableModel.getRowCount();
+      Object[] elements = new Object[count];
+      for (int idx = 0; idx < count; idx++) {
+        elements[idx] = tableModel.getValueAt(idx, myColumnIndex);
+      }
+      return elements;
+    }
+
+    @Override
+    public String getElementText(Object element) {
+      if (element instanceof SModuleReference) {
+        return ((SModuleReference)element).getModuleName();
+      }
+      if (element instanceof SModelReference) {
+        return ((SModelReference) element).getModelName();
+      }
+      return String.valueOf(element);
+    }
+
+    @Override
+    public void selectElement(Object element, String selectedText) {
+      final TableModel tableModel = myComponent.getModel();
+      final int count = tableModel.getRowCount();
+      for (int row = 0; row < count; row++) {
+        if (element.equals(tableModel.getValueAt(row, myColumnIndex))) {
+          final int viewRow = myComponent.convertRowIndexToView(row);
+          myComponent.getSelectionModel().setSelectionInterval(viewRow, viewRow);
+          TableUtil.scrollSelectionToVisible(myComponent);
+          break;
+        }
+      }
+    }
+  }
+
+  protected static class RemoveEntryAction implements AnActionButtonRunnable {
+    private final JTable myTable;
+
+    public RemoveEntryAction(@NotNull JTable table) {
+      myTable = table;
+    }
+
+    @Override
+    public void run(AnActionButton anActionButton) {
+      int first = myTable.getSelectionModel().getMinSelectionIndex();
+      int last = myTable.getSelectionModel().getMaxSelectionIndex();
+      for (int i : myTable.getSelectedRows()) {
+        if (!confirmRemove(i)) {
+          return;
+        }
+      }
+      TableUtil.removeSelectedItems(myTable);
+      if (myTable.getModel() instanceof AbstractTableModel) {
+        ((AbstractTableModel) myTable.getModel()).fireTableRowsDeleted(first, last);
+      }
+      first = Math.max(0, first - 1);
+      myTable.getSelectionModel().setSelectionInterval(first, first);
+    }
+
+    protected boolean confirmRemove(int row) {
+      return true;
     }
   }
 
