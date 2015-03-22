@@ -22,9 +22,6 @@ import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.JpsBuildTestCase;
@@ -47,10 +44,6 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   private static void initLogging() {
-    // TODO: make log4j.xml in src/testResources instead
-    BasicConfigurator.resetConfiguration();
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
     com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
     com.intellij.openapi.diagnostic.Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
   }
