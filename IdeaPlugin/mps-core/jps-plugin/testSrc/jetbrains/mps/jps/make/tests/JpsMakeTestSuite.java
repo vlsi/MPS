@@ -27,5 +27,5 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({RebuildProjectTest.class,
                      MakeProjectTest.class,
                      RebuildIdeaPluginTest.class})
-public class AllMakeTests {
+public class JpsMakeTestSuite {
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.tests;
+package jetbrains.mps.idea.java.tests;
 
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -23,8 +23,8 @@ import jetbrains.mps.TestMode;
 import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class})
-public class AllTests {
+@Suite.SuiteClasses({ForeignIdReferenceCacheTest.class})
+public class JavaTestSuite {
   @BeforeClass
   public static void setTestMode() {
     RuntimeFlags.setTestMode(TestMode.USUAL);
