@@ -269,9 +269,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
-        <property id="4497478346159780089" name="version" index="pHN13" />
-        <property id="4497478346159780086" name="languageId" index="pHN1c" />
-        <property id="4497478346159780084" name="namespace" index="pHN1e" />
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1166648550386" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" flags="nn" index="2xF2bX" />
@@ -290,6 +288,11 @@
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439833" name="version" index="2V$B1S" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1261,9 +1264,11 @@
               <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
             </node>
             <node concept="pHN19" id="2zps7ZCzA0R" role="33vP2m">
-              <property role="pHN1c" value="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" />
-              <property role="pHN1e" value="jetbrains.mps.testbench.suite" />
-              <property role="pHN13" value="-1" />
+              <node concept="2V$Bhx" id="34EJa6aJHwi" role="2V$M_3">
+                <property role="2V$B1T" value="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" />
+                <property role="2V$B1Q" value="jetbrains.mps.testbench.suite" />
+                <property role="2V$B1S" value="-1" />
+              </node>
             </node>
           </node>
         </node>

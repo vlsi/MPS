@@ -16,7 +16,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,15 +28,15 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.behavior.LanguageRefExpression_Behavior;
-import jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LanguageRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9pn6lo_a(editorContext, node);
-  }
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9pn6lo_a_0(editorContext, node);
   }
   private EditorCell createCollection_9pn6lo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -44,7 +44,7 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9pn6lo_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9pn6lo_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9pn6lo_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9pn6lo_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9pn6lo_d0(editorContext, node));
     return editorCell;
   }
@@ -65,14 +65,15 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_9pn6lo_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("namespace");
-    provider.setNoTargetText("<no namespace>");
-    provider.setReadOnly(true);
+  private EditorCell createRefNode_9pn6lo_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("languageId");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_namespace");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("languageId");
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LanguageRefExpression_Editor.LanguageRefExpression_generic_cellMenu_9pn6lo_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,7 +94,9 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SLanguage) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SLanguage parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      LanguageRefExpression_Behavior.call_setLanguage_4497478346160391203(node, parameterObject);
+      SNode lid = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
+      BehaviorReflection.invokeVirtual(Void.class, lid, "virtual_setLanguage_3542851458883438752", new Object[]{parameterObject});
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), lid);
     }
     public boolean isReferentPresentation() {
       return false;
@@ -106,82 +109,6 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_9pn6lo_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9pn6lo_a_0");
-    editorCell.setBig(true);
-    editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_9pn6lo_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_9pn6lo_b0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createCollection_9pn6lo_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9pn6lo_a0");
-    editorCell.addEditorCell(this.createConstant_9pn6lo_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9pn6lo_b0a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_9pn6lo_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module uid");
-    editorCell.setCellId("Constant_9pn6lo_a0a");
-    Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_9pn6lo_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("languageId");
-    provider.setNoTargetText("<no languageId>");
-    provider.setReadOnly(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_languageId");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createCollection_9pn6lo_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9pn6lo_b0");
-    editorCell.addEditorCell(this.createConstant_9pn6lo_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9pn6lo_b1a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_9pn6lo_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
-    editorCell.setCellId("Constant_9pn6lo_a1a");
-    Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_9pn6lo_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("version");
-    provider.setNoTargetText("<no version>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_version");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

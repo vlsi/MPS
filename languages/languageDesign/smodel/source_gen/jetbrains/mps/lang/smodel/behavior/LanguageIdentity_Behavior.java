@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class LanguageRefExpression_Behavior {
+public class LanguageIdentity_Behavior {
   public static void init(SNode thisNode) {
   }
 }
