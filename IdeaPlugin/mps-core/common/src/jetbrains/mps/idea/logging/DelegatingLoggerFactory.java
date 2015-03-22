@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.jps.make.tests;
+package jetbrains.mps.idea.logging;
 
 import com.intellij.openapi.diagnostic.Logger;
 import org.apache.log4j.Level;
