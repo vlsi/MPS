@@ -32,7 +32,7 @@ import java.io.File;
  * @param <B> -- corresponds to the test configuration (input) data format which is used in the particular mps jps test cases
  * @param <E> -- represents the entity which is supposed to set up the jps (and mps) environment given a bean of the kind {@link B}
  **/
-public abstract class MpsJpsBuildTestCaseWithBean<B extends MpsBean, E extends TestEnvironment<B>> extends MpsJpsBuildTestCase {
+public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E extends TestEnvironment<B>> extends MpsJpsBuildTestCase {
   private E myEnvironment;
 
   private void initEnvironment(B emptyBean, E emptyEnvironment, String inputTestName) {
@@ -42,8 +42,8 @@ public abstract class MpsJpsBuildTestCaseWithBean<B extends MpsBean, E extends T
     myEnvironment = environmentAdjuster.construct();
   }
 
-  protected void setUpTest(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestName) {
-    initEnvironment(emptyBean, emptyEnvironment, getTestDataRootPath() + File.separator + inputTestName);
+  protected void setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestName) {
+    initEnvironment(emptyBean, emptyEnvironment, new File(getTestDataRootPath(), inputTestName).getAbsolutePath());
   }
 
   @NotNull

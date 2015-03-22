@@ -22,9 +22,6 @@ import org.jetbrains.jps.builders.BuildResult;
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testRebuild")
 public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
-  static {
-    new RebuildProjectTest();
-  }
   @NotNull
   @Override
   protected String getTestDataRootPath() {
@@ -33,6 +30,10 @@ public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
 
   public void testRebuildJava() {
     doTestRebuild("rebuildJava.in");
+  }
+
+  public void testMakeJavaAndXml() {
+    doTestRebuild("rebuildJavaAndXml.in");
   }
 
   public void testRebuildJavaKeepNoSources() {
@@ -44,7 +45,7 @@ public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
   }
 
   public void testRebuildBrokenProject() {
-    final BuildResult buildResult = doTestRebuildResult("rebuildBrokenProject.in", true);
+    final BuildResult buildResult = doMake("rebuildBrokenProject.in", true);
     buildResult.assertFailed();
   }
 }

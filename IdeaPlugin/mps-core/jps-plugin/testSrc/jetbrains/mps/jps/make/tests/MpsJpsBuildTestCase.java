@@ -18,9 +18,15 @@ package jetbrains.mps.jps.make.tests;
 
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.testFramework.VfsTestUtil;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.jdt.internal.compiler.flow.UnconditionalFlowInfo.AssertionFailedException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.JpsBuildTestCase;
@@ -30,6 +36,7 @@ import org.jetbrains.jps.model.serialization.JpsProjectLoader;
 import org.jetbrains.jps.model.serialization.PathMacroUtil;
 import org.jetbrains.jps.util.JpsPathUtil;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -37,10 +44,24 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
-  @NotNull
+  static {
+    initLogging();
+  }
+
+  private static void initLogging() {
+    // TODO: make log4j.xml in src/testResources instead
+    BasicConfigurator.resetConfiguration();
+    BasicConfigurator.configure();
+    Logger.getRootLogger().setLevel(Level.INFO);
+    com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
+    com.intellij.openapi.diagnostic.Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
+  }
+
+ @NotNull
   @NonNls
   @Override
   protected abstract String getTestDataRootPath();
+
 
   /**
    * @deprecated Please consider using {@link #copyToProject}
@@ -48,6 +69,23 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   @Deprecated
   protected String copyFromUserDirToProject(@NonNls String relativeSourcePath, @NonNls String relativeTargetPath) {
     return copyToProject(relativeSourcePath, relativeTargetPath);
+  }
+
+
+  @Override
+  protected String getHomePath() {
+    return System.getProperty("user.dir");
+  }
+
+  @Override
+  protected File findFindUnderProjectHome(String relativePath) {
+    String homePath = getHomePath();
+    File file = new File(homePath, FileUtil.toSystemDependentName(relativePath));
+    if (!file.exists()) {
+      throw new IllegalArgumentException("Cannot find file '" + relativePath + "' under '" + homePath + "' directory");
+    }
+
+    return file;
   }
 
   @Override
@@ -91,8 +129,18 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
     myBuildParams.clear();
   }
 
+  @Override
+  protected void tearDown() throws Exception {
+    File projectDir = getOrCreateProjectDir();
+    try {
+      super.tearDown();
+    } finally {
+      FileUtil.delete(projectDir);
+    }
+  }
+
   /**
-   * resolving strange behaviour at the parent implementation, which dependes on test data root
+   * resolving strange behaviour at the parent implementation, which depends on test data root
    */
   @Override
   protected void loadProject(String projectPath, Map<String, String> pathVariables) {
@@ -100,7 +148,7 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
       String fullProjectPath = FileUtil.toSystemDependentName(projectPath);
       Map<String, String> allPathVariables = new HashMap<String, String>(pathVariables.size() + 1);
       allPathVariables.putAll(pathVariables);
-      allPathVariables.put(PathMacroUtil.APPLICATION_HOME_DIR, PathManager.getHomePath());
+      allPathVariables.put(PathMacroUtil.APPLICATION_HOME_DIR, PathManager.getHomePathFor(PathManager.class));
       allPathVariables.putAll(getAdditionalPathVariables());
       JpsProjectLoader.loadProject(myProject, allPathVariables, fullProjectPath);
     }
@@ -108,4 +156,5 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
       throw new RuntimeException(e);
     }
   }
+
 }

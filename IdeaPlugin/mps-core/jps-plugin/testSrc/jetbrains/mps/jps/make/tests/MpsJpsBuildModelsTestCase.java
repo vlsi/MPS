@@ -27,9 +27,9 @@ import org.jetbrains.jps.builders.CompileScopeTestBuilder;
 
 import java.io.File;
 
-public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithBean<JpsTestBean, JpsTestModelsEnvironment> {
+public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithEnvironment<JpsTestBean, JpsTestModelsEnvironment> {
   private String getTestDataFilePath(String testName, @NonNls String ext) {
-    return getTestDataRootPath() + File.separator + testName + "." + ext;
+    return new File(getTestDataRootPath(), testName + "." + ext).getAbsolutePath();
   }
 
   private String getOutFilePath(String testName) {
@@ -48,22 +48,40 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithB
     assertGenerated(getGenFilePath(testName));
   }
 
-  protected void doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestName) {
-    setUpEnvironment(inputTestName);
-    rebuildAll();
+  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestName) {
+    final BuildResult buildResult = doMake(inputTestName, true);
+    buildResult.assertSuccessful();
 
     String testName = FileUtil.getNameWithoutExtension(inputTestName);
     checkGenerated(testName);
     checkOutput(testName);
+
+    return buildResult;
   }
 
-  protected BuildResult doTestRebuildResult(@NonNls @NotNull @TestDataFile String inputTestName, boolean rebuild) {
-    setUpEnvironment(inputTestName);
+  protected BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestName) {
+    final BuildResult buildResult = doMake(inputTestName, false);
+    buildResult.assertSuccessful();
+
+    String testName = FileUtil.getNameWithoutExtension(inputTestName);
+    checkGenerated(testName);
+    checkOutput(testName);
+
+    return buildResult;
+  }
+
+  protected BuildResult doMake(@NonNls @NotNull @TestDataFile String inputTestName, boolean rebuild) {
     CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
-    return doBuild(builder.all());
+    return doMakeWithScope(inputTestName, builder.all());
+  }
+
+  protected BuildResult doMakeWithScope(@NonNls @NotNull @TestDataFile String inputTestName,
+                                        CompileScopeTestBuilder builder) {
+    setUpEnvironment(inputTestName);
+    return doBuild(builder);
   }
 
   private void setUpEnvironment(String inputTestName) {
-    setUpTest(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
+    setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
   }
 }

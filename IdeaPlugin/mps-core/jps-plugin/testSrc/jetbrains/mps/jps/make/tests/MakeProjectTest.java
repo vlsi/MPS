@@ -19,6 +19,7 @@ package jetbrains.mps.jps.make.tests;
 import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.jps.builders.BuildResult;
 
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
@@ -31,6 +32,23 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
   }
 
   public void testMakeJava() {
-    doTestRebuild("makeJava.in");
+    doTestMake("makeJava.in");
+  }
+
+  public void testMakeJavaAndXml() {
+    doTestMake("makeJavaAndXml.in");
+  }
+
+  public void testMakeJavaKeepNoSources() {
+    doTestMake("makeJavaKeepNoSources.in");
+  }
+
+  public void testMakeJavaSourceGenNearModels() {
+    doTestMake("makeJavaSourceGenNearModels.in");
+  }
+
+  public void testMakeBrokenProject() {
+    final BuildResult buildResult = doMake("makeBrokenProject.in", false);
+    buildResult.assertFailed();
   }
 }

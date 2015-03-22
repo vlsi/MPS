@@ -17,6 +17,7 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.openapi.application.PathManager;
+import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.TestDataPath;
 import jetbrains.mps.jps.make.testEnvironment.SimpleJpsEnvironment;
 import jetbrains.mps.jps.make.testEnvironment.SimpleJpsTestBean;
@@ -35,22 +36,20 @@ import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.NumberFormatException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Collections;
+import java.util.Map;
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testRebuildIdeaPlugin")
-public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithBean<SimpleJpsTestBean, SimpleJpsEnvironment> {
-  static {
-    new RebuildIdeaPluginTest();
-  }
+public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithEnvironment<SimpleJpsTestBean, SimpleJpsEnvironment> {
   @NonNls
-  private static final String JAVA_HOME = "JAVA_HOME";
+  private static final String JAVA_HOME_ENV = "JAVA_HOME";
   @NonNls
   private static final String JAR_EXT = ".jar";
-  private String ideaHome;
-  private String pluginsPath;
-  private String javaHome;
+  private static final String PLUGINS_PATH_ENV = "PLUGINS_PATH";
+  private static final String JDK_NAME = "1.6";
+  private String IDEA_HOME;
+  private String PLUGINS_PATH;
+  private String JAVA_HOME;
 
   @NotNull
   @Override
@@ -59,72 +58,62 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithBean<SimpleJps
   }
 
   private void setUpParameters() {
-    ideaHome = PathManager.getHomePathFor(PathManager.class);
-    pluginsPath = PathManager.getPluginsPath();
-    javaHome = System.getProperty("jdk.home.path");
-    if (javaHome == null) {
-      javaHome = System.getenv(JAVA_HOME);
+    IDEA_HOME = PathManager.getHomePathFor(PathManager.class);
+    PLUGINS_PATH = PathManager.getPluginsPath();
+    JAVA_HOME = System.getProperty("jdk.home.path");
+    if (JAVA_HOME == null) {
+      JAVA_HOME = System.getenv(JAVA_HOME_ENV);
     }
-    assert ideaHome != null;
-    assert pluginsPath != null;
-    assert javaHome != null;
+    assert IDEA_HOME != null;
+    assert PLUGINS_PATH != null;
+    assert JAVA_HOME != null;
   }
 
   public void testRebuildIdeaPlugin() throws IOException {
     setUpParameters();
-    setUpTest(new SimpleJpsTestBean(), new SimpleJpsEnvironment(this), "test.in");
+    setUpEnvironment(new SimpleJpsTestBean(), new SimpleJpsEnvironment(this), "test.in");
 
-    String projectDir = copyToProject("../../", "IdeaPlugin");
-
-    // unfortunately we now depend on generated java sources of MPS in a couple of places
-    copyToProject("../../../plugins/vcs-core/core/source_gen", "plugins/vcs-core/core/source_gen");
-    copyToProject("../../../plugins/vcs/common/source_gen", "plugins/vcs/common/source_gen");
-    copyToProject("../../../plugins/vcs/common/source", "plugins/vcs/common/source");
-    copyToProject("../../../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
-    copyToProject("../../../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
-    copyToProject("../../../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
-    addBuildParameter("PLUGINS_PATH", pluginsPath);
+    String projectDir = copyToProject("../../../IdeaPlugin", "IdeaPlugin");
     loadProject(projectDir);
     setUpJdk();
     setUpIdeaSdk();
+    addBuildParameter(PLUGINS_PATH_ENV, PLUGINS_PATH);
     rebuildAll();
   }
 
-  private void setUpIdeaSdk() {
-    JpsSimpleElement<JpsIdeaSdkProperties> props = new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(ideaHome, "1.6"));
-    JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk;
-    ideaSdk = myModel.getGlobal().addSdk("IDEA IC", ideaHome, "1.6", JpsIdeaSdkType.INSTANCE, props);
-
-    File[] files = new File(ideaHome, "lib").listFiles();
-    for (File jar : files) {
-      if (!jar.getName().endsWith(JAR_EXT)) continue;
-      ideaSdk.addRoot(JpsPathUtil.pathToUrl(jar.getPath()), JpsOrderRootType.COMPILED);
-    }
+  @NotNull
+  @Override
+  protected Map<String, String> getAdditionalPathVariables() {
+    return Collections.singletonMap(PLUGINS_PATH_ENV, PLUGINS_PATH);
   }
 
   private void setUpJdk() {
-    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk("1.6", javaHome, "1.6", JpsJavaSdkType.INSTANCE);
-    if (isAppleJDK()) {
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "../Classes/classes.jar"), JpsOrderRootType.COMPILED);
-    } else {
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/jre/lib/rt.jar"), JpsOrderRootType.COMPILED);
-      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/lib/tools.jar"), JpsOrderRootType.COMPILED);
+    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk(JDK_NAME, JAVA_HOME, "1.6", JpsJavaSdkType.INSTANCE);
+    jdk.addRoot(JpsPathUtil.pathToUrl(PlatformTestUtil.getRtJarPath()), JpsOrderRootType.COMPILED);
+    if (getToolsJarPath().exists()) {
+      jdk.addRoot(JpsPathUtil.pathToUrl(getToolsJarPath().getAbsolutePath()), JpsOrderRootType.COMPILED);
     }
   }
 
-  private boolean isAppleJDK() {
-    if (!System.getProperty("os.name").toLowerCase().startsWith("mac")) {
-      return false;
-    }
-    String javaVersion = System.getProperty("java.version").toLowerCase();
-    Pattern pattern = Pattern.compile("\\d\\.(\\d+)(\\..*)?");
-    Matcher matcher = pattern.matcher(javaVersion);
-    if (matcher.matches()) {
-      try {
-        return Integer.parseInt(matcher.group(1)) < 7;
-      } catch (NumberFormatException ignored) {
+  private void setUpIdeaSdk() {
+    JpsSimpleElement<JpsIdeaSdkProperties> props =
+      new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(IDEA_HOME, JDK_NAME));
+    JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk;
+    ideaSdk = myModel.getGlobal().addSdk("IDEA IC", IDEA_HOME, "1.6", JpsIdeaSdkType.INSTANCE, props);
+
+    final File ideaHomeLib = new File(IDEA_HOME, "lib");
+    if (ideaHomeLib.exists() && ideaHomeLib.isDirectory()) {
+      File[] files = ideaHomeLib.listFiles();
+      assert files != null;
+      for (File jar : files) {
+        if (jar.getName().endsWith(JAR_EXT)) {
+          ideaSdk.addRoot(JpsPathUtil.pathToUrl(jar.getPath()), JpsOrderRootType.COMPILED);
+        }
       }
     }
-    return false;
+  }
+
+  private File getToolsJarPath() {
+    return new File(new File(JAVA_HOME, "lib"), "tools.jar");
   }
 }
