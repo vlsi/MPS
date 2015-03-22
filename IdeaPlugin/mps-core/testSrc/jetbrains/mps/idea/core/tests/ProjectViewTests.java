@@ -30,6 +30,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.tool.builder.util.PathManager;
 import junit.framework.Assert;
 
 import java.util.Arrays;
@@ -53,7 +54,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
 
   @Override
   protected String getTestDataPath() {
-    return System.getProperty("idea.plugins.path") + "/tests";
+    return PathManager.getPluginsPath() + "/tests";
   }
 
   @Override
