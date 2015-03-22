@@ -26,6 +26,7 @@ import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -123,7 +124,7 @@ public class MPSConfigurationBean {
     return usedLanguages;
   }
 
-  public void setUsedLanguages(String[] usedLanguages) {
+  public void setUsedLanguages(@NonNls String[] usedLanguages) {
     Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
     usedLanguageReferences.clear();
     for (String usedLanguage : usedLanguages) {
