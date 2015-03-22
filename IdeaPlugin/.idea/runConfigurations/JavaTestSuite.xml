@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AllJavaTests from plugin" type="JUnit" factoryName="JUnit">
+  <configuration default="false" name="JavaTestSuite" type="JUnit" factoryName="JUnit">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <module name="mps-java" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" value="jetbrains.mps.idea.java.tests" />
-    <option name="MAIN_CLASS_NAME" value="jetbrains.mps.idea.java.tests.AllJavaTests" />
+    <option name="MAIN_CLASS_NAME" value="jetbrains.mps.idea.java.tests.JavaTestSuite" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <option name="VM_PARAMETERS" value="-ea -Dmps.make.debug=false -Didea.platform.prefix=Idea -Didea.config.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/config -Didea.system.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/system -Didea.plugins.path=$PROJECT_DIR$" />
@@ -23,6 +23,7 @@
       <option name="TRANSPORT" value="0" />
       <option name="LOCAL" value="true" />
     </RunnerSettings>
+    <RunnerSettings RunnerId="Profile " />
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Debug" />
     <ConfigurationWrapper RunnerId="Run" />
