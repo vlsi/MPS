@@ -50,23 +50,10 @@
       </layout>
   </appender>
 
-  <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+  <appender name="MPS-FILE" class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="1Mb"/>
       <param name="MaxBackupIndex" value="3"/>
-      <param name="file" value="$LOG_DIR$/ideaPlugin.log"/>
-      <layout class="org.apache.log4j.PatternLayout">
-          <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
-      </layout>
-      <filter class="org.apache.log4j.varia.LevelRangeFilter">
-          <param name="LevelMin" value="INFO"/>
-      </filter>
-  </appender>
-
-  <appender name="FILE-LOCAL" class="org.apache.log4j.RollingFileAppender">
-      <param name="MaxFileSize" value="1Mb"/>
-      <param name="MaxBackupIndex" value="3"/>
-      <param name="file" value="$APPLICATION_DIR$/mpsPlugin.log"/>
-      <param name="append" value="true"/>
+      <param name="file" value="MPSPlugin.log"/>
       <layout class="org.apache.log4j.PatternLayout">
           <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
       </layout>
@@ -78,24 +65,24 @@
   <category name="com.intellij" additivity="false">
       <priority value="WARN"/>
       <appender-ref ref="CONSOLE-WARN"/>
-      <appender-ref ref="FILE"/>
+      <appender-ref ref="MPS-FILE"/>
   </category>
 
   <category name="jetbrains.mps" additivity="false">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
-    <appender-ref ref="FILE"/>
+    <appender-ref ref="MPS-FILE"/>
   </category>
 
   <category name="#com.intellij" additivity="false">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
-    <appender-ref ref="FILE"/>
+    <appender-ref ref="MPS-FILE"/>
   </category>
 
   <root>
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-WARN"/>
-    <appender-ref ref="FILE"/>
+    <appender-ref ref="MPS-FILE"/>
   </root>
 </log4j:configuration>
