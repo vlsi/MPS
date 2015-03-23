@@ -21,6 +21,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -31,6 +33,10 @@ import org.jetbrains.mps.openapi.model.SReference;
  * Created by simon on 11/03/15.
  */
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
+  public ReadOnlyDefaultEditor(@NotNull SConcept concept) {
+    super(concept);
+  }
+
   @Override
 
   protected void cacheParametersInternal() {

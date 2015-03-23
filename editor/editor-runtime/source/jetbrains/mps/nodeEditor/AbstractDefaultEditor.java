@@ -69,8 +69,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
   private BigInteger currentConstantIdNumber = BigInteger.ZERO;
 
+  public AbstractDefaultEditor(@NotNull SConcept concept) {
+    myConcept = concept;
+  }
+
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    assert myConcept.equals(node.getConcept());
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
@@ -89,7 +94,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private void cacheParameters(SNode node, jetbrains.mps.openapi.editor.EditorContext editorContext) {
     myEditorContext = editorContext;
     mySNode = node;
-    myConcept = node.getConcept();
     cacheParametersInternal();
     SConcept baseConcept = SNodeUtil.concept_BaseConcept;
     for (SProperty sProperty : baseConcept.getProperties()) {
@@ -337,7 +341,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   public static AbstractDefaultEditor createEditor(SNode node) {
     ConceptDescriptor conceptDescriptor = ((SConceptAdapter) node.getConcept()).getConceptDescriptor();
-    return conceptDescriptor == null ? new ReadOnlyDefaultEditor() : new DefaultEditor();
+    return conceptDescriptor == null ? new ReadOnlyDefaultEditor(node.getConcept()) : new DefaultEditor(node.getConcept());
   }
 
 }

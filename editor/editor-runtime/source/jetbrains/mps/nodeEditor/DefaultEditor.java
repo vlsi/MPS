@@ -46,6 +46,8 @@ import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
@@ -61,6 +63,10 @@ import java.util.Iterator;
  * 04 04, 2013
  */
 public class DefaultEditor extends AbstractDefaultEditor {
+
+  public DefaultEditor(@NotNull SConcept concept) {
+    super(concept);
+  }
 
   @Override
   protected void cacheParametersInternal() {
