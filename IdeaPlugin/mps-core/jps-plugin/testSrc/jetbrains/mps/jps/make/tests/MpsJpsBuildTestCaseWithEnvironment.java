@@ -33,21 +33,20 @@ import java.io.File;
  * @param <E> -- represents the entity which is supposed to set up the jps (and mps) environment given a bean of the kind {@link B}
  **/
 public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E extends TestEnvironment<B>> extends MpsJpsBuildTestCase {
-  private E myEnvironment;
-
-  private void initEnvironment(B emptyBean, E emptyEnvironment, String inputTestName) {
+  private E adjustEnvironment(B emptyBean, E emptyEnvironment, String inputTestName) {
     MpsBeanAdjuster<B> beanConstructor = new MpsBeanAdjuster<B>(emptyBean);
 
     JpsTestEnvironmentAdjuster<B, E> environmentAdjuster = new JpsTestEnvironmentAdjuster<B, E>(beanConstructor, emptyEnvironment, inputTestName);
-    myEnvironment = environmentAdjuster.construct();
+    return environmentAdjuster.construct();
   }
 
-  protected void setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestName) {
-    initEnvironment(emptyBean, emptyEnvironment, new File(getTestDataRootPath(), inputTestName).getAbsolutePath());
-  }
-
-  @NotNull
-  protected E getEnvironment() {
-    return myEnvironment;
+  /**
+   * @param emptyBean -- new instance of the bean class B
+   * @param emptyEnvironment -- new instance of the environment class E
+   * @param inputTestFileName -- the file with the test data to be read
+   * @return adjusted environment (input file is read by the MpsBeanAdjuster and the environment is filled with data accordingly)
+   */
+  protected E setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestFileName) {
+    return adjustEnvironment(emptyBean, emptyEnvironment, new File(getTestDataRootPath(), inputTestFileName).getAbsolutePath());
   }
 }

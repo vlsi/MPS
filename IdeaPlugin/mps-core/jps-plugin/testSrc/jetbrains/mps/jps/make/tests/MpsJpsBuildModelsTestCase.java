@@ -28,6 +28,8 @@ import org.jetbrains.jps.builders.CompileScopeTestBuilder;
 import java.io.File;
 
 public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithEnvironment<JpsTestBean, JpsTestModelsEnvironment> {
+  private JpsTestModelsEnvironment myEnvironment;
+
   private String getTestDataFilePath(String testName, @NonNls String ext) {
     return new File(getTestDataRootPath(), testName + "." + ext).getAbsolutePath();
   }
@@ -41,7 +43,7 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
   }
 
   protected void checkOutput(String testName) {
-    assertOutput(getEnvironment().getModule(), getOutFilePath(testName));
+    assertOutput(myEnvironment.getModule(), getOutFilePath(testName));
   }
 
   protected void checkGenerated(String testName) {
@@ -82,6 +84,6 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
   }
 
   private void setUpEnvironment(String inputTestName) {
-    setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
+    myEnvironment = setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
   }
 }
