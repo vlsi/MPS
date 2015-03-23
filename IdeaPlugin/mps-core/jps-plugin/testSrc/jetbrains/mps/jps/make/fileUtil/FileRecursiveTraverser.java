@@ -24,6 +24,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
+/**
+ * @deprecated
+ * @see com.intellij.openapi.util.io.FileUtil#processFilesRecursively
+ */
+@Deprecated
 public class FileRecursiveTraverser {
   @NotNull
   private final String myBasePath;
