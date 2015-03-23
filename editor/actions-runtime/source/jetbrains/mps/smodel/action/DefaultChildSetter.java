@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
@@ -33,8 +31,6 @@ public class DefaultChildSetter extends AbstractChildNodeSetter {
 
   public DefaultChildSetter(SContainmentLink link) {
     myLink = link;
-
-
   }
 
   public SContainmentLink getLink() {

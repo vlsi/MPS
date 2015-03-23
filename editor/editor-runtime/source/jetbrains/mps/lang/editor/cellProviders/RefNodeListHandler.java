@@ -32,6 +32,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @deprecated use ChildListHandler
+ */
+@Deprecated
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   private SNode myChildConcept;

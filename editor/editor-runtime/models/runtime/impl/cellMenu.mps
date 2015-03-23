@@ -180,10 +180,14 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -252,6 +256,7 @@
   </registry>
   <node concept="312cEu" id="3NL5ivGjjTJ">
     <property role="TrG5h" value="EnumPropertySubstituteInfo" />
+    <property role="IEkAT" value="true" />
     <node concept="312cEg" id="3NL5ivGj$wR" role="jymVt">
       <property role="TrG5h" value="myNode" />
       <node concept="3Tm6S6" id="3NL5ivGj$wS" role="1B3o_S" />
@@ -622,6 +627,18 @@
     <node concept="3Tm1VV" id="3NL5ivGjjTK" role="1B3o_S" />
     <node concept="3uibUv" id="3NL5ivGjk8K" role="1zkMxy">
       <ref role="3uigEE" to="4ky7:~AbstractNodeSubstituteInfo" resolve="AbstractNodeSubstituteInfo" />
+    </node>
+    <node concept="3UR2Jj" id="2klkXdpsoRt" role="lGtFl">
+      <node concept="TZ5HI" id="2klkXdpsoRu" role="TZ5Hx">
+        <node concept="TZ5HA" id="2klkXdpsoRv" role="3HnX3l">
+          <node concept="1dT_AC" id="2klkXdpspFK" role="1dT_Ay">
+            <property role="1dT_AB" value="use EnumSPropertySubstituteInfo" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="2klkXdpsoRw" role="2AJF6D">
+      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="2UXArULvaez">

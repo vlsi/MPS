@@ -18,9 +18,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
+/**
+ * 
+ * @deprecated use EnumSPropertySubstituteInfo
+ */
+@Deprecated
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myNode;
   private SNode myPropertyDeclaration;
+  @Deprecated
   public EnumPropertySubstituteInfo(SNode node, SNode propertyDeclaration, EditorContext editorContext) {
     super(editorContext);
     myNode = node;

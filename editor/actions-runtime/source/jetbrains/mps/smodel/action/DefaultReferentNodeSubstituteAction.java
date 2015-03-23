@@ -35,6 +35,8 @@ import java.util.HashMap;
 /**
  * Igor Alshannikov
  * Mar 29, 2005
+ *
+ * @deprecated use DefaultSReferentSubstituteAction
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private final SNode myCurrentReferent;
