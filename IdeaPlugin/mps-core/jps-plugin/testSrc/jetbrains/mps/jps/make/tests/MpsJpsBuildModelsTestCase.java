@@ -48,31 +48,31 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     assertGenerated(getGenFilePath(testName));
   }
 
-  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestName) {
-    final BuildResult buildResult = doMake(inputTestName, true);
+  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+    final BuildResult buildResult = doMake(inputTestFileName, true);
     buildResult.assertSuccessful();
 
-    String testName = FileUtil.getNameWithoutExtension(inputTestName);
+    String testName = FileUtil.getNameWithoutExtension(inputTestFileName);
     checkGenerated(testName);
     checkOutput(testName);
 
     return buildResult;
   }
 
-  protected BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestName) {
-    final BuildResult buildResult = doMake(inputTestName, false);
+  protected BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+    final BuildResult buildResult = doMake(inputTestFileName, false);
     buildResult.assertSuccessful();
 
-    String testName = FileUtil.getNameWithoutExtension(inputTestName);
+    String testName = FileUtil.getNameWithoutExtension(inputTestFileName);
     checkGenerated(testName);
     checkOutput(testName);
 
     return buildResult;
   }
 
-  protected BuildResult doMake(@NonNls @NotNull @TestDataFile String inputTestName, boolean rebuild) {
+  protected BuildResult doMake(@NonNls @NotNull @TestDataFile String inputTestFileName, boolean rebuild) {
     CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
-    return doMakeWithScope(inputTestName, builder.all());
+    return doMakeWithScope(inputTestFileName, builder.all());
   }
 
   protected BuildResult doMakeWithScope(@NonNls @NotNull @TestDataFile String inputTestName,

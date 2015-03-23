@@ -17,6 +17,7 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
@@ -44,8 +45,8 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   private static void initLogging() {
-    com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
-    com.intellij.openapi.diagnostic.Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
+    Logger.setFactory(DelegatingLoggerFactory.class);
+    Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
   }
 
  @NotNull
