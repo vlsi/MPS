@@ -98,9 +98,10 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
     Iterable<SNode> nodes = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink.getRoleName()).getScope().getAvailableElements(null);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
-      if (node == null || !node.getConcept().isSubConceptOf(referentConcept)) {
+      if (node == null) {
         continue;
       }
+      assert node.getConcept().isSubConceptOf(referentConcept);
       actions.add(new DefaultSReferentSubstituteAction(node, mySourceNode, targetNode, myLink));
     }
     return actions;

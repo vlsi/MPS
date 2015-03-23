@@ -44,6 +44,7 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
     myCurrentReferent = currentReferent;
     myLink = link;
     myRefDescriptor = ModelConstraints.getReferenceDescriptor(sourceNode, link.getRoleName());
+    assert myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept());
   }
 
   @Override
@@ -89,10 +90,6 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
   @Override
   public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     if (myCurrentReferent != myTargetNode) {
-      //todo assert in constructor
-      if (!myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept())) {
-        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(myTargetNode));
-      }
       SNodeAccessUtil.setReferenceTarget(getSourceNode(), myLink, myTargetNode);
 
       if (editorContext != null) {
