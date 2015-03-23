@@ -86,11 +86,6 @@ public class DefaultEditor extends AbstractDefaultEditor {
   }
 
   @Override
-  protected boolean needToAddPropertiesOrChildren() {
-    return !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
-  }
-
-  @Override
   protected void addPropertyCell(SProperty property) {
     EditorCell_Property editorCell = EditorCell_Property.create(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
     editorCell.setDefaultText("<no " + property.getName() + ">");

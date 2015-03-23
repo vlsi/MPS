@@ -161,7 +161,9 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
   }
 
-  protected abstract boolean needToAddPropertiesOrChildren();
+  protected boolean needToAddPropertiesOrChildren() {
+    return !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
+  }
 
   protected abstract void addPropertyCell(final SProperty property);
 
