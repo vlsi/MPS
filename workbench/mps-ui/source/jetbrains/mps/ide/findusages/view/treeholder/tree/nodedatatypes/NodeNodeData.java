@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
-import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -27,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
@@ -36,12 +36,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
-import java.util.List;
 
 public class NodeNodeData extends AbstractResultNodeData {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeNodeData.class));
 
-  private static final String NODE = "node";
+  private static final String NODE = "nodePtr";
 
   private SNodeReference myNodePointer;
 
@@ -87,8 +86,8 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   @Override
   public Icon getIcon() {
-    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) return null;
-    return IconManager.getIconFor(myNodePointer.resolve(MPSModuleRepository.getInstance()));
+    final SNode node = myNodePointer.resolve(MPSModuleRepository.getInstance());
+    return node == null ? null : IconManager.getIconFor(node);
   }
 
   @Override
@@ -99,23 +98,17 @@ public class NodeNodeData extends AbstractResultNodeData {
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
-    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
-      Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.resolve(MPSModuleRepository.getInstance())));
-      element.addContent(nodeXML);
-    } else {
-      throw new CantSaveSomethingException();
-    }
+    element.setAttribute(NODE, SNodePointer.serialize(myNodePointer));
   }
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
-    List children = element.getChild(NODE).getChildren();
-    if (children == null || children.size() == 1) {
-      throw new CantLoadSomethingException();
+    try {
+      myNodePointer = SNodePointer.deserialize(element.getAttributeValue(NODE));
+    } catch (Exception ex) {
+      throw new CantLoadSomethingException(ex);
     }
-    myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
   }
 
   public static String snodeRepresentation(final SNode node) {
