@@ -97,7 +97,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     cacheParametersInternal();
     SConcept baseConcept = SNodeUtil.concept_BaseConcept;
     for (SProperty sProperty : baseConcept.getProperties()) {
-      sProperty.getName();
       myProperties.remove(sProperty);
     }
 
@@ -125,6 +124,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       if (maxPriority < propertyPriority) {
         maxPriority = propertyPriority;
         myNameProperty = property;
+        myProperties.remove(myNameProperty);
       }
     }
   }
@@ -171,9 +171,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private void addProperties() {
     for (SProperty property : myProperties) {
-      if (property.equals(myNameProperty)) {
-        continue;
-      }
       addRoleLabel(property.getName(), "property");
       addPropertyCell(property);
       addNewLine();
