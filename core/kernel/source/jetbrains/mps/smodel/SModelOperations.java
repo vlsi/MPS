@@ -21,10 +21,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -45,8 +42,6 @@ import java.util.List;
 import java.util.Set;
 
 public class SModelOperations {
-  private static final Logger LOG = LogManager.getLogger(SModelOperations.class);
-
   @Nullable
   public static SNode getRootByName(SModel model, @NotNull String name) {
     for (SNode root : model.getRootNodes()) {
@@ -76,9 +71,9 @@ public class SModelOperations {
     ModelChange.assertLegalChange_new(model);
 
     final SModule module = model.getModule();
-    final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
-    final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
-    Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
+    final Collection<SModule> moduleDeclaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
+    final Collection<SLanguage> moduleDeclaredUsedLanguages = module != null ? module.getUsedLanguages() : null;
+    Set<SLanguage> modelDeclaredUsedLanguages = getAllImportedLanguageIds(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModel sm : allImportedModels(model)) {
@@ -88,21 +83,15 @@ public class SModelOperations {
     final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
     modelScanner.crossModelReferences(true).usedLanguages(true).walk(model);
     for (SLanguage language : modelScanner.getUsedLanguages()) {
-      Language lang = findModule(language);
-      if (lang == null) {
-        LOG.error("Can't find language " + language.getQualifiedName());
-        continue;
-      }
-      SModuleReference ref = lang.getModuleReference();
-      if (!usedLanguages.contains(ref)) {
+      if (!modelDeclaredUsedLanguages.contains(language)) {
         if (module != null) {
-          if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
-            ((AbstractModule) module).addUsedLanguage(ref);
+          if (respectModulesScopes && !moduleDeclaredUsedLanguages.contains(language)) {
+            ((AbstractModule) module).addUsedLanguage(language);
           }
         }
 
-        usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(MetaIdByDeclaration.ref2Id(ref));
+        modelDeclaredUsedLanguages.add(language);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
       }
     }
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
@@ -110,7 +99,7 @@ public class SModelOperations {
         if (respectModulesScopes && module != null) {
           SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
           SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-          if (targetModule != null && !declaredDependencies.contains(targetModule)) {
+          if (targetModule != null && !moduleDeclaredDependencies.contains(targetModule)) {
             ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
           }
         }
@@ -175,19 +164,6 @@ public class SModelOperations {
     return new HashSet<SLanguage>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguagesIds());
   }
 
-  // FIXME there's only 1 use of the method, does it justify its extraction here?
-  public static Set<SModuleReference> getUsedLanguages(@NotNull SModel model) {
-    Set<SModuleReference> result = new HashSet<SModuleReference>();
-    final ModelDependencyScanner ms = new ModelDependencyScanner().usedLanguages(true).crossModelReferences(false);
-    ms.walk(model);
-    for (SLanguage l : ms.getUsedLanguages()) {
-      Language lang = findModule(l);
-      if (lang == null) continue;
-      result.add(lang.getModuleReference());
-    }
-    return result;
-  }
-
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model) {
     Set<SModel> result = new LinkedHashSet<SModel>();
@@ -240,14 +216,6 @@ public class SModelOperations {
       }
     }
     return modelsList;
-  }
-
-  @Nullable
-  private static Language findModule(SLanguage language) {
-    // XXX SLanguage.getModule shall be there (we need SModule regardless of whether module is in the project/workspace or is bundled
-    // as it's MPS way to declare dependencies), shall use it instead of ModuleRepositoryFacade. Couldn't use getSourceModule as it
-    // implies 'source' of the language.
-    return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
 
   //-----------------------------------------------------

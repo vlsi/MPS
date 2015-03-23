@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -34,6 +32,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -46,6 +45,7 @@ import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -57,7 +57,6 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Frame;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -228,8 +227,9 @@ public class ImportHelper {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
             } else {
-              if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
-                ((AbstractModule) myContextModule).addUsedLanguage(ref);
+              final SLanguage rtLanguage = MetaAdapterByDeclaration.getLanguage(lang);
+              if (!myContextModule.getUsedLanguages().contains(rtLanguage)) {
+                ((AbstractModule) myContextModule).addUsedLanguage(rtLanguage);
                 reload = true;
               }
             }

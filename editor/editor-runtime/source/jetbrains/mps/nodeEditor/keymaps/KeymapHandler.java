@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,18 +25,18 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -128,11 +128,15 @@ public abstract class KeymapHandler<E> {
         importedAndExtendedLanguages.addAll(LanguageDependenciesManager.getAllExtendedLanguageReferences(l));
       }
 
+      final Set<SLanguage> moduleUsedLanguages = editorContext.getModel().getModule().getUsedLanguages();
       for (SModuleReference ref : importedAndExtendedLanguages) {
         SModule language = ref.resolve(MPSModuleRepository.getInstance());
-        if (language == null) continue;
-        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), SConceptRepository.getInstance().getLanguage(language.getModuleName())))
+        if (!(language instanceof Language)) {
           continue;
+        }
+        if (!moduleUsedLanguages.contains(MetaAdapterByDeclaration.getLanguage((Language) language))) {
+          continue;
+        }
 
         List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(((Language) language));
         if (keyMapsForNamespace != null) {
