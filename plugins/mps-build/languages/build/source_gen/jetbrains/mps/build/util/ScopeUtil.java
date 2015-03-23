@@ -8,6 +8,7 @@ import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -28,7 +29,23 @@ import java.util.ArrayList;
 public class ScopeUtil {
   public ScopeUtil() {
   }
+  /**
+   * 
+   * @deprecated use SContainmentLink version, remove after 3.3
+   */
+  @Deprecated
   public static Scope simpleRoleScope(SNode node, SNode link) {
+    return new SimpleRoleScope(node, link) {
+      @Override
+      public String getName(SNode child) {
+        if (!(SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")))) {
+          return child.getPresentation();
+        }
+        return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      }
+    };
+  }
+  public static Scope simpleRoleScope(SNode node, SContainmentLink link) {
     return new SimpleRoleScope(node, link) {
       @Override
       public String getName(SNode child) {

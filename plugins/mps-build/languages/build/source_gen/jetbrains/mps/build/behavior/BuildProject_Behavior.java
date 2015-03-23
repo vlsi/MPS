@@ -162,7 +162,7 @@ public class BuildProject_Behavior {
       return new EmptyScope();
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")));
+    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"));
     SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 

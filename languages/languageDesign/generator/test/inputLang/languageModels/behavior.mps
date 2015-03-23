@@ -2,7 +2,7 @@
 <model ref="r:e6fa6600-76f8-4a95-9fda-01416b2cfa47(jetbrains.mps.transformation.test.inputLang.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -85,11 +85,11 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -144,12 +144,12 @@
                 <ref role="37wK5l" to="o8zo:7ipADkTevQ_" resolve="createComposite" />
                 <ref role="1Pybhc" to="o8zo:7ipADkTevLt" resolve="CompositeScope" />
                 <node concept="2YIFZM" id="379IfaV77Et" role="37wK5m">
-                  <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
                   <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                  <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                   <node concept="13iPFW" id="379IfaV77Eu" role="37wK5m" />
-                  <node concept="28GBK8" id="379IfaV77Ev" role="37wK5m">
-                    <ref role="28H3Ia" to="tpm0:2S48fJgAlSA" />
-                    <ref role="28GBKb" to="tpm0:2S48fJgAlRV" resolve="RefTestClass" />
+                  <node concept="359W_D" id="5TYh2YDXGkM" role="37wK5m">
+                    <ref role="359W_E" to="tpm0:2S48fJgAlRV" resolve="RefTestClass" />
+                    <ref role="359W_F" to="tpm0:2S48fJgAlSA" />
                   </node>
                 </node>
                 <node concept="3K4zz7" id="2S48fJgAM5C" role="37wK5m">
@@ -219,12 +219,12 @@
           <node concept="3clFbS" id="2S48fJgAM6o" role="3clFbx">
             <node concept="3cpWs6" id="379IfaV77Ao" role="3cqZAp">
               <node concept="2YIFZM" id="379IfaV77Ar" role="3cqZAk">
-                <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
                 <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                 <node concept="13iPFW" id="379IfaV77As" role="37wK5m" />
-                <node concept="28GBK8" id="379IfaV77At" role="37wK5m">
-                  <ref role="28H3Ia" to="tpm0:2S48fJgAlT0" />
-                  <ref role="28GBKb" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
+                <node concept="359W_D" id="5TYh2YDXGy9" role="37wK5m">
+                  <ref role="359W_E" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
+                  <ref role="359W_F" to="tpm0:2S48fJgAlT0" />
                 </node>
               </node>
             </node>

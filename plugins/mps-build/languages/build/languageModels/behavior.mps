@@ -1652,12 +1652,12 @@
               <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
             </node>
             <node concept="2YIFZM" id="3h9a8EwPwus" role="33vP2m">
-              <ref role="37wK5l" to="o3n2:3h9a8EwPwth" resolve="simpleRoleScope" />
               <ref role="1Pybhc" to="o3n2:3h9a8EwPwtb" resolve="ScopeUtil" />
+              <ref role="37wK5l" to="o3n2:5TYh2YDXK4L" resolve="simpleRoleScope" />
               <node concept="13iPFW" id="3h9a8EwPwut" role="37wK5m" />
-              <node concept="28GBK8" id="3h9a8EwPwuv" role="37wK5m">
-                <ref role="28GBKb" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                <ref role="28H3Ia" to="3ior:4RPz6WoY4Cy" />
+              <node concept="359W_D" id="5TYh2YDXROV" role="37wK5m">
+                <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                <ref role="359W_F" to="3ior:4RPz6WoY4Cy" />
               </node>
             </node>
           </node>

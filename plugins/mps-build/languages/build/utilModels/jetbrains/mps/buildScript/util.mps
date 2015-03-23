@@ -1335,6 +1335,7 @@
     </node>
     <node concept="2YIFZL" id="3h9a8EwPwth" role="jymVt">
       <property role="TrG5h" value="simpleRoleScope" />
+      <property role="IEkAT" value="true" />
       <node concept="3uibUv" id="3h9a8EwPwtH" role="3clF45">
         <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
@@ -1423,6 +1424,111 @@
         <property role="TrG5h" value="link" />
         <node concept="3Tqbb2" id="3h9a8EwPwtu" role="1tU5fm">
           <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5TYh2YDXLuJ" role="lGtFl">
+        <node concept="TZ5HI" id="5TYh2YDXLuK" role="TZ5Hx">
+          <node concept="TZ5HA" id="5TYh2YDXLuL" role="3HnX3l">
+            <node concept="1dT_AC" id="5TYh2YDXL_1" role="1dT_Ay">
+              <property role="1dT_AB" value="use SContainmentLink version, remove after 3.3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5TYh2YDXLuM" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="5TYh2YDXK4L" role="jymVt">
+      <property role="TrG5h" value="simpleRoleScope" />
+      <node concept="3uibUv" id="5TYh2YDXK4M" role="3clF45">
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+      </node>
+      <node concept="3clFbS" id="5TYh2YDXK4N" role="3clF47">
+        <node concept="3clFbF" id="5TYh2YDXK4O" role="3cqZAp">
+          <node concept="2ShNRf" id="5TYh2YDXK4P" role="3clFbG">
+            <node concept="YeOm9" id="5TYh2YDXK4Q" role="2ShVmc">
+              <node concept="1Y3b0j" id="5TYh2YDXK4R" role="YeSDq">
+                <property role="2bfB8j" value="true" />
+                <ref role="1Y3XeK" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                <ref role="37wK5l" to="o8zo:5TYh2YDX_D_" resolve="SimpleRoleScope" />
+                <node concept="37vLTw" id="5TYh2YDXK4S" role="37wK5m">
+                  <ref role="3cqZAo" node="5TYh2YDXK5k" resolve="node" />
+                </node>
+                <node concept="3clFb_" id="5TYh2YDXK4T" role="jymVt">
+                  <property role="1EzhhJ" value="false" />
+                  <property role="TrG5h" value="getName" />
+                  <node concept="3Tm1VV" id="5TYh2YDXK4U" role="1B3o_S" />
+                  <node concept="17QB3L" id="5TYh2YDXK4V" role="3clF45" />
+                  <node concept="3clFbS" id="5TYh2YDXK4W" role="3clF47">
+                    <node concept="3clFbJ" id="5TYh2YDXK4X" role="3cqZAp">
+                      <node concept="3clFbS" id="5TYh2YDXK4Y" role="3clFbx">
+                        <node concept="3cpWs6" id="5TYh2YDXK4Z" role="3cqZAp">
+                          <node concept="2OqwBi" id="5TYh2YDXK50" role="3cqZAk">
+                            <node concept="liA8E" id="5TYh2YDXK51" role="2OqNvi">
+                              <ref role="37wK5l" to="ec5l:~SNode.getPresentation():java.lang.String" resolve="getPresentation" />
+                            </node>
+                            <node concept="2JrnkZ" id="5TYh2YDXK52" role="2Oq$k0">
+                              <node concept="37vLTw" id="5TYh2YDXK53" role="2JrQYb">
+                                <ref role="3cqZAo" node="5TYh2YDXK5e" resolve="child" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3fqX7Q" id="5TYh2YDXK54" role="3clFbw">
+                        <node concept="2OqwBi" id="5TYh2YDXK55" role="3fr31v">
+                          <node concept="1mIQ4w" id="5TYh2YDXK56" role="2OqNvi">
+                            <node concept="chp4Y" id="5TYh2YDXK57" role="cj9EA">
+                              <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="5TYh2YDXK58" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5TYh2YDXK5e" resolve="child" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="5TYh2YDXK59" role="3cqZAp">
+                      <node concept="2OqwBi" id="5TYh2YDXK5a" role="3clFbG">
+                        <node concept="1PxgMI" id="5TYh2YDXK5b" role="2Oq$k0">
+                          <ref role="1PxNhF" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                          <node concept="37vLTw" id="5TYh2YDXK5c" role="1PxMeX">
+                            <ref role="3cqZAo" node="5TYh2YDXK5e" resolve="child" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="5TYh2YDXK5d" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTG" id="5TYh2YDXK5e" role="3clF46">
+                    <property role="TrG5h" value="child" />
+                    <node concept="3Tqbb2" id="5TYh2YDXK5f" role="1tU5fm" />
+                  </node>
+                  <node concept="2AHcQZ" id="5TYh2YDXK5g" role="2AJF6D">
+                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                  </node>
+                </node>
+                <node concept="3Tm1VV" id="5TYh2YDXK5h" role="1B3o_S" />
+                <node concept="37vLTw" id="5TYh2YDXK5i" role="37wK5m">
+                  <ref role="3cqZAo" node="5TYh2YDXK5m" resolve="link" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5TYh2YDXK5j" role="1B3o_S" />
+      <node concept="37vLTG" id="5TYh2YDXK5k" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="5TYh2YDXK5l" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5TYh2YDXK5m" role="3clF46">
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="5TYh2YDXNMQ" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
         </node>
       </node>
     </node>
