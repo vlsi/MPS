@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -33,6 +35,8 @@ import org.jetbrains.mps.openapi.model.SReference;
  * Created by simon on 11/03/15.
  */
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReadOnlyDefaultEditor.class));
+
   public ReadOnlyDefaultEditor(@NotNull SConcept concept) {
     super(concept);
   }
@@ -99,13 +103,14 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       return;
     }
     final SNode referentNode = reference.getTargetNode();
-    //todo remove visibility util
-    //todo if model == null log.error
-    if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
+    if (referentNode == null) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getRoleName() + "?";
       addErrorCell(myErrorText);
       return;
+    }
+    if (referentNode.getModel() == null) {
+      LOG.error("Reference to node which is not inside model. Node: " + referentNode, referentNode);
     }
     EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
       @Override
