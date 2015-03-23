@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,9 +50,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   @Override
   public Icon doGetIcon() {
-    String conceptFqName = myNodeResult.getConcept().getQualifiedName();
-
     //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
-    return IconManager.getIconForConceptFQName(conceptFqName);
+    return IconManager.getIcon(myNodeResult.getConcept());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   public RootChooseModel(Project project, RootNodeNameIndex index) {
     super(project, "node");
     myIndex = index;
+    setCheckBoxName("Include stubs and &non-&&project models");
   }
 
   @Override
@@ -90,15 +91,10 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   }
 
   @Override
-  public String doGetFullName(Object element) {
-    SNodeDescriptorPresentation presentation = (SNodeDescriptorPresentation) ((NavigationItem) element).getPresentation();
+  public String doGetFullName(NavigationItem element) {
+    SNodeDescriptorPresentation presentation = (SNodeDescriptorPresentation) element.getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
-  }
-
-  @Override
-  protected String doGetCheckBoxName() {
-    return "Include stubs and &non-&&project models";
   }
 
   @Override

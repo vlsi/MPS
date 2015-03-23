@@ -38,8 +38,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
@@ -119,10 +119,9 @@ public class ImportHelper {
   }
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
       @Nullable BaseAction parentAction, @Nullable final Runnable onClose) {
-    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
+    BaseModuleModel goToLanguageModel = new BaseModuleModel(project, "language") {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
-        SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
         return new AddLanguageItem(project, ref, contextModule, model);
       }
 
