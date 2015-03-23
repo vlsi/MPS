@@ -32,7 +32,7 @@ public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
     doTestRebuild("rebuildJava.in");
   }
 
-  public void testMakeJavaAndXml() {
+  public void testRebuildJavaAndXml() {
     doTestRebuild("rebuildJavaAndXml.in");
   }
 
