@@ -109,24 +109,23 @@ public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
   @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode sourceNodePeer = getSourceNode();
-    CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
-    SNode sourceNode = mapping.get(sourceNodePeer);
-    SNode nodeToEquatePeer = sourceNodePeer;
+    SNode sourceNode = getSourceNode();
+    CopyUtil.copy(Arrays.asList(sourceNode.getContainingRoot()), mapping);
+    SNode sourceNodeCopy = mapping.get(sourceNode);
+    SNode nodeToEquate = sourceNode;
     TypeChecker typeChecker = TypeChecker.getInstance();
-    while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
-      nodeToEquatePeer = nodeToEquatePeer.getParent();
+    while (nodeToEquate != null && typeChecker.getTypeOf(nodeToEquate) == null) {
+      nodeToEquate = nodeToEquate.getParent();
     }
-    if (nodeToEquatePeer == null) {
+    if (nodeToEquate == null) {
       return null;
     }
-    SNode nodeToEquate = mapping.get(nodeToEquatePeer);
-    SNode parent = nodeToEquate.getParent();
-    if (parent == null) {
+    SNode nodeToEquateCopy = mapping.get(nodeToEquate);
+    if (nodeToEquateCopy.getParent() == null) {
+      // why?..
       return null;
     }
-    SNodeAccessUtil.setReferenceTarget(sourceNode, myLink, myTargetNode);
-    SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
+    SNodeAccessUtil.setReferenceTarget(sourceNodeCopy, myLink, myTargetNode);
     return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
   }
 }
