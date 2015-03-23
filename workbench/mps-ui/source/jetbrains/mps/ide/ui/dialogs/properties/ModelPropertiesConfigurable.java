@@ -387,7 +387,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
-          final IResultProvider[] provider = new IResultProvider[1];
           final SearchScope scope = new ModelsScope(myModelDescriptor);
           myProject.getModelAccess().runReadAction(new Runnable() {
             @Override
@@ -410,26 +409,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
               query[0] = new SearchQuery(new MyModulesHolder(modules), scope);
-              provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder() {
-                @Override
-                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-                  if (!(query.getObjectHolder() instanceof ModulesHolder))
-                    return super.find(query, monitor);
-
-                  SearchResults searchResults = new SearchResults();
-                  ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
-                  for (SModule searchedModule : modulesHolder.getObject()) {
-                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
-                    searchResults.addAll(super.find(searchQuery, monitor));
-                  }
-
-                  return searchResults;
-                }
-              });
             }
           });
+          final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
           UsagesViewTool usagesViewTool = myProject.getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          usagesViewTool.findUsages(provider, query[0], true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
       };

@@ -8,14 +8,13 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.IterableUtil;
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
@@ -30,16 +29,22 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
-    IHolder holder = query.getObjectHolder();
-    assert holder instanceof ModuleHolder;
-    SModule module = ((ModuleHolder) holder).getObject();
-    assert module instanceof Language;
+    Object value = query.getObjectHolder().getObject();
+    SModule module = null;
+    if (value instanceof SModule) {
+      module = ((SModule) value);
+    } else if (value instanceof SModuleReference) {
+      module = query.getScope().resolve(((SModuleReference) value));
+    }
+    if (!(module instanceof Language)) {
+      return searchResults;
+    }
     Language language = (Language) module;
     SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) {
       return searchResults;
     }
-    if (IterableUtil.asCollection(structureModel.getRootNodes()).size() == 0) {
+    if (!(structureModel.getRootNodes().iterator().hasNext())) {
       return searchResults;
     }
     List<SNode> roots = new LinkedList<SNode>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Set<String> getModelFactoryExtensions() {
     return myExtensionToModelFactoryMap.keySet();
+  }
+
+  @Override
+  public String asString(@NotNull SModuleReference reference) {
+    return reference.toString();
   }
 
   @Override

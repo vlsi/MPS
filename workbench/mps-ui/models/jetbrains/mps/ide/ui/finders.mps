@@ -2191,53 +2191,21 @@
         </node>
         <node concept="3cpWs8" id="3_o1C0wGpRf" role="3cqZAp">
           <node concept="3cpWsn" id="3_o1C0wGpRg" role="3cpWs9">
-            <property role="TrG5h" value="objectHolder" />
-            <node concept="3uibUv" id="3_o1C0wGpRh" role="1tU5fm">
-              <ref role="3uigEE" to="n7hd:~IHolder" resolve="IHolder" />
+            <property role="TrG5h" value="value" />
+            <node concept="3uibUv" id="5wOcmpUOUQK" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
             </node>
-            <node concept="2OqwBi" id="3_o1C0wGpRi" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxgmzFV" role="2Oq$k0">
-                <ref role="3cqZAo" node="3_o1C0wGpR5" resolve="query" />
-              </node>
-              <node concept="liA8E" id="3_o1C0wGpRk" role="2OqNvi">
-                <ref role="37wK5l" to="5fm0:~SearchQuery.getObjectHolder():jetbrains.mps.ide.findusages.model.holders.IHolder" resolve="getObjectHolder" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="3_o1C0wGpRl" role="3cqZAp">
-          <node concept="3fqX7Q" id="3_o1C0wGpRm" role="3clFbw">
-            <node concept="1eOMI4" id="3_o1C0wGpRn" role="3fr31v">
-              <node concept="2ZW3vV" id="3_o1C0wGpRo" role="1eOMHV">
-                <node concept="37vLTw" id="3GM_nagTsV7" role="2ZW6bz">
-                  <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="objectHolder" />
+            <node concept="2OqwBi" id="5wOcmpUOUsx" role="33vP2m">
+              <node concept="2OqwBi" id="3_o1C0wGpRi" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxgmzFV" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3_o1C0wGpR5" resolve="query" />
                 </node>
-                <node concept="3uibUv" id="3_o1C0wGpRq" role="2ZW6by">
-                  <ref role="3uigEE" to="n7hd:~ModuleHolder" resolve="ModuleHolder" />
+                <node concept="liA8E" id="3_o1C0wGpRk" role="2OqNvi">
+                  <ref role="37wK5l" to="5fm0:~SearchQuery.getObjectHolder():jetbrains.mps.ide.findusages.model.holders.IHolder" resolve="getObjectHolder" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="3_o1C0wGpRr" role="3clFbx">
-            <node concept="3cpWs6" id="3_o1C0wGpRs" role="3cqZAp">
-              <node concept="37vLTw" id="3GM_nagTwhL" role="3cqZAk">
-                <ref role="3cqZAo" node="3_o1C0wGpRb" resolve="searchResults" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3_o1C0wGpRu" role="3cqZAp">
-          <node concept="3cpWsn" id="3_o1C0wGpRv" role="3cpWs9">
-            <property role="TrG5h" value="moduleHolder" />
-            <node concept="3uibUv" id="3_o1C0wGpRw" role="1tU5fm">
-              <ref role="3uigEE" to="n7hd:~ModuleHolder" resolve="ModuleHolder" />
-            </node>
-            <node concept="10QFUN" id="3_o1C0wGpRx" role="33vP2m">
-              <node concept="37vLTw" id="3GM_nagTx9Q" role="10QFUP">
-                <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="objectHolder" />
-              </node>
-              <node concept="3uibUv" id="3_o1C0wGpRz" role="10QFUM">
-                <ref role="3uigEE" to="n7hd:~ModuleHolder" resolve="ModuleHolder" />
+              <node concept="liA8E" id="5wOcmpUOUG7" role="2OqNvi">
+                <ref role="37wK5l" to="n7hd:~IHolder.getObject():java.lang.Object" resolve="getObject" />
               </node>
             </node>
           </node>
@@ -2248,14 +2216,91 @@
             <node concept="3uibUv" id="3_o1C0wGpRA" role="1tU5fm">
               <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
             </node>
-            <node concept="2OqwBi" id="3_o1C0wGpRB" role="33vP2m">
-              <node concept="37vLTw" id="3GM_nagTzL2" role="2Oq$k0">
-                <ref role="3cqZAo" node="3_o1C0wGpRv" resolve="moduleHolder" />
-              </node>
-              <node concept="liA8E" id="3_o1C0wGpRD" role="2OqNvi">
-                <ref role="37wK5l" to="n7hd:~ModuleHolder.getObject():org.jetbrains.mps.openapi.module.SModule" resolve="getObject" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3_o1C0wGpRl" role="3cqZAp">
+          <node concept="2ZW3vV" id="5wOcmpUOX_o" role="3clFbw">
+            <node concept="3uibUv" id="5wOcmpUOXR4" role="2ZW6by">
+              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+            </node>
+            <node concept="37vLTw" id="5wOcmpUOXj_" role="2ZW6bz">
+              <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="value" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="3_o1C0wGpRr" role="3clFbx">
+            <node concept="3clFbF" id="5wOcmpUOY9l" role="3cqZAp">
+              <node concept="37vLTI" id="5wOcmpUOYrf" role="3clFbG">
+                <node concept="1eOMI4" id="5wOcmpUOYsi" role="37vLTx">
+                  <node concept="10QFUN" id="5wOcmpUOYsf" role="1eOMHV">
+                    <node concept="3uibUv" id="5wOcmpUOYsk" role="10QFUM">
+                      <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+                    </node>
+                    <node concept="37vLTw" id="5wOcmpUOYsl" role="10QFUP">
+                      <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="value" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="5wOcmpUOY9k" role="37vLTJ">
+                  <ref role="3cqZAo" node="3_o1C0wGpR_" resolve="searchedModule" />
+                </node>
               </node>
             </node>
+          </node>
+          <node concept="3eNFk2" id="5wOcmpUOYt7" role="3eNLev">
+            <node concept="2ZW3vV" id="5wOcmpUOYJ_" role="3eO9$A">
+              <node concept="3uibUv" id="5wOcmpUOYJY" role="2ZW6by">
+                <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
+              </node>
+              <node concept="37vLTw" id="5wOcmpUOYJc" role="2ZW6bz">
+                <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="value" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="5wOcmpUOYt9" role="3eOfB_">
+              <node concept="3clFbF" id="5wOcmpUOYKG" role="3cqZAp">
+                <node concept="37vLTI" id="5wOcmpUOYLv" role="3clFbG">
+                  <node concept="2OqwBi" id="5wOcmpUP05L" role="37vLTx">
+                    <node concept="2OqwBi" id="5wOcmpUP00u" role="2Oq$k0">
+                      <node concept="37vLTw" id="5wOcmpUOZZH" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3_o1C0wGpR5" resolve="query" />
+                      </node>
+                      <node concept="liA8E" id="5wOcmpUP04U" role="2OqNvi">
+                        <ref role="37wK5l" to="5fm0:~SearchQuery.getScope():org.jetbrains.mps.openapi.module.SearchScope" resolve="getScope" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5wOcmpUP0c6" role="2OqNvi">
+                      <ref role="37wK5l" to="88zw:~SearchScope.resolve(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
+                      <node concept="1eOMI4" id="5wOcmpUP0dI" role="37wK5m">
+                        <node concept="10QFUN" id="5wOcmpUP0dF" role="1eOMHV">
+                          <node concept="37vLTw" id="5wOcmpUP0fV" role="10QFUP">
+                            <ref role="3cqZAo" node="3_o1C0wGpRg" resolve="value" />
+                          </node>
+                          <node concept="3uibUv" id="5wOcmpUP0gZ" role="10QFUM">
+                            <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="5wOcmpUOYKF" role="37vLTJ">
+                    <ref role="3cqZAo" node="3_o1C0wGpR_" resolve="searchedModule" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="5wOcmpUOYMj" role="9aQIa">
+            <node concept="3clFbS" id="5wOcmpUOYMk" role="9aQI4">
+              <node concept="3cpWs6" id="5wOcmpUOZ4y" role="3cqZAp">
+                <node concept="37vLTw" id="5wOcmpUOZm0" role="3cqZAk">
+                  <ref role="3cqZAo" node="3_o1C0wGpRb" resolve="searchResults" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5wOcmpUP0Es" role="3cqZAp">
+          <node concept="3SKdUq" id="5wOcmpUP0HV" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME likely it's smarter to unwrap devkit at the caller's, wrapped with CompositeFinder" />
           </node>
         </node>
         <node concept="3clFbJ" id="3_o1C0wGpRE" role="3cqZAp">

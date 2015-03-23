@@ -2127,9 +2127,14 @@
           <ref role="37wK5l" node="J2bOg0caq7" resolve="SearchQuery" />
           <node concept="2ShNRf" id="J2bOg0cav7" role="37wK5m">
             <node concept="1pGfFk" id="J2bOg0cav8" role="2ShVmc">
-              <ref role="37wK5l" to="n7hd:~ModuleHolder.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="ModuleHolder" />
-              <node concept="37vLTw" id="J2bOg0caqS" role="37wK5m">
-                <ref role="3cqZAo" node="J2bOg0caqL" resolve="module" />
+              <ref role="37wK5l" to="n7hd:~ModuleRefHolder.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference)" resolve="ModuleRefHolder" />
+              <node concept="2OqwBi" id="5wOcmpUPbAv" role="37wK5m">
+                <node concept="37vLTw" id="J2bOg0caqS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="J2bOg0caqL" resolve="module" />
+                </node>
+                <node concept="liA8E" id="5wOcmpUPbHN" role="2OqNvi">
+                  <ref role="37wK5l" to="88zw:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                </node>
               </node>
             </node>
           </node>

@@ -6,9 +6,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -31,12 +30,16 @@ public class LanguageUsagesFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
-    IHolder objectHolder = query.getObjectHolder();
-    if (!((objectHolder instanceof ModuleHolder))) {
+    Object value = query.getObjectHolder().getObject();
+    SModule searchedModule;
+    if (value instanceof SModule) {
+      searchedModule = ((SModule) value);
+    } else if (value instanceof SModuleReference) {
+      searchedModule = query.getScope().resolve(((SModuleReference) value));
+    } else {
       return searchResults;
     }
-    ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
-    SModule searchedModule = moduleHolder.getObject();
+    // FIXME likely it's smarter to unwrap devkit at the caller's, wrapped with CompositeFinder 
     if (searchedModule instanceof DevKit) {
       for (Language devKiltLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
         SearchQuery innerQuery = new SearchQuery(devKiltLanguage, query.getScope());
