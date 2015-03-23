@@ -25,7 +25,7 @@ public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
   @NotNull
   @Override
   protected String getTestDataRootPath() {
-    return "testResources/testRebuild";
+    return "mps-core/jps-plugin/testResources/testRebuild";
   }
 
   public void testRebuildJava() {
@@ -45,7 +45,8 @@ public class RebuildProjectTest extends MpsJpsBuildModelsTestCase {
   }
 
   public void testRebuildBrokenProject() {
-    final BuildResult buildResult = doMake("rebuildBrokenProject.in", true);
+    setUpEnvironment("rebuildBrokenProject.in");
+    final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
   }
 }

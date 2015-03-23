@@ -50,40 +50,42 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     assertGenerated(getGenFilePath(testName));
   }
 
-  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestFileName) {
-    final BuildResult buildResult = doMake(inputTestFileName, true);
-    buildResult.assertSuccessful();
-
+  private void checkGeneratorAndCompilerOutput(String inputTestFileName) {
     String testName = FileUtil.getNameWithoutExtension(inputTestFileName);
     checkGenerated(testName);
     checkOutput(testName);
+  }
+
+  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+    setUpEnvironment(inputTestFileName);
+    final BuildResult buildResult = doMake(true);
+    buildResult.assertSuccessful();
+    checkGeneratorAndCompilerOutput(inputTestFileName);
 
     return buildResult;
   }
 
   protected BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestFileName) {
-    final BuildResult buildResult = doMake(inputTestFileName, false);
+    setUpEnvironment(inputTestFileName);
+    final BuildResult buildResult = doMake(false);
     buildResult.assertSuccessful();
-
-    String testName = FileUtil.getNameWithoutExtension(inputTestFileName);
-    checkGenerated(testName);
-    checkOutput(testName);
+    checkGeneratorAndCompilerOutput(inputTestFileName);
 
     return buildResult;
   }
 
-  protected BuildResult doMake(@NonNls @NotNull @TestDataFile String inputTestFileName, boolean rebuild) {
+  protected BuildResult doMake(boolean rebuild) {
+    assert myEnvironment != null;
     CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
-    return doMakeWithScope(inputTestFileName, builder.all());
+    return doMakeWithScope(builder.all());
   }
 
-  protected BuildResult doMakeWithScope(@NonNls @NotNull @TestDataFile String inputTestFileName,
-                                        CompileScopeTestBuilder builder) {
-    setUpEnvironment(inputTestFileName);
+  protected BuildResult doMakeWithScope(CompileScopeTestBuilder builder) {
+    assert myEnvironment != null;
     return doBuild(builder);
   }
 
-  private void setUpEnvironment(String inputTestFileName) {
+  protected void setUpEnvironment(@NonNls @NotNull @TestDataFile String inputTestFileName) {
     myEnvironment = setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestFileName);
   }
 }

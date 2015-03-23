@@ -49,7 +49,30 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
   }
 
   public void testMakeBrokenProject() {
-    final BuildResult buildResult = doMake("makeBrokenProject.in", false);
+    setUpEnvironment("makeBrokenProject.in");
+    final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
+  }
+
+  private void testMakeAfterRebuildDoesNothing(@TestDataFile @NonNls String testName) {
+    doTestRebuild(testName);
+    final BuildResult buildResult = doMake(false);
+    buildResult.assertUpToDate();
+  }
+
+  public void testMakeAfterRebuildDoesNothingJava() {
+    testMakeAfterRebuildDoesNothing("makeJava.in");
+  }
+
+  public void testMakeAfterRebuildDoesNothingJavaAndXml() {
+    testMakeAfterRebuildDoesNothing("makeJavaAndXml.in");
+  }
+
+  public void testMakeAfterRebuildDoesNothingJavaKeepNoSources() {
+    testMakeAfterRebuildDoesNothing("makeJavaKeepNoSources.in");
+  }
+
+  public void testMakeAfterRebuildDoesNothingJavaSourceGenNearModels() {
+    testMakeAfterRebuildDoesNothing("makeJavaSourceGenNearModels.in");
   }
 }
