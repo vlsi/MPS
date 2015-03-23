@@ -125,9 +125,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
       if (child == null) {
         String noTargetText = "<no " + link.getRoleName() + ">";
         jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = link.isOptional() ?
-            new EditorCell_Constant(myEditorContext, mySNode, "") : new EditorCell_Error(myEditorContext, mySNode, noTargetText);
-        noRefCell.setText("");
-        noRefCell.setEditable(true);
+            new EditorCell_Constant(myEditorContext, mySNode, "", true) : new EditorCell_Error(myEditorContext, mySNode, "", true);
         noRefCell.setDefaultText(noTargetText);
 
         //todo rewrite cell actions
