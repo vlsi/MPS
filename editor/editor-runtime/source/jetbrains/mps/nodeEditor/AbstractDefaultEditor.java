@@ -260,10 +260,8 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, targetNode);
-    if (result.getRole() != null) {
-      result.setRole(link.getRoleName());
-    }
-
+    result.setRole(link.getRoleName());
+    result.setReferenceCell(true);
     return result;
   }
 

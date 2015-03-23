@@ -114,10 +114,6 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       }
     }, referentNode, referenceLink.getRoleName());
     setSemanticNodeToCells(cell, mySNode);
-    if (cell.getRole() == null) {
-      cell.setRole(referenceLink.getRoleName());
-      cell.setReferenceCell(true);
-    }
     addCell(cell);
   }
 }
