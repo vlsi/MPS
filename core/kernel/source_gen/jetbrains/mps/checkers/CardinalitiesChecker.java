@@ -4,13 +4,13 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class CardinalitiesChecker extends AbstractConstraintsChecker {
@@ -18,39 +18,28 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
   }
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
-    component.addDependency(concept);
-    for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
-      if (isEmptyString(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")))) {
-        continue;
-      }
-      component.addDependency(link);
-      SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(link);
-      if (SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1")) {
-        if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-            // TODO this is a hack for constructor declarations 
-            if ("returnType".equals(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-              continue;
-            }
-            component.addError(node, "No children in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1") + ")", null);
-          }
-        } else {
-          if (SNodeOperations.getReference(node, link) == null) {
-            component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + "\" (declared cardinality is 1)", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))));
-          }
+    SAbstractConcept concept = SNodeOperations.getConcept(node);
+    for (SContainmentLink link : Sequence.fromIterable(concept.getContainmentLinks())) {
+      List<SNode> children = SNodeOperations.getChildren(node, link);
+
+      if (!(link.isOptional()) && ListSequence.fromList(children).isEmpty()) {
+        // TODO this is a hack for constructor declarations 
+        if ("returnType".equals(link.getRoleName()) && "ConstructorDeclaration".equals(concept.getQualifiedName())) {
+          continue;
         }
+
+        component.addError(node, "No children in obligatory role \"" + link.getRoleName(), null);
       }
-      if (SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1")) {
-        if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-            component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1") + ")", null);
-          }
+      if (!(link.isMultiple()) && ListSequence.fromList(children).count() > 1) {
+        component.addError(node, ListSequence.fromList(children).count() + " children in role \"" + link.getRoleName() + ", which has single-cardinality", null);
+      }
+    }
+    for (SReferenceLink link : Sequence.fromIterable(concept.getReferenceLinks())) {
+      if (!(link.isOptional())) {
+        if (SNodeOperations.getReference(node, link) == null) {
+          component.addError(node, "No reference in obligatory role \"" + link.getRoleName(), null, new ReferenceMessageTarget(link.getRoleName()));
         }
       }
     }
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }
