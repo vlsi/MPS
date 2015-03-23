@@ -1,4 +1,4 @@
-modelsLocation ../../tests/blProject/models;
+modelsLocation tests/blProject/models;
 modelsToCopy main.mps;
 modelsDirName models;
 moduleName main;

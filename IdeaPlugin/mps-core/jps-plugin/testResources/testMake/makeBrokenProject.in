@@ -1,4 +1,4 @@
-modelsLocation ../../tests/makeTestBroken/models;
+modelsLocation tests/makeTestBroken/models;
 modelsToCopy broken.mps;
 modelsDirName models;
 moduleName makeTestBroken;

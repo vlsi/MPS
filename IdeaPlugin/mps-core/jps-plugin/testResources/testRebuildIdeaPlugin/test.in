@@ -1,4 +1,4 @@
-modelsLocation ../../tests/makeTests/models;
+modelsLocation tests/makeTests/models;
 modelsToCopy MainJava.mps ManifestXml.mps;
 modelsDirName models;
 moduleName makeTests;
