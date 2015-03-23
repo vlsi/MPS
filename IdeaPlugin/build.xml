@@ -248,9 +248,8 @@
       <test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>
     </junit>
 
-
     <junit fork="true"
-           dir="./mps-core/jps-plugin"
+           dir="."
            haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="true">

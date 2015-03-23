@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.make.tests;
 
+import com.intellij.testFramework.TestDataFile;
 import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,7 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
   @NonNls
   @Override
   protected String getTestDataRootPath() {
-    return "testResources/testMake";
+    return "mps-core/jps-plugin/testResources/testMake";
   }
 
   public void testMakeJava() {

@@ -54,7 +54,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithEnvironment<Si
   @NotNull
   @Override
   protected String getTestDataRootPath() {
-    return "testResources/testRebuildIdeaPlugin";
+    return "mps-core/jps-plugin/testResources/testRebuildIdeaPlugin";
   }
 
   private void setUpParameters() {
@@ -73,7 +73,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithEnvironment<Si
     setUpParameters();
     setUpEnvironment(new SimpleJpsTestBean(), new SimpleJpsEnvironment(this), "test.in");
 
-    String projectDir = copyToProject("../../../IdeaPlugin", "IdeaPlugin");
+    String projectDir = copyToProject("../IdeaPlugin", "IdeaPlugin");
     loadProject(projectDir);
     setUpJdk();
     setUpIdeaSdk();

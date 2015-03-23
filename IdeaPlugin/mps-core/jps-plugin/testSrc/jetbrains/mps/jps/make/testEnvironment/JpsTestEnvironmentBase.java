@@ -47,7 +47,7 @@ public abstract class JpsTestEnvironmentBase<B extends MpsBean> implements TestE
 
   private String getLanguageLocations() {
     String separator = ";";
-    String[] dirsToScan = {PathManager.getPluginsPath(), "../.."}; // assuming we are in the module dir right now
+    String[] dirsToScan = {PathManager.getPluginsPath(), "."}; // assuming we are in the project dir right now
     StringBuilder sb = new StringBuilder();
     for (String langLocation : MPS_LANGUAGE_LOCATIONS) {
       File locFile = new FileFinder(dirsToScan).checkedFind(langLocation);

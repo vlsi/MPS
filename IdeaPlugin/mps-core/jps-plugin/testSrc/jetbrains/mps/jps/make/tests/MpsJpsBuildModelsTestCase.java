@@ -77,13 +77,13 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     return doMakeWithScope(inputTestFileName, builder.all());
   }
 
-  protected BuildResult doMakeWithScope(@NonNls @NotNull @TestDataFile String inputTestName,
+  protected BuildResult doMakeWithScope(@NonNls @NotNull @TestDataFile String inputTestFileName,
                                         CompileScopeTestBuilder builder) {
-    setUpEnvironment(inputTestName);
+    setUpEnvironment(inputTestFileName);
     return doBuild(builder);
   }
 
-  private void setUpEnvironment(String inputTestName) {
-    myEnvironment = setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestName);
+  private void setUpEnvironment(String inputTestFileName) {
+    myEnvironment = setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestFileName);
   }
 }
