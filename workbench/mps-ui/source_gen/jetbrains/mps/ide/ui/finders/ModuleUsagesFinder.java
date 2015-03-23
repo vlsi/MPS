@@ -6,15 +6,14 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import java.util.Collection;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -40,14 +39,20 @@ public class ModuleUsagesFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
-    IHolder objectHolder = query.getObjectHolder();
-    if (!((objectHolder instanceof ModuleHolder))) {
+    Object value = query.getObjectHolder().getObject();
+    SModule searchedModule = null;
+    if (value instanceof SModule) {
+      searchedModule = ((SModule) value);
+    } else if (value instanceof SModuleReference) {
+      SModuleReference moduleRef = (SModuleReference) value;
+      searchedModule = query.getScope().resolve(moduleRef);
+    }
+    if (searchedModule == null) {
       return searchResults;
     }
-    ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
-    SModule searchedModule = moduleHolder.getObject();
-    SearchScope scope = query.getScope();
-    for (SModule module : scope.getModules()) {
+    Collection<SModule> modules = IterableUtil.asCollection(query.getScope().getModules());
+    monitor.start("Looking up module uses", modules.size());
+    for (SModule module : modules) {
       if (monitor.isCanceled()) {
         return searchResults;
       }
@@ -61,8 +66,9 @@ public class ModuleUsagesFinder implements IFinder {
       } else if (module instanceof Generator) {
         collectUsagesInGenerator(searchedModule, (Generator) module, searchResults);
       }
+      monitor.advance(1);
     }
-
+    monitor.done();
     return searchResults;
   }
   /*package*/ void collectUsagesInSolution(SModule searchedModule, Solution solution, SearchResults searchResults) {

@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
-import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -50,7 +50,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
 
     monitor.start("", IterableUtil.asCollection(structureModel.getRootNodes()).size() + 1);
     try {
-      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
+      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelImportsUsagesFinder());
       List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject());

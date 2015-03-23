@@ -28,6 +28,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -281,48 +282,28 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       }).addExtraAction(myFindAnActionButton = new FindAnActionButton(importedModelsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          final SearchQuery[] query = new SearchQuery[1];
-          final IResultProvider[] provider = new IResultProvider[1];
           final SearchScope scope = new ModelsScope(myModelDescriptor);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              List<SModelReference> modelReferences = new LinkedList<SModelReference>();
-              for (int i : myTable.getSelectedRows()) {
-                Object value = myImportedModels.getValueAt(i, 0);
-                if (value instanceof SModelReference) {
-                  modelReferences.add((SModelReference) value);
-                }
-              }
-
-              ModelsHolder modelsHolder = new ModelsHolder(modelReferences) {
-                @Override
-                public void read(Element element, Project project) throws CantLoadSomethingException {
-                }
-
-                @Override
-                public void write(Element element, Project project) throws CantSaveSomethingException {
-                }
-              };
-              query[0] = new SearchQuery(modelsHolder, scope);
-              provider[0] = FindUtils.makeProvider(new ModelUsagesFinder() {
-                @Override
-                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-                  SearchResults searchResults = new SearchResults();
-                  ModelsHolder modelsHolder = (ModelsHolder) query.getObjectHolder();
-                  for (SModelReference searchedModelReference : modelsHolder.getObject()) {
-                    searchResults.getSearchedNodes().add(searchedModelReference);
-                    SearchQuery searchQuery = new SearchQuery(searchedModelReference, query.getScope());
-                    searchResults.addAll(super.find(searchQuery, monitor));
-                  }
-
-                  return searchResults;
-                }
-              });
+          final List<SModelReference> modelReferences = new ArrayList<SModelReference>();
+          for (int i : myTable.getSelectedRows()) {
+            Object value = myImportedModels.getValueAt(i, 0);
+            if (value instanceof SModelReference) {
+              modelReferences.add((SModelReference) value);
             }
-          });
+          }
+          // FIXME instead of overridden read/write, UsagesViewTool shall take an extra argument whether to persist this query.
+          ModelsHolder modelsHolder = new ModelsHolder(modelReferences) {
+            @Override
+            public void read(Element element, Project project) throws CantLoadSomethingException {
+            }
+
+            @Override
+            public void write(Element element, Project project) throws CantSaveSomethingException {
+            }
+          };
+          final SearchQuery query = new SearchQuery(modelsHolder, scope);
+          final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
           UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
       });

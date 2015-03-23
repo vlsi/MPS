@@ -46,11 +46,11 @@ import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -122,7 +122,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.BorderFactory;
@@ -416,7 +415,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
 
           final SearchQuery[] query = new SearchQuery[1];
-          final IResultProvider[] provider = new IResultProvider[1];
           final SearchScope scope = myModule.getScope();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
@@ -432,25 +430,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
               query[0] = new SearchQuery(new MyModulesHolder(modules), scope);
-              provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder() {
-                @Override
-                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-                  SearchResults searchResults = new SearchResults();
-                  ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
-                  for (SModule searchedModule : modulesHolder.getObject()) {
-                    searchResults.getSearchedNodes().add(searchedModule);
-                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
-                    searchResults.addAll(super.find(searchQuery, monitor));
-                  }
-
-                  return searchResults;
-                }
-              });
             }
           });
+          final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
           UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
           if (usagesViewTool != null) {
-            usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+            usagesViewTool.findUsages(provider, query[0], true, true, true, "No usages found");
           }
           forceCancelCloseDialog();
         }
@@ -585,7 +570,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModelReference> list = (new ModelChooser()).compute();
+          List<SModelReference> list = new ModelChooser().compute();
           for (SModelReference reference : list) {
             myAccessoriesModelsTableModel.addItem(reference);
           }
@@ -615,29 +600,22 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     protected void findUsages(final Object value) {
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (value instanceof SModelReference) {
-            query[0] = new SearchQuery(
-              (jetbrains.mps.smodel.SModelReference) value,
-              new ModulesScope(Arrays.asList(myModule))
-            );
-            provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
-          } else if (value instanceof SModuleReference) {
-            query[0] = new SearchQuery(
-              MPSModuleRepository.getInstance().getModuleByFqName(
-                ((SModuleReference) value).getModuleName()),
-              GlobalScope.getInstance()
-            );
-            provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
-          }
-        }
-      });
+      final SearchQuery query;
+      final IResultProvider provider;
+      if (value instanceof SModelReference) {
+        query = new SearchQuery((SModelReference) value, new ModulesScope(Arrays.asList(myModule)));
+        provider = FindUtils.makeProvider(new ModelUsagesFinder());
+      } else if (value instanceof SModuleReference) {
+        final SModuleReference moduleReference = (SModuleReference) value;
+        // FIXME GenericHolder is not capable of serialization, replace with ModuleHolder
+        query = new SearchQuery(new GenericHolder(moduleReference, moduleReference.getModuleName()), GlobalScope.getInstance());
+        provider = FindUtils.makeProvider(new ModuleUsagesFinder());
+      } else {
+        return;
+      }
+
       UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+      usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
       forceCancelCloseDialog();
     }
 

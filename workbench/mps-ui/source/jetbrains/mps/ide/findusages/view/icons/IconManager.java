@@ -25,9 +25,13 @@ import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.icons.IdeIcons;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
+import java.util.Collection;
 
 public class IconManager {
   public static Icon getIconForIHolder(IHolder holder) {
@@ -47,7 +51,32 @@ public class IconManager {
     } else if (holder instanceof ConstantHolder) {
       return ((ConstantHolder) holder).getIcon();
     }
+    try {
+      final Object value = holder.getObject();
+      if (value instanceof Collection) {
+        Collection c = (Collection) value;
+        if (!c.isEmpty()) {
+          return getIconForHoldValue(c.iterator().next());
+        }
+      }
+      return getIconForHoldValue(value);
+    } catch (Exception ex) {
+      // ignore for now, to handle bogus IHolder implementations that e.g. access model in getObject().
+    }
     // StringHolder, AspectMethodsFinder.AspectMethodsHolder
+    return null;
+  }
+
+  private static Icon getIconForHoldValue(Object value) {
+    if (value instanceof SNodeReference) {
+      return IdeIcons.DEFAULT_NODE_ICON;
+    }
+    if (value instanceof SModelReference) {
+      return IdeIcons.MODEL_ICON;
+    }
+    if (value instanceof SModuleReference) {
+      return IdeIcons.DEFAULT_ICON;
+    }
     return null;
   }
 
