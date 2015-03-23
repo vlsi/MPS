@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.refactoring;
 
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
@@ -35,22 +36,22 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.refactoring.rename.RenameHandler;
-import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.lang.model.SourceVersion;
 import java.util.Set;
@@ -137,6 +138,19 @@ public class ModelRenameHandler implements RenameHandler {
           }
         }
       });
+
+
+      //Get MPSPsiModel source file to select in project view.
+      final AtomicReference<VirtualFile> psiModelSourceFile = new AtomicReference<VirtualFile>();
+      ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          psiModelSourceFile.set(MPSPsiProvider.getInstance(project).getPsi(modelDescriptor.getReference()).getSourceVirtualFile());
+        }
+      });
+
+      //Navigate using SourceFile (pointing to real file)
+      ProjectView.getInstance(project).select(modelDescriptor, psiModelSourceFile.get(), true);
     }
   }
 

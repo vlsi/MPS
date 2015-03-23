@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
@@ -60,8 +61,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -69,6 +72,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -108,24 +112,7 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    final CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
-      @Override
-      protected void doOKAction() {
-        final SNodeReference conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
-        myOperationContext.getProject().getModelAccess().executeCommand(new Runnable() {
-          @Override
-          public void run() {
-            SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
-            SModel model = myModelDescriptor;
-            SNode newNode = NodeFactoryManager.createNode(concept, null, null, model);
-            SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, getNameField().getText());
-            model.addRootNode(newNode);
-            myModelDescriptor.save();
-          }
-        });
-        super.doOKAction();
-      }
-    };
+    final MyCreateFromTemplateDialog dialog = new MyCreateFromTemplateDialog(myProject);
     dialog.setTitle(MPSBundle.message("create.new.root.dialog.title"));
     myOperationContext.getProject().getModelAccess().runReadAction(new Runnable() {
       @Override
@@ -139,6 +126,12 @@ public class NewRootAction extends AnAction {
       }
     });
     dialog.show();
+
+    final SNodeReference rootNode = dialog.getRootNode();
+    if (rootNode != null) {
+      FileEditorManager.getInstance(myProject).openFile(
+        MPSNodesVirtualFileSystem.getInstance().getFileFor(rootNode), true);
+    }
   }
 
   private boolean createPerRootModel(AnActionEvent e) {
@@ -300,5 +293,36 @@ public class NewRootAction extends AnAction {
     }
 
     return isUnderSourceRoot && myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
+  }
+
+  private class MyCreateFromTemplateDialog extends CreateFromTemplateDialog {
+    protected MyCreateFromTemplateDialog(@NotNull Project project) {
+      super(project);
+    }
+
+    public SNodeReference getRootNode() {
+      return myRootNode;
+    }
+
+    private SNodeReference myRootNode = null;
+
+    @Override
+    protected void doOKAction() {
+      final SNodeReference conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
+      myOperationContext.getProject().getModelAccess().executeCommand(new Runnable() {
+        @Override
+        public void run() {
+          SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
+          SModel model = myModelDescriptor;
+          final SNode newNode = NodeFactoryManager.createNode(concept, null, null, model);
+          SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, getNameField().getText());
+          model.addRootNode(newNode);
+          myModelDescriptor.save();
+
+          myRootNode = newNode.getReference();
+        }
+      });
+      super.doOKAction();
+    }
   }
 }

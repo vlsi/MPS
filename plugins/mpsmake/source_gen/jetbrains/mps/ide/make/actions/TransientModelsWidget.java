@@ -4,9 +4,13 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.wm.StatusBarWidget;
 import com.intellij.openapi.wm.CustomStatusBarWidget;
+import com.intellij.ide.ui.UISettingsListener;
+import java.beans.PropertyChangeListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
+import com.intellij.ide.ui.UISettings;
+import java.awt.KeyboardFocusManager;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
@@ -15,8 +19,9 @@ import java.awt.Dimension;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import javax.swing.JComponent;
+import java.beans.PropertyChangeEvent;
 
-/*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.TextPresentation, StatusBarWidget.WidgetPresentation {
+/*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.TextPresentation, StatusBarWidget.WidgetPresentation, UISettingsListener, PropertyChangeListener {
   public static final String WIDGET_ID = "TransientModelsWidget";
   @NotNull
   private final StatusBar myStatusBar;
@@ -26,6 +31,10 @@ import javax.swing.JComponent;
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
     myComponent = new TransientModelsPanel(this);
+
+    // Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget 
+    UISettings.getInstance().addUISettingsListener(this, this);
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", this);
   }
   @Override
   public void install(@NotNull StatusBar bar) {
@@ -104,5 +113,11 @@ import javax.swing.JComponent;
   }
   public float getAlignment() {
     return JComponent.RIGHT_ALIGNMENT;
+  }
+  public void uiSettingsChanged(UISettings settings) {
+    myComponent.update();
+  }
+  public void propertyChange(PropertyChangeEvent event) {
+    myComponent.update();
   }
 }

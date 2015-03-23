@@ -1129,12 +1129,15 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModelsWidget" file="TransientModelsWidget.java">
+    <classNode dependClassName="com.intellij.ide.ui.UISettings" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.util.Consumer" />
     <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.awt.KeyboardFocusManager" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.beans.PropertyChangeEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -1146,10 +1149,12 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.ide.ui.UISettingsListener" />
     <classNode extendsClassName="com.intellij.openapi.wm.CustomStatusBarWidget" />
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
     <classNode extendsClassName="com.intellij.openapi.wm.TextPresentation" />
     <classNode extendsClassName="com.intellij.openapi.wm.WidgetPresentation" />
+    <classNode extendsClassName="java.beans.PropertyChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" file="WidgetSettingsPanel.java">
     <classNode dependClassName="com.intellij.notification.impl.NotificationsConfigurationImpl" />
