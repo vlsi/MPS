@@ -66,8 +66,8 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
-  private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
-  private BigInteger currentConstantIdNumber = BigInteger.ZERO;
+  private int currentCollectionIdNumber = 0;
+  private int currentConstantIdNumber = 0;
 
   public AbstractDefaultEditor(@NotNull SConcept concept) {
     myConcept = concept;
@@ -211,9 +211,9 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected void addLabel(String label, boolean editable) {
     EditorCell_Collection cellCollection = collectionStack.peek();
     EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, editable);
-    childLabel.setCellId("constant_" + currentConstantIdNumber.toString());
-    currentConstantIdNumber = currentConstantIdNumber.add(BigInteger.ONE);
+    childLabel.setCellId("constant_" + currentConstantIdNumber);
     cellCollection.addEditorCell(childLabel);
+    currentConstantIdNumber++;
   }
 
   protected void addCell(EditorCell cell) {
@@ -286,7 +286,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private EditorCell_Collection pushCollection() {
     EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(myEditorContext, mySNode);
     collectionStack.push(newCollection);
-    currentCollectionIdNumber = currentCollectionIdNumber.add(BigInteger.ONE);
     return newCollection;
   }
 
@@ -295,8 +294,8 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       return null;
     }
     EditorCell_Collection result = collectionStack.pop();
-    result.setCellId("collection_" + currentCollectionIdNumber.toString());
-    currentCollectionIdNumber = currentCollectionIdNumber.subtract(BigInteger.ONE);
+    result.setCellId("collection_" + currentCollectionIdNumber);
+    currentCollectionIdNumber++;
     if (!collectionStack.isEmpty()) {
       collectionStack.peek().addEditorCell(result);
     }
