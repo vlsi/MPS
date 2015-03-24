@@ -38,7 +38,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Deque;
@@ -61,13 +60,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected EditorContext myEditorContext;
 
   private SProperty myNameProperty;
-  protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
-  protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
-  protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
-
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private int currentCollectionIdNumber = 0;
   private int currentConstantIdNumber = 0;
+  
+
 
   public AbstractDefaultEditor(@NotNull SConcept concept) {
     myConcept = concept;
@@ -75,8 +72,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    assert myConcept.equals(node.getConcept());
-    cacheParameters(node, editorContext);
+    myEditorContext = editorContext;
+    mySNode = node;
+    assert myConcept.equals(mySNode.getConcept());
+    init();
+    initNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
     addLabel(camelToLabel(myConcept.getName()));
@@ -91,31 +91,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return mainCellCollection;
   }
 
-  private void cacheParameters(SNode node, jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    myEditorContext = editorContext;
-    mySNode = node;
-    cacheParametersInternal();
-    SConcept baseConcept = SNodeUtil.concept_BaseConcept;
-    for (SProperty sProperty : baseConcept.getProperties()) {
-      myProperties.remove(sProperty);
-    }
+  abstract protected void init();
 
-    for (SReferenceLink sReferenceLink : baseConcept.getReferenceLinks()) {
-      myReferenceLinks.remove(sReferenceLink);
-    }
-
-    for (SContainmentLink sContainmentLink : baseConcept.getContainmentLinks()) {
-      myContainmentLinks.remove(sContainmentLink);
-    }
-
-    cacheNameProperty();
-  }
-
-  protected abstract void cacheParametersInternal();
-
-  private void cacheNameProperty() {
+  private void initNameProperty() {
     int maxPriority = -1;
-    for (SProperty property : myProperties) {
+    for (SProperty property : getProperties()) {
       String propertyName = property.getName();
       if (propertyName == null) {
         continue;
@@ -124,7 +104,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       if (maxPriority < propertyPriority) {
         maxPriority = propertyPriority;
         myNameProperty = property;
-        myProperties.remove(myNameProperty);
+        getProperties().remove(myNameProperty);
       }
     }
   }
@@ -162,8 +142,12 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   }
 
   protected boolean needToAddPropertiesOrChildren() {
-    return !myContainmentLinks.isEmpty() || !myReferenceLinks.isEmpty();
+    return !getContainmentLinks().isEmpty() || !getReferenceLinks().isEmpty();
   }
+
+  protected abstract Collection<SProperty> getProperties();
+  protected abstract Collection<SReferenceLink> getReferenceLinks();
+  protected abstract Collection<SContainmentLink> getContainmentLinks();
 
   protected abstract void addPropertyCell(final SProperty property);
 
@@ -172,7 +156,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected abstract void addReferenceCell(final SReferenceLink referenceLink);
 
   private void addProperties() {
-    for (SProperty property : myProperties) {
+    for (SProperty property : getProperties()) {
       addRoleLabel(property.getName(), "property");
       addPropertyCell(property);
       addNewLine();
@@ -180,14 +164,14 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   }
 
   private void addReferences() {
-    for (SReferenceLink reference : myReferenceLinks) {
+    for (SReferenceLink reference : getReferenceLinks()) {
       addRoleLabel(reference.getRoleName(), "reference");
       addReferenceCell(reference);
     }
   }
 
   private void addChildren() {
-    for (SContainmentLink link : myContainmentLinks) {
+    for (SContainmentLink link : getContainmentLinks()) {
       addRoleLabel(link.getRoleName(), "link");
       addNewLine();
       addChildCell(link);

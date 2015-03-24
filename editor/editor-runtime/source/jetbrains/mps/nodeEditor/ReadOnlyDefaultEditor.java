@@ -31,34 +31,53 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * Created by simon on 11/03/15.
  */
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReadOnlyDefaultEditor.class));
+  protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
+  protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
+  protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
   public ReadOnlyDefaultEditor(@NotNull SConcept concept) {
     super(concept);
   }
 
-  @Override
-
-  protected void cacheParametersInternal() {
+  protected void init() {
+    assert mySNode != null && myConcept != null;
     for (SProperty sProperty : mySNode.getProperties()) {
       myProperties.add(sProperty);
     }
 
     for (SReference sReference : mySNode.getReferences()) {
       SReferenceLink link = sReference.getLink();
-      assert link != null : "Null meta-link from node: " + mySNode + ", role: " + sReference.getRole();
+      assert link != null : "Null meta-link from node: " + this.mySNode + ", role: " + sReference.getRole();
       myReferenceLinks.add(link);
     }
 
-    for (SNode child : mySNode.getChildren()) {
+    for (SNode child : this.mySNode.getChildren()) {
       SContainmentLink containmentLink = child.getContainmentLink();
-      assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + mySNode + ", child: " + child;
+      assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + this.mySNode + ", child: " + child;
       myContainmentLinks.add(containmentLink);
     }
+  }
+  @Override
+  protected Collection<SProperty> getProperties() {
+    return myProperties;
+  }
+
+  @Override
+  protected Collection<SReferenceLink> getReferenceLinks() {
+    return myReferenceLinks;
+  }
+
+  @Override
+  protected Collection<SContainmentLink> getContainmentLinks() {
+    return myContainmentLinks;
   }
 
   @Override

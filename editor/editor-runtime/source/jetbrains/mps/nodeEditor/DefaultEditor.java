@@ -56,6 +56,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 /**
@@ -63,13 +65,16 @@ import java.util.Iterator;
  * 04 04, 2013
  */
 public class DefaultEditor extends AbstractDefaultEditor {
+  protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
+  protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
+  protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
   public DefaultEditor(@NotNull SConcept concept) {
     super(concept);
   }
 
-  @Override
-  protected void cacheParametersInternal() {
+  protected void init() {
+    assert mySNode != null && myConcept != null;
     for (SProperty sProperty : myConcept.getProperties()) {
       myProperties.add(sProperty);
     }
@@ -83,6 +88,21 @@ public class DefaultEditor extends AbstractDefaultEditor {
     for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
       myContainmentLinks.add(sContainmentLink);
     }
+  }
+
+  @Override
+  protected Collection<SProperty> getProperties() {
+    return myProperties;
+  }
+
+  @Override
+  protected Collection<SReferenceLink> getReferenceLinks() {
+    return myReferenceLinks;
+  }
+
+  @Override
+  protected Collection<SContainmentLink> getContainmentLinks() {
+    return myContainmentLinks;
   }
 
   @Override
