@@ -107,6 +107,7 @@ public class MovePropertyUp_Action extends BaseAction {
           refactorInstances = _quotation_createNode_vnzymo_a0m0a0a4a0(newProperty, ((SNode) MapSequence.fromMap(_params).get("target")), ((SNode) MapSequence.fromMap(_params).get("target")));
           SNode executeMethod = _quotation_createNode_vnzymo_a0n0a0a4a0(currentConcept, currentConcept, refactorInstances, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, newProperty);
           MigrationScriptBuilder.createMigrationScript(targetLanguage).setName("Move_property_" + propName).setExecuteMethod(executeMethod);
+
         }
       });
     } catch (Throwable t) {

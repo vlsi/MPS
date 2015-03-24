@@ -11,6 +11,8 @@ import jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 
 public class MigrationScriptBuilder {
@@ -31,14 +33,32 @@ public class MigrationScriptBuilder {
     return this;
   }
 
+  @Deprecated
   public MigrationScriptBuilder setBody(SNode body) {
-    SLinkOperations.setTarget(MigrationScript_Behavior.call_getMethod_7153805464403784143(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), body);
+    SLinkOperations.setTarget(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), body);
     return this;
   }
 
   public MigrationScriptBuilder setExecuteMethod(SNode method) {
-    SNodeOperations.replaceWithAnother(MigrationScript_Behavior.call_getMethod_7153805464403784143(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), method);
+    SNodeOperations.replaceWithAnother(getExecuteMethod(), method);
     return this;
+  }
+
+  public MigrationScriptBuilder appendExecuteStatements(SNode... statements) {
+    return appendExecuteStatements(Sequence.fromArray(statements));
+  }
+
+  public MigrationScriptBuilder appendExecuteStatements(Iterable<SNode> statements) {
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addSequence(Sequence.fromIterable(statements));
+    return this;
+  }
+
+  public SNode getExecuteMethod() {
+    return MigrationScript_Behavior.call_getMethod_7153805464403784143(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030"));
+  }
+
+  public SNode getExecuteMethodModuleParameter() {
+    return ListSequence.fromList(SLinkOperations.getChildren(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first();
   }
 
   public SNode getScript() {
