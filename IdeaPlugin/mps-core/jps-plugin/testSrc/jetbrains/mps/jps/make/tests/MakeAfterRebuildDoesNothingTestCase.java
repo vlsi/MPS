@@ -38,19 +38,27 @@ public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsBuildModelsTestCa
     buildResult.assertUpToDate();
   }
 
-  public void testMakeAfterRebuildDoesNothingJava() {
+  public void testMakeJava() {
     doTest("makeJava.in");
   }
 
-  public void testMakeAfterRebuildDoesNothingJavaAndXml() {
-    doTest("makeJavaAndXml.in");
-  }
-
-  public void testMakeAfterRebuildDoesNothingJavaKeepNoSources() {
+  public void testMakeJavaKeepNoSources() {
     doTest("makeJavaKeepNoSources.in");
   }
 
-  public void testMakeAfterRebuildDoesNothingJavaSourceGenNearModels() {
+  public void testMakeJavaSourceGenNearModels() {
     doTest("makeJavaSourceGenNearModels.in");
+  }
+
+  public void testMakeJavaAndXml() {
+    doTest("makeJavaAndXml.in");
+  }
+
+  public void testMakeJavaAndXmlKeepNoSources() {
+    doTest("makeJavaAndXmlKeepNoSources.in");
+  }
+
+  public void testMakeJavaAndXmlSourceGenNearModels() {
+    doTest("makeJavaAndXmlSourceGenNearModels.in");
   }
 }
