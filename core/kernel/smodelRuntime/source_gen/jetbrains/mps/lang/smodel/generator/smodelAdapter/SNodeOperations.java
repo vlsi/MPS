@@ -96,7 +96,7 @@ public class SNodeOperations {
     // look up for certain concept 
     if (root) {
       SNode rootParent = node.getContainingRoot();
-      if (rootParent.getModel() != null && SNodeOperations.nullSafeInstanceOf(rootParent, ancestorConcept)) {
+      if (rootParent.getModel() != null && isInstanceOf(rootParent, ancestorConcept)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
         }
@@ -114,25 +114,19 @@ public class SNodeOperations {
     if (outputNode == null) {
       return null;
     }
-    if (SNodeOperations.nullSafeInstanceOf(outputNode, ancestorConcept)) {
+    if (isInstanceOf(outputNode, ancestorConcept)) {
       if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
         return outputNode;
       }
     }
     while ((outputNode = outputNode.getParent()) != null) {
-      if (SNodeOperations.nullSafeInstanceOf(outputNode, ancestorConcept)) {
+      if (isInstanceOf(outputNode, ancestorConcept)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
           break;
         }
       }
     }
     return outputNode;
-  }
-  private static boolean nullSafeInstanceOf(SNode node, SAbstractConcept concept) {
-    if (concept == null) {
-      return true;
-    }
-    return SNodeOperations._isInstanceOf(node, concept);
   }
   public static SNode getNodeAncestorWhereConceptInList(SNode node, SAbstractConcept[] ancestorConcepts, boolean inclusion, boolean root) {
     return SNodeOperations.getNodeAncestorWhereConceptInList(node, ancestorConcepts, inclusion, root, false);
@@ -188,7 +182,7 @@ public class SNodeOperations {
       node = node.getParent();
     }
     while (node != null) {
-      if (ancestorConcept == null || SNodeOperations._isInstanceOf(node, ancestorConcept)) {
+      if (ancestorConcept == null || SNodeOperations.isInstanceOf(node, ancestorConcept)) {
         result.add(node);
       }
       node = node.getParent();
@@ -267,20 +261,11 @@ public class SNodeOperations {
   }
   private static boolean _isInstanceOf(SNode node, SAbstractConcept[] concepts) {
     for (SAbstractConcept concept : concepts) {
-      if (concept == null) {
-        continue;
-      }
-      if (SNodeOperations._isInstanceOf(node, concept)) {
+      if (isInstanceOf(node, concept)) {
         return true;
       }
     }
     return false;
-  }
-  private static boolean _isInstanceOf(SNode node, SAbstractConcept concept) {
-    if (node == null) {
-      return false;
-    }
-    return SNodeUtil.isInstanceOf(node, concept);
   }
   public static List<SNode> getChildren(SNode node) {
     if (node == null) {
@@ -307,12 +292,7 @@ public class SNodeOperations {
     if (concept == null) {
       return false;
     }
-    return SNodeOperations._isInstanceOf(node, concept);
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static boolean isInstanceOf(SNode node, String conceptFQName) {
-    return isInstanceOf(node, stringToConcept(conceptFQName));
+    return SNodeUtil.isInstanceOf(node, concept);
   }
   public static SNode getNextSibling(SNode node) {
     if (node == null) {
