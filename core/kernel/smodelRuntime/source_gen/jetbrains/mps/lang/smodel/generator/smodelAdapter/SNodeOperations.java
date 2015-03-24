@@ -7,10 +7,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.CopyUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.ArrayList;
 import jetbrains.mps.util.IterableUtil;
@@ -20,6 +18,7 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -51,20 +50,6 @@ public class SNodeOperations {
    */
   /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
   public SNodeOperations() {
-  }
-  /*package*/ static SAbstractConcept stringToConcept(String conceptFqName) {
-    if (conceptFqName == null) {
-      return null;
-    }
-    return SConceptRepository.getInstance().getConcept(conceptFqName);
-  }
-  /*package*/ static SAbstractConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
-    int n = conceptFqNames.length;
-    SAbstractConcept[] result = new SConcept[n];
-    for (int i = 0; i < n; i++) {
-      result[i] = stringToConcept(conceptFqNames[i]);
-    }
-    return result;
   }
   public static SNode copyNode(SNode node) {
     if (node == null) {
@@ -221,8 +206,7 @@ public class SNodeOperations {
     if (childConcept == null) {
       // It's odd to ignore stop condition when there's no designated childConcept, 
       // but this is how it used to be from revision ad249caf since 2009. 
-      String childConceptFqName = null;
-      return getNodeDescendants(node, stringToConcept(childConceptFqName), inclusion);
+      return getNodeDescendants(node, null, inclusion);
     }
     return descendantsAsList(node, inclusion, new InstanceOfCondition(childConcept), new InstanceOfCondition(stopConceptFqNames));
   }
