@@ -40,11 +40,12 @@ import java.util.Collections;
 import java.util.Map;
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testRebuildIdeaPlugin")
-public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithEnvironment<SimpleJpsTestBean, SimpleJpsEnvironment> {
+public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironment<SimpleJpsTestBean, SimpleJpsEnvironment> {
   @NonNls
   private static final String JAVA_HOME_ENV = "JAVA_HOME";
   @NonNls
   private static final String JAR_EXT = ".jar";
+  @NonNls
   private static final String PLUGINS_PATH_ENV = "PLUGINS_PATH";
   private static final String JDK_NAME = "1.6";
   private String IDEA_HOME;
@@ -54,7 +55,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCaseWithEnvironment<Si
   @NotNull
   @Override
   protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testRebuildIdeaPlugin";
+    return new File(getHomePath(), "mps-core/jps-plugin/testResources/testRebuildIdeaPlugin").getAbsolutePath();
   }
 
   private void setUpParameters() {

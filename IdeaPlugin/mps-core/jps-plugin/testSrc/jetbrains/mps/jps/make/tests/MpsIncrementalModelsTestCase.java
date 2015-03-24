@@ -24,9 +24,23 @@ import org.jetbrains.jps.builders.impl.logging.ProjectBuilderLoggerBase;
  * Uses a special logger to validate the make procedure
  */
 public abstract class MpsIncrementalModelsTestCase extends MpsJpsBuildModelsTestCase {
+  /**
+   * test cases:
+   * model with java or xml file
+   * 1. clean rebuild, make -- nothing happens
+   * 2. clean rebuild, touch model with java, make -- java updated, classes are not
+   * 3. clean rebuild, touch model with xml, make -- resources are not updated nor in src_gen nor in the output folder
+   * 4. clean rebuild, change model with java, make -- java updated, classes updated
+   * 5. clean rebuild, change model with xml, make -- resources updated in src_gen and output
+   * 6. clean rebuild, remove java from model, make -- java removed from src_gen and class file removed from the output
+   * 7. clean rebuild, remove xml  from model, make -- xml removed from src_gen and from the output
+   * 8. clean rebuild, remove model, make -- java removed from src_gen and from the output
+   * 9. clean rebuild, remove model, make -- xml removed from src_gen and from the output
+   *
+   */
   private static class StringProjectBuilderLogger extends ProjectBuilderLoggerBase {
     private final String myRoot;
-    private StringBuilder myLog;
+    private final StringBuilder myLog;
 
     private StringProjectBuilderLogger(String root, StringBuilder log) {
       myRoot = root;

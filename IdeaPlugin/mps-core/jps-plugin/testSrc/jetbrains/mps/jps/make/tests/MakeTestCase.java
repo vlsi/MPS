@@ -16,28 +16,25 @@
 
 package jetbrains.mps.jps.make.tests;
 
-import com.intellij.testFramework.TestDataFile;
 import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 
+import java.io.File;
+
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
+public class MakeTestCase extends MpsJpsBuildModelsTestCase {
   @NotNull
   @NonNls
   @Override
   protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testMake";
+    return new File(getHomePath(), "mps-core/jps-plugin/testResources/testMake").getAbsolutePath();
   }
 
   public void testMakeJava() {
     doTestMake("makeJava.in");
-  }
-
-  public void ignoreTestMakeJavaAndXml() {
-    doTestMake("makeJavaAndXml.in");
   }
 
   public void testMakeJavaKeepNoSources() {
@@ -48,31 +45,21 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
     doTestMake("makeJavaSourceGenNearModels.in");
   }
 
+  public void testMakeJavaAndXml() {
+    doTestMake("makeJavaAndXml.in");
+  }
+
+  public void testMakeJavaAndXmlKeepNoSources() {
+    doTestMake("makeJavaAndXmlKeepNoSources.in");
+  }
+
+  public void testMakeJavaAndXmlSourceGenNearModels() {
+    doTestMake("makeJavaAndXmlSourceGenNearModels.in");
+  }
+
   public void testMakeBrokenProject() {
     setUpEnvironment("makeBrokenProject.in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
-  }
-
-  private void testMakeAfterRebuildDoesNothing(@TestDataFile @NonNls String testName) {
-    doTestRebuild(testName);
-    final BuildResult buildResult = doMake(false);
-    buildResult.assertUpToDate();
-  }
-
-  public void ignoreTestRebuildDoesNothingJava() {
-    testMakeAfterRebuildDoesNothing("makeJava.in");
-  }
-
-  public void ignoreTestMakeAfterRebuildDoesNothingJavaAndXml() {
-    testMakeAfterRebuildDoesNothing("makeJavaAndXml.in");
-  }
-
-  public void testMakeAfterRebuildDoesNothingJavaKeepNoSources() {
-    testMakeAfterRebuildDoesNothing("makeJavaKeepNoSources.in");
-  }
-
-  public void ignoreTestMakeAfterRebuildDoesNothingJavaSourceGenNearModels() {
-    testMakeAfterRebuildDoesNothing("makeJavaSourceGenNearModels.in");
   }
 }
