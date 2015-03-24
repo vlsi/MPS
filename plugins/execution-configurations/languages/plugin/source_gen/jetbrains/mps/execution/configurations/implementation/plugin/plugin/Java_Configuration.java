@@ -6,14 +6,14 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.execution.lib.NodesDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -36,8 +36,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -45,21 +43,20 @@ import org.apache.log4j.LogManager;
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
-  private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.baseLanguage.structure.ClassConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(ListSequence.fromListAndArray(new ArrayList<NodesDescriptor>(), new NodesDescriptor(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) != null);
     }
-  }), MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.execution.util.structure.IMainClass", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }), new NodesDescriptor(MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass")), "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(node);
     }
-  })))).toListSequence());
+  })));
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
       this.getNode().checkConfiguration();
       final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
-
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
