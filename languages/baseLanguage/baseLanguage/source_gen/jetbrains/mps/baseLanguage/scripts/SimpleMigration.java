@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class SimpleMigration extends AbstractMigrationRefactoring {
   private final SNode applicableConcept;
@@ -19,7 +18,7 @@ public abstract class SimpleMigration extends AbstractMigrationRefactoring {
   }
   @Override
   public String getFqNameOfConceptToSearchInstances() {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(applicableConcept), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, applicableConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
   @Override
   public String getAdditionalInfo() {

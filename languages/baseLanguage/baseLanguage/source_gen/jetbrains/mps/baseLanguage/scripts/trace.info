@@ -2826,27 +2826,27 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474381">
     <file name="SimpleMigration.java">
-      <node id="842610415962474431" at="11,0,12,0" concept="4" trace="applicableConcept" />
-      <node id="842610415962474390" at="12,51,13,16" concept="14" />
-      <node id="842610415962474437" at="13,16,14,47" concept="3" />
-      <node id="842610415962474411" at="17,38,18,17" concept="9" />
-      <node id="842610415962474495" at="21,55,22,152" concept="9" />
-      <node id="842610415962506054" at="25,37,26,21" concept="9" />
-      <node id="842610415962474383" at="12,0,16,0" concept="1" trace="SimpleMigration#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="842610415962474403" at="16,0,20,0" concept="7" trace="isShowAsIntention#()Z" />
-      <node id="842610415962474423" at="20,0,24,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-      <node id="842610415962474417" at="24,0,28,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <scope id="842610415962474406" at="17,38,18,17" />
-      <scope id="842610415962474426" at="21,55,22,152" />
-      <scope id="842610415962474420" at="25,37,26,21" />
-      <scope id="842610415962474386" at="12,51,14,47" />
-      <scope id="842610415962474383" at="12,0,16,0">
+      <node id="842610415962474431" at="10,0,11,0" concept="4" trace="applicableConcept" />
+      <node id="842610415962474390" at="11,51,12,16" concept="14" />
+      <node id="842610415962474437" at="12,16,13,47" concept="3" />
+      <node id="842610415962474411" at="16,38,17,17" concept="9" />
+      <node id="842610415962474495" at="20,55,21,128" concept="9" />
+      <node id="842610415962506054" at="24,37,25,21" concept="9" />
+      <node id="842610415962474383" at="11,0,15,0" concept="1" trace="SimpleMigration#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="842610415962474403" at="15,0,19,0" concept="7" trace="isShowAsIntention#()Z" />
+      <node id="842610415962474423" at="19,0,23,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="842610415962474417" at="23,0,27,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <scope id="842610415962474406" at="16,38,17,17" />
+      <scope id="842610415962474426" at="20,55,21,128" />
+      <scope id="842610415962474420" at="24,37,25,21" />
+      <scope id="842610415962474386" at="11,51,13,47" />
+      <scope id="842610415962474383" at="11,0,15,0">
         <var name="applicableConcept" id="842610415962474429" />
       </scope>
-      <scope id="842610415962474403" at="16,0,20,0" />
-      <scope id="842610415962474423" at="20,0,24,0" />
-      <scope id="842610415962474417" at="24,0,28,0" />
-      <unit id="842610415962474381" at="10,0,29,0" name="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
+      <scope id="842610415962474403" at="15,0,19,0" />
+      <scope id="842610415962474423" at="19,0,23,0" />
+      <scope id="842610415962474417" at="23,0,27,0" />
+      <unit id="842610415962474381" at="9,0,28,0" name="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/8602774279580416019">

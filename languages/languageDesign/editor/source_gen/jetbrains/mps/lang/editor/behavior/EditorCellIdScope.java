@@ -70,6 +70,6 @@ public class EditorCellIdScope extends FilteringScope {
       return true;
     }
     SNode conceptAspect = SNodeOperations.getNodeAncestor(editorCellId, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), false, false);
-    return conceptAspect == null || !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SNodeOperations.asNode(myConceptDeclaration), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{})));
+    return conceptAspect == null || !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(myConceptDeclaration, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{})));
   }
 }

@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -15141,11 +15141,8 @@
             </node>
             <node concept="3fqX7Q" id="3K0abI6exzs" role="3uHU7w">
               <node concept="2OqwBi" id="73yVtVlZZJi" role="3fr31v">
-                <node concept="2OqwBi" id="73yVtVlZZ26" role="2Oq$k0">
-                  <node concept="37vLTw" id="73yVtVlLFM9" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3K0abI6ds_d" resolve="myConceptDeclaration" />
-                  </node>
-                  <node concept="FGMqu" id="73yVtVlZZrt" role="2OqNvi" />
+                <node concept="37vLTw" id="73yVtVlLFM9" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3K0abI6ds_d" resolve="myConceptDeclaration" />
                 </node>
                 <node concept="2qgKlT" id="73yVtVm00j0" role="2OqNvi">
                   <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />

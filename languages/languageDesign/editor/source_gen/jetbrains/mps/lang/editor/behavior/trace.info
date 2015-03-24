@@ -4900,7 +4900,7 @@
       <node id="4323500428151363032" at="67,41,68,196" concept="11" />
       <node id="4323500428151564638" at="69,31,70,18" concept="12" />
       <node id="4323500428151575040" at="71,5,72,246" concept="11" />
-      <node id="4323500428151580058" at="72,246,73,311" concept="12" />
+      <node id="4323500428151580058" at="72,246,73,287" concept="12" />
       <node id="2859854489140332472" at="37,0,40,0" concept="10" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="2859854489140557115" at="41,0,44,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="2859854489140047972" at="51,67,54,9" concept="9" />
@@ -4937,7 +4937,7 @@
       <scope id="2859854489140047956" at="49,55,55,7">
         <var name="extendedLangRef" id="2859854489140047960" />
       </scope>
-      <scope id="4323500428151282464" at="67,41,73,311">
+      <scope id="4323500428151282464" at="67,41,73,287">
         <var name="conceptAspect" id="4323500428151575041" />
         <var name="editorCellId" id="4323500428151363033" />
       </scope>
