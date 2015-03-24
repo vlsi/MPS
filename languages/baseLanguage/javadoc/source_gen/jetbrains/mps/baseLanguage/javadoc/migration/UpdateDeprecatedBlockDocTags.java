@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.javadoc.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,11 +24,11 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
+public class MigrationScript_0 extends MigrationScriptBase {
   public String getCaption() {
     return "Add CommentLine child to DeprecatedBlockDocTags";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(SModule m, DataCollector collector_) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
@@ -42,14 +43,14 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a0a0a0a1();
+        final GeneratedMatchingPattern pattern = new MigrationScript_0.Pattern_zc5nt1_a0a0a0a0a0a0a1();
         if (!(pattern.match(it))) {
           return;
         }
 
         {
-          SNode placeholder = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.lang.core.structure.BaseConcept");
-          SNode migratedNode = _quotation_createNode_fgay1s_a0b0d0a0a0a1();
+          SNode placeholder = SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+          SNode migratedNode = _quotation_createNode_zc5nt1_a0b0d0a0a0a1();
           adjustMigratedIds(it, migratedNode);
           SNodeOperations.replaceWithAnother(placeholder, migratedNode);
         }
@@ -60,13 +61,13 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);
   }
-  public static class Pattern_fgay1s_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_fgay1s_a0a0a0a0a0a0a1() {
+  public static class Pattern_zc5nt1_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_zc5nt1_a0a0a0a0a0a0a1() {
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_fgay1s_a0a0a0a0a0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag".equals(nodeToMatch_fgay1s_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_zc5nt1_a0a0a0a0a0b = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag".equals(nodeToMatch_zc5nt1_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
           return false;
         }
       }
@@ -83,7 +84,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_fgay1s_a0b0d0a0a0a1() {
+  private static SNode _quotation_createNode_zc5nt1_a0b0d0a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
