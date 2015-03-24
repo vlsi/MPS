@@ -449,7 +449,7 @@ public class SNodeOperations {
     nodeParent.insertChildBefore(role, siblingNode, node);
     return siblingNode;
   }
-  public static SNode replaceWithNewChild(SNode oldChild, SConcept concept) {
+  public static SNode replaceWithNewChild(SNode oldChild, SAbstractConcept concept) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
     if (oldChildParent == null && (oldChild.getModel() == null || oldChild.getParent() != null)) {
