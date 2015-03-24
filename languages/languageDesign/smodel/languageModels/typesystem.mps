@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -7850,24 +7850,24 @@
     <property role="TrG5h" value="typeof_OperationParm_LinkQualifier_LinkQualifier" />
     <property role="3GE5qa" value="operation.parameter" />
     <node concept="3clFbS" id="4uVbusd0fYl" role="18ibNy">
-      <node concept="2NvLDW" id="4uVbusd0g09" role="3cqZAp">
-        <property role="Ob790" value="0" />
-        <node concept="mw_s8" id="4uVbusd0g0b" role="1ZfhK$">
-          <node concept="1Z2H0r" id="4uVbusd0g0c" role="mwGJk">
-            <node concept="2OqwBi" id="4uVbusd0g0j" role="1Z2MuG">
-              <node concept="1YBJjd" id="4uVbusd0g0k" role="2Oq$k0">
+      <node concept="1ZobV4" id="7Cf7MK0_qJd" role="3cqZAp">
+        <property role="3wDh2S" value="false" />
+        <node concept="mw_s8" id="7Cf7MK0_qJf" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7Cf7MK0_qJg" role="mwGJk">
+            <node concept="2OqwBi" id="7Cf7MK0_qJh" role="1Z2MuG">
+              <node concept="1YBJjd" id="7Cf7MK0_qJi" role="2Oq$k0">
                 <ref role="1YBMHb" node="4uVbusd0fYm" resolve="operationParam" />
               </node>
-              <node concept="3TrEf2" id="4uVbusd0g0l" role="2OqNvi">
+              <node concept="3TrEf2" id="7Cf7MK0_qJj" role="2OqNvi">
                 <ref role="3Tt5mk" to="tp25:4uVbusd0fYd" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="4uVbusd0g0e" role="1ZfhKB">
-          <node concept="2c44tf" id="4uVbusd0g0f" role="mwGJk">
-            <node concept="3Tqbb2" id="4uVbusd0g0g" role="2c44tc">
-              <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+        <node concept="mw_s8" id="7Cf7MK0_qJk" role="1ZfhKB">
+          <node concept="2c44tf" id="7Cf7MK0_qJl" role="mwGJk">
+            <node concept="3uibUv" id="3YBeIJ0enMa" role="2c44tc">
+              <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
             </node>
           </node>
         </node>
@@ -11014,6 +11014,26 @@
     <node concept="1YaCAy" id="49hVTZmCOxi" role="1YuTPh">
       <property role="TrG5h" value="conceptShortDescriptionOperation" />
       <ref role="1YaFvo" to="tp25:5XpkEY8oJOs" resolve="ConceptShortDescriptionOperation" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="7Cf7MK0$aUQ">
+    <property role="2RFo0w" value="true" />
+    <property role="TrG5h" value="supertypesOf_ClassifierTypeSConceptNode_SConceptType" />
+    <property role="3GE5qa" value="type" />
+    <node concept="3clFbS" id="7Cf7MK0$aUR" role="2sgrp5">
+      <node concept="3cpWs6" id="7Cf7MK0$aUS" role="3cqZAp">
+        <node concept="2c44tf" id="7Cf7MK0$aUT" role="3cqZAk">
+          <node concept="3bZ5Sz" id="7Cf7MK0$aXq" role="2c44tc" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Yb3XT" id="7Cf7MK0$aUV" role="1YuTPh">
+      <property role="TrG5h" value="type" />
+      <node concept="2DMOqp" id="7Cf7MK0$aUW" role="1YbcFS">
+        <node concept="3uibUv" id="7Cf7MK0$aWC" role="2DMOqq">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
