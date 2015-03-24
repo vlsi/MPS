@@ -1,7 +1,4 @@
-mps-make/main/source_gen.caches/main/dependencies
-mps-make/main/source_gen.caches/main/generated
-source_gen/main/ConcoleUtil.java
-source_gen/main/MainClass.java
-source_gen/main/ProjectKind.java
-source_gen/main/SimpleMarker.java
-source_gen/main/trace.info
+mps-make/makeTests/source_gen.caches/MainJava/dependencies
+mps-make/makeTests/source_gen.caches/MainJava/generated
+source_gen/MainJava/Main.java
+source_gen/MainJava/trace.info

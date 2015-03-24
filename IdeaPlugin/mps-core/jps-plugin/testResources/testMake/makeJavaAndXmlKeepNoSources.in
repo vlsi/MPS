@@ -1,7 +1,7 @@
 modelsLocation tests/makeTests/models;
-modelsToCopy MainJava.mps;
+modelsToCopy MainJava.mps ManifestXml.mps;
 modelsDirName models;
 moduleName makeTests;
 generatorOutputPath source_gen;
-useModuleSourceFolder true;
-useTransientOutputFolder false;
+useModuleSourceFolder false;
+useTransientOutputFolder true;

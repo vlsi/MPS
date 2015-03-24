@@ -1,7 +1,7 @@
-modelsLocation tests/blProject/models;
-modelsToCopy main.mps;
+modelsLocation tests/makeTests/models;
+modelsToCopy MainJava.mps;
 modelsDirName models;
-moduleName main;
+moduleName makeTests;
 generatorOutputPath source_gen;
 useModuleSourceFolder false;
 useTransientOutputFolder true;

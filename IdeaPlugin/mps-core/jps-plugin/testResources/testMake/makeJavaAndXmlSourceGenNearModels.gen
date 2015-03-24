@@ -1,8 +1,8 @@
+models/MainJava/Main.java
+models/MainJava/trace.info
+models/ManifestXml/manifest.xml
+models/ManifestXml/trace.info
 mps-make/makeTests/source_gen.caches/MainJava/dependencies
 mps-make/makeTests/source_gen.caches/MainJava/generated
 mps-make/makeTests/source_gen.caches/ManifestXml/dependencies
 mps-make/makeTests/source_gen.caches/ManifestXml/generated
-src/MainJava/Main.java
-src/MainJava/trace.info
-src/ManifestXml/manifest.xml
-src/ManifestXml/trace.info
