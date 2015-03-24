@@ -39,7 +39,7 @@ public class PasteWrappers {
         SLinkOperations.setTarget(imd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")));
         ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(imd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"), false, new SAbstractConcept[]{})).toListSequence().visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.ThisExpression");
+            SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"));
           }
         });
         return imd;

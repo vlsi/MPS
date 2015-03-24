@@ -37,9 +37,9 @@ public class GenericTypesUtil {
       }
       // let's see if it's inside ? extends E or ? super E, we want to avoid invalid types like ? extends ? 
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) && SNodeOperations.hasRole(typeVariableRef, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound")) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) && SNodeOperations.hasRole(typeVariableRef, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound"))) {
-        SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(typeVariableRef), "jetbrains.mps.baseLanguage.structure.WildCardType");
+        SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(typeVariableRef), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
       } else {
-        SNodeOperations.replaceWithNewChild(typeVariableRef, "jetbrains.mps.baseLanguage.structure.WildCardType");
+        SNodeOperations.replaceWithNewChild(typeVariableRef, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
       }
     }
     return typeCopy;

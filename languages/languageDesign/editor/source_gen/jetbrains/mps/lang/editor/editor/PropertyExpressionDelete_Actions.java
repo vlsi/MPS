@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertyExpressionDelete_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +24,7 @@ public class PropertyExpressionDelete_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector");
+      SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"));
     }
   }
   public static class PropertyExpressionDelete_Actions_BACKSPACE extends AbstractCellAction {
@@ -35,7 +36,7 @@ public class PropertyExpressionDelete_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector");
+      SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"));
     }
   }
 }

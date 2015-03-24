@@ -66,7 +66,7 @@ public class AddContext_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode tNode = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, 0x112103ebf76L, "templateNode"));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, 0x112103ebf76L, "templateNode"), null);
-      SNode result = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
+      SNode result = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
       if (SNodeOperations.isInstanceOf(tNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, 0x7b85dded0be53d6fL, "contentNode"), _quotation_createNode_4m6r5j_a0a0d0a(tNode));
       } else {
