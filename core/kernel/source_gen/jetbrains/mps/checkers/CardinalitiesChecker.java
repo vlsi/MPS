@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -19,7 +19,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
     SAbstractConcept concept = SNodeOperations.getConcept(node);
-    for (SContainmentLink link : Sequence.fromIterable(concept.getContainmentLinks())) {
+    for (SContainmentLink link : CollectionSequence.fromCollection(concept.getContainmentLinks())) {
       List<SNode> children = SNodeOperations.getChildren(node, link);
 
       if (!(link.isOptional()) && ListSequence.fromList(children).isEmpty()) {
@@ -34,7 +34,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
         component.addError(node, ListSequence.fromList(children).count() + " children in role \"" + link.getRoleName() + ", which has single-cardinality", null);
       }
     }
-    for (SReferenceLink link : Sequence.fromIterable(concept.getReferenceLinks())) {
+    for (SReferenceLink link : CollectionSequence.fromCollection(concept.getReferenceLinks())) {
       if (!(link.isOptional())) {
         if (SNodeOperations.getReference(node, link) == null) {
           component.addError(node, "No reference in obligatory role \"" + link.getRoleName(), null, new ReferenceMessageTarget(link.getRoleName()));

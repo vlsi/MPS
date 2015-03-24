@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -115,20 +115,20 @@ public class IntentionUtils {
     SAbstractConcept concept = SNodeOperations.getConcept(node1);
 
     // todo: use ConceptRegistry/SConcept when it will possible 
-    for (SProperty p : Sequence.fromIterable(concept.getProperties())) {
+    for (SProperty p : CollectionSequence.fromCollection(concept.getProperties())) {
       if (neq_k79hya_a0a0e0g(node1.getProperty(p), node2.getProperty(p))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
-    for (SReferenceLink r : Sequence.fromIterable(concept.getReferenceLinks())) {
+    for (SReferenceLink r : CollectionSequence.fromCollection(concept.getReferenceLinks())) {
       if (node1.getReference(r).getTargetNode() != node2.getReference(r).getTargetNode()) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    for (SContainmentLink l : Sequence.fromIterable(concept.getContainmentLinks())) {
+    for (SContainmentLink l : CollectionSequence.fromCollection(concept.getContainmentLinks())) {
       Iterator<? extends SNode> c1 = node1.getChildren(l).iterator();
       Iterator<? extends SNode> c2 = node2.getChildren(l).iterator();
 

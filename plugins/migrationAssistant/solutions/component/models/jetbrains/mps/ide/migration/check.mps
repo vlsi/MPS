@@ -790,7 +790,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPuk" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getProperties():java.lang.Iterable" resolve="getProperties" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getProperties():java.util.Collection" resolve="getProperties" />
                     </node>
                   </node>
                 </node>
@@ -916,7 +916,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPuH" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getContainmentLinks():java.lang.Iterable" resolve="getContainmentLinks" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getContainmentLinks():java.util.Collection" resolve="getContainmentLinks" />
                     </node>
                   </node>
                 </node>
@@ -1058,7 +1058,7 @@
                       <ref role="3cqZAo" node="3n7MNzOAPtK" resolve="concept" />
                     </node>
                     <node concept="liA8E" id="3n7MNzOAPv8" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
+                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.util.Collection" resolve="getReferenceLinks" />
                     </node>
                   </node>
                 </node>

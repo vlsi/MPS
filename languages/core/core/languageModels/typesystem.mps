@@ -1769,7 +1769,7 @@
               <node concept="2yIwOk" id="4Fsfm22PZlx" role="2OqNvi" />
             </node>
             <node concept="liA8E" id="4Fsfm22Q0zv" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SAbstractConcept.getProperties():java.lang.Iterable" resolve="getProperties" />
+              <ref role="37wK5l" to="t3eg:~SAbstractConcept.getProperties():java.util.Collection" resolve="getProperties" />
             </node>
           </node>
           <node concept="A3Dl8" id="4Fsfm22Q2pL" role="1tU5fm">
@@ -1985,7 +1985,7 @@
               <node concept="2yIwOk" id="4Fsfm22Pnec" role="2OqNvi" />
             </node>
             <node concept="liA8E" id="4Fsfm22Pned" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
+              <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.util.Collection" resolve="getReferenceLinks" />
             </node>
           </node>
           <node concept="A3Dl8" id="4Fsfm22Ppri" role="1tU5fm">
