@@ -51,6 +51,8 @@ import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
@@ -430,9 +432,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               return modules;
             }
           });
-          final SearchQuery query = new SearchQuery(new MyModulesHolder(modules), scope);
+          final SearchQuery query = new SearchQuery(new ModulesHolder(modules), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
           UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }
@@ -533,12 +535,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             myRuntimeTableModel.addItem(reference);
           }
         }
-      }).setRemoveAction(new RemoveEntryAction(runtimeTable))/*.addExtraAction(new FindAnActionButton(runtimeTable) {
+      }).setRemoveAction(new RemoveEntryAction(runtimeTable)).addExtraAction(new FindAnActionButton(runtimeTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          findUsages(myRuntimeTableModel.getValueAt(runtimeTable.getSelectionModel().getMinSelectionIndex(), 0));
+          List<SModuleReference> modules = new ArrayList<SModuleReference>();
+          for (int row : runtimeTable.getSelectedRows()) {
+            modules.add(myRuntimeTableModel.getValueAt(row));
+          }
+          findModuleUsages(modules);
         }
-      })*/;
+      });
       decorator.setPreferredSize(new Dimension(500, 150));
 
       JPanel table = decorator.createPanel();
@@ -572,12 +578,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             myAccessoriesModelsTableModel.addItem(reference);
           }
         }
-      }).setRemoveAction(new RemoveEntryAction(accessoriesTable))/*.addExtraAction(new FindAnActionButton(accessoriesTable) {
+      }).setRemoveAction(new RemoveEntryAction(accessoriesTable)).addExtraAction(new FindAnActionButton(accessoriesTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          findUsages(myAccessoriesModelsTableModel.getValueAt(accessoriesTable.getSelectionModel().getMinSelectionIndex(), 0));
+          List<SModelReference> models = new ArrayList<SModelReference>();
+          for (int row : accessoriesTable.getSelectedRows()) {
+            models.add(myAccessoriesModelsTableModel.getValueAt(row));
+          }
+          findModelUsages(models);
         }
-      })*/;
+      });
       decoratorForAccessories.setPreferredSize(new Dimension(500, 150));
 
       table = decoratorForAccessories.createPanel();
@@ -596,22 +606,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return myRuntimeTableModel.isModified();
     }
 
-    protected void findUsages(final Object value) {
-      final SearchQuery query;
-      final IResultProvider provider;
-      if (value instanceof SModelReference) {
-        query = new SearchQuery((SModelReference) value, new ModulesScope(Arrays.asList(myModule)));
-        provider = FindUtils.makeProvider(new ModelUsagesFinder());
-      } else if (value instanceof SModuleReference) {
-        final SModuleReference moduleReference = (SModuleReference) value;
-        // FIXME GenericHolder is not capable of serialization, replace with ModuleHolder
-        query = new SearchQuery(new GenericHolder(moduleReference, moduleReference.getModuleName()), GlobalScope.getInstance());
-        provider = FindUtils.makeProvider(new ModuleUsagesFinder());
-      } else {
-        return;
-      }
 
-      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+    /*package*/ void findModuleUsages(List<SModuleReference> modules) {
+      final SearchQuery query = new SearchQuery(new GenericHolder(modules), GlobalScope.getInstance());
+      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
+      findUsageImpl(query, provider);
+    }
+
+    /*package*/ void findModelUsages(List<SModelReference> models) {
+      final SearchQuery query = new SearchQuery(new ModelsHolder(models), new ModulesScope(Arrays.asList(myModule)));
+      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
+      findUsageImpl(query, provider);
+    }
+
+    private void findUsageImpl(SearchQuery query, IResultProvider provider) {
+      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
       UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
       forceCancelCloseDialog();
     }
@@ -647,7 +656,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         fireTableDataChanged();
       }
 
-      public Object getValueAt(int rowIndex) {
+      public SModuleReference getValueAt(int rowIndex) {
         return myTableItems.get(rowIndex);
       }
 
@@ -717,7 +726,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         fireTableDataChanged();
       }
 
-      public Object getValueAt(int rowIndex) {
+      public SModelReference getValueAt(int rowIndex) {
         return myTableItems.get(rowIndex);
       }
 

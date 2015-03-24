@@ -136,7 +136,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
     final SearchTask searchTask = new SearchTask(provider, query);
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
@@ -186,6 +186,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     int index = getCurrentTabIndex();
     UsagesView usagesView = createUsageView(options.myRunAgain ? searchTask : null);
     UsageViewData usageViewData = new UsageViewData(usagesView, options.myRunAgain ? searchTask : null);
+    usageViewData.setTransientView(options.myTransientView);
     myUsageViewsData.add(usageViewData);
 
     usagesView.setContents(searchResults);
@@ -252,14 +253,16 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     Element tabsXML = new Element(TABS);
     for (UsageViewData usageViewData : myUsageViewsData) {
+      if (usageViewData.isTransientView()) {
+        continue;
+      }
       Element tabXML = new Element(TAB);
-      boolean error = false;
       try {
         usageViewData.write(tabXML, project);
+        tabsXML.addContent(tabXML);
       } catch (CantSaveSomethingException e) {
-        error = true;
+        // ignore
       }
-      if (!error) tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
 
@@ -339,12 +342,20 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public final UsagesView myUsagesView;
     public final SearchTask mySearchTask;
+    private boolean myIsTransientView = false;
     // now it's not in use, but will be used to implement constructable finders
 //    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public UsageViewData(@NotNull UsagesView view, @Nullable SearchTask searchTask) {
       myUsagesView = view;
       mySearchTask = searchTask;
+    }
+
+    /*package*/void setTransientView(boolean isTransientView) {
+      myIsTransientView = isTransientView;
+    }
+    /*package*/boolean isTransientView() {
+      return myIsTransientView;
     }
 
     @NotNull

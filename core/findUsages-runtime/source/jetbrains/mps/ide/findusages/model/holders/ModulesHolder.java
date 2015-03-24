@@ -41,7 +41,7 @@ public class ModulesHolder implements IHolder<List<SModule>> {
   @Override
   @NotNull
   public String getCaption() {
-    return NameUtil.formatNumericalString(myModules.size(), "model");
+    return NameUtil.formatNumericalString(myModules.size(), "module");
   }
 
   @Override

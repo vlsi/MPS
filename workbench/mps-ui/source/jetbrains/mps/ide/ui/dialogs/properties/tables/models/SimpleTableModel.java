@@ -50,7 +50,7 @@ public abstract class SimpleTableModel<T> extends AbstractTableModel implements 
     return 1;
   }
 
-  public Object getValueAt(int rowIndex) {
+  public T getValueAt(int rowIndex) {
     return myTableItems.get(rowIndex);
   }
 

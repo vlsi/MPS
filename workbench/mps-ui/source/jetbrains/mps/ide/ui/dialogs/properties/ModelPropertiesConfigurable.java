@@ -286,24 +286,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
           final List<SModelReference> modelReferences = new ArrayList<SModelReference>();
           for (int i : myTable.getSelectedRows()) {
-            Object value = myImportedModels.getValueAt(i, 0);
-            if (value instanceof SModelReference) {
-              modelReferences.add((SModelReference) value);
-            }
+            modelReferences.add(myImportedModels.getValueAt(i));
           }
-          // FIXME instead of overridden read/write, UsagesViewTool shall take an extra argument whether to persist this query.
-          ModelsHolder modelsHolder = new ModelsHolder(modelReferences) {
-            @Override
-            public void read(Element element, Project project) throws CantLoadSomethingException {
-            }
-
-            @Override
-            public void write(Element element, Project project) throws CantSaveSomethingException {
-            }
-          };
-          final SearchQuery query = new SearchQuery(modelsHolder, scope);
+          final SearchQuery query = new SearchQuery(new ModelsHolder(modelReferences), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
           UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }
@@ -365,7 +352,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider provider = FindUtils.makeProvider(new LanguageUsagesFinder());
       // FIXME FindAction below uses slightly different code to perform search, merge. Unwrap devkit here, do not rely on LanguageUsageFinder to do that?
       // And get rid of MyModulesHolder, at last.
-      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
       UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
       forceCancelCloseDialog();
     }
@@ -402,7 +389,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           });
           final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
           UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }

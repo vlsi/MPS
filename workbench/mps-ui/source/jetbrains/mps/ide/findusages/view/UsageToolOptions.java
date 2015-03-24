@@ -20,9 +20,11 @@ package jetbrains.mps.ide.findusages.view;
  * @author Artem Tikhomirov
  */
 public final class UsageToolOptions {
-  /*package*/ boolean myRunAgain = false;
+  /*package*/ boolean myRunAgain = true;
   /*package*/ boolean myNavigateIfSingle = false;
   /*package*/ boolean myForceNewTab = false;
+  /*package*/ boolean myTransientView = false;
+
   /*package*/ String myNotFoundMessage = "No usages found";
 
   public UsageToolOptions allowRunAgain(boolean runAgain) {
@@ -39,6 +41,17 @@ public final class UsageToolOptions {
     myForceNewTab = forceNewTab;
     return this;
   }
+
+  /**
+   * Usages might be preserved between MPS runs.
+   * Default value: <code>false</code>
+   * @param transientView <code>true</code> to throw usage view away at the end of MPS session
+   */
+  public UsageToolOptions transientView(boolean transientView) {
+    myTransientView = transientView;
+    return this;
+  }
+
   public UsageToolOptions notFoundMessage(String msg) {
     myNotFoundMessage = msg;
     return this;
