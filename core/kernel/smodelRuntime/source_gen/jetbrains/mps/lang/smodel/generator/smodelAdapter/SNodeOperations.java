@@ -19,10 +19,8 @@ import org.jetbrains.mps.util.InstanceOfCondition;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
@@ -33,9 +31,11 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.util.ConditionalIterable;
@@ -293,15 +293,6 @@ public class SNodeOperations {
       return EMPTY_LIST;
     }
     return SLinkOperations.getChildren(node, linkDeclaration);
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
-    if (node == null || linkDeclaration == null) {
-      return EMPTY_LIST;
-    }
-    linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SLinkOperations.getChildren(node, MetaAdapterByDeclaration.getContainmentLink(linkDeclaration));
   }
   public static SModel getModel(SNode node) {
     if (node == null) {
