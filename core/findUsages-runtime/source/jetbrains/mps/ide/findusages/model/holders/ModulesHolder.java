@@ -19,6 +19,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -26,6 +27,13 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.ide.findusages.model.holders.GenericHolder} instead. This class
+ * may survive only if it uses SModuleReference, not SModule, <em>AND</em> supports serializaton (which is quite easy to implement, if needed).
+ * Otherwise, GenericHolder is sufficient.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class ModulesHolder implements IHolder<List<SModule>> {
   private List<SModule> myModules = new ArrayList<SModule>();
 

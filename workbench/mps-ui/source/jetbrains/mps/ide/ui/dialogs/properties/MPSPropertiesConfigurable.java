@@ -40,7 +40,12 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
@@ -240,6 +245,14 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       }
     };
   }
+
+  // keep usage view options common to properties page in a single place
+  /*package*/ void showUsageImpl(SearchQuery query, IResultProvider provider) {
+    final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
+    UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+  }
+
+
   public abstract class CommonTab extends BaseTab {
 
     protected JTextField myTextFieldName;

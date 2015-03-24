@@ -52,11 +52,8 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsageToolOptions;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -154,6 +151,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.EventObject;
@@ -416,26 +414,22 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindAnActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-
-          final SearchScope scope = myModule.getScope();
-          // FIXME use collection of SModuleReference instead
-          List<SModule> modules = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<SModule>>() {
+          final SearchScope scope = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SearchScope>() {
             @Override
-            public List<SModule> compute() {
-              List<SModule> modules = new LinkedList<SModule>();
-              for (int i : myTable.getSelectedRows()) {
-                Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
-                if (value instanceof SModuleReference) {
-                  modules.add(MPSModuleRepository.getInstance().getModuleByFqName(((SModuleReference) value).getModuleName()));
-                }
-              }
-              return modules;
+            public SearchScope compute() {
+              return myModule.getScope();
             }
           });
-          final SearchQuery query = new SearchQuery(new ModulesHolder(modules), scope);
+          List<SModuleReference> modules = new ArrayList<SModuleReference>();
+          for (int i : myTable.getSelectedRows()) {
+            final DependenciesTableItem valueAt = myDependTableModel.getValueAt(i);
+            modules.add(valueAt.getItem().getModuleRef());
+          }
+          // FIXME this code is quite similar to that in #findModuleUsage, shall refactor into FindModuleAction and reuse
+          // the problem is different scope, I don't know why one uses Module's, and another uses Global
+          final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SModuleReference>>(modules), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
-          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+          showUsageImpl(query, provider);
           forceCancelCloseDialog();
         }
       };
@@ -610,18 +604,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     /*package*/ void findModuleUsages(List<SModuleReference> modules) {
       final SearchQuery query = new SearchQuery(new GenericHolder(modules), GlobalScope.getInstance());
       final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-      findUsageImpl(query, provider);
+      showUsageImpl(query, provider);
+      forceCancelCloseDialog();
     }
 
     /*package*/ void findModelUsages(List<SModelReference> models) {
       final SearchQuery query = new SearchQuery(new ModelsHolder(models), new ModulesScope(Arrays.asList(myModule)));
       final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-      findUsageImpl(query, provider);
-    }
-
-    private void findUsageImpl(SearchQuery query, IResultProvider provider) {
-      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
-      UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+      showUsageImpl(query, provider);
       forceCancelCloseDialog();
     }
 
@@ -1330,6 +1320,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
     }
   }
+
   /*
    * FIXME myModule.getRepository requires read action (implementation, not API), while mpsProject.getRepository does not
    * Not sure whether which one is right (both seem reasonable, repository of a module might change, repository of the project could not)

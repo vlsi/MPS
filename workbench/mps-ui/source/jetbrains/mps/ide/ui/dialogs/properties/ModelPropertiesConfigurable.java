@@ -30,8 +30,6 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.icons.MPSIcons.General;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
@@ -40,8 +38,6 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsageToolOptions;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -75,7 +71,6 @@ import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NotCondition;
-import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -290,8 +285,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           }
           final SearchQuery query = new SearchQuery(new ModelsHolder(modelReferences), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
-          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+          showUsageImpl(query, provider);
           forceCancelCloseDialog();
         }
       });
@@ -351,9 +345,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final SearchQuery query = new SearchQuery(entry.myLanguage != null ? new LanguageHolder(entry.myLanguage) : new ModuleRefHolder(entry.myDevKit), scope);
       final IResultProvider provider = FindUtils.makeProvider(new LanguageUsagesFinder());
       // FIXME FindAction below uses slightly different code to perform search, merge. Unwrap devkit here, do not rely on LanguageUsageFinder to do that?
-      // And get rid of MyModulesHolder, at last.
-      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
-      UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+      showUsageImpl(query, provider);
       forceCancelCloseDialog();
     }
 
@@ -389,8 +381,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           });
           final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
-          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false).transientView(true);
-          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
+          showUsageImpl(query, provider);
           forceCancelCloseDialog();
         }
       };
