@@ -20,32 +20,40 @@ import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testRebuild")
+@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class RebuildTestCase extends MpsJpsBuildModelsTestCase {
   @NotNull
   @Override
   protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testRebuild";
+    return "mps-core/jps-plugin/testResources/testMake";
   }
 
   public void testRebuildJava() {
-    doTestRebuild("rebuildJava.in");
-  }
-
-  public void ignoreTestRebuildJavaAndXml() {
-    doTestRebuild("rebuildJavaAndXml.in");
+    doTestRebuild("makeJava.in");
   }
 
   public void testRebuildJavaKeepNoSources() {
-    doTestRebuild("rebuildJavaKeepNoSources.in");
+    doTestRebuild("makeJavaKeepNoSources.in");
   }
 
   public void testRebuildJavaSourceGenNearModels() {
-    doTestRebuild("rebuildJavaSourceGenNearModels.in");
+    doTestRebuild("makeJavaSourceGenNearModels.in");
+  }
+
+  public void testRebuildJavaAndXml() {
+    doTestRebuild("makeJavaAndXml.in");
+  }
+
+  public void testRebuildJavaAndXmlKeepNoSources() {
+    doTestMake("makeJavaAndXmlKeepNoSources.in");
+  }
+
+  public void testRebuildJavaAndXmlSourceGenNearModels() {
+    doTestMake("makeJavaAndXmlSourceGenNearModels.in");
   }
 
   public void testRebuildBrokenProject() {
-    setUpEnvironment("rebuildBrokenProject.in");
+    setUpEnvironment("makeBrokenProject.in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
   }

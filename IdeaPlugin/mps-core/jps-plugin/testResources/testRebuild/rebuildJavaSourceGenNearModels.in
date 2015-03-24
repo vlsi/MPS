@@ -1,7 +1,0 @@
-modelsLocation tests/blProject/models;
-modelsToCopy main.mps;
-modelsDirName models;
-moduleName main;
-generatorOutputPath models;
-useModuleSourceFolder false;
-useTransientOutputFolder false;
