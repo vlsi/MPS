@@ -19,7 +19,6 @@ import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
@@ -457,23 +457,6 @@ public class SNodeOperations {
     }
     SModel model = oldChild.getModel();
     SNode newChild = SModelOperations.createNewNode(model, null, concept);
-    if (newChild == null) {
-      return null;
-    }
-    SNodeUtil.replaceWithAnother(oldChild, newChild);
-    SNodeOperations.copyAllAttributes(oldChild, newChild);
-    return newChild;
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
-    assert oldChild != null : "can't replace node. node is NULL";
-    SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && (oldChild.getModel() == null || oldChild.getParent() != null)) {
-      return null;
-    }
-    SModel model = oldChild.getModel();
-    SNode newChild = SModelOperations.createNewNode(model, null, conceptFqName);
     if (newChild == null) {
       return null;
     }
