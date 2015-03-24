@@ -7,10 +7,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.DevKit;
 
@@ -28,8 +28,6 @@ public class LanguageImportFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     for (SLanguage lang : LanguageUsagesFinder.getLanguageToLookUp(query)) {
-      // FIXME !!! refactor to look up SLanguage, not SModule, no reason to re-use ModuleUsagesFinder here, rather LanguageUsagesFinder 
-      Language language = (Language) lang.getSourceModule();
       searchResults.getSearchedNodes().add(lang);
       SearchScope scope = query.getScope();
       ModuleUsagesFinder moduleFinder = new ModuleUsagesFinder();
@@ -38,16 +36,16 @@ public class LanguageImportFinder implements IFinder {
           return searchResults;
         }
         if (module instanceof Solution) {
-          moduleFinder.collectUsagesInSolution(language, (Solution) module, searchResults);
+          moduleFinder.collectUsagesInSolution(lang, (Solution) module, searchResults);
         }
         if (module instanceof Language) {
-          moduleFinder.collectUsagesInLanguage(language, (Language) module, searchResults);
+          moduleFinder.collectUsagesInLanguage(lang, (Language) module, searchResults);
           for (Generator g : ((Language) module).getGenerators()) {
-            moduleFinder.collectUsagesInGenerator(language, g, searchResults);
+            moduleFinder.collectUsagesInGenerator(lang, g, searchResults);
           }
         }
         if (module instanceof DevKit) {
-          moduleFinder.collectUsagesInDevKit(language, (DevKit) module, searchResults);
+          moduleFinder.collectUsagesInDevKit(lang, (DevKit) module, searchResults);
         }
       }
     }
