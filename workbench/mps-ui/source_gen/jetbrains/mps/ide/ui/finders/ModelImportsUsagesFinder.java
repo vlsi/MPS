@@ -30,6 +30,7 @@ public class ModelImportsUsagesFinder implements IFinder {
       return searchResults;
     }
     SModelReference modelReference = (SModelReference) value;
+    searchResults.getSearchedNodes().add(modelReference);
     Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(query.getScope(), Collections.singleton(modelReference), monitor);
     for (SModel modelDescriptor : usages) {
       if (monitor.isCanceled()) {
@@ -38,7 +39,7 @@ public class ModelImportsUsagesFinder implements IFinder {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }
-      searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
+      searchResults.add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
     }
     return searchResults;
   }

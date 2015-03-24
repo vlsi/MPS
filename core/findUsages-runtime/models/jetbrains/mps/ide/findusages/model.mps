@@ -173,6 +173,7 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -197,6 +198,12 @@
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -1115,8 +1122,8 @@
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="J2bOg02HbN" role="1tU5fm">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="16syzq" id="J2bOg02HbO" role="11_B2D">
-          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+        <node concept="3uibUv" id="6$qiO1QkBI9" role="11_B2D">
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3Tm6S6" id="J2bOg02HbP" role="1B3o_S" />
@@ -1150,8 +1157,8 @@
             <node concept="2ShNRf" id="J2bOg02Hgr" role="37vLTx">
               <node concept="1pGfFk" id="J2bOg02Hgs" role="2ShVmc">
                 <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
-                <node concept="16syzq" id="J2bOg02Hc3" role="1pMfVU">
-                  <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+                <node concept="3uibUv" id="6$qiO1QkCSL" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -1187,9 +1194,7 @@
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="J2bOg02Hce" role="1tU5fm">
           <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-          <node concept="16syzq" id="J2bOg02Hcf" role="11_B2D">
-            <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
-          </node>
+          <node concept="3qTvmN" id="6$qiO1QkCXF" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="J2bOg02Hcg" role="3clF46">
@@ -1211,8 +1216,16 @@
             <node concept="37vLTw" id="J2bOg02Hcn" role="37vLTJ">
               <ref role="3cqZAo" node="J2bOg02HbL" resolve="mySearchedNodes" />
             </node>
-            <node concept="37vLTw" id="J2bOg02Hco" role="37vLTx">
-              <ref role="3cqZAo" node="J2bOg02Hcd" resolve="searchedNodes" />
+            <node concept="2ShNRf" id="6$qiO1QkDa2" role="37vLTx">
+              <node concept="1pGfFk" id="6$qiO1QkDa3" role="2ShVmc">
+                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
+                <node concept="3uibUv" id="6$qiO1QkDa4" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                </node>
+                <node concept="37vLTw" id="6$qiO1QkDfP" role="37wK5m">
+                  <ref role="3cqZAo" node="J2bOg02Hcd" resolve="searchedNodes" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -1234,6 +1247,21 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="J2bOg02Hcv" role="3clF47">
+        <node concept="3SKdUt" id="6$qiO1QkvD4" role="3cqZAp">
+          <node concept="3SKdUq" id="6$qiO1QkwN8" role="3SKWNk">
+            <property role="3SKdUp" value="mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6$qiO1QkxR2" role="3cqZAp">
+          <node concept="3SKdUq" id="6$qiO1QkyUc" role="3SKWNk">
+            <property role="3SKdUp" value="kind as our results, hence we use &lt;?&gt;, not &lt;T&gt; (I don't feel there's reason introduce &lt;E&gt; as it" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6$qiO1Qk$54" role="3cqZAp">
+          <node concept="3SKdUq" id="6$qiO1QkBzq" role="3SKWNk">
+            <property role="3SKdUp" value="(a) limits where we can look; (b) complicates the code" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="J2bOg02Hcw" role="3cqZAp">
           <node concept="37vLTw" id="J2bOg02Hcx" role="3cqZAk">
             <ref role="3cqZAo" node="J2bOg02HbL" resolve="mySearchedNodes" />
@@ -1243,8 +1271,8 @@
       <node concept="3Tm1VV" id="J2bOg02Hcy" role="1B3o_S" />
       <node concept="3uibUv" id="J2bOg02Hcz" role="3clF45">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="16syzq" id="J2bOg02Hc$" role="11_B2D">
-          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+        <node concept="3uibUv" id="6$qiO1Ql9Pn" role="11_B2D">
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
     </node>
@@ -1804,15 +1832,15 @@
             <property role="TrG5h" value="alive" />
             <node concept="3uibUv" id="J2bOg02Hfq" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-              <node concept="16syzq" id="J2bOg02Hfr" role="11_B2D">
-                <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+              <node concept="3uibUv" id="6$qiO1QkWk8" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
             </node>
             <node concept="2ShNRf" id="J2bOg02HhQ" role="33vP2m">
               <node concept="1pGfFk" id="J2bOg02HhR" role="2ShVmc">
                 <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
-                <node concept="16syzq" id="J2bOg02Hft" role="1pMfVU">
-                  <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+                <node concept="3uibUv" id="6$qiO1QkXwD" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -1825,8 +1853,8 @@
           <node concept="3cpWsn" id="J2bOg02HfF" role="1Duv9x">
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="node" />
-            <node concept="16syzq" id="J2bOg02HfH" role="1tU5fm">
-              <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+            <node concept="3uibUv" id="6$qiO1Ql365" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
             </node>
           </node>
           <node concept="3clFbS" id="J2bOg02Hfw" role="2LFqv$">
@@ -1864,9 +1892,7 @@
       <node concept="3Tm1VV" id="J2bOg02HfL" role="1B3o_S" />
       <node concept="3uibUv" id="J2bOg02HfM" role="3clF45">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="16syzq" id="J2bOg02HfN" role="11_B2D">
-          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
-        </node>
+        <node concept="3qTvmN" id="6$qiO1QkV7X" role="11_B2D" />
       </node>
     </node>
     <node concept="3clFb_" id="J2bOg02HfO" role="jymVt">
@@ -1881,13 +1907,25 @@
             </node>
             <node concept="2ShNRf" id="J2bOg02HhX" role="37vLTx">
               <node concept="1pGfFk" id="J2bOg02HhY" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;(int)" resolve="ArrayList" />
+                <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
                 <node concept="2ShNRf" id="J2bOg02HhZ" role="37wK5m">
                   <node concept="1pGfFk" id="J2bOg02Hi0" role="2ShVmc">
-                    <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;(int)" resolve="LinkedHashSet" />
+                    <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;(java.util.Collection)" resolve="LinkedHashSet" />
                     <node concept="37vLTw" id="J2bOg02HfV" role="37wK5m">
                       <ref role="3cqZAo" node="J2bOg02HbQ" resolve="mySearchResults" />
                     </node>
+                    <node concept="3uibUv" id="6$qiO1Ql17N" role="1pMfVU">
+                      <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
+                      <node concept="16syzq" id="6$qiO1Ql1Iu" role="11_B2D">
+                        <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3uibUv" id="6$qiO1Ql1Zc" role="1pMfVU">
+                  <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
+                  <node concept="16syzq" id="6$qiO1Ql2E0" role="11_B2D">
+                    <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
                   </node>
                 </node>
               </node>

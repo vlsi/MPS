@@ -437,6 +437,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1pPo_sfd6N6" role="3cqZAp">
+          <node concept="2OqwBi" id="1pPo_sfd7o$" role="3clFbG">
+            <node concept="2OqwBi" id="1pPo_sfd74N" role="2Oq$k0">
+              <node concept="37vLTw" id="1pPo_sfd6N4" role="2Oq$k0">
+                <ref role="3cqZAo" node="3_o1C0wGpFb" resolve="searchResults" />
+              </node>
+              <node concept="liA8E" id="1pPo_sfd7kh" role="2OqNvi">
+                <ref role="37wK5l" to="5fm0:~SearchResults.getSearchedNodes():java.util.Set" resolve="getSearchedNodes" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1pPo_sfd7T9" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="37vLTw" id="1pPo_sfd7XQ" role="37wK5m">
+                <ref role="3cqZAo" node="5wOcmpULWu5" resolve="searchedModule" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5wOcmpULYns" role="3cqZAp">
           <node concept="3cpWsn" id="5wOcmpULYnt" role="3cpWs9">
             <property role="TrG5h" value="modules" />
@@ -1885,7 +1903,24 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5wOcmpULOGR" role="3cqZAp" />
+        <node concept="3clFbF" id="6$qiO1QkdTe" role="3cqZAp">
+          <node concept="2OqwBi" id="6$qiO1Qkfa5" role="3clFbG">
+            <node concept="2OqwBi" id="6$qiO1QkeCG" role="2Oq$k0">
+              <node concept="37vLTw" id="6$qiO1QkdTc" role="2Oq$k0">
+                <ref role="3cqZAo" node="3_o1C0wGpMh" resolve="searchResults" />
+              </node>
+              <node concept="liA8E" id="6$qiO1Qkf2$" role="2OqNvi">
+                <ref role="37wK5l" to="5fm0:~SearchResults.getSearchedNodes():java.util.Set" resolve="getSearchedNodes" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6$qiO1QkfUC" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="37vLTw" id="1pPo_sfcPNb" role="37wK5m">
+                <ref role="3cqZAo" node="3_o1C0wGpMw" resolve="modelReference" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5wOcmpULOXr" role="3cqZAp">
           <node concept="3cpWsn" id="5wOcmpULOXs" role="3cpWs9">
             <property role="TrG5h" value="models" />
@@ -2211,7 +2246,24 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="ZVS8OJnzA4" role="3cqZAp" />
+        <node concept="3clFbF" id="1pPo_sfd4Go" role="3cqZAp">
+          <node concept="2OqwBi" id="1pPo_sfd5i0" role="3clFbG">
+            <node concept="2OqwBi" id="1pPo_sfd4Wp" role="2Oq$k0">
+              <node concept="37vLTw" id="1pPo_sfd4Gm" role="2Oq$k0">
+                <ref role="3cqZAo" node="3_o1C0wGpRb" resolve="searchResults" />
+              </node>
+              <node concept="liA8E" id="1pPo_sfd5dJ" role="2OqNvi">
+                <ref role="37wK5l" to="5fm0:~SearchResults.getSearchedNodes():java.util.Set" resolve="getSearchedNodes" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1pPo_sfd5Od" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="37vLTw" id="1pPo_sfd5Th" role="37wK5m">
+                <ref role="3cqZAo" node="ZVS8OJnxDu" resolve="languages" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="ZVS8OJnzLC" role="3cqZAp">
           <node concept="3cpWsn" id="ZVS8OJnzLD" role="3cpWs9">
             <property role="TrG5h" value="models" />
@@ -2801,6 +2853,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1pPo_sfcNQR" role="3cqZAp">
+          <node concept="2OqwBi" id="1pPo_sfcOs5" role="3clFbG">
+            <node concept="2OqwBi" id="1pPo_sfcO2h" role="2Oq$k0">
+              <node concept="37vLTw" id="1pPo_sfcNQP" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wOcmpULBDy" resolve="searchResults" />
+              </node>
+              <node concept="liA8E" id="1pPo_sfcOmG" role="2OqNvi">
+                <ref role="37wK5l" to="5fm0:~SearchResults.getSearchedNodes():java.util.Set" resolve="getSearchedNodes" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1pPo_sfcP0g" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="37vLTw" id="1pPo_sfcP5S" role="37wK5m">
+                <ref role="3cqZAo" node="5wOcmpULBDR" resolve="modelReference" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5wOcmpULBFp" role="3cqZAp">
           <node concept="3cpWsn" id="5wOcmpULBFq" role="3cpWs9">
             <property role="TrG5h" value="usages" />
@@ -2884,16 +2954,11 @@
             </node>
             <node concept="3clFbF" id="5wOcmpULBFR" role="3cqZAp">
               <node concept="2OqwBi" id="5wOcmpULBFS" role="3clFbG">
-                <node concept="2OqwBi" id="5wOcmpULBFT" role="2Oq$k0">
-                  <node concept="37vLTw" id="5wOcmpULBFU" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5wOcmpULBDy" resolve="searchResults" />
-                  </node>
-                  <node concept="liA8E" id="5wOcmpULBFV" role="2OqNvi">
-                    <ref role="37wK5l" to="5fm0:~SearchResults.getSearchResults():java.util.List" resolve="getSearchResults" />
-                  </node>
+                <node concept="37vLTw" id="5wOcmpULBFU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5wOcmpULBDy" resolve="searchResults" />
                 </node>
                 <node concept="liA8E" id="5wOcmpULBFW" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+                  <ref role="37wK5l" to="5fm0:~SearchResults.add(jetbrains.mps.ide.findusages.model.SearchResult):void" resolve="add" />
                   <node concept="2ShNRf" id="5wOcmpULBFX" role="37wK5m">
                     <node concept="1pGfFk" id="5wOcmpULBFY" role="2ShVmc">
                       <ref role="37wK5l" to="5fm0:~SearchResult.&lt;init&gt;(java.lang.Object,java.lang.String)" resolve="SearchResult" />
@@ -3008,6 +3073,24 @@
                   </node>
                   <node concept="3uibUv" id="ZVS8OJmVHe" role="10QFUM">
                     <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1pPo_sfcS40" role="3cqZAp">
+              <node concept="2OqwBi" id="1pPo_sfcSrj" role="3clFbG">
+                <node concept="2OqwBi" id="1pPo_sfcSfN" role="2Oq$k0">
+                  <node concept="37vLTw" id="1pPo_sfcS3Y" role="2Oq$k0">
+                    <ref role="3cqZAo" node="ZVS8OJmVFJ" resolve="searchResults" />
+                  </node>
+                  <node concept="liA8E" id="1pPo_sfcSn2" role="2OqNvi">
+                    <ref role="37wK5l" to="5fm0:~SearchResults.getSearchedNodes():java.util.Set" resolve="getSearchedNodes" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1pPo_sfd3QN" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="1pPo_sfd3Vu" role="37wK5m">
+                    <ref role="3cqZAo" node="ZVS8OJnDy6" resolve="lang" />
                   </node>
                 </node>
               </node>

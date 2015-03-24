@@ -37,7 +37,7 @@ public class LanguageUsagesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     HashSet<SLanguage> languages = new HashSet<SLanguage>(getLanguageToLookUp(query));
-
+    searchResults.getSearchedNodes().addAll(languages);
     Collection<SModel> models = IterableUtil.asCollection(query.getScope().getModels());
     monitor.start("Look up instances of language concepts", models.size());
     for (SModel model : models) {

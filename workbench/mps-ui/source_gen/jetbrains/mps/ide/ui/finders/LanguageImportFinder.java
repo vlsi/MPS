@@ -30,6 +30,7 @@ public class LanguageImportFinder implements IFinder {
     for (SLanguage lang : LanguageUsagesFinder.getLanguageToLookUp(query)) {
       // FIXME !!! refactor to look up SLanguage, not SModule, no reason to re-use ModuleUsagesFinder here, rather LanguageUsagesFinder 
       Language language = (Language) lang.getSourceModule();
+      searchResults.getSearchedNodes().add(lang);
       SearchScope scope = query.getScope();
       ModuleUsagesFinder moduleFinder = new ModuleUsagesFinder();
       for (SModule module : scope.getModules()) {

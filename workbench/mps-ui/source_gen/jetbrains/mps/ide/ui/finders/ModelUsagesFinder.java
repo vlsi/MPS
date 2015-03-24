@@ -31,7 +31,7 @@ public class ModelUsagesFinder implements IFinder {
       return searchResults;
     }
     SModelReference modelReference = (SModelReference) value;
-
+    searchResults.getSearchedNodes().add(modelReference);
     Collection<SModel> models = IterableUtil.asCollection(query.getScope().getModels());
     monitor.start("Looking up references to a model", models.size());
     for (SModel modelDescriptor : models) {

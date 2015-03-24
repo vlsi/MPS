@@ -50,6 +50,7 @@ public class ModuleUsagesFinder implements IFinder {
     if (searchedModule == null) {
       return searchResults;
     }
+    searchResults.getSearchedNodes().add(searchedModule);
     Collection<SModule> modules = IterableUtil.asCollection(query.getScope().getModules());
     monitor.start("Looking up module uses", modules.size());
     for (SModule module : modules) {
