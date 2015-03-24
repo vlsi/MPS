@@ -295,7 +295,6 @@
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -1032,20 +1031,17 @@
                       </node>
                       <node concept="3cpWs3" id="4PIVP4GTGpv" role="37wK5m">
                         <node concept="2OqwBi" id="1$sIUMYazzH" role="3uHU7w">
-                          <node concept="2OqwBi" id="1$sIUMYazzA" role="2Oq$k0">
-                            <node concept="FGMqu" id="1$sIUMYazzB" role="2OqNvi" />
-                            <node concept="2OqwBi" id="1$sIUMYazzC" role="2Oq$k0">
-                              <node concept="2OqwBi" id="1$sIUMYazzD" role="2Oq$k0">
-                                <node concept="37vLTw" id="2BHiRxglCYv" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                                </node>
-                                <node concept="1mfA1w" id="1$sIUMYazzF" role="2OqNvi" />
+                          <node concept="2OqwBi" id="1$sIUMYazzC" role="2Oq$k0">
+                            <node concept="2OqwBi" id="1$sIUMYazzD" role="2Oq$k0">
+                              <node concept="37vLTw" id="2BHiRxglCYv" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
                               </node>
-                              <node concept="3NT_Vc" id="1$sIUMYazzG" role="2OqNvi" />
+                              <node concept="1mfA1w" id="1$sIUMYazzF" role="2OqNvi" />
                             </node>
+                            <node concept="2yIwOk" id="4k9eBecuOxh" role="2OqNvi" />
                           </node>
-                          <node concept="2qgKlT" id="1$sIUMYazzI" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                          <node concept="liA8E" id="4k9eBecuOQB" role="2OqNvi">
+                            <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                           </node>
                         </node>
                         <node concept="3cpWs3" id="4PIVP4GTGoc" role="3uHU7B">
@@ -1347,13 +1343,17 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="4jSklMIU$RZ" role="3clFbw">
-            <node concept="10Nm6u" id="4jSklMIU$S4" role="3uHU7w" />
-            <node concept="2OqwBi" id="4jSklMIU$Rd" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxgmC6V" role="2Oq$k0">
-                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+          <node concept="3fqX7Q" id="4k9eBecuNPo" role="3clFbw">
+            <node concept="2OqwBi" id="4k9eBecuNPq" role="3fr31v">
+              <node concept="2OqwBi" id="4k9eBecuNPr" role="2Oq$k0">
+                <node concept="37vLTw" id="4k9eBecuNPs" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                </node>
+                <node concept="2yIwOk" id="4k9eBecuNPt" role="2OqNvi" />
               </node>
-              <node concept="3NT_Vc" id="4jSklMIU$Rj" role="2OqNvi" />
+              <node concept="liA8E" id="4k9eBecuNPu" role="2OqNvi">
+                <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+              </node>
             </node>
           </node>
         </node>
