@@ -23,6 +23,7 @@ import jetbrains.mps.idea.testFramework.TestEnvironment;
 import jetbrains.mps.jps.make.testEnvironment.JpsTestEnvironmentAdjuster;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.junit.Assert;
 
 import java.io.File;
 
@@ -33,10 +34,10 @@ import java.io.File;
  * @param <E> -- represents the entity which is supposed to set up the jps (and mps) environment given a bean of the kind {@link B}
  **/
 public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E extends TestEnvironment<B>> extends MpsJpsBuildTestCase {
-  private E adjustEnvironment(B emptyBean, E emptyEnvironment, String inputTestName) {
+  private E adjustEnvironment(B emptyBean, E emptyEnvironment, String filePath) {
     MpsBeanAdjuster<B> beanConstructor = new MpsBeanAdjuster<B>(emptyBean);
 
-    JpsTestEnvironmentAdjuster<B, E> environmentAdjuster = new JpsTestEnvironmentAdjuster<B, E>(beanConstructor, emptyEnvironment, inputTestName);
+    JpsTestEnvironmentAdjuster<B, E> environmentAdjuster = new JpsTestEnvironmentAdjuster<B, E>(beanConstructor, emptyEnvironment, filePath);
     return environmentAdjuster.construct();
   }
 
@@ -47,6 +48,8 @@ public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E ex
    * @return adjusted environment (input file is read by the MpsBeanAdjuster and the environment is filled with data accordingly)
    */
   protected E setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestFileName) {
-    return adjustEnvironment(emptyBean, emptyEnvironment, new File(getTestDataRootPath(), inputTestFileName).getAbsolutePath());
+    final File file = new File(getTestDataRootPath(), inputTestFileName);
+    Assert.assertTrue(file.exists());
+    return adjustEnvironment(emptyBean, emptyEnvironment, file.getAbsolutePath());
   }
 }

@@ -31,12 +31,14 @@ import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.model.serialization.JpsProjectLoader;
 import org.jetbrains.jps.model.serialization.PathMacroUtil;
 import org.jetbrains.jps.util.JpsPathUtil;
+import org.junit.Assert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
@@ -49,11 +51,10 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
     Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
   }
 
- @NotNull
+  @NotNull
   @NonNls
   @Override
   protected abstract String getTestDataRootPath();
-
 
   /**
    * @deprecated Please consider using {@link #copyToProject}
@@ -63,10 +64,10 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
     return copyToProject(relativeSourcePath, relativeTargetPath);
   }
 
-
   @Override
   protected String getHomePath() {
-    return System.getProperty("user.dir");
+    final File projectDir = new ProjectDirFinder().findProjectDir();
+    return projectDir.getAbsolutePath();
   }
 
   @Override

@@ -34,15 +34,16 @@ public class JpsTestEnvironmentAdjuster<B extends MpsBean, E extends TestEnviron
 
   public JpsTestEnvironmentAdjuster(@NotNull MpsBeanAdjuster<B> beanConstructor,
                                     @NotNull E environment,
-                                    @NonNls @TestDataFile String beanInputFile) {
+                                    @NonNls @TestDataFile String beanInputFilePath) {
     myBeanConstructor = beanConstructor;
     myEnvironment = environment;
-    myBeanInputFile = beanInputFile;
+    myBeanInputFile = beanInputFilePath;
   }
 
   @NotNull
   private B createSettingsBean(@TestDataFile String testInput) {
     File in = new File(testInput);
+    assert in.exists();
     try {
       return myBeanConstructor.constructBeanFromFile(in);
     } catch (FileNotFoundException e) {

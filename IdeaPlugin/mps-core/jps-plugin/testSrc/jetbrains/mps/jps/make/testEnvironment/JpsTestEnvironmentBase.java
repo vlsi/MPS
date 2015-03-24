@@ -23,6 +23,7 @@ import jetbrains.mps.idea.testFramework.MpsBean;
 import jetbrains.mps.idea.testFramework.TestEnvironment;
 import jetbrains.mps.jps.make.fileUtil.FileFinder;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
+import jetbrains.mps.jps.make.tests.ProjectDirFinder;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.impl.JpsMPSModuleExtensionImpl;
 import org.jetbrains.annotations.NonNls;
@@ -47,7 +48,8 @@ public abstract class JpsTestEnvironmentBase<B extends MpsBean> implements TestE
 
   private String getLanguageLocations() {
     String separator = ";";
-    String[] dirsToScan = {PathManager.getPluginsPath(), "."}; // assuming we are in the project dir right now
+    final String projectDirPath = new ProjectDirFinder().findProjectDir().getAbsolutePath();
+    String[] dirsToScan = {PathManager.getPluginsPath(), projectDirPath};
     StringBuilder sb = new StringBuilder();
     for (String langLocation : MPS_LANGUAGE_LOCATIONS) {
       File locFile = new FileFinder(dirsToScan).checkedFind(langLocation);
