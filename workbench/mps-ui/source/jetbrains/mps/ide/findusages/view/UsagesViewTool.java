@@ -50,6 +50,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -116,15 +117,31 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne,
-      final boolean forceNewTab,
-      final String notFoundMsg) {
+  /**
+   * Display usages in a tool window of a respective project, according to options supplied.
+   *
+   */
+  public static void showUsages(@NotNull Project project, @NotNull IResultProvider provider, @NotNull SearchQuery query, @NotNull UsageToolOptions options) {
+    project.getComponent(UsagesViewTool.class).findUsages(provider, query, options);
+  }
+
+  /**
+   * @deprecated Use {@link #showUsages(com.intellij.openapi.project.Project, jetbrains.mps.ide.findusages.model.IResultProvider, jetbrains.mps.ide.findusages.model.SearchQuery, UsageToolOptions)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean forceNewTab, String notFoundMsg) {
+    findUsages(provider, query, new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
+  }
+
+  private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
     final SearchTask searchTask = new SearchTask(provider, query);
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
         new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
           private SearchResults searchResults;
+
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
             searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()), new ProgressMonitorAdapter(indicator));
@@ -132,7 +149,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
           @Override
           public void onSuccess() {
-            showResults(searchTask, searchResults, showOne, forceNewTab, isRerunnable, notFoundMsg);
+            showResults(searchTask, searchResults, options);
           }
         }.queue();
       }
@@ -141,46 +158,48 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   public void show(SearchResults results, String notFoundMsg) {
     ThreadUtils.assertEDT();
-    showResults(null, results, true, true, false, notFoundMsg);
+    showResults(null, results, new UsageToolOptions().navigateIfSingle(false).forceNewTab(true).allowRunAgain(false).notFoundMessage(notFoundMsg));
   }
 
-  private void showResults(SearchTask searchTask, final SearchResults searchResults, final boolean showOne,
-      final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
+  private void showResults(SearchTask searchTask, final SearchResults<?> searchResults, UsageToolOptions options) {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
-      manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
-    } else if (resCount == 1 && !showOne) {
-      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
-          // TODO: use node pointers here
-          if (node != null) {
+      manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, options.myNotFoundMessage, null, null);
+      return;
+    } else if (resCount == 1 && options.myNavigateIfSingle) {
+      final SearchResult<?> searchResult = searchResults.getSearchResults().get(0);
+      if (searchResult.getObject() instanceof SNode) {
+        final SNode node = (SNode) searchResult.getObject();
+        // FIXME need a dedicated command (NavigateNodeCommand?) to execute, which hides required runWriteInEDT complexity
+        mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
             NavigationSupport.getInstance().openNode(mpsProject, node, true, !(node.getModel() != null && node.getParent() == null));
           }
-        }
-      });
-    } else {
-      int index = getCurrentTabIndex();
-      UsagesView usagesView = createUsageView(isRerunnable ? searchTask : null);
-      UsageViewData usageViewData = new UsageViewData(usagesView, isRerunnable ? searchTask : null);
-      myUsageViewsData.add(usageViewData);
-
-      usagesView.setContents(searchResults);
-
-      Icon icon = usagesView.getIcon();
-      String caption = usagesView.getCaption();
-      JComponent component = usagesView.getComponent();
-      Content content = addContent(component, caption, icon, true);
-      getContentManager().setSelectedContent(content);
-
-      if (!forceNewTab) {
-        closeLastUnpinnedTab(index);
+        });
+        return;
       }
-      openTool(true);
+      // FALL THROUGH (single result we can't navigate to)
     }
+    int index = getCurrentTabIndex();
+    UsagesView usagesView = createUsageView(options.myRunAgain ? searchTask : null);
+    UsageViewData usageViewData = new UsageViewData(usagesView, options.myRunAgain ? searchTask : null);
+    myUsageViewsData.add(usageViewData);
+
+    usagesView.setContents(searchResults);
+
+    Icon icon = usagesView.getIcon();
+    String caption = usagesView.getCaption();
+    JComponent component = usagesView.getComponent();
+    Content content = addContent(component, caption, icon, true);
+    getContentManager().setSelectedContent(content);
+
+    if (!options.myForceNewTab) {
+      closeLastUnpinnedTab(index);
+    }
+    openTool(true);
   }
 
   //---END FIND STUFF----

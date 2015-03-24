@@ -53,6 +53,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -97,7 +98,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
@@ -414,29 +415,25 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
 
-          final SearchQuery[] query = new SearchQuery[1];
           final SearchScope scope = myModule.getScope();
-          ModelAccess.instance().runReadAction(new Runnable() {
+          // FIXME use collection of SModuleReference instead
+          List<SModule> modules = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<SModule>>() {
             @Override
-            public void run() {
+            public List<SModule> compute() {
               List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
                 if (value instanceof SModuleReference) {
-                  modules.add(
-                    MPSModuleRepository.getInstance().getModuleByFqName(
-                      ((SModuleReference) value).getModuleName())
-                  );
+                  modules.add(MPSModuleRepository.getInstance().getModuleByFqName(((SModuleReference) value).getModuleName()));
                 }
               }
-              query[0] = new SearchQuery(new MyModulesHolder(modules), scope);
+              return modules;
             }
           });
+          final SearchQuery query = new SearchQuery(new MyModulesHolder(modules), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-          UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-          if (usagesViewTool != null) {
-            usagesViewTool.findUsages(provider, query[0], true, true, true, "No usages found");
-          }
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }
       };
@@ -614,8 +611,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         return;
       }
 
-      UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-      usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
+      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+      UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
       forceCancelCloseDialog();
     }
 

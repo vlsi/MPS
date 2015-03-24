@@ -19,8 +19,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -70,7 +71,8 @@ public class FindLanguageUsages_Action extends BaseAction {
       final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
       final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
       final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
-      ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false, "Language has no usages");
+      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
+      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);

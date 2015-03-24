@@ -40,6 +40,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -302,8 +303,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           };
           final SearchQuery query = new SearchQuery(modelsHolder, scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-          UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }
       });
@@ -364,8 +365,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider provider = FindUtils.makeProvider(new LanguageUsagesFinder());
       // FIXME FindAction below uses slightly different code to perform search, merge. Unwrap devkit here, do not rely on LanguageUsageFinder to do that?
       // And get rid of MyModulesHolder, at last.
-      UsagesViewTool usagesViewTool = myProject.getComponent(UsagesViewTool.class);
-      usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
+      final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+      UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
       forceCancelCloseDialog();
     }
 
@@ -401,8 +402,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           });
           final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
-          UsagesViewTool usagesViewTool = myProject.getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
+          final UsageToolOptions uvOpt = new UsageToolOptions().allowRunAgain(true).forceNewTab(true).navigateIfSingle(false);
+          UsagesViewTool.showUsages(ProjectHelper.toIdeaProject(myProject), provider, query, uvOpt);
           forceCancelCloseDialog();
         }
       };

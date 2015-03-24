@@ -18,8 +18,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -63,8 +64,8 @@ public class FindModelUsages_Action extends BaseAction {
       SearchScope scope = GlobalScope.getInstance();
       final SearchQuery query = new SearchQuery(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), scope);
       final IResultProvider provider = FindUtils.makeProvider(new ModelImportsUsagesFinder());
-
-      ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false, "Model has no usages");
+      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).navigateIfSingle(false).forceNewTab(false).notFoundMessage("Model has no usages");
+      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
