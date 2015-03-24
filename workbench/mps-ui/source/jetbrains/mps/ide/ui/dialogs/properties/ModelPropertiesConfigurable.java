@@ -34,9 +34,10 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
+import jetbrains.mps.ide.findusages.model.holders.LanguageHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -85,7 +86,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
@@ -358,25 +358,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     protected void findUsages(final Object value) {
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
       final SearchScope scope = new ModelsScope(myModelDescriptor);
-      // FIXME FindAction below uses slightly different code to perform search, merge.
-      // Refactor LanguageUsageFinder to understand SLanguage.
-      // Introduce CompositeFinder to handle collections from IHolder instead of dedicated ModulesHolder
+      final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
+      final SearchQuery query = new SearchQuery(entry.myLanguage != null ? new LanguageHolder(entry.myLanguage) : new ModuleRefHolder(entry.myDevKit), scope);
+      final IResultProvider provider = FindUtils.makeProvider(new LanguageUsagesFinder());
+      // FIXME FindAction below uses slightly different code to perform search, merge. Unwrap devkit here, do not rely on LanguageUsageFinder to do that?
       // And get rid of MyModulesHolder, at last.
-      myProject.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
-          query[0] = new SearchQuery(entry.myLanguage != null ?
-              entry.myLanguage.getSourceModule() : entry.myDevKit.resolve(myProject.getRepository()),
-              scope);
-          provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
-        }
-      });
       UsagesViewTool usagesViewTool = myProject.getComponent(UsagesViewTool.class);
-      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+      usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
       forceCancelCloseDialog();
     }
 
@@ -386,34 +375,34 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindAnActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          final SearchQuery[] query = new SearchQuery[1];
           final SearchScope scope = new ModelsScope(myModelDescriptor);
+          final List<SLanguage> languages = new LinkedList<SLanguage>();
           myProject.getModelAccess().runReadAction(new Runnable() {
             @Override
             public void run() {
-              List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
                 if (value instanceof UsedLangsTableModel.Import) {
-                  // FIXME dedicated search for SLanguage
                   final Import entry = (Import) value;
                   if (entry.myLanguage != null) {
-                    modules.add(entry.myLanguage.getSourceModule());
+                    languages.add(entry.myLanguage);
                   } else {
                     final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
                     if (devkit instanceof DevKit) {
                       // FIXME update DevKit to use SLanguage
-                      modules.addAll(((DevKit) devkit).getAllExportedLanguages());
+                      for (Language l : ((DevKit) devkit).getAllExportedLanguages()) {
+                        languages.add(MetaAdapterByDeclaration.getLanguage(l));
+                      }
                     }
                   }
                 }
               }
-              query[0] = new SearchQuery(new MyModulesHolder(modules), scope);
             }
           });
+          final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
           UsagesViewTool usagesViewTool = myProject.getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider, query[0], true, true, true, "No usages found");
+          usagesViewTool.findUsages(provider, query, true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
       };

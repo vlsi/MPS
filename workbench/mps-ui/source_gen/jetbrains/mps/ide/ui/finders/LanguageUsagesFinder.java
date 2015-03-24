@@ -6,22 +6,28 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import java.util.Collections;
+import jetbrains.mps.project.DevKit;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
+/**
+ * Look up nodes of particular language in scope models.
+ * Exact language match, no extended/extending languages are considered.
+ * I.e. if there's a node A of L1, and we look up L2 which extends L1, node A won't be considered as 'use' of L2. Same for node B of L2, and a search of L1.
+ */
 public class LanguageUsagesFinder implements IFinder {
   private static final String NODES_IN_LANGUAGE = "nodes written in language";
 
@@ -30,68 +36,51 @@ public class LanguageUsagesFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
+    HashSet<SLanguage> languages = new HashSet<SLanguage>(getLanguageToLookUp(query));
+
+    Collection<SModel> models = IterableUtil.asCollection(query.getScope().getModels());
+    monitor.start("Look up instances of language concepts", models.size());
+    for (SModel model : models) {
+      if (monitor.isCanceled()) {
+        return searchResults;
+      }
+      if (!(SModelStereotype.isUserModel(model))) {
+        continue;
+      }
+
+      for (SNode node : SNodeUtil.getDescendants(model)) {
+        if (languages.contains(node.getConcept().getLanguage())) {
+          searchResults.add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
+        }
+      }
+      monitor.advance(1);
+    }
+    monitor.done();
+    return searchResults;
+  }
+
+  /*package*/ static Collection<SLanguage> getLanguageToLookUp(SearchQuery query) {
     Object value = query.getObjectHolder().getObject();
     SModule searchedModule;
     if (value instanceof SModule) {
       searchedModule = ((SModule) value);
     } else if (value instanceof SModuleReference) {
       searchedModule = query.getScope().resolve(((SModuleReference) value));
+    } else if (value instanceof SLanguage) {
+      return Collections.singletonList(((SLanguage) value));
     } else {
-      return searchResults;
+      return Collections.emptyList();
     }
     // FIXME likely it's smarter to unwrap devkit at the caller's, wrapped with CompositeFinder 
     if (searchedModule instanceof DevKit) {
-      for (Language devKiltLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
-        SearchQuery innerQuery = new SearchQuery(devKiltLanguage, query.getScope());
-        searchResults.addAll(find(innerQuery, monitor));
+      ArrayList<SLanguage> rv = new ArrayList<SLanguage>();
+      for (Language devKitLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
+        rv.add(MetaAdapterByDeclaration.getLanguage(devKitLanguage));
       }
     }
-    if (!((searchedModule instanceof Language))) {
-      return searchResults;
+    if (searchedModule instanceof Language) {
+      return Collections.singletonList(MetaAdapterByDeclaration.getLanguage((Language) searchedModule));
     }
-    Language language = (Language) searchedModule;
-    SearchScope scope = query.getScope();
-    if (scope instanceof GlobalScope) {
-      ModuleUsagesFinder moduleFinder = new ModuleUsagesFinder();
-      for (SModule module : (as_m2sz3c_a0a0b0j0d(scope, GlobalScope.class)).getModules()) {
-        if (monitor.isCanceled()) {
-          return searchResults;
-        }
-        if (module instanceof Solution) {
-          moduleFinder.collectUsagesInSolution(language, (Solution) module, searchResults);
-        }
-        if (module instanceof Language) {
-          moduleFinder.collectUsagesInLanguage(language, (Language) module, searchResults);
-          for (Generator g : ((Language) module).getGenerators()) {
-            moduleFinder.collectUsagesInGenerator(language, g, searchResults);
-          }
-        }
-        if (module instanceof DevKit) {
-          moduleFinder.collectUsagesInDevKit(language, (DevKit) module, searchResults);
-        }
-      }
-    } else if (query.getScope() instanceof ModelsScope) {
-      searchResults.getSearchedNodes().add(language);
-      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a3(query.getScope(), ModelsScope.class)).getModels()) {
-        collectUsagesInModel(language, modelDescriptor, searchResults);
-      }
-    }
-    return searchResults;
-  }
-  private void collectUsagesInModel(Language searchedLanguage, SModel modelDescriptor, SearchResults searchResults) {
-    if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-      return;
-    }
-    for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
-      if (SNodeOperations.getLanguage(node) == searchedLanguage) {
-        searchResults.add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
-      }
-    }
-  }
-  private static <T> T as_m2sz3c_a0a0b0j0d(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_m2sz3c_a0a0b0a9a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
+    return Collections.emptyList();
   }
 }
