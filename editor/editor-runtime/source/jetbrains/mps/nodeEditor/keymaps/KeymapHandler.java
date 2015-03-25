@@ -27,11 +27,10 @@ import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
@@ -128,13 +127,12 @@ public abstract class KeymapHandler<E> {
         importedAndExtendedLanguages.addAll(LanguageDependenciesManager.getAllExtendedLanguageReferences(l));
       }
 
-      final Set<SLanguage> moduleUsedLanguages = editorContext.getModel().getModule().getUsedLanguages();
-      for (SModuleReference ref : importedAndExtendedLanguages) {
-        SModule language = ref.resolve(MPSModuleRepository.getInstance());
+      //  As long as our concept hierarchy mimics that of languages, it's ok to go through extended languages
+      // to find out possible editors/keymaps declared for super-concepts. This code has to change into generated
+      // factory for keymaps, so that we don't need to walk hierarchy here.
+      for (SLanguage l : new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended()) {
+        SModule language = l.getSourceModule();
         if (!(language instanceof Language)) {
-          continue;
-        }
-        if (!moduleUsedLanguages.contains(MetaAdapterByDeclaration.getLanguage((Language) language))) {
           continue;
         }
 

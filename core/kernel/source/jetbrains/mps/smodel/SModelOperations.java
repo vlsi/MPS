@@ -159,8 +159,25 @@ public class SModelOperations {
     return new HashSet<SModuleReference>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguages());
   }
 
+  /**
+   * @deprecated xxxIds is confusing, use {@link #getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel)} instead
+   */
   @NotNull
+  @ToRemove(version = 3.3)
   public static Set<SLanguage> getAllImportedLanguageIds(SModel model) {
+    return getAllLanguageImports(model);
+  }
+
+  /**
+   * Tell used languages of a model the way user specified them in model dependencies.
+   * Doesn't look at actual model content (i.e. what concept instances are there).
+   * <p>
+   * To obtain closure including extended/extending languages, use {@link jetbrains.mps.smodel.SLanguageHierarchy}
+   * @return set of languages imported by the model, either directly or through devkit
+   * @since 3.3
+   */
+  @NotNull
+  public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
     return new HashSet<SLanguage>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguagesIds());
   }
 
