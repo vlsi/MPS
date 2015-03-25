@@ -32,13 +32,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class DefaultSReferentSubstituteAction extends AbstractSubstituteAction {
+public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction {
   private final SNode myCurrentReferent;
   private final SReferenceLink myLink;
   private final ReferenceDescriptor myRefDescriptor;
   private final SNode myTargetNode;
 
-  public DefaultSReferentSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
+  public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
     super(sourceNode);
     myTargetNode = targetNode;
     myCurrentReferent = currentReferent;

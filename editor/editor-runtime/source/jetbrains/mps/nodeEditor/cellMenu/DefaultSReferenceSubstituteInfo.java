@@ -20,7 +20,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.action.DefaultSReferentSubstituteAction;
+import jetbrains.mps.smodel.action.DefaultSReferenceSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -102,7 +102,7 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
         continue;
       }
       assert node.getConcept().isSubConceptOf(referentConcept);
-      actions.add(new DefaultSReferentSubstituteAction(node, mySourceNode, targetNode, myLink));
+      actions.add(new DefaultSReferenceSubstituteAction(node, mySourceNode, targetNode, myLink));
     }
     return actions;
   }
