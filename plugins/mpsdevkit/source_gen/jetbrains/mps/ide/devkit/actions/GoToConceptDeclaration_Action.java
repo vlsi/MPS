@@ -31,7 +31,7 @@ public class GoToConceptDeclaration_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))) != null;
+    return SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).getDeclarationNode() != null;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -68,7 +68,7 @@ public class GoToConceptDeclaration_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
-      SNode concept = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
+      SNode concept = ((SNode) SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).getDeclarationNode());
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), concept, true, true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
