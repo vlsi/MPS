@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -68,7 +69,10 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
     if (text != null) {
       return text;
     }
-    return myTargetNode.getConcept().getName();
+    if (myTargetNode.getConcept().isSubConceptOf(SNodeUtil.concept_IResolveInfo)) {
+      return SNodeUtil.getResolveInfo(myTargetNode);
+    }
+    return myTargetNode.getPresentation();
   }
 
   @Override

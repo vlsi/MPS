@@ -88,7 +88,6 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
   }
 
   private List<SubstituteAction> createActions(SNode targetNode) {
-
     final SAbstractConcept referentConcept = myLink.getTargetConcept();
     if (referentConcept == null) {
       return Collections.emptyList();

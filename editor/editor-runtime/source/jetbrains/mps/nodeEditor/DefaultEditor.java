@@ -227,7 +227,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
         cell.setRole(referenceLink.getRoleName());
         //todo attributes
-        addCell(cell);
+        addCellWithRole(IterableUtils.first(AttributeOperations.getLinkAttributes(mySNode, referenceLink)), AttributeKind.Reference.class, cell);
       }
     }
 
