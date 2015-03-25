@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -26,13 +25,12 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultChildSetter;
-import jetbrains.mps.smodel.action.DefaultChildSubstituteAction;
+import jetbrains.mps.smodel.action.DefaultSChildSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -108,7 +106,7 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     ArrayList<SubstituteAction> substituteActions = new ArrayList<SubstituteAction>();
     for (SAbstractConcept concept : concepts) {
       //todo add constraits
-      substituteActions.add(new DefaultChildSubstituteAction(concept, myParentNode, myCurrentChild, mySetter));
+      substituteActions.add(new DefaultSChildSubstituteAction(concept, myParentNode, myCurrentChild, mySetter));
     }
     return substituteActions;
   }

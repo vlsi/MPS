@@ -25,13 +25,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class DefaultChildSubstituteAction extends AbstractSubstituteAction {
+public class DefaultSChildSubstituteAction extends AbstractSubstituteAction {
   private SNode myCurrentChild;
   private SNode myOldChild;
   private IChildNodeSetter mySetter;
   private SAbstractConcept myConcept;
 
-  public DefaultChildSubstituteAction(SAbstractConcept outputConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
+  public DefaultSChildSubstituteAction(SAbstractConcept outputConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter) {
     super(parentNode);
     myConcept = outputConcept;
     myCurrentChild = currentChild;
