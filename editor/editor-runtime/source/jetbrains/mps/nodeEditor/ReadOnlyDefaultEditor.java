@@ -89,7 +89,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(final SProperty property) {
-    EditorCell_Property cell = EditorCell_Property.create(myEditorContext, new ModelAccessor() {
+    EditorCell_Property cell = new EditorCell_Property(myEditorContext, new ModelAccessor() {
       public String getText() {
         return mySNode.getProperty(property);
       }

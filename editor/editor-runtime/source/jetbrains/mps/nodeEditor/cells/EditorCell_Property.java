@@ -36,7 +36,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   private boolean myCommitInProgress;
   private boolean myCommitInCommand = true;
 
-  protected EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
+  public EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
     setErrorState(!accessor.isValidText(getText()));
     myModelAccessor = accessor;

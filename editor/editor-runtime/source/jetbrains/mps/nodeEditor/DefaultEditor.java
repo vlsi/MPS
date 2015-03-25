@@ -43,10 +43,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -55,6 +57,7 @@ import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
@@ -114,7 +117,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(SProperty property) {
-    EditorCell_Property editorCell = EditorCell_Property.create(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
+    EditorCell_Property editorCell = new EditorCell_Property(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
+    editorCell.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(editorCell, new Pair<SNodeReference, String>(new SNodePointer(mySNode), property.getName()));
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
       editorCell.setCellId("property_" + property);

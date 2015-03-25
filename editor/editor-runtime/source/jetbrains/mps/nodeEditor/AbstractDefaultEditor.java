@@ -231,7 +231,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   }
 
   protected EditorCell createReferentEditorCell(EditorContext editorContext, SReferenceLink link, final SNode targetNode) {
-    EditorCell_Property result = EditorCell_Property.create(editorContext, new ModelAccessor() {
+    EditorCell_Property result = new EditorCell_Property(editorContext, new ModelAccessor() {
       public String getText() {
         String name = targetNode.getName();
         if (name != null) {
