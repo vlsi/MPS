@@ -67,7 +67,13 @@ public class SModelOperations {
     return model.isReadOnly();
   }
 
-  public static void validateLanguagesAndImports(@NotNull SModel model, boolean respectModulesScopes, boolean firstVersion) {
+  /**
+   * Populate given model with proper imports/languages according to actual model content (i.e. nodes)
+   * @param model model to populate with language/import dependencies
+   * @param updateModuleImports <code>true</code> to update imports of model's module (if any)
+   * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9)
+   */
+  public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
     ModelChange.assertLegalChange_new(model);
 
     final SModule module = model.getModule();
@@ -85,7 +91,7 @@ public class SModelOperations {
     for (SLanguage language : modelScanner.getUsedLanguages()) {
       if (!modelDeclaredUsedLanguages.contains(language)) {
         if (module != null) {
-          if (respectModulesScopes && !moduleDeclaredUsedLanguages.contains(language)) {
+          if (updateModuleImports && !moduleDeclaredUsedLanguages.contains(language)) {
             ((AbstractModule) module).addUsedLanguage(language);
           }
         }
@@ -96,7 +102,7 @@ public class SModelOperations {
     }
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
       if (importedModels.add(targetModelReference)) {
-        if (respectModulesScopes && module != null) {
+        if (updateModuleImports && module != null) {
           SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
           SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
           if (targetModule != null && !moduleDeclaredDependencies.contains(targetModule)) {

@@ -2520,15 +2520,8 @@
                                   <property role="TrG5h" value="ver" />
                                   <node concept="10Oyi0" id="7rK8qWGHJwz" role="1tU5fm" />
                                   <node concept="2OqwBi" id="7rK8qWGHJw$" role="33vP2m">
-                                    <node concept="1eOMI4" id="7rK8qWGHJw_" role="2Oq$k0">
-                                      <node concept="10QFUN" id="7rK8qWGHJwA" role="1eOMHV">
-                                        <node concept="37vLTw" id="7rK8qWGHJwB" role="10QFUP">
-                                          <ref role="3cqZAo" node="7rK8qWGHJxc" resolve="module" />
-                                        </node>
-                                        <node concept="3uibUv" id="7rK8qWGHJwC" role="10QFUM">
-                                          <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                                        </node>
-                                      </node>
+                                    <node concept="37vLTw" id="7rK8qWGHJwB" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="7rK8qWGHJxc" resolve="module" />
                                     </node>
                                     <node concept="liA8E" id="7rK8qWGHJwD" role="2OqNvi">
                                       <ref role="37wK5l" to="vsqj:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getUsedLanguageVersion" />
@@ -2605,19 +2598,22 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="2OqwBi" id="7rK8qWGHJx4" role="2GsD0m">
-                              <node concept="1eOMI4" id="7rK8qWGHJx5" role="2Oq$k0">
-                                <node concept="10QFUN" id="7rK8qWGHJx6" role="1eOMHV">
-                                  <node concept="37vLTw" id="7rK8qWGHJx7" role="10QFUP">
-                                    <ref role="3cqZAo" node="7rK8qWGHJxc" resolve="module" />
-                                  </node>
-                                  <node concept="3uibUv" id="7rK8qWGHJx8" role="10QFUM">
-                                    <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                            <node concept="2OqwBi" id="5DIzVECRyWL" role="2GsD0m">
+                              <node concept="2ShNRf" id="5DIzVECRb4A" role="2Oq$k0">
+                                <node concept="1pGfFk" id="5DIzVECRvPI" role="2ShVmc">
+                                  <ref role="37wK5l" to="cu2c:~SLanguageHierarchy.&lt;init&gt;(java.util.Collection)" resolve="SLanguageHierarchy" />
+                                  <node concept="2OqwBi" id="5DIzVECRwsV" role="37wK5m">
+                                    <node concept="37vLTw" id="5DIzVECRw9c" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="7rK8qWGHJxc" resolve="module" />
+                                    </node>
+                                    <node concept="liA8E" id="5DIzVECRyBX" role="2OqNvi">
+                                      <ref role="37wK5l" to="vsqj:~AbstractModule.getUsedLanguages():java.util.Set" resolve="getUsedLanguages" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>
-                              <node concept="liA8E" id="7rK8qWGHJx9" role="2OqNvi">
-                                <ref role="37wK5l" to="vsqj:~AbstractModule.getAllUsedLanguages():java.util.Set" resolve="getAllUsedLanguages" />
+                              <node concept="liA8E" id="5DIzVECRznG" role="2OqNvi">
+                                <ref role="37wK5l" to="cu2c:~SLanguageHierarchy.getExtended():java.util.Set" resolve="getExtended" />
                               </node>
                             </node>
                           </node>

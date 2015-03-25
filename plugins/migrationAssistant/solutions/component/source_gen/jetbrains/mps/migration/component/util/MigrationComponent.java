@@ -41,6 +41,7 @@ import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -328,9 +329,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
           public Integer select(AbstractModule module) {
             int scripts = 0;
             module.validateLanguageVersions();
-            for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+            for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
               int currentLangVersion = lang.getLanguageVersion();
-              int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+              int ver = module.getUsedLanguageVersion(lang);
 
               ver = Math.max(ver, 0);
               currentLangVersion = Math.max(currentLangVersion, 0);

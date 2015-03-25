@@ -56,7 +56,7 @@ public final class SModelLegacy {
     org.jetbrains.mps.openapi.model.SModel modelDescriptor =
         RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(ref);
     int usedVersion = -1;
-    if (modelDescriptor instanceof RefactorableSModelDescriptor) {
+    if (!firstVersion && modelDescriptor instanceof RefactorableSModelDescriptor) {
       usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
     }
     importElement = new ImportElement(ref, -1, firstVersion ? -1 : usedVersion);

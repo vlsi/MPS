@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -155,16 +156,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return result;
   }
 
+
+  /**
+   * @deprecated it's just a short-hand for <code>new SLanguageHierarchy(getUsedLanguages())</code>, it's hardly a justification for a cast to AbstractModule
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Set<SLanguage> getAllUsedLanguages() {
-    Set<SLanguage> directlyUsed = getUsedLanguages();
-    Set<SLanguage> result = getUsedLanguages();
-    for (SLanguage direct : directlyUsed) {
-      result.add(direct);
-      for (Language ext : ((Language) direct.getSourceModule()).getAllExtendedLanguages()) {
-        result.add(MetaAdapterByDeclaration.getLanguage(ext));
-      }
-    }
-    return result;
+    return new SLanguageHierarchy(getUsedLanguages()).getExtended();
   }
 
   @Override
