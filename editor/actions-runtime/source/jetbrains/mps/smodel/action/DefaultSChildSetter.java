@@ -24,12 +24,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-public class DefaultChildSetter extends AbstractChildNodeSetter {
-  private static final Logger LOG = LogManager.getLogger(DefaultChildSetter.class);
+public class DefaultSChildSetter extends AbstractChildNodeSetter {
+  private static final Logger LOG = LogManager.getLogger(DefaultSChildSetter.class);
 
   SContainmentLink myLink;
 
-  public DefaultChildSetter(SContainmentLink link) {
+  public DefaultSChildSetter(SContainmentLink link) {
     myLink = link;
   }
 

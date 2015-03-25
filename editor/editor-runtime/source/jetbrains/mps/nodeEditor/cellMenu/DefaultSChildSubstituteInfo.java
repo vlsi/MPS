@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.DefaultChildSetter;
+import jetbrains.mps.smodel.action.DefaultSChildSetter;
 import jetbrains.mps.smodel.action.DefaultSChildSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
@@ -52,7 +52,7 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myCurrentChild;
   private SContainmentLink myLink;
   private SAbstractConcept myTargetConcept;
-  private DefaultChildSetter mySetter;
+  private DefaultSChildSetter mySetter;
 
   public DefaultSChildSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
@@ -66,7 +66,7 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
       }
     });
     myTargetConcept = link.getTargetConcept();
-    mySetter = new DefaultChildSetter(myLink);
+    mySetter = new DefaultSChildSetter(myLink);
   }
 
   public DefaultSChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SContainmentLink link, final EditorContext editorContext) {
@@ -75,7 +75,7 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     myCurrentChild = currChildNode;
     myLink = link;
     myTargetConcept = link.getTargetConcept();
-    mySetter = new DefaultChildSetter(myLink);
+    mySetter = new DefaultSChildSetter(myLink);
   }
 
   @Override
@@ -135,8 +135,8 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     return inequationsForHole;
   }
 
-  protected DefaultChildSetter createDefaultNodeSetter() {
-    return new DefaultChildSetter(myLink);
+  protected DefaultSChildSetter createDefaultNodeSetter() {
+    return new DefaultSChildSetter(myLink);
   }
 
   protected SContainmentLink getLink() {
