@@ -63,7 +63,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private int currentCollectionIdNumber = 0;
   private int currentConstantIdNumber = 0;
-  
+
 
 
   public AbstractDefaultEditor(@NotNull SConcept concept) {

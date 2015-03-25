@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
@@ -50,21 +50,28 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   protected void init() {
     assert mySNode != null && myConcept != null;
     for (SProperty sProperty : mySNode.getProperties()) {
-      myProperties.add(sProperty);
+      if (!sProperty.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+        myProperties.add(sProperty);
+      }
     }
 
     for (SReference sReference : mySNode.getReferences()) {
       SReferenceLink link = sReference.getLink();
       assert link != null : "Null meta-link from node: " + this.mySNode + ", role: " + sReference.getRole();
-      myReferenceLinks.add(link);
+      if (!link.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+        myReferenceLinks.add(link);
+      }
     }
 
     for (SNode child : this.mySNode.getChildren()) {
       SContainmentLink containmentLink = child.getContainmentLink();
       assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + this.mySNode + ", child: " + child;
-      myContainmentLinks.add(containmentLink);
+      if (!containmentLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+        myContainmentLinks.add(containmentLink);
+      }
     }
   }
+
   @Override
   protected Collection<SProperty> getProperties() {
     return myProperties;

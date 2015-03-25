@@ -43,6 +43,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
@@ -76,17 +77,23 @@ public class DefaultEditor extends AbstractDefaultEditor {
   protected void init() {
     assert mySNode != null && myConcept != null;
     for (SProperty sProperty : myConcept.getProperties()) {
-      myProperties.add(sProperty);
+      if (!sProperty.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+        myProperties.add(sProperty);
+      }
     }
     // TODO: add other SProperties declared in this node, not declared in the concept
 
     for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
-      myReferenceLinks.add(sReferenceLink);
+      if (!sReferenceLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)){
+        myReferenceLinks.add(sReferenceLink);
+      }
     }
     // TODO: add other SReferenceLinks declared in this node, not declared in the concept
 
     for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
-      myContainmentLinks.add(sContainmentLink);
+      if (!sContainmentLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+        myContainmentLinks.add(sContainmentLink);
+      }
     }
   }
 
