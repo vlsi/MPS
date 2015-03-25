@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.lang.editor.cellProviders.ChildListHandler;
+import jetbrains.mps.lang.editor.cellProviders.SChildListHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -266,7 +266,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
   }
 
 
-  private static class ListHandler extends ChildListHandler {
+  private static class ListHandler extends SChildListHandler {
     public ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
       super(ownerNode, link, context, false);
     }

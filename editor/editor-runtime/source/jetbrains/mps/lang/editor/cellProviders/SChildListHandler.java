@@ -30,17 +30,17 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class ChildListHandler extends AbstractCellListHandler {
+public abstract class SChildListHandler extends AbstractCellListHandler {
 
   protected SContainmentLink myLink;
   private boolean myIsReverseOrder = false;
 
-  public ChildListHandler(final SNode ownerNode, final SContainmentLink link, EditorContext editorContext) {
+  public SChildListHandler(final SNode ownerNode, final SContainmentLink link, EditorContext editorContext) {
     super(ownerNode, link.getRoleName(), editorContext);
     myLink = link;
   }
 
-  public ChildListHandler(SNode ownerNode, SContainmentLink link, EditorContext editorContext, boolean isReverseOrder) {
+  public SChildListHandler(SNode ownerNode, SContainmentLink link, EditorContext editorContext, boolean isReverseOrder) {
     this(ownerNode, link, editorContext);
     myIsReverseOrder = isReverseOrder;
   }
