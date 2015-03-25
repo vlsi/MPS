@@ -48,7 +48,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private SNode myParentNode;
   private SNode myCurrentChild;
@@ -56,7 +56,7 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
   private SAbstractConcept myTargetConcept;
   private DefaultChildSetter mySetter;
 
-  public DefaultContainmentSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
+  public DefaultSChildSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
     myLink = link;
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
@@ -71,7 +71,7 @@ public class DefaultContainmentSubstituteInfo extends AbstractNodeSubstituteInfo
     mySetter = new DefaultChildSetter(myLink);
   }
 
-  public DefaultContainmentSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SContainmentLink link, final EditorContext editorContext) {
+  public DefaultSChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
     myParentNode = parentNode;
     myCurrentChild = currChildNode;

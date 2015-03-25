@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultContainmentSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -163,7 +163,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
         noRefCell.setCellId("empty_" + link.getRoleName());
         noRefCell.setRole(link.getRoleName());
-        noRefCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(mySNode, link, myEditorContext));
+        noRefCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, link, myEditorContext));
         setIndent(noRefCell);
         addCell(noRefCell);
       } else {
@@ -172,7 +172,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         //todo rewrite cell actions
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(mySNode, link.getDeclarationNode(), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(mySNode, link.getDeclarationNode(), child));
-        editorCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(mySNode, child, link, myEditorContext));
+        editorCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, child, link, myEditorContext));
         setIndent(editorCell);
         addCell(editorCell);
       }
@@ -296,7 +296,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(listOwner, elementNode, myLink, editorContext));
+          elementCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(listOwner, elementNode, myLink, editorContext));
         }
       }
     }

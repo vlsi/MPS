@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.nodeEditor.cellMenu.DefaultContainmentSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -55,7 +55,7 @@ public abstract class ChildListHandler extends AbstractCellListHandler {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultContainmentSubstituteInfo(getOwner(), myLink, editorContext));
+    emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getOwner(), myLink, editorContext));
     emptyCell.setRole(getElementRole());
     emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
