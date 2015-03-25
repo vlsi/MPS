@@ -14134,7 +14134,7 @@
         <node concept="3clFbF" id="6nWbOYovFmF" role="3cqZAp">
           <node concept="37vLTI" id="6nWbOYovG_g" role="3clFbG">
             <node concept="37vLTw" id="6nWbOYovHj6" role="37vLTx">
-              <ref role="3cqZAo" node="6nWbOYovDMq" resolve="conceptDeclaration" />
+              <ref role="3cqZAo" node="6nWbOYovDMq" resolve="concept" />
             </node>
             <node concept="37vLTw" id="6nWbOYovFmE" role="37vLTJ">
               <ref role="3cqZAo" node="6nWbOYovC2n" resolve="myConceptDeclaration" />
@@ -14148,7 +14148,7 @@
         <node concept="H_c77" id="6nWbOYondVn" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="6nWbOYovDMq" role="3clF46">
-        <property role="TrG5h" value="conceptDeclaration" />
+        <property role="TrG5h" value="concept" />
         <node concept="3THzug" id="6nWbOYovEob" role="1tU5fm" />
       </node>
     </node>

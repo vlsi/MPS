@@ -5308,8 +5308,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/7348800710866869604">
     <file name="EditorComponentDeclarationScope.java">
       <node id="7348800710869155991" at="24,0,25,0" concept="6" trace="myConceptDeclaration" />
-      <node id="7348800710866951589" at="25,89,26,206" concept="16" />
-      <node id="7348800710869169579" at="26,206,27,46" concept="5" />
+      <node id="7348800710866951589" at="25,78,26,206" concept="16" />
+      <node id="7348800710869169579" at="26,206,27,35" concept="5" />
       <node id="7348800710868323038" at="29,70,30,211" concept="17" />
       <node id="7348800710867217080" at="32,61,33,74" concept="11" />
       <node id="7348800710867437441" at="34,48,35,55" concept="11" />
@@ -5328,7 +5328,7 @@
       <node id="878629418303110567" at="32,0,46,0" concept="15" trace="getModels#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/Collection;" />
       <scope id="7348800710866892501" at="29,70,30,211" />
       <scope id="7348800710867980056" at="39,47,40,107" />
-      <scope id="7348800710866951283" at="25,89,27,46" />
+      <scope id="7348800710866951283" at="25,78,27,35" />
       <scope id="2467262375109764290" at="47,41,49,521">
         <var name="editorComponent" id="7348800710868357966" />
       </scope>
@@ -5336,7 +5336,7 @@
         <var name="editorComponent" id="7348800710866938935" />
       </scope>
       <scope id="7348800710866951279" at="25,0,29,0">
-        <var name="conceptDeclaration" id="7348800710869163162" />
+        <var name="concept" id="7348800710869163162" />
         <var name="model" id="7348800710866951896" />
       </scope>
       <scope id="7348800710867764356" at="37,104,41,9">

@@ -28,7 +28,6 @@
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(java.util.concurrent@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -934,7 +933,7 @@
             <node concept="3cpWs6" id="7aqYYYFvW7d" role="3cqZAp">
               <node concept="2ShNRf" id="7aqYYYFvW7f" role="3cqZAk">
                 <node concept="1pGfFk" id="7aqYYYFvW7g" role="2ShVmc">
-                  <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                  <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                   <node concept="2OqwBi" id="7aqYYYFvW7h" role="37wK5m">
                     <node concept="13iPFW" id="7aqYYYFvW7i" role="2Oq$k0" />
                     <node concept="I4A8Y" id="7aqYYYFvW7j" role="2OqNvi" />
@@ -942,13 +941,8 @@
                   <node concept="3clFbT" id="7aqYYYFvW7k" role="37wK5m">
                     <property role="3clFbU" value="true" />
                   </node>
-                  <node concept="2OqwBi" id="1GLgM0B3Lo4" role="37wK5m">
-                    <node concept="37vLTw" id="1GLgM0B3LdO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="13YBgBBRT4e" resolve="kind" />
-                    </node>
-                    <node concept="liA8E" id="1GLgM0B3LIY" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                    </node>
+                  <node concept="37vLTw" id="1GLgM0B3LdO" role="37wK5m">
+                    <ref role="3cqZAo" node="13YBgBBRT4e" resolve="kind" />
                   </node>
                 </node>
               </node>
@@ -983,7 +977,7 @@
                 <ref role="37wK5l" to="o3n2:3h9a8EwPwtM" resolve="where" />
                 <node concept="2ShNRf" id="7aqYYYFvLYS" role="37wK5m">
                   <node concept="1pGfFk" id="7aqYYYFvMre" role="2ShVmc">
-                    <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                    <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                     <node concept="2OqwBi" id="7aqYYYFvR5k" role="37wK5m">
                       <node concept="13iPFW" id="7aqYYYFvR4Z" role="2Oq$k0" />
                       <node concept="I4A8Y" id="7aqYYYFvR5p" role="2OqNvi" />
@@ -991,13 +985,8 @@
                     <node concept="3clFbT" id="7aqYYYFvR5B" role="37wK5m">
                       <property role="3clFbU" value="true" />
                     </node>
-                    <node concept="2OqwBi" id="1GLgM0B3ORg" role="37wK5m">
-                      <node concept="37vLTw" id="1GLgM0B3OEQ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="13YBgBBRT4e" resolve="kind" />
-                      </node>
-                      <node concept="liA8E" id="1GLgM0B3Peb" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                      </node>
+                    <node concept="37vLTw" id="1GLgM0B3OEQ" role="37wK5m">
+                      <ref role="3cqZAo" node="13YBgBBRT4e" resolve="kind" />
                     </node>
                   </node>
                 </node>
@@ -1078,7 +1067,7 @@
                 <node concept="3cpWs6" id="13YBgBBSMsX" role="3cqZAp">
                   <node concept="2YIFZM" id="13YBgBBSMsZ" role="3cqZAk">
                     <ref role="1Pybhc" to="o3n2:13YBgBBS5VR" resolve="DescendantsScope" />
-                    <ref role="37wK5l" to="o3n2:13YBgBBS6Uj" resolve="forNamedElements" />
+                    <ref role="37wK5l" to="o3n2:_dGddVGbND" resolve="forNamedElements" />
                     <node concept="13iPFW" id="13YBgBBSMt1" role="37wK5m" />
                     <node concept="359W_D" id="1GLgM0B3KdR" role="37wK5m">
                       <ref role="359W_F" to="3ior:6qcrfIJFfrM" />

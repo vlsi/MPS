@@ -392,15 +392,15 @@
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="4124388153790980106" name="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" flags="nn" index="2ZHEkA" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -1896,7 +1896,7 @@
             <node concept="3cpWs6" id="1bWeed$oEFK" role="3cqZAp">
               <node concept="2ShNRf" id="1bWeed$oEFM" role="3cqZAk">
                 <node concept="1pGfFk" id="1bWeed$oEFO" role="2ShVmc">
-                  <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                  <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                   <node concept="2OqwBi" id="1bWeed$oEGa" role="37wK5m">
                     <node concept="I4A8Y" id="1bWeed$oEGf" role="2OqNvi" />
                     <node concept="37vLTw" id="2BHiRxgmKsX" role="2Oq$k0">
@@ -1906,8 +1906,8 @@
                   <node concept="3clFbT" id="1bWeed$oEGh" role="37wK5m">
                     <property role="3clFbU" value="false" />
                   </node>
-                  <node concept="3nh3qo" id="1bWeed$oEGU" role="37wK5m">
-                    <ref role="3nh3qp" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                  <node concept="35c_gC" id="4k9eBec_tqK" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                   </node>
                 </node>
               </node>
@@ -1985,7 +1985,7 @@
             <node concept="3cpWs6" id="5WMFzVNueY8" role="3cqZAp">
               <node concept="2ShNRf" id="5WMFzVNueY9" role="3cqZAk">
                 <node concept="1pGfFk" id="5WMFzVNueYa" role="2ShVmc">
-                  <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                  <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                   <node concept="2OqwBi" id="5WMFzVNueYb" role="37wK5m">
                     <node concept="I4A8Y" id="5WMFzVNueYd" role="2OqNvi" />
                     <node concept="37vLTw" id="2BHiRxghf7d" role="2Oq$k0">
@@ -1995,8 +1995,8 @@
                   <node concept="3clFbT" id="5WMFzVNueYe" role="37wK5m">
                     <property role="3clFbU" value="false" />
                   </node>
-                  <node concept="3nh3qo" id="5WMFzVNueYi" role="37wK5m">
-                    <ref role="3nh3qp" to="3ior:4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
+                  <node concept="35c_gC" id="4k9eBec_tkA" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
                   </node>
                 </node>
               </node>
@@ -2086,7 +2086,7 @@
             <node concept="3cpWs6" id="2vaDE4tApLg" role="3cqZAp">
               <node concept="2ShNRf" id="2vaDE4tApLh" role="3cqZAk">
                 <node concept="1pGfFk" id="2vaDE4tApLi" role="2ShVmc">
-                  <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                  <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                   <node concept="2OqwBi" id="2vaDE4tApLj" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxghf9E" role="2Oq$k0">
                       <ref role="3cqZAo" node="2vaDE4tApKS" resolve="project" />
@@ -2096,8 +2096,8 @@
                   <node concept="3clFbT" id="2vaDE4tApLm" role="37wK5m">
                     <property role="3clFbU" value="false" />
                   </node>
-                  <node concept="3nh3qo" id="2vaDE4tApLq" role="37wK5m">
-                    <ref role="3nh3qp" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
+                  <node concept="35c_gC" id="4k9eBec_txo" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
                   </node>
                 </node>
               </node>

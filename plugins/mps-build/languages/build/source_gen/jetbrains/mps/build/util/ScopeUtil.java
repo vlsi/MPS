@@ -97,21 +97,21 @@ public class ScopeUtil {
   public static Scope getVisibleArtifactsScope(SNode project, boolean includeLayoutRoots) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildLayout_Node");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     }
     return new ScopeUtil.VisibleArtifactsScope(VisibleArtifacts.createFor(project), includeLayoutRoots);
   }
   public static Scope getVisibleJarsScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildSource_SingleFile");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L, "jetbrains.mps.build.structure.BuildSource_SingleFile"));
     }
     return new ScopeUtil.VisibleJarsScope(VisibleArtifacts.createFor(project));
   }
   public static Scope getVisibleJarFoldersScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
-      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb659d7L, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
     }
     return new ScopeUtil.VisibleJarFoldersScope(VisibleArtifacts.createFor(project));
   }

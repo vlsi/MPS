@@ -22,9 +22,9 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 
 /*package*/ class EditorComponentDeclarationScope extends FilteringScope {
   private SNode myConceptDeclaration;
-  private EditorComponentDeclarationScope(final SModel model, SNode conceptDeclaration) {
+  private EditorComponentDeclarationScope(final SModel model, SNode concept) {
     super(new ModelsScope(getModels(model), false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")));
-    myConceptDeclaration = conceptDeclaration;
+    myConceptDeclaration = concept;
   }
   /*package*/ EditorComponentDeclarationScope(SNode editorComponent) {
     this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));

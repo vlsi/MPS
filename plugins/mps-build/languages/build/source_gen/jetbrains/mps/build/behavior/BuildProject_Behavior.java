@@ -81,12 +81,12 @@ public class BuildProject_Behavior {
   }
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SAbstractConcept kind, String role) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"))) {
-      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind.getQualifiedName());
+      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind);
     }
 
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
       final SNode _this = thisNode;
-      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind.getQualifiedName()), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
           return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), false)).contains(_this));
         }
