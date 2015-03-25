@@ -13,8 +13,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -79,8 +77,6 @@ public class ReloadSession {
       fireReloadStarted();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
-          MPSModuleRepository.getInstance().saveAll();
           for (ReloadParticipant rp : participants) {
             rp.update(monitor.subTask(1, SubProgressKind.REPLACING));
           }
