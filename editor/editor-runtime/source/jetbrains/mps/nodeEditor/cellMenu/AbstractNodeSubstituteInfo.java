@@ -118,7 +118,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   public List<SubstituteAction> getSmartMatchingActions(final String pattern, final boolean strictMatching, EditorCell contextCell) {
     // TODO make this thread local maybe?
     ourModelForTypechecking = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    for (SLanguage l : SModelOperations.getAllImportedLanguageIds(getEditorContext().getModel())) {
+    for (SLanguage l : SModelOperations.getAllLanguageImports(getEditorContext().getModel())) {
       ((SModelInternal) ourModelForTypechecking).addLanguage(l);
     }
 

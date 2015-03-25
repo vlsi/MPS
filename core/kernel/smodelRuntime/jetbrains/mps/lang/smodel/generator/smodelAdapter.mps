@@ -2,9 +2,9 @@
 <model ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
@@ -3657,21 +3657,23 @@
           <node concept="1rXfSq" id="1EtdPNufFQV" role="3clFbG">
             <ref role="37wK5l" node="1EtdPNufvop" resolve="getAllSubConcepts" />
             <node concept="37vLTw" id="1EtdPNufFQW" role="37wK5m">
-              <ref role="3cqZAo" node="1EtdPNufFR5" resolve="conceptDeclarationNode" />
+              <ref role="3cqZAo" node="1EtdPNufFR5" resolve="concept" />
             </node>
-            <node concept="2ShNRf" id="1EtdPNufFQX" role="37wK5m">
-              <node concept="1pGfFk" id="1EtdPNufFQY" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
-                <node concept="2YIFZM" id="1EtdPNug1wR" role="37wK5m">
-                  <ref role="37wK5l" to="cu2c:~SModelOperations.getSLanguages(org.jetbrains.mps.openapi.model.SModel):java.util.List" resolve="getSLanguages" />
-                  <ref role="1Pybhc" to="cu2c:~SModelOperations" resolve="SModelOperations" />
-                  <node concept="37vLTw" id="1EtdPNug1wS" role="37wK5m">
-                    <ref role="3cqZAo" node="1EtdPNufFR7" resolve="model" />
+            <node concept="2OqwBi" id="207KEdpTqKj" role="37wK5m">
+              <node concept="2ShNRf" id="207KEdpTkpk" role="2Oq$k0">
+                <node concept="1pGfFk" id="207KEdpTpWH" role="2ShVmc">
+                  <ref role="37wK5l" to="cu2c:~SLanguageHierarchy.&lt;init&gt;(java.util.Collection)" resolve="SLanguageHierarchy" />
+                  <node concept="2YIFZM" id="207KEdpTq88" role="37wK5m">
+                    <ref role="37wK5l" to="cu2c:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
+                    <ref role="1Pybhc" to="cu2c:~SModelOperations" resolve="SModelOperations" />
+                    <node concept="37vLTw" id="207KEdpTqfZ" role="37wK5m">
+                      <ref role="3cqZAo" node="1EtdPNufFR7" resolve="model" />
+                    </node>
                   </node>
                 </node>
-                <node concept="3uibUv" id="1EtdPNufM48" role="1pMfVU">
-                  <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
-                </node>
+              </node>
+              <node concept="liA8E" id="207KEdpTr4r" role="2OqNvi">
+                <ref role="37wK5l" to="cu2c:~SLanguageHierarchy.getExtended():java.util.Set" resolve="getExtended" />
               </node>
             </node>
           </node>
@@ -3685,7 +3687,7 @@
       </node>
       <node concept="3Tm1VV" id="1EtdPNufFR4" role="1B3o_S" />
       <node concept="37vLTG" id="1EtdPNufFR5" role="3clF46">
-        <property role="TrG5h" value="conceptDeclarationNode" />
+        <property role="TrG5h" value="concept" />
         <node concept="3uibUv" id="1EtdPNufJMv" role="1tU5fm">
           <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
@@ -3693,6 +3695,26 @@
       <node concept="37vLTG" id="1EtdPNufFR7" role="3clF46">
         <property role="TrG5h" value="model" />
         <node concept="H_c77" id="1EtdPNufFR8" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="16ccp1tXv$c" role="lGtFl">
+        <node concept="TZ5HA" id="16ccp1tXv$d" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXv$e" role="1dT_Ay">
+            <property role="1dT_AB" value="Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="16ccp1tXw5f" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXw5g" role="1dT_Ay">
+            <property role="1dT_AB" value="or the language extended by those imported. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="16ccp1tXw5l" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXw5m" role="1dT_Ay">
+            <property role="1dT_AB" value="Intention is to get possible concepts which instances, added to model, would not require any dependency change." />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="16ccp1tXvIG" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2YIFZL" id="5IkW5anF8Dh" role="jymVt">
@@ -3920,12 +3942,12 @@
               <node concept="17QB3L" id="1EtdPNufvoJ" role="11_B2D" />
             </node>
             <node concept="2OqwBi" id="1EtdPNufvoK" role="33vP2m">
-              <node concept="2YIFZM" id="1EtdPNufvoL" role="2Oq$k0">
-                <ref role="1Pybhc" to="cu2c:~LanguageHierarchyCache" resolve="LanguageHierarchyCache" />
-                <ref role="37wK5l" to="cu2c:~LanguageHierarchyCache.getInstance():jetbrains.mps.smodel.LanguageHierarchyCache" resolve="getInstance" />
+              <node concept="2YIFZM" id="207KEdpTk1M" role="2Oq$k0">
+                <ref role="37wK5l" to="cu2c:~ConceptDescendantsCache.getInstance():jetbrains.mps.smodel.ConceptDescendantsCache" resolve="getInstance" />
+                <ref role="1Pybhc" to="cu2c:~ConceptDescendantsCache" resolve="ConceptDescendantsCache" />
               </node>
               <node concept="liA8E" id="1EtdPNufvoM" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~LanguageHierarchyCache.getAllDescendantsOfConcept(java.lang.String):java.util.Set" resolve="getAllDescendantsOfConcept" />
+                <ref role="37wK5l" to="cu2c:~ConceptDescendantsCache.getDescendants(java.lang.String):java.util.Set" resolve="getDescendants" />
                 <node concept="2OqwBi" id="1EtdPNug6qk" role="37wK5m">
                   <node concept="37vLTw" id="1EtdPNug6jn" role="2Oq$k0">
                     <ref role="3cqZAo" node="1EtdPNufvoq" resolve="concept" />

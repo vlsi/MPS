@@ -73,7 +73,7 @@ public class SModelOperations {
     final SModule module = model.getModule();
     final Collection<SModule> moduleDeclaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<SLanguage> moduleDeclaredUsedLanguages = module != null ? module.getUsedLanguages() : null;
-    Set<SLanguage> modelDeclaredUsedLanguages = getAllImportedLanguageIds(model);
+    Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModel sm : allImportedModels(model)) {
@@ -131,23 +131,6 @@ public class SModelOperations {
       languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
     }
     return new ArrayList<Language>(languages);
-  }
-
-  /**
-   * All languages visible for the model, including imported and languages they extend
-   */
-  @NotNull
-  public static List<SLanguage> getSLanguages(SModel model) {
-    Set<SLanguage> languages = new LinkedHashSet<SLanguage>();
-
-    for (SLanguage lang : getAllImportedLanguageIds(model)) {
-      languages.add(lang);
-      for (Language l : LanguageDependenciesManager.getAllExtendedLanguages((Language) lang.getSourceModule())) {
-        languages.add(MetaAdapterByDeclaration.getLanguage(l));
-      }
-
-    }
-    return new ArrayList<SLanguage>(languages);
   }
 
   /**
