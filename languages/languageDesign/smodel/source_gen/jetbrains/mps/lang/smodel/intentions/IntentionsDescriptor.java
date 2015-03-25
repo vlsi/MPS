@@ -20,5 +20,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new LinkRef2Link_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ReplaceConceptIsWithConceptEquals_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new Replace_ListType_withNodeListType_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SConceptType2Concept_Intention());
   }
 }

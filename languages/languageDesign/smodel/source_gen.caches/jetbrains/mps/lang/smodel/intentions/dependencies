@@ -179,6 +179,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.LinkRef2Link_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ReplaceConceptIsWithConceptEquals_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.Replace_ListType_withNodeListType_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.SConceptType2Concept_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.intentions.LinkName2Link_Intention" file="LinkName2Link_Intention.java">
@@ -245,6 +246,23 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.intentions.SConceptType2Concept_Intention" file="SConceptType2Concept_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
