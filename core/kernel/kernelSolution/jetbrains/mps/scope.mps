@@ -43,6 +43,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -2917,6 +2918,7 @@
       <ref role="3uigEE" node="VXQuBhO0U" resolve="ModelsScope" />
     </node>
     <node concept="3clFbW" id="7ipADkTfyJc" role="jymVt">
+      <property role="IEkAT" value="true" />
       <node concept="3cqZAl" id="7ipADkTfyJd" role="3clF45" />
       <node concept="3Tm1VV" id="7ipADkTfyJe" role="1B3o_S" />
       <node concept="3clFbS" id="7ipADkTfyJg" role="3clF47">
@@ -2948,7 +2950,54 @@
         <property role="TrG5h" value="targetConcept" />
         <node concept="17QB3L" id="7ipADkTfyPu" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="4k9eBec$R4e" role="lGtFl">
+        <node concept="TZ5HI" id="4k9eBec$R4f" role="TZ5Hx">
+          <node concept="TZ5HA" id="4k9eBec$R4g" role="3HnX3l">
+            <node concept="1dT_AC" id="4k9eBec$R6Z" role="1dT_Ay">
+              <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4k9eBec$R4h" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
+    <node concept="2tJIrI" id="4k9eBec$Rqo" role="jymVt" />
+    <node concept="3clFbW" id="4k9eBec$QVW" role="jymVt">
+      <node concept="3cqZAl" id="4k9eBec$QVX" role="3clF45" />
+      <node concept="3Tm1VV" id="4k9eBec$QVY" role="1B3o_S" />
+      <node concept="3clFbS" id="4k9eBec$QVZ" role="3clF47">
+        <node concept="XkiVB" id="4k9eBec$QW0" role="3cqZAp">
+          <ref role="37wK5l" node="4k9eBec$Bew" resolve="ModelsScope" />
+          <node concept="1rXfSq" id="4k9eBec$QW1" role="37wK5m">
+            <ref role="37wK5l" node="VXQuBiVSS" resolve="getImportedModels" />
+            <node concept="37vLTw" id="4k9eBec$QW2" role="37wK5m">
+              <ref role="3cqZAo" node="4k9eBec$QW5" resolve="model" />
+            </node>
+          </node>
+          <node concept="37vLTw" id="4k9eBec$QW3" role="37wK5m">
+            <ref role="3cqZAo" node="4k9eBec$QW7" resolve="rootsOnly" />
+          </node>
+          <node concept="37vLTw" id="4k9eBec$QW4" role="37wK5m">
+            <ref role="3cqZAo" node="4k9eBec$QW9" resolve="targetConcept" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4k9eBec$QW5" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="H_c77" id="4k9eBec$QW6" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="4k9eBec$QW7" role="3clF46">
+        <property role="TrG5h" value="rootsOnly" />
+        <node concept="10P_77" id="4k9eBec$QW8" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="4k9eBec$QW9" role="3clF46">
+        <property role="TrG5h" value="targetConcept" />
+        <node concept="3bZ5Sz" id="4k9eBec$R71" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4k9eBec$RvW" role="jymVt" />
     <node concept="2YIFZL" id="VXQuBiVSS" role="jymVt">
       <property role="TrG5h" value="getImportedModels" />
       <property role="IEkAT" value="false" />

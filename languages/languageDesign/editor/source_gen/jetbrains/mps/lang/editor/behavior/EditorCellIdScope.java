@@ -6,6 +6,7 @@ import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelsScope;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -20,14 +21,13 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorCellIdScope extends FilteringScope {
   private SNode myConceptDeclaration;
   public EditorCellIdScope(SModel model, SNode conceptDeclaration) {
-    super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorCellId"));
+    super(new ModelsScope(getModels(model), false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId")));
     myConceptDeclaration = conceptDeclaration;
   }
 

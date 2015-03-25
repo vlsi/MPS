@@ -396,6 +396,9 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
       </concept>
@@ -405,9 +408,6 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
@@ -14115,7 +14115,7 @@
           <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
           <node concept="2ShNRf" id="6nWbOYondQA" role="37wK5m">
             <node concept="1pGfFk" id="KLxcNZbz6w" role="2ShVmc">
-              <ref role="37wK5l" to="o8zo:VXQuBi1M2" resolve="ModelsScope" />
+              <ref role="37wK5l" to="o8zo:4k9eBec$Bew" resolve="ModelsScope" />
               <node concept="1rXfSq" id="KLxcNZbwY1" role="37wK5m">
                 <ref role="37wK5l" node="KLxcNZazQB" resolve="getModels" />
                 <node concept="37vLTw" id="KLxcNZbxLx" role="37wK5m">
@@ -14125,8 +14125,8 @@
               <node concept="3clFbT" id="6nWbOYondQD" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
-              <node concept="3nh3qo" id="6nWbOYonfAM" role="37wK5m">
-                <ref role="3nh3qp" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
+              <node concept="35c_gC" id="4k9eBec$SfL" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
               </node>
             </node>
           </node>
@@ -14727,7 +14727,7 @@
           <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
           <node concept="2ShNRf" id="3K0abI6cvR3" role="37wK5m">
             <node concept="1pGfFk" id="3K0abI6d9ug" role="2ShVmc">
-              <ref role="37wK5l" to="o8zo:VXQuBi1M2" resolve="ModelsScope" />
+              <ref role="37wK5l" to="o8zo:4k9eBec$Bew" resolve="ModelsScope" />
               <node concept="1rXfSq" id="2uKfC5QsPx8" role="37wK5m">
                 <ref role="37wK5l" node="2uKfC5QsOH4" resolve="getModels" />
                 <node concept="37vLTw" id="2uKfC5QsPFn" role="37wK5m">
@@ -14737,8 +14737,8 @@
               <node concept="3clFbT" id="3K0abI6cBD4" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
-              <node concept="3nh3qo" id="3K0abI6cIal" role="37wK5m">
-                <ref role="3nh3qp" to="tpc2:3K0abI4q_wn" resolve="EditorCellId" />
+              <node concept="35c_gC" id="4k9eBec$TET" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:3K0abI4q_wn" resolve="EditorCellId" />
               </node>
             </node>
           </node>
