@@ -59,7 +59,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected SConcept myConcept;
   protected EditorContext myEditorContext;
 
-  private SProperty myNameProperty;
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private int currentCollectionIdNumber = 0;
   private int currentConstantIdNumber = 0;
@@ -76,12 +75,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     mySNode = node;
     assert myConcept.equals(mySNode.getConcept());
     init();
-    initNameProperty();
+    SProperty nameProperty = initNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
     addLabel(camelToLabel(myConcept.getName()));
-    if (myNameProperty != null) {
-      addPropertyCell(myNameProperty);
+    if (nameProperty != null) {
+      getProperties().remove(nameProperty);
+      addPropertyCell(nameProperty);
     }
     addReferences();
     if (needToAddPropertiesOrChildren()) {
@@ -93,7 +93,8 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   abstract protected void init();
 
-  private void initNameProperty() {
+  private SProperty initNameProperty() {
+    SProperty nameProperty = null;
     int maxPriority = -1;
     for (SProperty property : getProperties()) {
       String propertyName = property.getName();
@@ -103,10 +104,10 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       int propertyPriority = getPropertyPriority(propertyName);
       if (maxPriority < propertyPriority) {
         maxPriority = propertyPriority;
-        myNameProperty = property;
-        getProperties().remove(myNameProperty);
+        nameProperty = property;
       }
     }
+    return nameProperty;
   }
 
   private int getPropertyPriority(@NotNull String propertyName) {
