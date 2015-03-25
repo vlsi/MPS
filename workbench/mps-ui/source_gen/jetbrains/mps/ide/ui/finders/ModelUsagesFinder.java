@@ -6,71 +6,55 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
-import java.util.Collections;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 
+/**
+ * Look up particular nodes in scope models with reference target pointing to SModelReference.
+ * Search results are of type SNode
+ */
 public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
   }
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    SearchResults searchResults = new SearchResults();
-    IHolder holder = query.getObjectHolder();
-    assert holder instanceof ModelHolder;
-    SModelReference modelReference = ((ModelHolder) holder).getObject();
+    SearchResults<SNode> searchResults = new SearchResults<SNode>();
+    Object value = query.getObjectHolder().getObject();
+    if (!(value instanceof SModelReference)) {
+      return searchResults;
+    }
+    SModelReference modelReference = (SModelReference) value;
     searchResults.getSearchedNodes().add(modelReference);
-    if (query.getScope() instanceof ModelsScope) {
-      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsScope.class)).getModels()) {
-        if (monitor.isCanceled()) {
-          return searchResults;
-        }
-        if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-          continue;
-        }
-        for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
-          for (SReference reference : node.getReferences()) {
-            if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
-              continue;
-            }
-            SModelReference targetModelReference = reference.getTargetSModelReference();
-            if (targetModelReference == null) {
-              continue;
-            }
-            if (targetModelReference.equals(modelReference)) {
-              searchResults.getSearchResults().add(new SearchResult<SNode>(node, "nodes from model"));
-            }
+    Collection<SModel> models = IterableUtil.asCollection(query.getScope().getModels());
+    monitor.start("Looking up references to a model", models.size());
+    for (SModel modelDescriptor : models) {
+      if (monitor.isCanceled()) {
+        return searchResults;
+      }
+      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+        continue;
+      }
+      for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
+        for (SReference reference : node.getReferences()) {
+          SModelReference targetModelReference = reference.getTargetSModelReference();
+          if (targetModelReference == null) {
+            continue;
+          }
+          if (targetModelReference.equals(modelReference)) {
+            searchResults.getSearchResults().add(new SearchResult<SNode>(node, "nodes from model"));
           }
         }
       }
-    } else {
-      Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(GlobalScope.getInstance(), Collections.singleton(modelReference), new EmptyProgressMonitor());
-
-      for (SModel modelDescriptor : usages) {
-        if (monitor.isCanceled()) {
-          return searchResults;
-        }
-        if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-          continue;
-        }
-        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
-      }
+      monitor.advance(1);
     }
+    monitor.done();
     return searchResults;
-  }
-  private static <T> T as_s8v3jk_a0a0a0f0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

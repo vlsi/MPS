@@ -18,8 +18,6 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
-import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -57,41 +55,41 @@ public abstract class EvaluationUi extends JPanel {
       setErrorText("Program should be paused on breakpoint to evaluate");
       return;
     }
-    try {
-      final Class clazz = model.generateClass();
-      setEvaluating(model);
-      final ThreadReference thread = check_4q63yg_a0c0b0m(myDebugSession.getUiState().getThread());
-      myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
-        public void invoke() {
-          try {
-            Evaluator evaluator = model.createEvaluatorInstance(clazz);
-            IValueProxy evaluatedValue = evaluator.evaluate();
-            if (evaluatedValue != null) {
-              JavaValue value = CustomViewersManager.getInstance().fromJdi(evaluatedValue.getJDIValue(), thread);
-              value.initSubvalues();
-              setSuccess(value, model);
-            } else {
-              setFailure(null, "Evaluation returned null.", model);
+    new Thread("Debugger Evaluation thread") {
+      @Override
+      public void run() {
+        try {
+          final Class clazz = model.generateClass();
+          setEvaluating(model);
+          final ThreadReference thread = check_4q63yg_a0c0a0a0a0a1a21(myDebugSession.getUiState().getThread());
+          myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              try {
+                Evaluator evaluator = model.createEvaluatorInstance(clazz);
+                IValueProxy evaluatedValue = evaluator.evaluate();
+                if (evaluatedValue != null) {
+                  JavaValue value = CustomViewersManager.getInstance().fromJdi(evaluatedValue.getJDIValue(), thread);
+                  value.initSubvalues();
+                  setSuccess(value, model);
+                } else {
+                  setFailure(null, "Evaluation returned null.", model);
+                }
+              } catch (EvaluationException e) {
+                setFailure(e, null, model);
+              } catch (Throwable t) {
+                setFailure(t, null, model);
+                LOG.error(null, t);
+              }
             }
-          } catch (EvaluationException e) {
-            setFailure(e, null, model);
-          } catch (Throwable t) {
-            setFailure(t, null, model);
-            LOG.error(null, t);
-          }
+          }, thread);
+        } catch (EvaluationException e) {
+          setFailure(e, null, model);
+        } catch (Throwable t) {
+          setFailure(t, null, model);
+          LOG.error(null, t);
         }
-      }, thread);
-    } catch (InvalidEvaluatedExpressionException e) {
-      setFailure(e.getCause(), null, model);
-    } catch (InvocationTargetEvaluationException e) {
-      setFailure(e.getCause(), null, model);
-      LOG.error(null, e.getCause());
-    } catch (EvaluationException e) {
-      setFailure(e, null, model);
-    } catch (Throwable t) {
-      setFailure(t, null, model);
-      LOG.error(null, t);
-    }
+      }
+    }.start();
   }
   private void setSuccess(@NotNull final JavaValue evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
@@ -188,7 +186,7 @@ public abstract class EvaluationUi extends JPanel {
       }
     }
   }
-  private static ThreadReference check_4q63yg_a0c0b0m(JavaThread checkedDotOperand) {
+  private static ThreadReference check_4q63yg_a0c0a0a0a0a1a21(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

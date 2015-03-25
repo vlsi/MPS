@@ -89,9 +89,6 @@ public interface ConceptDescriptor {
   @Deprecated
   Set<String> getPropertyNames(); // since 3.0
 
-  @Deprecated
-  boolean hasProperty(String name); // since 3.0
-
   //------------ refs
 
   Set<SReferenceLinkId> getReferenceIds(); // since 3.2
@@ -103,9 +100,6 @@ public interface ConceptDescriptor {
 
   @Deprecated
   Set<String> getReferenceNames(); // since 3.0
-
-  @Deprecated
-  boolean hasReference(String name); // since 3.0
 
   //------------ children
 
@@ -119,18 +113,9 @@ public interface ConceptDescriptor {
   @Deprecated
   Set<String> getChildrenNames(); // since 3.0
 
-  @Deprecated
-  boolean hasChild(String name); // since 3.0
-
-  @Deprecated //obtain from descriptor
-  Set<String> getUnorderedChildrenNames(); // since 3.0
-
   @Deprecated //obtain from descriptor
     //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name); // since 3.0
-
-  @Deprecated //obtain from descriptor
-  boolean isUnorderedChild(String name); // since 3.0
 
   //------------
 

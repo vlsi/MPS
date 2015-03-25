@@ -142,6 +142,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_vsmugd_d0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
+    ParameterDeclaration_Name_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
   private EditorCell createCollection_vsmugd_a_0(EditorContext editorContext, SNode node) {

@@ -23,6 +23,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.concurrent.ExecutionException;
@@ -34,7 +36,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class GeneratorUtil {
   @Nullable
-  public static Class generateAndLoadEvaluatorClass(Project project, SModel model, String className, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
+  public static Class generateAndLoadEvaluatorClass(Project project, final SModel model, String className, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
     IMakeService makeService = IMakeService.INSTANCE.get();
     MakeSession makeSession = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
     if (makeService.openNewSession(makeSession)) {
@@ -67,7 +69,13 @@ public class GeneratorUtil {
           if (project != null) {
             options = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
           }
-          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()), (options != null ? options : JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS));
+          final Wrappers._T<Set<String>> collectCompileClasspath = new Wrappers._T<Set<String>>(null);
+          project.getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              collectCompileClasspath.value = JavaModuleOperations.collectCompileClasspath(model.getModule());
+            }
+          });
+          javaCompiler.compile(JavaModuleOperations.createClassPathItem(collectCompileClasspath.value, GeneratorUtil.class.getName()), (options != null ? options : JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS));
           javaCompiler.removeCompilationResultListener(compilationResult);
 
           final String fullClassName = SNodeOperations.getModelLongName(model) + "." + className;
@@ -93,8 +101,6 @@ public class GeneratorUtil {
         throw new EvaluationException(e);
       } catch (ClassNotFoundException e) {
         throw new EvaluationException(e);
-      } finally {
-        makeService.closeSession(makeSession);
       }
     }
     throw new EvaluationException("Errors during generation.");

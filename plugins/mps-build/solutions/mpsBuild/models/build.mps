@@ -120,6 +120,7 @@
       <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
+      <concept id="7389400916848036997" name="jetbrains.mps.build.structure.BuildLayout_Node" flags="ng" index="39821Y" />
       <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
       <concept id="7389400916848073810" name="jetbrains.mps.build.structure.BuildSource_JavaContentRoot" flags="ng" index="398b2D">
         <child id="2754769020641429197" name="folders" index="nFU4p" />
@@ -700,6 +701,10 @@
         </node>
         <node concept="nFU4i" id="1FaKCGJSzF3" role="nFU4p">
           <property role="nFU4j" value="stubUtils/source_gen" />
+          <property role="3LZaj6" value="source" />
+        </node>
+        <node concept="nFU4i" id="2brFPFtkxDK" role="nFU4p">
+          <property role="nFU4j" value="stubUtils/source" />
           <property role="3LZaj6" value="source" />
         </node>
       </node>
@@ -13256,6 +13261,7 @@
         </node>
         <node concept="398223" id="4tNwrSpaf0F" role="39821P">
           <node concept="398223" id="t7CJPgp1D_" role="39821P">
+            <node concept="39821Y" id="6S2ZmsBiFPU" role="39821P" />
             <node concept="3_J27D" id="t7CJPgp1DB" role="Nbhlr">
               <node concept="3Mxwew" id="t7CJPgp1EF" role="3MwsjC">
                 <property role="3MwjfP" value="jps" />
@@ -19942,6 +19948,12 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="6MuwFuPzbHD" role="3bR37C">
+          <node concept="3bR9La" id="6MuwFuPzbHE" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="4LDuh$Ud1Nd" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -22903,6 +22915,31 @@
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
     </node>
+    <node concept="PiPfp" id="4gzZMp9tuO_" role="3989C9">
+      <property role="TrG5h" value="idea-jps-tests" />
+      <node concept="25yagZ" id="4gzZMp9tuPB" role="PiKyV">
+        <node concept="2HycW7" id="4gzZMp9tuPH" role="25yagT">
+          <node concept="398BVA" id="4gzZMp9tuPN" role="25ysHA">
+            <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="4gzZMp9tuPO" role="iGT6I">
+              <property role="2Ry0Am" value="IdeaPlugin" />
+              <node concept="2Ry0Ak" id="4gzZMp9tuPP" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-core" />
+                <node concept="2Ry0Ak" id="4gzZMp9tuPQ" role="2Ry0An">
+                  <property role="2Ry0Am" value="lib" />
+                  <node concept="2Ry0Ak" id="4gzZMp9tuPR" role="2Ry0An">
+                    <property role="2Ry0Am" value="jps" />
+                    <node concept="2Ry0Ak" id="4gzZMp9tuPS" role="2Ry0An">
+                      <property role="2Ry0Am" value="jps-build-test-139.1117.1.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="PiPfp" id="7quUOWmbjD$" role="3989C9">
       <property role="TrG5h" value="idea-devkit-jps" />
       <node concept="25yagZ" id="7quUOWmbsOU" role="PiKyV">
@@ -23131,6 +23168,26 @@
             </node>
           </node>
           <node concept="398223" id="H87DT7qJTG" role="39821P">
+            <node concept="28jJK3" id="6S2ZmsBiFQB" role="39821P">
+              <node concept="398BVA" id="6S2ZmsBiFQF" role="28jJRO">
+                <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
+                <node concept="2Ry0Ak" id="6S2ZmsBiFQL" role="iGT6I">
+                  <property role="2Ry0Am" value="IdeaPlugin" />
+                  <node concept="2Ry0Ak" id="6S2ZmsBiFQQ" role="2Ry0An">
+                    <property role="2Ry0Am" value="mps-core" />
+                    <node concept="2Ry0Ak" id="6S2ZmsBiFQT" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="6S2ZmsBiFQY" role="2Ry0An">
+                        <property role="2Ry0Am" value="jps" />
+                        <node concept="2Ry0Ak" id="6S2ZmsBiFR3" role="2Ry0An">
+                          <property role="2Ry0Am" value="jps-build-test-139.1117.1.jar" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3_J27D" id="H87DT7qJTI" role="Nbhlr">
               <node concept="3Mxwew" id="H87DT7qJVL" role="3MwsjC">
                 <property role="3MwjfP" value="jps" />
@@ -23284,6 +23341,9 @@
       </node>
       <node concept="2sjeV3" id="7quUOWmbsPp" role="nCB5Z">
         <ref role="2sjeV2" node="7quUOWmbjD$" resolve="idea-devkit-jps" />
+      </node>
+      <node concept="2sjeV3" id="4gzZMp9tuNe" role="nCB5Z">
+        <ref role="2sjeV2" node="4gzZMp9tuO_" resolve="idea-jps-tests" />
       </node>
       <node concept="2GAZfH" id="H87DT7k18X" role="398b2p">
         <node concept="TIC1d" id="H87DT7k18Y" role="2GAZfG">

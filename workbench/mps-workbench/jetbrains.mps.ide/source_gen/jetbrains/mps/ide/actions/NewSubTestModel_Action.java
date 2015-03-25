@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -45,7 +46,8 @@ public class NewSubTestModel_Action extends BaseAction {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
-    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
+    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")))) && ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot().canCreateModel(SModelStereotype.withStereotype(((SModel) MapSequence.fromMap(_params).get("model")).getModelName(), SModelStereotype.TESTS));
+
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -84,25 +86,29 @@ public class NewSubTestModel_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SModel> result = new Wrappers._T<SModel>();
+      final Wrappers._T<SModel> createdModel = new Wrappers._T<SModel>(null);
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          result.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
-          SModel createdModel = result.value;
-          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model"));
-          ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
-          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
-            ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
+          createdModel.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
+          if (createdModel.value == null) {
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("Can't create submodel " + SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS) + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
+            }
+            return;
           }
-          for (SModuleReference importedLanguage : ((SModelInternal) sourceModel).importedLanguages()) {
-            ((SModelInternal) createdModel).addLanguage(importedLanguage);
+          ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
+          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedModels()) {
+            ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
           }
-          for (SModuleReference devKit : ((SModelInternal) sourceModel).importedDevkits()) {
-            ((SModelInternal) createdModel).addDevKit(devKit);
+          for (SLanguage importedLanguage : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
+            ((SModelInternal) createdModel.value).addLanguage(importedLanguage);
           }
+          for (SModuleReference devKit : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedDevkits()) {
+            ((SModelInternal) createdModel.value).addDevKit(devKit);
+          }
+          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(createdModel.value, false);
         }
       });
-      ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(result.value, false);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "NewSubTestModel", t);

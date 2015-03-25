@@ -17,19 +17,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +47,7 @@ import static jetbrains.mps.util.SNodeOperations.getDebugText;
  * As a tribute to legacy code, we do allow access to constant and meta-info objects of a node without read access.
  * It's not encouraged for a new code, though, and might change in future, that's why it's stated here and not in openapi.SNode
  */
-public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode, SReferenceLinkAdapterProvider {
+public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
@@ -69,7 +61,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SContainmentLink myRoleInParent;
   private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
   private Object[] myProperties = null;
-  private SNodeId myId;
+  private org.jetbrains.mps.openapi.model.SNodeId myId;
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
   private SConcept myConcept; //todo make final after 3.2
   private SNode parent;
@@ -81,33 +73,28 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SNode prev;  // notNull, myFirstChild.myLeftSibling = the last child
 
   public SNode(@NotNull SConcept concept) {
+    this(concept, SModel.generateUniqueId());
+  }
+
+  public SNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
     myConcept = concept;
-    myId = SModel.generateUniqueId();
+    myId = id;
   }
 
-  //-------------old methods working by name---------------
-  @Deprecated//since 3.1, remove after next release
-  public SNode(@NotNull String conceptFqName) {
-    myConcept = MetaAdapterFactoryByName.getConcept(conceptFqName);
-    myId = SModel.generateUniqueId();
-  }
-
-  public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
+    public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
 
   @NotNull
   @Override
   public SConcept getConcept() {
-    // deliberately no assertCanRead(). It's constance field and meta-info.
+    // deliberately no assertCanRead(). It's constant field and meta-info.
     return myConcept;
   }
 
-  public void setConcept(@NotNull SConcept concept) {
+  /*package*/ void setConcept(@NotNull SConcept concept) {
     //remove method after 3.2
     myConcept = concept;
-    //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(getModel());
   }
 
   @Override
@@ -131,7 +118,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SNodeId getNodeId() {
+  public org.jetbrains.mps.openapi.model.SNodeId getNodeId() {
     // deliberately no assertCanRead. It's constant field and sort of meta-info, why to constraint to read access?
     return myId;
   }
@@ -444,7 +431,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (EqualUtil.equals(id, myId)) return;
 
     if (myOwner.getModel() == null) {
-      myId = ((SNodeId) id);
+      myId = id;
     } else {
       LOG.error("can't set id to registered node " + getDebugText(this), new Throwable());
     }
@@ -489,36 +476,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return myOwner;
   }
 
+  /**
+   * @deprecated use <code>getConcept().getDeclarationNode()</code> instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public org.jetbrains.mps.openapi.model.SNode getConceptDeclarationNode() {
     return getConcept().getDeclarationNode();
   }
 
-  public SNode getPropertyDeclaration(String propertyName) {
-    return (SNode) SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
-  }
-
   //--------private-------
-
-  public SNode getLinkDeclaration(String role) {
-    return (SNode) SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
-  }
-
-  public SNode getRoleLink() {
-    if (getRoleInParent() == null) return null;
-    if (getParent() == null) return null;
-    return getParent().getLinkDeclaration(getRoleInParent());
-  }
-
-  //---------tree structure-------------
-
-  //remove method after 3.2
-  public void setConceptFqName(String conceptFQName) {
-    if (myConcept.getQualifiedName().equals(conceptFQName)) return;
-    setConcept(MetaAdapterFactoryByName.getConcept(conceptFQName));
-
-    //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(getModel());
-  }
 
   // perform inner structures update, doesn't dispatch any events
   private void addReferenceInternal(final SReference reference) {
@@ -889,45 +856,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    SContainmentLink link = convertToLink(newRole);
-    if (link == null) {
-      link = MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), newRole);
-    }
-    setRoleInParent(link);
+    setRoleInParent(convertToLink(newRole));
   }
 
   @Deprecated
   @Override
   public final boolean hasProperty(String propertyName) {
-    SProperty prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
-    if (hasProperty(prop)) return true;
-
-    prop = convertToProp(propertyName);
-    if (prop == null) return false;
-
-    return hasProperty(prop);
+    return hasProperty(convertToProp(propertyName));
   }
 
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    SProperty prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
-    String res = getProperty(prop);
-    if (res != null) return res;
-
-    prop = convertToProp(propertyName);
-    if (prop == null) return res;
-
-    return getProperty(prop);
+    return getProperty(convertToProp(propertyName));
   }
 
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
     SProperty prop = convertToProp(propertyName);
-    if (prop == null) {
-      prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
-    }
     setProperty(prop, propertyValue);
   }
 
@@ -944,58 +891,31 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    SReferenceLink ref = convertToRef(role);
-    if (ref == null) {
-      ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
-    }
-    setReferenceTarget(ref, target);
+    setReferenceTarget(convertToRef(role), target);
   }
 
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    SReferenceLink ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
-
-    SNode res = getReferenceTarget(ref);
-    if (res != null) return res;
-
-    ref = convertToRef(role);
-    if (ref == null) return res;
-
-    return getReferenceTarget(ref);
+    return getReferenceTarget(convertToRef(role));
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    SReferenceLink ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
-    SReference res = getReference(ref);
-    if (res != null) return res;
-
-    ref = convertToRef(role);
-    if (ref == null) return res;
-
-    return getReference(ref);
+    return getReference(convertToRef(role));
   }
 
   @Deprecated
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    SReferenceLink ref = convertToRef(role);
-    if (ref == null) {
-      ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
-    }
-    setReference(ref, reference);
+    setReference(convertToRef(role), reference);
   }
 
   @Deprecated
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    SContainmentLink link = convertToLink(role);
-    if (link == null) {
-      link = MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role);
-    }
-    insertChildBefore(link, child, anchor);
+    insertChildBefore(convertToLink(role), child, anchor);
   }
 
   @Deprecated
@@ -1008,40 +928,22 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    List<SNode> res = getChildren(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role));
-    if (!res.isEmpty()) return res;
-
-    SContainmentLink linkById = convertToLink(role);
-    if (linkById == null) return res;
-
-    return getChildren(linkById);
+    return getChildren(convertToLink(role));
   }
 
-  @Nullable
+  @NotNull
   private SContainmentLink convertToLink(String role) {
-    SContainmentLink link = MetaAdapterFactoryByName.getContainmentLink(getConcept().getQualifiedName(), role);
-    SContainmentLinkId id = ((SContainmentLinkAdapter) link).getRoleId();
-    if (id.equals(MetaIdFactory.INVALID_LINK_ID)) return null;
-
-    return MetaAdapterFactory.getContainmentLink(id, role);
+    return ((ConceptMetaInfoConverter) myConcept).convertAggregation(role);
   }
 
-  @Nullable
+  @NotNull
   private SReferenceLink convertToRef(String role) {
-    SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(getConcept().getQualifiedName(), role);
-    SReferenceLinkId id = ((SReferenceLinkAdapter) link).getRoleId();
-    if (id.equals(MetaIdFactory.INVALID_REF_ID)) return null;
-
-    return MetaAdapterFactory.getReferenceLink(id, role);
+    return ((ConceptMetaInfoConverter) myConcept).convertAssociation(role);
   }
 
-  @Nullable
-  private SProperty convertToProp(String role) {
-    SProperty link = MetaAdapterFactoryByName.getProperty(getConcept().getQualifiedName(), role);
-    SPropertyId id = ((SPropertyAdapter) link).getId();
-    if (id.equals(MetaIdFactory.INVALID_PROP_ID)) return null;
-
-    return MetaAdapterFactory.getProperty(id, role);
+  @NotNull
+  private SProperty convertToProp(String name) {
+    return ((ConceptMetaInfoConverter) myConcept).convertProperty(name);
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {
@@ -1123,10 +1025,5 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         return node;
       }
     }
-  }
-
-  @Override
-  public SReferenceLink createSReferenceLinkAdapterByName(String conceptName, String role) {
-    return MetaAdapterFactoryByName.getReferenceLink(conceptName, role);
   }
 }

@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -96,7 +97,11 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
 
     Set<SAbstractConcept> concepts = new HashSet<SAbstractConcept>();
-    for (SLanguage language : SModelOperations.getSLanguages(this.myParentNode.getModel())) {
+    SModel model = this.myParentNode.getModel();
+    if (model == null) {
+      return Collections.emptyList();
+    }
+    for (SLanguage language : SModelOperations.getAllLanguageImports(model)) {
       for (SAbstractConcept concept : language.getConcepts()) {
         if (concept.isSubConceptOf(this.myTargetConcept)) {
           concepts.add(concept);
@@ -105,7 +110,7 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
     ArrayList<SubstituteAction> substituteActions = new ArrayList<SubstituteAction>();
     for (SAbstractConcept concept : concepts) {
-      //todo add constraits
+      //todo add constraints
       substituteActions.add(new DefaultSChildSubstituteAction(concept, myParentNode, myCurrentChild, mySetter));
     }
     return substituteActions;

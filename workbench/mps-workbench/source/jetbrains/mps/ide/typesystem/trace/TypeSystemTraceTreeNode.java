@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -34,8 +33,8 @@ import java.util.Map;
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
   private static final Map<String, Color> COLOR_MAP = initColors();
 
-  public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext, State state, EditorComponent editorComponent) {
-    super(userObject, operationContext);
+  public TypeSystemTraceTreeNode(AbstractOperation userObject, State state, EditorComponent editorComponent) {
+    super(userObject);
     AbstractOperation operation = userObject;
     this.setAutoExpandable(true);
     this.setIcon(IdeIcons.DEFAULT_ICON);
@@ -54,8 +53,8 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     setText(operation.getPresentation());
   }
 
-  public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext) {
-    super(userObject, operationContext);
+  public TypeSystemTraceTreeNode(AbstractOperation userObject) {
+    super(userObject);
     AbstractOperation operation = userObject;
     setNodeIdentifier(operation.getPresentation());
     this.setAutoExpandable(true);

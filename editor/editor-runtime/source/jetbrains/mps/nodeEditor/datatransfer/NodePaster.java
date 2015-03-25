@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.SNodeOperations;
@@ -126,7 +127,7 @@ public class NodePaster {
 
   public boolean canPasteAsRoots() {
     for (SNode pasteNode : myPasteNodes) {
-      SNode nodeConcept = ((jetbrains.mps.smodel.SNode) pasteNode).getConceptDeclarationNode();
+      SNode nodeConcept = new SNodeLegacy(pasteNode).getConceptDeclarationNode();
       if (!SNodeUtil.isInstanceOfConceptDeclaration(nodeConcept) || !SNodeUtil.getConceptDeclaration_IsRootable(nodeConcept)) {
         return false;
       }
@@ -180,7 +181,7 @@ public class NodePaster {
   }
 
   private boolean canPasteToTarget(SNode pasteTarget, String role, boolean allowOneCardinality) {
-    SNode link = findSuitableLink(((jetbrains.mps.smodel.SNode) pasteTarget).getConceptDeclarationNode(), role);
+    SNode link = findSuitableLink(new SNodeLegacy(pasteTarget).getConceptDeclarationNode(), role);
     if (link != null && SModelUtil.isAggregation(link)) {
       if (!allowOneCardinality) {
         return SModelUtil.isMultipleLinkDeclaration(link);
@@ -192,7 +193,7 @@ public class NodePaster {
   }
 
   private void pasteToTarget(final SNode pasteTarget, final SNode anchorNode, String role, final PastePlaceHint placeHint) {
-    final SNode link = findSuitableLink(((jetbrains.mps.smodel.SNode) pasteTarget).getConceptDeclarationNode(), role);
+    final SNode link = findSuitableLink(new SNodeLegacy(pasteTarget).getConceptDeclarationNode(), role);
 
     // unique child?
     if (!SModelUtil.isMultipleLinkDeclaration(link)) {
@@ -214,7 +215,7 @@ public class NodePaster {
     }
 
     // delete original anchor if it was abstract concept
-    if (anchorNode != null && DataTransferUtil.isAbstract(((jetbrains.mps.smodel.SNode) anchorNode).getConceptDeclarationNode())) {
+    if (anchorNode != null && DataTransferUtil.isAbstract(new SNodeLegacy(anchorNode).getConceptDeclarationNode())) {
       anchorNode.delete();
     }
   }
@@ -222,7 +223,7 @@ public class NodePaster {
   private SNode normalizeForLink(SNode pasteNode, SNode link) {
     SNode node;
     SNode linkTargetConcept = SModelUtil.getLinkDeclarationTarget(link);
-    if (SModelUtil.isAssignableConcept(((jetbrains.mps.smodel.SNode) pasteNode).getConceptDeclarationNode(), linkTargetConcept)) {
+    if (SModelUtil.isAssignableConcept(new SNodeLegacy(pasteNode).getConceptDeclarationNode(), linkTargetConcept)) {
       node = pasteNode;
     } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, linkTargetConcept)) {
       node = PasteWrappersManager.getInstance().wrapInto(pasteNode, linkTargetConcept);
@@ -285,7 +286,7 @@ public class NodePaster {
     for (SNode link : links) {
       boolean suitable = true;
       for (SNode pasteNode : myPasteNodes) {
-        SNode pasteConcept = ((jetbrains.mps.smodel.SNode) pasteNode).getConceptDeclarationNode();
+        SNode pasteConcept = new SNodeLegacy(pasteNode).getConceptDeclarationNode();
         if (!SModelUtil.isAssignableConcept(pasteConcept, SModelUtil.getLinkDeclarationTarget(link)) &&
             !PasteWrappersManager.getInstance().canWrapInto(pasteNode, SModelUtil.getLinkDeclarationTarget(link))) {
           suitable = false;

@@ -217,7 +217,7 @@ public class ChangeSetBuilder {
 
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModelBase>() {
       public List<SModuleReference> invoke(SModelBase model) {
-        return model.importedLanguages();
+        return jetbrains.mps.util.SNodeOperations.getUsedLanguages(model);
       }
     });
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModelBase>() {

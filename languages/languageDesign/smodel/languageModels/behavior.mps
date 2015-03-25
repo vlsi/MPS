@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -27,6 +27,10 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
+    <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -6974,6 +6978,165 @@
         </node>
       </node>
       <node concept="3cqZAl" id="5HgiwiAyY36" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3TEgbCBRuUE">
+    <property role="3GE5qa" value="reference.module" />
+    <ref role="13h7C2" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
+    <node concept="13hLZK" id="3TEgbCBRuUF" role="13h7CW">
+      <node concept="3clFbS" id="3TEgbCBRuUG" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="34EJa6aIcyg">
+    <property role="3GE5qa" value="identity" />
+    <ref role="13h7C2" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
+    <node concept="13i0hz" id="34EJa6aIcyj" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getLanguage" />
+      <node concept="3Tm1VV" id="34EJa6aIcyk" role="1B3o_S" />
+      <node concept="3uibUv" id="34EJa6aIcyr" role="3clF45">
+        <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+      </node>
+      <node concept="3clFbS" id="34EJa6aIcym" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="34EJa6aIcyw" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="setLanguage" />
+      <node concept="3Tm1VV" id="34EJa6aIcyx" role="1B3o_S" />
+      <node concept="3cqZAl" id="34EJa6aIcyG" role="3clF45" />
+      <node concept="3clFbS" id="34EJa6aIcyz" role="3clF47" />
+      <node concept="37vLTG" id="34EJa6aIcyK" role="3clF46">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="34EJa6aIcyJ" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="34EJa6aIcyh" role="13h7CW">
+      <node concept="3clFbS" id="34EJa6aIcyi" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="34EJa6aIcNO">
+    <property role="3GE5qa" value="identity" />
+    <ref role="13h7C2" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
+    <node concept="13hLZK" id="34EJa6aIcNP" role="13h7CW">
+      <node concept="3clFbS" id="34EJa6aIcNQ" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="34EJa6aIcNR" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getLanguage" />
+      <ref role="13i0hy" node="34EJa6aIcyj" resolve="getLanguage" />
+      <node concept="3Tm1VV" id="34EJa6aIcNS" role="1B3o_S" />
+      <node concept="3clFbS" id="34EJa6aIcNV" role="3clF47">
+        <node concept="3cpWs6" id="34EJa6aIoEE" role="3cqZAp">
+          <node concept="2YIFZM" id="34EJa6aInNj" role="3cqZAk">
+            <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String,int):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+            <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+            <node concept="2YIFZM" id="34EJa6aInNy" role="37wK5m">
+              <ref role="1Pybhc" to="a7z3:~SLanguageId" resolve="SLanguageId" />
+              <ref role="37wK5l" to="a7z3:~SLanguageId.deserialize(java.lang.String):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="deserialize" />
+              <node concept="2OqwBi" id="34EJa6aInNz" role="37wK5m">
+                <node concept="13iPFW" id="34EJa6aInN$" role="2Oq$k0" />
+                <node concept="3TrcHB" id="34EJa6aInN_" role="2OqNvi">
+                  <ref role="3TsBF5" to="tp25:34EJa6aIcNo" resolve="languageId" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="34EJa6aInUu" role="37wK5m">
+              <node concept="13iPFW" id="34EJa6aInRx" role="2Oq$k0" />
+              <node concept="3TrcHB" id="34EJa6aIodz" role="2OqNvi">
+                <ref role="3TsBF5" to="tp25:34EJa6aIcNn" resolve="namespace" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="34EJa6aIojC" role="37wK5m">
+              <node concept="13iPFW" id="34EJa6aIog$" role="2Oq$k0" />
+              <node concept="3TrcHB" id="34EJa6aIoBt" role="2OqNvi">
+                <ref role="3TsBF5" to="tp25:34EJa6aIcNp" resolve="version" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="34EJa6aIcNW" role="3clF45">
+        <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="34EJa6aIcNZ" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="setLanguage" />
+      <ref role="13i0hy" node="34EJa6aIcyw" resolve="setLanguage" />
+      <node concept="3Tm1VV" id="34EJa6aIcO0" role="1B3o_S" />
+      <node concept="3clFbS" id="34EJa6aIcO5" role="3clF47">
+        <node concept="3clFbF" id="34EJa6aImMt" role="3cqZAp">
+          <node concept="37vLTI" id="34EJa6aInjY" role="3clFbG">
+            <node concept="2OqwBi" id="34EJa6aImP8" role="37vLTJ">
+              <node concept="13iPFW" id="34EJa6aImMr" role="2Oq$k0" />
+              <node concept="3TrcHB" id="34EJa6aIn77" role="2OqNvi">
+                <ref role="3TsBF5" to="tp25:34EJa6aIcNo" resolve="languageId" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="34EJa6aInlV" role="37vLTx">
+              <node concept="2YIFZM" id="34EJa6aInkw" role="2Oq$k0">
+                <ref role="37wK5l" to="d2v5:~IdHelper.getLanguageId(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
+                <ref role="1Pybhc" to="d2v5:~IdHelper" resolve="IdHelper" />
+                <node concept="37vLTw" id="34EJa6aInkx" role="37wK5m">
+                  <ref role="3cqZAo" node="34EJa6aIcO6" resolve="language" />
+                </node>
+              </node>
+              <node concept="liA8E" id="34EJa6aInyV" role="2OqNvi">
+                <ref role="37wK5l" to="a7z3:~SLanguageId.serialize():java.lang.String" resolve="serialize" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="34EJa6aId_i" role="3cqZAp">
+          <node concept="37vLTI" id="34EJa6aId_j" role="3clFbG">
+            <node concept="2OqwBi" id="34EJa6aId_k" role="37vLTx">
+              <node concept="37vLTw" id="34EJa6aId_l" role="2Oq$k0">
+                <ref role="3cqZAo" node="34EJa6aIcO6" resolve="language" />
+              </node>
+              <node concept="liA8E" id="34EJa6aId_m" role="2OqNvi">
+                <ref role="37wK5l" to="t3eg:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="34EJa6aId_n" role="37vLTJ">
+              <node concept="13iPFW" id="34EJa6aId_o" role="2Oq$k0" />
+              <node concept="3TrcHB" id="34EJa6aId_p" role="2OqNvi">
+                <ref role="3TsBF5" to="tp25:34EJa6aIcNn" resolve="namespace" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="34EJa6aId_q" role="3cqZAp">
+          <node concept="37vLTI" id="34EJa6aId_r" role="3clFbG">
+            <node concept="2OqwBi" id="34EJa6aId_s" role="37vLTx">
+              <node concept="37vLTw" id="34EJa6aId_t" role="2Oq$k0">
+                <ref role="3cqZAo" node="34EJa6aIcO6" resolve="language" />
+              </node>
+              <node concept="liA8E" id="34EJa6aId_u" role="2OqNvi">
+                <ref role="37wK5l" to="t3eg:~SLanguage.getLanguageVersion():int" resolve="getLanguageVersion" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="34EJa6aId_v" role="37vLTJ">
+              <node concept="13iPFW" id="34EJa6aId_w" role="2Oq$k0" />
+              <node concept="3TrcHB" id="34EJa6aId_x" role="2OqNvi">
+                <ref role="3TsBF5" to="tp25:34EJa6aIcNp" resolve="version" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="34EJa6aIcO6" role="3clF46">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="34EJa6aIcO7" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="34EJa6aIcO8" role="3clF45" />
     </node>
   </node>
 </model>

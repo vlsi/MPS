@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Set<String> referenceNames;
   private Set<String> childrenNames;
   private HashMap<String, Boolean> childrenMap = new HashMap<String, Boolean>();
-  private Set<String> unorderedChildren;
   private boolean isAbstract;
   private boolean isFinal;
   private String conceptAlias;
@@ -187,7 +186,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         // direct references and children
-        unorderedChildren = new HashSet<String>();
         for (SNode link : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration)) {
           // process link declarations, excluding those that specialize some other link.
           // We don't generate anything for such links, thus exclude them here as well.
@@ -199,9 +197,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             continue;
           }
           boolean unordered = SPropertyOperations.getBoolean(link.getProperty(SNodeUtil.property_LinkDeclaration_unordered));
-          if (unordered) {
-            unorderedChildren.add(role);
-          }
           final SConceptId targetConceptId = MetaIdByDeclaration.getConceptId(link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target));
           final String linkCardinality = link.getProperty(SNodeUtil.property_LinkDeclaration_sourceCardinality);
           final boolean isOptional = !SNodeUtil.isAtLeastOne(linkCardinality);
@@ -310,7 +305,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         for (String child : parentDescriptor.getChildrenNames()) {
           childrenMap.put(child, parentDescriptor.isMultipleChild(child));
         }
-        unorderedChildren.addAll(parentDescriptor.getUnorderedChildrenNames());
 
         for (SContainmentLinkId lid : parentDescriptor.getLinkIds()) {
           linksByIds.put(lid, parentDescriptor.getLinkDescriptor(lid));
@@ -319,7 +313,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           linksByName.put(lname, parentDescriptor.getLinkDescriptor(lname));
         }
       }
-      unorderedChildren = Collections.unmodifiableSet(unorderedChildren);
       childrenNames = Collections.unmodifiableSet(childrenMap.keySet());
 
       myLinks = Collections.unmodifiableMap(linksByIds);
@@ -371,12 +364,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   public Set<String> getChildrenNames() {
     init();
     return childrenNames;
-  }
-
-  @Override
-  public Set<String> getUnorderedChildrenNames() {
-    init();
-    return unorderedChildren;
   }
 
   @Override

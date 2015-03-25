@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -28,16 +29,23 @@ import org.jetbrains.mps.openapi.model.SReference;
  */
 @Immutable
 public final class SReferenceChangeEvent {
+  private final SModel myModel;
   private final SNode myNode;
   private final SReferenceLink myLink;
   private final SReference myOldValue;
   private final SReference myNewValue;
 
-  public SReferenceChangeEvent(@NotNull SNode node, @NotNull SReferenceLink link, SReference oldValue, SReference newValue) {
+  public SReferenceChangeEvent(@NotNull SModel model, @NotNull SNode node, @NotNull SReferenceLink link, SReference oldValue, SReference newValue) {
+    myModel = model;
     myNode = node;
     myLink = link;
     myOldValue = oldValue;
     myNewValue = newValue;
+  }
+
+  @NotNull
+  public SModel getModel() {
+    return myModel;
   }
 
   @NotNull

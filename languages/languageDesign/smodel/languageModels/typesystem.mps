@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -194,6 +194,22 @@
       <concept id="1196350785112" name="jetbrains.mps.lang.quotation.structure.Antiquotation" flags="ng" index="2c44te" />
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      </concept>
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
+      </concept>
+      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
+        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
+      <concept id="8182547171709614739" name="jetbrains.mps.lang.quotation.structure.NodeBuilderRef" flags="nn" index="36bGnv">
+        <reference id="8182547171709614741" name="target" index="36bGnp" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -11014,6 +11030,38 @@
     <node concept="1YaCAy" id="49hVTZmCOxi" role="1YuTPh">
       <property role="TrG5h" value="conceptShortDescriptionOperation" />
       <ref role="1YaFvo" to="tp25:5XpkEY8oJOs" resolve="ConceptShortDescriptionOperation" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3TEgbCBRnqD">
+    <property role="TrG5h" value="typeof_LanguageRefExpression" />
+    <property role="3GE5qa" value="reference.module" />
+    <node concept="3clFbS" id="3TEgbCBRnqE" role="18ibNy">
+      <node concept="1Z5TYs" id="3TEgbCBRnJk" role="3cqZAp">
+        <node concept="mw_s8" id="3TEgbCBRnJC" role="1ZfhKB">
+          <node concept="2pJPEk" id="3TEgbCBRnJ$" role="mwGJk">
+            <node concept="2pJPED" id="3TEgbCBRnLq" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="3TEgbCBRnLE" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="3TEgbCBRnLV" role="2pJxcZ">
+                  <ref role="36bGnp" to="t3eg:~SLanguage" resolve="SLanguage" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3TEgbCBRnJn" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3TEgbCBRnGX" role="mwGJk">
+            <node concept="1YBJjd" id="3TEgbCBRnHp" role="1Z2MuG">
+              <ref role="1YBMHb" node="3TEgbCBRnqG" resolve="lre" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3TEgbCBRnqG" role="1YuTPh">
+      <property role="TrG5h" value="lre" />
+      <ref role="1YaFvo" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
     </node>
   </node>
 </model>

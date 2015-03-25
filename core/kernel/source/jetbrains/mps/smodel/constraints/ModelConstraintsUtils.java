@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /* package */ class ModelConstraintsUtils {
@@ -34,11 +33,6 @@ import org.jetbrains.mps.openapi.module.SModule;
   }
 
   @Nullable
-  public static SModule getModule(@Nullable SReference reference) {
-    return reference != null ? getModule(reference.getSourceNode()) : null;
-  }
-
-  @Nullable
   public static SModule getModule(@Nullable SNode node) {
     return node != null ? getModule(node.getModel()) : null;
   }
@@ -48,10 +42,6 @@ import org.jetbrains.mps.openapi.module.SModule;
     if (model == null) {
       return null;
     }
-    SModel modelDescriptor = model;
-    if (modelDescriptor == null) {
-      return null;
-    }
-    return modelDescriptor.getModule();
+    return model.getModule();
   }
 }

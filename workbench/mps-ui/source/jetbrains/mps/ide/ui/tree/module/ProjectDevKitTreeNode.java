@@ -52,7 +52,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  public void init() {
+  protected void doInit() {
     populate();
     myInitialized = true;
   }

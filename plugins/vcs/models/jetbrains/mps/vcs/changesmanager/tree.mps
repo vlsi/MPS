@@ -322,7 +322,6 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -6613,49 +6612,25 @@
             </node>
           </node>
           <node concept="3clFbS" id="5$KqLV$yO3e" role="3clFbx">
-            <node concept="3cpWs8" id="5$KqLV$yOJL" role="3cqZAp">
-              <node concept="3cpWsn" id="5$KqLV$yOJM" role="3cpWs9">
-                <property role="TrG5h" value="node" />
-                <node concept="3Tqbb2" id="5$KqLV$yOJN" role="1tU5fm" />
-                <node concept="2OqwBi" id="5$KqLV$yOJO" role="33vP2m">
-                  <node concept="1eOMI4" id="5$KqLV$yOJP" role="2Oq$k0">
-                    <node concept="10QFUN" id="5$KqLV$yOJQ" role="1eOMHV">
-                      <node concept="37vLTw" id="2BHiRxghfMh" role="10QFUP">
-                        <ref role="3cqZAo" node="5$KqLV$yO33" resolve="treeNode" />
-                      </node>
-                      <node concept="3uibUv" id="5$KqLV$yOJS" role="10QFUM">
-                        <ref role="3uigEE" to="rl1i:51NkKCgB390" resolve="HierarchyTreeNode" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="5$KqLV$yOJT" role="2OqNvi">
-                    <ref role="37wK5l" to="rl1i:51NkKCgB4rb" resolve="getNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="5$KqLV$yOJW" role="3cqZAp">
-              <node concept="3clFbS" id="5$KqLV$yOJX" role="3clFbx">
-                <node concept="3cpWs6" id="5$KqLV$yOX$" role="3cqZAp">
-                  <node concept="2ShNRf" id="5$KqLV$yOXA" role="3cqZAk">
-                    <node concept="1pGfFk" id="5$KqLV$yOXC" role="2ShVmc">
-                      <ref role="37wK5l" to="gwd2:4oT3Lbm4M0g" resolve="NodeFeature" />
-                      <node concept="2ShNRf" id="5$KqLV$yOXD" role="37wK5m">
-                        <node concept="1pGfFk" id="5$KqLV$yOXF" role="2ShVmc">
-                          <ref role="37wK5l" to="cu2c:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodePointer" />
-                          <node concept="37vLTw" id="3GM_nagTwsS" role="37wK5m">
-                            <ref role="3cqZAo" node="5$KqLV$yOJM" resolve="node" />
-                          </node>
+            <node concept="3cpWs6" id="5$KqLV$yOX$" role="3cqZAp">
+              <node concept="2ShNRf" id="5$KqLV$yOXA" role="3cqZAk">
+                <node concept="1pGfFk" id="5$KqLV$yOXC" role="2ShVmc">
+                  <ref role="37wK5l" to="gwd2:4oT3Lbm4M0g" resolve="NodeFeature" />
+                  <node concept="2OqwBi" id="5$KqLV$yOJO" role="37wK5m">
+                    <node concept="1eOMI4" id="5$KqLV$yOJP" role="2Oq$k0">
+                      <node concept="10QFUN" id="5$KqLV$yOJQ" role="1eOMHV">
+                        <node concept="37vLTw" id="2BHiRxghfMh" role="10QFUP">
+                          <ref role="3cqZAo" node="5$KqLV$yO33" resolve="treeNode" />
+                        </node>
+                        <node concept="3uibUv" id="5$KqLV$yOJS" role="10QFUM">
+                          <ref role="3uigEE" to="rl1i:51NkKCgB390" resolve="HierarchyTreeNode" />
                         </node>
                       </node>
                     </node>
+                    <node concept="liA8E" id="5$KqLV$yOJT" role="2OqNvi">
+                      <ref role="37wK5l" to="rl1i:7N9Eg8nY$Mh" resolve="getNodeReference" />
+                    </node>
                   </node>
-                </node>
-              </node>
-              <node concept="3y3z36" id="5$KqLV$yOK1" role="3clFbw">
-                <node concept="10Nm6u" id="5$KqLV$yOK4" role="3uHU7w" />
-                <node concept="37vLTw" id="3GM_nagTsDN" role="3uHU7B">
-                  <ref role="3cqZAo" node="5$KqLV$yOJM" resolve="node" />
                 </node>
               </node>
             </node>

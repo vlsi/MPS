@@ -130,6 +130,8 @@ public interface EditorCell {
 
   void requestRelayout();
 
+  boolean wasRelayoutRequested();
+
   void setCaretX(int x);
 
   int getCaretX();

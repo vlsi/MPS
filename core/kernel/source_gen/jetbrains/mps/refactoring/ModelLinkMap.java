@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -79,7 +80,7 @@ public class ModelLinkMap {
       public void invoke(SNode node) {
         String modelName = SModelStereotype.withoutStereotype(newPtr.getModelReference().getModelName());
         String name = node.getConcept().getName();
-        ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
+        new SNodeLegacy(node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
     move(myNodeRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -128,7 +129,7 @@ public class ModelLinkMap {
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getQualifiedName());
-        ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+        new SNodeLegacy(node).setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
       }
     });
     res |= setProp(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
@@ -199,7 +200,7 @@ public class ModelLinkMap {
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
             String name = NameUtil.shortNameFromLongName(node.getConcept().getQualifiedName());
-            ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getModelName(), name));
+            new SNodeLegacy(node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getModelName(), name));
           }
         });
       }

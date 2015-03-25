@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.choose.base;
 
 import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -55,11 +54,6 @@ public abstract class BasePresentation implements ItemPresentation {
         return doGetIcon();
       }
     });
-  }
-
-  @Nullable
-  public TextAttributesKey getTextAttributesKey() {
-    return null;
   }
 
   @NotNull

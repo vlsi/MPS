@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -23,6 +22,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -30,9 +30,9 @@ import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -118,8 +118,8 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   public List<SubstituteAction> getSmartMatchingActions(final String pattern, final boolean strictMatching, EditorCell contextCell) {
     // TODO make this thread local maybe?
     ourModelForTypechecking = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    for (SModuleReference l : SModelOperations.getAllImportedLanguages(getEditorContext().getModel())) {
-      ((SModelBase) ourModelForTypechecking).getSModel().addLanguage(l);
+    for (SLanguage l : SModelOperations.getAllLanguageImports(getEditorContext().getModel())) {
+      ((SModelInternal) ourModelForTypechecking).addLanguage(l);
     }
 
     try {

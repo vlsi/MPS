@@ -594,6 +594,8 @@
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/test_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

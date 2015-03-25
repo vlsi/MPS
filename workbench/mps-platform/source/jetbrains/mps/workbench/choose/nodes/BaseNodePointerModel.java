@@ -35,11 +35,12 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
 
   public BaseNodePointerModel(Project project, String entityName) {
     super(project, entityName);
+    setCheckBoxName("Include &non-&&project models");
   }
 
   @Override
-  public String doGetFullName(Object element) {
-    NodePointerPresentation presentation = (NodePointerPresentation) ((NavigationItem) element).getPresentation();
+  public String doGetFullName(NavigationItem element) {
+    NodePointerPresentation presentation = (NodePointerPresentation) element.getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
@@ -78,10 +79,5 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
         });
       }
     };
-  }
-
-  @Override
-  protected String doGetCheckBoxName() {
-    return "Include &non-&&project models";
   }
 }

@@ -37,6 +37,7 @@ import java.util.List;
  */
 public class JpsMPSModelSerializerExtension extends JpsModelSerializerExtension {
 
+  @NotNull
   @Override
   public List<? extends JpsFacetConfigurationSerializer<?>> getFacetConfigurationSerializers() {
     return Collections.singletonList(new JpsMPSFacetConfigurationSerializer());
@@ -62,7 +63,7 @@ public class JpsMPSModelSerializerExtension extends JpsModelSerializerExtension 
 
     @Override
     protected void saveExtension(JpsMPSModuleExtension extension, Element facetConfigurationTag, JpsModule module) {
-      MPSConfigurationBean configuration = ((JpsMPSModuleExtensionImpl) extension).getConfiguration();
+      MPSConfigurationBean configuration = extension.getConfiguration();
       State state = configuration.toState();
       XmlSerializer.serializeInto(state, facetConfigurationTag, new SkipDefaultValuesSerializationFilters());
     }

@@ -91,8 +91,9 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       return "";
     }
     String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
+    String normalizedContentHome = FileUtil.getAbsolutePath(contentHome).replace("\\", "/");
     try {
-      return FileUtil.getRelativePath(normalized, contentHome, "/");
+      return FileUtil.getRelativePath(normalized, normalizedContentHome, "/");
     } catch (Exception ex) {
       return null;
     }

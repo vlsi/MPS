@@ -61,6 +61,34 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   @Override
+  public void visitModuleNode(@NotNull final ProjectModuleTreeNode node) {
+    // XXX might be fruitful to have pre/post visit notifications, so that we can get rid of propagateStatusToNamespaceNodes (do it from post visit)
+    if (node.isInitialized()) {
+      // we've got children (SModelTreeNodes) and there's update for them in #visitModelNode(), below
+      return;
+    }
+    scheduleModelRead(node, new Runnable() {
+      @Override
+      public void run() {
+        if (node.getModule().isReadOnly()) {
+          new StatusUpdate(node).update(GenerationStatus.READONLY);
+          return;
+        }
+        final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+        if (project != null && DumbService.getInstance(project).isDumb()) {
+          // see visitModelNode for explanation
+          propagateStatusToNamespaceNodes(node, GenerationStatus.UPDATING);
+          return;
+        }
+        GenerationStatus s = new StatusUpdate(node).update();
+        // no need to check for generator and language here as #visitModelNode does, as now
+        // we can face generator module only as sibling to language's models (i.e. SModelTreeNodes)
+        propagateStatusToNamespaceNodes(node, s);
+      }
+    });
+  }
+
+  @Override
   public void visitModelNode(@NotNull final SModelTreeNode modelNode) {
     scheduleModelRead(modelNode, new Runnable() {
       @Override

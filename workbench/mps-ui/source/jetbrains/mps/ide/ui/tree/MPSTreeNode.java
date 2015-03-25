@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,15 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -51,7 +48,6 @@ import java.util.Set;
 public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
-  private IOperationContext myOperationContext;
   private MPSTree myTree;
   private boolean myAdded;
 
@@ -72,34 +68,26 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private int myToggleClickCount = 2;
 
   public MPSTreeNode() {
-    this(null, null);
+    super(null);
   }
 
   public MPSTreeNode(Object userObject) {
-    this(userObject, null);
+    super(userObject);
   }
 
   /**
    * @deprecated use cons without IOperationContext parameter
+   * @param userObject
+   * @param operationContext <em>ignored</em>
    */
   @Deprecated
-  public MPSTreeNode(IOperationContext operationContext) {
-    myOperationContext = operationContext;
-  }
-  /**
-   * @deprecated use cons without IOperationContext parameter
-   */
-  @Deprecated
+  @ToRemove(version = 3.3)
   public MPSTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject);
-    myOperationContext = operationContext;
-  }
-
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
       return Collections.<MPSTreeNode>emptySet().iterator();
@@ -117,13 +105,18 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   /**
    *  returns the closest ancestor (nodes or the containing tree) which implements the given class
    */
+  @SuppressWarnings("unchecked")
   public <T> T getAncestor(@Nullable Class<T> cls) {
     TreeNode parent = getParent();
     while (parent != null) {
-      if (cls.isInstance(parent)) return (T) parent;
+      if (cls.isInstance(parent)) {
+        return (T) parent;
+      }
       parent = parent.getParent();
     }
-    if (myTree != null && cls.isInstance(myTree)) return (T) myTree;
+    if (myTree != null && cls.isInstance(myTree)) {
+      return (T) myTree;
+    }
     return null;
   }
 
@@ -139,24 +132,6 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     return false;
   }
 
-  /**
-   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
-   * see ProjectPaneActionGroups.getActionGroup()
-   */
-  @Deprecated
-  public final ActionGroup getActionGroup() {
-    return null;
-  }
-
-  /**
-   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
-   * see ProjectPaneActionGroups.getQuickCreateGroup()
-   */
-  @Deprecated
-  public final ActionGroup getQuickCreateGroup(boolean plain) {
-    return null;
-  }
-
   public void doubleClick() {
   }
 
@@ -169,24 +144,32 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     getTree().fireTreeNodeAdded(this);
   }
 
+  /**
+   * Deemed for tree clients to ensure node is initialized (i.e. has its children).
+   * If the node is already {@link #isInitialized() initialized}, does nothing.
+   * Otherwise, {@link jetbrains.mps.ide.ui.tree.MPSTree#doInit(MPSTreeNode)}  delegates} to owning tree, if any,
+   * to perform actual initialization, with respect to tree's considerations (e.g. might wrap with model read action or
+   * "Loading..."  notification nodes).
+   * Tree shall call {@link #doInit()} at some point where actual node initialization takes place.
+   * Although not final, extra care should be taken if overriding (FIXME perhaps, shall make final, and move isInitialized field here as well).
+   */
   public void init() {
     if (isInitialized()) {
       return;
     }
-
-    MPSTree tree = ModelAccess.instance().runReadAction(new Computable<MPSTree>() {
-      @Override
-      public MPSTree compute() {
-        doInit();
-        return getTree();
-      }
-    });
-
+    MPSTree tree = getTree();
     if (tree != null) {
-      ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+      tree.doInit(this);
+    } else {
+      doInit();
     }
   }
 
+  /**
+   * This method shall not be invoked by code outside of MPSTree framework.
+   * Subclasses shall override and perform actual node initialization here.
+   * Default implementation does nothing, subclasses don't need to invoke <code>super.doInit()</code>
+   */
   protected void doInit() {
   }
 
@@ -283,6 +266,9 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     return null;
   }
 
+  /**
+   * Ignores subtree of nodes that have not been initialized yet.
+   */
   @Nullable
   public final MPSTreeNode findDescendantWith(Object userObject) {
     if (getUserObject() == null ? userObject == null : getUserObject().equals(userObject)) return this;
@@ -291,28 +277,6 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
         if (result != null) return result;
       }
-    }
-    return null;
-  }
-
-  @Nullable
-  public final <T> MPSTreeNode findDescendantWith(Condition<T> condition) {
-    if (condition.met((T) getUserObject())) return this;
-    if (isInitialized()) {
-      for (int i = 0; i < getChildCount(); i++) {
-        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(condition);
-        if (result != null) return result;
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  public final <T> MPSTreeNode findStraightAncestorWith(Condition<T> condition) {
-    if (!isInitialized()) init();
-    for (int i = 0; i < getChildCount(); i++) {
-      MPSTreeNode child = (MPSTreeNode) getChildAt(i);
-      if (condition.met((T) child.getUserObject())) return child;
     }
     return null;
   }

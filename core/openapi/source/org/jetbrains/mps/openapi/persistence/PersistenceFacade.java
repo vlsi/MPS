@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,15 @@ public abstract class PersistenceFacade {
    * */
   public abstract Set<String> getModelFactoryExtensions();
 
-  public abstract SModuleReference createModuleReference(String text);
+  /**
+   * Serialize counterpart for {@link #createModuleReference(String)}.
+   * @param reference module reference to serialize
+   * @return persistence-ready presentation of a module identifier
+   * @since 3.3
+   */
+  public abstract String asString(@NotNull SModuleReference reference);
+
+  public abstract SModuleReference createModuleReference(@NotNull String text);
 
   /**
    * Creates an SModelId from a given text identifier.

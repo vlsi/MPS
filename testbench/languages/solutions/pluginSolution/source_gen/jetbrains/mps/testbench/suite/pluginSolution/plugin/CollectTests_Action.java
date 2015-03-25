@@ -6,11 +6,13 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.InternalFlag;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -33,7 +35,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -58,7 +59,8 @@ public class CollectTests_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(PersistenceFacade.getInstance().createModuleReference("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite", -1);
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {

@@ -14,13 +14,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
@@ -115,28 +116,30 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   protected void addBuiltInImports() {
     Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    SModelInternal modelInternal = ((SModelInternal) myModel);
     for (Language l : CollectionSequence.fromCollection(languages)) {
       if (l != base && !(LanguageDependenciesManager.getAllExtendedLanguages(l).contains(base))) {
         continue;
       }
-      ((SModelInternal) myModel).addLanguage(l.getModuleReference());
+      modelInternal.addLanguage(l.getModuleReference());
       ((AbstractModule) myModel.getModule()).addUsedLanguage(l.getModuleReference());
-      ((SModelInternal) (myModel)).addModelImport(l.getStructureModelDescriptor().getReference(), false);
+      modelInternal.addModelImport(l.getStructureModelDescriptor().getReference(), false);
       ((AbstractModule) myModel.getModule()).addDependency(l.getModuleReference(), false);
     }
-    ((SModelInternal) myModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+    modelInternal.addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
     ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
   }
 
   protected void validateImports() {
-    for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), ((SModelInternal) myModel).importedDevkits())) {
-      ((SModelInternal) myModel).deleteDevKit(devKit);
+    SModelInternal modelInternal = (SModelInternal) myModel;
+    for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), modelInternal.importedDevkits())) {
+      modelInternal.deleteDevKit(devKit);
     }
-    for (SModuleReference language : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), ((SModelInternal) myModel).importedLanguages())) {
-      ((SModelInternal) myModel).deleteLanguage(language);
+    for (SLanguage language : ListSequence.fromListWithValues(new ArrayList<SLanguage>(), modelInternal.importedLanguageIds())) {
+      modelInternal.deleteLanguageId(language);
     }
-    for (jetbrains.mps.smodel.SModel.ImportElement model : ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), ((SModelInternal) myModel).importedModels())) {
-      ((SModelInternal) myModel).deleteModelImport(model.getModelReference());
+    for (jetbrains.mps.smodel.SModel.ImportElement model : ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), modelInternal.importedModels())) {
+      modelInternal.deleteModelImport(model.getModelReference());
     }
     addBuiltInImports();
     TemporaryModels.getInstance().addMissingImports(myModel);
@@ -296,16 +299,18 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected void addNodeImports(SNode node) {
+    final SModelInternal modelInternal = (SModelInternal) myModel;
+    final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
     for (SNode subNode : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}))) {
-      SModuleReference usedLanguage = subNode.getConcept().getLanguage().getSourceModule().getModuleReference();
-      if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
-        ((SModelInternal) myModel).addLanguage(usedLanguage);
+      SLanguage usedLanguage = subNode.getConcept().getLanguage();
+      if (!(importedLanguages.contains(usedLanguage))) {
+        modelInternal.addLanguage(usedLanguage);
         ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
         SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
-        if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
-          ((SModelInternal) myModel).addModelImport(usedModel.getReference(), false);
+        if (usedModel != null && !(modelInternal.importedModels().contains(usedModel))) {
+          modelInternal.addModelImport(usedModel.getReference(), false);
           ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
         }
       }

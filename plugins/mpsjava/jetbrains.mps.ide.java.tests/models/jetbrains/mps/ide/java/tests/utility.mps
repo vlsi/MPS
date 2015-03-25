@@ -2,10 +2,10 @@
 <model ref="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
@@ -35,6 +35,7 @@
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="n8sb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" />
     <import index="qx6n" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -654,8 +655,8 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="2Joe2ReCeX7" role="2OqNvi">
-                          <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-                          <node concept="37vLTw" id="2Joe2ReCwcw" role="37wK5m">
+                          <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+                          <node concept="37vLTw" id="1vW2ylWOSzH" role="37wK5m">
                             <ref role="3cqZAo" node="2Joe2ReAu6W" resolve="langref" />
                           </node>
                         </node>
@@ -664,8 +665,8 @@
                   </node>
                   <node concept="3cpWsn" id="2Joe2ReAu6W" role="1Duv9x">
                     <property role="TrG5h" value="langref" />
-                    <node concept="3uibUv" id="2Joe2ReAu70" role="1tU5fm">
-                      <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
+                    <node concept="3uibUv" id="1vW2ylWOQxV" role="1tU5fm">
+                      <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="2Joe2ReAu71" role="1DdaDG">
@@ -683,7 +684,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="2Joe2ReAu78" role="2OqNvi">
-                      <ref role="37wK5l" to="51te:~SModelDescriptorStub.importedLanguages():java.util.List" resolve="importedLanguages" />
+                      <ref role="37wK5l" to="51te:~SModelDescriptorStub.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
                     </node>
                   </node>
                 </node>

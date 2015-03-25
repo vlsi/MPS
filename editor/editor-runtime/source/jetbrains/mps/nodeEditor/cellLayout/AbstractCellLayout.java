@@ -70,6 +70,6 @@ public abstract class AbstractCellLayout implements CellLayout {
   }
 
   @Override
-  public void move(EditorCell_Collection editorCells) {
+  public void move(EditorCell_Collection editorCells, int deltaX, int deltaY) {
   }
 }

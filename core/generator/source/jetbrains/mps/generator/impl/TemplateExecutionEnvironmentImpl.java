@@ -347,7 +347,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             // it's ok, just continue with a next applicable rule, if any
             if (ex.isLoggingNeeded() && reductionRule != null) {
               SNodeReference ruleNode = reductionRule.getRuleNode();
-              String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
+              String messageText = String.format("-- dismissed reduction rule: %s", ex.getMessage() == null ? "<no message>" : ex.getMessage());
               if (ex.isInfo()) {
                 getLogger().info(ruleNode, messageText);
               } else if (ex.isWarning()) {

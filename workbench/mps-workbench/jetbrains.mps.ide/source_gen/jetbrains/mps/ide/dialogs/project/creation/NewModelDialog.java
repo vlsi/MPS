@@ -52,6 +52,7 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -291,7 +292,7 @@ public class NewModelDialog extends DialogWrapper {
         for (SModelReference ref : SModelOperations.getImportedModelUIDs(myClone)) {
           ((SModelInternal) result).addModelImport(ref, false);
         }
-        for (SModuleReference ref : ((SModelInternal) myClone).importedLanguages()) {
+        for (SLanguage ref : ((SModelInternal) myClone).importedLanguageIds()) {
           ((SModelInternal) result).addLanguage(ref);
         }
         for (SModuleReference ref : ((SModelInternal) myClone).importedDevkits()) {

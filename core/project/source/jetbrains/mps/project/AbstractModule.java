@@ -310,6 +310,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
+  /**
+   * Register language to use in module's models
+   * @since 3.3
+   */
+  public void addUsedLanguage(@NotNull SLanguage language) {
+    // FIXME SLanguage->SModuleReference transition
+    addUsedLanguage(language.getSourceModule().getModuleReference());
+  }
+
   public void addUsedLanguage(SModuleReference langRef) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -320,6 +329,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     dependenciesChanged();
     setChanged();
+  }
+
+  public void removeUsedLanguage(SLanguage lang) {
+    // FIXME SLanguage->SModuleReference transition
+    removeUsedLanguage(lang.getSourceModule().getModuleReference());
   }
 
   public void removeUsedLanguage(SModuleReference langRef) {

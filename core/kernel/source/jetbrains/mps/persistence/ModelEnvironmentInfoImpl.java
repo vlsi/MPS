@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,12 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,7 +37,7 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
 
   @Override
   public SNodeReference getConceptId(SNode node) {
-    SNode conceptDeclarationNode = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
+    SNode conceptDeclarationNode = new SNodeLegacy(node).getConceptDeclarationNode();
     return conceptDeclarationNode == null ? null : conceptDeclarationNode.getReference();
   }
 
@@ -64,17 +65,13 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
 
   @Override
   public boolean isInUnorderedRole(SNode node) {
-    SNode parent = node.getParent();
-    if (parent == null) return false;
-    String roleInParent = node.getRoleInParent();
-    return ConceptRegistry.getInstance().getConceptDescriptor(parent.getConcept().getQualifiedName()).isUnorderedChild(
-        roleInParent);
+    final SContainmentLink roleInParent = node.getContainmentLink();
+    return roleInParent != null && roleInParent.isUnordered();
   }
 
   @Override
   public SNodeReference getPropertyId(SNode containingNode, String propertyName) {
-    SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(((jetbrains.mps.smodel.SNode) containingNode).getConceptDeclarationNode(),
-        propertyName);
+    SNode propertyDeclaration = new SNodeLegacy(containingNode).getPropertyDeclaration(propertyName);
     return propertyDeclaration == null ? null : propertyDeclaration.getReference();
   }
 

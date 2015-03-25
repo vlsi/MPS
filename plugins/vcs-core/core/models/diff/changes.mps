@@ -95,6 +95,9 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -7023,24 +7026,16 @@
           </node>
           <node concept="9aQIb" id="69abr3GmYqa" role="9aQIa">
             <node concept="3clFbS" id="69abr3GmYqb" role="9aQI4">
-              <node concept="3SKdUt" id="69abr3GmYqc" role="3cqZAp">
-                <node concept="3SKdUq" id="69abr3GmYqd" role="3SKWNk">
-                  <property role="3SKdUp" value="hardcoded to get rid of dependency on core language" />
-                </node>
-              </node>
               <node concept="3cpWs8" id="69abr3GmYqe" role="3cqZAp">
                 <node concept="3cpWsn" id="69abr3GmYqf" role="3cpWs9">
                   <property role="TrG5h" value="stubNode" />
                   <node concept="3Tqbb2" id="69abr3GmYqg" role="1tU5fm" />
                   <node concept="2ShNRf" id="69abr3GmYqh" role="33vP2m">
                     <node concept="1pGfFk" id="3x0OQtFcCVD" role="2ShVmc">
-                      <ref role="37wK5l" to="cu2c:~SNode.&lt;init&gt;(java.lang.String)" resolve="SNode" />
-                      <node concept="2YIFZM" id="3x0OQtFcCVE" role="37wK5m">
-                        <ref role="37wK5l" to="msyo:~InternUtil.intern(java.lang.String):java.lang.String" resolve="intern" />
-                        <ref role="1Pybhc" to="msyo:~InternUtil" resolve="InternUtil" />
-                        <node concept="Xl_RD" id="3x0OQtFcCVF" role="37wK5m">
-                          <property role="Xl_RC" value="jetbrains.mps.lang.core.structure.BaseConcept" />
-                        </node>
+                      <ref role="37wK5l" to="cu2c:~SNode.&lt;init&gt;(org.jetbrains.mps.openapi.language.SConcept)" resolve="SNode" />
+                      <node concept="10M0yZ" id="1RQQO7DXQ7g" role="37wK5m">
+                        <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                        <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
                       </node>
                     </node>
                   </node>

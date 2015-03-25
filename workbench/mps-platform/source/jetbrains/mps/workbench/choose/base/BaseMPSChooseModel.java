@@ -140,7 +140,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return doGetFullName(element);
+        return doGetFullName((NavigationItem) element);
       }
     });
   }
@@ -161,7 +161,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return find(new ModulesScope(project.getModulesWithGenerators()));
   }
 
-  public abstract String doGetFullName(Object element);
+  public abstract String doGetFullName(NavigationItem element);
 
   public abstract String doGetObjectName(T object);
 
@@ -173,13 +173,14 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @Override
   public final String getCheckBoxName() {
-    String name = doGetCheckBoxName();
-    if (name == null) return null;
-    return UIUtil.replaceMnemonicAmpersand(name);
+    if (myCheckboxName == null) {
+      return null;
+    }
+    return UIUtil.replaceMnemonicAmpersand(myCheckboxName);
   }
 
-  protected String doGetCheckBoxName() {
-    return myCheckboxName;
+  public final void setCheckBoxName(String name) {
+    myCheckboxName = name;
   }
 
   @Override

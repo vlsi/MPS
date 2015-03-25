@@ -24,11 +24,14 @@ import jetbrains.mps.smodel.Language;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -164,6 +167,20 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   public Collection<LanguageRuntime> getAvailableLanguages() {
     myRepository.getModelAccess().checkReadAccess();
     return myLanguages.values();
+  }
+
+  public Collection<SLanguage> getAllLanguages() {
+    final Collection<LanguageRuntime> languages = getAvailableLanguages();
+    ArrayList<SLanguage> rv = new ArrayList<SLanguage>(languages.size());
+    for (LanguageRuntime lr : languages) {
+      rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace(), lr.getVersion()));
+    }
+    return rv;
+  }
+
+  @Nullable
+  public LanguageRuntime getLanguage(SLanguage language) {
+    return ((SLanguageAdapter) language).getLanguageDescriptor();
   }
 
   @Nullable

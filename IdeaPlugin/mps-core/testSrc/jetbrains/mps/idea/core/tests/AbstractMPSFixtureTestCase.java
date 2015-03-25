@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
@@ -30,9 +29,6 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectBundle;
-import com.intellij.openapi.projectRoots.JavaSdk;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
@@ -43,16 +39,15 @@ import com.intellij.testFramework.fixtures.JavaTestFixtureFactory;
 import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
-import com.intellij.util.SystemProperties;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import junit.framework.Assert;
-import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -61,7 +56,6 @@ import java.io.File;
 
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   private static int ourIndex = 0;
-  private static boolean TRACE_ON_HACK = false;
 
   protected MPSFacet myFacet;
   private JavaCodeInsightTestFixture myFixture;
@@ -69,7 +63,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 
   static {
-    if (TRACE_ON_HACK) BasicConfigurator.configure();
+    com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
     IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
   }
 
@@ -108,8 +102,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
     myFacet = addMPSFacet(myModule);
-
-    if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
   }
 
   @Override
@@ -189,8 +181,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
     @Override
     protected void initModule(Module module) {
-      // turn on trace
-      if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
       super.initModule(module);
     }
 

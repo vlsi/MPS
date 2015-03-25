@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -56,7 +55,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final LinkDescriptor[] myOwnLinks;
   private final String[] myOwnChildNames;
   private final boolean[] myMultiple;
-  private final String[] myUnorderedChildren;
   private final boolean myAbstract;
   private final boolean myFinal;
   private final String myConceptAlias;
@@ -118,7 +116,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myOwnLinks = ownLinks;
     myOwnChildNames = ownChildNames;
     myMultiple = multiple;
-    myUnorderedChildren = unorderedChildren;
 
     myAbstract = isAbstract;
     myFinal = isFinal;
@@ -231,15 +228,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       childMap.put(myOwnChildNames[i], myMultiple[i]);
     }
 
-    Set<String> unorderedNamesNew = new HashSet<String>(Arrays.asList(myUnorderedChildren));
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      unorderedNamesNew.addAll(parentDescriptor.getUnorderedChildrenNames());
       for (String child : parentDescriptor.getChildrenNames()) {
         childMap.put(child, parentDescriptor.isMultipleChild(child));
       }
     }
 
-    unorderedNames = Collections.unmodifiableSet(unorderedNamesNew);
     childNames = Collections.unmodifiableSet(childMap.keySet());
 
     //ids
@@ -258,12 +252,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     }
     links = linksMap;
     linksByName = linksByNameMap;
-  }
-
-  @Override
-  public Set<String> getUnorderedChildrenNames() {
-    init();
-    return unorderedNames;
   }
 
   @Override

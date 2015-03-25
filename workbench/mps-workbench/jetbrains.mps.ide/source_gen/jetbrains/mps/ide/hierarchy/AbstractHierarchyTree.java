@@ -200,7 +200,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         final SNode node = ((HierarchyTreeNode) treeNode).getNode();
-        hierarchyView.showItemInHierarchy(node, treeNode.getOperationContext());
+        hierarchyView.showItemInHierarchy(node);
       }
     };
     return ActionUtils.groupFromActions(hierarchyAction);

@@ -2,10 +2,10 @@
 <model ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -282,11 +282,15 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -5492,6 +5496,7 @@
     <node concept="2YIFZL" id="3IONCthJ3TP" role="jymVt">
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="true" />
       <node concept="3uibUv" id="3IONCthJkW6" role="3clF45">
         <ref role="3uigEE" to="k7g3:~List" resolve="List" />
         <node concept="3uibUv" id="3IONCthJnNh" role="11_B2D">
@@ -5538,6 +5543,40 @@
         <property role="TrG5h" value="model" />
         <node concept="3uibUv" id="3IONCthJ3Ui" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
+        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
+          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
+            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
+              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
+            </node>
+            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
+            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
+            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="3TEgbCBO36f" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="3TEgbCBO38m" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
         </node>
       </node>
     </node>

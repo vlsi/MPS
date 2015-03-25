@@ -16,18 +16,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import java.util.List;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,17 +47,13 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
       if (!(model instanceof DefaultSModelDescriptor)) {
         return;
       }
-
-      List<SModuleReference> langs = ((DefaultSModelDescriptor) model).importedLanguages();
-      Iterable<SNode> descrs = ListSequence.fromList(langs).select(new ISelector<SModuleReference, Language>() {
-        public Language select(SModuleReference it) {
-          return ((Language) it.resolve(MPSModuleRepository.getInstance()));
+      // FIXME why DefaultSModelDescriptor?! SModelInternal would be enough 
+      Iterable<SLanguage> langs = ((DefaultSModelDescriptor) model).importedLanguageIds();
+      Iterable<SNode> descrs = Sequence.fromIterable(langs).select(new ISelector<SLanguage, SModule>() {
+        public SModule select(SLanguage it) {
+          return it.getSourceModule();
         }
-      }).where(new IWhereFilter<Language>() {
-        public boolean accept(Language it) {
-          return it != null;
-        }
-      }).translate(new ITranslator2<Language, SModel>() {
+      }).ofType(Language.class).translate(new ITranslator2<Language, SModel>() {
         public Iterable<SModel> translate(Language it) {
           return it.getAccessoryModels();
         }

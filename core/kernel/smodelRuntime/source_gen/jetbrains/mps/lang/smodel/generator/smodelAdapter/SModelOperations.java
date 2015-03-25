@@ -136,11 +136,8 @@ public class SModelOperations {
       return null;
     }
 
-    if (id != null) {
-      ((jetbrains.mps.smodel.SNode) result).setId(id);
-    }
     BehaviorReflection.initNode(result);
-    return ((SNode) result);
+    return result;
   }
   public static SNode createNewRootNode(SModel model, SConcept concept) {
     SNode newNode = createNewNode(model, null, concept);

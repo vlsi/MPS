@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
@@ -93,7 +94,7 @@ public class ChildrenCollectionFinder {
     if (current.getRole() != null) {
       String role = current.getRole();
       SNode currentNode = current.getSNode();
-      SNode linkDeclaration = ((jetbrains.mps.smodel.SNode) currentNode).getLinkDeclaration(role);
+      SNode linkDeclaration = new SNodeLegacy(currentNode).getLinkDeclaration(role);
       if (linkDeclaration != null &&
         !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
         SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {

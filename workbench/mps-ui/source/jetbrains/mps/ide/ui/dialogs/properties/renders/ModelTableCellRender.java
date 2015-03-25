@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import javax.swing.BorderFactory;
 import javax.swing.JTable;
 
+// FIXME use StateTableCellRenderer for superclass
 public class ModelTableCellRender extends ColoredTableCellRenderer {
   @Override
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {

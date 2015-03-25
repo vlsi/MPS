@@ -27,8 +27,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -314,9 +316,9 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addStyle(cell, attribute, true);
   }
 
-  public static AbstractDefaultEditor createEditor(SNode node) {
-    ConceptDescriptor conceptDescriptor = ((SConceptAdapter) node.getConcept()).getConceptDescriptor();
-    return conceptDescriptor == null ? new ReadOnlyDefaultEditor(node.getConcept()) : new DefaultEditor(node.getConcept());
+  public static AbstractDefaultEditor createEditor(SNode node, ConceptDescriptor descriptor) {
+    //todo: remove getDeclarationNode() check when editor doesn't need concept node
+    return descriptor instanceof IllegalConceptDescriptor ? new ReadOnlyDefaultEditor(node.getConcept()) : new DefaultEditor(node.getConcept());
   }
 
 }

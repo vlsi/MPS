@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.SNodeLegacy;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -33,7 +34,7 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
 
   public PropertySubstituteAction(SNode sourceNode, String propertyName, String propertyValue) {
     super(null, null, sourceNode);
-    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getPropertyDeclaration(propertyName);
+    SNode propertyDeclaration = new SNodeLegacy(sourceNode).getPropertyDeclaration(propertyName);
     myPropertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
     myPropertyName = propertyName;
     myPropertyValue = propertyValue;

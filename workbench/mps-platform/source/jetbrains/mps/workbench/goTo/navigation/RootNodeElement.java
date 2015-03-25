@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
@@ -36,10 +35,6 @@ public class RootNodeElement implements NavigationItem {
   @Override
   public ItemPresentation getPresentation() {
     return new SNodeDescriptorPresentation(myNodeResult);
-  }
-
-  public FileStatus getFileStatus() {
-    return FileStatus.NOT_CHANGED;
   }
 
   public SModelReference getModel() {

@@ -55,7 +55,7 @@ public class MetadataUtil {
     if (model instanceof GeneratableSModel) {
       SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0f0d(((GeneratableSModel) model))));
     }
-    for (SModuleReference language : ListSequence.fromList(modelBase.importedLanguages())) {
+    for (SModuleReference language : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getUsedLanguages(modelBase))) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).addElement(createModuleRefNode(language));
     }
     for (SModuleReference genlanguage : ListSequence.fromList(modelBase.engagedOnGenerationLanguages())) {
@@ -106,7 +106,7 @@ public class MetadataUtil {
       check_ca1g54_a0a5a8(((GeneratableSModel) model), root);
     }
 
-    Set<SModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), modelBase.importedLanguages());
+    Set<SModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), jetbrains.mps.util.SNodeOperations.getUsedLanguages(modelBase));
     Set<SModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode it) {
         return getModuleReference(it);

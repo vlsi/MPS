@@ -13,15 +13,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
@@ -73,21 +71,16 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   }
   private SModel createModel() {
     SModel model = new SModel(getReference(), new ForeignNodeIdMap());
-    for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+    for (SLanguage l : getLanguagesToImport()) {
+      model.addLanguage(l);
     }
     new ASMModelLoader(myModelRoot.getModule(), getSource().getPaths(), model, false).updateModel();
     return model;
   }
-  protected Set<Language> getLanguagesToImport() {
-    Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
-    SetSequence.fromSet(moduleIds).addElement(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)").getModuleId().toString());
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
-      public Language select(String it) {
-        return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.fromString(it)));
-      }
-    });
-    return SetSequence.fromSetWithValues(new HashSet<Language>(), languages);
+  private Set<SLanguage> getLanguagesToImport() {
+    Set<SLanguage> rv = SetSequence.fromSet(new HashSet<SLanguage>());
+    SetSequence.fromSet(rv).addElement(MetaIdByDeclaration.ref2Id(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)")));
+    return rv;
   }
   @Override
   public void reloadFromDiskSafe() {

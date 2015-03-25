@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,17 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.event.*;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.Enumeration;
@@ -164,17 +169,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
   public void eventsHappenedInCommand(final List<SModelEvent> events) {
     final Runnable action = new UpdateRunnable(events);
 
-    if (ThreadUtils.isInEDT()) {
-      action.run();
-    } else {
-      getTree().rebuildTreeLater(new Runnable() {
-        @Override
-        public void run() {
-          if (myProject.isDisposed()) return;
-          action.run();
-        }
-      }, false);
-    }
+    ThreadUtils.runInUIThreadNoWait(new ModelReadRunnable(myProject.getModelAccess(), action));
   }
 
   private class UpdateRunnable implements Runnable {

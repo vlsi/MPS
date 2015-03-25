@@ -115,7 +115,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     enable(event.getPresentation());
 
-    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllImportedLanguageIds(targetModel));
+    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllLanguageImports(targetModel));
 
     LanguageAspect aspect = Language.getModelAspect(targetModel);
     if (aspect != null) {

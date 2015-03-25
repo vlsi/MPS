@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -31,9 +32,8 @@ public class InterfaceSNode extends SNode {
   public InterfaceSNode(@NotNull SConcept concept) {
     super(concept);
   }
-
-  public InterfaceSNode(@NotNull String conceptFqName) {
-    super(conceptFqName);
+  public InterfaceSNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
+    super(concept, id);
   }
 
   @Override

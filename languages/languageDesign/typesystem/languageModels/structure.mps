@@ -18,7 +18,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -67,7 +70,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -124,7 +126,11 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="dependency" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="hnK4Fb6" resolve="Dependency" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      <node concept="asaX9" id="3kHI3RTzXam" role="lGtFl">
+        <property role="YLQ7P" value="Used to point to Dependency, which has been deprecated for few years now. Link left not to break a model with children here, if any" />
+        <property role="YLPcu" value="3.3" />
+      </node>
     </node>
     <node concept="PrWs8" id="3SW4jvYrbIJ" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
@@ -755,47 +761,6 @@
       <property role="1uS6qo" value="=:" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hnK4Fb6">
-    <property role="TrG5h" value="Dependency" />
-    <property role="3GE5qa" value="dependency" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="hnK4N6t" role="1TKVEi">
-      <property role="20kJfa" value="targetConcept" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="h$HseF9" role="1TKVEi">
-      <property role="20kJfa" value="sourceConcept" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="hnK4MjT" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="findSourceBlock" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="hnK4ZZE" resolve="FindSourceBlock" />
-    </node>
-    <node concept="asaX9" id="6kw_BboU45$" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="hnK4ZZE">
-    <property role="TrG5h" value="FindSourceBlock" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="dependency" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-    <node concept="asaX9" id="6kw_BboU9Sv" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="hnK54GW">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="FindSourceBlockParameter" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="dependency" />
-    <property role="34LRSv" value="targetNode" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="asaX9" id="6kw_BboU9Sw" role="lGtFl" />
-    <node concept="PrWs8" id="1653mnvB5ZA" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hp8hY$D">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -861,18 +826,6 @@
     <node concept="PrWs8" id="hwLI5On" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="hwMaO9f">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="helgins list type variable" />
-    <property role="TrG5h" value="ListVarDeclaration" />
-    <property role="34LRSv" value="listVar" />
-    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="PrWs8" id="hwMaTKD" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="asaX9" id="1HoKM8fgV03" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="hyX1q9U">
     <property role="TrG5h" value="WhenConcreteVariableDeclaration" />
@@ -1485,26 +1438,6 @@
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="i38XITi">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ConceptTypeClause" />
-    <property role="34LRSv" value="typeInstanceOf" />
-    <ref role="1TJDcQ" node="hgmwoz7" resolve="TypeClause" />
-    <node concept="1TJgyj" id="i38XNJY" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="matchingConcept" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="i38XN6s" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="linkInfo" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="i38Y6gu" resolve="ConceptClauseLinkInfo" />
-    </node>
-    <node concept="asaX9" id="37ChM3AWUGS" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="i38Y6gu">
     <property role="TrG5h" value="ConceptClauseLinkInfo" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -1524,6 +1457,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childIndex" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="3kHI3RTA0ZE" role="lGtFl">
+      <property role="YLQ7P" value="Likely, pair to ConceptTypeClause, which has been deprecated and removed, and doesn't make sense on its own" />
+      <property role="YLPcu" value="3.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="72ZQJIMM0Vs">
@@ -1565,18 +1502,6 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="isApplicable" />
       <ref role="20lvS9" node="5kDQIcz4Ovu" resolve="OverloadedOpIsApplicableFunction" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="4S7QVIRdh5q">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="OperationContextExpression" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="operationContext" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="asaX9" id="2jDhBReD622" role="lGtFl" />
-    <node concept="PrWs8" id="2D1PBM_bxJn" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="37pAx5geenC">
@@ -1623,92 +1548,6 @@
     <node concept="1TJgyi" id="5RZKUQ_HQq9" role="1TKVEl">
       <property role="TrG5h" value="nodeId" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="6Znc$$3_J_E">
-    <property role="R5$K7" value="false" />
-    <property role="19KtqR" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="DependentComputationItem" />
-    <property role="3GE5qa" value="dependency" />
-    <property role="34LRSv" value="Dependent Computation Item" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6Znc$$3_R5U" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="findMasterBlock" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6Znc$$3_R5P" resolve="DependentComputationItem_FindMasterBlock" />
-    </node>
-    <node concept="1TJgyj" id="2A_9fkoWGXJ" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="isApplicableBlock" />
-      <ref role="20lvS9" node="2A_9fkoWGP8" resolve="DependentComputationItem_ApplicableBlock" />
-    </node>
-    <node concept="1TJgyj" id="2A_9fkoWGXK" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="isBlockingBlock" />
-      <ref role="20lvS9" node="6PDHzKG26j$" resolve="DependentComputationItem_BlockingBlock" />
-    </node>
-    <node concept="1TJgyj" id="6Znc$$3_J_F" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="applicableConcept" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="2CzRZ49LAyn" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="blockingNodeConcept" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-    </node>
-    <node concept="PrWs8" id="63zViWdxmIp" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="asaX9" id="66u2SbKUcYj" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="6Znc$$3_J_H">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="function parameter" />
-    <property role="TrG5h" value="ConceptFunctionParameter_DependentComputationNode" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="node" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2_n" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="6Znc$$3_R5P">
-    <property role="TrG5h" value="DependentComputationItem_FindMasterBlock" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="dependency" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-    <node concept="asaX9" id="66u2SbKUcYm" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="2A_9fkoWGP8">
-    <property role="TrG5h" value="DependentComputationItem_ApplicableBlock" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="dependency" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-    <node concept="asaX9" id="66u2SbKUcYk" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="6PDHzKG26j$">
-    <property role="TrG5h" value="DependentComputationItem_BlockingBlock" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="dependency" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-    <node concept="asaX9" id="66u2SbKUcYl" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="6PDHzKG26jC">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="function parameter" />
-    <property role="TrG5h" value="ConceptFunctionParameter_BlockingComputationNode" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="node" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2Am" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="2A0HSGJ0Ugb">
