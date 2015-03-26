@@ -259,7 +259,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayoutManager(1, 2, JBInsets.NONE, -1, -1));
+        //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+        panel.setLayout(new GridLayoutManager(1, 2, new JBInsets(0,0,0,0), -1, -1));
 
         JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
         panel.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,

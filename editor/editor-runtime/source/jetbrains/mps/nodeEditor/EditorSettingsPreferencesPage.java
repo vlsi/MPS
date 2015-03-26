@@ -108,8 +108,8 @@ class EditorSettingsPreferencesPage {
     panel.add(editorTabsRB,
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
-    JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, JBInsets.NONE, 2, 2));
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+    JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, new JBInsets(0,0,0,0), 2, 2));
 
     fontPropertiesPanel.add(new JBLabel("Font Name : "), getLabelConstraint(0, 0));
     myFontsComboBox = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());

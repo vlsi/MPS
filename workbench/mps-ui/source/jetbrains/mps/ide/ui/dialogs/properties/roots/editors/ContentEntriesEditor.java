@@ -41,13 +41,13 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -181,8 +181,9 @@ public class ContentEntriesEditor implements Disposable {
 
     final JBPanel editorsPanel = new JBPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
     editorsPanel.add(entriesPanel,
-        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
+        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new JBInsets(0,0,0,0), 0, 0));
 
     final JBPanel editorPanel = new JBPanel(new BorderLayout());
     editorPanel.setBorder(BorderFactory.createEtchedBorder());

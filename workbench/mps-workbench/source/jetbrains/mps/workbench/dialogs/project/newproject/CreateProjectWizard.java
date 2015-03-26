@@ -114,7 +114,8 @@ public class CreateProjectWizard extends DialogWrapper {
   @Override
   protected JComponent createCenterPanel() {
     if(myPanel == null){
-      myPanel = new JPanel(new GridLayoutManager(1,1, JBInsets.NONE, -1, -1));
+      //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+      myPanel = new JPanel(new GridLayoutManager(1,1, new JBInsets(0,0,0,0), -1, -1));
 
       initLeftPanel();
 
@@ -135,7 +136,8 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void initLeftPanel() {
-    myLeftPanel = new JPanel(new GridLayoutManager(2, 1, JBInsets.NONE, -1, -1));
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+    myLeftPanel = new JPanel(new GridLayoutManager(2, 1, new JBInsets(0,0,0,0), -1, -1));
 
     mySearchField = new SearchTextField(false);
     mySearchField.addDocumentListener(new DocumentAdapter() {
@@ -296,7 +298,8 @@ public class CreateProjectWizard extends DialogWrapper {
 
     //-----Description panel-----
 
-    myDescriptionPanel = new JPanel(new GridLayoutManager(1, 1, JBInsets.NONE, -1, -1));
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+    myDescriptionPanel = new JPanel(new GridLayoutManager(1, 1, new JBInsets(0,0,0,0), -1, -1));
     myDescriptionPanel.setBorder(IdeBorderFactory.createTitledBorder("Description", true));
 
     myDescriptionPane = new JTextPane();
@@ -313,7 +316,8 @@ public class CreateProjectWizard extends DialogWrapper {
     //-----Template settings panel-----
 
     myTemplateSettingsHolder = new JPanel(new BorderLayout());
-    myTemplateSettings = new JPanel(new GridLayoutManager(2, 1, JBInsets.NONE, -1, -1));
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+    myTemplateSettings = new JPanel(new GridLayoutManager(2, 1, new JBInsets(0,0,0,0), -1, -1));
     myTemplateSettings.setBorder(IdeBorderFactory.createEmptyBorder(0, IdeBorderFactory.TITLED_BORDER_INDENT, 5, 0));
     myHideableDecorator = new HideableDecorator(myTemplateSettingsHolder, "More Settings", false);
     myHideableDecorator.setContentComponent(myTemplateSettings);
