@@ -28,102 +28,93 @@
   </root>
   <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746048">
     <file name="JavaClassStubModelDescriptor.java">
-      <node id="6619269785060746050" at="26,0,27,0" concept="13" trace="LOG" />
-      <node id="6619269785060746057" at="28,0,29,0" concept="5" trace="myModel" />
-      <node id="6619269785060746060" at="29,0,30,0" concept="5" trace="myModelRoot" />
-      <node id="6619269785060746067" at="30,115,31,34" concept="15" />
-      <node id="6619269785060746070" at="31,34,32,23" concept="4" />
-      <node id="6619269785060746084" at="35,46,36,19" concept="10" />
-      <node id="6619269785060746091" at="40,42,41,51" concept="10" />
-      <node id="6445318040924938202" at="47,30,48,25" concept="10" />
-      <node id="6619269785060746105" at="49,9,50,32" concept="4" />
-      <node id="6619269785060746109" at="50,32,51,41" concept="4" />
-      <node id="6619269785060746114" at="52,7,53,60" concept="4" />
-      <node id="6619269785060746118" at="54,5,55,19" concept="10" />
-      <node id="6619269785060746124" at="58,29,59,27" concept="10" />
-      <node id="2948071073855625636" at="62,24,63,35" concept="4" />
-      <node id="2948071073855626116" at="63,35,64,0" concept="12" />
-      <node id="2948071073855628226" at="64,0,65,30" concept="9" />
-      <node id="2948071073855632321" at="66,27,67,40" concept="4" />
-      <node id="2948071073855635658" at="67,40,68,21" concept="4" />
-      <node id="2948071073855637689" at="68,21,69,58" concept="4" />
-      <node id="6619269785060746133" at="72,32,73,70" concept="9" />
-      <node id="6619269785060746146" at="74,48,75,27" concept="4" />
-      <node id="6619269785060746157" at="76,5,77,100" concept="4" />
-      <node id="6619269785060746173" at="77,100,78,17" concept="10" />
-      <node id="6619269785060746180" at="80,49,81,70" concept="9" />
-      <node id="888797416774852031" at="81,70,82,190" concept="4" />
-      <node id="6619269785060746218" at="82,190,83,14" concept="10" />
-      <node id="6619269785060746358" at="86,36,87,35" concept="4" />
-      <node id="6619269785060746367" at="88,43,89,55" concept="4" />
-      <node id="6619269785060746372" at="89,55,90,13" concept="10" />
-      <node id="6619269785060746373" at="91,5,92,13" concept="4" />
-      <node id="6619269785060746390" at="92,13,93,22" concept="4" />
-      <node id="6619269785060746375" at="93,22,94,60" concept="4" />
-      <node id="6619269785060746392" at="97,26,98,13" concept="10" />
-      <node id="808351956864957663" at="99,5,100,36" concept="9" />
-      <node id="808351956864960196" at="100,36,101,28" concept="4" />
-      <node id="808351956864963063" at="101,28,102,48" concept="4" />
-      <node id="6445318040924937703" at="46,27,49,9" concept="7" />
-      <node id="6619269785060746141" at="73,70,76,5" concept="6" />
-      <node id="6619269785060746385" at="96,25,99,5" concept="7" />
-      <node id="6619269785060746063" at="30,0,34,0" concept="2" trace="JavaClassStubModelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljetbrains/mps/extapi/persistence/FolderSetDataSource;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
-      <node id="6619269785060746080" at="34,0,38,0" concept="8" trace="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-      <node id="6619269785060746120" at="57,0,61,0" concept="8" trace="isLoaded#()Z" />
-      <node id="6619269785060746360" at="87,35,91,5" concept="7" />
-      <node id="6619269785060746086" at="38,0,43,0" concept="8" trace="getSource#()Ljetbrains/mps/extapi/persistence/FolderSetDataSource;" />
-      <node id="2948071073855630587" at="65,30,70,5" concept="7" />
-      <node id="6619269785060746175" at="80,0,85,0" concept="8" trace="getLanguagesToImport#()Ljava/util/Set;" />
-      <node id="6445318040924930914" at="45,26,52,7" concept="16" />
-      <node id="6619269785060746129" at="72,0,80,0" concept="8" trace="createModel#()Ljetbrains/mps/smodel/SModel;" />
-      <node id="6619269785060746383" at="96,0,104,0" concept="8" trace="reload#()V" />
-      <node id="6619269785060746100" at="44,37,54,5" concept="7" />
-      <node id="2948071073855537944" at="61,0,72,0" concept="8" trace="unload#()V" />
-      <node id="6619269785060746355" at="85,0,96,0" concept="8" trace="reloadFromDiskSafe#()V" />
-      <node id="6619269785060746096" at="43,0,57,0" concept="8" trace="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-      <scope id="6619269785060746083" at="35,46,36,19" />
-      <scope id="6619269785060746090" at="40,42,41,51" />
-      <scope id="6445318040924937706" at="47,30,48,25" />
-      <scope id="6619269785060746123" at="58,29,59,27" />
-      <scope id="6619269785060746145" at="74,48,75,27" />
-      <scope id="6619269785060746389" at="97,26,98,13" />
-      <scope id="6619269785060746066" at="30,115,32,23" />
-      <scope id="6619269785060746366" at="88,43,90,13" />
-      <scope id="2948071073855630590" at="66,27,69,58" />
-      <scope id="6619269785060746141" at="73,70,76,5">
-        <var name="l" id="6619269785060746143" />
-      </scope>
-      <scope id="6619269785060746179" at="80,49,83,14">
-        <var name="rv" id="6619269785060746181" />
-      </scope>
-      <scope id="6619269785060746063" at="30,0,34,0">
+      <node id="6619269785060746057" at="21,0,22,0" concept="5" trace="myModel" />
+      <node id="6619269785060746067" at="22,99,23,34" concept="15" />
+      <node id="6619269785060746084" at="26,46,27,19" concept="10" />
+      <node id="6619269785060746091" at="31,42,32,51" concept="10" />
+      <node id="6445318040924938202" at="38,30,39,25" concept="10" />
+      <node id="6619269785060746105" at="40,9,41,32" concept="4" />
+      <node id="6619269785060746109" at="41,32,42,41" concept="4" />
+      <node id="6619269785060746114" at="43,7,44,60" concept="4" />
+      <node id="6619269785060746118" at="45,5,46,19" concept="10" />
+      <node id="6619269785060746124" at="49,29,50,27" concept="10" />
+      <node id="3930940175261483527" at="53,24,54,22" concept="4" />
+      <node id="2948071073855626116" at="54,22,55,0" concept="12" />
+      <node id="2948071073855628226" at="55,0,56,30" concept="9" />
+      <node id="2948071073855632321" at="57,27,58,40" concept="4" />
+      <node id="2948071073855635658" at="58,40,59,21" concept="4" />
+      <node id="2948071073855637689" at="59,21,60,58" concept="4" />
+      <node id="6619269785060746133" at="63,32,64,70" concept="9" />
+      <node id="6619269785060746146" at="65,48,66,27" concept="4" />
+      <node id="6619269785060746157" at="67,5,68,103" concept="4" />
+      <node id="6619269785060746173" at="68,103,69,17" concept="10" />
+      <node id="3930940175261432242" at="71,49,72,163" concept="10" />
+      <node id="3930940175261485644" at="75,36,76,22" concept="4" />
+      <node id="6619269785060746367" at="77,43,78,55" concept="4" />
+      <node id="6619269785060746372" at="78,55,79,13" concept="10" />
+      <node id="6619269785060746373" at="80,5,81,13" concept="4" />
+      <node id="6619269785060746390" at="81,13,82,22" concept="4" />
+      <node id="6619269785060746392" at="85,26,86,13" concept="10" />
+      <node id="808351956864957663" at="87,5,88,36" concept="9" />
+      <node id="808351956864960196" at="88,36,89,28" concept="4" />
+      <node id="808351956864963063" at="89,28,90,48" concept="4" />
+      <node id="6619269785060746063" at="22,0,25,0" concept="2" trace="JavaClassStubModelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljetbrains/mps/extapi/persistence/FolderSetDataSource;)V" />
+      <node id="6445318040924937703" at="37,27,40,9" concept="7" />
+      <node id="6619269785060746141" at="64,70,67,5" concept="6" />
+      <node id="6619269785060746175" at="71,0,74,0" concept="8" trace="getLanguagesToImport#()Ljava/util/Set;" />
+      <node id="6619269785060746385" at="84,25,87,5" concept="7" />
+      <node id="6619269785060746080" at="25,0,29,0" concept="8" trace="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+      <node id="6619269785060746120" at="48,0,52,0" concept="8" trace="isLoaded#()Z" />
+      <node id="6619269785060746360" at="76,22,80,5" concept="7" />
+      <node id="6619269785060746086" at="29,0,34,0" concept="8" trace="getSource#()Ljetbrains/mps/extapi/persistence/FolderSetDataSource;" />
+      <node id="2948071073855630587" at="56,30,61,5" concept="7" />
+      <node id="6445318040924930914" at="36,26,43,7" concept="16" />
+      <node id="6619269785060746129" at="63,0,71,0" concept="8" trace="createModel#()Ljetbrains/mps/smodel/SModel;" />
+      <node id="6619269785060746383" at="84,0,92,0" concept="8" trace="reload#()V" />
+      <node id="6619269785060746100" at="35,37,45,5" concept="7" />
+      <node id="6619269785060746355" at="74,0,84,0" concept="8" trace="reloadFromDiskSafe#()V" />
+      <node id="2948071073855537944" at="52,0,63,0" concept="8" trace="unload#()V" />
+      <node id="6619269785060746096" at="34,0,48,0" concept="8" trace="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+      <scope id="6619269785060746066" at="22,99,23,34" />
+      <scope id="6619269785060746083" at="26,46,27,19" />
+      <scope id="6619269785060746090" at="31,42,32,51" />
+      <scope id="6445318040924937706" at="38,30,39,25" />
+      <scope id="6619269785060746123" at="49,29,50,27" />
+      <scope id="6619269785060746145" at="65,48,66,27" />
+      <scope id="6619269785060746179" at="71,49,72,163" />
+      <scope id="6619269785060746389" at="85,26,86,13" />
+      <scope id="6619269785060746366" at="77,43,79,13" />
+      <scope id="6619269785060746063" at="22,0,25,0">
         <var name="modelReference" id="6619269785060746074" />
-        <var name="root" id="6619269785060746078" />
         <var name="source" id="6619269785060746076" />
       </scope>
-      <scope id="6619269785060746080" at="34,0,38,0" />
-      <scope id="6619269785060746120" at="57,0,61,0" />
-      <scope id="6619269785060746086" at="38,0,43,0" />
-      <scope id="6445318040924930918" at="46,27,51,41" />
-      <scope id="6619269785060746175" at="80,0,85,0" />
-      <scope id="6619269785060746132" at="72,32,78,17">
+      <scope id="2948071073855630590" at="57,27,60,58" />
+      <scope id="6619269785060746141" at="64,70,67,5">
+        <var name="l" id="6619269785060746143" />
+      </scope>
+      <scope id="6619269785060746175" at="71,0,74,0" />
+      <scope id="6619269785060746080" at="25,0,29,0" />
+      <scope id="6619269785060746120" at="48,0,52,0" />
+      <scope id="6619269785060746086" at="29,0,34,0" />
+      <scope id="6445318040924930918" at="37,27,42,41" />
+      <scope id="6619269785060746132" at="63,32,69,17">
         <var name="model" id="6619269785060746134" />
       </scope>
-      <scope id="6619269785060746384" at="96,25,102,48">
+      <scope id="6619269785060746384" at="84,25,90,48">
         <var name="oldModel" id="808351956864957661" />
       </scope>
-      <scope id="6619269785060746104" at="45,26,53,60" />
-      <scope id="2948071073855537953" at="62,24,70,5">
+      <scope id="6619269785060746357" at="75,36,82,22" />
+      <scope id="6619269785060746104" at="36,26,44,60" />
+      <scope id="2948071073855537953" at="53,24,61,5">
         <var name="oldModel" id="2948071073855628227" />
       </scope>
-      <scope id="6619269785060746129" at="72,0,80,0" />
-      <scope id="6619269785060746357" at="86,36,94,60" />
-      <scope id="6619269785060746383" at="96,0,104,0" />
-      <scope id="6619269785060746099" at="44,37,55,19" />
-      <scope id="2948071073855537944" at="61,0,72,0" />
-      <scope id="6619269785060746355" at="85,0,96,0" />
-      <scope id="6619269785060746096" at="43,0,57,0" />
-      <unit id="6619269785060746048" at="25,0,105,0" name="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
+      <scope id="6619269785060746129" at="63,0,71,0" />
+      <scope id="6619269785060746383" at="84,0,92,0" />
+      <scope id="6619269785060746355" at="74,0,84,0" />
+      <scope id="6619269785060746099" at="35,37,46,19" />
+      <scope id="2948071073855537944" at="52,0,63,0" />
+      <scope id="6619269785060746096" at="34,0,48,0" />
+      <unit id="6619269785060746048" at="20,0,93,0" name="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     </file>
   </root>
   <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746414">
@@ -199,8 +190,8 @@
       <node id="5586757089729065936" at="159,46,160,73" concept="10" />
       <node id="5586757089729067428" at="162,13,163,73" concept="0" />
       <node id="5586757089729068056" at="163,73,164,63" concept="4" />
-      <node id="6619269785060746597" at="165,16,166,98" concept="4" />
-      <node id="885133290400073714" at="166,98,167,33" concept="4" />
+      <node id="6619269785060746597" at="165,16,166,92" concept="4" />
+      <node id="885133290400073714" at="166,92,167,33" concept="4" />
       <node id="6619269785060746606" at="167,33,168,56" concept="4" />
       <node id="6619269785060746634" at="169,9,170,56" concept="4" />
       <node id="6619269785060746647" at="171,7,172,68" concept="4" />

@@ -163,7 +163,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           assert modelDescriptor instanceof JavaClassStubModelDescriptor;
           smd = (JavaClassStubModelDescriptor) modelDescriptor;
         } else {
-          smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource(), this);
+          smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource());
           smd.setModelRoot(this);
           ListSequence.fromList(result).addElement(smd);
         }
