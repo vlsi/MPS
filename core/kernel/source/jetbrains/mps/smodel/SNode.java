@@ -40,6 +40,7 @@ import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -100,6 +101,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SConcept getConcept() {
 //    assertCanRead(); FIXME uncomment once we get rid of legacy code that keeps SNode (not pointers thereto) and accesses concept (e.g. fqn) without explicit model access
     return myConcept;
+  }
+
+  @Override
+  public boolean isInstanceOfConcept(@NotNull SAbstractConcept c) {
+    return getConcept().isSubConceptOf(c);
   }
 
   public void setConcept(@NotNull SConcept concept) {
@@ -938,6 +944,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     referenceChanged(role, toRemove, reference);
+  }
+
+  @Override
+  public void insertChildAfter(@NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (anchor == null) {
+      insertChildBefore(role, child, getFirstChild());
+    } else {
+      insertChildBefore(role, child, anchor.getNextSibling());
+    }
   }
 
   public void insertChildBefore(@NotNull final SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
