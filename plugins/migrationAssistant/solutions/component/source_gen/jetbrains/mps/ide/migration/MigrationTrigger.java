@@ -41,7 +41,14 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.migration.check.Problem;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
@@ -337,8 +344,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    final _FunctionTypes._void_P0_E0 afterProjectInitialized = lastStep.afterProjectInitialized();
-    if (afterProjectInitialized == null) {
+    final Iterable<Problem> problems = lastStep.getProblems();
+    if (Sequence.fromIterable(problems).isEmpty()) {
       return;
     }
 
@@ -346,7 +353,35 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       public void run() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            afterProjectInitialized.invoke();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                ModelCheckerViewer v = new ModelCheckerViewer(myProject) {
+                  @Override
+                  protected void close() {
+                    ModelCheckerTool.getInstance(myProject).closeTab(this);
+                    super.close();
+                  }
+                };
+                final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
+                Sequence.fromIterable(problems).visitAll(new IVisitor<Problem>() {
+                  public void visit(Problem it) {
+                    Object r = it.getReason();
+
+                    ModelCheckerIssue mci;
+                    if (r instanceof SNode) {
+                      mci = new ModelCheckerIssue.NodeIssue(((org.jetbrains.mps.openapi.model.SNode) r), it.getMessage(), null);
+                    } else if (r instanceof SModule) {
+                      mci = new ModelCheckerIssue.ModuleIssue(it.getMessage(), null);
+                    } else {
+                      throw new IllegalArgumentException(r.getClass().getName());
+                    }
+                    result.add(new SearchResult<ModelCheckerIssue>(mci, r, it.getCategory()));
+                  }
+                });
+                v.setSearchResults(result);
+                ModelCheckerTool.getInstance(myProject).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
+              }
+            });
           }
         }, ModalityState.NON_MODAL);
 
