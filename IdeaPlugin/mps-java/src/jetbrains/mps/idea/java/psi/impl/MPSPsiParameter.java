@@ -20,6 +20,7 @@ import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiIdentifier;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
@@ -46,8 +47,8 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
 
   private Boolean myIsVararg;
 
-  public MPSPsiParameter(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiParameter(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @NotNull

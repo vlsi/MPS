@@ -16,6 +16,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiWildcardType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -26,8 +27,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiWildcardType extends MPSPsiNode implements ComputesPsiType<PsiType> {
-  public MPSPsiWildcardType(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiWildcardType(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

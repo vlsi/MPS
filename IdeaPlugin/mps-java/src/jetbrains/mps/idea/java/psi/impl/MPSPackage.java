@@ -22,6 +22,7 @@ import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
@@ -52,7 +53,8 @@ public class MPSPackage extends MPSPsiNodeBase implements PsiPackage {
 
   private MPSPsiModel myPsiModel;
 
-  public MPSPackage(MPSPsiModel psiModel) {
+  public MPSPackage(MPSPsiModel psiModel, PsiManager manager) {
+    super(manager);
     myPsiModel = psiModel;
   }
 
@@ -133,6 +135,11 @@ public class MPSPackage extends MPSPsiNodeBase implements PsiPackage {
   @Override
   public PsiClass[] getClasses(@NotNull GlobalSearchScope scope) {
     return new PsiClass[0];  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  //TODO: add @Override in 3.3
+  public PsiFile[] getFiles(@NotNull GlobalSearchScope scope) {
+    return new PsiFile[0];
   }
 
   @Nullable

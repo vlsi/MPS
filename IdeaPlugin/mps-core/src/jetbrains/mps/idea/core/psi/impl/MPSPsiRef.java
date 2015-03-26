@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,13 +41,15 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   private SNodeId nodeId;
   private String referenceText;
 
-  public MPSPsiRef(String role, SModelReference model, SNodeId nodeId) {
+  public MPSPsiRef(String role, SModelReference model, SNodeId nodeId, PsiManager manager) {
+    super(manager);
     this.role = role;
     this.model = model;
     this.nodeId = nodeId;
   }
 
-  public MPSPsiRef(String role, String referenceText) {
+  public MPSPsiRef(String role, String referenceText, PsiManager manager) {
+    super(manager);
     this.role = role;
     this.referenceText = referenceText;
   }

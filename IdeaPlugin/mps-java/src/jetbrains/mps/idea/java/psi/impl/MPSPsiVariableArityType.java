@@ -2,6 +2,7 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiArrayType;
 import com.intellij.psi.PsiEllipsisType;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -12,8 +13,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class MPSPsiVariableArityType extends MPSPsiNode implements ComputesPsiType<PsiEllipsisType> {
 
-  public MPSPsiVariableArityType(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiVariableArityType(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

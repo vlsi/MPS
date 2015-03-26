@@ -29,6 +29,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiCodeBlock;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiIdentifier;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiModifier.ModifierConstant;
@@ -74,10 +75,10 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   // used during java refactorings
   private boolean isCopy = false;
 
-  public MPSPsiMethod(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
-    addChildLast(new MPSPsiMethodModifierList());
-    addChildLast(new MPSPsiParameterList());
+  public MPSPsiMethod(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
+    addChildLast(new MPSPsiMethodModifierList(manager));
+    addChildLast(new MPSPsiParameterList(manager));
   }
 
   @Nullable
@@ -106,7 +107,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @Override
   public PsiReferenceList getThrowsList() {
     MPSPsiClassifierType[] classes = getChildrenOfType("throwsItem", MPSPsiClassifierType.class);
-    return new MPSPsiRefList(this, Role.THROWS_LIST, classes);
+    return new MPSPsiRefList(this, Role.THROWS_LIST, classes, getManager());
   }
 
   @Nullable

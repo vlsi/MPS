@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReferenceList;
 import org.jetbrains.annotations.NotNull;
@@ -28,8 +29,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiInterface extends MPSPsiClassifier {
-  public MPSPsiInterface(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiInterface(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @NotNull

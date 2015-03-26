@@ -227,9 +227,15 @@
           <ref role="3uigEE" to="e2lb:~String" resolve="String" />
         </node>
       </node>
+      <node concept="37vLTG" id="jvNGldhwOQ" role="3clF46">
+        <property role="TrG5h" value="manager" />
+        <node concept="3uibUv" id="jvNGldhCo_" role="1tU5fm">
+          <ref role="3uigEE" to="yj1e:~PsiManager" resolve="PsiManager" />
+        </node>
+      </node>
       <node concept="3clFbS" id="7dfaalTbzmA" role="3clF47">
         <node concept="XkiVB" id="7dfaalTbV2p" role="3cqZAp">
-          <ref role="37wK5l" to="pos2:~MPSPsiNode(SNodeId,String,String)" resolve="MPSPsiNode" />
+          <ref role="37wK5l" to="pos2:~MPSPsiNode(SNodeId,String,String,PsiManager)" resolve="MPSPsiNode" />
           <node concept="37vLTw" id="7dfaalTbzmC" role="37wK5m">
             <ref role="3cqZAo" node="7dfaalTbzmw" resolve="id" />
           </node>
@@ -238,6 +244,9 @@
           </node>
           <node concept="37vLTw" id="7dfaalTbzmE" role="37wK5m">
             <ref role="3cqZAo" node="7dfaalTbzm$" resolve="containingRole" />
+          </node>
+          <node concept="37vLTw" id="jvNGldhCuN" role="37wK5m">
+            <ref role="3cqZAo" node="jvNGldhwOQ" resolve="manager" />
           </node>
         </node>
       </node>

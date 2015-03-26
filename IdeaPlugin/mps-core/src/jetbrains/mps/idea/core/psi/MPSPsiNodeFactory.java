@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.psi;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
@@ -32,9 +33,9 @@ public interface MPSPsiNodeFactory {
 
   public static final ExtensionPointName<MPSPsiNodeFactory> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiFactory");
 
-  MPSPsiNode create(SNodeId id, SConcept concept, String containingRole);
+  MPSPsiNode create(SNodeId id, SConcept concept, String containingRole, PsiManager manager);
 
-  MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId);
+  MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId, PsiManager manager);
 
-  MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText);
+  MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText, PsiManager manager);
 }

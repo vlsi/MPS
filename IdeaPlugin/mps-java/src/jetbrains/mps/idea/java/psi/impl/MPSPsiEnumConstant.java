@@ -21,6 +21,7 @@ import com.intellij.psi.JavaResolveResult;
 import com.intellij.psi.PsiEnumConstant;
 import com.intellij.psi.PsiEnumConstantInitializer;
 import com.intellij.psi.PsiExpressionList;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiType;
 import org.jetbrains.annotations.NotNull;
@@ -32,8 +33,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiEnumConstant extends MPSPsiField implements PsiEnumConstant {
-  public MPSPsiEnumConstant(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiEnumConstant(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

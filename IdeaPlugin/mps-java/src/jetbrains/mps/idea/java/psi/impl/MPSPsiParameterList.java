@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
 import com.intellij.psi.impl.PsiImplUtil;
@@ -29,7 +30,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class MPSPsiParameterList extends MPSPsiNodeBase implements PsiParameterList {
 
-  public MPSPsiParameterList() {
+  public MPSPsiParameterList(PsiManager manager) {
+    super(manager);
   }
 
   @Override
