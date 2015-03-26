@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ASMModelLoader {
@@ -54,11 +53,10 @@ public class ASMModelLoader {
         if (myModel.getNode(ASMNodeId.createId(ClassifierLoader.getClassName(classfile))) != null) {
           continue;
         }
-        loader.getClassifier(classfile, new _FunctionTypes._void_P1_E0<SNode>() {
-          public void invoke(SNode n) {
-            myModel.addRootNode(n);
-          }
-        });
+        SNode classifier = loader.getClassifier(classfile);
+        if (classifier != null) {
+          myModel.addRootNode(classifier);
+        }
       }
     } catch (Exception e) {
       LOG.error("Exception", e);

@@ -5,7 +5,6 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMNodeId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ClassifierLoader" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.SReferenceCreator" />
@@ -48,7 +47,8 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.SReferenceHandler" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
