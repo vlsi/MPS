@@ -26,6 +26,7 @@
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1224500764161" name="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression" flags="nn" index="pVHWs" />
+      <concept id="1224500790866" name="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" flags="nn" index="pVOtf" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
@@ -7260,12 +7261,8 @@
                   <node concept="37vLTw" id="2BHiRxeuyO9" role="37wK5m">
                     <ref role="3cqZAo" node="6hYzBiUOvv1" resolve="myNode" />
                   </node>
-                  <node concept="pVHWs" id="1wxNQgEU1Wo" role="37wK5m">
-                    <node concept="10M0yZ" id="1wxNQgEU1Wr" role="3uHU7w">
-                      <ref role="1PxDUh" to="bc3y:~ClassReader" resolve="ClassReader" />
-                      <ref role="3cqZAo" to="bc3y:~ClassReader.SKIP_FRAMES" resolve="SKIP_FRAMES" />
-                    </node>
-                    <node concept="pVHWs" id="6hYzBiUOvw1" role="3uHU7B">
+                  <node concept="pVOtf" id="7sAt0z3f$8X" role="37wK5m">
+                    <node concept="pVOtf" id="7sAt0z3fzPi" role="3uHU7B">
                       <node concept="10M0yZ" id="6hYzBiUOvw2" role="3uHU7B">
                         <ref role="1PxDUh" to="bc3y:~ClassReader" resolve="ClassReader" />
                         <ref role="3cqZAo" to="bc3y:~ClassReader.SKIP_CODE" resolve="SKIP_CODE" />
@@ -7274,6 +7271,10 @@
                         <ref role="1PxDUh" to="bc3y:~ClassReader" resolve="ClassReader" />
                         <ref role="3cqZAo" to="bc3y:~ClassReader.SKIP_DEBUG" resolve="SKIP_DEBUG" />
                       </node>
+                    </node>
+                    <node concept="10M0yZ" id="1wxNQgEU1Wr" role="3uHU7w">
+                      <ref role="1PxDUh" to="bc3y:~ClassReader" resolve="ClassReader" />
+                      <ref role="3cqZAo" to="bc3y:~ClassReader.SKIP_FRAMES" resolve="SKIP_FRAMES" />
                     </node>
                   </node>
                 </node>

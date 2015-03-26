@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import org.jetbrains.org.objectweb.asm.tree.InnerClassNode;
 import org.jetbrains.org.objectweb.asm.Opcodes;
-import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.InputStream;
 import jetbrains.mps.util.ReadUtil;
@@ -33,7 +32,7 @@ public class ClassifierLoader {
     }
     ASMClass ac = new ASMClass(new ClassReader(code));
     SNode res = new ClassifierUpdater(ac, mySkipPrivate, myReferenceFactory).create(getClassName(file));
-    if (res != null) {
+    if (res != null && !(ac.getInnerClasses().isEmpty())) {
       List<SNode> innerClassifiers = updateInnerClassifiers(file, ac);
       ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addSequence(ListSequence.fromList(innerClassifiers));
     }
@@ -41,7 +40,18 @@ public class ClassifierLoader {
   }
   private List<SNode> updateInnerClassifiers(IFile file, ASMClass ac) {
     List<SNode> rv = ListSequence.fromList(new ArrayList<SNode>());
+    String outerName = ac.getName();
+    IFile parent = file.getParent();
     for (InnerClassNode cn : ac.getInnerClasses()) {
+      String name = cn.name;
+      if (name == null) {
+        // I doubt this could ever happen 
+        continue;
+      }
+      if (cn.innerName == null) {
+        // JVM spec, 4.7.6, inner_name_index - anonymous classes have no inner name 
+        continue;
+      }
       if ((cn.access & Opcodes.ACC_SYNTHETIC) != 0) {
         continue;
       }
@@ -51,11 +61,7 @@ public class ClassifierLoader {
         continue;
       }
 
-      String name = cn.name;
-      if (name == null) {
-        continue;
-      }
-      if (!(name.startsWith(ac.getName() + '$'))) {
+      if (!(outerName.equals(cn.outerName))) {
         continue;
       }
 
@@ -65,11 +71,8 @@ public class ClassifierLoader {
       }
 
       boolean isStatic = (cn.access & Opcodes.ACC_STATIC) != 0;
-      if (AbstractClassPathItem.isAnonymous(name)) {
-        continue;
-      }
 
-      SNode inner = getClassifier(file.getParent().getDescendant(name + ".class"));
+      SNode inner = getClassifier(parent.getDescendant(name + ".class"));
       SPropertyOperations.set(inner, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic"), "" + (!(isStatic)));
       ListSequence.fromList(rv).addElement(inner);
     }
