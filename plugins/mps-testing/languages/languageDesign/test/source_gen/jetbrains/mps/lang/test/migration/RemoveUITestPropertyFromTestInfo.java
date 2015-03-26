@@ -5,7 +5,6 @@ package jetbrains.mps.lang.test.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -21,11 +20,11 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
-public class MigrationScript_0 extends MigrationScriptBase {
+public class RemoveUITestPropertyFromTestInfo extends MigrationScriptBase {
   public String getCaption() {
     return "Remove the obsolete uiTest property from TestInfo concepts";
   }
-  public SNode execute(SModule m, DataCollector collector_) {
+  public SNode execute(SModule m) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"));
@@ -40,7 +39,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        final GeneratedMatchingPattern pattern = new MigrationScript_0.Pattern_zc5nt1_a0a0a0a0a0a0a1();
+        final GeneratedMatchingPattern pattern = new RemoveUITestPropertyFromTestInfo.Pattern_vbjplg_a0a0a0a0a0a0a1();
         if (!(pattern.match(it))) {
           return;
         }
@@ -60,13 +59,13 @@ public class MigrationScript_0 extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test"), 0);
   }
-  public static class Pattern_zc5nt1_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_zc5nt1_a0a0a0a0a0a0a1() {
+  public static class Pattern_vbjplg_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_vbjplg_a0a0a0a0a0a0a1() {
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_zc5nt1_a0a0a0a0a0b = nodeToMatch;
-        if (!("jetbrains.mps.lang.test.structure.TestInfo".equals(nodeToMatch_zc5nt1_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_vbjplg_a0a0a0a0a0b = nodeToMatch;
+        if (!("jetbrains.mps.lang.test.structure.TestInfo".equals(nodeToMatch_vbjplg_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
           return false;
         }
       }

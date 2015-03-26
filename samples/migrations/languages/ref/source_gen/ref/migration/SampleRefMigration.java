@@ -5,7 +5,6 @@ package ref.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -28,12 +27,12 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class MigrationScript_1 extends MigrationScriptBase {
+public class SampleRefMigration extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using smodel API";
   }
-  public SNode execute(SModule m, DataCollector collector_) {
-    final Map<SModule, SNode> declData = collector_.collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
+  public SNode execute(SModule m) {
+    final Map<SModule, SNode> declData = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 
     final Map<SModule, SNode> requiredData = declData;
 
@@ -55,7 +54,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
     Sequence.fromIterable(references).visitAll(new IVisitor<SNode>() {
       public void visit(SNode oldNode) {
         // create a new one, leave the reference target empty 
-        SNode newNode = _quotation_createNode_zc5nt1_a0b0a0a11a1();
+        SNode newNode = _quotation_createNode_u457zm_a0b0a0a11a1();
 
         // find the target of the old reference and its containing model 
         final SReference oldRef = oldNode.getReference("target");
@@ -88,7 +87,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, "ref"), 1);
   }
-  private static SNode _quotation_createNode_zc5nt1_a0b0a0a11a1() {
+  private static SNode _quotation_createNode_u457zm_a0b0a0a11a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L, "ref.structure.NewComponentRef"), null, null, false);

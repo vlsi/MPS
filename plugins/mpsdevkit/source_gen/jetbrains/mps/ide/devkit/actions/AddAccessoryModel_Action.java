@@ -24,9 +24,9 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.dependency.VisibilityUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -103,6 +103,9 @@ public class AddAccessoryModel_Action extends BaseAction {
 
       modelAccess.executeCommand(new Runnable() {
         public void run() {
+          // see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
+
           LanguageDescriptor descriptor;
           descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result);

@@ -2713,6 +2713,22 @@
                                 </node>
                               </node>
                             </node>
+                            <node concept="3SKdUt" id="dM2t63OhFb" role="3cqZAp">
+                              <node concept="3SKdUq" id="dM2t63OhGn" role="3SKWNk">
+                                <property role="3SKdUp" value="see MPS-18743" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="BwQO0yFnuD" role="3cqZAp">
+                              <node concept="2OqwBi" id="BwQO0yFnLW" role="3clFbG">
+                                <node concept="2YIFZM" id="BwQO0yFnEO" role="2Oq$k0">
+                                  <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                                </node>
+                                <node concept="liA8E" id="BwQO0yFofv" role="2OqNvi">
+                                  <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="3rWxMbAN7zf" role="3cqZAp">
                               <node concept="2OqwBi" id="3rWxMbAN7BE" role="3clFbG">
                                 <node concept="liA8E" id="3rWxMbAN7SN" role="2OqNvi">
@@ -4687,6 +4703,22 @@
               <node concept="3clFbS" id="4okGtcfGOxe" role="1bW5cS">
                 <node concept="SfApY" id="2_YO2vq9BMt" role="3cqZAp">
                   <node concept="3clFbS" id="2_YO2vq9BMu" role="SfCbr">
+                    <node concept="3SKdUt" id="BwQO0yHz3d" role="3cqZAp">
+                      <node concept="3SKdUq" id="BwQO0yHz6d" role="3SKWNk">
+                        <property role="3SKdUp" value="see MPS-18743" />
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="BwQO0yHyvr" role="3cqZAp">
+                      <node concept="2OqwBi" id="BwQO0yHy_2" role="3clFbG">
+                        <node concept="2YIFZM" id="BwQO0yHyyl" role="2Oq$k0">
+                          <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                          <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                        </node>
+                        <node concept="liA8E" id="BwQO0yHyXa" role="2OqNvi">
+                          <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="7TEAg4yl959" role="3cqZAp">
                       <node concept="2YIFZM" id="7TEAg4yl8Ub" role="3clFbG">
                         <ref role="37wK5l" to="3df7:~VfsUtil.createDirectories(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="createDirectories" />

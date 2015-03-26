@@ -19,6 +19,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -96,6 +97,9 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
       modelAccess.runWriteAction(new Runnable() {
         public void run() {
+          // see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
+
           for (SModel smodel : Sequence.fromIterable(seq)) {
             IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
             SModel newModel = PersistenceUtil.loadModel(oldFile);

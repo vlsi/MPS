@@ -16,6 +16,9 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
@@ -131,6 +134,15 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     if (session == null) {
       return;
     }
+
+    // see MPS-18743, 21760 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
+        MPSModuleRepository.getInstance().saveAll();
+      }
+    });
+
     // Q: also do normal progressMonitor, as in real reload on timeout ? 
     session.doReload(new EmptyProgressMonitor());
   }
@@ -159,6 +171,14 @@ public class ReloadManagerComponent extends ReloadManager implements Application
         if (rs.isEmpty()) {
           return;
         }
+
+        // see MPS-18743, 21760 
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
+            MPSModuleRepository.getInstance().saveAll();
+          }
+        });
 
         if (rs.wantsToShowProgress()) {
           ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {

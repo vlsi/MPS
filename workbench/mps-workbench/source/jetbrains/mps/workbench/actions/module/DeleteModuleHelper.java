@@ -60,6 +60,7 @@ public class DeleteModuleHelper {
       throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
     }
 
+    //see MPS-18743
     MPSModuleRepository.getInstance().saveAll();
 
     if (deleteFiles) {

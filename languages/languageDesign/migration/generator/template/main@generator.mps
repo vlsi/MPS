@@ -34,7 +34,7 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
+    <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -240,9 +240,6 @@
       <concept id="1217960314443" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase" flags="nn" index="2k5Stg">
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
-      </concept>
-      <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
-        <child id="1218047638032" name="baseName" index="2piZGb" />
       </concept>
       <concept id="1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" flags="nn" index="12$id9">
         <child id="1229477520175" name="outputNode" index="12$y8L" />
@@ -578,30 +575,6 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="3bMTD0E__zd" role="3clF46">
-        <property role="TrG5h" value="c" />
-        <node concept="3uibUv" id="2RG318eW9_$" role="1tU5fm">
-          <ref role="3uigEE" to="6f4m:2RG318eW0B2" resolve="DataCollector" />
-        </node>
-        <node concept="17Uvod" id="2jVtfYIyVTj" role="lGtFl">
-          <property role="2qtEX9" value="name" />
-          <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-          <node concept="3zFVjK" id="2jVtfYIyVWG" role="3zH0cK">
-            <node concept="3clFbS" id="2jVtfYIyZ9v" role="2VODD2">
-              <node concept="3clFbF" id="2jVtfYIz1v$" role="3cqZAp">
-                <node concept="2OqwBi" id="2jVtfYIz209" role="3clFbG">
-                  <node concept="1iwH7S" id="2jVtfYIz1vz" role="2Oq$k0" />
-                  <node concept="2piZGk" id="2jVtfYIz2ih" role="2OqNvi">
-                    <node concept="Xl_RD" id="2jVtfYIzN6U" role="2piZGb">
-                      <property role="Xl_RC" value="collector" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="3uibUv" id="14fCAVbU4Q" role="3clF45">
         <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
       </node>
@@ -636,8 +609,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="3bMTD0E_Hoe" role="33vP2m">
-              <node concept="37vLTw" id="3bMTD0E_G9D" role="2Oq$k0">
-                <ref role="3cqZAo" node="3bMTD0E__zd" resolve="c" />
+              <node concept="1rXfSq" id="5UnT0285s_K" role="2Oq$k0">
+                <ref role="37wK5l" to="6f4m:5UnT0285o41" resolve="getDataCollector" />
               </node>
               <node concept="liA8E" id="3bMTD0E_Jrl" role="2OqNvi">
                 <ref role="37wK5l" to="6f4m:3bMTD0E$RxS" resolve="collectData" />

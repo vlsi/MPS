@@ -17,6 +17,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
 import jetbrains.mps.util.IStatus;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -82,15 +83,17 @@ public class DeleteGenerator_Action extends BaseAction {
         public void run() {
           Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
           final IStatus s = butcher.canDelete(generator);
-          if (!(s.isOk())) {
+          if (s.isOk()) {
+            // this is needed since we reload language after deleting generator, see MPS-18743 
+            MPSModuleRepository.getInstance().saveAll();
+            butcher.delete(generator);
+          } else {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
               }
             });
-            return;
           }
-          butcher.delete(generator);
         }
       });
     } catch (Throwable t) {

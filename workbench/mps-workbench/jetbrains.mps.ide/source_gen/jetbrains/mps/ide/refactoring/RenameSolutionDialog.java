@@ -6,9 +6,7 @@ import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.Project;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
 
@@ -23,22 +21,24 @@ public class RenameSolutionDialog extends RenameDialog {
   }
   @Override
   protected void doRefactoringAction() {
-    boolean renamed = new ModelAccessHelper(ProjectHelper.getModelAccess(getProject())).executeCommand(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
+    ProjectHelper.getModelAccess(getProject()).executeCommand(new Runnable() {
+      public void run() {
         final String fqName = getCurrentValue();
         if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
           setErrorText("Duplicate solution name");
-          return false;
+          return;
         }
+
+        // see MPS-18743 
+        MPSModuleRepository.getInstance().saveAll();
+
         new SolutionRenamer(mySolution, fqName, myProject).rename();
-        return true;
+        doSuperRefactoringAction();
       }
     });
+  }
 
-    //  TODO ?  
-    if (renamed) {
-      super.doRefactoringAction();
-    }
+  private void doSuperRefactoringAction() {
+    super.doRefactoringAction();
   }
 }

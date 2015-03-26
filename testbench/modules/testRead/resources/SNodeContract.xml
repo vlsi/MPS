@@ -130,5 +130,11 @@
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
+  <void method="add">
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+  </void>
+  <void method="add">
+   <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.isInstanceOfConcept(org.jetbrains.mps.openapi.language.SAbstractConcept)</string>
+  </void>
  </object>
 </java> 

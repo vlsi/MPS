@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -103,6 +104,8 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
 
       modelAccess.runWriteAction(new Runnable() {
         public void run() {
+          // see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
           for (SModel smodel : Sequence.fromIterable(seq)) {
             IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
             ModelRoot modelRoot = smodel.getModelRoot();

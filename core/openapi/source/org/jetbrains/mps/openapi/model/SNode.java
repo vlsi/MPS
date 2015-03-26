@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -86,6 +87,8 @@ public interface SNode {
   @NotNull
   SConcept getConcept();
 
+  boolean isInstanceOfConcept(@NotNull SAbstractConcept c);
+
   /**
    * A string representing the node used to show the node in UI
    */
@@ -115,6 +118,17 @@ public interface SNode {
    *               child becomes head of collection
    */
   void insertChildBefore(@NotNull SContainmentLink role, @NotNull SNode child, @Nullable SNode anchor);
+
+  /**
+   * Inserts the given node as a child of the current node of the specified role right after the anchor node.<br/>
+   *
+   * @param role   a role to insert new child into
+   * @param child  a node to insert
+   * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
+   *               a new child is inserted as a first child. If anchor is the last child element, newly added
+   *               child becomes tail of collection
+   */
+  void insertChildAfter(@NotNull SContainmentLink role, @NotNull SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc

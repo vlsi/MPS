@@ -55,6 +55,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -775,6 +776,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   private void doUpdateModelsSet() {
     assertCanChange();
+
+    for (SModel model : getModels()) {
+      if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
+        LOG.error(
+            "Trying to reload module " + getModuleName() + " which contains a non-saved model" +
+                model.getModelName() + "To prevent data loss, MPS will not update models in this module. "+
+                "Please save your work and restart MPS. See MPS-18743 for details."
+        );
+        return;
+      }
+    }
 
     Set<ModelRoot> toRemove = new HashSet<ModelRoot>(mySModelRoots);
     Set<ModelRoot> toUpdate = new HashSet<ModelRoot>(mySModelRoots);

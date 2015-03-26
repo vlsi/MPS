@@ -201,6 +201,12 @@
         <child id="1170075736412" name="block" index="1HWHxc" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1313,11 +1319,11 @@
       </node>
     </node>
     <node concept="3clFb_" id="3zgutK7osz5" role="jymVt">
-      <property role="TrG5h" value="mergeModelsLater" />
+      <property role="TrG5h" value="mergeLater" />
       <node concept="3Tm1VV" id="3zgutK7osz6" role="1B3o_S" />
       <node concept="3cqZAl" id="3zgutK7osz7" role="3clF45" />
       <node concept="37vLTG" id="3zgutK7osz8" role="3clF46">
-        <property role="TrG5h" value="models" />
+        <property role="TrG5h" value="tasks" />
         <node concept="_YKpA" id="3DUvbXCgnvk" role="1tU5fm">
           <node concept="3uibUv" id="3DUvbXCgnvm" role="_ZDj9">
             <ref role="3uigEE" node="3zgutK7osC3" resolve="Conflictable" />
@@ -1405,7 +1411,7 @@
         <node concept="3clFbF" id="3DUvbXCgnvq" role="3cqZAp">
           <node concept="2OqwBi" id="3DUvbXCgnvE" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgh9Zf" role="2Oq$k0">
-              <ref role="3cqZAo" node="3zgutK7osz8" resolve="models" />
+              <ref role="3cqZAo" node="3zgutK7osz8" resolve="tasks" />
             </node>
             <node concept="2es0OD" id="3DUvbXCgnvJ" role="2OqNvi">
               <node concept="1bVj0M" id="3DUvbXCgnvK" role="23t8la">
@@ -1625,6 +1631,39 @@
             <property role="TrG5h" value="conflictableReload" />
             <node concept="1bVj0M" id="491od_ZnGEZ" role="33vP2m">
               <node concept="3clFbS" id="491od_ZnGF0" role="1bW5cS">
+                <node concept="3clFbF" id="dM2t63OEol" role="3cqZAp">
+                  <node concept="2OqwBi" id="dM2t63OEom" role="3clFbG">
+                    <node concept="2YIFZM" id="dM2t63OEon" role="2Oq$k0">
+                      <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                      <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                    </node>
+                    <node concept="liA8E" id="dM2t63OEoo" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
+                      <node concept="1bVj0M" id="dM2t63OEop" role="37wK5m">
+                        <node concept="3clFbS" id="dM2t63OEoq" role="1bW5cS">
+                          <node concept="3SKdUt" id="dM2t63LJ8f" role="3cqZAp">
+                            <node concept="3SKdUq" id="dM2t63LJ9o" role="3SKWNk">
+                              <property role="3SKdUp" value="see MPS-18743" />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="dM2t63LHnc" role="3cqZAp">
+                            <node concept="2OqwBi" id="dM2t63LHRf" role="3clFbG">
+                              <node concept="2YIFZM" id="dM2t63LHE7" role="2Oq$k0">
+                                <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                                <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                              </node>
+                              <node concept="liA8E" id="dM2t63LIlp" role="2OqNvi">
+                                <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="dM2t63OE5V" role="3cqZAp" />
+                <node concept="3clFbH" id="dM2t63LIyo" role="3cqZAp" />
                 <node concept="1DcWWT" id="491od_ZnGF1" role="3cqZAp">
                   <node concept="2OqwBi" id="491od_ZnGF2" role="1DdaDG">
                     <node concept="37vLTw" id="3GM_nagTthA" role="2Oq$k0">
@@ -2130,7 +2169,7 @@
         <node concept="3clFbS" id="3zgutK7oswJ" role="3clF47">
           <node concept="3clFbF" id="3zgutK7oswK" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyz9iE" role="3clFbG">
-              <ref role="37wK5l" node="3zgutK7osz5" resolve="mergeModelsLater" />
+              <ref role="37wK5l" node="3zgutK7osz5" resolve="mergeLater" />
               <node concept="37vLTw" id="2BHiRxglboP" role="37wK5m">
                 <ref role="3cqZAo" node="3zgutK7oswG" resolve="tasks" />
               </node>

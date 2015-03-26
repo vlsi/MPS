@@ -7674,6 +7674,22 @@
               <ref role="37wK5l" to="88zw:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
               <node concept="1bVj0M" id="OqYxEjbR7W" role="37wK5m">
                 <node concept="3clFbS" id="OqYxEjbR7X" role="1bW5cS">
+                  <node concept="3SKdUt" id="BwQO0yIo40" role="3cqZAp">
+                    <node concept="3SKdUq" id="BwQO0yIo8a" role="3SKWNk">
+                      <property role="3SKdUp" value="see MPS-18743" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="BwQO0yImDU" role="3cqZAp">
+                    <node concept="2OqwBi" id="BwQO0yImPo" role="3clFbG">
+                      <node concept="2YIFZM" id="BwQO0yImIC" role="2Oq$k0">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                        <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      </node>
+                      <node concept="liA8E" id="BwQO0yInQm" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="2Gpval" id="36tV70Zqv__" role="3cqZAp">
                     <node concept="2GrKxI" id="36tV70Zqv_A" role="2Gsz3X">
                       <property role="TrG5h" value="model" />
@@ -33412,6 +33428,23 @@
               <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="59D800tYjrK" role="37wK5m">
                 <node concept="3clFbS" id="59D800tYjrL" role="1bW5cS">
+                  <node concept="3SKdUt" id="BwQO0yNb3G" role="3cqZAp">
+                    <node concept="3SKdUq" id="BwQO0yNb6a" role="3SKWNk">
+                      <property role="3SKdUp" value="see MPS-18743" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="BwQO0yN97h" role="3cqZAp">
+                    <node concept="2OqwBi" id="BwQO0yN9Iz" role="3clFbG">
+                      <node concept="2YIFZM" id="BwQO0yN9sI" role="2Oq$k0">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                        <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      </node>
+                      <node concept="liA8E" id="BwQO0yNaor" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="BwQO0yNdyc" role="3cqZAp" />
                   <node concept="2Gpval" id="63zBYr2A2mI" role="3cqZAp">
                     <node concept="37vLTw" id="63zBYr2A2ow" role="2GsD0m">
                       <ref role="3cqZAo" node="63zBYr2A26w" resolve="seq" />
@@ -35766,6 +35799,22 @@
               <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="38LNA6Kbjrz" role="37wK5m">
                 <node concept="3clFbS" id="38LNA6Kbjr$" role="1bW5cS">
+                  <node concept="3SKdUt" id="BwQO0yKC$N" role="3cqZAp">
+                    <node concept="3SKdUq" id="BwQO0yKCBu" role="3SKWNk">
+                      <property role="3SKdUp" value="see MPS-18743" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="BwQO0yKAF8" role="3cqZAp">
+                    <node concept="2OqwBi" id="BwQO0yKBhx" role="3clFbG">
+                      <node concept="2YIFZM" id="BwQO0yKAZq" role="2Oq$k0">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                        <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      </node>
+                      <node concept="liA8E" id="BwQO0yKBUr" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="2Gpval" id="38LNA6Kbjr_" role="3cqZAp">
                     <node concept="37vLTw" id="38LNA6KbjrA" role="2GsD0m">
                       <ref role="3cqZAo" node="38LNA6KbjqS" resolve="seq" />

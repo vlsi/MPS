@@ -73,6 +73,8 @@ public class RenameLanguageDialog extends RenameDialog {
     ModelAccess modelAccess = myProject.getModelAccess();
     modelAccess.executeCommand(new Runnable() {
       public void run() {
+        // see MPS-18743 
+        MPSModuleRepository.getInstance().saveAll();
         renamer.rename(needToRegenerate);
         renamer.update();
       }
