@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.LanguageEditorChecker" file="LanguageEditorChecker.java">
-    <classNode dependClassName="com.intellij.openapi.application.impl.LaterInvocator" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />

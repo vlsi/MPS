@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.checking;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -140,7 +140,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
     if (intention != null) {
       if (!myOnceExecutedQuickFixes.contains(intention)) {
         myOnceExecutedQuickFixes.add(intention);
-        LaterInvocator.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
             EditorCell selectedCell = editorContext.getSelectedCell();
