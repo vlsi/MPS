@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -127,7 +128,9 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode == null) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getRoleName() + "?";
-      addErrorCell(myErrorText);
+      EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, myErrorText);
+      errorCell.setCellId("error_" + referenceLink.getRoleName());
+      addCell(errorCell);
       return;
     }
     if (referentNode.getModel() == null) {
@@ -140,6 +143,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       }
     }, referentNode, referenceLink.getRoleName());
     setSemanticNodeToCells(cell, mySNode);
+    cell.setCellId("reference_" + referenceLink.getRoleName());
     addCell(cell);
   }
 }

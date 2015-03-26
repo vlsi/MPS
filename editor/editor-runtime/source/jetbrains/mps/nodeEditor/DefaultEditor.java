@@ -209,7 +209,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
       if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
         //todo do we need this?
         String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-        addCell(createErrorCell(rinfo != null ? rinfo : "?" + referenceLink.getRoleName() + "?", referenceLink));
+        EditorCell errorCell = createErrorCell(rinfo != null ? rinfo : "?" + referenceLink.getRoleName() + "?", referenceLink);
+        errorCell.setCellId("error_" + referenceLink.getRoleName());
+        addCell(errorCell);
       } else {
         EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           @Override
@@ -225,7 +227,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
         cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
         cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
-        cell.setRole(referenceLink.getRoleName());
+        cell.setCellId("reference_" + referenceLink.getRoleName());
         //todo attributes
         addCellWithRole(IterableUtils.first(AttributeOperations.getLinkAttributes(mySNode, referenceLink)), AttributeKind.Reference.class, cell);
       }

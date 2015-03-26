@@ -293,11 +293,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return lastCell;
   }
 
-  protected void addErrorCell(String error) {
-    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error);
-    addCell(errorCell);
-  }
-
   protected void setIndent(EditorCell cell) {
     addStyle(cell, StyleAttributes.INDENT_LAYOUT_INDENT);
   }
