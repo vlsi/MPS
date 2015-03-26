@@ -25,7 +25,7 @@ import java.io.File;
 
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class SingleMakeTestCase extends MpsJpsModelsEnvironmentTestCase {
+public class SingleMakeTestCase extends MpsJpsSingleTestCase {
   @NotNull
   @NonNls
   @Override
@@ -34,31 +34,31 @@ public class SingleMakeTestCase extends MpsJpsModelsEnvironmentTestCase {
   }
 
   public void testMakeJava() {
-    doTestMake("makeJava.in");
+    doTestMake("java/in");
   }
 
   public void testMakeJavaKeepNoSources() {
-    doTestMake("makeJavaKeepNoSources.in");
+    doTestMake("javaKeepNoSources/in");
   }
 
   public void testMakeJavaSourceGenNearModels() {
-    doTestMake("makeJavaSourceGenNearModels.in");
+    doTestMake("javaSourceGenNearModels/in");
   }
 
   public void testMakeJavaAndXml() {
-    doTestMake("makeJavaAndXml.in");
+    doTestMake("javaAndXml/in");
   }
 
   public void testMakeJavaAndXmlKeepNoSources() {
-    doTestMake("makeJavaAndXmlKeepNoSources.in");
+    doTestMake("javaAndXmlKeepNoSources/in");
   }
 
   public void testMakeJavaAndXmlSourceGenNearModels() {
-    doTestMake("makeJavaAndXmlSourceGenNearModels.in");
+    doTestMake("javaAndXmlSourceGenNearModels/in");
   }
 
   public void testMakeBrokenProject() {
-    setUpEnvironment("makeBrokenProject.in");
+    setUpEnvironment("brokenProject/in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
   }

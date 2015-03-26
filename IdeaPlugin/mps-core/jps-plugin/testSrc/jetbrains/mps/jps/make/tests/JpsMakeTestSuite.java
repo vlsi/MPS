@@ -24,8 +24,9 @@ import org.junit.runners.Suite;
  * Date: 1/15/13
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({RebuildTestCase.class,
-                     MakeTestCase.class,
+@Suite.SuiteClasses({SingleRebuildTestCase.class,
+                     SingleMakeTestCase.class,
+                     MakeAfterRebuildDoesNothingTestCase.class,
                      RebuildIdeaPluginTestCase.class})
 public class JpsMakeTestSuite {
 }

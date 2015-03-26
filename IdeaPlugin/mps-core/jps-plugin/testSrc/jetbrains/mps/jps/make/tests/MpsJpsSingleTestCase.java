@@ -17,7 +17,6 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.testFramework.TestDataFile;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
@@ -40,7 +39,7 @@ public abstract class MpsJpsSingleTestCase extends MpsJpsModelsEnvironmentTestCa
   }
 
   private void checkGeneratorAndCompilerOutput(String inputTestFileName) {
-    String testName = FileUtil.getNameWithoutExtension(inputTestFileName);
+    String testName = getTestName(inputTestFileName);
     checkGenerated(testName);
     checkOutput(testName);
   }
@@ -62,5 +61,4 @@ public abstract class MpsJpsSingleTestCase extends MpsJpsModelsEnvironmentTestCa
 
     return buildResult;
   }
-
 }

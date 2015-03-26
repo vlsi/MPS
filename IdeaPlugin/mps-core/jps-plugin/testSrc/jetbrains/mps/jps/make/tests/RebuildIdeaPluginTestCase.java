@@ -72,7 +72,7 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
 
   public void testRebuildIdeaPlugin() throws IOException {
     setUpParameters();
-    setUpEnvironment(new SimpleJpsTestBean(), new SimpleJpsEnvironment(this), "test.in");
+    setUpEnvironment("test.in");
 
     String projectDir = copyToProject("../IdeaPlugin", "IdeaPlugin");
     loadProject(projectDir);
@@ -116,5 +116,17 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
 
   private File getToolsJarPath() {
     return new File(new File(JAVA_HOME, "lib"), "tools.jar");
+  }
+
+  @NotNull
+  @Override
+  protected SimpleJpsTestBean createBean() {
+    return new SimpleJpsTestBean();
+  }
+
+  @NotNull
+  @Override
+  protected SimpleJpsEnvironment createEnvironment() {
+    return new SimpleJpsEnvironment(this);
   }
 }

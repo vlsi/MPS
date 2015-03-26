@@ -22,6 +22,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
+import jetbrains.mps.jps.make.fileUtil.ProjectDirFinder;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -31,14 +32,12 @@ import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.model.serialization.JpsProjectLoader;
 import org.jetbrains.jps.model.serialization.PathMacroUtil;
 import org.jetbrains.jps.util.JpsPathUtil;
-import org.junit.Assert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.Set;
 
 public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
@@ -82,7 +81,7 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   @Override
-  public String copyToProject(@NotNull String relativeSourcePath, @NotNull String relativeTargetPath) {
+  public String copyToProject(@NonNls @NotNull String relativeSourcePath, @NonNls @NotNull String relativeTargetPath) {
     return super.copyToProject(relativeSourcePath, relativeTargetPath);
   }
 

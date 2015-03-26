@@ -23,7 +23,7 @@ import jetbrains.mps.idea.testFramework.MpsBean;
 import jetbrains.mps.idea.testFramework.TestEnvironment;
 import jetbrains.mps.jps.make.fileUtil.FileFinder;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
-import jetbrains.mps.jps.make.tests.ProjectDirFinder;
+import jetbrains.mps.jps.make.fileUtil.ProjectDirFinder;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.impl.JpsMPSModuleExtensionImpl;
 import org.jetbrains.annotations.NonNls;
@@ -59,8 +59,8 @@ public abstract class JpsTestEnvironmentBase<B extends MpsBean> implements TestE
     return sb.toString();
   }
 
-  protected JpsModule initJpsModule(String moduleName, String... dirs) {
-    return myTestCase.addModule(moduleName, dirs);
+  protected JpsModule initJpsModule(String moduleName, String... sourceRoots) {
+    return myTestCase.addModule(moduleName, sourceRoots);
   }
 
   protected void registerMpsModuleExtension(JpsModule module, MPSConfigurationBean configuration) {

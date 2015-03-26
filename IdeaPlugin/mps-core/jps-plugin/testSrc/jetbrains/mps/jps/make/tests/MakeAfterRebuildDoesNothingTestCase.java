@@ -24,7 +24,7 @@ import org.jetbrains.jps.builders.BuildResult;
 
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsBuildModelsTestCase {
+public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsSingleTestCase {
   @NotNull
   @NonNls
   @Override
@@ -39,7 +39,7 @@ public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsBuildModelsTestCa
   }
 
   public void testMakeJava() {
-    doTest("makeJava.in");
+    doTest("java/in");
   }
 
   public void testMakeJavaKeepNoSources() {
