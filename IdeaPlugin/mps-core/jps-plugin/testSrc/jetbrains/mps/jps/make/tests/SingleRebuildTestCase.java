@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class RebuildTestCase extends MpsJpsBuildModelsTestCase {
+public class SingleRebuildTestCase extends MpsJpsSingleTestCase {
   @NotNull
   @Override
   protected String getTestDataRootPath() {

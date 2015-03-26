@@ -25,7 +25,7 @@ import java.io.File;
 
 
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MakeTestCase extends MpsJpsBuildModelsTestCase {
+public class SingleMakeTestCase extends MpsJpsModelsEnvironmentTestCase {
   @NotNull
   @NonNls
   @Override

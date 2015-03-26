@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.jps.make.tests;
+package jetbrains.mps.jps.make.fileUtil;
 
 import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
 
 import java.io.File;

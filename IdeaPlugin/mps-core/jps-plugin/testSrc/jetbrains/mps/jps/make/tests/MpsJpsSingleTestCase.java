@@ -17,23 +17,12 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.testFramework.TestDataFile;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestModelsEnvironment;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
-import org.jetbrains.jps.builders.CompileScopeTestBuilder;
 
-import java.io.File;
-
-public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithEnvironment<JpsTestBean, JpsTestModelsEnvironment> {
-  private JpsTestModelsEnvironment myEnvironment;
-
-  private String getTestDataFilePath(String testName, @NonNls String ext) {
-    return new File(getTestDataRootPath(), testName + "." + ext).getAbsolutePath();
-  }
-
+public abstract class MpsJpsSingleTestCase extends MpsJpsModelsEnvironmentTestCase {
   private String getOutFilePath(String testName) {
     return getTestDataFilePath(testName, "out");
   }
@@ -43,7 +32,7 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
   }
 
   protected void checkOutput(String testName) {
-    assertOutput(myEnvironment.getModule(), getOutFilePath(testName));
+    assertOutput(getEnvironment().getModule(), getOutFilePath(testName));
   }
 
   protected void checkGenerated(String testName) {
@@ -56,7 +45,7 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     checkOutput(testName);
   }
 
-  protected BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+  protected final BuildResult doTestRebuild(@NonNls @NotNull @TestDataFile String inputTestFileName) {
     setUpEnvironment(inputTestFileName);
     final BuildResult buildResult = doMake(true);
     buildResult.assertSuccessful();
@@ -65,7 +54,7 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     return buildResult;
   }
 
-  protected BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+  protected final BuildResult doTestMake(@NonNls @NotNull @TestDataFile String inputTestFileName) {
     setUpEnvironment(inputTestFileName);
     final BuildResult buildResult = doMake(false);
     buildResult.assertSuccessful();
@@ -74,18 +63,4 @@ public abstract class MpsJpsBuildModelsTestCase extends MpsJpsBuildTestCaseWithE
     return buildResult;
   }
 
-  protected BuildResult doMake(boolean rebuild) {
-    assert myEnvironment != null;
-    CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
-    return doMakeWithScope(builder.all());
-  }
-
-  protected BuildResult doMakeWithScope(CompileScopeTestBuilder builder) {
-    assert myEnvironment != null;
-    return doBuild(builder);
-  }
-
-  protected void setUpEnvironment(@NonNls @NotNull @TestDataFile String inputTestFileName) {
-    myEnvironment = setUpEnvironment(new JpsTestBean(), new JpsTestModelsEnvironment(this), inputTestFileName);
-  }
 }
