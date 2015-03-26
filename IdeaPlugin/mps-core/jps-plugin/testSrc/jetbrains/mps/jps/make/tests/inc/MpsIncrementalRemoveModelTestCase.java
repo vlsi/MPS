@@ -14,51 +14,49 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.jps.make.tests;
+package jetbrains.mps.jps.make.tests.inc;
 
-import com.intellij.testFramework.TestDataFile;
 import com.intellij.testFramework.TestDataPath;
+import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
+import jetbrains.mps.jps.make.tests.inc.MpsIncrementalMakeTestCase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
+import org.jetbrains.jps.cmdline.ProjectDescriptor;
+import org.junit.Assume;
 
+import java.io.File;
+import java.util.ResourceBundle;
 
+/**
+ * 1. clean rebuild, remove model, make -- java removed from src_gen and from the output
+ * 2. clean rebuild, remove model, make -- xml removed from src_gen and from the output
+ */
 @TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsSingleTestCase {
+public class MpsIncrementalRemoveModelTestCase extends MpsIncrementalSingleModelTestCase {
   @NotNull
   @NonNls
   @Override
-  protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testMake";
+  protected String getLogFileName() {
+    return "remove.log";
   }
 
-  private void doTest(@TestDataFile @NonNls String testName) {
-    doTestRebuild(testName);
-    final BuildResult buildResult = doMake(false);
-    buildResult.assertUpToDate();
+  @NotNull
+  @Override
+  protected BuildResult doTestIncrementalBuild(@NotNull ProjectDescriptor projectDescriptor) {
+    rebuildAll();
+
+    final String modelFile = getModelPath();
+    delete(modelFile);
+
+    return makeAll();
   }
 
   public void testJava() {
     doTest("java/in");
   }
 
-  public void testJavaKeepNoSources() {
-    doTest("javaKeepNoSources/in");
-  }
-
-  public void testJavaSourceGenNearModels() {
-    doTest("javaSourceGenNearModels/in");
-  }
-
   public void testXml() {
     doTest("xml/in");
-  }
-
-  public void testXmlKeepNoSources() {
-    doTest("xmlKeepNoSources/in");
-  }
-
-  public void testXmlSourceGenNearModels() {
-    doTest("xmlSourceGenNearModels/in");
   }
 }

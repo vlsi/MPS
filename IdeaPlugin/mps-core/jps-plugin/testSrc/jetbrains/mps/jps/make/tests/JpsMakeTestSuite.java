@@ -16,6 +16,9 @@
 
 package jetbrains.mps.jps.make.tests;
 
+import jetbrains.mps.jps.make.tests.inc.MpsIncrementalChangeModelTestCase;
+import jetbrains.mps.jps.make.tests.inc.MpsIncrementalMakeTestCase;
+import jetbrains.mps.jps.make.tests.inc.MpsIncrementalRemoveModelTestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -27,6 +30,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({SingleRebuildTestCase.class,
                      SingleMakeTestCase.class,
                      MakeAfterRebuildDoesNothingTestCase.class,
+                     MpsIncrementalChangeModelTestCase.class,
+                     MpsIncrementalRemoveModelTestCase.class,
                      RebuildIdeaPluginTestCase.class})
 public class JpsMakeTestSuite {
 }

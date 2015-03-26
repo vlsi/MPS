@@ -33,31 +33,31 @@ public class SingleMakeTestCase extends MpsJpsSingleTestCase {
     return new File(getHomePath(), "mps-core/jps-plugin/testResources/testMake").getAbsolutePath();
   }
 
-  public void testMakeJava() {
+  public void testJava() {
     doTestMake("java/in");
   }
 
-  public void testMakeJavaKeepNoSources() {
+  public void testJavaKeepNoSources() {
     doTestMake("javaKeepNoSources/in");
   }
 
-  public void testMakeJavaSourceGenNearModels() {
+  public void testJavaSourceGenNearModels() {
     doTestMake("javaSourceGenNearModels/in");
   }
 
-  public void testMakeJavaAndXml() {
-    doTestMake("javaAndXml/in");
+  public void testXml() {
+    doTestMake("xml/in");
   }
 
-  public void testMakeJavaAndXmlKeepNoSources() {
-    doTestMake("javaAndXmlKeepNoSources/in");
+  public void testXmlKeepNoSources() {
+    doTestMake("xmlKeepNoSources/in");
   }
 
-  public void testMakeJavaAndXmlSourceGenNearModels() {
-    doTestMake("javaAndXmlSourceGenNearModels/in");
+  public void testXmlSourceGenNearModels() {
+    doTestMake("xmlSourceGenNearModels/in");
   }
 
-  public void testMakeBrokenProject() {
+  public void testBrokenProject() {
     setUpEnvironment("brokenProject/in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();

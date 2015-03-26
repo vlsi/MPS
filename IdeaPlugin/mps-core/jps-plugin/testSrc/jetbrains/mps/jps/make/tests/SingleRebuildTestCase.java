@@ -28,32 +28,32 @@ public class SingleRebuildTestCase extends MpsJpsSingleTestCase {
     return "mps-core/jps-plugin/testResources/testMake";
   }
 
-  public void testRebuildJava() {
-    doTestRebuild("makeJava.in");
+  public void testJava() {
+    doTestRebuild("java/in");
   }
 
-  public void testRebuildJavaKeepNoSources() {
-    doTestRebuild("makeJavaKeepNoSources.in");
+  public void testJavaKeepNoSources() {
+    doTestRebuild("javaKeepNoSources/in");
   }
 
-  public void testRebuildJavaSourceGenNearModels() {
-    doTestRebuild("makeJavaSourceGenNearModels.in");
+  public void testJavaSourceGenNearModels() {
+    doTestRebuild("javaSourceGenNearModels/in");
   }
 
-  public void testRebuildJavaAndXml() {
-    doTestRebuild("makeJavaAndXml.in");
+  public void testXml() {
+    doTestRebuild("xml/in");
   }
 
-  public void testRebuildJavaAndXmlKeepNoSources() {
-    doTestMake("makeJavaAndXmlKeepNoSources.in");
+  public void testXmlKeepNoSources() {
+    doTestMake("xmlKeepNoSources/in");
   }
 
-  public void testRebuildJavaAndXmlSourceGenNearModels() {
-    doTestMake("makeJavaAndXmlSourceGenNearModels.in");
+  public void testXmlSourceGenNearModels() {
+    doTestMake("xmlSourceGenNearModels/in");
   }
 
-  public void testRebuildBrokenProject() {
-    setUpEnvironment("makeBrokenProject.in");
+  public void testBrokenProject() {
+    setUpEnvironment("brokenProject/in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
   }
