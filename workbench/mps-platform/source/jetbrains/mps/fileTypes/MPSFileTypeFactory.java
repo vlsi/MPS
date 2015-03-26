@@ -30,8 +30,7 @@ public class MPSFileTypeFactory extends FileTypeFactory {
   public static final FileType MPS_HEADER_FILE_TYPE = MPSModelHeaderFileType.INSTANCE;
   public static final FileType MPS_ROOT_FILE_TYPE = MPSModelRootFileType.INSTANCE;
 
-  public static final FileType PROJECT_FILE_TYPE = new MPSProjectFileType("MPS Project", "MPS Project File Type", MPSExtentions.MPS_PROJECT,
-      FileIcons.PROJECT_ICON);
+  public static final FileType PROJECT_FILE_TYPE = MPSProjectFileType.INSTANCE;
   public static final FileType SOLUTION_FILE_TYPE = new XMLFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, FileIcons.SOLUTION_ICON);
   public static final FileType LANGUAGE_FILE_TYPE = new XMLFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE,
       FileIcons.PROJECT_LANGUAGE_ICON);
