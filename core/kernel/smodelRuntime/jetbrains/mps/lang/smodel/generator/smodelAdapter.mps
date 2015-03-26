@@ -2,9 +2,9 @@
 <model ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
@@ -192,7 +192,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3652,6 +3652,26 @@
     </node>
     <node concept="2YIFZL" id="1EtdPNufFQS" role="jymVt">
       <property role="TrG5h" value="getAllSubConcepts" />
+      <node concept="2AHcQZ" id="16ccp1tXvIG" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="P$JXv" id="16ccp1tXv$c" role="lGtFl">
+        <node concept="TZ5HA" id="16ccp1tXv$d" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXv$e" role="1dT_Ay">
+            <property role="1dT_AB" value="Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="16ccp1tXw5f" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXw5g" role="1dT_Ay">
+            <property role="1dT_AB" value="or the language extended by those imported. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="16ccp1tXw5l" role="TZ5H$">
+          <node concept="1dT_AC" id="16ccp1tXw5m" role="1dT_Ay">
+            <property role="1dT_AB" value="Intention is to get possible concepts which instances, added to model, would not require any dependency change." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbS" id="1EtdPNufFQT" role="3clF47">
         <node concept="3clFbF" id="1EtdPNufFQU" role="3cqZAp">
           <node concept="1rXfSq" id="1EtdPNufFQV" role="3clFbG">
@@ -3695,26 +3715,6 @@
       <node concept="37vLTG" id="1EtdPNufFR7" role="3clF46">
         <property role="TrG5h" value="model" />
         <node concept="H_c77" id="1EtdPNufFR8" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="16ccp1tXv$c" role="lGtFl">
-        <node concept="TZ5HA" id="16ccp1tXv$d" role="TZ5H$">
-          <node concept="1dT_AC" id="16ccp1tXv$e" role="1dT_Ay">
-            <property role="1dT_AB" value="Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model," />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="16ccp1tXw5f" role="TZ5H$">
-          <node concept="1dT_AC" id="16ccp1tXw5g" role="1dT_Ay">
-            <property role="1dT_AB" value="or the language extended by those imported. " />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="16ccp1tXw5l" role="TZ5H$">
-          <node concept="1dT_AC" id="16ccp1tXw5m" role="1dT_Ay">
-            <property role="1dT_AB" value="Intention is to get possible concepts which instances, added to model, would not require any dependency change." />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="16ccp1tXvIG" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2YIFZL" id="5IkW5anF8Dh" role="jymVt">
@@ -4223,8 +4223,8 @@
       </node>
       <node concept="37vLTG" id="5XpkEY8ouV8" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3uibUv" id="2J7f4gHXk9O" role="1tU5fm">
-          <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="5_JO0PsHoAU" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
     </node>
@@ -4264,8 +4264,8 @@
       </node>
       <node concept="37vLTG" id="5XpkEY8obB$" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3uibUv" id="2J7f4gHXke$" role="1tU5fm">
-          <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="5_JO0PsHqOc" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
     </node>

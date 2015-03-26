@@ -11,7 +11,7 @@ public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownReference_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Reference in undeclared role \"" + ((SReferenceLink) RemoveUnknownReference_QuickFix.this.getField("role")[0]).getRoleName() + "\"";
+    return "Remove reference in undeclared role \"" + ((SReferenceLink) RemoveUnknownReference_QuickFix.this.getField("role")[0]).getRoleName() + "\"";
   }
   public void execute(SNode node) {
     SNodeAccessUtil.setReferenceTarget(node, ((SReferenceLink) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);

@@ -279,10 +279,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptAliasOperation_BehaviorDescriptor();
       case 12:
         return new ConceptShortDescriptionOperation_BehaviorDescriptor();
-      case 32:
-        return new LanguageRefExpression_BehaviorDescriptor();
       case 31:
         return new LanguageId_BehaviorDescriptor();
+      case 32:
+        return new LanguageRefExpression_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

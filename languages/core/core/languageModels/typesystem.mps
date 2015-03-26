@@ -904,7 +904,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="1mruP2nnVic" role="3uHU7B">
-                <property role="Xl_RC" value="Child in undeclared role \&quot;" />
+                <property role="Xl_RC" value="Remove child in undeclared role \&quot;" />
               </node>
             </node>
             <node concept="Xl_RD" id="1mruP2nnVid" role="3uHU7w">
@@ -952,7 +952,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="1mruP2nnW23" role="3uHU7B">
-                <property role="Xl_RC" value="Reference in undeclared role \&quot;" />
+                <property role="Xl_RC" value="Remove reference in undeclared role \&quot;" />
               </node>
             </node>
             <node concept="Xl_RD" id="1mruP2nnW24" role="3uHU7w">

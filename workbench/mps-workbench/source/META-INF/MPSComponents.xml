@@ -33,7 +33,7 @@
       <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.WatchedRoots</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.WatchedRootsUpdater</implementation-class>

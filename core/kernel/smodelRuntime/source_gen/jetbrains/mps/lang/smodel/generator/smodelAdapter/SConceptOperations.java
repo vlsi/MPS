@@ -202,13 +202,13 @@ public final class SConceptOperations {
     SModel model = null;
     return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(model, null, conceptFqName));
   }
-  public static String conceptAlias(SConcept concept) {
+  public static String conceptAlias(SAbstractConcept concept) {
     if (concept == null) {
       return null;
     }
     return concept.getConceptAlias();
   }
-  public static String shortDescription(SConcept concept) {
+  public static String shortDescription(SAbstractConcept concept) {
     if (concept == null) {
       return null;
     }

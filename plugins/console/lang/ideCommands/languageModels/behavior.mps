@@ -2502,7 +2502,7 @@
       <node concept="3clFbS" id="2tFdLTRKcTQ" role="3clF47">
         <node concept="3clFbF" id="2tFdLTRKcWU" role="3cqZAp">
           <node concept="Xl_RD" id="2tFdLTRKcWT" role="3clFbG">
-            <property role="Xl_RC" value="delete the source_gen and source_gen.caches directories" />
+            <property role="Xl_RC" value="delete the source_gen, source_gen.caches and classes_gen directories" />
           </node>
         </node>
       </node>

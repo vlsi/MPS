@@ -62,8 +62,11 @@ public class ModulesMiner {
 
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
     List<ModuleHandle> result = new ArrayList<ModuleHandle>();
+    if (refreshFiles) {
+      refreshRecursivelyIntoJars(dir);
+    }
     LOG.debug("Reading modules from " + dir);
-    readModuleDescriptors(dir, excludes, result, refreshFiles, new DescriptorReader<ModuleHandle>() {
+    readModuleDescriptors(dir, excludes, result, new DescriptorReader<ModuleHandle>() {
       @Override
       public ModuleHandle read(ModuleHandle handle) {
         return handle;
@@ -72,33 +75,44 @@ public class ModulesMiner {
     return result;
   }
 
+  private void refreshRecursivelyIntoJars(IFile file) {
+    FileSystem.getInstance().refresh(file);
+    if (file.isDirectory()) {
+      for (IFile child: file.getChildren()) {
+        refreshRecursivelyIntoJars(child);
+      }
+    } else if (file.getPath().endsWith(JAR)) {
+      IFile jarRoot = stepIntoJar(file);
+      refreshRecursivelyIntoJars(jarRoot);
+    }
+  }
+
+  // Resulting file is already inside jar, i.e. file in JarFileSystem, because we added JAR_SEPARATOR
+  private IFile stepIntoJar(IFile jarFile) {
+    return FileSystem.getInstance().getFileByPath(jarFile.getPath() + JAR_SEPARATOR);
+  }
+
   private boolean needProcess(IFile file, Set<IFile> excludes) {
     return !FileSystem.getInstance().isFileIgnored(file.getName()) && !excludes.contains(file);
   }
 
-  private <T> void readModuleDescriptors(IFile file, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
+  private <T> void readModuleDescriptors(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
     if (!needProcess(file, excludes)) return;
-    if (refreshFiles) {
-      FileSystem.getInstance().refresh(file);
-    }
 
     if (file.isDirectory()) {
-      readModuleDescriptorsFromFolder(file, excludes, result, refreshFiles, reader);
+      readModuleDescriptorsFromFolder(file, excludes, result, reader);
     } else {
-      readModuleDescriptorsFromFile(file, excludes, result, refreshFiles, reader);
+      readModuleDescriptorsFromFile(file, excludes, result, reader);
     }
   }
 
-  private <T> void readModuleDescriptorsFromFile(IFile file, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
+  private <T> void readModuleDescriptorsFromFile(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
     if (!needProcess(file, excludes)) return;
-    if (refreshFiles) {
-      FileSystem.getInstance().refresh(file);
-    }
 
     if (file.getName().endsWith(JAR)) {
-      IFile jarRoot = FileSystem.getInstance().getFileByPath(file.getPath() + JAR_SEPARATOR);
+      IFile jarRoot = stepIntoJar(file);
       if (jarRoot != null) {
-        readModuleDescriptorsFromFolder(jarRoot, excludes, result, refreshFiles, reader);
+        readModuleDescriptorsFromFolder(jarRoot, excludes, result, reader);
       }
     } else {
       if (!isModuleFile(file)) return;
@@ -112,11 +126,8 @@ public class ModulesMiner {
     }
   }
 
-  private <T> void readModuleDescriptorsFromFolder(IFile file, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
+  private <T> void readModuleDescriptorsFromFolder(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
     if (!needProcess(file, excludes)) return;
-    if (refreshFiles) {
-      FileSystem.getInstance().refresh(file);
-    }
 
     // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
     // if this is just good old plain directory, we check every file in it
@@ -135,7 +146,7 @@ public class ModulesMiner {
       } else {
         IFile dirInJar = file.getDescendant(MODULES_DIR);
         if (dirInJar.exists() && dirInJar.isDirectory()) {
-          readModuleDescriptorsFromFolder(dirInJar, excludes, result, refreshFiles, reader);
+          readModuleDescriptorsFromFolder(dirInJar, excludes, result, reader);
         }
       }
 
@@ -147,7 +158,7 @@ public class ModulesMiner {
       ArrayList<IFile> folders = new ArrayList<IFile>();
       for (IFile child : children) {
         if (!child.isDirectory()) {
-          readModuleDescriptorsFromFile(child, excludes, result, refreshFiles, reader);
+          readModuleDescriptorsFromFile(child, excludes, result, reader);
         } else {
           folders.add(child);
         }
@@ -155,7 +166,7 @@ public class ModulesMiner {
 
       // now read from folders
       for (IFile child : folders) {
-        readModuleDescriptorsFromFolder(child, excludes, result, refreshFiles, reader);
+        readModuleDescriptorsFromFolder(child, excludes, result, reader);
       }
 
     }

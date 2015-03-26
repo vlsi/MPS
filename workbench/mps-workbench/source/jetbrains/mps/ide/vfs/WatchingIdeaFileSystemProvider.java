@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.JarFileSystem;
+import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.watching.WatchedRoots;
 import org.jetbrains.annotations.NotNull;
 
 /**
