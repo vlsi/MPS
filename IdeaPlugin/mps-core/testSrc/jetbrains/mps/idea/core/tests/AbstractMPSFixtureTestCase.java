@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
@@ -24,15 +23,13 @@ import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.ide.highlighter.ModuleFileType;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectBundle;
-import com.intellij.openapi.projectRoots.JavaSdk;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
@@ -43,7 +40,8 @@ import com.intellij.testFramework.fixtures.JavaTestFixtureFactory;
 import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
-import com.intellij.util.SystemProperties;
+import com.intellij.util.ThrowableRunnable;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -105,6 +103,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myFacet = addMPSFacet(myModule);
 
     if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
+
+    //Flush all EDT events to be made before run tests
+    try {
+      UIUtil.invokeAndWaitIfNeeded(new ThrowableRunnable() {
+        @Override
+        public void run() throws Throwable {
+         flushEDT();
+        }
+      });
+    } catch (Throwable throwable) {
+      Logger.getInstance(this.getClass()).error("Error while flushing EDT events", throwable);
+    }
   }
 
   @Override
@@ -146,16 +156,27 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     Assert.assertNotNull("MPS facet type is not found", facetType);
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
-    preConfigureFacet(configuration);
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        preConfigureFacet(configuration);
+      }
+    }, ModalityState.defaultModalityState());
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
       @Override
       public void run() {
-        facetModel.commit();
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            facetModel.commit();
+          }
+        });
       }
     });
+
     return facet;
   }
 

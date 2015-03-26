@@ -64,23 +64,6 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
     runnable.run();
   }
 
-  @Override
-  protected void setUp() throws Exception {
-    final Exception[] thrown = new Exception[1];
-    // Calling super.setup() in EDT
-    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          DataMPSFixtureTestCase.super.setUp();
-        } catch (Exception e) {
-          thrown[0] = e;
-        }
-      }
-    });
-    if (thrown[0] != null) throw thrown[0];
-  }
-
   protected abstract void prepareTestData(MPSFacetConfiguration configuration) throws Exception;
 
   protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException {

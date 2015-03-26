@@ -29,11 +29,13 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -102,6 +104,18 @@ public class EditorTests extends DataMPSFixtureTestCase {
     // restore test logger factory
     Logger.setFactory(TestLoggerFactory.class);
     if (thrown[0] != null) throw thrown[0];
+
+    //Flush all EDT events to be made before run tests
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          flushEDT();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    });
   }
 
   @Override

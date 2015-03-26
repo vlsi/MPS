@@ -27,18 +27,20 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.util.ThrowableRunnable;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
@@ -51,6 +53,17 @@ import java.util.List;
 import java.util.Set;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
+
+  @Override
+  protected void runTest() throws Throwable {
+    UIUtil.invokeAndWaitIfNeeded(new ThrowableRunnable() {
+      @Override
+      public void run() throws Throwable {
+        flushEDT();
+      }
+    });
+    super.runTest();
+  }
 
   public void testFacetInitialized() {
     FacetManager facetManager = FacetManager.getInstance(myModule);
