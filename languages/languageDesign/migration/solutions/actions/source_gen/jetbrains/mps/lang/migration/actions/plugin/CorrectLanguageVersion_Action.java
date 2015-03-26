@@ -56,6 +56,9 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     }
 
     List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+    if (lang.getLanguageVersion() == 0) {
+      return false;
+    }
     if (ListSequence.fromList(migrations).isEmpty() && lang.getLanguageVersion() != 0) {
       return true;
     }

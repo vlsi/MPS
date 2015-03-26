@@ -5,56 +5,27 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.util.Set;
-import com.intellij.openapi.util.Pair;
-import jetbrains.mps.workbench.ActionPlace;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.ide.projectPane.CreateRootNodeGroup;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(CreateRootNode_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup";
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  public static final String LABEL_ID_newRoot = ID + "newRoot";
   public CreateRootNode_ActionGroup() {
-    super("Root Node", ID);
+    super("CreateRootNode", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
-    }
-  }
-  public void doUpdate(AnActionEvent event) {
-    try {
-      List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
-      if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
-
-      if (CreateRootNode_ActionGroup.this.getChildrenCount() == 0) {
-        CreateRootNode_ActionGroup.this.add(new CreateRootNodeGroup());
+      {
+        LabelledAnchor action = new LabelledAnchor(CreateRootNode_ActionGroup.LABEL_ID_newRoot);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        CreateRootNode_ActionGroup.this.addAction(action);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-    for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
-      this.addPlace(p.first, p.second);
-    }
-  }
-  public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
-    SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-  }
-  public boolean isStrict() {
-    return false;
   }
 }

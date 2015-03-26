@@ -14,21 +14,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" file="AddMissingLanguageImport_Intention.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.DependencyHelper" file="DependencyHelper.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ModelImporter" />
@@ -48,7 +33,6 @@
   <dependency className="jetbrains.mps.lang.core.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
-    <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SuppressErrors_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />

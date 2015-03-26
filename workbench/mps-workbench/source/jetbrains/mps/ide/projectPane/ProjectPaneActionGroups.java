@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
+import jetbrains.mps.ide.actions.CreateRootNode_ActionGroup;
 import jetbrains.mps.ide.actions.DevkitActions_ActionGroup;
 import jetbrains.mps.ide.actions.FileActions_ActionGroup;
 import jetbrains.mps.ide.actions.FolderActions_ActionGroup;
@@ -91,6 +92,7 @@ public class ProjectPaneActionGroups {
   // FIXME hardcoded action ID
   public static final String GENERATOR_NEW_ACTIONS = "jetbrains.mps.ide.devkit.actions.GeneratorNewActions_ActionGroup";
 
+  public static final String CREATE_ROOT_ACTIONS = CreateRootNode_ActionGroup.ID;
 
   public static ActionGroup getActionGroup(MPSTreeNode treeNode) {
     if (treeNode instanceof TextTreeNode) {
@@ -142,16 +144,16 @@ public class ProjectPaneActionGroups {
     return null;
   }
 
-  public static ActionGroup getQuickCreateGroup(MPSTreeNode treeNode, boolean plain) {
+  public static ActionGroup getQuickCreateGroup(MPSTreeNode treeNode) {
     if (treeNode instanceof TextTreeNode) {
       if (treeNode instanceof ProjectTreeNode) {
         return ActionUtils.getGroup(PROJECT_NEW_ACTIONS);
       } else if (treeNode instanceof PackageNode) {
-        return new CreateRootNodeGroup(plain);
+        return ActionUtils.getGroup(CREATE_ROOT_ACTIONS);
       }
     }
     if (treeNode instanceof SModelTreeNode) {
-      return new CreateRootNodeGroup(plain);
+      return ActionUtils.getGroup(CREATE_ROOT_ACTIONS);
     }
     if (treeNode instanceof ProjectModuleTreeNode) {
       if (treeNode instanceof ProjectSolutionTreeNode) {

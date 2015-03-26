@@ -71,6 +71,7 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
     return cd.getConceptFqName();
   }
 
+  @NotNull
   @Override
   public SLanguage getLanguage() {
     return MetaAdapterFactory.getLanguage(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));

@@ -51,6 +51,7 @@ public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter imp
     return myFqName;
   }
 
+  @NotNull
   @Override
   public SLanguage getLanguage() {
     return MetaAdapterFactoryByName.getLanguage(NameUtil.namespaceFromConceptFQName(myFqName));
