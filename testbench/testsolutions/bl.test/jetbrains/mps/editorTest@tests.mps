@@ -457,9 +457,6 @@
         <child id="938834323431434551" name="developer" index="32547w" />
       </concept>
       <concept id="938834323431421731" name="testDefaultEditor.structure.Company" flags="ng" index="325pZO" />
-      <concept id="6007318803034320743" name="testDefaultEditor.structure.DummyMethod" flags="ng" index="3ofevS">
-        <child id="6007318803034320803" name="statements" index="3ofesW" />
-      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -10283,63 +10280,6 @@
     <node concept="3clFbS" id="5dui9Yb8T7u" role="LjaKd">
       <node concept="2TK7Tu" id="5dui9Yb8T7t" role="3cqZAp">
         <property role="2TTd_B" value="Simon" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="5dui9YboFsG">
-    <property role="3GE5qa" value="defaultEditor" />
-    <property role="TrG5h" value="AddStatements" />
-    <node concept="3ofevS" id="5dui9YboFsI" role="LiRBU">
-      <node concept="LIFWc" id="2Mv5QWCGhdD" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_statements" />
-      </node>
-    </node>
-    <node concept="3ofevS" id="5dui9YboFsP" role="LiZbd">
-      <node concept="3clFbF" id="5dui9YboFsX" role="3ofesW">
-        <node concept="2OqwBi" id="5dui9YboFsT" role="3clFbG">
-          <node concept="10M0yZ" id="5dui9YboFsU" role="2Oq$k0">
-            <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-            <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-          </node>
-          <node concept="liA8E" id="5dui9YboFsV" role="2OqNvi">
-            <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbF" id="5dui9YboFCq" role="3ofesW">
-        <node concept="2OqwBi" id="5dui9YboFCm" role="3clFbG">
-          <node concept="10M0yZ" id="5dui9YboFCn" role="2Oq$k0">
-            <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-            <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-          </node>
-          <node concept="liA8E" id="5dui9YboFCo" role="2OqNvi">
-            <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
-            <node concept="LIFWc" id="2rnYJEuZmgo" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="1" />
-              <property role="p6zMs" value="1" />
-              <property role="LIFWd" value="Constant_arlg9k_c0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="5dui9YboFXb" role="LjaKd">
-      <node concept="2TK7Tu" id="5dui9YboFXa" role="3cqZAp">
-        <property role="2TTd_B" value="System.out.println" />
-      </node>
-      <node concept="2HxZob" id="2Mv5QWCB4Oj" role="3cqZAp">
-        <node concept="1iFQzN" id="2Mv5QWCB4Or" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
-        </node>
-      </node>
-      <node concept="2TK7Tu" id="2Mv5QWCESL4" role="3cqZAp">
-        <property role="2TTd_B" value="System.out.println" />
       </node>
     </node>
   </node>
