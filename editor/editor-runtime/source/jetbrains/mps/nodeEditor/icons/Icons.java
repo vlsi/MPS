@@ -26,6 +26,6 @@ import javax.swing.*;
 public class Icons {
   public static final Icon OK = MPSIcons.General.ErrorOk;
   public static final Icon IN_PROGRESS = General.ErrorsInProgress;
-  public static final Icon ERRORS = General.ErrorsFound;
+  public static final Icon ERRORS = MPSIcons.General.ErrorsFound;
   public static final Icon WARNINGS = MPSIcons.General.WarningsFound;
 }
