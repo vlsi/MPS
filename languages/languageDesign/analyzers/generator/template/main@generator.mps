@@ -490,11 +490,6 @@
       <ref role="2rTdP9" to="bj1v:nUEAIXlVr8" resolve="Rule" />
       <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
-    <node concept="2rT7sh" id="7vC9IliBRvB" role="2rTMjI">
-      <property role="TrG5h" value="analyzer" />
-      <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-      <ref role="2rTdP9" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
-    </node>
     <node concept="2rT7sh" id="5S9yM2ugwUI" role="2rTMjI">
       <property role="TrG5h" value="field" />
       <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
@@ -814,9 +809,6 @@
       <node concept="37vLTG" id="6EBM_lhyOrs" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="6EBM_lhyOrt" role="1tU5fm" />
-      </node>
-      <node concept="1pdMLZ" id="9V7Nft$VZL" role="lGtFl">
-        <ref role="2rW$FS" node="7vC9IliBRvB" resolve="analyzer" />
       </node>
     </node>
     <node concept="3clFb_" id="7XrupC0LiSp" role="jymVt">
