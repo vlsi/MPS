@@ -392,7 +392,7 @@
     <property role="TrG5h" value="main" />
     <property role="3$yP7D" value="true" />
     <node concept="1J8HWv" id="5vxy$fN7dY7" role="24Zfi7">
-      <property role="TrG5h" value="exportedInstructionClassifier" />
+      <property role="TrG5h" value="exportedInstructionClass" />
       <ref role="vkxhZ" to="bj1v:5JpT3MjX6ua" resolve="Instruction" />
       <ref role="vkxhW" to="tpee:fz12cDA" resolve="ClassConcept" />
       <ref role="1J8bob" to="bj1v:5vxy$fN7gVQ" resolve="InstructionClassKeeper" />
@@ -837,6 +837,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="37vLTw" id="1_Iic4WS9Aj" role="37wK5m">
+                <ref role="3cqZAo" to="hxuy:~AnalyzerRunner.myAnalyzer" resolve="myAnalyzer" />
               </node>
             </node>
             <node concept="liA8E" id="3LAF1LmxHmm" role="2OqNvi">
@@ -1768,7 +1771,7 @@
       </node>
     </node>
     <node concept="3y4P_M" id="5vxy$fN7PE2" role="lGtFl">
-      <ref role="3y4P_e" node="5vxy$fN7dY7" resolve="exportedInstructionClassifier" />
+      <ref role="3y4P_e" node="5vxy$fN7dY7" resolve="exportedInstructionClass" />
     </node>
   </node>
   <node concept="13MO4I" id="7wwiZxTDRdt">
@@ -2002,7 +2005,7 @@
                                       <node concept="2OqwBi" id="5vxy$fN822o" role="2Oq$k0">
                                         <node concept="1iwH7S" id="5vxy$fN822p" role="2Oq$k0" />
                                         <node concept="1J843M" id="5vxy$fN822q" role="2OqNvi">
-                                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClassifier" />
+                                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClass" />
                                           <node concept="2OqwBi" id="5vxy$fN822r" role="vkvud">
                                             <node concept="2OqwBi" id="5vxy$fN822s" role="2Oq$k0">
                                               <node concept="30H73N" id="5vxy$fN822t" role="2Oq$k0" />
@@ -2380,7 +2383,7 @@
                       <node concept="2OqwBi" id="5vxy$fN7T4B" role="3clFbG">
                         <node concept="1iwH7S" id="5vxy$fN7SGN" role="2Oq$k0" />
                         <node concept="1J843M" id="5vxy$fN7TbC" role="2OqNvi">
-                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClassifier" />
+                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClass" />
                           <node concept="2OqwBi" id="6ViLkrkrNNs" role="vkvud">
                             <node concept="30H73N" id="6ViLkrkrNMR" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6ViLkrkrNNw" role="2OqNvi">
@@ -2897,7 +2900,7 @@
                                       <node concept="2OqwBi" id="6TZAgDx076y" role="2Oq$k0">
                                         <node concept="1iwH7S" id="6TZAgDx076z" role="2Oq$k0" />
                                         <node concept="1J843M" id="5vxy$fN7U7M" role="2OqNvi">
-                                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClassifier" />
+                                          <ref role="1J843X" node="5vxy$fN7dY7" resolve="exportedInstructionClass" />
                                           <node concept="2OqwBi" id="6TZAgDx076_" role="vkvud">
                                             <node concept="2OqwBi" id="6TZAgDx076A" role="2Oq$k0">
                                               <node concept="30H73N" id="6TZAgDx076B" role="2Oq$k0" />
@@ -4102,6 +4105,9 @@
                 <node concept="2ShNRf" id="3LAF1LmxEok" role="37vLTx">
                   <node concept="1pGfFk" id="3LAF1LmxEom" role="2ShVmc">
                     <ref role="37wK5l" node="3LAF1LmxxLu" resolve="UserAnalyzerRules" />
+                    <node concept="37vLTw" id="1_Iic4WS8_L" role="37wK5m">
+                      <ref role="3cqZAo" node="1_Iic4WS81q" resolve="analyzer" />
+                    </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxeoocA" role="37vLTJ">
@@ -4121,6 +4127,12 @@
           <node concept="37vLTw" id="2BHiRxeojZ3" role="3cqZAk">
             <ref role="3cqZAo" node="3LAF1LmxEo3" resolve="instance" />
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1_Iic4WS81q" role="3clF46">
+        <property role="TrG5h" value="analyzer" />
+        <node concept="3uibUv" id="1_Iic4WS81p" role="1tU5fm">
+          <ref role="3uigEE" to="hxuy:~DataFlowAnalyzer" resolve="DataFlowAnalyzer" />
         </node>
       </node>
     </node>
