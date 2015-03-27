@@ -132,6 +132,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_j8ahcr_a3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_j8ahcr_a0d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_j8ahcr_b0d0(editorContext, node));

@@ -344,7 +344,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_zgm7s3_b3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a1d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b1d0(editorContext, node));
