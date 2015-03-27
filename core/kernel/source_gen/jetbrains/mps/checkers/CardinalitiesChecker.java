@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
@@ -24,7 +25,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
 
       if (!(link.isOptional()) && ListSequence.fromList(children).isEmpty()) {
         // TODO this is a hack for constructor declarations 
-        if ("returnType".equals(link.getRoleName()) && "ConstructorDeclaration".equals(concept.getQualifiedName())) {
+        if (link.equals(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")) && concept.equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
           continue;
         }
 

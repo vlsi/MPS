@@ -37,6 +37,7 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="vyt2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.scope(MPS.Core/jetbrains.mps.scope@java_stub)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -306,6 +307,13 @@
       <concept id="4124388153790980106" name="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" flags="nn" index="2ZHEkA" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
       </concept>
@@ -562,35 +570,26 @@
                     <node concept="3N13vt" id="6qi2OtU3uy0" role="3cqZAp" />
                   </node>
                   <node concept="1Wc70l" id="6qi2OtU3uy1" role="3clFbw">
-                    <node concept="2OqwBi" id="6qi2OtU3uy2" role="3uHU7w">
-                      <node concept="Xl_RD" id="6qi2OtU3uy3" role="2Oq$k0">
-                        <property role="Xl_RC" value="ConstructorDeclaration" />
+                    <node concept="2OqwBi" id="HIkvO2L3LC" role="3uHU7w">
+                      <node concept="37vLTw" id="HIkvO2L3JE" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6qi2OtU3uxp" resolve="concept" />
                       </node>
-                      <node concept="liA8E" id="6qi2OtU3uy4" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                        <node concept="2OqwBi" id="6qi2OtU3uy5" role="37wK5m">
-                          <node concept="37vLTw" id="3GM_nagTtl_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6qi2OtU3uxp" resolve="concept" />
-                          </node>
-                          <node concept="liA8E" id="1GLgM0B6988" role="2OqNvi">
-                            <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                          </node>
+                      <node concept="liA8E" id="HIkvO2L4cz" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                        <node concept="35c_gC" id="HIkvO2L4es" role="37wK5m">
+                          <ref role="35c_gD" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
                         </node>
                       </node>
                     </node>
                     <node concept="2OqwBi" id="6qi2OtU3uy8" role="3uHU7B">
-                      <node concept="Xl_RD" id="6qi2OtU3uy9" role="2Oq$k0">
-                        <property role="Xl_RC" value="returnType" />
+                      <node concept="2GrUjf" id="HIkvO2L4zC" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="6qi2OtU3ux$" resolve="link" />
                       </node>
                       <node concept="liA8E" id="6qi2OtU3uya" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                        <node concept="2OqwBi" id="6qi2OtU3uyb" role="37wK5m">
-                          <node concept="2GrUjf" id="6qi2OtU3uyc" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="6qi2OtU3ux$" resolve="link" />
-                          </node>
-                          <node concept="liA8E" id="1GLgM0B5TvJ" role="2OqNvi">
-                            <ref role="37wK5l" to="t3eg:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
-                          </node>
+                        <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                        <node concept="359W_D" id="HIkvO2L578" role="37wK5m">
+                          <ref role="359W_E" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+                          <ref role="359W_F" to="tpee:fzclF7X" />
                         </node>
                       </node>
                     </node>
