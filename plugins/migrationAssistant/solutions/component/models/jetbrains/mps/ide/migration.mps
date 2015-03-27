@@ -51,6 +51,11 @@
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
   </imports>
   <registry>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
+        <child id="1238852204892" name="componentType" index="1Lm7xW" />
+      </concept>
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -3004,6 +3009,25 @@
       <node concept="3Tm1VV" id="5SsFeroaac7" role="1B3o_S" />
       <node concept="3clFbS" id="5SsFeroaac8" role="3clF47" />
       <node concept="10P_77" id="5SsFeroaac9" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="3OvHNCMjyE0" role="jymVt" />
+    <node concept="3clFb_" id="3OvHNCMjyBz" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getMissingMigrations" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="3OvHNCMjyB$" role="1B3o_S" />
+      <node concept="3clFbS" id="3OvHNCMjyB_" role="3clF47" />
+      <node concept="_YKpA" id="3OvHNCMj$I3" role="3clF45">
+        <node concept="1LlUBW" id="3OvHNCMj$IC" role="_ZDj9">
+          <node concept="3uibUv" id="3OvHNCMj$IK" role="1Lm7xW">
+            <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          </node>
+          <node concept="3uibUv" id="3OvHNCMj$J4" role="1Lm7xW">
+            <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="2htE_P_PUz$" role="jymVt" />
     <node concept="3clFb_" id="7rK8qWGGnEQ" role="jymVt">

@@ -26,8 +26,10 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -35,11 +37,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.check.Problem;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
@@ -132,6 +130,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
     }
 
+    addElementToMigrationList("Checking migrations consistency... Please wait.");
+    List<Tuples._2<SModule, SLanguage>> missingMigrations = myManager.getMissingMigrations();
+    if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
+      myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError(missingMigrations));
+      addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
+      return;
+    }
+
     addElementToMigrationList("Checking models... Please wait.");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -187,12 +193,6 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Errors are detected in project after executing migrations. Press 'Next' to continue.");
-      return;
-    }
-
-    if (myManager.isMigrationRequired()) {
-      myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError());
-      addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
       return;
     }
 
@@ -303,36 +303,19 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
   }
   private class MigrationsMissingError extends MigrationErrorDescriptor {
-    public MigrationsMissingError() {
+    private List<Tuples._2<SModule, SLanguage>> errors;
+    public MigrationsMissingError(List<Tuples._2<SModule, SLanguage>> errors) {
+      this.errors = errors;
     }
     public String getMessage() {
       return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Usages tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public Iterable<Problem> getProblems() {
-      final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
-          for (SModule module : Sequence.fromIterable(modules)) {
-            for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
-              int currentLangVersion = lang.getLanguageVersion();
-              int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
-
-              ver = Math.max(ver, 0);
-              currentLangVersion = Math.max(currentLangVersion, 0);
-
-              if (ver >= currentLangVersion) {
-                continue;
-              }
-
-              ListSequence.fromList(result).addElement(new MissingMigrationProblem(module, lang));
-            }
-          }
+      return ListSequence.fromList(errors).take(100).select(new ISelector<Tuples._2<SModule, SLanguage>, Problem>() {
+        public Problem select(Tuples._2<SModule, SLanguage> it) {
+          return ((Problem) new MissingMigrationProblem(it._0(), it._1()));
         }
       });
-
-      return ListSequence.fromList(result).take(100);
     }
   }
 }

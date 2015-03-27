@@ -38,24 +38,33 @@
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/2620437876317548374">
     <file name="MissingMigrationProblem.java">
-      <node id="2620437876317548375" at="9,0,10,0" concept="4" trace="myLanguage" />
-      <node id="2620437876317548383" at="11,70,12,18" concept="13" />
-      <node id="2620437876317548385" at="12,18,13,26" concept="3" />
-      <node id="2620437876317548398" at="16,30,17,283" concept="9" />
-      <node id="2620437876317548405" at="20,31,21,32" concept="9" />
-      <node id="2620437876317548394" at="16,0,19,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="2620437876317548401" at="20,0,23,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
-      <node id="2620437876317548379" at="11,0,15,0" concept="1" trace="MissingMigrationProblem#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/language/SLanguage;)V" />
-      <scope id="2620437876317548397" at="16,30,17,283" />
-      <scope id="2620437876317548404" at="20,31,21,32" />
-      <scope id="2620437876317548382" at="11,70,13,26" />
-      <scope id="2620437876317548394" at="16,0,19,0" />
-      <scope id="2620437876317548401" at="20,0,23,0" />
-      <scope id="2620437876317548379" at="11,0,15,0">
+      <node id="2620437876317548375" at="11,0,12,0" concept="4" trace="myLanguage" />
+      <node id="2620437876317548383" at="13,70,14,18" concept="13" />
+      <node id="2620437876317548385" at="14,18,15,26" concept="3" />
+      <node id="2202165082743254676" at="18,30,19,62" concept="8" />
+      <node id="2202165082743255635" at="21,25,22,292" concept="3" />
+      <node id="2620437876317548398" at="24,7,25,21" concept="9" />
+      <node id="2620437876317548405" at="28,31,29,32" concept="9" />
+      <node id="2202165082743257109" at="21,0,24,0" concept="7" trace="run#()V" />
+      <node id="2620437876317548401" at="28,0,31,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
+      <node id="2620437876317548379" at="13,0,17,0" concept="1" trace="MissingMigrationProblem#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/language/SLanguage;)V" />
+      <node id="2202165082743257107" at="19,62,24,7" concept="3" />
+      <node id="2620437876317548394" at="18,0,27,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
+      <scope id="2202165082743257111" at="21,25,22,292" />
+      <scope id="2620437876317548404" at="28,31,29,32" />
+      <scope id="2620437876317548382" at="13,70,15,26" />
+      <scope id="2202165082743257109" at="21,0,24,0" />
+      <scope id="2620437876317548401" at="28,0,31,0" />
+      <scope id="2620437876317548379" at="13,0,17,0">
         <var name="language" id="2620437876317548391" />
         <var name="module" id="2620437876317548389" />
       </scope>
-      <unit id="2620437876317548374" at="8,0,24,0" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem" />
+      <scope id="2620437876317548397" at="18,30,25,21">
+        <var name="msg" id="2202165082743254677" />
+      </scope>
+      <scope id="2620437876317548394" at="18,0,27,0" />
+      <unit id="2202165082743257109" at="20,45,24,5" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$1" />
+      <unit id="2620437876317548374" at="10,0,32,0" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem" />
     </file>
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/3875289449857686106">
