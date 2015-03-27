@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,33 @@ package jetbrains.mps.reloading;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.util.Condition;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -43,7 +55,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private Map<String, ZipEntry> myEntries = new THashMap<String, ZipEntry>();
   private MyCache myCache = new MyCache();
   private String myPath;
 
@@ -77,78 +88,90 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public boolean hasClass(String name) {
+  public boolean hasClass(String qualifiedClassName) {
     checkValidity();
     ensureInitialized();
-    ZipEntry entry = myEntries.get(name);
-    return entry != null;
+    final int ix = qualifiedClassName.lastIndexOf('.');
+    String packageName = ix == -1 ? "" : qualifiedClassName.substring(0, ix);
+    String className = qualifiedClassName.substring(ix+1);
+    return myCache.getClassesSetFor(packageName).contains(className);
   }
 
   @Override
-  public synchronized byte[] getClass(String name) {
+  public synchronized byte[] getClass(String qualifiedClassName) {
     checkValidity();
     ensureInitialized();
-    ZipEntry entry = myEntries.get(name);
-    if (entry == null) return null;
     InputStream inp = null;
     ZipFile zf = null;
     try {
       zf = new ZipFile(myFile);
+      String entryName = toClassEntry(qualifiedClassName);
+      ZipEntry entry = zf.getEntry(entryName);
+      if (entry == null) {
+        return null;
+      }
       inp = zf.getInputStream(entry);
-      if (inp == null) return null;
-
-      return ReadUtil.read(inp);
+      if (inp == null) {
+        return null;
+      }
+      // safe to assume int as class files have size limit way lower than 2^31
+      return ReadUtil.read(inp, (int) entry.getSize());
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(getClass().getName(), e);
       return null;
     } finally {
-      if (zf != null) {
-        try {
-          zf.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
+      FileUtil.closeFileSafe(inp);
+      closeZipFile(zf);
+    }
+  }
+
+  private static String toClassEntry(String classQualifiedName) {
+    StringBuilder sb = new StringBuilder(classQualifiedName);
+    for (int i = 0; i < classQualifiedName.length(); i++) {
+      if (sb.charAt(i) == '.') {
+        sb.setCharAt(i, '/');
       }
-      if (inp != null) {
-        try {
-          inp.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
+    }
+    sb.append(MPSExtentions.DOT_CLASSFILE);
+    return sb.toString();
+  }
+
+  private static void closeZipFile(ZipFile zf) {
+    if (zf != null) {
+      try {
+        zf.close();
+      } catch (IOException e) {
+        LOG.error(JarFileClassPathItem.class.getName(), e);
       }
     }
   }
 
   @Override
-  public synchronized ClassifierKind getClassifierKind(String name) {
+  public synchronized ClassifierKind getClassifierKind(String qualifiedClassName) {
     checkValidity();
     ensureInitialized();
-    ZipEntry entry = myEntries.get(name);
-    if (entry == null) return null;
+    checkValidity();
+    ensureInitialized();
     InputStream inp = null;
     ZipFile zf = null;
     try {
       zf = new ZipFile(myFile);
+      String entryName = toClassEntry(qualifiedClassName);
+      ZipEntry entry = zf.getEntry(entryName);
+      if (entry == null) {
+        return null;
+      }
       inp = zf.getInputStream(entry);
+      if (inp == null) {
+        return null;
+      }
       return ClassifierKind.getClassifierKind(inp);
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(getClass().getName(), e);
       return null;
     } finally {
-      if (inp != null) {
-        try {
-          inp.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
-      if (zf != null) {
-        try {
-          zf.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
+      FileUtil.closeFileSafe(inp);
+      closeZipFile(zf);
     }
   }
 
@@ -299,9 +322,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
           buildPackageCaches(pack);
           myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
-
-          String fullClassName = pack.length() > 0 ? pack + "." + className : className;
-          myEntries.put(InternUtil.intern(fullClassName), entry);
         }
       }
     } catch (IOException e) {

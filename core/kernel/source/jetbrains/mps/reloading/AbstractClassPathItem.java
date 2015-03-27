@@ -18,6 +18,7 @@ package jetbrains.mps.reloading;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.regex.Pattern;
@@ -61,6 +62,11 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       result = Math.max(result, getTimestamp(subpackage));
     }
     return result;
+  }
+
+  @Override
+  public boolean hasPackage(@NotNull String name) {
+    return getSubpackages(name).iterator().hasNext();
   }
 
   //-----------------------
