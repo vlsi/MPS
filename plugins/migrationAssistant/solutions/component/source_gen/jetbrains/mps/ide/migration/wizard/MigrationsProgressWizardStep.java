@@ -309,24 +309,28 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Usages tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public Iterable<Problem> getProblems() {
-      List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
+      final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
-      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
-      for (SModule module : Sequence.fromIterable(modules)) {
-        for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
-          int currentLangVersion = lang.getLanguageVersion();
-          int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
+          for (SModule module : Sequence.fromIterable(modules)) {
+            for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+              int currentLangVersion = lang.getLanguageVersion();
+              int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
 
-          ver = Math.max(ver, 0);
-          currentLangVersion = Math.max(currentLangVersion, 0);
+              ver = Math.max(ver, 0);
+              currentLangVersion = Math.max(currentLangVersion, 0);
 
-          if (ver >= currentLangVersion) {
-            continue;
+              if (ver >= currentLangVersion) {
+                continue;
+              }
+
+              ListSequence.fromList(result).addElement(new MissingMigrationProblem(module, lang));
+            }
           }
-
-          ListSequence.fromList(result).addElement(new MissingMigrationProblem(module, lang));
         }
-      }
+      });
 
       return ListSequence.fromList(result).take(100);
     }
