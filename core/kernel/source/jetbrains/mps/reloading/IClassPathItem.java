@@ -16,6 +16,8 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
@@ -28,6 +30,13 @@ import java.util.List;
 public interface IClassPathItem extends ClassBytesProvider {
   //this is for performance reasons
   boolean hasClass(String name);
+
+  /**
+   *
+   * @param name qualified package name
+   * @return <code>true</code> if this classpath item knows about classes in specified package or any subpackage thereof.
+   */
+  boolean hasPackage(@NotNull String name);
   
   @Nullable
   ClassifierKind getClassifierKind(String name);
@@ -41,14 +50,41 @@ public interface IClassPathItem extends ClassBytesProvider {
 
   Enumeration<URL> getResources(String name);
 
+  /**
+   * @deprecated The only client of this method doesn't seem to be really bound to particular iteration order and could live with API like getAllClasses()
+   */
+  @Deprecated
   Iterable<String> getRootClasses(String namespace);
 
+  /**
+   * @deprecated the only distinction between this method and {@link #getRootClasses(String)} is that this one gives inner classes, but is it something
+   * anyone care about? The only use of this method (getAvailableClasses().iterator().hasNext()) would work the same with getRootClasses (inner classes could
+   * not be there it there are no outer)
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   Iterable<String> getAvailableClasses(String namespace);
 
+  /**
+   * @deprecated there are 2 uses of the method, 1 is to be replaced with {@link #hasPackage(String)}, another shall get refactored as there's no need in
+   * specific iteration order
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   Iterable<String> getSubpackages(String namespace);
 
+  /**
+   * @deprecated the method is not in use and will be removed
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   long getClassesTimestamp(String namespace);
 
+  /**
+   * @deprecated the method is not in use and will be removed
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   long getTimestamp();
 
   List<RealClassPathItem> flatten();
