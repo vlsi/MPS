@@ -66,7 +66,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   @Override
   public boolean hasPackage(@NotNull String name) {
-    return getSubpackages(name).iterator().hasNext();
+    return getAvailableClasses(name).iterator().hasNext() || getSubpackages(name).iterator().hasNext();
   }
 
   //-----------------------

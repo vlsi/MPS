@@ -18,6 +18,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.iterable.IterableEnumeration;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,8 +54,20 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public boolean hasClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
-      boolean result = item.hasClass(name);
-      if (result) return true;
+      if (item.hasClass(name)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @Override
+  public boolean hasPackage(@NotNull String name) {
+    checkValidity();
+    for (IClassPathItem item : myChildren) {
+      if (item.hasPackage(name)) {
+        return true;
+      }
     }
     return false;
   }

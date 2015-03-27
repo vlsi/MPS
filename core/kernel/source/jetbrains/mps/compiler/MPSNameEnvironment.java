@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,15 +26,7 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
 
   @Override
   public NameEnvironmentAnswer findType(char[][] compoundTypeName) {
-    StringBuilder fqName = new StringBuilder();
-    for (int i = 0; i < compoundTypeName.length; i++) {
-      char[] part = compoundTypeName[i];
-      fqName.append(new String(part));
-      if (i != compoundTypeName.length - 1) {
-        fqName.append(".");
-      }
-    }
-    return findType(fqName.toString());
+    return findType(toQualifiedName(compoundTypeName, null));
   }
 
   @Override
@@ -44,29 +36,26 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
 
   @Override
   public boolean isPackage(char[][] parentPackageName, char[] packageName) {
-    String pname = toQualifiedName(parentPackageName, packageName);
-    return getClassPathItem().getAvailableClasses(pname).iterator().hasNext() ||
-      getClassPathItem().getSubpackages(pname).iterator().hasNext();
+    String packName = toQualifiedName(parentPackageName, packageName);
+    return getClassPathItem().hasPackage(packName);
   }
 
-  private String toQualifiedName(char[][] packageName, char[] name) {
-    int size = name.length;
+  private static String toQualifiedName(char[][] packageName, char[] name) {
+    StringBuilder sb = new StringBuilder(128);
     if(packageName != null) {
       for(char[] part : packageName) {
-        size += part.length + 1;
+        sb.append(part);
+        sb.append('.');
+      }
+      if (name == null && sb.length() > 0) {
+        // at least one package, but no class name - strip last dot
+        sb.setLength(sb.length()-1);
       }
     }
-    char[] result = new char[size];
-    int i = 0;
-    if(packageName != null) {
-      for(char[] part : packageName) {
-        System.arraycopy(part, 0, result, i, part.length);
-        i += part.length;
-        result[i++] = '.';
-      }
+    if (name != null) {
+      sb.append(name);
     }
-    System.arraycopy(name, 0, result, i, name.length);
-    return new String(result);
+    return sb.toString();
   }
 
   @Override
