@@ -9,69 +9,74 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:4f3f3d44-88a3-4a22-aa9e-fb5ea41e67af(jetbrains.mps.lang.migration.pluginSolution.util)/1909661648054735008">
     <file name="MigrationScriptBuilder.java">
-      <node id="3025751040649922178" at="20,0,21,0" concept="2" trace="myScript" />
-      <node id="3025751040649929361" at="22,53,23,75" concept="4" />
-      <node id="3025751040649932054" at="23,75,24,432" concept="1" />
-      <node id="3025751040650072748" at="27,81,28,48" concept="5" />
-      <node id="3025751040649929386" at="31,54,32,158" concept="1" />
-      <node id="3025751040649976804" at="32,158,33,16" concept="5" />
-      <node id="3025751040650628484" at="37,53,38,175" concept="1" />
-      <node id="3025751040650628494" at="38,175,39,16" concept="5" />
-      <node id="4586699529715655995" at="42,64,43,67" concept="1" />
-      <node id="4586699529715656004" at="43,67,44,16" concept="5" />
-      <node id="4586699529715907281" at="47,78,48,67" concept="5" />
-      <node id="4586699529715855691" at="51,85,52,392" concept="1" />
-      <node id="4586699529715855700" at="52,392,53,16" concept="5" />
-      <node id="4586699529715741167" at="56,35,57,275" concept="5" />
-      <node id="4586699529715673396" at="60,50,61,214" concept="5" />
-      <node id="3025751040649924161" at="64,28,65,20" concept="5" />
-      <node id="3025751040650029589" at="27,0,30,0" concept="6" trace="createMigrationScript#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <node id="3025751040649983578" at="47,0,50,0" concept="3" trace="appendExecuteStatements#(null)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <node id="4586699529715736867" at="56,0,59,0" concept="3" trace="getExecuteMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4586699529715673394" at="60,0,63,0" concept="3" trace="getExecuteMethodModuleParameter#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3025751040649924014" at="64,0,67,0" concept="3" trace="getScript#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3025751040650050921" at="22,0,26,0" concept="0" trace="MigrationScriptBuilder#(Ljetbrains/mps/smodel/Language;)V" />
-      <node id="3025751040649949694" at="31,0,35,0" concept="3" trace="setName#(Ljava/lang/String;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <node id="4586699529715655991" at="42,0,46,0" concept="3" trace="setExecuteMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <node id="4586699529715855689" at="51,0,55,0" concept="3" trace="appendExecuteStatements#(Ljava/lang/Iterable;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <node id="3025751040650628480" at="36,0,41,0" concept="3" trace="setBody#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
-      <scope id="3025751040649929360" at="27,81,28,48" />
-      <scope id="3025751040649983581" at="47,78,48,67" />
-      <scope id="4586699529715736858" at="56,35,57,275" />
-      <scope id="4586699529715673395" at="60,50,61,214" />
-      <scope id="3025751040649924017" at="64,28,65,20" />
-      <scope id="3025751040650050925" at="22,53,24,432">
+      <node id="3025751040649922178" at="21,0,22,0" concept="2" trace="myScript" />
+      <node id="3025751040649929361" at="23,53,24,75" concept="4" />
+      <node id="3025751040649932054" at="24,75,25,432" concept="1" />
+      <node id="3025751040650072748" at="28,81,29,48" concept="5" />
+      <node id="3025751040649929386" at="32,54,33,158" concept="1" />
+      <node id="3025751040649976804" at="33,158,34,16" concept="5" />
+      <node id="3025751040650628484" at="38,53,39,175" concept="1" />
+      <node id="3025751040650628494" at="39,175,40,16" concept="5" />
+      <node id="4586699529715655995" at="43,64,44,67" concept="1" />
+      <node id="4586699529715656004" at="44,67,45,16" concept="5" />
+      <node id="4586699529715907281" at="48,78,49,67" concept="5" />
+      <node id="4586699529715855691" at="52,85,53,392" concept="1" />
+      <node id="4586699529715855700" at="53,392,54,16" concept="5" />
+      <node id="2331711164042563246" at="57,53,58,98" concept="1" />
+      <node id="2331711164042570383" at="58,98,59,16" concept="5" />
+      <node id="4586699529715741167" at="62,35,63,275" concept="5" />
+      <node id="4586699529715673396" at="66,50,67,214" concept="5" />
+      <node id="3025751040649924161" at="70,28,71,20" concept="5" />
+      <node id="3025751040650029589" at="28,0,31,0" concept="6" trace="createMigrationScript#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="3025751040649983578" at="48,0,51,0" concept="3" trace="appendExecuteStatements#(null)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="4586699529715736867" at="62,0,65,0" concept="3" trace="getExecuteMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4586699529715673394" at="66,0,69,0" concept="3" trace="getExecuteMethodModuleParameter#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3025751040649924014" at="70,0,73,0" concept="3" trace="getScript#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3025751040650050921" at="23,0,27,0" concept="0" trace="MigrationScriptBuilder#(Ljetbrains/mps/smodel/Language;)V" />
+      <node id="3025751040649949694" at="32,0,36,0" concept="3" trace="setName#(Ljava/lang/String;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="4586699529715655991" at="43,0,47,0" concept="3" trace="setExecuteMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="4586699529715855689" at="52,0,56,0" concept="3" trace="appendExecuteStatements#(Ljava/lang/Iterable;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="2331711164042559573" at="57,0,61,0" concept="3" trace="addMissingImports#()Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <node id="3025751040650628480" at="37,0,42,0" concept="3" trace="setBody#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
+      <scope id="3025751040649929360" at="28,81,29,48" />
+      <scope id="3025751040649983581" at="48,78,49,67" />
+      <scope id="4586699529715736858" at="62,35,63,275" />
+      <scope id="4586699529715673395" at="66,50,67,214" />
+      <scope id="3025751040649924017" at="70,28,71,20" />
+      <scope id="3025751040650050925" at="23,53,25,432">
         <var name="migrationModel" id="3025751040649929362" />
       </scope>
-      <scope id="3025751040649949697" at="31,54,33,16" />
-      <scope id="3025751040650628483" at="37,53,39,16" />
-      <scope id="4586699529715655994" at="42,64,44,16" />
-      <scope id="4586699529715855690" at="51,85,53,16" />
-      <scope id="3025751040650029589" at="27,0,30,0">
+      <scope id="3025751040649949697" at="32,54,34,16" />
+      <scope id="3025751040650628483" at="38,53,40,16" />
+      <scope id="4586699529715655994" at="43,64,45,16" />
+      <scope id="4586699529715855690" at="52,85,54,16" />
+      <scope id="2331711164042559576" at="57,53,59,16" />
+      <scope id="3025751040650029589" at="28,0,31,0">
         <var name="language" id="3025751040650061276" />
       </scope>
-      <scope id="3025751040649983578" at="47,0,50,0">
+      <scope id="3025751040649983578" at="48,0,51,0">
         <var name="statements" id="4586699529715694137" />
       </scope>
-      <scope id="4586699529715736867" at="56,0,59,0" />
-      <scope id="4586699529715673394" at="60,0,63,0" />
-      <scope id="3025751040649924014" at="64,0,67,0" />
-      <scope id="3025751040650050921" at="22,0,26,0">
+      <scope id="4586699529715736867" at="62,0,65,0" />
+      <scope id="4586699529715673394" at="66,0,69,0" />
+      <scope id="3025751040649924014" at="70,0,73,0" />
+      <scope id="3025751040650050921" at="23,0,27,0">
         <var name="language" id="3025751040649929396" />
       </scope>
-      <scope id="3025751040649949694" at="31,0,35,0">
+      <scope id="3025751040649949694" at="32,0,36,0">
         <var name="name" id="3025751040649967728" />
       </scope>
-      <scope id="4586699529715655991" at="42,0,46,0">
+      <scope id="4586699529715655991" at="43,0,47,0">
         <var name="method" id="4586699529715655992" />
       </scope>
-      <scope id="4586699529715855689" at="51,0,55,0">
+      <scope id="4586699529715855689" at="52,0,56,0">
         <var name="statements" id="4586699529715855704" />
       </scope>
-      <scope id="3025751040650628480" at="36,0,41,0">
+      <scope id="2331711164042559573" at="57,0,61,0" />
+      <scope id="3025751040650628480" at="37,0,42,0">
         <var name="body" id="3025751040650628481" />
       </scope>
-      <unit id="1909661648054735008" at="18,0,69,0" name="jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder" />
+      <unit id="1909661648054735008" at="19,0,75,0" name="jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder" />
     </file>
   </root>
 </debug-info>

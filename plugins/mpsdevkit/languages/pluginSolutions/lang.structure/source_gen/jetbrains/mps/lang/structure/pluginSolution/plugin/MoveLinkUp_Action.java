@@ -105,7 +105,7 @@ public class MoveLinkUp_Action extends BaseAction {
           SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), roleName + "_old");
 
           MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(targetLanguage);
-          builder.setName("Move_link_" + roleName).appendExecuteStatements(MoveLinkUp_Action.this.moveLinkStatements(currentConcept, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), newLink, builder, _params));
+          builder.setName("Move_link_" + roleName).appendExecuteStatements(MoveLinkUp_Action.this.moveLinkStatements(currentConcept, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), newLink, builder, _params)).addMissingImports();
         }
       });
     } catch (Throwable t) {

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 
 public class MigrationScriptBuilder {
@@ -50,6 +51,11 @@ public class MigrationScriptBuilder {
 
   public MigrationScriptBuilder appendExecuteStatements(Iterable<SNode> statements) {
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addSequence(Sequence.fromIterable(statements));
+    return this;
+  }
+
+  public MigrationScriptBuilder addMissingImports() {
+    SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(myScript), false, true);
     return this;
   }
 

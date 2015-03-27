@@ -88,6 +88,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -120,6 +123,7 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
@@ -449,6 +453,39 @@
             <ref role="ehGHo" to="tpee:fzclF8l" resolve="Statement" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="21rTJcz$mP8" role="jymVt" />
+    <node concept="3clFb_" id="21rTJcz$s1l" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="addMissingImports" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="21rTJcz$s1o" role="3clF47">
+        <node concept="3clFbF" id="21rTJcz$sUI" role="3cqZAp">
+          <node concept="2YIFZM" id="21rTJcz$sUV" role="3clFbG">
+            <ref role="37wK5l" to="cu2c:~SModelOperations.validateLanguagesAndImports(org.jetbrains.mps.openapi.model.SModel,boolean,boolean):void" resolve="validateLanguagesAndImports" />
+            <ref role="1Pybhc" to="cu2c:~SModelOperations" resolve="SModelOperations" />
+            <node concept="2OqwBi" id="21rTJcz$t7z" role="37wK5m">
+              <node concept="37vLTw" id="21rTJcz$sWD" role="2Oq$k0">
+                <ref role="3cqZAo" node="2BXC8DkHgq2" resolve="myScript" />
+              </node>
+              <node concept="I4A8Y" id="21rTJcz$tKz" role="2OqNvi" />
+            </node>
+            <node concept="3clFbT" id="21rTJcz$uvN" role="37wK5m" />
+            <node concept="3clFbT" id="21rTJcz$u_j" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="21rTJcz$uEf" role="3cqZAp">
+          <node concept="Xjq3P" id="21rTJcz$uV7" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="21rTJcz$7vo" role="1B3o_S" />
+      <node concept="3uibUv" id="21rTJcz$a06" role="3clF45">
+        <ref role="3uigEE" node="1E0uMqHvl2w" resolve="MigrationScriptBuilder" />
       </node>
     </node>
     <node concept="2tJIrI" id="3YBeIJ0a6lV" role="jymVt" />
