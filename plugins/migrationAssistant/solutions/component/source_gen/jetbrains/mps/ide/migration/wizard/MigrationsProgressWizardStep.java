@@ -12,6 +12,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import javax.swing.JComponent;
 import javax.swing.DefaultListModel;
 import java.util.Collections;
 import javax.swing.JPanel;
@@ -66,12 +67,10 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         }
       }
     };
-    createComponent();
   }
 
   @Override
-  protected final void createComponent() {
-    super.createComponent();
+  protected final void doCreateComponent(JComponent mainPanel) {
     myList = new JBList(new DefaultListModel());
     myList.setCellRenderer(new MigrationsListRenderer(myExecuted, Collections.emptySet()));
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
@@ -79,8 +78,8 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
     myProgress = new InlineProgressIndicator(true, myTask);
     myProgress.setIndeterminate(false);
-    myComponent.add(listPanel, BorderLayout.CENTER);
-    myComponent.add(myProgress.getComponent(), BorderLayout.SOUTH);
+    mainPanel.add(listPanel, BorderLayout.CENTER);
+    mainPanel.add(myProgress.getComponent(), BorderLayout.SOUTH);
   }
 
   @Override

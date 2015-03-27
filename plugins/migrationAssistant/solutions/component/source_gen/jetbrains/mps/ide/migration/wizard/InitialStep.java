@@ -44,14 +44,12 @@ public class InitialStep extends MigrationWizardStep {
 
   public InitialStep(Project project) {
     super(project, "Migration Required", ID);
-    createComponent();
   }
 
   @Override
-  protected final void createComponent() {
-    super.createComponent();
+  protected void doCreateComponent(JComponent mainPanel) {
     JPanel pagePanel = new JPanel(new GridLayoutManager(2, 1, new JBInsets(5, 5, 5, 0), -1, -1));
-    myComponent.add(pagePanel, BorderLayout.CENTER);
+    mainPanel.add(pagePanel, BorderLayout.CENTER);
 
     JPanel infoHolder = new JPanel(new BorderLayout());
     JTextPane info = new JTextPane();
