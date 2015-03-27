@@ -25,7 +25,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
-import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequence;
@@ -49,18 +48,20 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
 import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.BuildRootIndex;
 import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
 import org.jetbrains.jps.builders.logging.ProjectBuilderLogger;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
+import org.jetbrains.jps.cmdline.ProjectDescriptor;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
@@ -69,7 +70,6 @@ import org.jetbrains.jps.incremental.fs.CompilationRound;
 import org.jetbrains.jps.incremental.java.JavaBuilder;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
-import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.module.JpsModule;
@@ -80,6 +80,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.lang.Iterable;
 import java.util.ArrayList;
@@ -89,6 +90,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -99,6 +101,7 @@ import java.util.concurrent.Future;
  * TODO Something with {@link ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism.
  */
 public class MPSMakeMediator {
+  private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
   private final JpsMPSProject myProject;
   private Map<SModel, ModuleBuildTarget> myToMake;
   private Map<ModuleBuildTarget, File> myOutputRootsPerTarget = new HashMap<ModuleBuildTarget, File>();
@@ -106,7 +109,7 @@ public class MPSMakeMediator {
   private MPSIdeaRefreshComponent myRefreshComponent;
   private OutputConsumer myOutputConsumer;
 
-  private MyMessageHandler myMessageHandler = new MyMessageHandler();
+  private JpsMpsMessageHandler myMessageHandler = new JpsMpsMessageHandler();
   private final MessageFeedbackStrategy myMessageFeedbackStrategy = new MessageFeedbackStrategy(myMessageHandler);
 
   private JpsRedirects myRedirects;
@@ -122,14 +125,15 @@ public class MPSMakeMediator {
 
   public boolean build() {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
+    final boolean isMake = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
 
-    Iterable<IMResource> resources = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Iterable<IMResource>>() {
+    Iterable<MResource> resources = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Iterable<MResource>>() {
       @Override
-      public Iterable<IMResource> compute() {
-        Iterable<IMResource> resources = Sequence.fromIterable(collectResources(myToMake.keySet())).toListSequence();
-        ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
+      public Iterable<MResource> compute() {
+        Iterable<MResource> resources = collectResources(myToMake.keySet(), isMake);
+        ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<MResource, SModule>() {
           @Override
-          public SModule select(IMResource r) {
+          public SModule select(MResource r) {
             return r.module();
           }
         });
@@ -156,7 +160,7 @@ public class MPSMakeMediator {
 
           if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
             BuildRootIndex buildRootIndex = myContext.getProjectDescriptor().getBuildRootIndex();
-            buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
+            buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, false, "", Collections.<File>emptySet()));
           }
         }
         return resources;
@@ -180,7 +184,7 @@ public class MPSMakeMediator {
     MakeSession ms = createCleanMakeSession();
 
     ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
-      myRedirects, !JavaBuilderUtil.isCompileJavaIncrementally(myContext), new Stub(), new IJobMonitor.Stub() {
+      myRedirects, !isMake, new Stub(), new IJobMonitor.Stub() {
       @Override
       public void reportFeedback(IFeedback fdbk) {
         myMessageFeedbackStrategy.reportFeedback(fdbk);
@@ -194,10 +198,10 @@ public class MPSMakeMediator {
       success = res.get().isSucessful();
       success = processFiles(success, makeFacetConfiguration);
     } catch (InterruptedException e) {
-      reportError("Error while make", e);
+      reportError(BUNDLE.getString("error.while.make"), e);
       success = false;
     } catch (ExecutionException e) {
-      reportError("Error while make", e);
+      reportError(BUNDLE.getString("error.while.make"), e);
       success = false;
     }
 
@@ -226,11 +230,11 @@ public class MPSMakeMediator {
     return isGeneratorOutputPathUnderSourceRoot;
   }
 
-  private boolean processFiles(boolean success, ReducedMakeFacetConfiguration makeFacetConfiguration) {
+  private boolean processFiles(boolean success, final ReducedMakeFacetConfiguration makeFacetConfiguration) {
     ProjectBuilderLogger logger = myContext.getLoggingManager().getProjectBuilderLogger();
     if (logger.isEnabled()) {
       try {
-        logger.logCompiledPaths(makeFacetConfiguration.getWrittenFiles(), MPSMakeConstants.BUILDER_ID, "Written files:");
+        logger.logCompiledPaths(makeFacetConfiguration.getWrittenFiles(), MPSMakeConstants.BUILDER_ID, "MPS generated files:");
       } catch (IOException ignored) {
       }
     }
@@ -240,31 +244,15 @@ public class MPSMakeMediator {
       ModuleBuildTarget target = myToMake.get(source);
       File file = new File(writtenFile);
 
-      if (source != null) {
-        DataSource dataSource = source.getSource();
-        // all written java files need to be registered as output for the model files to get recompiled in the case of models' change
-        if (isJava(file)) {
-          List<String> modelSourceFiles = getFilesFromDataSource(dataSource);
-          try {
-            // that is a lame place -- we registering a mapping from a model file in the src folder to some java file in the (!) temporary idea root of the src_gen folder
-            // we hope that idea will notice that the model has changed and removes the file from the src_gen folder.
-            // after that the MPS must regenerate the changed models
-            // probably the whole idea of using the temporary source roots here needs to be revised.
-            myOutputConsumer.registerOutputFile(target, file, modelSourceFiles);
-          } catch (IOException e) {
-            reportError("IO problem while registering output for source", e);
-            success = false;
-          }
-        }
-      }
-
       if (isJava(file)) {
         // all written java files need to be marked as dirty to get compiled by the JavaBuilder
-        try {
-          FSOperations.markDirty(myContext, CompilationRound.CURRENT, new File(writtenFile));
-        } catch (IOException e) {
-          reportError("IO problem while marking java sources dirty", e);
-          success = false;
+        for (String written : makeFacetConfiguration.getWrittenFiles()) {
+          try {
+            FSOperations.markDirty(myContext, CompilationRound.CURRENT, new File(written));
+          } catch (IOException e) {
+            reportError(BUNDLE.getString("io.problem.while.marking.java.sources.dirty"), e);
+            success = false;
+          }
         }
       } else {
         // all non-java files got to be copied (which are not in the caches folder)
@@ -272,27 +260,13 @@ public class MPSMakeMediator {
           try {
             copyResource(target, file);
           } catch (IOException e) {
-            reportError("IO problem during resources copying", e);
+            reportError(BUNDLE.getString("io.problem.during.resources.copying"), e);
             success = false;
           }
         }
       }
 
       myRefreshComponent.refresh(writtenFile);
-    }
-
-    for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
-      File file = new File(keptFile);
-      // all kept java files need to be marked as dirty to get compiled by the JavaBuilder
-      // (e.g. scenario: removed output folder, src_gen persists)
-      if (isJava(file)) {
-        try {
-          FSOperations.markDirty(myContext, CompilationRound.CURRENT, file);
-        } catch (IOException e) {
-          reportError("IO problem during marking kept java sources dirty", e);
-          success = false;
-        }
-      }
     }
 
     List<String> deletedFiles = makeFacetConfiguration.getDeletedFiles();
@@ -304,7 +278,7 @@ public class MPSMakeMediator {
       try {
         FSOperations.markDeleted(myContext, new File(deletedFile));
       } catch (IOException e) {
-        reportError("IO problem while deleting files with FS", e);
+        reportError(BUNDLE.getString("io.problem.while.deleting.files.with.fs"), e);
         success = false;
       }
     }
@@ -352,9 +326,7 @@ public class MPSMakeMediator {
   }
 
   private void reportError(String msg, Throwable e) {
-    myContext.processMessage(
-      new CompilerMessage(msg,
-        Kind.ERROR, e.getMessage()));
+    myContext.processMessage(new CompilerMessage(msg, Kind.ERROR, e.getMessage()));
   }
 
   private File getTmpOutputRoot(JpsModule module, final BuildDataManager buildDataManager) {
@@ -362,7 +334,7 @@ public class MPSMakeMediator {
     return new File(moduleDataRoot, MPSMakePaths.SOURCE_GEN);
   }
 
-  private File getCachesOutputRoot (JpsModule module, final BuildDataManager buildDataManager) {
+  private File getCachesOutputRoot(JpsModule module, final BuildDataManager buildDataManager) {
     File moduleDataRoot = getModuleDataRoot(module, buildDataManager.getDataPaths());
     return new File(moduleDataRoot, MPSMakePaths.SOURCE_GEN_CACHES);
   }
@@ -372,49 +344,34 @@ public class MPSMakeMediator {
     return new File(dataRoot, module.getName());
   }
 
-
-  private Iterable<IMResource> collectResources(Collection<SModel> models) {
-    return Sequence.fromIterable(new ModelsToResources(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+  private Iterable<MResource> collectResources(Collection<SModel> models, boolean dirtyOnly) {
+    final ISequence<SModel> generatableModels = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       @Override
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
-    })).resources(false)).select(new ISelector<IResource, IMResource>() {
+    });
+    final Iterable<IResource> modelsResources = new ModelsToResources(generatableModels).resources(dirtyOnly);
+    return Sequence.fromIterable(modelsResources).select(new ISelector<IResource, MResource>() {
       @Override
-      public IMResource select(IResource r) {
-        return (IMResource) r;
+      public MResource select(IResource r) {
+        return (MResource) r;
       }
     });
   }
 
-  private class MyMessageHandler implements IMessageHandler {
+  private class JpsMpsMessageHandler implements IMessageHandler {
     @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
-          // We need to report the problem twice:
-          // -- once for the build process to recognize the error
-          // -- once for the MPSCompilerComponent to recognize and display a reference to the model
-          myContext.processMessage(
-            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-              Kind.ERROR,
-              msg.getText()));
-          myContext.processMessage(
-            new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
-              MPSCustomMessages.MSG_ERROR,
-              msg.getText()));
+          myContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, msg.getText()));
           break;
         case WARNING:
-          myContext.processMessage(
-            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-              Kind.WARNING,
-              msg.getText()));
+          myContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, msg.getText()));
           break;
         case INFORMATION:
-          myContext.processMessage(
-            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-              Kind.INFO,
-              msg.getText()));
+          myContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, msg.getText()));
           break;
         default:
       }

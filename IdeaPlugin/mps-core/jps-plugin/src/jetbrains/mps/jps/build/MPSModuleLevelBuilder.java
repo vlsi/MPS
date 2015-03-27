@@ -18,11 +18,13 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.util.io.FileUtilRt;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -68,6 +70,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildStarted(final CompileContext context) {
+
     context.addBuildListener(new BuildListener() {
       @Override
       public void filesGenerated(Collection<Pair<String, String>> paths) {
@@ -151,7 +154,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         return status;
       }
 
-      MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, compileContext, refreshComponent, outputConsumer);
+      final JpsMPSProject project = JpsMPSRepositoryFacade.getInstance().getProject();
+      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext, refreshComponent, outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
         status = ExitCode.OK;
@@ -174,8 +178,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         JpsSolutionIdea solution = JpsMPSRepositoryFacade.getInstance().getSolution(target.getModule());
         if (solution == null) return true;
 
-        String suffix = FileUtil.getExtension(file.getName());
-        if (!suffix.equals("model")) {
+        String suffix = FileUtilRt.getExtension(file.getName());
+        if (!suffix.equals(MODEL_EXTENSION)) {
           ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
           if (modelFactory == null) return true;
         }
@@ -196,6 +200,6 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public List<String> getCompilableFileExtensions() {
-    return Arrays.asList(JAVA_EXTENSION, MPSR_EXTENSION, MODEL_EXTENSION, MPS_MODEL_EXTENSION);
+    return Arrays.asList(MPSR_EXTENSION, MODEL_EXTENSION, MPS_MODEL_EXTENSION);
   }
 }
