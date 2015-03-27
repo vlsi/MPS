@@ -245,7 +245,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     if (!(isComplete())) {
       return null;
     }
-    if (myErrorContainer.getErrorDescriptor() != null) {
+    if (myErrorContainer.getErrorDescriptor() == null) {
       return null;
     }
 
