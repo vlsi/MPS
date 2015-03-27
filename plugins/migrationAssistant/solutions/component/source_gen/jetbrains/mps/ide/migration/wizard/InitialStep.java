@@ -30,7 +30,7 @@ import jetbrains.mps.migration.global.ProjectOptionsRegistry;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.CommitStepException;
 
-public class InitialStep extends MigrationStep {
+public class InitialStep extends MigrationWizardStep {
   public static final String ID = "initial";
 
   private static final String TEXT = "Welcome to Migration Assistant!<br><br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>" + "This wizard will guide you through the migration process. It's going to take a while.<br><br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.";
@@ -92,7 +92,7 @@ public class InitialStep extends MigrationStep {
 
   @Override
   public Object getNextStepId() {
-    return MigrationsProgressStep.ID;
+    return MigrationsProgressWizardStep.ID;
   }
 
   @Override

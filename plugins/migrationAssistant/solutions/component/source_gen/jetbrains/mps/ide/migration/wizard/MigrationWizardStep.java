@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.IdeBorderFactory;
 
-public abstract class MigrationStep extends AbstractWizardStepEx {
+public abstract class MigrationWizardStep extends AbstractWizardStepEx {
   private static final Icon WIZARD_ICON = MPSIcons.General.NewProject;
   protected Project myProject;
   protected JComponent myComponent;
   private String myId;
-  public MigrationStep(Project project, String title, String id) {
+  public MigrationWizardStep(Project project, String title, String id) {
     super(title);
     myProject = project;
     myId = id;

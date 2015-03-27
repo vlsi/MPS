@@ -7,7 +7,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -40,7 +42,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorStep;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -66,7 +68,7 @@ import org.jetbrains.annotations.Nullable;
  */
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
-public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
+public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
   private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
@@ -77,6 +79,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
+
+  private MigrationErrorDescriptor myErrors = null;
 
   public MigrationTrigger(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager migrationManager) {
     super(ideaProject);
@@ -318,11 +322,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
   }
 
+  public MigrationErrorDescriptor getErrorDescriptor() {
+    return myErrors;
+  }
+
+  public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+    myErrors = errors;
+  }
+
   @Override
   public void executeWizard() {
     myState.migrationRequired = false;
 
-    final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
+    final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, this);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     boolean finished = wizard.showAndGet();
     restoreTipsState();
@@ -330,7 +342,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    if (wizard.isFinishSuccessfull()) {
+    if (myErrors == null) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
         public void run() {
           ProjectManagerEx.getInstance().reloadProject(myProject);
@@ -339,12 +351,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    MigrationErrorStep lastStep = as_feb5zp_a0a01a04(wizard.getCurrentStepObject(), MigrationErrorStep.class);
+    MigrationErrorWizardStep lastStep = as_feb5zp_a0a01a64(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
     if (lastStep == null) {
       return;
     }
 
-    final Iterable<Problem> problems = lastStep.getProblems();
+    final Iterable<Problem> problems = myErrors.getProblems();
     if (Sequence.fromIterable(problems).isEmpty()) {
       return;
     }
@@ -404,7 +416,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a01a04(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a01a64(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

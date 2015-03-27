@@ -11,12 +11,16 @@ import javax.swing.event.HyperlinkEvent;
 import com.intellij.ide.BrowserUtil;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
-import jetbrains.mps.ide.migration.check.Problem;
 
-public abstract class MigrationErrorStep extends MigrationStep {
-  public MigrationErrorStep(Project project, String id) {
-    super(project, "Could not Apply All Migrations", id);
+public class MigrationErrorWizardStep extends MigrationWizardStep {
+  public static final String ID = "Problem";
+
+  private MigrationErrorContainer myErrorContainer;
+
+  public MigrationErrorWizardStep(Project project, MigrationErrorContainer stateHolder) {
+    super(project, "Could not Apply All Migrations", ID);
     createComponent();
+    myErrorContainer = stateHolder;
   }
   @Override
   protected final void createComponent() {
@@ -26,7 +30,7 @@ public abstract class MigrationErrorStep extends MigrationStep {
 
     StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
     sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
-    sb.append(getText()).append("</font></body></html>");
+    sb.append(myErrorContainer.getErrorDescriptor().getMessage()).append("</font></body></html>");
     info.setText(sb.toString());
 
     info.addHyperlinkListener(new HyperlinkListener() {
@@ -52,8 +56,4 @@ public abstract class MigrationErrorStep extends MigrationStep {
   public boolean canBeCancelled() {
     return false;
   }
-
-  protected abstract String getText();
-
-  public abstract Iterable<Problem> getProblems();
 }
