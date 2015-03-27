@@ -2676,7 +2676,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="6Sxc5MiyXpZ" role="3uHU7w">
-                <property role="Xl_RC" value="Problems will be shown in Usages tool when the project is loaded." />
+                <property role="Xl_RC" value="Problems will be shown in Model Checker tool when the project is loaded." />
               </node>
             </node>
           </node>
@@ -2784,7 +2784,7 @@
                   <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.&lt;br&gt;&lt;br&gt;" />
                 </node>
                 <node concept="Xl_RD" id="6Sxc5Miz3zQ" role="3uHU7w">
-                  <property role="Xl_RC" value="Problem nodes will be shown in Usages tool after the project is loaded.&lt;br&gt;" />
+                  <property role="Xl_RC" value="Problem nodes will be shown in Model Checker tool after the project is loaded.&lt;br&gt;" />
                 </node>
               </node>
               <node concept="Xl_RD" id="6Sxc5MiyOgZ" role="3uHU7w">
@@ -2996,7 +2996,7 @@
                   </node>
                 </node>
                 <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
-                  <property role="Xl_RC" value="Problems will be shown in Usages tool after the project is loaded.&lt;br&gt;" />
+                  <property role="Xl_RC" value="Problems will be shown in Model Checker tool after the project is loaded.&lt;br&gt;" />
                 </node>
               </node>
               <node concept="Xl_RD" id="7u9mkj2dzmq" role="3uHU7w">

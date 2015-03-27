@@ -271,7 +271,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public PreCheckError() {
     }
     public String getMessage() {
-      return "Migration Assistant found that some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Usages tool when the project is loaded.";
+      return "Migration Assistant found that some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
     }
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
@@ -284,7 +284,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public PostCheckError() {
     }
     public String getMessage() {
-      return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Usages tool after the project is loaded.<br>" + "Please correct them manually.";
+      return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Model Checker tool after the project is loaded.<br>" + "Please correct them manually.";
     }
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
@@ -308,7 +308,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       this.errors = errors;
     }
     public String getMessage() {
-      return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Usages tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+      return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public Iterable<Problem> getProblems() {
       return ListSequence.fromList(errors).take(100).select(new ISelector<Tuples._2<SModule, SLanguage>, Problem>() {
