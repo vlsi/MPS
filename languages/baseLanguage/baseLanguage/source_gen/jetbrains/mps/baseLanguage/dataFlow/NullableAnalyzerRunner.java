@@ -25,12 +25,12 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
   public NullableAnalyzerRunner(SNode node) {
     super(null, null);
     myNode = node;
+    myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
-    myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
   }
   private void prepareProgram() {
-    NullableAnalyzerRules.getInstance().apply(myNode, myProgram);
+    NullableAnalyzerRules.getInstance(myAnalyzer).apply(myNode, myProgram);
   }
   public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {

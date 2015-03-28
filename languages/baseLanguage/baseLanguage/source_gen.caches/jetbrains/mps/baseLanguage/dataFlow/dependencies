@@ -254,6 +254,29 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForLoopNotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.DataFlowTryCatchUtil" file="DataFlowTryCatchUtil.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -476,21 +499,17 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForLoopNotNull" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNotNull" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" file="NullableAnalyzerRunner.java">

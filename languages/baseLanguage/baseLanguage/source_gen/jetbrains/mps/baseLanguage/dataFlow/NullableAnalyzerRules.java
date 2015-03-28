@@ -9,7 +9,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.HashSet;
@@ -17,30 +24,32 @@ import java.util.HashSet;
 public class NullableAnalyzerRules {
   private static NullableAnalyzerRules instance;
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
-  private List<DataFlowConstructor> myConceptRules = new LinkedList();
-  private Map<SNode, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap();
-  public NullableAnalyzerRules() {
-    {
-      DataFlowConstructor rule = new RuleAssertNotNull();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.AssertStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    myConceptRules.add(new RuleAfterDotExpression());
-    myConceptRules.add(new RuleCreator());
-    myConceptRules.add(new RuleFieldReference());
-    myConceptRules.add(new RuleMethodCall());
-    myConceptRules.add(new RuleNullLiteral());
-    myConceptRules.add(new RuleVariableDeclaration());
-    myConceptRules.add(new IfEqualsNullAll());
-    myConceptRules.add(new RuleTernaryOperation());
-    myConceptRules.add(new IfNotNullAll());
-    myConceptRules.add(new ForLoopNotNull());
-    myConceptRules.add(new RuleWhileNotNull());
+  private List<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor> myConceptRules = new LinkedList<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor>();
+  private Map<SNode, Set<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor>> myConceptRulesCache = new HashMap<SNode, Set<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor>>();
+  private DataFlowAnalyzer myAnalyzer;
+  public NullableAnalyzerRules(DataFlowAnalyzer analyzer) {
+    myAnalyzer = analyzer;
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+
   }
   public void apply(SNode nodeToApply, Program program) {
+    for (SLanguage language : CollectionSequence.fromCollection(((SModelInternal) nodeToApply.getModel()).importedLanguageIds())) {
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language.getQualifiedName());
+      for (jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor rule : CollectionSequence.fromCollection(languageRuntime.getAspect(DataFlowAspectDescriptor.class).getConstructors(myAnalyzer.getClass()))) {
+        myConceptRules.add(rule);
+      }
+    }
     for (SNode descendant : SNodeOperations.getNodeDescendants(((SNode) nodeToApply), null, false, new SAbstractConcept[]{})) {
       String key = descendant.getConcept().getQualifiedName();
       if (myApplicableMap.containsKey(key)) {
@@ -50,19 +59,19 @@ public class NullableAnalyzerRules {
           }
         }
       }
-      for (DataFlowConstructor rule : getRules(descendant)) {
+      for (jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor rule : getRules(descendant)) {
         rule.performActions(program, descendant);
       }
     }
   }
-  private Set<DataFlowConstructor> getRules(SNode node) {
+  private Set<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor> getRules(SNode node) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
-    Set<DataFlowConstructor> cachedResult = myConceptRulesCache.get(concept);
+    Set<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor> cachedResult = myConceptRulesCache.get(concept);
     if (cachedResult != null) {
       return cachedResult;
     }
-    Set<DataFlowConstructor> result = new HashSet<DataFlowConstructor>();
-    for (DataFlowConstructor rule : myConceptRules) {
+    Set<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor> result = new HashSet<jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor>();
+    for (jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor rule : myConceptRules) {
       if (rule.isApplicable(node)) {
         result.add(rule);
       }
@@ -70,9 +79,9 @@ public class NullableAnalyzerRules {
     myConceptRulesCache.put(concept, result);
     return result;
   }
-  public static NullableAnalyzerRules getInstance() {
+  public static NullableAnalyzerRules getInstance(DataFlowAnalyzer analyzer) {
     if (instance == null) {
-      instance = new NullableAnalyzerRules();
+      instance = new NullableAnalyzerRules(analyzer);
     }
     return instance;
   }

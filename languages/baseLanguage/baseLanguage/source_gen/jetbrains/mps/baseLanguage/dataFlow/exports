@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:b4e08ebf-6677-4e3f-b096-0da99178199e(jetbrains.mps.baseLanguage.dataFlow)">
+  <persistence version="9" />
+  <languages />
+  <imports>
+    <import index="ty9a" ref="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)" implicit="true" />
+    <import index="3zic" ref="54ea0835-22d2-4244-bb0e-fcce4a8347bf/r:a09d30f9-35f5-4a7e-8da3-be37cebd1334(jetbrains.mps.baseLanguage@transient1/jetbrains.mps.baseLanguage.dataFlow@0)" implicit="true" />
+  </imports>
+  <registry>
+    <language id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers">
+      <concept id="6332494575505837814" name="jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper" flags="ng" index="2$Z8iP">
+        <reference id="6332494575505841336" name="class" index="2$Z9rV" />
+      </concept>
+      <concept id="1417545764634752447" name="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper" flags="ng" index="3qhtvz">
+        <reference id="1417545764634752448" name="class" index="3qhtus" />
+      </concept>
+    </language>
+    <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="9032177546942789835" name="jetbrains.mps.lang.generator.structure.TrivialModelId" flags="ng" index="2$$0lk">
+        <property id="9032177546942789839" name="modelName" index="2$$0lg" />
+      </concept>
+      <concept id="9032177546941420365" name="jetbrains.mps.lang.generator.structure.ExportEntry" flags="ng" index="2$UQVi">
+        <reference id="9032177546941634307" name="label" index="2$VUEs" />
+        <child id="9032177546942803148" name="outputModel" index="2$$55j" />
+        <child id="9032177546941575212" name="dataKeeper" index="2$VCQN" />
+        <child id="9032177546941575209" name="outputNode" index="2$VCQQ" />
+        <child id="9032177546941575207" name="inputNode" index="2$VCQS" />
+      </concept>
+      <concept id="9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" flags="ng" index="2$VJBW">
+        <property id="9032177546941580392" name="nodeId" index="2$VJBR" />
+        <property id="9032177546941580390" name="conceptId" index="2$VJBT" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="2$UQVi" id="4B4pwYvDGdm">
+    <ref role="2$VUEs" to="ty9a:1eG8_N9UuQ_" resolve="exportedAnalyzerClass" />
+    <node concept="2$$0lk" id="4B4pwYvDGdn" role="2$$55j">
+      <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGdo" role="2$VCQS">
+      <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer" />
+      <property role="2$VJBR" value="6868777471677432036" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGdp" role="2$VCQQ">
+      <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <property role="2$VJBR" value="5315485677493076483" />
+    </node>
+    <node concept="3qhtvz" id="4B4pwYvDGdl" role="2$VCQN">
+      <ref role="3qhtus" to="3zic:4B4pwYvDG83" resolve="NullableAnalyzerRunner" />
+    </node>
+  </node>
+  <node concept="2$UQVi" id="4B4pwYvDGil">
+    <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
+    <node concept="2$$0lk" id="4B4pwYvDGim" role="2$$55j">
+      <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGin" role="2$VCQS">
+      <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
+      <property role="2$VJBR" value="6868777471677432047" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGio" role="2$VCQQ">
+      <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <property role="2$VJBR" value="5315485677493077078" />
+    </node>
+    <node concept="2$Z8iP" id="4B4pwYvDGik" role="2$VCQN">
+      <ref role="2$Z9rV" to="3zic:4B4pwYvDGhm" resolve="notNullInstruction" />
+    </node>
+  </node>
+  <node concept="2$UQVi" id="4B4pwYvDGjo">
+    <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
+    <node concept="2$$0lk" id="4B4pwYvDGjp" role="2$$55j">
+      <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGjq" role="2$VCQS">
+      <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
+      <property role="2$VJBR" value="6868777471677432050" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGjr" role="2$VCQQ">
+      <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <property role="2$VJBR" value="5315485677493077145" />
+    </node>
+    <node concept="2$Z8iP" id="4B4pwYvDGjn" role="2$VCQN">
+      <ref role="2$Z9rV" to="3zic:4B4pwYvDGip" resolve="nullableInstruction" />
+    </node>
+  </node>
+  <node concept="2$UQVi" id="4B4pwYvDGkr">
+    <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
+    <node concept="2$$0lk" id="4B4pwYvDGks" role="2$$55j">
+      <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGkt" role="2$VCQS">
+      <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
+      <property role="2$VJBR" value="6868777471677432053" />
+    </node>
+    <node concept="2$VJBW" id="4B4pwYvDGku" role="2$VCQQ">
+      <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <property role="2$VJBR" value="5315485677493077212" />
+    </node>
+    <node concept="2$Z8iP" id="4B4pwYvDGkq" role="2$VCQN">
+      <ref role="2$Z9rV" to="3zic:4B4pwYvDGjs" resolve="nullInstruction" />
+    </node>
+  </node>
+</model>
+
