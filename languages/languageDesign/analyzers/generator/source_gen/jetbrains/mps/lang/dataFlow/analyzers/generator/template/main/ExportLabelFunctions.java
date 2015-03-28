@@ -17,9 +17,20 @@ public class ExportLabelFunctions {
   public static void marshal_6332494575505825672(ExportLabelContext ctx) {
     SLinkOperations.setTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L, 0x57e18a43f31d1cb8L, "class"), ctx.getOutput());
   }
+  public static void marshal_1417545764634750374(ExportLabelContext ctx) {
+    SLinkOperations.setTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL, 0x13ac225cc9e9f5c0L, "class"), ctx.getOutput());
+  }
   public static void unmarshal_6332494575505825674(final ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L, 0x57e18a43f31d1cb8L, "class")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L, 0x57e18a43f31d1cb8L, "class")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        ListSequence.fromList(SLinkOperations.getChildren(ctx.getOutput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(SNodeOperations.copyNode(it));
+      }
+    });
+  }
+  public static void unmarshal_1417545764634750376(final ExportLabelContext ctx) {
+    SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL, 0x13ac225cc9e9f5c0L, "class")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL, 0x13ac225cc9e9f5c0L, "class")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         ListSequence.fromList(SLinkOperations.getChildren(ctx.getOutput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(SNodeOperations.copyNode(it));
       }

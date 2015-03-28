@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+
 import java.util.Collection;
 
 /**
  * Created by simon on 26/03/15.
  */
-public interface DataFlowAspectDescriptor {
-  Collection<DataFlowConstructor> getConstructors(DataFlowAnalyzer analyzer);
+public interface DataFlowAspectDescriptor extends LanguageAspectDescriptor{
+  Collection<DataFlowConstructor> getConstructors(Class clazz);
 }
