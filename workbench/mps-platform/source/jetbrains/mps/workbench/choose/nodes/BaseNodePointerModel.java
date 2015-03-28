@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,8 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,34 +43,26 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
 
   @Override
   public String doGetObjectName(final SNodeReference nodePointer) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-        String name = node.getName();
-        if (name == null) {
-          return node.toString();
-        }
-        return name;
-      }
-    });
+    SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
+    String name = node.getName();
+    if (name == null) {
+      return node.toString();
+    }
+    return name;
   }
 
   @Override
   public NavigationItem doGetNavigationItem(SNodeReference node) {
     return new BaseNodePointerItem(node) {
-      private Project myProject = getProject();
-
       @Override
       public void navigate(boolean requestFocus) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        getProject().getModelAccess().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
             SNode node = getNode();
             if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
-            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
+            NavigationSupport.getInstance().openNode(getProject(), node, true, !(node.getModel() != null && node.getParent() == null));
           }
         });
       }
