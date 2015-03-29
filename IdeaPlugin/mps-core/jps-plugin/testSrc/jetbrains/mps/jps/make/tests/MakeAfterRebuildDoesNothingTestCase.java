@@ -23,41 +23,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 
 
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class MakeAfterRebuildDoesNothingTestCase extends MpsJpsSingleTestCase {
-  @NotNull
-  @NonNls
   @Override
-  protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testMake";
-  }
-
-  private void doTest(@TestDataFile @NonNls String testName) {
+  protected void doTest(@NotNull @TestDataFile @NonNls String testName) {
     doTestRebuild(testName);
     final BuildResult buildResult = doMake(false);
     buildResult.assertUpToDate();
   }
 
-  public void testJava() {
-    doTest("java/in");
-  }
-
-  public void testJavaKeepNoSources() {
-    doTest("javaKeepNoSources/in");
-  }
-
+  // FIXME: fails because we cannot deal with the MPS generated files creation under the model source root which is not marked as isGenerated=true
+  // FIXME: ignored for now
+  @Override
   public void testJavaSourceGenNearModels() {
     doTest("javaSourceGenNearModels/in");
   }
-
-  public void testXml() {
-    doTest("xml/in");
-  }
-
-  public void testXmlKeepNoSources() {
-    doTest("xmlKeepNoSources/in");
-  }
-
+  // FIXME: see the comment above; ignored for now
+  @Override
   public void testXmlSourceGenNearModels() {
     doTest("xmlSourceGenNearModels/in");
   }

@@ -16,23 +16,11 @@
 
 package jetbrains.mps.jps.make.tests.inc;
 
-import com.intellij.testFramework.TestDataPath;
-import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
-import jetbrains.mps.jps.make.tests.inc.MpsIncrementalMakeTestCase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 import org.jetbrains.jps.cmdline.ProjectDescriptor;
-import org.junit.Assume;
 
-import java.io.File;
-import java.util.ResourceBundle;
-
-/**
- * 1. clean rebuild, remove model, make -- java removed from src_gen and from the output
- * 2. clean rebuild, remove model, make -- xml removed from src_gen and from the output
- */
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class MpsIncrementalRemoveModelTestCase extends MpsIncrementalSingleModelTestCase {
   @NotNull
   @NonNls
@@ -50,13 +38,5 @@ public class MpsIncrementalRemoveModelTestCase extends MpsIncrementalSingleModel
     delete(modelFile);
 
     return makeAll();
-  }
-
-  public void testJava() {
-    doTest("java/in");
-  }
-
-  public void testXml() {
-    doTest("xml/in");
   }
 }

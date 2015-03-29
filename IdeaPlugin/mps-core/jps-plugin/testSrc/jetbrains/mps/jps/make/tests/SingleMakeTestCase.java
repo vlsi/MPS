@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.make.tests;
 
+import com.intellij.testFramework.TestDataFile;
 import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -24,37 +25,11 @@ import org.jetbrains.jps.builders.BuildResult;
 import java.io.File;
 
 
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class SingleMakeTestCase extends MpsJpsSingleTestCase {
-  @NotNull
-  @NonNls
+
   @Override
-  protected String getTestDataRootPath() {
-    return new File(getHomePath(), "mps-core/jps-plugin/testResources/testMake").getAbsolutePath();
-  }
-
-  public void testJava() {
-    doTestMake("java/in");
-  }
-
-  public void testJavaKeepNoSources() {
-    doTestMake("javaKeepNoSources/in");
-  }
-
-  public void testJavaSourceGenNearModels() {
-    doTestMake("javaSourceGenNearModels/in");
-  }
-
-  public void testXml() {
-    doTestMake("xml/in");
-  }
-
-  public void testXmlKeepNoSources() {
-    doTestMake("xmlKeepNoSources/in");
-  }
-
-  public void testXmlSourceGenNearModels() {
-    doTestMake("xmlSourceGenNearModels/in");
+  protected void doTest(@TestDataFile @NonNls @NotNull String inputTestFileName) {
+    doTestMake(inputTestFileName);
   }
 
   public void testBrokenProject() {

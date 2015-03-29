@@ -18,12 +18,10 @@ package jetbrains.mps.jps.make.tests.inc;
 
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.testFramework.TestDataPath;
 import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
-import org.jetbrains.jps.builders.JpsBuildTestCase;
 import org.jetbrains.jps.cmdline.ProjectDescriptor;
 import org.junit.Assume;
 
@@ -32,16 +30,11 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 /**
- * 1. clean rebuild, change model with java, make -- java updated, classes updated
- * 2. clean rebuild, change model with xml,  make -- resources updated in src_gen and output
+ * FIXME: need to propagate bean and env generic arguments down the class hierarchy;
  */
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class MpsIncrementalChangeModelTestCase extends MpsIncrementalSingleModelTestCase {
-  // fixme: need to propagate bean and env generic arguments down the class hierarchy;
-  @NonNls
-  private static final String MODEL_TO_REPLACE_PREFIX = "NonEmpty";
-  @NonNls
-  private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
+  @NonNls private static final String MODEL_TO_REPLACE_PREFIX = "NonEmpty";
+  @NonNls private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
 
   @NotNull
   @NonNls
@@ -72,19 +65,11 @@ public class MpsIncrementalChangeModelTestCase extends MpsIncrementalSingleModel
     }
   }
 
-  private File getNewModel() {
+  protected File getNewModel() {
     final JpsTestBean bean = getBean();
     final File modelsFolder = findFindUnderProjectHome(bean.modelsLocation);
     final String theOnlyModel = bean.modelsToCopy.get(0);
     final String theModelToReplace = MODEL_TO_REPLACE_PREFIX + theOnlyModel;
     return new File(modelsFolder, theModelToReplace);
-  }
-
-  public void testJava() {
-    doTest("java/in");
-  }
-
-  public void testXml() {
-    doTest("xml/in");
   }
 }

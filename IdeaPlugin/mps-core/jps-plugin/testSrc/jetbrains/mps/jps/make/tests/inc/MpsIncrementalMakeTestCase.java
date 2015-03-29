@@ -36,14 +36,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO
- * new test cases
- * 1 removed output folder, src_gen persists
- * 2 removed both
- * 3 two models, one touched, no changes on the second model's output and generated sources
- */
-
-/**
  * Intended to check the incremental make in idea+mps build procedure.
  * Uses a special logger to validate the make procedure
  */
@@ -57,10 +49,13 @@ public abstract class MpsIncrementalMakeTestCase extends MpsJpsModelsEnvironment
   @NotNull
   protected abstract String getLogFileName();
 
-  @NotNull
-  protected BuildResult doTest(@TestDataFile @NonNls @NotNull String inputTestFileName) {
+  /**
+   * please implement the {@link #doTestIncrementalBuild} and {@link #getLogFileName}
+   */
+  @Override
+  protected void doTest(@TestDataFile @NonNls @NotNull String inputTestFileName) {
     setUpEnvironment(inputTestFileName);
-    return doTestIncremental(getTestName(inputTestFileName));
+    doTestIncremental(getTestName(inputTestFileName));
   }
 
   private BuildResult doTestIncremental(String testName) {

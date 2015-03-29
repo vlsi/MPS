@@ -16,40 +16,16 @@
 
 package jetbrains.mps.jps.make.tests;
 
+import com.intellij.testFramework.TestDataFile;
 import com.intellij.testFramework.TestDataPath;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
 
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class SingleRebuildTestCase extends MpsJpsSingleTestCase {
-  @NotNull
   @Override
-  protected String getTestDataRootPath() {
-    return "mps-core/jps-plugin/testResources/testMake";
-  }
-
-  public void testJava() {
-    doTestRebuild("java/in");
-  }
-
-  public void testJavaKeepNoSources() {
-    doTestRebuild("javaKeepNoSources/in");
-  }
-
-  public void testJavaSourceGenNearModels() {
-    doTestRebuild("javaSourceGenNearModels/in");
-  }
-
-  public void testXml() {
-    doTestRebuild("xml/in");
-  }
-
-  public void testXmlKeepNoSources() {
-    doTestMake("xmlKeepNoSources/in");
-  }
-
-  public void testXmlSourceGenNearModels() {
-    doTestMake("xmlSourceGenNearModels/in");
+  protected void doTest(@TestDataFile @NonNls @NotNull String inputFileTestName) {
+    doTestRebuild(inputFileTestName);
   }
 
   public void testBrokenProject() {

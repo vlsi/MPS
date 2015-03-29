@@ -16,7 +16,6 @@
 
 package jetbrains.mps.jps.make.tests.inc;
 
-import com.intellij.testFramework.TestDataPath;
 import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -27,21 +26,9 @@ import org.junit.Assume;
 import java.io.File;
 import java.util.ResourceBundle;
 
-/**
- * 1. clean rebuild, touch model with java, make -- java is not updated, classes are not
- * 2. clean rebuild, touch model with xml, make -- resources are not updated nor in src_gen nor in the output folder
- */
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
 public class MpsIncrementalTouchModelTestCase extends MpsIncrementalMakeTestCase {
   @NonNls
   private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
-
-  @NonNls
-  @NotNull
-  @Override
-  protected String getTestDataRootPath() {
-    return new File(getHomePath(), "mps-core/jps-plugin/testResources/testMake").getAbsolutePath();
-  }
 
   @NotNull
   @NonNls
@@ -67,13 +54,5 @@ public class MpsIncrementalTouchModelTestCase extends MpsIncrementalMakeTestCase
     Assume.assumeTrue(BUNDLE.getString("this.kind.of.test.case.does.not.support.multiple.models"), bean.modelsToCopy.size() == 1);
     final String theOnlyModel = bean.modelsToCopy.get(0);
     return new File(modelsFolder, theOnlyModel).getAbsolutePath();
-  }
-
-  public void testMakeJava() {
-    doTest("java/in");
-  }
-
-  public void testMakeXml() {
-    doTest("xml/in");
   }
 }

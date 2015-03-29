@@ -28,13 +28,6 @@ public abstract class MpsIncrementalSingleModelTestCase extends MpsIncrementalMa
   @NonNls
   private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
 
-  @NonNls
-  @NotNull
-  @Override
-  protected String getTestDataRootPath() {
-    return new File(getHomePath(), "mps-core/jps-plugin/testResources/testMake").getAbsolutePath();
-  }
-
   protected String getModelPath() {
     final JpsTestBean bean = getBean();
     final String modelsFolder = getAbsolutePath(bean.modelsDirName);

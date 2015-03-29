@@ -16,51 +16,28 @@
 
 package jetbrains.mps.jps.make.tests.inc;
 
-import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.testFramework.TestDataPath;
 import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.jps.builders.BuildResult;
-import org.jetbrains.jps.cmdline.ProjectDescriptor;
-import org.junit.Assume;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ResourceBundle;
 
-/**
- * 1. clean rebuild, remove java from model, make -- java removed from src_gen and class file removed from the output
- * 2. clean rebuild, remove xml  from model, make -- xml removed from src_gen and from the output
- */
-@TestDataPath(value = "$PROJECT_ROOT/mps-core/jps-plugin/testResources/testMake")
-public class MpsIncrementalRemoveFileFromModelTestCase extends MpsIncrementalSingleModelTestCase {
+public class MpsIncrementalRemoveFileFromModelTestCase extends MpsIncrementalChangeModelTestCase {
   @NonNls
-  private final static ResourceBundle BUNDLE = ResourceBundle.getBundle("jetbrains.mps.idea.core.MPSCoreBundle");
+  private static final String EMPTY_MODEL = "EmptyModel.mps";
 
   @NotNull
   @NonNls
   @Override
   protected String getLogFileName() {
-    return "removeAll.log";
+    return "removeFile.log";
   }
 
-  @NotNull
   @Override
-  protected BuildResult doTestIncrementalBuild(@NotNull ProjectDescriptor projectDescriptor) {
-    rebuildAll();
-
-    final String modelFile = getModelPath();
-    // TODO
-    return makeAll();
-  }
-
-  public void testMakeJava() {
-    doTest("java/in");
-  }
-
-  public void testMakeXml() {
-    doTest("xml/in");
+  protected File getNewModel() {
+    final JpsTestBean bean = getBean();
+    final File modelsFolder = findFindUnderProjectHome(bean.modelsLocation);
+    final String theModelToReplace = EMPTY_MODEL;
+    return new File(modelsFolder, theModelToReplace);
   }
 }
