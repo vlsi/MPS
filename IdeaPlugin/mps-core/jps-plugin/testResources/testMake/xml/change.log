@@ -5,7 +5,16 @@ source_gen/ManifestXml/manifest.xml
 source_gen/ManifestXml/trace.info
 End of files
 Cleaning output files:
+mps-make/makeTests/source_gen.caches/ManifestXml/dependencies
+mps-make/makeTests/source_gen.caches/ManifestXml/generated
+source_gen/ManifestXml/manifest.xml
+source_gen/ManifestXml/trace.info
+End of files
+Cleaning output files:
 out/production/makeTests/ManifestXml/manifest.xml
+End of files
+Cleaning output files:
+out/production/makeTests/ManifestXml/trace.info
 End of files
 MPS generated files:
 mps-make/makeTests/source_gen.caches/NonEmptyManifestXml/dependencies
