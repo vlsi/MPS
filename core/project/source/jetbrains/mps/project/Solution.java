@@ -77,9 +77,10 @@ public class Solution extends ReloadableModuleBase {
   }
 
   private static void populateModelRoot(ClassType classType, ModelRootDescriptor javaStubsModelRoot) {
+    PackageScopeControl psc = null;
     if (classType == ClassType.JDK) {
       PackageScopeControl jdkPackages = new PackageScopeControl();
-      jdkPackages.setPublicOnly(true);
+      jdkPackages.setSkipPrivate(true);
       jdkPackages.includeWithPrefix("java.");
       jdkPackages.includeWithPrefix("javax.");
       jdkPackages.includeWithPrefix("org.");
@@ -90,8 +91,15 @@ public class Solution extends ReloadableModuleBase {
       // ant integration uses sun.misc.Resource for no apparent reason
       jdkPackages.includeWithPrefix("sun.");
       jdkPackages.includeWithPrefix("sun.misc.");
+      psc = jdkPackages;
+    } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
+      PackageScopeControl platformPackages = new PackageScopeControl();
+      platformPackages.setSkipPrivate(true);
+      psc = platformPackages;
+    }
+    if (psc != null) {
       final Memento m = javaStubsModelRoot.getMemento().createChild("PackageScope");
-      jdkPackages.save(m);
+      psc.save(m);
     }
   }
 

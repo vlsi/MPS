@@ -28,7 +28,7 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public final class PackageScopeControl {
-  private boolean myOnlyPublic = false;
+  private boolean mySkipPrivate = false;
   private List<String> myIncludePrefix;
   private List<String> myExcludePrefix;
 
@@ -38,7 +38,7 @@ public final class PackageScopeControl {
   // caller controls element in memento we write to, e.g. if it needs to write few scopes, it's up to caller to
   // name them and to place in a container
   public void save(Memento memento) {
-    memento.put("only-public", Boolean.toString(myOnlyPublic));
+    memento.put("skip-private", Boolean.toString(mySkipPrivate));
     if (myIncludePrefix != null) {
       for (String prefix : myIncludePrefix) {
         memento.createChild("include").put("prefix", prefix);
@@ -52,7 +52,7 @@ public final class PackageScopeControl {
   }
 
   public void load(Memento memento) {
-    myOnlyPublic = Boolean.parseBoolean(memento.get("only-public"));
+    mySkipPrivate = Boolean.parseBoolean(memento.get("skip-private"));
     for (Memento entry : memento.getChildren("include")) {
       includeWithPrefix(entry.get("prefix"));
     }
@@ -86,12 +86,12 @@ public final class PackageScopeControl {
     myExcludePrefix.add(packageNamePrefix);
   }
 
-  public boolean isPublicOnly() {
-    return myOnlyPublic;
+  public boolean isSkipPrivate() {
+    return mySkipPrivate;
   }
 
-  public void setPublicOnly(boolean publicClassesOnly) {
-    myOnlyPublic = publicClassesOnly;
+  public void setSkipPrivate(boolean skipPrivate) {
+    mySkipPrivate = skipPrivate;
   }
 
   /**

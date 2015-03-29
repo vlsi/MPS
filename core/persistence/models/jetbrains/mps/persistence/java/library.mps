@@ -135,9 +135,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
-      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -332,28 +330,10 @@
     <node concept="312cEg" id="3M1v4zmWEN5" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myPublicClassesOnly" />
+      <property role="TrG5h" value="mySkipPrivate" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="3M1v4zmWEn5" role="1B3o_S" />
       <node concept="10P_77" id="3M1v4zmWEIP" role="1tU5fm" />
-    </node>
-    <node concept="312cEg" id="3M1v4zmWFaR" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myIncludePrivateMembers" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="3M1v4zmWFaS" role="1B3o_S" />
-      <node concept="10P_77" id="3M1v4zmWFaT" role="1tU5fm" />
-      <node concept="3clFbT" id="3M1v4zmWIuZ" role="33vP2m">
-        <property role="3clFbU" value="true" />
-      </node>
-      <node concept="z59LJ" id="3M1v4zmXIcV" role="lGtFl">
-        <node concept="TZ5HA" id="3M1v4zmXIcW" role="TZ5H$">
-          <node concept="1dT_AC" id="3M1v4zmXIcX" role="1dT_Ay">
-            <property role="1dT_AB" value="true is legacy default value (we didn't skip private members), perhaps shall change to false?" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3clFbW" id="5JsnGMj1qdf" role="jymVt">
       <node concept="3cqZAl" id="5JsnGMj1qdg" role="3clF45" />
@@ -383,37 +363,23 @@
       </node>
     </node>
     <node concept="3clFb_" id="3M1v4zmWG36" role="jymVt">
-      <property role="TrG5h" value="limit" />
+      <property role="TrG5h" value="setSkipPrivate" />
       <node concept="3cqZAl" id="3M1v4zmWG38" role="3clF45" />
       <node concept="3clFbS" id="3M1v4zmWG3a" role="3clF47">
-        <node concept="3clFbF" id="3M1v4zmWIAz" role="3cqZAp">
-          <node concept="37vLTI" id="3M1v4zmWIN$" role="3clFbG">
-            <node concept="37vLTw" id="3OgbTjMM5c2" role="37vLTx">
-              <ref role="3cqZAo" node="3M1v4zmWH6R" resolve="publicClassesOnly" />
-            </node>
-            <node concept="37vLTw" id="3M1v4zmWIAy" role="37vLTJ">
-              <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="myPublicClassesOnly" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3M1v4zmWIXI" role="3cqZAp">
           <node concept="37vLTI" id="3M1v4zmWJdp" role="3clFbG">
             <node concept="37vLTw" id="3M1v4zmWJnu" role="37vLTx">
-              <ref role="3cqZAo" node="3M1v4zmWI0V" resolve="includePrivateMembers" />
+              <ref role="3cqZAo" node="3M1v4zmWI0V" resolve="skipPrivateMembers" />
             </node>
-            <node concept="37vLTw" id="3M1v4zmWIXG" role="37vLTJ">
-              <ref role="3cqZAo" node="3M1v4zmWFaR" resolve="myIncludePrivateMembers" />
+            <node concept="37vLTw" id="5PX8QuHL4uD" role="37vLTJ">
+              <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="mySkipPrivate" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="3M1v4zmWH6R" role="3clF46">
-        <property role="TrG5h" value="publicClassesOnly" />
-        <node concept="10P_77" id="3M1v4zmWH6Q" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="3M1v4zmWI0V" role="3clF46">
-        <property role="TrG5h" value="includePrivateMembers" />
-        <node concept="10P_77" id="3M1v4zmWImQ" role="1tU5fm" />
+        <property role="TrG5h" value="skipPrivateMembers" />
+        <node concept="10P_77" id="5PX8QuHL21v" role="1tU5fm" />
       </node>
     </node>
     <node concept="3clFb_" id="5JsnGMj1qdw" role="jymVt">
@@ -721,23 +687,13 @@
         </node>
         <node concept="3clFbF" id="3M1v4zmXFDF" role="3cqZAp">
           <node concept="2OqwBi" id="3M1v4zmXGKb" role="3clFbG">
-            <node concept="2OqwBi" id="3M1v4zmXG9x" role="2Oq$k0">
-              <node concept="37vLTw" id="3M1v4zmXFDD" role="2Oq$k0">
-                <ref role="3cqZAo" node="3M1v4zmXBiT" resolve="loader" />
-              </node>
-              <node concept="liA8E" id="3M1v4zmXGBc" role="2OqNvi">
-                <ref role="37wK5l" to="1ltj:3M1v4zmX5mk" resolve="onlyPublicClasses" />
-                <node concept="37vLTw" id="3M1v4zmXGET" role="37wK5m">
-                  <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="myPublicClassesOnly" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="3M1v4zmXFDD" role="2Oq$k0">
+              <ref role="3cqZAo" node="3M1v4zmXBiT" resolve="loader" />
             </node>
             <node concept="liA8E" id="3M1v4zmXHmQ" role="2OqNvi">
               <ref role="37wK5l" to="1ltj:3M1v4zmXhjW" resolve="skipPrivateMembers" />
-              <node concept="3fqX7Q" id="3M1v4zmXH$Y" role="37wK5m">
-                <node concept="37vLTw" id="3M1v4zmXH_0" role="3fr31v">
-                  <ref role="3cqZAo" node="3M1v4zmWFaR" resolve="myIncludePrivateMembers" />
-                </node>
+              <node concept="37vLTw" id="5PX8QuHL5_y" role="37wK5m">
+                <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="mySkipPrivate" />
               </node>
             </node>
           </node>
@@ -2136,23 +2092,13 @@
                                 <ref role="3cqZAo" node="5JsnGMj1qlq" resolve="smd" />
                               </node>
                               <node concept="liA8E" id="3M1v4zmXYzj" role="2OqNvi">
-                                <ref role="37wK5l" node="3M1v4zmWG36" resolve="limit" />
-                                <node concept="2OqwBi" id="3M1v4zmXZ6T" role="37wK5m">
-                                  <node concept="37vLTw" id="3M1v4zmXZ3$" role="2Oq$k0">
+                                <ref role="37wK5l" node="3M1v4zmWG36" resolve="setSkipPrivate" />
+                                <node concept="2OqwBi" id="3M1v4zmY0NW" role="37wK5m">
+                                  <node concept="37vLTw" id="3M1v4zmY0NX" role="2Oq$k0">
                                     <ref role="3cqZAo" node="3mzc6JEn9ey" resolve="myPackageScope" />
                                   </node>
-                                  <node concept="liA8E" id="3M1v4zmXZmB" role="2OqNvi">
-                                    <ref role="37wK5l" to="5iu4:~PackageScopeControl.isPublicOnly():boolean" resolve="isPublicOnly" />
-                                  </node>
-                                </node>
-                                <node concept="3fqX7Q" id="3M1v4zmY0NU" role="37wK5m">
-                                  <node concept="2OqwBi" id="3M1v4zmY0NW" role="3fr31v">
-                                    <node concept="37vLTw" id="3M1v4zmY0NX" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3mzc6JEn9ey" resolve="myPackageScope" />
-                                    </node>
-                                    <node concept="liA8E" id="3M1v4zmY0NY" role="2OqNvi">
-                                      <ref role="37wK5l" to="5iu4:~PackageScopeControl.isPublicOnly():boolean" resolve="isPublicOnly" />
-                                    </node>
+                                  <node concept="liA8E" id="3M1v4zmY0NY" role="2OqNvi">
+                                    <ref role="37wK5l" to="5iu4:~PackageScopeControl.isSkipPrivate():boolean" resolve="isSkipPrivate" />
                                   </node>
                                 </node>
                               </node>

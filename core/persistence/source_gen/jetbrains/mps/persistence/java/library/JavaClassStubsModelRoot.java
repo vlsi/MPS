@@ -172,7 +172,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource());
           smd.setModelRoot(this);
           if (myPackageScope != null) {
-            smd.limit(myPackageScope.isPublicOnly(), !(myPackageScope.isPublicOnly()));
+            smd.setSkipPrivate(myPackageScope.isSkipPrivate());
           }
           ListSequence.fromList(result).addElement(smd);
         }

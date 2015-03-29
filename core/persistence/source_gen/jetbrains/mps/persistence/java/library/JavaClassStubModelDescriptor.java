@@ -19,17 +19,12 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   private SModel myModel;
-  private boolean myPublicClassesOnly;
-  /**
-   * true is legacy default value (we didn't skip private members), perhaps shall change to false?
-   */
-  private boolean myIncludePrivateMembers = true;
+  private boolean mySkipPrivate;
   public JavaClassStubModelDescriptor(SModelReference modelReference, FolderSetDataSource source) {
     super(modelReference, source);
   }
-  /*package*/ void limit(boolean publicClassesOnly, boolean includePrivateMembers) {
-    myPublicClassesOnly = publicClassesOnly;
-    myIncludePrivateMembers = includePrivateMembers;
+  /*package*/ void setSkipPrivate(boolean skipPrivateMembers) {
+    mySkipPrivate = skipPrivateMembers;
   }
   @Override
   protected SModel getCurrentModelInternal() {
@@ -75,7 +70,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       model.addLanguage(l);
     }
     ASMModelLoader loader = new ASMModelLoader(getModelRoot().getModule(), getSource().getPaths());
-    loader.onlyPublicClasses(myPublicClassesOnly).skipPrivateMembers(!(myIncludePrivateMembers));
+    loader.skipPrivateMembers(mySkipPrivate);
     loader.update(model);
     return model;
   }

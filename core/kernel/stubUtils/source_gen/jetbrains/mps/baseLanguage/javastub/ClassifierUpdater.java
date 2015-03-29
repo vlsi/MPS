@@ -55,6 +55,8 @@ public class ClassifierUpdater {
   private final SReferenceHandler myHandler;
   private final ASMClass myParsedClass;
   public ClassifierUpdater(ASMClass asmClass, boolean skipPrivate, SReferenceHandler handler) {
+    // we treat skipPrivate here as 'hide implementation details', thus only public and protected 
+    // members are visible if skipPrivate == true (i.e. those visible to outer code) 
     mySkipPrivate = skipPrivate;
     myHandler = handler;
     myParsedClass = asmClass;
@@ -196,7 +198,7 @@ public class ClassifierUpdater {
   }
   private void updateInstanceFields(SNode cls) {
     for (ASMField field : myParsedClass.getDeclaredFields()) {
-      if (field.isPrivate() && mySkipPrivate) {
+      if (shallSkip(field)) {
         continue;
       }
       if (field.isStatic()) {
@@ -216,7 +218,7 @@ public class ClassifierUpdater {
   }
   private void updateStaticFields(SNode cls) {
     for (ASMField field : myParsedClass.getDeclaredFields()) {
-      if (field.isPrivate() && mySkipPrivate) {
+      if (shallSkip(field)) {
         continue;
       }
       if (!(field.isStatic())) {
@@ -268,7 +270,7 @@ public class ClassifierUpdater {
       if (c.isSynthetic()) {
         continue;
       }
-      if (c.isPrivate() && mySkipPrivate) {
+      if (shallSkip(c)) {
         continue;
       }
 
@@ -320,7 +322,7 @@ public class ClassifierUpdater {
   }
   private void updateInstanceMethods(SNode cls) {
     for (ASMMethod m : myParsedClass.getDeclaredMethods()) {
-      if (m.isPrivate() && mySkipPrivate) {
+      if (shallSkip(m)) {
         continue;
       }
       if (m.isStatic()) {
@@ -344,7 +346,7 @@ public class ClassifierUpdater {
   }
   private void updateStaticMethods(SNode cls) {
     for (ASMMethod m : myParsedClass.getDeclaredMethods()) {
-      if (m.isPrivate() && mySkipPrivate) {
+      if (shallSkip(m)) {
         continue;
       }
       if (!(m.isStatic())) {
@@ -650,6 +652,12 @@ public class ClassifierUpdater {
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
 
     sourceNode.setReference(role, ref);
+  }
+  private boolean shallSkip(ASMField f) {
+    return mySkipPrivate && !((f.isPublic() || f.isProtected()));
+  }
+  private boolean shallSkip(ASMMethod m) {
+    return mySkipPrivate && !((m.isPublic() || m.isProtected()));
   }
   public boolean isSkipPrivate() {
     return mySkipPrivate;
