@@ -157,8 +157,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public synchronized ClassifierKind getClassifierKind(String qualifiedClassName) {
     checkValidity();
     ensureInitialized();
-    checkValidity();
-    ensureInitialized();
     InputStream inp = null;
     ZipFile zf = null;
     try {

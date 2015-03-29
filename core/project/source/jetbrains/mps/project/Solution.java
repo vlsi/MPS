@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
+import jetbrains.mps.java.stub.PackageScopeControl;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -27,14 +29,13 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -46,7 +47,6 @@ import java.util.Set;
  * Aug 26, 2005
  */
 public class Solution extends ReloadableModuleBase {
-  private static final Logger LOG = LogManager.getLogger(Solution.class);
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -56,8 +56,7 @@ public class Solution extends ReloadableModuleBase {
 
   private static Map<SModuleReference, ClasspathReader.ClassType> initBootstrapSolutions() {
     Map<SModuleReference, ClasspathReader.ClassType> result = new HashMap<SModuleReference, ClasspathReader.ClassType>();
-    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("JDK",
-        ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), ClasspathReader.ClassType.JDK);
+    result.put(BootstrapLanguages.jdkRef(), ClasspathReader.ClassType.JDK);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("Annotations",
         ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), ClasspathReader.ClassType.ANNOTATIONS);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.OpenAPI",
@@ -76,6 +75,27 @@ public class Solution extends ReloadableModuleBase {
         ModuleId.fromString("920eaa0e-ecca-46bc-bee7-4e5c59213dd6")), ClasspathReader.ClassType.TEST);
     return result;
   }
+
+  private static void populateModelRoot(ClassType classType, ModelRootDescriptor javaStubsModelRoot) {
+    if (classType == ClassType.JDK) {
+      PackageScopeControl jdkPackages = new PackageScopeControl();
+      jdkPackages.setPublicOnly(true);
+      jdkPackages.includeWithPrefix("java.");
+      jdkPackages.includeWithPrefix("javax.");
+      jdkPackages.includeWithPrefix("org.");
+      // com.sun.jdi is in use by debugger
+      jdkPackages.includeWithPrefix("com.");
+      jdkPackages.includeWithPrefix("com.sun.");
+      jdkPackages.includeWithPrefix("com.sun.jdi.");
+      // ant integration uses sun.misc.Resource for no apparent reason
+      jdkPackages.includeWithPrefix("sun.");
+      jdkPackages.includeWithPrefix("sun.misc.");
+      final Memento m = javaStubsModelRoot.getMemento().createChild("PackageScope");
+      jdkPackages.save(m);
+    }
+  }
+
+
 
   /* TODO make package local, move to appropriate package */
   public Solution(SolutionDescriptor descriptor, IFile file) {
@@ -143,7 +163,10 @@ public class Solution extends ReloadableModuleBase {
     for (String path : CommonPaths.getMPSPaths(classType)) {
       final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
       final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(path, modelRootDescriptors);
-      if (javaStubsModelRoot != null) modelRootDescriptors.add(javaStubsModelRoot);
+      if (javaStubsModelRoot != null) {
+        modelRootDescriptors.add(javaStubsModelRoot);
+        populateModelRoot(classType, javaStubsModelRoot);
+      }
       descriptor.getAdditionalJavaStubPaths().add(path);
     }
   }

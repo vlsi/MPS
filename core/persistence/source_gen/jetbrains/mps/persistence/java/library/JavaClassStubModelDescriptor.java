@@ -19,8 +19,17 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   private SModel myModel;
+  private boolean myPublicClassesOnly;
+  /**
+   * true is legacy default value (we didn't skip private members), perhaps shall change to false?
+   */
+  private boolean myIncludePrivateMembers = true;
   public JavaClassStubModelDescriptor(SModelReference modelReference, FolderSetDataSource source) {
     super(modelReference, source);
+  }
+  /*package*/ void limit(boolean publicClassesOnly, boolean includePrivateMembers) {
+    myPublicClassesOnly = publicClassesOnly;
+    myIncludePrivateMembers = includePrivateMembers;
   }
   @Override
   protected SModel getCurrentModelInternal() {
@@ -65,7 +74,9 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     for (SLanguage l : getLanguagesToImport()) {
       model.addLanguage(l);
     }
-    new ASMModelLoader(getModelRoot().getModule(), getSource().getPaths(), model, false).updateModel();
+    ASMModelLoader loader = new ASMModelLoader(getModelRoot().getModule(), getSource().getPaths());
+    loader.onlyPublicClasses(myPublicClassesOnly).skipPrivateMembers(!(myIncludePrivateMembers));
+    loader.update(model);
     return model;
   }
   private Set<SLanguage> getLanguagesToImport() {

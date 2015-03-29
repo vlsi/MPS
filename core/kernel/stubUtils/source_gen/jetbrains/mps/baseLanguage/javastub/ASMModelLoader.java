@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -17,19 +17,25 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ASMModelLoader {
   private static final Logger LOG = LogManager.getLogger(ASMModelLoader.class);
-  private final SModel myModel;
   private final SModule myModule;
   private Collection<String> myPaths;
-  private final boolean mySkipPrivate;
-  public ASMModelLoader(SModule module, Collection<String> paths, SModel model, boolean skipPrivate) {
+  private boolean mySkipPrivate;
+  private boolean myOnlyPublic;
+  public ASMModelLoader(SModule module, Collection<String> paths) {
     myModule = module;
-    myModel = model;
-    mySkipPrivate = skipPrivate;
     myPaths = paths;
   }
-  public void updateModel() {
+  public ASMModelLoader onlyPublicClasses(boolean onlyPublicClasses) {
+    myOnlyPublic = onlyPublicClasses;
+    return this;
+  }
+  public ASMModelLoader skipPrivateMembers(boolean skipPrivateMembers) {
+    mySkipPrivate = skipPrivateMembers;
+    return this;
+  }
+  public void update(SModel model) {
     try {
-      ClassifierLoader loader = new ClassifierLoader(new SReferenceCreator(myModule, myModel), mySkipPrivate);
+      ClassifierLoader loader = new ClassifierLoader(new SReferenceCreator(myModule, model), myOnlyPublic, mySkipPrivate);
 
       Iterable<IFile> classFiles = CollectionSequence.fromCollection(myPaths).select(new ISelector<String, IFile>() {
         public IFile select(String it) {
@@ -50,12 +56,12 @@ public class ASMModelLoader {
       });
 
       for (IFile classfile : classFiles) {
-        if (myModel.getNode(ASMNodeId.createId(ClassifierLoader.getClassName(classfile))) != null) {
+        if (model.getNode(ASMNodeId.createId(ClassifierLoader.getClassName(classfile))) != null) {
           continue;
         }
         SNode classifier = loader.getClassifier(classfile);
         if (classifier != null) {
-          myModel.addRootNode(classifier);
+          model.addRootNode(classifier);
         }
       }
     } catch (Exception e) {

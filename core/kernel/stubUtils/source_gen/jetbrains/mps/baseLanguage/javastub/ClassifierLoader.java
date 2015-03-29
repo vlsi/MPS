@@ -4,15 +4,15 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import org.jetbrains.org.objectweb.asm.ClassReader;
+import org.jetbrains.org.objectweb.asm.Opcodes;
+import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import org.jetbrains.org.objectweb.asm.tree.InnerClassNode;
-import org.jetbrains.org.objectweb.asm.Opcodes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.InputStream;
 import jetbrains.mps.util.ReadUtil;
@@ -21,16 +21,22 @@ import java.io.IOException;
 public class ClassifierLoader {
   private final SReferenceHandler myReferenceFactory;
   private final boolean mySkipPrivate;
-  public ClassifierLoader(SReferenceHandler refFactory, boolean skipPrivate) {
+  private final boolean myOnlyPublic;
+  public ClassifierLoader(SReferenceHandler refFactory, boolean onlyPublic, boolean skipPrivate) {
     myReferenceFactory = refFactory;
     mySkipPrivate = skipPrivate;
+    myOnlyPublic = onlyPublic;
   }
   public SNode getClassifier(IFile file) {
     byte[] code = readClass(file);
     if (code == null) {
       return null;
     }
-    ASMClass ac = new ASMClass(new ClassReader(code));
+    ClassReader classReader = new ClassReader(code);
+    if (myOnlyPublic && (classReader.getAccess() & Opcodes.ACC_PUBLIC) == 0) {
+      return null;
+    }
+    ASMClass ac = new ASMClass(classReader);
     SNode res = new ClassifierUpdater(ac, mySkipPrivate, myReferenceFactory).create(getClassName(file));
     if (res != null && !(ac.getInnerClasses().isEmpty())) {
       List<SNode> innerClassifiers = updateInnerClassifiers(file, ac);
@@ -101,4 +107,5 @@ public class ClassifierLoader {
     String name = file.getName();
     return name.substring(0, name.indexOf("."));
   }
+  private boolean onlyPublic;
 }
