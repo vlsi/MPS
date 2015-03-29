@@ -77,6 +77,9 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
+  public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId, String resolveInfo) {
+    return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
+  }
 
   @Deprecated
   @ToRemove(version = 3.2)

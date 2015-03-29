@@ -5,7 +5,8 @@ package jetbrains.mps.baseLanguage.javastub;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public interface SReferenceHandler {
-  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation);
+  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo, String rootPresentation);
 }

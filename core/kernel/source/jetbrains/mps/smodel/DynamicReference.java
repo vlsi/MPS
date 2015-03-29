@@ -89,6 +89,9 @@ public class DynamicReference extends SReferenceBase {
   public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     return new DynamicReference(role, sourceNode, modelName, resolveInfo);
   }
+  public static DynamicReference createDynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+  }
 
   private DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     super(role, sourceNode, null, null);

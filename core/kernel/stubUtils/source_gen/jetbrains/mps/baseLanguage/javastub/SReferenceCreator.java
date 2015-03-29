@@ -9,6 +9,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelLegacy;
@@ -26,7 +27,7 @@ public class SReferenceCreator implements SReferenceHandler {
     myModelLongName = NameUtil.getModelLongName(myModelReference.getModelName());
   }
   @Override
-  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
+  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo, String rootPresentation) {
     if (pack.equals(myModelLongName)) {
       SNode nodeInSameModel = myModel.getNode(targetNodeId);
       if (nodeInSameModel != null) {

@@ -39,6 +39,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.util.NodeNameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.apache.log4j.Logger;
@@ -449,11 +450,11 @@ public class ClassifierUpdater {
   private SNode createAnnotation(ASMAnnotation annotation) {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")));
     ASMClassType c = (ASMClassType) annotation.getType();
-    addClassifierReference(result, "annotation", c);
+    addClassifierReference(result, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), c);
     Map<String, Object> values = ((Map<String, Object>) annotation.getValues());
     for (String key : MapSequence.fromMap(values).keySet()) {
       SNode value = _quotation_createNode_ol94f8_a0a0e0eb(getAnnotationValue(MapSequence.fromMap(values).get(key)));
-      addAnnotationMethodReference(value, "key", c, key);
+      addAnnotationMethodReference(value, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, 0x114a71b44e3L, "key"), c, key);
       ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a71c697fL, "value"))).addElement(value);
     }
     return result;
@@ -508,13 +509,13 @@ public class ClassifierUpdater {
       ASMEnumValue enumValue = (ASMEnumValue) value;
       ASMClassType c = (ASMClassType) enumValue.getType();
       SNode res = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")));
-      addClassifierReference(res, "enumClass", c);
-      addEnumConstReference(res, "enumConstantDeclaration", enumValue);
+      addClassifierReference(res, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), c);
+      addEnumConstReference(res, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), enumValue);
       return res;
     }
     if (value instanceof ASMClassType) {
       SNode res = _quotation_createNode_ol94f8_a0a0n0fb();
-      addClassifierReference(res, "classifier", (ASMClassType) value);
+      addClassifierReference(res, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier"), (ASMClassType) value);
       return res;
     }
     if (LOG.isEnabledFor(Level.ERROR)) {
@@ -570,7 +571,7 @@ public class ClassifierUpdater {
     if (type instanceof ASMClassType) {
       ASMClassType c = (ASMClassType) type;
       SNode classifierType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
-      addClassifierReference(classifierType, "classifier", c);
+      addClassifierReference(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), c);
       return classifierType;
     }
     if (type instanceof ASMParameterizedType) {
@@ -613,8 +614,8 @@ public class ClassifierUpdater {
     }
     ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).addSequence(ListSequence.fromList(toAdd));
   }
-  private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
-    if (sourceNode.getReferenceTarget(role) != null) {
+  private void addClassifierReference(SNode sourceNode, SReferenceLink role, ASMClassType clsType) {
+    if (sourceNode.getReference(role) != null) {
       return;
     }
 
@@ -623,10 +624,10 @@ public class ClassifierUpdater {
     resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.setReference(ref.getRole(), ref);
+    sourceNode.setReference(role, ref);
   }
-  private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
-    if (sourceNode.getReferenceTarget(role) != null) {
+  private void addAnnotationMethodReference(SNode sourceNode, SReferenceLink role, ASMClassType annotationType, String method) {
+    if (sourceNode.getReference(role) != null) {
       return;
     }
 
@@ -634,10 +635,10 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     String resolve = method;
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.setReference(ref.getRole(), ref);
+    sourceNode.setReference(role, ref);
   }
-  private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
-    if (sourceNode.getReferenceTarget(role) != null) {
+  private void addEnumConstReference(SNode sourceNode, SReferenceLink role, ASMEnumValue enumValue) {
+    if (sourceNode.getReference(role) != null) {
       return;
     }
 
@@ -648,7 +649,7 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
 
-    sourceNode.setReference(ref.getRole(), ref);
+    sourceNode.setReference(role, ref);
   }
   public boolean isSkipPrivate() {
     return mySkipPrivate;
