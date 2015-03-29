@@ -10,7 +10,7 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcept_Action", getShortcut(" F6"));
+    addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveLinkUp_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action", getShortcut("shift F6"));

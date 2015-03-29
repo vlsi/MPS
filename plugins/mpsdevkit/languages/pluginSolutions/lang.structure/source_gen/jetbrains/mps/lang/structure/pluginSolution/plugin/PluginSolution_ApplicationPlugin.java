@@ -20,7 +20,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new MoveConcept_Action());
+    addAction(new MoveConcepts_Action());
     addAction(new MoveLinkUp_Action());
     addAction(new MovePropertyUp_Action());
     addAction(new RenameConcept_Action());

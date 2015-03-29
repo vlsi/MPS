@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
@@ -19,18 +20,18 @@ import java.util.HashMap;
 public class ConceptMoveUtil {
   public ConceptMoveUtil() {
   }
-  public static List<SNode> getConceptsAspects(final List<SNode> concepts, SModel aspectModel) {
+  public static List<SNode> getConceptsAspects(final Iterable<SNode> concepts, SModel aspectModel) {
     return ListSequence.fromList(SModelOperations.roots(aspectModel, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         List<SNode> baseConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
-        return ListSequence.fromList(baseConcepts).isNotEmpty() && ListSequence.fromList(concepts).containsSequence(ListSequence.fromList(baseConcepts));
+        return ListSequence.fromList(baseConcepts).isNotEmpty() && Sequence.fromIterable(concepts).containsSequence(ListSequence.fromList(baseConcepts));
       }
     }).toListSequence();
   }
-  public static List<SNode> getConceptAspects(List<SNode> concepts, SModel aspectModel) {
+  public static List<SNode> getConceptAspects(Iterable<SNode> concepts, SModel aspectModel) {
     return getConceptsAspects(concepts, aspectModel);
   }
-  public static Map<LanguageAspect, List<SNode>> getAspectNodes(Language language, List<SNode> nodes) {
+  public static Map<LanguageAspect, List<SNode>> getAspectNodes(Language language, Iterable<SNode> nodes) {
     // map with aspects to roots solely attached to list of given nodes 
     Map<LanguageAspect, List<SNode>> aspectNodesMap = MapSequence.fromMap(new HashMap<LanguageAspect, List<SNode>>());
     for (LanguageAspect aspect : LanguageAspect.values()) {
