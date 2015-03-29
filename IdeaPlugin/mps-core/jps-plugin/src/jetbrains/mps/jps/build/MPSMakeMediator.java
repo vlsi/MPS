@@ -47,6 +47,7 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -156,12 +157,8 @@ public class MPSMakeMediator {
 
           File generatorOutputRoot = new File(mpsModule.getConfiguration().getGeneratorOutputPath());
           File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
-          myOutputRootsPerTarget.put(target, outputRoot);
 
-          if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
-            BuildRootIndex buildRootIndex = myContext.getProjectDescriptor().getBuildRootIndex();
-            buildRootIndex.associateTempRoot(myContext, target, new JavaSourceRootDescriptor(outputRoot, target, true, false, "", Collections.<File>emptySet()));
-          }
+          myOutputRootsPerTarget.put(target, outputRoot);
         }
         return resources;
       }
@@ -244,16 +241,15 @@ public class MPSMakeMediator {
       ModuleBuildTarget target = myToMake.get(source);
       File file = new File(writtenFile);
 
+      // all written java files need to be marked as dirty to get compiled by the JavaBuilder
+      try {
+        FSOperations.markDirty(myContext, CompilationRound.CURRENT, new File(writtenFile));
+        myOutputConsumer.registerOutputFile(target, file, getFilesFromDataSource(source.getSource()));
+      } catch (IOException e) {
+        reportError(BUNDLE.getString("io.problem.while.marking.java.sources.dirty"), e);
+        success = false;
+      }
       if (isJava(file)) {
-        // all written java files need to be marked as dirty to get compiled by the JavaBuilder
-        for (String written : makeFacetConfiguration.getWrittenFiles()) {
-          try {
-            FSOperations.markDirty(myContext, CompilationRound.CURRENT, new File(written));
-          } catch (IOException e) {
-            reportError(BUNDLE.getString("io.problem.while.marking.java.sources.dirty"), e);
-            success = false;
-          }
-        }
       } else {
         // all non-java files got to be copied (which are not in the caches folder)
         if (!myRedirects.isInCacheOutput(writtenFile)) {
@@ -298,8 +294,8 @@ public class MPSMakeMediator {
         result.add(file.getPath());
       } else {
         for (IFile child : file.getChildren()) {
-          if (FileUtil.extensionEquals(child.getName(), MPSModuleLevelBuilder.MODEL_EXTENSION)
-            || FileUtil.extensionEquals(child.getName(), MPSModuleLevelBuilder.MPSR_EXTENSION)) {
+          if (FileUtil.extensionEquals(child.getName(), MPSExtentions.MODEL_HEADER)
+            || FileUtil.extensionEquals(child.getName(), MPSExtentions.MODEL_ROOT)) {
             result.add(child.getPath());
           }
         }
@@ -320,9 +316,9 @@ public class MPSMakeMediator {
     final String outputRootUrl = JpsJavaExtensionService.getInstance().getOutputUrl(target.getModule(), target.isTests());
     final String targetPath = JpsPathUtil.urlToPath(outputRootUrl) + '/' + relativePath;
 
-
     final File targetFile = new File(targetPath).getCanonicalFile();
     FileUtil.copyContent(file, targetFile);
+    myOutputConsumer.registerOutputFile(target, targetFile, Collections.singletonList(file.getPath()));
   }
 
   private void reportError(String msg, Throwable e) {
@@ -404,5 +400,4 @@ public class MPSMakeMediator {
       return idx >= 0 ? rootPaths[idx] : null;
     }
   }
-
 }

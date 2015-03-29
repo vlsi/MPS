@@ -26,7 +26,9 @@ import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
+import jetbrains.mps.project.MPSExtentions;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
@@ -45,16 +47,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import static jetbrains.mps.project.MPSExtentions.*;
+
 /**
  * evgeny, 11/30/12
  */
 public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
+  @NonNls
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSModuleLevelBuilder.class);
-
-  private static final String JAVA_EXTENSION = "java";
-  static final String MODEL_EXTENSION = "model";
-  static final String MPSR_EXTENSION = "mpsr";
-  static final String MPS_MODEL_EXTENSION = "mps";
 
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
 
@@ -70,7 +70,6 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildStarted(final CompileContext context) {
-
     context.addBuildListener(new BuildListener() {
       @Override
       public void filesGenerated(Collection<Pair<String, String>> paths) {
@@ -150,7 +149,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
       final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
       if (toMake.isEmpty()) {
-        LOG.debug("Nothing to do");
+        LOG.debug("Nothing to do -- no changed models");
         return status;
       }
 
@@ -179,10 +178,10 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         if (solution == null) return true;
 
         String suffix = FileUtilRt.getExtension(file.getName());
-        if (!suffix.equals(MODEL_EXTENSION)) {
+        if (!suffix.equals(MODEL_HEADER)) {
           ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
           if (modelFactory == null) return true;
-        }
+        } // fixme obviously
 
         String path = FileUtil.toCanonicalPath(file.getPath());
         SModel model = solution.getModelByPath(path);
@@ -200,6 +199,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public List<String> getCompilableFileExtensions() {
-    return Arrays.asList(MPSR_EXTENSION, MODEL_EXTENSION, MPS_MODEL_EXTENSION);
+//    return Arrays.asList(MODEL_ROOT, MODEL, MODEL_HEADER, TRACE_INFO_EXT);
+    return null;
   }
 }
