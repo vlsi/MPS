@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,7 +308,7 @@ public class ModelPersistence {
   public static Document saveModel(@NotNull SModel sourceModel) {
     int persistenceVersion = -1;
     if (sourceModel instanceof DefaultSModel) {
-      persistenceVersion = ((DefaultSModel) sourceModel).getPersistenceVersion();
+      persistenceVersion = ((DefaultSModel) sourceModel).getSModelHeader().getPersistenceVersion();
     }
     if (persistenceVersion == -1 || getModelPersistence(persistenceVersion) == null) {
       persistenceVersion = getCurrentPersistenceVersion();
