@@ -36,7 +36,7 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
     doTestMake("makeJava.in");
   }
 
-  public void testMakeJavaAndXml() {
+  public void ignoreTestMakeJavaAndXml() {
     doTestMake("makeJavaAndXml.in");
   }
 
@@ -60,11 +60,11 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
     buildResult.assertUpToDate();
   }
 
-  public void testMakeAfterRebuildDoesNothingJava() {
+  public void ignoreTestRebuildDoesNothingJava() {
     testMakeAfterRebuildDoesNothing("makeJava.in");
   }
 
-  public void testMakeAfterRebuildDoesNothingJavaAndXml() {
+  public void ignoreTestMakeAfterRebuildDoesNothingJavaAndXml() {
     testMakeAfterRebuildDoesNothing("makeJavaAndXml.in");
   }
 
@@ -72,7 +72,7 @@ public class MakeProjectTest extends MpsJpsBuildModelsTestCase {
     testMakeAfterRebuildDoesNothing("makeJavaKeepNoSources.in");
   }
 
-  public void testMakeAfterRebuildDoesNothingJavaSourceGenNearModels() {
+  public void ignoreTestMakeAfterRebuildDoesNothingJavaSourceGenNearModels() {
     testMakeAfterRebuildDoesNothing("makeJavaSourceGenNearModels.in");
   }
 }
