@@ -156,7 +156,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3351,10 +3351,14 @@
         <node concept="3Tqbb2" id="4$0H1w_YZHQ" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="4nkKl$KPUMx" role="3clF47">
-        <node concept="3clFbF" id="4$0H1w_YZKa" role="3cqZAp">
-          <node concept="2YIFZM" id="4$0H1w_YZKb" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~SReference.disableLogging():void" resolve="disableLogging" />
-            <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+        <node concept="3cpWs8" id="3KCC4i_48b_" role="3cqZAp">
+          <node concept="3cpWsn" id="3KCC4i_48bC" role="3cpWs9">
+            <property role="TrG5h" value="needToEnableLogging" />
+            <node concept="10P_77" id="3KCC4i_48bz" role="1tU5fm" />
+            <node concept="2YIFZM" id="4$0H1w_YZKb" role="33vP2m">
+              <ref role="37wK5l" to="cu2c:~SReference.disableLogging():boolean" resolve="disableLogging" />
+              <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+            </node>
           </node>
         </node>
         <node concept="2GUZhq" id="4$0H1w_YZKk" role="3cqZAp">
@@ -3440,10 +3444,17 @@
             </node>
           </node>
           <node concept="3clFbS" id="4$0H1w_YZKn" role="2GVbov">
-            <node concept="3clFbF" id="4$0H1w_YZKo" role="3cqZAp">
-              <node concept="2YIFZM" id="4$0H1w_YZKp" role="3clFbG">
-                <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
-                <ref role="37wK5l" to="cu2c:~SReference.enableLogging():void" resolve="enableLogging" />
+            <node concept="3clFbJ" id="3KCC4i_49ai" role="3cqZAp">
+              <node concept="3clFbS" id="3KCC4i_49ak" role="3clFbx">
+                <node concept="3clFbF" id="4$0H1w_YZKo" role="3cqZAp">
+                  <node concept="2YIFZM" id="4$0H1w_YZKp" role="3clFbG">
+                    <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+                    <ref role="37wK5l" to="cu2c:~SReference.enableLogging():void" resolve="enableLogging" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="3KCC4i_49ci" role="3clFbw">
+                <ref role="3cqZAo" node="3KCC4i_48bC" resolve="needToEnableLogging" />
               </node>
             </node>
           </node>

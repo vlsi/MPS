@@ -169,7 +169,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -5482,12 +5482,26 @@
         <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
       </node>
       <node concept="3clFbS" id="7Yvyxcb_4LN" role="3clF47">
+        <node concept="3cpWs8" id="3KCC4i_3MQY" role="3cqZAp">
+          <node concept="3cpWsn" id="3KCC4i_3MR1" role="3cpWs9">
+            <property role="TrG5h" value="needToEnableLogging" />
+            <node concept="10P_77" id="3KCC4i_3MQW" role="1tU5fm" />
+            <node concept="3clFbT" id="3KCC4i_3MSD" role="33vP2m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
         <node concept="2GUZhq" id="7Yvyxcb_cE9" role="3cqZAp">
           <node concept="3clFbS" id="7Yvyxcb_cEb" role="2GV8ay">
             <node concept="3clFbF" id="7Yvyxcb_cEx" role="3cqZAp">
-              <node concept="2YIFZM" id="7Yvyxcb_cEy" role="3clFbG">
-                <ref role="37wK5l" to="cu2c:~SReference.disableLogging():void" resolve="disableLogging" />
-                <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+              <node concept="37vLTI" id="3KCC4i_3MSX" role="3clFbG">
+                <node concept="37vLTw" id="3KCC4i_3MTC" role="37vLTJ">
+                  <ref role="3cqZAo" node="3KCC4i_3MR1" resolve="needToEnableLogging" />
+                </node>
+                <node concept="2YIFZM" id="7Yvyxcb_cEy" role="37vLTx">
+                  <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+                  <ref role="37wK5l" to="cu2c:~SReference.disableLogging():boolean" resolve="disableLogging" />
+                </node>
               </node>
             </node>
             <node concept="3cpWs6" id="7Yvyxcb_cHA" role="3cqZAp">
@@ -5502,10 +5516,17 @@
             </node>
           </node>
           <node concept="3clFbS" id="7Yvyxcb_cEc" role="2GVbov">
-            <node concept="3clFbF" id="7Yvyxcb_cFd" role="3cqZAp">
-              <node concept="2YIFZM" id="7Yvyxcb_cFY" role="3clFbG">
-                <ref role="37wK5l" to="cu2c:~SReference.enableLogging():void" resolve="enableLogging" />
-                <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+            <node concept="3clFbJ" id="3KCC4i_3MUk" role="3cqZAp">
+              <node concept="3clFbS" id="3KCC4i_3MUm" role="3clFbx">
+                <node concept="3clFbF" id="7Yvyxcb_cFd" role="3cqZAp">
+                  <node concept="2YIFZM" id="7Yvyxcb_cFY" role="3clFbG">
+                    <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
+                    <ref role="37wK5l" to="cu2c:~SReference.enableLogging():void" resolve="enableLogging" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="3KCC4i_3MV0" role="3clFbw">
+                <ref role="3cqZAo" node="3KCC4i_3MR1" resolve="needToEnableLogging" />
               </node>
             </node>
           </node>
@@ -5599,6 +5620,40 @@
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="2iZvIBbzBGG" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="2iZvIBbzBHj" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
+        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
+          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
+            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
+              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
+            </node>
+            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
+            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
+            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
+          </node>
+        </node>
+      </node>
       <node concept="3uibUv" id="3IONCthJkW6" role="3clF45">
         <ref role="3uigEE" to="k7g3:~List" resolve="List" />
         <node concept="3uibUv" id="3IONCthJnNh" role="11_B2D">
@@ -5645,40 +5700,6 @@
         <property role="TrG5h" value="model" />
         <node concept="3uibUv" id="3IONCthJ3Ui" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
-        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
-          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
-            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
-              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
-            </node>
-            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
-            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
-            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
-        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="2iZvIBbzBGG" role="2B76xF">
-          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="2iZvIBbzBHj" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
         </node>
       </node>
     </node>

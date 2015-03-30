@@ -339,11 +339,14 @@ public class SNodeOperations {
    */
   @Deprecated
   public static SNode getTargetNodeSilently(SReference ref) {
+    boolean needToEnableLogging = false;
     try {
-      jetbrains.mps.smodel.SReference.disableLogging();
+      needToEnableLogging = jetbrains.mps.smodel.SReference.disableLogging();
       return ref.getTargetNode();
     } finally {
-      jetbrains.mps.smodel.SReference.enableLogging();
+      if (needToEnableLogging) {
+        jetbrains.mps.smodel.SReference.enableLogging();
+      }
     }
   }
   /**

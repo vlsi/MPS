@@ -31,12 +31,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
   private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
-  private static boolean ourLoggingOff = false;
+  private final static ThreadLocal<Boolean> ourLoggingOff = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
   private SReferenceLink myRoleId;
   private volatile String myResolveInfo;
@@ -101,20 +109,28 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  public static void disableLogging() {
-    ourLoggingOff = true;
+  /**
+   * @return Whether logging was really disabled by this call, i.e. it wasn't already disabled before
+   */
+  public static boolean disableLogging() {
+    boolean wasOff = ourLoggingOff.get();
+    ourLoggingOff.set(true);
+    return !wasOff;
   }
 
   public static void enableLogging() {
-    ourLoggingOff = false;
+    ourLoggingOff.set(false);
   }
 
   public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
+    boolean needToEnableLogging = false;
     try {
-      disableLogging();
+      needToEnableLogging = disableLogging();
       return ref.getTargetNode();
     } finally {
-      enableLogging();
+      if (needToEnableLogging) {
+        enableLogging();
+      }
     }
   }
 
@@ -194,7 +210,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   protected abstract SNode getTargetNode_internal();
 
   protected final void error(String message, ProblemDescription... problems) {
-    if (ourLoggingOff) return;
+    if (ourLoggingOff.get()) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     SModel model = getSourceNode().getModel();
