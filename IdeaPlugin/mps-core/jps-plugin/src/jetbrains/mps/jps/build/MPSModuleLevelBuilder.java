@@ -154,7 +154,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       }
 
       final JpsMPSProject project = JpsMPSRepositoryFacade.getInstance().getProject();
-      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext, refreshComponent, outputConsumer);
+      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext,  outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
         status = ExitCode.OK;
