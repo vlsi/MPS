@@ -88,9 +88,6 @@ public class Solution extends ReloadableModuleBase {
       jdkPackages.includeWithPrefix("com.");
       jdkPackages.includeWithPrefix("com.sun.");
       jdkPackages.includeWithPrefix("com.sun.jdi.");
-      // ant integration uses sun.misc.Resource for no apparent reason
-      jdkPackages.includeWithPrefix("sun.");
-      jdkPackages.includeWithPrefix("sun.misc.");
       psc = jdkPackages;
     } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
       PackageScopeControl platformPackages = new PackageScopeControl();
