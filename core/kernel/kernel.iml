@@ -17,10 +17,6 @@
     <content url="file://$MODULE_DIR$/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/stubUtils">
-      <sourceFolder url="file://$MODULE_DIR$/stubUtils/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stubUtils/source" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/tests">
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>

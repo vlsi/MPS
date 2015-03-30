@@ -699,14 +699,6 @@
           <property role="nFU4j" value="smodelRuntime/source_gen" />
           <property role="3LZaj6" value="source" />
         </node>
-        <node concept="nFU4i" id="1FaKCGJSzF3" role="nFU4p">
-          <property role="nFU4j" value="stubUtils/source_gen" />
-          <property role="3LZaj6" value="source" />
-        </node>
-        <node concept="nFU4i" id="2brFPFtkxDK" role="nFU4p">
-          <property role="nFU4j" value="stubUtils/source" />
-          <property role="3LZaj6" value="source" />
-        </node>
       </node>
       <node concept="398b2D" id="1FaKCGJSzF5" role="398b2p">
         <node concept="398BVA" id="1FaKCGJSzF7" role="398b2C">
@@ -1071,6 +1063,38 @@
               <node concept="2Ry0Ak" id="3dkXFAFl6a5" role="2Ry0An">
                 <property role="2Ry0Am" value="persistence" />
                 <node concept="2Ry0Ak" id="3dkXFAFl6a6" role="2Ry0An">
+                  <property role="2Ry0Am" value="source_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2GAZfH" id="60rt_c8PS3C" role="398b2p">
+        <node concept="TIC1d" id="60rt_c8PS3$" role="2GAZfG">
+          <node concept="398BVA" id="60rt_c8PSy0" role="TIC6M">
+            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="60rt_c8PT0c" role="iGT6I">
+              <property role="2Ry0Am" value="core" />
+              <node concept="2Ry0Ak" id="60rt_c8PT0h" role="2Ry0An">
+                <property role="2Ry0Am" value="java-stub" />
+                <node concept="2Ry0Ak" id="60rt_c8PT0m" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2GAZfH" id="60rt_c8PT0o" role="398b2p">
+        <node concept="TIC1d" id="60rt_c8PT0p" role="2GAZfG">
+          <node concept="398BVA" id="60rt_c8PT0q" role="TIC6M">
+            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="60rt_c8PT0r" role="iGT6I">
+              <property role="2Ry0Am" value="core" />
+              <node concept="2Ry0Ak" id="60rt_c8PT0s" role="2Ry0An">
+                <property role="2Ry0Am" value="java-stub" />
+                <node concept="2Ry0Ak" id="60rt_c8PTuY" role="2Ry0An">
                   <property role="2Ry0Am" value="source_gen" />
                 </node>
               </node>
@@ -1803,6 +1827,9 @@
             </node>
             <node concept="1bldCd" id="1OSlDLmrG9D" role="39821P">
               <ref role="3$exzV" node="7Kfy9QB6KYK" resolve="jetbrains.mps.baseLanguage.util" />
+            </node>
+            <node concept="1bldCd" id="60rt_c8PQCC" role="39821P">
+              <ref role="3$exzV" node="1TaHNgiHrmy" resolve="jetbrains.mps.java.stub" />
             </node>
           </node>
           <node concept="3_J27D" id="IFRVVI696F" role="Nbhlr">
@@ -4244,13 +4271,10 @@
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="6wK_PpNA8Br" role="iGT6I">
             <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="6wK_PpNA8Bs" role="2Ry0An">
-              <property role="2Ry0Am" value="kernel" />
-              <node concept="2Ry0Ak" id="6wK_PpNA8Bt" role="2Ry0An">
-                <property role="2Ry0Am" value="stubUtils" />
-                <node concept="2Ry0Ak" id="6wK_PpNA8Bu" role="2Ry0An">
-                  <property role="2Ry0Am" value="stubUtils.msd" />
-                </node>
+            <node concept="2Ry0Ak" id="6wK_PpNA8Bt" role="2Ry0An">
+              <property role="2Ry0Am" value="java-stub" />
+              <node concept="2Ry0Ak" id="1ivyE9ZJaEd" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.java.stub.msd" />
               </node>
             </node>
           </node>

@@ -38,6 +38,7 @@
       <module fileurl="file://$PROJECT_DIR$/tools/gensources/gensources.iml" filepath="$PROJECT_DIR$/tools/gensources/gensources.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" group="editor" />
+      <module fileurl="file://$PROJECT_DIR$/core/java-stub/java-stub.iml" filepath="$PROJECT_DIR$/core/java-stub/java-stub.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/resources/kernel-resources.iml" filepath="$PROJECT_DIR$/core/kernel/resources/kernel-resources.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" filepath="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/make-facets.iml" group="core" />
