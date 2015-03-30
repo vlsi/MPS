@@ -75,29 +75,30 @@ public abstract class MpsJpsModelsEnvironmentTestCase extends MpsJpsBuildTestCas
     doTest("xmlSourceGenNearModels/in");
   }
 
-  public void testJavaPerRoot() {
-    doTest("java/in_per_root");
-  }
+//  public void testJavaPerRoot() {
+//    doTest("java/in_per_root");
+//  }
+//
+//  public void testJavaKeepNoSourcesPerRoot() {
+//    doTest("javaKeepNoSources/in_per_root");
+//  }
+//
+//  public void testJavaSourceGenNearModelsPerRoot() {
+//    doTest("javaSourceGenNearModels/in_per_root");
+//  }
+//
+//  public void testXmlPerRoot() {
+//    doTest("xml/in_per_root");
+//  }
+//
+//  public void testXmlKeepNoSourcesPerRoot() {
+//    doTest("xmlKeepNoSources/in_per_root");
+//  }
+//
+//  public void testXmlSourceGenNearModelsPerRoot() {
+//    doTest("xmlSourceGenNearModels/in_per_root");
+//  }
 
-  public void testJavaKeepNoSourcesPerRoot() {
-    doTest("javaKeepNoSources/in_per_root");
-  }
-
-  public void testJavaSourceGenNearModelsPerRoot() {
-    doTest("javaSourceGenNearModels/in_per_root");
-  }
-
-  public void testXmlPerRoot() {
-    doTest("xml/in_per_root");
-  }
-
-  public void testXmlKeepNoSourcesPerRoot() {
-    doTest("xmlKeepNoSources/in_per_root");
-  }
-
-  public void testXmlSourceGenNearModelsPerRoot() {
-    doTest("xmlSourceGenNearModels/in_per_root");
-  }
   @NotNull
   @NonNls
   @Override
