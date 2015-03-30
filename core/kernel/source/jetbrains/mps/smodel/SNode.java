@@ -237,7 +237,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       return "?" + persistentName + "?";
     }
 
-    return SNodeUtil.getPresentation(this);
+    return String.valueOf(SNodeUtil.getPresentation(this));
   }
 
   @Override
