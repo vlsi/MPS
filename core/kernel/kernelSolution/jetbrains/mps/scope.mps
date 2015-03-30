@@ -26,6 +26,8 @@
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
     <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
+    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
+    <import index="fwv2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -4442,17 +4444,77 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="VXQuBi4P9" role="3cqZAp">
-          <node concept="37vLTI" id="VXQuBi59N" role="3clFbG">
-            <node concept="2YIFZM" id="4k9eBec$CNU" role="37vLTx">
-              <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-              <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
-              <node concept="37vLTw" id="4k9eBec$CTg" role="37wK5m">
+        <node concept="3cpWs8" id="4RAZ75IMKBz" role="3cqZAp">
+          <node concept="3cpWsn" id="4RAZ75IMKB$" role="3cpWs9">
+            <property role="TrG5h" value="cd" />
+            <node concept="3uibUv" id="4RAZ75IMKBw" role="1tU5fm">
+              <ref role="3uigEE" to="fwv2:~ConceptDescriptor" resolve="ConceptDescriptor" />
+            </node>
+            <node concept="2YIFZM" id="4RAZ75IMKB_" role="33vP2m">
+              <ref role="37wK5l" to="n55e:~ConceptRegistryUtil.getConceptDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
+              <ref role="1Pybhc" to="n55e:~ConceptRegistryUtil" resolve="ConceptRegistryUtil" />
+              <node concept="37vLTw" id="4RAZ75IMKBA" role="37wK5m">
                 <ref role="3cqZAo" node="VXQuBi1NM" resolve="targetConcept" />
               </node>
             </node>
-            <node concept="37vLTw" id="VXQuBi4P8" role="37vLTJ">
-              <ref role="3cqZAo" node="VXQuBhR9t" resolve="myTargetConcept" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4RAZ75IMKWm" role="3cqZAp">
+          <node concept="3clFbS" id="4RAZ75IMKWo" role="3clFbx">
+            <node concept="3clFbF" id="4RAZ75IMLgJ" role="3cqZAp">
+              <node concept="37vLTI" id="4RAZ75IMLqf" role="3clFbG">
+                <node concept="2YIFZM" id="4RAZ75IML_U" role="37vLTx">
+                  <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                  <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+                  <node concept="37vLTw" id="4RAZ75IMLFi" role="37wK5m">
+                    <ref role="3cqZAo" node="VXQuBi1NM" resolve="targetConcept" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="4RAZ75IMLgH" role="37vLTJ">
+                  <ref role="3cqZAo" node="VXQuBhR9t" resolve="myTargetConcept" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="4RAZ75IML9h" role="3clFbw">
+            <node concept="10Nm6u" id="4RAZ75IMLbB" role="3uHU7w" />
+            <node concept="37vLTw" id="4RAZ75IML60" role="3uHU7B">
+              <ref role="3cqZAo" node="4RAZ75IMKB$" resolve="cd" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="4RAZ75IMLH4" role="9aQIa">
+            <node concept="3clFbS" id="4RAZ75IMLH5" role="9aQI4">
+              <node concept="3clFbF" id="4RAZ75IMLML" role="3cqZAp">
+                <node concept="37vLTI" id="4RAZ75IMLWa" role="3clFbG">
+                  <node concept="3K4zz7" id="4RAZ75IMMoo" role="37vLTx">
+                    <node concept="2OqwBi" id="4RAZ75IMM82" role="3K4Cdx">
+                      <node concept="37vLTw" id="4RAZ75IMM4_" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4RAZ75IMKB$" resolve="cd" />
+                      </node>
+                      <node concept="liA8E" id="4RAZ75IMMep" role="2OqNvi">
+                        <ref role="37wK5l" to="fwv2:~ConceptDescriptor.isInterfaceConcept():boolean" resolve="isInterfaceConcept" />
+                      </node>
+                    </node>
+                    <node concept="2YIFZM" id="4RAZ75IMMu0" role="3K4E3e">
+                      <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getInterfaceConcept(java.lang.String):org.jetbrains.mps.openapi.language.SInterfaceConcept" resolve="getInterfaceConcept" />
+                      <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+                      <node concept="37vLTw" id="4RAZ75IMMu1" role="37wK5m">
+                        <ref role="3cqZAo" node="VXQuBi1NM" resolve="targetConcept" />
+                      </node>
+                    </node>
+                    <node concept="2YIFZM" id="4RAZ75IMMxV" role="3K4GZi">
+                      <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+                      <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                      <node concept="37vLTw" id="4RAZ75IMMxW" role="37wK5m">
+                        <ref role="3cqZAo" node="VXQuBi1NM" resolve="targetConcept" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4RAZ75IMLMK" role="37vLTJ">
+                    <ref role="3cqZAo" node="VXQuBhR9t" resolve="myTargetConcept" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

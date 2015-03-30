@@ -7,6 +7,8 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -29,7 +31,12 @@ public class ModelsScope extends Scope {
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, String targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
     myRootsOnly = rootsOnly;
-    myTargetConcept = MetaAdapterFactoryByName.getConcept(targetConcept);
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(targetConcept);
+    if (cd == null) {
+      myTargetConcept = MetaAdapterFactoryByName.getConcept(targetConcept);
+    } else {
+      myTargetConcept = (cd.isInterfaceConcept() ? MetaAdapterFactoryByName.getInterfaceConcept(targetConcept) : MetaAdapterFactoryByName.getConcept(targetConcept));
+    }
   }
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, SAbstractConcept targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
