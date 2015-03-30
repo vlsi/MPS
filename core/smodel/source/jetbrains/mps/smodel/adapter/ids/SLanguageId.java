@@ -16,20 +16,27 @@
 package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.UUID;
 
+@Immutable
 public final class SLanguageId {
-  @NotNull
-  private final UUID myId;
+  private final long myHigh;
+  private final long myLow;
 
   public SLanguageId(@NotNull UUID id) {
-    myId = id;
+    this(id.getMostSignificantBits(), id.getLeastSignificantBits());
+  }
+
+  public SLanguageId(long mostSignificantBits, long leastSignificantBits) {
+    myHigh = mostSignificantBits;
+    myLow = leastSignificantBits;
   }
 
   @NotNull
   public UUID getIdValue() {
-    return myId;
+    return new UUID(myHigh, myLow);
   }
 
   @Override
@@ -39,16 +46,17 @@ public final class SLanguageId {
 
     SLanguageId that = (SLanguageId) o;
 
-    return myId.equals(that.myId);
+    return myHigh == that.myHigh && myLow == that.myLow;
   }
 
   @Override
   public int hashCode() {
-    return myId.hashCode();
+    // kudos to UUID.hashCode()
+    return (int)((myHigh >> 32) ^ myHigh ^ (myLow >> 32) ^ myLow);
   }
 
   public String serialize(){
-    return myId.toString();
+    return getIdValue().toString();
   }
 
   public static SLanguageId deserialize(String s){
