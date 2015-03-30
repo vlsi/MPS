@@ -26,12 +26,13 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class SimpleFileReader {
-  private static final Pattern WHITESPACE_OR_COMMA = Pattern.compile(" |,|\\n|\\t");
+  private static final String LINE_SEPARATOR_PATTERN = "\r\n|[\n\r\u2028\u2029\u0085]";
+  private static final Pattern COMMA_OR_NEWLINE = Pattern.compile(",|" + LINE_SEPARATOR_PATTERN);
 
   private final Pattern myDelimiters;
 
   public SimpleFileReader() {
-    this(WHITESPACE_OR_COMMA);
+    this(COMMA_OR_NEWLINE);
   }
 
   public SimpleFileReader(@NotNull Pattern delimiters) {
