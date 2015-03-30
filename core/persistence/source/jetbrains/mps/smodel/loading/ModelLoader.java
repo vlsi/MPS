@@ -37,12 +37,21 @@ public class ModelLoader {
   private SModelData myFullModel;
   private final SModel myDataOwner;
 
+  /**
+   *
+   * @param model model being updated, survives.
+   * @param fullModel source of nodes to inject into updated models, for disposal.
+   * @param dataOwner provides extra information about location in case anything goes wrong
+   */
   public ModelLoader(@NotNull SModelData model, @NotNull SModelData fullModel, @NotNull SModel dataOwner) {
     myModel = model;
     myFullModel = fullModel;
     myDataOwner = dataOwner;
   }
 
+  /**
+   * Update initial model with elements from full model. Instance of initial model is the one to keep.
+   */
   public void update() {
     for (SNode root : myModel.getRootNodes()) {
       if (root instanceof LazySNode) {
