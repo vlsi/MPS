@@ -16,6 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -24,6 +25,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
@@ -110,14 +112,16 @@ public class ValidationUtil {
   }
 
   public static void validateModule(final SModule m, Consumer<ValidationProblem> consumer) {
+    if (m instanceof TransientSModule || m instanceof ProjectStructureModule) return;
+
     if (m instanceof DevKit) {
       validateDevkit((DevKit) m, consumer);
     } else if (m instanceof Language) {
       validateLanguage((Language) m, consumer);
     } else if (m instanceof Generator) {
       validateGenerator((Generator) m, consumer);
-    } else if (m instanceof AbstractModule) {
-      validateAbstractModule((AbstractModule) m, consumer);
+    } else if (m instanceof Solution) {
+      validateAbstractModule((Solution) m, consumer);
     } else {
       throw new IllegalArgumentException("Unknown module for validation: " + m.getClass());
     }
