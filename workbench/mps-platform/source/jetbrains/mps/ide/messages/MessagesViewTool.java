@@ -65,17 +65,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private final MyMessageList myDefaultList;
   private final Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
 
-  private boolean showToolAfterAddingMessage = true;
-
-  /**
-   * @deprecated there are no uses for this method
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setShowToolAfterAddingMessage(boolean showToolAfterAddingMessage) {
-    this.showToolAfterAddingMessage = showToolAfterAddingMessage;
-  }
-
   public MessagesViewTool(Project project) {
     myProject = project;
     myDefaultList = new MyMessageList(project, "Messages");
@@ -120,7 +109,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     final MessageList list = getAvailableList(listName, true);
     list.add(message);
 
-    if (list.isVisible(message) && (showToolAfterAddingMessage || message.getKind() == MessageKind.ERROR)) {
+    if (list.isVisible(message) && message.getKind() == MessageKind.ERROR) {
       new ShowList(list).execute();
     }
   }
@@ -150,9 +139,8 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public static class MessageViewToolState {
-    public MessageViewToolState(MessageListState defaultListState, boolean showToolAfterAddingMessage) {
+    public MessageViewToolState(MessageListState defaultListState) {
       this.defaultListState = defaultListState;
-      this.showToolAfterAddingMessage = showToolAfterAddingMessage;
     }
     public MessageViewToolState() {
       this.defaultListState = new MessageListState();
@@ -164,27 +152,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   @Override
   public MessageViewToolState getState() {
-    return new MessageViewToolState(getDefaultList().getState(), showToolAfterAddingMessage);
+    return new MessageViewToolState(getDefaultList().getState());
   }
 
   @Override
   public void loadState(MessageViewToolState state) {
     getDefaultList().loadState(state.defaultListState);
-    showToolAfterAddingMessage = state.showToolAfterAddingMessage;
   }
 
   public MessageView getMessagesService() {
     return SERVICE.getInstance(myProject);
-  }
-
-  /**
-   * What's this?
-   * @deprecated Since 2011, developers question themselves, what it this method for, and nobody knows the answer.
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void resetAutoscrollOption() {
-    getDefaultList().resetAutoscrollOption();
   }
 
   public IMessageHandler newHandler() {
@@ -216,6 +193,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
       try {
         contentManager = getMessagesService().getContentManager();
       } catch (NullPointerException dumb) {
+        // intentionally no-op
       }
       Content content = contentManager != null ? contentManager.getContent(messageList.getComponent()) : null;
       if (content == null || !content.isPinned()) {

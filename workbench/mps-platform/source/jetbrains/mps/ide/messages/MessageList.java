@@ -56,9 +56,8 @@ import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -141,7 +140,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private volatile boolean myIsDisposed = false;
 
   protected MessageList(Project project) {
-    this.myProject = project;
+    myProject = project;
     myUpdateQueue.setRestartTimerOnAdd(true);
   }
 
@@ -432,31 +431,11 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   /**
-   * @deprecated override {@link #updateHeader()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  protected void setDisplayInfo(String name) {
-    // inherently no-op
-  }
-
-  /**
-   * use {@link #createContent(boolean, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void createContent() {
-    // no-op
-  }
-
-  /**
    * Override and implement registration of UI component into the MessageView.
    * Don't forget to activate message dispatch once content is ready.
    * @see #activateUpdate()
    */
-  public void createContent(final boolean canClose, final boolean isMultiple) {
-    createContent();
-  }
+  public abstract void createContent(final boolean canClose, final boolean isMultiple);
 
   /**
    * MessageList doesn't update once instantiated, activate update dispatch once
@@ -534,8 +513,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   private void showHelpForCurrentMessage() {
     String helpURL = getHelpUrlForCurrentMessage();
-    if (helpURL == null) return;
-    BrowserUtil.launchBrowser(helpURL);
+    if (helpURL == null) {
+      return;
+    }
+    BrowserUtil.browse(helpURL);
   }
 
   private String getHelpUrlForCurrentMessage() {
@@ -579,14 +560,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   protected void updateHeader() {
-    // FIXME would be empty once setDisplayInfo is gone
-    if (hasErrors() || hasWarnings() || hasInfo()) {
-      setDisplayInfo(NameUtil.formatNumericalString(myErrors, "error") + "/"
-        + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
-        + NameUtil.formatNumericalString(myInfos, "info"));
-    } else {
-      setDisplayInfo("");
-    }
   }
 
   private void updateActions() {
@@ -628,7 +601,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
 
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
+    public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
       CopyPasteManagerEx.getInstance().setContents(new StringSelection(myTextToCopy));
     }
   }
@@ -677,7 +650,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
       String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages limit", null, String.valueOf(MessageList.this.myMaxListSize),
           new InputValidatorEx() {
             @Nullable

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,15 +60,6 @@ public abstract class SReferenceBase extends SReference {
       ImmatureReferences.getInstance().add(this);
     }
     myImmatureTargetNode = immatureTargetNode;
-  }
-
-  @Override
-  @Deprecated
-  public boolean isExternal() {
-    SModel m = getSourceNode().getModel();
-    if (m == null) return true;
-
-    return !(m.getReference().equals(getTargetSModelReference()));
   }
 
   @Override

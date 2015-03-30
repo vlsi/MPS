@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.Nullable;
@@ -80,25 +79,6 @@ public class SModelHeader {
 
   public void setDoNotGenerate(boolean doNotGenerate) {
     this.doNotGenerate = doNotGenerate;
-  }
-
-  /**
-   * @deprecated use {@link #setModelReference(org.jetbrains.mps.openapi.model.SModelReference)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setUID(String UID) {
-    setModelReference(UID == null ? null : PersistenceFacade.getInstance().createModelReference(UID));
-  }
-
-  /**
-   * @deprecated use {@link #getModelReference()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public String getUID() {
-    SModelReference mr = getModelReference();
-    return mr == null ? null : mr.toString();
   }
 
   /**

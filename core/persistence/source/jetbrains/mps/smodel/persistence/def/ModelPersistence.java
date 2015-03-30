@@ -49,6 +49,8 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
@@ -442,10 +444,9 @@ public class ModelPersistence {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
           String name = attributes.getQName(idx);
           String value = attributes.getValue(idx);
-          if (MODEL_UID.equals(name)) {
-            myResult.setUID(value);
-          } else if (ModelPersistence9.REF.equals(name)) {
-            myResult.setUID(value);
+          if (MODEL_UID.equals(name) || ModelPersistence9.REF.equals(name)) {
+            final SModelReference mr = value == null ? null : PersistenceFacade.getInstance().createModelReference(value);
+            myResult.setModelReference(mr);
           } else if (SModelHeader.VERSION.equals(name)) {
             try {
               myResult.setVersion(Integer.parseInt(value));

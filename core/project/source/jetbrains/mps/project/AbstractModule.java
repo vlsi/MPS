@@ -372,22 +372,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
-  //----get deps
-
-  /**
-   * @deprecated use {@link #getDeclaredDependencies()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public final List<Dependency> getDependencies() {
-    assertCanRead();
-    ArrayList<Dependency> rv = new ArrayList<Dependency>();
-    for (SDependency dep : getDeclaredDependencies()) {
-      rv.add(new Dependency(dep.getTargetModule(), dep.isReexport()));
-    }
-    return rv;
-  }
-
   //----languages & devkits
 
   /**

@@ -16,7 +16,6 @@
 package jetbrains.mps.messages;
 
 import jetbrains.mps.logging.Log4jUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,14 +32,6 @@ public interface IMessageHandler {
   public final static class LogHandler implements IMessageHandler {
     private final Logger myLog;
 
-    /**
-     * @deprecated jetbrains.mps.logging.Logger is abandoned in favor of apache's log4j or native java.util.logging.Logger.
-     */
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public LogHandler(@NotNull jetbrains.mps.logging.Logger log) {
-      this(Logger.getLogger(IMessageHandler.class));
-    }
     public LogHandler(@NotNull Logger log) {
       myLog = log;
     }

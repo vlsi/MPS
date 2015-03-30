@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -192,13 +192,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   protected abstract SNode getTargetNode_internal();
-
-  @Deprecated
-  /**
-   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
-   * @Deprecated in 3.0
-   */
-  public abstract boolean isExternal();
 
   protected final void error(String message, ProblemDescription... problems) {
     if (ourLoggingOff) return;
