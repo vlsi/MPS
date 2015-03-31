@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -39,13 +40,18 @@ import java.util.Set;
  */
 public class AnalyzerRules {
   private List<DataFlowConstructor> myConceptRules = new LinkedList<DataFlowConstructor>();
-  private Map<SNode, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap<SNode, Set<DataFlowConstructor>>();
+  private Map<SConcept, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap<SConcept, Set<DataFlowConstructor>>();
   private DataFlowAnalyzer myAnalyzer;
-  public AnalyzerRules(DataFlowAnalyzer analyzer) {
+  private final SNode myNodeToApply;
+  private final Program myProgram;
+
+  public AnalyzerRules(DataFlowAnalyzer analyzer, SNode nodeToApply, Program program) {
+    myNodeToApply = nodeToApply;
+    myProgram = program;
     myAnalyzer = analyzer;
   }
-  public void apply(SNode nodeToApply, Program program) {
-    SModelInternal model = (SModelInternal) nodeToApply.getModel();
+  public void apply() {
+    SModelInternal model = (SModelInternal) myNodeToApply.getModel();
     if (model == null) {
       return;
     }
@@ -62,14 +68,14 @@ public class AnalyzerRules {
         myConceptRules.add(rule);
       }
     }
-    for (SNode descendant : SNodeOperations.getNodeDescendants(nodeToApply, null, false, new SAbstractConcept[]{})) {
+    for (SNode descendant : SNodeOperations.getNodeDescendants(myNodeToApply, null, false, new SAbstractConcept[]{})) {
       for (DataFlowConstructor rule : getRules(descendant)) {
-        rule.performActions(program, descendant);
+        rule.performActions(myProgram, descendant);
       }
     }
   }
   private Set<DataFlowConstructor> getRules(SNode node) {
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
+    SConcept concept = node.getConcept();
     Set<DataFlowConstructor> cachedResult = myConceptRulesCache.get(concept);
     if (cachedResult != null) {
       return cachedResult;
