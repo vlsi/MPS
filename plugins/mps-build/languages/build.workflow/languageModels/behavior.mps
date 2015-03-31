@@ -2,7 +2,7 @@
 <model ref="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -215,8 +215,8 @@
                   <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                   <node concept="13iPFW" id="3rV3sBXetzD" role="37wK5m" />
                   <node concept="359W_D" id="6t3ylNOzOTK" role="37wK5m">
-                    <ref role="359W_F" to="8xvf:3rV3sBXcG6U" />
-                    <ref role="359W_E" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
+                    <ref role="359W_E" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
+                    <ref role="359W_F" to="8xvf:2pKPpytmA9R" />
                   </node>
                 </node>
               </node>
