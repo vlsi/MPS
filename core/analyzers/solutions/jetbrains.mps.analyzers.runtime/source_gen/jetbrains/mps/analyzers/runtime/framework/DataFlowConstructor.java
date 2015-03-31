@@ -5,7 +5,13 @@ package jetbrains.mps.analyzers.runtime.framework;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 
-public abstract class DataFlowConstructor implements jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor {
+/**
+ * 
+ * @deprecated use jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor
+ */
+@Deprecated
+public abstract class DataFlowConstructor {
+  @Deprecated
   public DataFlowConstructor() {
   }
   public abstract boolean isApplicable(SNode node);

@@ -1286,9 +1286,6 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="6EBM_lhymK5" role="1zkMxy">
-      <ref role="3uigEE" to="mu20:DMZNGGEq73" resolve="DataFlowConstructor" />
-    </node>
     <node concept="312cEg" id="3OYWvKo5tAi" role="jymVt">
       <property role="TrG5h" value="myPattern" />
       <node concept="3Tm6S6" id="3OYWvKo5tAj" role="1B3o_S" />
@@ -1381,6 +1378,9 @@
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="4ipeeu8X4pN" role="1tU5fm" />
       </node>
+    </node>
+    <node concept="3uibUv" id="CCosYFb$Bo" role="EKbjA">
+      <ref role="3uigEE" to="hxuy:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
   </node>
   <node concept="312cEu" id="7wwiZxTDPtN">
@@ -2537,9 +2537,6 @@
     <node concept="n94m4" id="4ipeeu8Vzdu" role="lGtFl">
       <ref role="n9lRv" to="bj1v:nUEAIXlVr8" resolve="Rule" />
     </node>
-    <node concept="3uibUv" id="4ipeeu8Vzdv" role="1zkMxy">
-      <ref role="3uigEE" to="mu20:DMZNGGEq73" resolve="DataFlowConstructor" />
-    </node>
     <node concept="17Uvod" id="4wrJgg0Gq9Y" role="lGtFl">
       <property role="2qtEX9" value="name" />
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -2672,6 +2669,9 @@
       <node concept="1pdMLZ" id="XEpIBK2Cla" role="lGtFl">
         <ref role="2rW$FS" node="4ipeeu8X4pT" resolve="perform" />
       </node>
+    </node>
+    <node concept="3uibUv" id="CCosYFb_k7" role="EKbjA">
+      <ref role="3uigEE" to="hxuy:~DataFlowConstructor" resolve="DataFlowConstructor" />
     </node>
   </node>
   <node concept="13MO4I" id="4ipeeu8X0PQ">
