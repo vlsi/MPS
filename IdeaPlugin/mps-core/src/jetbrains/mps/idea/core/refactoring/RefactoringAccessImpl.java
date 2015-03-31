@@ -68,11 +68,6 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   }
 
   @Override
-  public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    return showRefactoringDialogBase(project, refactoringContext, refactoring, false);
-  }
-
-  @Override
   public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
     refactoringViewItem.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
