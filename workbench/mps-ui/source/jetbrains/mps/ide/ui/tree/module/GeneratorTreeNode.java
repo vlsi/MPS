@@ -53,8 +53,7 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   }
 
   public String calculateText() {
-    String name = getModule().getModuleName();
-    return "generator/" + (name == null ? "<no name>" : name);
+    return "generator/" + getModule().getAlias();
   }
 
   @Override
