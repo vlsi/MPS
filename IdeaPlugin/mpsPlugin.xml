@@ -322,11 +322,13 @@
   
   <target name="java.compile.mps-common" depends="fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/src" />
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/resources" />
     <mkdir dir="${build.tmp}/java/out/mps-common" />
     <javac2 destdir="${build.tmp}/java/out/mps-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/common/src" />
+        <path location="${mps_home}/IdeaPlugin/mps-core/common/resources" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -348,6 +350,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-common">
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/common/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-core/common/resources" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

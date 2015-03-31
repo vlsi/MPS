@@ -120,7 +120,6 @@
       <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
-      <concept id="7389400916848036997" name="jetbrains.mps.build.structure.BuildLayout_Node" flags="ng" index="39821Y" />
       <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
       <concept id="7389400916848073810" name="jetbrains.mps.build.structure.BuildSource_JavaContentRoot" flags="ng" index="398b2D">
         <child id="2754769020641429197" name="folders" index="nFU4p" />
@@ -12830,6 +12829,25 @@
           </node>
         </node>
       </node>
+      <node concept="2GAZfH" id="VxSDiB06mI" role="398b2p">
+        <node concept="TIC1d" id="VxSDiB06mE" role="2GAZfG">
+          <node concept="398BVA" id="VxSDiB06n5" role="TIC6M">
+            <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="VxSDiB06nb" role="iGT6I">
+              <property role="2Ry0Am" value="IdeaPlugin" />
+              <node concept="2Ry0Ak" id="VxSDiB06ne" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-core" />
+                <node concept="2Ry0Ak" id="VxSDiB06nh" role="2Ry0An">
+                  <property role="2Ry0Am" value="common" />
+                  <node concept="2Ry0Ak" id="VxSDiB06nk" role="2Ry0An">
+                    <property role="2Ry0Am" value="resources" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="398b33" id="t7CJPgp3el" role="3989C9">
       <property role="TrG5h" value="mps-jps-plugin" />
@@ -13279,7 +13297,6 @@
         </node>
         <node concept="398223" id="4tNwrSpaf0F" role="39821P">
           <node concept="398223" id="t7CJPgp1D_" role="39821P">
-            <node concept="39821Y" id="6S2ZmsBiFPU" role="39821P" />
             <node concept="3_J27D" id="t7CJPgp1DB" role="Nbhlr">
               <node concept="3Mxwew" id="t7CJPgp1EF" role="3MwsjC">
                 <property role="3MwjfP" value="jps" />
