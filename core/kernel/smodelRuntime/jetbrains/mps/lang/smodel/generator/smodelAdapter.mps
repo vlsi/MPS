@@ -188,7 +188,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -345,6 +345,7 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
       </concept>
@@ -10497,11 +10498,14 @@
                   <node concept="2OqwBi" id="6jBERHCF3F8" role="3clFbw">
                     <node concept="3w_OXm" id="6jBERHCF3Ff" role="2OqNvi" />
                     <node concept="2OqwBi" id="1$sIUMYazMy" role="2Oq$k0">
-                      <node concept="2OqwBi" id="1$sIUMYazMv" role="2Oq$k0">
-                        <node concept="3NT_Vc" id="1$sIUMYazMx" role="2OqNvi" />
-                        <node concept="37vLTw" id="2BHiRxghfs7" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5IkW5anFesR" resolve="newChild" />
+                      <node concept="2OqwBi" id="3p8IqUIFR7b" role="2Oq$k0">
+                        <node concept="2OqwBi" id="1$sIUMYazMv" role="2Oq$k0">
+                          <node concept="3NT_Vc" id="1$sIUMYazMx" role="2OqNvi" />
+                          <node concept="37vLTw" id="2BHiRxghfs7" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5IkW5anFesR" resolve="newChild" />
+                          </node>
                         </node>
+                        <node concept="FGMqu" id="3p8IqUIFRjt" role="2OqNvi" />
                       </node>
                       <node concept="2qgKlT" id="1$sIUMYazMz" role="2OqNvi">
                         <ref role="37wK5l" to="tpcn:hK3S4A1" resolve="findPropertyDeclaration" />
@@ -10625,11 +10629,14 @@
                           <ref role="3cqZAo" node="6jBERHCF3Fr" resolve="linkRole" />
                         </node>
                       </node>
-                      <node concept="2OqwBi" id="1K7tYdF_cDt" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxglYEa" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5IkW5anFesR" resolve="newChild" />
+                      <node concept="2OqwBi" id="3p8IqUIFRDx" role="2Oq$k0">
+                        <node concept="2OqwBi" id="1K7tYdF_cDt" role="2Oq$k0">
+                          <node concept="37vLTw" id="2BHiRxglYEa" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5IkW5anFesR" resolve="newChild" />
+                          </node>
+                          <node concept="3NT_Vc" id="1K7tYdF_cDv" role="2OqNvi" />
                         </node>
-                        <node concept="3NT_Vc" id="1K7tYdF_cDv" role="2OqNvi" />
+                        <node concept="FGMqu" id="3p8IqUIFRPN" role="2OqNvi" />
                       </node>
                     </node>
                   </node>

@@ -231,6 +231,7 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -1027,11 +1028,14 @@
           <node concept="3cpWsn" id="7f7fEWSoItu" role="3cpWs9">
             <property role="TrG5h" value="linkDeclaration" />
             <node concept="2OqwBi" id="1$sIUMYazz7" role="33vP2m">
-              <node concept="2OqwBi" id="1$sIUMYazz4" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgm7QC" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3bMB$t1cK9g" resolve="sourceNode" />
+              <node concept="2OqwBi" id="3p8IqUIFhN3" role="2Oq$k0">
+                <node concept="2OqwBi" id="1$sIUMYazz4" role="2Oq$k0">
+                  <node concept="37vLTw" id="2BHiRxgm7QC" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3bMB$t1cK9g" resolve="sourceNode" />
+                  </node>
+                  <node concept="3NT_Vc" id="1$sIUMYazz6" role="2OqNvi" />
                 </node>
-                <node concept="3NT_Vc" id="1$sIUMYazz6" role="2OqNvi" />
+                <node concept="FGMqu" id="3p8IqUIFi09" role="2OqNvi" />
               </node>
               <node concept="2qgKlT" id="1$sIUMYazz8" role="2OqNvi">
                 <ref role="37wK5l" to="tpcn:hEwILKz" resolve="findLinkDeclaration" />

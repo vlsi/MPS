@@ -259,6 +259,7 @@
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -2801,8 +2802,11 @@
           <node concept="3clFbJ" id="1$dcvTE6OHb" role="3cqZAp">
             <node concept="3fqX7Q" id="1$dcvTE6OHc" role="3clFbw">
               <node concept="2OqwBi" id="73yVtVm07eC" role="3fr31v">
-                <node concept="37vLTw" id="1oFmEVza8A9" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1$dcvTE731u" resolve="applicableConcept" />
+                <node concept="2OqwBi" id="3p8IqUIG1Vg" role="2Oq$k0">
+                  <node concept="37vLTw" id="1oFmEVza8A9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1$dcvTE731u" resolve="applicableConcept" />
+                  </node>
+                  <node concept="FGMqu" id="3p8IqUIG26Q" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="73yVtVm0jTH" role="2OqNvi">
                   <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />

@@ -16,7 +16,7 @@ public class CellUtil {
   }
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
     SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable"));
-    if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(deprecatable), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
+    if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(deprecatable)), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }
