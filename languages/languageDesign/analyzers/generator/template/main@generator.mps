@@ -633,11 +633,6 @@
       <ref role="2rZz_L" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
       <ref role="2rTdP9" to="bj1v:nUEAIXlVr8" resolve="Rule" />
     </node>
-    <node concept="2rT7sh" id="3LAF1LmxJmT" role="2rTMjI">
-      <property role="TrG5h" value="rules" />
-      <ref role="2rTdP9" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
     <node concept="2rT7sh" id="3QIZCvDv_wO" role="2rTMjI">
       <property role="TrG5h" value="funcParam" />
       <ref role="2rTdP9" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
