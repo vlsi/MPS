@@ -7,6 +7,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.dataFlow.framework.analyzers.AnalyzerRules;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.HashMap;
@@ -30,7 +31,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     prepareProgram();
   }
   private void prepareProgram() {
-    NullableAnalyzerRules.getInstance(myAnalyzer).apply(myNode, myProgram);
+    new AnalyzerRules(myAnalyzer, myNode, myProgram).apply();
   }
   public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {

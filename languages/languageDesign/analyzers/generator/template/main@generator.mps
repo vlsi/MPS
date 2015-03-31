@@ -249,7 +249,6 @@
       <concept id="7325101476742962089" name="jetbrains.mps.lang.generator.structure.UnmarshalFunction" flags="ig" index="3dkYti" />
       <concept id="7325101476742955528" name="jetbrains.mps.lang.generator.structure.MarshalFunction" flags="ig" index="3dkZVN" />
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
-        <property id="1177959072138" name="keepSourceRoot" index="13Pg2o" />
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ" />
@@ -703,7 +702,6 @@
       </node>
     </node>
     <node concept="3lhOvk" id="34Ni56Atq0d" role="3lj3bC">
-      <property role="13Pg2o" value="true" />
       <ref role="30HIoZ" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
       <ref role="3lhOvi" node="7XrupC0L9ZS" resolve="UserAnalyzerRunner" />
     </node>

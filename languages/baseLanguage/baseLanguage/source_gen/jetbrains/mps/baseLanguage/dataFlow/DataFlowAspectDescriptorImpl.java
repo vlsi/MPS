@@ -6,12 +6,13 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor;
+import java.util.HashMap;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.ArrayList;
 
 public class DataFlowAspectDescriptorImpl implements DataFlowAspectDescriptor {
-  private Map<Class, List<DataFlowConstructor>> myClassToRulesMap;
+  private Map<Class, List<DataFlowConstructor>> myClassToRulesMap = new HashMap<Class, List<DataFlowConstructor>>();
   public DataFlowAspectDescriptorImpl() {
     init(NullableAnalyzerRunner.NullableAnalyzer.class, new ForLoopNotNull());
     init(NullableAnalyzerRunner.NullableAnalyzer.class, new IfEqualsNullAll());
