@@ -42,7 +42,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.project.ReferenceUpdater;
+import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
@@ -249,7 +249,7 @@ public class ModelRenameHandler implements RenameHandler {
 
     public void updateReferencesIfNeeded(Project project) {
       if (!myLazy) {
-        ReferenceUpdater.getInstance().updateModelAndModuleReferences(ProjectHelper.toMPSProject(project));
+        Renamer.updateModelAndModuleReferences(ProjectHelper.toMPSProject(project).getRepository());
       }
     }
   }
