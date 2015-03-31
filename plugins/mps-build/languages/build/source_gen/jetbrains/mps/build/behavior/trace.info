@@ -525,7 +525,7 @@
       <node id="4101476690143383739" at="64,0,70,0" concept="12" trace="createBwfTaskLibraryDependency_bn484n_a0a0a0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1224588814561807530" at="54,0,61,0" concept="12" trace="virtual_getLayoutScope_1224588814561807654#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
       <node id="1224588814561913852" at="41,0,50,5" concept="5" />
-      <node id="1224588814561825226" at="28,188,39,9" concept="8" />
+      <node id="1224588814561825226" at="28,167,39,9" concept="8" />
       <node id="1224588814561807549" at="27,121,40,5" concept="5" />
       <node id="1224588814561807530" at="27,0,54,0" concept="12" trace="virtual_getProjectStructureScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
       <scope id="1224588814561807532" at="25,43,25,43" />
@@ -570,7 +570,7 @@
         <var name="kind" id="1224588814561825272" />
         <var name="thisNode" id="1224588814561807530" />
       </scope>
-      <scope id="1224588814561807551" at="28,188,39,9" />
+      <scope id="1224588814561807551" at="28,167,39,9" />
       <scope id="1224588814561807535" at="27,121,52,16" />
       <scope id="1224588814561807530" at="27,0,54,0">
         <var name="kind" id="1224588814561807536" />

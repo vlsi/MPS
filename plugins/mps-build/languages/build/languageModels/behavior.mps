@@ -321,10 +321,6 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1960721196051541146" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" flags="nn" index="13GOg" />
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -359,6 +355,9 @@
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
@@ -11117,8 +11116,8 @@
                   <node concept="YeOm9" id="13YBgBBRSNQ" role="2ShVmc">
                     <node concept="1Y3b0j" id="13YBgBBRSNR" role="YeSDq">
                       <property role="2bfB8j" value="true" />
-                      <ref role="37wK5l" to="o8zo:7ipADkTevTG" resolve="SimpleRoleScope" />
                       <ref role="1Y3XeK" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                      <ref role="37wK5l" to="o8zo:1pnkBUIVmcX" resolve="SimpleRoleScope" />
                       <node concept="3clFb_" id="13YBgBBRSNT" role="jymVt">
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getName" />
@@ -11172,9 +11171,9 @@
                         <node concept="13iPFW" id="13YBgBBRSOd" role="2Oq$k0" />
                         <node concept="1mfA1w" id="13YBgBBRTF_" role="2OqNvi" />
                       </node>
-                      <node concept="28GBK8" id="13YBgBBRSOe" role="37wK5m">
-                        <ref role="28H3Ia" to="3ior:6qcrfIJFfrM" />
-                        <ref role="28GBKb" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      <node concept="359W_D" id="3p8IqUIGf$a" role="37wK5m">
+                        <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                        <ref role="359W_F" to="3ior:6qcrfIJFfrM" />
                       </node>
                       <node concept="3nh3qo" id="13YBgBBRSOf" role="37wK5m">
                         <ref role="3nh3qp" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
@@ -11210,8 +11209,8 @@
             </node>
           </node>
           <node concept="3clFbC" id="13YBgBBRSOz" role="3clFbw">
-            <node concept="3TUQnm" id="13YBgBBRSO$" role="3uHU7w">
-              <ref role="3TV0OU" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+            <node concept="35c_gC" id="3p8IqUIGfzB" role="3uHU7w">
+              <ref role="35c_gD" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmkmd" role="3uHU7B">
               <ref role="3cqZAo" node="13YBgBBRSMK" resolve="kind" />
