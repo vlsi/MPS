@@ -20,8 +20,14 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Auxiliary methods that used to constitute API of smodel.SModel and we no longer want to be there.
@@ -63,4 +69,17 @@ public final class SModelLegacy {
 
     myModel.addModelImport(importElement);
   }
+
+  public List<SModuleReference> importedLanguages() {
+    final Collection<SLanguage> usedLanguages = myModel.usedLanguages();
+    ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(usedLanguages.size());
+    for (SLanguage l : usedLanguages) {
+      final SModule sourceModule = l.getSourceModule();
+      if (sourceModule != null) {
+        rv.add(sourceModule.getModuleReference());
+      }
+    }
+    return rv;
+  }
+
 }

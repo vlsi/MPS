@@ -201,7 +201,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   @Deprecated
   public final List<SModuleReference> importedLanguages() {
-    return getSModelInternal().importedLanguages();
+    return new SModelLegacy(getSModelInternal()).importedLanguages();
   }
 
   @Override

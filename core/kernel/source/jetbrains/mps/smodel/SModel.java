@@ -55,7 +55,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -616,24 +615,8 @@ public class SModel implements SModelData {
     return Collections.unmodifiableMap(myLanguagesIds);
   }
 
-  @Deprecated
-  public List<SModuleReference> importedLanguages() {
-    // FIXME this stupid code is for compatibility only. We shall decide what to use for used language -
-    // FIXME SLanguage, SModuleReference or anything completely different, and refactor the code (including legacy uses) accordingly
-    // Likely, we'll need SModelLegacy (similar to SNodeLegacy) to keep this transformation for uses from old persistence implementations
-    ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(myLanguagesIds.size());
-    for (SLanguage l : myLanguagesIds.keySet()) {
-      final SModule sourceModule = l.getSourceModule();
-      if (sourceModule != null) {
-        rv.add(sourceModule.getModuleReference());
-      }
-    }
-    return rv;
-  }
-
   public void deleteLanguage(@NotNull SLanguage id) {
     assertLegalChange();
-
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
