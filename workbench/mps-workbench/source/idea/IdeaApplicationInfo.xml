@@ -16,4 +16,5 @@
                   slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
   <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
+  <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 </component>
