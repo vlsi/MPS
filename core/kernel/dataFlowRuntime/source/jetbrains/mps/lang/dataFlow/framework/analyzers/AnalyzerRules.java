@@ -15,17 +15,19 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.analyzers;
 
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
@@ -36,9 +38,11 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by simon on 30/03/15.
+ * @author simon
  */
 public class AnalyzerRules {
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(AnalyzerRules.class));
+
   private List<DataFlowConstructor> myConceptRules = new LinkedList<DataFlowConstructor>();
   private Map<SConcept, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap<SConcept, Set<DataFlowConstructor>>();
   private String myAnalyzerId;
@@ -51,11 +55,14 @@ public class AnalyzerRules {
     myAnalyzerId = analyzerId;
   }
   public void apply() {
-    SModelInternal model = (SModelInternal) myNodeToApply.getModel();
-    if (model == null) {
+    SModel model = myNodeToApply.getModel();
+    if (!(model instanceof SModelInternal)) {
+      LOG.warning(model == null ? "Checking node which is not attached to the model: " + jetbrains.mps.util.SNodeOperations.getDebugText(myNodeToApply)
+                                : "Model " + model.getModelName() + " is not instance of SModelInternal");
       return;
     }
-    for (SLanguage language : model.importedLanguageIds()) {
+    SModelInternal modelInternal = (SModelInternal) model;
+    for (SLanguage language : modelInternal.importedLanguageIds()) {
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language.getQualifiedName());
       if (languageRuntime == null) {
         continue;
