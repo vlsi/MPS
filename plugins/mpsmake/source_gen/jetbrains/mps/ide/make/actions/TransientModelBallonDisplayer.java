@@ -51,7 +51,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
   }
   private void ensureRegistered() {
-    if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().isRegistered(ID))) {
+    if (!(NotificationsConfigurationImpl.getInstanceImpl().isRegistered(ID))) {
       NotificationsConfiguration.getNotificationsConfiguration().register(ID, NotificationDisplayType.BALLOON, false);
     }
   }
@@ -103,7 +103,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     ballon.show(new RelativePoint(component, point), Balloon.Position.above);
   }
   public static boolean isPopupShown() {
-    if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().SHOW_BALLOONS)) {
+    if (!(NotificationsConfigurationImpl.getInstanceImpl().SHOW_BALLOONS)) {
       return false;
     }
     NotificationDisplayType displayType = NotificationsConfigurationImpl.getSettings(ID).getDisplayType();
