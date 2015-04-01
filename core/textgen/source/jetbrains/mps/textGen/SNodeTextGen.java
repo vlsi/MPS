@@ -146,16 +146,25 @@ public abstract class SNodeTextGen {
     }
   }
 
+  /**
+   * @deprecated has been deprecated for 2,5 years. Shall drop, finally?
+   */
   @Deprecated
+  @ToRemove(version = 3.3)
   public String getReferentPresentation(SReference reference) {
     // todo: this method not working now
     return getReferentPresentation(reference, true);
   }
 
+  public String getDefaultNoTextGenErrorText(SNode node) {
+    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
+  }
+
   /**
-   * @deprecated move to BaseLanguageTextGen (where it belongs), drop unused parameter
+   * @deprecated moved to BaseLanguageTextGen (where it belongs). Left for compatibility with existing generated
+   * textgen classes (those using $ref{} part, despite its vague contract)
    */
-  @ToRemove(version = 0)
+  @ToRemove(version = 3.3)
   @Deprecated
   public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
@@ -202,9 +211,5 @@ public abstract class SNodeTextGen {
     } else {
       return shortName;
     }
-  }
-
-  public String getDefaultNoTextGenErrorText(SNode node) {
-    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
   }
 }

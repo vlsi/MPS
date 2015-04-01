@@ -211,6 +211,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -634,6 +635,7 @@
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.FieldReferenceOperation_TextGen" file="FieldReferenceOperation_TextGen.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1344,6 +1346,7 @@
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.TypeVariableReference_TextGen" file="TypeVariableReference_TextGen.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
