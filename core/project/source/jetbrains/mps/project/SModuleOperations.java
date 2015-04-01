@@ -62,7 +62,10 @@ public class SModuleOperations {
     for (ModelRoot modelRoot : module.getModelRoots()) {
       if (modelRoot instanceof FileBasedModelRoot) {
         FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) modelRoot;
-        result.add(exposePath(fileBasedModelRoot.getContentRoot()));
+        String contentRoot = fileBasedModelRoot.getContentRoot();
+        if (contentRoot != null) {
+          result.add(exposePath(contentRoot));
+        }
         // todo: use excluded & source folders like IDEA
 //        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
 //          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
