@@ -2,9 +2,9 @@
 <model ref="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
   </languages>
   <imports>
     <import index="nd9w" ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)" />
@@ -66,12 +66,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -142,8 +142,8 @@
           </node>
           <node concept="3clFbF" id="2lb0lXX1ZPZ" role="3cqZAp">
             <node concept="2YIFZM" id="2lb0lXX2ngO" role="3clFbG">
-              <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
               <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+              <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
               <node concept="2OqwBi" id="2lb0lXX2ngP" role="37wK5m">
                 <node concept="1PxgMI" id="2lb0lXX2ngQ" role="2Oq$k0">
                   <ref role="1PxNhF" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
@@ -153,9 +153,9 @@
                   <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" />
                 </node>
               </node>
-              <node concept="28GBK8" id="2lb0lXX3wE1" role="37wK5m">
-                <ref role="28GBKb" to="nd9w:1iYrdV1xxgn" resolve="Constants" />
-                <ref role="28H3Ia" to="nd9w:1iYrdV1xxgC" />
+              <node concept="359W_D" id="5TYh2YDXH9X" role="37wK5m">
+                <ref role="359W_E" to="nd9w:1iYrdV1xxgn" resolve="Constants" />
+                <ref role="359W_F" to="nd9w:1iYrdV1xxgC" />
               </node>
             </node>
           </node>

@@ -8,6 +8,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 
@@ -31,7 +32,7 @@ public class DefaultRenameContributor implements RenameRefactoringContributor {
     final String newName = RenameDialog.getNewName(project, oldName, "node");
     if (newName == null) return;
 
-    if (node.getModel() == null || SNodeOperations.isDisposed(node)) {
+    if (node.getModel() == null || SNodeUtil.isAccessible(node, mpsProject.getRepository())) {
       return;
     }
 

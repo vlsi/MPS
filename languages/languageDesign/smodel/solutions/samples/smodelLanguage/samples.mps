@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -4938,11 +4938,8 @@
                 <node concept="3Tqbb2" id="hbu2oGa" role="1tU5fm">
                   <ref role="ehGHo" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
                 </node>
-                <node concept="2OqwBi" id="2XA_ayKtW0R" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTryP" role="2Oq$k0">
-                    <ref role="3cqZAo" node="hbtUaot" resolve="exprConcept" />
-                  </node>
-                  <node concept="FGMqu" id="2XA_ayKtWMu" role="2OqNvi" />
+                <node concept="37vLTw" id="3GM_nagTryP" role="33vP2m">
+                  <ref role="3cqZAo" node="hbtUaot" resolve="exprConcept" />
                 </node>
               </node>
             </node>
@@ -5062,11 +5059,8 @@
                   <node concept="3THzug" id="hboSYH6" role="_ZDj9" />
                 </node>
                 <node concept="2OqwBi" id="hxx_0eo" role="33vP2m">
-                  <node concept="2OqwBi" id="2XA_ayKtRQH" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxghiSS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="hboI7jk" resolve="concept" />
-                    </node>
-                    <node concept="FGMqu" id="2XA_ayKtS4b" role="2OqNvi" />
+                  <node concept="37vLTw" id="2BHiRxghiSS" role="2Oq$k0">
+                    <ref role="3cqZAo" node="hboI7jk" resolve="concept" />
                   </node>
                   <node concept="3oNA_f" id="hboSY2f" role="2OqNvi" />
                 </node>

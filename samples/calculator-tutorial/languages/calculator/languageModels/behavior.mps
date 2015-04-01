@@ -85,15 +85,15 @@
       <concept id="8077936094962911282" name="jetbrains.mps.lang.scopes.structure.ParentScope" flags="nn" index="iy90A" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
@@ -120,12 +120,12 @@
           <node concept="3clFbS" id="3ASi0WxiFn7" role="3clFbx">
             <node concept="3cpWs6" id="3ASi0WxiFn_" role="3cqZAp">
               <node concept="2YIFZM" id="3ASi0WxiFnH" role="3cqZAk">
-                <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
                 <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                 <node concept="13iPFW" id="3ASi0WxiFnI" role="37wK5m" />
-                <node concept="28GBK8" id="3ASi0WxiFnK" role="37wK5m">
-                  <ref role="28GBKb" to="64en:i46Ymgg" resolve="Calculator" />
-                  <ref role="28H3Ia" to="64en:i46YMrC" />
+                <node concept="359W_D" id="6t3ylNOzPXh" role="37wK5m">
+                  <ref role="359W_E" to="64en:i46Ymgg" resolve="Calculator" />
+                  <ref role="359W_F" to="64en:i46YMrC" />
                 </node>
               </node>
             </node>

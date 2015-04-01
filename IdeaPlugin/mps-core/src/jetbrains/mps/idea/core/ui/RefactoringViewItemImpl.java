@@ -29,14 +29,12 @@ import com.intellij.usages.UsageViewManager;
 import com.intellij.usages.UsageViewPresentation;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.refactoring.PsiSearchResult;
 import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -109,25 +107,11 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     usageView.addPerformOperationAction(new Runnable() {
       @Override
       public void run() {
-        if (myRefactoringContext != null && myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
-          showRefactoringOptions();
-        } else {
           myCallback.performAction(RefactoringViewItemImpl.this);
-        }
-
       }
     }, name, canNotMakeString, RefactoringBundle.message("usageView.doAction"));
   }
 
-
-  private void showRefactoringOptions() {
-    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(myProject, myRefactoringContext, myRefactoringContext.getRefactoring(), false);
-    dialog.show();
-    boolean cancelled = dialog.isCancelled();
-    if (!cancelled) {
-      myCallback.performAction(this);
-    }
-  }
 
   private static UsageViewPresentation createPresentation() {
     UsageViewPresentation presentation = new UsageViewPresentation();

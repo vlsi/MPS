@@ -84,12 +84,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   List<ImportElement> getAdditionalModelVersions();
 
-  int getVersion();
-
-  void setVersion(int version);
-
-  void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
-
   boolean updateSModelReferences();
 
   void changeModelReference(SModelReference newModelReference);

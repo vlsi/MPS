@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -246,7 +247,7 @@ class IntelligentNodeMover {
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, node, myCurrent);
+        parent.insertChildBefore(myRole, node, myCurrent.getNextSibling());
       }
     }
   }
@@ -283,20 +284,16 @@ class IntelligentNodeMover {
     }
   }
 
-  private void addWithAnchor(SNode parent, SNode prevChild) {
+  private void addWithAnchor(SNode parent, @NotNull SNode prevChild) {
     myParent.removeChild(myCurrent);
-    if (forward()) {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, myCurrent, prevChild);
-    } else {
-      parent.insertChildBefore(myRole, myCurrent, prevChild);
-    }
+    parent.insertChildBefore(myRole, myCurrent, forward() ? prevChild.getNextSibling() : prevChild);
     moveOtherNodes();
   }
 
   private void addAtBoundary(SNode result) {
     myParent.removeChild(myCurrent);
     if (forward()) {
-      jetbrains.mps.util.SNodeOperations.insertChild(result, myRole, myCurrent, null);
+      result.insertChildBefore(myRole, myCurrent, result.getFirstChild());
     } else {
       result.addChild(myRole, myCurrent);
     }

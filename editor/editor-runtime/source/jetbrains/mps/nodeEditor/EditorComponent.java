@@ -118,6 +118,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
@@ -2834,7 +2835,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isNodeDisposed() {
-    return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
+    SNode node = getEditedNode();
+    return node != null && !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance());
   }
 
   public CellTracker getCellTracker() {

@@ -4,6 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class BuildJavaPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor {
   public BuildJavaPlugin_BehaviorDescriptor() {
@@ -11,10 +12,10 @@ public class BuildJavaPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDesc
   public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return BuildJavaPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
   }
-  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
+  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SAbstractConcept kind) {
     return BuildJavaPlugin_Behavior.virtual_getLayoutScope_1224588814561807654(thisNode, kind);
   }
-  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
+  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SAbstractConcept kind) {
     return BuildJavaPlugin_Behavior.virtual_getProjectStructureScope_3734116213129936182(thisNode, kind);
   }
   @Override

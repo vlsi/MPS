@@ -23,7 +23,6 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
-    <import index="rhwp" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="cpzd" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)" />
@@ -1296,26 +1295,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1DUTkFD88pG" role="3cqZAp">
-          <node concept="37vLTI" id="1DUTkFD8c7X" role="3clFbG">
-            <node concept="2OqwBi" id="1DUTkFD8dIv" role="37vLTx">
-              <node concept="37vLTw" id="1B5M0L_k4J1" role="2Oq$k0">
-                <ref role="3cqZAo" node="1B5M0L_jX9n" resolve="modelBase" />
-              </node>
-              <node concept="liA8E" id="1DUTkFD8ee2" role="2OqNvi">
-                <ref role="37wK5l" to="51te:~SModelDescriptorStub.getVersion():int" resolve="getVersion" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1DUTkFD88xH" role="37vLTJ">
-              <node concept="3TrcHB" id="1DUTkFD88N9" role="2OqNvi">
-                <ref role="3TsBF5" to="e4tq:7gTJ_yqjx7F" resolve="version" />
-              </node>
-              <node concept="37vLTw" id="1DUTkFD88pF" role="2Oq$k0">
-                <ref role="3cqZAo" node="1DUTkFD84KJ" resolve="root" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="4Nxj0gBEKtz" role="3cqZAp">
           <node concept="2ZW3vV" id="4Nxj0gBELFE" role="3clFbw">
             <node concept="3uibUv" id="1B5M0L_klm6" role="2ZW6by">
@@ -1996,24 +1975,6 @@
             </node>
             <node concept="3Tqbb2" id="6fx930y8aKA" role="1tU5fm">
               <ref role="ehGHo" to="e4tq:7gTJ_yqjx5H" resolve="Model" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6fx930y8gs6" role="3cqZAp">
-          <node concept="2OqwBi" id="6fx930y8h6t" role="3clFbG">
-            <node concept="37vLTw" id="1B5M0L_naRd" role="2Oq$k0">
-              <ref role="3cqZAo" node="1B5M0L_mW3J" resolve="modelBase" />
-            </node>
-            <node concept="liA8E" id="6fx930y8hdp" role="2OqNvi">
-              <ref role="37wK5l" to="51te:~SModelDescriptorStub.setVersion(int):void" resolve="setVersion" />
-              <node concept="2OqwBi" id="6fx930y8htQ" role="37wK5m">
-                <node concept="3TrcHB" id="6fx930y8hDQ" role="2OqNvi">
-                  <ref role="3TsBF5" to="e4tq:7gTJ_yqjx7F" resolve="version" />
-                </node>
-                <node concept="37vLTw" id="6fx930y8hi5" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6fx930y8aKF" resolve="root" />
-                </node>
-              </node>
             </node>
           </node>
         </node>

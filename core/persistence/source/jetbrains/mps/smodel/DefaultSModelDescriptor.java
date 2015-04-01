@@ -20,13 +20,10 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.LazyLoadFacility;
 import jetbrains.mps.persistence.PersistenceVersionAware;
-import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
-import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,15 +34,12 @@ import java.io.IOException;
 import java.util.Map;
 
 
-public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, PersistenceVersionAware {
+public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, PersistenceVersionAware {
   private static final String MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
   private final LazyLoadFacility myPersistence;
 
   private SModelHeader myHeader;
-
-  private final Object myRefactoringHistoryLock = new Object();
-  private StructureModificationLog myStructureModificationLog;
 
   public DefaultSModelDescriptor(@NotNull LazyLoadFacility persistence, @NotNull SModelHeader header) {
     super(header.getModelReference(), persistence.getSource());
@@ -127,26 +121,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   @Override
-  @NotNull
-  public StructureModificationLog getStructureModificationLog() {
-    synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationLog == null) {
-        myStructureModificationLog = RefactoringsPersistence.load(getSource());
-      }
-      if (myStructureModificationLog == null) {
-        myStructureModificationLog = new StructureModificationLog();
-      }
-    }
-    return myStructureModificationLog;
-  }
-
-  @Override
-  public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
-    myStructureModificationLog = log;
-    RefactoringsPersistence.save(getSource(), log);
-  }
-
-  @Override
   protected boolean saveModel() throws IOException {
     SModel smodel = getSModel();
     if (smodel instanceof InvalidSModel) {
@@ -200,39 +174,8 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     return getModelHeader().isDoNotGenerate();
   }
 
-  @Override
-  public int getVersion() {
-    return getModelHeader().getVersion();
-  }
-
-  @Override
-  public void setVersion(int newVersion) {
-    assertCanChange();
-
-    getModelHeader().setVersion(newVersion);
-    setChanged(true);
-  }
-
   private SModelHeader getModelHeader() {
     return myHeader;
-  }
-
-  @Override
-  protected void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel) {
-    if (getVersion() != -1) return;
-
-    int latestVersion = getStructureModificationLog().getLatestVersion(getReference());
-    myStructureModificationLog = null;  // we don't need to keep log in memory
-    if (latestVersion != -1) {
-      loadedSModel.setVersion(latestVersion);
-      //LOG.error("Version for model " + getModelName() + " was not set.");
-    }
-  }
-
-  @Override
-  protected void replaceModel(SModel newModel, ModelLoadingState state) {
-    super.replaceModel(newModel, state);
-    myStructureModificationLog = null;
   }
 
   @Override

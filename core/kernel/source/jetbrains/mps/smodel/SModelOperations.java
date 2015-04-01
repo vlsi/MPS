@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -61,6 +62,13 @@ public class SModelOperations {
       return Collections.emptyList();
     }
     return FastNodeFinderManager.get(model).getNodes(conceptFqName, true);
+  }
+
+  public static List<SNode> getNodes(SModel model, @NotNull SAbstractConcept concept) {
+    if (model == null) {
+      return Collections.emptyList();
+    }
+    return FastNodeFinderManager.get(model).getNodes(concept, true);
   }
 
   public static boolean isReadOnly(SModel model) {

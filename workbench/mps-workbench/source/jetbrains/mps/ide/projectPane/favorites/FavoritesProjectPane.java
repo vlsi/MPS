@@ -40,9 +40,11 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -264,7 +266,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         @Override
         public void run() {
           SNode node = treeNode.getSNode();
-          if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null) {
+          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()) || node.getModel() == null) {
             return;
           }
           FavoritesProjectPane.this.editNode(node, myProject, wasClicked);

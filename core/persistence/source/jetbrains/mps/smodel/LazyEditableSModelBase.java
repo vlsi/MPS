@@ -41,7 +41,6 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
     }
     if (state == ModelLoadingState.INTERFACE_LOADED) {
       ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
-      processLoadedModel(result.getModel());
       result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
       return result;
     }
@@ -127,8 +126,6 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
    * loads model from the source, w/o changing state of SModelDescriptor
    */
   protected abstract ModelLoadResult loadSModel(ModelLoadingState state);
-
-  protected abstract void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel);
 
   protected void replaceModel(final SModel newModel, final ModelLoadingState state) {
     if (newModel == getCurrentModelInternal()) {

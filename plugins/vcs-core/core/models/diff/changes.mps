@@ -2,10 +2,10 @@
 <model ref="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -27,10 +27,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
-        <child id="1224071154657" name="classifierType" index="0kSFW" />
-        <child id="1224071154656" name="expression" index="0kSFX" />
-      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -6420,172 +6416,6 @@
         <node concept="3clFbF" id="4LCuQ2VxAIH" role="3cqZAp">
           <node concept="Xl_RD" id="4LCuQ2VxAII" role="3clFbG">
             <property role="Xl_RC" value="Change Do Not Generate Option" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="3DFYCjfl45M">
-    <property role="TrG5h" value="ModelVersionChange" />
-    <property role="3GE5qa" value="metadata" />
-    <node concept="3Tm1VV" id="3DFYCjfl45N" role="1B3o_S" />
-    <node concept="3uibUv" id="3DFYCjfl45O" role="1zkMxy">
-      <ref role="3uigEE" node="5Gi8bfMd_nh" resolve="MetadataChange" />
-    </node>
-    <node concept="3clFbW" id="3DFYCjfl45P" role="jymVt">
-      <node concept="3cqZAl" id="3DFYCjfl45Q" role="3clF45" />
-      <node concept="3Tm1VV" id="3DFYCjfl45R" role="1B3o_S" />
-      <node concept="3clFbS" id="3DFYCjfl45S" role="3clF47">
-        <node concept="XkiVB" id="3DFYCjfl45T" role="3cqZAp">
-          <ref role="37wK5l" node="5Gi8bfMd_nq" resolve="MetadataChange" />
-          <node concept="37vLTw" id="2BHiRxgm_lB" role="37wK5m">
-            <ref role="3cqZAo" node="3DFYCjfl45V" resolve="changeSet" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3DFYCjfl45V" role="3clF46">
-        <property role="TrG5h" value="changeSet" />
-        <node concept="3uibUv" id="3kRMfhMvhrA" role="1tU5fm">
-          <ref role="3uigEE" to="bfxj:3kRMfhMv03j" resolve="ChangeSet" />
-        </node>
-        <node concept="2AHcQZ" id="3DFYCjfl45X" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3DFYCjfl45Y" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="apply" />
-      <node concept="3cqZAl" id="3DFYCjfl45Z" role="3clF45" />
-      <node concept="3Tm1VV" id="3DFYCjfl460" role="1B3o_S" />
-      <node concept="37vLTG" id="3DFYCjfl461" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="3DFYCjfl462" role="1tU5fm" />
-        <node concept="2AHcQZ" id="3DFYCjfl463" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3DFYCjfl464" role="3clF46">
-        <property role="TrG5h" value="nodeCopier" />
-        <node concept="3uibUv" id="3DFYCjfl465" role="1tU5fm">
-          <ref role="3uigEE" node="69abr3GmYnQ" resolve="NodeCopier" />
-        </node>
-        <node concept="2AHcQZ" id="3DFYCjfl466" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3DFYCjfl467" role="3clF47">
-        <node concept="3clFbF" id="7BQNkbM6G9M" role="3cqZAp">
-          <node concept="2OqwBi" id="7BQNkbM6Gtn" role="3clFbG">
-            <node concept="1eOMI4" id="5WIcYaGhyZQ" role="2Oq$k0">
-              <node concept="10QFUN" id="5WIcYaGhyZR" role="1eOMHV">
-                <node concept="2JrnkZ" id="5WIcYaGhyZT" role="10QFUP">
-                  <node concept="37vLTw" id="5WIcYaGhyZU" role="2JrQYb">
-                    <ref role="3cqZAo" node="3DFYCjfl461" resolve="model" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="1BY2K4dQswR" role="10QFUM">
-                  <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="7BQNkbM6Hcm" role="2OqNvi">
-              <ref role="37wK5l" to="51te:~SModelDescriptorStub.setVersion(int):void" resolve="setVersion" />
-              <node concept="2OqwBi" id="7BQNkbM6ILh" role="37wK5m">
-                <node concept="1eOMI4" id="5WIcYaGh$h_" role="2Oq$k0">
-                  <node concept="0kSF2" id="1BY2K4dQs4i" role="1eOMHV">
-                    <node concept="3uibUv" id="1BY2K4dQsg6" role="0kSFW">
-                      <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                    </node>
-                    <node concept="2OqwBi" id="5WIcYaGh$hD" role="0kSFX">
-                      <node concept="liA8E" id="5WIcYaGh$hE" role="2OqNvi">
-                        <ref role="37wK5l" to="bfxj:3kRMfhMv9u8" resolve="getNewModel" />
-                      </node>
-                      <node concept="1rXfSq" id="5WIcYaGh$hF" role="2Oq$k0">
-                        <ref role="37wK5l" node="5x0q8wkvS4u" resolve="getChangeSet" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="7BQNkbM6IVM" role="2OqNvi">
-                  <ref role="37wK5l" to="51te:~SModelDescriptorStub.getVersion():int" resolve="getVersion" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_SkSZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="3DFYCjfl46s" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="createOppositeChange" />
-      <node concept="3uibUv" id="3DFYCjfl46t" role="3clF45">
-        <ref role="3uigEE" node="7Dh0CRFZxgO" resolve="ModelChange" />
-      </node>
-      <node concept="3Tmbuc" id="3DFYCjfl46u" role="1B3o_S" />
-      <node concept="2AHcQZ" id="3DFYCjfl46v" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="3clFbS" id="3DFYCjfl46w" role="3clF47">
-        <node concept="3clFbF" id="3DFYCjfl46x" role="3cqZAp">
-          <node concept="2ShNRf" id="3DFYCjfl46y" role="3clFbG">
-            <node concept="1pGfFk" id="3DFYCjfl46z" role="2ShVmc">
-              <ref role="37wK5l" node="3DFYCjfl45P" resolve="ModelVersionChange" />
-              <node concept="2OqwBi" id="3DFYCjfl46$" role="37wK5m">
-                <node concept="1rXfSq" id="4hiugqyyN8B" role="2Oq$k0">
-                  <ref role="37wK5l" node="5x0q8wkvS4u" resolve="getChangeSet" />
-                </node>
-                <node concept="liA8E" id="3DFYCjfl46A" role="2OqNvi">
-                  <ref role="37wK5l" to="bfxj:3kRMfhMv9uc" resolve="getOppositeChangeSet" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_SkT0" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="3DFYCjfl46B" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getType" />
-      <node concept="3uibUv" id="3DFYCjfl46C" role="3clF45">
-        <ref role="3uigEE" node="7inhnIFBpHM" resolve="ChangeType" />
-      </node>
-      <node concept="3Tm1VV" id="3DFYCjfl46D" role="1B3o_S" />
-      <node concept="2AHcQZ" id="3DFYCjfl46E" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="3clFbS" id="3DFYCjfl46F" role="3clF47">
-        <node concept="3clFbF" id="3DFYCjfl46G" role="3cqZAp">
-          <node concept="Rm8GO" id="3DFYCjfl46H" role="3clFbG">
-            <ref role="Rm8GQ" node="7inhnIFBpI0" resolve="CHANGE" />
-            <ref role="1Px2BO" node="7inhnIFBpHM" resolve="ChangeType" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_SkSY" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="3DFYCjfl46I" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="toString" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="3DFYCjfl46J" role="1B3o_S" />
-      <node concept="17QB3L" id="3DFYCjfl46K" role="3clF45" />
-      <node concept="2AHcQZ" id="3DFYCjfl46L" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="3DFYCjfl46M" role="3clF47">
-        <node concept="3clFbF" id="3DFYCjfl46N" role="3cqZAp">
-          <node concept="Xl_RD" id="3DFYCjfl46O" role="3clFbG">
-            <property role="Xl_RC" value="Change Model Version" />
           </node>
         </node>
       </node>

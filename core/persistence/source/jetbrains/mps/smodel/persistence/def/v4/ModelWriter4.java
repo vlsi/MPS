@@ -108,14 +108,7 @@ public class ModelWriter4 implements IModelWriter {
       importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
-      int version = -1;
       org.jetbrains.mps.openapi.model.SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-      if (importedModelDescriptor instanceof DefaultSModelDescriptor) {
-        version = ((DefaultSModelDescriptor) importedModelDescriptor).getVersion();
-      }
-      if (version > -1) {
-        importElem.setAttribute(ModelPersistence.VERSION, version + "");
-      }
       rootElement.addContent(importElem);
     }
 

@@ -17,42 +17,34 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ChangeFeatureNameExpression_Editor());
-      case 2:
         return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
-      case 3:
+      case 2:
         return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
-      case 4:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
-      case 5:
-        return Collections.<ConceptEditor>singletonList(new DeleteFeatureExpression_Editor());
-      case 6:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
-      case 7:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
-      case 8:
-        return Collections.<ConceptEditor>singletonList(new MergeNodeWithAnotherNodeExpression_Editor());
-      case 9:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
-      case 10:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
-      case 11:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
-      case 12:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
-      case 13:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
-      case 14:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
-      case 15:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
-      case 16:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
-      case 17:
+      case 14:
         return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
-      case 18:
-        return Collections.<ConceptEditor>singletonList(new UpdateModelByDefaultOperation_Editor());
-      case 19:
+      case 15:
         return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
       default:
     }
@@ -71,6 +63,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"};
 }

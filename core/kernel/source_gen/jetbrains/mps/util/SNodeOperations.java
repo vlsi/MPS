@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -22,7 +21,7 @@ import java.util.LinkedList;
 import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -70,11 +69,6 @@ public class SNodeOperations {
     }
     return res;
   }
-  @Deprecated
-  public static Iterable<SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
-    // Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly 
-    return SNodeUtil.getDescendants(node, cond, includeFirst);
-  }
   /**
    * 
    * @deprecated use node/../.ancestors.where 
@@ -101,11 +95,6 @@ public class SNodeOperations {
       result.put(p.getName(), node.getProperty(p));
     }
     return result;
-  }
-  @Deprecated
-  public static List<SNode> getDescendants(SNode node, Condition<SNode> condition) {
-    // Deprecated: use openapi.model.SNodeUtil.getDescendants() instead 
-    return IterableUtil.asList(SNodeUtil.getDescendants(node, condition, false));
   }
   /**
    * todo rewrite the code using this
@@ -208,19 +197,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
-    if (anchor != null) {
-      parent.insertChildBefore(role, child, anchor.getNextSibling());
-      return;
-    }
-    parent.insertChildBefore(role, child, parent.getFirstChild());
-  }
-  /**
-   * todo KILL IT! should not be used since nodes are not passed between read actions
-   * todo after killing it, correct migration script to return false instead
-   */
-  @Deprecated
-  public static boolean isDisposed(SNode node) {
-    return !(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()));
+    parent.insertChildAfter(role, child, anchor);
   }
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
@@ -237,15 +214,15 @@ public class SNodeOperations {
     String nameText = null;
     String modelName;
     try {
-      if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
-        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
+      if (node.getConcept().isSubConceptOf(SNodeUtil.concept_LinkDeclaration)) {
+        String role = SNodeAccessUtil.getProperty(node, SNodeUtil.property_LinkDeclaration_role);
         if ((role != null && role.length() > 0)) {
           nameText = '\"' + role + '\"';
         } else {
           nameText = "<no ref>";
         }
-      } else if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_INamedConcept)) {
-        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+      } else if (node.getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
+        String name = SNodeAccessUtil.getProperty(node, SNodeUtil.property_INamedConcept_name);
         if ((name != null && name.length() > 0)) {
           nameText = '\"' + name + '\"';
         } else {
@@ -306,7 +283,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static String getResolveInfo(SNode n) {
-    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo")));
+    String resolveInfo = SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo")));
     if (resolveInfo != null) {
       return resolveInfo;
     }
@@ -411,7 +388,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static int nodesCount(SModel model) {
-    return IterableUtil.asCollection(SNodeUtil.getDescendants(model)).size();
+    return IterableUtil.asCollection(org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(model)).size();
   }
   /**
    * 
