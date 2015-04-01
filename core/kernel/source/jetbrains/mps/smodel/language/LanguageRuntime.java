@@ -32,10 +32,8 @@ import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
 import jetbrains.mps.smodel.structure.InterpretedFacetProvider;
@@ -197,16 +195,6 @@ public abstract class LanguageRuntime {
   }
 
   /**
-   * @deprecated use {@link #getAspect(Class) getAspect(TextGenAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public TextGenAspectDescriptor getTextGenAspectDescriptor() {
-    return new TextGenAspectInterpreted();
-  }
-
-
-  /**
    * The reason this method is replaced with nearly identical {@link #getAspect(Class)} is that in 3.2 we need to support
    * descriptors generated either with 3.1 and 3.2, while providing single API for users of LanguageRuntime. Since the contract of
    * generated factory method is different (getAspectDescriptor in 3.1 provides editor aspect only, while in 3.2 we provide
@@ -291,9 +279,6 @@ public abstract class LanguageRuntime {
     }
     if (descriptorInterface == ConstraintsAspectDescriptor.class) {
       return (T) getConstraintsAspectDescriptor();
-    }
-    if (descriptorInterface == TextGenAspectDescriptor.class) {
-      return (T) getTextGenAspectDescriptor();
     }
     if (descriptorInterface == FindUsageAspectDescriptor.class) {
       return (T) getFindUsages();

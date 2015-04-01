@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -154,6 +155,11 @@ public abstract class SNodeTextGen {
     return getReferentPresentation(reference, true);
   }
 
+  /**
+   * @deprecated move to BaseLanguageTextGen (where it belongs), drop unused parameter
+   */
+  @ToRemove(version = 0)
+  @Deprecated
   public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
       foundError("null reference");

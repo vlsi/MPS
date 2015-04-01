@@ -978,8 +978,12 @@
       <property role="TrG5h" value="mps-textgen" />
       <node concept="398b2D" id="4RFviIanHB0" role="398b2p">
         <node concept="nFU4i" id="4RFviIanJs$" role="nFU4p">
-          <property role="nFU4j" value="source" />
+          <property role="nFU4j" value="src-legacy" />
           <property role="3LZaj6" value="source" />
+        </node>
+        <node concept="nFU4i" id="12Ma8Fcq2rR" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="source" />
         </node>
         <node concept="398BVA" id="4RFviIanIyg" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
