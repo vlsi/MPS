@@ -904,26 +904,35 @@
                 <node concept="CQp6Q" id="1ZLSPqwU6qf" role="3uHU7B" />
               </node>
               <node concept="3clFbS" id="1ZLSPqwU6qg" role="3clFbx">
+                <node concept="3cpWs8" id="rXLmmKBE8W" role="3cqZAp">
+                  <node concept="3cpWsn" id="rXLmmKBE8X" role="3cpWs9">
+                    <property role="TrG5h" value="role" />
+                    <node concept="3uibUv" id="rXLmmKBE8T" role="1tU5fm">
+                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    </node>
+                    <node concept="10QFUN" id="rXLmmKBE8Y" role="33vP2m">
+                      <node concept="2OqwBi" id="rXLmmKBE8Z" role="10QFUP">
+                        <node concept="liA8E" id="rXLmmKBE90" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                          <node concept="Xl_RD" id="rXLmmKBE91" role="37wK5m">
+                            <property role="Xl_RC" value="role" />
+                          </node>
+                        </node>
+                        <node concept="CQp6Q" id="rXLmmKBE92" role="2Oq$k0" />
+                      </node>
+                      <node concept="3uibUv" id="rXLmmKBE93" role="10QFUM">
+                        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="1ZLSPqwU6qh" role="3cqZAp">
                   <node concept="2OqwBi" id="1ZLSPqwU6qi" role="3clFbG">
                     <node concept="CQp69" id="2sN7BRm7aGl" role="2Oq$k0" />
                     <node concept="liA8E" id="1ZLSPqwU6qm" role="2OqNvi">
                       <ref role="37wK5l" to="ec5l:~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void" resolve="addChild" />
-                      <node concept="1eOMI4" id="7F2lUg6IRSJ" role="37wK5m">
-                        <node concept="10QFUN" id="7F2lUg6IRSK" role="1eOMHV">
-                          <node concept="2OqwBi" id="7F2lUg6IRSF" role="10QFUP">
-                            <node concept="liA8E" id="7F2lUg6IRSG" role="2OqNvi">
-                              <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
-                              <node concept="Xl_RD" id="7F2lUg6IRSH" role="37wK5m">
-                                <property role="Xl_RC" value="role" />
-                              </node>
-                            </node>
-                            <node concept="CQp6Q" id="7F2lUg6IRSI" role="2Oq$k0" />
-                          </node>
-                          <node concept="3uibUv" id="7F2lUg6IRSE" role="10QFUM">
-                            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="rXLmmKBEhC" role="37wK5m">
+                        <ref role="3cqZAo" node="rXLmmKBE8X" resolve="role" />
                       </node>
                       <node concept="CQp6Q" id="1ZLSPqwU6qn" role="37wK5m" />
                     </node>
@@ -939,6 +948,16 @@
                       <node concept="10Nm6u" id="7F2lUg6ISsK" role="37wK5m" />
                     </node>
                     <node concept="CQp6Q" id="7F2lUg6IRWM" role="2Oq$k0" />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="rXLmmKBE5f" role="3cqZAp">
+                  <node concept="2YIFZM" id="rXLmmKBE5g" role="3clFbG">
+                    <ref role="37wK5l" node="rXLmmK_Xyz" resolve="roleRead" />
+                    <ref role="1Pybhc" node="3McbO0WUe6Z" resolve="ReadHelper" />
+                    <node concept="CQp6Q" id="rXLmmKBE5h" role="37wK5m" />
+                    <node concept="37vLTw" id="rXLmmKBEgD" role="37wK5m">
+                      <ref role="3cqZAo" node="rXLmmKBE8X" resolve="role" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -4802,6 +4821,20 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="rXLmmKBvis" role="3cqZAp">
+          <node concept="3clFbS" id="rXLmmKBviu" role="3clFbx">
+            <node concept="3cpWs6" id="rXLmmKBvGH" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="rXLmmKBvDc" role="3clFbw">
+            <node concept="10Nm6u" id="rXLmmKBvEz" role="3uHU7w" />
+            <node concept="2OqwBi" id="rXLmmKBvnL" role="3uHU7B">
+              <node concept="37vLTw" id="rXLmmKBvmO" role="2Oq$k0">
+                <ref role="3cqZAo" node="rXLmmK_Xz1" resolve="node" />
+              </node>
+              <node concept="1mfA1w" id="rXLmmKBvyR" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
         <node concept="1QHqEK" id="rXLmmKAIvn" role="3cqZAp">
           <node concept="1QHqEC" id="rXLmmKAIvp" role="1QHqEI">
             <node concept="3clFbS" id="rXLmmKAIvr" role="1bW5cS">
@@ -4822,8 +4855,11 @@
                           <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getContainmentLink(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                           <node concept="2OqwBi" id="rXLmmKAuqO" role="37wK5m">
                             <node concept="2OqwBi" id="rXLmmKAu7g" role="2Oq$k0">
-                              <node concept="37vLTw" id="rXLmmKAu5r" role="2Oq$k0">
-                                <ref role="3cqZAo" node="rXLmmK_Xz1" resolve="node" />
+                              <node concept="2OqwBi" id="rXLmmKBuYj" role="2Oq$k0">
+                                <node concept="37vLTw" id="rXLmmKAu5r" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="rXLmmK_Xz1" resolve="node" />
+                                </node>
+                                <node concept="1mfA1w" id="rXLmmKBvbg" role="2OqNvi" />
                               </node>
                               <node concept="2yIwOk" id="rXLmmKAujx" role="2OqNvi" />
                             </node>

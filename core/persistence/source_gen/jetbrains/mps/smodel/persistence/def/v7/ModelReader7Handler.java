@@ -344,8 +344,10 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       SNode result = (SNode) resultObject;
       SNode child = (SNode) value;
       if (child != null) {
-        result.addChild(((String) child.getUserObject("role")), child);
+        String role = (String) child.getUserObject("role");
+        result.addChild(role, child);
         child.putUserObject("role", null);
+        ReadHelper.roleRead(child, role);
       }
     }
   }

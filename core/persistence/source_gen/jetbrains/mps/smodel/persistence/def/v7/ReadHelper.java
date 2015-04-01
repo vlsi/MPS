@@ -182,9 +182,12 @@ public class ReadHelper {
     if (info == null) {
       return;
     }
+    if (SNodeOperations.getParent(node) == null) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        info.nodeRoleRead(node, check_9mlqpu_b0a0a0c0s(MetaAdapterFactoryByName.getContainmentLink(SNodeOperations.getConcept(node).getQualifiedName(), role).getDeclarationNode()), false);
+        info.nodeRoleRead(node, check_9mlqpu_b0a0a0d0s(MetaAdapterFactoryByName.getContainmentLink(SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), role).getDeclarationNode()), false);
       }
     });
   }
@@ -220,7 +223,7 @@ public class ReadHelper {
     }
     return null;
   }
-  private static SNodeReference check_9mlqpu_b0a0a0c0s(SNode checkedDotOperand) {
+  private static SNodeReference check_9mlqpu_b0a0a0d0s(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

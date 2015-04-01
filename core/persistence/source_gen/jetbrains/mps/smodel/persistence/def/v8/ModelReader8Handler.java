@@ -453,6 +453,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         if (stubConcept != null) {
           jetbrains.mps.smodel.SNode childNode = SNodeFactory.newRegular(stubConcept);
           result.addChild(child._0(), childNode);
+          ReadHelper.roleRead(childNode, child._0());
           return;
         }
       }
