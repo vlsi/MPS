@@ -23,5 +23,5 @@ import java.util.Collection;
  * Created by simon on 26/03/15.
  */
 public interface DataFlowAspectDescriptor extends LanguageAspectDescriptor{
-  Collection<DataFlowConstructor> getConstructors(Class clazz);
+  Collection<DataFlowConstructor> getConstructors(String analyzerId);
 }

@@ -23,7 +23,7 @@ import java.util.Collections;
  */
 public abstract class AbstractDataFlowAspectDescriptor implements DataFlowAspectDescriptor {
   @Override
-  public Collection<DataFlowConstructor> getConstructors(Class clazz) {
+  public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
     return Collections.emptyList();
   }
 }

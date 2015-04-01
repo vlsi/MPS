@@ -41,14 +41,14 @@ import java.util.Set;
 public class AnalyzerRules {
   private List<DataFlowConstructor> myConceptRules = new LinkedList<DataFlowConstructor>();
   private Map<SConcept, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap<SConcept, Set<DataFlowConstructor>>();
-  private DataFlowAnalyzer myAnalyzer;
+  private String myAnalyzerId;
   private final SNode myNodeToApply;
   private final Program myProgram;
 
-  public AnalyzerRules(DataFlowAnalyzer analyzer, SNode nodeToApply, Program program) {
+  public AnalyzerRules(String analyzerId, SNode nodeToApply, Program program) {
     myNodeToApply = nodeToApply;
     myProgram = program;
-    myAnalyzer = analyzer;
+    myAnalyzerId = analyzerId;
   }
   public void apply() {
     SModelInternal model = (SModelInternal) myNodeToApply.getModel();
@@ -64,7 +64,7 @@ public class AnalyzerRules {
       if (aspect == null) {
         continue;
       }
-      for (DataFlowConstructor rule : aspect.getConstructors(myAnalyzer.getClass())) {
+      for (DataFlowConstructor rule : aspect.getConstructors(myAnalyzerId)) {
         myConceptRules.add(rule);
       }
     }
