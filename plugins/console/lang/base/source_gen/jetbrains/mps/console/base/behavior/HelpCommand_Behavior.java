@@ -68,7 +68,7 @@ public class HelpCommand_Behavior {
             try {
               return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getShortDisplayString_7006261637493126103", new Object[]{}), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.asNode(it), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "");
             }
           }
         }

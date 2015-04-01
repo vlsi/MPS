@@ -53,7 +53,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
 
-  private static NodeMemberAccessModifier ourMemberAccessModifier = null;
   /**
    * inv: all children of a node, inclusive, have the same owner
    */
@@ -80,10 +79,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
     myConcept = concept;
     myId = id;
-  }
-
-    public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
-    ourMemberAccessModifier = modifier;
   }
 
   @NotNull

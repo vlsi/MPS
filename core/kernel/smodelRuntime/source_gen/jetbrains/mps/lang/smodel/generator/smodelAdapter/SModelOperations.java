@@ -21,9 +21,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -126,7 +126,7 @@ public class SModelOperations {
   public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     return createNewNode(model, id, new SConceptAdapterByName(conceptFqName));
   }
-  public static SNode createNewNode(SModel model, SNodeId id, SConcept concept) {
+  public static SNode createNewNode(SModel model, SNodeId id, SAbstractConcept concept) {
     if (concept == null) {
       return null;
     }

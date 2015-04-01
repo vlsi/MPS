@@ -40,7 +40,6 @@ import org.junit.runners.Suite;
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.packaged.PackagedLanguageTest.class,
-    jetbrains.mps.refactoring.RefactoringTest.class,
     jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
 //  jetbrains.mps.ide.vcs.test.merge.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
     jetbrains.mps.ide.vcs.test.merge.MergeCoreTest.class,

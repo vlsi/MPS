@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class BLQueryArgumentSharpActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +24,7 @@ public class BLQueryArgumentSharpActions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument");
+      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument"));
     }
   }
   public static class BLQueryArgumentSharpActions_BACKSPACE extends AbstractCellAction {
@@ -35,7 +36,7 @@ public class BLQueryArgumentSharpActions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument");
+      SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument"));
     }
   }
 }

@@ -18,13 +18,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LogicalOperator_1904811872814312765(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -50,7 +50,7 @@ public class QueriesGenerated {
                 return newInitializedInstance;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString(SNodeOperations.asNode((item)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+                return (item).getConceptAlias();
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -173,7 +173,7 @@ public class QueriesGenerated {
               return SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, 0x1a6f404e630a460dL, "right"));
             }
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString(SNodeOperations.asNode((item)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              return (item).getConceptAlias();
             }
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);

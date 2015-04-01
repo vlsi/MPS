@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference.util;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -119,7 +120,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       SNode value = map.get(conceptFQName);
       if (value != null) {
         SNode result = postprocessGetNode(value);
-        if (result != null && jetbrains.mps.util.SNodeOperations.isDisposed(result)) {
+        if (result != null && !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(result, MPSModuleRepository.getInstance())) {
           map.remove(conceptFQName);
         } else {
           return new Pair<Boolean, SNode>(true, result);
@@ -150,7 +151,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     if (map != null && map.containsKey(c)) {
       Pair<SNode, GeneratedMatchingPattern> patternPair = map.get(c);
       SNode resultNode = patternPair.o1;
-      if (resultNode != null && jetbrains.mps.util.SNodeOperations.isDisposed(resultNode)) {
+      if (resultNode != null && !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(resultNode, MPSModuleRepository.getInstance())) {
         map.remove(c);
         return null;
       } else {

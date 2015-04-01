@@ -9,7 +9,6 @@ import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.refactoring.ModelLinkMap;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
@@ -17,7 +16,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelLegacy;
-import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -48,7 +46,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
   private SModelHeader my_headerParam;
   private DefaultSModel my_modelField;
   private ReadHelper my_helperField;
-  private ModelLinkMap my_linkMapField;
   public ModelReader7Handler(ModelLoadingState toState, SModelHeader header) {
     my_toStateParam = toState;
     my_headerParam = header;
@@ -151,7 +148,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new ReadHelper(my_modelField.getReference());
-      my_linkMapField = new ModelLinkMap(my_modelField);
       return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }
     @Override
@@ -164,7 +160,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         } catch (NumberFormatException e) {
           version = -1;
         }
-        my_headerParam.setVersion(version);
         return;
       }
       if ("doNotGenerate".equals(name)) {
@@ -249,7 +244,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_2824634917103356434(Object resultObject, Object value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
       Object child = (Object) value;
-      if (my_toStateParam == ModelLoadingState.INTERFACE_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(my_modelField))) {
+      if (my_toStateParam == ModelLoadingState.INTERFACE_LOADED) {
         result.setState(ModelLoadingState.INTERFACE_LOADED);
         throw new BreakParseSAXException();
       }
@@ -261,8 +256,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
     }
     private boolean validateInternal(ModelLoadResult result) throws SAXException {
-      new StructureModificationProcessor(my_linkMapField, my_modelField).updateModelOnLoad();
-      my_linkMapField.fillModelEnvironmentInfo();
       result.setState(ModelLoadingState.FULLY_LOADED);
       return true;
     }
@@ -351,8 +344,10 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       SNode result = (SNode) resultObject;
       SNode child = (SNode) value;
       if (child != null) {
-        result.addChild(((String) child.getUserObject("role")), child);
+        String role = (String) child.getUserObject("role");
+        result.addChild(role, child);
         child.putUserObject("role", null);
+        ReadHelper.roleRead(child, role);
       }
     }
   }
@@ -364,21 +359,16 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) throws SAXException {
       boolean needLazy = my_toStateParam != ModelLoadingState.FULLY_LOADED;
       String readType = my_helperField.readType(attrs.getValue("type"));
-      return (needLazy ? SNodeFactory.newLazy(readType) : SNodeFactory.newRegular(readType));
+      jetbrains.mps.smodel.SNode result = (needLazy ? SNodeFactory.newLazy(readType) : SNodeFactory.newRegular(readType));
+      ReadHelper.conceptRead(result);
+      return result;
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
-      if ("typeId".equals(name)) {
-        my_linkMapField.addTypeLocation(my_helperField.readLinkId(value), result);
-        return;
-      }
       if ("role".equals(name)) {
-        result.putUserObject("role", my_helperField.readRole(value));
-        return;
-      }
-      if ("roleId".equals(name)) {
-        my_linkMapField.addRoleLocation(my_helperField.readLinkId(value), result);
+        String role = my_helperField.readRole(value);
+        result.putUserObject("role", role);
         return;
       }
       if ("id".equals(name)) {
@@ -426,8 +416,9 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       SNode result = (SNode) resultObject;
       String[] child = (String[]) value;
       if (child[1] != null) {
-        result.setProperty(my_helperField.readName(child[0]), child[1]);
-        my_linkMapField.addNameLocation(my_helperField.readLinkId(child[2]), result, child[0]);
+        String pname = my_helperField.readName(child[0]);
+        result.setProperty(pname, child[1]);
+        ReadHelper.propertyRead(result, pname);
       }
     }
     private void handleChild_286176397450364288(Object resultObject, Object value) throws SAXException {
@@ -442,16 +433,17 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       StaticReference ref = new StaticReference(my_helperField.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
-      my_linkMapField.addTargetLocation(ptr, ref);
 
       result.setReference(ref.getRole(), ref);
-      my_linkMapField.addRoleLocation(my_helperField.readLinkId(child[3]), ref);
+      ReadHelper.referenceRead(ref);
     }
     private void handleChild_286176397450364333(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       SNode child = (SNode) value;
-      result.addChild(((String) child.getUserObject("role")), child);
+      String role = (String) child.getUserObject("role");
+      result.addChild((role), child);
       child.putUserObject("role", null);
+      ReadHelper.roleRead(child, role);
     }
   }
   public class PropertyElementHandler extends ModelReader7Handler.ElementHandler {

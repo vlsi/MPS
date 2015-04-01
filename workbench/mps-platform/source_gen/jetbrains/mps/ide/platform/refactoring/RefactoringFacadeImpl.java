@@ -10,7 +10,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
@@ -24,35 +23,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.refactoring.StructureModificationProcessor;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
-import jetbrains.mps.findUsages.UsagesList;
-import java.util.Set;
-import jetbrains.mps.smodel.SModelRepository;
-import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
-import jetbrains.mps.make.IMakeService;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
 
 public class RefactoringFacadeImpl implements RefactoringFacade {
   protected Logger myLog = LogManager.getLogger(this.getClass());
@@ -66,22 +37,11 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       public void run() {
         try {
           refactoring.refactor(context);
-          if (refactoring instanceof ILoggableRefactoring) {
-            if (!(context.isLocal())) {
-              writeIntoLog(context);
-            }
-            updateModels(context);
-          }
         } catch (Throwable t) {
           myLog.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
         }
       }
     });
-    if (context.getDoesGenerateModels()) {
-      generateModels(modelsToGenerate, context);
-    } else {
-      //  mark "generation required" 
-    }
     try {
       refactoring.doWhenDone(context);
     } catch (Throwable t) {
@@ -94,17 +54,12 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
     final List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
     SwingUtilities.invokeLater(new Runnable() {
-      @Override
       public void run() {
-        final boolean cancelled = RefactoringAccessEx.getInstance().showRefactoringDialog(ideaProject, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
-        if (!(cancelled)) {
-          project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
-            public void run() {
-              executeSimple(refactoringContext);
-            }
-          });
-        }
-
+        project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
+          public void run() {
+            executeSimple(refactoringContext);
+          }
+        });
       }
     });
   }
@@ -196,18 +151,6 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
     RefactoringAccessEx.getInstance().showRefactoringView(refactoringContext, okAction, searchResults, !(modelsToGenerate.isEmpty()), refactoringContext.getRefactoring().getUserFriendlyName());
   }
-  public void writeIntoLog(RefactoringContext context) {
-    assert !(context.isLocal());
-    assert context.getRefactoring() instanceof ILoggableRefactoring;
-    StructureModificationProcessor.addToLog(context.getStructureModification());
-  }
-  public void updateLoadedModels(final RefactoringContext context) {
-    SetSequence.fromSet(loadedModelsForUpdate(context)).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        updateModel(it, context);
-      }
-    });
-  }
   @NotNull
   private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext context) {
     List<SModel> result = new ArrayList<SModel>();
@@ -218,105 +161,5 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     }
 
     return result;
-  }
-  private void updateModels(RefactoringContext context) {
-    assert context.getRefactoring() instanceof ILoggableRefactoring;
-    if (!(context.isLocal())) {
-      updateLoadedModels(context);
-    } else {
-      UsagesList usages = context.getUsages();
-      if (usages != null) {
-        for (SModel anotherModel : usages.getAffectedModels()) {
-          updateModel(anotherModel, context);
-        }
-      }
-    }
-  }
-  private Set<SModel> loadedModelsForUpdate(RefactoringContext context) {
-    final SModelRepository modelRepository = SModelRepository.getInstance();
-    Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
-    Set<SModel> result = SetSequence.fromSet(new HashSet<SModel>());
-    //  the dependencies should be added manually: they should be loaded after refactoring but have no ImportElement for themselves 
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).select(new ISelector<SModelReference, SModel>() {
-      public SModel select(SModelReference it) {
-        return modelRepository.getModelDescriptor(it);
-      }
-    }));
-
-    for (SModel descr : modelRepository.getModelDescriptors()) {
-      if (!(SModelStereotype.isUserModel(descr)) || !(descr.isLoaded())) {
-        continue;
-      }
-      if (!(descr instanceof SModelBase)) {
-        continue;
-      }
-      //  we suppose that all models were saved before refactoring started => ImportElements are up to date 
-      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(((SModelBase) descr).getSModel()))) {
-        if (MapSequence.fromMap(dependencies).containsKey(elem.getModelReference())) {
-          SetSequence.fromSet(result).addElement(descr);
-          break;
-        }
-      }
-    }
-    return result;
-  }
-  private void updateModel(SModel model, RefactoringContext context) {
-    IRefactoring refactoring = context.getRefactoring();
-    try {
-      ((ILoggableRefactoring) refactoring).updateModel(model, context);
-    } catch (Throwable t) {
-      myLog.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + SNodeOperations.getModelLongName(model) + ". Models could have been corrupted.", t);
-    }
-    if (!(context.isLocal())) {
-      Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
-      for (SModelReference modelRef : dependencies.keySet()) {
-        ((SModelInternal) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
-      }
-    }
-    if (model instanceof EditableSModel) {
-      ((EditableSModel) model).setChanged(true);
-    }
-  }
-  private void generateModels(@NotNull final List<SModel> sourceModels, @NotNull final RefactoringContext context) {
-    if (sourceModels.isEmpty()) {
-      return;
-    }
-    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier(context.getSelectedProject());
-    final List<SModel> descriptors = new ArrayList<SModel>();
-    SModelRepository.getInstance().saveAll();
-    //  save all before launching make 
-    context.setUpMembersAccessModifier(modifier);
-    modifier.addModelsToModify(sourceModels);
-    SNode.setNodeMemberAccessModifier(modifier);
-    for (SModel model : sourceModels) {
-      if (!(SNodeOperations.isModelDisposed(model))) {
-        descriptors.add(model);
-      }
-    }
-
-    new Thread() {
-      @Override
-      public void run() {
-        try {
-          Project project = context.getSelectedProject();
-          MakeSession sess = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
-          if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-            Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(descriptors).resources(false));
-            result.get();
-            //  wait for end of make to remove member access modifier 
-          }
-        } catch (InterruptedException e) {
-        } catch (CancellationException ignore) {
-        } catch (ExecutionException e) {
-          e.printStackTrace();
-        } finally {
-          onGenerationFinished();
-        }
-      }
-    }.start();
-    //     GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
-  }
-  private void onGenerationFinished() {
-    SNode.setNodeMemberAccessModifier(null);
   }
 }

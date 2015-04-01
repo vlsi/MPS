@@ -149,10 +149,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -161,6 +157,10 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1113,8 +1113,8 @@
           </node>
           <node concept="3cpWs6" id="3vXGXT8byMT" role="3cqZAp">
             <node concept="2YIFZM" id="3vXGXT8byMW" role="3cqZAk">
-              <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
               <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+              <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
               <node concept="2OqwBi" id="3vXGXT8byNi" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTv5E" role="2Oq$k0">
                   <ref role="3cqZAo" node="3vXGXT8byJI" resolve="group" />
@@ -1123,9 +1123,9 @@
                   <ref role="3Tt5mk" to="kdzh:5HVSRHdUL82" />
                 </node>
               </node>
-              <node concept="28GBK8" id="3vXGXT8byNs" role="37wK5m">
-                <ref role="28GBKb" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
-                <ref role="28H3Ia" to="kdzh:1jjYQYSgYJu" />
+              <node concept="359W_D" id="6t3ylNOzKIU" role="37wK5m">
+                <ref role="359W_E" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
+                <ref role="359W_F" to="kdzh:1jjYQYSgYJu" />
               </node>
             </node>
           </node>

@@ -51,7 +51,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ImportedModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />

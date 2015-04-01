@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 
@@ -69,7 +70,7 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
-            ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
+            ListSequence.fromList(SNodeOperations.getChildren(container, MetaAdapterByDeclaration.getContainmentLink(containingLink))).addElement(result);
             return result;
           }
         };

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -80,15 +80,16 @@ public abstract class SPropertyAdapter implements SProperty {
       return null;
     }
 
-    SNode dataType = SLinkOperations.getTarget(propertyNode, "dataType", false);
+    SNode dataType = propertyNode.getReferenceTarget("dataType");
     if (dataType == null) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      SNode pdt = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+    if (dataType.isInstanceOfConcept(SNodeUtil.concept_PrimitiveDataTypeDeclaration)) {
       return new SPrimitiveDataTypeAdapter((
-          BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
-              "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL : ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
+          BehaviorReflection.invokeNonVirtual(Boolean.TYPE, dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
+              "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL :
+              ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
+                  "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
     }
     return new SDataTypeAdapter();
   }

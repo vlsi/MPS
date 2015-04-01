@@ -550,10 +550,10 @@ public class JavaToMpsConverter {
     runCommand("Code transforms", new Runnable() {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
-          SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+          SNodeOperations.replaceWithNewChild(fieldRefOp, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"));
         }
         for (SNode imco : ListSequence.fromList(toReplaceWithArrayClone)) {
-          SNodeOperations.replaceWithNewChild(imco, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation");
+          SNodeOperations.replaceWithNewChild(imco, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"));
         }
         for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
           SNodeOperations.replaceWithAnother(pair.key(), pair.value());

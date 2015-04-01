@@ -3318,60 +3318,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="1NYD3hytmTS" role="jymVt">
-      <property role="TrG5h" value="getDescendants" />
-      <node concept="3uibUv" id="1NYD3hytmTT" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-        <node concept="3uibUv" id="3SfeoxXfB40" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1NYD3hytmTV" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmTW" role="3clF47">
-        <node concept="3SKdUt" id="4bu8cw970MI" role="3cqZAp">
-          <node concept="3SKdUq" id="4bu8cw970QL" role="3SKWNk">
-            <property role="3SKdUp" value="Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="4bu8cw9731j" role="3cqZAp">
-          <node concept="2YIFZM" id="4bu8cw973bN" role="3cqZAk">
-            <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-            <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition,boolean):java.lang.Iterable" resolve="getDescendants" />
-            <node concept="37vLTw" id="4bu8cw973gh" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUc" resolve="node" />
-            </node>
-            <node concept="37vLTw" id="4bu8cw973wk" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUe" resolve="cond" />
-            </node>
-            <node concept="37vLTw" id="4bu8cw973IL" role="37wK5m">
-              <ref role="3cqZAo" node="1NYD3hytmUh" resolve="includeFirst" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUc" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1NYD3hytmUd" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUe" role="3clF46">
-        <property role="TrG5h" value="cond" />
-        <node concept="3uibUv" id="1NYD3hytmUf" role="1tU5fm">
-          <ref role="3uigEE" to="r9fo:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="3SfeoxXfB4n" role="11_B2D">
-            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmUh" role="3clF46">
-        <property role="TrG5h" value="includeFirst" />
-        <node concept="10P_77" id="1NYD3hytmUi" role="1tU5fm" />
-      </node>
-      <node concept="2AHcQZ" id="4bu8cw96Rzy" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="2YIFZL" id="1NYD3hytmUm" role="jymVt">
       <property role="TrG5h" value="findParent" />
       <property role="IEkAT" value="true" />
@@ -3595,61 +3541,6 @@
         <node concept="3uibUv" id="1NYD3hytmUU" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1NYD3hytmUY" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="TrG5h" value="getDescendants" />
-      <node concept="3uibUv" id="5T4fSAVSVze" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
-        <node concept="3uibUv" id="3SfeoxXfB4o" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1NYD3hytmV0" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmV1" role="3clF47">
-        <node concept="3SKdUt" id="5YcedGY4xUQ" role="3cqZAp">
-          <node concept="3SKdUq" id="5YcedGY4xYY" role="3SKWNk">
-            <property role="3SKdUp" value="Deprecated: use openapi.model.SNodeUtil.getDescendants() instead" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5YcedGY4wqW" role="3cqZAp">
-          <node concept="2YIFZM" id="5YcedGY4w$g" role="3cqZAk">
-            <ref role="37wK5l" to="msyo:~IterableUtil.asList(java.lang.Iterable):java.util.List" resolve="asList" />
-            <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
-            <node concept="2YIFZM" id="5YcedGY4wHa" role="37wK5m">
-              <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-              <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.util.Condition,boolean):java.lang.Iterable" resolve="getDescendants" />
-              <node concept="37vLTw" id="5YcedGY4wNc" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmVa" resolve="node" />
-              </node>
-              <node concept="37vLTw" id="5YcedGY4x6p" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmVc" resolve="condition" />
-              </node>
-              <node concept="3clFbT" id="5YcedGY4xm_" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmVa" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1_FiQN2lP6H" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmVc" role="3clF46">
-        <property role="TrG5h" value="condition" />
-        <node concept="3uibUv" id="1NYD3hytmVd" role="1tU5fm">
-          <ref role="3uigEE" to="r9fo:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="3SfeoxXfB41" role="11_B2D">
-            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5YcedGY4x_y" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="1NYD3hytmVk" role="jymVt">
@@ -4353,61 +4244,21 @@
       <node concept="3cqZAl" id="3YzxW_BCQA8" role="3clF45" />
       <node concept="3Tm1VV" id="3YzxW_BCQA9" role="1B3o_S" />
       <node concept="3clFbS" id="3YzxW_BCQAa" role="3clF47">
-        <node concept="3clFbJ" id="3YzxW_BCQAb" role="3cqZAp">
-          <node concept="3y3z36" id="3YzxW_BCQAc" role="3clFbw">
-            <node concept="37vLTw" id="3YzxW_BCQAd" role="3uHU7B">
-              <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
-            </node>
-            <node concept="10Nm6u" id="3YzxW_BCQAe" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="3YzxW_BCQAf" role="3clFbx">
-            <node concept="3clFbF" id="3YzxW_BCQAg" role="3cqZAp">
-              <node concept="2OqwBi" id="3YzxW_BCQAh" role="3clFbG">
-                <node concept="37vLTw" id="3YzxW_BCQAi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
-                </node>
-                <node concept="liA8E" id="3YzxW_BCQAj" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
-                  <node concept="37vLTw" id="3YzxW_BCQAk" role="37wK5m">
-                    <ref role="3cqZAo" node="3YzxW_BCQAV" resolve="role" />
-                  </node>
-                  <node concept="37vLTw" id="3YzxW_BCQAl" role="37wK5m">
-                    <ref role="3cqZAo" node="3YzxW_BCQAX" resolve="child" />
-                  </node>
-                  <node concept="2OqwBi" id="3YzxW_BCQAm" role="37wK5m">
-                    <node concept="37vLTw" id="3qaUGgZW$Vr" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
-                    </node>
-                    <node concept="liA8E" id="3YzxW_BCQAr" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode" resolve="getNextSibling" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="3YzxW_BCQAs" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="3YzxW_BCQAB" role="3cqZAp">
-          <node concept="2OqwBi" id="3YzxW_BCQAC" role="3clFbG">
-            <node concept="37vLTw" id="3YzxW_BCQAD" role="2Oq$k0">
+        <node concept="3clFbF" id="3YzxW_BCQAg" role="3cqZAp">
+          <node concept="2OqwBi" id="3YzxW_BCQAh" role="3clFbG">
+            <node concept="37vLTw" id="3YzxW_BCQAi" role="2Oq$k0">
               <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
             </node>
-            <node concept="liA8E" id="3YzxW_BCQAE" role="2OqNvi">
-              <ref role="37wK5l" to="ec5l:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
-              <node concept="37vLTw" id="3YzxW_BCQAF" role="37wK5m">
+            <node concept="liA8E" id="3YzxW_BCQAj" role="2OqNvi">
+              <ref role="37wK5l" to="ec5l:~SNode.insertChildAfter(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildAfter" />
+              <node concept="37vLTw" id="3YzxW_BCQAk" role="37wK5m">
                 <ref role="3cqZAo" node="3YzxW_BCQAV" resolve="role" />
               </node>
-              <node concept="37vLTw" id="3YzxW_BCQAG" role="37wK5m">
+              <node concept="37vLTw" id="3YzxW_BCQAl" role="37wK5m">
                 <ref role="3cqZAo" node="3YzxW_BCQAX" resolve="child" />
               </node>
-              <node concept="2OqwBi" id="3qaUGgZW_qn" role="37wK5m">
-                <node concept="37vLTw" id="3qaUGgZW_4J" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3YzxW_BCQAT" resolve="parent" />
-                </node>
-                <node concept="liA8E" id="3qaUGgZW_BY" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode" resolve="getFirstChild" />
-                </node>
+              <node concept="37vLTw" id="3qaUGgZW$Vr" role="37wK5m">
+                <ref role="3cqZAo" node="3YzxW_BCQAZ" resolve="anchor" />
               </node>
             </node>
           </node>
@@ -4456,49 +4307,6 @@
         <node concept="3uibUv" id="3YzxW_BCQB0" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1NYD3hytmVT" role="jymVt">
-      <property role="TrG5h" value="isDisposed" />
-      <node concept="10P_77" id="1NYD3hytmVU" role="3clF45" />
-      <node concept="3Tm1VV" id="1NYD3hytmVV" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmVW" role="3clF47">
-        <node concept="3cpWs6" id="1NYD3hytmVX" role="3cqZAp">
-          <node concept="3fqX7Q" id="2R7EsbQQlc0" role="3cqZAk">
-            <node concept="2YIFZM" id="2R7EsbQQleQ" role="3fr31v">
-              <ref role="37wK5l" to="ec5l:~SNodeUtil.isAccessible(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository):boolean" resolve="isAccessible" />
-              <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-              <node concept="37vLTw" id="2R7EsbQQlfV" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmW4" resolve="node" />
-              </node>
-              <node concept="2YIFZM" id="2R7EsbQQlkm" role="37wK5m">
-                <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmW4" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1NYD3hytmW5" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="1NYD3hytmW6" role="lGtFl">
-        <node concept="TZ5HA" id="1NYD3hytmW7" role="TZ5H$">
-          <node concept="1dT_AC" id="1NYD3hytmW8" role="1dT_Ay">
-            <property role="1dT_AB" value="todo KILL IT! should not be used since nodes are not passed between read actions" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="1NYD3hytmW9" role="TZ5H$">
-          <node concept="1dT_AC" id="1NYD3hytmWa" role="1dT_Ay">
-            <property role="1dT_AB" value="todo after killing it, correct migration script to return false instead" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1NYD3hytmWb" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="7U87j6$6ALH" role="jymVt">
@@ -5791,40 +5599,6 @@
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="true" />
-      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
-        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="3TEgbCBO36f" role="2B76xF">
-          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="3TEgbCBO38m" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
-        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
-          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
-            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
-              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
-            </node>
-            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
-            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
-            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
-          </node>
-        </node>
-      </node>
       <node concept="3uibUv" id="3IONCthJkW6" role="3clF45">
         <ref role="3uigEE" to="k7g3:~List" resolve="List" />
         <node concept="3uibUv" id="3IONCthJnNh" role="11_B2D">
@@ -5871,6 +5645,40 @@
         <property role="TrG5h" value="model" />
         <node concept="3uibUv" id="3IONCthJ3Ui" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
+        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
+          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
+            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
+              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
+            </node>
+            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
+            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
+          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
+            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="2iZvIBbzBGG" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="2iZvIBbzBHj" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
         </node>
       </node>
     </node>

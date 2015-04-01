@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
@@ -114,11 +115,11 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       return state;
     }
   }
-  public NodeByConcept_Configuration(String concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+  public NodeByConcept_Configuration(SAbstractConcept concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     myConcept = concept;
     myIsValid = isValid;
   }
-  private final String myConcept;
+  private final SAbstractConcept myConcept;
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
   private SettingsEditorEx<NodeByConcept_Configuration> myEditorEx;
   public NodeByConcept_Configuration createCloneTemplate() {

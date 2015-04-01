@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -194,11 +194,11 @@
         <reference id="1171323947160" name="concept" index="2SmgA8" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
@@ -1759,15 +1759,15 @@
           <node concept="3cpWs6" id="3yYSgye12qL" role="3cqZAp">
             <node concept="2ShNRf" id="3yYSgye133A" role="3cqZAk">
               <node concept="1pGfFk" id="3yYSgye1h4s" role="2ShVmc">
-                <ref role="37wK5l" to="o8zo:VXQuBi1M2" resolve="ModelsScope" />
+                <ref role="37wK5l" to="o8zo:4k9eBec$Bew" resolve="ModelsScope" />
                 <node concept="37vLTw" id="3yYSgye1hyF" role="37wK5m">
                   <ref role="3cqZAo" node="3yYSgye0BVW" resolve="models" />
                 </node>
                 <node concept="3clFbT" id="3yYSgye1imI" role="37wK5m">
                   <property role="3clFbU" value="false" />
                 </node>
-                <node concept="3nh3qo" id="3yYSgye1jbp" role="37wK5m">
-                  <ref role="3nh3qp" to="tpc2:3t4KfBEkQvF" resolve="StyleAttributeDeclaration" />
+                <node concept="35c_gC" id="4k9eBec$S$i" role="37wK5m">
+                  <ref role="35c_gD" to="tpc2:3t4KfBEkQvF" resolve="StyleAttributeDeclaration" />
                 </node>
               </node>
             </node>

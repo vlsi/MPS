@@ -2,12 +2,12 @@
 <model ref="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1722,11 +1722,8 @@
                                             <node concept="Tc6Ow" id="60B$8337QAV" role="2ShVmc">
                                               <node concept="17QB3L" id="60B$8337QAW" role="HW$YZ" />
                                               <node concept="2OqwBi" id="60B$8337QAX" role="HW$Y0">
-                                                <node concept="2OqwBi" id="60B$8337QAY" role="2Oq$k0">
-                                                  <node concept="37vLTw" id="60B$8337QAZ" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
-                                                  </node>
-                                                  <node concept="FGMqu" id="60B$8337QB0" role="2OqNvi" />
+                                                <node concept="37vLTw" id="60B$8337QAZ" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
                                                 </node>
                                                 <node concept="3TrcHB" id="60B$8337QB1" role="2OqNvi">
                                                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />

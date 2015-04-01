@@ -256,7 +256,6 @@
         <property id="2853323645193760541" name="directCall" index="3Vpymx" />
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -2592,14 +2591,11 @@
                 <node concept="3Tqbb2" id="w9zKYst70F" role="1tU5fm">
                   <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                 </node>
-                <node concept="2OqwBi" id="w9zKYst76E" role="33vP2m">
-                  <node concept="FGMqu" id="w9zKYst76F" role="2OqNvi" />
-                  <node concept="2OqwBi" id="w9zKYst76G" role="2Oq$k0">
-                    <node concept="37vLTw" id="3GM_nagTA0v" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2MoGTJpavLi" resolve="p" />
-                    </node>
-                    <node concept="3NT_Vc" id="w9zKYst76I" role="2OqNvi" />
+                <node concept="2OqwBi" id="w9zKYst76G" role="33vP2m">
+                  <node concept="37vLTw" id="3GM_nagTA0v" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2MoGTJpavLi" resolve="p" />
                   </node>
+                  <node concept="3NT_Vc" id="w9zKYst76I" role="2OqNvi" />
                 </node>
               </node>
             </node>

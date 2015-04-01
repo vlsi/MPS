@@ -3250,6 +3250,7 @@
         <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" bootstrap="true" />
         <module file="${mps_home}/core/java-stub/jetbrains.mps.java.stub.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/behavior/languages/behavior/jetbrains.mps.lang.behavior.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/checkedName/jetbrains.mps.lang.checkedName.mpl" bootstrap="true" />
@@ -3303,24 +3304,22 @@
         <module file="${mps_home}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.libs.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
-        <module file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" />
+        <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
+        <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" />
+        <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" />
         <module file="${mps_home}/languages/languageDesign/migration/util/jetbrains.mps.lang.migration.util.mpl" />
         <module file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
         <module file="${mps_home}/languages/languageDesign/make/languages/reduced/jetbrains.mps.make.reduced.mpl" />
         <module file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" />
+        <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" />
+        <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" />
         <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
         <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
-      <chunk>
-        <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
-        <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" />
-        <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
-        <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
-        <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" />
-      </chunk>
+      <chunk />
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
@@ -9348,7 +9347,9 @@
     <delete dir="${mps_home}/plugins/mps-core/languages/core.xml/source_gen" />
     <delete dir="${mps_home}/plugins/mps-core/languages/core.xml.sax/generator/source_gen" />
     <delete dir="${mps_home}/languages/util/execution/util/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/access/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-editor/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-platform/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/access/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/actions/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/generator/source_gen" />
@@ -9385,17 +9386,14 @@
     <delete dir="${mps_home}/languages/languageDesign/make/languages/reduced/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/make/languages/script/generator/source_gen" />
     <delete dir="${mps_home}/core/tool/ant/source_gen" />
+    <delete dir="${mps_home}/core/tool/builder/source_gen" />
     <delete dir="${mps_home}/core/tool/common/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/make/languages/gentest/source_gen" />
     <delete dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
     <delete dir="${mps_home}/editor/typesystemIntegration/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/jdk8/languages/jdk8/generator/source_gen" />
-    <delete dir="${mps_home}/workbench/mps-editor/source_gen" />
-    <delete dir="${mps_home}/workbench/mps-platform/source_gen" />
-    <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/migration/util/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/plugin/generator/source_gen" />
-    <delete dir="${mps_home}/core/tool/builder/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/make/languages/gentest/source_gen" />
   </target>
 </project>

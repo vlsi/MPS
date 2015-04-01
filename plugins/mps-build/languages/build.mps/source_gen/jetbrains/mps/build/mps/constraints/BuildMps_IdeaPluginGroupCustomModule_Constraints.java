@@ -51,7 +51,7 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
               if ((group == null)) {
                 return new EmptyScope();
               }
-              return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(group, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x5b7be37b4deb1202L, "group")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules")));
+              return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(group, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x5b7be37b4deb1202L, "group")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules"));
             }
           }
         };

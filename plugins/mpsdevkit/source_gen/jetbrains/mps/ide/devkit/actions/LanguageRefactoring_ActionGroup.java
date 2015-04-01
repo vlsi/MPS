@@ -14,7 +14,7 @@ public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      LanguageRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.RenameLanguage_Action");
+      LanguageRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameSolution_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

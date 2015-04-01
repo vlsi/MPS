@@ -499,43 +499,6 @@
       <unit id="2732852465125672459" at="24,0,219,0" name="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     </file>
   </root>
-  <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4209733725028893042">
-    <file name="ModelVersionChange.java">
-      <node id="4209733725028893049" at="11,59,12,21" concept="16" />
-      <node id="8788437410273477234" at="15,76,16,120" concept="5" />
-      <node id="4209733725028893089" at="20,48,21,73" concept="12" />
-      <node id="4209733725028893100" at="25,31,26,29" concept="12" />
-      <node id="4209733725028893107" at="29,28,30,34" concept="12" />
-      <node id="1872946594187952402" at="32,69,33,47" concept="12" />
-      <node id="4209733725028893045" at="11,0,14,0" concept="2" trace="ModelVersionChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
-      <node id="1872946594187952402" at="32,0,35,0" concept="15" trace="as_7exgcv_a0a0a0a0b#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="4209733725028893054" at="14,0,18,0" concept="10" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
-      <node id="4209733725028893102" at="28,0,32,0" concept="10" trace="toString#()Ljava/lang/String;" />
-      <node id="4209733725028893084" at="18,0,23,0" concept="10" trace="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-      <node id="4209733725028893095" at="23,0,28,0" concept="10" trace="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-      <scope id="4209733725028893048" at="11,59,12,21" />
-      <scope id="4209733725028893063" at="15,76,16,120" />
-      <scope id="4209733725028893088" at="20,48,21,73" />
-      <scope id="4209733725028893099" at="25,31,26,29" />
-      <scope id="4209733725028893106" at="29,28,30,34" />
-      <scope id="1872946594187952402" at="32,69,33,47" />
-      <scope id="4209733725028893045" at="11,0,14,0">
-        <var name="changeSet" id="4209733725028893051" />
-      </scope>
-      <scope id="1872946594187952402" at="32,0,35,0">
-        <var name="o" id="1872946594187952402" />
-        <var name="type" id="1872946594187952402" />
-      </scope>
-      <scope id="4209733725028893054" at="14,0,18,0">
-        <var name="model" id="4209733725028893057" />
-        <var name="nodeCopier" id="4209733725028893060" />
-      </scope>
-      <scope id="4209733725028893102" at="28,0,32,0" />
-      <scope id="4209733725028893084" at="18,0,23,0" />
-      <scope id="4209733725028893095" at="23,0,28,0" />
-      <unit id="4209733725028893042" at="10,0,36,0" name="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
-    </file>
-  </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4972886494893223485">
     <file name="NodeGroupChange.java">
       <node id="4972886494893223503" at="28,0,29,0" concept="6" trace="myParentNodeId" />

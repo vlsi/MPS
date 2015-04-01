@@ -645,6 +645,28 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myDescriptorFile;
   }
 
+  public void rename(String newName) {
+    //if module name is a prefix of it's model's name - rename the model, too
+    for (SModel m : getModels()) {
+      if (m.isReadOnly()) continue;
+      if (!m.getModelName().startsWith(getModuleName() + ".")) continue;
+      if (!(m instanceof EditableSModel)) continue;
+
+      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
+    }
+
+    //see MPS-18743, need to save before setting descriptor
+    getRepository().saveAll();
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (myDescriptorFile != null) {
+      myDescriptorFile.rename(newName + MPSExtentions.DOT_LANGUAGE);
+    }
+
+    descriptor.setNamespace(newName);
+    setModuleDescriptor(descriptor);
+  }
+
   @NotNull
   public SearchScope getScope() {
     assertCanRead();
@@ -953,9 +975,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (res == null) {
       LOG.error(
           "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
-          " in module " + getModuleName() + "." +
-          " This can either mean that the language is not imported into this module or that " +
-          "validateLanguageVersions was not called on this module in appropriate moment.",
+              " in module " + getModuleName() + "." +
+              " This can either mean that the language is not imported into this module or that " +
+              "validateLanguageVersions was not called on this module in appropriate moment.",
           new Throwable());
       return usedLanguage.getLanguageVersion();
     }

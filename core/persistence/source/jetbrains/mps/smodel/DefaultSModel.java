@@ -51,16 +51,6 @@ public class DefaultSModel extends LazySModel {
   }
 
   @Override
-  public int getVersion() {
-    return myHeader.getVersion();
-  }
-
-  @Override
-  public void setVersion(int version) {
-    myHeader.setVersion(version);
-  }
-
-  @Override
   public SModel createEmptyCopy() {
     return new DefaultSModel(getReference());
   }

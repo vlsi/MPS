@@ -76,6 +76,14 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
+  //models will be named like xxx.modelName, where xxx is a part of newName before sharp symbol
+  public void rename(String newName) {
+    int sharp = newName.indexOf("#");
+    super.rename(sharp < 0 ? newName : newName.substring(sharp));
+    myGeneratorDescriptor.setGeneratorUID(newName);
+  }
+
+  @Override
   public boolean isPackaged() {
     return getSourceLanguage().isPackaged();
   }

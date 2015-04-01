@@ -303,16 +303,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public int getVersion() {
-    return getSModelInternal().getVersion();
-  }
-
-  @Override
-  public void setVersion(int version) {
-    getSModelInternal().setVersion(version);
-  }
-
-  @Override
   public boolean isDisposed() {
     return getDisposedStacktrace() != null;
   }
@@ -326,11 +316,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public FastNodeFinder createNodeFinder(SModel model) {
     assert model == this;
     return getSModel().createFastNodeFinder();
-  }
-
-  @Override
-  public final void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    getSModelInternal().updateImportedModelUsedVersion(sModelReference, currentVersion);
   }
 
   @Override
