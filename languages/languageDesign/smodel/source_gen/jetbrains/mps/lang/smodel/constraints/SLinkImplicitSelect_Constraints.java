@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -79,6 +80,9 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     /*package*/ SNode patternVar_nodeType;
     public Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
@@ -124,6 +128,9 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public static class Pattern_f4oi2a_a1a0a0a0e extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_nodeType;
     public Pattern_f4oi2a_a1a0a0a0e() {
+    }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
     }
     public boolean match(SNode nodeToMatch) {
       {

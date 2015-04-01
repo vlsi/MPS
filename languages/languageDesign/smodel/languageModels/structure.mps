@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -677,10 +677,20 @@
     <property role="3GE5qa" value="operation.model" />
     <property role="34LRSv" value="nodes" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyj" id="1xD045lXGSy" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conceptArgument" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="hzMxujR" resolve="IRefConceptArg" />
+    </node>
     <node concept="1TJgyj" id="h2Smgyo" role="1TKVEi">
       <property role="20kJfa" value="concept" />
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <node concept="asaX9" id="1xD045m1Wye" role="lGtFl">
+        <property role="YLPcu" value="3.3" />
+        <property role="YLQ7P" value="use conceptArgument" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="h2Xjw1B">

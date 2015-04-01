@@ -1188,6 +1188,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171324442831(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
+  public static SNode sourceNodeQuery_1758937410081154181(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument"));
+  }
   public static SNode sourceNodeQuery_1171415812317(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
@@ -1468,7 +1471,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0op(returnType);
+      return _quotation_createNode_x583g4_a0a0c0pp(returnType);
     }
   }
   public static SNode sourceNodeQuery_3425232330194999293(final SourceSubstituteMacroNodeContext _context) {
@@ -1693,7 +1696,7 @@ public class QueriesGenerated {
   private static boolean neq_x583g4_a0a0ph(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNode _quotation_createNode_x583g4_a0a0c0op(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0pp(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

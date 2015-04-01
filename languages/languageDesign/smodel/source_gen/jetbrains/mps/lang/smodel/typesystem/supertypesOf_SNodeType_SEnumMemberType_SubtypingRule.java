@@ -9,9 +9,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodePointer;
@@ -40,6 +41,9 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
   public static class Pattern_2cenap_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_2cenap_a0a0a0a4() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6v72fr_a0a = nodeToMatch;
@@ -47,7 +51,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0b0a0b0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v72fr_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"))))) {
             return false;
           }
@@ -72,5 +76,5 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0b0a0b0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }
