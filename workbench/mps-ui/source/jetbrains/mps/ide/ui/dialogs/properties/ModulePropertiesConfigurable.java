@@ -44,7 +44,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
-import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.JBUI;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.icons.MPSIcons.General;
@@ -261,8 +261,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
         JPanel panel = new JPanel();
-        //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
-        panel.setLayout(new GridLayoutManager(1, 2, new JBInsets(0,0,0,0), -1, -1));
+        panel.setLayout(new GridLayoutManager(1, 2, JBUI.emptyInsets(), -1, -1));
 
         JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
         panel.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
