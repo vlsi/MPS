@@ -54,7 +54,7 @@
     <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
-    <import index="qju1" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.refactoring(jetbrains.mps.refactoring@java_stub)" />
+    <import index="7u5g" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.refactoring(MPS.Platform/jetbrains.mps.refactoring@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -2095,13 +2095,13 @@
               <node concept="1QHqEC" id="7msLDqME3k3" role="1QHqEI">
                 <node concept="3clFbS" id="7msLDqME3k5" role="1bW5cS">
                   <node concept="3clFbF" id="7msLDqME3uH" role="3cqZAp">
-                    <node concept="2YIFZM" id="7msLDqME4zF" role="3clFbG">
-                      <ref role="37wK5l" to="qju1:~Renamer.renameModel(org.jetbrains.mps.openapi.model.EditableSModel,java.lang.String):void" resolve="renameModel" />
-                      <ref role="1Pybhc" to="qju1:~Renamer" resolve="Renamer" />
-                      <node concept="37vLTw" id="2BHiRxeucSX" role="37wK5m">
+                    <node concept="2YIFZM" id="4FkYMYI0tre" role="3clFbG">
+                      <ref role="37wK5l" to="7u5g:~Renamer.renameModel(org.jetbrains.mps.openapi.model.EditableSModel,java.lang.String):void" resolve="renameModel" />
+                      <ref role="1Pybhc" to="7u5g:~Renamer" resolve="Renamer" />
+                      <node concept="37vLTw" id="4FkYMYI0trf" role="37wK5m">
                         <ref role="3cqZAo" node="29N7xYwTG4w" resolve="myModelDescriptor" />
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTwxV" role="37wK5m">
+                      <node concept="37vLTw" id="4FkYMYI0trg" role="37wK5m">
                         <ref role="3cqZAo" node="2174XWuQEdQ" resolve="newModelName" />
                       </node>
                     </node>
@@ -2270,13 +2270,13 @@
                     <node concept="1QHqEC" id="7msLDqMEkUz" role="1QHqEI">
                       <node concept="3clFbS" id="7msLDqMEkU$" role="1bW5cS">
                         <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
-                          <node concept="2YIFZM" id="7msLDqMEk_9" role="3clFbG">
-                            <ref role="37wK5l" to="qju1:~Renamer.renameModule(org.jetbrains.mps.openapi.module.SModule,java.lang.String):void" resolve="renameModule" />
-                            <ref role="1Pybhc" to="qju1:~Renamer" resolve="Renamer" />
-                            <node concept="37vLTw" id="7msLDqMEkBt" role="37wK5m">
+                          <node concept="2YIFZM" id="4FkYMYI0tAH" role="3clFbG">
+                            <ref role="37wK5l" to="7u5g:~Renamer.renameModule(org.jetbrains.mps.openapi.module.SModule,java.lang.String):void" resolve="renameModule" />
+                            <ref role="1Pybhc" to="7u5g:~Renamer" resolve="Renamer" />
+                            <node concept="37vLTw" id="4FkYMYI0tAI" role="37wK5m">
                               <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                             </node>
-                            <node concept="37vLTw" id="7msLDqMEkHV" role="37wK5m">
+                            <node concept="37vLTw" id="4FkYMYI0tAJ" role="37wK5m">
                               <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
                             </node>
                           </node>
