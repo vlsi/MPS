@@ -18,9 +18,9 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
+import jetbrains.mps.textgen.TextGenRegistry;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -128,19 +128,6 @@ public class TextGen {
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
-  // compatibility stuff
-  @Deprecated
-  public static void appendNodeText(SNodeTextGen textGen, SNode node, TextGenBuffer buffer) {
-    textGen.setBuffer(buffer);
-    try {
-      textGen.setSNode(node);
-      textGen.doGenerateText(node);
-      textGen.setSNode(null);
-    } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + SNodeOperations.getDebugText(node), node, e);
-    }
-  }
-
   /* package */ static void appendNodeText(TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
     if (node == null) {
       buffer.append("???");
@@ -157,8 +144,8 @@ public class TextGen {
 
   // helper stuff
   @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
+  /*package*/ static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+    return TextGenRegistry.getInstance().getTextGenDescriptor(node);
   }
 
   private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {

@@ -54,6 +54,7 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
+import jetbrains.mps.textgen.TextGenRegistry;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -100,6 +101,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new QueryMethodGenerated(classLoaderManager));
     LanguageRegistry languageRegistry = init(new LanguageRegistry(moduleRepository, classLoaderManager));
     init(new ConceptRegistry(languageRegistry));
+    init(new TextGenRegistry(languageRegistry));
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));

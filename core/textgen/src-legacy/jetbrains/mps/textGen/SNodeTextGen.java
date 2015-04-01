@@ -18,11 +18,8 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -55,7 +52,7 @@ public abstract class SNodeTextGen {
 
   //not to generate stub method in each MPS text gen
 
-  protected void doGenerateText(SNode node) {
+  public void doGenerateText(SNode node) {
   }
 
   public String getFilename(SNode node) {
@@ -95,7 +92,7 @@ public abstract class SNodeTextGen {
       return;
     }
 
-    getTextGenForNode(node).doGenerateText(node, myBuffer);
+    TextGen.getTextGenForNode(node).doGenerateText(node, myBuffer);
   }
 
   public void indentBuffer() {
@@ -209,10 +206,5 @@ public abstract class SNodeTextGen {
 
   public String getDefaultNoTextGenErrorText(SNode node) {
     return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
-  }
-
-  @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
   }
 }

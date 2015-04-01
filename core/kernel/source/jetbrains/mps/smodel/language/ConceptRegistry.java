@@ -25,22 +25,17 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -55,7 +50,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   private final Map<SConceptId, ConceptDescriptor> conceptDescriptorsById = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
   private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<SConceptId, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<SConceptId, ConstraintsDescriptor>();
-  private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
 
   private final LanguageRegistry myLanguageRegistry;
 
@@ -268,51 +262,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
-  @NotNull
-  public TextGenDescriptor getTextGenDescriptor(@Nullable SNode node) {
-    if (node == null) {
-      return new DefaultTextGenDescriptor();
-    }
-    return getTextGenDescriptor(node.getConcept());
-  }
-
-  private TextGenDescriptor getTextGenDescriptor(SConcept concept) {
-    final String fqName = concept.getQualifiedName();
-
-    TextGenDescriptor descriptor = textGenDescriptors.get(fqName);
-
-    if (descriptor != null) {
-      return descriptor;
-    }
-
-    if (!startLoad(fqName, LanguageAspect.TEXT_GEN)) {
-      return new DefaultTextGenDescriptor();
-    }
-
-    try {
-      LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage().getQualifiedName());
-      TextGenAspectDescriptor textGenAspectDescriptor;
-      if (languageRuntime == null) {
-        // Then language was just renamed and was not re-generated then it can happen that it has no
-        LOG.warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName));
-        textGenAspectDescriptor = new TextGenAspectInterpreted();
-      } else {
-        textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);
-      }
-      descriptor = textGenAspectDescriptor != null ? textGenAspectDescriptor.getDescriptor(concept) : null;
-
-      if (descriptor == null) {
-        descriptor = new DefaultTextGenDescriptor();
-      }
-
-      textGenDescriptors.put(fqName, descriptor);
-
-      return descriptor;
-    } finally {
-      finishLoad(fqName, LanguageAspect.TEXT_GEN);
-    }
-  }
-
   @Override
   public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
     // no-op, it's not the right time to drop caches (unless can do it selectively)
@@ -326,6 +275,5 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptDescriptors.clear();
     behaviorDescriptors.clear();
     constraintsDescriptors.clear();
-    textGenDescriptors.clear();
   }
 }

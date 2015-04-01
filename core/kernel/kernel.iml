@@ -40,7 +40,6 @@
     <orderEntry type="library" scope="TEST" name="JMock" level="project" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="project" exported="" />
