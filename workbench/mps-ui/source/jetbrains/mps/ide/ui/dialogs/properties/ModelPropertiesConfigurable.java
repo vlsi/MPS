@@ -263,7 +263,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModelReference> list = new ModelChooser().compute();
+          List<SModelReference> list = new ModelChooser(myProject).compute();
           for (SModelReference reference : list) {
             if (!myModelDescriptor.getReference().equals(reference)) {
               myImportedModels.addItem(reference);
