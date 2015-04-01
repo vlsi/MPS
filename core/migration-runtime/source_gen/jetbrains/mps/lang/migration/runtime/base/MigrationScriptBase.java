@@ -8,6 +8,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.containers.EmptyIterable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.Computable;
+import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
 import java.util.Collections;
 
@@ -54,6 +60,90 @@ public abstract class MigrationScriptBase implements MigrationScript {
   protected void adjustMigratedIds(SNode node, SNode migrated) {
     if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false)).contains(migrated))) {
       ((jetbrains.mps.smodel.SNode) migrated).setId(node.getNodeId());
+    }
+  }
+
+  private static interface SNodePlacePointer {
+    public boolean isNodeRemoved();
+    public void insertOrReplace(SNode newNode);
+    public void remove();
+    /*package*/ static class ChildPointer implements MigrationScriptBase.SNodePlacePointer {
+      private SNode node;
+      private SNode parent;
+      private SContainmentLink link;
+      private SNode nextSibling;
+      /*package*/ ChildPointer(SNode node) {
+        this.node = node;
+        parent = node.getParent();
+        link = node.getContainmentLink();
+        nextSibling = node.getNextSibling();
+      }
+      public boolean isNodeRemoved() {
+        return node.getParent() == parent;
+      }
+      public void insertOrReplace(SNode newNode) {
+        if (!(isNodeRemoved())) {
+          SNodeUtil.replaceWithAnother(node, newNode);
+        } else {
+          parent.insertChildBefore(link, newNode, nextSibling);
+        }
+      }
+      public void remove() {
+        if (!(isNodeRemoved())) {
+          parent.removeChild(node);
+        }
+      }
+    }
+    /*package*/ static class RootPointer implements MigrationScriptBase.SNodePlacePointer {
+      private SNode node;
+      private SModel model;
+      /*package*/ RootPointer(SNode node) {
+        this.node = node;
+        model = node.getModel();
+      }
+      public boolean isNodeRemoved() {
+        return node.getParent() == null && node.getModel() == model;
+      }
+      public void insertOrReplace(SNode newNode) {
+        if (!(isNodeRemoved())) {
+          SNodeUtil.replaceWithAnother(node, newNode);
+        } else {
+          model.addRootNode(newNode);
+        }
+      }
+      public void remove() {
+        if (!(isNodeRemoved())) {
+          model.removeRootNode(node);
+        }
+      }
+    }
+  }
+  private static MigrationScriptBase.SNodePlacePointer createSNodePlacePointer(SNode node) {
+    if (node.getParent() == null) {
+      return new MigrationScriptBase.SNodePlacePointer.ChildPointer(node);
+    } else {
+      return new MigrationScriptBase.SNodePlacePointer.RootPointer(node);
+    }
+  }
+
+  protected void applyTransormMigration(SNode origin, Computable<SNode> migration) {
+    MigrationScriptBase.SNodePlacePointer pointer = createSNodePlacePointer(origin);
+    List<SNode> descendants = SNodeOperations.getNodeDescendants(origin, null, true, new SAbstractConcept[]{});
+
+    SNode migrated = migration.compute();
+
+    if (migrated == null) {
+      // origin should be removed 
+      pointer.remove();
+    } else {
+      if (!(ListSequence.fromList(descendants).contains(migrated)) && migrated instanceof jetbrains.mps.smodel.SNode) {
+        // returned value is new created node 
+        if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(origin, null, false)).contains(migrated))) {
+          // origin is not keeped 
+          ((jetbrains.mps.smodel.SNode) migrated).setId(origin.getNodeId());
+        }
+      }
+      pointer.insertOrReplace(migrated);
     }
   }
 
