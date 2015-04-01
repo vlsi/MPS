@@ -58,21 +58,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       openingBrace.relayout();
     }
 
-    if (myGridLayout) {
-      /**
-       * Setting initial X coordinates to 0 for all inner cells inside grid. This is necessary
-       * to correctly calculate maximum width of inner cells inside indent layout.
-       */
-      for (EditorCell editorCell : cells) {
-        if (editorCell instanceof EditorCell_Collection && ((EditorCell_Collection) editorCell).getCellLayout() instanceof CellLayout_Horizontal) {
-          EditorCell_Collection collectionCell = (EditorCell_Collection) editorCell;
-          for (EditorCell columnCell : collectionCell) {
-            columnCell.moveTo(0, columnCell.getY());
-          }
-        }
-      }
-    }
-
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
     int lastCellWidth;
