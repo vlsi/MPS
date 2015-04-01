@@ -43,9 +43,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1190931376940(final PropertyMacroContext _context) {
     return _context.createUniqueName("nodeToMatch", SNodeOperations.getContainingRoot(_context.getNode()));
   }
-  public static Object propertyMacro_GetPropertyValue_1202825939894(final PropertyMacroContext _context) {
-    return _context.getNode().getConcept().getQualifiedName();
-  }
   public static Object propertyMacro_GetPropertyValue_1190931377077(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f77L, "value"));
   }
@@ -147,6 +144,9 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_7207007552736296724(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference")), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, 0x3b2f5e7b070d317dL, "declaration")), "patternVarField");
   }
+  public static Object referenceMacro_GetReferent_1758937410081852409(final ReferenceMacroContext _context) {
+    return SNodeOperations.asNode(SNodeOperations.getConcept(_context.getNode()));
+  }
   public static Object referenceMacro_GetReferent_2144206851851948492(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
   }
@@ -243,6 +243,9 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_412500033819200833(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "antiquotationParameters");
+  }
+  public static Object referenceMacro_GetReferent_1758937410079905949(final ReferenceMacroContext _context) {
+    return SNodeOperations.asNode(SNodeOperations.getConcept(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"))));
   }
   public static Object referenceMacro_GetReferent_7207007552736298813(final ReferenceMacroContext _context) {
     return SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
