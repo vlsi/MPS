@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
-import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -24,10 +24,12 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -72,7 +74,17 @@ public abstract class MetaAdapterFactory {
     if (original.getLanguageVersion() == anotherVersion) {
       return original;
     }
-    return getLanguage(IdHelper.getLanguageId(original), original.getQualifiedName(), anotherVersion);
+    SLanguageId langId = null;
+    if (original instanceof SLanguageAdapterById) {
+      langId = ((SLanguageAdapterById) original).getId();
+    } else if (original instanceof SLanguageAdapter) {
+      final LanguageRuntime rt = ((SLanguageAdapter) original).getLanguageDescriptor();
+      langId = rt == null ? null : rt.getId();
+    }
+    if (langId == null) {
+      langId = MetaIdByDeclaration.ref2LangId(original.getSourceModule().getModuleReference());
+    }
+    return getLanguage(langId, original.getQualifiedName(), anotherVersion);
   }
 
   @NotNull
