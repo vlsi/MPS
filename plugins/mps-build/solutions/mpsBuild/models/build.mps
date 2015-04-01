@@ -977,10 +977,6 @@
     <node concept="398b33" id="6g0vjebAkhc" role="3989C9">
       <property role="TrG5h" value="mps-textgen" />
       <node concept="398b2D" id="4RFviIanHB0" role="398b2p">
-        <node concept="nFU4i" id="4RFviIanJs$" role="nFU4p">
-          <property role="nFU4j" value="src-legacy" />
-          <property role="3LZaj6" value="source" />
-        </node>
         <node concept="nFU4i" id="12Ma8Fcq2rR" role="nFU4p">
           <property role="3LZaj6" value="source" />
           <property role="nFU4j" value="source" />

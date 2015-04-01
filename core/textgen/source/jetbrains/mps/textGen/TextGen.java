@@ -20,7 +20,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
-import jetbrains.mps.textgen.TextGenRegistry;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;

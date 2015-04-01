@@ -3465,7 +3465,6 @@
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
         <pathelement path="${mps_home}/core/project/source" />
-        <pathelement path="${mps_home}/core/textgen/src-legacy" />
         <pathelement path="${mps_home}/core/textgen/source" />
         <path location="${mps_home}/core/persistence/source" />
         <path location="${mps_home}/core/persistence/source_gen" />
@@ -3637,10 +3636,7 @@
     <mkdir dir="${build.tmp}/java/out/mps-textgen" />
     <javac2 destdir="${build.tmp}/java/out/mps-textgen" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/core/textgen/src-legacy" />
-        <pathelement path="${mps_home}/core/textgen/source" />
-      </src>
+      <src path="${mps_home}/core/textgen/source" />
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -3657,7 +3653,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-textgen">
-      <fileset dir="${mps_home}/core/textgen/src-legacy" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/textgen/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
