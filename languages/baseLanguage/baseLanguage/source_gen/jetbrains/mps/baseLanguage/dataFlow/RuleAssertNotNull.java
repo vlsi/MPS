@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -18,8 +19,12 @@ public class RuleAssertNotNull implements DataFlowConstructor {
   public RuleAssertNotNull() {
   }
   public boolean isApplicable(SNode node) {
-    return myPattern.match(node);
+    return SNodeOperations.getConcept(node).getQualifiedName().equals(getApplicableConceptName()) && myPattern.match(node);
   }
+  public String getApplicableConceptName() {
+    return "jetbrains.mps.baseLanguage.structure.AssertStatement";
+  }
+
   public void performActions(Program program, SNode node) {
     myPattern.performActions(program);
   }
