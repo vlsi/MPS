@@ -31,7 +31,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     prepareProgram();
   }
   private void prepareProgram() {
-    new AnalyzerRules(myAnalyzer, myNode, myProgram).apply();
+    new AnalyzerRules(NullableAnalyzerRunner.NullableAnalyzer.getId(), myNode, myProgram).apply();
   }
   public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {
@@ -93,6 +93,9 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     }
     public AnalysisDirection getDirection() {
       return AnalysisDirection.FORWARD;
+    }
+    public static String getId() {
+      return "jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner.NullableAnalyzer";
     }
   }
 }

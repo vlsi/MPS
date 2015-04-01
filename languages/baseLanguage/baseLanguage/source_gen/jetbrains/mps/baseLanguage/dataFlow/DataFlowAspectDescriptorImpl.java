@@ -12,30 +12,30 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 public class DataFlowAspectDescriptorImpl implements DataFlowAspectDescriptor {
-  private Map<Class, List<DataFlowConstructor>> myClassToRulesMap = new HashMap<Class, List<DataFlowConstructor>>();
+  private Map<String, List<DataFlowConstructor>> myClassToRulesMap = new HashMap<String, List<DataFlowConstructor>>();
   public DataFlowAspectDescriptorImpl() {
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new ForLoopNotNull());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new IfEqualsNullAll());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new IfNotNullAll());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleAfterDotExpression());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleAssertNotNull());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleCreator());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleFieldReference());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleMethodCall());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleNullLiteral());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleTernaryOperation());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleVariableDeclaration());
-    init(NullableAnalyzerRunner.NullableAnalyzer.class, new RuleWhileNotNull());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new ForLoopNotNull());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new IfEqualsNullAll());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new IfNotNullAll());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleAfterDotExpression());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleAssertNotNull());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleCreator());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleFieldReference());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleMethodCall());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleNullLiteral());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleTernaryOperation());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleVariableDeclaration());
+    init(NullableAnalyzerRunner.NullableAnalyzer.getId(), new RuleWhileNotNull());
   }
-  public Collection<DataFlowConstructor> getConstructors(Class c) {
-    List<DataFlowConstructor> result = myClassToRulesMap.get(c);
+  public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
+    List<DataFlowConstructor> result = myClassToRulesMap.get(analyzerId);
     return (result != null ? Collections.<DataFlowConstructor>unmodifiableList(result) : Collections.<DataFlowConstructor>emptyList());
   }
-  private void init(Class clazz, DataFlowConstructor rule) {
-    List<DataFlowConstructor> list = myClassToRulesMap.get(clazz);
+  private void init(String analyzerId, DataFlowConstructor rule) {
+    List<DataFlowConstructor> list = myClassToRulesMap.get(analyzerId);
     if (list == null) {
       list = new ArrayList<DataFlowConstructor>();
-      myClassToRulesMap.put(clazz, list);
+      myClassToRulesMap.put(analyzerId, list);
     }
     list.add(rule);
   }

@@ -25,7 +25,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 
 @Generated
 public class QueriesGenerated {
@@ -49,10 +48,10 @@ public class QueriesGenerated {
     return Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_9177062368042363996(final PropertyMacroContext _context) {
-    return ((String) _context.getVariable("var:name"));
+    return Analyzer_Behavior.call_getAnalyzerName_178770917832626046(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6319461651763908498(final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(_context.getOriginalInputModel()) + ((String) _context.getVariable("var:name"));
+    return Analyzer_Behavior.call_getAnalyzerRunnerFqName_178770917832652115(_context.getNode()) + "." + Analyzer_Behavior.call_getAnalyzerName_178770917832626046(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_2156297836851612469(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -257,8 +256,5 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
-  }
-  public static Object insertMacro_varValue_6319461651763929005(final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
   }
 }
