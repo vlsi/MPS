@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
+import gnu.trove.TIntArrayList;
 import jetbrains.mps.editor.runtime.style.CellAlign;
 import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * User: Sergey Dmitriev
@@ -31,6 +35,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public void setGridLayout(boolean gridLayout) {
     myGridLayout = gridLayout;
+  }
+
+  boolean isGridLayout() {
+    return myGridLayout;
   }
 
   @Override
@@ -100,75 +108,40 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     }
 
     if (myGridLayout) {
-      int x0 = x;
-      int size = editorCells.getContentCellsCount();
-      int[] maxHeights = new int[size];
-      for (int j = 0; j < maxHeights.length; j++) {
-        maxHeights[j] = 0;
-      }
-      for (int i = 0; ; i++) {
-        int maxWidth = -1;
-        int j = 0;
-        for (EditorCell editorCell : cells) {
-          if (editorCell instanceof EditorCell_Collection) {
-            EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-            jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
-            if (cellLayout instanceof CellLayout_Horizontal) {
-              if (i < editorCellCollection.getCellsCount()) {
-                EditorCell cell = editorCellCollection.getCellAt(i);
-                cell.moveTo(x0, cell.getY());
-                editorCell.relayout();
-                maxWidth = Math.max(maxWidth, cell.getWidth());
-                maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
-              }
+      TIntArrayList columnWidths = new TIntArrayList();
+      for (EditorCell editorCell : cells) {
+        if (editorCell instanceof EditorCell_Collection && ((EditorCell_Collection) editorCell).getCellLayout() instanceof CellLayout_Horizontal) {
+          EditorCell_Collection collectionCell = (EditorCell_Collection) editorCell;
+          int columnNumber = 0;
+          for (EditorCell columnCell : collectionCell) {
+            if (columnNumber < columnWidths.size()) {
+              columnWidths.set(columnNumber, Math.max(columnWidths.get(columnNumber), columnCell.getWidth()));
             } else {
-              maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
+              columnWidths.add(columnCell.getWidth());
             }
-          } else {
-            maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
-          }
-          j++;
-        }
-        for (EditorCell editorCell : cells) {
-          if (editorCell instanceof EditorCell_Collection) {
-            EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-            jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
-            if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getCellsCount()) {
-              EditorCell cell = editorCellCollection.getCellAt(i);
-              cell.setWidth(maxWidth);
-            }
+            columnNumber++;
           }
         }
-        if (maxWidth == -1) {
-          break;
-        }
-        x0 += maxWidth;
       }
-      int j = 0;
-      height = 0;
+
       for (EditorCell editorCell : cells) {
-        editorCell.moveTo(editorCell.getX(), y + height);
-        editorCell.relayout();
-        int deltaHeight = maxHeights[j];
-        editorCell.setHeight(deltaHeight);
-        height += deltaHeight;
-        j++;
-      }
-      for (EditorCell editorCell : cells) {
-        if (editorCell instanceof EditorCell_Collection) {
-          EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-          jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
-          if (cellLayout instanceof CellLayout_Horizontal) {
-            int width0 = 0;
-            for (EditorCell cell : editorCellCollection) {
-              width0 += cell.getWidth();
-            }
-            editorCellCollection.setWidth(width0);
-            width = Math.max(width, width0);
+        if (editorCell instanceof EditorCell_Collection && ((EditorCell_Collection) editorCell).getCellLayout() instanceof CellLayout_Horizontal) {
+          EditorCell_Collection collectionCell = (EditorCell_Collection) editorCell;
+          int lineWidth = 0;
+          int columnNumber = 0;
+          for (EditorCell columnCell : collectionCell) {
+            setX(columnCell, x + lineWidth);
+            int columnWidth = columnWidths.get(columnNumber);
+            columnCell.setWidth(columnWidth);
+            lineWidth += columnWidth;
+            columnNumber++;
           }
+          editorCell.setWidth(lineWidth);
+          width = Math.max(width, lineWidth);
         }
       }
     }
+
     if (usesBraces) {
       closingBrace.setY(y + height - closingBrace.getHeight());
       if (myGridLayout) {
@@ -189,6 +162,21 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
+  }
+
+  private void setX(EditorCell cell, int newX) {
+    int deltaX = newX - cell.getX();
+    Deque<EditorCell> cellsToMove = new LinkedList<EditorCell>();
+    cellsToMove.add(cell);
+    while (!cellsToMove.isEmpty()) {
+      EditorCell nextCell = cellsToMove.removeFirst();
+      nextCell.setX(nextCell.getX() + deltaX);
+      if (nextCell instanceof EditorCell_Collection) {
+        for (EditorCell childCell : ((EditorCell_Collection) nextCell)) {
+          cellsToMove.addLast(childCell);
+        }
+      }
+    }
   }
 
   private int getBracesIndent(EditorCell cell) {

@@ -95,6 +95,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_zca0xt_a3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zca0xt_a0d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zca0xt_b0d0(editorContext, node));
