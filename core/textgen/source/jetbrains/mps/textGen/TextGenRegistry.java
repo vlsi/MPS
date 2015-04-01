@@ -88,15 +88,22 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     }
 
     LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
-    TextGenAspectDescriptor textGenAspectDescriptor;
+    TextGenAspectDescriptor textGenAspectDescriptor = null;
     if (languageRuntime == null) {
       // Then language was just renamed and was not re-generated then it can happen that it has no
       Logger.getLogger(ConceptRegistry.class).warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName));
-      textGenAspectDescriptor = new TextGenAspectInterpreted();
     } else {
       textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);
     }
-    descriptor = textGenAspectDescriptor != null ? textGenAspectDescriptor.getDescriptor(concept) : null;
+    if (textGenAspectDescriptor == null) {
+      // LanguageRuntime.createAspectDescriptor used to instantiate interpreted aspect in case
+      // language didn't define one, here we mimic this, as there are models that rely on this
+      // E.g. bl.collections.SortDirection extends bl.BooleanConstant, but there's no textgen for
+      // bl.collections. It used to go to new interpreted aspect instance for bl.collections, although
+      // better solution is to walk either language runtime hierarchy or concept hierarchy to find proper textgen.
+      textGenAspectDescriptor = new TextGenAspectInterpreted();
+    }
+    descriptor = textGenAspectDescriptor.getDescriptor(concept);
 
     if (descriptor == null) {
       descriptor = new DefaultTextGenDescriptor();
