@@ -308,7 +308,7 @@
       <concept id="1208528650020" name="jetbrains.mps.lang.plugin.structure.ToolType" flags="in" index="1xUVSX">
         <reference id="1208529537963" name="tool" index="1xYkEM" />
       </concept>
-      <concept id="8131292300541727132" name="jetbrains.mps.lang.plugin.structure.AddKeystrokewStatement" flags="nn" index="1ysbro">
+      <concept id="8131292300541727132" name="jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement" flags="nn" index="1ysbro">
         <child id="8131292300541905245" name="stroke" index="1ysQSp" />
       </concept>
       <concept id="3205675194086686068" name="jetbrains.mps.lang.plugin.structure.GroupAccessOperation" flags="nn" index="3$FqnI">
@@ -515,7 +515,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -21718,7 +21718,7 @@
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2" />
+    <property role="9BnSK" value="3.2.1" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">
     <property role="TrG5h" value="EditGivenNode" />
