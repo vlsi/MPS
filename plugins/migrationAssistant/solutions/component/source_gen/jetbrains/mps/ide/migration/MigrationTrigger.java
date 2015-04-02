@@ -288,6 +288,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      super.moduleAdded(module);
       ModelAccess.assertLegalWrite();
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
@@ -300,6 +301,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
     @Override
     public void moduleChanged(SModule module) {
+      super.moduleChanged(module);
       ModelAccess.assertLegalWrite();
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
