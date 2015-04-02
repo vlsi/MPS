@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:660c9398-8a87-475d-96c9-15d9b8dd8412(jetbrains.mps.baseLanguage.dataFlow)">
+<model ref="r:5f7971ee-5a4f-43c8-b80c-360623e103e2(jetbrains.mps.baseLanguage.dataFlow)">
   <persistence version="9" />
   <languages />
   <imports>
+    <import index="8l0i" ref="3518d24a-8c20-4a9f-a313-cc9bbfff9e3a/r:8fa8fa9d-904f-4af7-9c32-a68ed0049786(jetbrains.mps.baseLanguage@transient25/jetbrains.mps.baseLanguage.dataFlow@0)" implicit="true" />
     <import index="ty9a" ref="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)" implicit="true" />
-    <import index="1t3j" ref="65fe5f2d-889b-4c4f-8259-2c0cbaf35049/r:0e09d6f8-5d36-46dd-9d01-b32e548ef684(jetbrains.mps.baseLanguage@transient16/jetbrains.mps.baseLanguage.dataFlow@0)" implicit="true" />
   </imports>
   <registry>
     <language id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers">
@@ -32,72 +32,72 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="1eGlc3_k87s">
+  <node concept="2$UQVi" id="1eGlc3_lIHE">
     <ref role="2$VUEs" to="ty9a:1eG8_N9UuQ_" resolve="exportedAnalyzerClass" />
-    <node concept="2$$0lk" id="1eGlc3_k87t" role="2$$55j">
+    <node concept="2$$0lk" id="1eGlc3_lIHF" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k87u" role="2$VCQS">
+    <node concept="2$VJBW" id="1eGlc3_lIHG" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer" />
       <property role="2$VJBR" value="6868777471677432036" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k87v" role="2$VCQQ">
+    <node concept="2$VJBW" id="1eGlc3_lIHH" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="1417601170172575874" />
+      <property role="2$VJBR" value="1417601170172996112" />
     </node>
-    <node concept="3qhtvz" id="1eGlc3_k87r" role="2$VCQN">
-      <ref role="3qhtus" to="1t3j:1eGlc3_k822" resolve="NullableAnalyzerRunner" />
+    <node concept="3qhtvz" id="1eGlc3_lIHD" role="2$VCQN">
+      <ref role="3qhtus" to="8l0i:1eGlc3_lICg" resolve="NullableAnalyzerRunner" />
     </node>
   </node>
-  <node concept="2$UQVi" id="1eGlc3_k88v">
+  <node concept="2$UQVi" id="1eGlc3_lIIH">
     <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
-    <node concept="2$$0lk" id="1eGlc3_k88w" role="2$$55j">
+    <node concept="2$$0lk" id="1eGlc3_lIII" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k88x" role="2$VCQS">
+    <node concept="2$VJBW" id="1eGlc3_lIIJ" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
       <property role="2$VJBR" value="6868777471677432047" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k88y" role="2$VCQQ">
+    <node concept="2$VJBW" id="1eGlc3_lIIK" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="1417601170172576224" />
+      <property role="2$VJBR" value="1417601170172996462" />
     </node>
-    <node concept="2$Z8iP" id="1eGlc3_k88u" role="2$VCQN">
-      <ref role="2$Z9rV" to="1t3j:1eGlc3_k87w" resolve="notNullInstruction" />
+    <node concept="2$Z8iP" id="1eGlc3_lIIG" role="2$VCQN">
+      <ref role="2$Z9rV" to="8l0i:1eGlc3_lIHI" resolve="notNullInstruction" />
     </node>
   </node>
-  <node concept="2$UQVi" id="1eGlc3_k89y">
+  <node concept="2$UQVi" id="1eGlc3_lIJK">
     <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
-    <node concept="2$$0lk" id="1eGlc3_k89z" role="2$$55j">
+    <node concept="2$$0lk" id="1eGlc3_lIJL" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k89$" role="2$VCQS">
+    <node concept="2$VJBW" id="1eGlc3_lIJM" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
       <property role="2$VJBR" value="6868777471677432050" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k89_" role="2$VCQQ">
+    <node concept="2$VJBW" id="1eGlc3_lIJN" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="1417601170172576291" />
+      <property role="2$VJBR" value="1417601170172996529" />
     </node>
-    <node concept="2$Z8iP" id="1eGlc3_k89x" role="2$VCQN">
-      <ref role="2$Z9rV" to="1t3j:1eGlc3_k88z" resolve="nullableInstruction" />
+    <node concept="2$Z8iP" id="1eGlc3_lIJJ" role="2$VCQN">
+      <ref role="2$Z9rV" to="8l0i:1eGlc3_lIIL" resolve="nullableInstruction" />
     </node>
   </node>
-  <node concept="2$UQVi" id="1eGlc3_k8a_">
+  <node concept="2$UQVi" id="1eGlc3_lIKN">
     <ref role="2$VUEs" to="ty9a:5vxy$fN7dY7" resolve="exportedInstructionClass" />
-    <node concept="2$$0lk" id="1eGlc3_k8aA" role="2$$55j">
+    <node concept="2$$0lk" id="1eGlc3_lIKO" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.baseLanguage.dataFlow" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k8aB" role="2$VCQS">
+    <node concept="2$VJBW" id="1eGlc3_lIKP" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
       <property role="2$VJBR" value="6868777471677432053" />
     </node>
-    <node concept="2$VJBW" id="1eGlc3_k8aC" role="2$VCQQ">
+    <node concept="2$VJBW" id="1eGlc3_lIKQ" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="1417601170172576358" />
+      <property role="2$VJBR" value="1417601170172996596" />
     </node>
-    <node concept="2$Z8iP" id="1eGlc3_k8a$" role="2$VCQN">
-      <ref role="2$Z9rV" to="1t3j:1eGlc3_k89A" resolve="nullInstruction" />
+    <node concept="2$Z8iP" id="1eGlc3_lIKM" role="2$VCQN">
+      <ref role="2$Z9rV" to="8l0i:1eGlc3_lIJO" resolve="nullInstruction" />
     </node>
   </node>
 </model>
