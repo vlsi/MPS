@@ -20,6 +20,7 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -161,7 +162,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      return defineClass(name, bytes, 0, bytes.length, loadedClassDomain(classBytes.getPath()));
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
     }
     return null;
   }
@@ -300,10 +301,5 @@ public class ModuleClassLoader extends ClassLoader {
     public ReloadableModule getModule() {
       return myModule;
     }
-  }
-
-  public static ProtectionDomain loadedClassDomain(URL url) {
-    CodeSource cs = new CodeSource(url, (Certificate[]) null);
-    return new ProtectionDomain(cs, null);
   }
 }

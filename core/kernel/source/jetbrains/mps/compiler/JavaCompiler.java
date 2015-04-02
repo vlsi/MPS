@@ -84,8 +84,7 @@ public class JavaCompiler {
     compilerOptions.put(CompilerOptions.OPTION_SourceFileAttribute, CompilerOptions.GENERATE);
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
-    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options,
-        new MyCompilerRequestor(), new DefaultProblemFactory());
+    Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory());
     //c.options.verbose = true;
 
     try {

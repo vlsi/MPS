@@ -34,6 +34,7 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -395,10 +396,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
       assert facet != null;
       IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-      byte[] bytes = classPathItem.getClass(name);
-      if (bytes == null) return null;
+      ClassBytes classBytes = classPathItem.getClassBytes(name);
+      if (classBytes == null) return null;
+      byte[] bytes = classBytes.getBytes();
       definePackageIfNecessary(name);
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
     }
 
     private void definePackageIfNecessary(String name) {
