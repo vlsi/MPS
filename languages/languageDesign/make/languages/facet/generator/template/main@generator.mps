@@ -3656,12 +3656,6 @@
     <property role="TrG5h" value="FacetAspectDescriptor" />
     <node concept="3Tm1VV" id="2sMVRqVjJWm" role="1B3o_S" />
     <node concept="n94m4" id="2sMVRqVjJWr" role="lGtFl" />
-    <node concept="3uibUv" id="2sMVRqVjNzi" role="1zkMxy">
-      <ref role="3uigEE" to="bltl:~DescriptorProvider" resolve="DescriptorProvider" />
-      <node concept="3uibUv" id="1bUnjNYEO7S" role="11_B2D">
-        <ref role="3uigEE" to="bltl:~FacetDescriptor" resolve="FacetDescriptor" />
-      </node>
-    </node>
     <node concept="312cEg" id="1yZMluZ2_9N" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="TrG5h" value="myManifest" />
@@ -3683,53 +3677,6 @@
             <node concept="2ShNRf" id="7K6pmvOWPzb" role="37vLTx">
               <node concept="1pGfFk" id="7K6pmvOWPzd" role="2ShVmc">
                 <ref role="37wK5l" node="_iTMAGGJ7n" resolve="FacetManifest" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="2sMVRqVjO5w" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getDescriptor" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="2sMVRqVjO5x" role="1B3o_S" />
-      <node concept="3uibUv" id="1bUnjNYEO7T" role="3clF45">
-        <ref role="3uigEE" to="bltl:~FacetDescriptor" resolve="FacetDescriptor" />
-      </node>
-      <node concept="37vLTG" id="2sMVRqVjO5z" role="3clF46">
-        <property role="TrG5h" value="conceptFqName" />
-        <node concept="3uibUv" id="2sMVRqVjO5$" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="2sMVRqVjO5_" role="3clF47">
-        <node concept="3clFbF" id="7K6pmvOWPze" role="3cqZAp">
-          <node concept="2ShNRf" id="7K6pmvOWPzf" role="3clFbG">
-            <node concept="YeOm9" id="7K6pmvOWPzh" role="2ShVmc">
-              <node concept="1Y3b0j" id="7K6pmvOWPzi" role="YeSDq">
-                <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" to="bltl:~FacetDescriptor" resolve="FacetDescriptor" />
-                <ref role="37wK5l" to="bltl:~FacetDescriptor.&lt;init&gt;()" resolve="FacetDescriptor" />
-                <node concept="3Tm1VV" id="7K6pmvOWPzj" role="1B3o_S" />
-                <node concept="3clFb_" id="7K6pmvOWPzk" role="jymVt">
-                  <property role="IEkAT" value="false" />
-                  <property role="1EzhhJ" value="false" />
-                  <property role="TrG5h" value="getManifest" />
-                  <property role="DiZV1" value="false" />
-                  <node concept="3Tm1VV" id="7K6pmvOWPzl" role="1B3o_S" />
-                  <node concept="3uibUv" id="1yZMluZ2Auq" role="3clF45">
-                    <ref role="3uigEE" to="wcph:~IFacetManifest" resolve="IFacetManifest" />
-                  </node>
-                  <node concept="3clFbS" id="7K6pmvOWPzn" role="3clF47">
-                    <node concept="3cpWs6" id="1yZMluZ2Aji" role="3cqZAp">
-                      <node concept="37vLTw" id="1yZMluZ2AjL" role="3cqZAk">
-                        <ref role="3cqZAo" node="1yZMluZ2_9N" resolve="myManifest" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>

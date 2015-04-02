@@ -16,8 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="FacetAspectDescriptor.java">
-      <unit at="16,15,20,5" name="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor$1" />
-      <unit at="10,0,27,0" name="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor" />
+      <unit at="8,0,18,0" name="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor" />
     </file>
     <file name="FacetManifest.java">
       <unit at="24,55,28,5" name="jetbrains.mps.make.sandbox.sample.FacetManifest$1" />
