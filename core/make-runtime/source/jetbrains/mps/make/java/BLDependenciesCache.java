@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make.java;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
