@@ -888,6 +888,12 @@
       <node concept="nCB5N" id="6C2IEmQCnRd" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
+      <node concept="nCB5N" id="4GtFDNyDpM5" role="nCB5Z">
+        <ref role="nCB5Y" node="6zSiHRgtmKh" resolve="kernel-resources" />
+      </node>
+      <node concept="nCB5N" id="4GtFDNyDoPH" role="nCB5Z">
+        <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
+      </node>
     </node>
     <node concept="398b33" id="6zSiHRgtmKh" role="3989C9">
       <property role="TrG5h" value="kernel-resources" />
