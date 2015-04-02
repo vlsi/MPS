@@ -105,7 +105,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public synchronized byte[] getClass(String qualifiedClassName) {
+  public synchronized ClassBytes getClassBytes(String qualifiedClassName) {
     checkValidity();
     ensureInitialized();
     InputStream inp = null;
@@ -122,7 +122,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
         return null;
       }
       // safe to assume int as class files have size limit way lower than 2^31
-      return ReadUtil.read(inp, (int) entry.getSize());
+      byte[] bytes = ReadUtil.read(inp, (int) entry.getSize());
+      return bytes == null ? null : new DefaultClassBytes(bytes, myFile.toURI().toURL());
     } catch (IOException e) {
       LOG.error(getClass().getName(), e);
       return null;
@@ -329,6 +330,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  // FIXME rewrite without IFile, write class path item tests about jars in jars
   private static File transformFile(IFile f) throws IOException {
     if (!FileSystem.getInstance().isPackaged(f)) {
       return new File(f.getPath());

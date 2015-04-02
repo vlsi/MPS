@@ -19,6 +19,7 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,9 +29,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author Kostik
- */
 public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
@@ -72,11 +70,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return false;
   }
 
+  @Nullable
   @Override
-  public byte[] getClass(String name) {
+  public ClassBytes getClassBytes(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
-      byte[] result = item.getClass(name);
+      ClassBytes result = item.getClassBytes(name);
       if (result != null) return result;
     }
     return null;

@@ -18,8 +18,8 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -28,6 +28,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
+import java.security.cert.Certificate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
@@ -151,13 +154,14 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromSelf(String name) throws ModuleIsNotLoadableException {
-    byte[] bytes = mySupport.findClassBytes(name);
-    if (bytes != null) {
+    ClassBytes classBytes = mySupport.findClassBytes(name);
+    if (classBytes != null) {
+      byte[] bytes = classBytes.getBytes();
       String pack = NameUtil.namespaceFromLongName(name);
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      return defineClass(name, bytes, 0, bytes.length, loadedClassDomain(classBytes.getPath()));
     }
     return null;
   }
@@ -296,5 +300,10 @@ public class ModuleClassLoader extends ClassLoader {
     public ReloadableModule getModule() {
       return myModule;
     }
+  }
+
+  public static ProtectionDomain loadedClassDomain(URL url) {
+    CodeSource cs = new CodeSource(url, (Certificate[]) null);
+    return new ProtectionDomain(cs, null);
   }
 }
