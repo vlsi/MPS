@@ -3462,6 +3462,10 @@
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
         <pathelement path="${mps_home}/core/project/source" />
+        <path location="${mps_home}/core/persistence/source" />
+        <path location="${mps_home}/core/persistence/source_gen" />
+        <path location="${mps_home}/core/java-stub/source" />
+        <path location="${mps_home}/core/java-stub/source_gen" />
       </src>
       <classpath>
         <path refid="path.java.library.annotations-lib" />
@@ -3724,7 +3728,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-persistence" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-kernel, fetchDependencies">
+  <target name="java.compile.mps-persistence" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${mps_home}/core/persistence/source" />
     <mkdir dir="${mps_home}/core/persistence/source_gen" />
     <mkdir dir="${mps_home}/core/java-stub/source" />
@@ -3744,12 +3748,11 @@
         <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
-        <pathelement path="${build.tmp}/java/out/mps-project" />
-        <pathelement path="${build.tmp}/java/out/mps-kernel" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
