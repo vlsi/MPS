@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.make;
 
+import org.jetbrains.mps.annotations.Immutable;
+
 import java.io.File;
 
+@Immutable
 public class FileWithPosition {
-  private File myFile;
-  private int myOffset;
+  private final File myFile;
+  private final int myOffset;
 
   public FileWithPosition(File file, int offset) {
     myFile = file;

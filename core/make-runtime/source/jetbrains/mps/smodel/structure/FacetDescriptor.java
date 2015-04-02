@@ -13,28 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.make;
+package jetbrains.mps.smodel.structure;
 
-import java.io.File;
+import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.util.annotation.ToRemove;
 
-public class ResourceFile {
-  private String myPath;
-  private File myFile;
+/**
+ * @deprecated Use {@link jetbrains.mps.smodel.runtime.MakeAspectDescriptor} IMPORTANT!!! Unfortunately, this code shall survive 3.3
+ * as our generated FacetAspectDescriptors extend DescriptorProvider(FacetDescriptor) and thus we shall keep this class for compatibility reasons.
+ */
+@Deprecated
+@ToRemove(version = 3.2)
+public abstract class FacetDescriptor {
 
-  ResourceFile(File file, String fqName) {
-    myPath = fqName;
-    myFile = file;
-  }
-
-  String getPath() {
-    return myPath;
-  }
-
-  File getFile() {
-    return myFile;
-  }
-
-  public String toString() {
-    return "Resource " + myPath + " at " + myFile;
-  }
+  public abstract IFacetManifest getManifest ();
 }

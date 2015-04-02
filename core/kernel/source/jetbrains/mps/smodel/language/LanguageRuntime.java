@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import jetbrains.mps.make.facet.IFacetManifest;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -30,13 +29,9 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.FacetDescriptor;
-import jetbrains.mps.smodel.structure.InterpretedFacetProvider;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -138,17 +133,6 @@ public abstract class LanguageRuntime {
   }
 
   public abstract Collection<? extends GeneratorRuntime> getGenerators();
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(MakeAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public DescriptorProvider<FacetDescriptor> getFacetProvider() {
-    DescriptorProvider<FacetDescriptor> facetDescriptor =
-        getObjectByClassNameForLanguage(getNamespace() + ".plugin.FacetAspectDescriptor", DescriptorProvider.class, getLanguage());
-    return facetDescriptor == null ? new InterpretedFacetProvider() : facetDescriptor;
-  }
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(StructureAspectDescriptor.class)} instead
@@ -282,19 +266,6 @@ public abstract class LanguageRuntime {
     }
     if (descriptorInterface == FindUsageAspectDescriptor.class) {
       return (T) getFindUsages();
-    }
-    if (descriptorInterface == MakeAspectDescriptor.class) {
-      final DescriptorProvider<FacetDescriptor> fp = getFacetProvider();
-      if (MakeAspectDescriptor.class.isInstance(fp)) {
-        return (T) fp;
-      }
-      final IFacetManifest fm = fp.getDescriptor(null).getManifest();
-      return (T) new MakeAspectDescriptor() {
-        @Override
-        public IFacetManifest getManifest() {
-          return fm;
-        }
-      };
     }
     return null;
   }

@@ -16,9 +16,11 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.File;
 
+@Immutable
 public class JavaFile {
   private final File myFile;
   private final String myClassName;

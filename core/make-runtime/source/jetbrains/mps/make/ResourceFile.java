@@ -13,17 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.structure;
+package jetbrains.mps.make;
 
-import jetbrains.mps.make.facet.IFacetManifest;
-import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.annotations.Immutable;
 
-/**
- * @deprecated Use {@link jetbrains.mps.smodel.runtime.MakeAspectDescriptor}
- */
-@Deprecated
-@ToRemove(version = 3.2)
-public abstract class FacetDescriptor {
+import java.io.File;
 
-  public abstract IFacetManifest getManifest ();
+@Immutable
+public class ResourceFile {
+  private final String myPath;
+  private final File myFile;
+
+  ResourceFile(File file, String fqName) {
+    myPath = fqName;
+    myFile = file;
+  }
+
+  String getPath() {
+    return myPath;
+  }
+
+  File getFile() {
+    return myFile;
+  }
+
+  public String toString() {
+    return "Resource " + myPath + " at " + myFile;
+  }
 }
