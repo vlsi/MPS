@@ -4,20 +4,22 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
-import java.util.Arrays;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.ide.wizard.AbstractWizardStepEx;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
-import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Pre;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Migration;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorStep_Post;
+import jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import java.awt.Dimension;
-import jetbrains.mps.ide.migration.wizard.MigrationStep;
+import jetbrains.mps.ide.migration.wizard.MigrationWizardStep;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-  public MigrationAssistantWizard(Project project, MigrationManager manager) {
-    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationErrorStep_Pre(project), new MigrationErrorStep_Migration(project), new MigrationErrorStep_Post(project)));
+  public MigrationAssistantWizard(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
+    super("Migration Assistant Wizard", project, ListSequence.fromListAndArray(new ArrayList<AbstractWizardStepEx>(), new InitialStep(project), new MigrationsProgressWizardStep(project, manager, errorContainer), new MigrationErrorWizardStep(project, errorContainer)));
+
     Dimension oldSize = super.getPreferredSize();
     setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
   }
@@ -29,7 +31,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   @Override
   protected void updateStep() {
     super.updateStep();
-    getCancelButton().setEnabled(((MigrationStep) getCurrentStepObject()).canBeCancelled());
+    getCancelButton().setEnabled(((MigrationWizardStep) getCurrentStepObject()).canBeCancelled());
   }
   @Override
   protected void doNextAction() {
@@ -37,7 +39,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ((MigrationStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
+        ((MigrationWizardStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
           public void invoke() {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
@@ -48,8 +50,5 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         });
       }
     });
-  }
-  public boolean isFinishSuccessfull() {
-    return ((MigrationsProgressStep) mySteps.get(1)).isEverythingOk();
   }
 }

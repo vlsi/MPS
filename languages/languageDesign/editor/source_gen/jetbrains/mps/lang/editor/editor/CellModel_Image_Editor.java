@@ -65,18 +65,13 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yczb8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Image cell:");
     editorCell.setCellId("Constant_yczb8_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_yczb8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yczb8_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_yczb8_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yczb8_b3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yczb8_c3a(editorContext, node));
@@ -136,6 +131,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_yczb8_a1d0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_property(style, editorCell);
+    style.set(StyleAttributes.DRAW_BORDER, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -160,7 +156,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_imageFile");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, true);
-    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

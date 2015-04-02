@@ -8,18 +8,18 @@ import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.ide.wizard.CommitStepException;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ide.wizard.CommitStepException;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public abstract class MigrationStep extends AbstractWizardStepEx {
+public abstract class MigrationWizardStep extends AbstractWizardStepEx {
   private static final Icon WIZARD_ICON = MPSIcons.General.NewProject;
   protected Project myProject;
-  protected JComponent myComponent;
+  private JComponent myComponent;
   private String myId;
-  public MigrationStep(Project project, String title, String id) {
+  public MigrationWizardStep(Project project, String title, String id) {
     super(title);
     myProject = project;
     myId = id;
@@ -35,6 +35,12 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
   }
   @Override
   public JComponent getComponent() {
+    if (myComponent == null) {
+      this.myComponent = new JPanel(new BorderLayout());
+      myComponent.setBorder(IdeBorderFactory.createEmptyBorder(0, 10, 0, 10));
+      doCreateComponent(myComponent);
+    }
+
     return myComponent;
   }
   @Override
@@ -54,8 +60,5 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
   public void autostart(_FunctionTypes._void_P0_E0 later) {
     later.invoke();
   }
-  protected void createComponent() {
-    this.myComponent = new JPanel(new BorderLayout());
-    myComponent.setBorder(IdeBorderFactory.createEmptyBorder(0, 10, 0, 10));
-  }
+  protected abstract void doCreateComponent(JComponent mainPanel);
 }

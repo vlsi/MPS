@@ -35,14 +35,22 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     int topInset = 0;
     int bottomInset = 0;
 
+    boolean isInsideGird = editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Vertical &&
+        ((CellLayout_Vertical) editorCells.getParent().getCellLayout()).isGridLayout();
 
     for (EditorCell editorCell : editorCells) {
       PunctuationUtil.addGaps(editorCell, false, false);
-
-      editorCell.moveTo(x + width, editorCell.getY());
+      if (isInsideGird) {
+        /**
+         * X coordinates & widths of child cells should be later calculated by
+         * containing CellLayout_Vertical layout if {@link isInsideGird}
+         */
+        editorCell.moveTo(x, editorCell.getY());
+      } else {
+        editorCell.moveTo(x + width, editorCell.getY());
+      }
       editorCell.relayout();
       width += editorCell.getWidth();
-
 
       ascent = Math.max(ascent, editorCell.getAscent());
       descent = Math.max(descent, editorCell.getDescent());

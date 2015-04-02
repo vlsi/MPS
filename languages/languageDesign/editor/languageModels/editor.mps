@@ -1136,6 +1136,9 @@
           </node>
           <node concept="3F0A7n" id="g_az8EO" role="3EZMnx">
             <ref role="1NtTu8" to="tpc2:g_ayjLd" resolve="usesBraces" />
+            <node concept="VPXOz" id="2jfAk2L7SjA" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
           </node>
           <node concept="VPM3Z" id="hEU$PYS" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -1806,6 +1809,9 @@
           <node concept="VPM3Z" id="hEU$PS$" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
+          <node concept="VPXOz" id="2jfAk2L98ep" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
           <node concept="2iRfu4" id="i2IxuQz" role="2iSdaV" />
         </node>
         <node concept="VPXOz" id="hF4$uMw" role="3F10Kt">
@@ -1938,6 +1944,9 @@
           </node>
           <node concept="VPM3Z" id="hEU$Pxn" role="3F10Kt">
             <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VPXOz" id="2jfAk2L2CU1" role="3F10Kt">
+            <property role="VOm3f" value="true" />
           </node>
           <node concept="3F1sOY" id="h7UiHVj" role="3EZMnx">
             <ref role="1NtTu8" to="tpc2:h7TRxg_" />
@@ -3186,6 +3195,9 @@
           <node concept="VPM3Z" id="hFfQESC" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
+          <node concept="VPXOz" id="2jfAk2L6DPI" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
           <node concept="3F0ifn" id="hFfQG73" role="3EZMnx">
             <property role="3F0ifm" value="alt. condition" />
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
@@ -3195,9 +3207,6 @@
             <node concept="VPXOz" id="hFfQNCj" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
-          </node>
-          <node concept="VPM3Z" id="hFfQESE" role="3F10Kt">
-            <property role="VOm3f" value="false" />
           </node>
           <node concept="2iRfu4" id="i2IxuSH" role="2iSdaV" />
         </node>
@@ -4027,9 +4036,6 @@
       </node>
       <node concept="3F0ifn" id="g_ucs4T" role="3EZMnx">
         <property role="3F0ifm" value="Image cell:" />
-        <node concept="VPXOz" id="hEUNSyB" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
       </node>
       <node concept="3EZMnI" id="hF4Ff3Y" role="3EZMnx">
         <property role="3EZMnw" value="true" />
@@ -4055,14 +4061,14 @@
           <node concept="3F0ifn" id="hF4FgOc" role="3EZMnx">
             <property role="3F0ifm" value="image file : " />
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
+            <node concept="VPXOz" id="1Ye$GFH9zd_" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
           </node>
           <node concept="3EZMnI" id="hF4FgOf" role="3EZMnx">
             <node concept="3F0A7n" id="hF4FgOg" role="3EZMnx">
               <ref role="1NtTu8" to="tpc2:g_ubRTz" resolve="imageFile" />
               <node concept="VPM3Z" id="hF4FgOh" role="3F10Kt">
-                <property role="VOm3f" value="true" />
-              </node>
-              <node concept="VPXOz" id="hF4FgOi" role="3F10Kt">
                 <property role="VOm3f" value="true" />
               </node>
             </node>
@@ -4086,7 +4092,7 @@
             <node concept="VPM3Z" id="hF4FgOt" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
-            <node concept="VPXOz" id="hF4FgOu" role="3F10Kt">
+            <node concept="VPXOz" id="1Ye$GFH9$$4" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
             <node concept="2iRfu4" id="i2IxuPL" role="2iSdaV" />
@@ -4094,7 +4100,7 @@
           <node concept="VPM3Z" id="hF4FgOv" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="VPXOz" id="hF4FgOw" role="3F10Kt">
+          <node concept="VPXOz" id="5XYV_59RlLt" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
           <node concept="2iRfu4" id="i2IxuMQ" role="2iSdaV" />
@@ -4118,10 +4124,7 @@
           </node>
           <node concept="2iRfu4" id="i2IxuUI" role="2iSdaV" />
         </node>
-        <node concept="VPXOz" id="hF4Fix2" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="2iRkQZ" id="i2IxuOV" role="2iSdaV" />
+        <node concept="2EHx9g" id="2jfAk2Larnb" role="2iSdaV" />
       </node>
       <node concept="VPM3Z" id="hEU$Q0Q" role="3F10Kt">
         <property role="VOm3f" value="false" />
@@ -8718,15 +8721,18 @@
           <node concept="VPM3Z" id="hVN98$4" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
+          <node concept="VPXOz" id="2jfAk2L49su" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
           <node concept="3F0ifn" id="hVN99no" role="3EZMnx">
             <property role="3F0ifm" value="run in command" />
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F0A7n" id="hVN9qBl" role="3EZMnx">
             <ref role="1NtTu8" to="tpc2:hVN9gW1" resolve="runInCommand" />
-          </node>
-          <node concept="VPM3Z" id="hVN98$6" role="3F10Kt">
-            <property role="VOm3f" value="false" />
+            <node concept="VPXOz" id="2jfAk2L4aC9" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
           </node>
           <node concept="2iRfu4" id="i2IxuRZ" role="2iSdaV" />
         </node>
@@ -8738,6 +8744,9 @@
           <node concept="VPM3Z" id="hGQ1f_X" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
+          <node concept="VPXOz" id="2jfAk2L49sB" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
           <node concept="3F1sOY" id="hGQ1f_Y" role="3EZMnx">
             <ref role="1NtTu8" to="tpc2:hGPY5io" />
           </node>
@@ -8746,6 +8755,9 @@
         <node concept="3EZMnI" id="7a3hLlC0jqg" role="3EZMnx">
           <node concept="VPM3Z" id="7a3hLlC0jqh" role="3F10Kt">
             <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VPXOz" id="2jfAk2L49sK" role="3F10Kt">
+            <property role="VOm3f" value="true" />
           </node>
           <node concept="3F0ifn" id="7a3hLlC0jqk" role="3EZMnx">
             <property role="3F0ifm" value="allow empty" />
