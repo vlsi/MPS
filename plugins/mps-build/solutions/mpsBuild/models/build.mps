@@ -2857,6 +2857,22 @@
           <property role="1E1SXH" value="true" />
           <ref role="1E1SXG" node="3dkXFAFkSFA" resolve="mps-persistence" />
         </node>
+        <node concept="1E1SXE" id="5g8Dzn7kxL3" role="3bR37C">
+          <property role="1E1SXH" value="true" />
+          <ref role="1E1SXG" node="6g0vjebAkhc" resolve="mps-textgen" />
+        </node>
+        <node concept="1E1SXE" id="5g8Dzn7kwmc" role="3bR37C">
+          <property role="1E1SXH" value="true" />
+          <ref role="1E1SXG" node="1WZWsoqIz7X" resolve="mps-migration" />
+        </node>
+        <node concept="1E1SXE" id="5g8Dzn7kxiK" role="3bR37C">
+          <property role="1E1SXH" value="true" />
+          <ref role="1E1SXG" node="6C2IEmQCfZN" resolve="mps-make-rt" />
+        </node>
+        <node concept="1E1SXE" id="5g8Dzn7kzDZ" role="3bR37C">
+          <property role="1E1SXH" value="true" />
+          <ref role="1E1SXG" node="75RBgxKm6HY" resolve="mps-generator" />
+        </node>
         <node concept="1SiIV0" id="VCtQSj7LRC" role="3bR37C">
           <node concept="3bR9La" id="VCtQSj7LRD" role="1SiIV1">
             <property role="3bR36h" value="true" />
