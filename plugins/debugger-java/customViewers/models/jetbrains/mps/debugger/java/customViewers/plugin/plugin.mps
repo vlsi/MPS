@@ -112,7 +112,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
@@ -242,7 +242,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="BaseLanguage Debugger Support" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2" />
+    <property role="9BnSK" value="3.2.1" />
     <node concept="2Tc6Op" id="5ODR6dNebC9" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.debugger.java" />
     </node>
@@ -934,11 +934,11 @@
                 <node concept="4Qynq" id="2yCvSeNKOOb" role="2ShVmc">
                   <ref role="4QCsL" node="2yCvSeNKOQA" resolve="model" />
                   <node concept="2OqwBi" id="2yCvSeNKOOc" role="4QCpJ">
-                    <node concept="37vLTw" id="tajkkrJ6sU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="tajkkrJ3SA" resolve="node" />
-                    </node>
                     <node concept="liA8E" id="647MIFZIikv" role="2OqNvi">
                       <ref role="37wK5l" to="cu2c:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                    </node>
+                    <node concept="37vLTw" id="tajkkrJ6sU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="tajkkrJ3SA" resolve="node" />
                     </node>
                   </node>
                 </node>

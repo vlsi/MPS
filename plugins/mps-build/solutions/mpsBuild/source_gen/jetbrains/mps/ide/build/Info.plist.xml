@@ -97,7 +97,7 @@
         <string>false</string>
         
         <key>idea.path.selector</key>
-        <string>MPS31</string>
+        <string>MPS32</string>
         
         <key>idea.java.redist</key>
         <string>NoJavaDistribution</string>

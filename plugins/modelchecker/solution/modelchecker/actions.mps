@@ -285,7 +285,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -537,7 +537,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Model Checker" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2" />
+    <property role="9BnSK" value="3.2.1" />
   </node>
   <node concept="Zd50a" id="1gEYwydCqV1">
     <property role="TrG5h" value="Default" />
@@ -5090,9 +5090,6 @@
                                     <node concept="3cpWs8" id="1KUoCipvFWg" role="3cqZAp">
                                       <node concept="3cpWsn" id="1KUoCipvFWh" role="3cpWs9">
                                         <property role="TrG5h" value="ccp" />
-                                        <node concept="3Tqbb2" id="1KUoCipvFWi" role="1tU5fm">
-                                          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-                                        </node>
                                         <node concept="1PxgMI" id="3OvBgpDE8jw" role="33vP2m">
                                           <property role="1BlNFB" value="true" />
                                           <ref role="1PxNhF" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
@@ -5102,6 +5099,9 @@
                                             </node>
                                             <node concept="3NT_Vc" id="HL_aTAffc_" role="2OqNvi" />
                                           </node>
+                                        </node>
+                                        <node concept="3Tqbb2" id="1KUoCipvFWi" role="1tU5fm">
+                                          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                                         </node>
                                       </node>
                                     </node>
