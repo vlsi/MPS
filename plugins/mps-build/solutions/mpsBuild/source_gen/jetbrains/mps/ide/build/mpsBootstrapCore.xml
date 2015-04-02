@@ -3346,13 +3346,17 @@
       <fileset dir="${build.tmp}/java/out/mps-openapi" />
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-core.jar">
-      <fileset dir="${build.tmp}/java/out/mps-core" />
+      <fileset dir="${build.tmp}/java/out/mps-kernel" />
+      <fileset dir="${build.tmp}/java/out/mps-core-component" />
       <fileset dir="${build.tmp}/java/out/mps-smodel" />
       <fileset dir="${build.tmp}/java/out/mps-persistence" />
       <fileset dir="${build.tmp}/java/out/mps-project" />
       <fileset dir="${build.tmp}/java/out/mps-debuginfo-api" />
       <fileset dir="${build.tmp}/java/out/mps-generator" />
       <fileset dir="${build.tmp}/java/out/mps-textgen" />
+      <fileset dir="${build.tmp}/java/out/kernel-resources" />
+      <fileset dir="${build.tmp}/java/out/mps-make-rt" />
+      <fileset dir="${build.tmp}/java/out/mps-migration" />
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-tool.jar">
       <fileset dir="${build.tmp}/java/out/mps-tool" />
