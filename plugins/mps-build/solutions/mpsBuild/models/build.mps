@@ -696,36 +696,6 @@
           <property role="3LZaj6" value="source" />
         </node>
       </node>
-      <node concept="398b2D" id="5cCcm$KAKd2" role="398b2p">
-        <node concept="398BVA" id="5cCcm$KAKd3" role="398b2C">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="5cCcm$KAKd4" role="iGT6I">
-            <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="5cCcm$KAKd5" role="2Ry0An">
-              <property role="2Ry0Am" value="migration-runtime" />
-            </node>
-          </node>
-        </node>
-        <node concept="nFU4i" id="5cCcm$KAKd7" role="nFU4p">
-          <property role="nFU4j" value="source_gen" />
-          <property role="3LZaj6" value="source" />
-        </node>
-      </node>
-      <node concept="398b2D" id="7AOtmmvLdhx" role="398b2p">
-        <node concept="398BVA" id="7AOtmmvLdhy" role="398b2C">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="7AOtmmvLdhz" role="iGT6I">
-            <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="7AOtmmvLdh$" role="2Ry0An">
-              <property role="2Ry0Am" value="migration" />
-            </node>
-          </node>
-        </node>
-        <node concept="nFU4i" id="7AOtmmvLdhA" role="nFU4p">
-          <property role="nFU4j" value="source" />
-          <property role="3LZaj6" value="source" />
-        </node>
-      </node>
       <node concept="398b2D" id="1FaKCGJSzFk" role="398b2p">
         <node concept="398BVA" id="1FaKCGJSzFm" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
@@ -989,6 +959,12 @@
       <node concept="nCB5N" id="7IVmW1Epg$k" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
+      <node concept="nCB5N" id="1WZWsoqIvYP" role="nCB5Z">
+        <ref role="nCB5Y" node="6g0vjebAkhc" resolve="mps-textgen" />
+      </node>
+      <node concept="nCB5N" id="1WZWsoqIwVp" role="nCB5Z">
+        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
+      </node>
     </node>
     <node concept="398b33" id="3A27KL0TKsc" role="3989C9">
       <property role="TrG5h" value="mps-project" />
@@ -1142,6 +1118,45 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="398b33" id="1WZWsoqIz7X" role="3989C9">
+      <property role="TrG5h" value="mps-migration" />
+      <node concept="nCB5N" id="1WZWsoqIHOD" role="nCB5Z">
+        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
+      </node>
+      <node concept="nCB5N" id="1WZWsoqIIKZ" role="nCB5Z">
+        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
+      </node>
+      <node concept="398b2D" id="5cCcm$KAKd2" role="398b2p">
+        <node concept="398BVA" id="5cCcm$KAKd3" role="398b2C">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="5cCcm$KAKd4" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="5cCcm$KAKd5" role="2Ry0An">
+              <property role="2Ry0Am" value="migration-runtime" />
+            </node>
+          </node>
+        </node>
+        <node concept="nFU4i" id="5cCcm$KAKd7" role="nFU4p">
+          <property role="nFU4j" value="source_gen" />
+          <property role="3LZaj6" value="source" />
+        </node>
+      </node>
+      <node concept="398b2D" id="7AOtmmvLdhx" role="398b2p">
+        <node concept="398BVA" id="7AOtmmvLdhy" role="398b2C">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="7AOtmmvLdhz" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="7AOtmmvLdh$" role="2Ry0An">
+              <property role="2Ry0Am" value="migration" />
+            </node>
+          </node>
+        </node>
+        <node concept="nFU4i" id="7AOtmmvLdhA" role="nFU4p">
+          <property role="nFU4j" value="source" />
+          <property role="3LZaj6" value="source" />
         </node>
       </node>
     </node>
@@ -1812,6 +1827,9 @@
           </node>
           <node concept="Saw0i" id="6zSiHRgtyQF" role="39821P">
             <ref role="Saw0g" node="6zSiHRgtmKh" resolve="kernel-resources" />
+          </node>
+          <node concept="Saw0i" id="1WZWsoqIKE5" role="39821P">
+            <ref role="Saw0g" node="1WZWsoqIz7X" resolve="mps-migration" />
           </node>
           <node concept="398223" id="7wpYgMyUGWH" role="39821P">
             <node concept="3_J27D" id="7wpYgMyUGWI" role="Nbhlr">
