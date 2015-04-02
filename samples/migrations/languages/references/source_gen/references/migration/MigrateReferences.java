@@ -5,20 +5,22 @@ package references.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -28,11 +30,12 @@ public class MigrateReferences extends MigrationScriptBase {
     return "migrate the references using a TransformStatement";
   }
   public SNode execute(SModule m) {
-    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+    final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a1();
+    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, "references.structure.NewComponentRef"));
+        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
-    }), MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, "references.structure.NewComponentRef"))).where(new IWhereFilter<SNode>() {
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
         return true;
       }
@@ -41,18 +44,15 @@ public class MigrateReferences extends MigrationScriptBase {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
       }
     }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a0a0a0a1();
-        if (!(pattern.match(it))) {
+      public void visit(final SNode nodeToMigrate) {
+        if (!(pattern.match(nodeToMigrate))) {
           return;
         }
-
-        {
-          SNode placeholder = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.lang.core.structure.BaseConcept");
-          SNode migratedNode = _quotation_createNode_w5820p_a0b0d0a0a0a1(pattern.getFieldValue("patternVar_comp"));
-          adjustMigratedIds(it, migratedNode);
-          SNodeOperations.replaceWithAnother(placeholder, migratedNode);
-        }
+        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+          public SNode compute() {
+            return _quotation_createNode_w5820p_a0a0f(pattern.getFieldValue("patternVar_comp"));
+          }
+        });
       }
     });
     return null;
@@ -63,17 +63,21 @@ public class MigrateReferences extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0);
   }
-  public static class Pattern_w5820p_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+
+  public static class Pattern_w5820p_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_comp;
-    public Pattern_w5820p_a0a0a0a0a0a0a1() {
+    public Pattern_w5820p_a0a0a1() {
+    }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef");
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_w5820p_a0a0a0a0a0b = nodeToMatch;
-        if (!("references.structure.NewComponentRef".equals(nodeToMatch_w5820p_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_w5820p_a0a0f = nodeToMatch;
+        if (!(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef").equals(nodeToMatch_w5820p_a0a0f.getConcept()))) {
           return false;
         }
-        patternVar_comp = nodeToMatch_w5820p_a0a0a0a0a0b.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"));
+        patternVar_comp = nodeToMatch_w5820p_a0a0f.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
       }
       return true;
     }
@@ -94,7 +98,7 @@ public class MigrateReferences extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_w5820p_a0b0d0a0a0a1(Object parameter_1) {
+  private static SNode _quotation_createNode_w5820p_a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, "references.structure.NewComponentRef"), null, null, false);
