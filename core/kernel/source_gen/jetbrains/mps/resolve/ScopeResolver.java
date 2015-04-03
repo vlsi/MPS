@@ -8,10 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.Scope;
@@ -24,11 +20,6 @@ public class ScopeResolver implements IResolver {
   }
   @Override
   public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final SRepository repository) {
-    SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(sourceNode)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});
-    if (linkDeclaration == null) {
-      return false;
-    }
-    final SNode referentConcept = SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
     return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -49,7 +40,7 @@ public class ScopeResolver implements IResolver {
         if (result == null) {
           return false;
         }
-        sourceNode.setReferenceTarget(reference.getRole(), result);
+        sourceNode.setReferenceTarget(reference.getLink(), result);
         return true;
       }
     });
