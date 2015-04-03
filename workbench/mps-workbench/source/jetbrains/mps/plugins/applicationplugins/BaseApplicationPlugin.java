@@ -64,7 +64,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
 
   }
 
-  protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName) {
+  protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName, Anchor anchor) {
     DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
     DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
     if (gTo == null || gWhat == null) {
@@ -76,15 +76,25 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
 
     myAdjustedGroups.put(gTo, gWhat);
     if (labelName != null) {
-      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      Constraints constraints = new Constraints(anchor, labelName);
       gTo.add(gWhat, constraints);
     } else {
       gTo.add(gWhat);
     }
   }
 
+  protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName) {
+    insertInterfaceGroupIntoAnother(whatId,toId, labelName, Anchor.AFTER);
+  }
+
+
   protected void insertGroupIntoAnother(String whatId, String toId, String labelName) {
     insertInterfaceGroupIntoAnother(whatId, toId, labelName);
+    //todo with this method, we can use Idea's ActionStubs
+  }
+
+  protected void insertGroupIntoAnother(String whatId, String toId, String labelName, Anchor anchor) {
+    insertInterfaceGroupIntoAnother(whatId, toId, labelName, anchor);
     //todo with this method, we can use Idea's ActionStubs
   }
 
