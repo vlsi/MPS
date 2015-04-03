@@ -265,6 +265,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
+          if (isDisposed()) {
+            return;
+          }
           rebuildEditorContent();
         }
       });
@@ -422,8 +425,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       private boolean isInsideEditor(Point point, Rectangle viewRect) {
         return isShowing() && point != null
-                            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
-                            && point.getY() >= 0 && point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
+            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
+            && point.getY() >= 0 &&
+            point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
       }
     });
 
