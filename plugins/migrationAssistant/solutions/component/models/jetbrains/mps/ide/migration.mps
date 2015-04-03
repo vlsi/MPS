@@ -5,11 +5,11 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
   </languages>
   <imports>
@@ -1906,6 +1906,14 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfmjG" role="3clF47">
+          <node concept="3clFbF" id="3VzOWAgL7fY" role="3cqZAp">
+            <node concept="3nyPlj" id="3VzOWAgL7$1" role="3clFbG">
+              <ref role="37wK5l" to="88zw:~SRepositoryContentAdapter.moduleAdded(org.jetbrains.mps.openapi.module.SModule):void" resolve="moduleAdded" />
+              <node concept="37vLTw" id="3VzOWAgL7KS" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1Yn1nOeKoem" role="3cqZAp">
             <node concept="2YIFZM" id="1Yn1nOeKoen" role="3clFbG">
               <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
@@ -1991,6 +1999,14 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfr8o" role="3clF47">
+          <node concept="3clFbF" id="3VzOWAgL7TQ" role="3cqZAp">
+            <node concept="3nyPlj" id="3VzOWAgL7TO" role="3clFbG">
+              <ref role="37wK5l" to="88zw:~SRepositoryContentAdapter.moduleChanged(org.jetbrains.mps.openapi.module.SModule):void" resolve="moduleChanged" />
+              <node concept="37vLTw" id="3VzOWAgL87G" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfr8l" resolve="module" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1Yn1nOeKnRw" role="3cqZAp">
             <node concept="2YIFZM" id="1Yn1nOeKnRx" role="3clFbG">
               <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
