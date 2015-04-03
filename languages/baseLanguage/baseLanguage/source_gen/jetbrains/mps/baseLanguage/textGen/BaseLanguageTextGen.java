@@ -17,13 +17,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.apache.log4j.Level;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.Level;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -166,9 +166,7 @@ public abstract class BaseLanguageTextGen {
   }
   public static void referenceToShortName(SReference reference, final SNodeTextGen textGen) {
     if (reference == null) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("null reference");
-      }
+      textGen.foundError("null reference");
       textGen.append("???");
       return;
     }
@@ -180,17 +178,13 @@ public abstract class BaseLanguageTextGen {
     if (name == null) {
       SNode targetNode = ref.getTargetNode();
       if (targetNode == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(String.format("Unknown target for role %s", ref.getLink()));
-        }
+        textGen.foundError(String.format("Unknown target for role %s", ref.getLink()));
         textGen.append("???");
         return;
       }
       name = SNodeUtil.getResolveInfo(targetNode);
       if (name == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(String.format("No resolve info for node %s", targetNode));
-        }
+        textGen.foundError(String.format("No resolve info for node %s", targetNode));
         name = targetNode.getName();
       }
     }
