@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -116,7 +117,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime != null) {
           StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-          if (structureAspectDescriptor == null) return new IllegalConceptDescriptor(fqName);
+          if (structureAspectDescriptor == null) {
+            return new IllegalConceptDescriptor(fqName);
+          }
 
           descriptor = structureAspectDescriptor.getDescriptor(fqName);
         }
@@ -124,7 +127,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LOG.error("Exception while structure descriptor creating for the concept " + fqName, e);
       }
 
-      if (descriptor == null) return new IllegalConceptDescriptor(fqName);
+      if (descriptor == null) {
+        return new IllegalConceptDescriptor(fqName);
+      }
       assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
       conceptDescriptors.put(fqName, descriptor);
@@ -151,14 +156,18 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
         if (languageRuntime != null) {
           StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-          if (structureAspectDescriptor == null) return new IllegalConceptDescriptor(id);
+          if (structureAspectDescriptor == null) {
+            return new IllegalConceptDescriptor(id);
+          }
           descriptor = structureAspectDescriptor.getDescriptor(id);
         }
       } catch (Throwable e) {
         LOG.error("Exception while structure descriptor creating for the concept " + id, e);
       }
 
-      if (descriptor == null) return new IllegalConceptDescriptor(id);
+      if (descriptor == null) {
+        return new IllegalConceptDescriptor(id);
+      }
       assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
       conceptDescriptorsById.put(id, descriptor);
@@ -183,20 +192,24 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     try {
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        BehaviorAspectDescriptor behaviorAspect = null;
         if (languageRuntime == null) {
           LOG.warn("No language for: " + fqName + ", while looking for behavior descriptor.");
         } else {
-          final BehaviorAspectDescriptor behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
-          descriptor = behaviorAspect != null ? behaviorAspect.getDescriptor(fqName) : null;
+          behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
         }
+        if (behaviorAspect == null) {
+          behaviorAspect = BehaviorAspectInterpreted.getInstance();
+        }
+        descriptor = behaviorAspect.getDescriptor(fqName);
       } catch (Throwable e) {
         LOG.warn("Exception while behavior descriptor creating", e);
       }
 
-      if (descriptor == null) {
-//        descriptor = new IllegalBehaviorDescriptor(fqName);
-        descriptor = new InterpretedBehaviorDescriptor(fqName);
-      }
+      // Shall not happen, provided we use BehaviorAspectInterpreted for missing aspects,
+      // and generated aspects delegate to BehaviorAspectInterpreted for unknown concepts, too.
+      // Nevertheless, just in case we break this contract in the future, assert would help us to notice it fast.
+      assert descriptor != null;
 
       behaviorDescriptors.put(fqName, descriptor);
 
@@ -237,15 +250,18 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     try {
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(conceptId.getLanguageId());
-        ConstraintsAspectDescriptor constraintsAspectDescriptor;
+        ConstraintsAspectDescriptor constraintsAspectDescriptor = null;
         if (languageRuntime == null) {
           // Then language was just renamed and was not re-generated then it can happen that it has no
           LOG.warn("No language for: " + conceptId + ", while looking for constraints descriptor.");
-          constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        descriptor = constraintsAspectDescriptor != null ? constraintsAspectDescriptor.getDescriptor(conceptId) : null;
+        if (constraintsAspectDescriptor == null) {
+          // @see jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor
+          constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
+        }
+        descriptor = constraintsAspectDescriptor.getDescriptor(conceptId);
       } catch (Throwable e) {
         LOG.warn("Exception while constraints descriptor creating", e);
       }

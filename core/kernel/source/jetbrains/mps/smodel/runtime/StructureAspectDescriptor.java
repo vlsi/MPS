@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ import java.util.Collection;
 
 /**
  * Interface to access generated meta-information about structure aspect.
+ * Null structure aspect shall be tolerated, as language is the only way to supply extensions at the moment, and
+ * not all extensions are about structure (i.e. there might be languages without structure).
+ * <p/>
  * IMPORTANT: generated code shall not implement this interface directly, rather extend
  * {@link jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor}.
  *

@@ -70,6 +70,9 @@ public abstract class SLanguageAdapter implements SLanguage {
     }
 
     StructureAspectDescriptor struc = getLanguageDescriptor().getAspect(StructureAspectDescriptor.class);
+    if (struc == null) {
+      return Collections.emptyList();
+    }
     ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
     for (ConceptDescriptor cd : ((BaseStructureAspectDescriptor) struc).getDescriptors()) {
       if (cd.isInterfaceConcept()) {
