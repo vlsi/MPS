@@ -41,6 +41,7 @@ public class SLanguageAdapterById extends SLanguageAdapter {
   }
 
   @Override
+  @NotNull
   public String getQualifiedName() {
     LanguageRuntime ld = getLanguageDescriptor();
     if (ld == null) {
@@ -52,7 +53,8 @@ public class SLanguageAdapterById extends SLanguageAdapter {
   @Override
   @Nullable
   public LanguageRuntime getLanguageDescriptor() {
-    return LanguageRegistry.getInstance().getLanguage(myLanguage);
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance();
+    return languageRegistry == null ? null : languageRegistry.getLanguage(myLanguage);
   }
 
   @Override
