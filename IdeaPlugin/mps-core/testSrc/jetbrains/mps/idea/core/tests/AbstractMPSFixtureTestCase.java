@@ -151,23 +151,20 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   }
 
   protected MPSFacet addMPSFacet(Module module) {
-    FacetManager facetManager = FacetManager.getInstance(module);
+    final FacetManager facetManager = FacetManager.getInstance(module);
     FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
     Assert.assertNotNull("MPS facet type is not found", facetType);
-    MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
+    final MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        preConfigureFacet(configuration);
-      }
-    }, ModalityState.defaultModalityState());
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);
     UIUtil.invokeAndWaitIfNeeded(new Runnable() {
       @Override
       public void run() {
+        preConfigureFacet(configuration);
+        final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
+        facetModel.addFacet(facet);
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
