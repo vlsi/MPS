@@ -28,10 +28,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
-import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
-import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
-import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
@@ -116,10 +112,10 @@ public class ModelPersistence {
       null,
       null,
       null,
-      new ModelPersistence4(),
-      new ModelPersistence5(),
-      new ModelPersistence6(),
-      new ModelPersistence7(),
+      null,
+      null,
+      null,
+      null,
       new ModelPersistence8(),
       new ModelPersistence9()
   };

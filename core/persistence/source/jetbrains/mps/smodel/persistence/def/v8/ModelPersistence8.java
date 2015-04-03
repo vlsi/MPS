@@ -19,19 +19,30 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
+import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.def.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
 
-/**
- * evgeny, 4/29/13
- */
-public class ModelPersistence8 extends ModelPersistence7 {
+public class ModelPersistence8 implements IModelPersistence {
+
+  //todo remove
+  @Override
+  public IModelWriter getModelWriter() {
+    return null;
+  }
+
+  @Override
+  public void index(char[] data, Consumer<String> consumer) {
+    PersistenceUtil.index(data, consumer);
+  }
+
   @Override
   public int getVersion() {
     return 8;
@@ -39,7 +50,7 @@ public class ModelPersistence8 extends ModelPersistence7 {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return new ModelWriter8(header);
+    return null;
   }
 
   @Override
@@ -61,4 +72,6 @@ public class ModelPersistence8 extends ModelPersistence7 {
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
   }
+
+
 }

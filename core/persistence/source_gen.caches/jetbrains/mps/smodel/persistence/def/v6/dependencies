@@ -7,7 +7,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
