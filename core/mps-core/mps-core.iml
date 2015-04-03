@@ -17,6 +17,8 @@
     <orderEntry type="module" module-name="debuginfo-api" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="migrations-runtime" />
   </component>
 </module>
 

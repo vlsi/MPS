@@ -3540,7 +3540,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-core-component" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-generator, java.compile.mps-textgen, java.compile.kernel-resources, java.compile.mps-make-rt, fetchDependencies">
+  <target name="java.compile.mps-core-component" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-generator, java.compile.mps-textgen, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-core-component" />
     <javac2 destdir="${build.tmp}/java/out/mps-core-component" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
@@ -3557,6 +3557,7 @@
         <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <pathelement path="${build.tmp}/java/out/kernel-resources" />
         <pathelement path="${build.tmp}/java/out/mps-make-rt" />
+        <pathelement path="${build.tmp}/java/out/mps-migration" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
@@ -3826,6 +3827,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/core/migration-runtime/source_gen" />
+        <pathelement path="${mps_home}/core/migration-runtime/source" />
         <pathelement path="${mps_home}/core/migration/source" />
       </src>
       <classpath>
@@ -3846,6 +3848,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-migration">
       <fileset dir="${mps_home}/core/migration-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/migration-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/migration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
