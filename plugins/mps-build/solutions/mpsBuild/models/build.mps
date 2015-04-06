@@ -9992,11 +9992,6 @@
             <ref role="1Busuk" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgruAG" role="3bR37C">
-          <node concept="1Busua" id="2a9bszgruAF" role="1SiIV1">
-            <ref role="1Busuk" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="54EoiPjAcaF" role="3bR37C">
           <node concept="3bR9La" id="54EoiPjAcaG" role="1SiIV1">
             <property role="3bR36h" value="false" />
