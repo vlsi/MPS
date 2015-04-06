@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+/**
+ * LanguageRuntime is allowed to return null descriptor in case there are no behavior methods for language's concept defined right in the language.
+ * Access to behaviors from concept's hierarchy is done by ConceptRegistry at the moment, see {@link jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor}.
+ */
 public interface BehaviorAspectDescriptor extends LanguageAspectDescriptor {
   BehaviorDescriptor getDescriptor(String fqName);
 }

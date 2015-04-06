@@ -214,7 +214,7 @@ public final class BinaryPersistence {
     SModelReference modelRef = is.readModelReference();
     SModelHeader result = new SModelHeader();
     result.setModelReference(modelRef);
-    result.setVersion(is.readInt());
+    is.readInt(); //left for compatibility: old version was here
     is.mark(4);
     if (is.readByte() == HEADER_ATTRIBUTES) {
       result.setDoNotGenerate(is.readBoolean());
@@ -289,7 +289,7 @@ public final class BinaryPersistence {
     os.writeInt(HEADER_START);
     os.writeInt(STREAM_ID);
     os.writeModelReference(myModelData.getReference());
-    os.writeInt(myModelData.getVersion());
+    os.writeInt(-1);  //old model version
     if (myModelData instanceof DefaultSModel) {
       os.writeByte(HEADER_ATTRIBUTES);
       SModelHeader mh = ((DefaultSModel) myModelData).getSModelHeader();

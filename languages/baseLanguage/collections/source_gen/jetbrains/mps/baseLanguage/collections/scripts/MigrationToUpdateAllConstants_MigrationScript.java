@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MigrationToUpdateAllConstants_MigrationScript extends BaseMigrationScript {
   public MigrationToUpdateAllConstants_MigrationScript(IOperationContext operationContext) {
@@ -25,7 +26,7 @@ public class MigrationToUpdateAllConstants_MigrationScript extends BaseMigration
         return node.getProperty("value") != null;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.collections.structure.AllConstant");
+        SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant"));
       }
       public boolean isShowAsIntention() {
         return false;

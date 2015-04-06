@@ -58,12 +58,6 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
   }
 
   @Override
-  @Deprecated
-  public boolean isExternal() {
-    return false;
-  }
-
-  @Override
   @Nullable
   public synchronized SModelReference getTargetSModelReference() {
     if (myReplacementReference != null) {

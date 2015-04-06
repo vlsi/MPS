@@ -66,9 +66,9 @@
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="eunx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" />
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
-    <import index="s7nh" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.save(MPS.Platform/jetbrains.mps.ide.save@java_stub)" />
     <import index="lphm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.ui(MPS.IDEA/com.intellij.ide.ui@java_stub)" />
     <import index="18oi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.beans(JDK/java.beans@java_stub)" />
+    <import index="s7nh" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.save(MPS.Platform/jetbrains.mps.ide.save@java_stub)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
@@ -545,7 +545,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Generation support" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2" />
+    <property role="9BnSK" value="3.3" />
   </node>
   <node concept="sE7Ow" id="4BZFyk0pEUc">
     <property role="fJN8o" value="true" />
@@ -6997,6 +6997,24 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="hP8D6fqe6M" role="EKbjA">
+      <ref role="3uigEE" to="82u:~StatusBarWidget" resolve="StatusBarWidget" />
+    </node>
+    <node concept="3uibUv" id="1$ZRmkX9bOC" role="EKbjA">
+      <ref role="3uigEE" to="82u:~CustomStatusBarWidget" resolve="CustomStatusBarWidget" />
+    </node>
+    <node concept="3uibUv" id="4hZPELmBBTb" role="EKbjA">
+      <ref role="3uigEE" to="82u:~StatusBarWidget$TextPresentation" resolve="StatusBarWidget.TextPresentation" />
+    </node>
+    <node concept="3uibUv" id="1$ZRmkX9bYN" role="EKbjA">
+      <ref role="3uigEE" to="82u:~StatusBarWidget$WidgetPresentation" resolve="StatusBarWidget.WidgetPresentation" />
+    </node>
+    <node concept="3uibUv" id="2LX1rHNIXCu" role="EKbjA">
+      <ref role="3uigEE" to="lphm:~UISettingsListener" resolve="UISettingsListener" />
+    </node>
+    <node concept="3uibUv" id="1tWJVfj_YDg" role="EKbjA">
+      <ref role="3uigEE" to="18oi:~PropertyChangeListener" resolve="PropertyChangeListener" />
+    </node>
     <node concept="3clFb_" id="2LX1rHNIXRt" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="uiSettingsChanged" />
@@ -7048,24 +7066,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="3uibUv" id="hP8D6fqe6M" role="EKbjA">
-      <ref role="3uigEE" to="82u:~StatusBarWidget" resolve="StatusBarWidget" />
-    </node>
-    <node concept="3uibUv" id="1$ZRmkX9bOC" role="EKbjA">
-      <ref role="3uigEE" to="82u:~CustomStatusBarWidget" resolve="CustomStatusBarWidget" />
-    </node>
-    <node concept="3uibUv" id="4hZPELmBBTb" role="EKbjA">
-      <ref role="3uigEE" to="82u:~StatusBarWidget$TextPresentation" resolve="StatusBarWidget.TextPresentation" />
-    </node>
-    <node concept="3uibUv" id="1$ZRmkX9bYN" role="EKbjA">
-      <ref role="3uigEE" to="82u:~StatusBarWidget$WidgetPresentation" resolve="StatusBarWidget.WidgetPresentation" />
-    </node>
-    <node concept="3uibUv" id="2LX1rHNIXCu" role="EKbjA">
-      <ref role="3uigEE" to="lphm:~UISettingsListener" resolve="UISettingsListener" />
-    </node>
-    <node concept="3uibUv" id="1tWJVfj_YDg" role="EKbjA">
-      <ref role="3uigEE" to="18oi:~PropertyChangeListener" resolve="PropertyChangeListener" />
     </node>
   </node>
   <node concept="312cEu" id="4_qBpm$bmFj">

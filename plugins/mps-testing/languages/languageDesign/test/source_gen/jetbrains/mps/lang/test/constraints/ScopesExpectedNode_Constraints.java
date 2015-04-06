@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -51,7 +50,7 @@ public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
                 return null;
               }
               SNode scopesTest = SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
-              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(_context.getModel(), false, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(scopesTest, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference")))), "virtual_getFqName_1213877404258", new Object[]{}));
+              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(_context.getModel(), false, SNodeOperations.getConcept(SLinkOperations.getTarget(scopesTest, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"))));
               return modelPlusImportedScope;
             }
           }

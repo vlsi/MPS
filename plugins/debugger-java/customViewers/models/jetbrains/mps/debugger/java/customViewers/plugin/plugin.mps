@@ -2,12 +2,12 @@
 <model ref="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
-    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="-1" />
-    <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="0" />
+    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="0" />
+    <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -242,7 +242,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="BaseLanguage Debugger Support" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2" />
+    <property role="9BnSK" value="3.3" />
     <node concept="2Tc6Op" id="5ODR6dNebC9" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.debugger.java" />
     </node>
@@ -934,11 +934,11 @@
                 <node concept="4Qynq" id="2yCvSeNKOOb" role="2ShVmc">
                   <ref role="4QCsL" node="2yCvSeNKOQA" resolve="model" />
                   <node concept="2OqwBi" id="2yCvSeNKOOc" role="4QCpJ">
-                    <node concept="37vLTw" id="tajkkrJ6sU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="tajkkrJ3SA" resolve="node" />
-                    </node>
                     <node concept="liA8E" id="647MIFZIikv" role="2OqNvi">
                       <ref role="37wK5l" to="cu2c:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                    </node>
+                    <node concept="37vLTw" id="tajkkrJ6sU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="tajkkrJ3SA" resolve="node" />
                     </node>
                   </node>
                 </node>

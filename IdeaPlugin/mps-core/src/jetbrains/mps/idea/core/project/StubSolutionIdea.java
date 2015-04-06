@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,12 +76,12 @@ public abstract class StubSolutionIdea extends StubSolution {
 
   public static Solution newInstance(Library library, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(library.getName(), library.getFiles(OrderRootType.CLASSES));
-    return register(descriptor, moduleOwner, new LibraryStubSolution(descriptor, library));
+    return register(MPSModuleRepository.getInstance(), moduleOwner, new LibraryStubSolution(descriptor, library));
   }
 
   public static Solution newInstance(Sdk sdk, Sdk baseJdk, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
-    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
+    return register(MPSModuleRepository.getInstance(), moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
   }
 
   public static Solution newInstanceForJdk(Sdk sdk, MPSModuleOwner moduleOwner) {
@@ -101,12 +101,12 @@ public abstract class StubSolutionIdea extends StubSolution {
 
     descriptor.setId(jdkId);
 
-    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, null));
+    return register(repo, moduleOwner, new SdkStubSolution(descriptor, sdk, null));
   }
 
   public static Solution newInstanceForRoots(Sdk sdk, Sdk baseJdk, VirtualFile[] roots, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(sdk.getName(), roots);
-    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
+    return register(MPSModuleRepository.getInstance(), moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
   }
 
 

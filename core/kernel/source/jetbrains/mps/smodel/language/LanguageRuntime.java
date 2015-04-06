@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,34 +15,10 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import jetbrains.mps.make.facet.IFacetManifest;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
-import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.FacetDescriptor;
-import jetbrains.mps.smodel.structure.InterpretedFacetProvider;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -55,8 +31,6 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
 /**
  * Runtime representation of a language, extension point for various language aspects.
@@ -80,6 +54,7 @@ public abstract class LanguageRuntime {
 
   /**
    * FIXME This method shall become abstract post 3.2, it's non-abstract for binary compatibility with legacy LanguageRuntime classes
+   * FIXME Better yet, supply a cons that takes mandatory values (id, name), rather than overriding methods in generated classes
    * @return now value of the field, <code>null</code> if not set. Generated LanguageRuntime classes shall override return value
    * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
    */
@@ -100,6 +75,7 @@ public abstract class LanguageRuntime {
   /**
    * Generated LanguageRuntime classes shall override this method
    * FIXME This method shall become abstract post 3.2, and is non-abstract for binary compatibility of languages generated in 3.1 when loaded into 3.2
+   * FIXME see getId() for explanation why it should stay and become final, instead.
    * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
    * @since 3.2
    * @return 0 now
@@ -109,119 +85,7 @@ public abstract class LanguageRuntime {
     return -1;
   }
 
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public IHelginsDescriptor getTypesystem() {
-    Language language = getLanguage();
-
-    SModel helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(language);
-    if (helginsModelDescriptor == null) return null;
-    String packageName = NameUtil.getModelLongName(helginsModelDescriptor);
-
-    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, language);
-
-    if (helginsDescriptor != null) {
-      return (IHelginsDescriptor) helginsDescriptor;
-    } else {
-      return getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", IHelginsDescriptor.class, language);
-    }
-  }
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(FindUsageAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public FindUsageAspectDescriptor getFindUsages() {
-    return null;
-  }
-
   public abstract Collection<? extends GeneratorRuntime> getGenerators();
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(MakeAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public DescriptorProvider<FacetDescriptor> getFacetProvider() {
-    DescriptorProvider<FacetDescriptor> facetDescriptor =
-        getObjectByClassNameForLanguage(getNamespace() + ".plugin.FacetAspectDescriptor", DescriptorProvider.class, getLanguage());
-    return facetDescriptor == null ? new InterpretedFacetProvider() : facetDescriptor;
-  }
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(StructureAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public StructureAspectDescriptor getStructureAspectDescriptor() {
-    String className = getNamespace() + ".structure.StructureAspectDescriptor";
-    Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
-
-    return (StructureAspectDescriptor) compiled;
-  }
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(BehaviorAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public BehaviorAspectDescriptor getBehaviorAspectDescriptor() {
-    String className = getNamespace() + ".behavior.BehaviorAspectDescriptor";
-    Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
-
-    if (compiled instanceof BehaviorAspectDescriptor) {
-      return (BehaviorAspectDescriptor) compiled;
-    } else {
-      return BehaviorAspectInterpreted.getInstance();
-    }
-  }
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(ConstraintsAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public ConstraintsAspectDescriptor getConstraintsAspectDescriptor() {
-    String className = getNamespace() + ".constraints.ConstraintsAspectDescriptor";
-    Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
-
-    if (compiled instanceof ConstraintsAspectDescriptor) {
-      return (ConstraintsAspectDescriptor) compiled;
-    } else {
-      return ConstraintsAspectInterpreted.getInstance();
-    }
-  }
-
-  /**
-   * @deprecated use {@link #getAspect(Class) getAspect(TextGenAspectDescriptor.class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public TextGenAspectDescriptor getTextGenAspectDescriptor() {
-    return new TextGenAspectInterpreted();
-  }
-
-
-  /**
-   * The reason this method is replaced with nearly identical {@link #getAspect(Class)} is that in 3.2 we need to support
-   * descriptors generated either with 3.1 and 3.2, while providing single API for users of LanguageRuntime. Since the contract of
-   * generated factory method is different (getAspectDescriptor in 3.1 provides editor aspect only, while in 3.2 we provide
-   * all aspects), a new method was introduced to hide 'all aspects' logic for 3.1-generated runtimes.
-   * Alternative is to try both alternatives (getAspectDescriptor and e.g. getTypesystem) wherever descriptor is queried.
-   *
-   * @deprecated use {@link #getAspect(Class)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorInterface) {
-    // this method is overridden in Language runtime classes generated with 3.0 and 3.1
-    // in 3.2, generated classes override #createAspectDescriptor
-    return null;
-  }
 
   /**
    * Provide aspect instance associated with the language. Aspect is instantiated only once, lazily (the first time asked)
@@ -240,14 +104,9 @@ public abstract class LanguageRuntime {
     @SuppressWarnings("unchecked")
     T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
     if (aspectDescriptor == null) {
-      // try new factory method from 3.2
       aspectDescriptor = createAspectDescriptor(descriptorInterface);
       if (aspectDescriptor == null) {
-        // fallback to 3.1
-        aspectDescriptor = getAspectDescriptor(descriptorInterface);
-        if (aspectDescriptor == null) {
-          return null;
-        }
+        return null;
       }
       @SuppressWarnings("unchecked")
       T alreadyThere = (T) myAspectDescriptors.putIfAbsent(descriptorInterface, aspectDescriptor);
@@ -259,58 +118,7 @@ public abstract class LanguageRuntime {
   }
 
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
-    // compatibility with 3.1 descriptors, e.g. getStructureAspectDescriptor call has been replaced with getAspect(StructureAspectDescriptor.class)
-    // and 3.2 language runtime code supply one in generated createAspectDescriptor. However, for 3.1 descriptors we do it here explicitly.
-    // The body of this method shall be cleared (or method made abstract) past 3.2, and generated override methods won't need to delegate to this super.
-    if (descriptorInterface == IHelginsDescriptor.class) {
-      return (T) getTypesystem();
-    }
-    if (descriptorInterface == StructureAspectDescriptor.class) {
-      // after 3.2, prior to removing of this code, check expectations of the calling code - now it expects non-null
-      // structure aspect, while this generated factory method supply one only when non-empty structure model exists.
-      // The requirement to have structure model shall be relaxed.
-      StructureAspectDescriptor oldDescriptor = getStructureAspectDescriptor();
-      // In case of empty structure model StructureAspectDescriptor class does not exist. In such case returning empty structure.
-      if (oldDescriptor == null) {
-        return (T) new BaseStructureAspectDescriptor() {
-          @Override
-          public Collection<ConceptDescriptor> getDescriptors() {
-            return Collections.EMPTY_LIST;
-          }
-          @Override
-          public ConceptDescriptor getDescriptor(String fqName) {
-            return null;
-          }
-        };
-      }
-      return (T) oldDescriptor;
-    }
-    if (descriptorInterface == BehaviorAspectDescriptor.class) {
-      // same here, ConceptRegistry instantiates InterpretedBehaviorDescriptor if can't get one from LanguageRuntime - inconsistency.
-      return (T) getBehaviorAspectDescriptor();
-    }
-    if (descriptorInterface == ConstraintsAspectDescriptor.class) {
-      return (T) getConstraintsAspectDescriptor();
-    }
-    if (descriptorInterface == TextGenAspectDescriptor.class) {
-      return (T) getTextGenAspectDescriptor();
-    }
-    if (descriptorInterface == FindUsageAspectDescriptor.class) {
-      return (T) getFindUsages();
-    }
-    if (descriptorInterface == MakeAspectDescriptor.class) {
-      final DescriptorProvider<FacetDescriptor> fp = getFacetProvider();
-      if (MakeAspectDescriptor.class.isInstance(fp)) {
-        return (T) fp;
-      }
-      final IFacetManifest fm = fp.getDescriptor(null).getManifest();
-      return (T) new MakeAspectDescriptor() {
-        @Override
-        public IFacetManifest getManifest() {
-          return fm;
-        }
-      };
-    }
+    // FIXME Method shall become abstract past 3.3, once we change generated override methods not to delegate to this super.
     return null;
   }
 
@@ -374,22 +182,5 @@ public abstract class LanguageRuntime {
   @Override
   public String toString() {
     return getNamespace() + " runtime";
-  }
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  private Language getLanguage() {
-    final Language[] result = new Language[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (getId() != null) {
-          result[0] = ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(getId().getIdValue())));
-        } else {
-          result[0] = ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
-        }
-      }
-    });
-    return result[0];
   }
 }

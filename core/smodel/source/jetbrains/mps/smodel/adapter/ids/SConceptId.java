@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
+@Immutable
 public final class SConceptId {
   private final SLanguageId myLanguageId;
   private final long myConceptId;

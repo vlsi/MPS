@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import javax.swing.JCheckBox;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -24,7 +23,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.FocusTraversalPolicy;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
@@ -41,8 +39,6 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
   private JButton myCancelButton;
   @Nullable
   private RefactoringContext myRefactoringContext = null;
-  private JCheckBox myGenerateModelsCheckbox;
-  private JCheckBox myIsLocalCheckbox;
   public RefactoringViewItemImpl(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
     myProject = refactoringContext.getSelectedProject();
@@ -89,27 +85,10 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       }
     });
     myButtonsPanel.add(myCancelButton);
-    if (myRefactoringContext != null) {
-      addCheckboxes(hasModelsToGenerate);
-    }
     myPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
     final FocusTraversalPolicy ftp = myPanel.getFocusTraversalPolicy();
     myPanel.setFocusTraversalPolicy(new RefactoringViewItemImpl.MyFocusTraversalPolicy(ftp));
-  }
-  private void addCheckboxes(boolean hasModelsToGenerate) {
-    if (hasModelsToGenerate) {
-      myGenerateModelsCheckbox = new JCheckBox("rebuild models");
-      myGenerateModelsCheckbox.setSelected(true);
-      myButtonsPanel.add(myGenerateModelsCheckbox);
-    }
-    // noinspection ConstantConditions 
-    if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
-      myIsLocalCheckbox = new JCheckBox("is local");
-      myIsLocalCheckbox.setSelected(myRefactoringContext.isLocal());
-      myIsLocalCheckbox.setEnabled(false);
-      myButtonsPanel.add(myIsLocalCheckbox);
-    }
   }
   public JComponent getComponent() {
     return myPanel;
@@ -121,15 +100,6 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     return myUsagesView;
   }
   private void doRefactor() {
-    if (myRefactoringContext != null) {
-      if (myGenerateModelsCheckbox != null) {
-        // noinspection ConstantConditions 
-        myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckbox.isSelected());
-      } else {
-        // noinspection ConstantConditions 
-        myRefactoringContext.setDoesGenerateModels(false);
-      }
-    }
     myRefactoringViewAction.performAction(this);
   }
   @Override

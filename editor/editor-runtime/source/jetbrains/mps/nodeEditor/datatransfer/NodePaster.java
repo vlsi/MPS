@@ -27,7 +27,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -68,7 +67,7 @@ public class NodePaster {
   }
 
   public void paste(SNode pasteTarget, PasteEnv pasteEnv, @Nullable String pack) {
-    paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv,pack);
+    paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv, pack);
   }
 
   public void pasteWithRemove(List<SNode> pasteTargets) {
@@ -102,7 +101,7 @@ public class NodePaster {
   }
 
 
-  private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv,@Nullable String pack) {
+  private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv, @Nullable String pack) {
     String role_ = role != null ? role : pasteTarget.getRoleInParent();
     int status = canPaste(pasteTarget, role_, pasteEnv);
 
@@ -112,14 +111,14 @@ public class NodePaster {
       pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT, false);
     } else if (status == PASTE_TO_ROOT) {
 
-      pasteAsRoots(pasteTarget.getModel(),pack);
+      pasteAsRoots(pasteTarget.getModel(), pack);
     }
   }
 
   public void pasteAsRoots(SModel model, @Nullable String dstPackage) {
     for (SNode pasteNode : myPasteNodes) {
       model.addRootNode(pasteNode);
-      if (dstPackage==null) continue;
+      if (dstPackage == null) continue;
 
       SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.propertyName_BaseConcept_virtualPackage, dstPackage);
     }
@@ -204,13 +203,15 @@ public class NodePaster {
       return;
     }
 
-    SNode _anchorNode = anchorNode;
+    SNode currentAnchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
       SNode nodeToPaste = normalizeForLink(pasteNode, link);
-      SNodeOperations.insertChild(pasteTarget, SModelUtil.getGenuineLinkRole(link), nodeToPaste, _anchorNode, insertBefore);
+      String r = SModelUtil.getGenuineLinkRole(link);
+      SNode realAnchor = insertBefore ? currentAnchorNode : currentAnchorNode == null ? pasteTarget.getFirstChild() : currentAnchorNode.getNextSibling();
+      pasteTarget.insertChildBefore(r, nodeToPaste, realAnchor);
       CopyPasteManager.getInstance().postProcessNode(nodeToPaste);
-      _anchorNode = nodeToPaste;
+      currentAnchorNode = nodeToPaste;
       insertBefore = false;
     }
 

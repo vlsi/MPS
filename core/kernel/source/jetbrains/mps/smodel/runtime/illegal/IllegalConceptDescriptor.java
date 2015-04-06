@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,12 +113,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<String> getPropertyNames() {
-    reportWarn();
-    return Collections.emptySet();
-  }
-
-  @Override
   public Set<SReferenceLinkId> getReferenceIds() {
     reportWarn();
     return Collections.emptySet();
@@ -149,12 +143,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<String> getReferenceNames() {
-    reportWarn();
-    return Collections.emptySet();
-  }
-
-  @Override
   public Set<SContainmentLinkId> getLinkIds() {
     reportWarn();
     return Collections.emptySet();
@@ -167,21 +155,9 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<String> getChildrenNames() {
-    reportWarn();
-    return Collections.emptySet();
-  }
-
-  @Override
   public StaticScope getStaticScope() {
     reportWarn();
     return StaticScope.GLOBAL;
-  }
-
-  @Override
-  public boolean isMultipleChild(String name) {
-    reportWarn();
-    return false;
   }
 
   @Override

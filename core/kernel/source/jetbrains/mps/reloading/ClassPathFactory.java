@@ -40,24 +40,28 @@ public class ClassPathFactory {
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
   private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
 
+  // FIXME rewrite without IFile, write class path item tests about jars in jars
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     synchronized (LOCK) {
       if (myCache.containsKey(path)) return myCache.get(path);
-      IFile file = FileSystem.getInstance().getFileByPath(path);
-      path = file.getPath();
-      boolean isPackaged = FileSystem.getInstance().isPackaged(file) || path.endsWith(".jar") || path.endsWith(".zip");
-      boolean isDirectory = file.isDirectory();
-      boolean exists = file.exists() || new File(path).exists();
+      IFile iFile = FileSystem.getInstance().getFileByPath(path);
+      path = iFile.getPath();
+      boolean isPackaged = FileSystem.getInstance().isPackaged(iFile) || path.endsWith(".jar") || path.endsWith(".zip");
+      boolean isDirectory = iFile.isDirectory();
+      File file = new File(path);
+      boolean exists = iFile.exists() || file.exists();
       RealClassPathItem item;
       if (!exists) {
-        String moduleString = requestor == null ? "" : (" in " + requestor);
-        LOG.debug("Can't load class path item " + path + moduleString + "." + (isDirectory ? " Execute make in IDEA." : ""));
+        String moduleString = requestor == null ? "" : " in " + requestor;
+        LOG.debug(String.format("Can't load class path item %s%s.%s", path, moduleString, isDirectory ? " Execute make in IDEA." : ""));
         item = new NonExistingClassPathItem(path);
       } else if (isPackaged) {
         item = new JarFileClassPathItem(path);
       } else {
-        if (!isDirectory) throw new IllegalArgumentException("Path variable must point to a directory or to a jar/zip location");
+        if (!isDirectory) {
+          throw new IllegalArgumentException("Path variable must point to a directory or to a jar/zip location");
+        }
         item = new FileClassPathItem(path);
       }
 

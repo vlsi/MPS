@@ -44,6 +44,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 public abstract class SAbstractConceptAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
@@ -64,7 +65,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   @Override
-  public Iterable<SReferenceLink> getReferenceLinks() {
+  public Collection<SReferenceLink> getReferenceLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -76,7 +77,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   @Override
-  public Iterable<SContainmentLink> getContainmentLinks() {
+  public Collection<SContainmentLink> getContainmentLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -134,7 +135,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   @Override
-  public Iterable<SProperty> getProperties() {
+  public Collection<SProperty> getProperties() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 

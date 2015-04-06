@@ -47,7 +47,7 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
 
     String modelsFolder = myTestCase.getAbsolutePath(bean.modelsDirName);
     String generatorOutput = myTestCase.getAbsolutePath(bean.generatorOutputPath);
-    myModule = initJpsModule(bean.moduleName, modelsFolder, generatorOutput);
+    myModule = initJpsModule(bean.moduleName, modelsFolder);
 
     MPSConfigurationBean configuration = initMpsConfiguration(bean, generatorOutput);
     initModelRoots(configuration, modelsFolder);

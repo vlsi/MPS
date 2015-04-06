@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ public class ReadUtil {
   }
 
   public static byte[] read(InputStream is, int size) throws IOException {
-    ByteArrayOutputStream os = new ByteArrayOutputStream(size);
+    ByteArrayOutputStream os = new ByteArrayOutputStream(size < 0 ? 4096 : size);
     byte[] buff = new byte[4096];
     while (true) {
       int read = is.read(buff, 0, buff.length);

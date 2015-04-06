@@ -121,7 +121,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3420,8 +3420,8 @@
     <property role="TrG5h" value="reduce_ReplaceWithNewOperation" />
     <ref role="3gUMe" to="tp25:g__qnPU" resolve="Node_ReplaceWithNewOperation" />
     <node concept="2YIFZM" id="g__tonY" role="13RCb5">
-      <ref role="37wK5l" to="i8bi:5IkW5anFery" resolve="replaceWithNewChild" />
       <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
+      <ref role="37wK5l" to="i8bi:7U2DyFDnPgG" resolve="replaceWithNewChild" />
       <node concept="10Nm6u" id="g__too1" role="37wK5m">
         <node concept="29HgVG" id="g__too2" role="lGtFl">
           <node concept="3NFfHV" id="h23Suxg" role="3NFExx">
@@ -3438,25 +3438,19 @@
           </node>
         </node>
       </node>
-      <node concept="Xl_RD" id="g__too3" role="37wK5m">
-        <property role="Xl_RC" value="_concept_name_" />
-        <node concept="17Uvod" id="g__too4" role="lGtFl">
-          <property role="2qtEX9" value="value" />
-          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-          <node concept="3zFVjK" id="h23SxWS" role="3zH0cK">
-            <node concept="3clFbS" id="h23SxWT" role="2VODD2">
-              <node concept="3cpWs6" id="h23Syto" role="3cqZAp">
-                <node concept="2YIFZM" id="h23S_Ff" role="3cqZAk">
-                  <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                  <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                  <node concept="2JrnkZ" id="h23SClI" role="37wK5m">
-                    <node concept="2OqwBi" id="hxx$PYY" role="2JrQYb">
-                      <node concept="30H73N" id="h23SAhm" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="h23SB4a" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp25:g__rbu9" />
-                      </node>
-                    </node>
+      <node concept="35c_gC" id="7osd9LN_j_y" role="37wK5m">
+        <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="1ZhdrF" id="7osd9LN_jHk" role="lGtFl">
+          <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+          <property role="2qtEX8" value="conceptDeclaration" />
+          <node concept="3$xsQk" id="7osd9LN_jHn" role="3$ytzL">
+            <node concept="3clFbS" id="7osd9LN_jHo" role="2VODD2">
+              <node concept="3clFbF" id="7osd9LN_jHu" role="3cqZAp">
+                <node concept="2OqwBi" id="7osd9LN_jHp" role="3clFbG">
+                  <node concept="3TrEf2" id="7osd9LN_jHs" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:g__rbu9" />
                   </node>
+                  <node concept="30H73N" id="7osd9LN_jHt" role="2Oq$k0" />
                 </node>
               </node>
             </node>

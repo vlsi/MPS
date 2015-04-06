@@ -33,8 +33,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
  * Evgeny Gryaznov, 1/4/11
  */
 public class SNodeFactoryOperations {
-
-
   @Deprecated
   public static SConcept asInstanceConcept(SNode node) {
     if (node == null) { return null; }
@@ -46,27 +44,9 @@ public class SNodeFactoryOperations {
     return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    if (conceptFqName == null) return null;
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
-  }
-
   public static SNode createNewNode(SConcept concept, SNode prototypeNode) {
     if (concept == null) return null;
     return NodeFactoryManager.createNode(concept, prototypeNode, null, null);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode enclosingNode = null;
-    if (prototypeNode != null) {
-      enclosingNode = prototypeNode.getParent();
-    }
-
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model);
   }
 
   public static SNode createNewNode(SModel model, SConcept concept, SNode prototypeNode) {
@@ -78,29 +58,10 @@ public class SNodeFactoryOperations {
     return NodeFactoryManager.createNode(concept, prototypeNode, enclosingNode, model);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
-    model.addRootNode(newNode);
-    return newNode;
-  }
-
   public static SNode createNewRootNode(SModel model, SConcept concept, SNode prototypeNode) {
     SNode newNode = NodeFactoryManager.createNode(concept, prototypeNode, null, model);
     model.addRootNode(newNode);
     return newNode;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
-    if (node != null) {
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
-      node.addChild(role, newChild);
-      return newChild;
-    }
-    return null;
   }
 
   public static SNode addNewChild(SNode node, SContainmentLink role, SConcept childConcept) {
@@ -112,34 +73,10 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, String childConceptFQName) {
-    if (node != null) {
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
-      AttributeOperations.addAttribute(node, descriptor, newChild);
-      return newChild;
-    }
-    return null;
-  }
-
   public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, SConcept childConcept) {
     if (node != null) {
       SNode newChild = NodeFactoryManager.createNode(childConcept, null, node, node.getModel());
       AttributeOperations.addAttribute(node, descriptor, newChild);
-      return newChild;
-    }
-    return null;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
-    if (node != null) {
-      Iterable<? extends SNode> ch = node.getChildren(role);
-      SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
-      SNodeEditorUtil.setSingleChild(node, role, newChild);
       return newChild;
     }
     return null;
@@ -156,18 +93,6 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, String childConceptFQName) {
-    if (node != null) {
-      SNode prototypeNode = AttributeOperations.getAttribute(node, descriptor);
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
-      AttributeOperations.setAttribute(node, descriptor, newChild);
-      return newChild;
-    }
-    return null;
-  }
-
   public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, SConcept childConcept) {
     if (node != null) {
       SNode prototypeNode = AttributeOperations.getAttribute(node, descriptor);
@@ -176,27 +101,6 @@ public class SNodeFactoryOperations {
       return newChild;
     }
     return null;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
-    assert oldChild != null : "can't replace node. node is NULL";
-    SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && !(oldChild.getModel() != null && oldChild.getParent() == null)) {
-      return null;
-    }
-    SModel model = oldChild.getModel();
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model);
-    if (newChild == null) return null;
-    if (oldChildParent == null) {
-      model.addRootNode(newChild);
-      model.removeRootNode(oldChild);
-    } else {
-      SNodeUtil.replaceWithAnother(oldChild, newChild);
-    }
-    copyAllAttributes(oldChild, newChild);
-    return newChild;
   }
 
   public static SNode replaceWithNewChild(SNode oldChild, SConcept concept) {
@@ -231,40 +135,13 @@ public class SNodeFactoryOperations {
     }
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
-    if (node == null || node.getParent() == null) return null;
-    SNode parent = node.getParent();
-    SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel());
-    if (newChild == null) return null;
-    String role = node.getRoleInParent();
-    assert parent != null && role != null;
-    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
-    return newChild;
-  }
-
   public static SNode insertNewNextSiblingChild(SNode node, SConcept concept) {
     if (node == null || node.getParent() == null) return null;
     SNode parent = node.getParent();
     SNode newChild = NodeFactoryManager.createNode(concept, null, parent, node.getModel());
     if (newChild == null) return null;
     SContainmentLink role = node.getContainmentLink();
-    parent.insertChildBefore(role, newChild, node.getNextSibling());
-    return newChild;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode insertNewPrevSiblingChild(SNode node, String conceptFqName) {
-    if (node == null) return null;
-    SNode parent = node.getParent();
-    if (parent == null) return null;
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel());
-    if (newChild == null) return null;
-    String role = node.getRoleInParent();
-    assert role != null;
-    parent.insertChildBefore(role, newChild, node);
+    parent.insertChildAfter(role, newChild, node);
     return newChild;
   }
 
@@ -277,13 +154,5 @@ public class SNodeFactoryOperations {
     SContainmentLink role = node.getContainmentLink();
     parent.insertChildBefore(role, newChild, node);
     return newChild;
-  }
-
-  public static SNode addNewChild(SNode body, SContainmentLink statement, String s) {
-    return addNewChild(body, statement.getRoleName(), s);
-  }
-
-  public static SNode setNewChild(SNode constructor, SContainmentLink body, String s) {
-    return setNewChild(constructor, body.getRoleName(), s);
   }
 }

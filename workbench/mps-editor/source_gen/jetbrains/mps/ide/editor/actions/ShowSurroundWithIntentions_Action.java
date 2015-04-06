@@ -32,7 +32,6 @@ import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -154,7 +153,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   }
   private Iterable<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     final IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setIntentionClass(SurroundWithIntention.class);
     query.setSurroundWith(true);
     query.setCurrentNodeOnly(true);
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getTypecheckingContextOwner(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode(), new ITypechecking.Computation<Iterable<Pair<IntentionExecutable, SNode>>>() {

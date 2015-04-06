@@ -22,6 +22,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
+import jetbrains.mps.jps.make.fileUtil.ProjectDirFinder;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -49,11 +50,10 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
     Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
   }
 
- @NotNull
+  @NotNull
   @NonNls
   @Override
   protected abstract String getTestDataRootPath();
-
 
   /**
    * @deprecated Please consider using {@link #copyToProject}
@@ -63,10 +63,10 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
     return copyToProject(relativeSourcePath, relativeTargetPath);
   }
 
-
   @Override
   protected String getHomePath() {
-    return System.getProperty("user.dir");
+    final File projectDir = new ProjectDirFinder().findProjectDir();
+    return projectDir.getAbsolutePath();
   }
 
   @Override
@@ -81,7 +81,7 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   @Override
-  public String copyToProject(@NotNull String relativeSourcePath, @NotNull String relativeTargetPath) {
+  public String copyToProject(@NonNls @NotNull String relativeSourcePath, @NonNls @NotNull String relativeTargetPath) {
     return super.copyToProject(relativeSourcePath, relativeTargetPath);
   }
 

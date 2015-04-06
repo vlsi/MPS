@@ -83,8 +83,8 @@
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595817127967">
     <file name="RemoveRepetition_QuickFix.java">
       <node id="1645404595817128789" at="17,44,18,45" concept="8" />
-      <node id="1645404595817154180" at="20,35,21,108" concept="7" />
-      <node id="1645404595817150392" at="21,108,22,382" concept="3" />
+      <node id="1645404595817154180" at="20,35,21,201" concept="7" />
+      <node id="1645404595817150392" at="21,201,22,382" concept="3" />
       <node id="1645404595817162296" at="22,382,23,540" concept="3" />
       <node id="1645404595817232693" at="23,540,24,170" concept="3" />
       <node id="1645404595817243488" at="24,170,25,71" concept="3" />

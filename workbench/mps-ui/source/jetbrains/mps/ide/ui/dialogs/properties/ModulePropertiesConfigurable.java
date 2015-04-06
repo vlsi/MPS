@@ -567,7 +567,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModelReference> list = new ModelChooser().compute();
+          List<SModelReference> list = new ModelChooser(myProject).compute();
           for (SModelReference reference : list) {
             myAccessoriesModelsTableModel.addItem(reference);
           }

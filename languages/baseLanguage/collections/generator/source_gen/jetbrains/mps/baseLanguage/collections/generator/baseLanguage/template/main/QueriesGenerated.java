@@ -1804,7 +1804,7 @@ public class QueriesGenerated extends QueryProviderBase {
         try {
           SNode nt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(varRef), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), "virtual_deriveType_1213877435747", new Object[]{varRef});
           if ((TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null)) {
-            SNode nr = SNodeOperations.replaceWithNewChild(varRef, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef");
+            SNode nr = SNodeOperations.replaceWithNewChild(varRef, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef"));
             SLinkOperations.setTarget(nr, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, 0x59f2b8b299d6e72bL, "original"), varRef);
           }
         } catch (RuntimeException ex) {

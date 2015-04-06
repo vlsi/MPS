@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -86,7 +85,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
-    SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
+    SNode realAnchor = insertBefore ? anchorNode : anchorNode == null ? getOwner().getFirstChild() : anchorNode.getNextSibling();
+    getOwner().insertChildBefore(getElementRole(), myInsertedNode, realAnchor);
   }
 
   @Override

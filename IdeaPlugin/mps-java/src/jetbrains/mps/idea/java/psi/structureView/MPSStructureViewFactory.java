@@ -29,6 +29,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -44,9 +45,8 @@ public class MPSStructureViewFactory implements NodeStructureViewProvider {
   @Nullable
   @Override
   public StructureViewBuilder getStructureViewBuilder(@NotNull MPSNodeVirtualFile file, @NotNull Project project) {
-    jetbrains.mps.project.Project mpsproject = ProjectHelper.toMPSProject(project);
     SNode node = file.getNode();
-    SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false);
+    SNode container = SNodeOperations.getNodeAncestor(node, MetaAdapterFactoryByName.getInterfaceConcept("jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
     final MemberContainerStructureModel model = new MemberContainerStructureModel(container);
     return new StructureViewBuilder() {
       @NotNull

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.make.fileUtil;
 
+import com.intellij.openapi.util.io.FileUtilRt;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +51,8 @@ public class FileRecursiveTraverser {
           fileStack.push(child);
         }
       } else {
-        result.add(FileUtil.getRelativePath(file.getAbsolutePath(), myBasePath, File.separator));
+        result.add(FileUtil.getRelativePath(FileUtilRt.toSystemIndependentName(file.getAbsolutePath()),
+                                            FileUtilRt.toSystemIndependentName(myBasePath), "/"));
       }
     }
     return result;

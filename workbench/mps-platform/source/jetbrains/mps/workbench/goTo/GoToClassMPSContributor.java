@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,16 @@ import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +84,11 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
   @Override
   public String getQualifiedName(NavigationItem item) {
-    return (item.getPresentation() instanceof NodePointerPresentation) ? createModel(null).doGetFullName(item) : null;
+    if (item.getPresentation() instanceof NodePointerPresentation) {
+      NodePointerPresentation presentation = (NodePointerPresentation) item.getPresentation();
+      return presentation.getModelName() + getQualifiedNameSeparator() + presentation.getPresentableText();
+    }
+    return null;
   }
 
   @Override

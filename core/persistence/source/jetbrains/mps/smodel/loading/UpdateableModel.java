@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -34,25 +35,27 @@ import org.jetbrains.mps.openapi.model.SModel;
  * that can change model is loading/replacing.
  * This class has an aim to synchronize all loading processes
  */
-public abstract class UpdateableModel {
-  private final SModel myDescriptor;
-
+public final class UpdateableModel {
+  private final ModelLoader myLoader;
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
   private volatile jetbrains.mps.smodel.SModel myModel = null;
   private boolean myLoading = false;
 
-  public UpdateableModel(SModel descriptor) {
-    myDescriptor = descriptor;
+  public UpdateableModel(@NotNull ModelLoader loader) {
+    myLoader = loader;
   }
 
-  public final ModelLoadingState getState() {
+  @NotNull
+  public ModelLoadingState getState() {
     return myState;
   }
 
   //null in parameter means "give me th current model, don't attempt to load"
   //with null parameter, no synch should occur
-  public final jetbrains.mps.smodel.SModel getModel(@Nullable ModelLoadingState state) {
-    if (state == null) return myModel;
+  public jetbrains.mps.smodel.SModel getModel(@Nullable ModelLoadingState state) {
+    if (state == null) {
+      return myModel;
+    }
     if (!ModelAccess.instance().canWrite()) {
       synchronized (this) {
         if (state.ordinal() > myState.ordinal()) {
@@ -66,7 +69,9 @@ public abstract class UpdateableModel {
   }
 
   private void ensureLoadedTo(final ModelLoadingState state) {
-    if (state.ordinal() <= myState.ordinal() || myLoading) return;
+    if (state.ordinal() <= myState.ordinal() || myLoading) {
+      return;
+    }
     myLoading = true;  //this is for elimination of infinite recursion
     try {
       ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
@@ -75,25 +80,16 @@ public abstract class UpdateableModel {
           return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
             @Override
             public ModelLoadResult compute() {
-              return doLoad(state, myModel);
+              return myLoader.doLoad(state, myModel);
             }
           });
         }
       });
-      if (myModel != null) {
-        assert myModel instanceof InvalidSModel || res.getModel() == myModel;
-      } else {
-        myModel = res.getModel();
-        myModel.setModelDescriptor(myDescriptor);
-      }
-      myState = res.getState();
+      doReplace(res.getModel(), res.getState());
     } finally {
       myLoading = false;
     }
   }
-
-  // FIXME extract doLoad into separate interface, UpdatableModel cease to take openapi.SModel, instead, doLoad implementation initialize setModelDescriptor as required
-  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable jetbrains.mps.smodel.SModel current);
 
   public void replaceWith(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
     if (!ModelAccess.instance().canWrite()) {
@@ -108,5 +104,11 @@ public abstract class UpdateableModel {
   private void doReplace(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
     myModel = newModel;
     myState = state;
+  }
+
+  // it does clash with ModelLoader which performs model update. Shall change the other one.
+  public interface ModelLoader {
+    // FIXME contract of what ModelLoadResult shall contain is vague. There's assumption that model it returns is identical to myModel. Why?
+    ModelLoadResult doLoad(ModelLoadingState state, @Nullable jetbrains.mps.smodel.SModel current);
   }
 }

@@ -19,6 +19,13 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.persistence.LightModelEnvironmentInfo;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -159,5 +166,82 @@ public class ReadHelper {
   public String readName(String s) {
     return s;
   }
+  public static void conceptRead(final SNode node) {
+    final LightModelEnvironmentInfo info = getInfo();
+    if (info == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        info.conceptRead(node, check_9mlqpu_b0a0a0c0r(SNodeOperations.getConcept(node).getDeclarationNode()), StaticScope.GLOBAL, ConceptKind.NORMAL);
+      }
+    });
+  }
+  public static void roleRead(final SNode node, final String role) {
+    final LightModelEnvironmentInfo info = getInfo();
+    if (info == null) {
+      return;
+    }
+    if (SNodeOperations.getParent(node) == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        info.nodeRoleRead(node, check_9mlqpu_b0a0a0d0s(MetaAdapterFactoryByName.getContainmentLink(SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), role).getDeclarationNode()), false);
+      }
+    });
+  }
+  public static void propertyRead(final SNode node, final String propName) {
+    final LightModelEnvironmentInfo info = getInfo();
+    if (info == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        info.propertyNameRead(node, propName, check_9mlqpu_c0a0a0c0t(MetaAdapterFactoryByName.getProperty(SNodeOperations.getConcept(node).getQualifiedName(), propName).getDeclarationNode()));
+      }
+    });
+  }
+  public static void referenceRead(final SReference ref) {
+    final LightModelEnvironmentInfo info = getInfo();
+    if (info == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        info.referenceRoleRead(ref, check_9mlqpu_b0a0a0c0u(MetaAdapterFactoryByName.getReferenceLink(ref.getSourceNode().getConcept().getQualifiedName(), ref.getRole()).getDeclarationNode()));
+      }
+    });
+  }
+  private static LightModelEnvironmentInfo getInfo() {
+    return as_9mlqpu_a0a0v(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
+  }
   protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
+  private static SNodeReference check_9mlqpu_b0a0a0c0r(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+  private static SNodeReference check_9mlqpu_b0a0a0d0s(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+  private static SNodeReference check_9mlqpu_c0a0a0c0t(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+  private static SNodeReference check_9mlqpu_b0a0a0c0u(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+  private static <T> T as_9mlqpu_a0a0v(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }

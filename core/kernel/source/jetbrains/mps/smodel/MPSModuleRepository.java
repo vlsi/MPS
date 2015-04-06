@@ -49,19 +49,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   private final GlobalModelAccess myGlobalModelAccess;
 
-  @ToRemove(version=3.2)
-  private final CommandListener myCommandListener = new CommandListener() {
-    @Override
-    public void commandStarted() {
-      fireCommandStarted();
-    }
-
-    @Override
-    public void commandFinished() {
-      fireCommandFinished();
-    }
-  };
-
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
   private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
@@ -98,26 +85,24 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       throw new IllegalStateException("already initialized");
     }
     ourInstance = this;
-    getModelAccess().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
-    getModelAccess().removeCommandListener(myCommandListener);
     ourInstance = null;
     super.dispose();
   }
 
   //-----------------register/unregister-merge-----------
 
-  public <T extends SModule> T registerModule(T module, MPSModuleOwner owner) {
+  public <T extends SModule> T registerModule(T moduleToRegister, MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
-    SModuleId moduleId = module.getModuleReference().getModuleId();
-    String moduleFqName = module.getModuleName();
+    SModuleId moduleId = moduleToRegister.getModuleReference().getModuleId();
+    String moduleFqName = moduleToRegister.getModuleName();
 
-    AbstractModule aModule = (AbstractModule) module;
-    assert moduleId != null : "Module with null id is added to repository: fqName=" + moduleFqName + "; file=" + aModule.getDescriptorFile();
+    AbstractModule aModuleToRegister = (AbstractModule) moduleToRegister;
+    if (moduleId == null) throw new NullModuleIdException(aModuleToRegister);
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
@@ -127,26 +112,33 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        AbstractModule m = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
-        LOG.warn(String.format("Duplicate module name %s : module with the same UID exists at %s and %s", moduleFqName, m.getDescriptorFile(), aModule.getDescriptorFile()));
+        AbstractModule existingModule = (AbstractModule) myFqNameToModulesMap.get(moduleFqName);
+        LOG.error("", new ModuleWithSuchNameAlreadyExistsInTheRepositoryException(aModuleToRegister, existingModule));
+        return (T) existingModule;
       }
-      myFqNameToModulesMap.put(moduleFqName, module);
+      myFqNameToModulesMap.put(moduleFqName, moduleToRegister);
     }
 
-    myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
-    myModules.add(module);
+    myIdToModuleMap.put(moduleToRegister.getModuleId(), moduleToRegister);
+    myModules.add(moduleToRegister);
 
-    for (org.jetbrains.mps.openapi.model.SModel model:aModule.getModels()){
-      if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()){
-        LOG.error("Added a module with unsaved model to a repository. This can cause data loss, see MPS-18743. Modify models that are not added to a module or modify them when they are in repo already");
+    checkModelsAreNotChanged(aModuleToRegister);
+    aModuleToRegister.attach(this);
+    myModuleToOwners.addLink(moduleToRegister, owner);
+    invalidateCaches();
+    fireModuleAdded(moduleToRegister);
+    return moduleToRegister;
+  }
+
+  // Adding not saved model can cause data loss, see MPS-18743.
+  private void checkModelsAreNotChanged(AbstractModule aModuleToRegister) {
+    for (org.jetbrains.mps.openapi.model.SModel model : aModuleToRegister.getModels()) {
+      if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
+        LOG.error("Added a module with unsaved model to a repository. " +
+            "Modify models that are not added to a module or modify them when they are in repo already", new Throwable());
         break;
       }
     }
-    aModule.attach(this);
-    myModuleToOwners.addLink(module, owner);
-    invalidateCaches();
-    fireModuleAdded(module);
-    return module;
   }
 
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
@@ -261,6 +253,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //--------------------------------------------------
 
+  // TODO: !!
+  // FIXME: we should invalidate caches only in specific modules
+  // The problem is that the scope collects transitive dependencies as well
   public void invalidateCaches() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
@@ -268,7 +263,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
-        // FIXME: we should invalidate caches only in specific modules
         for (SModule m : getModules()) {
           SearchScope moduleScope = ((AbstractModule) m).getScope();
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
@@ -312,4 +306,24 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
 
+  private static class ModuleWithSuchNameAlreadyExistsInTheRepositoryException extends RuntimeException {
+    public ModuleWithSuchNameAlreadyExistsInTheRepositoryException(AbstractModule newModule, AbstractModule existingModule) {
+      super(getMessage(newModule, existingModule), new Throwable());
+    }
+
+    private static String getMessage(AbstractModule newModule, AbstractModule existingModule) {
+      String moduleName = newModule.getModuleName();
+      assert moduleName.equals(existingModule.getModuleName());
+      return String.format("Trying to register a module with the name %s at %s :" +
+          " module with the same name already exists at %s, ", moduleName, newModule.getDescriptorFile(), existingModule.getDescriptorFile());
+    }
+  }
+
+  private static class NullModuleIdException extends RuntimeException {
+    public NullModuleIdException(AbstractModule aModuleToRegister) {
+      super("Trying to add module with null id to the repository:\n" +
+            "moduleName: " + aModuleToRegister.getModuleName() + ";\n" +
+            "file: '" + aModuleToRegister.getDescriptorFile() + "'");
+    }
+  }
 }

@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Collections;
-import sun.misc.Resource;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
 import java.io.InputStream;

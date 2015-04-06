@@ -77,7 +77,7 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
                   }
                 };
               }
-              return new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.build.structure.BuildLayout_Node");
+              return new ModelPlusImportedScope(_context.getModel(), false, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
             }
           }
         };

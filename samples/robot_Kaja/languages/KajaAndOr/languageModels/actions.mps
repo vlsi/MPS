@@ -2,8 +2,8 @@
 <model ref="r:7300eb0d-e71e-4ce8-9bcb-0e6de0a42f4e(jetbrains.mps.samples.KajaAndOr.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -578,13 +578,10 @@
           <node concept="CmF0q" id="zEL6hQatjx" role="D06XQ">
             <node concept="3clFbS" id="zEL6hQatjy" role="2VODD2">
               <node concept="3clFbF" id="zEL6hQatjz" role="3cqZAp">
-                <node concept="2OqwBi" id="zEL6hQbmJW" role="3clFbG">
-                  <node concept="3TrcHB" id="zEL6hQbnl5" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                  </node>
-                  <node concept="2OqwBi" id="2XA_ayKxETu" role="2Oq$k0">
-                    <node concept="uNquD" id="zEL6hQatj$" role="2Oq$k0" />
-                    <node concept="FGMqu" id="2XA_ayKxFPE" role="2OqNvi" />
+                <node concept="2OqwBi" id="2XA_ayKxETu" role="3clFbG">
+                  <node concept="uNquD" id="zEL6hQatj$" role="2Oq$k0" />
+                  <node concept="liA8E" id="4k9eBecwvX5" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
                   </node>
                 </node>
               </node>
@@ -851,13 +848,10 @@
           <node concept="uSjag" id="zEL6hPNsZY" role="uSyvl">
             <node concept="3clFbS" id="zEL6hPNsZZ" role="2VODD2">
               <node concept="3clFbF" id="zEL6hPNt3u" role="3cqZAp">
-                <node concept="2OqwBi" id="zEL6hPNtbP" role="3clFbG">
-                  <node concept="2OqwBi" id="2XA_ayKxP03" role="2Oq$k0">
-                    <node concept="uNquD" id="zEL6hPNt3t" role="2Oq$k0" />
-                    <node concept="FGMqu" id="2XA_ayKxPG$" role="2OqNvi" />
-                  </node>
-                  <node concept="3TrcHB" id="zEL6hQ9LUa" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
+                <node concept="2OqwBi" id="2XA_ayKxP03" role="3clFbG">
+                  <node concept="uNquD" id="zEL6hPNt3t" role="2Oq$k0" />
+                  <node concept="liA8E" id="4k9eBecwbY_" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
                   </node>
                 </node>
               </node>

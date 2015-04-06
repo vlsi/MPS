@@ -265,7 +265,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_hop3er_b3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a1d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hop3er_b1d0(editorContext, node));
@@ -287,6 +287,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_runInCommand");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -301,6 +304,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_hop3er_c3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a2d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hop3er_b2d0(editorContext, node));
@@ -338,6 +342,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_hop3er_d3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a3d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hop3er_b3d0(editorContext, node));

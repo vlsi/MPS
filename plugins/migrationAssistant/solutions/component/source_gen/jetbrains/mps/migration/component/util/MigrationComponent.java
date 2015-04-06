@@ -33,6 +33,11 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.util.ArrayList;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
@@ -40,12 +45,10 @@ import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -183,6 +186,31 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
     boolean languageMig = isLanguageMigrationRequired(modules);
     return projectMig || languageMig;
+  }
+
+  public List<Tuples._2<SModule, SLanguage>> getMissingMigrations() {
+    final List<Tuples._2<SModule, SLanguage>> result = ListSequence.fromList(new ArrayList<Tuples._2<SModule, SLanguage>>());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
+        for (SModule module : Sequence.fromIterable(modules)) {
+          for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+            int currentLangVersion = lang.getLanguageVersion();
+            int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+
+            ver = Math.max(ver, 0);
+            currentLangVersion = Math.max(currentLangVersion, 0);
+
+            if (ver >= currentLangVersion) {
+              continue;
+            }
+
+            ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage>from(module, lang));
+          }
+        }
+      }
+    });
+    return result;
   }
 
   public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {

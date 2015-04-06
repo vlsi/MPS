@@ -55,7 +55,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -255,6 +254,10 @@ public class SModel implements SModelData {
 
   // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+    if (myModelDescriptor == modelDescriptor) {
+      // just to guard against accidental second assignment
+      return;
+    }
     myModelDescriptor = ((SModelBase) modelDescriptor);
     myNodeOwner.setEventDispatch(modelDescriptor == null ? null : myModelDescriptor.getEventDispatch());
   }
@@ -612,24 +615,8 @@ public class SModel implements SModelData {
     return Collections.unmodifiableMap(myLanguagesIds);
   }
 
-  @Deprecated
-  public List<SModuleReference> importedLanguages() {
-    // FIXME this stupid code is for compatibility only. We shall decide what to use for used language -
-    // FIXME SLanguage, SModuleReference or anything completely different, and refactor the code (including legacy uses) accordingly
-    // Likely, we'll need SModelLegacy (similar to SNodeLegacy) to keep this transformation for uses from old persistence implementations
-    ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(myLanguagesIds.size());
-    for (SLanguage l : myLanguagesIds.keySet()) {
-      final SModule sourceModule = l.getSourceModule();
-      if (sourceModule != null) {
-        rv.add(sourceModule.getModuleReference());
-      }
-    }
-    return rv;
-  }
-
   public void deleteLanguage(@NotNull SLanguage id) {
     assertLegalChange();
-
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
@@ -811,32 +798,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public int getVersion() {
-    return -1;
-  }
-
   //---------refactorings--------
-
-  public void setVersion(int version) {
-
-  }
-
-  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    assertLegalChange();
-
-    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement == null && myLegacyImplicitImports != null) {
-      importElement = myLegacyImplicitImports.find(sModelReference);
-    }
-
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    } else {
-      if (myLegacyImplicitImports != null) {
-        myLegacyImplicitImports.addAdditionalModelVersion(sModelReference, currentVersion);
-      }
-    }
-  }
 
   public boolean updateSModelReferences() {
     assertLegalChange();
@@ -936,7 +898,6 @@ public class SModel implements SModelData {
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
-    to.setVersion(getVersion());
   }
 
   public static class ImportElement {

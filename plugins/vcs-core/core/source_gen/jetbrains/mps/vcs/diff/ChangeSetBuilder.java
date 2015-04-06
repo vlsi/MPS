@@ -40,7 +40,6 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
-import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -236,9 +235,6 @@ public class ChangeSetBuilder {
         ListSequence.fromList(myNewChanges).addElement(new DoNotGenerateOptionChange(myChangeSet));
       }
     }
-    if (as_nbyrtw_a0a0h0q(myNewModel, SModelBase.class).getVersion() != as_nbyrtw_a0a0h0q_0(myOldModel, SModelBase.class).getVersion()) {
-      ListSequence.fromList(myNewChanges).addElement(new ModelVersionChange(myChangeSet));
-    }
   }
   private void build(boolean withOpposite) {
     Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.roots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.roots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
@@ -360,12 +356,6 @@ public class ChangeSetBuilder {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
-  }
-  private static <T> T as_nbyrtw_a0a0h0q(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_nbyrtw_a0a0h0q_0(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_nbyrtw_a0a0a0v(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

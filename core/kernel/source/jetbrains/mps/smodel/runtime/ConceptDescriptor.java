@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,9 +86,6 @@ public interface ConceptDescriptor {
   @Deprecated
   PropertyDescriptor getPropertyDescriptor(String name); // since 3.2
 
-  @Deprecated
-  Set<String> getPropertyNames(); // since 3.0
-
   //------------ refs
 
   Set<SReferenceLinkId> getReferenceIds(); // since 3.2
@@ -98,9 +95,6 @@ public interface ConceptDescriptor {
   @Deprecated
   ReferenceDescriptor getRefDescriptor(String name); // since 3.2
 
-  @Deprecated
-  Set<String> getReferenceNames(); // since 3.0
-
   //------------ children
 
   Set<SContainmentLinkId> getLinkIds(); // since 3.2
@@ -109,13 +103,6 @@ public interface ConceptDescriptor {
 
   @Deprecated
   LinkDescriptor getLinkDescriptor(String name); // since 3.2
-
-  @Deprecated
-  Set<String> getChildrenNames(); // since 3.0
-
-  @Deprecated //obtain from descriptor
-    //true if true, false if false or !hasChild(name);
-  boolean isMultipleChild(String name); // since 3.0
 
   //------------
 

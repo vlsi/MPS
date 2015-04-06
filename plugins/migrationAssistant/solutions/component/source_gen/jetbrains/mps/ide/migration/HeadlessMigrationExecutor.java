@@ -5,7 +5,10 @@ package jetbrains.mps.ide.migration;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
+import jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class HeadlessMigrationExecutor extends AbstractProjectComponent implements IStartupMigrationExecutor {
@@ -22,7 +25,16 @@ public class HeadlessMigrationExecutor extends AbstractProjectComponent implemen
         if (!(myMigrationManager.isMigrationRequired())) {
           return;
         }
-        new MigrationsProgressStep(myProject, myMigrationManager).autostart(new _FunctionTypes._void_P0_E0() {
+        new MigrationsProgressWizardStep(myProject, myMigrationManager, new MigrationErrorContainer() {
+          @Nullable
+          public MigrationErrorDescriptor getErrorDescriptor() {
+            return errors;
+          }
+          public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+            this.errors = errors;
+          }
+          private MigrationErrorDescriptor errors;
+        }).autostart(new _FunctionTypes._void_P0_E0() {
           public void invoke() {
           }
         });

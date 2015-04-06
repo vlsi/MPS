@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class DefaultTextGen extends SNodeTextGen {
   @Override
-  protected void doGenerateText(SNode node) {
+  public void doGenerateText(SNode node) {
     append(getDefaultNoTextGenErrorText(node));
   }
 }

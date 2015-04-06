@@ -59,26 +59,6 @@ import java.util.Set;
  */
 public final class GenerationFacade {
 
-  /**
-   * @deprecated Use smodel language to access typed node&lt;MappingConfiguration&gt; (filter values from {@link jetbrains.mps.smodel.Generator#getOwnTemplateModels()}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
-    List<SModel> list = generator.getOwnTemplateModels();
-    List<SNode> mappings = new ArrayList<SNode>();
-    for (SModel templateModel : list) {
-      mappings.addAll(FastNodeFinderManager.get(templateModel).getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true));
-    }
-    return mappings;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models, IOperationContext context) {
-    return getModifiedModels(models);
-  }
-
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
     Set<SModel> result = new LinkedHashSet<SModel>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();

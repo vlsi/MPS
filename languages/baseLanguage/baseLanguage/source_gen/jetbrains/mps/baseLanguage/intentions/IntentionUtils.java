@@ -13,10 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 
@@ -101,63 +104,52 @@ public class IntentionUtils {
       return false;
     }
     // todo: i don't think that this code is true 
-    SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-    return SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
+    SContainmentLink l = diff._0().getContainmentLink();
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), SNodeOperations.asSConcept(l.getTargetConcept()));
   }
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
-    if (neq_k79hya_a0a0g(SNodeOperations.getConceptDeclaration(node1), SNodeOperations.getConceptDeclaration(node2))) {
+    if (neq_k79hya_a0a0g(SNodeOperations.getConcept(node1), SNodeOperations.getConcept(node2))) {
       return MultiTuple.<SNode,SNode>from(node1, node2);
     }
-    SNode concept = SNodeOperations.getConceptDeclaration(node1);
+    SAbstractConcept concept = SNodeOperations.getConcept(node1);
 
     // todo: use ConceptRegistry/SConcept when it will possible 
-    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getPropertyDeclarations())) {
-      SNode property = ((SNode) _property);
-      if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), node2.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
+    for (SProperty p : CollectionSequence.fromCollection(concept.getProperties())) {
+      if (neq_k79hya_a0a0e0g(node1.getProperty(p), node2.getProperty(p))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
-      SNode linkDeclaration = (SNode) _link;
-      if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference")) {
-        if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
-          return MultiTuple.<SNode,SNode>from(node1, node2);
-        }
+    for (SReferenceLink r : CollectionSequence.fromCollection(concept.getReferenceLinks())) {
+      if (node1.getReference(r).getTargetNode() != node2.getReference(r).getTargetNode()) {
+        return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
-      SNode linkDeclaration = (SNode) _link;
+    for (SContainmentLink l : CollectionSequence.fromCollection(concept.getContainmentLinks())) {
+      Iterator<? extends SNode> c1 = node1.getChildren(l).iterator();
+      Iterator<? extends SNode> c2 = node2.getChildren(l).iterator();
 
-      if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-        List<SNode> children1 = SNodeOperations.getChildren(node1, linkDeclaration);
-        List<SNode> children2 = SNodeOperations.getChildren(node2, linkDeclaration);
+      while (c1.hasNext() && c2.hasNext()) {
+        SNode child1 = c1.next();
+        SNode child2 = c2.next();
 
-        if (ListSequence.fromList(children1).count() != ListSequence.fromList(children2).count()) {
+        Tuples._2<SNode, SNode> currentChildDiff = getDiffNodes(child1, child2);
+        if (currentChildDiff == null) {
+          continue;
+        }
+
+        if (currentResult == null) {
+          currentResult = currentChildDiff;
+        } else {
           return MultiTuple.<SNode,SNode>from(node1, node2);
         }
+      }
 
-        {
-          Iterator<SNode> child1_it = ListSequence.fromList(children1).iterator();
-          Iterator<SNode> child2_it = ListSequence.fromList(children2).iterator();
-          SNode child1_var;
-          SNode child2_var;
-          while (child1_it.hasNext() && child2_it.hasNext()) {
-            child1_var = child1_it.next();
-            child2_var = child2_it.next();
-            Tuples._2<SNode, SNode> currentChildDiff = getDiffNodes(child1_var, child2_var);
-            if (currentChildDiff != null) {
-              if (currentResult == null) {
-                currentResult = currentChildDiff;
-              } else {
-                return MultiTuple.<SNode,SNode>from(node1, node2);
-              }
-            }
-          }
-        }
+      if (c1.hasNext() || c2.hasNext()) {
+        return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
@@ -217,7 +209,7 @@ public class IntentionUtils {
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
+  private static boolean neq_k79hya_a0a0e0g(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

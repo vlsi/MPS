@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.dataFlow;
 
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.dataFlow.framework.Program;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
@@ -16,10 +16,10 @@ public class RuleMethodCall extends DataFlowConstructor {
   public RuleMethodCall() {
   }
   public boolean isApplicable(SNode node) {
-    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), SNodeOperations.asSConcept(getApplicableConcept()));
   }
-  public String getApplicableConceptFqName() {
-    return "jetbrains.mps.baseLanguage.structure.IMethodCall";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall");
   }
   public void performActions(Program o, SNode node) {
     SNode m = node;

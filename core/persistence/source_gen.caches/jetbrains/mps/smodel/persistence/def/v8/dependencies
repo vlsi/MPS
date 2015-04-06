@@ -20,15 +20,12 @@
   <dependency className="jetbrains.mps.smodel.persistence.def.v8.ModelReader8Handler" file="ModelReader8Handler.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
-    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.InterfaceSNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

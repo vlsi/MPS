@@ -13,7 +13,6 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteE
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -32,7 +31,7 @@ public class MyMainActionGroup implements PaletteActionGroup {
 
   public PaletteElement[] getElements() {
     List<PaletteElement> groups = ListSequence.fromList(new ArrayList<PaletteElement>());
-    ModelPlusImportedScope scope = new ModelPlusImportedScope(myDiagramCell.getSNode().getModel(), false, NameUtil.nodeFQName(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, "jetbrains.mps.testHybridEditor.structure.MetaBlock").getDeclarationNode()));
+    ModelPlusImportedScope scope = new ModelPlusImportedScope(myDiagramCell.getSNode().getModel(), false, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, "jetbrains.mps.testHybridEditor.structure.MetaBlock"));
     for (SNode node : Sequence.fromIterable(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, "jetbrains.mps.testHybridEditor.structure.MetaBlock"));

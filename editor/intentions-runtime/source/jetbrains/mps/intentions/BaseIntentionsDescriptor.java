@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,10 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-
 public abstract class BaseIntentionsDescriptor {
   protected BaseIntentionsDescriptor() {
 
   }
-
-  /**
-   * @deprecated with direct class instantiations, there's no need in module/model parameters
-   * FIXME update templates and regenerate all intention models
-   * Shall be removed in the release next to one with updated templates
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  protected BaseIntentionsDescriptor(SModuleReference moduleRef, SModelReference modelRef) {
-  }
-
+  // FIXME shall pass IntentionsManager instance into init() to get populated with intentions
   public abstract void init();
 }

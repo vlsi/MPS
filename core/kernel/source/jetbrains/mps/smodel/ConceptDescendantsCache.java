@@ -179,7 +179,9 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
     StructureAspectDescriptor structureDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-    if (structureDescriptor == null) return Collections.emptySet();
+    if (structureDescriptor == null) {
+      return Collections.emptySet();
+    }
 
     if (structureDescriptor instanceof BaseStructureAspectDescriptor) {
       return new HashSet<ConceptDescriptor>(((BaseStructureAspectDescriptor) structureDescriptor).getDescriptors());

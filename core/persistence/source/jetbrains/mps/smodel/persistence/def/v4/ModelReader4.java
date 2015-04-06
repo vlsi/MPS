@@ -105,16 +105,6 @@ public class ModelReader4 implements IModelReader {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
       int importIndex = Integer.parseInt(indexValue);
 
-      String usedModelVersionString = element.getAttributeValue(ModelPersistence.VERSION);
-      int usedModelVersion = -1;
-      try {
-        if (usedModelVersionString != null) {
-          usedModelVersion = Integer.parseInt(usedModelVersionString);
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
       String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
 
       if (importedModelUIDString == null) {
@@ -128,7 +118,7 @@ public class ModelReader4 implements IModelReader {
       }
 
       SModelReference importedModelReference = PersistenceFacade.getInstance().createModelReference(importedModelUIDString);
-      model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
+      model.addModelImport(new ImportElement(importedModelReference, importIndex, -1));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();

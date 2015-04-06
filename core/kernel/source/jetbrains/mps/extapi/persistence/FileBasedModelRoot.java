@@ -130,7 +130,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public final void save(Memento memento) {
+  public void save(Memento memento) {
     memento.put("contentPath", contentRoot);
     memento.put("type", getType());
     for (String kind : getSupportedFileKinds()) {

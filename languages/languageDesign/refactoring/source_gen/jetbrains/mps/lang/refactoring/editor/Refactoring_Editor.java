@@ -55,8 +55,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_kt8f5i_p0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kt8f5i_q0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kt8f5i_r0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_kt8f5i_s0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_kt8f5i_t0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_kt8f5i_a0(EditorContext editorContext, SNode node) {
@@ -458,33 +456,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setRole("doWhenDoneBlock");
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createConstant_kt8f5i_s0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_kt8f5i_s0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_kt8f5i_t0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("updateModelBlock");
-    provider.setNoTargetText("<non-loggable>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("updateModelBlock");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

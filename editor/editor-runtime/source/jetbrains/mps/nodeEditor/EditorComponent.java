@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectView.ProjectViewSelectInProvider;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -119,6 +118,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
@@ -265,6 +265,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
+          if (isDisposed()) {
+            return;
+          }
           rebuildEditorContent();
         }
       });
@@ -422,8 +425,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       private boolean isInsideEditor(Point point, Rectangle viewRect) {
         return isShowing() && point != null
-                            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
-                            && point.getY() >= 0 && point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
+            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
+            && point.getY() >= 0 &&
+            point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
       }
     });
 
@@ -1245,23 +1249,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
     popupMenu.show(EditorComponent.this, x, y);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 looks like not used
-   */
-  @Deprecated
-  public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
-    getModelAccess().executeCommand(new EditorCommand(this) {
-      @Override
-      protected void doExecute() {
-        try {
-          intention.execute(node, context);
-        } catch (Throwable t) {
-          LOG.error("Intention execution failed: " + t.getMessage(), t);
-        }
-      }
-    });
   }
 
   private DefaultActionGroup getCellActionsGroup() {
@@ -2852,7 +2839,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isNodeDisposed() {
-    return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
+    SNode node = getEditedNode();
+    return node != null && !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance());
   }
 
   public CellTracker getCellTracker() {

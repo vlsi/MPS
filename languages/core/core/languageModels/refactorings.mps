@@ -2,8 +2,8 @@
 <model ref="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)">
   <persistence version="9" />
   <languages>
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
-    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
+    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -137,7 +137,6 @@
       <concept id="1200932465350" name="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" flags="in" index="2t9MJh" />
       <concept id="1682834381185132063" name="jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause" flags="in" index="P00rF" />
       <concept id="2058726427123891188" name="jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause" flags="in" index="YZUGN" />
-      <concept id="1197382578687" name="jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation" flags="nn" index="39$33D" />
       <concept id="1199619425400" name="jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression" flags="nn" index="1eSWlJ">
         <child id="1199619459779" name="destination" index="1eT4Jk" />
         <child id="1199619459778" name="whatToMove" index="1eT4Jl" />
@@ -152,7 +151,6 @@
         <property id="6895093993902236371" name="userFriendlyName" index="3SMaAB" />
         <child id="616550569928923871" name="modelsToGenerateBlock" index="28Zu_" />
         <child id="1347577327951503399" name="affectedNodesBlock" index="2LmeTn" />
-        <child id="1347577327951503400" name="updateModelBlock" index="2LmeTo" />
         <child id="2058726427123891193" name="doWhenDoneBlock" index="YZUGY" />
         <child id="5497648299878741976" name="initBlock" index="1M1Ino" />
         <child id="6895093993902236381" name="doRefactorBlock" index="3SMaAD" />
@@ -172,7 +170,6 @@
         <reference id="6895093993902496263" name="refactoringParameter" index="3SN95N" />
       </concept>
       <concept id="1189694053795" name="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" flags="in" index="3ZiDMR" />
-      <concept id="1189694434958" name="jetbrains.mps.lang.refactoring.structure.UpdateModelClause" flags="in" index="3Zk6Yq" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
@@ -181,7 +178,6 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -799,14 +795,11 @@
                                         <node concept="1PxgMI" id="56WrVy7azTh" role="2Oq$k0">
                                           <property role="1BlNFB" value="true" />
                                           <ref role="1PxNhF" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-                                          <node concept="2OqwBi" id="56WrVy7azTi" role="1PxMeX">
-                                            <node concept="2OqwBi" id="56WrVy7azTj" role="2Oq$k0">
-                                              <node concept="37vLTw" id="56WrVy7azTk" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="56WrVy7azTo" resolve="node" />
-                                              </node>
-                                              <node concept="3NT_Vc" id="56WrVy7azTl" role="2OqNvi" />
+                                          <node concept="2OqwBi" id="56WrVy7azTj" role="1PxMeX">
+                                            <node concept="37vLTw" id="56WrVy7azTk" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="56WrVy7azTo" resolve="node" />
                                             </node>
-                                            <node concept="FGMqu" id="56WrVy7azTm" role="2OqNvi" />
+                                            <node concept="3NT_Vc" id="56WrVy7azTl" role="2OqNvi" />
                                           </node>
                                         </node>
                                         <node concept="3TrcHB" id="56WrVy7azTn" role="2OqNvi">
@@ -896,11 +889,6 @@
             <ref role="3cqZAo" node="65fYhwGpOX4" resolve="searchResults" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="3Zk6Yq" id="65fYhwGpOZq" role="2LmeTo">
-      <node concept="3clFbS" id="65fYhwGpOZr" role="2VODD2">
-        <node concept="39$33D" id="65fYhwGpOZ$" role="3cqZAp" />
       </node>
     </node>
     <node concept="YZUGN" id="65fYhwGpOZH" role="YZUGY">

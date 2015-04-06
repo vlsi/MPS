@@ -20,9 +20,13 @@ import com.intellij.testFramework.TestDataFile;
 import jetbrains.mps.idea.testFramework.MpsBean;
 import jetbrains.mps.idea.testFramework.MpsBeanAdjuster;
 import jetbrains.mps.idea.testFramework.TestEnvironment;
+import jetbrains.mps.jps.make.testEnvironment.JpsTestBean;
 import jetbrains.mps.jps.make.testEnvironment.JpsTestEnvironmentAdjuster;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.jps.builders.BuildResult;
+import org.jetbrains.jps.builders.CompileScopeTestBuilder;
+import org.junit.Assert;
 
 import java.io.File;
 
@@ -33,10 +37,13 @@ import java.io.File;
  * @param <E> -- represents the entity which is supposed to set up the jps (and mps) environment given a bean of the kind {@link B}
  **/
 public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E extends TestEnvironment<B>> extends MpsJpsBuildTestCase {
-  private E adjustEnvironment(B emptyBean, E emptyEnvironment, String inputTestName) {
+  private B myBean;
+  private E myEnvironment;
+
+  private E adjustEnvironment(B emptyBean, E emptyEnvironment, String filePath) {
     MpsBeanAdjuster<B> beanConstructor = new MpsBeanAdjuster<B>(emptyBean);
 
-    JpsTestEnvironmentAdjuster<B, E> environmentAdjuster = new JpsTestEnvironmentAdjuster<B, E>(beanConstructor, emptyEnvironment, inputTestName);
+    JpsTestEnvironmentAdjuster<B, E> environmentAdjuster = new JpsTestEnvironmentAdjuster<B, E>(beanConstructor, emptyEnvironment, filePath);
     return environmentAdjuster.construct();
   }
 
@@ -46,7 +53,39 @@ public abstract class MpsJpsBuildTestCaseWithEnvironment<B extends MpsBean, E ex
    * @param inputTestFileName -- the file with the test data to be read
    * @return adjusted environment (input file is read by the MpsBeanAdjuster and the environment is filled with data accordingly)
    */
-  protected E setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestFileName) {
-    return adjustEnvironment(emptyBean, emptyEnvironment, new File(getTestDataRootPath(), inputTestFileName).getAbsolutePath());
+  private E setUpEnvironment(@NotNull B emptyBean, @NotNull E emptyEnvironment, @NonNls @TestDataFile String inputTestFileName) {
+    final File file = new File(getTestDataRootPath(), inputTestFileName);
+    Assert.assertTrue(file.exists());
+    return adjustEnvironment(emptyBean, emptyEnvironment, file.getAbsolutePath());
+  }
+
+  protected BuildResult doMake(boolean rebuild) {
+    assert myEnvironment != null;
+    CompileScopeTestBuilder builder = rebuild ? CompileScopeTestBuilder.rebuild() : CompileScopeTestBuilder.make();
+    return doMakeWithScope(builder.all());
+  }
+
+  protected BuildResult doMakeWithScope(CompileScopeTestBuilder builder) {
+    return doBuild(builder);
+  }
+
+  protected void setUpEnvironment(@NonNls @NotNull @TestDataFile String inputTestFileName) {
+    myBean = createBean();
+    myEnvironment = createEnvironment();
+    setUpEnvironment(myBean, myEnvironment, inputTestFileName);
+  }
+
+  @NotNull
+  protected abstract B createBean();
+
+  @NotNull
+  protected abstract E createEnvironment();
+
+  protected B getBean() {
+    return myBean;
+  }
+
+  protected E getEnvironment() {
+    return myEnvironment;
   }
 }

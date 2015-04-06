@@ -22,7 +22,4 @@ public class Refactoring_Behavior {
     SLinkOperations.setTarget(nodeTarget, MetaAdapterFactory.getReferenceLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, 0x5fb04b74a77a0596L, "concept"), baseConcept);
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x5fb04b74a77a0656L, "target"), nodeTarget);
   }
-  public static boolean call_isLoggable_1347577327951509202(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x12b38e70a3eb6028L, "updateModelBlock")) != null);
-  }
 }
