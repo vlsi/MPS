@@ -63,6 +63,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         } finally {
           myIsComplete = true;
           setFraction(progress, 1.0);
+          myProgress.setText("Finished");
           PersistenceRegistry.getInstance().enableFastFindUsages();
         }
       }

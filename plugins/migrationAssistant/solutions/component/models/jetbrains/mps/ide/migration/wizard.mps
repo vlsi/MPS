@@ -1181,6 +1181,19 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3clFbF" id="6JvwUsisPK1" role="3cqZAp">
+                            <node concept="2OqwBi" id="6JvwUsisPRX" role="3clFbG">
+                              <node concept="37vLTw" id="6JvwUsisPJZ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
+                              </node>
+                              <node concept="liA8E" id="6JvwUsisR2k" role="2OqNvi">
+                                <ref role="37wK5l" to="50yb:~AbstractProgressIndicatorExBase.setText(java.lang.String):void" resolve="setText" />
+                                <node concept="Xl_RD" id="6JvwUsisR4n" role="37wK5m">
+                                  <property role="Xl_RC" value="Finished" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="5SsFeroaazp" role="3cqZAp">
                             <node concept="2OqwBi" id="5SsFeroaazq" role="3clFbG">
                               <node concept="2YIFZM" id="5SsFerobmJQ" role="2Oq$k0">
