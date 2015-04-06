@@ -2513,7 +2513,7 @@
                           <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
                         </node>
                         <node concept="liA8E" id="513ZrA4x4zU" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~DefaultListModel.indexOf(java.lang.Object):int" resolve="indexOf" />
+                          <ref role="37wK5l" to="dbrf:~DefaultListModel.lastIndexOf(java.lang.Object):int" resolve="lastIndexOf" />
                           <node concept="37vLTw" id="513ZrA4x4$5" role="37wK5m">
                             <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
                           </node>

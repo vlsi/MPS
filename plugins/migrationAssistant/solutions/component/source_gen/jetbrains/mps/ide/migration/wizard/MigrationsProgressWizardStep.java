@@ -233,7 +233,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         model.addElement(step);
-        myList.ensureIndexIsVisible(model.indexOf(step));
+        myList.ensureIndexIsVisible(model.lastIndexOf(step));
         myList.repaint();
       }
     });
