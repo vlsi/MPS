@@ -8027,6 +8027,12 @@
               <ref role="3bR37D" node="7Kfy9QB6L6C" resolve="jetbrains.mps.lang.generator" />
             </node>
           </node>
+          <node concept="1SiIV0" id="1H__yqUxAu4" role="3bR37C">
+            <node concept="3bR9La" id="1H__yqUxAu5" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruJn" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruJm" role="1SiIV1">
