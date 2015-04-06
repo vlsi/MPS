@@ -54,12 +54,12 @@ public class AnalyzerRules {
   public void apply() {
     SModel model = myNodeToApply.getModel();
     if (!(model instanceof SModelInternal)) {
-      LOG.warning(model == null ? "Checking node which is not attached to the model: " + jetbrains.mps.util.SNodeOperations.getDebugText(myNodeToApply)
+      LOG.warning(model == null ? "Checking node which is not attached to the model: " + myNodeToApply.getPresentation() + " " + myNodeToApply.getNodeId()
                                 : "Model " + model.getModelName() + " is not instance of SModelInternal");
       return;
     }
     SModelInternal modelInternal = (SModelInternal) model;
-    for (SLanguage language : modelInternal.importedLanguageIds()) {
+    for (SLanguage language : modelInternal.getModelDepsManager().getAllImportedLanguagesIds()) {
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language.getQualifiedName());
       if (languageRuntime == null) {
         continue;
