@@ -21,22 +21,24 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseScope;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public abstract class FindUsagesScope extends BaseScope implements SearchScope, IExternalizeable {
   private static final String SCOPE_CLASS_ATTR = "scope_class";
   private static final String SCOPE_TAG = "scope";
 
-  private Set<SModule> myModules = new HashSet<SModule>();
-  private Set<SModel> myModels = new HashSet<SModel>();
+  protected final Set<SModule> myModules = new LinkedHashSet<SModule>();
+  protected final Set<SModel> myModels = new LinkedHashSet<SModel>();
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
     return myModules;

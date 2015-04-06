@@ -148,6 +148,14 @@ public abstract class PersistenceFacade {
    */
   public abstract SNodeId createNodeId(String text);
 
+  /**
+   * Serialize counterpart for {@link #createNodeReference(String)}, persistence-ready presentation of a node reference.
+   * @param nodeRef node reference to serialize
+   * @return textual representation of node reference
+   */
+  @NotNull
+  public abstract String asString(@NotNull SNodeReference nodeRef);
+
   public abstract SNodeReference createNodeReference(String text);
 
   /**

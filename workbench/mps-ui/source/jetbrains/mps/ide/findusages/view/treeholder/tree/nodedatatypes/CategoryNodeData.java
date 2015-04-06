@@ -35,24 +35,6 @@ public class CategoryNodeData extends BaseNodeData {
   private String myCategory = "";
   private INodeRepresentator myNodeRepresentator;
 
-  @Deprecated
-  public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
-    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
-    myCategory = category;
-  }
-
-  @Deprecated
-  public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
-      INodeRepresentator nodeRepresentator) {
-    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
-    myCategory = category;
-    myNodeRepresentator = nodeRepresentator;
-  }
-
-  public CategoryNodeData(PathItemRole role, String categoryKindName, String category, boolean resultsSection) {
-    this(role, categoryKindName, category, resultsSection, null);
-  }
-
   public CategoryNodeData(PathItemRole role, String categoryKindName, String category, boolean resultsSection,
       INodeRepresentator nodeRepresentator) {
     super(role, "<b>" + category + "</b>", "", true, false, resultsSection);

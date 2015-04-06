@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,47 +17,57 @@ package jetbrains.mps.ide.findusages.model.scopes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class ModulesScope extends FindUsagesScope {
-  private static final Logger LOG = LogManager.getLogger(ModulesScope.class);
-  private static final String MODULE_ID = "module_id";
+  private static final String MODULE_ID = "ref";
   private static final String MODULE_TAG = "module";
-
-  @NotNull
-  private final List<SModule> myModules = new ArrayList<SModule>();
 
   public ModulesScope(@NotNull Iterable<? extends SModule> modules) {
     for (SModule module : modules) {
-      myModules.add(module);
-      addModule(module);
+      if (module != null) {
+        addModule(module);
+      }
     }
   }
 
-  public ModulesScope(@NotNull String moduleName) {
-    // use this method carefully!
-    this(Collections.singleton(resolveModule(moduleName)));
+  public ModulesScope(@NotNull SModule... modules) {
+    this(Arrays.asList(modules));
   }
+
 
   public ModulesScope(Element element, Project project) throws CantLoadSomethingException {
-    this(resolveModules(element));
+    this(resolveModules(element, project.getRepository()));
   }
 
-  private static Iterable<SModule> resolveModules(Element element) throws CantLoadSomethingException {
+  private static Iterable<SModule> resolveModules(Element element, SRepository repo) throws CantLoadSomethingException {
     List<SModule> result = new ArrayList<SModule>();
-    for (Element moduleXml : (List<Element>) element.getChildren(MODULE_TAG)) {
+    final Logger log = LogManager.getLogger(ModulesScope.class);
+    for (Element moduleXml : element.getChildren(MODULE_TAG)) {
       try {
-        result.add(resolveModule(moduleXml.getAttribute(MODULE_ID).getValue()));
+        final String moduleRef = moduleXml.getAttributeValue(MODULE_ID);
+        if (moduleRef == null) {
+          continue;
+        }
+        SModuleReference mr = PersistenceFacade.getInstance().createModuleReference(moduleRef);
+        final SModule module = mr.resolve(repo);
+        if (module != null) {
+          result.add(module);
+        } else {
+          log.warn("module not found " + moduleRef);
+        }
       } catch (IllegalArgumentException e) {
         throw new CantLoadSomethingException(e);
       }
@@ -65,21 +75,11 @@ public class ModulesScope extends FindUsagesScope {
     return result;
   }
 
-  private static SModule resolveModule(String moduleName) {
-    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
-    if (module == null) {
-      LOG.warn("module scope not found for module  " + moduleName);
-      throw new IllegalArgumentException("module scope not found for module " + moduleName);
-    } else {
-      return module;
-    }
-  }
-
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     for (SModule module : myModules) {
       Element moduleXml = new Element(MODULE_TAG);
-      moduleXml.setAttribute(MODULE_ID, module.getModuleName());
+      moduleXml.setAttribute(MODULE_ID, PersistenceFacade.getInstance().asString(module.getModuleReference()));
       element.addContent(moduleXml);
     }
   }

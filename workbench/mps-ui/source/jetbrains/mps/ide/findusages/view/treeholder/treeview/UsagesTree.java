@@ -22,7 +22,6 @@ import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -35,7 +34,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -174,8 +172,6 @@ public class UsagesTree extends MPSTree {
 
   @Override
   public void rebuildNow() {
-    ThreadUtils.assertEDT();
-
     UsagesTree.super.rebuildNow();
     int i;
     for (i = 0; i < getRootNode().getChildCount(); i++) {
@@ -264,6 +260,11 @@ public class UsagesTree extends MPSTree {
       @Override
       public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode();
+        if (myContents.getTreeRoot().getChildren().isEmpty()) {
+          // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
+          // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
+          return root;
+        }
         if (myShowSearchedNodes) {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
@@ -519,7 +520,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         if (treeNode.getUserObject() == null) {
@@ -530,10 +531,10 @@ public class UsagesTree extends MPSTree {
         if (data instanceof NodeNodeData) {
           SNode node = ((NodeNodeData) data).getNode();
           if (node != null) {
-            if (!inProjectIfPossible) {
-              navigateToNode(node, focus);
+            if (inProjectIfPossible) {
+              NavigationSupport.getInstance().selectInTree(myProject, node, focus);
             } else {
-              navigateInTree(node, focus);
+              NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
             }
           } else {
             LOG.info("clicked node was deleted");
@@ -541,12 +542,12 @@ public class UsagesTree extends MPSTree {
         } else if (data instanceof ModelNodeData) {
           SModel model = ((ModelNodeData) data).getModel();
           if (model != null) {
-            navigateInTree(model, focus);
+            NavigationSupport.getInstance().selectInTree(myProject, model, focus);
           }
         } else if (data instanceof ModuleNodeData) {
           SModule module = ((ModuleNodeData) data).getModule();
           if (module != null) {
-            navigateInTree(module, focus);
+            NavigationSupport.getInstance().selectInTree(myProject, module, focus);
           }
         }
       }
@@ -636,30 +637,6 @@ public class UsagesTree extends MPSTree {
       }
 
       current = parent;
-    }
-  }
-
-  public void navigateToNode(final SNode node, boolean focus) {
-    ModelAccess.assertLegalWrite();
-
-    SModel modelDescriptor = node.getModel();
-    if (modelDescriptor == null) return;
-
-    SModule module = modelDescriptor.getModule();
-    if (module == null) return;
-
-    NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
-  }
-
-  private void navigateInTree(Object o, boolean focus) {
-    if (o instanceof SNode) {
-      NavigationSupport.getInstance().selectInTree(myProject, (SNode) o, focus);
-    } else if (o instanceof SModel) {
-      NavigationSupport.getInstance().selectInTree(myProject, ((SModel) o), focus);
-    } else if (o instanceof SModule) {
-      NavigationSupport.getInstance().selectInTree(myProject, (SModule) o, focus);
-    } else {
-      throw new IllegalArgumentException();
     }
   }
 
