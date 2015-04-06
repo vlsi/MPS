@@ -1536,21 +1536,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2pwkv5pjLCa" role="3cqZAp" />
-        <node concept="3SKdUt" id="7rK8qWGIg27" role="3cqZAp">
-          <node concept="3SKdUq" id="7rK8qWGIgEB" role="3SKWNk">
-            <property role="3SKdUp" value="project steps are considered to be X percent of the whole process" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7rK8qWGIczI" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGIczJ" role="3cpWs9">
-            <property role="TrG5h" value="projectStepsFraction" />
-            <node concept="10P55v" id="215zFAtpt33" role="1tU5fm" />
-            <node concept="3b6qkQ" id="215zFAtpsQy" role="33vP2m">
-              <property role="$nhwW" value="0.3" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7rK8qWGIdTf" role="3cqZAp" />
         <node concept="3cpWs8" id="7rK8qWGI6gW" role="3cqZAp">
           <node concept="3cpWsn" id="7rK8qWGI6gX" role="3cpWs9">
             <property role="TrG5h" value="projectStepsCount" />
@@ -1571,8 +1556,9 @@
             <node concept="37vLTw" id="5fy1Xi0jbPJ" role="37wK5m">
               <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
             </node>
-            <node concept="3cmrfG" id="5fy1Xi0jbRH" role="37wK5m">
-              <property role="3cmrfH" value="0" />
+            <node concept="2YIFZM" id="6JtYk_H67mD" role="37wK5m">
+              <ref role="37wK5l" to="bim2:6JtYk_H3TH2" resolve="initial" />
+              <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
             </node>
           </node>
         </node>
@@ -1698,23 +1684,9 @@
                 <node concept="37vLTw" id="5fy1Xi0jdfN" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="3cpWs3" id="2pwkv5pjYwF" role="37wK5m">
-                  <node concept="FJ1c_" id="2pwkv5pjYwG" role="3uHU7w">
-                    <node concept="37vLTw" id="2pwkv5pk209" role="3uHU7w">
-                      <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
-                    </node>
-                    <node concept="37vLTw" id="2pwkv5pjYwI" role="3uHU7B">
-                      <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="2pwkv5pjYwJ" role="3uHU7B">
-                    <node concept="37vLTw" id="2pwkv5pjYwK" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                    </node>
-                    <node concept="liA8E" id="2pwkv5pjYwL" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
-                    </node>
-                  </node>
+                <node concept="2YIFZM" id="6JtYk_H67oV" role="37wK5m">
+                  <ref role="37wK5l" to="bim2:6JtYk_H3TKi" resolve="cleanupMigrations" />
+                  <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
                 </node>
               </node>
             </node>

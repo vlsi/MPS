@@ -110,6 +110,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.migration.ProgressEstimation" file="ProgressEstimation.java" />
   <dependency className="jetbrains.mps.ide.migration.ResolveConflictDialog" file="ResolveConflictDialog.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
