@@ -36,6 +36,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -56,7 +57,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //this is only used in 3.2 to make rebuild faster in case of many nodes.
   //in 3.3 it will be fixed by introducing path providers
-  //this cache is onlly alive during read action in build() method
+  //this cache is only alive during read action in build() method
   private Map<Pair<DataNode, Object>, DataNode> myRebuildCache;
 
   public DataTree() {
@@ -182,70 +183,64 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   private void addSearchedNode(DataNode root, Object node) {
     List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult<Object>(node, SearchedNodesNodeData.CATEGORY_NAME));
-    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, null, false, null);
+    createPath(path, root, null, false, null);
   }
 
   private void addResultWithPresentation(DataNode root, SearchResult result, INodeRepresentator nodeRepresentator) {
     List<PathItem> path = PathProvider.getPathForSearchResult(result);
-    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, nodeRepresentator, true, result);
+    createPath(path, root, nodeRepresentator, true, result);
   }
 
-  //the first argument's type is exact for performance reasons
-  private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator<Object> nodeRepresentator,
-      boolean results, SearchResult result) {
-    DataNode next = null;
-    PathItem currentPathItem = path.get(index);
-    Object currentIdObject = currentPathItem.getIdObject();
+  private void createPath(List<PathItem> path, DataNode parent, @Nullable INodeRepresentator<Object> nodeRepresentator,
+      boolean results, @Nullable SearchResult result) {
 
-    DataNode child = myRebuildCache.get(new Pair<DataNode, Object>(root, currentIdObject));
-    if (child != null) {
-      next = child;
+    assert !path.isEmpty();
+    final PathItem pathTail = path.get(path.size() - 1);
+
+    final String tailCustomCaption;
+    if (result != null && nodeRepresentator != null) {
+      tailCustomCaption = nodeRepresentator.getPresentation(result.getObject());
+    } else {
+      tailCustomCaption = null;
     }
 
-    if (next == null) {
-      PathItemRole creator = path.get(index).getRole();
-      BaseNodeData data = null;
 
-      boolean isResult = index == path.size() - 1;
-      final String caption;
-      if (result != null && isResult && nodeRepresentator != null) {
-        caption = nodeRepresentator.getPresentation(result.getObject());
+      for (PathItem currentPathItem : path) {
+      Object currentIdObject = currentPathItem.getIdObject();
+      final boolean isResult = currentPathItem == pathTail;
+
+      DataNode next = myRebuildCache.get(new Pair<DataNode, Object>(parent, currentIdObject));
+
+      if (next == null) {
+        PathItemRole creator = currentPathItem.getRole();
+        BaseNodeData data = null;
+
+        final String caption = isResult ? tailCustomCaption : null;
+
+        if (currentIdObject instanceof SModule) {
+          data = new ModuleNodeData(creator, caption, ((SModule) currentIdObject).getModuleReference(), isResult, results);
+        } else if (currentIdObject instanceof SModuleReference) {
+          data = new ModuleNodeData(creator, caption, (SModuleReference) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof SModelReference) {
+          data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof SNode) {
+          data = new NodeNodeData(creator, caption, (SNode) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof Pair) {
+          Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
+          data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
+        }
+
+        assert data != null : currentIdObject;
+
+        next = new DataNode(data);
+        parent.add(next);
+        myRebuildCache.put(new Pair<DataNode, Object>(parent, data.getIdObject()), next);
       } else {
-        caption = null;
+        if (isResult) {
+          next.getData().setIsResultNode_internal(true);
+        }
       }
-      if (currentIdObject instanceof SModule) {
-        data = new ModuleNodeData(creator, null, ((SModule) currentIdObject).getModuleReference(), isResult, results);
-      } else if (currentIdObject instanceof SModuleReference) {
-        data = new ModuleNodeData(creator, caption, (SModuleReference) currentIdObject, isResult, results);
-      } else if (currentIdObject instanceof SModelReference) {
-        data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isResult, results);
-      } else if (currentIdObject instanceof SNode) {
-        data = new NodeNodeData(creator, caption, (SNode) currentIdObject,  isResult, results);
-      } else if (currentIdObject instanceof Pair) {
-        Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
-        data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
-      }
-
-      assert data != null : currentIdObject;
-
-      next = new DataNode(data);
-      root.add(next);
-      myRebuildCache.put(new Pair<DataNode, Object>(root, data.getIdObject()), next);
-    } else {
-      adjustNode(next, path, index);
-    }
-    if (index == path.size() - 1) {
-      return next;
-    } else {
-      return createPath(path, index + 1, next, nodeRepresentator, results, result);
-    }
-  }
-
-  private void adjustNode(DataNode next, ArrayList<PathItem> path, int index) {
-    if (index == path.size() - 1) {
-      next.getData().setIsResultNode_internal(true);
+      parent = next;
     }
   }
 
