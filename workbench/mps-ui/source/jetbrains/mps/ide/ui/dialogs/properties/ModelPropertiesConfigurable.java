@@ -390,7 +390,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     protected boolean confirmRemove(final Object value) {
       final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
-      if (myInUseCondition.met(entry)) {
+      boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return myInUseCondition.met(entry);
+        }
+      });
+      if (inActualUse) {
         ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
             ProjectHelper.toIdeaProject(myProject), "Delete used language",
             "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
