@@ -1043,7 +1043,7 @@
       </node>
     </node>
     <node concept="312cEg" id="2htE_P_OuKG" role="jymVt">
-      <property role="34CwA1" value="false" />
+      <property role="34CwA1" value="true" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myIsComplete" />
       <property role="3TUv4t" value="false" />
@@ -1200,7 +1200,7 @@
                     <ref role="3cqZAo" node="5SsFeroaawe" resolve="project" />
                   </node>
                   <node concept="Xl_RD" id="7rK8qWGEWiw" role="37wK5m">
-                    <property role="Xl_RC" value="Migrating" />
+                    <property role="Xl_RC" value="Migration progress" />
                   </node>
                   <node concept="3clFbT" id="7rK8qWGEWKG" role="37wK5m">
                     <property role="3clFbU" value="false" />
@@ -1354,13 +1354,36 @@
               <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
             </node>
             <node concept="2ShNRf" id="7rK8qWGDMP$" role="37vLTx">
-              <node concept="1pGfFk" id="7rK8qWGDMry" role="2ShVmc">
-                <ref role="37wK5l" to="x3zs:~InlineProgressIndicator.&lt;init&gt;(boolean,com.intellij.openapi.progress.TaskInfo)" resolve="InlineProgressIndicator" />
-                <node concept="3clFbT" id="7rK8qWGDMRU" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="7rK8qWGEX6Q" role="37wK5m">
-                  <ref role="3cqZAo" node="7rK8qWGEHl$" resolve="myTask" />
+              <node concept="YeOm9" id="4oHxNYJ3L9E" role="2ShVmc">
+                <node concept="1Y3b0j" id="4oHxNYJ3L9H" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="x3zs:~InlineProgressIndicator" resolve="InlineProgressIndicator" />
+                  <ref role="37wK5l" to="x3zs:~InlineProgressIndicator.&lt;init&gt;(boolean,com.intellij.openapi.progress.TaskInfo)" resolve="InlineProgressIndicator" />
+                  <node concept="3Tm1VV" id="4oHxNYJ3L9I" role="1B3o_S" />
+                  <node concept="3clFbT" id="7rK8qWGDMRU" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="37vLTw" id="7rK8qWGEX6Q" role="37wK5m">
+                    <ref role="3cqZAo" node="7rK8qWGEHl$" resolve="myTask" />
+                  </node>
+                  <node concept="3clFb_" id="4oHxNYJ3Rca" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="isFinished" />
+                    <property role="DiZV1" value="false" />
+                    <property role="IEkAT" value="false" />
+                    <node concept="3Tmbuc" id="4oHxNYJ3Rcb" role="1B3o_S" />
+                    <node concept="10P_77" id="4oHxNYJ3Rcd" role="3clF45" />
+                    <node concept="3clFbS" id="4oHxNYJ3Rcf" role="3clF47">
+                      <node concept="3clFbF" id="4oHxNYJ42n1" role="3cqZAp">
+                        <node concept="37vLTw" id="4oHxNYJ42mZ" role="3clFbG">
+                          <ref role="3cqZAo" node="2htE_P_OuKG" resolve="myIsComplete" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="4oHxNYJ3Rcg" role="2AJF6D">
+                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

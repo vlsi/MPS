@@ -165,7 +165,7 @@ public class MigrationCheckUtil {
 
       processedModules++;
       if (progressCallback != null) {
-        progressCallback.invoke(0.45 * processedModules / modulesCount);
+        progressCallback.invoke(0.55 + 0.45 * processedModules / modulesCount);
       }
     }
 

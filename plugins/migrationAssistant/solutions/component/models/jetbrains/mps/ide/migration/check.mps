@@ -1349,16 +1349,21 @@
                     <node concept="37vLTw" id="6JtYk_H8EB3" role="2SgG2M">
                       <ref role="3cqZAo" node="6JtYk_H7N0R" resolve="progressCallback" />
                     </node>
-                    <node concept="FJ1c_" id="6JtYk_H8FEh" role="2SgHGx">
-                      <node concept="37vLTw" id="6JtYk_H8GMe" role="3uHU7w">
-                        <ref role="3cqZAo" node="6JtYk_H8GMa" resolve="modulesCount" />
+                    <node concept="3cpWs3" id="5mhZAW2bF58" role="2SgHGx">
+                      <node concept="3b6qkQ" id="5mhZAW2bFeI" role="3uHU7B">
+                        <property role="$nhwW" value="0.55" />
                       </node>
-                      <node concept="17qRlL" id="6JtYk_H8F4J" role="3uHU7B">
-                        <node concept="3b6qkQ" id="6JtYk_H8ENl" role="3uHU7B">
-                          <property role="$nhwW" value="0.45" />
+                      <node concept="FJ1c_" id="6JtYk_H8FEh" role="3uHU7w">
+                        <node concept="37vLTw" id="6JtYk_H8GMe" role="3uHU7w">
+                          <ref role="3cqZAo" node="6JtYk_H8GMa" resolve="modulesCount" />
                         </node>
-                        <node concept="37vLTw" id="4NGxE$H11LL" role="3uHU7w">
-                          <ref role="3cqZAo" node="6JtYk_H8wLG" resolve="processedModules" />
+                        <node concept="17qRlL" id="6JtYk_H8F4J" role="3uHU7B">
+                          <node concept="3b6qkQ" id="6JtYk_H8ENl" role="3uHU7B">
+                            <property role="$nhwW" value="0.45" />
+                          </node>
+                          <node concept="37vLTw" id="4NGxE$H11LL" role="3uHU7w">
+                            <ref role="3cqZAo" node="6JtYk_H8wLG" resolve="processedModules" />
+                          </node>
                         </node>
                       </node>
                     </node>

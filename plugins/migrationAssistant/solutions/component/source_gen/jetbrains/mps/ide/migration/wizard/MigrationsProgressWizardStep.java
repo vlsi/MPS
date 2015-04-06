@@ -49,13 +49,13 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   private InlineProgressIndicator myProgress;
   private Set<String> myExecuted = new HashSet<String>();
   private MigrationErrorContainer myErrorContainer;
-  private boolean myIsComplete = false;
+  private volatile boolean myIsComplete = false;
 
   public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
     myErrorContainer = errorContainer;
-    this.myTask = new Task.Modal(project, "Migrating", false) {
+    this.myTask = new Task.Modal(project, "Migration progress", false) {
       public void run(@NotNull ProgressIndicator progress) {
         PersistenceRegistry.getInstance().disableFastFindUsages();
         try {
@@ -76,7 +76,12 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
     listPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(0, 0, 2, 0), BorderFactory.createEtchedBorder()));
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
-    myProgress = new InlineProgressIndicator(true, myTask);
+    myProgress = new InlineProgressIndicator(true, myTask) {
+      @Override
+      protected boolean isFinished() {
+        return myIsComplete;
+      }
+    };
     myProgress.setIndeterminate(false);
     mainPanel.add(listPanel, BorderLayout.CENTER);
     mainPanel.add(myProgress.getComponent(), BorderLayout.SOUTH);
