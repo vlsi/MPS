@@ -7422,7 +7422,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.classLike#3751132065236752909" depends="java.compile.baselang-kernel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.classLike, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.classLike#3751132065236752909" depends="java.compile.baselang-kernel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.classLike, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
     <mkdir dir="${mps_home}/languages/languageDesign/classLike/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.classLike#3751132065236752909" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.classLike#3751132065236752909" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -7451,6 +7451,7 @@
         <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.classLike" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />

@@ -8496,11 +8496,23 @@
               <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
             </node>
           </node>
+          <node concept="1SiIV0" id="37nTcqvTCV2" role="3bR37C">
+            <node concept="3bR9La" id="37nTcqvTCV3" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="73yVtVm7UUp" role="3bR37C">
           <node concept="3bR9La" id="73yVtVm7UUq" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="37nTcqvTCV0" role="3bR37C">
+          <node concept="3bR9La" id="37nTcqvTCV1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
           </node>
         </node>
       </node>
