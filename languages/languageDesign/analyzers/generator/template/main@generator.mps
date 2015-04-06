@@ -20,12 +20,10 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="o4yu" ref="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)" />
     <import index="mu20" ref="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" />
     <import index="hxuy" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" />
     <import index="whpq" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern(jetbrains.mps.lang.pattern@java_stub)" />
     <import index="flgp" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" />
@@ -33,10 +31,6 @@
     <import index="qnq2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" />
     <import index="t3eg" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(org.jetbrains.mps.openapi.persistence@java_stub)" />
-    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="i0jt" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework.analyzers(MPS.Core/jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -941,7 +935,7 @@
           <node concept="2OqwBi" id="CCosYF1ZYx" role="3clFbG">
             <node concept="2ShNRf" id="CCosYF1tY9" role="2Oq$k0">
               <node concept="1pGfFk" id="CCosYF1YwM" role="2ShVmc">
-                <ref role="37wK5l" to="i0jt:~AnalyzerRules.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.dataFlow.framework.Program)" resolve="AnalyzerRules" />
+                <ref role="37wK5l" to="hxuy:~AnalyzerRules.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.dataFlow.framework.Program)" resolve="AnalyzerRules" />
                 <node concept="2YIFZM" id="5uNfefH6jDk" role="37wK5m">
                   <ref role="37wK5l" node="5uNfefH5NSm" resolve="getId" />
                   <ref role="1Pybhc" node="7XrupC0LiJG" resolve="UserAnalyzerRunner.Analyzer" />
@@ -955,7 +949,7 @@
               </node>
             </node>
             <node concept="liA8E" id="CCosYF20fc" role="2OqNvi">
-              <ref role="37wK5l" to="i0jt:~AnalyzerRules.apply():void" resolve="apply" />
+              <ref role="37wK5l" to="hxuy:~AnalyzerRules.apply():void" resolve="apply" />
             </node>
           </node>
         </node>
@@ -2535,8 +2529,8 @@
                   </node>
                 </node>
               </node>
+              <node concept="raruj" id="6UFhkIl2ibV" role="lGtFl" />
             </node>
-            <node concept="raruj" id="1eGlc3_eOpO" role="lGtFl" />
           </node>
           <node concept="3clFbH" id="9V7Nft_uJc" role="3cqZAp" />
         </node>

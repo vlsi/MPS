@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.dataFlow.framework.analyzers;
+package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor;
-import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelInternal;

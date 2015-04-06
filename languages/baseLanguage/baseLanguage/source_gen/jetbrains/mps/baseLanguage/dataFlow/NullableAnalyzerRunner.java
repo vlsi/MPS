@@ -7,7 +7,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.dataFlow.framework.analyzers.AnalyzerRules;
+import jetbrains.mps.lang.dataFlow.framework.AnalyzerRules;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.HashMap;
