@@ -39,9 +39,9 @@ import jetbrains.mps.util.FileUtil;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class MigrationCheckUtil {
@@ -49,7 +49,7 @@ public class MigrationCheckUtil {
     return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable final _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
     List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
     Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
@@ -68,8 +68,16 @@ public class MigrationCheckUtil {
       return result;
     }
 
+    if (progressCallback != null) {
+      progressCallback.invoke(0.1);
+    }
+
     // find missing languages 
-    Collection<LanguageMissingProblem> missingLangProblems = findMissingLanguages(modules, maxErrors);
+    Collection<LanguageMissingProblem> missingLangProblems = findMissingLanguages(modules, maxErrors, new _FunctionTypes._void_P1_E0<Double>() {
+      public void invoke(Double fraction) {
+        progressCallback.invoke(0.1 + 0.45 * fraction);
+      }
+    });
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(missingLangProblems));
 
     maxErrors -= CollectionSequence.fromCollection(missingLangProblems).count();
@@ -83,10 +91,6 @@ public class MigrationCheckUtil {
         return it.getLanguage();
       }
     }));
-
-    if (progressCallback != null) {
-      progressCallback.invoke(0.1);
-    }
 
     // find missing concepts, when language's not missing 
     // find missing concept features when concept's not mising 
@@ -161,7 +165,7 @@ public class MigrationCheckUtil {
 
       processedModules++;
       if (progressCallback != null) {
-        progressCallback.invoke(0.9 * processedModules / modulesCount);
+        progressCallback.invoke(0.45 * processedModules / modulesCount);
       }
     }
 
@@ -226,24 +230,26 @@ public class MigrationCheckUtil {
     return rv;
   }
 
-  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors) {
+  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
     // we can add here an additional chank for "used", "exported", "generated into" languages etc.,  
     // but I'm not sure this is needed. All we need in migration is working concepts. 
 
     // the node in the map is an example of language use to show it to the user 
     final Map<SLanguage, SNode> problemLangs = MapSequence.fromMap(new HashMap<SLanguage, SNode>());
-    Sequence.fromIterable(allNodes(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }))).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SLanguage lang = it.getConcept().getLanguage();
-        if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
-          MapSequence.fromMap(problemLangs).put(lang, it);
+    int modulesCount = Sequence.fromIterable(modules).count();
+    int processedModules = 0;
+    for (SModule module : Sequence.fromIterable(modules)) {
+      Sequence.fromIterable(allNodes(module.getModels())).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SLanguage lang = it.getConcept().getLanguage();
+          if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
+            MapSequence.fromMap(problemLangs).put(lang, it);
+          }
         }
-      }
-    });
+      });
+      processedModules++;
+      progressCallback.invoke(1.0 * processedModules / modulesCount);
+    }
 
     final Set<LanguageMissingProblem> problems = SetSequence.fromSet(new HashSet<LanguageMissingProblem>());
     MapSequence.fromMap(problemLangs).take(maxErrors).visitAll(new IVisitor<IMapping<SLanguage, SNode>>() {
