@@ -151,36 +151,36 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
   public MPSPsiNode create(SNodeId id, SConcept concept, String containingRole) {
     for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
-      final MPSPsiNode psiNode = factory.create(id, concept, containingRole);
+      final MPSPsiNode psiNode = factory.create(id, concept, containingRole, PsiManager.getInstance(myProject));
       if (psiNode != null) {
         return psiNode;
       }
     }
-    return new MPSPsiNode(id, concept.getQualifiedName(), containingRole);
+    return new MPSPsiNode(id, concept.getQualifiedName(), containingRole, PsiManager.getInstance(myProject));
   }
 
   public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId) {
     if (linkTargetConcept != null) {
       for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
-        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, targetModel, targetId);
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, targetModel, targetId, PsiManager.getInstance(myProject));
         if (psiRefNode != null) {
           return psiRefNode;
         }
       }
     }
-    return new MPSPsiRef(role, targetModel, targetId);
+    return new MPSPsiRef(role, targetModel, targetId, PsiManager.getInstance(myProject));
   }
 
   public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText) {
     if (linkTargetConcept != null) {
       for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
-        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, referenceText);
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, referenceText, PsiManager.getInstance(myProject));
         if (psiRefNode != null) {
           return psiRefNode;
         }
       }
     }
-    return new MPSPsiRef(role, referenceText);
+    return new MPSPsiRef(role, referenceText, PsiManager.getInstance(myProject));
   }
 
   private MPSPsiModel getMPSPsiModel(final SModel model, final SModelReference modelRef) {

@@ -56,7 +56,8 @@ public class IdeaPluginModuleFacetTab extends BaseTab implements FacetTab {
   @Override
   public void init() {
     JPanel content = new JPanel();
-    content.setLayout(new GridLayoutManager(1, 2, JBInsets.NONE, -1, -1));
+    //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
+    content.setLayout(new GridLayoutManager(1, 2, new JBInsets(0,0,0,0), -1, -1));
 
     JBLabel label = new JBLabel("Plugin ID:");
     content.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,

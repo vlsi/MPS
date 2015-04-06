@@ -47,10 +47,6 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   private int cachedTreePosition;
 
-  public MPSPsiNodeBase() {
-    this(null);
-  }
-
   public MPSPsiNodeBase(PsiManager manager) {
     super(manager, MPSLanguage.INSTANCE);
     this.children = new NodeList(this);

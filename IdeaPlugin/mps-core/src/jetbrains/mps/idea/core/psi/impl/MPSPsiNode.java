@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiManager;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -52,7 +53,8 @@ public class MPSPsiNode extends MPSPsiNodeBase implements MPSPsiRealNode {
   private String myName;
   private Map<String, String> myProperties;
 
-  public MPSPsiNode(SNodeId id, String concept, String containingRole) {
+  public MPSPsiNode(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(manager);
     myId = id;
     myConcept = concept;
     myContainingRole = containingRole;

@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiManager;
 import com.intellij.util.ArrayUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -25,8 +26,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiEnum extends MPSPsiClass {
-  public MPSPsiEnum(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiEnum(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

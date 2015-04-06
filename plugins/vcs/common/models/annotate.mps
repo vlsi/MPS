@@ -8483,19 +8483,17 @@
       <property role="TrG5h" value="SHORTEN_NAMES" />
       <node concept="3Tm1VV" id="CRlyEVv4SO" role="1B3o_S" />
       <node concept="17QB3L" id="CRlyEVv4SP" role="1tU5fm" />
-      <node concept="10M0yZ" id="CRlyEVv4SQ" role="33vP2m">
-        <ref role="1PxDUh" to="m79:~ShowShortenNames" resolve="ShowShortenNames" />
-        <ref role="3cqZAo" to="m79:~ShowShortenNames.KEY" resolve="KEY" />
+      <node concept="Xl_RD" id="4VlO8rdJi_a" role="33vP2m">
+        <property role="Xl_RC" value="annotate.show.short.names" />
       </node>
     </node>
     <node concept="Wx3nA" id="CRlyEVv4Ty" role="jymVt">
       <property role="TrG5h" value="COLORS" />
       <node concept="3Tm1VV" id="CRlyEVv4Tz" role="1B3o_S" />
-      <node concept="10M0yZ" id="CRlyEVv4T_" role="33vP2m">
-        <ref role="1PxDUh" to="m79:~ShowAnnotationColorsAction" resolve="ShowAnnotationColorsAction" />
-        <ref role="3cqZAo" to="m79:~ShowAnnotationColorsAction.KEY" resolve="KEY" />
-      </node>
       <node concept="17QB3L" id="CRlyEVv4T$" role="1tU5fm" />
+      <node concept="Xl_RD" id="4VlO8rdJlzW" role="33vP2m">
+        <property role="Xl_RC" value="vcs.show.colored.annotations" />
+      </node>
     </node>
     <node concept="Wx3nA" id="CRlyEVv4Ur" role="jymVt">
       <property role="TrG5h" value="KEYS_TO_TITLES" />

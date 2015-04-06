@@ -21,6 +21,7 @@ import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFinder;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiPackage;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.jgoodies.common.collect.ArrayListModel;
@@ -74,7 +75,7 @@ public class MPSPackageFinder extends PsiElementFinder {
             if (psiModel == null) {
               return null;
             }
-            packages.add(new MPSPackage(psiModel));
+            packages.add(new MPSPackage(psiModel, PsiManager.getInstance(myProject)));
           }
         }
 

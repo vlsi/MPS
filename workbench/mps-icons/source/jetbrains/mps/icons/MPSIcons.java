@@ -68,6 +68,7 @@ public class MPSIcons {
     public static final Icon OpenSample = IconLoader.getIcon("/general/openSample.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
     public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
+    public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
   }
 
   public static class Generator {

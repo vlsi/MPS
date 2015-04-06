@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiManager;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
@@ -44,39 +45,39 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
   static {
     factories.put(ConceptNames.ClassConcept, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiClass(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiClass(id, concept, containingRole, manager);
       }
     });
     // TODO use MPS-generated constant value
     factories.put(ConceptNames.Interface, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiInterface(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiInterface(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.EnumClass, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiEnum(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiEnum(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.ClassifierType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiClassifierType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiClassifierType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.PrimitiveType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiPrimitiveType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiPrimitiveType(id, concept, containingRole, manager);
       }
     });
     NodeCreator wildCardTypeNodeCreator = new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiWildcardType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiWildcardType(id, concept, containingRole, manager);
       }
     };
     factories.put(ConceptNames.UpperBoundType, wildCardTypeNodeCreator);
@@ -84,94 +85,94 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
     factories.put(ConceptNames.WildCardType, wildCardTypeNodeCreator);
     factories.put(ConceptNames.StringType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiStringType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiStringType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.ArrayType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiArrayType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiArrayType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.VariableArityType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiVariableArityType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiVariableArityType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.ConstructorDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiConstructor(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiConstructor(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.MethodDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiMethod(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiMethod(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.ParameterDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiParameter(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiParameter(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.TypeVariableDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiTypeParameter(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiTypeParameter(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.TypeVariableReference, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiTypeParamRef(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiTypeParamRef(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.FieldDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiField(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiField(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.EnumConstantDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiEnumConstant(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiEnumConstant(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.StaticFieldDeclaration, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiField(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiField(id, concept, containingRole, manager);
       }
     });
 
     // collection types
     factories.put(ConceptNames.SequenceType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiSequenceType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiSequenceType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.ListType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiListType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiListType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.SetType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiSetType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiSetType(id, concept, containingRole, manager);
       }
     });
     factories.put(ConceptNames.MapType, new NodeCreator() {
       @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiMapType(id, concept, containingRole);
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager) {
+        return new MPSPsiMapType(id, concept, containingRole, manager);
       }
     });
 
@@ -179,25 +180,25 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
 
     RefCreator dotBasedRefCreator = new RefCreator() {
       @Override
-      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
-        return new MPSDotBasedPsiRef(role, targetModel, targetId);
+      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId, PsiManager manager) {
+        return new MPSDotBasedPsiRef(role, targetModel, targetId, manager);
       }
 
       @Override
-      public MPSPsiRef createReferenceNode(String role, String referenceText) {
-        return new MPSDotBasedPsiRef(role, referenceText);
+      public MPSPsiRef createReferenceNode(String role, String referenceText, PsiManager manager) {
+        return new MPSDotBasedPsiRef(role, referenceText, manager);
       }
     };
 
     RefCreator methodRefCreator = new RefCreator() {
       @Override
-      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
-        return new MPSPsiMethodRef(role, targetModel, targetId);
+      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId, PsiManager manager) {
+        return new MPSPsiMethodRef(role, targetModel, targetId, manager);
       }
 
       @Override
-      public MPSPsiRef createReferenceNode(String role, String referenceText) {
-        return new MPSPsiMethodRef(role, referenceText);
+      public MPSPsiRef createReferenceNode(String role, String referenceText, PsiManager manager) {
+        return new MPSPsiMethodRef(role, referenceText, manager);
       }
     };
 
@@ -211,7 +212,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
   }
 
   @Override
-  public MPSPsiNode create(SNodeId id, SConcept concept, String containingRole) {
+  public MPSPsiNode create(SNodeId id, SConcept concept, String containingRole, PsiManager manager) {
     SConcept currConcept = concept;
     NodeCreator factory = null;
 
@@ -221,7 +222,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
     }
 
     if (factory != null) {
-      return factory.create(id, concept.getQualifiedName(), containingRole);
+      return factory.create(id, concept.getQualifiedName(), containingRole, manager);
     }
 
     return null;
@@ -244,34 +245,34 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
   }
 
   @Override
-  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId) {
+  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId, PsiManager manager) {
     RefCreator factory = getRefCreator(linkTargetConcept);
 
     if (factory != null) {
-      return factory.createReferenceNode(role, targetModel, targetId);
+      return factory.createReferenceNode(role, targetModel, targetId, manager);
     }
 
     return null;
   }
 
   @Override
-  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText) {
+  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText, PsiManager manager) {
     RefCreator factory = getRefCreator(linkTargetConcept);
 
     if (factory != null) {
-      return factory.createReferenceNode(role, referenceText);
+      return factory.createReferenceNode(role, referenceText, manager);
     }
 
     return null;
   }
 
   private interface NodeCreator {
-    MPSPsiNode create(SNodeId id, String concept, String containingRole);
+    MPSPsiNode create(SNodeId id, String concept, String containingRole, PsiManager manager);
   }
 
   private interface RefCreator {
-    MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId);
+    MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId, PsiManager manager);
 
-    MPSPsiRef createReferenceNode(String role, String referenceText);
+    MPSPsiRef createReferenceNode(String role, String referenceText, PsiManager manager);
   }
 }

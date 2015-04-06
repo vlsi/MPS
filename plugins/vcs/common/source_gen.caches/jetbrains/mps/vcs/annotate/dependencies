@@ -252,8 +252,6 @@
   <dependency className="jetbrains.mps.vcs.annotate.ViewAction" file="ViewAction.java">
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowAnnotationColorsAction" />
-    <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowShortenNames" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />

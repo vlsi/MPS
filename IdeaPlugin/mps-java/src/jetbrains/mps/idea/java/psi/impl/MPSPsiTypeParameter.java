@@ -26,6 +26,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
@@ -57,8 +58,8 @@ import java.util.List;
 
 public class MPSPsiTypeParameter extends MPSPsiNode implements PsiTypeParameter {
 
-  public MPSPsiTypeParameter(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiTypeParameter(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Nullable
@@ -85,7 +86,7 @@ public class MPSPsiTypeParameter extends MPSPsiNode implements PsiTypeParameter 
   @NotNull
   @Override
   public PsiReferenceList getExtendsList() {
-    return new EmptyPsiRefList(Role.EXTENDS_LIST);
+    return new EmptyPsiRefList(Role.EXTENDS_LIST, getManager());
   }
 
   @Nullable
@@ -352,7 +353,8 @@ public class MPSPsiTypeParameter extends MPSPsiNode implements PsiTypeParameter 
   class EmptyPsiRefList extends MPSPsiNodeBase implements PsiReferenceList {
     private Role myRole;
 
-    EmptyPsiRefList(Role role) {
+    EmptyPsiRefList(Role role, PsiManager manager) {
+      super(manager);
       myRole = role;
     }
 

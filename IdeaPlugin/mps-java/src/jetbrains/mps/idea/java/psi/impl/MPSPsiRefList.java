@@ -20,6 +20,7 @@ import com.intellij.pom.java.LanguageLevel;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReferenceList;
 import com.intellij.psi.impl.light.LightClassReference;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
@@ -41,7 +42,8 @@ public class MPSPsiRefList extends MPSPsiNodeBase implements PsiReferenceList {
   private Role myRole;
   private MPSPsiClassifierType[] myClasses;
 
-  public MPSPsiRefList(PsiElement parent, Role role, MPSPsiClassifierType[] classes) {
+  public MPSPsiRefList(PsiElement parent, Role role, MPSPsiClassifierType[] classes, PsiManager manager) {
+    super(manager);
     myParent = parent;
     myRole = role;
     myClasses = classes;

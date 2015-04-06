@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.highlighter;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.apache.log4j.Logger;
@@ -28,8 +30,14 @@ import java.util.List;
 public class EditorsHelper {
   public static Logger LOG = LogManager.getLogger(EditorsHelper.class);
 
-  public static List<MPSFileNodeEditor> getAllEditors(FileEditorManager manager) {
-    return filterMPSEditors(manager.getAllEditors());
+  public static List<MPSFileNodeEditor> getAllEditors(final FileEditorManager manager) {
+    FileEditor[] allEditors = ApplicationManager.getApplication().runReadAction(new Computable<FileEditor[]>() {
+      @Override
+      public FileEditor[] compute() {
+        return manager.getAllEditors();
+      }
+    });
+    return filterMPSEditors(allEditors);
   }
 
   public static List<Editor> getSelectedEditors(FileEditorManager manager) {

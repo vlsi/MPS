@@ -21,7 +21,6 @@ import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.ide.highlighter.ModuleFileType;
-import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
@@ -39,6 +38,8 @@ import com.intellij.testFramework.fixtures.JavaTestFixtureFactory;
 import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
+import com.intellij.util.ThrowableRunnable;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
@@ -49,7 +50,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import junit.framework.Assert;
 import org.jetbrains.annotations.NotNull;
-
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -102,6 +102,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
     myFacet = addMPSFacet(myModule);
+
+    //Flush all EDT events to be made before run tests
+    try {
+      UIUtil.invokeAndWaitIfNeeded(new ThrowableRunnable() {
+        @Override
+        public void run() throws Throwable {
+         flushEDT();
+        }
+      });
+    } catch (Throwable throwable) {
+      Logger.getInstance(this.getClass()).error("Error while flushing EDT events", throwable);
+    }
   }
 
   @Override
@@ -138,21 +150,29 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   }
 
   protected MPSFacet addMPSFacet(Module module) {
-    FacetManager facetManager = FacetManager.getInstance(module);
+    final FacetManager facetManager = FacetManager.getInstance(module);
     FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
     Assert.assertNotNull("MPS facet type is not found", facetType);
-    MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
+    final MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
-    preConfigureFacet(configuration);
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
       @Override
       public void run() {
-        facetModel.commit();
+        preConfigureFacet(configuration);
+        final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
+        facetModel.addFacet(facet);
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            facetModel.commit();
+          }
+        });
       }
     });
+
     return facet;
   }
 

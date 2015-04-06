@@ -15,44 +15,55 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.ide.highlighter.ProjectFileType;
+import com.intellij.openapi.fileTypes.InternalFileType;
+import com.intellij.openapi.vfs.CharsetToolkit;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class MPSProjectFileType extends ProjectFileType {
-  private final String myName;
-  private final String myDescription;
-  private final String myDefaultExt;
-  private final Icon myIcon;
+public class MPSProjectFileType implements InternalFileType {
+  public static final MPSProjectFileType INSTANCE = new MPSProjectFileType();
 
-  public MPSProjectFileType(String name, String description, String extension, Icon icon) {
-    myName = name;
-    myDescription = description;
-    myDefaultExt = extension;
-    myIcon = icon;
+  private MPSProjectFileType() {
   }
 
   @NotNull
   @Override
   public String getName() {
-    return myName;
+    return "MPS Project";
   }
 
   @NotNull
   @Override
   public String getDescription() {
-    return myDescription;
+    return "MPS Project File Type";
   }
 
   @NotNull
   @Override
   public String getDefaultExtension() {
-    return myDefaultExt;
+    return MPSExtentions.MPS_PROJECT;
   }
 
   @Override
   public Icon getIcon() {
-    return myIcon;
+    return FileIcons.PROJECT_ICON;
+  }
+
+  @Override
+  public boolean isBinary() {
+    return false;
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  @Override
+  public String getCharset(@NotNull VirtualFile file, @NotNull final byte[] content) {
+    return CharsetToolkit.UTF8;
   }
 }

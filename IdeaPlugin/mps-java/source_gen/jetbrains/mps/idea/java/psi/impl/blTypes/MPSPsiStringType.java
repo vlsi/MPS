@@ -6,17 +6,17 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.java.psi.impl.ComputesPsiType;
 import com.intellij.psi.PsiClassType;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import com.intellij.psi.PsiManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiType;
-import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.GlobalSearchScope;
 
 /**
  * danilla 7/10/13
  */
 public class MPSPsiStringType extends MPSPsiNode implements ComputesPsiType<PsiClassType> {
-  public MPSPsiStringType(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiStringType(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
   @Override
   public PsiClassType getPsiType() {
