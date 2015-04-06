@@ -13,7 +13,7 @@ public interface MigrationManager {
 
   public List<Tuples._3<SModule, SLanguage, Integer>> getMissingMigrations();
 
-  public int projectStepsCount();
+  public int projectStepsCount(boolean isCleanup);
 
   public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup);
 

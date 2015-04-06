@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import java.util.Map;
+import jetbrains.mps.ide.migration.ProgressEstimation;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -33,9 +34,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
@@ -61,6 +62,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
           doRun(progress);
         } finally {
           myIsComplete = true;
+          setFraction(progress, 1.0);
           PersistenceRegistry.getInstance().enableFastFindUsages();
         }
       }
@@ -101,17 +103,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
   }
 
-  private void doRun(ProgressIndicator progress) {
+  private void doRun(final ProgressIndicator progress) {
     Map<String, Object> options = InitialStep.getOptions();
-
-    // project steps are considered to be X percent of the whole process 
-    double projectStepsFraction = 0.3;
-
-    int projectStepsCount = myManager.projectStepsCount();
-    setFraction(progress, 0);
+    setFraction(progress, ProgressEstimation.initial());
 
     boolean cleanNotification = false;
     List<MigrationManager.MigrationStep> cleanupMigrations = ListSequence.fromList(new ArrayList<MigrationManager.MigrationStep>());
+    int cleanupStepsCount = myManager.projectStepsCount(true);
+    int stepNum = 0;
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
       if (step == null) {
@@ -127,11 +126,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         cleanNotification = true;
         addElementToMigrationList("Cleaning project... Please wait.");
       }
-      setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
+
+      stepNum++;
+      setFraction(progress, ProgressEstimation.cleanupMigrations(1.0 * stepNum / cleanupStepsCount));
     }
 
     addElementToMigrationList("Checking migrations consistency... Please wait.");
     List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = myManager.getMissingMigrations();
+    setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError(missingMigrations));
       addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
@@ -142,7 +144,11 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-        if (MigrationCheckUtil.haveProblems(modules)) {
+        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+            setFraction(progress, ProgressEstimation.preCheck(fraction));
+          }
+        })) {
           myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PreCheckError());
         }
       }
@@ -156,20 +162,23 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
+    int projectStepsCount = myManager.projectStepsCount(false);
+    stepNum = 0;
     while (executeSingleStep(myManager.nextProjectStep(options, false))) {
-      setFraction(progress, progress.getFraction() + projectStepsFraction / projectStepsCount);
+      stepNum++;
+      setFraction(progress, ProgressEstimation.projectMigrations(1.0 * stepNum / projectStepsCount));
     }
-    setFraction(progress, projectStepsFraction);
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");
       return;
     }
 
     int languageStepsCount = myManager.languageStepsCount();
+    stepNum = 0;
     while (executeSingleStep(myManager.nextLanguageStep())) {
-      setFraction(progress, progress.getFraction() + (1.0 - projectStepsFraction) / languageStepsCount);
+      stepNum++;
+      setFraction(progress, ProgressEstimation.languageMigrations(1.0 * stepNum / languageStepsCount));
     }
-    setFraction(progress, 1.0);
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");
       return;
@@ -181,12 +190,19 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         MPSModuleRepository.getInstance().saveAll();
       }
     });
+    setFraction(progress, ProgressEstimation.saving(1.0));
 
     addElementToMigrationList("Checking models... Please wait.");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
-        if (MigrationCheckUtil.haveProblems(modules)) {
+        final Wrappers._int moduleNum = new Wrappers._int(0);
+        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+            moduleNum.value++;
+            setFraction(progress, ProgressEstimation.postCheck(fraction));
+          }
+        })) {
           myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError());
         }
       }
@@ -276,7 +292,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
       Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
-      return MigrationCheckUtil.getProblems(modules, 100);
+      return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }
 
@@ -289,7 +305,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
       Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
-      return MigrationCheckUtil.getProblems(modules, 100);
+      return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }
   private class MigrationExceptionError extends MigrationErrorDescriptor {

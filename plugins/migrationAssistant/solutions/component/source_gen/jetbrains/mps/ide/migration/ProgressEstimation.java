@@ -24,16 +24,16 @@ public class ProgressEstimation {
     return ProgressEstimation.START_FRACTION;
   }
 
-  public static double cleanupMigrations(double doneFraction) {
-    return initial() + CLEANUP_MIGRATIONS_FRACTION * doneFraction;
+  public static double migrationsCheck(double doneFraction) {
+    return initial() + MIGRATIONS_CHECK_FRACTION * doneFraction;
   }
 
-  public static double migrationsCheck(double doneFraction) {
-    return cleanupMigrations(1.0) + MIGRATIONS_CHECK_FRACTION * doneFraction;
+  public static double cleanupMigrations(double doneFraction) {
+    return migrationsCheck(1.0) + CLEANUP_MIGRATIONS_FRACTION * doneFraction;
   }
 
   public static double preCheck(double doneFraction) {
-    return migrationsCheck(1.0) + PRECHECK_FRACTION * doneFraction;
+    return cleanupMigrations(1.0) + PRECHECK_FRACTION * doneFraction;
   }
 
   public static double projectMigrations(double doneFraction) {
@@ -44,11 +44,11 @@ public class ProgressEstimation {
     return projectMigrations(1.0) + LANGUAGE_MIGRATIONS_FRACTION * doneFraction;
   }
 
-  public static double postCheck(double doneFraction) {
-    return languageMigrations(1.0) + POSTCHECK_FRACTION * doneFraction;
+  public static double saving(double doneFraction) {
+    return languageMigrations(1.0) + SAVING_FRACTION * doneFraction;
   }
 
-  public static double saving(double doneFraction) {
-    return postCheck(1.0) + SAVING_FRACTION * doneFraction;
+  public static double postCheck(double doneFraction) {
+    return saving(1.0) + POSTCHECK_FRACTION * doneFraction;
   }
 }

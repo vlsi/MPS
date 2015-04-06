@@ -2143,22 +2143,69 @@
       <node concept="3Tm1VV" id="7rK8qWGGApM" role="1B3o_S" />
       <node concept="10Oyi0" id="7rK8qWGGApN" role="3clF45" />
       <node concept="3clFbS" id="7rK8qWGGApQ" role="3clF47">
-        <node concept="3clFbF" id="7rK8qWGGF27" role="3cqZAp">
-          <node concept="2OqwBi" id="7rK8qWGGFKT" role="3clFbG">
-            <node concept="2OqwBi" id="7rK8qWGGF29" role="2Oq$k0">
-              <node concept="2YIFZM" id="7rK8qWGGF2a" role="2Oq$k0">
+        <node concept="3cpWs8" id="6JtYk_H749Y" role="3cqZAp">
+          <node concept="3cpWsn" id="6JtYk_H749Z" role="3cpWs9">
+            <property role="TrG5h" value="migrations" />
+            <node concept="_YKpA" id="6JtYk_H74nh" role="1tU5fm">
+              <node concept="3uibUv" id="6JtYk_H74nj" role="_ZDj9">
+                <ref role="3uigEE" to="bco1:~ProjectMigration" resolve="ProjectMigration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6JtYk_H74a0" role="33vP2m">
+              <node concept="2YIFZM" id="6JtYk_H74a1" role="2Oq$k0">
                 <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
                 <ref role="1Pybhc" to="bco1:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
               </node>
-              <node concept="liA8E" id="7rK8qWGGF2b" role="2OqNvi">
+              <node concept="liA8E" id="6JtYk_H74a2" role="2OqNvi">
                 <ref role="37wK5l" to="bco1:~ProjectMigrationsRegistry.getMigrations():java.util.List" resolve="getMigrations" />
               </node>
             </node>
-            <node concept="liA8E" id="7rK8qWGGHqx" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~List.size():int" resolve="size" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6JtYk_H7erm" role="3cqZAp">
+          <node concept="3cpWsn" id="6JtYk_H7ern" role="3cpWs9">
+            <property role="TrG5h" value="cleanupSize" />
+            <node concept="10Oyi0" id="6JtYk_H7er7" role="1tU5fm" />
+            <node concept="2OqwBi" id="6JtYk_H7ero" role="33vP2m">
+              <node concept="2OqwBi" id="6JtYk_H7erp" role="2Oq$k0">
+                <node concept="37vLTw" id="6JtYk_H7erq" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6JtYk_H749Z" resolve="migrations" />
+                </node>
+                <node concept="UnYns" id="6JtYk_H7err" role="2OqNvi">
+                  <node concept="3uibUv" id="6JtYk_H7ers" role="UnYnz">
+                    <ref role="3uigEE" to="bco1:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="34oBXx" id="6JtYk_H7ert" role="2OqNvi" />
             </node>
           </node>
         </node>
+        <node concept="3cpWs6" id="6JtYk_H77dS" role="3cqZAp">
+          <node concept="3K4zz7" id="6JtYk_H79AV" role="3cqZAk">
+            <node concept="3cpWsd" id="6JtYk_H7$2z" role="3K4GZi">
+              <node concept="37vLTw" id="6JtYk_H7_ff" role="3uHU7w">
+                <ref role="3cqZAo" node="6JtYk_H7ern" resolve="cleanupSize" />
+              </node>
+              <node concept="2OqwBi" id="6JtYk_H7vkE" role="3uHU7B">
+                <node concept="37vLTw" id="6JtYk_H7q3E" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6JtYk_H749Z" resolve="migrations" />
+                </node>
+                <node concept="34oBXx" id="6JtYk_H7xMP" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="6JtYk_H78iA" role="3K4Cdx">
+              <ref role="3cqZAo" node="6JtYk_H72$6" resolve="isCleanup" />
+            </node>
+            <node concept="37vLTw" id="6JtYk_H7eru" role="3K4E3e">
+              <ref role="3cqZAo" node="6JtYk_H7ern" resolve="cleanupSize" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6JtYk_H72$6" role="3clF46">
+        <property role="TrG5h" value="isCleanup" />
+        <node concept="10P_77" id="6JtYk_H72$5" role="1tU5fm" />
       </node>
     </node>
     <node concept="2tJIrI" id="25gV4LsqpuD" role="jymVt" />

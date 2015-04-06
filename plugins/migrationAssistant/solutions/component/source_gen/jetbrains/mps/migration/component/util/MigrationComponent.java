@@ -41,8 +41,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -271,8 +271,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return true;
   }
 
-  public int projectStepsCount() {
-    return ProjectMigrationsRegistry.getInstance().getMigrations().size();
+  public int projectStepsCount(boolean isCleanup) {
+    List<ProjectMigration> migrations = ProjectMigrationsRegistry.getInstance().getMigrations();
+    int cleanupSize = ListSequence.fromList(migrations).ofType(CleanupProjectMigration.class).count();
+    return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
   public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
