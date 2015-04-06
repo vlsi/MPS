@@ -416,7 +416,7 @@
       <node id="6044402259151605529" at="129,7,130,95" concept="3" />
       <node id="2765300268232794197" at="131,5,132,0" concept="11" />
       <node id="4404440421171585302" at="132,0,133,81" concept="3" />
-      <node id="4404440421171608055" at="133,81,134,93" concept="8" />
+      <node id="4404440421171608055" at="133,81,134,102" concept="8" />
       <node id="2620437876316494002" at="135,64,136,118" concept="3" />
       <node id="2620437876316493108" at="136,118,137,90" concept="3" />
       <node id="2620437876316493111" at="137,90,138,13" concept="9" />
@@ -484,9 +484,9 @@
       <node id="2620437876316404019" at="298,32,299,77" concept="9" />
       <node id="2620437876316404324" at="301,44,302,46" concept="9" />
       <node id="4404440421171638745" at="306,0,307,0" concept="4" trace="errors" />
-      <node id="4404440421171638754" at="307,79,308,27" concept="3" />
+      <node id="4404440421171638754" at="307,88,308,27" concept="3" />
       <node id="7935677192557016959" at="310,32,311,351" concept="9" />
-      <node id="4404440421171687262" at="315,65,316,75" concept="9" />
+      <node id="4404440421171687262" at="315,74,316,61" concept="9" />
       <node id="2620437876316101246" at="271,0,273,0" concept="2" trace="PreCheckError#()V" />
       <node id="2620437876316153987" at="284,0,286,0" concept="2" trace="PostCheckError#()V" />
       <node id="2620437876316469482" at="296,0,298,0" concept="2" trace="MigrationExceptionError#()V" />
@@ -510,7 +510,7 @@
       <node id="2620437876316403310" at="301,0,304,0" concept="7" trace="getProblems#()Ljava/lang/Iterable;" />
       <node id="2620437876316539594" at="307,0,310,0" concept="2" trace="MigrationsMissingError#(Ljava/util/List;)V" />
       <node id="2620437876316505136" at="310,0,313,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="4404440421171663419" at="315,0,318,0" concept="7" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/ide/migration/check/Problem;" />
+      <node id="4404440421171663419" at="315,0,318,0" concept="7" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/ide/migration/check/Problem;" />
       <node id="8570387127138396901" at="91,0,95,0" concept="7" trace="run#()V" />
       <node id="6508209524259161795" at="125,0,129,7" concept="6" />
       <node id="2620437876316297918" at="162,48,166,5" concept="6" />
@@ -519,7 +519,7 @@
       <node id="6781485246382123246" at="255,0,259,0" concept="7" trace="getPreviousStepId#()Ljava/lang/Object;" />
       <node id="6781485246382123253" at="260,0,264,0" concept="7" trace="isComplete#()Z" />
       <node id="6781485246382123260" at="265,0,269,0" concept="7" trace="canBeCancelled#()Z" />
-      <node id="2620437876316488733" at="134,93,139,5" concept="6" />
+      <node id="2620437876316488733" at="134,102,139,5" concept="6" />
       <node id="3013058279687721824" at="178,71,183,7" concept="3" />
       <node id="6044402259151525571" at="202,77,207,28" concept="3" />
       <node id="5783745319707887853" at="213,0,218,0" concept="7" trace="run#()V" />
@@ -576,9 +576,9 @@
       <scope id="2620437876316148127" at="286,32,287,214" />
       <scope id="2620437876316403308" at="298,32,299,77" />
       <scope id="2620437876316403315" at="301,44,302,46" />
-      <scope id="2620437876316539595" at="307,79,308,27" />
+      <scope id="2620437876316539595" at="307,88,308,27" />
       <scope id="2620437876316505140" at="310,32,311,351" />
-      <scope id="4404440421171663420" at="315,65,316,75" />
+      <scope id="4404440421171663420" at="315,74,316,61" />
       <scope id="2620437876316232806" at="62,19,64,67" />
       <scope id="8570387127138396902" at="91,33,93,31" />
       <scope id="6508209524259161798" at="126,33,128,70" />

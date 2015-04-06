@@ -131,7 +131,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
 
     addElementToMigrationList("Checking migrations consistency... Please wait.");
-    List<Tuples._2<SModule, SLanguage>> missingMigrations = myManager.getMissingMigrations();
+    List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = myManager.getMissingMigrations();
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError(missingMigrations));
       addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
@@ -303,17 +303,17 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
   }
   private class MigrationsMissingError extends MigrationErrorDescriptor {
-    private List<Tuples._2<SModule, SLanguage>> errors;
-    public MigrationsMissingError(List<Tuples._2<SModule, SLanguage>> errors) {
+    private List<Tuples._3<SModule, SLanguage, Integer>> errors;
+    public MigrationsMissingError(List<Tuples._3<SModule, SLanguage, Integer>> errors) {
       this.errors = errors;
     }
     public String getMessage() {
       return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public Iterable<Problem> getProblems() {
-      return ListSequence.fromList(errors).take(100).select(new ISelector<Tuples._2<SModule, SLanguage>, Problem>() {
-        public Problem select(Tuples._2<SModule, SLanguage> it) {
-          return ((Problem) new MissingMigrationProblem(it._0(), it._1()));
+      return ListSequence.fromList(errors).take(100).select(new ISelector<Tuples._3<SModule, SLanguage, Integer>, Problem>() {
+        public Problem select(Tuples._3<SModule, SLanguage, Integer> it) {
+          return ((Problem) new MissingMigrationProblem(it));
         }
       });
     }

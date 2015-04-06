@@ -11,7 +11,7 @@ import java.util.Map;
 public interface MigrationManager {
   public boolean isMigrationRequired();
 
-  public List<Tuples._2<SModule, SLanguage>> getMissingMigrations();
+  public List<Tuples._3<SModule, SLanguage, Integer>> getMissingMigrations();
 
   public int projectStepsCount();
 
