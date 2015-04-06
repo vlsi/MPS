@@ -6,10 +6,11 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -19,10 +20,11 @@ public class RuleAssertNotNull implements DataFlowConstructor {
   public RuleAssertNotNull() {
   }
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.getConcept(node).getQualifiedName().equals(getApplicableConceptName()) && myPattern.match(node);
+    return SNodeOperations.getConcept(node).equals(getApplicableConcept()) && myPattern.match(node);
   }
-  public String getApplicableConceptName() {
-    return "jetbrains.mps.baseLanguage.structure.AssertStatement";
+
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement");
   }
 
   public void performActions(Program program, SNode node) {
