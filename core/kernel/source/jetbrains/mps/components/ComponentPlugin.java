@@ -23,18 +23,39 @@ import java.util.LinkedList;
  * evgeny, 10/14/11
  */
 public class ComponentPlugin {
-
   private LinkedList<CoreComponent> myComponents;
+
+  private static ModelAccess getModelAccess() {
+    return ModelAccess.instance();
+  }
 
   public void init() {
     myComponents = new LinkedList<CoreComponent>();
+  }
+
+  /**
+   * this method is called from inheritors. Initialize a component and returns an initialized component instance
+   */
+  protected <T extends CoreComponent> T init(final T component) {
+    try {
+      getModelAccess().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          component.init();
+        }
+      });
+      myComponents.push(component);
+    } catch (Throwable th) {
+      throw new RuntimeException("Component " + component + " initialization error", th);
+    }
+    return component;
   }
 
   public void dispose() {
     if (myComponents == null) {
       return;
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         while (!myComponents.isEmpty()) {
@@ -44,25 +65,11 @@ public class ComponentPlugin {
     });
   }
 
-  protected <T extends CoreComponent> T init(final T component) {
-    try {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          component.init();
-        }
-      });
-      myComponents.push(component);
-    } catch (Exception th) {
-      throw new RuntimeException("Component " + component + " initialization error", th);
-    }
-    return component;
-  }
-
-  protected <T extends CoreComponent> void dispose(T component) {
+  private <T extends CoreComponent> void dispose(final T component) {
+    getModelAccess().checkWriteAccess();
     try {
       component.dispose();
-    } catch (Exception th) {
+    } catch (Throwable th) {
       throw new RuntimeException("Component " + component + " dispose error", th);
     }
   }
