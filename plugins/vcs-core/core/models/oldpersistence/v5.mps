@@ -43,6 +43,9 @@
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
+        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -1631,16 +1634,10 @@
     <property role="2bfB8j" value="true" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
+    <property role="IEkAT" value="false" />
     <node concept="3Tm1VV" id="p9Lm3R6FXr" role="1B3o_S" />
     <node concept="3uibUv" id="p9Lm3R6FXs" role="1zkMxy">
       <ref role="3uigEE" to="llmc:p9Lm3R6GAB" resolve="ModelWriter4" />
-    </node>
-    <node concept="3UR2Jj" id="p9Lm3R6FXH" role="lGtFl">
-      <node concept="TZ5HA" id="p9Lm3R6FXN" role="TZ5H$">
-        <node concept="1dT_AC" id="p9Lm3R6FXO" role="1dT_Ay">
-          <property role="1dT_AB" value="Evgeny Gryaznov, Aug 2, 2010" />
-        </node>
-      </node>
     </node>
     <node concept="3clFb_" id="p9Lm3R6FXt" role="jymVt">
       <property role="TrG5h" value="getModelPersistenceVersion" />

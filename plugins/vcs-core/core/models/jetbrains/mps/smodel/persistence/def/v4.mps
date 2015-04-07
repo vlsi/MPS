@@ -26,6 +26,7 @@
     <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -581,8 +582,8 @@
               <node concept="liA8E" id="p9Lm3R6GJc" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Iv4" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.VISIBLE_ELEMENT" resolve="VISIBLE_ELEMENT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBI" resolve="VISIBLE_ELEMENT" />
                 </node>
               </node>
             </node>
@@ -631,8 +632,8 @@
                   <node concept="liA8E" id="p9Lm3R6GJk" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Iv5" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_IMPORT_INDEX" resolve="MODEL_IMPORT_INDEX" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBM" resolve="MODEL_IMPORT_INDEX" />
                     </node>
                   </node>
                 </node>
@@ -666,8 +667,8 @@
                   <node concept="liA8E" id="p9Lm3R6GJv" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Iv6" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                     </node>
                   </node>
                 </node>
@@ -849,8 +850,8 @@
               <node concept="1pGfFk" id="p9Lm3R6GK8" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6Iv7" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.VISIBLE_ELEMENT" resolve="VISIBLE_ELEMENT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBI" resolve="VISIBLE_ELEMENT" />
                 </node>
               </node>
             </node>
@@ -864,8 +865,8 @@
             <node concept="liA8E" id="p9Lm3R6GKg" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iv8" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_IMPORT_INDEX" resolve="MODEL_IMPORT_INDEX" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgBM" resolve="MODEL_IMPORT_INDEX" />
               </node>
               <node concept="3cpWs3" id="p9Lm3R6G36" role="37wK5m">
                 <node concept="37vLTw" id="p9Lm3R6G37" role="3uHU7B">
@@ -886,8 +887,8 @@
             <node concept="liA8E" id="p9Lm3R6GKo" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iv9" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
               </node>
               <node concept="2OqwBi" id="p9Lm3R6GKv" role="37wK5m">
                 <node concept="37vLTw" id="p9Lm3R6GKu" role="2Oq$k0">
@@ -1143,7 +1144,7 @@
               <node concept="liA8E" id="p9Lm3R6GT1" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                 <node concept="10M0yZ" id="p9Lm3R6Iva" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                   <ref role="3cqZAo" to="zofw:~ModelPersistence.ROLE" resolve="ROLE" />
                 </node>
               </node>
@@ -1155,7 +1156,7 @@
               <node concept="liA8E" id="p9Lm3R6GT9" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivb" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                   <ref role="3cqZAo" to="zofw:~ModelPersistence.RESOLVE_INFO" resolve="RESOLVE_INFO" />
                 </node>
               </node>
@@ -1167,7 +1168,7 @@
               <node concept="liA8E" id="p9Lm3R6GTh" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivc" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                   <ref role="3cqZAo" to="zofw:~ModelPersistence.TARGET_NODE_ID" resolve="TARGET_NODE_ID" />
                 </node>
               </node>
@@ -2370,7 +2371,7 @@
               <node concept="1pGfFk" id="p9Lm3R6GW9" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivd" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                   <ref role="3cqZAo" to="zofw:~ModelPersistence.LINK" resolve="LINK" />
                 </node>
               </node>
@@ -2398,7 +2399,7 @@
             <node concept="liA8E" id="p9Lm3R6GWm" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Ive" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                 <ref role="3cqZAo" to="zofw:~ModelPersistence.ROLE" resolve="ROLE" />
               </node>
               <node concept="2YIFZM" id="p9Lm3R6GWs" role="37wK5m">
@@ -2838,7 +2839,7 @@
             <node concept="liA8E" id="p9Lm3R6GXY" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Ivf" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                 <ref role="3cqZAo" to="zofw:~ModelPersistence.TARGET_NODE_ID" resolve="TARGET_NODE_ID" />
               </node>
               <node concept="37vLTw" id="p9Lm3R6GeA" role="37wK5m">
@@ -2887,7 +2888,7 @@
                 <node concept="liA8E" id="p9Lm3R6GY6" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Ivg" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
                     <ref role="3cqZAo" to="zofw:~ModelPersistence.RESOLVE_INFO" resolve="RESOLVE_INFO" />
                   </node>
                   <node concept="37vLTw" id="p9Lm3R6GeR" role="37wK5m">
@@ -3211,8 +3212,8 @@
                   <node concept="liA8E" id="p9Lm3R6GYz" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivh" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                     </node>
                   </node>
                 </node>
@@ -3259,8 +3260,8 @@
               <node concept="liA8E" id="p9Lm3R6GYH" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivi" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE" resolve="LANGUAGE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBU" resolve="LANGUAGE" />
                 </node>
               </node>
             </node>
@@ -3309,8 +3310,8 @@
                   <node concept="liA8E" id="p9Lm3R6GYP" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivj" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                     </node>
                   </node>
                 </node>
@@ -3360,8 +3361,8 @@
                   <node concept="liA8E" id="p9Lm3R6GZ2" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivk" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE_ASPECT" resolve="LANGUAGE_ASPECT" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBY" resolve="LANGUAGE_ASPECT" />
                     </node>
                   </node>
                 </node>
@@ -3407,8 +3408,8 @@
               <node concept="liA8E" id="p9Lm3R6GZa" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivl" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE_ASPECT" resolve="LANGUAGE_ASPECT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBY" resolve="LANGUAGE_ASPECT" />
                 </node>
               </node>
             </node>
@@ -3444,8 +3445,8 @@
               <node concept="liA8E" id="p9Lm3R6GZi" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivm" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION" resolve="LANGUAGE_ENGAGED_ON_GENERATION" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgC2" resolve="LANGUAGE_ENGAGED_ON_GENERATION" />
                 </node>
               </node>
             </node>
@@ -3494,8 +3495,8 @@
                   <node concept="liA8E" id="p9Lm3R6GZq" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivn" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                     </node>
                   </node>
                 </node>
@@ -3544,8 +3545,8 @@
               <node concept="liA8E" id="p9Lm3R6GZE" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivo" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.DEVKIT" resolve="DEVKIT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgC6" resolve="DEVKIT" />
                 </node>
               </node>
             </node>
@@ -3594,8 +3595,8 @@
                   <node concept="liA8E" id="p9Lm3R6GZM" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivp" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                     </node>
                   </node>
                 </node>
@@ -3644,8 +3645,8 @@
               <node concept="liA8E" id="p9Lm3R6H02" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivq" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.IMPORT_ELEMENT" resolve="IMPORT_ELEMENT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBE" resolve="IMPORT_ELEMENT" />
                 </node>
               </node>
             </node>
@@ -3694,8 +3695,8 @@
                   <node concept="liA8E" id="p9Lm3R6H0a" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String,java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivr" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_IMPORT_INDEX" resolve="MODEL_IMPORT_INDEX" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBM" resolve="MODEL_IMPORT_INDEX" />
                     </node>
                     <node concept="2OqwBi" id="p9Lm3R6H0h" role="37wK5m">
                       <node concept="37vLTw" id="p9Lm3R6H0g" role="2Oq$k0">
@@ -3740,8 +3741,8 @@
                   <node concept="liA8E" id="p9Lm3R6H0q" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivs" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                     </node>
                   </node>
                 </node>
@@ -3918,8 +3919,8 @@
               <node concept="liA8E" id="p9Lm3R6H0S" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivt" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                 </node>
               </node>
             </node>
@@ -4215,8 +4216,8 @@
                   <node concept="liA8E" id="p9Lm3R6H1w" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivu" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                     </node>
                   </node>
                 </node>
@@ -4236,8 +4237,8 @@
                   <node concept="liA8E" id="p9Lm3R6H1C" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivv" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.VERSION" resolve="VERSION" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgCi" resolve="VERSION" />
                     </node>
                   </node>
                 </node>
@@ -4585,8 +4586,8 @@
               <node concept="liA8E" id="p9Lm3R6H29" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivw" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.TYPE" resolve="TYPE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBa" resolve="TYPE" />
                 </node>
               </node>
             </node>
@@ -4653,8 +4654,8 @@
               <node concept="liA8E" id="p9Lm3R6H2q" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivx" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.ID" resolve="ID" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBm" resolve="ID" />
                 </node>
               </node>
             </node>
@@ -4739,8 +4740,8 @@
               <node concept="liA8E" id="p9Lm3R6H2J" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Ivy" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.PROPERTY" resolve="PROPERTY" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBy" resolve="PROPERTY" />
                 </node>
               </node>
             </node>
@@ -4789,8 +4790,8 @@
                   <node concept="liA8E" id="p9Lm3R6H2R" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Ivz" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.NAME" resolve="NAME" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgAU" resolve="NAME" />
                     </node>
                   </node>
                 </node>
@@ -4832,8 +4833,8 @@
                   <node concept="liA8E" id="p9Lm3R6H32" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6Iv$" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.VALUE" resolve="VALUE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBA" resolve="VALUE" />
                     </node>
                   </node>
                 </node>
@@ -4880,8 +4881,8 @@
               <node concept="liA8E" id="p9Lm3R6H3d" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6Iv_" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LINK" resolve="LINK" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgAI" resolve="LINK" />
                 </node>
               </node>
             </node>
@@ -4979,8 +4980,8 @@
               <node concept="liA8E" id="p9Lm3R6H3v" role="2OqNvi">
                 <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
                 <node concept="10M0yZ" id="p9Lm3R6IvA" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                 </node>
               </node>
             </node>
@@ -5029,8 +5030,8 @@
                   <node concept="liA8E" id="p9Lm3R6H3B" role="2OqNvi">
                     <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                     <node concept="10M0yZ" id="p9Lm3R6IvB" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.ROLE" resolve="ROLE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgAM" resolve="ROLE" />
                     </node>
                   </node>
                 </node>
@@ -6830,8 +6831,8 @@
                       </node>
                       <node concept="2OqwBi" id="p9Lm3R6Hcg" role="3uHU7w">
                         <node concept="10M0yZ" id="p9Lm3R6IvR" role="2Oq$k0">
-                          <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                          <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                          <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                          <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                         </node>
                         <node concept="liA8E" id="p9Lm3R6Hch" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
@@ -6961,8 +6962,8 @@
                       </node>
                       <node concept="2OqwBi" id="p9Lm3R6HcI" role="3uHU7w">
                         <node concept="10M0yZ" id="p9Lm3R6IvU" role="2Oq$k0">
-                          <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                          <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                          <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                          <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                         </node>
                         <node concept="liA8E" id="p9Lm3R6HcJ" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
@@ -7091,8 +7092,8 @@
                           </node>
                           <node concept="2OqwBi" id="p9Lm3R6Hde" role="3uHU7w">
                             <node concept="10M0yZ" id="p9Lm3R6IvW" role="2Oq$k0">
-                              <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                              <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                              <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                              <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                             </node>
                             <node concept="liA8E" id="p9Lm3R6Hdf" role="2OqNvi">
                               <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
@@ -7318,8 +7319,8 @@
               <node concept="1pGfFk" id="p9Lm3R6HdL" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6IvY" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL" resolve="MODEL" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBu" resolve="MODEL" />
                 </node>
               </node>
             </node>
@@ -7333,8 +7334,8 @@
             <node concept="liA8E" id="p9Lm3R6HdT" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6IvZ" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
               </node>
               <node concept="2OqwBi" id="p9Lm3R6GB4" role="37wK5m">
                 <node concept="2OqwBi" id="p9Lm3R6He0" role="2Oq$k0">
@@ -7363,8 +7364,8 @@
               <node concept="1pGfFk" id="p9Lm3R6He3" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6Iw0" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.PERSISTENCE" resolve="PERSISTENCE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgCF" resolve="PERSISTENCE" />
                 </node>
               </node>
             </node>
@@ -7378,8 +7379,8 @@
             <node concept="liA8E" id="p9Lm3R6Heb" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iw1" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.PERSISTENCE_VERSION" resolve="PERSISTENCE_VERSION" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgCJ" resolve="PERSISTENCE_VERSION" />
               </node>
               <node concept="3cpWs3" id="p9Lm3R6GBf" role="37wK5m">
                 <node concept="1rXfSq" id="p9Lm3R6GBg" role="3uHU7B">
@@ -7491,8 +7492,8 @@
                   <node concept="1pGfFk" id="p9Lm3R6Hep" role="2ShVmc">
                     <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                     <node concept="10M0yZ" id="p9Lm3R6Iw2" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE" resolve="LANGUAGE" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBU" resolve="LANGUAGE" />
                     </node>
                   </node>
                 </node>
@@ -7506,8 +7507,8 @@
                 <node concept="liA8E" id="p9Lm3R6Hex" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iw3" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                   </node>
                   <node concept="2OqwBi" id="p9Lm3R6HeC" role="37wK5m">
                     <node concept="37vLTw" id="p9Lm3R6HeB" role="2Oq$k0">
@@ -7674,8 +7675,8 @@
                   <node concept="1pGfFk" id="p9Lm3R6Hfj" role="2ShVmc">
                     <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                     <node concept="10M0yZ" id="p9Lm3R6Iw4" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION" resolve="LANGUAGE_ENGAGED_ON_GENERATION" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgC2" resolve="LANGUAGE_ENGAGED_ON_GENERATION" />
                     </node>
                   </node>
                 </node>
@@ -7689,8 +7690,8 @@
                 <node concept="liA8E" id="p9Lm3R6Hfr" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iw5" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                   </node>
                   <node concept="2OqwBi" id="p9Lm3R6Hfy" role="37wK5m">
                     <node concept="37vLTw" id="p9Lm3R6Hfx" role="2Oq$k0">
@@ -7751,8 +7752,8 @@
                   <node concept="1pGfFk" id="p9Lm3R6HfJ" role="2ShVmc">
                     <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                     <node concept="10M0yZ" id="p9Lm3R6Iw6" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.DEVKIT" resolve="DEVKIT" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgC6" resolve="DEVKIT" />
                     </node>
                   </node>
                 </node>
@@ -7766,8 +7767,8 @@
                 <node concept="liA8E" id="p9Lm3R6HfR" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iw7" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.NAMESPACE" resolve="NAMESPACE" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgB2" resolve="NAMESPACE" />
                   </node>
                   <node concept="2OqwBi" id="p9Lm3R6HfY" role="37wK5m">
                     <node concept="37vLTw" id="p9Lm3R6HfX" role="2Oq$k0">
@@ -7811,8 +7812,8 @@
               <node concept="1pGfFk" id="p9Lm3R6Hg6" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6Iw8" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.MAX_IMPORT_INDEX" resolve="MAX_IMPORT_INDEX" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBQ" resolve="MAX_IMPORT_INDEX" />
                 </node>
               </node>
             </node>
@@ -7910,8 +7911,8 @@
                   <node concept="1pGfFk" id="p9Lm3R6Hgy" role="2ShVmc">
                     <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                     <node concept="10M0yZ" id="p9Lm3R6Iw9" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.IMPORT_ELEMENT" resolve="IMPORT_ELEMENT" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBE" resolve="IMPORT_ELEMENT" />
                     </node>
                   </node>
                 </node>
@@ -7957,8 +7958,8 @@
                 <node concept="liA8E" id="p9Lm3R6HgO" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iwa" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_IMPORT_INDEX" resolve="MODEL_IMPORT_INDEX" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgBM" resolve="MODEL_IMPORT_INDEX" />
                   </node>
                   <node concept="3cpWs3" id="p9Lm3R6GDM" role="37wK5m">
                     <node concept="Xl_RD" id="p9Lm3R6GDN" role="3uHU7B">
@@ -8001,8 +8002,8 @@
                 <node concept="liA8E" id="p9Lm3R6Hh6" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iwb" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                   </node>
                   <node concept="2OqwBi" id="p9Lm3R6Hhd" role="37wK5m">
                     <node concept="37vLTw" id="p9Lm3R6Hhc" role="2Oq$k0">
@@ -8023,8 +8024,8 @@
                 <node concept="liA8E" id="p9Lm3R6Hhj" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iwc" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.VERSION" resolve="VERSION" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgCi" resolve="VERSION" />
                   </node>
                   <node concept="3cpWs3" id="p9Lm3R6GE0" role="37wK5m">
                     <node concept="Xl_RD" id="p9Lm3R6GE1" role="3uHU7B">
@@ -8086,8 +8087,8 @@
             <node concept="liA8E" id="p9Lm3R6HhC" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iwd" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.VALUE" resolve="VALUE" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgBA" resolve="VALUE" />
               </node>
               <node concept="3cpWs3" id="p9Lm3R6GEk" role="37wK5m">
                 <node concept="Xl_RD" id="p9Lm3R6GEl" role="3uHU7B">
@@ -8376,8 +8377,8 @@
               <node concept="1pGfFk" id="p9Lm3R6Hik" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="10M0yZ" id="p9Lm3R6Iwe" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LANGUAGE_ASPECT" resolve="LANGUAGE_ASPECT" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBY" resolve="LANGUAGE_ASPECT" />
                 </node>
               </node>
             </node>
@@ -8391,8 +8392,8 @@
             <node concept="liA8E" id="p9Lm3R6His" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iwf" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.MODEL_UID" resolve="MODEL_UID" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
               </node>
               <node concept="2OqwBi" id="p9Lm3R6Hiz" role="37wK5m">
                 <node concept="37vLTw" id="p9Lm3R6Hiy" role="2Oq$k0">
@@ -8413,8 +8414,8 @@
             <node concept="liA8E" id="p9Lm3R6HiD" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iwg" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.VERSION" resolve="VERSION" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgCi" resolve="VERSION" />
               </node>
               <node concept="3cpWs3" id="p9Lm3R6GFP" role="37wK5m">
                 <node concept="Xl_RD" id="p9Lm3R6GFQ" role="3uHU7B">
@@ -8595,8 +8596,8 @@
                   <ref role="3cqZAo" node="p9Lm3R6GGD" resolve="theElementName" />
                 </node>
                 <node concept="10M0yZ" id="p9Lm3R6Iwh" role="37vLTx">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.NODE" resolve="NODE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgB6" resolve="NODE" />
                 </node>
               </node>
             </node>
@@ -8658,8 +8659,8 @@
               <ref role="3cqZAo" node="p9Lm3R6GGW" resolve="element" />
             </node>
             <node concept="10M0yZ" id="p9Lm3R6Iwi" role="37wK5m">
-              <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-              <ref role="3cqZAo" to="zofw:~ModelPersistence.ROLE" resolve="ROLE" />
+              <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+              <ref role="3cqZAo" to="iho:4BapoMDjgAM" resolve="ROLE" />
             </node>
             <node concept="2YIFZM" id="p9Lm3R6Hj7" role="37wK5m">
               <ref role="1Pybhc" node="p9Lm3R6GqT" resolve="VersionUtil" />
@@ -8685,8 +8686,8 @@
             <node concept="liA8E" id="p9Lm3R6Hjf" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iwj" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.TYPE" resolve="TYPE" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgBa" resolve="TYPE" />
               </node>
               <node concept="2YIFZM" id="p9Lm3R6Hjl" role="37wK5m">
                 <ref role="1Pybhc" node="p9Lm3R6GqT" resolve="VersionUtil" />
@@ -8719,8 +8720,8 @@
             <node concept="liA8E" id="p9Lm3R6Hjv" role="2OqNvi">
               <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
               <node concept="10M0yZ" id="p9Lm3R6Iwk" role="37wK5m">
-                <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                <ref role="3cqZAo" to="zofw:~ModelPersistence.ID" resolve="ID" />
+                <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                <ref role="3cqZAo" to="iho:4BapoMDjgBm" resolve="ID" />
               </node>
               <node concept="2OqwBi" id="p9Lm3R6GHo" role="37wK5m">
                 <node concept="2OqwBi" id="p9Lm3R6HjA" role="2Oq$k0">
@@ -8771,8 +8772,8 @@
                   <node concept="1pGfFk" id="p9Lm3R6HjI" role="2ShVmc">
                     <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                     <node concept="10M0yZ" id="p9Lm3R6Iwl" role="37wK5m">
-                      <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                      <ref role="3cqZAo" to="zofw:~ModelPersistence.PROPERTY" resolve="PROPERTY" />
+                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                      <ref role="3cqZAo" to="iho:4BapoMDjgBy" resolve="PROPERTY" />
                     </node>
                   </node>
                 </node>
@@ -8799,8 +8800,8 @@
                 <node concept="liA8E" id="p9Lm3R6HjV" role="2OqNvi">
                   <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                   <node concept="10M0yZ" id="p9Lm3R6Iwm" role="37wK5m">
-                    <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="3cqZAo" to="zofw:~ModelPersistence.NAME" resolve="NAME" />
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgAU" resolve="NAME" />
                   </node>
                   <node concept="2YIFZM" id="p9Lm3R6Hk1" role="37wK5m">
                     <ref role="1Pybhc" node="p9Lm3R6GqT" resolve="VersionUtil" />
@@ -8823,8 +8824,8 @@
                   <ref role="3cqZAo" node="p9Lm3R6GHu" resolve="propertyElement" />
                 </node>
                 <node concept="10M0yZ" id="p9Lm3R6Iwn" role="37wK5m">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.VALUE" resolve="VALUE" />
+                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                  <ref role="3cqZAo" to="iho:4BapoMDjgBA" resolve="VALUE" />
                 </node>
                 <node concept="2OqwBi" id="p9Lm3R6Hkb" role="37wK5m">
                   <node concept="37vLTw" id="p9Lm3R6Hka" role="2Oq$k0">
