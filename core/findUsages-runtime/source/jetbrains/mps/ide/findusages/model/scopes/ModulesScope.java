@@ -18,6 +18,8 @@ package jetbrains.mps.ide.findusages.model.scopes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -29,11 +31,18 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ModulesScope extends FindUsagesScope {
   private static final String MODULE_ID = "ref";
   private static final String MODULE_TAG = "module";
+  private boolean myRespectVisible = false;
+  private Map<SModuleReference, SModule> myResolveScope;
 
   public ModulesScope(@NotNull Iterable<? extends SModule> modules) {
     for (SModule module : modules) {
@@ -47,6 +56,35 @@ public class ModulesScope extends FindUsagesScope {
     this(Arrays.asList(modules));
   }
 
+  /**
+   * Tells whether to use only specified modules as reference resolution scope for {@link #resolve(org.jetbrains.mps.openapi.module.SModuleReference)},
+   * or all visible/accessible modules shall be considered
+   */
+  public void resolveRespectsAllVisible(boolean respectVisible) {
+    myRespectVisible = respectVisible;
+  }
+
+  @Override
+  public SModule resolve(@NotNull SModuleReference reference) {
+    if (myResolveScope == null) {
+      final Collection<SModule> allVisible;
+      if (myRespectVisible) {
+        allVisible = new GlobalModuleDependenciesManager(myModules).getModules(Deptype.VISIBLE);
+      } else {
+        allVisible = myModules;
+      }
+      myResolveScope = new HashMap<SModuleReference, SModule>(allVisible.size() * 4 / 3);
+      for (SModule m : allVisible) {
+        myResolveScope.put(m.getModuleReference(), m);
+      }
+    }
+    return myResolveScope.get(reference);
+  }
+
+  @Override
+  protected void scopeChanged() {
+
+  }
 
   public ModulesScope(Element element, Project project) throws CantLoadSomethingException {
     this(resolveModules(element, project.getRepository()));

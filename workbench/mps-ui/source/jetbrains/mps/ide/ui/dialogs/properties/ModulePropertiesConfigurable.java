@@ -52,6 +52,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -223,6 +224,32 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public String getDisplayName() {
     return String.format(PropertiesBundle.message("mps.properties.module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
   }
+
+  private FindUsagesScope getModuleAndOwnedModelsScope() {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<FindUsagesScope>() {
+      @Override
+      public FindUsagesScope compute() {
+        final ModulesScope rv = new ModulesScope(myModule);
+        rv.resolveRespectsAllVisible(true);
+        return rv;
+      }
+    });
+  }
+
+  /*package*/ void findModuleUsages(List<SModuleReference> modules) {
+    final SearchQuery query = new SearchQuery(new GenericHolder<Object>(modules), getModuleAndOwnedModelsScope());
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
+    showUsageImpl(query, provider);
+    forceCancelCloseDialog();
+  }
+
+  /*package*/ void findModelUsages(List<SModelReference> models) {
+    final SearchQuery query = new SearchQuery(new ModelsHolder(models), getModuleAndOwnedModelsScope());
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
+    showUsageImpl(query, provider);
+    forceCancelCloseDialog();
+  }
+
 
   public class ModuleCommonTab extends CommonTab {
 
@@ -415,23 +442,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindAnActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          final SearchScope scope = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SearchScope>() {
-            @Override
-            public SearchScope compute() {
-              return myModule.getScope();
-            }
-          });
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
           for (int i : myTable.getSelectedRows()) {
             final DependenciesTableItem valueAt = myDependTableModel.getValueAt(i);
             modules.add(valueAt.getItem().getModuleRef());
           }
-          // FIXME this code is quite similar to that in #findModuleUsage, shall refactor into FindModuleAction and reuse
-          // the problem is different scope, I don't know why one uses Module's, and another uses Global
-          final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SModuleReference>>(modules), scope);
-          final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-          showUsageImpl(query, provider);
-          forceCancelCloseDialog();
+          findModuleUsages(modules);
         }
       };
     }
@@ -599,21 +615,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return myRuntimeTableModel.isModified();
-    }
-
-
-    /*package*/ void findModuleUsages(List<SModuleReference> modules) {
-      final SearchQuery query = new SearchQuery(new GenericHolder(modules), GlobalScope.getInstance());
-      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-      showUsageImpl(query, provider);
-      forceCancelCloseDialog();
-    }
-
-    /*package*/ void findModelUsages(List<SModelReference> models) {
-      final SearchQuery query = new SearchQuery(new ModelsHolder(models), new ModulesScope(Arrays.asList(myModule)));
-      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-      showUsageImpl(query, provider);
-      forceCancelCloseDialog();
     }
 
     private class RuntimeTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {

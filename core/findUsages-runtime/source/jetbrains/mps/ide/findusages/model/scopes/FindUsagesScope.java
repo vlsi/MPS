@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,30 +44,72 @@ public abstract class FindUsagesScope extends BaseScope implements SearchScope, 
     return myModules;
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> getModels() {
     return myModels;
   }
 
-  protected void addModule(SModule module) {
-    myModules.add(module);
+  /**
+   * Register module and models it owns in the scope
+   */
+  protected void addModule(@NotNull SModule module) {
+    primAddModule(module);
     for (SModel model : module.getModels()) {
-      addModel(model);
+      primAddModel(model);
     }
+    scopeChanged();
   }
 
-  protected void addModel(SModel model) {
+  protected void addModel(@NotNull SModel model) {
+    primAddModel(model);
+    final SModule module = model.getModule();
+    if (module != null) {
+      primAddModule(module);
+    }
+    scopeChanged();
+  }
+
+  protected final void primAddModel(SModel model) {
     myModels.add(model);
   }
 
-  @Override
-  public SModel resolve(SModelReference reference) {
-    throw new UnsupportedOperationException();
+  protected final void primAddModule(SModule module) {
+    myModules.add(module);
   }
 
+  /**
+   * Subclasses shall override to react to scope change
+   */
+  protected void scopeChanged() {
+    // no-op
+  }
+  /**
+   * primitive default implementation, resolves to scope's models
+   */
   @Override
-  public SModule resolve(SModuleReference reference) {
-    throw new UnsupportedOperationException();
+  public SModel resolve(@NotNull SModelReference reference) {
+    // XXX perhaps, shall just delegate to BaseScope.resolve()
+    for (SModel m : getModels()) {
+      if (reference.equals(m.getReference())) {
+        return m;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * primitive default implementation, resolves to scope's modules
+   */
+  @Override
+  public SModule resolve(@NotNull SModuleReference reference) {
+    // XXX perhaps, shall just delegate to BaseScope.resolve()
+    for (SModule m : getModules()) {
+      if (reference.equals(m.getModuleReference())) {
+        return m;
+      }
+    }
+    return null;
   }
 
   @Override

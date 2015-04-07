@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// FIXME likely we don't need distinct ModulesScope and ModelsScope, everything shall be part of FindUsagesScope
 public class ModelsScope extends FindUsagesScope {
   private static final String MODEL_ID = "ref";
   private static final String MODEL_TAG = "model";
@@ -57,6 +58,7 @@ public class ModelsScope extends FindUsagesScope {
   @Override
   public Iterable<SModule> getModules() {
     // FIXME shall return modules of the models it was initialized with
+    // we've already collected required modules in the superclass, and it's safe to return scope here as nobody has been using this method anyway
     throw new UnsupportedOperationException();
   }
 
