@@ -12,20 +12,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 5:
-        return new InstructionReference_Constraints();
-      case 0:
-        return new AnalyzerRunnerAnalyzeOperation_Constraints();
-      case 1:
-        return new AnalyzerRunnerCreator_Constraints();
       case 6:
-        return new IsOperation_Constraints();
-      case 3:
-        return new ConceptCondition_Constraints();
+        return new InstructionReference_Constraints();
+      case 1:
+        return new AnalyzerRunnerAnalyzeOperation_Constraints();
       case 2:
-        return new ApplicableNodeReference_Constraints();
+        return new AnalyzerRunnerCreator_Constraints();
+      case 7:
+        return new IsOperation_Constraints();
       case 4:
+        return new ConceptCondition_Constraints();
+      case 3:
+        return new ApplicableNodeReference_Constraints();
+      case 5:
         return new EmitInstruction_Constraints();
+      case 8:
+        return new Rule_Constraints();
+      case 0:
+        return new Analyzer_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -53,7 +57,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x3a887e9da0b3e894L) {
       return new EmitInstruction_Constraints();
     }
+    if (id == 0x5faaa6bbd57b6c8L) {
+      return new Rule_Constraints();
+    }
+    if (id == 0x5bd9e43c93f46789L) {
+      return new Analyzer_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"};
 }
