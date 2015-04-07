@@ -44,12 +44,14 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -83,6 +85,8 @@ import java.util.Queue;
  * evgeny, 1/25/13
  */
 public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
+
+  private static final Logger LOG = Logger.getLogger(MPSPsiModel.class);
 
   public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
   private final SModelReference myModelReference;
@@ -344,24 +348,24 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public PsiFile getContainingFile() {
     // if it's singe-file model then return that file
     final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
-    final Ref<PsiFile> result = new Ref<PsiFile>(null);
-
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel model = myModelReference.resolve(repository);
-        if (model.getSource() instanceof FileDataSource) {
-          IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
-          VirtualFile vModelFile = VirtualFileManager.getInstance().findFileByUrl("file://" + iModelFile.getPath());
-          PsiFile psiFile = PsiManager.getInstance(getProject()).findFile(vModelFile);
-          result.set(psiFile);
-        }
-        // otherwise null
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {
+        @Override
+        public PsiFile compute() {
+          SModel model = myModelReference.resolve(repository);
+          if (model.getSource() instanceof FileDataSource) {
+            IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
+            VirtualFile vModelFile = VirtualFileUtils.getVirtualFile(iModelFile);
+            if (vModelFile == null) {
+              // extra check due to MPS-21363
+              LOG.warn("getContainingFile() -- could not get virtual file by IFile (" + iModelFile + ")");
+              return null;
+            }
+            return PsiManager.getInstance(getProject()).findFile(vModelFile);
+          } else {
+            return null;
+          }
       }
     });
-
-    return result.get();
-
   }
 
   /* package */
