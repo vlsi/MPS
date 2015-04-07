@@ -36,6 +36,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -75,7 +76,9 @@ public class MigrationCheckUtil {
     // find missing languages 
     Collection<LanguageMissingProblem> missingLangProblems = findMissingLanguages(modules, maxErrors, new _FunctionTypes._void_P1_E0<Double>() {
       public void invoke(Double fraction) {
-        progressCallback.invoke(0.1 + 0.45 * fraction);
+        if (progressCallback != null) {
+          progressCallback.invoke(0.1 + 0.45 * fraction);
+        }
       }
     });
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(missingLangProblems));
@@ -230,7 +233,7 @@ public class MigrationCheckUtil {
     return rv;
   }
 
-  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors, @NotNull _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
     // we can add here an additional chank for "used", "exported", "generated into" languages etc.,  
     // but I'm not sure this is needed. All we need in migration is working concepts. 
 
