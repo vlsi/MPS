@@ -6743,7 +6743,7 @@
           </node>
           <node concept="1SiIV0" id="7YI57w6K0hi" role="3bR37C">
             <node concept="3bR9La" id="7YI57w6K0hj" role="1SiIV1">
-              <property role="3bR36h" value="false" />
+              <property role="3bR36h" value="true" />
               <ref role="3bR37D" node="7Kfy9QB6LeP" resolve="jetbrains.mps.analyzers.runtime" />
             </node>
           </node>
@@ -6751,6 +6751,12 @@
             <node concept="3bR9La" id="7YI57w6K0hl" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6L8q" resolve="jetbrains.mps.lang.pattern" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="rS4VtnZ9xa" role="3bR37C">
+            <node concept="3bR9La" id="rS4VtnZ9xb" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7YI57w6K0rx" resolve="jetbrains.mps.lang.smodel#1139186730696" />
             </node>
           </node>
         </node>
@@ -6813,6 +6819,12 @@
           <node concept="3bR9La" id="4oBCpaLu3f4" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="rS4VtnZ9x8" role="3bR37C">
+          <node concept="3bR9La" id="rS4VtnZ9x9" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
       </node>
@@ -7785,6 +7797,12 @@
             <node concept="3bR9La" id="7UsPZgC7dAI" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6L7C" resolve="jetbrains.mps.make.facet" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="rS4VtnZ6NA" role="3bR37C">
+            <node concept="3bR9La" id="rS4VtnZ6NB" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6LeI" resolve="jetbrains.mps.lang.dataFlow.analyzers" />
             </node>
           </node>
         </node>
