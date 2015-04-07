@@ -34,8 +34,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.util.WriteExternalException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
