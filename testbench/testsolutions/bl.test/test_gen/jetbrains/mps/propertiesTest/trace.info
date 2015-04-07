@@ -6,89 +6,104 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/12077399789561866">
     <file name="PropertiesTest_Test.java">
-      <node id="12077399789562075" at="9,50,10,45" concept="4" />
-      <node id="12077399789563368" at="10,45,11,59" concept="1" />
-      <node id="12077399789563374" at="11,59,12,46" concept="1" />
-      <node id="7542046987151769351" at="12,46,13,65" concept="1" />
-      <node id="12077399789562182" at="13,65,14,45" concept="1" />
-      <node id="12077399789563400" at="14,45,15,57" concept="1" />
-      <node id="12077399789563419" at="15,57,16,44" concept="1" />
-      <node id="7542046987151769370" at="16,44,17,63" concept="1" />
-      <node id="12077399789561868" at="19,0,21,0" concept="0" trace="PropertiesTest_Test#()V" />
-      <node id="12077399789562069" at="9,0,19,0" concept="3" trace="test_properties#()V" />
-      <scope id="12077399789561871" at="19,32,19,32" />
-      <scope id="12077399789561868" at="19,0,21,0" />
-      <scope id="12077399789562072" at="9,50,17,63">
+      <node id="12077399789562075" at="9,50,10,43" concept="4" />
+      <node id="12077399789563368" at="10,43,11,49" concept="1" />
+      <node id="7542046987151769351" at="11,49,12,49" concept="1" />
+      <node id="4454445068919749766" at="12,49,13,49" concept="1" />
+      <node id="12077399789563374" at="13,49,14,49" concept="1" />
+      <node id="4454445068919749643" at="14,49,15,0" concept="6" />
+      <node id="12077399789562182" at="15,0,16,45" concept="1" />
+      <node id="12077399789563400" at="16,45,17,49" concept="1" />
+      <node id="7542046987151769370" at="17,49,18,49" concept="1" />
+      <node id="4454445068919750057" at="18,49,19,49" concept="1" />
+      <node id="12077399789563419" at="19,49,20,49" concept="1" />
+      <node id="12077399789561868" at="22,0,24,0" concept="0" trace="PropertiesTest_Test#()V" />
+      <node id="12077399789562069" at="9,0,22,0" concept="3" trace="test_properties#()V" />
+      <scope id="12077399789561871" at="22,32,22,32" />
+      <scope id="12077399789561868" at="22,0,24,0" />
+      <scope id="12077399789562072" at="9,50,20,49">
         <var name="testClass" id="12077399789562076" />
       </scope>
-      <scope id="12077399789562069" at="9,0,19,0" />
-      <unit id="12077399789561866" at="8,0,22,0" name="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
+      <scope id="12077399789562069" at="9,0,22,0" />
+      <unit id="12077399789561866" at="8,0,25,0" name="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
     </file>
   </root>
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/12077399789561873">
     <file name="TestClass.java">
-      <node id="12077399789561978" at="7,0,8,0" concept="2" trace="value" />
-      <node id="12077399789561889" at="8,38,9,35" concept="1" />
-      <node id="12077399789561902" at="9,35,10,40" concept="1" />
-      <node id="12077399789561983" at="10,40,11,36" concept="1" />
-      <node id="12077399789563300" at="11,36,12,42" concept="4" />
-      <node id="12077399789563492" at="12,42,13,38" concept="1" />
-      <node id="7542046987151769313" at="13,38,14,47" concept="1" />
-      <node id="7319542056806119210" at="14,47,15,39" concept="1" />
-      <node id="7319542056806206402" at="15,39,16,50" concept="4" />
-      <node id="12077399789562175" at="18,57,19,44" concept="1" />
-      <node id="12077399789561945" at="22,42,23,33" concept="1" />
-      <node id="12077399789562024" at="23,33,24,48" concept="1" />
-      <node id="12077399789562056" at="24,48,25,33" concept="1" />
-      <node id="12077399789563306" at="25,33,26,44" concept="4" />
-      <node id="12077399789563505" at="26,44,27,40" concept="1" />
-      <node id="7542046987151769338" at="27,40,28,49" concept="1" />
-      <node id="12077399789561879" at="31,0,32,0" concept="2" trace="myPropertyValue" />
-      <node id="12077399789561879" at="32,33,33,32" concept="5" />
-      <node id="12077399789561879" at="35,44,36,33" concept="1" />
-      <node id="7542046987151769304" at="38,0,39,0" concept="2" trace="mySecondPropertyValue" />
-      <node id="7542046987151769304" at="39,39,40,38" concept="5" />
-      <node id="7542046987151769304" at="42,50,43,39" concept="1" />
-      <node id="12077399789562164" at="18,0,21,0" concept="3" trace="changeValueUsingNestedClass#(I)V" />
-      <node id="12077399789561879" at="32,0,35,0" concept="3" trace="getPropertyValue#()I" />
-      <node id="12077399789561879" at="35,0,38,0" concept="3" trace="setPropertyValue#(I)V" />
-      <node id="7542046987151769304" at="39,0,42,0" concept="3" trace="getSecondPropertyValue#()I" />
-      <node id="7542046987151769304" at="42,0,45,0" concept="3" trace="setSecondPropertyValue#(I)V" />
-      <node id="12077399789561939" at="22,0,30,0" concept="0" trace="PropertyChanger#(I)V" />
-      <node id="12077399789561875" at="8,0,18,0" concept="0" trace="TestClass#(I)V" />
-      <scope id="12077399789562167" at="18,57,19,44" />
-      <scope id="12077399789561879" at="32,33,33,32" />
-      <scope id="12077399789561879" at="35,44,36,33" />
-      <scope id="7542046987151769304" at="39,39,40,38" />
-      <scope id="7542046987151769304" at="42,50,43,39" />
-      <scope id="12077399789562164" at="18,0,21,0">
+      <node id="7319542056806119210" at="8,38,9,34" concept="1" />
+      <node id="12077399789561889" at="9,34,10,32" concept="1" />
+      <node id="12077399789561902" at="10,32,11,42" concept="1" />
+      <node id="7542046987151769313" at="11,42,12,25" concept="1" />
+      <node id="4454445068919764745" at="12,25,13,25" concept="1" />
+      <node id="4454445068919752773" at="13,25,14,25" concept="1" />
+      <node id="12077399789562175" at="17,57,18,44" concept="1" />
+      <node id="26421392144127895" at="22,42,23,40" concept="1" />
+      <node id="7542046987151769338" at="23,40,24,57" concept="1" />
+      <node id="26421392144138315" at="24,57,25,57" concept="1" />
+      <node id="4454445068919769854" at="25,57,26,57" concept="1" />
+      <node id="12077399789561879" at="29,0,30,0" concept="2" trace="myProp1" />
+      <node id="12077399789561879" at="30,25,31,19" concept="5" />
+      <node id="12077399789561879" at="33,36,34,20" concept="1" />
+      <node id="7542046987151769304" at="36,0,37,0" concept="2" trace="myProp2" />
+      <node id="7542046987151769304" at="37,25,38,19" concept="5" />
+      <node id="7542046987151769304" at="40,35,41,20" concept="1" />
+      <node id="26421392144119981" at="43,0,44,0" concept="2" trace="myProp3" />
+      <node id="26421392144119981" at="44,25,45,19" concept="5" />
+      <node id="26421392144122721" at="47,35,48,20" concept="1" />
+      <node id="4454445068919737382" at="50,25,51,13" concept="5" />
+      <node id="4454445068919735982" at="53,35,54,20" concept="1" />
+      <node id="12077399789562164" at="17,0,20,0" concept="3" trace="changeValueUsingNestedClass#(I)V" />
+      <node id="12077399789561879" at="30,0,33,0" concept="3" trace="getProp1#()I" />
+      <node id="12077399789561879" at="33,0,36,0" concept="3" trace="setProp1#(I)V" />
+      <node id="7542046987151769304" at="37,0,40,0" concept="3" trace="getProp2#()I" />
+      <node id="7542046987151769304" at="40,0,43,0" concept="3" trace="setProp2#(I)V" />
+      <node id="26421392144119981" at="44,0,47,0" concept="3" trace="getProp3#()I" />
+      <node id="26421392144119981" at="47,0,50,0" concept="3" trace="setProp3#(I)V" />
+      <node id="4454445068919735975" at="50,0,53,0" concept="3" trace="getProp4#()I" />
+      <node id="4454445068919735975" at="53,0,56,0" concept="3" trace="setProp4#(I)V" />
+      <node id="12077399789561939" at="22,0,28,0" concept="0" trace="PropertyChanger#(I)V" />
+      <node id="12077399789561875" at="8,0,16,0" concept="0" trace="TestClass#(I)V" />
+      <scope id="12077399789562167" at="17,57,18,44" />
+      <scope id="12077399789561879" at="30,25,31,19" />
+      <scope id="12077399789561879" at="33,36,34,20" />
+      <scope id="7542046987151769304" at="37,25,38,19" />
+      <scope id="7542046987151769304" at="40,35,41,20" />
+      <scope id="26421392144119981" at="44,25,45,19" />
+      <scope id="26421392144119981" at="47,35,48,20" />
+      <scope id="4454445068919735975" at="50,25,51,13" />
+      <scope id="4454445068919735975" at="53,35,54,20" />
+      <scope id="12077399789562164" at="17,0,20,0">
         <var name="newValue" id="12077399789562168" />
       </scope>
-      <scope id="12077399789561879" at="32,0,35,0" />
-      <scope id="12077399789561879" at="35,0,38,0">
+      <scope id="12077399789561879" at="30,0,33,0" />
+      <scope id="12077399789561879" at="33,0,36,0">
         <var name="value" id="12077399789561879" />
       </scope>
-      <scope id="7542046987151769304" at="39,0,42,0" />
-      <scope id="7542046987151769304" at="42,0,45,0">
+      <scope id="7542046987151769304" at="37,0,40,0" />
+      <scope id="7542046987151769304" at="40,0,43,0">
         <var name="value" id="7542046987151769304" />
       </scope>
-      <scope id="12077399789561942" at="22,42,28,49">
-        <var name="asLocalValue" id="12077399789563307" />
+      <scope id="26421392144119981" at="44,0,47,0" />
+      <scope id="26421392144119981" at="47,0,50,0">
+        <var name="value" id="26421392144119981" />
       </scope>
-      <scope id="12077399789561878" at="8,38,16,50">
-        <var name="asLocalValue" id="12077399789563301" />
-        <var name="secondLocalValue" id="7319542056806206405" />
+      <scope id="4454445068919735975" at="50,0,53,0" />
+      <scope id="4454445068919735975" at="53,0,56,0">
+        <var name="value" id="4454445068919735975" />
       </scope>
-      <scope id="12077399789561939" at="22,0,30,0">
+      <scope id="12077399789561942" at="22,42,26,57" />
+      <scope id="12077399789561878" at="8,38,14,25" />
+      <scope id="12077399789561939" at="22,0,28,0">
         <var name="newValue" id="12077399789561943" />
       </scope>
-      <scope id="12077399789561875" at="8,0,18,0">
+      <scope id="12077399789561875" at="8,0,16,0">
         <var name="initialValue" id="12077399789561887" />
       </scope>
-      <unit id="12077399789561937" at="21,0,31,0" name="jetbrains.mps.propertiesTest.TestClass$PropertyChanger" />
-      <unit id="12077399789561873" at="6,0,46,0" name="jetbrains.mps.propertiesTest.TestClass" />
+      <unit id="12077399789561937" at="21,0,29,0" name="jetbrains.mps.propertiesTest.TestClass$PropertyChanger" />
+      <unit id="12077399789561873" at="6,0,57,0" name="jetbrains.mps.propertiesTest.TestClass" />
     </file>
   </root>
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/6799807267502338718">
@@ -187,15 +202,15 @@
   </root>
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/7319542056806110576">
     <file name="BaseTestClass.java">
-      <node id="7319542056806110823" at="9,0,10,0" concept="2" trace="myBasePropertyValue" />
-      <node id="7319542056806110823" at="10,37,11,36" concept="5" />
-      <node id="7319542056806110823" at="13,47,14,37" concept="1" />
+      <node id="7319542056806110823" at="9,0,10,0" concept="2" trace="myBaseProperty" />
+      <node id="7319542056806110823" at="10,32,11,26" concept="5" />
+      <node id="7319542056806110823" at="13,42,14,27" concept="1" />
       <node id="7319542056806117237" at="7,0,9,0" concept="0" trace="BaseTestClass#()V" />
-      <node id="7319542056806110823" at="10,0,13,0" concept="3" trace="getBasePropertyValue#()I" />
-      <node id="7319542056806110823" at="13,0,16,0" concept="3" trace="setBasePropertyValue#(I)V" />
+      <node id="7319542056806110823" at="10,0,13,0" concept="3" trace="getBaseProperty#()I" />
+      <node id="7319542056806110823" at="13,0,16,0" concept="3" trace="setBaseProperty#(I)V" />
       <scope id="7319542056806117243" at="7,26,7,26" />
-      <scope id="7319542056806110823" at="10,37,11,36" />
-      <scope id="7319542056806110823" at="13,47,14,37" />
+      <scope id="7319542056806110823" at="10,32,11,26" />
+      <scope id="7319542056806110823" at="13,42,14,27" />
       <scope id="7319542056806117237" at="7,0,9,0" />
       <scope id="7319542056806110823" at="10,0,13,0" />
       <scope id="7319542056806110823" at="13,0,16,0">
