@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
@@ -158,7 +158,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   private Set<Dependency> getDependencies() {
-    Set<Dependency> dependencies = new HashSet<Dependency>();
+    Set<Dependency> dependencies = new LinkedHashSet<Dependency>();
     for(DependenciesTableItem tableItem : myTableItems) {
       // FIXME here's comes a hack. We used to save only 'DEFAULT' SDependency with Dependency,
       // FIXME        and 'EXTENDS' as SModuleReference (@see getExtendedModules, below).
@@ -173,7 +173,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   private Set<SModuleReference> getExtendedModules() {
-    Set<SModuleReference> set = new HashSet<SModuleReference>();
+    Set<SModuleReference> set = new LinkedHashSet<SModuleReference>();
     for(DependenciesTableItem tableItem : myTableItems)
       if(tableItem.getItem().getScope() == SDependencyScope.EXTENDS) // XXX see getDependencies() above
         set.add(tableItem.getItem().getModuleRef());
@@ -182,7 +182,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   private Set<SModuleReference> getModulesByType(ModuleType type) {
-    Set<SModuleReference> set = new HashSet<SModuleReference>();
+    Set<SModuleReference> set = new LinkedHashSet<SModuleReference>();
     for(DependenciesTableItem tableItem : myTableItems)
       if(tableItem.getModuleType().equals(type))
         set.add(tableItem.getItem().getModuleRef());
