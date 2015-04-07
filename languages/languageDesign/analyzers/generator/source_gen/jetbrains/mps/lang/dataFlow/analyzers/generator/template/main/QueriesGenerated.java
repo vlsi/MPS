@@ -8,16 +8,22 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.DropRootRuleContext;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import java.util.Set;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -31,6 +37,24 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_1832482093173674464(final CreateRootRuleContext _context) {
     return LanguageAspect.DATA_FLOW.is(_context.getOriginalInputModel()) && ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))).isNotEmpty();
+  }
+  public static boolean dropRootRule_Condition_8337746954995362584(final DropRootRuleContext _context) {
+    SModule module = _context.getOriginalInputModel().getModule();
+    if (!(module instanceof Language)) {
+      return true;
+    }
+    Language ruleLanguage = ((Language) module);
+    Set<Language> extendedLanguages = LanguageDependenciesManager.getAllExtendedLanguages(ruleLanguage);
+    SNode analyzer = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer"));
+    SModule analyzerModule = SNodeOperations.getModel(analyzer).getModule();
+    if (!(analyzerModule instanceof Language)) {
+      return true;
+    }
+    Language analyzerLanguage = ((Language) analyzerModule);
+    if (analyzerLanguage != ruleLanguage && !(SetSequence.fromSet(extendedLanguages).contains(analyzerLanguage))) {
+      return true;
+    }
+    return false;
   }
   public static boolean baseMappingRule_Condition_4943044633102120866(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x2e25b6b7919dd956L, "condition")), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"));
