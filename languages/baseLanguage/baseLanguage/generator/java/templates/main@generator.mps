@@ -45,6 +45,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -56,6 +59,7 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -1095,8 +1099,11 @@
             </node>
           </node>
           <node concept="3cpWs6" id="4D3RMlPNgdg" role="3cqZAp">
-            <node concept="37vLTw" id="1tRxQXetJJ" role="3cqZAk">
-              <ref role="3cqZAo" node="hv3dtEI" resolve="myBackingPropertyVar" />
+            <node concept="2OqwBi" id="5NJ97UmmM44" role="3cqZAk">
+              <node concept="Xjq3P" id="5NJ97UmmMLC" role="2Oq$k0" />
+              <node concept="2OwXpG" id="5NJ97UmmM47" role="2OqNvi">
+                <ref role="2Oxat5" node="hv3dtEI" resolve="myBackingPropertyVar" />
+              </node>
             </node>
             <node concept="1W57fq" id="4D3RMlPNgdz" role="lGtFl">
               <node concept="3IZrLx" id="4D3RMlPNgd$" role="3IZSJc">
@@ -1233,8 +1240,11 @@
           </node>
           <node concept="3clFbF" id="hvtl7jA" role="3cqZAp">
             <node concept="37vLTI" id="hvtl7CT" role="3clFbG">
-              <node concept="37vLTw" id="3Rhnz24ioVV" role="37vLTJ">
-                <ref role="3cqZAo" node="hv3dtEI" resolve="myBackingPropertyVar" />
+              <node concept="2OqwBi" id="5NJ97UmmLDv" role="37vLTJ">
+                <node concept="Xjq3P" id="5NJ97UmmLTq" role="2Oq$k0" />
+                <node concept="2OwXpG" id="5NJ97UmmLDy" role="2OqNvi">
+                  <ref role="2Oxat5" node="hv3dtEI" resolve="myBackingPropertyVar" />
+                </node>
               </node>
               <node concept="37vLTw" id="2BHiRxgm_lW" role="37vLTx">
                 <ref role="3cqZAo" node="hvtkYJj" resolve="value" />
