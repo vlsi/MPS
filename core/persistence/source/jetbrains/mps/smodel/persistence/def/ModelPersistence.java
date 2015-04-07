@@ -63,8 +63,7 @@ public class ModelPersistence {
   private static final Logger LOG = LogManager.getLogger(ModelPersistence.class);
 
   public static final String MODEL = "model";
-  public static final String MODEL_UID = "modelUID";
-  public static final String ROOT_NODE = "root";
+  public static final String REF = "ref";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
@@ -313,13 +312,11 @@ public class ModelPersistence {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
           String name = attributes.getQName(idx);
           String value = attributes.getValue(idx);
-          if (MODEL_UID.equals(name) || ModelPersistence9.REF.equals(name)) {
+          if ("modelUID".equals(name) || ModelPersistence9.REF.equals(name)) {
             final SModelReference mr = value == null ? null : PersistenceFacade.getInstance().createModelReference(value);
             myResult.setModelReference(mr);
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
-          } else if ("version".equals(name)) {
-            //old model version
           } else {
             myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
           }

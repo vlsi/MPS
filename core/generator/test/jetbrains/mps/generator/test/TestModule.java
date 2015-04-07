@@ -148,7 +148,7 @@ public class TestModule extends AbstractModule {
       }
       Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModel());
       Element rootElement = document.getRootElement();
-      rootElement.setAttribute(ModelPersistence.MODEL_UID, getReference().toString());
+      rootElement.setAttribute(ModelPersistence.REF, getReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
         return ModelPersistence.readModel(modelContent, false);

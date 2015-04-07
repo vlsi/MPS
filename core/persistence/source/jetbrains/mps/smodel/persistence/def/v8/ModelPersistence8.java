@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.List;
 
 public class ModelPersistence8 implements IModelPersistence {
+  public static final String ROOT_NODE = "root";
 
   //todo remove
   @Override

@@ -66,7 +66,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
 
   // attributes
 
-  public static final String REF = "ref";
+  public static final String REF = ModelPersistence.REF;
   public static final String ID = "id";
   public static final String NAME = "name";
   public static final String VALUE = "value";
