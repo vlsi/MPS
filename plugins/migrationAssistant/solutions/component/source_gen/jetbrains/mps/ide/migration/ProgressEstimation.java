@@ -6,7 +6,7 @@ package jetbrains.mps.ide.migration;
 public class ProgressEstimation {
   private static final double MIGRATIONS_FRACTION = 0.6;
   private static final double CHECKS_FRACTION = 0.3;
-  private static final double OTHER_FRACTION = 0.99 - MIGRATIONS_FRACTION - CHECKS_FRACTION;
+  private static final double OTHER_FRACTION = 1.0 - MIGRATIONS_FRACTION - CHECKS_FRACTION;
 
 
   private static final double SAVING_FRACTION = OTHER_FRACTION * 0.9;
