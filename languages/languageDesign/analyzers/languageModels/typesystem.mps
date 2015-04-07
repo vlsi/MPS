@@ -740,14 +740,14 @@
               <ref role="QpYPw" to="tpcj:2BhfHtuWIb6" resolve="AddExtendedLanguage" />
               <node concept="3CnSsL" id="5420fVrTaKZ" role="3Coj4f">
                 <ref role="QkamJ" to="tpcj:2BhfHtuWIbq" resolve="extLang" />
-                <node concept="37vLTw" id="5420fVrTb4e" role="3CoRuB">
-                  <ref role="3cqZAo" node="hYjR2Jc" resolve="ruleLanguage" />
+                <node concept="37vLTw" id="7ePCaSBCsgv" role="3CoRuB">
+                  <ref role="3cqZAo" node="5420fVrT3U9" resolve="analyzerLanguage" />
                 </node>
               </node>
               <node concept="3CnSsL" id="5420fVrTb4p" role="3Coj4f">
                 <ref role="QkamJ" to="tpcj:2BhfHtuWIbx" resolve="lang" />
-                <node concept="37vLTw" id="5420fVrTb4F" role="3CoRuB">
-                  <ref role="3cqZAo" node="5420fVrT3U9" resolve="analyzerLanguage" />
+                <node concept="37vLTw" id="7ePCaSBCskt" role="3CoRuB">
+                  <ref role="3cqZAo" node="hYjR2Jc" resolve="ruleLanguage" />
                 </node>
               </node>
             </node>
