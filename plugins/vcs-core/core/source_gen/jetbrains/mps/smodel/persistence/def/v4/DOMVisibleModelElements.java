@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.HashMap;
 import org.jdom.Element;
 import java.util.List;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /*package*/ class DOMVisibleModelElements implements VisibleModelElements {
@@ -20,12 +20,12 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
     parseVisibleElements();
   }
   private void parseVisibleElements() {
-    List visibles = myModelElement.getChildren(ModelPersistence.VISIBLE_ELEMENT);
+    List visibles = myModelElement.getChildren(VCSPersistenceSupport.VISIBLE_ELEMENT);
     for (Object aVisible : visibles) {
       Element element = (Element) aVisible;
-      String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
+      String indexValue = element.getAttributeValue(VCSPersistenceSupport.MODEL_IMPORT_INDEX);
       int index = Integer.parseInt(indexValue);
-      String visibleModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
+      String visibleModelUIDString = element.getAttributeValue(VCSPersistenceSupport.MODEL_UID);
       myVisibleModelElements.put(index, PersistenceFacade.getInstance().createModelReference(visibleModelUIDString));
       myMaxVisibleModelIndex = Math.max(index, myMaxVisibleModelIndex);
     }
@@ -42,9 +42,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
   private int addModel(SModelReference modelReference) {
     myMaxVisibleModelIndex++;
     myVisibleModelElements.put(myMaxVisibleModelIndex, modelReference);
-    Element visibleElement = new Element(ModelPersistence.VISIBLE_ELEMENT);
-    visibleElement.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, myMaxVisibleModelIndex + "");
-    visibleElement.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
+    Element visibleElement = new Element(VCSPersistenceSupport.VISIBLE_ELEMENT);
+    visibleElement.setAttribute(VCSPersistenceSupport.MODEL_IMPORT_INDEX, myMaxVisibleModelIndex + "");
+    visibleElement.setAttribute(VCSPersistenceSupport.MODEL_UID, modelReference.toString());
     myModelElement.addContent(visibleElement);
     return myMaxVisibleModelIndex;
   }

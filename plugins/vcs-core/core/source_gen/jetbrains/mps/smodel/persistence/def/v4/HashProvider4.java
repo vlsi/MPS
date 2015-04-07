@@ -9,7 +9,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class HashProvider4 extends IHashProvider {
@@ -35,7 +35,7 @@ public class HashProvider4 extends IHashProvider {
       switch (token) {
         case XmlFastScanner.OPEN_TAG:
           depth++;
-          if (depth == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (depth == 2 && VCSPersistenceSupport.NODE.equals(scanner.getName())) {
             rootStart = scanner.getTokenOffset();
             rootId = IHashProvider.extractId(scanner.token());
             if (rootId != null && isEmpty) {
@@ -45,7 +45,7 @@ public class HashProvider4 extends IHashProvider {
           }
           break;
         case XmlFastScanner.SIMPLE_TAG:
-          if (depth == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (depth == 1 && VCSPersistenceSupport.NODE.equals(scanner.getName())) {
             rootId = IHashProvider.extractId(scanner.token());
             if (rootId != null) {
               String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
@@ -55,7 +55,7 @@ public class HashProvider4 extends IHashProvider {
           break;
         case XmlFastScanner.CLOSE_TAG:
           if (depth == 2) {
-            if (rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
+            if (rootId != null && VCSPersistenceSupport.NODE.equals(scanner.getName())) {
               String s = scanner.getText(rootStart, scanner.getOffset());
               rootHashes.put(rootId, ModelDigestUtil.hashText(s));
             }

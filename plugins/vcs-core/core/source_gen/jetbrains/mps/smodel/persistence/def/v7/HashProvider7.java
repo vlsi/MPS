@@ -9,7 +9,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class HashProvider7 extends IHashProvider {
@@ -35,8 +35,8 @@ public class HashProvider7 extends IHashProvider {
     while ((token = scanner.next()) != XmlFastScanner.EOI) {
       switch (token) {
         case XmlFastScanner.SIMPLE_TAG:
-          boolean rootShortPart = insideRoots && ModelPersistence.NODE.equals(scanner.getName());
-          boolean rootLongPart = depth == 1 && ModelPersistence.ROOT_CONTENT.equals(scanner.getName());
+          boolean rootShortPart = insideRoots && VCSPersistenceSupport.NODE.equals(scanner.getName());
+          boolean rootLongPart = depth == 1 && VCSPersistenceSupport.ROOT_CONTENT.equals(scanner.getName());
           if (rootShortPart || rootLongPart) {
             rootId = IHashProvider.extractId(scanner.token());
             if (rootId != null) {
@@ -52,30 +52,30 @@ public class HashProvider7 extends IHashProvider {
           break;
         case XmlFastScanner.OPEN_TAG:
           depth++;
-          if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
+          if (depth == 2 && VCSPersistenceSupport.ROOTS.equals(scanner.getName())) {
             insideRoots = true;
             rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, scanner.getTokenOffset())));
           }
-          if (insideRoots && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (insideRoots && VCSPersistenceSupport.NODE.equals(scanner.getName())) {
             rootStart = scanner.getTokenOffset();
             rootId = IHashProvider.extractId(scanner.token());
           }
-          if (depth == 2 && ModelPersistence.ROOT_CONTENT.equals(scanner.getName())) {
+          if (depth == 2 && VCSPersistenceSupport.ROOT_CONTENT.equals(scanner.getName())) {
             rootStart = scanner.getTokenOffset();
             rootId = IHashProvider.extractId(scanner.token());
           }
           break;
         case XmlFastScanner.CLOSE_TAG:
-          if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
+          if (depth == 2 && VCSPersistenceSupport.ROOTS.equals(scanner.getName())) {
             insideRoots = false;
           }
-          if (insideRoots && rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (insideRoots && rootId != null && VCSPersistenceSupport.NODE.equals(scanner.getName())) {
             String s = scanner.getText(rootStart, scanner.getOffset());
             shortContent.put(rootId, s);
             rootStart = -1;
             rootId = null;
           }
-          if (depth == 2 && rootId != null && ModelPersistence.ROOT_CONTENT.equals(scanner.getName())) {
+          if (depth == 2 && rootId != null && VCSPersistenceSupport.ROOT_CONTENT.equals(scanner.getName())) {
             String s = scanner.getText(rootStart, scanner.getOffset());
             addMultiHash(rootHashes, rootId, shortContent.get(rootId), s);
             rootStart = -1;

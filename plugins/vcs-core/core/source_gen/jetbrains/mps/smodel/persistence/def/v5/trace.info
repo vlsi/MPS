@@ -664,18 +664,18 @@
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703065">
     <file name="ModelWriter5.java">
-      <node id="453110257780703072" at="14,46,15,13" concept="9" />
-      <node id="453110257780703094" at="18,83,19,66" concept="10" />
-      <node id="453110257780703069" at="13,0,17,0" concept="7" trace="getModelPersistenceVersion#()I" />
-      <node id="453110257780703076" at="17,0,21,0" concept="7" trace="saveRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
-      <scope id="453110257780703071" at="14,46,15,13" />
-      <scope id="453110257780703082" at="18,83,19,66" />
-      <scope id="453110257780703069" at="13,0,17,0" />
-      <scope id="453110257780703076" at="17,0,21,0">
+      <node id="453110257780703072" at="11,46,12,13" concept="9" />
+      <node id="453110257780703094" at="15,83,16,66" concept="10" />
+      <node id="453110257780703069" at="10,0,14,0" concept="7" trace="getModelPersistenceVersion#()I" />
+      <node id="453110257780703076" at="14,0,18,0" concept="7" trace="saveRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
+      <scope id="453110257780703071" at="11,46,12,13" />
+      <scope id="453110257780703082" at="15,83,16,66" />
+      <scope id="453110257780703069" at="10,0,14,0" />
+      <scope id="453110257780703076" at="14,0,18,0">
         <var name="rootElement" id="453110257780703078" />
         <var name="sourceModel" id="453110257780703080" />
       </scope>
-      <unit id="453110257780703065" at="9,0,22,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelWriter5" />
+      <unit id="453110257780703065" at="9,0,19,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelWriter5" />
     </file>
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703095">

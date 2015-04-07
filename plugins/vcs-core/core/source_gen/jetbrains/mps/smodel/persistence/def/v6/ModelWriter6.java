@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import org.jdom.Document;
 import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -22,43 +22,43 @@ public class ModelWriter6 implements IModelWriter {
   @Override
   public Document saveModel(SModel sourceModel) {
     myHelper = new VersionUtil(sourceModel);
-    Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
-    Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
+    Element rootElement = new Element(VCSPersistenceSupport.MODEL);
+    rootElement.setAttribute(VCSPersistenceSupport.MODEL_UID, sourceModel.getReference().toString());
+    Element persistenceElement = new Element(VCSPersistenceSupport.PERSISTENCE);
+    persistenceElement.setAttribute(VCSPersistenceSupport.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
     // languages 
     for (SModuleReference languageNamespace : new SModelLegacy(sourceModel).importedLanguages()) {
-      Element languageElem = new Element(ModelPersistence.LANGUAGE);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
+      Element languageElem = new Element(VCSPersistenceSupport.LANGUAGE);
+      languageElem.setAttribute(VCSPersistenceSupport.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
     // languages engaged on generation 
     for (SModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
-      Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
+      Element languageElem = new Element(VCSPersistenceSupport.LANGUAGE_ENGAGED_ON_GENERATION);
+      languageElem.setAttribute(VCSPersistenceSupport.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
     // devkits 
     for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
-      Element devkitElem = new Element(ModelPersistence.DEVKIT);
-      devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
+      Element devkitElem = new Element(VCSPersistenceSupport.DEVKIT);
+      devkitElem.setAttribute(VCSPersistenceSupport.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
     // imports 
     for (SModel.ImportElement importElement : sourceModel.importedModels()) {
-      Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
-      importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
-      importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      Element importElem = new Element(VCSPersistenceSupport.IMPORT_ELEMENT);
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_UID, importElement.getModelReference().toString());
+      importElem.setAttribute(VCSPersistenceSupport.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(importElem);
     }
     for (SModel.ImportElement importElement : sourceModel.getImplicitImportsSupport().getAdditionalModelVersions()) {
-      Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
-      importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
-      importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
-      importElem.setAttribute(ModelPersistence.IMPLICIT, "yes");
+      Element importElem = new Element(VCSPersistenceSupport.IMPORT_ELEMENT);
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_UID, importElement.getModelReference().toString());
+      importElem.setAttribute(VCSPersistenceSupport.VERSION, "" + importElement.getUsedVersion());
+      importElem.setAttribute(VCSPersistenceSupport.IMPLICIT, "yes");
       rootElement.addContent(importElem);
     }
     // roots 
@@ -74,32 +74,32 @@ public class ModelWriter6 implements IModelWriter {
     throw new UnsupportedOperationException();
   }
   protected void saveRootStubs(Element parent, SModel model) {
-    Element roots = new Element(ModelPersistence.ROOT_STUBS);
+    Element roots = new Element(VCSPersistenceSupport.ROOT_STUBS);
     for (SNode root : model.getRootNodes()) {
       saveNode(roots, root, false);
     }
     parent.addContent(roots);
   }
   protected void saveNode(Element parentElement, SNode node, boolean saveChildren) {
-    Element element = new Element(ModelPersistence.NODE);
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node));
+    Element element = new Element(VCSPersistenceSupport.NODE);
+    DocUtil.setNotNullAttribute(element, VCSPersistenceSupport.ROLE, myHelper.genRole(node));
     // DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node)); 
-    element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
+    element.setAttribute(VCSPersistenceSupport.TYPE, myHelper.genType(node));
     // DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node)); 
-    element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
+    element.setAttribute(VCSPersistenceSupport.ID, node.getNodeId().toString());
     for (String propertyName : node.getPropertyNames()) {
-      Element propertyElement = new Element(ModelPersistence.PROPERTY);
-      propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
+      Element propertyElement = new Element(VCSPersistenceSupport.PROPERTY);
+      propertyElement.setAttribute(VCSPersistenceSupport.NAME, myHelper.genName(node, propertyName));
       // DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName)); 
-      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getProperty(propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, VCSPersistenceSupport.VALUE, node.getProperty(propertyName));
       element.addContent(propertyElement);
     }
     for (SReference reference : node.getReferences()) {
-      Element linkElement = new Element(ModelPersistence.LINK);
-      linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
+      Element linkElement = new Element(VCSPersistenceSupport.LINK);
+      linkElement.setAttribute(VCSPersistenceSupport.ROLE, myHelper.genRole(reference));
       // DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference)); 
-      linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, ((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
+      linkElement.setAttribute(VCSPersistenceSupport.TARGET_NODE_ID, myHelper.genTarget(reference));
+      DocUtil.setNotNullAttribute(linkElement, VCSPersistenceSupport.RESOLVE_INFO, ((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
       element.addContent(linkElement);
     }
     if (saveChildren) {

@@ -8,7 +8,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SModelVersionsInfo;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -34,7 +34,7 @@ public class ReferencePersister4 implements IReferencePersister {
     fillFields(linkElement, sourceNode, useUIDs, new SModelVersionsInfo());
   }
   public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
-    fillFields(linkElement.getAttributeValue(ModelPersistence.ROLE), linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO), linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID), sourceNode, useUIDs, versionsInfo);
+    fillFields(linkElement.getAttributeValue(VCSPersistenceSupport.ROLE), linkElement.getAttributeValue(VCSPersistenceSupport.RESOLVE_INFO), linkElement.getAttributeValue(VCSPersistenceSupport.TARGET_NODE_ID), sourceNode, useUIDs, versionsInfo);
   }
   public void fillFields(String role_, String resolveInfo, String targetNodeId_, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
     String role = VersionUtil.getLinkRole(role_, sourceNode, versionsInfo);
@@ -139,9 +139,9 @@ public class ReferencePersister4 implements IReferencePersister {
   public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
-    Element linkElement = new Element(ModelPersistence.LINK);
+    Element linkElement = new Element(VCSPersistenceSupport.LINK);
     parentElement.addContent(linkElement);
-    linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
+    linkElement.setAttribute(VCSPersistenceSupport.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
     String targetModelInfo = "";
     if (!((reference instanceof StaticReference && node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
@@ -172,10 +172,10 @@ public class ReferencePersister4 implements IReferencePersister {
     }
     // stack overflow was here!! 
     targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
-    linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
+    linkElement.setAttribute(VCSPersistenceSupport.TARGET_NODE_ID, targetNodeId);
     String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (resolveInfo != null) {
-      linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
+      linkElement.setAttribute(VCSPersistenceSupport.RESOLVE_INFO, resolveInfo);
     }
   }
   @Override

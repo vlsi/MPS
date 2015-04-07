@@ -6,9 +6,6 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import org.jdom.Element;
 import jetbrains.mps.smodel.DefaultSModel;
 
-/**
- * Evgeny Gryaznov, Aug 2, 2010
- */
 public class ModelWriter5 extends ModelWriter4 {
   @Override
   protected int getModelPersistenceVersion() {

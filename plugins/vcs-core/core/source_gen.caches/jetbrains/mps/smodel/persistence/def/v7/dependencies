@@ -8,8 +8,8 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
     <classNode dependClassName="jetbrains.mps.generator.ModelDigestUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.XmlFastScanner" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IHashProvider" />
@@ -101,9 +101,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DocUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.WriteHelper" />
     <classNode dependClassName="jetbrains.mps.util.StringUtil" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />

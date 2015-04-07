@@ -73,8 +73,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DocUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import org.jdom.Document;
 import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.smodel.DefaultSModel;
 import java.util.Set;
 import java.util.HashSet;
@@ -30,10 +30,10 @@ public class ModelWriter4 implements IModelWriter {
   }
   @Override
   public Document saveModel(SModel sourceModel) {
-    Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
-    Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
+    Element rootElement = new Element(VCSPersistenceSupport.MODEL);
+    rootElement.setAttribute(VCSPersistenceSupport.MODEL_UID, sourceModel.getReference().toString());
+    Element persistenceElement = new Element(VCSPersistenceSupport.PERSISTENCE);
+    persistenceElement.setAttribute(VCSPersistenceSupport.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
     if (sourceModel instanceof DefaultSModel) {
       saveRefactorings(rootElement, (DefaultSModel) sourceModel);
@@ -41,8 +41,8 @@ public class ModelWriter4 implements IModelWriter {
     // languages 
     Set<String> writtenAspects = new HashSet<String>();
     for (SModuleReference languageNamespace : new SModelLegacy(sourceModel).importedLanguages()) {
-      Element languageElem = new Element(ModelPersistence.LANGUAGE);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
+      Element languageElem = new Element(VCSPersistenceSupport.LANGUAGE);
+      languageElem.setAttribute(VCSPersistenceSupport.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
     for (SModel.ImportElement aspectElement : sourceModel.getImplicitImportsSupport().getAdditionalModelVersions()) {
@@ -57,36 +57,36 @@ public class ModelWriter4 implements IModelWriter {
     }
     // languages engaged on generation 
     for (SModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
-      Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
+      Element languageElem = new Element(VCSPersistenceSupport.LANGUAGE_ENGAGED_ON_GENERATION);
+      languageElem.setAttribute(VCSPersistenceSupport.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
     // devkits 
     for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
-      Element devkitElem = new Element(ModelPersistence.DEVKIT);
-      devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
+      Element devkitElem = new Element(VCSPersistenceSupport.DEVKIT);
+      devkitElem.setAttribute(VCSPersistenceSupport.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
     // imports 
-    Element maxRefID = new Element(ModelPersistence.MAX_IMPORT_INDEX);
+    Element maxRefID = new Element(VCSPersistenceSupport.MAX_IMPORT_INDEX);
     rootElement.addContent(maxRefID);
     int maxImport = 0;
     for (SModel.ImportElement importElement : sourceModel.importedModels()) {
       maxImport = Math.max(maxImport, importElement.getReferenceID());
     }
     for (SModel.ImportElement importElement : sourceModel.importedModels()) {
-      Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
+      Element importElem = new Element(VCSPersistenceSupport.IMPORT_ELEMENT);
       if (importElement.getReferenceID() < 0) {
         importElement.setReferenceID(++maxImport);
       }
-      importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelReference modelReference = importElement.getModelReference();
-      importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
-      importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      importElem.setAttribute(VCSPersistenceSupport.MODEL_UID, modelReference.toString());
+      importElem.setAttribute(VCSPersistenceSupport.VERSION, "" + importElement.getUsedVersion());
       org.jetbrains.mps.openapi.model.SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       rootElement.addContent(importElem);
     }
-    maxRefID.setAttribute(ModelPersistence.VALUE, "" + maxImport);
+    maxRefID.setAttribute(VCSPersistenceSupport.VALUE, "" + maxImport);
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
     for (SNode root : sourceModel.getRootNodes()) {
       saveNode(rootElement, root, visibleModelElements);
@@ -110,9 +110,9 @@ public class ModelWriter4 implements IModelWriter {
   }
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
     int modelVersion = VersionUtil.getLanguageAspectModelVersion(sourceModel, aspectReference);
-    Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
-    aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
-    aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
+    Element aspectModelElement = new Element(VCSPersistenceSupport.LANGUAGE_ASPECT);
+    aspectModelElement.setAttribute(VCSPersistenceSupport.MODEL_UID, aspectReference.toString());
+    aspectModelElement.setAttribute(VCSPersistenceSupport.VERSION, "" + modelVersion);
     parent.addContent(aspectModelElement);
   }
   public void saveNode(Element container, SNode node) {
@@ -124,20 +124,20 @@ public class ModelWriter4 implements IModelWriter {
   private void saveNode(Element parentElement, String elementName, SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
     String theElementName = elementName;
     if (theElementName == null) {
-      theElementName = ModelPersistence.NODE;
+      theElementName = VCSPersistenceSupport.NODE;
     }
     int modelVersion = VersionUtil.getNodeLanguageVersion(node);
     Element element = new Element(theElementName);
     final String role = node.getRoleInParent();
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, VersionUtil.formVersionedString(role, VersionUtil.getRoleVersion(node)));
-    element.setAttribute(ModelPersistence.TYPE, VersionUtil.formVersionedString(node.getConcept().getQualifiedName(), modelVersion));
-    element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
+    DocUtil.setNotNullAttribute(element, VCSPersistenceSupport.ROLE, VersionUtil.formVersionedString(role, VersionUtil.getRoleVersion(node)));
+    element.setAttribute(VCSPersistenceSupport.TYPE, VersionUtil.formVersionedString(node.getConcept().getQualifiedName(), modelVersion));
+    element.setAttribute(VCSPersistenceSupport.ID, node.getNodeId().toString());
     // properties ... 
     for (String propertyName : node.getPropertyNames()) {
-      Element propertyElement = new Element(ModelPersistence.PROPERTY);
+      Element propertyElement = new Element(VCSPersistenceSupport.PROPERTY);
       element.addContent(propertyElement);
-      propertyElement.setAttribute(ModelPersistence.NAME, VersionUtil.formVersionedString(propertyName, modelVersion));
-      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getProperty(propertyName));
+      propertyElement.setAttribute(VCSPersistenceSupport.NAME, VersionUtil.formVersionedString(propertyName, modelVersion));
+      DocUtil.setNotNullAttribute(propertyElement, VCSPersistenceSupport.VALUE, node.getProperty(propertyName));
     }
     // references ... 
     IReferencePersister referencePersister = getReferencePersister();
