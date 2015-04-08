@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -101,28 +102,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     } finally {
       myLock.readLock().unlock();
     }
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder("FolderSetDataSource(");
-    boolean first = true;
-    for (String s : getPaths()) {
-      if (first) {
-        first = false;
-      } else {
-        sb.append(",");
-      }
-      if (sb.length() > 200) {
-        sb.append("....");
-        break;
-      } else {
-        sb.append(s);
-      }
-    }
-    sb.append(')');
-    return sb.toString();
   }
 
   @Override

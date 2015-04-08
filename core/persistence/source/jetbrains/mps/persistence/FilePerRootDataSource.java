@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * evgeny, 6/3/13
  */
 public class FilePerRootDataSource extends FolderDataSource {
-
   public static final String HEADER_FILE = MPSExtentions.DOT_MODEL_HEADER;
   public static final String ROOT_EXTENSION = MPSExtentions.MODEL_ROOT;
 
@@ -39,9 +38,7 @@ public class FilePerRootDataSource extends FolderDataSource {
 
   @Override
   public boolean isIncluded(IFile file) {
-    if (!super.isIncluded(file)) return false;
-
-    return isPerRootPersistenceFile(file);
+    return super.isIncluded(file) && isPerRootPersistenceFile(file);
   }
 
   public static boolean isPerRootPersistenceFile(IFile file) {

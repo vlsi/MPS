@@ -160,9 +160,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   public void rebuildTreeLater() {
-    if (myTimer.isRunning()) {
-      return;
-    } else {
+    if (!myTimer.isRunning()) {
       myTimer.restart();
     }
   }
@@ -470,10 +468,9 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
             return nodeVirtualFile.getNode().getModel();
           }
         });
-        SModel d = smodel;
-        if (d == null) return false;
+        if (smodel == null) return false;
 
-        DataSource source = d.getSource();
+        DataSource source = smodel.getSource();
         if (!(source instanceof FileSystemBasedDataSource)) return false;
 
         IFile modelFile = ((FileSystemBasedDataSource) source).getAffectedFiles().iterator().next();

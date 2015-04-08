@@ -23,6 +23,9 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface DataSource {
 
+  /**
+   * Yields a string representation for the location of the data source (if applicable)
+   */
   @NotNull
   String getLocation();
 
