@@ -47,23 +47,12 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         final SModel modelDescriptor = mr.resolve(myProject.getRepository());
-        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
-          return;
-        }
+        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) return;
+
         final ModelValidator mv = new ModelValidator(modelDescriptor);
         mv.validate(myProject.getRepository());
-        List<String> errors = mv.errors();
-        List<String> warnings = mv.warnings();
 
-        if (
-            !modelDescriptor.isReadOnly() &&
-                (modelDescriptor instanceof PersistenceVersionAware) &&
-                ((PersistenceVersionAware) modelDescriptor).getPersistenceVersion() < 9
-            ) {
-          warnings.add("Outdated model persistence is used: " + ((PersistenceVersionAware) modelDescriptor).getPersistenceVersion() +
-              ". Please run Tools->Migration 3.2->Migrate from Names to Ids");
-        }
-        schedule(node, new ErrorReport(node, errors, warnings));
+        schedule(node, new ErrorReport(node, mv.errors(), mv.warnings()));
       }
     });
   }

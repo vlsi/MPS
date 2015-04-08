@@ -974,6 +974,9 @@
       <node concept="nCB5N" id="3A27KL0TQok" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-core" />
       </node>
+      <node concept="nCB5N" id="3giH8j_sq6v" role="nCB5Z">
+        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
+      </node>
       <node concept="nCB5N" id="3A27KL0TZVG" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
       </node>
