@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -51,7 +52,18 @@ public class ErrorChecker extends TreeUpdateVisitor {
         }
         final ModelValidator mv = new ModelValidator(modelDescriptor);
         mv.validate(myProject.getRepository());
-        schedule(node, new ErrorReport(node, mv.errors(), mv.warnings()));
+        List<String> errors = mv.errors();
+        List<String> warnings = mv.warnings();
+
+        if (
+            !modelDescriptor.isReadOnly() &&
+                (modelDescriptor instanceof PersistenceVersionAware) &&
+                ((PersistenceVersionAware) modelDescriptor).getPersistenceVersion() < 9
+            ) {
+          warnings.add("Outdated model persistence is used: " + ((PersistenceVersionAware) modelDescriptor).getPersistenceVersion() +
+              ". Please run Tools->Migration 3.2->Migrate from Names to Ids");
+        }
+        schedule(node, new ErrorReport(node, errors, warnings));
       }
     });
   }
