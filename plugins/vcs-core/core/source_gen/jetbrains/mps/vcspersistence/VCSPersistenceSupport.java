@@ -65,7 +65,8 @@ import jetbrains.mps.util.StringUtil;
  * E.g. if in some persistence we had only names of node's concepts, we are still able to remove SConceptByName in newer 
  * MPS versions. The persistences here can use in-repo or even in-structure-models search to obtain concept ids for 
  * names it has. It doesn't matter, how. It must not work under any circumstances. It must not produce the exact vision
- * of the old model. It MUST produce a new SModel.
+ * of the old model. It MUST produce a new SModel. 
+ * (??? [Mihail Muhin] isn't it better to produce model with persistence version set to LAST_VERSION?)
  */
 public class VCSPersistenceSupport {
   private static final Logger LOG = LogManager.getLogger(VCSPersistenceSupport.class);

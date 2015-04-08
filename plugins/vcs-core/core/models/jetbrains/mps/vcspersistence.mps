@@ -2979,7 +2979,12 @@
       </node>
       <node concept="TZ5HA" id="4BapoMDqrx1" role="TZ5H$">
         <node concept="1dT_AC" id="4BapoMDqrx2" role="1dT_Ay">
-          <property role="1dT_AB" value="of the old model. It MUST produce a new SModel." />
+          <property role="1dT_AB" value="of the old model. It MUST produce a new SModel. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDsbnE" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDsbnF" role="1dT_Ay">
+          <property role="1dT_AB" value="(??? [Mihail Muhin] isn't it better to produce model with persistence version set to LAST_VERSION?)" />
         </node>
       </node>
     </node>
