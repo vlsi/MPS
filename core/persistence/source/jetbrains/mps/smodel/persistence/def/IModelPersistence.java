@@ -41,8 +41,6 @@ public interface IModelPersistence {
    */
   IModelWriter getModelWriter(@Nullable SModelHeader header);
 
-  IModelReader getModelReader();
-
   IHashProvider getHashProvider();
 
   XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header);

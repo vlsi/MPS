@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
@@ -101,11 +100,6 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
       mmiProvider = new RegularMetaModelInfo();
     }
     return new ModelWriter9(mmiProvider);
-  }
-
-  @Override
-  public IModelReader getModelReader() {
-    return null;
   }
 
   @Override

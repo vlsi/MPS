@@ -13,9 +13,8 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
 
-public class ModelPersistence4 implements IModelPersistence {
+public class ModelPersistence4 implements IModelPersistence, IPersistenceWithReader {
   @Override
   public IHashProvider getHashProvider() {
     return null;

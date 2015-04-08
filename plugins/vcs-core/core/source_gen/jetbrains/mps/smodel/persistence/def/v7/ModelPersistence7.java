@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.v4.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;

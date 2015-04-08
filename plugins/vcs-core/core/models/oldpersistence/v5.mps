@@ -21,7 +21,6 @@
     <import index="zwkq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="llmc" ref="r:8276e029-a527-420e-8e0f-72df2934554c(jetbrains.mps.smodel.persistence.def.v4)" />
-    <import index="zzst" ref="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1652,7 +1651,7 @@
       </node>
       <node concept="3Tm1VV" id="p9Lm3R6FYe" role="1B3o_S" />
       <node concept="3uibUv" id="p9Lm3R6FYf" role="3clF45">
-        <ref role="3uigEE" to="zofw:~IModelReader" resolve="IModelReader" />
+        <ref role="3uigEE" to="llmc:4BapoMDsvXG" resolve="IModelReader" />
       </node>
     </node>
     <node concept="3clFb_" id="p9Lm3R6FYg" role="jymVt">

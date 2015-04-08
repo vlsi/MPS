@@ -747,7 +747,7 @@
       <node id="453110257780658575" at="18,0,22,0" concept="7" trace="getVersion#()I" />
       <node id="453110257780658582" at="22,0,26,0" concept="7" trace="getModelWriter#()Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
       <node id="453110257780658590" at="26,0,30,0" concept="7" trace="getModelWriter#(Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
-      <node id="453110257780658601" at="30,0,34,0" concept="7" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/IModelReader;" />
+      <node id="453110257780658601" at="30,0,34,0" concept="7" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/v4/IModelReader;" />
       <node id="453110257780658608" at="34,0,38,0" concept="7" trace="getHashProvider#()Ljetbrains/mps/smodel/persistence/def/IHashProvider;" />
       <node id="453110257780658615" at="38,0,42,0" concept="7" trace="getModelReaderHandler#(Ljetbrains/mps/smodel/loading/ModelLoadingState;Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <node id="453110257780658629" at="42,0,46,0" concept="7" trace="getLineToContentMapReaderHandler#()Ljetbrains/mps/util/xml/XMLSAXHandler;" />

@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.persistence.def.v5;
 
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.v4.IModelReader;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;

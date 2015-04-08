@@ -26,7 +26,7 @@
       <node id="453110257780685220" at="33,78,34,48" concept="10" />
       <node id="453110257780685182" at="16,0,20,0" concept="8" trace="getVersion#()I" />
       <node id="453110257780685189" at="20,0,24,0" concept="8" trace="getModelWriter#()Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
-      <node id="453110257780685196" at="24,0,28,0" concept="8" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/IModelReader;" />
+      <node id="453110257780685196" at="24,0,28,0" concept="8" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/v4/IModelReader;" />
       <node id="453110257780685203" at="28,0,32,0" concept="8" trace="getModelReaderHandler#(Ljetbrains/mps/smodel/loading/ModelLoadingState;Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <node id="453110257780685217" at="32,0,36,0" concept="8" trace="getLineToContentMapReaderHandler#()Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <scope id="453110257780685184" at="17,27,18,13" />

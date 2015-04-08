@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
@@ -51,11 +50,6 @@ public class ModelPersistence8 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return null;
-  }
-
-  @Override
-  public IModelReader getModelReader() {
     return null;
   }
 

@@ -26,7 +26,8 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.xml.XMLSAXHandler;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.v4.IPersistenceWithReader;
+import jetbrains.mps.smodel.persistence.def.v4.IModelReader;
 import org.jdom.Document;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
@@ -98,7 +99,7 @@ public class VCSPersistenceSupport {
   public static final String PERSISTENCE_VERSION = "version";
 
   @Nullable
-  public static IModelPersistence getPersistence(int version) {
+  private static IModelPersistence getPersistence(int version) {
     assert version >= 4;
 
     if (version == 4) {
@@ -122,7 +123,7 @@ public class VCSPersistenceSupport {
     try {
       in = dataSource.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-      loadDescriptor(result, source);
+      parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read descriptor from " + dataSource.getLocation() + ": " + e.getMessage(), e);
     } finally {
@@ -130,14 +131,10 @@ public class VCSPersistenceSupport {
     }
   }
 
-  /*package*/ static void loadDescriptor(SModelHeader result, InputSource source) throws IOException {
-    parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
-  }
-
   @NotNull
   public static SModelHeader loadDescriptor(InputSource source) throws IOException {
     SModelHeader result = new SModelHeader();
-    loadDescriptor(result, source);
+    parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
     return result;
   }
 
@@ -179,7 +176,10 @@ public class VCSPersistenceSupport {
     }
 
     // then try to use DOM reader 
-    IModelReader reader = mp.getModelReader();
+    if (!(mp instanceof IPersistenceWithReader)) {
+      throw new PersistenceVersionNotFoundException(m);
+    }
+    IModelReader reader = ((IPersistenceWithReader) mp).getModelReader();
     if (reader == null) {
       throw new PersistenceVersionNotFoundException(m);
     }
