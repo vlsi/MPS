@@ -648,18 +648,14 @@
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703035">
     <file name="ModelReader5.java">
-      <node id="453110257780703042" at="11,27,12,13" concept="9" />
-      <node id="453110257780703064" at="15,77,16,66" concept="10" />
-      <node id="453110257780703039" at="10,0,14,0" concept="7" trace="getVersion#()I" />
-      <node id="453110257780703046" at="14,0,18,0" concept="7" trace="readRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
-      <scope id="453110257780703041" at="11,27,12,13" />
-      <scope id="453110257780703052" at="15,77,16,66" />
-      <scope id="453110257780703039" at="10,0,14,0" />
-      <scope id="453110257780703046" at="14,0,18,0">
+      <node id="453110257780703064" at="11,77,12,66" concept="10" />
+      <node id="453110257780703046" at="10,0,14,0" concept="7" trace="readRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
+      <scope id="453110257780703052" at="11,77,12,66" />
+      <scope id="453110257780703046" at="10,0,14,0">
         <var name="model" id="453110257780703050" />
         <var name="rootElement" id="453110257780703048" />
       </scope>
-      <unit id="453110257780703035" at="9,0,19,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
+      <unit id="453110257780703035" at="9,0,15,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
     </file>
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703095">

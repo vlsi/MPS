@@ -3094,23 +3094,6 @@
         <ref role="3uigEE" node="p9Lm3R6G3H" resolve="ReferencePersister4" />
       </node>
     </node>
-    <node concept="3clFb_" id="p9Lm3R6GfY" role="jymVt">
-      <property role="TrG5h" value="getVersion" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6GfZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6Gg0" role="3clF47">
-        <node concept="3cpWs6" id="p9Lm3R6Gg1" role="3cqZAp">
-          <node concept="3cmrfG" id="p9Lm3R6Gg2" role="3cqZAk">
-            <property role="3cmrfH" value="4" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="p9Lm3R6Gg3" role="1B3o_S" />
-      <node concept="10Oyi0" id="p9Lm3R6Gg4" role="3clF45" />
-    </node>
     <node concept="3clFb_" id="p9Lm3R6Gg5" role="jymVt">
       <property role="TrG5h" value="readModel" />
       <property role="DiZV1" value="false" />

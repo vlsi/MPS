@@ -35,10 +35,6 @@ public class ModelReader4 implements IModelReader {
     return new ReferencePersister4();
   }
   @Override
-  public int getVersion() {
-    return 4;
-  }
-  @Override
   public DefaultSModel readModel(Document document, SModelHeader header) {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
