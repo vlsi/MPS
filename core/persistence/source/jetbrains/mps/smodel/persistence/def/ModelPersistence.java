@@ -59,6 +59,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * ModelPersistence handles all persistences supported by current MPS version.
+ * The range of supported versions is [FIRST_SUPPORTED_VERSION, LAST_VERSION].
+ * MPS must be able to read any of these persistences and write the last one.
+ * <p/>
+ * The "previous" persistences writeability is not a must, but it is better
+ * to support it to have less moments when we accidentally need to convert
+ * persistences. E.g. to be able to fix model before migration from previous
+ * version and save it in old persistence, or to merge two non-migrated branches
+ * without converting persistence.
+ * <p/>
+ * It is supposed that only one or two persistences are supported:
+ * the last persistence used by previous MPS version (to read and
+ * migrate project created in the previous version, and, sometimes,
+ * a new persistence introduced in current version.
+ * NOTE this is not mandatory, we can support more than two versions.
+ * <p/>
+ * We can't support full functionality on all created persistences as the change
+ * in persistence is actually made because of change in SModel. So, we can't
+ * actual SModel to a very old persistence or even read all the information
+ * from old persistence into a new SModel. The good thing about that is that we
+ * can "partially" support very old persistences where we might need such a support.
+ * See VCSPersistenceSupport for an example.
+ */
 public class ModelPersistence {
   private static final Logger LOG = LogManager.getLogger(ModelPersistence.class);
 
@@ -68,13 +92,19 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
+  public static final int FIRST_SUPPORTED_VERSION = 8;
   public static final int LAST_VERSION = 9;
+
+  public static boolean isSupported(int version) {
+    return version >= FIRST_SUPPORTED_VERSION && version <= LAST_VERSION;
+  }
 
   @Nullable
   public static IModelPersistence getPersistence(int version) {
     if (version == 8) return new ModelPersistence8();
     if (version == 9) return new ModelPersistence9();
 
+    assert !isSupported(version) : "inconsistent ModelPersistence.isSupported and .getPersistence. Version=" + version;
     LOG.error("Unknown persistence version requested: " + version, new Throwable());
     return null;
   }
