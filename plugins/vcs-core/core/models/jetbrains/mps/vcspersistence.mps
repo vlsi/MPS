@@ -231,7 +231,22 @@
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -2884,6 +2899,88 @@
         </node>
         <node concept="3Tm1VV" id="4BapoMDjgAy" role="1B3o_S" />
         <node concept="3cqZAl" id="4BapoMDjgAz" role="3clF45" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="4BapoMDqqn6" role="lGtFl">
+      <node concept="TZ5HA" id="4BapoMDqqn7" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqqn8" role="1dT_Ay">
+          <property role="1dT_AB" value="This is old persistences support for version control purposes. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqqHB" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqqHC" role="1dT_Ay">
+          <property role="1dT_AB" value="It's desirable to be possible to see diff and merge with models in very old persistences, which MPS can't fully " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqr4k" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqr4l" role="1dT_Ay">
+          <property role="1dT_AB" value="support because of changes to SModel. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqr6C" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqr6D" role="1dT_Ay">
+          <property role="1dT_AB" value="For VCS purposes, what is needed is to show the model to the user in a state, which is near to how this model " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqqQu" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqqQv" role="1dT_Ay">
+          <property role="1dT_AB" value="looked in the interested revision. So, while we can't read all the information into new SModel, we can still try to " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqqUW" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqqUX" role="1dT_Ay">
+          <property role="1dT_AB" value="create a new SModel from an old &quot;model state&quot;." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqqZt" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqqZu" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrjT" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrjU" role="1dT_Ay">
+          <property role="1dT_AB" value="The persistences here " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqqZJ" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrbP" role="1dT_Ay">
+          <property role="1dT_AB" value="1. should not be fully-functional. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrcd" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrce" role="1dT_Ay">
+          <property role="1dT_AB" value="2. can use any hacks to &quot;load&quot; the model. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqre_" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqreA" role="1dT_Ay">
+          <property role="1dT_AB" value="3. must &quot;load&quot; the SModel in &quot;new format&quot; (as if they were save by the last persistence, see below)" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrhr" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrhs" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqreZ" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrf0" role="1dT_Ay">
+          <property role="1dT_AB" value="E.g. if in some persistence we had only names of node's concepts, we are still able to remove SConceptByName in newer " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrrq" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrrr" role="1dT_Ay">
+          <property role="1dT_AB" value="MPS versions. The persistences here can use in-repo or even in-structure-models search to obtain concept ids for " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrrW" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrrX" role="1dT_Ay">
+          <property role="1dT_AB" value="names it has. It doesn't matter, how. It must not work under any circumstances. It must not produce the exact vision" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4BapoMDqrx1" role="TZ5H$">
+        <node concept="1dT_AC" id="4BapoMDqrx2" role="1dT_Ay">
+          <property role="1dT_AB" value="of the old model. It MUST produce a new SModel." />
+        </node>
       </node>
     </node>
   </node>

@@ -49,6 +49,24 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.StringUtil;
 
+/**
+ * This is old persistences support for version control purposes. 
+ * It's desirable to be possible to see diff and merge with models in very old persistences, which MPS can't fully 
+ * support because of changes to SModel. 
+ * For VCS purposes, what is needed is to show the model to the user in a state, which is near to how this model 
+ * looked in the interested revision. So, while we can't read all the information into new SModel, we can still try to 
+ * create a new SModel from an old "model state".
+ * 
+ * The persistences here 
+ * 1. should not be fully-functional. 
+ * 2. can use any hacks to "load" the model. 
+ * 3. must "load" the SModel in "new format" (as if they were save by the last persistence, see below)
+ * 
+ * E.g. if in some persistence we had only names of node's concepts, we are still able to remove SConceptByName in newer 
+ * MPS versions. The persistences here can use in-repo or even in-structure-models search to obtain concept ids for 
+ * names it has. It doesn't matter, how. It must not work under any circumstances. It must not produce the exact vision
+ * of the old model. It MUST produce a new SModel.
+ */
 public class VCSPersistenceSupport {
   private static final Logger LOG = LogManager.getLogger(VCSPersistenceSupport.class);
   public static final String TARGET_NODE_ID = "targetNodeId";
