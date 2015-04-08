@@ -1616,23 +1616,6 @@
       <node concept="3Tm1VV" id="p9Lm3R6FY0" role="1B3o_S" />
       <node concept="10Oyi0" id="p9Lm3R6FY1" role="3clF45" />
     </node>
-    <node concept="3clFb_" id="p9Lm3R6FY2" role="jymVt">
-      <property role="TrG5h" value="getModelWriter" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6FY3" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6FY4" role="3clF47">
-        <node concept="3cpWs6" id="p9Lm3R6FY5" role="3cqZAp">
-          <node concept="10Nm6u" id="4BapoMDshLV" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="p9Lm3R6FY7" role="1B3o_S" />
-      <node concept="3uibUv" id="p9Lm3R6FY8" role="3clF45">
-        <ref role="3uigEE" to="zofw:~IModelWriter" resolve="IModelWriter" />
-      </node>
-    </node>
     <node concept="3clFb_" id="p9Lm3R6FY9" role="jymVt">
       <property role="TrG5h" value="getModelReader" />
       <property role="DiZV1" value="false" />

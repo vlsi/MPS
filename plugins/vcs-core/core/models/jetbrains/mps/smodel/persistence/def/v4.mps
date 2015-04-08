@@ -391,23 +391,6 @@
       <node concept="3Tm1VV" id="p9Lm3R6G0t" role="1B3o_S" />
       <node concept="10Oyi0" id="p9Lm3R6G0u" role="3clF45" />
     </node>
-    <node concept="3clFb_" id="p9Lm3R6G0v" role="jymVt">
-      <property role="TrG5h" value="getModelWriter" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6G0w" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6G0x" role="3clF47">
-        <node concept="3cpWs6" id="p9Lm3R6G0y" role="3cqZAp">
-          <node concept="10Nm6u" id="4BapoMDsh8E" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="p9Lm3R6G0$" role="1B3o_S" />
-      <node concept="3uibUv" id="p9Lm3R6G0_" role="3clF45">
-        <ref role="3uigEE" to="zofw:~IModelWriter" resolve="IModelWriter" />
-      </node>
-    </node>
     <node concept="3clFb_" id="p9Lm3R6G0A" role="jymVt">
       <property role="TrG5h" value="getModelWriter" />
       <property role="DiZV1" value="false" />
@@ -427,9 +410,7 @@
       </node>
       <node concept="3clFbS" id="p9Lm3R6G0F" role="3clF47">
         <node concept="3cpWs6" id="p9Lm3R6G0G" role="3cqZAp">
-          <node concept="1rXfSq" id="p9Lm3R6G0H" role="3cqZAk">
-            <ref role="37wK5l" node="p9Lm3R6G0v" resolve="getModelWriter" />
-          </node>
+          <node concept="10Nm6u" id="4BapoMDt4v$" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="p9Lm3R6G0I" role="1B3o_S" />

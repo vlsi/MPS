@@ -156,7 +156,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -1837,26 +1836,6 @@
       </node>
       <node concept="3Tm1VV" id="p9Lm3R6x6k" role="1B3o_S" />
       <node concept="10Oyi0" id="p9Lm3R6x6l" role="3clF45" />
-    </node>
-    <node concept="3clFb_" id="p9Lm3R6x6m" role="jymVt">
-      <property role="TrG5h" value="getModelWriter" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6x6n" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6x6o" role="3clF47">
-        <node concept="3cpWs6" id="p9Lm3R6x6p" role="3cqZAp">
-          <node concept="1rXfSq" id="p9Lm3R6x6q" role="3cqZAk">
-            <ref role="37wK5l" node="p9Lm3R6x6u" resolve="getModelWriter" />
-            <node concept="10Nm6u" id="p9Lm3R6x6r" role="37wK5m" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="p9Lm3R6x6s" role="1B3o_S" />
-      <node concept="3uibUv" id="p9Lm3R6x6t" role="3clF45">
-        <ref role="3uigEE" to="zofw:~IModelWriter" resolve="IModelWriter" />
-      </node>
     </node>
     <node concept="3clFb_" id="p9Lm3R6x6u" role="jymVt">
       <property role="TrG5h" value="getModelWriter" />

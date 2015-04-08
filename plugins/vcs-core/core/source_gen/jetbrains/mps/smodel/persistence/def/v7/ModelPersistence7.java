@@ -20,10 +20,6 @@ public class ModelPersistence7 extends ModelPersistence6 {
     return 7;
   }
   @Override
-  public IModelWriter getModelWriter() {
-    return getModelWriter(null);
-  }
-  @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
     return null;
   }

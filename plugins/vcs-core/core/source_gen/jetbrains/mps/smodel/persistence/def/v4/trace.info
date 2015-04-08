@@ -23,25 +23,22 @@
       <node id="453110257780703239" at="27,78,28,16" concept="11" />
       <node id="453110257780703302" at="31,61,32,13" concept="12" />
       <node id="453110257780703259" at="35,27,36,13" concept="11" />
-      <node id="453110257780703266" at="39,40,40,16" concept="11" />
-      <node id="453110257780703276" at="43,69,44,28" concept="11" />
-      <node id="453110257780703283" at="47,40,48,30" concept="11" />
+      <node id="453110257780703276" at="39,69,40,16" concept="11" />
+      <node id="453110257780703283" at="43,40,44,30" concept="11" />
       <node id="453110257780703217" at="18,0,22,0" concept="9" trace="getHashProvider#()Ljetbrains/mps/smodel/persistence/def/IHashProvider;" />
       <node id="453110257780703224" at="22,0,26,0" concept="9" trace="getModelReaderHandler#(Ljetbrains/mps/smodel/loading/ModelLoadingState;Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <node id="453110257780703236" at="26,0,30,0" concept="9" trace="getLineToContentMapReaderHandler#()Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <node id="453110257780703245" at="30,0,34,0" concept="9" trace="index#([CLorg/jetbrains/mps/openapi/util/Consumer;)V" />
       <node id="453110257780703256" at="34,0,38,0" concept="9" trace="getVersion#()I" />
-      <node id="453110257780703263" at="38,0,42,0" concept="9" trace="getModelWriter#()Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
-      <node id="453110257780703270" at="42,0,46,0" concept="9" trace="getModelWriter#(Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
-      <node id="453110257780703280" at="46,0,50,0" concept="9" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/v4/IModelReader;" />
+      <node id="453110257780703270" at="38,0,42,0" concept="9" trace="getModelWriter#(Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/smodel/persistence/def/IModelWriter;" />
+      <node id="453110257780703280" at="42,0,46,0" concept="9" trace="getModelReader#()Ljetbrains/mps/smodel/persistence/def/v4/IModelReader;" />
       <scope id="453110257780703219" at="19,42,20,16" />
       <scope id="453110257780703230" at="23,109,24,16" />
       <scope id="453110257780703238" at="27,78,28,16" />
       <scope id="453110257780703253" at="31,61,32,13" />
       <scope id="453110257780703258" at="35,27,36,13" />
-      <scope id="453110257780703265" at="39,40,40,16" />
-      <scope id="453110257780703275" at="43,69,44,28" />
-      <scope id="453110257780703282" at="47,40,48,30" />
+      <scope id="453110257780703275" at="39,69,40,16" />
+      <scope id="453110257780703282" at="43,40,44,30" />
       <scope id="453110257780703217" at="18,0,22,0" />
       <scope id="453110257780703224" at="22,0,26,0">
         <var name="header" id="453110257780703228" />
@@ -53,12 +50,11 @@
         <var name="data" id="453110257780703247" />
       </scope>
       <scope id="453110257780703256" at="34,0,38,0" />
-      <scope id="453110257780703263" at="38,0,42,0" />
-      <scope id="453110257780703270" at="42,0,46,0">
+      <scope id="453110257780703270" at="38,0,42,0">
         <var name="header" id="453110257780703272" />
       </scope>
-      <scope id="453110257780703280" at="46,0,50,0" />
-      <unit id="453110257780703213" at="17,0,51,0" name="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" />
+      <scope id="453110257780703280" at="42,0,46,0" />
+      <unit id="453110257780703213" at="17,0,47,0" name="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" />
     </file>
   </root>
   <root nodeRef="r:8276e029-a527-420e-8e0f-72df2934554c(jetbrains.mps.smodel.persistence.def.v4)/453110257780703303">

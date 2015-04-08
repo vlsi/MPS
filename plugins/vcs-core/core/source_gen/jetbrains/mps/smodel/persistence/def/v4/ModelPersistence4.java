@@ -36,12 +36,8 @@ public class ModelPersistence4 implements IModelPersistence, IPersistenceWithRea
     return 4;
   }
   @Override
-  public IModelWriter getModelWriter() {
-    return null;
-  }
-  @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return getModelWriter();
+    return null;
   }
   @Override
   public IModelReader getModelReader() {

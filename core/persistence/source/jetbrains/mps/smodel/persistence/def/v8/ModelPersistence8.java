@@ -32,12 +32,6 @@ import java.util.List;
 public class ModelPersistence8 implements IModelPersistence {
   public static final String ROOT_NODE = "root";
 
-  //todo remove
-  @Override
-  public IModelWriter getModelWriter() {
-    return null;
-  }
-
   @Override
   public void index(char[] data, Consumer<String> consumer) {
     PersistenceUtil.index(data, consumer);
@@ -67,6 +61,4 @@ public class ModelPersistence8 implements IModelPersistence {
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
   }
-
-
 }

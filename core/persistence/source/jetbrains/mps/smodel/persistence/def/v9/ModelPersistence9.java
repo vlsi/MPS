@@ -87,11 +87,6 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   }
 
   @Override
-  public IModelWriter getModelWriter() {
-    return new ModelWriter9(new RegularMetaModelInfo());
-  }
-
-  @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
     final MetaModelInfoProvider mmiProvider;
     if (header != null && header.getMetaInfoProvider() != null) {

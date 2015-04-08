@@ -23,7 +23,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IModelWriter" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.IModelReader" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
