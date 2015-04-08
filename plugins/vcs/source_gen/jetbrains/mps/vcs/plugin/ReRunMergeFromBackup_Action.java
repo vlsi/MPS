@@ -107,6 +107,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
             continue;
           }
 
+          // this.model came from repo, so it must be supported by ModelPersistence 
           mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
           if (mine == null) {
             return;

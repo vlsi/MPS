@@ -61,6 +61,7 @@
     <import index="xqpa" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
+    <import index="xa8l" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diff(MPS.IDEA/com.intellij.openapi.diff@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3514,8 +3515,8 @@
                     </node>
                   </node>
                   <node concept="2YIFZM" id="6m1MVDkVd4C" role="37vLTx">
-                    <ref role="1Pybhc" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
-                    <ref role="37wK5l" to="iho:4BapoMDjgOk" resolve="readModel" />
+                    <ref role="37wK5l" to="zofw:~ModelPersistence.readModel(org.jetbrains.mps.openapi.persistence.StreamDataSource,boolean):jetbrains.mps.smodel.DefaultSModel" resolve="readModel" />
+                    <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
                     <node concept="2ShNRf" id="E7RDZanoir" role="37wK5m">
                       <node concept="1pGfFk" id="E7RDZanpAH" role="2ShVmc">
                         <ref role="37wK5l" to="ep0o:~FileDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FileDataSource" />
@@ -3852,7 +3853,7 @@
                                   </node>
                                   <node concept="2ShNRf" id="6m1MVDkVpEF" role="37wK5m">
                                     <node concept="1pGfFk" id="6m1MVDkVpEG" role="2ShVmc">
-                                      <ref role="37wK5l" to="hdhb:62HG2toKLMS" resolve="SimpleDiffRequest" />
+                                      <ref role="37wK5l" to="hdhb:6Q0s2VIBeWi" resolve="SimpleDiffRequest" />
                                       <node concept="10M0yZ" id="6m1MVDkVpEH" role="37wK5m">
                                         <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
                                         <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
@@ -3860,8 +3861,8 @@
                                       <node concept="10QFUN" id="281cAWYbfbQ" role="37wK5m">
                                         <node concept="10Nm6u" id="281cAWYbfbO" role="10QFUP" />
                                         <node concept="10Q1$e" id="281cAWYbfbL" role="10QFUM">
-                                          <node concept="3uibUv" id="281cAWYbhdj" role="10Q1$1">
-                                            <ref role="3uigEE" to="cu2c:~SModel" resolve="SModel" />
+                                          <node concept="3uibUv" id="4BapoMDqVnP" role="10Q1$1">
+                                            <ref role="3uigEE" to="xa8l:~DiffContent" resolve="DiffContent" />
                                           </node>
                                         </node>
                                       </node>
