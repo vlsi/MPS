@@ -804,9 +804,9 @@ public class ModelListenerTest {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(10, 25, 15, 5, 4);
     final int actualNodes = m1f.countModelNodes();
-    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use twice as much time to account for slower build agents
-    final long baselineMillis = 100;
-    final int testRuns = 5;
+    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use four times as much time to account for slower build agents
+    final long baselineMillis = 200;
+    final int testRuns = 10;
     long elapsed = 0;
     for (int i = 0; i < testRuns; i++) {
       final long start = System.nanoTime();
@@ -819,8 +819,8 @@ public class ModelListenerTest {
       Assert.fail(String.format(fmt, actualNodes, baselineMillis, testRuns, averageMillis));
     }
     // guard if it's too fast
-    if (averageMillis < baselineMillis / 4) {
-      final String fmt = "Walking model of %d nodes took less than 25%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
+    if (averageMillis < baselineMillis / 10) {
+      final String fmt = "Walking model of %d nodes took less than 10%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
       Assert.fail(String.format(fmt, actualNodes, testRuns, averageMillis, baselineMillis));
     }
   }
