@@ -8,9 +8,9 @@ public class BaseTestClass {
   }
   private int myBaseProperty;
   public int getBaseProperty() {
-    return myBaseProperty;
+    return this.myBaseProperty;
   }
   public void setBaseProperty(int value) {
-    myBaseProperty = value;
+    this.myBaseProperty = value;
   }
 }

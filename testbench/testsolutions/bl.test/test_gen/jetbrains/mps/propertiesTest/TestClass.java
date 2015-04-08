@@ -28,21 +28,21 @@ public class TestClass extends BaseTestClass {
   }
   private int myProp1;
   public int getProp1() {
-    return myProp1;
+    return this.myProp1;
   }
   private void setProp1(int value) {
-    myProp1 = value;
+    this.myProp1 = value;
   }
   private int myProp2;
   public int getProp2() {
-    return myProp2;
+    return this.myProp2;
   }
   public void setProp2(int value) {
-    myProp2 = value;
+    this.myProp2 = value;
   }
   private int myProp3;
   public int getProp3() {
-    return myProp3;
+    return this.myProp3;
   }
   public void setProp3(int value) {
     myProp3 = value;
