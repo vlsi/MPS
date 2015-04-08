@@ -4857,9 +4857,8 @@
             <node concept="2ShNRf" id="p9Lm3R6Chy" role="33vP2m">
               <node concept="1pGfFk" id="p9Lm3R6Chz" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
-                <node concept="10M0yZ" id="p9Lm3R6FUc" role="37wK5m">
-                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
-                  <ref role="3cqZAo" to="iho:4BapoMDjgCA" resolve="ROOT_STUBS" />
+                <node concept="Xl_RD" id="4BapoMDmFDj" role="37wK5m">
+                  <property role="Xl_RC" value="root_stubs" />
                 </node>
               </node>
             </node>

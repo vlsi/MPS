@@ -378,7 +378,7 @@
       <node id="453110257780686225" at="67,51,68,40" concept="3" />
       <node id="453110257780686234" at="69,5,70,37" concept="10" />
       <node id="453110257780686245" at="73,75,74,46" concept="15" />
-      <node id="453110257780686257" at="76,62,77,66" concept="9" />
+      <node id="453110257780686257" at="76,62,77,46" concept="9" />
       <node id="453110257780686264" at="78,45,79,35" concept="3" />
       <node id="453110257780686273" at="80,5,81,29" concept="3" />
       <node id="453110257780686287" at="83,84,84,62" concept="9" />
@@ -402,7 +402,7 @@
       <node id="453110257780686386" at="109,5,110,38" concept="3" />
       <node id="453110257780686043" at="19,0,22,0" concept="8" trace="getModelPersistenceVersion#()I" />
       <node id="453110257780686222" at="66,35,69,5" concept="6" />
-      <node id="453110257780686261" at="77,66,80,5" concept="6" />
+      <node id="453110257780686261" at="77,46,80,5" concept="6" />
       <node id="453110257780686374" at="105,23,108,7" concept="6" />
       <node id="453110257780686239" at="72,0,76,0" concept="8" trace="saveModelAsMultiStream#(Ljetbrains/mps/smodel/SModel;)Ljava/util/Map;" />
       <node id="453110257780686084" at="30,17,35,5" concept="6" />
@@ -434,7 +434,7 @@
       <scope id="453110257780686222" at="66,35,69,5">
         <var name="root" id="453110257780686230" />
       </scope>
-      <scope id="453110257780686261" at="77,66,80,5">
+      <scope id="453110257780686261" at="77,46,80,5">
         <var name="root" id="453110257780686269" />
       </scope>
       <scope id="453110257780686373" at="105,23,108,7" />

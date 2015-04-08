@@ -74,7 +74,7 @@ public class ModelWriter6 implements IModelWriter {
     throw new UnsupportedOperationException();
   }
   protected void saveRootStubs(Element parent, SModel model) {
-    Element roots = new Element(VCSPersistenceSupport.ROOT_STUBS);
+    Element roots = new Element("root_stubs");
     for (SNode root : model.getRootNodes()) {
       saveNode(roots, root, false);
     }

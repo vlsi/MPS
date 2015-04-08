@@ -7811,9 +7811,8 @@
             <node concept="2ShNRf" id="p9Lm3R6Hg5" role="33vP2m">
               <node concept="1pGfFk" id="p9Lm3R6Hg6" role="2ShVmc">
                 <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
-                <node concept="10M0yZ" id="p9Lm3R6Iw8" role="37wK5m">
-                  <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
-                  <ref role="3cqZAo" to="iho:4BapoMDjgBQ" resolve="MAX_IMPORT_INDEX" />
+                <node concept="Xl_RD" id="4BapoMDmAKc" role="37wK5m">
+                  <property role="Xl_RC" value="maxImportIndex" />
                 </node>
               </node>
             </node>

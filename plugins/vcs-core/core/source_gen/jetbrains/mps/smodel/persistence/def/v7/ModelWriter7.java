@@ -113,14 +113,14 @@ public class ModelWriter7 implements IModelWriter {
     for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(VCSPersistenceSupport.PROPERTY);
       propertyElement.setAttribute(VCSPersistenceSupport.NAME, myHelper.genName(node, propertyName));
-      DocUtil.setNotNullAttribute(propertyElement, VCSPersistenceSupport.NAME_ID, myHelper.genNameId(node, propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, "nameId", myHelper.genNameId(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, VCSPersistenceSupport.VALUE, node.getProperty(propertyName));
       nodeElement.addContent(propertyElement);
     }
     for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(VCSPersistenceSupport.LINK);
       linkElement.setAttribute(VCSPersistenceSupport.ROLE, myHelper.genRole(reference));
-      DocUtil.setNotNullAttribute(linkElement, VCSPersistenceSupport.ROLE_ID, myHelper.genRoleId(reference));
+      DocUtil.setNotNullAttribute(linkElement, "roleId", myHelper.genRoleId(reference));
       linkElement.setAttribute(VCSPersistenceSupport.TARGET_NODE_ID, myHelper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, VCSPersistenceSupport.RESOLVE_INFO, myHelper.genResolveInfo(reference));
       nodeElement.addContent(linkElement);
@@ -135,9 +135,9 @@ public class ModelWriter7 implements IModelWriter {
   }
   protected void saveNodeAttributes(Element element, SNode node) {
     DocUtil.setNotNullAttribute(element, VCSPersistenceSupport.ROLE, myHelper.genRole(node));
-    DocUtil.setNotNullAttribute(element, VCSPersistenceSupport.ROLE_ID, myHelper.genRoleId(node));
+    DocUtil.setNotNullAttribute(element, "roleId", myHelper.genRoleId(node));
     element.setAttribute(VCSPersistenceSupport.TYPE, myHelper.genType(node));
-    DocUtil.setNotNullAttribute(element, VCSPersistenceSupport.TYPE_ID, myHelper.genTypeId(node));
+    DocUtil.setNotNullAttribute(element, "typeId", myHelper.genTypeId(node));
     element.setAttribute(VCSPersistenceSupport.ID, node.getNodeId().toString());
   }
   @Override

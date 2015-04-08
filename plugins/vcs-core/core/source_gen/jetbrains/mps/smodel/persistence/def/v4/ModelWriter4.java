@@ -68,7 +68,7 @@ public class ModelWriter4 implements IModelWriter {
       rootElement.addContent(devkitElem);
     }
     // imports 
-    Element maxRefID = new Element(VCSPersistenceSupport.MAX_IMPORT_INDEX);
+    Element maxRefID = new Element("maxImportIndex");
     rootElement.addContent(maxRefID);
     int maxImport = 0;
     for (SModel.ImportElement importElement : sourceModel.importedModels()) {
