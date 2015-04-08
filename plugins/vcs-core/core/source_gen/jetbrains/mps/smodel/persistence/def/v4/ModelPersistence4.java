@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.persistence.def.IModelReader;
 public class ModelPersistence4 implements IModelPersistence {
   @Override
   public IHashProvider getHashProvider() {
-    return new HashProvider4();
+    return null;
   }
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
@@ -38,7 +38,7 @@ public class ModelPersistence4 implements IModelPersistence {
   }
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter4();
+    return null;
   }
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {

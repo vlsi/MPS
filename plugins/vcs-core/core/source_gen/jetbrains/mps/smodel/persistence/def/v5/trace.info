@@ -648,40 +648,24 @@
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703035">
     <file name="ModelReader5.java">
-      <node id="453110257780703042" at="14,27,15,13" concept="9" />
-      <node id="453110257780703064" at="18,77,19,66" concept="10" />
-      <node id="453110257780703039" at="13,0,17,0" concept="7" trace="getVersion#()I" />
-      <node id="453110257780703046" at="17,0,21,0" concept="7" trace="readRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
-      <scope id="453110257780703041" at="14,27,15,13" />
-      <scope id="453110257780703052" at="18,77,19,66" />
-      <scope id="453110257780703039" at="13,0,17,0" />
-      <scope id="453110257780703046" at="17,0,21,0">
+      <node id="453110257780703042" at="11,27,12,13" concept="9" />
+      <node id="453110257780703064" at="15,77,16,66" concept="10" />
+      <node id="453110257780703039" at="10,0,14,0" concept="7" trace="getVersion#()I" />
+      <node id="453110257780703046" at="14,0,18,0" concept="7" trace="readRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
+      <scope id="453110257780703041" at="11,27,12,13" />
+      <scope id="453110257780703052" at="15,77,16,66" />
+      <scope id="453110257780703039" at="10,0,14,0" />
+      <scope id="453110257780703046" at="14,0,18,0">
         <var name="model" id="453110257780703050" />
         <var name="rootElement" id="453110257780703048" />
       </scope>
-      <unit id="453110257780703035" at="9,0,22,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
-    </file>
-  </root>
-  <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703065">
-    <file name="ModelWriter5.java">
-      <node id="453110257780703072" at="11,46,12,13" concept="9" />
-      <node id="453110257780703094" at="15,83,16,66" concept="10" />
-      <node id="453110257780703069" at="10,0,14,0" concept="7" trace="getModelPersistenceVersion#()I" />
-      <node id="453110257780703076" at="14,0,18,0" concept="7" trace="saveRefactorings#(Lorg/jdom/Element;Ljetbrains/mps/smodel/DefaultSModel;)V" />
-      <scope id="453110257780703071" at="11,46,12,13" />
-      <scope id="453110257780703082" at="15,83,16,66" />
-      <scope id="453110257780703069" at="10,0,14,0" />
-      <scope id="453110257780703076" at="14,0,18,0">
-        <var name="rootElement" id="453110257780703078" />
-        <var name="sourceModel" id="453110257780703080" />
-      </scope>
-      <unit id="453110257780703065" at="9,0,19,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelWriter5" />
+      <unit id="453110257780703035" at="9,0,19,0" name="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
     </file>
   </root>
   <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/453110257780703095">
     <file name="ModelPersistence5.java">
       <node id="453110257780703102" at="17,27,18,13" concept="9" />
-      <node id="453110257780703109" at="21,40,22,30" concept="9" />
+      <node id="453110257780703109" at="21,40,22,16" concept="9" />
       <node id="453110257780703116" at="25,40,26,30" concept="9" />
       <node id="453110257780703127" at="29,109,30,43" concept="9" />
       <node id="272290680556458296" at="33,78,34,48" concept="9" />
@@ -691,7 +675,7 @@
       <node id="453110257780703120" at="28,0,32,0" concept="7" trace="getModelReaderHandler#(Ljetbrains/mps/smodel/loading/ModelLoadingState;Ljetbrains/mps/smodel/SModelHeader;)Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <node id="453110257780703133" at="32,0,36,0" concept="7" trace="getLineToContentMapReaderHandler#()Ljetbrains/mps/util/xml/XMLSAXHandler;" />
       <scope id="453110257780703101" at="17,27,18,13" />
-      <scope id="453110257780703108" at="21,40,22,30" />
+      <scope id="453110257780703108" at="21,40,22,16" />
       <scope id="453110257780703115" at="25,40,26,30" />
       <scope id="453110257780703126" at="29,109,30,43" />
       <scope id="453110257780703135" at="33,78,34,48" />

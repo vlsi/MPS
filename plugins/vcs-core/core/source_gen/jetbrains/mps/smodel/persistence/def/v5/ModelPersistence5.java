@@ -19,7 +19,7 @@ public class ModelPersistence5 extends ModelPersistence4 {
   }
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter5();
+    return null;
   }
   @Override
   public IModelReader getModelReader() {

@@ -15,19 +15,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.VisibleModelElements" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.HashProvider4" file="HashProvider4.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
-    <classNode dependClassName="jetbrains.mps.generator.ModelDigestUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.XmlFastScanner" />
-    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IHashProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" file="ModelPersistence4.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -38,9 +25,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IHashProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IModelReader" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IModelWriter" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.HashProvider4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ModelReader4" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ModelWriter4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -81,34 +66,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IModelReader" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelWriter4" file="ModelWriter4.java">
-    <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DocUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IReferencePersister" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.VisibleModelElements" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.DOMVisibleModelElements" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
-    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
-    <classNode dependClassName="org.jdom.Document" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IModelWriter" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" file="ReferencePersister4.java">
     <classNode dependClassName="java.lang.Integer" />

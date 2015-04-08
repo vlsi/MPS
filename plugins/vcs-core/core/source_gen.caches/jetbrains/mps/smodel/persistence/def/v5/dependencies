@@ -28,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelWriter5" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" />
@@ -70,12 +69,6 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelWriter5" file="ModelWriter5.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.ModelWriter4" />
   </dependency>
 </dependenciesRoot>
 

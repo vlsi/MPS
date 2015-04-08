@@ -6,9 +6,6 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import org.jdom.Element;
 import jetbrains.mps.smodel.DefaultSModel;
 
-/**
- * Evgeny Gryaznov, Aug 2, 2010
- */
 public class ModelReader5 extends ModelReader4 {
   @Override
   public int getVersion() {

@@ -177,18 +177,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
-    </language>
     <language id="dcb5a83a-19a8-44ff-a4cb-fc7d324ecc63" name="jetbrains.mps.core.xml.sax">
       <concept id="2264311582634140417" name="jetbrains.mps.core.xml.sax.structure.XMLSAXParser" flags="ng" index="CQp1y">
         <reference id="2264311582634140419" name="root" index="CQp1w" />
@@ -246,9 +234,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -1569,16 +1554,10 @@
     <property role="2bfB8j" value="true" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
+    <property role="IEkAT" value="false" />
     <node concept="3Tm1VV" id="p9Lm3R6FWX" role="1B3o_S" />
     <node concept="3uibUv" id="p9Lm3R6FWY" role="1zkMxy">
       <ref role="3uigEE" to="llmc:p9Lm3R6Gf_" resolve="ModelReader4" />
-    </node>
-    <node concept="3UR2Jj" id="p9Lm3R6FXf" role="lGtFl">
-      <node concept="TZ5HA" id="p9Lm3R6FXl" role="TZ5H$">
-        <node concept="1dT_AC" id="p9Lm3R6FXm" role="1dT_Ay">
-          <property role="1dT_AB" value="Evgeny Gryaznov, Aug 2, 2010" />
-        </node>
-      </node>
     </node>
     <node concept="3clFb_" id="p9Lm3R6FWZ" role="jymVt">
       <property role="TrG5h" value="getVersion" />
@@ -1629,65 +1608,6 @@
       <node concept="3cqZAl" id="p9Lm3R6FXe" role="3clF45" />
     </node>
   </node>
-  <node concept="312cEu" id="p9Lm3R6FXp">
-    <property role="TrG5h" value="ModelWriter5" />
-    <property role="2bfB8j" value="true" />
-    <property role="1sVAO0" value="false" />
-    <property role="1EXbeo" value="false" />
-    <property role="IEkAT" value="false" />
-    <node concept="3Tm1VV" id="p9Lm3R6FXr" role="1B3o_S" />
-    <node concept="3uibUv" id="p9Lm3R6FXs" role="1zkMxy">
-      <ref role="3uigEE" to="llmc:p9Lm3R6GAB" resolve="ModelWriter4" />
-    </node>
-    <node concept="3clFb_" id="p9Lm3R6FXt" role="jymVt">
-      <property role="TrG5h" value="getModelPersistenceVersion" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6FXu" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6FXv" role="3clF47">
-        <node concept="3cpWs6" id="p9Lm3R6FXw" role="3cqZAp">
-          <node concept="3cmrfG" id="p9Lm3R6FXx" role="3cqZAk">
-            <property role="3cmrfH" value="5" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="p9Lm3R6FXy" role="1B3o_S" />
-      <node concept="10Oyi0" id="p9Lm3R6FXz" role="3clF45" />
-    </node>
-    <node concept="3clFb_" id="p9Lm3R6FX$" role="jymVt">
-      <property role="TrG5h" value="saveRefactorings" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="p9Lm3R6FX_" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-      <node concept="37vLTG" id="p9Lm3R6FXA" role="3clF46">
-        <property role="TrG5h" value="rootElement" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="p9Lm3R6FXB" role="1tU5fm">
-          <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="p9Lm3R6FXC" role="3clF46">
-        <property role="TrG5h" value="sourceModel" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="p9Lm3R6FXD" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~DefaultSModel" resolve="DefaultSModel" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="p9Lm3R6FXE" role="3clF47">
-        <node concept="3SKdUt" id="p9Lm3R6FXQ" role="3cqZAp">
-          <node concept="3SKdUq" id="p9Lm3R6FXP" role="3SKWNk">
-            <property role="3SKdUp" value="refactorings are extracted into separate file in version 5" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="p9Lm3R6FXF" role="1B3o_S" />
-      <node concept="3cqZAl" id="p9Lm3R6FXG" role="3clF45" />
-    </node>
-  </node>
   <node concept="312cEu" id="p9Lm3R6FXR">
     <property role="TrG5h" value="ModelPersistence5" />
     <property role="2bfB8j" value="true" />
@@ -1723,11 +1643,7 @@
       </node>
       <node concept="3clFbS" id="p9Lm3R6FY4" role="3clF47">
         <node concept="3cpWs6" id="p9Lm3R6FY5" role="3cqZAp">
-          <node concept="2ShNRf" id="p9Lm3R6FYL" role="3cqZAk">
-            <node concept="HV5vD" id="p9Lm3R6FYM" role="2ShVmc">
-              <ref role="HV5vE" node="p9Lm3R6FXp" resolve="ModelWriter5" />
-            </node>
-          </node>
+          <node concept="10Nm6u" id="4BapoMDshLV" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="p9Lm3R6FY7" role="1B3o_S" />

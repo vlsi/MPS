@@ -27,7 +27,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IModelWriter" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ModelWriter6" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5" />
@@ -63,24 +62,6 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v6.ModelWriter6" file="ModelWriter6.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DocUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
-    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
-    <classNode dependClassName="org.jdom.Document" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IModelWriter" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" file="VersionUtil.java">
     <classNode dependClassName="java.lang.Character" />
