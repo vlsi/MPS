@@ -153,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

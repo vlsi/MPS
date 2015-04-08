@@ -2,13 +2,13 @@
 <model ref="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
   </languages>
   <imports>
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -60,6 +60,7 @@
     <import index="4rb9" ref="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" />
     <import index="xqpa" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3430,24 +3431,24 @@
                       <property role="3cmrfH" value="0" />
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="6m1MVDkVd4e" role="37vLTx">
-                    <ref role="37wK5l" to="zofw:~ModelPersistence.readModel(org.jetbrains.mps.openapi.persistence.StreamDataSource,boolean):jetbrains.mps.smodel.DefaultSModel" resolve="readModel" />
-                    <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <node concept="2ShNRf" id="E7RDZan7NK" role="37wK5m">
-                      <node concept="1pGfFk" id="E7RDZanfKF" role="2ShVmc">
+                  <node concept="2YIFZM" id="4BapoMDn$VQ" role="37vLTx">
+                    <ref role="1Pybhc" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="37wK5l" to="iho:4BapoMDjgOk" resolve="readModel" />
+                    <node concept="2ShNRf" id="4BapoMDn$VR" role="37wK5m">
+                      <node concept="1pGfFk" id="4BapoMDn$VS" role="2ShVmc">
                         <ref role="37wK5l" to="ep0o:~FileDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FileDataSource" />
-                        <node concept="2OqwBi" id="6m1MVDkVd4f" role="37wK5m">
-                          <node concept="2YIFZM" id="6m1MVDkVd4g" role="2Oq$k0">
+                        <node concept="2OqwBi" id="4BapoMDn$VT" role="37wK5m">
+                          <node concept="2YIFZM" id="4BapoMDn$VU" role="2Oq$k0">
                             <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                             <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
                           </node>
-                          <node concept="liA8E" id="6m1MVDkVd4h" role="2OqNvi">
+                          <node concept="liA8E" id="4BapoMDn$VV" role="2OqNvi">
                             <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                            <node concept="AH0OO" id="6m1MVDkVd4i" role="37wK5m">
-                              <node concept="37vLTw" id="2BHiRxgmeME" role="AHHXb">
+                            <node concept="AH0OO" id="4BapoMDn$VW" role="37wK5m">
+                              <node concept="37vLTw" id="4BapoMDn$VX" role="AHHXb">
                                 <ref role="3cqZAo" node="6m1MVDkVd3h" resolve="args" />
                               </node>
-                              <node concept="3cmrfG" id="6m1MVDkVd4k" role="AHEQo">
+                              <node concept="3cmrfG" id="4BapoMDn$VY" role="AHEQo">
                                 <property role="3cmrfH" value="0" />
                               </node>
                             </node>
@@ -3455,7 +3456,7 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbT" id="6m1MVDkVd4l" role="37wK5m">
+                    <node concept="3clFbT" id="4BapoMDn$VZ" role="37wK5m">
                       <property role="3clFbU" value="false" />
                     </node>
                   </node>
@@ -3472,8 +3473,8 @@
                     </node>
                   </node>
                   <node concept="2YIFZM" id="6m1MVDkVd4r" role="37vLTx">
-                    <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="37wK5l" to="zofw:~ModelPersistence.readModel(org.jetbrains.mps.openapi.persistence.StreamDataSource,boolean):jetbrains.mps.smodel.DefaultSModel" resolve="readModel" />
+                    <ref role="1Pybhc" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="37wK5l" to="iho:4BapoMDjgOk" resolve="readModel" />
                     <node concept="2ShNRf" id="E7RDZanj7h" role="37wK5m">
                       <node concept="1pGfFk" id="E7RDZankrs" role="2ShVmc">
                         <ref role="37wK5l" to="ep0o:~FileDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FileDataSource" />
@@ -3513,8 +3514,8 @@
                     </node>
                   </node>
                   <node concept="2YIFZM" id="6m1MVDkVd4C" role="37vLTx">
-                    <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="37wK5l" to="zofw:~ModelPersistence.readModel(org.jetbrains.mps.openapi.persistence.StreamDataSource,boolean):jetbrains.mps.smodel.DefaultSModel" resolve="readModel" />
+                    <ref role="1Pybhc" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="37wK5l" to="iho:4BapoMDjgOk" resolve="readModel" />
                     <node concept="2ShNRf" id="E7RDZanoir" role="37wK5m">
                       <node concept="1pGfFk" id="E7RDZanpAH" role="2ShVmc">
                         <ref role="37wK5l" to="ep0o:~FileDataSource.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="FileDataSource" />

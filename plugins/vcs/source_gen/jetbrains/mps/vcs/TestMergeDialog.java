@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;
@@ -90,9 +90,9 @@ public class TestMergeDialog {
       }
     } else
     if (args.length == 4 || args.length == 3) {
-      models[0] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[0])), false);
-      models[1] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[1])), false);
-      models[2] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[2])), false);
+      models[0] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[0])), false);
+      models[1] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[1])), false);
+      models[2] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[2])), false);
       if (args.length == 3) {
         resultFile = File.createTempFile("", "").getAbsolutePath();
       } else {
