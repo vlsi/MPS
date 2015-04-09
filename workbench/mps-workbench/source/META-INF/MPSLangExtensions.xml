@@ -83,7 +83,7 @@
                         serviceImplementation="com.intellij.codeEditor.printing.PrintSettings"/>
     <exportable serviceInterface="com.intellij.codeEditor.printing.PrintSettings"/>
     <applicationService serviceInterface="com.intellij.codeInsight.daemon.DaemonCodeAnalyzerSettings"
-                        serviceImplementation="com.intellij.codeInsight.daemon.DaemonCodeAnalyzerSettingsImpl"/>
+                        serviceImplementation="jetbrains.mps.codeInsight.daemon.MockDaemonCodeAnalyzerSettingsImpl"/>
     <exportable serviceInterface="com.intellij.codeInsight.daemon.DaemonCodeAnalyzerSettings"/>
     <!--
 
