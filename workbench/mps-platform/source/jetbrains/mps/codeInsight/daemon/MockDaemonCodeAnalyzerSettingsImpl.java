@@ -16,6 +16,21 @@
 package jetbrains.mps.codeInsight.daemon;
 
 import com.intellij.codeInsight.daemon.DaemonCodeAnalyzerSettings;
+import com.intellij.codeInsight.daemon.DaemonCodeAnalyzerSettingsImpl;
+import org.jdom.Element;
 
-public class MockDaemonCodeAnalyzerSettingsImpl extends DaemonCodeAnalyzerSettings {
+public class MockDaemonCodeAnalyzerSettingsImpl extends DaemonCodeAnalyzerSettingsImpl {
+  @Override
+  public void loadState(Element state) {
+  }
+
+  @Override
+  public Element getState() {
+    return null;
+  }
+
+  @Override
+  public boolean isCodeHighlightingChanged(DaemonCodeAnalyzerSettings oldSettings) {
+    return false;
+  }
 }
