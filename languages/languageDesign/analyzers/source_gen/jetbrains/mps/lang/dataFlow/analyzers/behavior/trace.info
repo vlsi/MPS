@@ -38,7 +38,7 @@
       <unit at="11,0,34,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor" />
     </file>
     <file name="AnalyzerRunnerClassKeeper_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerClassKeeper_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerClassKeeper_BehaviorDescriptor" />
     </file>
     <file name="AnalyzerRunnerCreator_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerCreator_BehaviorDescriptor" />
@@ -80,7 +80,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InsertPosition_BehaviorDescriptor" />
     </file>
     <file name="InstructionClassKeeper_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionClassKeeper_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionClassKeeper_BehaviorDescriptor" />
     </file>
     <file name="InstructionParameter_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionParameter_BehaviorDescriptor" />

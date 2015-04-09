@@ -6759,6 +6759,12 @@
               <ref role="3bR37D" node="7YI57w6K0rx" resolve="jetbrains.mps.lang.smodel#1139186730696" />
             </node>
           </node>
+          <node concept="1SiIV0" id="4__CqSX6ziG" role="3bR37C">
+            <node concept="3bR9La" id="4__CqSX6ziH" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruxa" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrux9" role="1SiIV1">
