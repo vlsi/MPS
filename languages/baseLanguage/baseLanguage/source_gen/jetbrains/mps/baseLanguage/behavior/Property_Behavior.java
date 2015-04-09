@@ -49,8 +49,11 @@ public class Property_Behavior {
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
     return NameUtil.capitalize(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, 0x117b75204e4L, "propertyName")));
   }
+  public static String call_getBackingVarName_26421392144464992(SNode thisNode) {
+    return "my" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
+  }
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, 0x117b752a0b9L, "type"))) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
+    return (check_9xvv7i_a0a0h(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, 0x117b752a0b9L, "type"))) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
     return "set" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
@@ -79,12 +82,12 @@ public class Property_Behavior {
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
     if ((setterVisibility == null)) {
-      return eq_9xvv7i_a0a0i0k(contextNodePackage, contextClassifierPackage);
+      return eq_9xvv7i_a0a0i0l(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(setterVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), thisNode));
-      if (eq_9xvv7i_a0b0k0k(contextNodePackage, declarationClassifierPackage)) {
+      if (eq_9xvv7i_a0b0k0l(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
@@ -121,16 +124,16 @@ public class Property_Behavior {
     // todo: just populate for now, make it right! 
     context.addMember(thisNode, null);
   }
-  private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {
+  private static boolean check_9xvv7i_a0a0h(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"));
     }
     return false;
   }
-  private static boolean eq_9xvv7i_a0a0i0k(Object a, Object b) {
+  private static boolean eq_9xvv7i_a0a0i0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_9xvv7i_a0b0k0k(Object a, Object b) {
+  private static boolean eq_9xvv7i_a0b0k0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

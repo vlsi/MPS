@@ -17,23 +17,22 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 
@@ -44,32 +43,9 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   private SNodeReference myNodePointer;
 
-  public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
-    super(
-      role,
-      (isResultNode && nodeRepresentator != null) ?
-        nodeRepresentator.getPresentation(node) :
-        snodeRepresentation(node),
-      nodeAdditionalInfo(node),
-      false,
-      isResultNode,
-      resultsSection
-    );
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
-  }
-
-  public NodeNodeData(PathItemRole role, SearchResult result, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
-    super(
-      role,
-      (isResultNode && nodeRepresentator != null) ?
-        nodeRepresentator.getPresentation(result.getObject()) :
-        snodeRepresentation((SNode) result.getPathObject()),
-      nodeAdditionalInfo((SNode) result.getPathObject()),
-      false,
-      isResultNode,
-      resultsSection
-    );
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) result.getPathObject());
+  public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isResultNode, boolean resultsSection) {
+    super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isResultNode, resultsSection);
+    myNodePointer = pathObject.getReference();
   }
 
   public NodeNodeData(Element element, Project project) throws CantLoadSomethingException {
@@ -80,71 +56,66 @@ public class NodeNodeData extends AbstractResultNodeData {
     return myNodePointer;
   }
 
+  /**
+   * @deprecated use {@link #getNodePointer()} and resolve as appropriate
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SNode getNode() {
     return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   @Override
   public Icon getIcon() {
-    final SNode node = myNodePointer.resolve(MPSModuleRepository.getInstance());
+    final SNode node = getNode();
     return node == null ? null : IconManager.getIconFor(node);
   }
 
   @Override
   public String createIdObject() {
-    return jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText();
+    return myNodePointer.toString() + "/" + getPlainText();
   }
 
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
-    element.setAttribute(NODE, SNodePointer.serialize(myNodePointer));
+    element.setAttribute(NODE, PersistenceFacade.getInstance().asString(myNodePointer));
   }
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     try {
-      myNodePointer = SNodePointer.deserialize(element.getAttributeValue(NODE));
+      myNodePointer = PersistenceFacade.getInstance().createNodeReference(element.getAttributeValue(NODE));
     } catch (Exception ex) {
       throw new CantLoadSomethingException(ex);
     }
   }
 
-  public static String snodeRepresentation(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        try {
-          String presentation = SNodeUtil.getPresentation(node);
-          String result = (presentation != null) ? presentation : node.toString();
-          LOG.assertLog(result != null, "Node presentation is null.");
-          result = StringUtil.escapeXml(result);
-          return result;
-        } catch (Throwable t) {
-          LOG.error(t);
-          return "Exception was thrown during node representation calculation " + t.getMessage();
-        }
-      }
-    });
+  private static String snodeRepresentation(final SNode node) {
+    try {
+      String presentation = SNodeUtil.getPresentation(node);
+      String result = (presentation != null) ? presentation : node.toString();
+      LOG.assertLog(result != null, "Node presentation is null.");
+      result = StringUtil.escapeXml(result);
+      return result;
+    } catch (Throwable t) {
+      LOG.error(t);
+      return "Exception was thrown during node representation calculation " + t.getMessage();
+    }
   }
 
-  public static String nodeAdditionalInfo(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        if (node.getParent() == null) return "";
-        return "role: " +
-          "<i>" +
-          StringUtil.escapeXml(node.getRoleInParent()) +
-          "</i>" +
-          "; " +
-          "in: " +
-          "<i>" +
-          snodeRepresentation(node.getParent()) +
-          "</i>";
-      }
-    });
+  private static String nodeAdditionalInfo(final SNode node) {
+    if (node.getParent() == null) return "";
+    return "role: " +
+      "<i>" +
+      StringUtil.escapeXml(node.getRoleInParent()) +
+      "</i>" +
+      "; " +
+      "in: " +
+      "<i>" +
+      snodeRepresentation(node.getParent()) +
+      "</i>";
   }
 
   @Override

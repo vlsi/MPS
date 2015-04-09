@@ -65,7 +65,7 @@
     <file name="MigrationManager.java">
       <node id="6781485246382121734" at="12,0,13,0" concept="5" trace="isMigrationRequired#()Z" />
       <node id="4404440421171603939" at="14,0,15,0" concept="5" trace="getMissingMigrations#()Ljava/util/List;" />
-      <node id="8570387127138876086" at="16,0,17,0" concept="5" trace="projectStepsCount#()I" />
+      <node id="8570387127138876086" at="16,0,17,0" concept="5" trace="projectStepsCount#(Z)I" />
       <node id="2400678414100434057" at="18,0,19,0" concept="5" trace="nextProjectStep#(Ljava/util/Map;Z)Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
       <node id="8570387127138876373" at="20,0,21,0" concept="5" trace="languageStepsCount#()I" />
       <node id="6781485246382121738" at="22,0,23,0" concept="5" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationStep;" />
@@ -74,7 +74,9 @@
       <node id="7679731643767593888" at="27,0,28,0" concept="5" trace="forceExecutionNextTime#()V" />
       <scope id="6781485246382121734" at="12,0,13,0" />
       <scope id="4404440421171603939" at="14,0,15,0" />
-      <scope id="8570387127138876086" at="16,0,17,0" />
+      <scope id="8570387127138876086" at="16,0,17,0">
+        <var name="isCleanup" id="7772642625669822599" />
+      </scope>
       <scope id="2400678414100434057" at="18,0,19,0">
         <var name="cleanup" id="2765300268232827400" />
         <var name="options" id="7485988173702230282" />
@@ -567,6 +569,68 @@
       <unit id="8570387127138597736" at="42,69,50,9" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$2" />
       <unit id="6044402259151664925" at="40,35,52,5" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$1" />
       <unit id="6781485246382122883" at="19,0,55,0" name="jetbrains.mps.ide.migration.MigrationAssistantWizard" />
+    </file>
+  </root>
+  <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/7772642625669010668">
+    <file name="ProgressEstimation.java">
+      <node id="7772642625669041413" at="7,0,8,0" concept="10" trace="MIGRATIONS_FRACTION" />
+      <node id="7772642625669041693" at="8,0,9,0" concept="10" trace="CHECKS_FRACTION" />
+      <node id="7772642625669042089" at="9,0,10,0" concept="10" trace="OTHER_FRACTION" />
+      <node id="7772642625669040649" at="12,0,13,0" concept="10" trace="SAVING_FRACTION" />
+      <node id="7772642625669013969" at="13,0,14,0" concept="10" trace="START_FRACTION" />
+      <node id="7772642625669027283" at="15,0,16,0" concept="10" trace="PRECHECK_FRACTION" />
+      <node id="7772642625669037174" at="16,0,17,0" concept="10" trace="POSTCHECK_FRACTION" />
+      <node id="7772642625669017636" at="17,0,18,0" concept="10" trace="MIGRATIONS_CHECK_FRACTION" />
+      <node id="7772642625669030806" at="19,0,20,0" concept="10" trace="PROJECT_MIGRATIONS_FRACTION" />
+      <node id="7772642625669033729" at="20,0,21,0" concept="10" trace="LANGUAGE_MIGRATIONS_FRACTION" />
+      <node id="7772642625669023518" at="21,0,22,0" concept="10" trace="CLEANUP_MIGRATIONS_FRACTION" />
+      <node id="7772642625669013296" at="23,34,24,45" concept="7" />
+      <node id="7772642625669017031" at="27,61,28,64" concept="7" />
+      <node id="7772642625669020509" at="31,63,32,77" concept="7" />
+      <node id="7772642625669023911" at="35,54,36,69" concept="7" />
+      <node id="7772642625669027690" at="39,63,40,70" concept="7" />
+      <node id="7772642625669031227" at="43,64,44,80" concept="7" />
+      <node id="7772642625669037623" at="47,52,48,68" concept="7" />
+      <node id="7772642625669034164" at="51,55,52,59" concept="7" />
+      <node id="7772642625669012290" at="23,0,26,0" concept="11" trace="initial#()D" />
+      <node id="7772642625669012088" at="27,0,30,0" concept="11" trace="migrationsCheck#(D)D" />
+      <node id="7772642625669012498" at="31,0,34,0" concept="11" trace="cleanupMigrations#(D)D" />
+      <node id="7772642625669012350" at="35,0,38,0" concept="11" trace="preCheck#(D)D" />
+      <node id="7772642625669012607" at="39,0,42,0" concept="11" trace="projectMigrations#(D)D" />
+      <node id="7772642625669012713" at="43,0,46,0" concept="11" trace="languageMigrations#(D)D" />
+      <node id="7772642625669012961" at="47,0,50,0" concept="11" trace="saving#(D)D" />
+      <node id="7772642625669012831" at="51,0,54,0" concept="11" trace="postCheck#(D)D" />
+      <scope id="7772642625669012291" at="23,34,24,45" />
+      <scope id="7772642625669012091" at="27,61,28,64" />
+      <scope id="7772642625669012499" at="31,63,32,77" />
+      <scope id="7772642625669012351" at="35,54,36,69" />
+      <scope id="7772642625669012608" at="39,63,40,70" />
+      <scope id="7772642625669012714" at="43,64,44,80" />
+      <scope id="7772642625669012962" at="47,52,48,68" />
+      <scope id="7772642625669012832" at="51,55,52,59" />
+      <scope id="7772642625669012290" at="23,0,26,0" />
+      <scope id="7772642625669012088" at="27,0,30,0">
+        <var name="doneFraction" id="7772642625669012565" />
+      </scope>
+      <scope id="7772642625669012498" at="31,0,34,0">
+        <var name="doneFraction" id="7772642625669012502" />
+      </scope>
+      <scope id="7772642625669012350" at="35,0,38,0">
+        <var name="doneFraction" id="7772642625669012376" />
+      </scope>
+      <scope id="7772642625669012607" at="39,0,42,0">
+        <var name="doneFraction" id="7772642625669012611" />
+      </scope>
+      <scope id="7772642625669012713" at="43,0,46,0">
+        <var name="doneFraction" id="7772642625669012717" />
+      </scope>
+      <scope id="7772642625669012961" at="47,0,50,0">
+        <var name="doneFraction" id="7772642625669012965" />
+      </scope>
+      <scope id="7772642625669012831" at="51,0,54,0">
+        <var name="doneFraction" id="7772642625669012835" />
+      </scope>
+      <unit id="7772642625669010668" at="6,0,55,0" name="jetbrains.mps.ide.migration.ProgressEstimation" />
     </file>
   </root>
 </debug-info>

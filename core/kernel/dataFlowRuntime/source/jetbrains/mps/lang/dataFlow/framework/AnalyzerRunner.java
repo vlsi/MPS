@@ -28,7 +28,7 @@ public class AnalyzerRunner<E> {
     myAnalyzer = analyzer;
   }
 
-  public AnalysisResult analyze() {
+  public AnalysisResult<E> analyze() {
     Map<ProgramState, E> stateValues = doAnalyze();
     Map<Instruction, E> result = new HashMap<Instruction, E>();
     for (Instruction i : myProgram.getInstructions()) {

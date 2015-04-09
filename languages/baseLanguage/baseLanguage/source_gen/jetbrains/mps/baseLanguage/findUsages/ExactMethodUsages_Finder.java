@@ -56,6 +56,6 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
   @Override
   public String getNodeCategory(SNode node) {
-    return "Exact Mathod Usages";
+    return "Exact Method Usages";
   }
 }

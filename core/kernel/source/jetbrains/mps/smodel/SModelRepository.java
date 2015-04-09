@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -351,6 +351,7 @@ public class SModelRepository implements CoreComponent {
     return getModelDescriptor(fqName.toString());
   }
 
+  // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
   public SModel getModelDescriptor(String modelName) {
     if (modelName == null) return null;
     return myFqNameToModelDescriptorMap.get(modelName);

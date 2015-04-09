@@ -4,22 +4,25 @@ package jetbrains.mps.ide.migration.check;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class MissingMigrationProblem extends Problem<SModule> {
   private SLanguage myLanguage;
+  private int myBadVersion;
 
-  public MissingMigrationProblem(SModule module, SLanguage language) {
-    super(module);
-    myLanguage = language;
+  public MissingMigrationProblem(Tuples._3<SModule, SLanguage, Integer> desc) {
+    super(desc._0());
+    myLanguage = desc._1();
+    myBadVersion = (int) desc._2();
   }
 
   public String getMessage() {
     final Wrappers._T<String> msg = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        msg.value = "Module " + getReason().getModuleName() + " uses language " + myLanguage.getQualifiedName() + " with version " + getReason().getUsedLanguageVersion(myLanguage) + " while current version is " + myLanguage.getLanguageVersion() + ". Migrations are missing for this language";
+        msg.value = "Module " + getReason().getModuleName() + " uses language " + myLanguage.getQualifiedName() + " with version " + getReason().getUsedLanguageVersion(myLanguage) + " while current version is " + myLanguage.getLanguageVersion() + ". At least migration for version " + myBadVersion + " is missing.";
       }
     });
     return msg.value;

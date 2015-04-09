@@ -187,6 +187,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return factory.create(text.substring(colon + 1));
   }
 
+  @NotNull
+  @Override
+  public String asString(@NotNull SNodeReference nodeRef) {
+    return SNodePointer.serialize(nodeRef);
+  }
+
   @Override
   public SNodeReference createNodeReference(String text) {
     return SNodePointer.deserialize(text);
