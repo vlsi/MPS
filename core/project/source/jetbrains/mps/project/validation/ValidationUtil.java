@@ -18,6 +18,7 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -40,6 +41,7 @@ import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -80,6 +82,16 @@ public class ValidationUtil {
         consumer.consume(new ValidationProblem(Severity.ERROR, m.getText()));
       }
       return;
+    }
+
+    if (
+        !model.isReadOnly() &&
+            (model instanceof PersistenceVersionAware) &&
+            ((PersistenceVersionAware) model).getPersistenceVersion() < ModelPersistence.LAST_VERSION
+        ) {
+      consumer.consume(
+          new ValidationProblem(Severity.WARNING, "Outdated model persistence is used: " + ((PersistenceVersionAware) model).getPersistenceVersion() +
+              ". Please run Tools->Migration 3.2->Migrate from Names to Ids"));
     }
 
     SModule module = model.getModule();
