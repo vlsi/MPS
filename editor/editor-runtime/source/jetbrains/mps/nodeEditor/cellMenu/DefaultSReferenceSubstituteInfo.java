@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
     }
     //todo use myLink.getScope
     //Iterable<SNode> nodes = myLink.getScope(mySourceNode).getAvailableElements(null);
-    Iterable<SNode> nodes = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink.getRoleName()).getScope().getAvailableElements(null);
+    Iterable<SNode> nodes = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink).getScope().getAvailableElements(null);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
       if (node == null) {

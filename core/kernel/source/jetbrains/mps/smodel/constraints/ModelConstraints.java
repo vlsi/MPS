@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -144,11 +145,22 @@ public class ModelConstraints {
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
-    ModelAccess.assertLegalRead();
-    return getReferenceDescriptorForReferenceNode(reference, reference.getSourceNode(), reference.getRole());
+    return getReferenceDescriptorForReferenceNode(reference, reference.getSourceNode(), reference.getLink().getRoleName());
   }
 
   @NotNull
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association) {
+    return getReferenceDescriptorForReferenceNode(null, sourceNode, association.getRoleName());
+  }
+
+  /**
+   * @deprecated shall use {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SReference)} or
+   *    {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.language.SReferenceLink)}
+   *    instead.
+   */
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
     // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
     ModelAccess.assertLegalRead();
@@ -157,10 +169,10 @@ public class ModelConstraints {
 
   @NotNull
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
-    SNode concept = referenceNode.getConcept().getDeclarationNode();
-    SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept, role);
+    SConcept concept = referenceNode.getConcept();
+    SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept.getDeclarationNode(), role);
     if (scopeReference == null) {
-      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getQualifiedName() + "'");
+      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + concept + "'");
     }
 
     return new OkReferenceDescriptor(
@@ -184,7 +196,7 @@ public class ModelConstraints {
     }
 
     return new OkReferenceDescriptor(
-      smartConcept, SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
+      MetaAdapterByDeclaration.getInstanceConcept(smartConcept), SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
       false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
       null // reference
     );

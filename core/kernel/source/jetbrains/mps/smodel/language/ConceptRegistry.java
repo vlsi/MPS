@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
@@ -234,6 +233,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return getConstraintsDescriptor(conceptDescriptor.getId());
   }
 
+  /**
+   * Use {@link jetbrains.mps.smodel.language.ConceptRegistryUtil#getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept)}
+   *     if you got SConcept
+   */
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
     ConstraintsDescriptor descriptor = constraintsDescriptors.get(conceptId);
