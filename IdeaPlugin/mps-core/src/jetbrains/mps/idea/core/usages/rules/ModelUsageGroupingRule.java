@@ -24,7 +24,7 @@ import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.workbench.ModelUtil;
+import jetbrains.mps.workbench.FileSystemModelHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -43,7 +43,7 @@ public class ModelUsageGroupingRule extends FileGroupingRule {
     if (usage instanceof UsageInModel) {
       final UsageInModel usageInModel = (UsageInModel) usage;
       SModel modelDescriptor = usageInModel.getModel();
-      Collection<VirtualFile> filesByModelDescriptor = ModelUtil.getVFilesByModelDescriptor(modelDescriptor);
+      Collection<VirtualFile> filesByModelDescriptor = new FileSystemModelHelper(modelDescriptor).getVirtualFiles();
       if (filesByModelDescriptor.isEmpty()) {
         return null;
       } else if (filesByModelDescriptor.size() > 1) {

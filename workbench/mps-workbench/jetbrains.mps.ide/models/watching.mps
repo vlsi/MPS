@@ -2,8 +2,8 @@
 <model ref="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -207,13 +207,13 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -225,6 +225,7 @@
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
     </language>
   </registry>
   <node concept="312cEu" id="2S7hKDHpGpj">
@@ -392,8 +393,8 @@
                                                           <node concept="37vLTw" id="3GM_nagTwKu" role="2Oq$k0">
                                                             <ref role="3cqZAo" node="2S7hKDHpGpK" resolve="models" />
                                                           </node>
-                                                          <node concept="2l5eF5" id="2S7hKDHpGqr" role="2OqNvi">
-                                                            <node concept="37vLTw" id="7308dazPb52" role="2l6Ag6">
+                                                          <node concept="TSZUe" id="40zfiUG83KZ" role="2OqNvi">
+                                                            <node concept="37vLTw" id="40zfiUG83WJ" role="25WWJ7">
                                                               <ref role="3cqZAo" node="7308dazPb4X" resolve="model" />
                                                             </node>
                                                           </node>
@@ -567,11 +568,17 @@
                                             </node>
                                           </node>
                                         </node>
-                                        <node concept="2YIFZM" id="2tkR5cH5bA6" role="2GsD0m">
-                                          <ref role="1Pybhc" to="kog3:~ModelUtil" resolve="ModelUtil" />
-                                          <ref role="37wK5l" to="kog3:~ModelUtil.getFilesByModelDescriptor(org.jetbrains.mps.openapi.model.SModel):java.util.Collection" resolve="getFilesByModelDescriptor" />
-                                          <node concept="2GrUjf" id="7308dazOyyj" role="37wK5m">
-                                            <ref role="2Gs0qQ" node="2S7hKDHpGqR" resolve="model" />
+                                        <node concept="2OqwBi" id="40zfiUG822H" role="2GsD0m">
+                                          <node concept="2ShNRf" id="40zfiUG7FFz" role="2Oq$k0">
+                                            <node concept="1pGfFk" id="40zfiUG81k7" role="2ShVmc">
+                                              <ref role="37wK5l" to="kog3:~FileSystemModelHelper.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="FileSystemModelHelper" />
+                                              <node concept="2GrUjf" id="40zfiUG81rk" role="37wK5m">
+                                                <ref role="2Gs0qQ" node="2S7hKDHpGqR" resolve="model" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="liA8E" id="40zfiUG82fr" role="2OqNvi">
+                                            <ref role="37wK5l" to="kog3:~FileSystemModelHelper.getFiles():java.util.Collection" resolve="getFiles" />
                                           </node>
                                         </node>
                                       </node>

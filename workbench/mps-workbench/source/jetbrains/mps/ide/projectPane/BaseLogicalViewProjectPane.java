@@ -72,8 +72,8 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.FileSystemModelHelper;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -405,7 +405,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<SModel> descriptors = getSelectedModels();
     if (descriptors != null) {
       for (SModel descriptor : descriptors) {
-        selectedFilesList.addAll(ModelUtil.getVFilesByModelDescriptor(descriptor));
+        selectedFilesList.addAll(new FileSystemModelHelper(descriptor).getVirtualFiles());
       }
     }
 
@@ -432,7 +432,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       }
     }
 
-    if (selectedFilesList.size() == 0) {
+    if (selectedFilesList.isEmpty()) {
       return null;
     }
 
