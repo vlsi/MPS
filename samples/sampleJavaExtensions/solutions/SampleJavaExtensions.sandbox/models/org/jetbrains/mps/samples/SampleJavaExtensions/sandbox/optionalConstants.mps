@@ -44,8 +44,14 @@
     <property role="TrG5h" value="OtherConstants" />
     <node concept="3le7z7" id="2lb0lXX3IBl" role="3le7zQ">
       <property role="TrG5h" value="C" />
-      <node concept="3cmrfG" id="2lb0lXX3Jk0" role="2G6nb5">
-        <property role="3cmrfH" value="1" />
+      <node concept="3cpWs3" id="5JE01wUf7Sa" role="2G6nb5">
+        <node concept="3cmrfG" id="5JE01wUf7Sd" role="3uHU7w">
+          <property role="3cmrfH" value="1" />
+        </node>
+        <node concept="1ojt10" id="5JE01wUeKZt" role="3uHU7B">
+          <ref role="1ojtd8" to="wwul:2lb0lXX3nek" resolve="CoreConstants" />
+          <ref role="32iksQ" to="wwul:2lb0lXX3oLb" resolve="B" />
+        </node>
       </node>
     </node>
     <node concept="3le7z7" id="2lb0lXX3J_V" role="3le7zQ">
@@ -56,8 +62,8 @@
             <ref role="32iksQ" node="2lb0lXX3IBl" resolve="C" />
           </node>
           <node concept="1ojt10" id="2lb0lXX3IBD" role="3uHU7B">
-            <ref role="1ojtd8" node="2lb0lXX3IBk" resolve="OtherConstants" />
-            <ref role="32iksQ" node="2lb0lXX3IBl" resolve="C" />
+            <ref role="1ojtd8" to="wwul:2lb0lXX3nek" resolve="CoreConstants" />
+            <ref role="32iksQ" to="wwul:2lb0lXX3nvu" resolve="A" />
           </node>
         </node>
         <node concept="3cmrfG" id="2lb0lXX3L9T" role="3uHU7w">
