@@ -25,8 +25,6 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -127,27 +125,22 @@ public abstract class ReferenceDescriptor {
       final ReferentConstraintContext context =
           new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
 
-      return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
-        @Override
-        public Scope compute() {
-          try {
-            if (scopeProvider != null) {
-              Scope searchScope = scopeProvider.createScope(getOperationContext(getModule()), context);
-              if (searchScope != null) {
-                if (reference != null && searchScope instanceof Adapter) {
-                  return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
-                }
-                return searchScope;
-              }
+      try {
+        if (scopeProvider != null) {
+          Scope searchScope = scopeProvider.createScope(getOperationContext(getModule()), context);
+          if (searchScope != null) {
+            if (reference != null && searchScope instanceof Adapter) {
+              return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
             }
-            // global search scope
-            return new ModelPlusImportedScope(getModel(), false, NameUtil.nodeFQName(linkTarget));
-          } catch (Exception t) {
-            LOG.error(t, getContextNode());
-            return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+            return searchScope;
           }
         }
-      });
+        // global search scope
+        return new ModelPlusImportedScope(getModel(), false, NameUtil.nodeFQName(linkTarget));
+      } catch (Exception t) {
+        LOG.error(t, getContextNode());
+        return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+      }
     }
 
     @Override

@@ -8,8 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
@@ -20,29 +18,24 @@ public class ScopeResolver implements IResolver {
   }
   @Override
   public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final SRepository repository) {
-    return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        Scope refScope = ModelConstraints.getScope(reference);
-        if (refScope instanceof ErrorScope) {
-          LOG.error("Couldn't create referent search scope : " + ((ErrorScope) refScope).getMessage());
-          return false;
-        }
-        SNode result = null;
-        String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-        if (resolveInfo != null) {
-          try {
-            result = refScope.resolve(sourceNode, resolveInfo);
-          } catch (Throwable t) {
-            LOG.warn("Exception was thrown during reference resolving", t);
-          }
-        }
-        if (result == null) {
-          return false;
-        }
-        sourceNode.setReferenceTarget(reference.getLink(), result);
-        return true;
+    Scope refScope = ModelConstraints.getScope(reference);
+    if (refScope instanceof ErrorScope) {
+      LOG.error("Couldn't create referent search scope : " + ((ErrorScope) refScope).getMessage());
+      return false;
+    }
+    SNode result = null;
+    String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+    if (resolveInfo != null) {
+      try {
+        result = refScope.resolve(sourceNode, resolveInfo);
+      } catch (Throwable t) {
+        LOG.warn("Exception was thrown during reference resolving", t);
       }
-    });
+    }
+    if (result == null) {
+      return false;
+    }
+    sourceNode.setReferenceTarget(reference.getLink(), result);
+    return true;
   }
 }
