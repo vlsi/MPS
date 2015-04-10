@@ -3,17 +3,24 @@
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387" progressColor="FDA916" progressY="230"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
-  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png"/>
+  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size128="/MPS_128.png"/>
   <dialogs-image url="/jetbrains/mps/workbench/icons/dialogImage.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
-  <update-urls check="http://www.jetbrains.com/mps/update.xml" download="http://www.jetbrains.com/mps/download/"/>
-  <!--TODO: Replace logo-url by better one-->
-  <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png"
-                  logo-url="/MPS_32.png"
+  <welcome-screen logo-url="/MPS_32.png"
+                  caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png"
                   slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
+
+  <third-party url="http://www.jetbrains.org/"/>
+
+  <editor background-url="/idea_logo_welcome.png"/>
+
+  <update-urls check="http://www.jetbrains.com/mps/update.xml"
+               download="http://www.jetbrains.com/mps/download/"/>
+
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
-  <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
+  <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System"
+            release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
   <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 </component>

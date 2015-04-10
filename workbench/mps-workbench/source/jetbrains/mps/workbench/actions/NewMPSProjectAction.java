@@ -28,7 +28,7 @@ import javax.swing.Icon;
 import java.util.Map;
 
 public class NewMPSProjectAction extends BaseAction implements DumbAware {
-  private static final Icon NEW_ICON_WELCOME_SCREEN = AllIcons.General.CreateNewProject;
+  private static final Icon NEW_ICON_WELCOME_SCREEN = AllIcons.Welcome.CreateNewProject;
 
   public NewMPSProjectAction() {
     setExecuteOutsideCommand(true);

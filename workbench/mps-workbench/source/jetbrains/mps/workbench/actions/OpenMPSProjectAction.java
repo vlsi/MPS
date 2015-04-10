@@ -39,7 +39,7 @@ import java.util.Map;
 
 public class OpenMPSProjectAction extends BaseAction {
   private static final Icon OPEN_ICON = Actions.Menu_open;
-  private static final Icon OPEN_ICON_WELCOME_SCREEN = AllIcons.General.OpenProject;
+  private static final Icon OPEN_ICON_WELCOME_SCREEN = AllIcons.Welcome.OpenProject;
 
   public OpenMPSProjectAction() {
     setExecuteOutsideCommand(true);
