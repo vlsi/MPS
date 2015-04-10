@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,8 +37,10 @@ import java.util.HashMap;
  * Igor Alshannikov
  * Mar 29, 2005
  *
- * @deprecated use DefaultSReferentSubstituteAction
+ * @deprecated use {@link jetbrains.mps.smodel.action.DefaultSReferenceSubstituteAction}
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private final SNode myCurrentReferent;
   private final SNode myLinkDeclaration;
