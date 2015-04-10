@@ -982,32 +982,6 @@
       <unit id="1219355636115" at="13,0,21,0" name="smodelLanguage.samples.NodeRef" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1221164914075">
-    <file name="SearchScope.java">
-      <node id="1221169280491" at="12,83,13,114" concept="5" />
-      <node id="1221169127143" at="13,114,14,17" concept="6" />
-      <node id="1221171408330" at="16,98,17,114" concept="5" />
-      <node id="1221171413634" at="17,114,18,72" concept="6" />
-      <node id="1221164930762" at="12,0,16,0" concept="4" trace="getSearchScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/smodel/search/ISearchScope;" />
-      <node id="1221171286994" at="16,0,20,0" concept="4" trace="isInScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <scope id="1221164930765" at="12,83,14,17">
-        <var name="scope" id="1221169280492" />
-      </scope>
-      <scope id="1221171286997" at="16,98,18,72">
-        <var name="scope" id="1221171408331" />
-      </scope>
-      <scope id="1221164930762" at="12,0,16,0">
-        <var name="context" id="1221166109617" />
-        <var name="methodCall" id="1221165056653" />
-      </scope>
-      <scope id="1221171286994" at="16,0,20,0">
-        <var name="context" id="1221171328906" />
-        <var name="methodCall" id="1221171328904" />
-        <var name="methodDeclaration" id="1221171333642" />
-      </scope>
-      <unit id="1221164914075" at="11,0,21,0" name="smodelLanguage.samples.SearchScope" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1226362060907">
     <file name="LinkRef.java">
       <node id="1226362136275" at="11,23,12,179" concept="5" />
