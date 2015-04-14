@@ -1821,6 +1821,12 @@
             <ref role="3bR37D" to="ffeo:ymnOULAU0j" resolve="jetbrains.mps.baseLanguage.unitTest" />
           </node>
         </node>
+        <node concept="1SiIV0" id="53DzIfoq79O" role="3bR37C">
+          <node concept="3bR9La" id="53DzIfoq79P" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiHrmy" resolve="jetbrains.mps.java.stub" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="55IIr" id="yja7V_1Mz9" role="auvoZ">
