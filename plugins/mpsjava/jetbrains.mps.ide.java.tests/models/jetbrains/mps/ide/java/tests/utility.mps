@@ -809,21 +809,27 @@
             <node concept="3cpWs8" id="70HT6wFs6dS" role="3cqZAp">
               <node concept="3cpWsn" id="70HT6wFs6dT" role="3cpWs9">
                 <property role="TrG5h" value="diff" />
-                <node concept="2YIFZM" id="70HT6wFs6e0" role="33vP2m">
-                  <ref role="1Pybhc" to="l288:7MIYyntE09$" resolve="NodesMatcher" />
-                  <ref role="37wK5l" to="l288:7MIYyntE0ec" resolve="matchNodes" />
-                  <node concept="37vLTw" id="3GM_nagTzSa" role="37wK5m">
-                    <ref role="3cqZAo" node="13DhuT6A0hE" resolve="result" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxglToO" role="37wK5m">
-                    <ref role="3cqZAo" node="13DhuT6A0hQ" resolve="expected" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagTsHq" role="37wK5m">
-                    <ref role="3cqZAo" node="70HT6wFs6cq" resolve="nodeMap" />
-                  </node>
-                </node>
                 <node concept="3uibUv" id="70HT6wFs6dU" role="1tU5fm">
                   <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                </node>
+                <node concept="2OqwBi" id="4OzBQ_jr4Qw" role="33vP2m">
+                  <node concept="2ShNRf" id="4OzBQ_jqUoQ" role="2Oq$k0">
+                    <node concept="1pGfFk" id="4OzBQ_jr4to" role="2ShVmc">
+                      <ref role="37wK5l" to="l288:4OzBQ_joz01" resolve="NodesMatcher" />
+                      <node concept="37vLTw" id="4OzBQ_jr4J9" role="37wK5m">
+                        <ref role="3cqZAo" node="70HT6wFs6cq" resolve="nodeMap" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4OzBQ_jr54v" role="2OqNvi">
+                    <ref role="37wK5l" to="l288:4OzBQ_joRGy" resolve="match" />
+                    <node concept="37vLTw" id="4OzBQ_jr62h" role="37wK5m">
+                      <ref role="3cqZAo" node="13DhuT6A0hE" resolve="result" />
+                    </node>
+                    <node concept="37vLTw" id="4OzBQ_jr6CO" role="37wK5m">
+                      <ref role="3cqZAo" node="13DhuT6A0hQ" resolve="expected" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

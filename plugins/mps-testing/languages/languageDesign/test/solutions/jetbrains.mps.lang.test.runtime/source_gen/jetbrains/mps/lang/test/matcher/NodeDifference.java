@@ -5,12 +5,12 @@ package jetbrains.mps.lang.test.matcher;
 import java.util.List;
 import java.util.ArrayList;
 
-public class NodeDifference extends DifferanceItem {
-  private String myName;
-  private List<DifferanceItem> myDifference = new ArrayList<DifferanceItem>();
-  public NodeDifference(String name, List<DifferanceItem> diffs) {
+public final class NodeDifference extends DifferenceItem {
+  private final String myName;
+  private final List<DifferenceItem> myDifference;
+  public NodeDifference(String name, List<DifferenceItem> diffs) {
     this.myName = name;
-    myDifference = new ArrayList<DifferanceItem>(diffs);
+    myDifference = new ArrayList<DifferenceItem>(diffs);
   }
   public String toString(int deep) {
     String pref = "";
@@ -19,7 +19,7 @@ public class NodeDifference extends DifferanceItem {
     }
     StringBuffer buff = new StringBuffer();
     buff.append(pref + "Node: " + myName + "\n");
-    for (DifferanceItem item : myDifference) {
+    for (DifferenceItem item : myDifference) {
       if (item instanceof NodeDifference) {
         buff.append(((NodeDifference) item).toString(deep + 1));
       } else {

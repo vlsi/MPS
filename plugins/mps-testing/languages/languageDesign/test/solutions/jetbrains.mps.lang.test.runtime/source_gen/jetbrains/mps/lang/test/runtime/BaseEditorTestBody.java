@@ -17,13 +17,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import java.util.ArrayList;
+import jetbrains.mps.lang.test.matcher.NodeDifference;
+import java.util.Collections;
+import junit.framework.Assert;
+import java.util.Map;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -123,15 +121,17 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   protected void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     ModelAccess.instance().flushEventQueue();
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    // FIXME why do we need model write here? 
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
-            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).resolve(myProject.getRepository());
-            Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
-            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
-            if (BaseEditorTestBody.this.myFinish != null) {
-              BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
+            SNode editedNode = myEditor.getCurrentlyEditedNode().resolve(myProject.getRepository());
+            NodesMatcher nm = new NodesMatcher();
+            List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
+            Assert.assertEquals(null, diff);
+            if (myFinish != null) {
+              myFinish.assertEditor(myEditor, (Map<SNode, SNode>) nm.getMap());
             }
           } catch (Throwable t) {
             throwable.value = t;

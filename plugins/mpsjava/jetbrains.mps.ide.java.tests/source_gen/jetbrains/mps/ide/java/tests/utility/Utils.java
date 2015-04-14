@@ -95,7 +95,7 @@ public class Utils {
 
       Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildClassifierNodeMap(result, expected, nodeMap);
-      NodeDifference diff = NodesMatcher.matchNodes(result, expected, nodeMap);
+      NodeDifference diff = new NodesMatcher(nodeMap).match(result, expected);
 
       Assert.assertEquals(null, diff);
 
