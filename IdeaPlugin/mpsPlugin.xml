@@ -326,7 +326,7 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/src" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/resources" />
     <mkdir dir="${build.tmp}/java/out/mps-common" />
-    <javac2 destdir="${build.tmp}/java/out/mps-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-common" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/common/src" />
@@ -359,7 +359,7 @@
   <target name="java.compile.mps-jps-plugin" depends="java.compile.mps-common, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
@@ -394,7 +394,7 @@
   <target name="java.compile.mps-plugin" depends="java.compile.mps-common, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/src" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/src" />
@@ -434,7 +434,7 @@
   <target name="java.compile.mps-vcs-core" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs-core/core/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-core" />
-    <javac2 destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-vcs-core" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
@@ -467,7 +467,7 @@
     <mkdir dir="${mps_home}/plugins/vcs/common/source_gen" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-vcs/source" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-platform" />
-    <javac2 destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-vcs-platform" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
@@ -509,7 +509,7 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/source_gen" />
     <mkdir dir="${mps_home}/plugins/mpsjava/platform/source" />
     <mkdir dir="${build.tmp}/java/out/mps-java" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
@@ -564,7 +564,7 @@
   <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-common, java.compile.mps-jps-plugin, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-java-jps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
@@ -598,7 +598,7 @@
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />

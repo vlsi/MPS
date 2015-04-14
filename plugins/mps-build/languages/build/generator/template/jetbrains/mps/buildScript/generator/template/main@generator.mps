@@ -2,12 +2,12 @@
 <model ref="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -259,6 +259,7 @@
       <concept id="4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" flags="ng" index="3GcXPv">
         <property id="6998860900671418236" name="javaLevelSource" index="TKLQk" />
         <property id="6998860900671530572" name="javaLevelTarget" index="TLli$" />
+        <property id="4416461515995149317" name="fork" index="1cm9xs" />
         <property id="2059109515400306584" name="compiler" index="3fBbaD" />
         <property id="7385586609667649463" name="outputFolder" index="1Lov1j" />
         <child id="7926701909975416101" name="sources" index="2IvZ16" />
@@ -6864,6 +6865,7 @@
           <property role="3fBbaD" value="modern" />
           <property role="TKLQk" value="1.7" />
           <property role="TLli$" value="1.7" />
+          <property role="1cm9xs" value="true" />
           <node concept="2Vbh7Z" id="CHffhsRIKo" role="1mSsI2">
             <node concept="2pNNFK" id="CHffhsRIKp" role="2Vbh7K">
               <property role="qg3DV" value="true" />
@@ -8802,6 +8804,49 @@
                     </node>
                     <node concept="3TrcHB" id="1hYW$Pud1ke" role="2OqNvi">
                       <ref role="3TsBF5" to="3ior:1hYW$Pu99cn" resolve="compilerOptions" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="17Uvod" id="3Par5_L7E1i" role="lGtFl">
+            <property role="P4ACc" value="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/4416461515995149317" />
+            <property role="2qtEX9" value="fork" />
+            <node concept="3zFVjK" id="3Par5_L7E1j" role="3zH0cK">
+              <node concept="3clFbS" id="3Par5_L7E1k" role="2VODD2">
+                <node concept="3cpWs8" id="3Par5_L7Frt" role="3cqZAp">
+                  <node concept="3cpWsn" id="3Par5_L7Fru" role="3cpWs9">
+                    <property role="TrG5h" value="options" />
+                    <node concept="3Tqbb2" id="3Par5_L7Frv" role="1tU5fm">
+                      <ref role="ehGHo" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+                    </node>
+                    <node concept="2OqwBi" id="3Par5_L7Frw" role="33vP2m">
+                      <node concept="1iwH7S" id="3Par5_L7Frx" role="2Oq$k0" />
+                      <node concept="1bhEwm" id="3Par5_L7Fry" role="2OqNvi">
+                        <ref role="1bhEwk" node="1s8OwvM8e8O" resolve="javaOpts" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="3Par5_L7Frz" role="3cqZAp">
+                  <node concept="3K4zz7" id="3Par5_L7Fr$" role="3clFbG">
+                    <node concept="2OqwBi" id="3Par5_L7Fr_" role="3K4E3e">
+                      <node concept="37vLTw" id="3Par5_L7FrA" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3Par5_L7Fru" resolve="options" />
+                      </node>
+                      <node concept="3TrcHB" id="3Par5_L7Jdj" role="2OqNvi">
+                        <ref role="3TsBF5" to="3ior:3Par5_L6wc4" resolve="fork" />
+                      </node>
+                    </node>
+                    <node concept="3clFbT" id="3Par5_L7OrD" role="3K4GZi">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="3y3z36" id="3Par5_L7FrD" role="3K4Cdx">
+                      <node concept="10Nm6u" id="3Par5_L7FrE" role="3uHU7w" />
+                      <node concept="37vLTw" id="3Par5_L7FrF" role="3uHU7B">
+                        <ref role="3cqZAo" node="3Par5_L7Fru" resolve="options" />
+                      </node>
                     </node>
                   </node>
                 </node>

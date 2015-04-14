@@ -2,7 +2,7 @@
 <model ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -1115,6 +1115,10 @@
     <node concept="1TJgyi" id="1Mjrj7j4qYl" role="1TKVEl">
       <property role="TrG5h" value="compiler" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="3Par5_L6wc4" role="1TKVEl">
+      <property role="TrG5h" value="fork" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="64wWIxoRWZs" role="1TKVEl">
       <property role="TrG5h" value="javaLevel" />
