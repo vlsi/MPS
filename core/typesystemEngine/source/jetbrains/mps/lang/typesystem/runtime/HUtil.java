@@ -33,10 +33,9 @@ public class HUtil {
   //todo: this method can be called from inference rules - by calling behavior methods,
   // todo: in which there are no typechecking context(
   public static SNode copyIfNecessary(SNode node) {
-    if (node != null && (node.getParent() != null || node.getModel() != null && node.getParent() == null)) {
+    if (node != null && (node.getParent() != null || node.getModel() != null)) {
       // this copies all the atributes, because can be used in migration scripts
-      SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
-      return copy;
+      return CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
     } else {
       return node;
     }
