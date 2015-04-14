@@ -63,6 +63,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 
 public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
@@ -76,6 +77,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   private LanguageDescriptor myLanguageDescriptor;
+  private List<Generator> myGenerators = new LinkedList<Generator>();
 
   private ClassLoader myStubsLoader = new StubsClassLoader();
 
@@ -174,19 +176,50 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   void revalidateGenerators() {
-    MPSModuleRepository repo = (MPSModuleRepository) getRepository();
-    for (Generator generator : getGenerators()) {
-      repo.unregisterModule(generator, this);
+    ListIterator<Generator> generators = myGenerators.listIterator();
+    Iterator<GeneratorDescriptor> generatorDescriptors =
+        getModuleDescriptor() != null && getModuleDescriptor().getGenerators() != null ? getModuleDescriptor().getGenerators().iterator() :
+            Collections.<GeneratorDescriptor>emptyList().iterator();
+
+    MPSModuleRepository moduleRepository = (MPSModuleRepository) getRepository();
+    while (generatorDescriptors.hasNext()) {
+      GeneratorDescriptor nextDescriptor = generatorDescriptors.next();
+      Generator nextGenerator = null;
+
+      while (generators.hasNext() && nextGenerator == null) {
+        // looking for the existing generator with same ID
+        Generator nextGeneratorCandidate = generators.next();
+        GeneratorDescriptor nextGeneratorCandidateDescriptor = nextGeneratorCandidate.getModuleDescriptor();
+        if (nextGeneratorCandidateDescriptor != null &&
+            EqualUtil.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
+            EqualUtil.equals(nextGeneratorCandidateDescriptor.getId(), nextDescriptor.getId())) {
+          nextGenerator = nextGeneratorCandidate;
+        } else {
+          // removing generator with different ID - either it was removed, or reordered, so will be added later
+          moduleRepository.unregisterModule(nextGeneratorCandidate, this);
+          generators.remove();
+        }
+      }
+
+      if (nextGenerator != null) {
+        nextGenerator.updateGeneratorDescriptor(nextDescriptor);
+      } else {
+        Generator generator = new Generator(this, nextDescriptor);
+        moduleRepository.registerModule(generator, this);
+        generators.add(generator);
+      }
     }
-    for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
-      Generator generator = new Generator(this, generatorDescriptor);
-      repo.registerModule(generator, this);
+    while (generators.hasNext()) {
+      Generator nextGenerator = generators.next();
+      moduleRepository.unregisterModule(nextGenerator, this);
+      generators.remove();
     }
   }
 
   @Override
   public void dispose() {
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    myGenerators.clear();
     super.dispose();
   }
 
@@ -230,6 +263,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public Collection<Generator> getGenerators() {
+    // TODO: use myGenerators collection instead?
     return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
