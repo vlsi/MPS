@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 public interface IApplicableTo2Concepts {
-  public String getApplicableConceptFQName1();
+  String getApplicableConceptFQName1();
 
-  public String getApplicableConceptFQName2();
+  String getApplicableConceptFQName2();
 }
