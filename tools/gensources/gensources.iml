@@ -1020,5 +1020,6 @@
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="module" module-name="java-stub" />
   </component>
 </module>
