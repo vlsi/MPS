@@ -315,6 +315,7 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
+        <property id="4237758264760168561" name="bugfixNr" index="1lNJF1" />
         <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
         <child id="6108265972537182996" name="splashScreen" index="2EqU2t" />
@@ -14959,6 +14960,7 @@
       <property role="2OjLBK" value="2" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
+      <property role="1lNJF1" value="1" />
       <node concept="55IIr" id="ES2LjlZRAH" role="3vi$VU">
         <node concept="2Ry0Ak" id="ES2LjlZRAI" role="iGT6I">
           <property role="2Ry0Am" value="workbench" />
