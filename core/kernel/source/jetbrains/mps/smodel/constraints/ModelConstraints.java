@@ -78,11 +78,10 @@ public class ModelConstraints {
 
     SNode currentNode = node;
 
-    ConceptRegistry registry = ConceptRegistry.getInstance();
     IOperationContext context = getOperationContext(getModule(node));
 
     while (currentNode != null) {
-      ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConcept().getQualifiedName());
+      ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(currentNode.getConcept());
 
       if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, context, checkingNodeContext)) {
         return false;
@@ -97,7 +96,7 @@ public class ModelConstraints {
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     ModelAccess.assertLegalRead();
 
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConcept().getQualifiedName());
+    ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
@@ -109,6 +108,11 @@ public class ModelConstraints {
     return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName), getOperationContext(module), checkingNodeContext);
   }
 
+  /**
+   * @deprecated use {@link #canBeRoot(SAbstractConcept, SModel)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     ModelAccess.assertLegalRead();
 
