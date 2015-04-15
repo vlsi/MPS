@@ -285,7 +285,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         dependenciesChanged();
         setChanged();
       }
-      return null;
+      return dep;
     }
 
     Dependency dep = new Dependency();
