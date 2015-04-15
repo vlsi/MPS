@@ -46,14 +46,7 @@ public class Renamer {
   }
 
   public static void updateModelAndModuleReferences(SRepository repo) {
-    ModelAccess.assertLegalWrite();
-
-    List<SModuleReference> refs = new ArrayList<SModuleReference>();
-    for (SModule module : repo.getModules()) {
-      if (module.isReadOnly()) continue;
-      refs.add(module.getModuleReference());
-    }
-    RefUpdateUtil.updateModuleRefs(refs);
+    repo.getModelAccess().checkWriteAccess();
 
     for (SModule m : repo.getModules()) {
       if (m.isReadOnly()) continue;

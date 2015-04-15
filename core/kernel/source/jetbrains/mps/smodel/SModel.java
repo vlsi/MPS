@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
@@ -870,7 +870,7 @@ public class SModel implements SModelData {
       if (module != null) {
         SModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || RefUpdateUtil.differs(ref, newRef);
+        changed = changed || ModuleReference.differs(ref, newRef);
       }
     }
     return changed;
