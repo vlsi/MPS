@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ public class LibraryInitializer implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
 
   private static LibraryInitializer INSTANCE;
+  private final MPSModuleRepository myRepo;
 
   public static LibraryInitializer getInstance() {
     return INSTANCE;
@@ -55,7 +56,7 @@ public class LibraryInitializer implements CoreComponent {
 
   @Override
   public void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepo.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         for (SLibrary lib : myLibraries) {
@@ -69,6 +70,7 @@ public class LibraryInitializer implements CoreComponent {
 
   @SuppressWarnings("UnusedParameters")
   public LibraryInitializer(MPSModuleRepository repo, ClassLoaderManager clm) {
+    myRepo = repo;
   }
 
   public void update() {
@@ -97,7 +99,7 @@ public class LibraryInitializer implements CoreComponent {
   }
 
   public void update(final boolean refreshFiles) {
-    ModelAccess.assertLegalWrite();
+    myRepo.getModelAccess().checkWriteAccess();
 
     final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
     final Set<SLibrary> toLoad = new HashSet<SLibrary>();
@@ -123,30 +125,24 @@ public class LibraryInitializer implements CoreComponent {
     if (toLoad.size() > 0) LOG.info("Loading " + toLoad.size() + " libraries");
     if (toUnload.size() > 0) LOG.info("Unloading " + toUnload.size() + " libraries");
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ArrayList<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
-        ArrayList<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
-        Collections.sort(toUnloadList);
-        Collections.sort(toLoadList);
-        for (SLibrary unloadLib : toUnloadList) {
-          unloadLib.dispose();
-        }
+    ArrayList<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
+    ArrayList<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
+    Collections.sort(toUnloadList);
+    Collections.sort(toLoadList);
+    for (SLibrary unloadLib : toUnloadList) {
+      unloadLib.dispose();
+    }
 
-        for (SLibrary loadLib : toLoadList) {
-          loadLib.attach(refreshFiles);
-        }
-      }
-    });
-
+    for (SLibrary loadLib : toLoadList) {
+      loadLib.attach(refreshFiles);
+    }
     CleanupManager.getInstance().cleanup();
   }
 
   //----------bootstrap modules
 
   public <M extends SModule> Set<M> getBootstrapModules(Class<M> cls) {
-    ModelAccess.assertLegalRead();
+    myRepo.getModelAccess().checkReadAccess();
 
     Set<String> bootstrapPaths = new HashSet<String>();
     bootstrapPaths.addAll(PathManager.getBootstrapPaths());
@@ -164,7 +160,7 @@ public class LibraryInitializer implements CoreComponent {
   }
 
   public List<ModulesMiner.ModuleHandle> getModuleHandles() {
-    ModelAccess.assertLegalRead();
+    myRepo.getModelAccess().checkReadAccess();
 
     List<ModulesMiner.ModuleHandle> result = new ArrayList<ModulesMiner.ModuleHandle>();
     for (SLibrary lib : myLibraries) {

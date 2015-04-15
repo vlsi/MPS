@@ -69,7 +69,6 @@ public class RulesManager {
   }
 
   public boolean loadLanguage(final String languageNamespace) {
-    ModelAccess.assertLegalWrite();
     LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
     if (language == null) return false;
     if (!myLoadedLanguages.contains(language)) {
@@ -79,7 +78,6 @@ public class RulesManager {
   }
 
   public void loadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       assert !myLoadedLanguages.contains(language);
       myLanguagesToLoad.add(language);
@@ -96,7 +94,6 @@ public class RulesManager {
         return;
       }
 
-//      ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : myLanguagesToLoad) {
         assert !myLoadedLanguages.contains(language);
         myLoadedLanguages.add(language);
@@ -131,7 +128,6 @@ public class RulesManager {
   }
 
   public void unloadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       if (myLoadedLanguages.contains(language)) {
         unloadLoadedAllLoaded();
@@ -144,7 +140,6 @@ public class RulesManager {
   }
 
   private void unloadLoadedAllLoaded() {
-    ModelAccess.assertLegalWrite();
 
     myLanguagesToLoad.addAll(myLoadedLanguages);
     myLoadedLanguages = new HashSet<LanguageRuntime>();

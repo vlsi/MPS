@@ -24,9 +24,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
@@ -109,11 +109,12 @@ public abstract class CurrentLinePositionComponentEx<S> {
         return new Runnable() {
           @Override
           public void run() {
-            ModelAccess.assertLegalWrite();
+            final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+            mpsProject.getModelAccess().checkWriteAccess();
             SNode node = newPainter.getSNode();
             if (node != null) {
               if (visible && focus) {
-                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(mpsProject), true, false).getCurrentEditorComponent();
                 currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent, myFileEditorManager);
                 if (currentEditorComponent != null) {
                   attach(newPainter, currentEditorComponent);

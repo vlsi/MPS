@@ -25,7 +25,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -607,7 +606,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   private int myCommandLevel = 0;
 
   private void incCommandLevel() {
-    assertLegalWrite();
+    checkWriteAccess();
     if (myCommandLevel != 0) {
       // LOG.error("command level>0", new Exception());
     } else {
@@ -617,7 +616,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   private void decCommandLevel(Project p) {
-    assertLegalWrite();
+    checkWriteAccess();
     myCommandLevel--;
     if (myCommandLevel == 0) {
       UndoHelper.getInstance().flushCommand(p);

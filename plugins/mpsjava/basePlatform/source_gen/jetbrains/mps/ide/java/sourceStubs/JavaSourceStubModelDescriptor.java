@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -78,7 +77,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   public void changed(DataSource source, Iterable<String> changedItems) {
     // FIXME it works, but is not incremental and is ugly 
 
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     // already attached but not createModel'd yet 
     if (myModel == null) {
@@ -228,7 +227,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   }
   @Override
   public void unload() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     SModel oldModel = myModel;
     if (oldModel != null) {

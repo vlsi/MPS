@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
@@ -171,7 +170,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     if (!(getSource() instanceof FileDataSource)) {
       throw new UnsupportedOperationException("cannot change model file on non-file data source");
     }
@@ -189,7 +188,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public final void save() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     // probably should be changed to assert
     // see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
@@ -233,7 +232,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void rename(String newModelName, boolean changeFile) {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     SModelReference oldName = getReference();
     fireBeforeModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));

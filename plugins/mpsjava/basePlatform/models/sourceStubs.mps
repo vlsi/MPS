@@ -2,9 +2,9 @@
 <model ref="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -1364,10 +1364,9 @@
           </node>
         </node>
         <node concept="3clFbH" id="4WQdl6XE$25" role="3cqZAp" />
-        <node concept="3clFbF" id="3PyP5yK8GDa" role="3cqZAp">
-          <node concept="2YIFZM" id="3PyP5yK8GIN" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3clFbF" id="C3pgkf1Mfn" role="3cqZAp">
+          <node concept="1rXfSq" id="C3pgkf1Mfk" role="3clFbG">
+            <ref role="37wK5l" to="51te:~SModelBase.assertCanChange():void" resolve="assertCanChange" />
           </node>
         </node>
         <node concept="3clFbH" id="iFm7W0iWfU" role="3cqZAp" />
@@ -2516,10 +2515,9 @@
       <node concept="3Tm1VV" id="2zDDKmDKScp" role="1B3o_S" />
       <node concept="3cqZAl" id="2zDDKmDKScr" role="3clF45" />
       <node concept="3clFbS" id="2zDDKmDKScx" role="3clF47">
-        <node concept="3clFbF" id="2zDDKmDLdA$" role="3cqZAp">
-          <node concept="2YIFZM" id="2zDDKmDLdHO" role="3clFbG">
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+        <node concept="3clFbF" id="C3pgkf1Ot4" role="3cqZAp">
+          <node concept="1rXfSq" id="C3pgkf1Ot2" role="3clFbG">
+            <ref role="37wK5l" to="51te:~SModelBase.assertCanChange():void" resolve="assertCanChange" />
           </node>
         </node>
         <node concept="3clFbH" id="2zDDKmDLdI4" role="3cqZAp" />

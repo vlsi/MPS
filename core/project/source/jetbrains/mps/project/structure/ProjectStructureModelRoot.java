@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -142,8 +141,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       return model;
     }
 
-    private void loadModels(Set<org.jetbrains.mps.openapi.model.SModelReference> result, ModelRootDescriptor root,
-        ModuleDescriptor md) {
+    private void loadModels(Set<org.jetbrains.mps.openapi.model.SModelReference> result, ModelRootDescriptor root, ModuleDescriptor md) {
       try {
         SModule module = ModuleRepositoryFacade.getInstance().getModule(md.getModuleReference());
         ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(root.getType());
@@ -187,7 +185,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     @Override
     public void reloadFromDiskSafe() {
-      ModelAccess.assertLegalWrite();
+      assertCanChange();
       if (getSource().getTimestamp() == -1) {
         SModelRepository.getInstance().deleteModel(this);
         return;
