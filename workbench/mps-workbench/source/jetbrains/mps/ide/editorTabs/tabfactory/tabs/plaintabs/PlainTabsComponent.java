@@ -245,10 +245,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
       myRebuilding = oldRebuilding;
     }
 
-    if (selNode != null && selNode.resolve(MPSModuleRepository.getInstance()) != null) {
+    SNode selNodeResolved;
+    if (selNode != null && (selNodeResolved = selNode.resolve(MPSModuleRepository.getInstance())) != null) {
       for (PlainEditorTab tab : myRealTabs) {
         if (EqualUtil.equals(tab.getNode(), selNode)) {
           myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
+          onNodeChange(selNodeResolved);
           break;
         }
       }

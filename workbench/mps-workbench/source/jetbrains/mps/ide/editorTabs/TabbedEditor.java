@@ -129,21 +129,21 @@ public class TabbedEditor extends BaseNodeEditor {
       myTabsComponent.dispose();
     }
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), new NodeChangeCallback() {
-        @Override
-        public void changeNode(SNode newNode) {
-          showNodeInternal(newNode, true, true);
-        }
-      }, new CreateModeCallback() {
-        @Override
-        public void exitCreateMode() {
-          showEditor();
-        }
+          @Override
+          public void changeNode(SNode newNode) {
+            showNodeInternal(newNode, true, true);
+          }
+        }, new CreateModeCallback() {
+          @Override
+          public void exitCreateMode() {
+            showEditor();
+          }
 
-        @Override
-        public void enterCreateMode(JComponent replace) {
-          showComponent(replace);
-        }
-      }, myProject
+          @Override
+          public void enterCreateMode(JComponent replace) {
+            showComponent(replace);
+          }
+        }, myProject
     );
 
     JComponent c = myTabsComponent.getComponent();
@@ -183,6 +183,13 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public void showNode(SNode node, boolean select) {
     SNode containingRoot = node.getModel() != null && node.getParent() == null ? node : node.getContainingRoot();
+
+    SNodeReference currentNodeReference = getCurrentlyEditedNode();
+    SNodeReference newNodeReference = node.getReference();
+    if (currentNodeReference != null && currentNodeReference.equals(newNodeReference)) {
+      return;
+    }
+
     showNodeInternal(containingRoot, select, false);
   }
 
@@ -190,46 +197,41 @@ public class TabbedEditor extends BaseNodeEditor {
     if (getCurrentEditorComponent() == null) {
       showEditor();
     }
-    final SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
-    final SNodeReference nodeRef = node.getReference();
-    boolean rootChange = currentlyEditedNode == null || !currentlyEditedNode.equals(nodeRef);
 
+    final SNodeReference nodeRef = node.getReference();
     if (!fromTabs) {
       myTabsComponent.setLastNode(nodeRef);
     }
-
-    if (rootChange) {
-      SModel model = getCurrentNodeModel();
-      if (model != null) {
-        ((SModelInternal) model).removeModelListener(myModelListener);
-      }
-
-      SModel md = node.getModel();
-      SModule module = md.getModule();
-      assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
-      SNodeReference selection = select ? nodeRef : null;
-      if (myTabsComponent.getCurrentTabAspect() != null) {
-        Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);
-        selection = a.isEmpty() ? selection : a.iterator().next();
-      }
-      if (!select && nodeRef.equals(selection)) {
-        // drop selection if it's the same as edited node and we are not forced to show it
-        selection = null;
-      }
-      editNode(nodeRef, selection);
-
-      model = getCurrentNodeModel();
-      assert model != null;
-
-      ((SModelInternal) model).addModelListener(myModelListener);
-
-      executeInEDT(new PrioritizedTask(TaskType.UPDATE_PROPERTIES, myType2TaskMap) {
-        @Override
-        public void performTask() {
-          updateProperties();
-        }
-      });
+    SModel model = getCurrentNodeModel();
+    if (model != null) {
+      ((SModelInternal) model).removeModelListener(myModelListener);
     }
+
+    SModel md = node.getModel();
+    SModule module = md.getModule();
+    assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
+    SNodeReference selection = select ? nodeRef : null;
+    if (myTabsComponent.getCurrentTabAspect() != null) {
+      Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);
+      selection = a.isEmpty() ? selection : a.iterator().next();
+    }
+    if (!select && nodeRef.equals(selection)) {
+      // drop selection if it's the same as edited node and we are not forced to show it
+      selection = null;
+    }
+    editNode(nodeRef, selection);
+
+    model = getCurrentNodeModel();
+    assert model != null;
+
+    ((SModelInternal) model).addModelListener(myModelListener);
+
+    executeInEDT(new PrioritizedTask(TaskType.UPDATE_PROPERTIES, myType2TaskMap) {
+      @Override
+      public void performTask() {
+        updateProperties();
+      }
+    });
   }
 
   private SModel getCurrentNodeModel() {
@@ -263,13 +265,14 @@ public class TabbedEditor extends BaseNodeEditor {
   private AnAction getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
-      @Override
-      public void changeNode(SNode node) {
-        myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
-        showNode(node, true);
-      }
-    });
+    List<DefaultActionGroup> groups =
+        CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
+          @Override
+          public void changeNode(SNode node) {
+            myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
+            showNode(node, true);
+          }
+        });
     for (DefaultActionGroup group : groups) {
       group.setPopup(false);
       result.add(group);
