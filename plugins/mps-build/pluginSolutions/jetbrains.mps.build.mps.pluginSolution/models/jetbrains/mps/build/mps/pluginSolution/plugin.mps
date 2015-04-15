@@ -3345,19 +3345,10 @@
       <node concept="3cqZAl" id="7$e6lgA3AAL" role="3clF45" />
       <node concept="3Tm1VV" id="7$e6lgA3AAM" role="1B3o_S" />
       <node concept="3clFbS" id="7$e6lgA3AAN" role="3clF47">
-        <node concept="XkiVB" id="7$e6lgA3AAO" role="3cqZAp">
-          <ref role="37wK5l" to="mlq0:~MPSTreeNode.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolve="MPSTreeNode" />
-          <node concept="10Nm6u" id="7$e6lgA3AAP" role="37wK5m" />
-        </node>
-        <node concept="3clFbF" id="7$e6lgA3AAQ" role="3cqZAp">
-          <node concept="2OqwBi" id="7$e6lgA3AAR" role="3clFbG">
-            <node concept="liA8E" id="7$e6lgA3AAS" role="2OqNvi">
-              <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.setUserObject(java.lang.Object):void" resolve="setUserObject" />
-              <node concept="37vLTw" id="2BHiRxgma39" role="37wK5m">
-                <ref role="3cqZAo" node="7$e6lgA3ABb" resolve="rootNode" />
-              </node>
-            </node>
-            <node concept="Xjq3P" id="7$e6lgA3AAU" role="2Oq$k0" />
+        <node concept="XkiVB" id="3U4Yh9n6NmC" role="3cqZAp">
+          <ref role="37wK5l" to="mlq0:~MPSTreeNode.&lt;init&gt;(java.lang.Object)" resolve="MPSTreeNode" />
+          <node concept="37vLTw" id="3U4Yh9n6Nvw" role="37wK5m">
+            <ref role="3cqZAo" node="7$e6lgA3ABb" resolve="rootNode" />
           </node>
         </node>
         <node concept="3clFbF" id="7$e6lgA3AAV" role="3cqZAp">

@@ -2,7 +2,7 @@
 <model ref="r:aba386f3-6ca6-4852-a4a2-5331bf9a5448(jetbrains.mps.samples.xmlPersistence.ideaPlugin)">
   <persistence version="9" />
   <languages>
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
   </languages>
   <imports />
   <registry>
@@ -103,7 +103,7 @@
           <node concept="2pNUuL" id="4CpCtD$GUku" role="2pNNFR">
             <property role="2pNUuO" value="until-build" />
             <node concept="2pMdtt" id="4CpCtD$GUky" role="2pMdts">
-              <property role="2pMdty" value="140.1" />
+              <property role="2pMdty" value="142.1" />
             </node>
           </node>
         </node>

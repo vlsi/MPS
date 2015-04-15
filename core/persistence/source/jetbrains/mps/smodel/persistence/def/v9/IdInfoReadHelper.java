@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,10 +167,6 @@ class IdInfoReadHelper {
   public boolean isImplementationWithStub(@NotNull SConcept concept) {
     return myMetaRegistry.find(concept).isImplementationWithStub();
   }
-  @Deprecated
-  public boolean isImplementationWithStab(@NotNull SConcept concept) {
-    return myMetaRegistry.find(concept).isImplementationWithStub();
-  }
 
   /**
    * This method shall be invoked only if {@link #isImplementationWithStub(org.jetbrains.mps.openapi.language.SConcept)} == <code>true</code>
@@ -184,11 +180,11 @@ class IdInfoReadHelper {
     return MetaAdapterFactory.getConcept(stub, ci.constructStubConceptName());
   }
 
-  public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName) {
+  public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName, int version) {
     // used languages is a subset of languages detected for meta-registry, don't want to use
     // set of languages available from myInfoCollector, which might not be yet ready, unless we ensure
     // proper read order (first registry, then used languages). It's even more complicated for per-root
     // persistence, where usedLanguages are kept in a header file only, while registry spans few.
-    return MetaAdapterFactory.getLanguage(langId, langName);
+    return MetaAdapterFactory.getLanguage(langId, langName, version);
   }
 }

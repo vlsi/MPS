@@ -16,11 +16,12 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.persistence.SNodeFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
@@ -149,7 +150,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       my_referenceDescriptorsField = new ArrayList<IReferencePersister>();
       my_visibleModelElementsField = new SAXVisibleModelElements();
       my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
-      return new ModelLoadResult(my_modelField, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.FULLY_LOADED);
     }
     @Override
     protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
@@ -224,7 +225,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_2286463592495498227(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      my_modelField.addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
+      new SModelLegacy(my_modelField).addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_2286463592495498259(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
@@ -312,7 +313,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) throws SAXException {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
+      SNode node = SNodeFactory.newRegular(conceptFQName);
       VersionUtil.fetchConceptVersion(rawFqName, node, my_versionsInfoField);
       return node;
     }

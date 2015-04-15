@@ -23,7 +23,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -58,10 +57,6 @@ public class FindConceptInstances_Action extends BaseAction {
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
@@ -105,7 +100,7 @@ public class FindConceptInstances_Action extends BaseAction {
             }
           };
         }
-      }.invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
+      }.invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindConceptInstances", t);

@@ -102,7 +102,7 @@ public class MethodResolveUtil {
   }
   public static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
     Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(methodCall)), "virtual_getFqName_1213877404258", new Object[]{});
+    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + SNodeOperations.getConcept(methodCall).getQualifiedName();
     return availableMethodDeclarations;
   }
 

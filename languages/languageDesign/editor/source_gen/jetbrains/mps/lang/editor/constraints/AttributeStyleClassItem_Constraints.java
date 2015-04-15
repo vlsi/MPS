@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.scope.ModelsScope;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescriptor {
@@ -59,7 +60,7 @@ public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescript
                   return LanguageAspect.EDITOR.get(it);
                 }
               }));
-              return new ModelsScope(models, false, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration");
+              return new ModelsScope(models, false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"));
             }
           }
         };

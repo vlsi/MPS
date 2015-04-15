@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+
 /**
  * A descriptor of a concept. Concepts define categories for AST nodes.
  * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
@@ -40,18 +42,18 @@ public interface SAbstractConcept {
   /**
    * Returns all the references this concept has, including inherited
    */
-  Iterable<SReferenceLink> getReferenceLinks();
+  Collection<SReferenceLink> getReferenceLinks();
 
   /**
    * Returns all the links this concept has, including inherited
    * There's no "specialized links" at the compiled language level, all links are "original"
    */
-  Iterable<SContainmentLink> getContainmentLinks();
+  Collection<SContainmentLink> getContainmentLinks();
 
   /**
      * Returns all the properties this concept has, including inherited
    */
-  Iterable<SProperty> getProperties();
+  Collection<SProperty> getProperties();
 
   /**
    * Either implementing or extending the supplied concept

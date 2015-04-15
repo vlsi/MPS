@@ -19,7 +19,13 @@ import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+/**
+ * Please use MPS build language to inject new tests.
+ * The tests below are supposed to be migrated to the MPS build scripts
+ * @deprecated since 3.2
+ */
 // todo: !!!should be WatchingSuite!!!
+@Deprecated
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     TestModule_closures_test.class,

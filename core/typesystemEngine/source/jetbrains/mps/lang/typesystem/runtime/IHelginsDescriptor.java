@@ -17,7 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
-import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 
 import java.util.Set;
 
@@ -32,12 +31,7 @@ public interface IHelginsDescriptor extends LanguageAspectDescriptor {
 
   public Set<InequationReplacementRule_Runtime> getEliminationRules();
 
-  @Deprecated
-  public Set<IDependency_Runtime> getDependencies();
-
   public Set<IVariableConverter_Runtime> getVariableConverters();
 
   public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders();
-
-  public Set<AbstractDependentComputation_Runtime> getDependentComputations();
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum Unit {
   USD_KWH("USD_KWH", "USD_KWH"),

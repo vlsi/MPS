@@ -75,10 +75,6 @@
       <property role="TrG5h" value="uuid" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="7gTJ_yqjx7F" role="1TKVEl">
-      <property role="TrG5h" value="version" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7O" role="1TKVEl">
       <property role="TrG5h" value="donotgenerate" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />

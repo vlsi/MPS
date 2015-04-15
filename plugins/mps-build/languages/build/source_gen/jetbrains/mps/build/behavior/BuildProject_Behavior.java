@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -29,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.scope.CompositeScope;
@@ -80,14 +79,14 @@ public class BuildProject_Behavior {
       return null;
     }
   }
-  public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
+  public static Scope call_getScope_1224588814561808649(SNode thisNode, SAbstractConcept kind, String role) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"))) {
-      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind));
+      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind);
     }
 
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
       final SNode _this = thisNode;
-      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, kind), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
           return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), false)).contains(_this));
         }
@@ -98,7 +97,7 @@ public class BuildProject_Behavior {
     //       we do not need index/child parameters here 
     if ("layout".equals(role)) {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9402L, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart"))) {
-        return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts")), kind);
+        return DescendantsScope.forNamedElements(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), kind);
       }
       for (SNode plugin : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x5c3f3e2c1ce9ac70L, "plugins")))) {
         Scope layoutScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
@@ -122,12 +121,12 @@ public class BuildProject_Behavior {
     }
 
     if (child != null) {
-      return BuildProject_Behavior.call_getScope_1224588814561808649(thisNode, kind, SNodeOperations.getContainingLinkRole(child));
+      return BuildProject_Behavior.call_getScope_1224588814561808649(thisNode, SNodeOperations.asSConcept(kind), SNodeOperations.getContainingLinkRole(child));
     }
     return new EmptyScope();
   }
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return BuildProject_Behavior.call_getScope_1224588814561808649(thisNode, kind, role);
+    return BuildProject_Behavior.call_getScope_1224588814561808649(thisNode, SNodeOperations.asSConcept(kind), role);
   }
   public static Iterable<SNode> call_getVisibleProjects_1224588814561807665(final SNode thisNode, boolean directDependenciesOnly) {
     if (directDependenciesOnly) {
@@ -163,7 +162,7 @@ public class BuildProject_Behavior {
       return new EmptyScope();
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")));
+    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"));
     SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 

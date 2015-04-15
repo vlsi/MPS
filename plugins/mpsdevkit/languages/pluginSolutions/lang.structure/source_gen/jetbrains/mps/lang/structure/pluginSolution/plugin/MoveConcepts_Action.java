@@ -4,36 +4,19 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import org.apache.log4j.Level;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import com.intellij.openapi.ui.Messages;
+import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -48,15 +31,9 @@ public class MoveConcepts_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "MoveConcepts"), ((List<SNode>) MapSequence.fromMap(_params).get("target")));
-  }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "MoveConcepts", t);
@@ -100,72 +77,12 @@ public class MoveConcepts_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(MoveConcepts_Action.this.init(_params))) {
-        return;
-      }
-      final SModelReference targetModel;
-      List<SModelReference> myModels;
-      myModels = ListSequence.fromList(((List<SModel>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModel, SModelReference>() {
-        public SModelReference select(SModel it) {
-          return it.getReference();
-        }
-      }).where(new IWhereFilter<SModelReference>() {
-        public boolean accept(SModelReference it) {
-          return Language.getModelAspect(SModelRepository.getInstance().getModelDescriptor(it)) == LanguageAspect.STRUCTURE;
-        }
-      }).toListSequence();
-      targetModel = SModelReferenceDialog.getSelectedModel(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), myModels);
-      if (targetModel == null) {
-        return;
-      }
-
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadInEDT(new Runnable() {
-        public void run() {
-          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
-            if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
-              return;
-            }
-          }
-
-          if (targetModel.resolve(MPSModuleRepository.getInstance()) == null) {
-            return;
-          }
-          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveConcepts", Arrays.asList("targetModel"), Arrays.asList(targetModel), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-        }
-      });
+      JOptionPane.showMessageDialog(null, "Not supported yet");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveConcepts", t);
       }
     }
-  }
-  private boolean init(final Map<String, Object> _params) {
-    final Wrappers._boolean canRefactor = new Wrappers._boolean(false);
-    final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        final SModel model = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
-        canRefactor.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).all(new IWhereFilter<SNode>() {
-          public boolean accept(SNode node) {
-            return SNodeOperations.getModel(node) == model;
-          }
-        });
-        hasGenerator.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode node) {
-            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)).isNotEmpty();
-          }
-        });
-      }
-    });
-    if (!(canRefactor.value)) {
-      Messages.showErrorDialog("All concept should be from the same language.", "Move concepts");
-      return false;
-    }
-    if (hasGenerator.value) {
-      Messages.showWarningDialog("Generator fragments will not be moved.", "Move concepts");
-    }
-    return true;
   }
   protected static Logger LOG = LogManager.getLogger(MoveConcepts_Action.class);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,60 +26,74 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 /**
+ * FIXME implementation of UpdatableModel.ModelLoader#doLoad() doesn't depend on model being editable, shall refactor and extract
+ * reloading code to be independent from EditableSModelBase
  * evgeny, 6/6/13
  */
-public abstract class LazyEditableSModelBase extends EditableSModelBase {
-  private final UpdateableModel myModel = new UpdateableModel(this) {
-    @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable LazySModel current) {
-      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
-      if (state == ModelLoadingState.INTERFACE_LOADED) {
-        ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
-        processLoadedModel(result.getModel());
-        return result;
-      }
-      if (state == ModelLoadingState.FULLY_LOADED) {
-        LazySModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-        if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
-        current.setUpdateMode(true);   //not to send events on changes
-        fullModel.setUpdateMode(true);
-        new ModelLoader(current, fullModel).update();
-        current.setUpdateMode(false);  //enable events
-        return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
-      }
-      throw new UnsupportedOperationException();
+public abstract class LazyEditableSModelBase extends EditableSModelBase implements UpdateableModel.ModelLoader {
+  private final UpdateableModel myModel;
+
+  @Override
+  public ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
+    if (state == ModelLoadingState.NOT_LOADED) {
+      // XXX ModelLoadResult doesn't tolerate null as an argument. If it never failed, the code is dead?
+      return new ModelLoadResult((SModel) null, ModelLoadingState.NOT_LOADED);
     }
-  };
+    if (state == ModelLoadingState.INTERFACE_LOADED) {
+      ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
+      result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
+      return result;
+    }
+    if (state == ModelLoadingState.FULLY_LOADED) {
+      SModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
+      if (current == null) {
+        fullModel.setModelDescriptor(LazyEditableSModelBase.this);
+        return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
+      }
+      current.setUpdateMode(true);   //not to send events on changes
+      fullModel.setUpdateMode(true);
+      new ModelLoader(current, fullModel, LazyEditableSModelBase.this).update();
+      current.setUpdateMode(false);  //enable events
+      return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
+    }
+    throw new UnsupportedOperationException();
+  }
 
   public LazyEditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
+    myModel = new UpdateableModel(this);
   }
 
 
+  @NotNull
   @Override
   protected final ModelLoadingState getLoadingState() {
     return myModel.getState();
   }
 
   @Override
-  public final LazySModel getSModelInternal() {
+  public final SModel getSModelInternal() {
     ModelLoadingState oldState = myModel.getState();
     if (oldState.ordinal() >= ModelLoadingState.INTERFACE_LOADED.ordinal()) {
       return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
     }
+    // FIXME UpdatableModel does synchronize(this) in getModel and replaceWith. What do we accomplish here with synchronize?
     synchronized (myModel) {
-      if (myModel instanceof InvalidSModel) return myModel.getModel(null);
+      final SModel currentModel = myModel.getModel(null);
+      if (currentModel instanceof InvalidSModel) {
+        return currentModel;
+      }
 
       oldState = myModel.getState();
-      LazySModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
-      if (res == null) return null; // this is when we are in recursion
-      if (oldState != myModel.getState()) {
-        res.setModelDescriptor(this);
-        // TODO FIXME listeners are invoked while holding the lock
-        fireModelStateChanged(myModel.getState());
+      SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+      if (res == null) {
+        return null; // this is when we are in recursion
       }
-      return res;
     }
+    if (oldState != myModel.getState()) {
+      fireModelStateChanged(myModel.getState());
+    }
+    return myModel.getModel(null);
   }
 
   @Override
@@ -93,14 +107,14 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   }
 
   @Override
-  protected final LazySModel getCurrentModelInternal() {
+  protected final SModel getCurrentModelInternal() {
     return myModel.getModel(null);
   }
 
 
   @Override
   protected void doUnload() {
-    final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
+    final SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
@@ -113,13 +127,14 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
    */
   protected abstract ModelLoadResult loadSModel(ModelLoadingState state);
 
-  protected abstract void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel);
-
-  protected void replaceModel(final LazySModel newModel, final ModelLoadingState state) {
-    if (newModel == getCurrentModelInternal()) return;
+  protected void replaceModel(final SModel newModel, final ModelLoadingState state) {
+    if (newModel == getCurrentModelInternal()) {
+      return;
+    }
     setChanged(false);
     final SModel oldModel = getCurrentModelInternal();
     myModel.replaceWith(newModel, state);
+    // newModel to get modelDescriptor along with event firing
     replaceModelAndFireEvent(oldModel, newModel);
   }
 

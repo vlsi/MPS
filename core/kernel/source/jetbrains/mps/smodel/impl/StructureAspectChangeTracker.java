@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,16 @@ package jetbrains.mps.smodel.impl;
 
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -54,7 +56,7 @@ import java.util.Set;
  * </pre>
  * @author Artem Tikhomirov
  */
-public final class StructureAspectChangeTracker extends SRepositoryListenerBase implements SRepositoryAttachListener, SModelChangeListener, SModelListener {
+public final class StructureAspectChangeTracker extends SRepositoryListenerBase implements SRepositoryAttachListener, SNodeChangeListener, SModelListener {
   // I assume model changes come in a single thread, as well as commandFinished notification, and do not care to synchronize
   private final Set<SModelReference> myChangedModels = new HashSet<SModelReference>();
   private final Set<SModuleReference> myChangedModules = new HashSet<SModuleReference>();
@@ -126,25 +128,25 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
   }
 
   @Override
-  public void nodeAdded(SModel model, SNode parent, String role, SNode child) {
-    structureModelChanged(model);
+  public void nodeAdded(@NotNull SNodeAddEvent event) {
+    structureModelChanged(event.getModel());
   }
 
   @Override
-  public void nodeRemoved(SModel model, SNode parent, String role, SNode child) {
-    structureModelChanged(model);
+  public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+    structureModelChanged(event.getModel());
   }
 
   @Override
-  public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+  public void propertyChanged(@NotNull SPropertyChangeEvent event) {
     // e.g. 'name' property change constitutes concept rename refactoring
-    structureModelChanged(node.getModel());
+    structureModelChanged(event.getModel());
   }
 
   @Override
-  public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
+  public void referenceChanged(@NotNull SReferenceChangeEvent event) {
     // e.g. adding 'extends' references might change concept hierarchy completely
-    structureModelChanged(node.getModel());
+    structureModelChanged(event.getModel());
   }
 
   private void structureModelChanged(SModel model) {

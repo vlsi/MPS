@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,8 +102,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     registerKeyboardAction(new MyRefreshAction(), KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
+  /**
+   * Initialization node common for each node initialized in the tree.
+   * Shall invoke {@link MPSTreeNode#doInit()} to perform actual initialization.
+   * May add extra utility stuff, as model read or progress indication (hence left protected for subclasses).
+   * Despite being accessible to subclasses, not deemed to be invoked by anything but {@link MPSTreeNode#init()} method.
+   */
   protected void doInit(final MPSTreeNode node) {
-    if (myExpandingNodes.contains(node)) return;
+    assert ThreadUtils.isInEDT();
+    if (myExpandingNodes.contains(node)) {
+      return;
+    }
 
     myExpandingNodes.add(node);
     try {
@@ -121,9 +130,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          node.init();
+          node.doInit();
         }
       });
+      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
 
       if (!myLoadingDisabled && node.isLoadingEnabled() && node.hasChild(progressNode)) { //node.init() might remove all the children
         node.remove(progressNode);
@@ -325,21 +335,22 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   public void expandRoot() {
     expandPath(new TreePath(new Object[]{getRootNode()}));
-    if (!getRootNode().isInitialized()) {
-      getRootNode().init();
-    }
+    getRootNode().init();
   }
 
   public void expandAll(MPSTreeNode node) {
     boolean wasLoadingDisabled = myLoadingDisabled;
     myLoadingDisabled = true;
     try {
-      expandPath(new TreePath(node.getPath()));
-      for (int i = 0; i < node.getChildCount(); i++) {
-        expandAll((MPSTreeNode) node.getChildAt(i));
-      }
+      expandAllImpl(node);
     } finally {
       myLoadingDisabled = wasLoadingDisabled;
+    }
+  }
+  private void expandAllImpl(MPSTreeNode node) {
+    expandPath(new TreePath(node.getPath()));
+    for (MPSTreeNode c : node) {
+      expandAllImpl(c);
     }
   }
 
@@ -347,15 +358,18 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     boolean wasAutoExpandEnabled = myAutoExpandEnabled;
     try {
       myAutoExpandEnabled = false;
-      for (int i = 0; i < node.getChildCount(); i++) {
-        collapseAll((MPSTreeNode) node.getChildAt(i));
-      }
-
-      if (node.isInitialized()) {
-        super.collapsePath(new TreePath(node.getPath()));
-      }
+      collapseAllImpl(node);
     } finally {
       myAutoExpandEnabled = wasAutoExpandEnabled;
+    }
+  }
+
+  private void collapseAllImpl(MPSTreeNode node) {
+    for (MPSTreeNode c : node) {
+      collapseAllImpl(c);
+    }
+    if (node.isInitialized()) {
+      super.collapsePath(new TreePath(node.getPath()));
     }
   }
 
@@ -371,6 +385,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     scrollRowToVisible(getRowForPath(path));
   }
 
+  // FIXME perhaps, shall be protected, rebuildAction is sort of implementation detail when there are rebuildNow() and rebuildLater()
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
     if (RuntimeFlags.isTestMode()) {
       return;
@@ -382,43 +397,32 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     myLoadingDisabled = true;
     try {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          final List<String> expansion = getExpandedPaths();
-          final List<String> selection = getSelectedPaths();
-          rebuildAction.run();
-          if (saveExpansion) {
-            runWithoutExpansion(new Runnable() {
-              @Override
-              public void run() {
-                expandPaths(expansion);
-                selectPaths(selection);
-              }
-            });
+      Runnable restoreExpansion = null;
+      if (saveExpansion) {
+        final List<String> expansion = getExpandedPaths();
+        final List<String> selection = getSelectedPaths();
+        restoreExpansion = new Runnable() {
+          @Override
+          public void run() {
+            expandPaths(expansion);
+            selectPaths(selection);
           }
-        }
-      });
+        };
+      }
+      ModelAccess.instance().runReadAction(rebuildAction);
+      if (restoreExpansion != null) {
+          runWithoutExpansion(restoreExpansion);
+      }
     } finally {
       myLoadingDisabled = false;
     }
-
-  }
-
-  public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        runRebuildAction(rebuildAction, saveExpansion);
-      }
-    });
   }
 
   public void rebuildLater() {
     myQueue.queue(new Update(myUpdateId) {
       @Override
       public void run() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
+        ThreadUtils.runInUIThreadNoWait(new Runnable() {
           @Override
           public void run() {
             if (MPSTree.this.isDisposed()) return;
@@ -520,9 +524,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = getRootNode();
 
-    if (!current.isInitialized()) {
-      current.init();
-    }
+    current.init();
 
     path.add(current);
 
@@ -563,9 +565,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private void ensurePathInitialized(TreePath path) {
     for (Object item : path.getPath()) {
       MPSTreeNode node = (MPSTreeNode) item;
-      if (!node.isInitialized()) {
-        node.init();
-      }
+      node.init();
     }
   }
 
@@ -667,9 +667,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       TreePath path = event.getPath();
       Object node = path.getLastPathComponent();
       MPSTreeNode treeNode = (MPSTreeNode) node;
-      if (!treeNode.isInitialized()) {
-        doInit(treeNode);
-      }
+      treeNode.init();
     }
 
     @Override

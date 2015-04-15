@@ -107,7 +107,7 @@ public class NewModelAction extends AnAction {
       return;
     }
 
-    MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+    final MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !mpsFacet.wasInitialized()) {
       return;
     }
@@ -117,31 +117,36 @@ public class NewModelAction extends AnAction {
       return;
     }
     //TODO: clean up this
-    String path = VirtualFileManager.extractPath(url);
-    for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
-      if (!(root instanceof DefaultModelRoot)) continue;
-      DefaultModelRoot modelRoot = (DefaultModelRoot) root;
-      for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (FileUtil.isSubPath(sourceRoot, path)) {
-          mySolution = mpsFacet.getSolution();
-          myModelRoot = modelRoot;
-          mySourceRoot = sourceRoot;
-          myModelPrefix = path.substring(sourceRoot.length());
-          while (myModelPrefix.startsWith("/") || myModelPrefix.startsWith("\\")) {
-            myModelPrefix = myModelPrefix.substring(1);
+    final String path = VirtualFileManager.extractPath(url);
+    ProjectHelper.toMPSProject(module.getProject()).getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
+          if (!(root instanceof DefaultModelRoot)) continue;
+          DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+          for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+            if (FileUtil.isSubPath(sourceRoot, path)) {
+              mySolution = mpsFacet.getSolution();
+              myModelRoot = modelRoot;
+              mySourceRoot = sourceRoot;
+              myModelPrefix = path.substring(sourceRoot.length());
+              while (myModelPrefix.startsWith("/") || myModelPrefix.startsWith("\\")) {
+                myModelPrefix = myModelPrefix.substring(1);
+              }
+              while (myModelPrefix.endsWith("/") || myModelPrefix.endsWith("\\")) {
+                myModelPrefix = myModelPrefix.substring(0, myModelPrefix.length());
+              }
+              myModelPrefix = myModelPrefix.replaceAll("/", ".");
+              myModelPrefix = myModelPrefix.replaceAll("\\\\", ".");
+              if (!myModelPrefix.isEmpty()) {
+                myModelPrefix += ".";
+              }
+              return;
+            }
           }
-          while (myModelPrefix.endsWith("/") || myModelPrefix.endsWith("\\")) {
-            myModelPrefix = myModelPrefix.substring(0, myModelPrefix.length());
-          }
-          myModelPrefix = myModelPrefix.replaceAll("/", ".");
-          myModelPrefix = myModelPrefix.replaceAll("\\\\", ".");
-          if (!myModelPrefix.isEmpty()) {
-            myModelPrefix += ".";
-          }
-          return;
         }
       }
-    }
+    });
   }
 
   @Override
@@ -175,20 +180,30 @@ public class NewModelAction extends AnAction {
             //Hack for update ProjectView
             model.addModelListener(new SModelListener() {
               @Override
-              public void modelLoaded(SModel sModel, boolean b) {}
+              public void modelLoaded(SModel sModel, boolean b) {
+              }
+
               @Override
-              public void modelReplaced(SModel sModel) {}
+              public void modelReplaced(SModel sModel) {
+              }
+
               @Override
-              public void modelUnloaded(SModel sModel) {}
+              public void modelUnloaded(SModel sModel) {
+              }
+
               @Override
               public void modelSaved(SModel sModel) {
                 ProjectView.getInstance(myProject).refresh();
                 sModel.removeModelListener(this); //need to refresh once
               }
+
               @Override
-              public void conflictDetected(SModel sModel) {}
+              public void conflictDetected(SModel sModel) {
+              }
+
               @Override
-              public void problemsDetected(SModel sModel, Iterable<Problem> problems) {}
+              public void problemsDetected(SModel sModel, Iterable<Problem> problems) {
+              }
             });
 
             model.setChanged(true);
@@ -213,7 +228,7 @@ public class NewModelAction extends AnAction {
         ProjectHelper.getModelAccess(myProject).runWriteAction(new Runnable() {
           @Override
           public void run() {
-            ((EditableSModel)newModel).save();
+            ((EditableSModel) newModel).save();
           }
         });
       }

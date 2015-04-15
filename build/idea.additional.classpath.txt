@@ -5,6 +5,7 @@ core/analyzers/classes
 core/kernel/classes
 core/kernel/resources/classes
 core/persistence/classes
+core/java-stub/classes
 core/smodel/classes
 core/findUsages-runtime/classes
 core/refactoring-runtime/classes

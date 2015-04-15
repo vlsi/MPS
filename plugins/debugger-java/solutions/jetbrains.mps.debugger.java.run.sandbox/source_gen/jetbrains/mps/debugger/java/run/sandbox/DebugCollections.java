@@ -10,9 +10,9 @@ import java.util.TreeMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -55,10 +55,10 @@ public class DebugCollections {
     System.out.println(strings);
   }
   private static void testLinkedList() {
-    Deque<String> strings = LinkedListSequence.fromLinkedList(new LinkedList<String>());
-    LinkedListSequence.fromLinkedList(strings).addElement("alpha");
-    LinkedListSequence.fromLinkedList(strings).addElement("beta");
-    LinkedListSequence.fromLinkedList(strings).addElement("gamma");
+    Deque<String> strings = LinkedListSequence.fromLinkedListNew(new LinkedList<String>());
+    LinkedListSequence.fromLinkedListNew(strings).addElement("alpha");
+    LinkedListSequence.fromLinkedListNew(strings).addElement("beta");
+    LinkedListSequence.fromLinkedListNew(strings).addElement("gamma");
     System.out.println(strings);
   }
   public static void testSet() {

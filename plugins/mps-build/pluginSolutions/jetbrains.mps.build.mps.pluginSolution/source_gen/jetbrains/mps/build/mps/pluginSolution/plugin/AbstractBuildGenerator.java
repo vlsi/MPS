@@ -6,7 +6,7 @@ import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;

@@ -12,13 +12,9 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -34,13 +30,14 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
         continue;
       }
 
+      // FIXME shall use root nodes from the model directly, rather than all this stuff with IClassPathItem 
       CompositeClassPathItem cp = new CompositeClassPathItem();
       for (String dir : ((FolderSetDataSource) model.getSource()).getPaths()) {
         try {
           if (dir.indexOf("!") != -1) {
             cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
           } else {
-            String name = SModelStereotype.withoutStereotype(((SModelReference) model.getReference()).getModelName()).replace('.', File.separatorChar);
+            String name = SModelStereotype.withoutStereotype(model.getReference().getModelName()).replace('.', File.separatorChar);
 
             // dirty hack for current problems with path separators 
             String dirCorrected = dir.replace('/', File.separatorChar);
@@ -56,21 +53,14 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
         }
       }
 
-      SModel md = model;
-      iterateClassPath(md.getModule().getModuleReference(), cp, consumer, SNodeOperations.getModelLongName(md));
+      String pName = NameUtil.getModelLongName(model);
+      for (final String cls : cp.getRootClasses(pName)) {
+        consumer.consume(new JavaStubNodeDescriptor(cp, pName, cls, model.getReference()));
+      }
       processedConsumer.consume(model);
     }
   }
 
-  public static void iterateClassPath(final SModuleReference module, final IClassPathItem item, Consumer<NavigationParticipant.NavigationTarget> consumer, final String pName) {
-    final org.jetbrains.mps.openapi.model.SModelReference model = StubHelper.uidForPackageInStubs(module, pName);
-    for (final String cls : item.getRootClasses(pName)) {
-      consumer.consume(new JavaStubNodeDescriptor(item, pName, cls, model));
-    }
-    for (String subpack : item.getSubpackages(pName)) {
-      iterateClassPath(module, item, consumer, subpack);
-    }
-  }
   @Override
   public void initComponent() {
     PersistenceFacade.getInstance().addNavigationParticipant(this);

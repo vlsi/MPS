@@ -349,86 +349,89 @@
       <node id="2370003301082742" at="31,156,32,32" concept="3" />
       <node id="2370003301082746" at="32,32,33,40" concept="3" />
       <node id="2370003301082750" at="33,40,34,36" concept="3" />
-      <node id="2370003301082576" at="40,54,41,47" concept="3" />
-      <node id="2370003301082581" at="41,47,42,20" concept="3" />
-      <node id="2370003301082597" at="47,54,48,46" concept="3" />
-      <node id="2370003301082602" at="48,46,49,20" concept="3" />
-      <node id="2370003301082615" at="51,8,52,186" concept="9" />
-      <node id="2370003301082628" at="52,186,53,37" concept="3" />
-      <node id="2370003301082638" at="54,12,55,16" concept="3" />
-      <node id="2370003301082645" at="58,26,59,36" concept="3" />
-      <node id="2370003301082650" at="59,36,60,91" concept="3" />
-      <node id="2370003301082659" at="60,91,61,63" concept="9" />
-      <node id="2034046503373008259" at="63,25,64,53" concept="3" />
-      <node id="2034046503373008266" at="64,53,65,62" concept="3" />
-      <node id="2370003301082674" at="67,7,68,93" concept="9" />
-      <node id="2370003301082683" at="69,23,70,43" concept="3" />
-      <node id="2370003301082695" at="72,45,73,57" concept="9" />
-      <node id="2370003301082702" at="73,57,74,96" concept="3" />
-      <node id="2370003301082721" at="75,14,76,67" concept="3" />
-      <node id="5636214660745318794" at="80,44,81,55" concept="9" />
-      <node id="2370003301082765" at="81,55,82,85" concept="10" />
-      <node id="2370003301082636" at="54,10,56,5" concept="0" />
-      <node id="2370003301082719" at="75,12,77,7" concept="0" />
-      <node id="2034046503373008256" at="63,0,67,0" concept="8" trace="run#()V" />
-      <node id="2370003301082762" at="80,0,84,0" concept="8" trace="getRelativePoint#()Lcom/intellij/ui/awt/RelativePoint;" />
+      <node id="2370003301082563" at="37,40,38,107" concept="9" />
+      <node id="2370003301082584" at="38,107,39,208" concept="9" />
+      <node id="2370003301082615" at="39,208,40,187" concept="9" />
+      <node id="2370003301082628" at="40,187,41,37" concept="3" />
+      <node id="2370003301082638" at="42,12,43,21" concept="3" />
+      <node id="697341891319381911" at="46,54,47,56" concept="3" />
+      <node id="2370003301082645" at="47,56,48,36" concept="3" />
+      <node id="2370003301082650" at="48,36,49,91" concept="3" />
+      <node id="2370003301082659" at="49,91,50,63" concept="9" />
+      <node id="2034046503373008259" at="52,25,53,53" concept="3" />
+      <node id="2034046503373008266" at="53,53,54,62" concept="3" />
+      <node id="2370003301082674" at="56,7,57,93" concept="9" />
+      <node id="2370003301082683" at="58,23,59,43" concept="3" />
+      <node id="2370003301082695" at="61,45,62,57" concept="9" />
+      <node id="2370003301082702" at="62,57,63,96" concept="3" />
+      <node id="2370003301082721" at="64,14,65,67" concept="3" />
+      <node id="5636214660745318794" at="69,44,70,55" concept="9" />
+      <node id="2370003301082765" at="70,55,71,90" concept="10" />
+      <node id="697341891319391511" at="74,0,75,0" concept="4" trace="myReplaceAllDuplicates" />
+      <node id="697341891319417683" at="75,69,76,18" concept="14" />
+      <node id="697341891319391515" at="76,18,77,52" concept="3" />
+      <node id="697341891319416164" at="80,63,81,38" concept="3" />
+      <node id="2370003301082636" at="42,10,44,5" concept="0" />
+      <node id="2370003301082719" at="64,12,66,7" concept="0" />
+      <node id="697341891319398851" at="80,0,83,0" concept="8" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="2034046503373008256" at="52,0,56,0" concept="8" trace="run#()V" />
+      <node id="2370003301082762" at="69,0,73,0" concept="8" trace="getRelativePoint#()Lcom/intellij/ui/awt/RelativePoint;" />
+      <node id="697341891319391395" at="75,0,79,0" concept="2" trace="ExecuteAction#(Ljava/lang/String;Z)V" />
       <node id="2370003301082738" at="31,0,36,0" concept="2" trace="LocalVariableIntroducer#(Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceLocalVariableRefactoring;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="2370003301082570" at="39,0,44,0" concept="8" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="2370003301082591" at="46,0,51,0" concept="8" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="2034046503373008252" at="61,63,67,7" concept="3" />
-      <node id="2370003301082693" at="71,12,77,7" concept="7" />
-      <node id="2370003301082563" at="37,40,44,8" concept="9" />
-      <node id="2370003301082584" at="44,8,51,8" concept="9" />
-      <node id="2370003301082691" at="71,10,78,5" concept="0" />
-      <node id="2370003301082681" at="68,93,78,5" concept="7" />
-      <node id="2370003301082561" at="36,47,56,5" concept="7" />
-      <node id="2370003301082556" at="36,0,58,0" concept="8" trace="invoke#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
-      <node id="2370003301082641" at="58,0,80,0" concept="8" trace="execute#()V" />
-      <scope id="2370003301082637" at="54,12,55,16" />
-      <scope id="2370003301082682" at="69,23,70,43" />
-      <scope id="2370003301082720" at="75,14,76,67" />
-      <scope id="2370003301082575" at="40,54,42,20" />
-      <scope id="2370003301082596" at="47,54,49,20" />
-      <scope id="2034046503373008258" at="63,25,65,62" />
-      <scope id="2370003301082694" at="72,45,74,96">
+      <node id="697341891319336743" at="50,63,56,7" concept="3" />
+      <node id="2370003301082693" at="60,12,66,7" concept="7" />
+      <node id="2370003301082691" at="60,10,67,5" concept="0" />
+      <node id="2370003301082561" at="36,47,44,5" concept="7" />
+      <node id="2370003301082556" at="36,0,46,0" concept="8" trace="invoke#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
+      <node id="2370003301082681" at="57,93,67,5" concept="7" />
+      <node id="2370003301082641" at="46,0,69,0" concept="8" trace="execute#(Z)V" />
+      <scope id="2370003301082637" at="42,12,43,21" />
+      <scope id="2370003301082682" at="58,23,59,43" />
+      <scope id="2370003301082720" at="64,14,65,67" />
+      <scope id="697341891319398858" at="80,63,81,38" />
+      <scope id="2034046503373008258" at="52,25,54,62" />
+      <scope id="2370003301082694" at="61,45,63,96">
         <var name="ecl" id="2370003301082696" />
       </scope>
-      <scope id="2370003301082764" at="80,44,82,85">
+      <scope id="2370003301082764" at="69,44,71,90">
         <var name="cell" id="5636214660745318795" />
       </scope>
+      <scope id="697341891319391398" at="75,69,77,52" />
       <scope id="2370003301082741" at="31,156,34,36" />
-      <scope id="2034046503373008256" at="63,0,67,0" />
-      <scope id="2370003301082762" at="80,0,84,0" />
+      <scope id="697341891319398851" at="80,0,83,0">
+        <var name="event" id="697341891319398855" />
+      </scope>
+      <scope id="2370003301082562" at="37,40,41,37">
+        <var name="allOccurences" id="2370003301082585" />
+        <var name="popup" id="2370003301082616" />
+        <var name="thisOnly" id="2370003301082564" />
+      </scope>
+      <scope id="2034046503373008256" at="52,0,56,0" />
+      <scope id="2370003301082762" at="69,0,73,0" />
+      <scope id="697341891319391395" at="75,0,79,0">
+        <var name="replaceAllDuplicates" id="697341891319391431" />
+        <var name="text" id="697341891319391407" />
+      </scope>
       <scope id="2370003301082738" at="31,0,36,0">
         <var name="editorComponent" id="2370003301082758" />
         <var name="editorContext" id="2370003301082760" />
         <var name="frame" id="2370003301082754" />
         <var name="refactoring" id="2370003301082756" />
       </scope>
-      <scope id="2370003301082570" at="39,0,44,0">
-        <var name="e" id="2370003301082573" />
+      <scope id="2370003301082692" at="60,12,66,7" />
+      <scope id="2370003301082560" at="36,47,44,5" />
+      <scope id="2370003301082556" at="36,0,46,0">
+        <var name="dataContext" id="2370003301082557" />
       </scope>
-      <scope id="2370003301082591" at="46,0,51,0">
-        <var name="e" id="2370003301082594" />
-      </scope>
-      <scope id="2370003301082692" at="71,12,77,7" />
-      <scope id="2370003301082562" at="37,40,53,37">
-        <var name="allOccurences" id="2370003301082585" />
-        <var name="popup" id="2370003301082616" />
-        <var name="thisOnly" id="2370003301082564" />
-      </scope>
-      <scope id="2370003301082560" at="36,47,56,5" />
-      <scope id="2370003301082644" at="58,26,78,5">
+      <scope id="2370003301082644" at="46,54,67,5">
         <var name="cell" id="2370003301082675" />
         <var name="result" id="2370003301082660" />
       </scope>
-      <scope id="2370003301082556" at="36,0,58,0">
-        <var name="dataContext" id="2370003301082557" />
+      <scope id="2370003301082641" at="46,0,69,0">
+        <var name="replaceAllDuplicates" id="697341891319378947" />
       </scope>
-      <scope id="2370003301082641" at="58,0,80,0" />
-      <unit id="2034046503373008256" at="62,55,67,5" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer$3" />
-      <unit id="2370003301082568" at="38,30,44,7" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer$1" />
-      <unit id="2370003301082589" at="45,35,51,7" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer$2" />
+      <unit id="2034046503373008256" at="51,72,56,5" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer$1" />
+      <unit id="697341891319389160" at="73,0,84,0" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer$ExecuteAction" />
       <unit id="2370003301082555" at="27,0,85,0" name="jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer" />
     </file>
   </root>

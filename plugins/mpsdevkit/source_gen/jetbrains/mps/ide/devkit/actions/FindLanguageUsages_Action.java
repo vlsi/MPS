@@ -13,14 +13,15 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -59,24 +60,19 @@ public class FindLanguageUsages_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT_CONTEXT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
       final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          query[0] = new SearchQuery(module, GlobalScope.getInstance());
-          provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
-        }
-      });
-      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
+      final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
+      final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
+      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
+      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);

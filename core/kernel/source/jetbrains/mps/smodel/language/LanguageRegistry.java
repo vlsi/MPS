@@ -21,14 +21,14 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -120,28 +120,26 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     final String rtClassName = l.getModuleName() + ".Language";
     // Here, we consider few cases:
     // (a) there's no LR class
-    // (b) there's legacy (previous MPS version, 3.1 at the moment) LR class (if we did changes to LR this release)
+    // (b) there's legacy LR class (if we did changes to LR this release)
     // (c) LR in accordance with actual MPS version
     // Both (b) and (c) may fail during class-loading, which we treat as invalid language, although
     // for legacy versions and careless class evolution we might face otherwise valid languages which
-    // fail to load due to class validation errors. Now (as of 3.2) we assume classes from 3.1 are either
-    // deleted, or loaded successfully (although not complete functional, i.e. load succeeds only from Java perspective)
-    // Thus, for missing LR we assume 'Migrate from 3.1' scenario and provide interpreted LR to support migration, and
-    // otherwise we treat an error as invalid/missing language.
+    // fail to load due to class validation errors.
+    // We aim to support binary compatibility between any two subsequent releases, thus failures for (b)
+    // shall serve as an indicator we failed to maintain binary compatibility between releases
     try {
       final Class<?> rtClass = l.getOwnClass(rtClassName);
       if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
-        LanguageRuntime result = ((Class<LanguageRuntime>) rtClass).newInstance();
-        if (result.getAspect(StructureAspectDescriptor.class) instanceof BaseStructureAspectDescriptor) {
-          return result;
-        }
+        return ((Class<LanguageRuntime>) rtClass).newInstance();
       }
       return new InterpretedLanguageRuntime(l);
     } catch (ClassNotFoundException ex) {
       return new InterpretedLanguageRuntime(l);
     } catch (InstantiationException e) {
+      LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
       return null;
     } catch (IllegalAccessException e) {
+      LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
       return null;
     }
   }
@@ -164,6 +162,20 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   public Collection<LanguageRuntime> getAvailableLanguages() {
     myRepository.getModelAccess().checkReadAccess();
     return myLanguages.values();
+  }
+
+  public Collection<SLanguage> getAllLanguages() {
+    final Collection<LanguageRuntime> languages = getAvailableLanguages();
+    ArrayList<SLanguage> rv = new ArrayList<SLanguage>(languages.size());
+    for (LanguageRuntime lr : languages) {
+      rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace(), lr.getVersion()));
+    }
+    return rv;
+  }
+
+  @Nullable
+  public LanguageRuntime getLanguage(SLanguage language) {
+    return ((SLanguageAdapter) language).getLanguageDescriptor();
   }
 
   @Nullable

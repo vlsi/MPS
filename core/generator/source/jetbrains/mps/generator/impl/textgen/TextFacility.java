@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,7 +92,6 @@ public final class TextFacility {
   }
 
   public void produceTextModel() {
-
     if (myGenStatus.getOutputModel() != null) {
       myEngine.generateDebugInfo(myGenerateDebugInfo).failIfNoTextGen(myFailNoTextGen);
       // there seems to be no reason for AtomicReference (callback is invoked before the method #generateModels() returns)
@@ -104,9 +103,9 @@ public final class TextFacility {
           result.set(results);
         }
       });
-      myTextGenOutcome = result.get();
+      setTextGenOutcome(result.get());
     } else {
-      myTextGenOutcome = Collections.emptyList();
+      setTextGenOutcome(Collections.<TextGenerationResult>emptyList());
     }
   }
 
@@ -116,8 +115,7 @@ public final class TextFacility {
     }
   }
 
-  // FIXME temp method, migration of old code only. shall be dropped asap
-  public void setTextGenOutcome(List<TextGenerationResult> textGenOutcome) {
+  private void setTextGenOutcome(List<TextGenerationResult> textGenOutcome) {
     myTextGenOutcome = textGenOutcome;
     accumulateErrors();
   }
@@ -125,7 +123,6 @@ public final class TextFacility {
   private List<TextGenerationResult> getTextGenOutcome() {
     if (myTextGenOutcome == null) {
       produceTextModel();
-      accumulateErrors();
     }
     return myTextGenOutcome;
   }

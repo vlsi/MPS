@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
@@ -174,12 +176,6 @@ public class ModelPersistence {
     if (result.getPersistenceVersion() < 7 && source instanceof FileDataSource) {
       Map<String, String> metadata = loadMetadata(((FileDataSource) source).getFile());
       if (metadata != null) {
-        if (metadata.containsKey(SModelHeader.VERSION)) {
-          try {
-            result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
-          } catch (NumberFormatException ignored) {
-          }
-        }
         if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
           result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
         }
@@ -207,7 +203,7 @@ public class ModelPersistence {
       IModelReader reader = mp.getModelReader();
       if (reader != null) {
         Document document = loadModelDocument(source);
-        return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult((SModel) reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
     String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
@@ -308,7 +304,7 @@ public class ModelPersistence {
   public static Document saveModel(@NotNull SModel sourceModel) {
     int persistenceVersion = -1;
     if (sourceModel instanceof DefaultSModel) {
-      persistenceVersion = ((DefaultSModel) sourceModel).getPersistenceVersion();
+      persistenceVersion = ((DefaultSModel) sourceModel).getSModelHeader().getPersistenceVersion();
     }
     if (persistenceVersion == -1 || getModelPersistence(persistenceVersion) == null) {
       persistenceVersion = getCurrentPersistenceVersion();
@@ -442,17 +438,13 @@ public class ModelPersistence {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
           String name = attributes.getQName(idx);
           String value = attributes.getValue(idx);
-          if (MODEL_UID.equals(name)) {
-            myResult.setUID(value);
-          } else if (ModelPersistence9.REF.equals(name)) {
-            myResult.setUID(value);
-          } else if (SModelHeader.VERSION.equals(name)) {
-            try {
-              myResult.setVersion(Integer.parseInt(value));
-            } catch (NumberFormatException ignored) {
-            }
+          if (MODEL_UID.equals(name) || ModelPersistence9.REF.equals(name)) {
+            final SModelReference mr = value == null ? null : PersistenceFacade.getInstance().createModelReference(value);
+            myResult.setModelReference(mr);
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
+          } else if ("version".equals(name)) {
+            //old model version
           } else {
             myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
           }

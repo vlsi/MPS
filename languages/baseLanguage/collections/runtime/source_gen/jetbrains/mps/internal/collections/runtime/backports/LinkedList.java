@@ -6,8 +6,14 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.ListIterator;
 
+/**
+ * 
+ * @deprecated use {@link java.util.LinkedList } instead
+ */
+@Deprecated
 public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, Serializable {
   private static final long serialVersionUID = -7296400805973169021L;
+  @Deprecated
   public LinkedList() {
   }
   @Override

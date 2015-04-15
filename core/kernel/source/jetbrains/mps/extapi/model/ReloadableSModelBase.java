@@ -55,7 +55,7 @@ public abstract class ReloadableSModelBase extends SModelBase implements ModelSo
   }
 
   @Override
-  public void attach(SRepository repository) {
+  public void attach(@NotNull SRepository repository) {
     super.attach(repository);
     myTimestampTracker.attach(this);
   }

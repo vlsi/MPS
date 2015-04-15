@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;

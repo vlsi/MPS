@@ -12,7 +12,7 @@ import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

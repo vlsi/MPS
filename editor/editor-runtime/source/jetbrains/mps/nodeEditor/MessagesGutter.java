@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.ApplicationInfo;
-import com.intellij.openapi.util.BuildNumber;
 import com.intellij.ui.ColorUtil;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
@@ -32,9 +29,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -50,7 +44,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.AffineTransform;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -75,16 +68,6 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private boolean myRightToLeft;
   private MergingUpdateQueue myUpdateQueue;
   private Object myUpdateIdentity = new Object();
-
-  protected static Logger LOG = LogManager.getLogger(MessagesGutter.class);
-  private final boolean IS_BEFORE_Idea_14_1 =
-      InternalFlag.isInternalMode() || ApplicationInfo.getInstance().getBuild().compareTo(BuildNumber.fromString("IC-141.177")) < 0;
-
-  private void logReflectionException(Exception e) {
-    if (LOG.isEnabledFor(Level.ERROR)) {
-      LOG.error("Compatibility reflection code fails", e);
-    }
-  }
 
   public MessagesGutter(EditorComponent editorComponent, boolean rightToLeft) {
     myEditorComponent = editorComponent;
@@ -159,36 +142,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
-    //TODO: remove in 3.3
-    //Reflection for compatibility with both IDEA 14 & 14.1
-    Color getTrackBackground = null;
-    Color getTrackBorderColor = null;
-    try {
-      getTrackBackground = (Color) ButtonlessScrollBarUI.class.getDeclaredMethod(
-          IS_BEFORE_Idea_14_1 ? "getTrackBackground" : "getTrackBackgroundDefault").invoke(null);
-      getTrackBorderColor = (Color) ButtonlessScrollBarUI.class.getDeclaredMethod(
-          IS_BEFORE_Idea_14_1 ? "getTrackBorderColor" : "getTrackBorderColorDefault").invoke(null);
-    } catch (IllegalAccessException e) {
-      logReflectionException(e);
-    } catch (InvocationTargetException e) {
-      logReflectionException(e);
-    } catch (NoSuchMethodException e) {
-      logReflectionException(e);
-    }
-
-    g.setColor(getTrackBackground);
+    g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
-    g.setColor(getTrackBorderColor);
+    g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
     int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
     g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
     drawMarks(g);
-  }
-
-  //TODO: Check if needed in 3.3 (141.177.4 platform) and find way to implement
-  protected int adjustThumbWidth(int width) {
-    return width - 2;
   }
 
   @Override
@@ -529,27 +490,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 
-      //TODO: remove in 3.3
-      //Reflection for compatibility with both IDEA 14 & 14.1
-      Color getTrackBackground = null;
-      Color getTrackBorderColor = null;
-      try {
-        getTrackBackground = (Color) ButtonlessScrollBarUI.class.getDeclaredMethod(
-            IS_BEFORE_Idea_14_1 ? "getTrackBackground" : "getTrackBackgroundDefault").invoke(null);
-        getTrackBorderColor = (Color) ButtonlessScrollBarUI.class.getDeclaredMethod(
-            IS_BEFORE_Idea_14_1 ? "getTrackBorderColor" : "getTrackBorderColorDefault").invoke(null);
-      } catch (IllegalAccessException e) {
-        logReflectionException(e);
-      } catch (InvocationTargetException e) {
-        logReflectionException(e);
-      } catch (NoSuchMethodException e) {
-        logReflectionException(e);
-      }
-
-      g.setColor(getTrackBackground);
+      g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
       g.fillRect(0, 0, bounds.width, bounds.height);
 
-      g.setColor(getTrackBorderColor);
+      g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
       g.drawLine(0, 0, 0, bounds.height);
 
       Icon icon = getIcon();

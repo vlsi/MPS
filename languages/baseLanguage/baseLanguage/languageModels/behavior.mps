@@ -243,7 +243,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -39740,17 +39740,17 @@
       <property role="13i0iv" value="true" />
       <property role="TrG5h" value="getExpectedRetType" />
       <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="i2fhBND" role="1B3o_S" />
-      <node concept="3Tqbb2" id="i2fhClb" role="3clF45" />
-      <node concept="3clFbS" id="i2fhBNF" role="3clF47" />
-      <node concept="2AHcQZ" id="3Rhnz24pH9f" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
-      </node>
       <node concept="P$JXv" id="3Rhnz24pH9p" role="lGtFl">
         <node concept="x79VA" id="3Rhnz24pH9R" role="x79VK">
           <property role="x79VB" value="the expected type. null is equivalent to &lt;VoidType&gt;. [note the quotation]" />
         </node>
       </node>
+      <node concept="2AHcQZ" id="3Rhnz24pH9f" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3Tm1VV" id="i2fhBND" role="1B3o_S" />
+      <node concept="3Tqbb2" id="i2fhClb" role="3clF45" />
+      <node concept="3clFbS" id="i2fhBNF" role="3clF47" />
     </node>
     <node concept="13i0hz" id="i2fhS7A" role="13h7CS">
       <property role="TrG5h" value="getLastStatement" />
@@ -56326,7 +56326,7 @@
             </node>
             <node concept="2ShNRf" id="7o4ozN$mxrY" role="33vP2m">
               <node concept="1pGfFk" id="7o4ozN$mxrZ" role="2ShVmc">
-                <ref role="37wK5l" to="fnmy:cIz_w5KW8Z" resolve="ClassifiersScope" />
+                <ref role="37wK5l" to="fnmy:4k9eBecB9js" resolve="ClassifiersScope" />
                 <node concept="2OqwBi" id="7o4ozN$mxs0" role="37wK5m">
                   <node concept="37vLTw" id="2BHiRxghgcS" role="2Oq$k0">
                     <ref role="3cqZAo" node="7o4ozN$mxrq" resolve="from" />
@@ -56336,8 +56336,8 @@
                 <node concept="37vLTw" id="2ROYXbqqqoD" role="37wK5m">
                   <ref role="3cqZAo" node="2ROYXbqqdT0" resolve="contextClas" />
                 </node>
-                <node concept="3nh3qo" id="2ROYXbqqqsz" role="37wK5m">
-                  <ref role="3nh3qp" to="tpee:g7pOWCK" resolve="Classifier" />
+                <node concept="35c_gC" id="4k9eBecBjQ3" role="37wK5m">
+                  <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
                 </node>
                 <node concept="3clFbT" id="5t1QwMhnEOR" role="37wK5m">
                   <property role="3clFbU" value="true" />

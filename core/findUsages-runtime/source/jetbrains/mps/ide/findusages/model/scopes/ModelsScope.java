@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,32 +17,31 @@ package jetbrains.mps.ide.findusages.model.scopes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelRepository;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
+// FIXME likely we don't need distinct ModulesScope and ModelsScope, everything shall be part of FindUsagesScope
 public class ModelsScope extends FindUsagesScope {
-  private static final Logger LOG = LogManager.getLogger(ModelsScope.class);
-  private static final String MODEL_ID = "model_id";
+  private static final String MODEL_ID = "ref";
   private static final String MODEL_TAG = "model";
-
-  @NotNull
-  private final List<SModel> myModels = new ArrayList<SModel>();
 
   public ModelsScope(@NotNull Iterable<? extends SModel> models) {
     for (SModel model : models) {
-      myModels.add(model);
-      addModel(model);
+      if (model != null) {
+        addModel(model);
+      }
     }
   }
 
@@ -50,25 +49,35 @@ public class ModelsScope extends FindUsagesScope {
     this(Arrays.asList(models));
   }
 
-  public ModelsScope(@NotNull String modelName) {
-    // use this method carefully!
-    this(Collections.singleton(resolveModel(modelName)));
-  }
 
   public ModelsScope(Element element, Project project) throws CantLoadSomethingException {
-    this(resolveModels(element));
+    this(resolveModels(element, project.getRepository()));
   }
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
+    // FIXME shall return modules of the models it was initialized with
+    // we've already collected required modules in the superclass, and it's safe to return scope here as nobody has been using this method anyway
     throw new UnsupportedOperationException();
   }
 
-  private static List<SModel> resolveModels(Element element) throws CantLoadSomethingException {
+  private static List<SModel> resolveModels(Element element, SRepository repo) throws CantLoadSomethingException {
     List<SModel> result = new ArrayList<SModel>();
-    for (Element modelXml : (List<Element>) element.getChildren(MODEL_TAG)) {
+    final Logger log = LogManager.getLogger(ModelsScope.class);
+    for (Element modelXml : element.getChildren(MODEL_TAG)) {
       try {
-        result.add(resolveModel(modelXml.getAttribute(MODEL_ID).getValue()));
+        final String modelRef = modelXml.getAttributeValue(MODEL_ID);
+        if (modelRef == null) {
+          continue;
+        }
+        SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
+        final SModel model = mr.resolve(repo);
+        if (model != null) {
+          result.add(model);
+        } else {
+          log.warn("model not found " + modelRef);
+        }
       } catch (IllegalArgumentException e) {
         throw new CantLoadSomethingException(e);
       }
@@ -76,22 +85,11 @@ public class ModelsScope extends FindUsagesScope {
     return result;
   }
 
-  private static SModel resolveModel(String modelName) {
-    // todo: !
-    SModel model = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName).iterator().next();
-    if (model == null) {
-      LOG.warn("model scope not found for model " + modelName);
-      throw new IllegalArgumentException("model scope not found for model " + modelName);
-    } else {
-      return model;
-    }
-  }
-
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     for (SModel model : myModels) {
       Element modelXml = new Element(MODEL_TAG);
-      modelXml.setAttribute(MODEL_ID, model.getModelName());
+      modelXml.setAttribute(MODEL_ID, PersistenceFacade.getInstance().asString(model.getReference()));
       element.addContent(modelXml);
     }
   }

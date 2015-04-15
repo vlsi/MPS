@@ -23,9 +23,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -61,18 +61,18 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
       }
     }));
     Collection<SNode> duplicatingEditorDeclarations = CollectionSequence.fromCollection(new ArrayList<SNode>());
-    Deque<Language> languagesToVisit = DequeSequence.fromDeque(new LinkedList<Language>());
+    Deque<Language> languagesToVisit = DequeSequence.fromDequeNew(new LinkedList<Language>());
     Set<String> visitedLanguages = SetSequence.fromSet(new HashSet<String>());
-    DequeSequence.fromDeque(languagesToVisit).addLastElement(containingLanguage);
+    DequeSequence.fromDequeNew(languagesToVisit).addLastElement(containingLanguage);
     SetSequence.fromSet(visitedLanguages).addElement(containingLanguage.getModuleName());
 
-    while (DequeSequence.fromDeque(languagesToVisit).isNotEmpty()) {
-      Language nextLanguage = DequeSequence.fromDeque(languagesToVisit).removeFirstElement();
+    while (DequeSequence.fromDequeNew(languagesToVisit).isNotEmpty()) {
+      Language nextLanguage = DequeSequence.fromDequeNew(languagesToVisit).removeFirstElement();
       // TODO: check extending languages as well 
       for (SModuleReference extendedLanguageRef : SetSequence.fromSet(nextLanguage.getExtendedLanguageRefs())) {
         SModule module = extendedLanguageRef.resolve(nextLanguage.getRepository());
         if (module instanceof Language && !(SetSequence.fromSet(visitedLanguages).contains(module.getModuleName()))) {
-          DequeSequence.fromDeque(languagesToVisit).addLastElement((Language) module);
+          DequeSequence.fromDequeNew(languagesToVisit).addLastElement((Language) module);
           SetSequence.fromSet(visitedLanguages).addElement(module.getModuleName());
         }
       }

@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseLoggableRefactoring" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.MoveNodes_Target" file="MoveNodes_Target.java">
     <classNode dependClassName="java.lang.Object" />

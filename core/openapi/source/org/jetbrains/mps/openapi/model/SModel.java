@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -61,7 +62,13 @@ public interface SModel {
   /**
    * Instantiates an SNode of the given concept, suitable for use in this model.
    */
-  SNode createNode(SConcept concept);
+  SNode createNode(@NotNull SConcept concept);
+
+  /**
+   * Instantiates an SNode of the given concept, suitable for use in this model, optionally specifying an id for the node.
+   * If no <code>nodeId</code> was supplied, the call is identical to {@link #createNode(org.jetbrains.mps.openapi.language.SConcept)}
+   */
+  SNode createNode(@NotNull SConcept concept, @Nullable SNodeId nodeId);
 
   /**
    * Adds the node as a root to this model.
@@ -125,9 +132,51 @@ public interface SModel {
 
   void removeModelListener(SModelListener l);
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link #addAccessListener(SNodeAccessListener)}
+   */
+  @Deprecated
   void addAccessListener(SModelAccessListener l);
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link #removeAccessListener(SNodeAccessListener)}
+   */
+  @Deprecated
   void removeAccessListener(SModelAccessListener l);
+
+  /**
+   * @param l listener to add, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void addAccessListener(SNodeAccessListener l);
+
+  /**
+   * @param l listener to remove, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void removeAccessListener(SNodeAccessListener l);
+
+  /**
+   * As {@link org.jetbrains.mps.openapi.model.SNode} API suggests, any model could be modified. However, it's up to model's
+   * implementation to decide whether to send notifications about changes or not.
+   * Attaching a change listener to a model doesn't guarantee changes get dispatched to the listener,
+   * unless it's a model that explicitly states that as part of its contract (e.g. {@link org.jetbrains.mps.openapi.model.EditableSModel}).
+   *
+   * Note, there's no guarantee about listener uniqueness, i.e. it's unspecified what happens if the same listener instance is added twice.
+   *
+   * @param l listener to add, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void addChangeListener(SNodeChangeListener l);
+
+  /**
+   * @param l listener to remove, tolerates <code>null</code>
+   * @since 3.3
+   */
+  void removeChangeListener(SNodeChangeListener l);
+
 
   /**
    * Represents a problem with the persitence.

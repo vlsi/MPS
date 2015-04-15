@@ -24,7 +24,6 @@ import jetbrains.mps.generator.GenerationParametersProviderEx;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
@@ -49,7 +48,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -430,18 +428,7 @@ class GenerationSession {
 
   private void logTenMinorStepsCountReached(SModel realOutputModel) {
     myLogger.error("failed to generate output after 10 repeated mappings");
-    IGenerationTracer tracer = mySessionContext.getGenerationTracer();
-    if (tracer.isTracing()) {
-      myLogger.error("last rules applied:");
-      List<Pair<SNodeReference, SNodeReference>> pairs = tracer.getAllAppliedRulesWithInputNodes(realOutputModel.getReference());
-      for (Pair<SNodeReference, SNodeReference> pair : pairs) {
-        SNode templateNode = pair.o1 == null ? null : pair.o1.resolve(MPSModuleRepository.getInstance());
-        myLogger.error(pair.o1, templateNode == null ? "unknown rule" : String.format("rule: %s", SNodeOperations.getDebugText(templateNode)),
-            GeneratorUtil.describe(pair.o2, "input"));
-      }
-    } else {
-      myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
-    }
+    myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
   }
 
   @NotNull

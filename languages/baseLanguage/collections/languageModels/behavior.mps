@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -6436,7 +6436,7 @@
                         <node concept="1eOMI4" id="vLputAMBm8" role="2Oq$k0">
                           <node concept="10QFUN" id="vLputAMBm9" role="1eOMHV">
                             <node concept="2OqwBi" id="vLputAMBm5" role="10QFUP">
-                              <node concept="FGMqu" id="vLputAMBm6" role="2OqNvi" />
+                              <node concept="FGMqu" id="4k9eBecwfVy" role="2OqNvi" />
                               <node concept="13iPFW" id="vLputAMBm7" role="2Oq$k0" />
                             </node>
                             <node concept="3Tqbb2" id="5cL0w3DZ7ok" role="10QFUM">

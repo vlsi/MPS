@@ -6,8 +6,9 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,17 +27,17 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        for (String propname : SNodeOperations.getProperties(node).keySet()) {
-          if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
+        for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
+          if (prop.getDeclarationNode() == null) {
             return true;
           }
         }
         return false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        for (String propname : SNodeOperations.getProperties(node).keySet()) {
-          if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
-            node.setProperty(propname, null);
+        for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
+          if (prop.getDeclarationNode() == null) {
+            node.setProperty(prop, null);
           }
         }
       }
@@ -55,10 +56,10 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) != null) && (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(node) == null);
+        return (SNodeOperations.getParent(node) != null) && (SNodeOperations.getContainingLinkDeclaration(node) == null);
       }
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(node);
+        SNodeOperations.deleteNode(node);
       }
       public boolean isShowAsIntention() {
         return false;
@@ -75,14 +76,14 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }
         }).isNotEmpty();
       }
       public void doUpdateInstanceNode(SNode node) {
-        for (SReference ref : Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }

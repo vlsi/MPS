@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:824e8a13-f288-473f-863b-d5f2a84b0c0e(ManifestXml)" content="header">
+  <persistence version="9" />
+  <languages>
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
+  </languages>
+  <imports />
+</model>
+

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,7 +167,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       }
     }
     final boolean hasAnError = hasAnErrorAsConsequence(operation);
-    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myContextTracker.getCurrentState(), myEditorComponent) {
+    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myContextTracker.getCurrentState(), myEditorComponent) {
       @Override
       public void doUpdatePresentation() {
         super.doUpdatePresentation();
@@ -529,8 +529,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
           continue;
         }
         if (showParent) {
-          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myOperationContext, myContextTracker.getCurrentState(),
-              myEditorComponent) {
+          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myContextTracker.getCurrentState(), myEditorComponent) {
             @Override
             public void doUpdatePresentation() {
               super.doUpdatePresentation();

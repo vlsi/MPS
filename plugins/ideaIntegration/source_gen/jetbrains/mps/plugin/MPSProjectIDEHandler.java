@@ -14,13 +14,11 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
@@ -28,6 +26,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -39,7 +38,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -110,7 +108,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
   @Override
   public void showNode(final String namespace, final String id) throws RemoteException {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         for (SModel descriptor : SModelRepository.getInstance().getModelDescriptors()) {
           if (!(namespace.equals(descriptor.getModelName()))) {
@@ -118,8 +117,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           }
           SNode node = descriptor.getNode(SNodeId.fromString(id));
           if (node != null) {
-            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(SNodeOperations.isRoot(node)));
+            NavigationSupport.getInstance().openNode(mpsProject, node, true, !(SNodeOperations.isRoot(node)));
           }
         }
         FrameUtil.activateFrame(getMainFrame());
@@ -130,22 +128,25 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     SearchQuery searchQuery = new SearchQuery(new AspectMethodsFinder.AspectMethodsHolder(namespace, name), GlobalScope.getInstance());
     IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
-    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("No usages for that method");
+    UsagesViewTool.showUsages(myProject, FindUtils.makeProvider(finders), searchQuery, opt);
   }
   @Override
   public void showConceptNode(final String fqName) throws RemoteException {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode concept = SModelUtil.findConceptDeclaration(fqName);
-        NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);
+        NavigationSupport.getInstance().openNode(mpsProject, concept, true, false);
         FrameUtil.activateFrame(getMainFrame());
       }
     });
   }
   @Override
   public void showClassUsages(final String fqName) throws RemoteException {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         SNode cls = findClassByName(fqName);
@@ -160,7 +161,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
   @Override
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         if (classFqName == null || methodName == null) {
@@ -194,18 +196,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
   private void findUsages(@NotNull final SNode node, final SearchScope scope, final IResultProvider provider) {
-    new Thread() {
-      @Override
-      public void run() {
-        SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
-          @Override
-          public SearchQuery compute() {
-            return new SearchQuery(node, scope);
-          }
-        });
-        myProject.getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false, "No usages for that node");
-      }
-    }.start();
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).navigateIfSingle(false).forceNewTab(false).notFoundMessage("No usages for that node");
+    UsagesViewTool.showUsages(myProject, provider, new SearchQuery(node, scope), opt);
   }
   private SNode findClassByName(String classFqName) {
     // This is slightly updated SModelUtil.findNodeByFQName, which moved here as it's the only place we use it 

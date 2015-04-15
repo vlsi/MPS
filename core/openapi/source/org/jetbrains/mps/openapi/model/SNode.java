@@ -49,6 +49,11 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
  * SNode represents the raw node in the AST. SNode does not know about constraints, behavior, getters and setters
  * for props/refs.
  * <p/>
+ * READ NOTIFICATIONS
+ * Accessing node triggers read notifications ({@link org.jetbrains.mps.openapi.model.SModelAccessListener} and legacy 'event casters').
+ * Notifications for a node are dispatched the moment node is made available to outer world, not the moment its property or reference is read, i.e.
+ * if we read 3 properties and 2 references of a node A, we get single nodeRead(A) followed by 3 propertyRead() and 2 referenceRead() notifications.
+ * <p/>
  * SEE ALSO SNodeUtil, SNodeAccessUtil
  */
 public interface SNode {
@@ -104,12 +109,13 @@ public interface SNode {
   void addChild(@NotNull SContainmentLink role, @NotNull SNode child);
 
   /**
-   * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
+   * Inserts the given node as a child of the current node of the specified role right in front of the anchor node.<br/>
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
-   *               a new child is inserted as a last child
+   *               a new child is inserted as a last child. If anchor is the first child element, newly added
+   *               child becomes head of collection
    */
   void insertChildBefore(@NotNull SContainmentLink role, @NotNull SNode child, @Nullable SNode anchor);
 
@@ -139,7 +145,7 @@ public interface SNode {
 
   /**
    * Returns the parent of this node
-   * Does not produce read on current as current is already obtained
+   * Does not produce read on current as current is already obtained, does notify read for the parent.
    *
    * @return parent of this node
    */
@@ -183,13 +189,15 @@ public interface SNode {
   /**
    * no parent -> no sibling. Root has no siblings
    * Does not produce read on current as current is already obtained
+   * Notifies read for the parent node and sibling node, if any.
    */
   @Nullable
   SNode getPrevSibling();
 
   /**
    * no parent -> no sibling. Root has no siblings
-   * Does not produce read on current as current is already obtained
+   * Does not produce read on current as current is already obtained.
+   * Notifies read for the parent node and sibling node, if any.
    */
   @Nullable
   SNode getNextSibling();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,13 @@
 package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
@@ -45,13 +41,18 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   public RootChooseModel(Project project, RootNodeNameIndex index) {
     super(project, "node");
     myIndex = index;
+    setCheckBoxName("Include stubs and &non-&&project models");
+  }
+
+  @Deprecated
+  public RootChooseModel(com.intellij.openapi.project.Project project, RootNodeNameIndex index) {
+    this(ProjectHelper.toMPSProject(project), index);
   }
 
   @Override
   public NavigationTarget[] find(boolean checkboxState) {
     if (checkboxState) return find(GlobalScope.getInstance());
-    MPSProject project = getProject().getComponent(MPSProject.class);
-    return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
+    return find(new FilterStubsScope(new ModulesScope(getProject().getModulesWithGenerators())));
   }
 
   @Override
@@ -63,21 +64,19 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   @Override
   public NavigationItem doGetNavigationItem(final NavigationTarget object) {
     return new RootNodeElement(object) {
-      private Project myProject = getProject();
 
       @Override
       public void navigate(boolean requestFocus) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        getProject().getModelAccess().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode node = object.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            SNode node = object.getNodeReference().resolve(getProject().getRepository());
             if (node == null) {
               LOG.error("Can't find node for: " + object.getNodeReference());
               return;
             }
 
-            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
+            NavigationSupport.getInstance().openNode(getProject(), node, true, !(node.getModel() != null && node.getParent() == null));
           }
         });
       }
@@ -90,15 +89,10 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   }
 
   @Override
-  public String doGetFullName(Object element) {
-    SNodeDescriptorPresentation presentation = (SNodeDescriptorPresentation) ((NavigationItem) element).getPresentation();
+  public String doGetFullName(NavigationItem element) {
+    SNodeDescriptorPresentation presentation = (SNodeDescriptorPresentation) element.getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
-  }
-
-  @Override
-  protected String doGetCheckBoxName() {
-    return "Include stubs and &non-&&project models";
   }
 
   @Override
@@ -118,7 +112,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
 
     @Override
     protected boolean acceptModel(SModel model) {
-      return !SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
+      return !SModelStereotype.isStubModel(model);
     }
   }
 }

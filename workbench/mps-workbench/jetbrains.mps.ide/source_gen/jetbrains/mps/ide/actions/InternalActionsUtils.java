@@ -40,6 +40,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -136,7 +137,7 @@ public class InternalActionsUtils {
         SearchResults<SNode> results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
-            return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
+            return it.resolve(MPSModuleRepository.getInstance());
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -148,8 +149,8 @@ public class InternalActionsUtils {
         return results;
       }
     });
-
-    project.getComponent(UsagesViewTool.class).findUsages(provider, new SearchQuery(GlobalScope.getInstance()), false, true, false, "Nothing");
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("Nothing");
+    UsagesViewTool.showUsages(project, provider, new SearchQuery(GlobalScope.getInstance()), opt);
   }
   protected static Logger LOG = LogManager.getLogger(InternalActionsUtils.class);
 }

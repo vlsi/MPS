@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2015 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -23,10 +38,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class SLanguageAdapter implements SLanguage {
-  protected String myLanguageFqName;
+  protected final String myLanguageFqName;
+  /**
+   * We use -1 to indicate we care about actual language version available.
+   * Positive value indicates this is a reference to the given revision of the language
+   */
+  private final int myVersion;
 
-  public SLanguageAdapter(@NotNull String language) {
+  protected SLanguageAdapter(@NotNull String language, int version) {
     this.myLanguageFqName = language;
+    myVersion = version;
   }
 
   @Nullable
@@ -44,9 +65,14 @@ public abstract class SLanguageAdapter implements SLanguage {
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = getLanguageDescriptor();
-    if (runtime == null) return Collections.<SAbstractConcept>emptySet();
+    if (runtime == null) {
+      return Collections.emptySet();
+    }
 
     StructureAspectDescriptor struc = getLanguageDescriptor().getAspect(StructureAspectDescriptor.class);
+    if (struc == null) {
+      return Collections.emptyList();
+    }
     ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
     for (ConceptDescriptor cd : ((BaseStructureAspectDescriptor) struc).getDescriptors()) {
       if (cd.isInterfaceConcept()) {
@@ -62,7 +88,9 @@ public abstract class SLanguageAdapter implements SLanguage {
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
     Language sourceModule = getSourceModule();
-    assert sourceModule != null;
+    if (sourceModule == null) {
+      return Collections.emptyList();
+    }
     for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
       // GeneratesInto doesn't qualify as 'true' language runtime, it's rather generator aspect, however, for the time being,
@@ -79,8 +107,13 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   public int getLanguageVersion() {
+    if (myVersion >= 0) {
+      return myVersion;
+    }
     LanguageRuntime languageDescriptor = getLanguageDescriptor();
-    if (languageDescriptor == null) return -1;
+    if (languageDescriptor == null) {
+      return -1;
+    }
     return languageDescriptor.getVersion();
   }
 

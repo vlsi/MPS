@@ -46,6 +46,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
@@ -319,7 +320,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
-            ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
+            ListSequence.fromList(SNodeOperations.getChildren(container, MetaAdapterByDeclaration.getContainmentLink(containingLink))).addElement(result);
             DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
             setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
             return result;

@@ -11949,8 +11949,8 @@
               <node concept="3clFbS" id="1uO_OGJ8LPv" role="3clFbx">
                 <node concept="3clFbF" id="2EkHBjgiHie" role="3cqZAp">
                   <node concept="2YIFZM" id="2EkHBjgiKq9" role="3clFbG">
-                    <ref role="37wK5l" to="msyo:~SNodeOperations.insertChild(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChild" />
                     <ref role="1Pybhc" to="msyo:~SNodeOperations" resolve="SNodeOperations" />
+                    <ref role="37wK5l" to="msyo:~SNodeOperations.insertChild(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChild" />
                     <node concept="37vLTw" id="2EkHBjgiPc6" role="37wK5m">
                       <ref role="3cqZAo" node="5EoRO0420jm" resolve="clas" />
                     </node>

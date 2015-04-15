@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public class TestRunState {
   private static final Object lock = new Object();

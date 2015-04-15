@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,7 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -54,14 +52,22 @@ public abstract class ModelRootBase implements ModelRoot {
     myModule = module;
   }
 
-  protected void assertCanRead() {
+  protected final void assertCanRead() {
     SRepository repository = myRepository;
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
     }
   }
 
-  @Override
+  protected final void assertCanChange() {
+    final SRepository repo = myRepository;
+    if (repo != null) {
+      repo.getModelAccess().checkWriteAccess();
+    }
+  }
+
+
+    @Override
   public final Iterable<SModel> getModels() {
     assertCanRead();
 
@@ -129,7 +135,7 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void update() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
 

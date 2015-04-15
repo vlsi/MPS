@@ -103,7 +103,7 @@ public class MigrationCheckUtil {
     int modulesCount = Sequence.fromIterable(modules).count();
     int processedModules = 0;
     for (SModule module : Sequence.fromIterable(modules)) {
-      for (SNode node : Sequence.fromIterable(allNodes(module.getModels()))) {
+      for (SNode node : Sequence.fromIterable(MigrationCheckUtil.allNodes(module.getModels()))) {
         SConcept concept = node.getConcept();
         if (!(concept.isValid())) {
           if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {

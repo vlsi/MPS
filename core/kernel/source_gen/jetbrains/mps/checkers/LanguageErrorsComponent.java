@@ -26,7 +26,7 @@ import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;

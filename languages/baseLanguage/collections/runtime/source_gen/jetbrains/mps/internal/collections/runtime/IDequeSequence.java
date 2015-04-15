@@ -15,6 +15,7 @@ public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
   public IDequeSequence<T> addSequence(ISequence<? extends T> seq);
   public IDequeSequence<T> removeSequence(ISequence<? extends T> seq);
   public IDequeSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
+  @Deprecated
   public Deque<T> toDeque();
   public IDequeSequence<T> asUnmodifiable();
   public IDequeSequence<T> asSynchronized();

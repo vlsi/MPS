@@ -4,9 +4,6 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="classes_gen" />
-    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
@@ -14,9 +11,6 @@
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generators/baseLanguage/templates" />
-        </modelRoot>
-        <modelRoot contentPath="${module}" type="java_classes">
-          <sourceRoot location="classes_gen" />
         </modelRoot>
       </models>
       <external-templates>

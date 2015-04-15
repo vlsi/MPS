@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,11 +235,10 @@ public abstract class SModuleBase implements SModule {
   }
 
   protected void assertCanRead() {
-// TODO enable
-//    SRepository repository = myRepository;
-//    if (repository != null) {
-//      repository.getModelAccess().checkReadAccess();
-//    }
+    final SRepository repository = myRepository;
+    if (repository != null) {
+      repository.getModelAccess().checkReadAccess();
+    }
   }
 
   protected void assertCanChange() {

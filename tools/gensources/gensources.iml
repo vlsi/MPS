@@ -106,7 +106,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/reduced/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/source_gen" isTestSource="false" />
@@ -618,6 +617,7 @@
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="module" module-name="java-stub" />
     <content url="file://$MODULE_DIR$/../../plugins/console/lang">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/source_gen" isTestSource="false" />

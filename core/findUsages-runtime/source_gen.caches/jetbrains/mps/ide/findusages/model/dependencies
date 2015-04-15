@@ -20,7 +20,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModelHolder" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModuleHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.NodeHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.VoidHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />

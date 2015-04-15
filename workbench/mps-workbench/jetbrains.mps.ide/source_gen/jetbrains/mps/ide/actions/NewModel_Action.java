@@ -29,6 +29,8 @@ import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -100,7 +102,7 @@ public class NewModel_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(NewModel_Action.this.hasModelRoots(_params))) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
           MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
@@ -109,12 +111,12 @@ public class NewModel_Action extends BaseAction {
         }
         return;
       }
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(NewModel_Action.this.hasModelRoots(_params))) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModel_Action.this.getStereotype(_params);
           dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModel_Action.this.getNamespace(_params), stereotype, NewModel_Action.this.isStrict(_params));
@@ -178,6 +180,13 @@ public class NewModel_Action extends BaseAction {
       return genNamespace + "." + name;
     }
     return ((SModule) MapSequence.fromMap(_params).get("module")).getModuleName();
+  }
+  private boolean hasModelRoots(final Map<String, Object> _params) {
+    return new ModelAccessHelper(((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return ((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext();
+      }
+    });
   }
   protected static Logger LOG = LogManager.getLogger(NewModel_Action.class);
 }

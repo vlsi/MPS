@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import java.net.URL;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
 import java.security.cert.Certificate;
@@ -22,11 +23,21 @@ import java.security.cert.Certificate;
 public class ProtectionDomainUtil {
   private static ProtectionDomain defaultDomain = null;
 
+  /**
+   * please use {@link #loadedClassDomain(URL url)} instead
+   * @deprecated (since 3.2)
+   */
+  @Deprecated
   public static ProtectionDomain loadedClassDomain() {
     if (defaultDomain == null) {
       CodeSource cs = new CodeSource(null, (Certificate[]) null);
       defaultDomain = new ProtectionDomain(cs, null);
     }
     return defaultDomain;
+  }
+
+  public static ProtectionDomain loadedClassDomain(URL url) {
+    CodeSource cs = new CodeSource(url, (Certificate[]) null);
+    return new ProtectionDomain(cs, null);
   }
 }

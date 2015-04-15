@@ -1,8 +1,14 @@
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+/**
+ * @deprecated This class is not in use and its instances don't get attach/detach notifications any longer
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public abstract class SNodeBase {
   /**
    * Called when node enters the "repository area".

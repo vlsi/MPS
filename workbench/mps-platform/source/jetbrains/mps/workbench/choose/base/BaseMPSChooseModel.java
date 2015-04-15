@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,17 @@ package jetbrains.mps.workbench.choose.base;
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -42,7 +43,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected static final Logger LOG = LogManager.getLogger(BaseMPSChooseModel.class);
   public static final String SEPARATOR = ".";
 
-  private Project myProject;
+  private final Project myProject;
 
   private T[] myObjectsInProjectScope = null;
   private T[] myObjectsInGlobalScope = null;
@@ -53,8 +54,17 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
 
 
-  protected BaseMPSChooseModel(Project project, String entityName) {
-    myProject = project;
+  /**
+   * @deprecated use one with MPS Project instead {@link #BaseMPSChooseModel(jetbrains.mps.project.Project, String)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected BaseMPSChooseModel(com.intellij.openapi.project.Project ideaProject, String entityName) {
+    this(ProjectHelper.toMPSProject(ideaProject), entityName);
+  }
+
+  protected BaseMPSChooseModel(@NotNull Project mpsProject, String entityName) {
+    myProject = mpsProject;
     myCheckboxName = String.format("Include &non-&&project %s", NameUtil.pluralize(entityName));
     myPromptText = String.format("%s name:", NameUtil.capitalize(entityName));
     myNotInProjectMessage = String.format("no %s found in project", NameUtil.pluralize(entityName));
@@ -67,50 +77,41 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return myProject;
   }
 
+  // expect model read access
   private Map<String, List<NavigationItem>> getProjectNamesCache() {
     if (myObjectsInProjectScope == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myObjectsInProjectScope = find(false);
-          myProjectNamesCache.clear();
-          for (T o : myObjectsInProjectScope) {
-            String name = doGetObjectName(o);
-            if (myProjectNamesCache.get(name) == null) {
-              myProjectNamesCache.put(name, new ArrayList<NavigationItem>());
-            }
-            myProjectNamesCache.get(name).add(doGetNavigationItem(o));
-          }
+      myObjectsInProjectScope = find(false);
+      myProjectNamesCache.clear();
+      for (T o : myObjectsInProjectScope) {
+        String name = doGetObjectName(o);
+        if (myProjectNamesCache.get(name) == null) {
+          myProjectNamesCache.put(name, new ArrayList<NavigationItem>());
         }
-      });
+        myProjectNamesCache.get(name).add(doGetNavigationItem(o));
+      }
     }
     return myProjectNamesCache;
   }
 
+  // expect model read access
   private Map<String, List<NavigationItem>> getGlobalNamesCache() {
     if (myObjectsInGlobalScope == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myObjectsInGlobalScope = find(true);
-          myGlobalNamesCache.clear();
-          for (T o : myObjectsInGlobalScope) {
-            String name = doGetObjectName(o);
-            if (myGlobalNamesCache.get(name) == null) {
-              myGlobalNamesCache.put(name, new ArrayList<NavigationItem>());
-            }
-            myGlobalNamesCache.get(name).add(doGetNavigationItem(o));
-          }
-
+      myObjectsInGlobalScope = find(true);
+      myGlobalNamesCache.clear();
+      for (T o : myObjectsInGlobalScope) {
+        String name = doGetObjectName(o);
+        if (myGlobalNamesCache.get(name) == null) {
+          myGlobalNamesCache.put(name, new ArrayList<NavigationItem>());
         }
-      });
+        myGlobalNamesCache.get(name).add(doGetNavigationItem(o));
+      }
     }
     return myGlobalNamesCache;
   }
 
   @Override
   public String[] getNames(final boolean checkBoxState) {
-    return ModelAccess.instance().runReadAction(new Computable<String[]>() {
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String[]>() {
       @Override
       public String[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
@@ -121,7 +122,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @Override
   public NavigationItem[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
-    return ModelAccess.instance().runReadAction(new Computable<NavigationItem[]>() {
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<NavigationItem[]>() {
       @Override
       public NavigationItem[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
@@ -137,17 +138,17 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @Override
   public String getFullName(final Object element) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return doGetFullName(element);
+        return doGetFullName((NavigationItem) element);
       }
     });
   }
 
   @Override
   public String getElementName(final Object element) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
         return ((NavigationItem) element).getName();
@@ -157,14 +158,22 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   public T[] find(boolean checkboxState) {
     if (checkboxState) return find(new FilteredGlobalScope());
-    MPSProject project = myProject.getComponent(MPSProject.class);
-    return find(new ModulesScope(project.getModulesWithGenerators()));
+    return find(new ModulesScope(getProject().getModulesWithGenerators()));
   }
 
-  public abstract String doGetFullName(Object element);
+  /**
+   * Invoked with model read access
+   */
+  public abstract String doGetFullName(NavigationItem element);
 
+  /**
+   * Invoked with model read access
+   */
   public abstract String doGetObjectName(T object);
 
+  /**
+   * Invoked with model read access
+   */
   public abstract NavigationItem doGetNavigationItem(T object);
 
   public abstract T[] find(SearchScope scope);
@@ -173,13 +182,14 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @Override
   public final String getCheckBoxName() {
-    String name = doGetCheckBoxName();
-    if (name == null) return null;
-    return UIUtil.replaceMnemonicAmpersand(name);
+    if (myCheckboxName == null) {
+      return null;
+    }
+    return UIUtil.replaceMnemonicAmpersand(myCheckboxName);
   }
 
-  protected String doGetCheckBoxName() {
-    return myCheckboxName;
+  public final void setCheckBoxName(String name) {
+    myCheckboxName = name;
   }
 
   @Override
