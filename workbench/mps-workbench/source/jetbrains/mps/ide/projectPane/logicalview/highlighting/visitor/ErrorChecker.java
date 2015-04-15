@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -46,11 +47,11 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         final SModel modelDescriptor = mr.resolve(myProject.getRepository());
-        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
-          return;
-        }
+        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) return;
+
         final ModelValidator mv = new ModelValidator(modelDescriptor);
         mv.validate(myProject.getRepository());
+
         schedule(node, new ErrorReport(node, mv.errors(), mv.warnings()));
       }
     });

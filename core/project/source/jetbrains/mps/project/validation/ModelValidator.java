@@ -16,6 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -85,6 +86,16 @@ public class ModelValidator {
 
     List<String> warnings = new ArrayList<String>(5);
     SModule module = myModel.getModule();
+
+    if (
+        !myModel.isReadOnly() &&
+            (myModel instanceof PersistenceVersionAware) &&
+            ((PersistenceVersionAware) myModel).getPersistenceVersion() < 9
+        ) {
+      warnings.add("Outdated model persistence is used: " + ((PersistenceVersionAware) myModel).getPersistenceVersion() +
+          ". Please run Tools->Migration 3.2->Migrate from Names to Ids");
+    }
+
     final SModelReference modelToValidateRef = myModel.getReference();
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {

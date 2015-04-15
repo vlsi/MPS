@@ -4,42 +4,53 @@ package jetbrains.mps.propertiesTest;
 
 
 public class TestClass extends BaseTestClass {
-  public int value;
+
   public TestClass(int initialValue) {
-    setPropertyValue(initialValue);
-    this.setPropertyValue(initialValue);
-    this.value = getPropertyValue();
-    int asLocalValue = getPropertyValue();
-    asLocalValue = getPropertyValue();
-    setSecondPropertyValue(getPropertyValue());
-    setBasePropertyValue(asLocalValue);
-    int secondLocalValue = getBasePropertyValue();
+    setBaseProperty(initialValue);
+    setProp1(getBaseProperty());
+    this.setProp1(this.getBaseProperty());
+    setProp2(getProp1());
+    setProp3(getProp2());
+    setProp4(getProp3());
   }
+
   public void changeValueUsingNestedClass(int newValue) {
     new TestClass.PropertyChanger(newValue);
   }
-  public class PropertyChanger {
+
+  private class PropertyChanger {
     public PropertyChanger(int newValue) {
-      setPropertyValue(newValue);
-      TestClass.this.setPropertyValue(newValue);
-      value = getPropertyValue();
-      int asLocalValue = getPropertyValue();
-      asLocalValue = getPropertyValue();
-      setSecondPropertyValue(getPropertyValue());
+      TestClass.this.setProp1(newValue);
+      TestClass.this.setProp2(TestClass.this.getProp1());
+      TestClass.this.setProp3(TestClass.this.getProp2());
+      TestClass.this.setProp4(TestClass.this.getProp3());
     }
   }
-  private int myPropertyValue;
-  public int getPropertyValue() {
-    return this.myPropertyValue;
+  private int myProp1;
+  public int getProp1() {
+    return this.myProp1;
   }
-  private void setPropertyValue(int value) {
-    this.myPropertyValue = value;
+  private void setProp1(int value) {
+    this.myProp1 = value;
   }
-  private int mySecondPropertyValue;
-  public int getSecondPropertyValue() {
-    return this.mySecondPropertyValue;
+  private int myProp2;
+  public int getProp2() {
+    return this.myProp2;
   }
-  private void setSecondPropertyValue(int value) {
-    this.mySecondPropertyValue = value;
+  public void setProp2(int value) {
+    this.myProp2 = value;
+  }
+  private int myProp3;
+  public int getProp3() {
+    return this.myProp3;
+  }
+  public void setProp3(int value) {
+    myProp3 = value;
+  }
+  public int getProp4() {
+    return 1;
+  }
+  public void setProp4(int value) {
+    setProp3(value);
   }
 }

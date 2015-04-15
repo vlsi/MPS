@@ -3857,7 +3857,7 @@
       <node concept="3clFbS" id="6KaA9AfR59_" role="2VODD2">
         <node concept="3clFbF" id="6KaA9AfR5Qy" role="3cqZAp">
           <node concept="Xl_RD" id="6KaA9AfR5Qx" role="3clFbG">
-            <property role="Xl_RC" value="Exact Mathod Usages" />
+            <property role="Xl_RC" value="Exact Method Usages" />
           </node>
         </node>
       </node>

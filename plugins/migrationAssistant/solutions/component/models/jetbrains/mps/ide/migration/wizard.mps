@@ -61,10 +61,6 @@
       <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
         <child id="1238852204892" name="componentType" index="1Lm7xW" />
       </concept>
-      <concept id="1238857743184" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" flags="nn" index="1LFfDK">
-        <child id="1238857764950" name="tuple" index="1LFl5Q" />
-        <child id="1238857834412" name="index" index="1LF_Uc" />
-      </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -151,6 +147,7 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
+      <concept id="1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" flags="nn" index="17qRlL" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -201,7 +198,6 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
-      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
@@ -236,6 +232,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
@@ -1046,7 +1043,7 @@
       </node>
     </node>
     <node concept="312cEg" id="2htE_P_OuKG" role="jymVt">
-      <property role="34CwA1" value="false" />
+      <property role="34CwA1" value="true" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myIsComplete" />
       <property role="3TUv4t" value="false" />
@@ -1173,6 +1170,30 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3clFbF" id="6JtYk_H6vsG" role="3cqZAp">
+                            <node concept="1rXfSq" id="6JtYk_H6vsH" role="3clFbG">
+                              <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                              <node concept="37vLTw" id="6JtYk_H6vsI" role="37wK5m">
+                                <ref role="3cqZAo" node="7rK8qWGEVfh" resolve="progress" />
+                              </node>
+                              <node concept="3b6qkQ" id="6JtYk_H6v_s" role="37wK5m">
+                                <property role="$nhwW" value="1.0" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="6JvwUsisPK1" role="3cqZAp">
+                            <node concept="2OqwBi" id="6JvwUsisPRX" role="3clFbG">
+                              <node concept="37vLTw" id="6JvwUsisPJZ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
+                              </node>
+                              <node concept="liA8E" id="6JvwUsisR2k" role="2OqNvi">
+                                <ref role="37wK5l" to="50yb:~AbstractProgressIndicatorExBase.setText(java.lang.String):void" resolve="setText" />
+                                <node concept="Xl_RD" id="6JvwUsisR4n" role="37wK5m">
+                                  <property role="Xl_RC" value="Finished" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="5SsFeroaazp" role="3cqZAp">
                             <node concept="2OqwBi" id="5SsFeroaazq" role="3clFbG">
                               <node concept="2YIFZM" id="5SsFerobmJQ" role="2Oq$k0">
@@ -1192,7 +1213,7 @@
                     <ref role="3cqZAo" node="5SsFeroaawe" resolve="project" />
                   </node>
                   <node concept="Xl_RD" id="7rK8qWGEWiw" role="37wK5m">
-                    <property role="Xl_RC" value="Migrating" />
+                    <property role="Xl_RC" value="Migration progress" />
                   </node>
                   <node concept="3clFbT" id="7rK8qWGEWKG" role="37wK5m">
                     <property role="3clFbU" value="false" />
@@ -1346,13 +1367,36 @@
               <ref role="3cqZAo" node="7rK8qWGDnm$" resolve="myProgress" />
             </node>
             <node concept="2ShNRf" id="7rK8qWGDMP$" role="37vLTx">
-              <node concept="1pGfFk" id="7rK8qWGDMry" role="2ShVmc">
-                <ref role="37wK5l" to="x3zs:~InlineProgressIndicator.&lt;init&gt;(boolean,com.intellij.openapi.progress.TaskInfo)" resolve="InlineProgressIndicator" />
-                <node concept="3clFbT" id="7rK8qWGDMRU" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="7rK8qWGEX6Q" role="37wK5m">
-                  <ref role="3cqZAo" node="7rK8qWGEHl$" resolve="myTask" />
+              <node concept="YeOm9" id="4oHxNYJ3L9E" role="2ShVmc">
+                <node concept="1Y3b0j" id="4oHxNYJ3L9H" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="x3zs:~InlineProgressIndicator" resolve="InlineProgressIndicator" />
+                  <ref role="37wK5l" to="x3zs:~InlineProgressIndicator.&lt;init&gt;(boolean,com.intellij.openapi.progress.TaskInfo)" resolve="InlineProgressIndicator" />
+                  <node concept="3Tm1VV" id="4oHxNYJ3L9I" role="1B3o_S" />
+                  <node concept="3clFbT" id="7rK8qWGDMRU" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="37vLTw" id="7rK8qWGEX6Q" role="37wK5m">
+                    <ref role="3cqZAo" node="7rK8qWGEHl$" resolve="myTask" />
+                  </node>
+                  <node concept="3clFb_" id="4oHxNYJ3Rca" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="isFinished" />
+                    <property role="DiZV1" value="false" />
+                    <property role="IEkAT" value="false" />
+                    <node concept="3Tmbuc" id="4oHxNYJ3Rcb" role="1B3o_S" />
+                    <node concept="10P_77" id="4oHxNYJ3Rcd" role="3clF45" />
+                    <node concept="3clFbS" id="4oHxNYJ3Rcf" role="3clF47">
+                      <node concept="3clFbF" id="4oHxNYJ42n1" role="3cqZAp">
+                        <node concept="37vLTw" id="4oHxNYJ42mZ" role="3clFbG">
+                          <ref role="3cqZAo" node="2htE_P_OuKG" resolve="myIsComplete" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="4oHxNYJ3Rcg" role="2AJF6D">
+                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1539,44 +1583,15 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2pwkv5pjLCa" role="3cqZAp" />
-        <node concept="3SKdUt" id="7rK8qWGIg27" role="3cqZAp">
-          <node concept="3SKdUq" id="7rK8qWGIgEB" role="3SKWNk">
-            <property role="3SKdUp" value="project steps are considered to be X percent of the whole process" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7rK8qWGIczI" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGIczJ" role="3cpWs9">
-            <property role="TrG5h" value="projectStepsFraction" />
-            <node concept="10P55v" id="215zFAtpt33" role="1tU5fm" />
-            <node concept="3b6qkQ" id="215zFAtpsQy" role="33vP2m">
-              <property role="$nhwW" value="0.3" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7rK8qWGIdTf" role="3cqZAp" />
-        <node concept="3cpWs8" id="7rK8qWGI6gW" role="3cqZAp">
-          <node concept="3cpWsn" id="7rK8qWGI6gX" role="3cpWs9">
-            <property role="TrG5h" value="projectStepsCount" />
-            <node concept="10Oyi0" id="7rK8qWGI6gV" role="1tU5fm" />
-            <node concept="2OqwBi" id="7rK8qWGI6gY" role="33vP2m">
-              <node concept="37vLTw" id="7rK8qWGI6gZ" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
-              </node>
-              <node concept="liA8E" id="7rK8qWGI6h0" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5fy1Xi0j8Nu" role="3cqZAp">
           <node concept="1rXfSq" id="5fy1Xi0j8Ns" role="3clFbG">
             <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
             <node concept="37vLTw" id="5fy1Xi0jbPJ" role="37wK5m">
               <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
             </node>
-            <node concept="3cmrfG" id="5fy1Xi0jbRH" role="37wK5m">
-              <property role="3cmrfH" value="0" />
+            <node concept="2YIFZM" id="6JtYk_H67mD" role="37wK5m">
+              <ref role="37wK5l" to="bim2:6JtYk_H3TH2" resolve="initial" />
+              <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
             </node>
           </node>
         </node>
@@ -1604,6 +1619,32 @@
                   <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7rK8qWGI6gW" role="3cqZAp">
+          <node concept="3cpWsn" id="7rK8qWGI6gX" role="3cpWs9">
+            <property role="TrG5h" value="cleanupStepsCount" />
+            <node concept="10Oyi0" id="7rK8qWGI6gV" role="1tU5fm" />
+            <node concept="2OqwBi" id="7rK8qWGI6gY" role="33vP2m">
+              <node concept="37vLTw" id="7rK8qWGI6gZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+              </node>
+              <node concept="liA8E" id="7rK8qWGI6h0" role="2OqNvi">
+                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
+                <node concept="3clFbT" id="6JtYk_H6urR" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6JtYk_H6uW0" role="3cqZAp">
+          <node concept="3cpWsn" id="6JtYk_H6uW3" role="3cpWs9">
+            <property role="TrG5h" value="stepNum" />
+            <node concept="10Oyi0" id="6JtYk_H6uVY" role="1tU5fm" />
+            <node concept="3cmrfG" id="6JtYk_H6vqM" role="33vP2m">
+              <property role="3cmrfH" value="0" />
             </node>
           </node>
         </node>
@@ -1696,27 +1737,34 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="6JtYk_H6wtS" role="3cqZAp" />
+            <node concept="3clFbF" id="6JtYk_H6xLm" role="3cqZAp">
+              <node concept="3uNrnE" id="6JtYk_H6x1n" role="3clFbG">
+                <node concept="37vLTw" id="6JtYk_H6x1p" role="2$L3a6">
+                  <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="5fy1Xi0jcWp" role="3cqZAp">
               <node concept="1rXfSq" id="5fy1Xi0jcWn" role="3clFbG">
                 <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
                 <node concept="37vLTw" id="5fy1Xi0jdfN" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="3cpWs3" id="2pwkv5pjYwF" role="37wK5m">
-                  <node concept="FJ1c_" id="2pwkv5pjYwG" role="3uHU7w">
-                    <node concept="37vLTw" id="2pwkv5pk209" role="3uHU7w">
-                      <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
+                <node concept="2YIFZM" id="6JtYk_H67oV" role="37wK5m">
+                  <ref role="37wK5l" to="bim2:6JtYk_H3TKi" resolve="cleanupMigrations" />
+                  <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+                  <node concept="FJ1c_" id="6JtYk_H6xCh" role="37wK5m">
+                    <node concept="37vLTw" id="6JtYk_H6xYP" role="3uHU7w">
+                      <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="cleanupStepsCount" />
                     </node>
-                    <node concept="37vLTw" id="2pwkv5pjYwI" role="3uHU7B">
-                      <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="2pwkv5pjYwJ" role="3uHU7B">
-                    <node concept="37vLTw" id="2pwkv5pjYwK" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                    </node>
-                    <node concept="liA8E" id="2pwkv5pjYwL" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
+                    <node concept="17qRlL" id="6JtYk_H6$0l" role="3uHU7B">
+                      <node concept="3b6qkQ" id="6JtYk_H6$2B" role="3uHU7B">
+                        <property role="$nhwW" value="1.0" />
+                      </node>
+                      <node concept="37vLTw" id="6JtYk_H6xWI" role="3uHU7w">
+                        <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1755,6 +1803,22 @@
                 <node concept="3uibUv" id="3OvHNCMjAP3" role="1Lm7xW">
                   <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
                 </node>
+                <node concept="10Oyi0" id="6dYNaa8m6DJ" role="1Lm7xW" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6JtYk_H6zj$" role="3cqZAp">
+          <node concept="1rXfSq" id="6JtYk_H6zjy" role="3clFbG">
+            <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+            <node concept="37vLTw" id="6JtYk_H6zTe" role="37wK5m">
+              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+            </node>
+            <node concept="2YIFZM" id="6JtYk_H6zWM" role="37wK5m">
+              <ref role="37wK5l" to="bim2:6JtYk_H3TDS" resolve="migrationsCheck" />
+              <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+              <node concept="3b6qkQ" id="6JtYk_H6zYO" role="37wK5m">
+                <property role="$nhwW" value="1.0" />
               </node>
             </node>
           </node>
@@ -1863,6 +1927,29 @@
                   <node concept="37vLTw" id="3n7MNzOJZrc" role="37wK5m">
                     <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
                   </node>
+                  <node concept="1bVj0M" id="6JtYk_H6EcX" role="37wK5m">
+                    <node concept="3clFbS" id="6JtYk_H6EcZ" role="1bW5cS">
+                      <node concept="3clFbF" id="6JtYk_H6FZs" role="3cqZAp">
+                        <node concept="1rXfSq" id="6JtYk_H6FZq" role="3clFbG">
+                          <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                          <node concept="37vLTw" id="6JtYk_H6X67" role="37wK5m">
+                            <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+                          </node>
+                          <node concept="2YIFZM" id="6JtYk_H6XqE" role="37wK5m">
+                            <ref role="37wK5l" to="bim2:6JtYk_H3THY" resolve="preCheck" />
+                            <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+                            <node concept="37vLTw" id="6JtYk_H7SVB" role="37wK5m">
+                              <ref role="3cqZAo" node="6JtYk_H6Ehe" resolve="fraction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="6JtYk_H6Ehe" role="1bW2Oz">
+                      <property role="TrG5h" value="fraction" />
+                      <node concept="10P55v" id="6JtYk_H7SlD" role="1tU5fm" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1918,29 +2005,62 @@
           </node>
         </node>
         <node concept="3clFbH" id="2htE_P_NQ4K" role="3cqZAp" />
+        <node concept="3cpWs8" id="6JtYk_H6Jfh" role="3cqZAp">
+          <node concept="3cpWsn" id="6JtYk_H6Jfk" role="3cpWs9">
+            <property role="TrG5h" value="projectStepsCount" />
+            <node concept="10Oyi0" id="6JtYk_H6Jff" role="1tU5fm" />
+            <node concept="2OqwBi" id="6JtYk_H6JTl" role="33vP2m">
+              <node concept="37vLTw" id="6JtYk_H6JOV" role="2Oq$k0">
+                <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
+              </node>
+              <node concept="liA8E" id="6JtYk_H6K7f" role="2OqNvi">
+                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
+                <node concept="3clFbT" id="6JtYk_H6L7H" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6JtYk_H6LIh" role="3cqZAp">
+          <node concept="37vLTI" id="6JtYk_H6MIt" role="3clFbG">
+            <node concept="3cmrfG" id="6JtYk_H6MVU" role="37vLTx">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="6JtYk_H6LIf" role="37vLTJ">
+              <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+            </node>
+          </node>
+        </node>
         <node concept="2$JKZl" id="25gV4LszN$p" role="3cqZAp">
           <node concept="3clFbS" id="25gV4LszN$q" role="2LFqv$">
+            <node concept="3clFbF" id="6JtYk_H6N5B" role="3cqZAp">
+              <node concept="3uNrnE" id="6JtYk_H6Ns7" role="3clFbG">
+                <node concept="37vLTw" id="6JtYk_H6Ns9" role="2$L3a6">
+                  <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="5fy1Xi0je1b" role="3cqZAp">
               <node concept="1rXfSq" id="5fy1Xi0je1c" role="3clFbG">
                 <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
                 <node concept="37vLTw" id="5fy1Xi0je1d" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="3cpWs3" id="5fy1Xi0je1e" role="37wK5m">
-                  <node concept="FJ1c_" id="5fy1Xi0je1f" role="3uHU7w">
-                    <node concept="37vLTw" id="5fy1Xi0je1g" role="3uHU7w">
-                      <ref role="3cqZAo" node="7rK8qWGI6gX" resolve="projectStepsCount" />
+                <node concept="2YIFZM" id="6JtYk_H6NCa" role="37wK5m">
+                  <ref role="37wK5l" to="bim2:6JtYk_H3TLZ" resolve="projectMigrations" />
+                  <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+                  <node concept="FJ1c_" id="6JtYk_H6Oh7" role="37wK5m">
+                    <node concept="37vLTw" id="6JtYk_H6OlG" role="3uHU7w">
+                      <ref role="3cqZAo" node="6JtYk_H6Jfk" resolve="projectStepsCount" />
                     </node>
-                    <node concept="37vLTw" id="5fy1Xi0je1h" role="3uHU7B">
-                      <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="5fy1Xi0je1i" role="3uHU7B">
-                    <node concept="37vLTw" id="5fy1Xi0je1j" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                    </node>
-                    <node concept="liA8E" id="5fy1Xi0je1k" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
+                    <node concept="17qRlL" id="6JtYk_H6NQq" role="3uHU7B">
+                      <node concept="3b6qkQ" id="6JtYk_H6NEc" role="3uHU7B">
+                        <property role="$nhwW" value="1.0" />
+                      </node>
+                      <node concept="37vLTw" id="6JtYk_H6NS_" role="3uHU7w">
+                        <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1962,17 +2082,6 @@
                   <property role="3clFbU" value="false" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5fy1Xi0jf1I" role="3cqZAp">
-          <node concept="1rXfSq" id="5fy1Xi0jf1J" role="3clFbG">
-            <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
-            <node concept="37vLTw" id="5fy1Xi0jf1K" role="37wK5m">
-              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-            </node>
-            <node concept="37vLTw" id="5fy1Xi0jfHa" role="37wK5m">
-              <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
             </node>
           </node>
         </node>
@@ -2015,36 +2124,45 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6JtYk_H6Pzg" role="3cqZAp">
+          <node concept="37vLTI" id="6JtYk_H6Qt0" role="3clFbG">
+            <node concept="3cmrfG" id="6JtYk_H6QEK" role="37vLTx">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="6JtYk_H6Pze" role="37vLTJ">
+              <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+            </node>
+          </node>
+        </node>
         <node concept="2$JKZl" id="25gV4LsznDS" role="3cqZAp">
           <node concept="3clFbS" id="25gV4LsznDU" role="2LFqv$">
+            <node concept="3clFbF" id="6JtYk_H6RhN" role="3cqZAp">
+              <node concept="3uNrnE" id="6JtYk_H6RE5" role="3clFbG">
+                <node concept="37vLTw" id="6JtYk_H6RE7" role="2$L3a6">
+                  <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="5fy1Xi0jgrO" role="3cqZAp">
               <node concept="1rXfSq" id="5fy1Xi0jgrP" role="3clFbG">
                 <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
                 <node concept="37vLTw" id="5fy1Xi0jgrQ" role="37wK5m">
                   <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
                 </node>
-                <node concept="3cpWs3" id="5fy1Xi0jh3T" role="37wK5m">
-                  <node concept="FJ1c_" id="5fy1Xi0jh3U" role="3uHU7w">
-                    <node concept="37vLTw" id="5fy1Xi0jh3V" role="3uHU7w">
+                <node concept="2YIFZM" id="6JtYk_H6YSJ" role="37wK5m">
+                  <ref role="37wK5l" to="bim2:6JtYk_H3TND" resolve="languageMigrations" />
+                  <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+                  <node concept="FJ1c_" id="6JtYk_H6Smu" role="37wK5m">
+                    <node concept="37vLTw" id="6JtYk_H6Sqj" role="3uHU7w">
                       <ref role="3cqZAo" node="7rK8qWGIaEv" resolve="languageStepsCount" />
                     </node>
-                    <node concept="1eOMI4" id="5fy1Xi0jh3W" role="3uHU7B">
-                      <node concept="3cpWsd" id="5fy1Xi0jh3X" role="1eOMHV">
-                        <node concept="37vLTw" id="5fy1Xi0jh3Y" role="3uHU7w">
-                          <ref role="3cqZAo" node="7rK8qWGIczJ" resolve="projectStepsFraction" />
-                        </node>
-                        <node concept="3b6qkQ" id="5fy1Xi0jh3Z" role="3uHU7B">
-                          <property role="$nhwW" value="1.0" />
-                        </node>
+                    <node concept="17qRlL" id="6JtYk_H6R8N" role="3uHU7B">
+                      <node concept="3b6qkQ" id="6JtYk_H6QKs" role="3uHU7B">
+                        <property role="$nhwW" value="1.0" />
                       </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="5fy1Xi0jh40" role="3uHU7B">
-                    <node concept="37vLTw" id="5fy1Xi0jh41" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-                    </node>
-                    <node concept="liA8E" id="5fy1Xi0jh42" role="2OqNvi">
-                      <ref role="37wK5l" to="fw3h:~ProgressIndicator.getFraction():double" resolve="getFraction" />
+                      <node concept="37vLTw" id="6JtYk_H6RaS" role="3uHU7w">
+                        <ref role="3cqZAo" node="6JtYk_H6uW3" resolve="stepNum" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2060,17 +2178,6 @@
               <node concept="liA8E" id="25gV4Lszl1p" role="2OqNvi">
                 <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextLanguageStep" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5fy1Xi0ji0Z" role="3cqZAp">
-          <node concept="1rXfSq" id="5fy1Xi0ji11" role="3clFbG">
-            <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
-            <node concept="37vLTw" id="5fy1Xi0ji12" role="37wK5m">
-              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
-            </node>
-            <node concept="3b6qkQ" id="5fy1Xi0jiFy" role="37wK5m">
-              <property role="$nhwW" value="1.0" />
             </node>
           </node>
         </node>
@@ -2134,6 +2241,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6JtYk_H6TD2" role="3cqZAp">
+          <node concept="1rXfSq" id="6JtYk_H6TD0" role="3clFbG">
+            <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+            <node concept="37vLTw" id="6JtYk_H6Uhm" role="37wK5m">
+              <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+            </node>
+            <node concept="2YIFZM" id="6JtYk_H6UkF" role="37wK5m">
+              <ref role="37wK5l" to="bim2:6JtYk_H3TRx" resolve="saving" />
+              <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+              <node concept="3b6qkQ" id="6JtYk_H6UmG" role="37wK5m">
+                <property role="$nhwW" value="1.0" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="513ZrA4x2JV" role="3cqZAp" />
         <node concept="3clFbF" id="6Sxc5MisG_v" role="3cqZAp">
           <node concept="1rXfSq" id="6Sxc5MisG_w" role="3clFbG">
@@ -2177,6 +2299,15 @@
                   </node>
                 </node>
               </node>
+              <node concept="3cpWs8" id="6JtYk_H6W7l" role="3cqZAp">
+                <node concept="3cpWsn" id="6JtYk_H6W7m" role="3cpWs9">
+                  <property role="TrG5h" value="moduleNum" />
+                  <node concept="10Oyi0" id="6JtYk_H6W7n" role="1tU5fm" />
+                  <node concept="3cmrfG" id="6JtYk_H6W7o" role="33vP2m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbJ" id="2htE_P_Nte5" role="3cqZAp">
                 <node concept="3clFbS" id="2htE_P_Nte7" role="3clFbx">
                   <node concept="3clFbF" id="2htE_P_NjU5" role="3cqZAp">
@@ -2200,6 +2331,36 @@
                   <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
                   <node concept="37vLTw" id="3n7MNzOJZQZ" role="37wK5m">
                     <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
+                  </node>
+                  <node concept="1bVj0M" id="6JtYk_H6Wl9" role="37wK5m">
+                    <node concept="3clFbS" id="6JtYk_H6Wla" role="1bW5cS">
+                      <node concept="3clFbF" id="6JtYk_H6Wlb" role="3cqZAp">
+                        <node concept="3uNrnE" id="6JtYk_H6Wlc" role="3clFbG">
+                          <node concept="37vLTw" id="6JtYk_H6Wld" role="2$L3a6">
+                            <ref role="3cqZAo" node="6JtYk_H6W7m" resolve="moduleNum" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6JtYk_H6Wle" role="3cqZAp">
+                        <node concept="1rXfSq" id="6JtYk_H6Wlf" role="3clFbG">
+                          <ref role="37wK5l" node="5fy1Xi0iCHE" resolve="setFraction" />
+                          <node concept="37vLTw" id="6JtYk_H6Wlg" role="37wK5m">
+                            <ref role="3cqZAo" node="7rK8qWGFcdK" resolve="progress" />
+                          </node>
+                          <node concept="2YIFZM" id="6JtYk_H6YWP" role="37wK5m">
+                            <ref role="37wK5l" to="bim2:6JtYk_H3TPv" resolve="postCheck" />
+                            <ref role="1Pybhc" to="bim2:6JtYk_H3TjG" resolve="ProgressEstimation" />
+                            <node concept="37vLTw" id="6JtYk_H7TEU" role="37wK5m">
+                              <ref role="3cqZAo" node="6JtYk_H6Wlo" resolve="fraction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="6JtYk_H6Wlo" role="1bW2Oz">
+                      <property role="TrG5h" value="fraction" />
+                      <node concept="10P55v" id="6JtYk_H7T0g" role="1tU5fm" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2365,7 +2526,7 @@
                           <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
                         </node>
                         <node concept="liA8E" id="513ZrA4x4zU" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~DefaultListModel.indexOf(java.lang.Object):int" resolve="indexOf" />
+                          <ref role="37wK5l" to="dbrf:~DefaultListModel.lastIndexOf(java.lang.Object):int" resolve="lastIndexOf" />
                           <node concept="37vLTw" id="513ZrA4x4$5" role="37wK5m">
                             <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
                           </node>
@@ -2745,6 +2906,7 @@
               <node concept="37vLTw" id="2htE_P_LHck" role="37wK5m">
                 <ref role="3cqZAo" node="2htE_P_LHc8" resolve="modules" />
               </node>
+              <node concept="10Nm6u" id="6JtYk_H7HDW" role="37wK5m" />
               <node concept="3cmrfG" id="2htE_P_LHcl" role="37wK5m">
                 <property role="3cmrfH" value="100" />
               </node>
@@ -2857,6 +3019,7 @@
               <node concept="37vLTw" id="2htE_P_LGc0" role="37wK5m">
                 <ref role="3cqZAo" node="2htE_P_LFN2" resolve="modules" />
               </node>
+              <node concept="10Nm6u" id="6JtYk_H7G74" role="37wK5m" />
               <node concept="3cmrfG" id="2htE_P_LEJ6" role="37wK5m">
                 <property role="3cmrfH" value="100" />
               </node>
@@ -2937,6 +3100,7 @@
             <node concept="3uibUv" id="3OvHNCMjF7v" role="1Lm7xW">
               <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
             </node>
+            <node concept="10Oyi0" id="6dYNaa8mBun" role="1Lm7xW" />
           </node>
         </node>
       </node>
@@ -2951,6 +3115,7 @@
               <node concept="3uibUv" id="3OvHNCMjEO5" role="1Lm7xW">
                 <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
               </node>
+              <node concept="10Oyi0" id="6dYNaa8mAUX" role="1Lm7xW" />
             </node>
           </node>
         </node>
@@ -3040,21 +3205,8 @@
                           <node concept="2ShNRf" id="7k0ZD$h8l1v" role="10QFUP">
                             <node concept="1pGfFk" id="7k0ZD$h8l1w" role="2ShVmc">
                               <ref role="37wK5l" to="t99v:2htE_P_SIXr" resolve="MissingMigrationProblem" />
-                              <node concept="1LFfDK" id="7k0ZD$h8l1x" role="37wK5m">
-                                <node concept="3cmrfG" id="7k0ZD$h8l1y" role="1LF_Uc">
-                                  <property role="3cmrfH" value="0" />
-                                </node>
-                                <node concept="37vLTw" id="7k0ZD$h8l1z" role="1LFl5Q">
-                                  <ref role="3cqZAo" node="3OvHNCMjL8X" resolve="it" />
-                                </node>
-                              </node>
-                              <node concept="1LFfDK" id="7k0ZD$h8l1$" role="37wK5m">
-                                <node concept="3cmrfG" id="7k0ZD$h8l1_" role="1LF_Uc">
-                                  <property role="3cmrfH" value="1" />
-                                </node>
-                                <node concept="37vLTw" id="7k0ZD$h8l1A" role="1LFl5Q">
-                                  <ref role="3cqZAo" node="3OvHNCMjL8X" resolve="it" />
-                                </node>
+                              <node concept="37vLTw" id="6dYNaa8mC1k" role="37wK5m">
+                                <ref role="3cqZAo" node="3OvHNCMjL8X" resolve="it" />
                               </node>
                             </node>
                           </node>

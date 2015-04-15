@@ -50,7 +50,7 @@ public class ParallelFor_Behavior {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body"));
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068581517677");
+    return null;
   }
   public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return true;

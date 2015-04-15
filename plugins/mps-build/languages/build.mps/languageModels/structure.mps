@@ -625,6 +625,10 @@
       <property role="TrG5h" value="minor" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="3FfyF1J0n1L" role="1TKVEl">
+      <property role="TrG5h" value="bugfixNr" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyi" id="328lVm4LOT6" role="1TKVEl">
       <property role="TrG5h" value="eap" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />

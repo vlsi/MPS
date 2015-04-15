@@ -7,14 +7,17 @@ import junit.framework.Assert;
 
 public class PropertiesTest_Test extends TestCase {
   public void test_properties() throws Exception {
-    TestClass testClass = new TestClass(239);
-    Assert.assertEquals(239, testClass.getPropertyValue());
-    Assert.assertEquals(239, testClass.value);
-    Assert.assertEquals(239, testClass.getSecondPropertyValue());
-    testClass.changeValueUsingNestedClass(1);
-    Assert.assertEquals(1, testClass.getPropertyValue());
-    Assert.assertEquals(1, testClass.value);
-    Assert.assertEquals(1, testClass.getSecondPropertyValue());
+    TestClass testClass = new TestClass(1);
+    Assert.assertEquals(1, testClass.getProp1());
+    Assert.assertEquals(1, testClass.getProp2());
+    Assert.assertEquals(1, testClass.getProp3());
+    Assert.assertEquals(1, testClass.getProp4());
+
+    testClass.changeValueUsingNestedClass(2);
+    Assert.assertEquals(2, testClass.getProp1());
+    Assert.assertEquals(2, testClass.getProp2());
+    Assert.assertEquals(2, testClass.getProp3());
+    Assert.assertEquals(1, testClass.getProp4());
   }
   public PropertiesTest_Test() {
   }

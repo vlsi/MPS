@@ -18,5 +18,11 @@ package jetbrains.mps.ide.editorTabs.tabfactory;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface NodeChangeCallback {
+  /**
+   * Will be called to change currently active/edited node (oldNode) to newNode.
+   * This method will not check if newNode == oldNode and will force editor update always.
+   *
+   * @param newNode the node to be selected in tabbed editor
+   */
   void changeNode(SNode newNode);
 }

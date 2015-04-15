@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -31,7 +32,7 @@ public class ModelRenamer {
   }
 
   public void rename() {
-    myModelDescriptor.rename(myModelName, true);
+    myModelDescriptor.rename(myModelName, myModelDescriptor.getSource() instanceof FileDataSource);
   }
 
   public void updateReferencesIfNeeded(Project project) {

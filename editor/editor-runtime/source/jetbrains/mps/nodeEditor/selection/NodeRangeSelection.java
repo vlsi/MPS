@@ -94,7 +94,11 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     }
     myFilter = createSelectionFilter(properties);
     myEmptyCellId = properties.get(EMPTY_CELL_ID);
-    initSelectedCells();
+    try {
+      initSelectedCells();
+    } catch (CellNotFoundException e) {
+      throw new SelectionRestoreException();
+    }
   }
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode) {
@@ -116,10 +120,14 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     assert myParentNode == myLastNode.getParent();
     assert myRole != null && myRole.equals(
         myLastNode.getRoleInParent()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRoleInParent();
-    initSelectedCells();
+    try {
+      initSelectedCells();
+    } catch (CellNotFoundException e) {
+      assert false : "EditorCell was not found for node: " + e.getNode();
+    }
   }
 
-  private void initSelectedCells() {
+  private void initSelectedCells() throws CellNotFoundException {
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
     boolean withinSelection = false;
     boolean breakLoop = false;
@@ -134,7 +142,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       }
       if (withinSelection) {
         EditorCell editorCell = getEditorComponent().findNodeCell(child);
-        assert editorCell != null : "editor cell was not found for node: " + child;
+        if (editorCell == null) {
+          throw new CellNotFoundException(child);
+        }
         selectedCells.add(editorCell);
       }
       if (breakLoop) {
@@ -385,6 +395,19 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     public abstract String getModuleReference();
 
     public void loadFilter(Map<String, String> properties) throws SelectionRestoreException, SelectionStoreException {
+    }
+  }
+
+  private static class CellNotFoundException extends Exception {
+    private SNode myNode;
+
+    private CellNotFoundException(SNode node) {
+      super("EditorCell was not found, node: " + node);
+      myNode = node;
+    }
+
+    public SNode getNode() {
+      return myNode;
     }
   }
 }

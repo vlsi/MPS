@@ -41,8 +41,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -187,8 +187,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return projectMig || languageMig;
   }
 
-  public List<Tuples._2<SModule, SLanguage>> getMissingMigrations() {
-    final List<Tuples._2<SModule, SLanguage>> result = ListSequence.fromList(new ArrayList<Tuples._2<SModule, SLanguage>>());
+  public List<Tuples._3<SModule, SLanguage, Integer>> getMissingMigrations() {
+    final List<Tuples._3<SModule, SLanguage, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, SLanguage, Integer>>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
@@ -203,8 +203,13 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             if (ver >= currentLangVersion) {
               continue;
             }
-
-            ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage>from(module, lang));
+            for (int v = ver; v < currentLangVersion; v++) {
+              if (fetchScript(new MigrationScriptReference(lang, v)) == null) {
+                ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
+                // next used language, please 
+                break;
+              }
+            }
           }
         }
       }
@@ -266,8 +271,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return true;
   }
 
-  public int projectStepsCount() {
-    return ProjectMigrationsRegistry.getInstance().getMigrations().size();
+  public int projectStepsCount(boolean isCleanup) {
+    List<ProjectMigration> migrations = ProjectMigrationsRegistry.getInstance().getMigrations();
+    int cleanupSize = ListSequence.fromList(migrations).ofType(CleanupProjectMigration.class).count();
+    return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
   public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
