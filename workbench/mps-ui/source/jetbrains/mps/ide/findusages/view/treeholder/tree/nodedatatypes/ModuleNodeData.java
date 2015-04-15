@@ -17,16 +17,15 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -36,37 +35,19 @@ import javax.swing.Icon;
 public class ModuleNodeData extends AbstractResultNodeData {
   private static final String MODULE_REF = "module_ref";
 
-  private SModuleReference myModuleReference = new jetbrains.mps.project.structure.modules.ModuleReference("");
+  private SModuleReference myModuleReference;
 
-  public ModuleNodeData(PathItemRole role, SearchResult result, boolean isResult, INodeRepresentator nodeRepresentator, boolean resultsSection) {
-    super(role,
-      (isResult && nodeRepresentator != null) ?
-        nodeRepresentator.getPresentation(result.getObject()) :
-        getCaption((SModule) result.getPathObject()),
-      "", true, isResult, resultsSection);
-    myModuleReference = ((SModule) result.getPathObject()).getModuleReference();
-  }
-
-  public ModuleNodeData(PathItemRole role, SModule module, boolean isResult, boolean resultsSection) {
-    super(role, getCaption(module), "", true, isResult, resultsSection);
-    myModuleReference = module.getModuleReference();
+  public ModuleNodeData(PathItemRole role, @Nullable String caption, @NotNull SModuleReference moduleRef, boolean isResult, boolean resultsSection) {
+    super(role, caption != null ? caption : getCaption(moduleRef), "", true, isResult, resultsSection);
+    myModuleReference = moduleRef;
   }
 
   public ModuleNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  private static String getCaption(SModule module) {
-    if (module instanceof Generator) {
-      Generator generator = (Generator) module;
-      String name = generator.getName();
-      if (name == null || name.equals("")) name = "no name";
-      return generator.getSourceLanguage().getModuleName() + " (generator/" + name + ")";
-    } else {
-      String namespace = module.getModuleName();
-      if (namespace == null) return "null";
-      return namespace;
-    }
+  private static String getCaption(SModuleReference moduleRef) {
+    return moduleRef.getModuleName();
   }
 
 
@@ -77,6 +58,11 @@ public class ModuleNodeData extends AbstractResultNodeData {
     return IconManager.getIconFor(module);
   }
 
+  /**
+   * @deprecated use {@link #getModuleReference()} and resolve as appropriate from the calling context
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }

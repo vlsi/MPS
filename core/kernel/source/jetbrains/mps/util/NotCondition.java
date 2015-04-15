@@ -32,4 +32,11 @@ public final class NotCondition<T> implements Condition<T> {
   public boolean met(T obj) {
     return !myDelegate.met(obj);
   }
+
+  /**
+   * Handy alternative to <code>new NotCondition()</code> (to save type argument)
+   */
+  public static <T> NotCondition<T> negate(@NotNull Condition<T> delegate) {
+    return new NotCondition<T>(delegate);
+  }
 }

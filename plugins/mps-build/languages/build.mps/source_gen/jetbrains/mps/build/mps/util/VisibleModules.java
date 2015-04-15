@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

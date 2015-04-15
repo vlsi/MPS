@@ -1,0 +1,76 @@
+/*
+ * Copyright 2003-2014 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.smodel.runtime.impl;
+
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.textGen.SNodeTextGen;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.textGen.TextGenBuffer;
+
+public class SNodeTextGenAdapter implements TextGenDescriptor {
+  // main difference between SNodeTextGen and TextGenDescriptor is: descriptor should be thread-safe and without any state
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeTextGenAdapter.class));
+
+  private final Class<SNodeTextGen> textGenClass;
+
+  public SNodeTextGenAdapter(String fqName, Class<SNodeTextGen> textGenClass) {
+    this.textGenClass = textGenClass;
+    try {
+      textGenClass.newInstance();
+    } catch (Exception e) {
+      LOG.error(e, fqName);
+    }
+  }
+
+  @Override
+  public void doGenerateText(@NotNull SNode node, @NotNull TextGenBuffer buffer) {
+    final SNodeTextGen textGen = getInstance();
+    textGen.setBuffer(buffer);
+    try {
+      textGen.setSNode(node);
+      textGen.doGenerateText(node);
+      textGen.setSNode(null);
+    } catch (Exception e) {
+      buffer.foundError("failed to generate text for " + SNodeOperations.getDebugText(node), node, e);
+    }
+  }
+
+  @NotNull
+  @Override
+  public String getFilename(SNode node) {
+    return String.valueOf(getInstance().getFilename(node));
+  }
+
+  @Override
+  public String getExtension(SNode node) {
+    return getInstance().getExtension(node);
+  }
+
+  private SNodeTextGen getInstance() {
+    try {
+      return textGenClass.newInstance();
+    } catch (RuntimeException ex) {
+      throw ex;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+}

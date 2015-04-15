@@ -150,7 +150,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1070,50 +1070,6 @@
             <property role="3SKdUp" value=" TODO use context to get data to the action" />
           </node>
         </node>
-        <node concept="3cpWs8" id="3SnNvqCbxQf" role="3cqZAp">
-          <node concept="3cpWsn" id="3SnNvqCbxQg" role="3cpWs9">
-            <property role="TrG5h" value="restartAction" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="3SnNvqCbxQh" role="1tU5fm">
-              <ref role="3uigEE" to="f8sb:~RestartAction" resolve="RestartAction" />
-            </node>
-            <node concept="2ShNRf" id="3SnNvqCbxQi" role="33vP2m">
-              <node concept="1pGfFk" id="3SnNvqCbxQj" role="2ShVmc">
-                <ref role="37wK5l" to="f8sb:~RestartAction.&lt;init&gt;(com.intellij.execution.Executor,com.intellij.execution.runners.ProgramRunner,com.intellij.execution.ui.RunContentDescriptor,com.intellij.execution.runners.ExecutionEnvironment)" resolve="RestartAction" />
-                <node concept="37vLTw" id="2BHiRxeuTu7" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMH" resolve="myExecutor" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuPhK" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMp" resolve="myRunner" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmwSu" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxQ7" resolve="contentDescriptor" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeun7h" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMK" resolve="myEnvironment" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3SnNvqCbxQt" role="3cqZAp">
-          <node concept="2OqwBi" id="3SnNvqCbxQu" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTw3b" role="2Oq$k0">
-              <ref role="3cqZAo" node="3SnNvqCbxQg" resolve="restartAction" />
-            </node>
-            <node concept="liA8E" id="3SnNvqCbxQw" role="2OqNvi">
-              <ref role="37wK5l" to="f8sb:~RestartAction.registerShortcut(javax.swing.JComponent):void" resolve="registerShortcut" />
-              <node concept="2OqwBi" id="3SnNvqCbxQx" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxglK_1" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxQ5" resolve="ui" />
-                </node>
-                <node concept="liA8E" id="3SnNvqCbxQz" role="2OqNvi">
-                  <ref role="37wK5l" to="l9cs:~RunnerLayoutUi.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3SnNvqCbxQ$" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCbxQ_" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTwW3" role="2Oq$k0">
@@ -1121,8 +1077,18 @@
             </node>
             <node concept="liA8E" id="3SnNvqCbxQB" role="2OqNvi">
               <ref role="37wK5l" to="nx1:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="37vLTw" id="3GM_nagTz9w" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCbxQg" resolve="restartAction" />
+              <node concept="2OqwBi" id="4Sa0NTIlImd" role="37wK5m">
+                <node concept="2YIFZM" id="4Sa0NTIlImj" role="2Oq$k0">
+                  <ref role="1Pybhc" to="nx1:~ActionManager" resolve="ActionManager" />
+                  <ref role="37wK5l" to="nx1:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="4Sa0NTIlImf" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                  <node concept="10M0yZ" id="4Sa0NTIlImJ" role="37wK5m">
+                    <ref role="3cqZAo" to="nx1:~IdeActions.ACTION_RERUN" resolve="ACTION_RERUN" />
+                    <ref role="1PxDUh" to="nx1:~IdeActions" resolve="IdeActions" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

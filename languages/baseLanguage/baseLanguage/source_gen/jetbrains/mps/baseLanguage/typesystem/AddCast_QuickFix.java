@@ -36,7 +36,7 @@ public class AddCast_QuickFix extends QuickFix_Runtime {
       return;
     }
     SNode actualType = (SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")) ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])));
-    SNode cast = SNodeOperations.replaceWithNewChild(((SNode) AddCast_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.CastExpression");
+    SNode cast = SNodeOperations.replaceWithNewChild(((SNode) AddCast_QuickFix.this.getField("expression")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"));
     SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), ((SNode) AddCast_QuickFix.this.getField("expression")[0]));
     SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), SNodeOperations.copyNode(actualType));
     boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(cast);

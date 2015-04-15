@@ -9,6 +9,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class FieldReferenceOperation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), false));
+    BaseLanguageTextGen.referenceToShortName(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), this);
   }
 }

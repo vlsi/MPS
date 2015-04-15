@@ -8710,30 +8710,6 @@
       <unit id="6007318803030060657" at="10,0,30,0" name="jetbrains.mps.editorTest.AddReference_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6007318803034322732">
-    <file name="AddStatements_Test.java">
-      <node id="6007318803034322732" at="15,53,16,107" concept="2" />
-      <node id="6007318803034322732" at="16,107,17,94" concept="2" />
-      <node id="6007318803034322732" at="24,51,25,63" concept="2" />
-      <node id="6007318803034324810" at="25,63,26,44" concept="2" />
-      <node id="3215314425155964179" at="26,44,27,74" concept="2" />
-      <node id="3215314425156963396" at="27,74,28,44" concept="2" />
-      <node id="6007318803034322732" at="12,0,14,0" concept="1" trace="AddStatements_Test#()V" />
-      <node id="6007318803034322732" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="6007318803034322732" at="14,0,19,0" concept="5" trace="test_AddStatements#()V" />
-      <node id="6007318803034322732" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="6007318803034322732" at="12,31,12,31" />
-      <scope id="6007318803034322732" at="21,23,21,23" />
-      <scope id="6007318803034322732" at="12,0,14,0" />
-      <scope id="6007318803034322732" at="15,53,17,94" />
-      <scope id="6007318803034322732" at="21,0,23,0" />
-      <scope id="6007318803034322732" at="24,51,28,44" />
-      <scope id="6007318803034322732" at="14,0,19,0" />
-      <scope id="6007318803034322732" at="23,0,30,0" />
-      <unit id="6007318803034322732" at="19,0,31,0" name="jetbrains.mps.editorTest.AddStatements_Test$TestBody" />
-      <unit id="6007318803034322732" at="10,0,32,0" name="jetbrains.mps.editorTest.AddStatements_Test" />
-    </file>
-  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6042072087468697821">
     <file name="LT_DotExpression_with_MinusAssignment_Test.java">
       <node id="6042072087468697821" at="15,77,16,107" concept="2" />

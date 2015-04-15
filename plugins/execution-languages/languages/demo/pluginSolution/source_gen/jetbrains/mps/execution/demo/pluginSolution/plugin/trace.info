@@ -385,7 +385,7 @@
       <scope id="8750596094204760417" at="57,0,74,0">
         <var name="element" id="8750596094204760417" />
       </scope>
-      <unit id="1448685625140440250" at="40,137,44,3" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration$1" />
+      <unit id="1448685625140440250" at="40,231,44,3" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration$1" />
       <unit id="8750596094204760417" at="92,0,101,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration$MyState" />
       <unit id="8750596094204760417" at="37,0,133,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration" />
     </file>

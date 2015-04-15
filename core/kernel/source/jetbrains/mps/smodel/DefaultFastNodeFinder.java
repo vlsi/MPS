@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,47 +18,27 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 
 // XXX almost identical to TransientModelNodeFinder, once
 // NodeReadAccessCasterInEditor#runReadTransparentAction has better alternative, merge.
 public class DefaultFastNodeFinder extends BaseFastNodeFinder {
-  // XXX identical to listener in TransientModelNodeFinder
-  private final SModelChangeListener myListener = new SModelChangeListener() {
-    @Override
-    public void nodeAdded(org.jetbrains.mps.openapi.model.SModel model, SNode node, String role, SNode child) {
-      added(child);
-    }
-
-    @Override
-    public void nodeRemoved(org.jetbrains.mps.openapi.model.SModel model, SNode node, String role, SNode child) {
-      removed(child);
-    }
-
-    @Override
-    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
-      // no-op
-    }
-
-    @Override
-    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
-      // no-op, FNF doesn't depend on references, structure only
-    }
-  };
+  private final SNodeChangeListener myListener;
 
   public DefaultFastNodeFinder(SModel model) {
     super(model);
     if (!model.isReadOnly() && model instanceof EditableSModel) {
-      ((EditableSModel) model).addChangeListener(myListener);
+      myListener = new ChangeTracker();
+      model.addChangeListener(myListener);
+    } else {
+      myListener = null;
     }
   }
 
   @Override
   public void dispose() {
-    if (myModel instanceof EditableSModel) {
-      ((EditableSModel) myModel).removeChangeListener(myListener);
+    if (myListener != null) {
+      myModel.removeChangeListener(myListener);
     }
     super.dispose();
   }

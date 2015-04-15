@@ -44,7 +44,7 @@ public class NonExistingClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public synchronized byte[] getClass(String name) {
+  public ClassBytes getClassBytes(String name) {
     checkValidity();
     return null;
   }
@@ -61,13 +61,13 @@ public class NonExistingClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public synchronized Iterable<String> getAvailableClasses(String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     return Collections.emptyList();
   }
 
   @Override
-  public synchronized Iterable<String> getSubpackages(String namespace) {
+  public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     return Collections.emptyList();
   }

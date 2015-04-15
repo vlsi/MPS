@@ -118,7 +118,6 @@ import java.util.Set;
     performActionsAfterChecking();
     myState.performActionsAfterChecking();  }
 
-  @UseCarefully
   public void setChecked() {
     myIsChecked = true;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,14 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeAccessUtilImpl;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
+import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -66,17 +65,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public final class MPSCore extends ComponentPlugin {
 
   public MPSCore() {
-  }
-
-  /**
-   * @deprecated MPSCore instance is kept by initialization code (which activates the environment)
-   * and should not be accessed unless initialization code passes it anywhere
-   * @return new, not initialized instance
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static MPSCore getInstance() {
-    return new MPSCore();
   }
 
   @Override
@@ -113,6 +101,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new QueryMethodGenerated(classLoaderManager));
     LanguageRegistry languageRegistry = init(new LanguageRegistry(moduleRepository, classLoaderManager));
     init(new ConceptRegistry(languageRegistry));
+    init(new TextGenRegistry(languageRegistry));
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
@@ -130,68 +119,5 @@ public final class MPSCore extends ComponentPlugin {
 
     init(new BootstrapMakeFacets());
     init(new PropertySupportCache(classLoaderManager));
-  }
-
-  /**
-   * @deprecated use {@link jetbrains.mps.smodel.SModelRepository#getInstance()} directly
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public SModelRepository getModelRepository() {
-    return SModelRepository.getInstance();
-  }
-
-  /**
-   * @deprecated use {@link jetbrains.mps.smodel.MPSModuleRepository#getInstance()} directly
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public MPSModuleRepository getModuleRepository() {
-    return MPSModuleRepository.getInstance();
-  }
-
-  /**
-   * @deprecated use {@link jetbrains.mps.smodel.GlobalSModelEventsManager#getInstance()} directly
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public GlobalSModelEventsManager getGlobalSModelEventsManager() {
-    return GlobalSModelEventsManager.getInstance();
-  }
-
-  /**
-   * @deprecated use [kernel] {@link RuntimeFlags#isTestMode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public boolean isTestMode() {
-    return RuntimeFlags.isTestMode();
-  }
-
-  /**
-   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(jetbrains.mps.TestMode)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setTestMode(boolean flag) {
-    RuntimeFlags.setTestMode(TestMode.USUAL);
-  }
-
-  /**
-   * @deprecated use [kernel] {@link jetbrains.mps.RuntimeFlags#isMergeDriverMode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public boolean isMergeDriverMode() {
-    return RuntimeFlags.isMergeDriverMode();
-  }
-
-  /**
-   * @deprecated use [kernel] {@link RuntimeFlags#setMergeDriverMode(boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setMergeDriverMode(boolean mergeDriverMode) {
-    RuntimeFlags.setMergeDriverMode(mergeDriverMode);
   }
 }

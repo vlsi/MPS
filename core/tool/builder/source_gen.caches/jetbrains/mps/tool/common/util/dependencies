@@ -28,9 +28,9 @@
     <classNode dependClassName="jetbrains.mps.tool.common.util.FileLoader" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.JarLoader" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.Loader" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="sun.misc.Resource" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.ClasspathCache" file="ClasspathCache.java">
     <classNode dependClassName="java.lang.String" />
@@ -65,7 +65,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.FileLoader" file="FileLoader.java">
-    <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -80,10 +79,10 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.ClasspathCache" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="jetbrains.mps.tool.common.util.Loader" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.FileUtil" file="FileUtil.java">
@@ -112,11 +111,11 @@
     <classNode dependClassName="java.util.zip.ZipFile" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.ClasspathCache" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.TimedComputable" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="jetbrains.mps.tool.common.util.Loader" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.Loader" file="Loader.java">
@@ -124,8 +123,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.ClasspathCache" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="sun.misc.Resource" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.ProjectUtil" file="ProjectUtil.java">
     <classNode dependClassName="java.io.File" />
@@ -135,6 +134,12 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.common.util.Resource" file="Resource.java">
+    <classNode dependClassName="java.io.ByteArrayOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.net.URL" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.StringUtil" file="StringUtil.java">
     <classNode dependClassName="java.lang.CharSequence" />
@@ -201,9 +206,9 @@
     <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.ClassPath" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="java.lang.ClassLoader" />
   </dependency>
 </dependenciesRoot>

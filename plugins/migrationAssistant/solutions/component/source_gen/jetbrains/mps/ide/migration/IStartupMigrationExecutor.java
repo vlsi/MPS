@@ -4,5 +4,4 @@ package jetbrains.mps.ide.migration;
 
 
 public interface IStartupMigrationExecutor {
-  public void executeWizard();
 }

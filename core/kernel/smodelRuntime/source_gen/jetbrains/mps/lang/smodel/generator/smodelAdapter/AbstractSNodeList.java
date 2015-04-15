@@ -9,9 +9,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /*package*/ abstract class AbstractSNodeList<LinkType> extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
@@ -161,53 +158,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       if (node.getParent() != null) {
         node.getParent().removeChild(node);
       }
-      SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
-    }
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static class AggregatedSNodesList extends AbstractSNodeList<String> {
-    @Deprecated
-    public AggregatedSNodesList(SNode parent, String role) {
-      super(parent, role, IterableUtil.asList(parent.getChildren(role)));
-    }
-    @Override
-    protected void doRemoveReference(SNode node) {
-      myReferenceContainer.removeChild(node);
-    }
-    @Override
-    protected void doAddReference(SNode node) {
-      if (node.getParent() != null) {
-        node.getParent().removeChild(node);
-      }
-      myReferenceContainer.addChild(myRole, node);
-    }
-    @Override
-    protected void insertAfter(SNode node, SNode anchorNode) {
-      if (node.getParent() != null) {
-        node.getParent().removeChild(node);
-      }
-      SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
-    }
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static class LinkedSNodesList extends AbstractSNodeList<String> {
-    @Deprecated
-    public LinkedSNodesList(SNode referenceContainer, String role) {
-      super(referenceContainer, role, referenceContainer.getReferenceTarget(role));
-    }
-    @Override
-    protected void doRemoveReference(SNode node) {
-      SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, null);
-    }
-    @Override
-    protected void doAddReference(SNode node) {
-      SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, node);
-    }
-    @Override
-    protected void insertAfter(SNode node, SNode anchorNode) {
-      doAddReference(node);
+      myReferenceContainer.insertChildBefore(myRole, node, (anchorNode == null ? myReferenceContainer.getFirstChild() : anchorNode.getNextSibling()));
     }
   }
 

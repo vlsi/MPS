@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @deprecated use DefContainmentSubstituteInfo
+ */
+
+@Deprecated
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultChildSubstituteInfo.class));
 
@@ -55,7 +60,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         myParentNode = sourceNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         Iterable<? extends SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
@@ -74,7 +79,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
           LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration);
         }
         myParentNode = parentNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }

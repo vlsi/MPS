@@ -4,24 +4,22 @@ package jetbrains.mps.execution.lib.ui;
 
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.execution.lib.NodesDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -33,23 +31,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeBySeveralConceptChooser extends NodeChooser {
   @NotNull
-  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.fromList(new ArrayList<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
+  private final List<NodesDescriptor> myTargetConcepts = ListSequence.fromList(new ArrayList<NodesDescriptor>());
   private final ModulesWithLanguagesScope myScope;
-  public NodeBySeveralConceptChooser(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>... targets) {
+  public NodeBySeveralConceptChooser(NodesDescriptor... targets) {
     this(Sequence.fromIterable(Sequence.fromArray(targets)).toListSequence());
   }
-  public NodeBySeveralConceptChooser(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
-      public Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        return MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ? "jetbrains.mps.lang.core.structure.BaseConcept" : it._0()), it._1());
+  public NodeBySeveralConceptChooser(List<NodesDescriptor> targets) {
+    ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<NodesDescriptor, NodesDescriptor>() {
+      public NodesDescriptor select(NodesDescriptor it) {
+        return new NodesDescriptor((it.concept() == null ? MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept") : it.concept()), it.filter());
       }
     }));
 
-    Iterable<Language> languages = ListSequence.fromList(myTargetConcepts).select(new ISelector<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Language>() {
-      public Language select(final Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+    Iterable<Language> languages = ListSequence.fromList(myTargetConcepts).select(new ISelector<NodesDescriptor, Language>() {
+      public Language select(final NodesDescriptor it) {
         return ModelAccess.instance().runReadAction(new Computable<Language>() {
           public Language compute() {
-            return (Language) SModelUtil.findConceptDeclaration(it._0()).getModel().getModule();
+            return (Language) it.concept().getLanguage().getSourceModule();
           }
         });
       }
@@ -59,12 +57,11 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
   }
   @Override
   protected List<SNode> findToChooseFromOnInit(final FindUsagesFacade manager, final ProgressMonitor monitor) {
-    return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
-      public Iterable<SNode> translate(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        String targetConcept = it._0();
-        final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        SAbstractConcept concept = SConceptRepository.getInstance().getConcept(targetConcept);
-        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(concept), false, monitor.subTask(10));
+    return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<NodesDescriptor, SNode>() {
+      public Iterable<SNode> translate(NodesDescriptor it) {
+        SAbstractConcept targetConcept = it.concept();
+        final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it.filter();
+        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(targetConcept), false, monitor.subTask(10));
         if (function == null) {
           return instances;
         } else {
@@ -85,11 +82,10 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {
-        return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
-          public boolean accept(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-            String targetConcept = it._0();
-            _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-            if (!(SNodeOperations.isInstanceOf(node, targetConcept))) {
+        return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<NodesDescriptor>() {
+          public boolean accept(NodesDescriptor it) {
+            _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it.filter();
+            if (!(SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(it.concept())))) {
               return false;
             }
             if (function == null) {

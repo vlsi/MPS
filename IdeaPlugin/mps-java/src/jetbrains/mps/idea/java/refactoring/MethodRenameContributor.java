@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -66,7 +67,7 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
     }
 
     // Q: not needed? since we're called with read lock
-    if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
+    if (!(node.getModel() != null) || SNodeUtil.isAccessible(node,mpsProject.getRepository())) {
       return;
     }
 

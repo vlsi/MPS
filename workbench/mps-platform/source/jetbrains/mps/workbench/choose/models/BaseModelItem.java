@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,8 @@ package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.vcs.FileStatus;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public abstract class BaseModelItem implements NavigationItem {
   private SModelReference myModelReference;
@@ -44,12 +40,6 @@ public abstract class BaseModelItem implements NavigationItem {
   @Nullable
   public ItemPresentation getPresentation() {
     return new ModelPresentation(myModelReference);
-  }
-
-  public FileStatus getFileStatus() {
-    SModel md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
-    boolean changed = md instanceof EditableSModel && ((EditableSModel) md).isChanged();
-    return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }
 
   @Override

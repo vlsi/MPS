@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
 import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -84,7 +85,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
+      ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : AbstractDefaultEditor.createEditor(node, conceptDescriptor);
       result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }

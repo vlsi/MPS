@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -205,7 +206,7 @@ public abstract class DeltaBuilder {
     return getCurrentRoot() != null;
   }
 
-  public void registerSubTree(@NotNull SNode replacedNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
+  public void registerSubTree(@NotNull SNode replacedNode, @NotNull SContainmentLink roleInParent, @NotNull Collection<SNode> subTree) {
     if (getNestedCopyRoots().isEmpty()) {
       assert getCurrentRoot() != null;
       getCurrentFragments().add(new SubTree(replacedNode, roleInParent, subTree));
@@ -364,9 +365,8 @@ public abstract class DeltaBuilder {
             if (allReplacedNodes.contains(outputTarget)) {
               // reference points elsewhere in this model under a replaced node.
               // reference needs update, its outputTarget is among replaced nodes
-              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), referenceTarget);
-              PostponedReference pr = generator.register(new PostponedReference(refInfo));
-              pr.setReferenceInOutputSourceNode();
+              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(next, referenceTarget);
+              new PostponedReference(reference.getLink(), reference.getSourceNode(), refInfo).setAndRegister(generator);
               break; // while outputTarget
             }
             outputTarget = outputTarget.getParent();
@@ -557,10 +557,10 @@ public abstract class DeltaBuilder {
   private static class SubTree {
     @NotNull
     private final SNode myInputNode;
-    private final String myRoleInParent;
+    private final SContainmentLink myRoleInParent;
     private final List<SNode> myReplacement; // we need to ensure order doesn't change if we later alter new nodes (MAP-SRC replacements)
 
-    public SubTree(@NotNull SNode inputNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
+    public SubTree(@NotNull SNode inputNode, @NotNull SContainmentLink roleInParent, @NotNull Collection<SNode> subTree) {
       myInputNode = inputNode;
       myRoleInParent = roleInParent;
       myReplacement = subTree instanceof List ? (List<SNode>) subTree : new ArrayList<SNode>(subTree);

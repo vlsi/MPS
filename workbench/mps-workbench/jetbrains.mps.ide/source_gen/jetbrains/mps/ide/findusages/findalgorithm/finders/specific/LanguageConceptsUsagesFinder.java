@@ -8,17 +8,16 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.IterableUtil;
 import java.util.List;
 import java.util.LinkedList;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
-import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -30,16 +29,22 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
-    IHolder holder = query.getObjectHolder();
-    assert holder instanceof ModuleHolder;
-    SModule module = ((ModuleHolder) holder).getObject();
-    assert module instanceof Language;
+    Object value = query.getObjectHolder().getObject();
+    SModule module = null;
+    if (value instanceof SModule) {
+      module = ((SModule) value);
+    } else if (value instanceof SModuleReference) {
+      module = query.getScope().resolve(((SModuleReference) value));
+    }
+    if (!(module instanceof Language)) {
+      return searchResults;
+    }
     Language language = (Language) module;
     SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) {
       return searchResults;
     }
-    if (IterableUtil.asCollection(structureModel.getRootNodes()).size() == 0) {
+    if (!(structureModel.getRootNodes().iterator().hasNext())) {
       return searchResults;
     }
     List<SNode> roots = new LinkedList<SNode>();
@@ -50,7 +55,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
 
     monitor.start("", IterableUtil.asCollection(structureModel.getRootNodes()).size() + 1);
     try {
-      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
+      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelImportsUsagesFinder());
       List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject());

@@ -19,6 +19,7 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -322,7 +323,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   private void activatePane(PaneActivator activator, boolean autoFocusContents) {
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
-    projectViewToolWindow.activate(activator, autoFocusContents);
+    //In unit test mode projectViewToolWindow == null
+    if(!ApplicationManager.getApplication().isUnitTestMode()) {
+      projectViewToolWindow.activate(activator, autoFocusContents);
+    }
   }
 
   public void selectNode(@NotNull final SNode node, boolean autofocus) {

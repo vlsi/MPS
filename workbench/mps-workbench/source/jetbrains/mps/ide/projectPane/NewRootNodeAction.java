@@ -30,8 +30,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -66,15 +64,6 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     Icon icon = IconManager.getIcon(nodeConcept);
     getTemplatePresentation().setIcon(icon);
     setExecuteOutsideCommand(true);
-  }
-
-  /**
-   * @deprecated use {@link #NewRootNodeAction(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SModel, String)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public NewRootNodeAction(final SNode nodeConcept, SModel model, String virtualPackage) {
-    this(MetaAdapterByDeclaration.getConcept(nodeConcept), model, virtualPackage);
   }
 
   @Override

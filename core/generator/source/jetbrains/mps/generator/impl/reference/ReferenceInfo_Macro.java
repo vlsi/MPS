@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,71 +15,54 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
+/**
+ * Restore a reference using user-supplied {@link jetbrains.mps.generator.runtime.ReferenceResolver code}.
+ */
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  @NotNull
   private final ReferenceResolver myResolver;
-  @NotNull
   private final TemplateContext myContext;
 
   // results of 'expandReferenceMacro'
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
 
-  public ReferenceInfo_Macro(@NotNull ReferenceResolver resolver, SNode outputSourceNode, String role, @NotNull TemplateContext context) {
-    super(outputSourceNode, role, context.getInput());
+  public ReferenceInfo_Macro(@NotNull ReferenceResolver resolver, @NotNull TemplateContext context) {
     myResolver = resolver;
     myContext = context;
   }
 
   @Nullable
   @Override
-  public SReference create(@NotNull TemplateGenerator generator) {
-    expandReferenceMacro(generator);
+  public SReference create(@NotNull PostponedReference ref) {
+    expandReferenceMacro(ref);
     if (myOutputTargetNode != null) {
-      return createStaticReference(myOutputTargetNode);
+      return createStaticReference(ref, myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      // It's not quite obvious whether dynamic references require null or non null - from DR cons it seems non-null
-      // is relevant for links to Classifiers.
-      // null is here as it the way it was prior to refactoring.
-      final SReference dr = createDynamicReference(myResolveInfoForDynamicResolve, null, getMacroNodeRef());
-      generator.registerDynamicReference(dr);
-      return dr;
+      final SReference dr = createDynamicReference(ref, myResolveInfoForDynamicResolve, new DynamicReferenceOrigin(getMacroNodeRef(), null));
+      ref.getGenerator().registerDynamicReference(dr);
+      return dr; 
     }
-    if (isRequired(generator.getLogger())) {
-      return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
+    if (!ref.getLink().isOptional()) {
+      return createInvalidReference(ref, myResolver.getDefaultResolveInfo());
     }
     return null;
   }
 
-  protected final boolean isRequired(IGeneratorLogger log) {
-    String role = getReferenceRole();
-    SConcept concept = getOutputSourceNode().getConcept();
-    SAbstractLink link = concept.getLink(role);
-    if (link == null) {
-      log.error(String.format("couldn't find link declaration for role \"%s\" in hierarchy of concept %s", role, concept.getQualifiedName()));
-      return false;
-    }
-    return !link.isOptional();
-  }
-
-  private void expandReferenceMacro(ITemplateGenerator generator) {
-    Object result = resolveReference();
+  private void expandReferenceMacro(PostponedReference ref) {
+    Object result = resolveReference(ref.getSourceNode());
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {
@@ -91,25 +74,25 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     }
 
     // check referent because it's manual and thus error prone mapping
-    if (myOutputTargetNode.getModel() == generator.getInputModel()) {
+    if (myOutputTargetNode.getModel() == ref.getGenerator().getInputModel()) {
       // There are RM that return input node from getReferent (e.g. in closures). The code below handles these cases, although I'm not
       // quite confident it's a nice idea in the first place (getReferent shall not return input nodes, imo)
       // try to find copy in output model and replace target
-      SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(myOutputTargetNode);
+      SNode outputTargetNode_output = ref.getGenerator().findCopiedOutputNodeForInputNode(myOutputTargetNode);
       if (outputTargetNode_output != null) {
         myOutputTargetNode = outputTargetNode_output;
       } else {
         // FIXME showErrorIfStrict
         final String msg = "reference macro returned node from input model; role: %s in %s";
-        generator.getLogger().warning(getMacroNodeRef(), String.format(msg, getReferenceRole(), SNodeOperations.getDebugText(getOutputSourceNode())),
-            GeneratorUtil.describe(getOutputSourceNode(), "source node"),
+        ref.getGenerator().getLogger().warning(getMacroNodeRef(), String.format(msg, ref.getLink(), SNodeOperations.getDebugText(ref.getSourceNode())),
+            GeneratorUtil.describe(ref.getSourceNode(), "source node"),
             GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"));
       }
     }
   }
 
-  protected Object resolveReference() {
-    return myResolver.resolve(getOutputSourceNode(), myContext);
+  private Object resolveReference(SNode outputSourceNode) {
+    return myResolver.resolve(outputSourceNode, myContext);
   }
 
   @Nullable

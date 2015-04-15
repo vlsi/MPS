@@ -17,10 +17,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -145,8 +147,14 @@ public final class SConceptOperations {
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
-  public static List<SAbstractConcept> getAllSubConcepts(SAbstractConcept conceptDeclarationNode, SModel model) {
-    return getAllSubConcepts(conceptDeclarationNode, new HashSet<SLanguage>(SModelOperations.getSLanguages(model)));
+  /**
+   * Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model,
+   * or the language extended by those imported. 
+   * Intention is to get possible concepts which instances, added to model, would not require any dependency change.
+   */
+  @NotNull
+  public static List<SAbstractConcept> getAllSubConcepts(SAbstractConcept concept, SModel model) {
+    return getAllSubConcepts(concept, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
   }
   @Deprecated
   @ToRemove(version = 3.2)
@@ -169,7 +177,7 @@ public final class SConceptOperations {
     if (concept == null) {
       return new ArrayList<SAbstractConcept>();
     }
-    Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getQualifiedName());
+    Set<String> descendants = ConceptDescendantsCache.getInstance().getDescendants(concept.getQualifiedName());
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
     for (String descendant : descendants) {
       SAbstractConcept declaration = MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(descendant));

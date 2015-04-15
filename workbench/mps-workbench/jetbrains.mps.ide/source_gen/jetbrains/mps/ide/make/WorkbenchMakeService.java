@@ -52,7 +52,6 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
@@ -322,15 +321,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
     @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
       } catch (RuntimeException e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
         throw e;
-      } finally {
-        ApplicationImpl.setExceptionalThreadWithReadAccessFlag(false);
       }
     }
     @Override

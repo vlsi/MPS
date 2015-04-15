@@ -120,8 +120,16 @@ public class NodeGroupChange extends ModelChange {
     // insert new nodes 
     SNode anchor = (myPreparedAnchorId == null ? null : model.getNode(myPreparedAnchorId));
     SNode parent = model.getNode(myParentNodeId);
-    for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, newNode, anchor);
+    if (anchor != null) {
+      // can't use anchor.next-sibling here as it looks for sibling with respect to node's containment role 
+      // while there are tests (MergeCoreTest) that expect ordering according overall children list 
+      anchor = anchor.getNextSibling();
+    } else {
+      // MergeCoreTest expects nodes without anchor to go first 
+      anchor = parent.getFirstChild();
+    }
+    for (SNode newNode : ListSequence.fromList(nodesToAdd)) {
+      parent.insertChildBefore(myRole, newNode, anchor);
     }
   }
   @Nullable

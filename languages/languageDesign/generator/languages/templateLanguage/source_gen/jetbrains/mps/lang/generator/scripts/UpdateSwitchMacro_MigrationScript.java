@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
@@ -28,7 +28,7 @@ public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
         return true;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode n = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
+        SNode n = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"));
         SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x10313f93662L, "templateSwitch")));
         SPropertyOperations.set(n, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment")));
         SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, 0xda3dc6e5174759eL, "sourceNodeQuery"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x11008e5fed8L, "sourceNodeQuery")));

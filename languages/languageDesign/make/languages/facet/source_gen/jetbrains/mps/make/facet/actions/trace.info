@@ -525,8 +525,8 @@
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/8703512757937161160">
     <file name="QueriesGenerated.java">
       <node id="8703512757937161194" at="290,42,291,535" concept="10" />
-      <node id="8703512757937161235" at="297,100,298,152" concept="9" />
-      <node id="8703512757937161241" at="298,152,299,206" concept="4" />
+      <node id="8703512757937161235" at="297,100,298,246" concept="9" />
+      <node id="8703512757937161241" at="298,246,299,206" concept="4" />
       <node id="8703512757937161259" at="299,206,300,184" concept="4" />
       <node id="8703512757937161287" at="300,184,301,25" concept="10" />
       <node id="8703512757937161216" at="303,59,304,179" concept="10" />

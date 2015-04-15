@@ -160,14 +160,14 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.structure");
       SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelBase) sampleModel).getSModel());
-      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
+      List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test");
       SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelBase) sampleModel).getSModel());
-      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
+      List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testSkipNodesWhileSaving() throws Exception {

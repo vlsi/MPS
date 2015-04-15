@@ -142,7 +142,7 @@ public class JavaPaster {
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
       parent.addChild(SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), node);
     } else {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), node, anchor, true);
+      parent.insertChildBefore(SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), node, anchor);
     }
     return true;
   }

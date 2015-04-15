@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 

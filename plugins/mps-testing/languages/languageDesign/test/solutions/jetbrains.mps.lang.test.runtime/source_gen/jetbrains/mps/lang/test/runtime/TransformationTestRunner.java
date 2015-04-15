@@ -159,12 +159,13 @@ public class TransformationTestRunner implements TestRunner {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     final Throwable[] error = new Throwable[1];
 
-    final SModule module = projectTest.getModelDescriptor().getModule();
-    if (!(module instanceof ReloadableModule)) {
-      throw new IllegalArgumentException("module " + module + " is not reloadable -- cannot run tests in it");
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    projectTest.getProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        final SModule module = projectTest.getModelDescriptor().getModule();
+        if (!(module instanceof ReloadableModule)) {
+          error[0] = new IllegalArgumentException("module" + module + " is not reloadable -- cannot run tests in it");
+          return;
+        }
         try {
           clazz.value = ((ReloadableModule) module).getOwnClass(className);
         } catch (Throwable t) {

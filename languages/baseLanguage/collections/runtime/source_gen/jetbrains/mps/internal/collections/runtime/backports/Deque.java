@@ -5,7 +5,11 @@ package jetbrains.mps.internal.collections.runtime.backports;
 import java.util.Queue;
 import java.util.Iterator;
 
-public interface Deque<T> extends Queue<T> {
+/**
+ * @deprecated use {@link java.util.Deque } instead
+ */
+@Deprecated
+public interface Deque<T> extends Queue<T>, java.util.Deque<T> {
   public void addFirst(T t);
   public void addLast(T t);
   public Iterator<T> descendingIterator();

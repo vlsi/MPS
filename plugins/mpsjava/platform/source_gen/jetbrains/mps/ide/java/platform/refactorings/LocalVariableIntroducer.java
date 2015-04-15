@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Frame;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -16,13 +15,14 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class LocalVariableIntroducer {
   private IntroduceLocalVariableRefactoring myRefactoring;
@@ -35,31 +35,20 @@ public class LocalVariableIntroducer {
   }
   public void invoke(DataContext dataContext) {
     if (myRefactoring.hasDuplicates()) {
-      AnAction thisOnly = new AnAction("Replace this occurence only") {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          myRefactoring.setReplacingAll(false);
-          execute();
-        }
-      };
-      AnAction allOccurences = new AnAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurence")) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          myRefactoring.setReplacingAll(true);
-          execute();
-        }
-      };
-      ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Multiple occurences found", ActionUtils.groupFromActions(thisOnly, allOccurences), dataContext, null, false);
+      AnAction thisOnly = new LocalVariableIntroducer.ExecuteAction("Replace this occurrence only", false);
+      AnAction allOccurences = new LocalVariableIntroducer.ExecuteAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurrence"), true);
+      ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Multiple occurrences found", ActionUtils.groupFromActions(thisOnly, allOccurences), dataContext, null, false);
       popup.show(getRelativePoint());
     } else {
-      execute();
+      execute(false);
     }
   }
-  private void execute() {
+  private void execute(boolean replaceAllDuplicates) {
+    myRefactoring.setReplacingAll(replaceAllDuplicates);
     myRefactoring.setIsFinal(false);
     myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         result.value = myRefactoring.doRefactoring();
         MoveRefactoringUtils.fixImportsFromNode(result.value);
@@ -79,6 +68,17 @@ public class LocalVariableIntroducer {
   }
   private RelativePoint getRelativePoint() {
     EditorCell cell = myEditorContext.getContextCell();
-    return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getY()));
+    return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getBottom()));
+  }
+  private class ExecuteAction extends AnAction {
+    private final boolean myReplaceAllDuplicates;
+    public ExecuteAction(String text, boolean replaceAllDuplicates) {
+      super(text);
+      myReplaceAllDuplicates = replaceAllDuplicates;
+    }
+
+    public void actionPerformed(@NotNull AnActionEvent event) {
+      execute(myReplaceAllDuplicates);
+    }
   }
 }

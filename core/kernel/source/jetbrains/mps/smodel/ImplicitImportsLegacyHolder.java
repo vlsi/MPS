@@ -62,8 +62,7 @@ public final class ImplicitImportsLegacyHolder {
       }
     }
     for (SModelReference ref : usedModels) {
-      int version = PersistenceRegistry.getInstance().getModelEnvironmentInfo().getModelVersion(ref);
-      implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
+      implicitImports.add(new ImportElement(ref, -1, -1));  // for compatibility index will be assigned on save
     }
     myImplicitImports = implicitImports;
   }

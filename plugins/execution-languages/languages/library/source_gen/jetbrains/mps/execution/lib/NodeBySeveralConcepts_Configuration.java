@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -98,11 +98,11 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
   }
   private boolean isValid(final SNode node) {
-    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
-      public boolean accept(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        String concept = it._0();
-        _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        if (SNodeOperations.isInstanceOf(node, concept)) {
+    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<NodesDescriptor>() {
+      public boolean accept(NodesDescriptor it) {
+        SAbstractConcept concept = it.concept();
+        _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it.filter();
+        if (SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept))) {
           if (function != null) {
             return function.invoke(node);
           } else {
@@ -140,10 +140,10 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       return state;
     }
   }
-  public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+  public NodeBySeveralConcepts_Configuration(List<NodesDescriptor> targets) {
     myTargets = targets;
   }
-  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private final List<NodesDescriptor> myTargets;
   private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
   public NodeBySeveralConcepts_Configuration createCloneTemplate() {
     return new NodeBySeveralConcepts_Configuration(myTargets);

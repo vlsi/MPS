@@ -2,9 +2,9 @@
 <model ref="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -29,6 +29,7 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="b2mh" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -42,6 +43,7 @@
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -216,9 +218,34 @@
   </registry>
   <node concept="312cEu" id="3tOCygy3AwS">
     <property role="TrG5h" value="ModelChooser" />
+    <node concept="312cEg" id="4QLRUySH$ni" role="jymVt">
+      <property role="TrG5h" value="myProject" />
+      <node concept="3Tm6S6" id="4QLRUySH$nj" role="1B3o_S" />
+      <node concept="3uibUv" id="4QLRUySHF08" role="1tU5fm">
+        <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QLRUySH$yK" role="jymVt" />
     <node concept="3clFbW" id="3tOCygy3AwX" role="jymVt">
       <node concept="3Tm1VV" id="3tOCygy3AwY" role="1B3o_S" />
-      <node concept="3clFbS" id="3tOCygy3AwZ" role="3clF47" />
+      <node concept="3clFbS" id="3tOCygy3AwZ" role="3clF47">
+        <node concept="3clFbF" id="4QLRUySH_w5" role="3cqZAp">
+          <node concept="37vLTI" id="4QLRUySH_yp" role="3clFbG">
+            <node concept="37vLTw" id="4QLRUySH_zf" role="37vLTx">
+              <ref role="3cqZAo" node="4QLRUySH$gb" resolve="project" />
+            </node>
+            <node concept="37vLTw" id="4QLRUySH_w4" role="37vLTJ">
+              <ref role="3cqZAo" node="4QLRUySH$ni" resolve="myProject" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4QLRUySH$gb" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="4QLRUySHF7c" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3tOCygy3Ax0" role="jymVt">
       <property role="TrG5h" value="compute" />
@@ -239,12 +266,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="3tOCygy3Ax9" role="33vP2m">
-              <node concept="2YIFZM" id="3tOCygy3Axa" role="2Oq$k0">
-                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              </node>
               <node concept="liA8E" id="3tOCygy3Axb" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <ref role="37wK5l" to="cu2c:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
                 <node concept="2ShNRf" id="3tOCygy3Axc" role="37wK5m">
                   <node concept="YeOm9" id="3tOCygy3Axd" role="2ShVmc">
                     <node concept="1Y3b0j" id="3tOCygy3Axe" role="YeSDq">
@@ -324,6 +347,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="2ShNRf" id="4QLRUySHRjv" role="2Oq$k0">
+                <node concept="1pGfFk" id="4QLRUySHRjw" role="2ShVmc">
+                  <ref role="37wK5l" to="cu2c:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="4QLRUySHSfh" role="37wK5m">
+                    <node concept="37vLTw" id="4QLRUySHS5I" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4QLRUySH$ni" resolve="myProject" />
+                    </node>
+                    <node concept="liA8E" id="4QLRUySHSFh" role="2OqNvi">
+                      <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -331,7 +367,13 @@
           <node concept="2YIFZM" id="3tOCygy3AxH" role="3cqZAk">
             <ref role="1Pybhc" to="vmom:~CommonChoosers" resolve="CommonChoosers" />
             <ref role="37wK5l" to="vmom:~CommonChoosers.showDialogModelCollectionChooser(com.intellij.openapi.project.Project,java.util.List,java.util.List):java.util.List" resolve="showDialogModelCollectionChooser" />
-            <node concept="10Nm6u" id="3tOCygy3AxI" role="37wK5m" />
+            <node concept="2YIFZM" id="4QLRUySHFn1" role="37wK5m">
+              <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+              <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="37vLTw" id="4QLRUySHFuq" role="37wK5m">
+                <ref role="3cqZAo" node="4QLRUySH$ni" resolve="myProject" />
+              </node>
+            </node>
             <node concept="37vLTw" id="3GM_nagTysI" role="37wK5m">
               <ref role="3cqZAo" node="3tOCygy3Ax6" resolve="models" />
             </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -226,7 +226,7 @@ public class DeleteModelHelper {
       if (refactoringContext.getSelectedModel() == null) return null;
 
       SearchQuery searchQuery = new SearchQuery(refactoringContext.getSelectedModel().getReference(), GlobalScope.getInstance());
-      return FindUtils.getSearchResults(new EmptyProgressMonitor(), searchQuery, new ModelUsagesFinder());
+      return FindUtils.getSearchResults(new EmptyProgressMonitor(), searchQuery, new ModelImportsUsagesFinder());
     }
   }
 }

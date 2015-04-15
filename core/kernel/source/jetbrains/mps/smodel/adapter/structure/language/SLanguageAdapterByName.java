@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
 public class SLanguageAdapterByName extends SLanguageAdapter {
   public SLanguageAdapterByName(@NotNull String language) {
-    super(language);
+    super(language, -1);
+  }
+  public SLanguageAdapterByName(@NotNull String language, int version) {
+    super(language, version);
   }
 
   @Override

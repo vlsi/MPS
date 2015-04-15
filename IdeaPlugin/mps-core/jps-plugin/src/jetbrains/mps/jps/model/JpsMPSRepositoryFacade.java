@@ -20,7 +20,6 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
-import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
@@ -48,6 +47,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.typesystem.MPSTypesystem;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.vfs.FileSystem;
@@ -85,6 +85,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
   public static final UUID JDK_UUID = UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
+  private static final BaseMPSModuleOwner OWNER = new BaseMPSModuleOwner() {};
 
   private MPSCore myMPSCore;
   private MPSPersistence myMPSPersistence;
@@ -93,7 +94,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
   private MPSBaseLanguage myMPSBaseLanguage;
   private volatile boolean isInitialized = false;
   private CachedRepositoryData myRepo;
-  private Map<JpsModule, JpsSolutionIdea> jpsToMpsModules = new HashMap<JpsModule, JpsSolutionIdea>();
+  private Map<JpsModule, JpsSolutionIdea> myJpsToMpsModules = new HashMap<JpsModule, JpsSolutionIdea>();
   private JpsMPSProject myProject;
 
   public JpsMPSRepositoryFacade() {
@@ -116,8 +117,6 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
           context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
 
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-
         initProject(context);
 
         if (MPSCompilerUtil.isTracingMode()) {
@@ -134,7 +133,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   public JpsSolutionIdea getSolution(JpsModule module) {
     if (!isInitialized) throw new IllegalStateException("Not initialized yet");
-    return jpsToMpsModules.get(module);
+    return myJpsToMpsModules.get(module);
   }
 
 
@@ -184,7 +183,6 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       long start = System.nanoTime();
       List<ModuleHandle> loadedModules = new ArrayList<ModuleHandle>();
-      BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
       for (String path: languages.split(";")) {
         IFile ipath = FileSystem.getInstance().getFileByPath(path);
         loadedModules.addAll(ModulesMiner.getInstance().collectModules(ipath, true));
@@ -196,7 +194,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       start = System.nanoTime();
       for (ModuleHandle moduleHandle : loadedModules) {
-        SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+        ModuleRepositoryFacade.createModule(moduleHandle, OWNER);
       }
 
       if (MPSCompilerUtil.isTracingMode()) {
@@ -242,7 +240,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       }
       myProject.addModule(solutionIdea.getModuleReference());
 
-      jpsToMpsModules.put(mod, solutionIdea);
+      myJpsToMpsModules.put(mod, solutionIdea);
 
       // let's handle module sdkLib
       for (JpsLibrary sdk: getModuleSdks(mod, context)) {
@@ -357,10 +355,14 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        disposeMPS();
-        isInitialized = false;
+        MPSModuleRepository.getInstance().unregisterModules(IterableUtil.asCollection(myProject.getModules()), myProject);
+        myProject.dispose();
+        myJpsToMpsModules.clear();
+        myRepo = null;
       }
     });
+    disposeMPS();
+    isInitialized = false;
   }
 
 

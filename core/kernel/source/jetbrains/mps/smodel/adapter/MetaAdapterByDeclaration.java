@@ -46,16 +46,16 @@ public class MetaAdapterByDeclaration {
     return MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
   }
 
-  public static SAbstractConcept getConcept(SNode node) {
-    SConcept concept = node.getConcept();
+  public static SAbstractConcept getConcept(SNode conceptNode) {
+    SConcept concept = conceptNode.getConcept();
     boolean cd = concept.equals(SNodeUtil.concept_ConceptDeclaration);
     boolean icd = concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
     if (cd || icd) {
-      String name = NameUtil.getModelLongName(node.getModel()) + "." + getNormalizedName(node);
+      String name = NameUtil.getModelLongName(conceptNode.getModel()) + "." + getNormalizedName(conceptNode);
       if (cd) {
-        return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(node), name);
+        return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
       } else {
-        return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(node), name);
+        return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
       }
     }
     return null;

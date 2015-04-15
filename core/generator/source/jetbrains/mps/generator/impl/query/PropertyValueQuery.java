@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,6 @@ package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -48,11 +45,6 @@ public interface PropertyValueQuery extends Query {
       myTemplateValue = templateValue;
     }
 
-    @Deprecated
-    @ToRemove(version = 3.2)
-    protected Base(@NotNull String propertyName, Object templateValue) {
-      this(MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName), templateValue);
-    }
     protected Base(@NotNull SProperty property, Object templateValue) {
       myMacro = null;
       myProperty = property;

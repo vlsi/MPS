@@ -18,10 +18,8 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -54,7 +52,7 @@ public abstract class SNodeTextGen {
 
   //not to generate stub method in each MPS text gen
 
-  protected void doGenerateText(SNode node) {
+  public void doGenerateText(SNode node) {
   }
 
   public String getFilename(SNode node) {
@@ -94,7 +92,7 @@ public abstract class SNodeTextGen {
       return;
     }
 
-    getTextGenForNode(node).doGenerateText(node, myBuffer);
+    TextGen.getTextGenForNode(node).doGenerateText(node, myBuffer);
   }
 
   public void indentBuffer() {
@@ -148,12 +146,26 @@ public abstract class SNodeTextGen {
     }
   }
 
+  /**
+   * @deprecated has been deprecated for 2,5 years. Shall drop, finally?
+   */
   @Deprecated
+  @ToRemove(version = 3.3)
   public String getReferentPresentation(SReference reference) {
     // todo: this method not working now
     return getReferentPresentation(reference, true);
   }
 
+  public String getDefaultNoTextGenErrorText(SNode node) {
+    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
+  }
+
+  /**
+   * @deprecated moved to BaseLanguageTextGen (where it belongs). Left for compatibility with existing generated
+   * textgen classes (those using $ref{} part, despite its vague contract)
+   */
+  @ToRemove(version = 3.3)
+  @Deprecated
   public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
       foundError("null reference");
@@ -199,14 +211,5 @@ public abstract class SNodeTextGen {
     } else {
       return shortName;
     }
-  }
-
-  public String getDefaultNoTextGenErrorText(SNode node) {
-    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
-  }
-
-  @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
   }
 }

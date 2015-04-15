@@ -25,7 +25,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.components.ShowImplementationComponent;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.ide.project.ProjectHelper;

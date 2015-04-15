@@ -362,7 +362,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyActionGroup" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyConnectorCreationAction" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
   </dependency>

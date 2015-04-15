@@ -12,7 +12,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.apache.log4j.Logger;
@@ -43,15 +43,15 @@ public class ViewBreakpoints_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {

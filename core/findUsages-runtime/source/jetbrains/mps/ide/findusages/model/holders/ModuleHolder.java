@@ -17,12 +17,19 @@ package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.ide.findusages.model.holders.ModuleRefHolder} instead. Code that used to cast to ModuleHolder to obtain SModule, shall
+ * perform instanceof check of the {@link #getObject() value} instead
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class ModuleHolder implements IHolder<SModule> {
   private static final String UID = "uid";
 

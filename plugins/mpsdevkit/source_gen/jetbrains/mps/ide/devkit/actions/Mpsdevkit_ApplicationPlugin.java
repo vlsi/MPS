@@ -52,7 +52,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OverrideBehaviorMethod_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
-    addAction(new RenameLanguage_Action());
     addAction(new ShowCellInExplorer_Action());
     addAction(new ShowGenerationTrace_Action());
     addAction(new ShowGenerationTraceback_Action());
