@@ -2,11 +2,11 @@
 <model ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -47,6 +47,7 @@
     <import index="zsa9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.actions.descriptor(MPS.Editor/jetbrains.mps.actions.descriptor@java_stub)" />
     <import index="bj1v" ref="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" />
     <import index="hxuy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
+    <import index="z9ad" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text.rt(MPS.Core/jetbrains.mps.text.rt@java_stub)" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -4217,7 +4218,7 @@
             <node concept="3clFbJ" id="227lWzxUob1" role="3cqZAp">
               <node concept="3clFbC" id="227lWzxUob2" role="3clFbw">
                 <node concept="3VsKOn" id="227lWzxUoiV" role="3uHU7w">
-                  <ref role="3VsUkX" to="fwv2:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                  <ref role="3VsUkX" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
                 </node>
                 <node concept="37vLTw" id="227lWzxUob4" role="3uHU7B">
                   <ref role="3cqZAo" node="227lWzxUoaX" resolve="descriptorClass" />
@@ -4229,9 +4230,31 @@
                     <node concept="16syzq" id="227lWzxU_En" role="10QFUM">
                       <ref role="16sUi3" node="227lWzxUobc" resolve="T" />
                     </node>
-                    <node concept="2ShNRf" id="2bjbvjqV5A8" role="10QFUP">
-                      <node concept="1pGfFk" id="2bjbvjqVpgV" role="2ShVmc">
-                        <ref role="37wK5l" to="vwd8:~TextGenAspectInterpreted.&lt;init&gt;()" resolve="TextGenAspectInterpreted" />
+                    <node concept="1nCR9W" id="2aOQZH68nI3" role="10QFUP">
+                      <property role="1nD$Q0" value="textgen.TextGenAspectDescriptor" />
+                      <node concept="3uibUv" id="2aOQZH68oh9" role="2lIhxL">
+                        <ref role="3uigEE" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                      </node>
+                      <node concept="17Uvod" id="2aOQZH68ohZ" role="lGtFl">
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                        <property role="2qtEX9" value="fqClassName" />
+                        <node concept="3zFVjK" id="2aOQZH68oi0" role="3zH0cK">
+                          <node concept="3clFbS" id="2aOQZH68oi1" role="2VODD2">
+                            <node concept="3clFbF" id="2aOQZH68oo1" role="3cqZAp">
+                              <node concept="3cpWs3" id="2aOQZH68oo2" role="3clFbG">
+                                <node concept="Xl_RD" id="2aOQZH68oo3" role="3uHU7w">
+                                  <property role="Xl_RC" value=".TextGenAspectDescriptor" />
+                                </node>
+                                <node concept="2OqwBi" id="2aOQZH68oo4" role="3uHU7B">
+                                  <node concept="30H73N" id="2aOQZH68oo5" role="2Oq$k0" />
+                                  <node concept="3TrcHB" id="2aOQZH68oo6" role="2OqNvi">
+                                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

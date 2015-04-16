@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
@@ -26,8 +27,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.TextGenAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>
