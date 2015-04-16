@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,13 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.textGen.SNodeTextGen;
+import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
-import jetbrains.mps.textGen.SNodeTextGen;
-import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.textGen.TextGenBuffer;
 
 public class SNodeTextGenAdapter implements TextGenDescriptor {
   // main difference between SNodeTextGen and TextGenDescriptor is: descriptor should be thread-safe and without any state
@@ -31,12 +30,12 @@ public class SNodeTextGenAdapter implements TextGenDescriptor {
 
   private final Class<SNodeTextGen> textGenClass;
 
-  public SNodeTextGenAdapter(String fqName, Class<SNodeTextGen> textGenClass) {
+  public SNodeTextGenAdapter(@NotNull Class<SNodeTextGen> textGenClass) {
     this.textGenClass = textGenClass;
     try {
       textGenClass.newInstance();
     } catch (Exception e) {
-      LOG.error(e, fqName);
+      LOG.error(e, textGenClass.getName());
     }
   }
 

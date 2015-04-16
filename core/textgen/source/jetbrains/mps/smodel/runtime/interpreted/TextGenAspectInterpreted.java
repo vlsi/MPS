@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,17 +37,12 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SConcept concept) {
-    SConcept baseConcept = SNodeUtil.concept_BaseConcept;
-    SConcept c = concept;
-    while(c != null && !c.equals(baseConcept)) {
-      String languageName = c.getLanguage().getQualifiedName();
-      Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
-      String textgenClassname = LanguageAspect.TEXT_GEN.getAspectQualifiedClassName(c) + "_TextGen";
-      Class<SNodeTextGen> textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
-      if (textgenClass != null) {
-        return new SNodeTextGenAdapter(c.getQualifiedName(), textgenClass);
-      }
-      c = c.getSuperConcept();
+    String languageName = concept.getLanguage().getQualifiedName();
+    Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
+    String textgenClassname = LanguageAspect.TEXT_GEN.getAspectQualifiedClassName(concept) + "_TextGen";
+    Class<SNodeTextGen> textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
+    if (textgenClass != null) {
+      return new SNodeTextGenAdapter(textgenClass);
     }
     return null;
   }
