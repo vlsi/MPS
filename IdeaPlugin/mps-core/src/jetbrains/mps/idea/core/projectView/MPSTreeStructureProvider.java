@@ -302,10 +302,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   }
 
   private IFile getModelFile(AbstractTreeNode treeNode) {
-    if (treeNode instanceof MPSPsiElementTreeNode) {
-      return getModelFile(treeNode.getParent());
-
-    } else if (treeNode instanceof MPSPsiModelTreeNode) {
+    if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
       if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)
