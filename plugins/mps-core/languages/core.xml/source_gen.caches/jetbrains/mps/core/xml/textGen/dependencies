@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlAttribute_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCDATA_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCharRefValue_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCharRef_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCommentLine_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlComment_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlDeclaration_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlDoctypeDeclaration_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlDocument_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlElement_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlEntityRefValue_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlEntityRef_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlExternalId_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlFile_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlNoSpaceValue_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlProcessingInstruction_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlProlog_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlTextValue_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlText_TextGen" />
+    <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlWhitespace_TextGen" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
+    <classNode dependClassName="jetbrains.mps.text.LegacyTextGenAdapter" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.BaseTextGenAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.textGen.XmlAttribute_TextGen" file="XmlAttribute_TextGen.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />

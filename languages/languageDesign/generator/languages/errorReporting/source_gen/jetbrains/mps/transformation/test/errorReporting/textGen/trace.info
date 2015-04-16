@@ -3,6 +3,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,31,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:e99b0478-397a-402b-a078-57c984a0eca3(jetbrains.mps.transformation.test.errorReporting.textGen)/7287346816896128678">
     <file name="ErrorReportingRoot_TextGen.java">
       <node id="7287346816896135357" at="9,42,10,42" concept="0" />

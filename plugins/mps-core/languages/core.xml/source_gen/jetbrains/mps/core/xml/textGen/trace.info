@@ -12,6 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,88,0" name="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:ea884767-f424-4c97-a82e-eccd57dbc217(jetbrains.mps.core.xml.textGen)/2133624044437737242">
     <file name="XmlProlog_TextGen.java">
       <node id="2133624044437742192" at="12,5,13,204" concept="5" />

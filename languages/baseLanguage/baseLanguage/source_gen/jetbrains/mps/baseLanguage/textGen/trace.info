@@ -19,6 +19,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,448,0" name="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1214046978376812376">
     <file name="VariableReference_TextGen.java">
       <node id="1214046978376812379" at="12,42,13,326" concept="1" />

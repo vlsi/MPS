@@ -9,6 +9,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,70,0" name="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:3be5b72a-7175-4830-8f2b-4d9b1e5c86a4(jetbrains.mps.baseLanguageInternal.textGen)/1100832983841501813">
     <file name="InternalClassCreator_TextGen.java">
       <node id="1100832983841501816" at="14,42,15,209" concept="0" />
