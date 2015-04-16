@@ -390,7 +390,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY = new ProviderFactory<SNodeDeleteProvider>() {
     @Override
     public SNodeDeleteProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
-      return new SNodeDeleteProvider(selectedNodes, modelDescriptor, project);
+      return new SNodeDeleteProvider(selectedNodes, project);
     }
   };
 

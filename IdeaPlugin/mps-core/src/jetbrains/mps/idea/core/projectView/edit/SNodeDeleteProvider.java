@@ -34,39 +34,37 @@ import java.util.Set;
  * User: fyodor
  * Date: 2/27/13
  */
-public class SNodeDeleteProvider implements DeleteProvider {
+public class SNodeDeleteProvider implements DeleteProvider, Runnable {
 
   private Collection<SNodeReference> mySelectedNodes;
   private Project myProject;
-  private EditableSModel myModelDescriptor;
 
-  public SNodeDeleteProvider(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, @NotNull Project project) {
+  public SNodeDeleteProvider(Collection<SNodeReference> selectedNodes, @NotNull Project project) {
     mySelectedNodes = selectedNodes;
     myProject = project;
-    myModelDescriptor = modelDescriptor;
   }
 
   @Override
   public void deleteElement(@NotNull DataContext dataContext) {
-    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
-      @Override
-      public void run() {
-        Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
-        for (SNodeReference selectedNode : mySelectedNodes) {
-          SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
-          if (nodeToDelete != null) {
-            SModel modelDescriptor = nodeToDelete.getModel();
-            if (modelDescriptor instanceof EditableSModel) {
-              nodeToDelete.delete();
-              modelsToSave.add((EditableSModel) modelDescriptor);
-            }
-          }
-        }
-        for (EditableSModel sModelDescriptor : modelsToSave) {
-          sModelDescriptor.save();
+    myProject.getModelAccess().executeCommandInEDT(this);
+  }
+
+  @Override
+  public void run() {
+    Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
+    for (SNodeReference selectedNode : mySelectedNodes) {
+      SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
+      if (nodeToDelete != null) {
+        SModel modelDescriptor = nodeToDelete.getModel();
+        if (modelDescriptor instanceof EditableSModel) {
+          nodeToDelete.delete();
+          modelsToSave.add((EditableSModel) modelDescriptor);
         }
       }
-    });
+    }
+    for (EditableSModel sModelDescriptor : modelsToSave) {
+      sModelDescriptor.save();
+    }
   }
 
   @Override

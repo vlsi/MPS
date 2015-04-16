@@ -36,6 +36,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -54,6 +55,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
+import java.util.Collections;
 
 /**
  * User: fyodor
@@ -278,4 +280,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     return myViewProvider.getPsi(getLanguage()).getText();
   }
 
+  @Override
+  public void delete() throws IncorrectOperationException {
+    SNodeDeleteProvider deleteProvider = new SNodeDeleteProvider(
+      Collections.singletonList(getSNodeReference()),
+      ProjectHelper.toMPSProject(getProject()));
+    getProjectRepository().getModelAccess().executeUndoTransparentCommand(deleteProvider);
+  }
 }
