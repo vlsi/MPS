@@ -39,6 +39,7 @@ public class JpsMPSModuleExtensionImpl extends JpsCompositeElementBase<JpsMPSMod
     this.configuration = configuration;
   }
 
+  @Override
   public MPSConfigurationBean getConfiguration() {
     return configuration;
   }

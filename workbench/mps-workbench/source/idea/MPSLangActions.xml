@@ -20,6 +20,34 @@
       <add-to-group group-id="FileMenu" anchor="after" relative-to-action="InvalidateCaches"/>
     </group>
 
+    <group id="GoToCodeGroup">
+      <separator/>
+      <!--
+      <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
+      <action id="ShowNavBar" class="com.intellij.ide.navigationToolbar.ShowNavBarAction"/>
+      -->
+      <action id="GotoDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoDeclarationAction"/>
+      <!--
+      <action id="GotoImplementation" class="com.intellij.codeInsight.navigation.actions.GotoImplementationAction"/>
+      <action id="GotoTypeDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoTypeDeclarationAction"/>
+      <action id="GotoSuperMethod" class="com.intellij.codeInsight.navigation.actions.GotoSuperAction"/>
+      <action id="GotoTest" class="com.intellij.testIntegration.GotoTestOrCodeAction"/>
+      <action id="GotoRelated" class="com.intellij.ide.actions.GotoRelatedSymbolAction"/>
+      <separator/>
+      <action id="FileStructurePopup" class="com.intellij.ide.actions.ViewStructureAction"/>
+      <action id="ShowFilePath" class="com.intellij.ide.actions.ShowFilePathAction"/>
+      <group id="HierarchyGroup">
+        <action id="TypeHierarchy" class="com.intellij.ide.hierarchy.actions.BrowseTypeHierarchyAction"/>
+        <action id="MethodHierarchy" class="com.intellij.ide.hierarchy.actions.BrowseMethodHierarchyAction"/>
+        <action id="CallHierarchy" class="com.intellij.ide.hierarchy.actions.BrowseCallHierarchyAction"/>
+      </group>
+      <separator/>
+      -->
+
+      <add-to-group group-id="GoToMenu" anchor="after" relative-to-action="EditBookmarksGroup"/>
+    </group>
+
+
     <action id="RecentChanges" class="com.intellij.history.integration.ui.actions.RecentChangesAction">
       <keyboard-shortcut first-keystroke="alt shift C" keymap="$default"/>
       <add-to-group group-id="ViewRecentActions" anchor="last"/>

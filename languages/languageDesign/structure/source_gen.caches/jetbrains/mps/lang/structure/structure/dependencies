@@ -2,9 +2,9 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.structure.structure.Cardinality" file="Cardinality.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.Cardinality_PropertySupport" file="Cardinality_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -15,9 +15,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ChildrenIncomingReferencesPolicy" file="ChildrenIncomingReferencesPolicy.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ChildrenIncomingReferencesPolicy_PropertySupport" file="ChildrenIncomingReferencesPolicy_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -28,9 +28,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy" file="EnumerationMemberIdentifierPolicy.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy_PropertySupport" file="EnumerationMemberIdentifierPolicy_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -41,9 +41,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.InstanceIncomingReferencesPolicy" file="InstanceIncomingReferencesPolicy.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.InstanceIncomingReferencesPolicy_PropertySupport" file="InstanceIncomingReferencesPolicy_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -54,9 +54,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.LinkMetaclass" file="LinkMetaclass.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.LinkMetaclass_PropertySupport" file="LinkMetaclass_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
@@ -67,9 +67,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.StaticScope" file="StaticScope.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.StaticScope_PropertySupport" file="StaticScope_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />

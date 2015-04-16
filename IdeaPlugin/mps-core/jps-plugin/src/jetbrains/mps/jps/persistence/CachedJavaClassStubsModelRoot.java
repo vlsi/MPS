@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,9 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
       for (String s : header.getPaths()) {
         source.addPath(s, this);
       }
-      result.add(new JavaClassStubModelDescriptor(header.getReference(), source, this));
+      final JavaClassStubModelDescriptor md = new JavaClassStubModelDescriptor(header.getReference(), source);
+      md.setModelRoot(this);
+      result.add(md);
     }
     return result;
   }

@@ -32,6 +32,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -73,7 +74,7 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
         @Override
         public void run() {
           SNode typeNode = type.getSNodeReference().resolve(repository);
-          myIsVararg = SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          myIsVararg = SNodeOperations.isInstanceOf(typeNode, MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.VariableArityType"));
         }
       });
     }

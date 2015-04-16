@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,10 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseNodePointerItem implements NavigationItem {
   private final SNodeReference myNode;
@@ -49,11 +48,6 @@ public abstract class BaseNodePointerItem implements NavigationItem {
   @Nullable
   public ItemPresentation getPresentation() {
     return myNodePointerPresentation;
-  }
-
-  public FileStatus getFileStatus() {
-    //todo return correct value
-    return FileStatus.NOT_CHANGED;
   }
 
   @Override

@@ -61,7 +61,7 @@
       <node id="1145577814158" at="27,186,28,241" concept="1" />
       <node id="1145578426519" at="30,54,31,365" concept="5" />
       <node id="1145578074915" at="31,365,32,371" concept="5" />
-      <node id="1145579167456" at="32,371,33,131" concept="5" />
+      <node id="1145579167456" at="32,371,33,219" concept="5" />
       <node id="1206556986910" at="35,54,36,375" concept="1" />
       <node id="1228342379959" at="36,375,37,222" concept="5" />
       <node id="1228342391907" at="37,222,38,44" concept="1" />
@@ -126,7 +126,7 @@
       <scope id="1145577814144" at="25,75,28,241">
         <var name="condition" id="1145577814153" />
       </scope>
-      <scope id="1145577972934" at="30,54,33,131">
+      <scope id="1145577972934" at="30,54,33,219">
         <var name="newCondition1" id="1145578426520" />
         <var name="newCondition2" id="1145578074916" />
         <var name="newCondition3" id="1145579167457" />
@@ -630,8 +630,8 @@
       <node id="1166649357812" at="17,356,18,693" concept="1" />
       <node id="1166649120556" at="20,36,21,271" concept="5" />
       <node id="1166649120564" at="21,271,22,367" concept="5" />
-      <node id="1166649120572" at="22,367,23,130" concept="5" />
-      <node id="1166649120578" at="23,130,24,520" concept="5" />
+      <node id="1166649120572" at="22,367,23,218" concept="5" />
+      <node id="1166649120578" at="23,218,24,520" concept="5" />
       <node id="1180648478076" at="26,38,27,232" concept="5" />
       <node id="1181945517587" at="27,232,28,252" concept="5" />
       <node id="1181950351648" at="28,252,29,254" concept="5" />
@@ -980,32 +980,6 @@
       </scope>
       <scope id="1219355713021" at="14,0,20,0" />
       <unit id="1219355636115" at="13,0,21,0" name="smodelLanguage.samples.NodeRef" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1221164914075">
-    <file name="SearchScope.java">
-      <node id="1221169280491" at="12,83,13,114" concept="5" />
-      <node id="1221169127143" at="13,114,14,17" concept="6" />
-      <node id="1221171408330" at="16,98,17,114" concept="5" />
-      <node id="1221171413634" at="17,114,18,72" concept="6" />
-      <node id="1221164930762" at="12,0,16,0" concept="4" trace="getSearchScope#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/smodel/search/ISearchScope;" />
-      <node id="1221171286994" at="16,0,20,0" concept="4" trace="isInScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <scope id="1221164930765" at="12,83,14,17">
-        <var name="scope" id="1221169280492" />
-      </scope>
-      <scope id="1221171286997" at="16,98,18,72">
-        <var name="scope" id="1221171408331" />
-      </scope>
-      <scope id="1221164930762" at="12,0,16,0">
-        <var name="context" id="1221166109617" />
-        <var name="methodCall" id="1221165056653" />
-      </scope>
-      <scope id="1221171286994" at="16,0,20,0">
-        <var name="context" id="1221171328906" />
-        <var name="methodCall" id="1221171328904" />
-        <var name="methodDeclaration" id="1221171333642" />
-      </scope>
-      <unit id="1221164914075" at="11,0,21,0" name="smodelLanguage.samples.SearchScope" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1226362060907">

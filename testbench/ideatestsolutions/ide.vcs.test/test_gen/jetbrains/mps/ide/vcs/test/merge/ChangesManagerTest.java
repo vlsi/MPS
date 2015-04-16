@@ -58,7 +58,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.vcs.changes.Change;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import com.intellij.openapi.vcs.VcsException;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -373,7 +373,7 @@ public class ChangesManagerTest {
     checkRootStatuses();
   }
   private SNode createNewRoot(SModel modelContent) {
-    SNode root = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    SNode root = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NewRoot");
     SModelOperations.addRootNode(modelContent, root);
     return root;
@@ -678,7 +678,7 @@ public class ChangesManagerTest {
     });
     doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode ifBefore = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
+        SNode ifBefore = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")));
         jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), ifBefore);
         return root.value;
       }

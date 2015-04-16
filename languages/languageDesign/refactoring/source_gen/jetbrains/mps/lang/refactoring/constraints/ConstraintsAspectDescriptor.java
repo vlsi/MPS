@@ -14,8 +14,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 2:
         return new RefactoringAction_Constraints();
-      case 5:
-        return new UpdateModelByDefaultOperation_Constraints();
       case 3:
         return new RefactoringFieldReference_Constraints();
       case 4:
@@ -24,8 +22,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ContextMemberOperation_Constraints();
       case 1:
         return new ModelsToGenerateByDefault_Constraints();
-      case 6:
-        return new UpdateModelClause_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -34,9 +30,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     long id = conceptId.getIdValue();
     if (id == 0x2cfffca8ff395f2fL) {
       return new RefactoringAction_Constraints();
-    }
-    if (id == 0x116c99031ffL) {
-      return new UpdateModelByDefaultOperation_Constraints();
     }
     if (id == 0x4c4b92003e483aaaL) {
       return new RefactoringFieldReference_Constraints();
@@ -50,10 +43,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x3c55f2dab56d441dL) {
       return new ModelsToGenerateByDefault_Constraints();
     }
-    if (id == 0x114ff506e8eL) {
-      return new UpdateModelClause_Constraints();
-    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference"};
 }

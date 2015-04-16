@@ -10,8 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
@@ -25,9 +25,9 @@ public class UnavailableConceptsChecker extends SpecificChecker {
       if (monitor.isCanceled()) {
         break;
       }
-      SNode concept = SNodeOperations.getConceptDeclaration(node);
-      if (concept == null) {
-        SpecificChecker.addIssue(results, node, "Cannot find concept \"" + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(concept), "virtual_getFqName_1213877404258", new Object[]{}) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
+      SAbstractConcept concept = SNodeOperations.getConcept(node);
+      if (!(concept.isValid())) {
+        SpecificChecker.addIssue(results, node, "Cannot find concept \"" + concept.getQualifiedName() + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
     monitor.done();

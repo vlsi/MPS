@@ -14,20 +14,21 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Set;
-import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.Level;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -112,21 +113,6 @@ public abstract class BaseLanguageTextGen {
   public static void internalClassName(String packageName, String className, SNode contextNode, final SNodeTextGen textGen) {
     BaseLanguageTextGen.appendClassName(packageName, NameUtil.longNameFromNamespaceAndShortName(packageName, className), contextNode, textGen);
   }
-  public static void extendedInterface(SNode interface1, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
-    SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(interface1));
-  }
-  public static void implementedInterface(SNode classConcept, final SNodeTextGen textGen) {
-    for (SNode classifierType : SLinkOperations.getChildren(classConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        BaseLanguageTextGen.extendedInterface(SNodeOperations.cast(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")), textGen);
-      }
-    }
-  }
-  public static void extendedClasses(SNode classConcept, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.EXTENDS, textGen);
-    SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(classConcept));
-  }
   public static void variableDeclaration(SNode node, final SNodeTextGen textGen) {
     if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"))) {
       textGen.append("final ");
@@ -159,7 +145,7 @@ public abstract class BaseLanguageTextGen {
   }
   public static void methodCall(SNode methodCall, final SNodeTextGen textGen) {
     BaseLanguageTextGen.methodTypeArguments(methodCall, textGen);
-    textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), false));
+    BaseLanguageTextGen.referenceToShortName(SNodeOperations.getReference(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), textGen);
     BaseLanguageTextGen.arguments(methodCall, textGen);
   }
   public static void methodTypeArguments(SNode methodCall, final SNodeTextGen textGen) {
@@ -177,6 +163,37 @@ public abstract class BaseLanguageTextGen {
       }
       textGen.append(">");
     }
+  }
+  public static void referenceToShortName(SReference reference, final SNodeTextGen textGen) {
+    if (reference == null) {
+      textGen.foundError("null reference");
+      textGen.append("???");
+      return;
+    }
+    String name = null;
+    final SReference ref = reference;
+    if (ref instanceof jetbrains.mps.smodel.SReference) {
+      name = ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+    }
+    if (name == null) {
+      SNode targetNode = ref.getTargetNode();
+      if (targetNode == null) {
+        textGen.foundError(String.format("Unknown target for role %s", ref.getLink()));
+        textGen.append("???");
+        return;
+      }
+      name = SNodeUtil.getResolveInfo(targetNode);
+      if (name == null) {
+        textGen.foundError(String.format("No resolve info for node %s", targetNode));
+        name = targetNode.getName();
+      }
+    }
+    if (name == null) {
+      textGen.append("???");
+    } else {
+      textGen.append(name);
+    }
+
   }
   public static void blClassifierRef(SReference classifierRef, final SNodeTextGen textGen) {
     if (classifierRef == null) {

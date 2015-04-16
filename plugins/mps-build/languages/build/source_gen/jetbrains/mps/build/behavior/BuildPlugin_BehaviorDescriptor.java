@@ -5,6 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public abstract class BuildPlugin_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildPlugin_BehaviorDescriptor() {
@@ -12,10 +13,10 @@ public abstract class BuildPlugin_BehaviorDescriptor extends BaseConcept_Behavio
   public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return BuildPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
   }
-  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
+  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SAbstractConcept kind) {
     return BuildPlugin_Behavior.virtual_getLayoutScope_1224588814561807654(thisNode, kind);
   }
-  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
+  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SAbstractConcept kind) {
     return BuildPlugin_Behavior.virtual_getProjectStructureScope_3734116213129936182(thisNode, kind);
   }
   @Override

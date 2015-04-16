@@ -7,6 +7,7 @@ import jetbrains.mps.execution.lib.ui.NodeByConceptChooser;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.util.Factory;
@@ -36,9 +37,9 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
       }
     });
   }
-  private String myConcept;
+  private SAbstractConcept myConcept;
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-  public NodeByConcept_Configuration_Editor(final String concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+  public NodeByConcept_Configuration_Editor(final SAbstractConcept concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     super(new Factory<NodeByConcept_Configuration>() {
       public NodeByConcept_Configuration create() {
         return new NodeByConcept_Configuration(concept, isValid);

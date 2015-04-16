@@ -114,7 +114,17 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
         myHighlighter.dumbUpdate();
       }
     });
+  }
 
+  @Override
+  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(rebuildAction, saveExpansion);
+    // gen status is tracked on model level. If there are no model nodes shown yet, generation status for module and
+    // namespace nodes shall be updated. Other alternative is to do it in ModuleNodeListener#attach() or in
+    // ProjectPaneTreeHighlighter#moduleNodeAdded. MNL at the moment doesn't track gen status notifications, so it's odd to put
+    // update there. PPTH#moduleNodeAdded() is decent alternative and perhaps the right thing to do, however, I decided
+    // to give it a 'single-shot' approach, to re-highlight a tree once rebuild is over, which seems reasonable.
+    myHighlighter.dumbUpdate();
   }
 
   @Override
@@ -124,6 +134,8 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     removeKeyListener(myKeyListener);
     super.dispose();
   }
+
+
 
   @Override
   public Comparator<Object> getChildrenComparator() {

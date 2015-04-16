@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
-import com.intellij.testFramework.TestLoggerFactory;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -62,15 +60,15 @@ public class EditorTests extends DataMPSFixtureTestCase {
     // this is to prevent exceptions in the project components that get "projectClosed" notifications
     ApplicationManagerEx.getApplicationEx().doNotSave();
 
-    DefaultModelRoot sModelRoot = (DefaultModelRoot) myFacet.getSolution().getModelRoots().iterator().next();
-    String path = sModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next();
-    final IFile modelFile = FileSystem.getInstance().getFileByPath(path + "/test.mps");
-    final List<SNode> roots = new ArrayList<SNode>();
-
     final Exception[] thrown = new Exception[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
+    runModelRead(new Runnable() {
       @Override
       public void run() {
+        DefaultModelRoot sModelRoot = (DefaultModelRoot) myFacet.getSolution().getModelRoots().iterator().next();
+        String path = sModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next();
+        final IFile modelFile = FileSystem.getInstance().getFileByPath(path + "/test.mps");
+        final List<SNode> roots = new ArrayList<SNode>();
+
         SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
         if (descr == null) {
           thrown[0] = new IllegalStateException("model not found");
@@ -97,12 +95,8 @@ public class EditorTests extends DataMPSFixtureTestCase {
             }
           }
         }
-
-
       }
     });
-    // restore test logger factory
-    Logger.setFactory(TestLoggerFactory.class);
     if (thrown[0] != null) throw thrown[0];
 
     //Flush all EDT events to be made before run tests

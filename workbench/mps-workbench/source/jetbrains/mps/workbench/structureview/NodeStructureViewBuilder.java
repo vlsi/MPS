@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.structureview;
 
 import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.*;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.structureview.adds.AspectGrouper;
@@ -38,7 +39,7 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
   @Override
   @NotNull
-  public StructureViewModel createStructureViewModel() {
+  public StructureViewModel createStructureViewModel(@Nullable Editor editor) {
     return new StructureViewModel() {
       @Override
       @Nullable

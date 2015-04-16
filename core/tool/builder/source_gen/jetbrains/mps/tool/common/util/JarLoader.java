@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
-import sun.misc.Resource;
 import java.io.InputStream;
 import java.io.FilterInputStream;
 
@@ -134,20 +133,11 @@ import java.io.FilterInputStream;
       myUrl = url;
     }
     @Override
-    public String getName() {
-      return myEntry.getName();
-    }
-    @Override
     public URL getURL() {
       return myUrl;
     }
     @Override
-    public URL getCodeSourceURL() {
-      return myURL;
-    }
-    @Nullable
-    @Override
-    public InputStream getInputStream() throws IOException {
+    protected InputStream getInputStream() throws IOException {
       final boolean[] wasReleased = {false};
       ZipFile file = null;
       try {
@@ -182,8 +172,9 @@ import java.io.FilterInputStream;
         return null;
       }
     }
+
     @Override
-    public int getContentLength() {
+    protected int getContentLength() {
       return (int) myEntry.getSize();
     }
   }

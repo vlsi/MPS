@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,24 +38,18 @@ import java.util.List;
 public class ConceptDescriptorBuilder {
   private static final String[] EMPTY_STRINGS = new String[0];
   private static final SConceptId[] EMPTY_IDS = new SConceptId[0];
-  private static final boolean[] EMPTY_BOOLS = new boolean[0];
 
   private final String conceptFqName;
   private SConceptId id;
   private String superConcept;
   private boolean isInterfaceConcept;
   private String[] parents;
-  private String[] ownPropertyNames;
-  private String[] ownReferenceNames;
-  private String[] ownChildNames;
-  private boolean[] isMultiple;
   private boolean isAbstract;
   private boolean isFinal;
   private String conceptAlias;
   private String shortDescription;
   private String helpUrl;
   private StaticScope staticScope;
-  private String[] unorderedChildren;
   private SConceptId superConceptId;
   private SConceptId[] parentIds;
   private List<PropertyDescriptor> ownProperties = new ArrayList<PropertyDescriptor>();
@@ -93,7 +87,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder properties(String... names) {
-    this.ownPropertyNames = names;
+    // intentional no-op
     return this;
   }
 
@@ -105,7 +99,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder references(String... names) {
-    this.ownReferenceNames = names;
+    // intentional no-op
     return this;
   }
 
@@ -117,8 +111,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder children(@NotNull String[] names, @NotNull boolean[] multiple) {
-    this.ownChildNames = names;
-    this.isMultiple = multiple;
+    // intentional no-op
     return this;
   }
 
@@ -130,7 +123,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder unordered(String... names) {
-    this.unorderedChildren = names;
+    // intentional no-op
     return this;
   }
 
@@ -175,13 +168,8 @@ public class ConceptDescriptorBuilder {
         parentIds == null ? EMPTY_IDS : parentIds,
         parents == null ? EMPTY_STRINGS : parents,
         ownProperties.toArray(new PropertyDescriptor[ownProperties.size()]),
-        ownPropertyNames == null ? EMPTY_STRINGS : ownPropertyNames,
         ownReferences.toArray(new ReferenceDescriptor[ownReferences.size()]),
-        ownReferenceNames == null ? EMPTY_STRINGS : ownReferenceNames,
         ownLinks.toArray(new LinkDescriptor[ownLinks.size()]),
-        ownChildNames == null ? EMPTY_STRINGS : ownChildNames,
-        isMultiple == null ? EMPTY_BOOLS : isMultiple,
-        unorderedChildren == null ? EMPTY_STRINGS : unorderedChildren,
         isAbstract, isFinal,
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,

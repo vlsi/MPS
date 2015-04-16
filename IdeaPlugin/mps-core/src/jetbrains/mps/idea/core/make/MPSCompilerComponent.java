@@ -38,6 +38,7 @@ import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -57,6 +58,7 @@ public class MPSCompilerComponent implements ProjectComponent {
     this.project = project;
   }
 
+  @Override
   public void projectOpened() {
     CompilerManager compilerManager = CompilerManager.getInstance(project);
 
@@ -132,42 +134,44 @@ public class MPSCompilerComponent implements ProjectComponent {
     });
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "MPS Compiler Component";
   }
 
   private class RefreshFilesCompilationStatusListener implements CustomBuilderMessageHandler {
-
     private final AtomicReference<List<File>>
         myAffectedFiles = new AtomicReference<List<File>>(new ArrayList<File>());
 
     @Override
     public void messageReceived(String builderId, String messageType, String messageText) {
-      if (!MPSMakeConstants.BUILDER_ID.equals(builderId)) {
-        return;
-      }
+      if (MPSMakeConstants.BUILDER_ID.equals(builderId)) {
 
-      if (messageType.equals(MPSCustomMessages.MSG_GENERATED)) {
-        myAffectedFiles.get().add(new File(messageText));
+        if (messageType.equals(MPSCustomMessages.MSG_GENERATED)) {
+          myAffectedFiles.get().add(new File(messageText));
 
-      } else if (messageType.equals(MPSCustomMessages.MSG_REFRESH)) {
-        final List<File> generatedFiles = myAffectedFiles.getAndSet(new ArrayList<File>());
-        if (project.isDisposed() || generatedFiles.isEmpty()) {
-          return;
+        } else if (messageType.equals(MPSCustomMessages.MSG_REFRESH)) {
+          final List<File> generatedFiles = myAffectedFiles.getAndSet(new ArrayList<File>());
+          if (project.isDisposed() || generatedFiles.isEmpty()) {
+            return;
+          }
+
+          // refresh affected files
+          CompilerUtil.refreshIOFiles(generatedFiles);
         }
-
-        // refresh affected files
-        CompilerUtil.refreshIOFiles(generatedFiles);
       }
     }
   }
@@ -181,11 +185,10 @@ public class MPSCompilerComponent implements ProjectComponent {
 
     @Override
     public void messageReceived(String builderId, String messageType, final String messageText) {
-      if (!MPSMakeConstants.BUILDER_ID.equals(builderId)) return;
-      if (!MPSCustomMessages.MSG_ERROR.equals(messageType)) return;
-      myErrorMessages.add(messageText);
+      if (MPSMakeConstants.BUILDER_ID.equals(builderId) && (Kind.ERROR.toString().equals(messageType))) {
+        myErrorMessages.add(messageText);
+      }
     }
   }
-
 }
 

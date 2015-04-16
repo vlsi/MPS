@@ -15,7 +15,6 @@ import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
@@ -44,7 +43,8 @@ import java.io.FileInputStream;
 import jetbrains.mps.util.FileUtil;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
@@ -55,9 +55,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import java.util.Collections;
-import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import java.io.StringWriter;
@@ -102,7 +103,6 @@ public class ModuleGenerationHolder {
     }
 
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
-    ModelAccess.instance().flushEventQueue();
     final Exception[] exceptions = new Exception[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -133,7 +133,6 @@ public class ModuleGenerationHolder {
         }
       }
     });
-    ModelAccess.instance().flushEventQueue();
     if (exceptions[0] != null) {
       throw exceptions[0];
     }
@@ -290,23 +289,21 @@ public class ModuleGenerationHolder {
     }));
   }
   private static Iterable<IResource> collectResources(Project project, final SModule module) {
-    final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SModule mod : withGenerators(Collections.singletonList(module))) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it) {
-              return SNodeOperations.isGeneratable(it);
-            }
-          }));
-        }
+    return new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
+      public Iterable<IResource> compute() {
+
+        Iterable<SModel> models = Sequence.fromIterable(withGenerators(Collections.singletonList(module))).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule mod) {
+            return mod.getModels();
+          }
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return GenerationFacade.canGenerate(it);
+          }
+        });
+        return new ModelsToResources(models).resources(false);
       }
     });
-    return new ModelsToResources(Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel smd) {
-        return GenerationFacade.canGenerate(smd);
-      }
-    })).resources(false);
   }
   private static class MyMessageHandler implements IMessageHandler {
     private final List<String> myGenerationErrors = new ArrayList<String>();

@@ -15,10 +15,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -58,9 +59,9 @@ public class MigrationsUtil {
   }
   public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
-    for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+    for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
       int currentLangVersion = lang.getLanguageVersion();
-      int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+      int ver = module.getUsedLanguageVersion(lang);
 
       ver = Math.max(ver, 0);
       currentLangVersion = Math.max(currentLangVersion, 0);
@@ -72,7 +73,7 @@ public class MigrationsUtil {
     return result;
   }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return !(((AbstractModule) module).getAllUsedLanguages().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
+    return !(new SLanguageHierarchy(module.getUsedLanguages()).getExtended().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
   public static Set<SModule> getModuleDependencies(SModule module) {
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));

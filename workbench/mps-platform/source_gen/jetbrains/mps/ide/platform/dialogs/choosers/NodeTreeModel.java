@@ -12,20 +12,15 @@ import com.intellij.ide.util.treeView.smartTree.Filter;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 
 public abstract class NodeTreeModel implements TreeModel {
   private static SNodeReference FAKE_ROOT = new SNodePointer(null);
@@ -75,12 +70,13 @@ public abstract class NodeTreeModel implements TreeModel {
     }
     @Override
     public ItemPresentation getPresentation() {
-      return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      return new NodePointerPresentation(myNode) {
+        @Nullable
         @Override
-        public ItemPresentation compute() {
-          return new NodeTreeModel.NodeTreeElementPresentation(myNode);
+        public String getLocationString() {
+          return null;
         }
-      });
+      };
     }
     @Override
     public void navigate(boolean b) {
@@ -92,21 +88,13 @@ public abstract class NodeTreeModel implements TreeModel {
             return;
           }
 
-          project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
+          project.getModelAccess().runWriteInEDT(new Runnable() {
             public void run() {
-              SNode node = ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
+              SNode node = myNode.resolve(project.getRepository());
               if (node == null) {
                 return;
               }
-              SModel model = node.getModel();
-              if (model == null) {
-                return;
-              }
-              SModule module = model.getModule();
-              if (module == null) {
-                return;
-              }
-              NavigationSupport.getInstance().openNode(new ModuleContext(module, project), node, true, true);
+              NavigationSupport.getInstance().openNode(project, node, true, true);
             }
           });
         }
@@ -119,15 +107,6 @@ public abstract class NodeTreeModel implements TreeModel {
     @Override
     public boolean canNavigateToSource() {
       return true;
-    }
-  }
-  protected static class NodeTreeElementPresentation extends NodePointerPresentation {
-    public NodeTreeElementPresentation(SNodeReference node) {
-      super(node);
-    }
-    @Override
-    public String doGetLocationString() {
-      return null;
     }
   }
 }

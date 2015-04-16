@@ -6,7 +6,7 @@ import com.intellij.ui.components.JBCheckBox;
 import java.util.List;
 import java.awt.Component;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;

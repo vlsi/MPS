@@ -120,7 +120,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
-    <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.project.DumbService" />

@@ -2,11 +2,11 @@
 <model ref="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -6288,17 +6288,8 @@
         <node concept="3cqZAl" id="9D0Ba05v3z" role="3clF45" />
         <node concept="3Tm1VV" id="9D0Ba05v3$" role="1B3o_S" />
         <node concept="3clFbS" id="9D0Ba05v3_" role="3clF47">
-          <node concept="3clFbF" id="4416plKaBu6" role="3cqZAp">
-            <node concept="2YIFZM" id="9D0Ba05v3D" role="3clFbG">
-              <ref role="37wK5l" to="9fym:~ApplicationImpl.setExceptionalThreadWithReadAccessFlag(boolean):void" resolve="setExceptionalThreadWithReadAccessFlag" />
-              <ref role="1Pybhc" to="9fym:~ApplicationImpl" resolve="ApplicationImpl" />
-              <node concept="3clFbT" id="9D0Ba05v3E" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-          <node concept="2GUZhq" id="9D0Ba05v3F" role="3cqZAp">
-            <node concept="3clFbS" id="9D0Ba05v3G" role="2GV8ay">
+          <node concept="SfApY" id="4Sa0NTIoK6K" role="3cqZAp">
+            <node concept="3clFbS" id="9D0Ba05v3G" role="SfCbr">
               <node concept="3clFbF" id="9D0Ba05v3H" role="3cqZAp">
                 <node concept="2Sg_IR" id="9D0Ba05v3I" role="3clFbG">
                   <node concept="37vLTw" id="2BHiRxeuPgU" role="2SgHGx">
@@ -6310,7 +6301,7 @@
                 </node>
               </node>
             </node>
-            <node concept="TDmWw" id="9D0Ba05v3L" role="TEXxN">
+            <node concept="TDmWw" id="9D0Ba05v3L" role="TEbGg">
               <node concept="3cpWsn" id="9D0Ba05v3M" role="TDEfY">
                 <property role="TrG5h" value="e" />
                 <node concept="3uibUv" id="9D0Ba05v3N" role="1tU5fm">
@@ -6359,17 +6350,6 @@
                 <node concept="YS8fn" id="9D0Ba05v43" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagTuvA" role="YScLw">
                     <ref role="3cqZAo" node="9D0Ba05v3M" resolve="e" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="9D0Ba05v45" role="2GVbov">
-              <node concept="3clFbF" id="9D0Ba05v46" role="3cqZAp">
-                <node concept="2YIFZM" id="9D0Ba05v47" role="3clFbG">
-                  <ref role="1Pybhc" to="9fym:~ApplicationImpl" resolve="ApplicationImpl" />
-                  <ref role="37wK5l" to="9fym:~ApplicationImpl.setExceptionalThreadWithReadAccessFlag(boolean):void" resolve="setExceptionalThreadWithReadAccessFlag" />
-                  <node concept="3clFbT" id="4416plKaCUz" role="37wK5m">
-                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,31 +35,11 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public boolean hasProperty(String name) {
-    return getPropertyNames().contains(name);
-  }
-
-  @Override
-  public boolean hasReference(String name) {
-    return getReferenceNames().contains(name);
-  }
-
-  @Override
-  public boolean hasChild(String name) {
-    return getChildrenNames().contains(name);
-  }
-
-  @Override
   public ConceptKind getConceptKind() {
     Set<String> ancestors = getAncestorsNames();
     return ancestors.contains(SNodeUtil.concept_InterfacePart.getQualifiedName()) ? ConceptKind.INTERFACE
         : ancestors.contains(SNodeUtil.concept_ImplementationWithStubPart.getQualifiedName()) ? ConceptKind.IMPLEMENTATION_WITH_STUB
         : ancestors.contains(SNodeUtil.concept_ImplementationPart.getQualifiedName()) ? ConceptKind.IMPLEMENTATION
         : ConceptKind.NORMAL;
-  }
-
-  @Override
-  public boolean isUnorderedChild(String name) {
-    return getUnorderedChildrenNames().contains(name);
   }
 }

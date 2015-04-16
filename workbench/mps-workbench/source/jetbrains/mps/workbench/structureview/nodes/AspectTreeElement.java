@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,10 @@
 package jetbrains.mps.workbench.structureview.nodes;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.awt.Color;
-
 public class AspectTreeElement extends NodeTreeElement {
-  private static final String NON_BIJECTIONAL_NODE_ASPECT = "non-bijectional node aspect";
   protected boolean myIsBijectional;
   protected RelationDescriptor myAspectDescriptor;
 
@@ -46,19 +40,5 @@ public class AspectTreeElement extends NodeTreeElement {
   @Override
   public TreeElement[] getChildren() {
     return new TreeElement[0];
-  }
-
-  @Override
-  public ItemPresentation getPresentation() {
-    return new NodeTreeElementPresentation() {
-      @Override
-      public TextAttributesKey getTextAttributesKey() {
-        if (myIsBijectional) return null;
-
-        TextAttributes att = new TextAttributes();
-        att.setForegroundColor(Color.GRAY);
-        return TextAttributesKey.createTextAttributesKey(NON_BIJECTIONAL_NODE_ASPECT, att);
-      }
-    };
   }
 }

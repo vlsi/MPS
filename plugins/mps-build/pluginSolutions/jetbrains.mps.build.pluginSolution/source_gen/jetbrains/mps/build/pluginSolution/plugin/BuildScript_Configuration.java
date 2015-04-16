@@ -6,6 +6,7 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
@@ -39,7 +40,7 @@ import org.apache.log4j.LogManager;
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
-  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.build.structure.BuildProject", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return true;
     }

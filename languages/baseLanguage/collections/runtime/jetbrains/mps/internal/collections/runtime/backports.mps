@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -24,6 +25,9 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
+        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -143,7 +147,36 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" flags="nn" index="1ZRNhn" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -151,6 +184,7 @@
   </registry>
   <node concept="3HP615" id="5Ffu4tBUxOx">
     <property role="TrG5h" value="Deque" />
+    <property role="IEkAT" value="false" />
     <node concept="3Tm1VV" id="5Ffu4tBUxOy" role="1B3o_S" />
     <node concept="16euLQ" id="5Ffu4tBUxOz" role="16eVyc">
       <property role="TrG5h" value="T" />
@@ -158,6 +192,12 @@
     <node concept="3uibUv" id="5Ffu4tBUxO$" role="3HQHJm">
       <ref role="3uigEE" to="k7g3:~Queue" resolve="Queue" />
       <node concept="16syzq" id="5Ffu4tBUxO_" role="11_B2D">
+        <ref role="16sUi3" node="5Ffu4tBUxOz" resolve="T" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="6gPw0iAPuKO" role="3HQHJm">
+      <ref role="3uigEE" to="k7g3:~Deque" resolve="Deque" />
+      <node concept="16syzq" id="6gPw0iAPvQa" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxOz" resolve="T" />
       </node>
     </node>
@@ -345,9 +385,31 @@
       </node>
       <node concept="3clFbS" id="5Ffu4tBUxPS" role="3clF47" />
     </node>
+    <node concept="2AHcQZ" id="3lc436X69pQ" role="2AJF6D">
+      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="3UR2Jj" id="3lc436X6e52" role="lGtFl">
+      <node concept="TZ5HA" id="3lc436X6e53" role="TZ5H$">
+        <node concept="1dT_AC" id="3lc436X6e54" role="1dT_Ay">
+          <property role="1dT_AB" value="@deprecated use " />
+        </node>
+        <node concept="1dT_AA" id="3lc436X6fAh" role="1dT_Ay">
+          <node concept="92FcH" id="3lc436X6fAn" role="qph3F">
+            <node concept="VXe08" id="3lc436X6j$m" role="92FcQ">
+              <ref role="VXe09" to="k7g3:~Deque" resolve="Deque" />
+            </node>
+            <node concept="TZ5HA" id="3lc436X6fAr" role="2XjZqd" />
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3lc436X6fAg" role="1dT_Ay">
+          <property role="1dT_AB" value=" instead" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5Ffu4tBUyZm">
     <property role="TrG5h" value="LinkedList" />
+    <property role="IEkAT" value="true" />
     <node concept="3Tm1VV" id="5Ffu4tBUyZn" role="1B3o_S" />
     <node concept="16euLQ" id="5Ffu4tBUyZo" role="16eVyc">
       <property role="TrG5h" value="T" />
@@ -862,6 +924,29 @@
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
+    </node>
+    <node concept="3UR2Jj" id="3lc436X4cGF" role="lGtFl">
+      <node concept="TZ5HI" id="3lc436X4cGG" role="TZ5Hx">
+        <node concept="TZ5HA" id="3lc436X4cGH" role="3HnX3l">
+          <node concept="1dT_AC" id="3lc436X4eGY" role="1dT_Ay">
+            <property role="1dT_AB" value="use " />
+          </node>
+          <node concept="1dT_AA" id="3lc436X4eH1" role="1dT_Ay">
+            <node concept="92FcH" id="3lc436X4eH7" role="qph3F">
+              <node concept="VXe08" id="3lc436X4iF6" role="92FcQ">
+                <ref role="VXe09" to="k7g3:~LinkedList" resolve="LinkedList" />
+              </node>
+              <node concept="TZ5HA" id="3lc436X4eHb" role="2XjZqd" />
+            </node>
+          </node>
+          <node concept="1dT_AC" id="3lc436X4eH0" role="1dT_Ay">
+            <property role="1dT_AB" value=" instead" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="3lc436X4cGI" role="2AJF6D">
+      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
 </model>

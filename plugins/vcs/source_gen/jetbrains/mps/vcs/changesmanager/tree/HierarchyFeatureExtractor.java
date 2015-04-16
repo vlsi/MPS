@@ -7,9 +7,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class HierarchyFeatureExtractor implements TreeNodeFeatureExtractor {
   public HierarchyFeatureExtractor() {
@@ -18,10 +16,7 @@ public class HierarchyFeatureExtractor implements TreeNodeFeatureExtractor {
   @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {
     if (treeNode instanceof HierarchyTreeNode) {
-      SNode node = ((HierarchyTreeNode) treeNode).getNode();
-      if (node != null) {
-        return new NodeFeature(new SNodePointer(node));
-      }
+      return new NodeFeature(((HierarchyTreeNode) treeNode).getNodeReference());
     }
     return null;
   }

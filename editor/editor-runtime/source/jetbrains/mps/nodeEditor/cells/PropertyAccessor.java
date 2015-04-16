@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,7 +44,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) myNode).getPropertyDeclaration(myPropertyName);
+        SNode propertyDeclaration = new SNodeLegacy(myNode).getPropertyDeclaration(myPropertyName);
         return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
       }
     });
@@ -58,7 +59,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) myNode).getPropertyDeclaration(myPropertyName);
+        SNode propertyDeclaration = new SNodeLegacy(myNode).getPropertyDeclaration(myPropertyName);
         return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
       }
     });

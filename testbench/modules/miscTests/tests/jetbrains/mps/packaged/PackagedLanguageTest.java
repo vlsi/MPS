@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,19 @@ package jetbrains.mps.packaged;
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -37,8 +42,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
+ * Project with solution and packaged language
  * @author Evgeny Gerashchenko
- * @since 14 December 2010
  */
 public class PackagedLanguageTest extends WorkbenchMpsTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testPackaged");
@@ -52,13 +57,13 @@ public class PackagedLanguageTest extends WorkbenchMpsTest {
     final boolean result = ProjectTestsSupport.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
         new ProjectRunnable() {
           public boolean execute(final Project project) {
-            return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+            return new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<Boolean>() {
               @Override
               public Boolean compute() {
-                checkStructureModelLoaded();
-                checkEditorModelLoaded();
+                checkStructureModelLoaded(project);
+                checkEditorModelLoaded(project);
                 checkIconsLoaded();
-                checkStubsLoaded();
+                checkStubsLoaded(project);
                 return true;
               }
             });
@@ -69,29 +74,30 @@ public class PackagedLanguageTest extends WorkbenchMpsTest {
     }
   }
 
-  private void checkStructureModelLoaded() {
-    final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + ".structure");
-    Assert.assertNotNull(structureModelDescriptor);
-    final SModel structureModel = structureModelDescriptor;
+  private Language getPackagedLanguage(Project project) {
+    // FIXME shall use project to access repository. However, at the moment project's repository doesn't contain any module
+    return ModuleRepositoryFacade.getInstance().getModule(PACKAGED_LANGUAGE, Language.class);
+  }
+
+  private void checkStructureModelLoaded(Project project) {
+    final SModel structureModel = LanguageAspect.STRUCTURE.get(getPackagedLanguage(project));
     Assert.assertNotNull(structureModel);
     Assert.assertEquals(1, IterableUtil.asCollection(structureModel.getRootNodes()).size());
     SNode root = structureModel.getRootNodes().iterator().next();
-    Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, "name"));
+    Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, SNodeUtil.property_INamedConcept_name));
     final SNode propertyDeclaration = jetbrains.mps.util.SNodeOperations.getChild(root, "propertyDeclaration");
     Assert.assertNotNull(propertyDeclaration);
-    Assert.assertEquals("someProperty", SNodeAccessUtil.getProperty(propertyDeclaration, "name"));
+    Assert.assertEquals("someProperty", SNodeAccessUtil.getProperty(propertyDeclaration, SNodeUtil.property_INamedConcept_name));
   }
 
-  private void checkEditorModelLoaded() {
-    final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + ".editor");
-    Assert.assertNotNull(editorModelDescriptor);
-    final SModel editorModel = editorModelDescriptor;
+  private void checkEditorModelLoaded(Project project) {
+    final SModel editorModel = LanguageAspect.EDITOR.get(getPackagedLanguage(project));
     Assert.assertNotNull(editorModel);
     Assert.assertEquals(1, IterableUtil.asCollection(editorModel.getRootNodes()).size());
   }
 
   private void checkIconsLoaded() {
-    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final SNode packagedConceptInstance = SModelUtil_new.instantiateConceptDeclaration(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT, null, null, false);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());
@@ -106,14 +112,18 @@ public class PackagedLanguageTest extends WorkbenchMpsTest {
     }
   }
 
-  private void checkStubsLoaded() {
-    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor("dummy" + "@java_stub");
-    Assert.assertNotNull(libraryModelDescriptor);
-    final SModel libraryModel = libraryModelDescriptor;
+  private void checkStubsLoaded(Project project) {
+    SModel libraryModel = null;
+    for (SModel m : getPackagedLanguage(project).getModels()) {
+      if ("dummy@java_stub".equals(m.getModelName())) {
+        libraryModel = m;
+        break;
+      }
+    }
     Assert.assertNotNull(libraryModel);
     Assert.assertEquals(1, IterableUtil.asCollection(libraryModel.getRootNodes()).size());
     final SNode root = libraryModel.getRootNodes().iterator().next();
-    Assert.assertEquals("DummyLibraryClass", SNodeAccessUtil.getProperty(root, "name"));
+    Assert.assertEquals("DummyLibraryClass", SNodeAccessUtil.getProperty(root, SNodeUtil.property_INamedConcept_name));
 
     SNode method = null;
     for (SNode child : root.getChildren("member")) {
@@ -127,6 +137,6 @@ public class PackagedLanguageTest extends WorkbenchMpsTest {
       }
     }
     Assert.assertNotNull(method);
-    Assert.assertEquals("doSomething", SNodeAccessUtil.getProperty(method, "name"));
+    Assert.assertEquals("doSomething", SNodeAccessUtil.getProperty(method, SNodeUtil.property_INamedConcept_name));
   }
 }

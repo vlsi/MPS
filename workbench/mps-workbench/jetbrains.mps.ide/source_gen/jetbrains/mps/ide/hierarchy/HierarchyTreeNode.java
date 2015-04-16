@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,7 +24,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
   }
   @Override
   protected void doUpdatePresentation() {
-    @DisposableCommand SNode node = myNode;
+    SNode node = myNode;
     if (node == null) {
       return;
     }
@@ -54,6 +53,10 @@ public class HierarchyTreeNode extends MPSTreeNode {
   }
   public SNode getNode() {
     return myNode;
+  }
+  @NotNull
+  public SNodeReference getNodeReference() {
+    return myNodeRef;
   }
   @NotNull
   public String calculateNodeIdentifier() {

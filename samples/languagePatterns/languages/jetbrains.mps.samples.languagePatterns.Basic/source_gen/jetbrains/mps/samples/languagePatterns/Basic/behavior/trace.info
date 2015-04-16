@@ -3,6 +3,9 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="AbstractRequestDescription_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
+    </file>
     <file name="AgendaItem_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AgendaItem_BehaviorDescriptor" />
     </file>
@@ -10,7 +13,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,64,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,72,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Car_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" />
@@ -45,6 +48,9 @@
     <file name="EmptyLine_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" />
     </file>
+    <file name="FormDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" />
+    </file>
     <file name="FruitPlate_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" />
     </file>
@@ -75,11 +81,20 @@
     <file name="RaceParticipant_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.RaceParticipant_BehaviorDescriptor" />
     </file>
+    <file name="Request_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" />
+    </file>
+    <file name="SimplifiedFormDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" />
+    </file>
     <file name="Singer_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" />
     </file>
     <file name="SolidLine_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" />
+    </file>
+    <file name="StringDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" />
     </file>
     <file name="Truck_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" />

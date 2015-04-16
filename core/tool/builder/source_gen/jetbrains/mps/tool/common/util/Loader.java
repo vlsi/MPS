@@ -4,7 +4,6 @@ package jetbrains.mps.tool.common.util;
 
 import java.net.URL;
 import org.jetbrains.annotations.Nullable;
-import sun.misc.Resource;
 import java.io.IOException;
 
 /*package*/ abstract class Loader {

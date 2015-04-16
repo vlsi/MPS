@@ -22,7 +22,6 @@ import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -35,9 +34,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -176,8 +172,6 @@ public class UsagesTree extends MPSTree {
 
   @Override
   public void rebuildNow() {
-    ThreadUtils.assertEDT();
-
     UsagesTree.super.rebuildNow();
     int i;
     for (i = 0; i < getRootNode().getChildCount(); i++) {
@@ -262,11 +256,15 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    final IOperationContext operationContext = new ProjectOperationContext(myProject);
     ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<UsagesTreeNode>(new Computable<UsagesTreeNode>() {
       @Override
       public UsagesTreeNode compute() {
-        UsagesTreeNode root = new UsagesTreeNode(operationContext);
+        UsagesTreeNode root = new UsagesTreeNode();
+        if (myContents.getTreeRoot().getChildren().isEmpty()) {
+          // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
+          // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
+          return root;
+        }
         if (myShowSearchedNodes) {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
@@ -286,9 +284,9 @@ public class UsagesTree extends MPSTree {
           } else {
             searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
           }
-          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider, operationContext));
+          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
         }
-        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider, operationContext));
+        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
 
         return root;
       }
@@ -299,8 +297,8 @@ public class UsagesTree extends MPSTree {
 
   //this is not recursive
   //use only for top-level nodes
-  private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories, IOperationContext ctx) {
-    List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories, ctx);
+  private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories) {
+    List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories);
     assert children.size() == 1;
 
     UsagesTreeNode child = children.get(0);
@@ -342,15 +340,15 @@ public class UsagesTree extends MPSTree {
     }
   }
 
-  private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories, IOperationContext ctx) {
+  private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
     for (DataNode child : root.getChildren()) {
-      children.addAll(buildSubtreeStructure(child, nodeCategories, ctx));
+      children.addAll(buildSubtreeStructure(child, nodeCategories));
     }
 
     BaseNodeData data = root.getData();
     if (nodeCategories.contains(data.getRole()) || data.isResultNode()) {
-      UsagesTreeNode node = new UsagesTreeNode(root, ctx);
+      UsagesTreeNode node = new UsagesTreeNode(root);
 
       for (UsagesTreeNode child : children) {
         node.add(child);
@@ -522,7 +520,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         if (treeNode.getUserObject() == null) {
@@ -533,10 +531,10 @@ public class UsagesTree extends MPSTree {
         if (data instanceof NodeNodeData) {
           SNode node = ((NodeNodeData) data).getNode();
           if (node != null) {
-            if (!inProjectIfPossible) {
-              navigateToNode(node, focus);
+            if (inProjectIfPossible) {
+              NavigationSupport.getInstance().selectInTree(myProject, node, focus);
             } else {
-              navigateInTree(node, focus);
+              NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
             }
           } else {
             LOG.info("clicked node was deleted");
@@ -544,12 +542,12 @@ public class UsagesTree extends MPSTree {
         } else if (data instanceof ModelNodeData) {
           SModel model = ((ModelNodeData) data).getModel();
           if (model != null) {
-            navigateInTree(model, focus);
+            NavigationSupport.getInstance().selectInTree(myProject, model, focus);
           }
         } else if (data instanceof ModuleNodeData) {
           SModule module = ((ModuleNodeData) data).getModule();
           if (module != null) {
-            navigateInTree(module, focus);
+            NavigationSupport.getInstance().selectInTree(myProject, module, focus);
           }
         }
       }
@@ -642,30 +640,6 @@ public class UsagesTree extends MPSTree {
     }
   }
 
-  public void navigateToNode(final SNode node, boolean focus) {
-    ModelAccess.assertLegalWrite();
-
-    SModel modelDescriptor = node.getModel();
-    if (modelDescriptor == null) return;
-
-    SModule module = modelDescriptor.getModule();
-    if (module == null) return;
-
-    NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
-  }
-
-  private void navigateInTree(Object o, boolean focus) {
-    if (o instanceof SNode) {
-      NavigationSupport.getInstance().selectInTree(myProject, (SNode) o, focus);
-    } else if (o instanceof SModel) {
-      NavigationSupport.getInstance().selectInTree(myProject, ((SModel) o), focus);
-    } else if (o instanceof SModule) {
-      NavigationSupport.getInstance().selectInTree(myProject, (SModule) o, focus);
-    } else {
-      throw new IllegalArgumentException();
-    }
-  }
-
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;
     return (UsagesTreeNode) getRootNode().getChildAt(index);
@@ -691,13 +665,12 @@ public class UsagesTree extends MPSTree {
   public class UsagesTreeNode extends MPSTreeNode {
     private int mySubresultsCount = 0;
 
-    public UsagesTreeNode(IOperationContext ctx) {
-      super(ctx);
+    public UsagesTreeNode() {
       setNodeIdentifier("");
     }
 
-    public UsagesTreeNode(DataNode userObj, IOperationContext ctx) {
-      super(userObj, ctx);
+    public UsagesTreeNode(DataNode userObj) {
+      super(userObj);
       if (userObj != null) {
         setNodeIdentifier(userObj.getData().getPlainText());
       }

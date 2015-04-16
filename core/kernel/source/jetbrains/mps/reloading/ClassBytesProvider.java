@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,49 @@
  */
 package jetbrains.mps.reloading;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.net.URL;
+
 public interface ClassBytesProvider {
+  /**
+   * use {@link #getClassBytes} instead
+   */
+  @Deprecated
   @Nullable
   byte[] getClass(String name);
+
+  @Nullable
+  ClassBytes getClassBytes(String name);
+
+  public static interface ClassBytes {
+    @NotNull
+    byte[] getBytes();
+
+    @NotNull
+    URL getPath();
+  }
+
+  public static class DefaultClassBytes implements ClassBytes {
+    private final byte[] myBytes;
+    private final URL myPath;
+
+    public DefaultClassBytes(@NotNull byte[] bytes, @NotNull URL path) {
+      myBytes = bytes;
+      myPath = path;
+    }
+
+    @NotNull
+    @Override
+    public byte[] getBytes() {
+      return myBytes;
+    }
+
+    @NotNull
+    @Override
+    public URL getPath() {
+      return myPath;
+    }
+  }
 }

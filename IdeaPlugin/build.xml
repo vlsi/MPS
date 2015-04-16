@@ -178,13 +178,12 @@
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="false">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
-      <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
@@ -212,18 +211,17 @@
         </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>
-      <test name="jetbrains.mps.idea.java.tests.AllJavaTests"/>
+      <test name="jetbrains.mps.idea.java.tests.JavaTestSuite"/>
     </junit>
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="false">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
-      <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
@@ -231,7 +229,6 @@
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
-      <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
       <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
@@ -248,26 +245,24 @@
         </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>
-      <test name="jetbrains.mps.idea.core.tests.AllTests"/>
+      <test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>
     </junit>
-
 
     <junit fork="true"
            dir="."
-           haltonfailure="true"
+           haltonfailure="false"
            showoutput="true"
            enableTestListenerEvents="true">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
-      <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.core.ex"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
@@ -295,7 +290,7 @@
         <file file="${plugins.sandbox.dir}/plugins/mps-java/lib/mps-java-common.jar"/>
         <pathelement path="${java.class.path}"/>
       </classpath>
-      <test name="jetbrains.mps.jps.make.AllMakeTests"/>
+      <test name="jetbrains.mps.jps.make.tests.JpsMakeTestSuite"/>
     </junit>
 
   </target>

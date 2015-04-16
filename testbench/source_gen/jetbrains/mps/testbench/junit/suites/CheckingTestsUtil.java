@@ -28,10 +28,12 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.validation.ModelValidator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.MessageCollectConsumer;
 
 public class CheckingTestsUtil {
   public CheckingTestsUtil() {
@@ -174,9 +176,9 @@ public class CheckingTestsUtil {
           if (!(SModelStereotype.isUserModel(sm))) {
             continue;
           }
-          StringBuilder errorMessages = CheckingTestsUtil.checkModel(sm);
-          if (errorMessages.length() > 0) {
-            errors.add("Broken References: " + errorMessages.toString());
+          String errorsMsgs = CheckingTestsUtil.checkModel(sm);
+          if (errorsMsgs != null) {
+            errors.add("Broken References: " + errorsMsgs);
           }
         }
       }
@@ -188,9 +190,9 @@ public class CheckingTestsUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModule sm : modules) {
-          StringBuilder errorMessages = CheckingTestsUtil.checkModuleInternal(sm);
-          if (errorMessages.length() > 0) {
-            errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+          String error = CheckingTestsUtil.checkModuleInternal(sm);
+          if (error != null) {
+            errors.add("Error in module " + sm.getModuleName() + ": " + error);
           }
         }
       }
@@ -224,24 +226,30 @@ public class CheckingTestsUtil {
       }
     }
   }
-  private static StringBuilder checkModel(final SModel sm) {
-    StringBuilder errorMessages = new StringBuilder();
-    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return new ModelValidator(sm).validate();
+  private static String checkModel(final SModel sm) {
+    final StringBuilder errorMessages = new StringBuilder();
+    errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+    final Wrappers._boolean withErrors = new Wrappers._boolean(false);
+
+    // todo why read here and no read when accessing nodes? 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ValidationUtil.validateModel(sm, new Consumer<ValidationProblem>() {
+          public void consume(ValidationProblem problem) {
+            if (problem.getSeverity() != ValidationProblem.Severity.ERROR) {
+              return;
+            }
+            withErrors.value = true;
+            errorMessages.append("\t").append(problem.getMessage()).append("\n");
+          }
+        });
       }
     });
-    if (!(validationResult.isEmpty())) {
-      errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
-      for (String item : validationResult) {
-        errorMessages.append("\t");
-        errorMessages.append(item);
-        errorMessages.append("\n");
-      }
-    }
+
     for (SNode node : SNodeUtil.getDescendants(sm)) {
       // Testbench.LOG.debug("Checking node " + node); 
       if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()) == null) {
+        withErrors.value = true;
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConcept().getQualifiedName());
         errorMessages.append("\n");
@@ -252,27 +260,32 @@ public class CheckingTestsUtil {
         if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }
-        if (SNodeOperations.getTargetNodeSilently(ref) == null) {
-          errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
+        if (SNodeOperations.getTargetNodeSilently(ref) != null) {
+          continue;
         }
+
+        withErrors.value = true;
+        errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
       }
     }
-    return errorMessages;
+
+    return (withErrors.value ? errorMessages.toString() : null);
   }
-  private static StringBuilder checkModuleInternal(final SModule module) {
-    StringBuilder errorMessages = new StringBuilder();
-    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return ModuleValidatorFactory.createValidator(module).getErrors();
+  private static String checkModuleInternal(final SModule module) {
+    final MessageCollectConsumer consumer = new MessageCollectConsumer();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ValidationUtil.validateModule(module, consumer);
       }
     });
-    if (!(validationResult.isEmpty())) {
-      for (String item : validationResult) {
-        errorMessages.append("\t");
-        errorMessages.append(item);
-        errorMessages.append("\n");
-      }
+    if (consumer.getErrors().isEmpty()) {
+      return null;
     }
-    return errorMessages;
+
+    StringBuilder errorMessages = new StringBuilder();
+    for (String item : consumer.getErrors()) {
+      errorMessages.append("\t").append(item).append("\n");
+    }
+    return errorMessages.toString();
   }
 }

@@ -17,16 +17,16 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -39,21 +39,8 @@ public class ModelNodeData extends AbstractResultNodeData {
 
   public SModelReference myModelReference;
 
-  public ModelNodeData(PathItemRole role, SearchResult result, boolean isResult,
-      INodeRepresentator nodeRepresentator, boolean resultsSection) {
-    super(role,
-        (isResult && nodeRepresentator != null) ?
-            nodeRepresentator.getPresentation(result.getObject()) :
-            SNodeOperations.getModelLongName(((SModel) result.getPathObject())),
-        "",
-        false,
-        isResult,
-        resultsSection);
-    myModelReference = ((SModel) result.getPathObject()).getReference();
-  }
-
-  public ModelNodeData(PathItemRole role, SModelReference modelReference, boolean isResult, boolean resultsSection) {
-    super(role, modelReference.getModelName(), "", false, isResult, resultsSection);
+  public ModelNodeData(PathItemRole role, @Nullable String caption, @NotNull SModelReference modelReference, boolean isResult, boolean resultsSection) {
+    super(role, caption != null ? caption : modelReference.getModelName(), "", false, isResult, resultsSection);
     myModelReference = modelReference;
   }
 
@@ -75,12 +62,22 @@ public class ModelNodeData extends AbstractResultNodeData {
     return getModelReference().toString() + "/" + getPlainText();
   }
 
+  /**
+   * @deprecated use {@link #getModelReference()} ()} and resolve as appropriate
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModel getModel() {
     SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor;
   }
 
+  /**
+   * @deprecated use {@link #getModelReference()} ()} and resolve as appropriate
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
@@ -93,7 +90,7 @@ public class ModelNodeData extends AbstractResultNodeData {
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element modelXML = new Element(MODEL);
-    modelXML.setAttribute(UID, myModelReference.toString());
+    modelXML.setAttribute(UID, PersistenceFacade.getInstance().asString(myModelReference));
     element.addContent(modelXML);
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,6 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -390,15 +389,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     private boolean mySurroundWith = false;
 
     public QueryDescriptor() {
-    }
-
-    /**
-     * @deprecated no-op operation
-     */
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public void setIntentionClass(Class<? extends Intention> intentionClass) {
-      // no-op
     }
 
     public void setSurroundWith(boolean surroundWith) {

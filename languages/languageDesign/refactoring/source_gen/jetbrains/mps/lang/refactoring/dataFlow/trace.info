@@ -6,7 +6,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DFABuilders.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.refactoring.dataFlow.DFABuilders" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.refactoring.dataFlow.DFABuilders" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590314(jetbrains.mps.lang.refactoring.dataFlow)/1210946712795">
@@ -23,38 +23,6 @@
         <var name="operationContext" id="1210946712795" />
       </scope>
       <unit id="1210946712795" at="12,0,20,0" name="jetbrains.mps.lang.refactoring.dataFlow.AbstractMoveExpression_DataFlow" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590314(jetbrains.mps.lang.refactoring.dataFlow)/3302086321379400383">
-    <file name="ChangeFeatureNameExpression_DataFlow.java">
-      <node id="3302086321379400386" at="15,102,16,221" concept="1" />
-      <node id="3302086321379400390" at="16,221,17,230" concept="1" />
-      <node id="3302086321379400394" at="17,230,18,228" concept="1" />
-      <node id="3302086321379400383" at="13,0,15,0" concept="0" trace="ChangeFeatureNameExpression_DataFlow#()V" />
-      <node id="3302086321379400383" at="15,0,20,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="3302086321379400383" at="13,49,13,49" />
-      <scope id="3302086321379400383" at="13,0,15,0" />
-      <scope id="3302086321379400385" at="15,102,18,228" />
-      <scope id="3302086321379400383" at="15,0,20,0">
-        <var name="_context" id="3302086321379400383" />
-        <var name="operationContext" id="3302086321379400383" />
-      </scope>
-      <unit id="3302086321379400383" at="12,0,21,0" name="jetbrains.mps.lang.refactoring.dataFlow.ChangeFeatureNameExpression_DataFlow" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590314(jetbrains.mps.lang.refactoring.dataFlow)/3302086321379403372">
-    <file name="DeleteFeatureExpression_DataFlow.java">
-      <node id="3302086321379403375" at="15,102,16,221" concept="1" />
-      <node id="3302086321379403372" at="13,0,15,0" concept="0" trace="DeleteFeatureExpression_DataFlow#()V" />
-      <node id="3302086321379403372" at="15,0,18,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="3302086321379403372" at="13,45,13,45" />
-      <scope id="3302086321379403374" at="15,102,16,221" />
-      <scope id="3302086321379403372" at="13,0,15,0" />
-      <scope id="3302086321379403372" at="15,0,18,0">
-        <var name="_context" id="3302086321379403372" />
-        <var name="operationContext" id="3302086321379403372" />
-      </scope>
-      <unit id="3302086321379403372" at="12,0,19,0" name="jetbrains.mps.lang.refactoring.dataFlow.DeleteFeatureExpression_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590314(jetbrains.mps.lang.refactoring.dataFlow)/500737799669193846">

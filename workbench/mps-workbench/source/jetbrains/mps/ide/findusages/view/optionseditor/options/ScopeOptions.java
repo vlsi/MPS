@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 
+// FIME myModel and myModule are DEFAULT_VALUE - why do we serialize this, and why
 public class ScopeOptions extends BaseOptions {
   private static final Logger LOG = LogManager.getLogger(ScopeOptions.class);
   private static final String SCOPE_TYPE = "scope_type";
@@ -50,7 +49,7 @@ public class ScopeOptions extends BaseOptions {
     read(element, project);
   }
 
-  public ScopeOptions(ScopeType scopeType, String model, String module) {
+  public ScopeOptions(@NotNull ScopeType scopeType, String model, String module) {
     myScopeType = scopeType;
     myModel = model;
     myModule = module;
@@ -86,22 +85,6 @@ public class ScopeOptions extends BaseOptions {
     myModule = module;
   }
 
-  public FindUsagesScope getScope(IOperationContext operationContext, SModel descriptor) {
-    switch (myScopeType) {
-      case GLOBAL:
-        return new GlobalScope();
-      case PROJECT:
-        return new ProjectScope(operationContext.getProject());
-      case MODULE:
-        return new ModulesScope(myModule);
-      case MODEL:
-        return new ModelsScope(myModel);
-      default:
-        LOG.error("Illegal scope type: " + myScopeType);
-        return new GlobalScope();
-    }
-  }
-
   public FindUsagesScope getScope(Project project) {
     switch (myScopeType) {
       case GLOBAL:
@@ -109,18 +92,13 @@ public class ScopeOptions extends BaseOptions {
       case PROJECT:
         return new ProjectScope(project);
       case MODULE:
-        return new ModulesScope(myModule);
+        return new ModulesScope(MPSModuleRepository.getInstance().getModuleByFqName(myModule));
       case MODEL:
-        return new ModelsScope(myModel);
+        return new ModelsScope(SModelRepository.getInstance().getModelDescriptor(myModel));
       default:
         LOG.error("Illegal scope type: " + myScopeType);
         return new GlobalScope();
     }
-  }
-
-  @NotNull
-  public SearchQuery getResult(SNode node, IOperationContext context, SModel modelDescriptor) {
-    return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 
   @Override

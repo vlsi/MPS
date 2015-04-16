@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
@@ -130,7 +131,7 @@ public class ChildSubstituteActionsHelper {
     if (childSetter instanceof DefaultChildNodeSetter) {
       linkDeclaration = ((DefaultChildNodeSetter) childSetter).myLinkDeclaration;
     } else if (childSetter instanceof AbstractCellMenuPart_ReplaceNode_CustomNodeConcept && currentChild != null) {
-      linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
+      linkDeclaration = new SNodeLegacy(currentChild).getRoleLink();
     } else {
       linkDeclaration = null;
     }
@@ -215,7 +216,7 @@ public class ChildSubstituteActionsHelper {
     SNode linkDeclaration = null;
     int index = 0;
     if (currentChild != null) {
-      linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
+      linkDeclaration = new SNodeLegacy(currentChild).getRoleLink();
       index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getContainmentLink()).indexOf(currentChild);
     }
 //    TODO generate wrapping setter to have access to original link

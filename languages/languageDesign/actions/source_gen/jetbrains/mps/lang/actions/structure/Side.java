@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum Side {
   right("right", null),

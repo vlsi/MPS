@@ -47,7 +47,6 @@ public class ProjectCreationTest {
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
   private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
-      PROJECT_PROPERTIES_DIR + "/encodings.xml",
       PROJECT_PROPERTIES_DIR + "/misc.xml",
       PROJECT_PROPERTIES_DIR + "/vcs.xml",
       PROJECT_PROPERTIES_DIR + "/workspace.xml",

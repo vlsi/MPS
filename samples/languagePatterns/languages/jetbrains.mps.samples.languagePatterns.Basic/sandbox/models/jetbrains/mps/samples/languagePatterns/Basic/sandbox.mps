@@ -2,8 +2,8 @@
 <model ref="r:ec46ec3f-76d3-4bf3-b52d-6703b340405c(jetbrains.mps.samples.languagePatterns.Basic.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="7a6f7ef7-3988-464b-8cc5-1182671c136e" name="jetbrains.mps.samples.languagePatterns.Basic" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7a6f7ef7-3988-464b-8cc5-1182671c136e" name="jetbrains.mps.samples.languagePatterns.Basic" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports />
   <registry>
@@ -46,6 +46,13 @@
       <concept id="3803436373354308747" name="jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle" flags="ng" index="3jnu6L">
         <property id="3803436373354308750" name="title" index="3jnu6O" />
         <child id="3803436373354309716" name="singer" index="3jnuPI" />
+      </concept>
+      <concept id="1885452693916492625" name="jetbrains.mps.samples.languagePatterns.Basic.structure.Request" flags="ng" index="1nA5DH">
+        <child id="1885452693916492683" name="description" index="1nA5ER" />
+      </concept>
+      <concept id="1885452693916492788" name="jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription" flags="ng" index="1nA5F8">
+        <property id="1885452693916492794" name="detail" index="1nA5F6" />
+        <property id="1885452693916492789" name="requestor" index="1nA5F9" />
       </concept>
       <concept id="5681697064999188987" name="jetbrains.mps.samples.languagePatterns.Basic.structure.Container" flags="ng" index="3YvCyr">
         <child id="5681697064999189115" name="components" index="3YvCGr" />
@@ -248,6 +255,13 @@
   <node concept="noRXt" id="34YubGAolS0">
     <property role="TrG5h" value="My Painting" />
     <property role="3GE5qa" value="fluent-editing" />
+  </node>
+  <node concept="1nA5DH" id="1CEujLdGPmJ">
+    <property role="TrG5h" value="NewScreen" />
+    <node concept="1nA5F8" id="1CEujLdHGWA" role="1nA5ER">
+      <property role="1nA5F9" value="Joe" />
+      <property role="1nA5F6" value="need it now" />
+    </node>
   </node>
 </model>
 

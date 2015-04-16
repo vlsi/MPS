@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
-import java.util.List;
 
 
 public class GeneratorUtil {
@@ -42,33 +39,6 @@ public class GeneratorUtil {
   public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
     // FIXME there's MetaAdapterByDeclaration, but it deals with smodel.SNode
     return NameUtil.nodeFQName(applicableConceptOfRule);
-  }
-
-
-  public static void logCurrentGenerationBranch(IGeneratorLogger logger, IGenerationTracer generationTracer, boolean error) {
-    List<Pair<SNode, String>> pairs = generationTracer.getNodesWithTextFromCurrentBranch();
-    StringBuilder indent = new StringBuilder();
-    boolean indentInc = true;
-    for (Pair<SNode, String> pair : pairs) {
-      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeOperations.getDebugText(pair.o1) : "");
-      SNodeReference nr = pair.o1 == null ? null : pair.o1.getReference();
-      if (error) {
-        logger.error(nr, logMessage);
-      } else {
-        logger.info(nr, logMessage);
-      }
-      if (indentInc && indent.length() >= 80) {
-        indentInc = false;
-      } else if (indent.length() == 0) {
-        indentInc = true;
-      }
-
-      if (indentInc) {
-        indent.append(".");
-      } else {
-        indent.deleteCharAt(indent.length() - 1);
-      }
-    }
   }
 
   public static ProblemDescription describeInput(TemplateContext ctx) {

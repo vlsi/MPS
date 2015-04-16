@@ -69,35 +69,34 @@ public class FileClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public synchronized byte[] getClass(String name) {
+  public synchronized ClassBytes getClassBytes(String name) {
     checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
-    String shortname = NameUtil.shortNameFromLongName(name);
+    String shortName = NameUtil.shortNameFromLongName(name);
 
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> classes = myAvailableClassesCache.get(namespace);
-    if (classes == null
-      || !classes.contains(shortname)) {
+    if (classes == null || !classes.contains(shortName)) {
       return null;
     }
 
     String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
     try {
-      byte[] result = null;
+      byte[] bytes = null;
       InputStream inp = null;
       try {
         inp = new FileInputStream(path);
-        result = ReadUtil.read(inp);
+        bytes = ReadUtil.read(inp);
       } finally {
         if (inp != null) {
           inp.close();
         }
       }
 
-      return result;
+      return bytes == null ? null : new DefaultClassBytes(bytes, new File(path).toURI().toURL());
     } catch (IOException e) {
       return null;
     }

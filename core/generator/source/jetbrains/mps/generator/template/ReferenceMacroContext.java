@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,9 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,9 +52,9 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
     if(outputNodes == null) return null;
     SNode referenceSourceNode = getOutputNode();
     String referenceRole = myRole;
-    ISearchScope referenceScope = SNodeOperations.getReferentSearchScope(referenceSourceNode, referenceRole, operationContext);
+    final Scope scope = ModelConstraints.getReferenceDescriptor(referenceSourceNode, referenceRole).getScope();
     for (SNode outputNode : outputNodes) {
-      if (SearchScopeOperations.containsNode(referenceScope, outputNode)) {
+      if (scope.contains(outputNode)) {
         return outputNode;
       }
     }
