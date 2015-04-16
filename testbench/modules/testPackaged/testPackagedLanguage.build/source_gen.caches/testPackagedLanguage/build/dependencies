@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testPackagedLanguage.build.MPS" file="MPS.xml" />
+  <dependency className="testPackagedLanguage.build.testPackaged" file="testPackaged.xml" />
 </dependenciesRoot>
 

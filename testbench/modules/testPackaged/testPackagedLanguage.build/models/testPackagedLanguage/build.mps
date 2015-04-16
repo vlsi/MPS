@@ -94,7 +94,7 @@
     </language>
   </registry>
   <node concept="1l3spW" id="10zO9FuGMC">
-    <property role="TrG5h" value="MPS" />
+    <property role="TrG5h" value="testPackaged" />
     <property role="2DA0ip" value=".." />
     <node concept="10PD9b" id="10zO9FuGMD" role="10PD9s" />
     <node concept="3b7kt6" id="10zO9FuGME" role="10PD9s" />
@@ -115,15 +115,15 @@
           </node>
         </node>
         <node concept="m$_wl" id="10zO9FuGNc" role="39821P">
-          <ref role="m_rDy" node="10zO9FuGMZ" resolve="MPS" />
+          <ref role="m_rDy" node="10zO9FuGMZ" resolve="testPackaged" />
         </node>
       </node>
     </node>
     <node concept="m$_wf" id="10zO9FuGMZ" role="3989C9">
-      <property role="m$_wk" value="MPS" />
+      <property role="m$_wk" value="testPackaged" />
       <node concept="3_J27D" id="10zO9FuGN0" role="m$_yQ">
         <node concept="3Mxwew" id="10zO9FuGN1" role="3MwsjC">
-          <property role="3MwjfP" value="MPS" />
+          <property role="3MwjfP" value="testPackaged" />
         </node>
       </node>
       <node concept="3_J27D" id="10zO9FuGN2" role="m$_w8">
@@ -132,19 +132,19 @@
         </node>
       </node>
       <node concept="m$f5U" id="10zO9FuGN4" role="m$_yh">
-        <ref role="m$f5T" node="10zO9FuGMY" resolve="MPS" />
+        <ref role="m$f5T" node="10zO9FuGMY" resolve="testPackaged" />
       </node>
       <node concept="m$_yC" id="10zO9FuGN5" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
       <node concept="3_J27D" id="10zO9FuGN6" role="m_cZH">
         <node concept="3Mxwew" id="10zO9FuGN7" role="3MwsjC">
-          <property role="3MwjfP" value="MPS" />
+          <property role="3MwjfP" value="testPackaged" />
         </node>
       </node>
     </node>
     <node concept="2G$12M" id="10zO9FuGMY" role="3989C9">
-      <property role="TrG5h" value="MPS" />
+      <property role="TrG5h" value="testPackaged" />
       <node concept="1E1JtD" id="10zO9FuGMP" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="testPackagedLanguage" />
