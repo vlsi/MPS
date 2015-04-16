@@ -16,6 +16,7 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -29,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.ImmediateParentConceptIterator;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -87,11 +89,36 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
+    ImmediateParentConceptIterator it = new ImmediateParentConceptIterator(concept, SNodeUtil.concept_BaseConcept);
+    // Would be nice if TGAD could answer for any subtype from the same language, i.e. when there's TextGen for A,
+    // and there's B extends A, and we ask for B's textgen, TGAD might answer with A's right away. Then, we could
+    // ask each language only once
+    // TODO  HashSet<SLanguage> seen = new HashSet<SLanguage>();
+    while (it.hasNext()) {
+      SConcept next = it.next();
+      TextGenAspectDescriptor textGenAspectDescriptor = getAspect(next);
+      descriptor = textGenAspectDescriptor.getDescriptor(next);
+      if (descriptor != null) {
+        break;
+      }
+    }
+
+    if (descriptor == null) {
+      descriptor = new DefaultTextGenDescriptor();
+    }
+
+    textGenDescriptors.put(fqName, descriptor);
+
+    return descriptor;
+  }
+
+  @NotNull
+  private TextGenAspectDescriptor getAspect(SConcept concept) {
     LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
     TextGenAspectDescriptor textGenAspectDescriptor = null;
     if (languageRuntime == null) {
       // Then language was just renamed and was not re-generated then it can happen that it has no
-      Logger.getLogger(ConceptRegistry.class).warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName));
+      Logger.getLogger(ConceptRegistry.class).warn(String.format("No language for concept %s, while looking for textgen descriptor.", concept));
     } else {
       textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);
     }
@@ -103,16 +130,9 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
       // better solution is to walk either language runtime hierarchy or concept hierarchy to find proper textgen.
       textGenAspectDescriptor = new TextGenAspectInterpreted();
     }
-    descriptor = textGenAspectDescriptor.getDescriptor(concept);
-
-    if (descriptor == null) {
-      descriptor = new DefaultTextGenDescriptor();
-    }
-
-    textGenDescriptors.put(fqName, descriptor);
-
-    return descriptor;
+    return textGenAspectDescriptor;
   }
+
   @Override
   public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
     // @see ConceptRegistry#beforeLanguagesUnloaded

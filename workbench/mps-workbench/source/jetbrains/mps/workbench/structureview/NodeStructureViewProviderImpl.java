@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,13 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.NodeStructureViewProvider;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 
@@ -37,15 +36,16 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   }
 
   public StructureViewBuilder create(Project project, SNodeReference np) {
-    ModelAccess.assertLegalRead();
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    mpsProject.getModelAccess().checkReadAccess();
 
     List<RelationDescriptor> tabs = project.getComponent(ProjectPluginManager.class).getTabDescriptors();
-    SNode node = np.resolve(MPSModuleRepository.getInstance());
+    SNode node = np.resolve(mpsProject.getRepository());
 
     for (RelationDescriptor tab : tabs) {
       SNode baseNode = tab.getBaseNode(node);
       if (baseNode != null && baseNode.getName() != null) {
-        return new NodeStructureViewBuilder(project, new jetbrains.mps.smodel.SNodePointer(baseNode));
+        return new NodeStructureViewBuilder(project, baseNode.getReference());
       }
     }
 

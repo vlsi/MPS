@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,15 +84,7 @@ public abstract class SNodeTextGen {
   }
 
   public void appendNode(SNode node) {
-    if (node == null) {
-      myBuffer.append("???");
-      if (mySNode != null) {
-        myBuffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(mySNode), mySNode, null);
-      }
-      return;
-    }
-
-    TextGen.getTextGenForNode(node).doGenerateText(node, myBuffer);
+    TextGen.appendNodeText(myBuffer, node, mySNode);
   }
 
   public void indentBuffer() {
