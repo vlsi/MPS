@@ -124,10 +124,13 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
         for (final AbstractTreeNode child : children) {
           if (child instanceof PsiFileNode) {
-            PsiFile value = ((PsiFileNode) child).getValue();
+            VirtualFile vFile = ((PsiFileNode) child).getVirtualFile();
+            if (vFile == null) {
+              continue;
+            }
 
             // check if it's a single file model
-            final SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiFileNode) child).getVirtualFile()));
+            final SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vFile));
             if (sModel != null) {
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
@@ -136,7 +139,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
               continue;
             }
 
-            if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(((PsiFileNode) child).getVirtualFile()))) {
+            if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(vFile))) {
               // it's a file that constitutes a FolderDataSource-backed model, remove it from the tree (root nodes are shown instead)
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
