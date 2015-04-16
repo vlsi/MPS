@@ -18,7 +18,6 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -93,7 +92,7 @@ public abstract class ModelRootBase implements ModelRoot {
     SModuleBase module = (SModuleBase) getModule();
 
     for (SModel model : myModels) {
-      if (model.getReference().resolve(MPSModuleRepository.getInstance()) != null) {
+      if (model.getReference().resolve(myRepository) != null) {
         LOG.error("Trying to dispose model `" + model.getModelName() + "` which was not previously removed from repository.");
         continue;
       }
