@@ -91,8 +91,8 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
 
     ImmediateParentConceptIterator it = new ImmediateParentConceptIterator(concept, SNodeUtil.concept_BaseConcept);
     // Would be nice if TGAD could answer for any subtype from the same language, i.e. when there's TextGen for A,
-    // and there's B extends A, and we ask for B's textgen, TGAD might answer with A's right away. Then, we coul
-    // ask each langugae only once
+    // and there's B extends A, and we ask for B's textgen, TGAD might answer with A's right away. Then, we could
+    // ask each language only once
     // TODO  HashSet<SLanguage> seen = new HashSet<SLanguage>();
     while (it.hasNext()) {
       SConcept next = it.next();

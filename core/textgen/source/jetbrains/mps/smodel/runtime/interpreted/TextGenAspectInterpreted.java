@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.SNodeTextGenAdapter;
@@ -27,7 +26,6 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
 
@@ -45,12 +43,5 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
       return new SNodeTextGenAdapter(textgenClass);
     }
     return null;
-  }
-
-  @Override
-  @Deprecated
-  public TextGenDescriptor getDescriptor(@NotNull String conceptFqName) {
-    SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
-    return getDescriptor(c);
   }
 }
