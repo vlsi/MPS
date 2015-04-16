@@ -10125,6 +10125,12 @@
               <ref role="3bR37D" node="7Kfy9QB6LbO" resolve="jetbrains.mps.lang.traceable" />
             </node>
           </node>
+          <node concept="1SiIV0" id="6OF1xxsLngl" role="3bR37C">
+            <node concept="3bR9La" id="6OF1xxsLngm" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="44LXwdzyvTi" resolve="Annotations" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgrutU" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrutT" role="1SiIV1">
