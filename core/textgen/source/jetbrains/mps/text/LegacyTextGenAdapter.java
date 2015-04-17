@@ -22,7 +22,7 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * FIXME WORK IN PROGRESS
+ * Adapt existing generated {@link SNodeTextGen} class to contemporary API of {@link TextGenDescriptor}
  * @author Artem Tikhomirov
  */
 public class LegacyTextGenAdapter implements TextGenDescriptor {

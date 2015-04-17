@@ -16,8 +16,8 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.text.TextGenTransitionContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
@@ -35,11 +35,6 @@ public abstract class SNodeTextGen {
 
   public final TextGenBuffer getBuffer() {
     return myBuffer;
-  }
-
-  public IOperationContext getContext() {
-    // todo: write something else!
-    return null;
   }
 
   public SNode getSNode() {
@@ -84,7 +79,17 @@ public abstract class SNodeTextGen {
   }
 
   public void appendNode(SNode node) {
-    TextGen.appendNodeText(myBuffer, node, mySNode);
+    if (node == null) {
+      myBuffer.append("???");
+
+      if (mySNode != null) {
+        myBuffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(mySNode), mySNode, null);
+      }
+
+      return;
+    }
+
+    TextGen.getTextGenForNode(node).generateText(new TextGenTransitionContext(node, myBuffer));
   }
 
   public void indentBuffer() {
@@ -97,14 +102,6 @@ public abstract class SNodeTextGen {
 
   public final void putUserObject(Object key, Object o) {
     myBuffer.putUserObject(key, o);
-  }
-
-  /**
-   * @deprecated Errors without explanation are not that much helpful
-   */
-  @Deprecated
-  public void foundError() {
-    foundError(null);
   }
 
   public void foundError(@Nullable String info) {

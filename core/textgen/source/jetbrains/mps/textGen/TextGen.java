@@ -89,7 +89,7 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
-    appendNodeText(buffer, node, null);
+    appendNodeText(buffer, node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
@@ -130,14 +130,9 @@ public class TextGen {
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
-  /* package */ static void appendNodeText(TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
+  private static void appendNodeText(TextGenBuffer buffer, SNode node) {
     if (node == null) {
       buffer.append("???");
-
-      if (contextNode != null) {
-        buffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(contextNode), contextNode, null);
-      }
-
       return;
     }
 
@@ -146,7 +141,7 @@ public class TextGen {
 
   // helper stuff
   @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+  /*package*/ static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
     return TextGenRegistry.getInstance().getTextGenDescriptor(node);
   }
 
