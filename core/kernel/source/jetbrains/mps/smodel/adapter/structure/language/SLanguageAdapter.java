@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -52,6 +53,9 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   @Nullable
   public abstract LanguageRuntime getLanguageDescriptor();
+
+  @NotNull
+  public abstract SLanguageId getId();
 
   @Override
   @Nullable

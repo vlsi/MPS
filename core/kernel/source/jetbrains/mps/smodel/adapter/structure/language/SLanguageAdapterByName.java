@@ -17,13 +17,16 @@ package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
-public class SLanguageAdapterByName extends SLanguageAdapter {
+public final class SLanguageAdapterByName extends SLanguageAdapter {
   public SLanguageAdapterByName(@NotNull String language) {
     super(language, -1);
   }
@@ -35,6 +38,19 @@ public class SLanguageAdapterByName extends SLanguageAdapter {
   @Nullable
   public LanguageRuntime getLanguageDescriptor() {
     return LanguageRegistry.getInstance().getLanguage(myLanguageFqName);
+  }
+
+  @Override
+  public SLanguageId getId() {
+    LanguageRuntime lr = getLanguageDescriptor();
+    if (lr != null) {
+      return lr.getId();
+    }
+    Language l = getSourceModule();
+    if (l != null) {
+      return MetaIdByDeclaration.getLanguageId(l);
+    }
+    return MetaIdFactory.INVALID_LANGUAGE_ID;
   }
 
   @Override

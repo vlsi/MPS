@@ -50,6 +50,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
         myName.equals(((SReferenceLinkAdapter) obj).myName);
   }
 
+  @NotNull
   public SReferenceLinkId getRoleId() {
     return myRoleId;
   }

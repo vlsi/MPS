@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -56,6 +57,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
+
+  @NotNull
+  public abstract SConceptId getId();
 
   protected abstract SNode findInModel(SModel strucModel);
 

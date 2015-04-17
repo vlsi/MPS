@@ -16,6 +16,9 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -44,6 +47,20 @@ public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter imp
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+  }
+
+  @NotNull
+  @Override
+  public SConceptId getId() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d != null) {
+      return d.getId();
+    }
+    final SNode n = getDeclarationNode();
+    if (n != null) {
+      return MetaIdByDeclaration.getConceptId(n);
+    }
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @Override

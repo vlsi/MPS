@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
@@ -62,12 +63,7 @@ public class ConceptRegistryUtil {
   public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr == null) {
-      SConceptId id;
-      if (concept instanceof SAbstractConceptAdapterById) {
-        id = ((SAbstractConceptAdapterById) concept).getId();
-      } else {
-        id = MetaIdFactory.INVALID_CONCEPT_ID;
-      }
+      SConceptId id = MetaIdHelper.getConcept(concept);
       return new IllegalConstraintsDescriptor(id, concept.getQualifiedName());
     }
 

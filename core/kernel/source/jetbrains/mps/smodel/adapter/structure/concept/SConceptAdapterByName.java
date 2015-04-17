@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
@@ -30,7 +32,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
+public final class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
     super(fqName);
   }
@@ -45,6 +47,20 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+  }
+
+  @NotNull
+  @Override
+  public SConceptId getId() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d != null) {
+      return d.getId();
+    }
+    final SNode n = getDeclarationNode();
+    if (n != null) {
+      return MetaIdByDeclaration.getConceptId(n);
+    }
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @NotNull

@@ -25,8 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
-public class SLanguageAdapterById extends SLanguageAdapter {
-  private SLanguageId myLanguage;
+public final class SLanguageAdapterById extends SLanguageAdapter {
+  private final SLanguageId myLanguage;
 
   public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
     this(language, fqName, -1);
@@ -36,6 +36,7 @@ public class SLanguageAdapterById extends SLanguageAdapter {
     this.myLanguage = language;
   }
 
+  @NotNull
   public SLanguageId getId() {
     return myLanguage;
   }
