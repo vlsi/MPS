@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -35,7 +34,7 @@ class MissingLanguageError extends ValidationProblem {
 
   @Override
   public boolean canFix() {
-    SLanguage slang = MetaIdByDeclaration.ref2Id(myLang);
+    SLanguage slang = MetaAdapterFactory.getLanguage(myLang);
     ModelDependencyScanner scanner = new ModelDependencyScanner().crossModelReferences(false);
     boolean langUsed = scanner.walk(myModel).getUsedLanguages().contains(slang);
     return !langUsed && ((SModelInternal) myModel).importedLanguageIds().contains(slang);
@@ -43,7 +42,7 @@ class MissingLanguageError extends ValidationProblem {
 
   @Override
   public void fix() {
-    SLanguage slang = MetaIdByDeclaration.ref2Id(myLang);
+    SLanguage slang = MetaAdapterFactory.getLanguage(myLang);
     ((SModelInternal) myModel).deleteLanguageId(slang);
   }
 }

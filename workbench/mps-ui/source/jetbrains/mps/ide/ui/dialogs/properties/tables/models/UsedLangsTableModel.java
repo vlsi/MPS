@@ -20,7 +20,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -67,7 +67,7 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
       }
     });
     if (m instanceof Language) {
-      final SLanguage lang = MetaIdByDeclaration.ref2Id(item);
+      final SLanguage lang = MetaAdapterFactory.getLanguage(item);
       if (!myLanguageItems.contains(lang)) {
         myLanguageItems.add(lang);
       }
