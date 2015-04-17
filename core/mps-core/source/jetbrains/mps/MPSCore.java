@@ -78,7 +78,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new MigrationPropertiesManager());
 
     // repositories
-    final SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
+    init(new SRepositoryRegistry());
     SModelRepository modelRepository = init(new SModelRepository());
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
     init(new GlobalSModelEventsManager(modelRepository));
@@ -90,7 +90,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new ModuleFileTracker(moduleRepository));
     CleanupManager cleanupManager = init(new CleanupManager(classLoaderManager));
     init(new PathMacros());
-    init(new LibraryInitializer(moduleRepository, classLoaderManager));
+    init(new LibraryInitializer(moduleRepository, cleanupManager));
     init(new GlobalScope(moduleRepository, modelRepository));
     init(new ImmatureReferences(moduleRepository));
 

@@ -19,17 +19,24 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -37,7 +44,8 @@ public class LibraryInitializer implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
 
   private static LibraryInitializer INSTANCE;
-  private final MPSModuleRepository myRepo;
+  private final ModelAccess myModelAccess;
+  private final CleanupManager myCleanupManager;
 
   public static LibraryInitializer getInstance() {
     return INSTANCE;
@@ -56,21 +64,16 @@ public class LibraryInitializer implements CoreComponent {
 
   @Override
   public void dispose() {
-    myRepo.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SLibrary lib : myLibraries) {
-          lib.dispose();
-        }
-        myLibraries.clear();
-      }
-    });
+    for (SLibrary lib : myLibraries) {
+      lib.dispose();
+    }
+    myLibraries.clear();
     INSTANCE = null;
   }
 
-  @SuppressWarnings("UnusedParameters")
-  public LibraryInitializer(MPSModuleRepository repo, ClassLoaderManager clm) {
-    myRepo = repo;
+  public LibraryInitializer(SRepository repository, CleanupManager cleanupManager) {
+    myModelAccess = repository.getModelAccess();
+    myCleanupManager = cleanupManager;
   }
 
   public void update() {
@@ -84,7 +87,7 @@ public class LibraryInitializer implements CoreComponent {
       for (String path : myParentLoaders.keySet()) {
         if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
           // handle one path being a prefix of the other
-          if (path != null && path.length() > foundPath.length()) {
+          if (path.length() > foundPath.length()) {
             foundPath = path;
           }
         }
@@ -99,15 +102,14 @@ public class LibraryInitializer implements CoreComponent {
   }
 
   public void update(final boolean refreshFiles) {
-    myRepo.getModelAccess().checkWriteAccess();
-
     final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
     final Set<SLibrary> toLoad = new HashSet<SLibrary>();
     myParentLoaders.clear();
-    for (LibraryContributor lc : myContributors) {
-      for (LibDescriptor s : lc.getLibraries()) {
-        IFile path = FileSystem.getInstance().getFileByPath(s.path);
-        SLibrary lib = new SLibrary(path, s.parentLoader, lc.hiddenLanguages());
+    for (LibraryContributor libraryContributor : myContributors) {
+      for (LibDescriptor libDescriptor : libraryContributor.getLibraries()) {
+        IFile path = FileSystem.getInstance().getFileByPath(libDescriptor.getPath());
+        ClassLoader libClassLoader = libDescriptor.getParentClassLoader();
+        SLibrary lib = new SLibrary(path, libClassLoader, libraryContributor.hiddenLanguages());
         toUnload.remove(lib);
         if (!myLibraries.contains(lib)) {
           myLibraries.add(lib);
@@ -115,68 +117,65 @@ public class LibraryInitializer implements CoreComponent {
         }
 
         IFile bundlePath = FileSystem.getInstance().isPackaged(path) ? FileSystem.getInstance().getBundleHome(path) : null;
-        myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
+        ClassLoader classLoader = libClassLoader != null ? libClassLoader : LibraryInitializer.class.getClassLoader();
+        myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : libDescriptor.getPath(), classLoader);
       }
     }
     myLibraries.removeAll(toUnload);
 
-    if (toUnload.size() + toLoad.size() == 0) return;
+    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
 
-    if (toLoad.size() > 0) LOG.info("Loading " + toLoad.size() + " libraries");
-    if (toUnload.size() > 0) LOG.info("Unloading " + toUnload.size() + " libraries");
+    if (!toLoad.isEmpty()) LOG.info("Loading " + toLoad.size() + " libraries");
+    if (!toUnload.isEmpty()) LOG.info("Unloading " + toUnload.size() + " libraries");
 
-    ArrayList<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
-    ArrayList<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
+    List<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
+    final List<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
     Collections.sort(toUnloadList);
     Collections.sort(toLoadList);
     for (SLibrary unloadLib : toUnloadList) {
       unloadLib.dispose();
     }
 
-    for (SLibrary loadLib : toLoadList) {
-      loadLib.attach(refreshFiles);
-    }
-    CleanupManager.getInstance().cleanup();
+    myModelAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SLibrary loadLib : toLoadList) {
+          loadLib.attach(refreshFiles);
+        }
+      }
+    });
+
+    myCleanupManager.cleanup();
   }
 
   //----------bootstrap modules
 
-  public <M extends SModule> Set<M> getBootstrapModules(Class<M> cls) {
-    myRepo.getModelAccess().checkReadAccess();
+  public Set<SModule> getBootstrapModules(Class<? extends SModule> aClass) {
+    myModelAccess.checkReadAccess();
 
     Set<String> bootstrapPaths = new HashSet<String>();
     bootstrapPaths.addAll(PathManager.getBootstrapPaths());
     bootstrapPaths.add(PathManager.getLanguagesPath());
 
-    List<M> result = new ArrayList<M>();
+    Set<SModule> result = new LinkedHashSet<SModule>();
     for (SLibrary lib : myLibraries) {
       if (bootstrapPaths.contains(lib.getFile().getPath())) {
-        result.addAll(ModuleRepositoryFacade.getInstance().getModules(lib, cls));
+        result.addAll(ModuleRepositoryFacade.getInstance().getModules(lib, aClass));
       }
     }
 
-    addGenerators(cls, result);
-    return new HashSet<M>(result);
+    return result;
   }
 
+  // used in plugin
   public List<ModulesMiner.ModuleHandle> getModuleHandles() {
-    myRepo.getModelAccess().checkReadAccess();
+    myModelAccess.checkReadAccess();
 
     List<ModulesMiner.ModuleHandle> result = new ArrayList<ModulesMiner.ModuleHandle>();
     for (SLibrary lib : myLibraries) {
       result.addAll(lib.getHandles());
     }
     return result;
-  }
-
-  public <M extends SModule> void addGenerators(Class<M> cls, Collection<M> result) {
-    for (M m : new ArrayList<M>(result)) {
-      if (m instanceof Language) {
-        if (cls == null || cls.isAssignableFrom(Generator.class)) {
-          result.addAll((List<? extends M>) ((Language) m).getGenerators());
-        }
-      }
-    }
   }
 
   //----------ext point

@@ -61,7 +61,6 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   private MessageBus myMessageBus;
   private MessageBusConnection myConnection;
   private BulkFileListener myFSListener = new BulkFileChangesListener();
-  private VirtualFileAdapter myVirtualFileListener = new MyVirtualFileListener();
   private DirectoryIndexExcludePolicy[] myExcludePolicies;
 
   private final Object LOCK = new Object();
@@ -156,15 +155,6 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
             notifyRootsChanged(false);
           }
         }
-      }
-    }
-  }
-
-  private class MyVirtualFileListener extends VirtualFileAdapter {
-    @Override
-    public void fileCreated(@NotNull VirtualFileEvent event) {
-      if (event.getFile().isDirectory() && isExcluded(event.getFile())) {
-        notifyRootsChanged(false);
       }
     }
   }

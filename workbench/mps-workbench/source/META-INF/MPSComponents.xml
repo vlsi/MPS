@@ -70,7 +70,7 @@
       <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
+      <implementation-class>jetbrains.mps.library.AdditionalLibrariesManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>

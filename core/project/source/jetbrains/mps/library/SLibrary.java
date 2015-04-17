@@ -23,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -48,9 +47,9 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
   private final WatchRequestor myWatchRequestor;
 
   SLibrary(IFile file, ClassLoader parent, boolean hidden) {
-    this.myFile = file;
-    this.myParentLoader = parent;
-    this.myHidden = hidden;
+    myFile = file;
+    myParentLoader = parent;
+    myHidden = hidden;
     myWatchRequestor = new WatchRequestor() {
       @Override
       public String getDirectory() {
@@ -71,16 +70,16 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   void attach(boolean refreshFiles) {
     LOG.debug("Attaching " + this);
-    MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
-    update(refreshFiles);
     FileSystem.getInstance().addListener(this);
+    MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
+    collectAndRegisterModules(refreshFiles);
   }
 
   void dispose() {
     LOG.debug("Disposing " + this);
-    FileSystem.getInstance().removeListener(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
     MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
+    FileSystem.getInstance().removeListener(this);
   }
 
   @Override
@@ -103,14 +102,12 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
       }
     }
     if (changed) {
-      update(false);
+      collectAndRegisterModules(false);
     }
   }
 
-  void update(boolean refreshFiles) {
-    ModelAccess.assertLegalWrite();
-
-    List<ModuleHandle> moduleHandles = Collections.unmodifiableList(ModulesMiner.getInstance().collectModules(myFile, refreshFiles));
+  void collectAndRegisterModules(boolean refreshFiles) {
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(myFile, refreshFiles);
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {

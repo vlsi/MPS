@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.WatchedRoots" />
     <classNode dependClassName="jetbrains.mps.library.Library" />
-    <classNode dependClassName="jetbrains.mps.library.LibraryManager" />
+    <classNode dependClassName="jetbrains.mps.library.AdditionalLibrariesManager" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />
     <classNode dependClassName="jetbrains.mps.project.ProjectLibraryManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

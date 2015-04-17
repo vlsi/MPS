@@ -20,11 +20,10 @@ import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
-public class LibraryManagerConfigurable extends  BaseLibraryManagerConfigurable{
+public class LibraryManagerConfigurable extends BaseLibraryManagerConfigurable {
+  private final AdditionalLibrariesManager myLibraryManager;
 
-  private LibraryManager myLibraryManager;
-
-  public LibraryManagerConfigurable(LibraryManager libraryManager) {
+  public LibraryManagerConfigurable(AdditionalLibrariesManager libraryManager) {
     myLibraryManager = libraryManager;
   }
 

@@ -17,32 +17,21 @@ package jetbrains.mps.library;
 
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.library.LibraryManagerPreferences;
-import jetbrains.mps.library.BaseLibraryManager.MyState;
+import jetbrains.mps.library.BaseLibraryManager.LibraryState;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-public abstract class BaseLibraryManager implements BaseComponent, PersistentStateComponent<MyState>, LibraryContributor {
-  private final SRepository myRepository;
-
+public abstract class BaseLibraryManager implements BaseComponent, PersistentStateComponent<LibraryState>, LibraryContributor {
   public BaseLibraryManager(MPSCoreComponents components) {
-    myRepository = components.getModuleRepository();
   }
 
   @Override
@@ -53,12 +42,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
-    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
+    LibraryInitializer.getInstance().update();
   }
 
   @Override
@@ -71,8 +55,8 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   @Override
   public final Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
-    for (Library l : getUILibraries()) {
-      result.add(new LibDescriptor(l.getPath(), null));
+    for (Library lib : getUILibraries()) {
+      result.add(new LibDescriptor(lib.getPath(), null));
     }
     return result;
   }
@@ -80,24 +64,24 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   public Library addLibrary(String name) {
     Library library = new Library();
     library.setName(name);
-    myState.getLibraries().put(library.getName(), library);
+    myLibraries.getLibraries().put(library.getName(), library);
     return library;
   }
 
   public void remove(Library l) {
-    myState.getLibraries().remove(l.getName());
+    myLibraries.getLibraries().remove(l.getName());
   }
 
   public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>();
-    result.addAll(myState.getLibraries().values());
+    result.addAll(myLibraries.getLibraries().values());
     return result;
   }
 
   //-------macro stuff
 
-  private MyState removeMacros(MyState state) {
-    MyState result = new MyState();
+  private LibraryState removeMacros(LibraryState state) {
+    LibraryState result = new LibraryState();
     for (Entry<String, Library> entry : state.getLibraries().entrySet()) {
       result.getLibraries().put(entry.getKey(), removeMacros(entry.getValue()));
     }
@@ -105,13 +89,13 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   private Library addMacros(Library l) {
-    Library result = l.copy();
+    Library result = l.clone();
     result.setPath(addMacros(result.getPath()));
     return result;
   }
 
   private Library removeMacros(Library l) {
-    Library result = l.copy();
+    Library result = l.clone();
     result.setPath(removeMacros(result.getPath()));
     return result;
   }
@@ -126,16 +110,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   //-------component stuff
 
-  private MyState myState = new MyState();
-
-  protected void loadLibraries() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(true);
-      }
-    });
-  }
+  private LibraryState myLibraries = new LibraryState();
 
   @Override
   @NonNls
@@ -145,20 +120,20 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   @Override
-  public MyState getState() {
-    MyState result = new MyState();
-    for (Entry<String, Library> entry : myState.getLibraries().entrySet()) {
+  public LibraryState getState() {
+    LibraryState result = new LibraryState();
+    for (Entry<String, Library> entry : myLibraries.getLibraries().entrySet()) {
       result.getLibraries().put(entry.getKey(), addMacros(entry.getValue()));
     }
     return result;
   }
 
   @Override
-  public void loadState(MyState state) {
-    myState = removeMacros(state);
+  public void loadState(LibraryState state) {
+    myLibraries = removeMacros(state);
   }
 
-  public static class MyState {
+  static class LibraryState {
     private Map<String, Library> myLibraries = new HashMap<String, Library>();
 
     public Map<String, Library> getLibraries() {

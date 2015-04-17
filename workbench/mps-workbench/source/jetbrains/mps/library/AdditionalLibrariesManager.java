@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.library;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -24,7 +23,6 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.contributor.BootstrapLibContributor;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -34,24 +32,20 @@ import java.util.Set;
 
 
 @State(
-  name = "LibraryManager",
+  name = "AdditionalLibrariesManager",
   storages = {
     @Storage(
       id = "other",
-      file = "$APP_CONFIG$/libraryManager.xml"
+      file = "$APP_CONFIG$/AdditionalLibrariesManager.xml"
     )}
 )
-public class LibraryManager extends BaseLibraryManager implements ApplicationComponent {
-  public static LibraryManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(LibraryManager.class);
-  }
+public class AdditionalLibrariesManager extends BaseLibraryManager implements ApplicationComponent {
+  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+  private Set<Library> myWorkbenchLib = createWorkbenchLib();
 
-  public LibraryManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
+  public AdditionalLibrariesManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
     super(coreComponents);
   }
-
-  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
-  private Set<Library> myLibs = createLibs();
 
   @Override
   public void initComponent() {
@@ -62,12 +56,12 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   @Override
   public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>(super.getUILibraries());
-    result.addAll(myLibs);
+    result.addAll(myWorkbenchLib);
     result.addAll(myCustomBuiltInLibraries.values());
     return result;
   }
 
-  private Set<Library> createLibs() {
+  private Set<Library> createWorkbenchLib() {
     Set<Library> result = new HashSet<Library>();
     if (InternalFlag.isInternalMode() || RuntimeFlags.isTestMode()) {
       result.add(new Library("mps.workbench") {
@@ -86,7 +80,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   @Override
   @NotNull
   public String getComponentName() {
-    return LibraryManager.class.getSimpleName();
+    return AdditionalLibrariesManager.class.getSimpleName();
   }
 
 }
