@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * @deprecated Not in use. Not deleted right away as it's sort of API.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public interface TextGenAspectDescriptor extends LanguageAspectDescriptor {
   /**
    * @param concept input kind for textgen

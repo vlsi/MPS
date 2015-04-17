@@ -21,7 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Aspect of a language which describes the ways to produce text from a node
  * @author Artem Tikhomirov
+ * @since 3.3
  */
 public interface TextGenAspectDescriptor extends LanguageAspectDescriptor {
   /**

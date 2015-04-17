@@ -18,8 +18,14 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
-import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.structure.DescriptorUtils;
+import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -27,9 +33,12 @@ import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.ImmediateParentConceptIterator;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,16 +63,17 @@ public class TextGen {
   }
 
   public static boolean canGenerateTextFor(SNode node) {
-    return !(getTextGenForNode(node) instanceof DefaultTextGenDescriptor);
+    return !(getTextGenForNode(node) instanceof MissingTextGenDescriptor);
   }
 
   public static String getExtension(@NotNull SNode node) {
-    return getTextGenForNode(node).getExtension(node);
+    return getLegacyTextGen(node).getExtension(node);
   }
 
   public static String getFileName(@NotNull SNode node) {
-    String fname = getTextGenForNode(node).getFilename(node);
-    String extension = getExtension(node);
+    final SNodeTextGen tg = getLegacyTextGen(node);
+    String fname = tg.getFilename(node);
+    String extension = tg.getExtension(node);
     return (extension == null) ? fname : fname + '.' + extension;
   }
 
@@ -138,13 +148,35 @@ public class TextGen {
       return;
     }
 
-    getTextGenForNode(node).doGenerateText(node, buffer);
+    getTextGenForNode(node).generateText(new TextGenTransitionContext(node, buffer));
   }
 
   // helper stuff
   @NotNull
   private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
     return TextGenRegistry.getInstance().getTextGenDescriptor(node);
+  }
+
+  // compatibility code until TextUnit and code to break input model into these units, with filename assigned, are introduced.
+  private static SNodeTextGen getLegacyTextGen(@NotNull SNode node) {
+    try {
+      for (SConcept next : new ImmediateParentConceptIterator(node.getConcept(), SNodeUtil.concept_BaseConcept)) {
+        String languageName = next.getLanguage().getQualifiedName();
+        Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
+        String textgenClassname = LanguageAspect.TEXT_GEN.getAspectQualifiedClassName(next) + "_TextGen";
+        Class<SNodeTextGen> textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
+        if (textgenClass != null) {
+          return textgenClass.newInstance();
+        }
+      }
+    } catch (InstantiationException ex) {
+      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
+      // fall-through
+    } catch (IllegalAccessException ex) {
+      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
+      // fall-through
+    }
+    return new DefaultTextGen();
   }
 
   private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {

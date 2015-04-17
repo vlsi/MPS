@@ -18,6 +18,7 @@ package jetbrains.mps.text.rt;
 /**
  * FIXME WORK IN PROGRESS
  * @author Artem Tikhomirov
+ * @since 3.3
  */
 public interface TextGenDescriptor {
   void generateText(TextGenContext context);

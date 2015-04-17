@@ -17,14 +17,13 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
-import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
+import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -75,7 +74,8 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
   @NotNull
   public TextGenDescriptor getTextGenDescriptor(@Nullable SNode node) {
     if (node == null) {
-      return new DefaultTextGenDescriptor();
+      // FIXME default implementation doesn't expect null node
+      return new MissingTextGenDescriptor();
     }
     return getTextGenDescriptor(node.getConcept());
   }
@@ -89,22 +89,23 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    ImmediateParentConceptIterator it = new ImmediateParentConceptIterator(concept, SNodeUtil.concept_BaseConcept);
     // Would be nice if TGAD could answer for any subtype from the same language, i.e. when there's TextGen for A,
     // and there's B extends A, and we ask for B's textgen, TGAD might answer with A's right away. Then, we could
     // ask each language only once
     // TODO  HashSet<SLanguage> seen = new HashSet<SLanguage>();
-    while (it.hasNext()) {
-      SConcept next = it.next();
+    for (SConcept next : new ImmediateParentConceptIterator(concept, SNodeUtil.concept_BaseConcept)) {
       TextGenAspectDescriptor textGenAspectDescriptor = getAspect(next);
-      descriptor = textGenAspectDescriptor.getDescriptor(next);
+      if (textGenAspectDescriptor == null) {
+        continue;
+      }
+      descriptor = textGenAspectDescriptor.getDescriptor(MetaIdHelper.getConcept(next));
       if (descriptor != null) {
         break;
       }
     }
 
     if (descriptor == null) {
-      descriptor = new DefaultTextGenDescriptor();
+      descriptor = new MissingTextGenDescriptor();
     }
 
     textGenDescriptors.put(fqName, descriptor);
@@ -112,25 +113,16 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     return descriptor;
   }
 
-  @NotNull
+  @Nullable
   private TextGenAspectDescriptor getAspect(SConcept concept) {
     LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
-    TextGenAspectDescriptor textGenAspectDescriptor = null;
     if (languageRuntime == null) {
       // Then language was just renamed and was not re-generated then it can happen that it has no
-      Logger.getLogger(ConceptRegistry.class).warn(String.format("No language for concept %s, while looking for textgen descriptor.", concept));
+      Logger.getLogger(TextGenRegistry.class).warn(String.format("No language for concept %s, while looking for textgen descriptor.", concept));
+      return null;
     } else {
-      textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);
+      return languageRuntime.getAspect(TextGenAspectDescriptor.class);
     }
-    if (textGenAspectDescriptor == null) {
-      // LanguageRuntime.createAspectDescriptor used to instantiate interpreted aspect in case
-      // language didn't define one, here we mimic this, as there are models that rely on this
-      // E.g. bl.collections.SortDirection extends bl.BooleanConstant, but there's no textgen for
-      // bl.collections. It used to go to new interpreted aspect instance for bl.collections, although
-      // better solution is to walk either language runtime hierarchy or concept hierarchy to find proper textgen.
-      textGenAspectDescriptor = new TextGenAspectInterpreted();
-    }
-    return textGenAspectDescriptor;
   }
 
   @Override

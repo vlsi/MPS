@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * FIXME WORK IN PROGRESS
  * @author Artem Tikhomirov
+ * @since 3.3
  */
 public interface TextGenContext {
   SNode getPrimaryInput();

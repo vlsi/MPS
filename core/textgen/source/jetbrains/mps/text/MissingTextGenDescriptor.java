@@ -16,29 +16,22 @@
 package jetbrains.mps.text;
 
 import jetbrains.mps.text.rt.TextGenContext;
+import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textGen.TextGenBuffer;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Context implementation for transition period, while we delegate to SNodeTextGen and use original TextGenBuffer
+ * React to missing textgen for a concept.
  * @author Artem Tikhomirov
  */
-public final class TextGenTransitionContext implements TextGenContext {
-  private final SNode myInput;
-  private final TextGenBuffer myBuffer;
-
-  public TextGenTransitionContext(@NotNull SNode input, @NotNull TextGenBuffer buffer) {
-    myInput = input;
-    myBuffer = buffer;
-  }
-
+public class MissingTextGenDescriptor implements TextGenDescriptor {
   @Override
-  public SNode getPrimaryInput() {
-    return myInput;
-  }
-
-  public TextGenBuffer getBuffer() {
-    return myBuffer;
+  public void generateText(TextGenContext context) {
+    TextGenTransitionContext tc = (TextGenTransitionContext) context;
+    TextGenBuffer buffer = tc.getBuffer();
+    SNode node = tc.getPrimaryInput();
+    buffer.append("<!TextGen not found for '" + node.getConcept() + "'!>");
+    buffer.foundError("No textgen for " + node.getConcept() + " in " + SNodeOperations.getDebugText(node), node, null);
   }
 }
