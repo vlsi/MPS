@@ -151,7 +151,7 @@ public class TextGeneratorEngine {
     }
   }
 
-  private class LatchRunnable implements Runnable {
+  private static class LatchRunnable implements Runnable {
     private final CountDownLatch myLatch;
     private final Runnable myDelegate;
 

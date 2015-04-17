@@ -398,8 +398,7 @@ public class TextGen_Facet extends IFacet.Stub {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                           break;
                         }
-                        String ext = TextGen.getExtension(root);
-                        String fname = ((ext != null ? root.getName() + "." + ext : root.getName()));
+                        String fname = TextGen.getFileName(root);
                         if (fname == null) {
                           fname = "<null> [" + root.getNodeId() + "]";
                           monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));

@@ -2,13 +2,13 @@
 <model ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
+    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -2275,57 +2275,15 @@
                                         <ref role="3cqZAo" node="5L5h3brvDNm" resolve="errors" />
                                       </node>
                                     </node>
-                                    <node concept="3cpWs8" id="1KUoCipv_33" role="3cqZAp">
-                                      <node concept="3cpWsn" id="1KUoCipv_34" role="3cpWs9">
-                                        <property role="TrG5h" value="ext" />
-                                        <node concept="17QB3L" id="1KUoCipv_35" role="1tU5fm" />
-                                        <node concept="2YIFZM" id="1KUoCipv_36" role="33vP2m">
-                                          <ref role="1Pybhc" to="zrid:~TextGen" resolve="TextGen" />
-                                          <ref role="37wK5l" to="zrid:~TextGen.getExtension(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="getExtension" />
-                                          <node concept="37vLTw" id="1KUoCipv_37" role="37wK5m">
-                                            <ref role="3cqZAo" node="1KUoCipv_4s" resolve="root" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
                                     <node concept="3cpWs8" id="1KUoCipv_38" role="3cqZAp">
                                       <node concept="3cpWsn" id="1KUoCipv_39" role="3cpWs9">
                                         <property role="TrG5h" value="fname" />
                                         <node concept="17QB3L" id="1KUoCipv_3a" role="1tU5fm" />
-                                        <node concept="1eOMI4" id="1KUoCipv_3b" role="33vP2m">
-                                          <node concept="3K4zz7" id="1KUoCipv_3c" role="1eOMHV">
-                                            <node concept="2OqwBi" id="1KUoCipv_3d" role="3K4GZi">
-                                              <node concept="37vLTw" id="3GM_nagTsln" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="1KUoCipv_4s" resolve="root" />
-                                              </node>
-                                              <node concept="liA8E" id="1KUoCipv_3f" role="2OqNvi">
-                                                <ref role="37wK5l" to="ec5l:~SNode.getName():java.lang.String" resolve="getName" />
-                                              </node>
-                                            </node>
-                                            <node concept="3y3z36" id="1KUoCipv_3g" role="3K4Cdx">
-                                              <node concept="10Nm6u" id="1KUoCipv_3h" role="3uHU7w" />
-                                              <node concept="37vLTw" id="3GM_nagTxTj" role="3uHU7B">
-                                                <ref role="3cqZAo" node="1KUoCipv_34" resolve="ext" />
-                                              </node>
-                                            </node>
-                                            <node concept="3cpWs3" id="1KUoCipv_3j" role="3K4E3e">
-                                              <node concept="37vLTw" id="3GM_nagTBCG" role="3uHU7w">
-                                                <ref role="3cqZAo" node="1KUoCipv_34" resolve="ext" />
-                                              </node>
-                                              <node concept="3cpWs3" id="1KUoCipv_3l" role="3uHU7B">
-                                                <node concept="2OqwBi" id="1KUoCipv_3m" role="3uHU7B">
-                                                  <node concept="37vLTw" id="3GM_nagTtV7" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="1KUoCipv_4s" resolve="root" />
-                                                  </node>
-                                                  <node concept="liA8E" id="1KUoCipv_3o" role="2OqNvi">
-                                                    <ref role="37wK5l" to="ec5l:~SNode.getName():java.lang.String" resolve="getName" />
-                                                  </node>
-                                                </node>
-                                                <node concept="Xl_RD" id="1KUoCipv_3p" role="3uHU7w">
-                                                  <property role="Xl_RC" value="." />
-                                                </node>
-                                              </node>
-                                            </node>
+                                        <node concept="2YIFZM" id="3TbYqg1Rih6" role="33vP2m">
+                                          <ref role="37wK5l" to="zrid:~TextGen.getFileName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="getFileName" />
+                                          <ref role="1Pybhc" to="zrid:~TextGen" resolve="TextGen" />
+                                          <node concept="37vLTw" id="3TbYqg1Rih7" role="37wK5m">
+                                            <ref role="3cqZAo" node="1KUoCipv_4s" resolve="root" />
                                           </node>
                                         </node>
                                       </node>
