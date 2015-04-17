@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testPackagedLanguage.test.null_Test" file="null_Test.java">
+  <dependency className="testPackagedLanguage.test.TestPackagedLanguage_Test" file="TestPackagedLanguage_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
 </dependenciesRoot>

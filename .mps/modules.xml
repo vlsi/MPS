@@ -343,7 +343,6 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/testExtendingAnalyzer.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" folder="tests" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.build/testPackagedLanguage.build.msd" folder="tests.testPackaged" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" folder="tests.testPackaged" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" folder="tests.testPackaged" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRead/jetbrains.mps.testRead.msd" folder="tests" />

@@ -11,6 +11,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
     </language>
@@ -22,6 +23,7 @@
   </registry>
   <node concept="1TIwiD" id="605L0w15dkf">
     <property role="TrG5h" value="TestConcept" />
+    <property role="MwhBj" value="${module}/icons/icon.png" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>

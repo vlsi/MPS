@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root nodeRef="r:34f797a5-116b-49ab-bc01-c690000d72d3(testPackagedLanguage.build)/18171913943305384">
-    <file name="testPackaged.xml">
-      <unit id="18171913943305384" at="1,0,315,10" name="testPackagedLanguage.build.testPackaged" />
-    </file>
-  </root>
-</debug-info>
-
