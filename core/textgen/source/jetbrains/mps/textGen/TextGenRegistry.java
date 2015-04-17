@@ -16,14 +16,20 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.structure.DescriptorUtils;
+import jetbrains.mps.text.LegacyTextGenAdapter;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -105,6 +111,12 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     }
 
     if (descriptor == null) {
+      // fall-back solution for Language classes generated in previous MPS version. They don't answer for new TextGenAspectDescriptor,
+      // thus we use logic extracted from TextGenAspectInterpreted, modified to use contemporary TextGenDescriptor.
+      final Class<? extends SNodeTextGen> legacyTextGenClass = getLegacyTextGenClass(concept);
+      if (legacyTextGenClass != null) {
+        return new LegacyTextGenAdapter(legacyTextGenClass);
+      }
       descriptor = new MissingTextGenDescriptor();
     }
 
@@ -123,6 +135,24 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     } else {
       return languageRuntime.getAspect(TextGenAspectDescriptor.class);
     }
+  }
+
+  /**
+   * @deprecated fall-back, to deal with Language classes generated in previous MPS version and support textgen without need to re-generate a language
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public Class<? extends SNodeTextGen> getLegacyTextGenClass(SConcept c) {
+    for (SConcept next : new ImmediateParentConceptIterator(c, SNodeUtil.concept_BaseConcept)) {
+      String languageName = next.getLanguage().getQualifiedName();
+      Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
+      String textgenClassname = LanguageAspect.TEXT_GEN.getAspectQualifiedClassName(next) + "_TextGen";
+      Class<? extends SNodeTextGen> textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
+      if (textgenClass != null) {
+        return textgenClass;
+      }
+    }
+    return null;
   }
 
   @Override
