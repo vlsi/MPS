@@ -2762,6 +2762,7 @@
         <property role="TrG5h" value="testPackagedLanguage.test" />
         <property role="3LESm3" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
         <property role="2GAjPV" value="false" />
+        <property role="aoJFB" value="tests" />
         <node concept="55IIr" id="5bAGsVFhMBa" role="3LF7KH">
           <node concept="2Ry0Ak" id="5bAGsVFhMBb" role="iGT6I">
             <property role="2Ry0Am" value="testbench" />
@@ -2808,11 +2809,11 @@
       </node>
     </node>
     <node concept="1l3spV" id="5bAGsVFhMvl" role="1l3spN">
-      <node concept="L2wRC" id="5bAGsVFhMD3" role="39821P">
-        <ref role="L2wRA" node="5bAGsVFhMB1" resolve="testPackagedLanguage" />
-      </node>
       <node concept="L2wRC" id="5bAGsVFhMDJ" role="39821P">
         <ref role="L2wRA" node="5bAGsVFhMB9" resolve="testPackagedLanguage.test" />
+      </node>
+      <node concept="L2wRC" id="5bAGsVFhMD3" role="39821P">
+        <ref role="L2wRA" node="5bAGsVFhMB1" resolve="testPackagedLanguage" />
       </node>
     </node>
     <node concept="10PD9b" id="5bAGsVFhMvp" role="10PD9s" />
@@ -2820,6 +2821,12 @@
     <node concept="1gjT0q" id="5bAGsVFhMvr" role="10PD9s" />
     <node concept="22LTRH" id="1WSLgzr6j4B" role="1hWBAP">
       <property role="TrG5h" value="packaged" />
+      <node concept="22LTRM" id="1J9x1z49eFC" role="22LTRK">
+        <ref role="22LTRN" node="5bAGsVFhMB9" resolve="testPackagedLanguage.test" />
+      </node>
+      <node concept="22LTRF" id="1J9x1z49eGj" role="22LTRK">
+        <ref role="22LTRG" node="5bAGsVFhMB0" resolve="testPackaged" />
+      </node>
     </node>
   </node>
 </model>

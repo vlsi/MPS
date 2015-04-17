@@ -42,6 +42,29 @@
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
+    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
+    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF/module.xml">
+      <module namespace="testPackagedLanguage.test" type="solution" uuid="2f5af9e7-34c8-45f3-b417-4dcbb52409b8">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
+        </dependencies>
+        <sources jar="testPackagedLanguage.test-src.jar" descriptor="testPackagedLanguage.test.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/testPackagedLanguage.test.jar">
+      <fileset dir="${build.tmp}/java/out/testPackagedLanguage.test" />
+      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models">
+      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/testPackagedLanguage.test-src.jar">
+      <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/testPackagedLanguage.jar" />
     <mkdir dir="${build.tmp}/default/testPackagedLanguage.jar/META-INF" />
     <echoxml file="${build.tmp}/default/testPackagedLanguage.jar/META-INF/module.xml">
@@ -86,32 +109,6 @@
       <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels" prefix="module/languageModels" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
-    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF/module.xml">
-      <module namespace="testPackagedLanguage.test" type="solution" uuid="2f5af9e7-34c8-45f3-b417-4dcbb52409b8">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
-        </dependencies>
-        <sources jar="testPackagedLanguage.test-src.jar" descriptor="testPackagedLanguage.test.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/testPackagedLanguage.test.jar">
-      <fileset dir="${build.tmp}/java/out/testPackagedLanguage.test" />
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/testPackagedLanguage.test-src.jar">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen">
-        <exclude name="**/trace.info" />
-      </fileset>
-      <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -219,7 +216,7 @@
   
   <target name="makeDependents" />
   
-  <target name="module-tests" depends="assemble" />
+  <target name="module-tests" depends="assemble, test.packaged" />
   
   <target name="java.compile.testPackagedLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
@@ -297,13 +294,10 @@
   </target>
   
   <target name="java.compile.testPackagedLanguage.test" depends="fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testPackagedLanguage.test" />
     <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" />
-      </src>
+      <src path="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
@@ -318,13 +312,104 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/testPackagedLanguage.test">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="test.packaged" depends="assemble">
+    <path id="mps.libraries.path">
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.classLike.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.quotation.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.refactoring.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.resources.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-closures.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-collections.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-core.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-editor.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-openapi.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-platform.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-test.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+    </path>
+    <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
+    <path id="mps.plugins.path" />
+    <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
+    <path id="mps.tests.path">
+      <pathelement location="${build.layout}/testPackagedLanguage-generator.jar" />
+      <pathelement location="${build.layout}/testPackagedLanguage.jar" />
+      <pathelement location="${build.layout}/testPackagedLanguage.test.jar" />
+    </path>
+    <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <junit showoutput="true" fork="true" haltonfailure="false">
+      <jvmarg value="-ea" />
+      <jvmarg value="-Xss1024k" />
+      <jvmarg value="-Xmx1024m" />
+      <jvmarg value="-XX:MaxPermSize=256m" />
+      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
+      
+      <classpath>
+        <fileset dir="${artifacts.mps}/lib">
+          <include name="**/*.jar" />
+        </fileset>
+      </classpath>
+      
+      <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
+      <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
+      <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
+      
+      <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-packaged" />
+      <formatter type="xml" />
+    </junit>
   </target>
   
   <target name="cleanSources">
     <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" />
     <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" />
+    <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" />
   </target>
 </project>
