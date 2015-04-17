@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root nodeRef="r:3cb2401e-fd57-4dbf-95e0-73c9ba8a127f(testPackagedLanguage.test)/8258351465735794199">
+    <file name="null_Test.java">
+      <unit id="8258351465735794199" at="7,0,9,0" name="testPackagedLanguage.test.null_Test" />
+    </file>
+  </root>
+</debug-info>
+

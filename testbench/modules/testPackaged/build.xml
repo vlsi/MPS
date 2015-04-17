@@ -83,28 +83,31 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage-languageModels" prefix="module/languageModels" />
     </jar>
-    <mkdir dir="${build.tmp}/default/testPackagedLanguage.sandbox.jar" />
-    <mkdir dir="${build.tmp}/default/testPackagedLanguage.sandbox.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/testPackagedLanguage.sandbox.jar/META-INF/module.xml">
-      <module namespace="testPackagedLanguage.sandbox" type="solution" uuid="2f5af9e7-34c8-45f3-b417-4dcbb52409b8">
-        <dependencies />
-        <sources jar="testPackagedLanguage.sandbox-src.jar" descriptor="testPackagedLanguage.sandbox.msd" />
+    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
+    <mkdir dir="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/testPackagedLanguage.test.jar/META-INF/module.xml">
+      <module namespace="testPackagedLanguage.test" type="solution" uuid="2f5af9e7-34c8-45f3-b417-4dcbb52409b8">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
+        </dependencies>
+        <sources jar="testPackagedLanguage.test-src.jar" descriptor="testPackagedLanguage.test.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/testPackaged.zip/testPackaged/languages/testPackaged/testPackagedLanguage.sandbox.jar">
-      <fileset dir="${build.tmp}/java/out/testPackagedLanguage.sandbox" />
-      <fileset dir="${basedir}/testPackagedLanguage.sandbox" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/testPackagedLanguage.sandbox.jar" />
+    <jar destfile="${build.tmp}/default/testPackaged.zip/testPackaged/languages/testPackaged/testPackagedLanguage.test.jar">
+      <fileset dir="${build.tmp}/java/out/testPackagedLanguage.test" />
+      <fileset dir="${basedir}/testPackagedLanguage.test" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage.sandbox-models">
-      <fileset dir="${basedir}/testPackagedLanguage.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage.test-models">
+      <fileset dir="${basedir}/testPackagedLanguage.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/testPackaged.zip/testPackaged/languages/testPackaged/testPackagedLanguage.sandbox-src.jar">
-      <fileset dir="${basedir}/testPackagedLanguage.sandbox/source_gen">
+    <jar destfile="${build.tmp}/default/testPackaged.zip/testPackaged/languages/testPackaged/testPackagedLanguage.test-src.jar">
+      <fileset dir="${basedir}/testPackagedLanguage.test/source_gen">
         <exclude name="**/trace.info" />
       </fileset>
-      <zipfileset file="${basedir}/testPackagedLanguage.sandbox/testPackagedLanguage.sandbox.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage.sandbox-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testPackagedLanguage.test/testPackagedLanguage.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testPackagedLanguage.test-models" prefix="module/models" />
     </jar>
     <zip destfile="${build.layout}/testPackaged.zip">
       <fileset dir="${build.tmp}/default/testPackaged.zip" />
@@ -123,7 +126,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.testPackagedLanguage, java.compile.testPackagedLanguage#6919151941181557458, java.compile.testPackagedLanguage.sandbox" />
+  <target name="compileJava" depends="java.compile.testPackagedLanguage, java.compile.testPackagedLanguage#6919151941181557458, java.compile.testPackagedLanguage.test" />
   
   <target name="processResources" />
   
@@ -149,6 +152,7 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
@@ -192,13 +196,15 @@
       <library file="${artifacts.mps}/lib/mps-editor.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-test.jar" />
+      <library file="${artifacts.mps}/lib/mps-tool.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <chunk>
         <module file="${basedir}/testPackagedLanguage/testPackagedLanguage.mpl" />
+        <module file="${basedir}/testPackagedLanguage.test/testPackagedLanguage.test.msd" />
       </chunk>
-      <chunk>
-        <module file="${basedir}/testPackagedLanguage.sandbox/testPackagedLanguage.sandbox.msd" />
-      </chunk>
+      <chunk />
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
@@ -279,21 +285,31 @@
     </javac>
   </target>
   
-  <target name="java.compile.testPackagedLanguage.sandbox">
-    <mkdir dir="${basedir}/testPackagedLanguage.sandbox/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testPackagedLanguage.sandbox" />
-    <javac destdir="${build.tmp}/java/out/testPackagedLanguage.sandbox" fork="true" includeantruntime="false">
+  <target name="java.compile.testPackagedLanguage.test" depends="fetchDependencies">
+    <mkdir dir="${basedir}/testPackagedLanguage.test/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/testPackagedLanguage.test" />
+    <javac destdir="${build.tmp}/java/out/testPackagedLanguage.test" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/testPackagedLanguage.sandbox/source_gen" />
+        <path location="${basedir}/testPackagedLanguage.test/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-library-1.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
+        <fileset file="${artifacts.mps}/lib/junit-4.11.jar" />
+      </classpath>
     </javac>
   </target>
   
   <target name="cleanSources">
     <delete dir="${basedir}/testPackagedLanguage/source_gen" />
+    <delete dir="${basedir}/testPackagedLanguage.test/source_gen" />
     <delete dir="${basedir}/testPackagedLanguage/generator/source_gen" />
-    <delete dir="${basedir}/testPackagedLanguage.sandbox/source_gen" />
   </target>
 </project>

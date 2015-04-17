@@ -4,6 +4,10 @@
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -166,14 +170,14 @@
       </node>
       <node concept="1E1JtA" id="10zO9FuGMX" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="testPackagedLanguage.sandbox" />
+        <property role="TrG5h" value="testPackagedLanguage.test" />
         <property role="3LESm3" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="10zO9FuGMQ" role="3LF7KH">
           <node concept="2Ry0Ak" id="10zO9FuGMU" role="iGT6I">
-            <property role="2Ry0Am" value="testPackagedLanguage.sandbox" />
+            <property role="2Ry0Am" value="testPackagedLanguage.test" />
             <node concept="2Ry0Ak" id="10zO9FuGMV" role="2Ry0An">
-              <property role="2Ry0Am" value="testPackagedLanguage.sandbox.msd" />
+              <property role="2Ry0Am" value="testPackagedLanguage.test.msd" />
             </node>
           </node>
         </node>
