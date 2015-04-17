@@ -55,7 +55,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private final List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
   private final JBTabsImpl myTabs;
   private RelationDescriptor myLastEmptyTab = null;
-  private volatile boolean myDisposed = false;
   private volatile boolean myRebuilding = false;
 
   private final Disposable myJbTabsDisposable = new Disposable() {
@@ -70,7 +69,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     myTabs = new JBTabsImpl(project, null, myJbTabsDisposable);
     myTabs.setTabsPosition(JBTabsPosition.bottom)
-        .setPaintBorder(0,0,0,0)
+        .setPaintBorder(0, 0, 0, 0)
         .setTabSidePaintBorder(1)
         .setGhostsAlwaysVisible(false)
         .setUiDecorator(new UiDecorator() {
@@ -89,7 +88,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     myTabs.addListener(new TabsListener() {
       @Override
       public void selectionChanged(TabInfo oldSelection, TabInfo newSelection) {
-        if (myDisposed) return;
+        if (isDisposed()) return;
         if (myRebuilding) return;
 
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -101,11 +100,16 @@ public class PlainTabsComponent extends BaseTabsComponent {
       }
 
       @Override
-      public void beforeSelectionChanged(TabInfo oldSelection, TabInfo newSelection) {}
+      public void beforeSelectionChanged(TabInfo oldSelection, TabInfo newSelection) {
+      }
+
       @Override
-      public void tabRemoved(TabInfo tabToRemove) {}
+      public void tabRemoved(TabInfo tabToRemove) {
+      }
+
       @Override
-      public void tabsMoved() {}
+      public void tabsMoved() {
+      }
     });
 
     addListeners();
@@ -113,7 +117,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
 
   private synchronized void onTabIndexChange() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     if (myTabs.getTabCount() == 0) return;
 
@@ -135,7 +139,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   public synchronized RelationDescriptor getCurrentTabAspect() {
-    if (myDisposed) return null;
+    if (isDisposed()) return null;
 
     if (myLastEmptyTab != null) return myLastEmptyTab;
     return myRealTabs.get(myTabs.getIndexOf(myTabs.getSelectedInfo())).getTab();
@@ -154,7 +158,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   public void setLastNode(SNodeReference node) {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     //not to make infinite recursion when tab is clicked
     if (EqualUtil.equals(node, getLastNode())) return;
@@ -166,15 +170,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
   //this is synchronized because we change myJbTabs here (while disposing)
   @Override
   public synchronized void dispose() {
+    super.dispose();
     removeListeners();
-    myDisposed = true;
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
   }
 
   @Override
   protected synchronized void updateTabColors() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     for (int i = 0; i < myRealTabs.size(); i++) {
       SNodeReference nodePtr = myRealTabs.get(i).getNode();
@@ -193,7 +197,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   protected synchronized void updateTabs() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     SNodeReference selNode = null;
     RelationDescriptor selRel = null;
@@ -275,7 +279,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   private synchronized void selectNodeTab() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     for (PlainEditorTab t : myRealTabs) {
       if (t.getNode() != null && t.getNode().equals(getLastNode())) {
@@ -293,7 +297,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   public synchronized void nextTab() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     int i = myTabs.getIndexOf(myTabs.getSelectedInfo());
     if (i < myTabs.getTabCount() - 1) {
@@ -303,7 +307,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   public synchronized void prevTab() {
-    if (myDisposed) return;
+    if (isDisposed()) return;
 
     int i = myTabs.getIndexOf(myTabs.getSelectedInfo());
     if (i > 0) {
@@ -313,11 +317,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   @Override
   protected boolean isTabUpdateNeeded(SNodeReference node) {
-    return !myDisposed && isOwn(node);
+    return !isDisposed() && isOwn(node);
   }
 
   private synchronized boolean isOwn(SNodeReference node) {
-    if (myDisposed) return false;
+    if (isDisposed()) return false;
 
     for (PlainEditorTab tab : myRealTabs) {
       if (EqualUtil.equals(tab.getNode(), node)) return true;
