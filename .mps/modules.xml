@@ -345,6 +345,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" folder="tests.testPackaged" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" folder="tests.testPackaged" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testPersistence/tests.testPersistence.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRead/jetbrains.mps.testRead.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testPrimitiveType/testPrimitiveType.mpl" folder="tests.subtyping" />
@@ -353,6 +354,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/tests.testPersistence.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/bl.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/bl.doubleDispatch.test/jetbrains.mps.baseLanguage.doubleDispatch.test.msd" folder="core.baseLanguage.doubleDispatch" />
