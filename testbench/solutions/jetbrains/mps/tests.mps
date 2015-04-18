@@ -69,6 +69,8 @@
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
+    <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -3834,6 +3836,25 @@
     </node>
     <node concept="lpD6D" id="1V0dlEgZt9x" role="lpD6w">
       <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="3ofMfJ4Yh7E">
+    <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
+      <property role="2R4zub" value="testPackagedLanguage.test" />
+      <property role="2R4zu8" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
+    </node>
+    <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
+      <property role="1wBEbI" value="true" />
+      <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="3ofMfJ4Yh7N">
+    <node concept="2R4zua" id="3ofMfJ4Yh7O" role="2R4z3u">
+      <property role="2R4zub" value="tests.testPersistence" />
+      <property role="2R4zu8" value="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6" />
+    </node>
+    <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
+      <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
     </node>
   </node>
 </model>

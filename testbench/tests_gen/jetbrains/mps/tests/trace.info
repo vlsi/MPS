@@ -201,6 +201,22 @@
       <unit id="3611349286777542940" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_testActions" />
     </file>
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3895553186365772266">
+    <file name="TestModule_testPackagedLanguage_test.java">
+      <node id="3895553186365772266" at="12,0,14,0" concept="0" trace="TestModule_testPackagedLanguage_test#()V" />
+      <scope id="3895553186365772266" at="12,49,12,49" />
+      <scope id="3895553186365772266" at="12,0,14,0" />
+      <unit id="3895553186365772266" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_testPackagedLanguage_test" />
+    </file>
+  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3895553186365772275">
+    <file name="TestModule_tests_testPersistence.java">
+      <node id="3895553186365772275" at="12,0,14,0" concept="0" trace="TestModule_tests_testPersistence#()V" />
+      <scope id="3895553186365772275" at="12,45,12,45" />
+      <scope id="3895553186365772275" at="12,0,14,0" />
+      <unit id="3895553186365772275" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_tests_testPersistence" />
+    </file>
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4195712261513837590">
     <file name="TestModule_jetbrains_mps_testRead.java">
       <node id="4195712261513837590" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_testRead#()V" />
