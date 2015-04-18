@@ -21,7 +21,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import jetbrains.mps.util.PathManager;
@@ -42,13 +41,6 @@ public class DependenciesViewerTest extends WorkbenchMpsTest {
   private static final String TARGET_MODEL = "testDependenciesViewer.sandbox.target";
   private final static File sourceZip = new File("testbench/modules/testDependenciesViewer.zip");
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_DEPENDENCY");
-
-  private TestOutputFilter filter = new TestOutputFilter() {
-    @Override
-    protected boolean isLineOK(String line) {
-      return !(line.contains("attribute") && line.contains("undeclared child role:"));
-    }
-  };
 
   @Test
   public void testDependencies() {

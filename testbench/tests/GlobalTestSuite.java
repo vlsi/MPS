@@ -44,7 +44,6 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.vcs.test.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,  //TODO: move this test to closed repository
-    jetbrains.mps.PersistenceTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
