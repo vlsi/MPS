@@ -308,12 +308,17 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) {
         return null;
+      }
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
     } else if (treeNode instanceof PsiDirectoryNode) {
-      IFile ifile = FileSystem.getInstance().getFileByPath(((PsiDirectoryNode) treeNode).getVirtualFile().getPath());
+      VirtualFile virtualFile = ((PsiDirectoryNode) treeNode).getVirtualFile();
+      if (virtualFile == null) {
+        return null;
+      }
+      IFile ifile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
       SModel model = SModelFileTracker.getInstance().findModel(ifile);
       if (model != null) return ifile;
 
