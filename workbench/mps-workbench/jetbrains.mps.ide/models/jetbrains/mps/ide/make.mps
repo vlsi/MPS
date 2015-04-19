@@ -65,6 +65,7 @@
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="lv7v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text(MPS.Core/jetbrains.mps.text@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1556,16 +1557,19 @@
     </node>
     <node concept="312cEg" id="9D0Ba05uSx" role="jymVt">
       <property role="TrG5h" value="myName" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="9D0Ba05uSy" role="1B3o_S" />
       <node concept="17QB3L" id="9D0Ba05uSz" role="1tU5fm" />
     </node>
     <node concept="312cEg" id="5nf3Xb9UUwM" role="jymVt">
       <property role="TrG5h" value="myModelName" />
+      <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5nf3Xb9UUF_" role="1tU5fm" />
       <node concept="3Tm6S6" id="5nf3Xb9UUwN" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="9D0Ba05uSs" role="jymVt">
       <property role="TrG5h" value="myFileContent" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5nf3Xb9UWH3" role="1tU5fm">
         <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
@@ -1673,6 +1677,35 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="3US3BmWscSq" role="3cqZAp">
+          <node concept="3clFbS" id="3US3BmWscSs" role="3clFbx">
+            <node concept="3cpWs6" id="1u7PrRUcEeJ" role="3cqZAp">
+              <node concept="2OqwBi" id="3US3BmWshHX" role="3cqZAk">
+                <node concept="1eOMI4" id="3US3BmWsh_O" role="2Oq$k0">
+                  <node concept="10QFUN" id="3US3BmWsh_L" role="1eOMHV">
+                    <node concept="3uibUv" id="3US3BmWsh_Q" role="10QFUM">
+                      <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                    </node>
+                    <node concept="37vLTw" id="3US3BmWshCE" role="10QFUP">
+                      <ref role="3cqZAo" node="9D0Ba05uSs" resolve="myFileContent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3US3BmWsiVc" role="2OqNvi">
+                  <ref role="37wK5l" to="lv7v:~TextUnit.getBytes():byte[]" resolve="getBytes" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="3US3BmWsdun" role="3clFbw">
+            <node concept="3uibUv" id="3US3BmWsdJC" role="2ZW6by">
+              <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+            </node>
+            <node concept="37vLTw" id="3US3BmWsdbO" role="2ZW6bz">
+              <ref role="3cqZAo" node="9D0Ba05uSs" resolve="myFileContent" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6WBOkz5A_SN" role="3cqZAp">
           <node concept="2OqwBi" id="5nf3Xb9Vbk_" role="3clFbG">
             <node concept="liA8E" id="5nf3Xb9VdxC" role="2OqNvi">
@@ -1701,8 +1734,37 @@
         <ref role="3uigEE" to="595t:~Charset" resolve="Charset" />
       </node>
       <node concept="3clFbS" id="9D0Ba05uQk" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05uQl" role="3cqZAp">
-          <node concept="10M0yZ" id="9D0Ba05uQm" role="3clFbG">
+        <node concept="3clFbJ" id="3US3BmWsfIV" role="3cqZAp">
+          <node concept="3clFbS" id="3US3BmWsfIX" role="3clFbx">
+            <node concept="3cpWs6" id="3US3BmWsgf$" role="3cqZAp">
+              <node concept="2OqwBi" id="3US3BmWsj_4" role="3cqZAk">
+                <node concept="1eOMI4" id="3US3BmWsjil" role="2Oq$k0">
+                  <node concept="10QFUN" id="3US3BmWsjii" role="1eOMHV">
+                    <node concept="3uibUv" id="3US3BmWsjin" role="10QFUM">
+                      <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                    </node>
+                    <node concept="37vLTw" id="3US3BmWsjio" role="10QFUP">
+                      <ref role="3cqZAo" node="9D0Ba05uSs" resolve="myFileContent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3US3BmWsjY4" role="2OqNvi">
+                  <ref role="37wK5l" to="lv7v:~TextUnit.getEncoding():java.nio.charset.Charset" resolve="getEncoding" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="3US3BmWsg8X" role="3clFbw">
+            <node concept="3uibUv" id="3US3BmWsgdU" role="2ZW6by">
+              <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+            </node>
+            <node concept="37vLTw" id="3US3BmWsg2D" role="2ZW6bz">
+              <ref role="3cqZAo" node="9D0Ba05uSs" resolve="myFileContent" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3US3BmWseGR" role="3cqZAp">
+          <node concept="10M0yZ" id="9D0Ba05uQm" role="3cqZAk">
             <ref role="1PxDUh" to="msyo:~FileUtil" resolve="FileUtil" />
             <ref role="3cqZAo" to="msyo:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
           </node>
@@ -1710,6 +1772,9 @@
       </node>
       <node concept="2AHcQZ" id="9D0Ba05uQn" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="3US3BmWskgz" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="9D0Ba05uQo" role="jymVt">

@@ -5,6 +5,7 @@ package jetbrains.mps.ide.make;
 import com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
+import jetbrains.mps.text.TextUnit;
 import java.nio.charset.Charset;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
@@ -24,9 +25,9 @@ import com.intellij.util.ArrayUtil;
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
   private static final String BINARY_CONTENT = "<binary content>";
-  private String myName;
-  private String myModelName;
-  private Object myFileContent;
+  private final String myName;
+  private final String myModelName;
+  private final Object myFileContent;
   public TextPreviewFile(String name, Object fileContent, String modelName) {
     this.myName = name;
     this.myFileContent = fileContent;
@@ -38,10 +39,17 @@ public class TextPreviewFile extends StubVirtualFile {
     if (myFileContent instanceof String) {
       return ((String) myFileContent).getBytes(getCharset());
     }
+    if (myFileContent instanceof TextUnit) {
+      return ((TextUnit) myFileContent).getBytes();
+    }
     return BINARY_CONTENT.getBytes(getCharset());
   }
   @Override
+  @NotNull
   public Charset getCharset() {
+    if (myFileContent instanceof TextUnit) {
+      return ((TextUnit) myFileContent).getEncoding();
+    }
     return FileUtil.DEFAULT_CHARSET;
   }
   @NotNull

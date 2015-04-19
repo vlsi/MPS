@@ -58,9 +58,11 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.concurrent.ArrayBlockingQueue;
+import jetbrains.mps.text.TextGenResult;
+import java.util.concurrent.TimeUnit;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
@@ -376,50 +378,56 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              for (final GResource resource : Sequence.fromIterable(input)) {
-                final Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
-                final Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
-                final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-                final Wrappers._boolean errors = new Wrappers._boolean(false);
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    model.value = resource.status().getOutputModel();
-                    if (model.value == null) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
-                      errors.value = true;
-                    } else {
-                      for (SNode root : model.value.getRootNodes()) {
-                        TextGenerationResult tgr = TextGen.generateText(root);
-                        errors.value |= tgr.hasErrors();
-                        if (errors.value) {
-                          for (IMessage err : tgr.problems()) {
-                            monitor.reportFeedback(new IFeedback.MESSAGE(err));
-                          }
-                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
-                          break;
-                        }
-                        String fname = TextGen.getFileName(root);
-                        if (fname == null) {
-                          fname = "<null> [" + root.getNodeId() + "]";
-                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));
-                        }
-                        MapSequence.fromMap(texts).put(fname, tgr.getResult());
+              final jetbrains.mps.text.TextGeneratorEngine tgEngine = new jetbrains.mps.text.TextGeneratorEngine();
+              try {
+                int modelsCount = Sequence.fromIterable(input).count();
+                final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
+                for (GResource resource : Sequence.fromIterable(input)) {
+                  final SModel model = resource.status().getOutputModel();
+                  if (model == null) {
+                    modelsCount--;
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
+                    // used to be a 'failure', with text generation result collected so far. 
+                    // Now, 'failure' here would yield empty result, always. 
+                    // It looks like 'best effort' (generate all possible) is reasonable alternative. 
+                    continue;
+                  }
+                  // FIXME shall take project from MakeSession and use it for readAction 
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      tgEngine.schedule(model, resultQueue);
+                    }
+                  });
+                }
+                while (modelsCount-- > 0) {
+                  final TextGenResult tgr = resultQueue.poll(1, TimeUnit.MINUTES);
+                  Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
+                  Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
+                  for (TextUnit tu : tgr.getUnits()) {
+                    // FIXME bring error reporting back 
+                    boolean errors = false;
+                    if (errors) {
+                      // <node> 
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
+                      break;
+                    }
 
-                        SNodeReference sourceNode = TracingUtil.getInput(root);
-                        if (sourceNode != null) {
-                          if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
-                            MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
-                          }
-                        }
+                    String fname = tu.getFileName();
+                    MapSequence.fromMap(texts).put(fname, tu);
+                    SNodeReference sourceNode = TracingUtil.getInput(tu.getStartNode());
+                    if (sourceNode != null) {
+                      if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
+                        MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
                       }
                     }
                   }
-                });
-
-                if (errors.value) {
-                  return new IResult.FAILURE(_output_21gswx_a0b);
+                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(tgr.getModel()), texts, rootNodeToFileName, null, tgr.getModel()))));
                 }
-                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(model.value), texts, rootNodeToFileName, resource.module(), resource.model()))));
+              } catch (InterruptedException ex) {
+                // fine, no more text generation 
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
+              } finally {
+                tgEngine.shutdown();
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);
