@@ -71,6 +71,7 @@
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
     <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
     <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
+    <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -3855,6 +3856,15 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="1lM6JtOM9Yh">
+    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
+      <property role="2R4zub" value="tests.testDepViewer" />
+      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
+    </node>
+    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
+      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
     </node>
   </node>
 </model>
