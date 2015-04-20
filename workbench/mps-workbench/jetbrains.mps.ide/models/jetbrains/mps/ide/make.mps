@@ -4254,21 +4254,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="9D0Ba05vaF" role="3cqZAp">
-          <node concept="2OqwBi" id="9D0Ba05vaG" role="3clFbG">
-            <node concept="2YIFZM" id="9D0Ba05vaH" role="2Oq$k0">
-              <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-              <ref role="1Pybhc" to="y5px:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
-            </node>
-            <node concept="liA8E" id="9D0Ba05vaI" role="2OqNvi">
-              <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.setGenerationSettings(jetbrains.mps.generator.IModifiableGenerationSettings):void" resolve="setGenerationSettings" />
-              <node concept="2YIFZM" id="9D0Ba05vaJ" role="37wK5m">
-                <ref role="1Pybhc" to="xjo8:~GenerationSettings" resolve="GenerationSettings" />
-                <ref role="37wK5l" to="xjo8:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SlqS" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
@@ -4283,18 +4268,6 @@
       <node concept="3Tm1VV" id="9D0Ba05vaL" role="1B3o_S" />
       <node concept="3cqZAl" id="9D0Ba05vaM" role="3clF45" />
       <node concept="3clFbS" id="9D0Ba05vaN" role="3clF47">
-        <node concept="3clFbF" id="9D0Ba05vaO" role="3cqZAp">
-          <node concept="2OqwBi" id="9D0Ba05vaP" role="3clFbG">
-            <node concept="2YIFZM" id="9D0Ba05vaQ" role="2Oq$k0">
-              <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-              <ref role="1Pybhc" to="y5px:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
-            </node>
-            <node concept="liA8E" id="9D0Ba05vaR" role="2OqNvi">
-              <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.setGenerationSettings(jetbrains.mps.generator.IModifiableGenerationSettings):void" resolve="setGenerationSettings" />
-              <node concept="10Nm6u" id="9D0Ba05vaS" role="37wK5m" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="9D0Ba05vaT" role="3cqZAp">
           <node concept="2OqwBi" id="9D0Ba05vaU" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuVu3" role="2Oq$k0">

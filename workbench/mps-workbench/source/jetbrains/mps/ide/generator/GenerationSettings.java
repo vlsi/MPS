@@ -23,6 +23,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
@@ -46,6 +47,10 @@ import javax.swing.JComponent;
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent {
 
+  /**
+   * @deprecated use {@link GenerationSettingsProvider#getGenerationSettings()} instead
+   */
+  @Deprecated
   public static IModifiableGenerationSettings getInstance() {
     final GenerationSettings gs = ApplicationManager.getApplication().getComponent(GenerationSettings.class);
     return gs.getModifiableSettings();
@@ -61,12 +66,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   @Override
   public void initComponent() {
-
+    GenerationSettingsProvider.getInstance().setGenerationSettings(getModifiableSettings());
   }
 
   @Override
   public void disposeComponent() {
-
+    if (getModifiableSettings() == GenerationSettingsProvider.getInstance().getGenerationSettings()) {
+      GenerationSettingsProvider.getInstance().setGenerationSettings(null);
+    }
   }
 
   @Override
