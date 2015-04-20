@@ -51,8 +51,8 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -333,12 +333,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // todo: why should we specify project only for Generate facet? 
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean> vars = (Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-      if (vars != null) {
-        vars._0(getSession().getProject());
-        vars._1(getSession().getContext());
-        vars._2(getSession().isCleanMake());
-      }
+      new GenerateFacetInitializer(getSession()).populate(ppool);
 
       // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
       Tuples._2<jetbrains.mps.project.Project, Boolean> varsForJavaCompile = (Tuples._2<jetbrains.mps.project.Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
