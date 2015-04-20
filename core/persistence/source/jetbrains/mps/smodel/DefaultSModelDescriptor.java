@@ -179,24 +179,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   @Override
-  protected void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel) {
-    if (getVersion() != -1) return;
-
-    int latestVersion = getStructureModificationLog().getLatestVersion(getReference());
-    myStructureModificationLog = null;  // we don't need to keep log in memory
-    if (latestVersion != -1) {
-      loadedSModel.setVersion(latestVersion);
-      //LOG.error("Version for model " + getModelName() + " was not set.");
-    }
-  }
-
-  @Override
-  protected void replaceModel(LazySModel newModel, ModelLoadingState state) {
-    super.replaceModel(newModel, state);
-    myStructureModificationLog = null;
-  }
-
-  @Override
   protected void reloadContents() {
     try {
       myHeader = myPersistence.readHeader();
