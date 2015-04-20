@@ -532,7 +532,7 @@
       <node id="7425893170002936816" at="283,0,298,0" concept="8" trace="run#()V" />
       <node id="7390982340086719485" at="66,0,82,0" concept="8" trace="editorWillBeDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="7425893170003960273" at="231,0,247,5" concept="7" />
-      <node id="7425893170002936814" at="281,66,298,9" concept="4" />
+      <node id="5680675782393210360" at="281,66,298,9" concept="4" />
       <node id="7390982340086719478" at="65,0,83,0" concept="5" trace="myDisposeListener" />
       <node id="7425893170002936760" at="255,148,273,5" concept="6" />
       <node id="7425893170004618911" at="280,33,299,5" concept="7" />
@@ -708,7 +708,7 @@
       <unit id="7390982340086720106" at="99,47,108,3" name="typesystemIntegration.languageChecker.LanguageEditorChecker$3" />
       <unit id="7425893170002936822" at="284,63,296,11" name="typesystemIntegration.languageChecker.LanguageEditorChecker$9" />
       <unit id="7390982340086720081" at="84,61,97,3" name="typesystemIntegration.languageChecker.LanguageEditorChecker$2" />
-      <unit id="7425893170002936816" at="282,37,298,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$8" />
+      <unit id="7425893170002936816" at="282,58,298,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$8" />
       <unit id="7390982340086719483" at="65,72,82,3" name="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />
       <unit id="7390982340086719450" at="57,0,319,0" name="typesystemIntegration.languageChecker.LanguageEditorChecker" />
     </file>

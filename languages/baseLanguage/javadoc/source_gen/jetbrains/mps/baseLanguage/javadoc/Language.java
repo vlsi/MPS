@@ -15,8 +15,7 @@ import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.baseLanguage.javadoc.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)";
@@ -61,7 +60,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.baseLanguage.javadoc.structure.StructureAspectDescriptor();
     }
     if (descriptorClass == TextGenAspectDescriptor.class) {
-      return (T) new TextGenAspectInterpreted();
+      return (T) new jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor();
     }
     return super.createAspectDescriptor(descriptorClass);
   }

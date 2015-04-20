@@ -1251,41 +1251,41 @@
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/736151805632466469">
     <file name="ViewAction.java">
-      <node id="736151805632466483" at="15,0,16,0" concept="16" trace="SHORTEN_NAMES" />
-      <node id="736151805632466530" at="16,0,17,0" concept="16" trace="COLORS" />
-      <node id="736151805632466587" at="17,0,18,0" concept="16" trace="KEYS_TO_TITLES" />
-      <node id="736151805632466480" at="18,0,19,0" concept="7" trace="myColumn" />
-      <node id="736151805632466542" at="19,0,20,0" concept="7" trace="myKey" />
-      <node id="736151805632466491" at="20,58,21,56" concept="18" />
-      <node id="736151805632466547" at="21,56,22,16" concept="6" />
-      <node id="736151805632466493" at="22,16,23,22" concept="6" />
-      <node id="736151805632466506" at="26,50,27,24" concept="13" />
-      <node id="736151805632466516" at="30,66,31,80" concept="6" />
-      <node id="736151805632466523" at="31,80,32,32" concept="6" />
-      <node id="736151805632466473" at="34,43,35,67" concept="13" />
-      <node id="736151805632466470" at="34,0,37,0" concept="17" trace="isSet#(Ljava/lang/String;)Z" />
-      <node id="736151805632466500" at="25,0,29,0" concept="11" trace="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-      <node id="736151805632466487" at="20,0,25,0" concept="3" trace="ViewAction#(Ljetbrains/mps/vcs/annotate/AnnotationColumn;Ljava/lang/String;)V" />
-      <node id="736151805632466508" at="29,0,34,0" concept="11" trace="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-      <scope id="736151805632466505" at="26,50,27,24" />
-      <scope id="736151805632466472" at="34,43,35,67" />
-      <scope id="736151805632466515" at="30,66,32,32" />
-      <scope id="736151805632466490" at="20,58,23,22" />
-      <scope id="736151805632466470" at="34,0,37,0">
+      <node id="736151805632466483" at="13,0,14,0" concept="16" trace="SHORTEN_NAMES" />
+      <node id="736151805632466530" at="14,0,15,0" concept="16" trace="COLORS" />
+      <node id="736151805632466587" at="15,0,16,0" concept="16" trace="KEYS_TO_TITLES" />
+      <node id="736151805632466480" at="16,0,17,0" concept="7" trace="myColumn" />
+      <node id="736151805632466542" at="17,0,18,0" concept="7" trace="myKey" />
+      <node id="736151805632466491" at="18,58,19,56" concept="18" />
+      <node id="736151805632466547" at="19,56,20,16" concept="6" />
+      <node id="736151805632466493" at="20,16,21,22" concept="6" />
+      <node id="736151805632466506" at="24,50,25,24" concept="13" />
+      <node id="736151805632466516" at="28,66,29,80" concept="6" />
+      <node id="736151805632466523" at="29,80,30,32" concept="6" />
+      <node id="736151805632466473" at="32,43,33,67" concept="13" />
+      <node id="736151805632466470" at="32,0,35,0" concept="17" trace="isSet#(Ljava/lang/String;)Z" />
+      <node id="736151805632466500" at="23,0,27,0" concept="11" trace="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+      <node id="736151805632466487" at="18,0,23,0" concept="3" trace="ViewAction#(Ljetbrains/mps/vcs/annotate/AnnotationColumn;Ljava/lang/String;)V" />
+      <node id="736151805632466508" at="27,0,32,0" concept="11" trace="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+      <scope id="736151805632466505" at="24,50,25,24" />
+      <scope id="736151805632466472" at="32,43,33,67" />
+      <scope id="736151805632466515" at="28,66,30,32" />
+      <scope id="736151805632466490" at="18,58,21,22" />
+      <scope id="736151805632466470" at="32,0,35,0">
         <var name="key" id="736151805632466527" />
       </scope>
-      <scope id="736151805632466500" at="25,0,29,0">
+      <scope id="736151805632466500" at="23,0,27,0">
         <var name="event" id="736151805632466503" />
       </scope>
-      <scope id="736151805632466487" at="20,0,25,0">
+      <scope id="736151805632466487" at="18,0,23,0">
         <var name="column" id="736151805632466497" />
         <var name="key" id="736151805632466534" />
       </scope>
-      <scope id="736151805632466508" at="29,0,34,0">
+      <scope id="736151805632466508" at="27,0,32,0">
         <var name="event" id="736151805632466511" />
         <var name="selected" id="736151805632466513" />
       </scope>
-      <unit id="736151805632466469" at="14,0,38,0" name="jetbrains.mps.vcs.annotate.ViewAction" />
+      <unit id="736151805632466469" at="12,0,36,0" name="jetbrains.mps.vcs.annotate.ViewAction" />
     </file>
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/7744421503924576834">

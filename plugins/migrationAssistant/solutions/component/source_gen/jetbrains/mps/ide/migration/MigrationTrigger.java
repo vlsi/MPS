@@ -46,7 +46,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
@@ -258,7 +258,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     final Set<SModule> modules2Check = SetSequence.fromSet(new HashSet<SModule>());
     final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
-        return MetaIdByDeclaration.ref2Id(it.getModuleReference());
+        return MetaAdapterFactory.getLanguage(it.getModuleReference());
       }
     }).toListSequence();
     Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
@@ -323,7 +323,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      ModelAccess.assertLegalWrite();
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
       }
@@ -336,7 +335,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     public void moduleChanged(SModule module) {
       super.moduleChanged(module);
-      ModelAccess.assertLegalWrite();
       if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
         return;
       }
@@ -352,7 +350,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
-      ModelAccess.assertLegalWrite();
       postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
     }
   }

@@ -59,22 +59,9 @@ public class Generator extends ReloadableModuleBase {
 
   public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
-    myGeneratorDescriptor = generatorDescriptor;
-
-    String uid = myGeneratorDescriptor.getGeneratorUID();
-    if (uid == null) {
-      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
-    }
-
-    ModuleId uuid = myGeneratorDescriptor.getId();
-    if (uuid == null) {
-      uuid = ModuleId.regular();
-      myGeneratorDescriptor.setId(uuid);
-    }
-    SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
-    setModuleReference(mp);
+    initGeneratorDescriptor(generatorDescriptor);
   }
-
+  
   @Override
   //models will be named like xxx.modelName, where xxx is a part of newName before sharp symbol
   public void rename(String newName) {
@@ -209,6 +196,38 @@ public class Generator extends ReloadableModuleBase {
       }
     }
     return descriptorChanged[0];
+  }
+
+  /**
+   * Internal method, used from the process of re-validating generators from the language module.
+   *
+   * We cannot call Generator.setModuleDescriptor() method from there because it is implemented to call
+   * Language.setModuleDescriptor() starting generators re-validation process.
+   *
+   * This method can be removed if we separate generator module persistence from the language module persistence.
+   *
+   * @param generatorDescriptor
+   */
+  final void updateGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
+    initGeneratorDescriptor(generatorDescriptor);
+    reloadAfterDescriptorChange();
+  }
+
+  private void initGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
+    myGeneratorDescriptor = generatorDescriptor;
+
+    String uid = myGeneratorDescriptor.getGeneratorUID();
+    if (uid == null) {
+      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
+    }
+
+    ModuleId uuid = myGeneratorDescriptor.getId();
+    if (uuid == null) {
+      uuid = ModuleId.regular();
+      myGeneratorDescriptor.setId(uuid);
+    }
+    SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
+    setModuleReference(mp);
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

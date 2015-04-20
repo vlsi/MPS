@@ -13,13 +13,14 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.baseLanguage.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.baseLanguage.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor;
 
@@ -59,6 +60,9 @@ public class Language extends LanguageRuntime {
     if (descriptorClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor();
     }
+    if (descriptorClass == DataFlowAspectDescriptor.class) {
+      return (T) new DataFlowAspectDescriptorImpl();
+    }
     if (descriptorClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
@@ -69,7 +73,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor();
     }
     if (descriptorClass == TextGenAspectDescriptor.class) {
-      return (T) new TextGenAspectInterpreted();
+      return (T) new jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor();
     }
     if (descriptorClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

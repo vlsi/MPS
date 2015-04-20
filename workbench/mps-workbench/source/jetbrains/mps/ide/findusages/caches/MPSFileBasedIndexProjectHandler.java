@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.startup.StartupManagerEx;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.DumbServiceImpl;
 import com.intellij.openapi.project.Project;
@@ -79,7 +80,12 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
         startupManager.registerCacheUpdater(updater);
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
         LOG.debug("Queueing cache update");
-        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(updater));
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(updater));
+          }
+        });
       }
     });
   }

@@ -39,6 +39,7 @@ public interface SReferenceLink extends SAbstractLink, SConceptFeature {
 
   /**
    * The concept for the nodes that this link points to.
+   * FIXME explain whether null/not null
    */
   SAbstractConcept getTargetConcept();
 

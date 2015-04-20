@@ -13,7 +13,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new Analyzer_BehaviorDescriptor();
-      case 20:
+      case 21:
         return new Instruction_BehaviorDescriptor();
       case 6:
         return new AnalyzerMergeFunction_BehaviorDescriptor();
@@ -29,45 +29,49 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AnalyzerFunParameterProgramState_BehaviorDescriptor();
       case 2:
         return new AnalyzerFunParameterInput_BehaviorDescriptor();
-      case 16:
+      case 17:
         return new ForwardDirection_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new BackwardDirection_BehaviorDescriptor();
       case 4:
         return new AnalyzerFunctionResultType_BehaviorDescriptor();
-      case 25:
+      case 27:
         return new Rule_BehaviorDescriptor();
-      case 21:
+      case 23:
         return new InstructionParameter_BehaviorDescriptor();
-      case 24:
-        return new PatternCondition_BehaviorDescriptor();
-      case 15:
-        return new EmitInstruction_BehaviorDescriptor();
-      case 22:
-        return new InstructionReference_BehaviorDescriptor();
       case 26:
+        return new PatternCondition_BehaviorDescriptor();
+      case 16:
+        return new EmitInstruction_BehaviorDescriptor();
+      case 24:
+        return new InstructionReference_BehaviorDescriptor();
+      case 28:
         return new RuleReference_BehaviorDescriptor();
-      case 11:
+      case 12:
         return new AnalyzerRunnerType_BehaviorDescriptor();
       case 9:
         return new AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor();
-      case 10:
+      case 11:
         return new AnalyzerRunnerCreator_BehaviorDescriptor();
-      case 23:
+      case 25:
         return new IsOperation_BehaviorDescriptor();
-      case 14:
+      case 15:
         return new ConceptCondition_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new ApplicableNodeReference_BehaviorDescriptor();
-      case 18:
-        return new InsertBeforePosition_BehaviorDescriptor();
       case 19:
+        return new InsertBeforePosition_BehaviorDescriptor();
+      case 20:
         return new InsertPosition_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new InsertAfterPosition_BehaviorDescriptor();
+      case 22:
+        return new InstructionClassKeeper_BehaviorDescriptor();
+      case 10:
+        return new AnalyzerRunnerClassKeeper_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
 }

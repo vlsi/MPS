@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @deprecated Not in use
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public interface TextGenDescriptor {
   void doGenerateText(@NotNull SNode node, @NotNull TextGenBuffer buffer);
 

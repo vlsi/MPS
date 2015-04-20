@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,20 +40,13 @@ public class Renamer {
 
   public static void renameModel(EditableSModel model, String newName) {
     model.getRepository().saveAll();
-    model.rename(newName, true);
+    model.rename(newName, model.getSource() instanceof FileDataSource);
     updateModelAndModuleReferences(model.getRepository());
     model.getRepository().saveAll();
   }
 
   public static void updateModelAndModuleReferences(SRepository repo) {
-    ModelAccess.assertLegalWrite();
-
-    List<SModuleReference> refs = new ArrayList<SModuleReference>();
-    for (SModule module : repo.getModules()) {
-      if (module.isReadOnly()) continue;
-      refs.add(module.getModuleReference());
-    }
-    RefUpdateUtil.updateModuleRefs(refs);
+    repo.getModelAccess().checkWriteAccess();
 
     for (SModule m : repo.getModules()) {
       if (m.isReadOnly()) continue;

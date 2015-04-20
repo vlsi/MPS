@@ -15,8 +15,7 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.core.properties.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "58f98fef-90ad-4b72-a390-fad66ec7005a(jetbrains.mps.core.properties)";
@@ -58,7 +57,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.core.properties.structure.StructureAspectDescriptor();
     }
     if (descriptorClass == TextGenAspectDescriptor.class) {
-      return (T) new TextGenAspectInterpreted();
+      return (T) new jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor();
     }
     return super.createAspectDescriptor(descriptorClass);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,22 +21,22 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 public class ModelRules {
-  public static final Object RULES_LOCK = new Object();
   private final LanguageRegistry myLanguageRegistry;
 
   private Set<String> myLoadedLanguages = new THashSet<String>();
@@ -45,10 +45,8 @@ public class ModelRules {
 
   public ModelRules(SModel model, LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
-    List<Language> languages = SModelOperations.getLanguages(model);
-    for (Language language : languages) {
-      loadLanguage(language.getModuleName());
-    }
+    Collection<SLanguage> languages = SModelOperations.getAllLanguageImports(model);
+    loadLanguages(languages);
   }
 
   public void clear() {
@@ -57,28 +55,23 @@ public class ModelRules {
   }
 
   //todo: we should not change language models while loading language
-  private boolean loadLanguage(final String languageNamespace) {
-    synchronized (RULES_LOCK) {
+  private void loadLanguages(Collection<SLanguage> languages) {
+    for (SLanguage l : languages) {
+      final String languageNamespace = l.getQualifiedName();
       if (myLoadedLanguages.contains(languageNamespace)) {
-        return true;
+        continue;
       }
-      LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
-      if (language == null) return false;
-      IHelginsDescriptor typeSystemDescriptor = null;
-      try {
-        typeSystemDescriptor = language.getAspect(IHelginsDescriptor.class);
-      } catch (Throwable t) {
-        LOG.error("Error while loading language: " + languageNamespace, t);
-      }
-      if (typeSystemDescriptor == null) {
-        return false;
+      LanguageRuntime language = myLanguageRegistry.getLanguage(l);
+      if (language == null) {
+        continue;
       }
       try {
-        myNonTypeSystemRules.addRuleSetItem(typeSystemDescriptor.getNonTypesystemRules());
-        return true;
+        IHelginsDescriptor typeSystemDescriptor = language.getAspect(IHelginsDescriptor.class);
+        if (typeSystemDescriptor != null) {
+          myNonTypeSystemRules.addRuleSetItem(typeSystemDescriptor.getNonTypesystemRules());
+        }
       } catch (Throwable t) {
-        LOG.error(null, t);
-        return false;
+        LOG.error("Error while loading language", t);
       } finally {
         myLoadedLanguages.add(languageNamespace);
       }

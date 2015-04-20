@@ -41,6 +41,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Nullable
   public abstract ReferenceDescriptor getReferenceDescriptor();
 
+  @NotNull
   public abstract SReferenceLinkId getRoleId();
 
   @Override

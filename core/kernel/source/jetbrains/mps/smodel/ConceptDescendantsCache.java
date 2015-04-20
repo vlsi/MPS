@@ -57,7 +57,6 @@ public class ConceptDescendantsCache implements CoreComponent {
   private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
     @Override
     public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
-      ModelAccess.assertLegalWrite();
       synchronized (myNotProcessedRuntimes) {
         myNotProcessedRuntimes.addAll(IterableUtil.asCollection(languages));
       }
@@ -65,7 +64,6 @@ public class ConceptDescendantsCache implements CoreComponent {
 
     @Override
     public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
-      ModelAccess.assertLegalWrite();
       HashSet<LanguageRuntime> c = new HashSet<LanguageRuntime>(IterableUtil.asCollection(languages));
       synchronized (myNotProcessedRuntimes) {
         LinkedList<LanguageRuntime> notYetLoaded = new LinkedList<LanguageRuntime>(myNotProcessedRuntimes);

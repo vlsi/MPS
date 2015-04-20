@@ -78,8 +78,10 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private JComponent myComponent;
   private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
+  private volatile boolean myDisposed = false;
 
-  protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, Project project) {
+  protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
+      CreateModeCallback createModeCallback, Project project) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myEditor = editor;
@@ -111,7 +113,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   @Override
   public void dispose() {
+    myDisposed = true;
+  }
 
+  protected boolean isDisposed() {
+    return myDisposed;
   }
 
   @Override

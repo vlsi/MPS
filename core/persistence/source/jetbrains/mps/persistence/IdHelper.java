@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -24,9 +25,6 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -35,9 +33,16 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated inline methods, use {@link MetaIdHelper} instead
+ */
 @Deprecated
 @ToRemove(version = 3.2)
 public class IdHelper {
+
+  /**
+   * @deprecated Replace with MetaIdHelper.getLanguage(). Unlike MetaIdHelper, this class returns null if id could not be detected, shall consider each use-case separately
+   */
   public static SLanguageId getLanguageId(SLanguage l) {
     if (l instanceof SLanguageAdapterById) {
       return ((SLanguageAdapterById) l).getId();
@@ -48,6 +53,9 @@ public class IdHelper {
     }
   }
 
+  /**
+   * @deprecated Replace with MetaIdHelper.getConcept(). Unlike MetaIdHelper, this class returns null if id could not be detected, shall consider each use-case separately
+   */
   public static SConceptId getConceptId(SAbstractConcept c) {
     if (c instanceof SAbstractConceptAdapterById) {
       return ((SAbstractConceptAdapterById) c).getId();
@@ -61,14 +69,14 @@ public class IdHelper {
   }
 
   public static SPropertyId getPropertyId(SProperty p) {
-    return ((SPropertyAdapter) p).getId();
+    return MetaIdHelper.getProperty(p);
   }
 
   public static SReferenceLinkId getRefId(SReferenceLink r) {
-    return ((SReferenceLinkAdapter) r).getRoleId();
+    return MetaIdHelper.getAssociation(r);
   }
 
   public static SContainmentLinkId getLinkId(SContainmentLink l) {
-    return ((SContainmentLinkAdapter) l).getRoleId();
+    return MetaIdHelper.getAggregation(l);
   }
 }

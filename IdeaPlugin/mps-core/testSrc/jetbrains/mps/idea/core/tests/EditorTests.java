@@ -29,11 +29,11 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -98,6 +98,18 @@ public class EditorTests extends DataMPSFixtureTestCase {
       }
     });
     if (thrown[0] != null) throw thrown[0];
+
+    //Flush all EDT events to be made before run tests
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          flushEDT();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    });
   }
 
   @Override

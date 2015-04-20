@@ -31,8 +31,8 @@
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
+  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5006"/>-->
   <property name="junit.debug.arg" value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
-  <!--property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"/-->
 
   <property environment="env"/>
 

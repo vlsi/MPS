@@ -19,16 +19,17 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)/1603335834236229182">
     <file name="MyConstants.java">
-      <node id="1603335834236229183" at="7,0,8,0" concept="11" trace="MINIMUM" />
-      <node id="1603335834236229186" at="8,0,9,0" concept="11" trace="DEFAULT" />
-      <node id="1603335834236229195" at="9,0,10,0" concept="11" trace="MAXIMUM" />
-      <node id="1603335834236229210" at="10,0,11,0" concept="11" trace="NAME" />
-      <node id="1603335834236229213" at="11,0,12,0" concept="11" trace="flag" />
-      <node id="1603335834236229216" at="12,0,13,0" concept="11" trace="FULL_NAME" />
-      <node id="1603335834236229182" at="13,0,15,0" concept="1" trace="MyConstants#()V" />
-      <scope id="1603335834236229182" at="13,24,13,24" />
-      <scope id="1603335834236229182" at="13,0,15,0" />
-      <unit id="1603335834236229182" at="6,0,16,0" name="Samples.MyConstants" />
+      <node id="1603335834236229183" at="8,0,9,0" concept="11" trace="MINIMUM" />
+      <node id="1603335834236229186" at="9,0,10,0" concept="11" trace="DEFAULT" />
+      <node id="1603335834236229195" at="10,0,11,0" concept="11" trace="MAXIMUM" />
+      <node id="6623106306057997578" at="11,0,12,0" concept="11" trace="OTHER" />
+      <node id="1603335834236229210" at="12,0,13,0" concept="11" trace="NAME" />
+      <node id="1603335834236229213" at="13,0,14,0" concept="11" trace="flag" />
+      <node id="1603335834236229216" at="14,0,15,0" concept="11" trace="FULL_NAME" />
+      <node id="1603335834236229182" at="15,0,17,0" concept="1" trace="MyConstants#()V" />
+      <scope id="1603335834236229182" at="15,24,15,24" />
+      <scope id="1603335834236229182" at="15,0,17,0" />
+      <unit id="1603335834236229182" at="7,0,18,0" name="Samples.MyConstants" />
     </file>
   </root>
   <root nodeRef="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)/1603335834236231963">

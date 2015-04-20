@@ -142,19 +142,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
-    g.setColor(ButtonlessScrollBarUI.getTrackBackground());
+    g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
-    g.setColor(ButtonlessScrollBarUI.getTrackBorderColor());
+    g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
     int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
     g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
     drawMarks(g);
-  }
-
-  @Override
-  protected int adjustThumbWidth(int width) {
-    return width - 2;
   }
 
   @Override
@@ -495,10 +490,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 
-      g.setColor(ButtonlessScrollBarUI.getTrackBackground());
+      g.setColor(ButtonlessScrollBarUI.getTrackBackgroundDefault());
       g.fillRect(0, 0, bounds.width, bounds.height);
 
-      g.setColor(ButtonlessScrollBarUI.getTrackBorderColor());
+      g.setColor(ButtonlessScrollBarUI.getTrackBorderColorDefault());
       g.drawLine(0, 0, 0, bounds.height);
 
       Icon icon = getIcon();

@@ -64,7 +64,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
@@ -390,7 +390,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     protected boolean confirmRemove(final Object value) {
       final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
-      if (myInUseCondition.met(entry)) {
+      boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return myInUseCondition.met(entry);
+        }
+      });
+      if (inActualUse) {
         ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
             ProjectHelper.toIdeaProject(myProject), "Delete used language",
             "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
@@ -470,7 +476,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), "Languages engaged on generation");
       ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
       for (SModuleReference moduleReference : myModelProperties.getLanguagesEngagedOnGeneration()) {
-        engagedLanguages.add(MetaIdByDeclaration.ref2Id(moduleReference));
+        engagedLanguages.add(MetaAdapterFactory.getLanguage(moduleReference));
       }
       myEngagedLanguagesModel.init(engagedLanguages, Collections.<SModuleReference>emptyList());
       languagesTable.setModel(myEngagedLanguagesModel);

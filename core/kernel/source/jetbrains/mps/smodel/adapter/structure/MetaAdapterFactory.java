@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -96,6 +97,11 @@ public abstract class MetaAdapterFactory {
   @Deprecated //todo: 2 hex values instead of UUID
   public static SLanguage getLanguage(UUID lang, String langName) {
     return getLanguage(MetaIdFactory.langId(lang), langName);
+  }
+
+  @NotNull
+  public static SLanguage getLanguage(@NotNull SModuleReference languageModuleRef) {
+    return getLanguage(MetaIdByDeclaration.ref2LangId(languageModuleRef), languageModuleRef.getModuleName());
   }
 
   @NotNull

@@ -45,7 +45,7 @@ final class FreeFloatNodeOwner extends SNodeOwner {
     }
   }
 
-  public void trackUndo(SNode root) {
+  private void trackUndo(SNode root) {
     for (SNode child : root.getChildren()) {
       trackUndo(child);
     }

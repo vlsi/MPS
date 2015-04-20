@@ -126,10 +126,12 @@
       <option name="workspace" value="true"/>
       &lt;!&ndash;<loadForDefaultProject/>&ndash;&gt;
     </component>
+    -->
     <component>
       <implementation-class>com.intellij.codeInsight.daemon.impl.EditorTracker</implementation-class>
       <loadForDefaultProject/>
     </component>
+    <!--
     <component>
       <implementation-class>com.intellij.codeInsight.daemon.impl.GeneralHighlightingPassFactory</implementation-class>
       <skipForDefaultProject/>

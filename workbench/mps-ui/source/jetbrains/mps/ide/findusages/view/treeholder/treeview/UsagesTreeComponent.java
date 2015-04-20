@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,10 +154,17 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   public void dispose() {
     myTree.dispose();
     myContents.stopListening();
+    myContents.removeChangeListeners(this);
   }
 
-  public void setContents(SearchResults contents) {
-    myContents.setContents(contents, myNodeRepresentator);
+  public void setContents(final SearchResults contents) {
+    // XXX no idea if there's real need to have read action here, just refactored ModelAccess static out of DataTree here.
+    myProject.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myContents.setContents(contents, myNodeRepresentator);
+      }
+    });
   }
 
   public OccurenceNavigator getOccurenceNavigator() {

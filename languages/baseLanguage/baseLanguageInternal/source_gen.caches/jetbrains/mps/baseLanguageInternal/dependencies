@@ -11,9 +11,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
@@ -22,8 +25,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.TextGenAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>

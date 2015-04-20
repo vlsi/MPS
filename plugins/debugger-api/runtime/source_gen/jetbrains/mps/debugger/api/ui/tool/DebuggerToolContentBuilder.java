@@ -27,11 +27,15 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.execution.runners.RestartAction;
+import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.DataProvider;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.util.Disposer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -94,9 +98,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
     //  TODO use context to get data to the action 
-    RestartAction restartAction = new RestartAction(myExecutor, myRunner, contentDescriptor, myEnvironment);
-    restartAction.registerShortcut(ui.getComponent());
-    actionGroup.add(restartAction);
+    actionGroup.add(ActionManager.getInstance().getAction(IdeActions.ACTION_RERUN));
     actionGroup.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup")));
     actionGroup.addAll(myExecutionResult.getActions());
     actionGroup.addSeparator();
@@ -123,6 +125,15 @@ public class DebuggerToolContentBuilder implements Disposable {
       super(executionResult.getExecutionConsole(), executionResult.getProcessHandler(), component, profile.getName(), profile.getIcon());
       myReuseProhibited = reuseProhibited;
       myAdditionalDisposable = additionalDisposable;
+      DataManager.registerDataProvider(component, new DataProvider() {
+        @Nullable
+        public Object getData(@NonNls String dataId) {
+          if (LangDataKeys.RUN_CONTENT_DESCRIPTOR.is(dataId)) {
+            return MyRunContentDescriptor.this;
+          }
+          return null;
+        }
+      });
     }
     @Override
     public boolean isContentReuseProhibited() {
@@ -131,6 +142,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     @Override
     public void dispose() {
       Disposer.dispose(myAdditionalDisposable);
+      DataManager.removeDataProvider(getComponent());
       super.dispose();
     }
   }

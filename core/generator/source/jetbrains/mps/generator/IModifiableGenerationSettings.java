@@ -53,8 +53,6 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setFailOnMissingTextGen(boolean fail);
 
-  boolean isGenerateDebugInfo();
-
   void setGenerateDebugInfo(boolean generateDebugInfo);
 
   void setShowBadChildWarning(boolean showBadChildWarning);

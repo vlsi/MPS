@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,7 +43,7 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
     myTargetNode = targetNode;
     myCurrentReferent = currentReferent;
     myLink = link;
-    myRefDescriptor = ModelConstraints.getReferenceDescriptor(sourceNode, link.getRoleName());
+    myRefDescriptor = ModelConstraints.getReferenceDescriptor(sourceNode, link);
     assert myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept());
   }
 

@@ -35,6 +35,7 @@
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="lcqf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" implicit="true" />
     <import index="mlq0" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.tree(MPS.Platform/jetbrains.mps.ide.ui.tree@java_stub)" implicit="true" />
   </imports>
@@ -149,7 +150,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1069,50 +1070,6 @@
             <property role="3SKdUp" value=" TODO use context to get data to the action" />
           </node>
         </node>
-        <node concept="3cpWs8" id="3SnNvqCbxQf" role="3cqZAp">
-          <node concept="3cpWsn" id="3SnNvqCbxQg" role="3cpWs9">
-            <property role="TrG5h" value="restartAction" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="3SnNvqCbxQh" role="1tU5fm">
-              <ref role="3uigEE" to="f8sb:~RestartAction" resolve="RestartAction" />
-            </node>
-            <node concept="2ShNRf" id="3SnNvqCbxQi" role="33vP2m">
-              <node concept="1pGfFk" id="3SnNvqCbxQj" role="2ShVmc">
-                <ref role="37wK5l" to="f8sb:~RestartAction.&lt;init&gt;(com.intellij.execution.Executor,com.intellij.execution.runners.ProgramRunner,com.intellij.execution.ui.RunContentDescriptor,com.intellij.execution.runners.ExecutionEnvironment)" resolve="RestartAction" />
-                <node concept="37vLTw" id="2BHiRxeuTu7" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMH" resolve="myExecutor" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuPhK" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMp" resolve="myRunner" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmwSu" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxQ7" resolve="contentDescriptor" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeun7h" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbxMK" resolve="myEnvironment" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3SnNvqCbxQt" role="3cqZAp">
-          <node concept="2OqwBi" id="3SnNvqCbxQu" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTw3b" role="2Oq$k0">
-              <ref role="3cqZAo" node="3SnNvqCbxQg" resolve="restartAction" />
-            </node>
-            <node concept="liA8E" id="3SnNvqCbxQw" role="2OqNvi">
-              <ref role="37wK5l" to="f8sb:~RestartAction.registerShortcut(javax.swing.JComponent):void" resolve="registerShortcut" />
-              <node concept="2OqwBi" id="3SnNvqCbxQx" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxglK_1" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxQ5" resolve="ui" />
-                </node>
-                <node concept="liA8E" id="3SnNvqCbxQz" role="2OqNvi">
-                  <ref role="37wK5l" to="l9cs:~RunnerLayoutUi.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3SnNvqCbxQ$" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCbxQ_" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTwW3" role="2Oq$k0">
@@ -1120,8 +1077,18 @@
             </node>
             <node concept="liA8E" id="3SnNvqCbxQB" role="2OqNvi">
               <ref role="37wK5l" to="nx1:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="37vLTw" id="3GM_nagTz9w" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCbxQg" resolve="restartAction" />
+              <node concept="2OqwBi" id="4Sa0NTIlImd" role="37wK5m">
+                <node concept="2YIFZM" id="4Sa0NTIlImj" role="2Oq$k0">
+                  <ref role="1Pybhc" to="nx1:~ActionManager" resolve="ActionManager" />
+                  <ref role="37wK5l" to="nx1:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="4Sa0NTIlImf" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                  <node concept="10M0yZ" id="4Sa0NTIlImJ" role="37wK5m">
+                    <ref role="3cqZAo" to="nx1:~IdeActions.ACTION_RERUN" resolve="ACTION_RERUN" />
+                    <ref role="1PxDUh" to="nx1:~IdeActions" resolve="IdeActions" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -1438,6 +1405,73 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="2uej7KTipsu" role="3cqZAp">
+            <node concept="2YIFZM" id="2uej7KTipwu" role="3clFbG">
+              <ref role="37wK5l" to="4xk:~DataManager.registerDataProvider(javax.swing.JComponent,com.intellij.openapi.actionSystem.DataProvider):void" resolve="registerDataProvider" />
+              <ref role="1Pybhc" to="4xk:~DataManager" resolve="DataManager" />
+              <node concept="37vLTw" id="2uej7KTipOT" role="37wK5m">
+                <ref role="3cqZAo" node="3SnNvqCbxMa" resolve="component" />
+              </node>
+              <node concept="2ShNRf" id="2uej7KTipPA" role="37wK5m">
+                <node concept="YeOm9" id="2uej7KTiMRZ" role="2ShVmc">
+                  <node concept="1Y3b0j" id="2uej7KTiMS2" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="1Y3XeK" to="nx1:~DataProvider" resolve="DataProvider" />
+                    <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                    <node concept="3Tm1VV" id="2uej7KTiMS3" role="1B3o_S" />
+                    <node concept="3clFb_" id="2uej7KTiMS4" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="getData" />
+                      <property role="DiZV1" value="false" />
+                      <property role="IEkAT" value="false" />
+                      <node concept="3Tm1VV" id="2uej7KTiMS5" role="1B3o_S" />
+                      <node concept="3uibUv" id="2uej7KTiMS7" role="3clF45">
+                        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                      </node>
+                      <node concept="37vLTG" id="2uej7KTiMS8" role="3clF46">
+                        <property role="TrG5h" value="dataId" />
+                        <node concept="3uibUv" id="2uej7KTiMS9" role="1tU5fm">
+                          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                        </node>
+                        <node concept="2AHcQZ" id="2uej7KTiMSa" role="2AJF6D">
+                          <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
+                        </node>
+                      </node>
+                      <node concept="2AHcQZ" id="2uej7KTiMSb" role="2AJF6D">
+                        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+                      </node>
+                      <node concept="3clFbS" id="2uej7KTiMSc" role="3clF47">
+                        <node concept="3clFbJ" id="2uej7KTiN17" role="3cqZAp">
+                          <node concept="3clFbS" id="2uej7KTiN18" role="3clFbx">
+                            <node concept="3cpWs6" id="2uej7KTiOc9" role="3cqZAp">
+                              <node concept="Xjq3P" id="2uej7KTiOAK" role="3cqZAk">
+                                <ref role="1HBi2w" node="3SnNvqCbxLS" resolve="DebuggerToolContentBuilder.MyRunContentDescriptor" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="2uej7KTiNQf" role="3clFbw">
+                            <node concept="10M0yZ" id="2uej7KTiN29" role="2Oq$k0">
+                              <ref role="1PxDUh" to="nx1:~LangDataKeys" resolve="LangDataKeys" />
+                              <ref role="3cqZAo" to="nx1:~LangDataKeys.RUN_CONTENT_DESCRIPTOR" resolve="RUN_CONTENT_DESCRIPTOR" />
+                            </node>
+                            <node concept="liA8E" id="2uej7KTiO4$" role="2OqNvi">
+                              <ref role="37wK5l" to="nx1:~DataKey.is(java.lang.String):boolean" resolve="is" />
+                              <node concept="37vLTw" id="2uej7KTiO6z" role="37wK5m">
+                                <ref role="3cqZAo" node="2uej7KTiMS8" resolve="dataId" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWs6" id="2uej7KTiOJP" role="3cqZAp">
+                          <node concept="10Nm6u" id="2uej7KTiONa" role="3cqZAk" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="3SnNvqCbxMe" role="jymVt">
@@ -1470,6 +1504,15 @@
               <ref role="37wK5l" to="8d8y:~Disposer.dispose(com.intellij.openapi.Disposable):void" resolve="dispose" />
               <node concept="37vLTw" id="2BHiRxeumPG" role="37wK5m">
                 <ref role="3cqZAo" node="3SnNvqCbxLY" resolve="myAdditionalDisposable" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2uej7KTiP12" role="3cqZAp">
+            <node concept="2YIFZM" id="2uej7KTiP2f" role="3clFbG">
+              <ref role="37wK5l" to="4xk:~DataManager.removeDataProvider(javax.swing.JComponent):void" resolve="removeDataProvider" />
+              <ref role="1Pybhc" to="4xk:~DataManager" resolve="DataManager" />
+              <node concept="1rXfSq" id="2uej7KTiP3k" role="37wK5m">
+                <ref role="37wK5l" to="l9cs:~RunContentDescriptor.getComponent():javax.swing.JComponent" resolve="getComponent" />
               </node>
             </node>
           </node>

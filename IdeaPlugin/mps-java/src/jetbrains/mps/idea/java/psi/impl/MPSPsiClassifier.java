@@ -12,6 +12,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiIdentifier;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
@@ -58,9 +59,9 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   private static Object LOG = new Object();
   private String myFQName;
 
-  public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
-    addChildLast(new MPSPsiMethodModifierList());
+  public MPSPsiClassifier(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
+    addChildLast(new MPSPsiMethodModifierList(manager));
   }
 
   @Nullable
@@ -397,6 +398,10 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   }
 
   class ClassTypeParameterList extends MPSPsiNodeBase implements PsiTypeParameterList {
+
+    public ClassTypeParameterList(PsiManager manager) {
+      super(manager);
+    }
 
     @Override
     public String toString() {

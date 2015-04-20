@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.FastNodeFinderManager;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,16 +34,13 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -114,7 +108,6 @@ public final class GenerationFacade {
   private IGenerationHandler myGenerationHandler;
   private TransientModelsProvider myTransientModelsProvider;
   private IMessageHandler myMessageHandler = IMessageHandler.NULL_HANDLER;
-  private IOperationContext myInvocationContext;
   private ModelStreamManager.Provider myStreamProvider;
 
   private GenerationFacade(@NotNull Project project, @NotNull GenerationOptions generationOptions) {
@@ -156,17 +149,6 @@ public final class GenerationFacade {
   }
 
   /**
-   * DO NOT USE, IOperationContext is deprecated and will be dropped
-   * GenerationController uses IOC to access project and to pass IOC to IGenerationHandler. Once IGenerationHandler is gone, IOC would cease as well.
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  private GenerationFacade invocationContext(IOperationContext ctx) {
-    myInvocationContext = ctx;
-    return this;
-  }
-
-  /**
    * Configure access to auxiliary data associated with model
    * FIXME public
    * @param streamProvider facility to keep model-associated data
@@ -177,6 +159,9 @@ public final class GenerationFacade {
     return this;
   }
 
+  /*
+   * @param invocationContext ignored, may be null
+   */
   public static boolean generateModels(final Project p,
       final List<? extends SModel> inputModels,
       final IOperationContext invocationContext,
@@ -188,7 +173,6 @@ public final class GenerationFacade {
 
     final GenerationFacade generationFacade = new GenerationFacade(p, options);
     generationFacade.generationHandler(generationHandler).messages(messages).transients(tmProvider);
-    generationFacade.invocationContext(invocationContext);
     generationFacade.modelStreams(new DefaultStreamManager.Provider());
     return  generationFacade.process(monitor, inputModels);
   }
@@ -222,7 +206,7 @@ public final class GenerationFacade {
     });
 
     GenControllerContext ctx = new GenControllerContext(myProject, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
-    final GenerationController gc = new GenerationController(inputModels, ctx, myGenerationHandler, logger, myInvocationContext);
+    final GenerationController gc = new GenerationController(inputModels, ctx, myGenerationHandler, logger);
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {

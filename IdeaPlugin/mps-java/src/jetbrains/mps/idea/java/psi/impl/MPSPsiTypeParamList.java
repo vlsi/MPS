@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
@@ -25,6 +26,10 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
  */
 
 public class MPSPsiTypeParamList extends MPSPsiNodeBase implements PsiTypeParameterList {
+  public MPSPsiTypeParamList(PsiManager manager) {
+    super(manager);
+  }
+
   @Override
   public String toString() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.

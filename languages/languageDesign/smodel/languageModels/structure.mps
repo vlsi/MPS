@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1130,6 +1130,10 @@
     <property role="3GE5qa" value="operation.node" />
     <property role="34LRSv" value="search scope" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="asaX9" id="6n80HowITfb" role="lGtFl">
+      <property role="YLQ7P" value="Implementation method in SNodeOperations has been deprecated for 3 years, and the last uses of the operation are history now" />
+      <property role="YLPcu" value="3.3" />
+    </node>
     <node concept="1TJgyj" id="hLj2ZkY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="operationContext" />

@@ -2,11 +2,11 @@
 <model ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -45,6 +45,9 @@
     <import index="42ru" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(jetbrains.mps.module@java_stub)" />
     <import index="jv2n" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.actions.descriptor(MPS.Editor/jetbrains.mps.openapi.actions.descriptor@java_stub)" />
     <import index="zsa9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.actions.descriptor(MPS.Editor/jetbrains.mps.actions.descriptor@java_stub)" />
+    <import index="bj1v" ref="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" />
+    <import index="hxuy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
+    <import index="z9ad" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text.rt(MPS.Core/jetbrains.mps.text.rt@java_stub)" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -3362,6 +3365,249 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="1_Iic4WUlrH" role="3aUrZf">
+      <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
+      <node concept="30G5F_" id="1_Iic4WUlrI" role="30HLyM">
+        <node concept="3clFbS" id="1_Iic4WUlrJ" role="2VODD2">
+          <node concept="3cpWs6" id="1_Iic4WUlrK" role="3cqZAp">
+            <node concept="2YIFZM" id="1_Iic4WUlrL" role="3cqZAk">
+              <ref role="37wK5l" to="zq1i:1XXGcSTYFLY" resolve="isAspectOfLanguage" />
+              <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
+              <node concept="30H73N" id="1_Iic4WUlrM" role="37wK5m" />
+              <node concept="Rm8GO" id="1_Iic4WUmCi" role="37wK5m">
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="1iwH7S" id="1_Iic4WUlrO" role="37wK5m" />
+              <node concept="35c_gC" id="1_Iic4WUlrP" role="37wK5m">
+                <ref role="35c_gD" to="bj1v:nUEAIXlVr8" resolve="Rule" />
+              </node>
+              <node concept="35c_gC" id="1_Iic4WUpgm" role="37wK5m">
+                <ref role="35c_gD" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1Koe21" id="1_Iic4WUlrQ" role="1lVwrX">
+        <node concept="312cEu" id="1_Iic4WUlrR" role="1Koe22">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="containerClass" />
+          <node concept="3clFb_" id="1_Iic4WUlrS" role="jymVt">
+            <property role="1EzhhJ" value="false" />
+            <property role="TrG5h" value="createAspectDescriptor" />
+            <property role="od$2w" value="false" />
+            <property role="DiZV1" value="false" />
+            <node concept="16syzq" id="1_Iic4WUlrT" role="3clF45">
+              <ref role="16sUi3" node="1_Iic4WUlsl" resolve="T" />
+            </node>
+            <node concept="37vLTG" id="1_Iic4WUlrU" role="3clF46">
+              <property role="TrG5h" value="descriptorClass" />
+              <node concept="3uibUv" id="1_Iic4WUlrV" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+                <node concept="16syzq" id="1_Iic4WUlrW" role="11_B2D">
+                  <ref role="16sUi3" node="1_Iic4WUlsl" resolve="T" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="1_Iic4WUlrX" role="3clF47">
+              <node concept="3clFbJ" id="1_Iic4WUlrY" role="3cqZAp">
+                <node concept="3clFbC" id="1_Iic4WUlrZ" role="3clFbw">
+                  <node concept="3VsKOn" id="1_Iic4WUls0" role="3uHU7w">
+                    <ref role="3VsUkX" to="hxuy:~DataFlowAspectDescriptor" resolve="DataFlowAspectDescriptor" />
+                  </node>
+                  <node concept="37vLTw" id="1_Iic4WUls1" role="3uHU7B">
+                    <ref role="3cqZAo" node="1_Iic4WUlrU" resolve="descriptorClass" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="1_Iic4WUls2" role="3clFbx">
+                  <node concept="3cpWs6" id="1_Iic4WUls3" role="3cqZAp">
+                    <node concept="10QFUN" id="1_Iic4WUls4" role="3cqZAk">
+                      <node concept="16syzq" id="1_Iic4WUls5" role="10QFUM">
+                        <ref role="16sUi3" node="1_Iic4WUlsl" resolve="T" />
+                      </node>
+                      <node concept="1nCR9W" id="1_Iic4WUls6" role="10QFUP">
+                        <property role="1nD$Q0" value="DataFlowAspectDescriptor" />
+                        <node concept="3uibUv" id="1_Iic4WUqpa" role="2lIhxL">
+                          <ref role="3uigEE" to="hxuy:~DataFlowAspectDescriptor" resolve="DataFlowAspectDescriptor" />
+                        </node>
+                        <node concept="17Uvod" id="1_Iic4WUls8" role="lGtFl">
+                          <property role="2qtEX9" value="fqClassName" />
+                          <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                          <node concept="3zFVjK" id="1_Iic4WUls9" role="3zH0cK">
+                            <node concept="3clFbS" id="1_Iic4WUlsa" role="2VODD2">
+                              <node concept="3clFbF" id="1_Iic4WUlsb" role="3cqZAp">
+                                <node concept="3cpWs3" id="1_Iic4WUlsc" role="3clFbG">
+                                  <node concept="Xl_RD" id="1_Iic4WUlsd" role="3uHU7w">
+                                    <property role="Xl_RC" value=".DataFlowAspectDescriptorImpl" />
+                                  </node>
+                                  <node concept="2OqwBi" id="1_Iic4WUlse" role="3uHU7B">
+                                    <node concept="3TrcHB" id="1_Iic4WUlsf" role="2OqNvi">
+                                      <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
+                                    </node>
+                                    <node concept="30H73N" id="1_Iic4WUlsg" role="2Oq$k0" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="raruj" id="1_Iic4WUlsh" role="lGtFl" />
+              </node>
+              <node concept="3cpWs6" id="1_Iic4WUlsi" role="3cqZAp">
+                <node concept="10Nm6u" id="1_Iic4WUlsj" role="3cqZAk" />
+              </node>
+            </node>
+            <node concept="3Tm1VV" id="1_Iic4WUlsk" role="1B3o_S" />
+            <node concept="16euLQ" id="1_Iic4WUlsl" role="16eVyc">
+              <property role="TrG5h" value="T" />
+              <node concept="3uibUv" id="1_Iic4WUlsm" role="3ztrMU">
+                <ref role="3uigEE" to="fwv2:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="1_Iic4WUlsn" role="1B3o_S" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="1_Iic4WUlso" role="3aUrZf">
+      <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
+      <node concept="30G5F_" id="1_Iic4WUlsp" role="30HLyM">
+        <node concept="3clFbS" id="1_Iic4WUlsq" role="2VODD2">
+          <node concept="3cpWs8" id="1_Iic4WUlsr" role="3cqZAp">
+            <node concept="3cpWsn" id="1_Iic4WUlss" role="3cpWs9">
+              <property role="TrG5h" value="aspectModel" />
+              <node concept="2OqwBi" id="1_Iic4WUlst" role="33vP2m">
+                <node concept="Rm8GO" id="1_Iic4WUscP" role="2Oq$k0">
+                  <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+                </node>
+                <node concept="liA8E" id="1_Iic4WUlsv" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                  <node concept="2OqwBi" id="1_Iic4WUlsw" role="37wK5m">
+                    <node concept="1iwH7S" id="1_Iic4WUlsx" role="2Oq$k0" />
+                    <node concept="3cR$yn" id="1_Iic4WUlsy" role="2OqNvi">
+                      <ref role="3cRzXn" node="227lWzxTzAl" resolve="langModule" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3uibUv" id="1_Iic4WUlsz" role="1tU5fm">
+                <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="1_Iic4WUls$" role="3cqZAp">
+            <node concept="3clFbS" id="1_Iic4WUls_" role="3clFbx">
+              <node concept="3cpWs6" id="1_Iic4WUlsA" role="3cqZAp">
+                <node concept="3clFbT" id="1_Iic4WUlsB" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="1_Iic4WUlsC" role="3clFbw">
+              <node concept="37vLTw" id="1_Iic4WUlsD" role="3uHU7B">
+                <ref role="3cqZAo" node="1_Iic4WUlss" resolve="aspectModel" />
+              </node>
+              <node concept="10Nm6u" id="1_Iic4WUlsE" role="3uHU7w" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="1_Iic4WUlsF" role="3cqZAp">
+            <node concept="2OqwBi" id="1_Iic4WUlsG" role="3cqZAk">
+              <node concept="2OqwBi" id="1_Iic4WUlsH" role="2Oq$k0">
+                <node concept="37vLTw" id="1_Iic4WUlsI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1_Iic4WUlss" resolve="aspectModel" />
+                </node>
+                <node concept="liA8E" id="1_Iic4WUlsJ" role="2OqNvi">
+                  <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1_Iic4WUlsK" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="1_Iic4WUlsL" role="37wK5m">
+                  <node concept="1iwH7S" id="1_Iic4WUlsM" role="2Oq$k0" />
+                  <node concept="3cR$yn" id="1_Iic4WUlsN" role="2OqNvi">
+                    <ref role="3cRzXn" node="227lWzxWwEv" resolve="modelRef" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="1_Iic4WUlsO" role="3cqZAp" />
+        </node>
+      </node>
+      <node concept="1Koe21" id="1_Iic4WUlsP" role="1lVwrX">
+        <node concept="312cEu" id="1_Iic4WUlsQ" role="1Koe22">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="containerClass" />
+          <node concept="3clFb_" id="1_Iic4WUlsR" role="jymVt">
+            <property role="1EzhhJ" value="false" />
+            <property role="TrG5h" value="createAspectDescriptor" />
+            <property role="od$2w" value="false" />
+            <property role="DiZV1" value="false" />
+            <node concept="16syzq" id="1_Iic4WUlsS" role="3clF45">
+              <ref role="16sUi3" node="1_Iic4WUltd" resolve="T" />
+            </node>
+            <node concept="37vLTG" id="1_Iic4WUlsT" role="3clF46">
+              <property role="TrG5h" value="descriptorClass" />
+              <node concept="3uibUv" id="1_Iic4WUlsU" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+                <node concept="16syzq" id="1_Iic4WUlsV" role="11_B2D">
+                  <ref role="16sUi3" node="1_Iic4WUltd" resolve="T" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="1_Iic4WUlsW" role="3clF47">
+              <node concept="3clFbJ" id="1_Iic4WUlsX" role="3cqZAp">
+                <node concept="3clFbC" id="1_Iic4WUlsY" role="3clFbw">
+                  <node concept="3VsKOn" id="1_Iic4WUlsZ" role="3uHU7w">
+                    <ref role="3VsUkX" to="hxuy:~DataFlowAspectDescriptor" resolve="DataFlowAspectDescriptor" />
+                  </node>
+                  <node concept="37vLTw" id="1_Iic4WUlt0" role="3uHU7B">
+                    <ref role="3cqZAo" node="1_Iic4WUlsT" resolve="descriptorClass" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="1_Iic4WUlt1" role="3clFbx">
+                  <node concept="3cpWs6" id="1_Iic4WUlt2" role="3cqZAp">
+                    <node concept="10QFUN" id="1_Iic4WUlt3" role="3cqZAk">
+                      <node concept="16syzq" id="1_Iic4WUlt4" role="10QFUM">
+                        <ref role="16sUi3" node="1_Iic4WUltd" resolve="T" />
+                      </node>
+                      <node concept="2ShNRf" id="1_Iic4WUlt5" role="10QFUP">
+                        <node concept="YeOm9" id="CCosYF3mU6" role="2ShVmc">
+                          <node concept="1Y3b0j" id="CCosYF3mU9" role="YeSDq">
+                            <property role="2bfB8j" value="true" />
+                            <ref role="1Y3XeK" to="hxuy:~AbstractDataFlowAspectDescriptor" resolve="AbstractDataFlowAspectDescriptor" />
+                            <ref role="37wK5l" to="hxuy:~AbstractDataFlowAspectDescriptor.&lt;init&gt;()" resolve="AbstractDataFlowAspectDescriptor" />
+                            <node concept="3Tm1VV" id="CCosYF3mUa" role="1B3o_S" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="raruj" id="1_Iic4WUlt9" role="lGtFl" />
+              </node>
+              <node concept="3cpWs6" id="1_Iic4WUlta" role="3cqZAp">
+                <node concept="10Nm6u" id="1_Iic4WUltb" role="3cqZAk" />
+              </node>
+            </node>
+            <node concept="3Tm1VV" id="1_Iic4WUltc" role="1B3o_S" />
+            <node concept="16euLQ" id="1_Iic4WUltd" role="16eVyc">
+              <property role="TrG5h" value="T" />
+              <node concept="3uibUv" id="1_Iic4WUlte" role="3ztrMU">
+                <ref role="3uigEE" to="fwv2:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="1_Iic4WUltf" role="1B3o_S" />
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="227lWzxTEC5" role="3aUrZf">
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="227lWzxTFib" role="30HLyM">
@@ -3972,7 +4218,7 @@
             <node concept="3clFbJ" id="227lWzxUob1" role="3cqZAp">
               <node concept="3clFbC" id="227lWzxUob2" role="3clFbw">
                 <node concept="3VsKOn" id="227lWzxUoiV" role="3uHU7w">
-                  <ref role="3VsUkX" to="fwv2:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                  <ref role="3VsUkX" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
                 </node>
                 <node concept="37vLTw" id="227lWzxUob4" role="3uHU7B">
                   <ref role="3cqZAo" node="227lWzxUoaX" resolve="descriptorClass" />
@@ -3984,9 +4230,31 @@
                     <node concept="16syzq" id="227lWzxU_En" role="10QFUM">
                       <ref role="16sUi3" node="227lWzxUobc" resolve="T" />
                     </node>
-                    <node concept="2ShNRf" id="2bjbvjqV5A8" role="10QFUP">
-                      <node concept="1pGfFk" id="2bjbvjqVpgV" role="2ShVmc">
-                        <ref role="37wK5l" to="vwd8:~TextGenAspectInterpreted.&lt;init&gt;()" resolve="TextGenAspectInterpreted" />
+                    <node concept="1nCR9W" id="2aOQZH68nI3" role="10QFUP">
+                      <property role="1nD$Q0" value="textgen.TextGenAspectDescriptor" />
+                      <node concept="3uibUv" id="2aOQZH68oh9" role="2lIhxL">
+                        <ref role="3uigEE" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                      </node>
+                      <node concept="17Uvod" id="2aOQZH68ohZ" role="lGtFl">
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                        <property role="2qtEX9" value="fqClassName" />
+                        <node concept="3zFVjK" id="2aOQZH68oi0" role="3zH0cK">
+                          <node concept="3clFbS" id="2aOQZH68oi1" role="2VODD2">
+                            <node concept="3clFbF" id="2aOQZH68oo1" role="3cqZAp">
+                              <node concept="3cpWs3" id="2aOQZH68oo2" role="3clFbG">
+                                <node concept="Xl_RD" id="2aOQZH68oo3" role="3uHU7w">
+                                  <property role="Xl_RC" value=".TextGenAspectDescriptor" />
+                                </node>
+                                <node concept="2OqwBi" id="2aOQZH68oo4" role="3uHU7B">
+                                  <node concept="30H73N" id="2aOQZH68oo5" role="2Oq$k0" />
+                                  <node concept="3TrcHB" id="2aOQZH68oo6" role="2OqNvi">
+                                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

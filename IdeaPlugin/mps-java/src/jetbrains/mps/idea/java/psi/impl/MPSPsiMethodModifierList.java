@@ -18,6 +18,7 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
@@ -33,6 +34,10 @@ import org.jetbrains.annotations.Nullable;
  */
 
 public class MPSPsiMethodModifierList extends MPSPsiNodeBase implements PsiModifierList {
+  public MPSPsiMethodModifierList(PsiManager manager) {
+    super(manager);
+  }
+
   @Override
   public String toString() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.

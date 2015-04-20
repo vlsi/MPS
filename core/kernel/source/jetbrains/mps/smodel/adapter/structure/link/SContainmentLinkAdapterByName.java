@@ -48,6 +48,7 @@ public final class SContainmentLinkAdapterByName extends SContainmentLinkAdapter
     return cd.getLinkDescriptor(myName);
   }
 
+  @NotNull
   @Override
   public SContainmentLinkId getRoleId() {
     LinkDescriptor d = getLinkDescriptor();

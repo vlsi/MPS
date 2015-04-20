@@ -44,7 +44,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
-import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.JBUI;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.icons.MPSIcons.General;
@@ -52,6 +52,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -80,7 +81,6 @@ import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -98,7 +98,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
@@ -117,7 +117,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
@@ -150,8 +149,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.EventObject;
@@ -224,6 +221,32 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     return String.format(PropertiesBundle.message("mps.properties.module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
   }
 
+  private FindUsagesScope getModuleAndOwnedModelsScope() {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<FindUsagesScope>() {
+      @Override
+      public FindUsagesScope compute() {
+        final ModulesScope rv = new ModulesScope(myModule);
+        rv.resolveRespectsAllVisible(true);
+        return rv;
+      }
+    });
+  }
+
+  /*package*/ void findModuleUsages(List<SModuleReference> modules) {
+    final SearchQuery query = new SearchQuery(new GenericHolder<Object>(modules), getModuleAndOwnedModelsScope());
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
+    showUsageImpl(query, provider);
+    forceCancelCloseDialog();
+  }
+
+  /*package*/ void findModelUsages(List<SModelReference> models) {
+    final SearchQuery query = new SearchQuery(new ModelsHolder(models), getModuleAndOwnedModelsScope());
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
+    showUsageImpl(query, provider);
+    forceCancelCloseDialog();
+  }
+
+
   public class ModuleCommonTab extends CommonTab {
 
     private ModuleDependenciesTab myModuleDependenciesTab;
@@ -261,7 +284,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayoutManager(1, 2, JBInsets.NONE, -1, -1));
+        panel.setLayout(new GridLayoutManager(1, 2, JBUI.emptyInsets(), -1, -1));
 
         JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
         panel.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
@@ -414,23 +437,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindAnActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          final SearchScope scope = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SearchScope>() {
-            @Override
-            public SearchScope compute() {
-              return myModule.getScope();
-            }
-          });
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
           for (int i : myTable.getSelectedRows()) {
             final DependenciesTableItem valueAt = myDependTableModel.getValueAt(i);
             modules.add(valueAt.getItem().getModuleRef());
           }
-          // FIXME this code is quite similar to that in #findModuleUsage, shall refactor into FindModuleAction and reuse
-          // the problem is different scope, I don't know why one uses Module's, and another uses Global
-          final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SModuleReference>>(modules), scope);
-          final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-          showUsageImpl(query, provider);
-          forceCancelCloseDialog();
+          findModuleUsages(modules);
         }
       };
     }
@@ -600,21 +612,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return myRuntimeTableModel.isModified();
     }
 
-
-    /*package*/ void findModuleUsages(List<SModuleReference> modules) {
-      final SearchQuery query = new SearchQuery(new GenericHolder(modules), GlobalScope.getInstance());
-      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
-      showUsageImpl(query, provider);
-      forceCancelCloseDialog();
-    }
-
-    /*package*/ void findModelUsages(List<SModelReference> models) {
-      final SearchQuery query = new SearchQuery(new ModelsHolder(models), new ModulesScope(Arrays.asList(myModule)));
-      final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModelUsagesFinder()));
-      showUsageImpl(query, provider);
-      forceCancelCloseDialog();
-    }
-
     private class RuntimeTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {
 
       private List<SModuleReference> myTableItems = new LinkedList<SModuleReference>();
@@ -772,7 +769,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final UsedLangsTableModel rv = new UsedLangsTableModel(myProject.getRepository());
       ArrayList<SLanguage> languages = new ArrayList<SLanguage>();
       for (SModuleReference mr : myModuleDescriptor.getUsedLanguages()) {
-        languages.add(MetaIdByDeclaration.ref2Id(mr));
+        languages.add(MetaAdapterFactory.getLanguage(mr));
       }
       rv.init(languages, myModuleDescriptor.getUsedDevkits());
       return rv;

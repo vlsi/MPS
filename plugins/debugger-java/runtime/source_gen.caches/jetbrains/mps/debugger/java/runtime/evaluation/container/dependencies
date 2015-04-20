@@ -150,6 +150,7 @@
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.FResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
+    <classNode dependClassName="jetbrains.mps.text.TextUnit" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />

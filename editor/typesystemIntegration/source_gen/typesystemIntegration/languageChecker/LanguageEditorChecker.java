@@ -46,7 +46,7 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import com.intellij.openapi.application.impl.LaterInvocator;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
@@ -279,7 +279,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     final boolean wasForceRunQuickFixes = myForceRunQuickFixes;
     myForceRunQuickFixes = false;
     if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
-      LaterInvocator.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
             public void run() {

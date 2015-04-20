@@ -420,5 +420,31 @@
     <property role="TrG5h" value="InsertAfterPosition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="5vxy$fN7gVQ">
+    <property role="TrG5h" value="InstructionClassKeeper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3QJUKqjisVE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="member" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="PrWs8" id="3QJUKqjisVH" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1eG8_N9UvmZ">
+    <property role="TrG5h" value="AnalyzerRunnerClassKeeper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3QJUKqj7A6F" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="member" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="PrWs8" id="3QJUKqj7A6_" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 

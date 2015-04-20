@@ -2,9 +2,9 @@
 <model ref="r:c10c60c4-8193-4b28-a3f2-372a46125628(jetbrains.mps.execution.impl.configurations)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -1256,7 +1256,7 @@
                     <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
                   </node>
                   <node concept="liA8E" id="7rvPfCBwHEM" role="2OqNvi">
-                    <ref role="37wK5l" to="8ilk:~RunManagerImpl.readExternal(org.jdom.Element):void" resolve="readExternal" />
+                    <ref role="37wK5l" to="8ilk:~RunManagerImpl.loadState(org.jdom.Element):void" resolve="loadState" />
                     <node concept="37vLTw" id="2BHiRxeun8r" role="37wK5m">
                       <ref role="3cqZAo" node="4tDMPuHd$PG" resolve="myState" />
                     </node>
@@ -1269,7 +1269,7 @@
                     <ref role="37wK5l" node="4tDMPuHd$U0" resolve="getSharedConfigurationManager" />
                   </node>
                   <node concept="liA8E" id="7rvPfCBwHF7" role="2OqNvi">
-                    <ref role="37wK5l" to="8ilk:~ProjectRunConfigurationManager.readExternal(org.jdom.Element):void" resolve="readExternal" />
+                    <ref role="37wK5l" to="8ilk:~ProjectRunConfigurationManager.loadState(org.jdom.Element):void" resolve="loadState" />
                     <node concept="37vLTw" id="2BHiRxeun4u" role="37wK5m">
                       <ref role="3cqZAo" node="4tDMPuHd$PK" resolve="mySharedState" />
                     </node>
@@ -1292,8 +1292,8 @@
               </node>
               <node concept="3cpWsn" id="4tfwdmbFMeg" role="TDEfY">
                 <property role="TrG5h" value="e" />
-                <node concept="3uibUv" id="4tfwdmbFMeh" role="1tU5fm">
-                  <ref role="3uigEE" to="8d8y:~InvalidDataException" resolve="InvalidDataException" />
+                <node concept="3uibUv" id="4Sa0NTIlXtL" role="1tU5fm">
+                  <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
                 </node>
               </node>
             </node>
@@ -1308,82 +1308,34 @@
         <node concept="3clFbS" id="4tfwdmbFHKM" role="3clF47">
           <node concept="SfApY" id="4tfwdmbFJ_Q" role="3cqZAp">
             <node concept="3clFbS" id="4tfwdmbFJ_R" role="SfCbr">
-              <node concept="3cpWs8" id="4tfwdmbFHKN" role="3cqZAp">
-                <node concept="3cpWsn" id="4tfwdmbFHKO" role="3cpWs9">
-                  <property role="TrG5h" value="newState" />
-                  <node concept="3uibUv" id="4tfwdmbFHKP" role="1tU5fm">
-                    <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
-                  </node>
-                  <node concept="2ShNRf" id="4tfwdmbFHKQ" role="33vP2m">
-                    <node concept="1pGfFk" id="4tfwdmbFHKR" role="2ShVmc">
-                      <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
-                      <node concept="Xl_RD" id="4tfwdmbFHKS" role="37wK5m">
-                        <property role="Xl_RC" value="root" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="4tfwdmbFHKT" role="3cqZAp">
-                <node concept="2OqwBi" id="4tfwdmbFHKU" role="3clFbG">
-                  <node concept="liA8E" id="4tfwdmbFHKV" role="2OqNvi">
-                    <ref role="37wK5l" to="8ilk:~RunManagerImpl.writeExternal(org.jdom.Element):void" resolve="writeExternal" />
-                    <node concept="37vLTw" id="4tfwdmbFHKW" role="37wK5m">
-                      <ref role="3cqZAo" node="4tfwdmbFHKO" resolve="newState" />
-                    </node>
-                  </node>
-                  <node concept="1rXfSq" id="4tfwdmbFHKX" role="2Oq$k0">
-                    <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="4tfwdmbFHKY" role="3cqZAp">
                 <node concept="37vLTI" id="4tfwdmbFHKZ" role="3clFbG">
                   <node concept="37vLTw" id="4tfwdmbFHL0" role="37vLTJ">
                     <ref role="3cqZAo" node="4tDMPuHd$PG" resolve="myState" />
                   </node>
-                  <node concept="37vLTw" id="4tfwdmbFHL1" role="37vLTx">
-                    <ref role="3cqZAo" node="4tfwdmbFHKO" resolve="newState" />
+                  <node concept="2OqwBi" id="4Sa0NTIlXze" role="37vLTx">
+                    <node concept="1rXfSq" id="4Sa0NTIlXwg" role="2Oq$k0">
+                      <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
+                    </node>
+                    <node concept="liA8E" id="4Sa0NTIlXRz" role="2OqNvi">
+                      <ref role="37wK5l" to="8ilk:~RunManagerImpl.getState():org.jdom.Element" resolve="getState" />
+                    </node>
                   </node>
                 </node>
               </node>
               <node concept="3clFbH" id="4tfwdmbFHL2" role="3cqZAp" />
-              <node concept="3cpWs8" id="4tfwdmbFHL3" role="3cqZAp">
-                <node concept="3cpWsn" id="4tfwdmbFHL4" role="3cpWs9">
-                  <property role="TrG5h" value="newSharedState" />
-                  <node concept="3uibUv" id="4tfwdmbFHL5" role="1tU5fm">
-                    <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
-                  </node>
-                  <node concept="2ShNRf" id="4tfwdmbFHL6" role="33vP2m">
-                    <node concept="1pGfFk" id="4tfwdmbFHL7" role="2ShVmc">
-                      <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
-                      <node concept="Xl_RD" id="4tfwdmbFHL8" role="37wK5m">
-                        <property role="Xl_RC" value="root" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="4tfwdmbFHL9" role="3cqZAp">
-                <node concept="2OqwBi" id="4tfwdmbFHLa" role="3clFbG">
-                  <node concept="liA8E" id="4tfwdmbFHLb" role="2OqNvi">
-                    <ref role="37wK5l" to="8ilk:~ProjectRunConfigurationManager.writeExternal(org.jdom.Element):void" resolve="writeExternal" />
-                    <node concept="37vLTw" id="4tfwdmbFHLc" role="37wK5m">
-                      <ref role="3cqZAo" node="4tfwdmbFHL4" resolve="newSharedState" />
-                    </node>
-                  </node>
-                  <node concept="1rXfSq" id="4tfwdmbFHLd" role="2Oq$k0">
-                    <ref role="37wK5l" node="4tDMPuHd$U0" resolve="getSharedConfigurationManager" />
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="4tfwdmbFHLe" role="3cqZAp">
                 <node concept="37vLTI" id="4tfwdmbFHLf" role="3clFbG">
                   <node concept="37vLTw" id="4tfwdmbFHLg" role="37vLTJ">
                     <ref role="3cqZAo" node="4tDMPuHd$PK" resolve="mySharedState" />
                   </node>
-                  <node concept="37vLTw" id="4tfwdmbFHLh" role="37vLTx">
-                    <ref role="3cqZAo" node="4tfwdmbFHL4" resolve="newSharedState" />
+                  <node concept="2OqwBi" id="4Sa0NTIlY9F" role="37vLTx">
+                    <node concept="1rXfSq" id="4Sa0NTIlY3a" role="2Oq$k0">
+                      <ref role="37wK5l" node="4tDMPuHd$U0" resolve="getSharedConfigurationManager" />
+                    </node>
+                    <node concept="liA8E" id="4Sa0NTIlYm_" role="2OqNvi">
+                      <ref role="37wK5l" to="8ilk:~ProjectRunConfigurationManager.getState():org.jdom.Element" resolve="getState" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1403,8 +1355,8 @@
               </node>
               <node concept="3cpWsn" id="4tfwdmbFJ_O" role="TDEfY">
                 <property role="TrG5h" value="e" />
-                <node concept="3uibUv" id="4tfwdmbFJ_P" role="1tU5fm">
-                  <ref role="3uigEE" to="8d8y:~WriteExternalException" resolve="WriteExternalException" />
+                <node concept="3uibUv" id="4Sa0NTIlYvj" role="1tU5fm">
+                  <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
                 </node>
               </node>
             </node>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e2011ca2-dcbd-4406-99ae-3829638c534a(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants)">
+<model ref="r:346133f9-6a85-4069-b85d-ad74be443b8e(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants)">
   <persistence version="9" />
   <languages />
   <imports>
     <import index="vi5j" ref="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)" implicit="true" />
-    <import index="6bpu" ref="3b12b69f-aa11-4d89-8418-fe342c65710a/r:7a433e71-84dd-4c16-81c9-24ab095bad1e(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox@transient89/org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants@1_0)" implicit="true" />
   </imports>
   <registry>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -28,59 +27,59 @@
         <property id="2687243112288297832" name="constantName" index="1oh28R" />
       </concept>
       <concept id="2687243112288329504" name="org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper" flags="ng" index="1oh9TZ">
-        <reference id="2687243112288738882" name="clazz" index="1onHWt" />
+        <property id="5806354288060700664" name="className" index="1Vucue" />
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="6v_8SxmpL$m">
+  <node concept="2$UQVi" id="5JE01wUfghz">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="6v_8SxmpL$n" role="2$$55j">
+    <node concept="2$$0lk" id="5JE01wUfgh$" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$o" role="2$VCQS">
+    <node concept="2$VJBW" id="5JE01wUfgh_" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="2687243112288188382" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$p" role="2$VCQQ">
+    <node concept="2$VJBW" id="5JE01wUfghA" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="7486429024045439241" />
+      <property role="2$VJBR" value="6623106306058028118" />
     </node>
-    <node concept="1oh28U" id="6v_8SxmpL$l" role="2$VCQN">
+    <node concept="1oh28U" id="5JE01wUfghy" role="2$VCQN">
       <property role="1oh28R" value="A" />
     </node>
   </node>
-  <node concept="2$UQVi" id="6v_8SxmpL$B">
+  <node concept="2$UQVi" id="5JE01wUfghO">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="6v_8SxmpL$C" role="2$$55j">
+    <node concept="2$$0lk" id="5JE01wUfghP" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$D" role="2$VCQS">
+    <node concept="2$VJBW" id="5JE01wUfghQ" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="2687243112288193611" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$E" role="2$VCQQ">
+    <node concept="2$VJBW" id="5JE01wUfghR" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="7486429024045439258" />
+      <property role="2$VJBR" value="6623106306058028135" />
     </node>
-    <node concept="1oh28U" id="6v_8SxmpL$A" role="2$VCQN">
+    <node concept="1oh28U" id="5JE01wUfghN" role="2$VCQN">
       <property role="1oh28R" value="B" />
     </node>
   </node>
-  <node concept="2$UQVi" id="6v_8SxmpL$K">
+  <node concept="2$UQVi" id="5JE01wUfghX">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3THt" resolve="exportedSetsOfConstants" />
-    <node concept="2$$0lk" id="6v_8SxmpL$L" role="2$$55j">
+    <node concept="2$$0lk" id="5JE01wUfghY" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$M" role="2$VCQS">
+    <node concept="2$VJBW" id="5JE01wUfghZ" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constants" />
       <property role="2$VJBR" value="2687243112288187284" />
     </node>
-    <node concept="2$VJBW" id="6v_8SxmpL$N" role="2$VCQQ">
+    <node concept="2$VJBW" id="5JE01wUfgi0" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="7486429024045439239" />
+      <property role="2$VJBR" value="6623106306058028116" />
     </node>
-    <node concept="1oh9TZ" id="6v_8SxmpL$J" role="2$VCQN">
-      <ref role="1onHWt" to="6bpu:6v_8SxmpL$7" resolve="CoreConstants" />
+    <node concept="1oh9TZ" id="5JE01wUfghW" role="2$VCQN">
+      <property role="1Vucue" value="CoreConstants" />
     </node>
   </node>
 </model>

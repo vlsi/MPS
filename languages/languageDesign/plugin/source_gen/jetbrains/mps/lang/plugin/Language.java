@@ -13,6 +13,8 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.lang.plugin.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.plugin.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
@@ -56,6 +58,9 @@ public class Language extends LanguageRuntime {
     }
     if (descriptorClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.plugin.constraints.ConstraintsAspectDescriptor();
+    }
+    if (descriptorClass == DataFlowAspectDescriptor.class) {
+      return (T) new AbstractDataFlowAspectDescriptor() {};
     }
     if (descriptorClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();

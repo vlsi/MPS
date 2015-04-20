@@ -51,6 +51,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
         myName.equals(((SContainmentLinkAdapter) obj).myName);
   }
 
+  @NotNull
   public SContainmentLinkId getRoleId() {
     return myRoleId;
   }

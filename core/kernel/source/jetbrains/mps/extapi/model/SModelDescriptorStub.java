@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -40,7 +39,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -206,7 +204,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void deleteLanguage(@NotNull SModuleReference ref) {
-    getSModelInternal().deleteLanguage(MetaIdByDeclaration.ref2Id(ref));
+    getSModelInternal().deleteLanguage(MetaAdapterFactory.getLanguage(ref));
   }
 
   @Override
@@ -214,7 +212,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     // Identical to SModelLegacy.addLanguage(SModuleReference). Refactor uses of this method and drop it,
     // while SModelLegacy may need to survive few releases as it deals with smodel.SModel instances directly.
     // Users of this class, however, have access to full power of SModel and therefore much more freedom what to do.
-    getSModelInternal().addLanguage(MetaIdByDeclaration.ref2Id(ref));
+    getSModelInternal().addLanguage(MetaAdapterFactory.getLanguage(ref));
   }
 
   @Override

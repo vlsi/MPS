@@ -210,12 +210,6 @@ public class GenerationDependencies {
     return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0, null);
   }
 
-  public static String getFileName(SNode outputRootNode) {
-    // TODO refactor, use DefaultFileGenerator.getFileName
-    String extension = TextGen.getExtension(outputRootNode);
-    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
-  }
-
   public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash,
       String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
       Map<String, String> dependenciesTraces) {
@@ -270,7 +264,7 @@ public class GenerationDependencies {
         filesList = new ArrayList<String>();
         generatedFiles.put(inputRootId, filesList);
       }
-      String fileName = getFileName(outputRoot);
+      String fileName = TextGen.getFileName(outputRoot);
       if (fileName != null) {
         filesList.add(fileName);
       }

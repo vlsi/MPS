@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiPrimitiveType;
 import com.intellij.psi.PsiType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -31,8 +32,8 @@ import java.util.Map;
 
 public class MPSPsiPrimitiveType extends MPSPsiNode implements ComputesPsiType<PsiPrimitiveType> {
 
-  public MPSPsiPrimitiveType(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiPrimitiveType(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

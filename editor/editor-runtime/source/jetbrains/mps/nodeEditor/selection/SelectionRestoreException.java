@@ -22,6 +22,6 @@ package jetbrains.mps.nodeEditor.selection;
  */
 public class SelectionRestoreException extends Exception {
   public SelectionRestoreException() {
-    super("Canot restore selection");
+    super("Cannot restore selection");
   }
 }

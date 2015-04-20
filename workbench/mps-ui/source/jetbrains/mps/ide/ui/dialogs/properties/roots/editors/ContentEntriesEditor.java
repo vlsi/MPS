@@ -38,7 +38,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
-import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
@@ -182,7 +182,7 @@ public class ContentEntriesEditor implements Disposable {
     final JBPanel editorsPanel = new JBPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
     editorsPanel.add(entriesPanel,
-        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
+        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBUI.emptyInsets(), 0, 0));
 
     final JBPanel editorPanel = new JBPanel(new BorderLayout());
     editorPanel.setBorder(BorderFactory.createEtchedBorder());

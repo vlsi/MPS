@@ -2062,6 +2062,19 @@
         <node concept="3F0A7n" id="6Iq8148fjWz" role="3EZMnx">
           <ref role="1NtTu8" to="kdzh:328lVm4LOT5" resolve="minor" />
         </node>
+        <node concept="3F0ifn" id="3FfyF1J0o09" role="3EZMnx">
+          <property role="3F0ifm" value="." />
+          <node concept="11L4FC" id="3FfyF1J8oYp" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="11LMrY" id="3FfyF1J8p0a" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="3FfyF1J0o2V" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <ref role="1NtTu8" to="kdzh:3FfyF1J0n1L" resolve="bugfixNr" />
+        </node>
         <node concept="3F0ifn" id="5cRJsFB9Zme" role="3EZMnx">
           <property role="3F0ifm" value="," />
           <node concept="11L4FC" id="5cRJsFB9Zmf" role="3F10Kt">

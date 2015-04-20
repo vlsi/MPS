@@ -42,6 +42,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.JBUI;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.WorkbenchPathManager;
@@ -114,7 +115,7 @@ public class CreateProjectWizard extends DialogWrapper {
   @Override
   protected JComponent createCenterPanel() {
     if(myPanel == null){
-      myPanel = new JPanel(new GridLayoutManager(1,1, JBInsets.NONE, -1, -1));
+      myPanel = new JPanel(new GridLayoutManager(1,1, JBUI.emptyInsets(), -1, -1));
 
       initLeftPanel();
 
@@ -135,7 +136,7 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void initLeftPanel() {
-    myLeftPanel = new JPanel(new GridLayoutManager(2, 1, JBInsets.NONE, -1, -1));
+    myLeftPanel = new JPanel(new GridLayoutManager(2, 1, JBUI.emptyInsets(), -1, -1));
 
     mySearchField = new SearchTextField(false);
     mySearchField.addDocumentListener(new DocumentAdapter() {
@@ -296,7 +297,7 @@ public class CreateProjectWizard extends DialogWrapper {
 
     //-----Description panel-----
 
-    myDescriptionPanel = new JPanel(new GridLayoutManager(1, 1, JBInsets.NONE, -1, -1));
+    myDescriptionPanel = new JPanel(new GridLayoutManager(1, 1, JBUI.emptyInsets(), -1, -1));
     myDescriptionPanel.setBorder(IdeBorderFactory.createTitledBorder("Description", true));
 
     myDescriptionPane = new JTextPane();
@@ -313,7 +314,7 @@ public class CreateProjectWizard extends DialogWrapper {
     //-----Template settings panel-----
 
     myTemplateSettingsHolder = new JPanel(new BorderLayout());
-    myTemplateSettings = new JPanel(new GridLayoutManager(2, 1, JBInsets.NONE, -1, -1));
+    myTemplateSettings = new JPanel(new GridLayoutManager(2, 1, JBUI.emptyInsets(), -1, -1));
     myTemplateSettings.setBorder(IdeBorderFactory.createEmptyBorder(0, IdeBorderFactory.TITLED_BORDER_INDENT, 5, 0));
     myHideableDecorator = new HideableDecorator(myTemplateSettingsHolder, "More Settings", false);
     myHideableDecorator.setContentComponent(myTemplateSettings);

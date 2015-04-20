@@ -260,14 +260,6 @@
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
-      <concept id="1221161909218" name="jetbrains.mps.lang.smodel.structure.SearchScopeType" flags="in" index="1iUZFY" />
-      <concept id="1221163681458" name="jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation" flags="nn" index="1j1KuI">
-        <reference id="1221164078452" name="referenceLink" index="1j3hhC" />
-        <child id="1221164004670" name="operationContext" index="1j2Zgy" />
-      </concept>
-      <concept id="1221170373891" name="jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation" flags="nn" index="1jrigv">
-        <child id="1221170724607" name="nodeToCheck" index="1jsBZz" />
-      </concept>
       <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
         <reference id="1176109685394" name="concept" index="3lApI3" />
       </concept>
@@ -5792,107 +5784,6 @@
               </node>
               <node concept="3TrcHB" id="hJBhRVA" role="2OqNvi">
                 <ref role="3TsBF5" to="tpce:hmfHohT" resolve="javaIdentifier" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="hLj6tmr">
-    <property role="TrG5h" value="SearchScope" />
-    <node concept="3Tm1VV" id="hLj6tms" role="1B3o_S" />
-    <node concept="3clFb_" id="hLj6xra" role="jymVt">
-      <property role="TrG5h" value="getSearchScope" />
-      <node concept="3uibUv" id="hLj6VkR" role="3clF45">
-        <ref role="3uigEE" to="y36q:~ISearchScope" resolve="ISearchScope" />
-      </node>
-      <node concept="3Tm1VV" id="hLj6xrc" role="1B3o_S" />
-      <node concept="3clFbS" id="hLj6xrd" role="3clF47">
-        <node concept="3cpWs8" id="hLjn7nF" role="3cqZAp">
-          <node concept="3cpWsn" id="hLjn7nG" role="3cpWs9">
-            <property role="TrG5h" value="scope" />
-            <node concept="1iUZFY" id="hLjn7nH" role="1tU5fm" />
-            <node concept="2OqwBi" id="hLjn7nI" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxghgro" role="2Oq$k0">
-                <ref role="3cqZAo" node="hLj70ad" resolve="methodCall" />
-              </node>
-              <node concept="1j1KuI" id="hLjn7nK" role="2OqNvi">
-                <ref role="1j3hhC" to="tpee:hwllgre" />
-                <node concept="37vLTw" id="2BHiRxgm5N5" role="1j2Zgy">
-                  <ref role="3cqZAo" node="hLjb1eL" resolve="context" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="hLjmxVB" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTsnS" role="3cqZAk">
-            <ref role="3cqZAo" node="hLjn7nG" resolve="scope" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="hLj70ad" role="3clF46">
-        <property role="TrG5h" value="methodCall" />
-        <node concept="3Tqbb2" id="hLj70ae" role="1tU5fm">
-          <ref role="ehGHo" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="hLjb1eL" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="hLjbHkP" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="hLjuLfi" role="jymVt">
-      <property role="TrG5h" value="isInScope" />
-      <node concept="37vLTG" id="hLjuVu8" role="3clF46">
-        <property role="TrG5h" value="methodCall" />
-        <node concept="3Tqbb2" id="hLjuVu9" role="1tU5fm">
-          <ref role="ehGHo" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="hLjuWCa" role="3clF46">
-        <property role="TrG5h" value="methodDeclaration" />
-        <node concept="3Tqbb2" id="hLjuXqv" role="1tU5fm">
-          <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="hLjuVua" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="hLjuVub" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
-      <node concept="10P_77" id="hLjuNP6" role="3clF45" />
-      <node concept="3Tm1VV" id="hLjuLfk" role="1B3o_S" />
-      <node concept="3clFbS" id="hLjuLfl" role="3clF47">
-        <node concept="3cpWs8" id="hLjveRa" role="3cqZAp">
-          <node concept="3cpWsn" id="hLjveRb" role="3cpWs9">
-            <property role="TrG5h" value="scope" />
-            <node concept="1iUZFY" id="hLjveRc" role="1tU5fm" />
-            <node concept="2OqwBi" id="hLjveRd" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxgmyx2" role="2Oq$k0">
-                <ref role="3cqZAo" node="hLjuVu8" resolve="methodCall" />
-              </node>
-              <node concept="1j1KuI" id="hLjveRf" role="2OqNvi">
-                <ref role="1j3hhC" to="tpee:hwllgre" />
-                <node concept="37vLTw" id="2BHiRxghf00" role="1j2Zgy">
-                  <ref role="3cqZAo" node="hLjuVua" resolve="context" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="hLjvga2" role="3cqZAp">
-          <node concept="2OqwBi" id="hLjvg$s" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT__k" role="2Oq$k0">
-              <ref role="3cqZAo" node="hLjveRb" resolve="scope" />
-            </node>
-            <node concept="1jrigv" id="hLjvEUf" role="2OqNvi">
-              <node concept="37vLTw" id="2BHiRxgm9bx" role="1jsBZz">
-                <ref role="3cqZAo" node="hLjuWCa" resolve="methodDeclaration" />
               </node>
             </node>
           </node>

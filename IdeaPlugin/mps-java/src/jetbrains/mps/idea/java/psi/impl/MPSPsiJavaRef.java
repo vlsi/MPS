@@ -16,6 +16,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -41,12 +42,12 @@ import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
  */
 
 public abstract class MPSPsiJavaRef extends MPSPsiRef {
-  public MPSPsiJavaRef(String role, SModelReference model, SNodeId nodeId) {
-    super(role, model, nodeId);
+  public MPSPsiJavaRef(String role, SModelReference model, SNodeId nodeId, PsiManager manager) {
+    super(role, model, nodeId, manager);
   }
 
-  public MPSPsiJavaRef(String role, String referenceText) {
-    super(role, referenceText);
+  public MPSPsiJavaRef(String role, String referenceText, PsiManager manager) {
+    super(role, referenceText, manager);
   }
 
   @Override

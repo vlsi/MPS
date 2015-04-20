@@ -20,6 +20,7 @@ import com.intellij.pom.java.LanguageLevel;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiSubstitutor;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiTypeParameter;
@@ -37,8 +38,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiTypeParamRef extends MPSPsiNode implements ComputesPsiType<PsiClassType> {
-  public MPSPsiTypeParamRef(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiTypeParamRef(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

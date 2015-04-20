@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiManager;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
@@ -24,8 +25,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  */
 
 public class MPSPsiConstructor extends MPSPsiMethod {
-  public MPSPsiConstructor(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
+  public MPSPsiConstructor(SNodeId id, String concept, String containingRole, PsiManager manager) {
+    super(id, concept, containingRole, manager);
   }
 
   @Override

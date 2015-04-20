@@ -40,6 +40,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   protected abstract SNode findInConcept(SNode cnode);
 
+  @NotNull
   public abstract SContainmentLinkId getRoleId();
 
   @Override

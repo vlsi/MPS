@@ -7,6 +7,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.dataFlow.framework.AnalyzerRules;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.HashMap;
@@ -25,12 +26,12 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
   public NullableAnalyzerRunner(SNode node) {
     super(null, null);
     myNode = node;
+    myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
-    myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
   }
   private void prepareProgram() {
-    NullableAnalyzerRules.getInstance().apply(myNode, myProgram);
+    new AnalyzerRules(NullableAnalyzerRunner.NullableAnalyzer.getId(), myNode, myProgram).apply();
   }
   public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {
@@ -92,6 +93,9 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     }
     public AnalysisDirection getDirection() {
       return AnalysisDirection.FORWARD;
+    }
+    public static String getId() {
+      return "jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner.NullableAnalyzer";
     }
   }
 }

@@ -17,6 +17,10 @@ package jetbrains.mps.smodel.adapter.ids;
 
 import java.util.UUID;
 
+/**
+ * There's jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory which creates API objects using implementation identity objects supplied by this class.
+ * To go from an API object back to implementation identity, use jetbrains.mps.smodel.adapter.ids.MetaIdFactory}
+ */
 public abstract class MetaIdFactory {
   public static final SLanguageId INVALID_LANGUAGE_ID = new SLanguageId(new UUID(0, 0));
   public static final SConceptId INVALID_CONCEPT_ID = new SConceptId(INVALID_LANGUAGE_ID, 0);

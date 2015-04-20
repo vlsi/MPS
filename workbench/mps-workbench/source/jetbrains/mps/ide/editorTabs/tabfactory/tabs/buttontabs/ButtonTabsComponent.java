@@ -29,7 +29,6 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -52,7 +51,8 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private ActionToolbar myToolbar = null;
 
-  public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, Project project) {
+  public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
+      Project project) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, project);
 
     getComponent().addHierarchyListener(new HierarchyListener() {
@@ -61,6 +61,9 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
+            if (isDisposed()) {
+              return;
+            }
             updateTabs();
           }
         });
@@ -109,7 +112,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   protected void updateTabs() {
     if (isDisposedNode()) return;
 
-    if (getLastNode()!=null && getLastNode().resolve(MPSModuleRepository.getInstance()) == null) {
+    if (getLastNode() != null && getLastNode().resolve(MPSModuleRepository.getInstance()) == null) {
       onNodeChange(myBaseNode.resolve(MPSModuleRepository.getInstance()));
     }
 
@@ -147,6 +150,9 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar;
     getComponent().add(myToolbar.getComponent(), BorderLayout.CENTER);
+    if (getLastNode() != null) {
+      onNodeChange(getLastNode().resolve(MPSModuleRepository.getInstance()));
+    }
   }
 
   @Override

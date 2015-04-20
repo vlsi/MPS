@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx2;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
@@ -17,9 +17,15 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -54,13 +60,11 @@ import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
 import org.apache.log4j.Level;
-import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.concurrent.ArrayBlockingQueue;
+import jetbrains.mps.text.TextGenResult;
+import java.util.concurrent.TimeUnit;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
@@ -71,6 +75,7 @@ public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.TextGen");
   public TextGen_Facet() {
+    ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_configure());
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGen());
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGenToMemory());
   }
@@ -92,6 +97,94 @@ public class TextGen_Facet extends IFacet.Stub {
   public IPropertiesPersistence propertiesPersistence() {
     return new TextGen_Facet.TargetProperties();
   }
+  public static class Target_configure implements ITargetEx {
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
+    public Target_configure() {
+    }
+    public IJob createJob() {
+      return new IJob.Stub() {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+          Iterable<IResource> _output_21gswx_a0a = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          switch (0) {
+            case 0:
+              if (vars(pa.global()).makeSession() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Need access to make session")));
+                return new IResult.FAILURE(_output_21gswx_a0a);
+              }
+            default:
+              return new IResult.SUCCESS(_output_21gswx_a0a);
+          }
+        }
+      };
+    }
+    public IConfig createConfig() {
+      return null;
+    }
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+    public Iterable<ITarget.Name> after() {
+      return null;
+    }
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")});
+    }
+    public ITarget.Name getName() {
+      return name;
+    }
+    public boolean isOptional() {
+      return false;
+    }
+    public boolean requiresInput() {
+      return false;
+    }
+    public boolean producesOutput() {
+      return false;
+    }
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      return rv;
+    }
+    public Iterable<Class<? extends IResource>> expectedOutput() {
+      return null;
+    }
+    public <T> T createParameters(Class<T> cls) {
+      return cls.cast(new Parameters());
+    }
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+      }
+      return t;
+    }
+    public static TextGen_Facet.Target_configure.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, TextGen_Facet.Target_configure.Parameters.class);
+    }
+    public static class Parameters extends MultiTuple._1<MakeSession> {
+      public Parameters() {
+        super();
+      }
+      public Parameters(MakeSession makeSession) {
+        super(makeSession);
+      }
+      public MakeSession makeSession(MakeSession value) {
+        return super._0(value);
+      }
+      public MakeSession makeSession() {
+        return super._0();
+      }
+      @SuppressWarnings(value = "unchecked")
+      public TextGen_Facet.Target_configure.Parameters assignFrom(Tuples._1<MakeSession> from) {
+        return (TextGen_Facet.Target_configure.Parameters) super.assign(from);
+      }
+    }
+  }
   public static class Target_textGen implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
     public Target_textGen() {
@@ -100,7 +193,7 @@ public class TextGen_Facet extends IFacet.Stub {
       return new IJob.Stub() {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          Iterable<IResource> _output_21gswx_a0a = null;
+          Iterable<IResource> _output_21gswx_a0b = null;
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
@@ -110,7 +203,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
               })) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
-                return new IResult.FAILURE(_output_21gswx_a0a);
+                return new IResult.FAILURE(_output_21gswx_a0b);
               }
 
               for (GResource resource : Sequence.fromIterable(input)) {
@@ -226,7 +319,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       }
                     }
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
-                    return new IResult.FAILURE(_output_21gswx_a0a);
+                    return new IResult.FAILURE(_output_21gswx_a0b);
                   }
 
                   // flush stream handlers 
@@ -238,14 +331,14 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }))) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
-                    return new IResult.FAILURE(_output_21gswx_a0a);
+                    return new IResult.FAILURE(_output_21gswx_a0b);
                   }
 
                   // output result 
                   for (GResource resource : ListSequence.fromList(currentInput)) {
                     Iterable<IDelta> delta = MapSequence.fromMap(deltas).get(resource);
                     IResource result = new TResource(delta, resource.module(), resource.model());
-                    _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
+                    _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
                   }
 
                   // clean up 
@@ -267,7 +360,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }))) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
-                    return new IResult.FAILURE(_output_21gswx_a0a);
+                    return new IResult.FAILURE(_output_21gswx_a0b);
                   }
 
                   currentRootsCount.value = 0;
@@ -283,7 +376,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 monitor.currentProgress().finishWork("Writing");
               }
             default:
-              return new IResult.SUCCESS(_output_21gswx_a0a);
+              return new IResult.SUCCESS(_output_21gswx_a0b);
           }
         }
       };
@@ -295,7 +388,7 @@ public class TextGen_Facet extends IFacet.Stub {
       return null;
     }
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate"), new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure")});
     }
     public Iterable<ITarget.Name> notBefore() {
       return null;
@@ -372,58 +465,63 @@ public class TextGen_Facet extends IFacet.Stub {
       return new IJob.Stub() {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          Iterable<IResource> _output_21gswx_a0b = null;
+          Iterable<IResource> _output_21gswx_a0c = null;
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              for (final GResource resource : Sequence.fromIterable(input)) {
-                final Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
-                final Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
-                final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-                final Wrappers._boolean errors = new Wrappers._boolean(false);
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    model.value = resource.status().getOutputModel();
-                    if (model.value == null) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
-                      errors.value = true;
-                    } else {
-                      for (SNode root : model.value.getRootNodes()) {
-                        TextGenerationResult tgr = TextGen.generateText(root);
-                        errors.value |= tgr.hasErrors();
-                        if (errors.value) {
-                          for (IMessage err : tgr.problems()) {
-                            monitor.reportFeedback(new IFeedback.MESSAGE(err));
-                          }
-                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
-                          break;
-                        }
-                        String ext = TextGen.getExtension(root);
-                        String fname = ((ext != null ? root.getName() + "." + ext : root.getName()));
-                        if (fname == null) {
-                          fname = "<null> [" + root.getNodeId() + "]";
-                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));
-                        }
-                        MapSequence.fromMap(texts).put(fname, tgr.getResult());
+              final jetbrains.mps.text.TextGeneratorEngine tgEngine = new jetbrains.mps.text.TextGeneratorEngine();
+              try {
+                int modelsCount = Sequence.fromIterable(input).count();
+                final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
+                for (GResource resource : Sequence.fromIterable(input)) {
+                  final SModel model = resource.status().getOutputModel();
+                  if (model == null) {
+                    modelsCount--;
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
+                    // used to be a 'failure', with text generation result collected so far. 
+                    // Now, 'failure' here would yield empty result, always. 
+                    // It looks like 'best effort' (generate all possible) is reasonable alternative. 
+                    continue;
+                  }
+                  // FIXME shall take project from MakeSession and use it for readAction 
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      tgEngine.schedule(model, resultQueue);
+                    }
+                  });
+                }
+                while (modelsCount-- > 0) {
+                  final TextGenResult tgr = resultQueue.poll(1, TimeUnit.MINUTES);
+                  Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
+                  Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
+                  for (TextUnit tu : tgr.getUnits()) {
+                    // FIXME bring error reporting back 
+                    boolean errors = false;
+                    if (errors) {
+                      // <node> 
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
+                      break;
+                    }
 
-                        SNodeReference sourceNode = TracingUtil.getInput(root);
-                        if (sourceNode != null) {
-                          if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
-                            MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
-                          }
-                        }
+                    String fname = tu.getFileName();
+                    MapSequence.fromMap(texts).put(fname, tu);
+                    SNodeReference sourceNode = TracingUtil.getInput(tu.getStartNode());
+                    if (sourceNode != null) {
+                      if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
+                        MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
                       }
                     }
                   }
-                });
-
-                if (errors.value) {
-                  return new IResult.FAILURE(_output_21gswx_a0b);
+                  _output_21gswx_a0c = Sequence.fromIterable(_output_21gswx_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(tgr.getModel()), texts, rootNodeToFileName, null, tgr.getModel()))));
                 }
-                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(model.value), texts, rootNodeToFileName, resource.module(), resource.model()))));
+              } catch (InterruptedException ex) {
+                // fine, no more text generation 
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
+              } finally {
+                tgEngine.shutdown();
               }
             default:
-              return new IResult.SUCCESS(_output_21gswx_a0b);
+              return new IResult.SUCCESS(_output_21gswx_a0c);
           }
         }
       };
@@ -435,7 +533,7 @@ public class TextGen_Facet extends IFacet.Stub {
       return null;
     }
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate"), new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure")});
     }
     public Iterable<ITarget.Name> notBefore() {
       return null;
@@ -479,6 +577,13 @@ public class TextGen_Facet extends IFacet.Stub {
     }
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
+        if (properties.hasProperties(name)) {
+          TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.configure.makeSession", null);
+        }
+      }
+      {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
@@ -489,6 +594,13 @@ public class TextGen_Facet extends IFacet.Stub {
     }
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
+        {
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.configure");
+          TextGen_Facet.Target_configure.Parameters props = properties.properties(name, TextGen_Facet.Target_configure.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.configure.makeSession")) {
+            props.makeSession(null);
+          }
+        }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);

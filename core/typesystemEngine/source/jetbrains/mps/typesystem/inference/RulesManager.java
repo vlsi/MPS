@@ -29,15 +29,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsManager;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,7 +43,6 @@ import java.util.Set;
 public class RulesManager {
 
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
-  private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
@@ -60,26 +56,13 @@ public class RulesManager {
   private volatile boolean myNeedsLoading = false;
   private Set<LanguageRuntime> myLoadedLanguages = new HashSet<LanguageRuntime>();
   private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<LanguageRuntime>();
-  private LanguageRegistry myLanguageRegistry;
 
   public RulesManager(TypeChecker typeChecker) {
     myRulesManagerNew = new RulesManagerNew(typeChecker);
     myOverloadedOperationsManager = new OverloadedOperationsManager(typeChecker);
-    myLanguageRegistry = typeChecker.getLanguageRegistry();
-  }
-
-  public boolean loadLanguage(final String languageNamespace) {
-    ModelAccess.assertLegalWrite();
-    LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
-    if (language == null) return false;
-    if (!myLoadedLanguages.contains(language)) {
-      loadLanguages(Collections.singleton(language));
-    }
-    return true;
   }
 
   public void loadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       assert !myLoadedLanguages.contains(language);
       myLanguagesToLoad.add(language);
@@ -96,7 +79,6 @@ public class RulesManager {
         return;
       }
 
-//      ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : myLanguagesToLoad) {
         assert !myLoadedLanguages.contains(language);
         myLoadedLanguages.add(language);
@@ -114,7 +96,6 @@ public class RulesManager {
         }
         try {
           myInferenceRules.addRuleSetItem(typesystem.getInferenceRules());
-          myNonTypesystemRules.addRuleSetItem(typesystem.getNonTypesystemRules());
           mySubtypingRules.addRuleSetItem(typesystem.getSubtypingRules());
           Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
           myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
@@ -131,7 +112,6 @@ public class RulesManager {
   }
 
   public void unloadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       if (myLoadedLanguages.contains(language)) {
         unloadLoadedAllLoaded();
@@ -144,14 +124,12 @@ public class RulesManager {
   }
 
   private void unloadLoadedAllLoaded() {
-    ModelAccess.assertLegalWrite();
 
     myLanguagesToLoad.addAll(myLoadedLanguages);
     myLoadedLanguages = new HashSet<LanguageRuntime>();
 
     // TODO: cleanup
     myInferenceRules.clear();
-    myNonTypesystemRules.clear();
     mySubtypingRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();

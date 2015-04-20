@@ -20,13 +20,14 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="module" module-name="debugger-api-runtime" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="debugger-java-api" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="mps-debugger" />
+    <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Tools" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
@@ -36,4 +37,3 @@
     <orderEntry type="module" module-name="kernel-resources" />
   </component>
 </module>
-

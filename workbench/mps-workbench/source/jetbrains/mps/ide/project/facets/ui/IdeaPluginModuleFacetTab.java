@@ -20,6 +20,7 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.JBUI;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
@@ -56,7 +57,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab implements FacetTab {
   @Override
   public void init() {
     JPanel content = new JPanel();
-    content.setLayout(new GridLayoutManager(1, 2, JBInsets.NONE, -1, -1));
+    content.setLayout(new GridLayoutManager(1, 2, JBUI.emptyInsets(), -1, -1));
 
     JBLabel label = new JBLabel("Plugin ID:");
     content.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,

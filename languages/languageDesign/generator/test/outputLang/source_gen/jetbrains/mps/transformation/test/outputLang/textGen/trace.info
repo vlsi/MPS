@@ -6,6 +6,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,34,0" name="jetbrains.mps.transformation.test.outputLang.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:dc2197ed-ff7a-4789-9556-7ee196b8feae(jetbrains.mps.transformation.test.outputLang.textGen)/1236704181256">
     <file name="OutputNode_TextGen.java">
       <node id="1237467872316" at="14,168,15,169" concept="0" />

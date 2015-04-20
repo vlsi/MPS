@@ -6107,8 +6107,8 @@
                 <node concept="2OwXpG" id="1CCpxWskg3B" role="2OqNvi">
                   <ref role="2Oxat5" to="nrbl:~NotificationsConfigurationImpl.SHOW_BALLOONS" resolve="SHOW_BALLOONS" />
                 </node>
-                <node concept="2YIFZM" id="1CCpxWskg3A" role="2Oq$k0">
-                  <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getNotificationsConfigurationImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getNotificationsConfigurationImpl" />
+                <node concept="2YIFZM" id="4Sa0NTIpd_z" role="2Oq$k0">
+                  <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getInstanceImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getInstanceImpl" />
                   <ref role="1Pybhc" to="nrbl:~NotificationsConfigurationImpl" resolve="NotificationsConfigurationImpl" />
                 </node>
               </node>
@@ -7446,8 +7446,8 @@
                   <ref role="3cqZAo" node="6za2oG6XsvV" resolve="ID" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="1tPM9NIM0Ol" role="2Oq$k0">
-                <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getNotificationsConfigurationImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getNotificationsConfigurationImpl" />
+              <node concept="2YIFZM" id="4Sa0NTIpdjO" role="2Oq$k0">
+                <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getInstanceImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getInstanceImpl" />
                 <ref role="1Pybhc" to="nrbl:~NotificationsConfigurationImpl" resolve="NotificationsConfigurationImpl" />
               </node>
             </node>
@@ -8075,8 +8075,8 @@
               <node concept="2OwXpG" id="yuiNvycW6S" role="2OqNvi">
                 <ref role="2Oxat5" to="nrbl:~NotificationsConfigurationImpl.SHOW_BALLOONS" resolve="SHOW_BALLOONS" />
               </node>
-              <node concept="2YIFZM" id="yuiNvycW6N" role="2Oq$k0">
-                <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getNotificationsConfigurationImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getNotificationsConfigurationImpl" />
+              <node concept="2YIFZM" id="4Sa0NTIpdkI" role="2Oq$k0">
+                <ref role="37wK5l" to="nrbl:~NotificationsConfigurationImpl.getInstanceImpl():com.intellij.notification.impl.NotificationsConfigurationImpl" resolve="getInstanceImpl" />
                 <ref role="1Pybhc" to="nrbl:~NotificationsConfigurationImpl" resolve="NotificationsConfigurationImpl" />
               </node>
             </node>

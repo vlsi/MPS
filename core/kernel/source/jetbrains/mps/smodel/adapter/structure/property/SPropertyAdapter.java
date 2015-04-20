@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SDataType;
@@ -42,6 +43,7 @@ public abstract class SPropertyAdapter implements SProperty {
 
   protected abstract SNode findInConcept(SNode cnode);
 
+  @NotNull
   public abstract SPropertyId getId();
 
   @Override

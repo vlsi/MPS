@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.Kaja.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -50,6 +52,9 @@ public class Language extends LanguageRuntime {
     }
     if (descriptorClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor();
+    }
+    if (descriptorClass == DataFlowAspectDescriptor.class) {
+      return (T) new AbstractDataFlowAspectDescriptor() {};
     }
     if (descriptorClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();

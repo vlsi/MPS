@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.textGen;
 
-import jetbrains.mps.generator.impl.NamedThreadFactory;
+import jetbrains.mps.util.NamedThreadFactory;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -151,7 +151,7 @@ public class TextGeneratorEngine {
     }
   }
 
-  private class LatchRunnable implements Runnable {
+  private static class LatchRunnable implements Runnable {
     private final CountDownLatch myLatch;
     private final Runnable myDelegate;
 

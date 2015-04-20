@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.*;
@@ -49,7 +49,7 @@ public final class SModelLegacy {
   }
 
   public void addLanguage(SModuleReference ref) {
-    myModel.addLanguage(MetaIdByDeclaration.ref2Id(ref));
+    myModel.addLanguage(MetaAdapterFactory.getLanguage(ref));
   }
 
   public void addModelImport(org.jetbrains.mps.openapi.model.SModelReference ref, boolean firstVersion) {

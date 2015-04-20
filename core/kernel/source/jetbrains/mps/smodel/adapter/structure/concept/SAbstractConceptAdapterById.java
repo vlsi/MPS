@@ -17,9 +17,13 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * Identifies truly id-backed adapter, the one that won't go to any registry to find out its id
+ */
 public interface SAbstractConceptAdapterById extends SAbstractConcept {
+  @NotNull
   SConceptId getId();
-  ConceptDescriptor getConceptDescriptor();
 }
