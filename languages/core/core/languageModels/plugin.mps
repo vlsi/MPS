@@ -44,6 +44,7 @@
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="lv7v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text(MPS.Core/jetbrains.mps.text@java_stub)" />
     <import index="53gy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -481,6 +482,55 @@
   <node concept="15KeUS" id="5L5h3brvDH_">
     <property role="TrG5h" value="TextGen" />
     <property role="3GE5qa" value="facets" />
+    <node concept="15KeUm" id="72ouys9JzGh" role="15LFul">
+      <property role="TrG5h" value="configure" />
+      <property role="2w7fpF" value="PASSTHRU" />
+      <node concept="15KeVb" id="72ouys9JD9X" role="15LFui">
+        <ref role="15KeV8" node="5L5h3brvDHA" resolve="textGen" />
+      </node>
+      <node concept="15KeVb" id="72ouys9JDgM" role="15LFui">
+        <ref role="15KeV8" node="5L5h3brvDMU" resolve="textGenToMemory" />
+      </node>
+      <node concept="2aLE7I" id="72ouys9JzGi" role="ElM8M">
+        <node concept="ElOhj" id="72ouys9JzGj" role="2aLE7H">
+          <node concept="3clFbS" id="72ouys9JzGk" role="2VODD2">
+            <node concept="3clFbJ" id="72ouys9JFyL" role="3cqZAp">
+              <node concept="3clFbS" id="72ouys9JFyM" role="3clFbx">
+                <node concept="1daRAt" id="72ouys9JFEN" role="3cqZAp">
+                  <property role="1daRAr" value="ERROR" />
+                  <node concept="Xl_RD" id="72ouys9JGPD" role="1daK9t">
+                    <property role="Xl_RC" value="Need access to make session" />
+                  </node>
+                </node>
+                <node concept="3D7k6m" id="72ouys9JGQj" role="3cqZAp">
+                  <property role="3D7k6l" value="FAILURE" />
+                </node>
+              </node>
+              <node concept="3clFbC" id="72ouys9JFDW" role="3clFbw">
+                <node concept="10Nm6u" id="72ouys9JFEq" role="3uHU7w" />
+                <node concept="1aIXbY" id="72ouys9JFyY" role="3uHU7B">
+                  <node concept="1aIXbZ" id="72ouys9JFyX" role="2Oq$k0" />
+                  <node concept="2sxana" id="72ouys9JFz1" role="2OqNvi">
+                    <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1aIAsN" id="72ouys9JDlJ" role="1aI7mi">
+        <property role="TrG5h" value="Parameters" />
+        <node concept="3Tm1VV" id="72ouys9JDlK" role="1B3o_S" />
+        <node concept="2lGYhJ" id="72ouys9JDlL" role="2pHZQ9">
+          <property role="3dDGau" value="false" />
+          <property role="TrG5h" value="makeSession" />
+          <node concept="3uibUv" id="72ouys9JDlT" role="2lK19J">
+            <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="15KeUm" id="5L5h3brvDHA" role="15LFul">
       <property role="1xVfUM" value="400" />
       <property role="TrG5h" value="textGen" />
@@ -2052,6 +2102,10 @@
         <property role="3HPxAp" value="AFTER" />
         <ref role="15KeV8" node="5L5h3brvzcf" resolve="generate" />
       </node>
+      <node concept="15KeVb" id="72ouys9JJ33" role="15LFui">
+        <property role="3HPxAp" value="AFTER" />
+        <ref role="15KeV8" node="72ouys9JzGh" resolve="configure" />
+      </node>
       <node concept="15KeVb" id="5L5h3brvDMG" role="15LFui">
         <ref role="15KeV8" to="fy8e:taepSZ9r$W" resolve="reconcile" />
       </node>
@@ -2088,6 +2142,10 @@
       <node concept="15KeVb" id="5L5h3brvDMV" role="15LFui">
         <property role="3HPxAp" value="AFTER" />
         <ref role="15KeV8" node="5L5h3brvzcf" resolve="generate" />
+      </node>
+      <node concept="15KeVb" id="72ouys9JMG7" role="15LFui">
+        <property role="3HPxAp" value="AFTER" />
+        <ref role="15KeV8" node="72ouys9JzGh" resolve="configure" />
       </node>
       <node concept="2aLE7I" id="5L5h3brvDMW" role="ElM8M">
         <node concept="ElOhj" id="5L5h3brvDMX" role="2aLE7H">

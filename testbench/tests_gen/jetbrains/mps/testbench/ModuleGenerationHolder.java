@@ -115,7 +115,7 @@ public class ModuleGenerationHolder {
             public void setup(IPropertiesPool ppool) {
               // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
               // fails if we don't generate one here 
-              new TextGenFacetInitializer().failNoTextGen(false).generateDebugInfo(true).populate(ppool);
+              new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true).populate(ppool);
               new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
                 public IFile invoke(String path) {
                   return tmpFile(path);

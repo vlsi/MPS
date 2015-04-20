@@ -160,6 +160,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
@@ -180,10 +181,13 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.RetainedUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.TextGen_Facet.Target_configure.Parameters" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.TextGen_Facet.Target_textGen.Parameters" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode dependClassName="jetbrains.mps.make.facets.Make_Facet.Target_make" />
     <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />

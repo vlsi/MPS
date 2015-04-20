@@ -21,6 +21,10 @@ import java.util.LinkedHashSet;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -32,15 +36,11 @@ import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
@@ -126,7 +126,7 @@ public class GenTestWorker extends GeneratorWorker {
 
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
     if (go.hasAnythingToGenerate()) {
-      loadAndMake(go);
+      loadAndMake(project, go);
       generate(project, go);
     } else {
       error("Could not find anything to test.");
@@ -167,6 +167,18 @@ public class GenTestWorker extends GeneratorWorker {
       }
     };
 
+    final MakeSession ms = new MakeSession(project, myMessageHandler, true) {
+      @Override
+      public IScript toScript(ScriptBuilder scriptBuilder) {
+        if (isInvokeTestsSet()) {
+          scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Test"));
+        }
+        if (isShowDiff()) {
+          scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Diff"));
+        }
+        return scriptBuilder.toScript();
+      }
+    };
     // FIXME feedback reported through IConfigMonitor.Stub goes to nowhere 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
@@ -177,7 +189,7 @@ public class GenTestWorker extends GeneratorWorker {
             return tmpFile(path);
           }
         }).populate(ppool);
-        new TextGenFacetInitializer().failNoTextGen(false).populate(ppool);
+        new TextGenFacetInitializer(ms).failNoTextGen(false).populate(ppool);
 
         Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
         if (dparams != null && isShowDiff()) {
@@ -201,18 +213,6 @@ public class GenTestWorker extends GeneratorWorker {
     };
     try {
       BuildMakeService bms = new BuildMakeService();
-      MakeSession ms = new MakeSession(project, myMessageHandler, true) {
-        @Override
-        public IScript toScript(ScriptBuilder scriptBuilder) {
-          if (isInvokeTestsSet()) {
-            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Test"));
-          }
-          if (isShowDiff()) {
-            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Diff"));
-          }
-          return scriptBuilder.toScript();
-        }
-      };
       Future<IResult> result = bms.make(ms, collectResources(project, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
       if (!(result.get().isSucessful())) {
         myErrors.add("Make was not successful " + result.get().output());
@@ -223,8 +223,8 @@ public class GenTestWorker extends GeneratorWorker {
       myErrors.add(e.toString());
     }
   }
-  private void loadAndMake(final MpsWorker.ObjectsToProcess go) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+  private void loadAndMake(Project project, final MpsWorker.ObjectsToProcess go) {
+    project.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         LibraryInitializer.getInstance().update();

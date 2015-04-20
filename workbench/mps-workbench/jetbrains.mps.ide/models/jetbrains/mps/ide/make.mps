@@ -4812,7 +4812,6 @@
     </node>
     <node concept="3clFb_" id="9D0Ba05vfM" role="jymVt">
       <property role="TrG5h" value="getSession" />
-      <node concept="3Tm6S6" id="9D0Ba05vfN" role="1B3o_S" />
       <node concept="3uibUv" id="9D0Ba05vfO" role="3clF45">
         <ref role="3uigEE" to="hfuk:7yGn3z4N4Nd" resolve="MakeSession" />
       </node>
@@ -6583,6 +6582,9 @@
                   <node concept="2ShNRf" id="72ouys9I5$P" role="2Oq$k0">
                     <node concept="1pGfFk" id="72ouys9Ivi3" role="2ShVmc">
                       <ref role="37wK5l" to="f0ym:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                      <node concept="1rXfSq" id="72ouys9JXV3" role="37wK5m">
+                        <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
+                      </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="72ouys9IvzP" role="2OqNvi">

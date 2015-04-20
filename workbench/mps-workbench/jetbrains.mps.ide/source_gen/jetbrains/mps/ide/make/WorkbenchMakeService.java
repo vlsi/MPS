@@ -145,7 +145,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
   }
-  private MakeSession getSession() {
+  /*package*/ MakeSession getSession() {
     return currentSessionStickyMark.getReference();
   }
   @Override
@@ -343,7 +343,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // end of hack 
 
       IModifiableGenerationSettings genSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-      new TextGenFacetInitializer().failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
+      new TextGenFacetInitializer(getSession()).failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
 
       new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 
