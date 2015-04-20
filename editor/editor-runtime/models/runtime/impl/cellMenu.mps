@@ -74,6 +74,7 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -616,6 +617,9 @@
     <node concept="3Tm1VV" id="3NL5ivGjjTK" role="1B3o_S" />
     <node concept="3uibUv" id="3NL5ivGjk8K" role="1zkMxy">
       <ref role="3uigEE" to="4ky7:~AbstractNodeSubstituteInfo" resolve="AbstractNodeSubstituteInfo" />
+    </node>
+    <node concept="3uibUv" id="4AnoT$g6Gxu" role="EKbjA">
+      <ref role="3uigEE" to="nu8v:~DefaultSubstituteInfo" resolve="DefaultSubstituteInfo" />
     </node>
   </node>
   <node concept="312cEu" id="2UXArULvaez">

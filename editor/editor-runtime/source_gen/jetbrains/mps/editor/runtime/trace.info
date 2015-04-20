@@ -12,6 +12,21 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/17416962143525199">
+    <file name="tmp.java">
+      <node id="17416962150343086" at="7,20,8,0" concept="9" />
+      <node id="17416962143623138" at="8,0,9,18" concept="2" />
+      <node id="17416962143618998" at="11,0,13,0" concept="5" trace="m#(Z)V" />
+      <node id="17416962143619045" at="7,0,11,0" concept="5" trace="mm#()V" />
+      <scope id="17416962143619002" at="11,28,11,28" />
+      <scope id="17416962143619049" at="7,20,9,18" />
+      <scope id="17416962143618998" at="11,0,13,0">
+        <var name="b" id="17416962143619021" />
+      </scope>
+      <scope id="17416962143619045" at="7,0,11,0" />
+      <unit id="17416962143525199" at="6,0,14,0" name="jetbrains.mps.editor.runtime.tmp" />
+    </file>
+  </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/4952318787899710481">
     <file name="AbstractLeftEditorHighlighterMessage.java">
       <node id="4952318787899710482" at="16,0,17,0" concept="3" trace="myTooltip" />
