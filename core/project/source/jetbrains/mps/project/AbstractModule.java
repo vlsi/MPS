@@ -946,6 +946,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void validateLanguageVersions() {
+    assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
@@ -963,10 +964,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         }
       }
     }
-    if (oldLanguageVersions.size() != newLanguageVersions.size()) {
-      oldLanguageVersions.clear();
-      oldLanguageVersions.putAll(newLanguageVersions);
-    }
+    oldLanguageVersions.clear();
+    oldLanguageVersions.putAll(newLanguageVersions);
   }
 
   @Override
