@@ -4,7 +4,6 @@ package jetbrains.mps.ide.platform.dependencyViewer;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -22,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -41,7 +41,7 @@ public class DependenciesPanel extends JPanel {
   private jetbrains.mps.project.Project myMPSProject;
   private DependencyViewerScope myScope;
   private DependencyViewerScope myInitialScope;
-  private List<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
+  private Iterable<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
   private boolean myIsMeta;
@@ -90,11 +90,15 @@ public class DependenciesPanel extends JPanel {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+            mySourceNodes = myReferencesFinder.getNodes(sourceScope);
             try {
-              monitor.start(null, 100);
-              List<SNode> nodes = myReferencesFinder.getNodes(sourceScope, monitor.subTask(20));
-              mySourceNodes = nodes;
-              results.value = (myIsMeta ? myReferencesFinder.getUsedLanguagesSearchResults(nodes, sourceScope, monitor.subTask(80)) : myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(80)));
+              if (myIsMeta) {
+                monitor.start("computing used languages", Sequence.fromIterable(mySourceNodes).count());
+                results.value = myReferencesFinder.getUsedConcepts(mySourceNodes, sourceScope, monitor);
+              } else {
+                monitor.start("computing references' targets", Sequence.fromIterable(mySourceNodes).count());
+                results.value = myReferencesFinder.findRefsFromScopeToOuter(mySourceNodes, sourceScope, monitor);
+              }
             } finally {
               monitor.done();
             }
@@ -117,11 +121,25 @@ public class DependenciesPanel extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
-        ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        SearchResults result = (myIsMeta ? myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor) : myReferencesFinder.getUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor));
-        results[0] = result;
-        myReferencesView.setContents(result);
-
+        final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+        final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            try {
+              if (myIsMeta) {
+                monitor.start("filtering nodes", Sequence.fromIterable(mySourceNodes).count());
+                result.value = myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor);
+              } else {
+                monitor.start("filtering references", Sequence.fromIterable(mySourceNodes).count());
+                result.value = myReferencesFinder.getRefsBetweenScopes(mySourceNodes, myScope, targetScope, monitor);
+              }
+            } finally {
+              monitor.done();
+            }
+          }
+        });
+        results[0] = result.value;
+        myReferencesView.setContents(result.value);
       }
     });
     return results[0];
