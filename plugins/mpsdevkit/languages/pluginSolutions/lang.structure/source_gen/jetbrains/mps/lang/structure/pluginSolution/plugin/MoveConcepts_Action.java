@@ -16,7 +16,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import com.intellij.openapi.ui.Messages;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -69,20 +82,77 @@ public class MoveConcepts_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      JOptionPane.showMessageDialog(null, "Not supported yet");
+      if (!(MoveConcepts_Action.this.init(_params))) {
+        return;
+      }
+      final SModelReference targetModelRef;
+      List<SModelReference> myModels;
+      myModels = ListSequence.fromList(((List<SModel>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModel, SModelReference>() {
+        public SModelReference select(SModel it) {
+          return it.getReference();
+        }
+      }).where(new IWhereFilter<SModelReference>() {
+        public boolean accept(SModelReference it) {
+          return Language.getModelAspect(SModelRepository.getInstance().getModelDescriptor(it)) == LanguageAspect.STRUCTURE;
+        }
+      }).toListSequence();
+      targetModelRef = SModelReferenceDialog.getSelectedModel(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), myModels);
+      if (targetModelRef == null) {
+        return;
+      }
+
+      final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+      repository.getModelAccess().executeCommand(new Runnable() {
+        public void run() {
+          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
+            if (!(SNodeUtil.isAccessible(node, repository))) {
+              return;
+            }
+          }
+          SModel targetModel = targetModelRef.resolve(repository);
+          if (targetModel == null) {
+            return;
+          }
+
+          MoveConceptUtil.moveConcepts(((List<SNode>) MapSequence.fromMap(_params).get("target")), targetModel);
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveConcepts", t);
       }
     }
+  }
+  private boolean init(final Map<String, Object> _params) {
+    final Wrappers._boolean fromSameLangauge = new Wrappers._boolean(false);
+    final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        final SModel model = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
+        fromSameLangauge.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).all(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return SNodeOperations.getModel(node) == model;
+          }
+        });
+        hasGenerator.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)).isNotEmpty();
+          }
+        });
+      }
+    });
+    if (!(fromSameLangauge.value)) {
+      Messages.showErrorDialog("All concept should be from the same language.", "Move concepts");
+      return false;
+    }
+    if (hasGenerator.value) {
+      Messages.showWarningDialog("Generator fragments will not be moved.", "Move concepts");
+    }
+    return true;
   }
   protected static Logger LOG = LogManager.getLogger(MoveConcepts_Action.class);
 }
