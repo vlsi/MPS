@@ -3068,7 +3068,12 @@
                     <node concept="3clFbH" id="71egOude_LQ" role="3cqZAp" />
                     <node concept="3SKdUt" id="5OeL7ncbMLd" role="3cqZAp">
                       <node concept="3SKdUq" id="5OeL7ncbMOc" role="3SKWNk">
-                        <property role="3SKdUp" value="FIXME rebuild is actually part of MakeSession, not of this RMFC class" />
+                        <property role="3SKdUp" value="FIXME rebuild is actually part of MakeSession, not of this RMFC class. For unknown reason, however, idea plugin" />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="5ImDKwiMSJ2" role="3cqZAp">
+                      <node concept="3SKdUq" id="5ImDKwiMTdg" role="3SKWNk">
+                        <property role="3SKdUp" value="uses distinct values for session's and generation's clean flag" />
                       </node>
                     </node>
                     <node concept="3clFbF" id="5OeL7ncaXsY" role="3cqZAp">
@@ -3100,6 +3105,25 @@
                         <node concept="liA8E" id="5OeL7ncbFRU" role="2OqNvi">
                           <ref role="37wK5l" to="f0ym:7UozGIENpIK" resolve="populate" />
                           <node concept="37vLTw" id="5OeL7ncbGvw" role="37wK5m">
+                            <ref role="3cqZAo" node="71egOude_LB" resolve="pp" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbH" id="5ImDKwiMNZ5" role="3cqZAp" />
+                    <node concept="3clFbF" id="5ImDKwiMOW3" role="3cqZAp">
+                      <node concept="2OqwBi" id="5ImDKwiMQum" role="3clFbG">
+                        <node concept="2ShNRf" id="5ImDKwiMOVZ" role="2Oq$k0">
+                          <node concept="1pGfFk" id="5ImDKwiMQjA" role="2ShVmc">
+                            <ref role="37wK5l" to="f0ym:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                            <node concept="37vLTw" id="5ImDKwiMQsB" role="37wK5m">
+                              <ref role="3cqZAo" node="5OeL7ncbypi" resolve="makeSession" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="5ImDKwiMQYL" role="2OqNvi">
+                          <ref role="37wK5l" to="f0ym:7UozGIEP8Yt" resolve="populate" />
+                          <node concept="37vLTw" id="5ImDKwiMR2R" role="37wK5m">
                             <ref role="3cqZAo" node="71egOude_LB" resolve="pp" />
                           </node>
                         </node>
