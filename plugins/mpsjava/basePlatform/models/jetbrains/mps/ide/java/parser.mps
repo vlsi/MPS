@@ -425,6 +425,12 @@
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+      </concept>
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1482,6 +1488,49 @@
                             <node concept="2GrUjf" id="2gGuqajx0NE" role="37wK5m">
                               <ref role="2Gs0qQ" node="31WmxQNAImS" resolve="innerTyp" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="29CAZ8$roaN" role="3cqZAp">
+                      <node concept="3clFbS" id="29CAZ8$roaP" role="3clFbx">
+                        <node concept="3SKdUt" id="29CAZ8$rq7T" role="3cqZAp">
+                          <node concept="3SKdUq" id="29CAZ8$rq86" role="3SKWNk">
+                            <property role="3SKdUp" value="container type is interface: it means member type must public static" />
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="29CAZ8$r_bN" role="3cqZAp">
+                          <node concept="2OqwBi" id="29CAZ8$rAH6" role="3clFbG">
+                            <node concept="2OqwBi" id="29CAZ8$r_k4" role="2Oq$k0">
+                              <node concept="37vLTw" id="29CAZ8$r_bL" role="2Oq$k0">
+                                <ref role="3cqZAo" node="31WmxQNAIna" resolve="nested" />
+                              </node>
+                              <node concept="3TrEf2" id="29CAZ8$rAf1" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                              </node>
+                            </node>
+                            <node concept="2oxUTD" id="29CAZ8$rAY0" role="2OqNvi">
+                              <node concept="2pJPEk" id="29CAZ8$rB7U" role="2oxUTC">
+                                <node concept="2pJPED" id="29CAZ8$rB8T" role="2pJPEn">
+                                  <ref role="2pJxaS" to="tpee:gFTm1ZL" resolve="PublicVisibility" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="3I3K9jthMir" role="3cqZAp">
+                          <node concept="3SKdUq" id="3I3K9jthMiM" role="3SKWNk">
+                            <property role="3SKdUp" value="no need to explicitly set static, as isStatic() handles this for interfaces" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="29CAZ8$rp4g" role="3clFbw">
+                        <node concept="37vLTw" id="29CAZ8$roo7" role="2Oq$k0">
+                          <ref role="3cqZAo" node="31WmxQNAIka" resolve="cls" />
+                        </node>
+                        <node concept="1mIQ4w" id="29CAZ8$rpYn" role="2OqNvi">
+                          <node concept="chp4Y" id="29CAZ8$rq1o" role="cj9EA">
+                            <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
                           </node>
                         </node>
                       </node>
