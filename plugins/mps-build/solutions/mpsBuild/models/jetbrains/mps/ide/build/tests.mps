@@ -25,6 +25,9 @@
     </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
+      <concept id="9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" flags="ng" index="28jJK3">
+        <child id="9126048691955220762" name="path" index="28jJRO" />
+      </concept>
       <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
         <child id="2755237150521975437" name="value" index="aVJcq" />
       </concept>
@@ -2756,6 +2759,30 @@
           <property role="3LESm3" value="b181e1a0-ffd1-4960-bfe6-05d77538e481" />
           <property role="2GAjPV" value="false" />
         </node>
+        <node concept="1SiIV0" id="6BljlJlAQLu" role="3bR37C">
+          <node concept="1BurEX" id="6BljlJlAQLv" role="1SiIV1">
+            <node concept="55IIr" id="6BljlJlAQLn" role="1BurEY">
+              <node concept="2Ry0Ak" id="6BljlJlAQLo" role="iGT6I">
+                <property role="2Ry0Am" value="testbench" />
+                <node concept="2Ry0Ak" id="6BljlJlAQLp" role="2Ry0An">
+                  <property role="2Ry0Am" value="modules" />
+                  <node concept="2Ry0Ak" id="6BljlJlAQLq" role="2Ry0An">
+                    <property role="2Ry0Am" value="testPackaged" />
+                    <node concept="2Ry0Ak" id="6BljlJlAQLr" role="2Ry0An">
+                      <property role="2Ry0Am" value="testPackagedLanguage" />
+                      <node concept="2Ry0Ak" id="6BljlJlAQLs" role="2Ry0An">
+                        <property role="2Ry0Am" value="lib" />
+                        <node concept="2Ry0Ak" id="6BljlJlAQLt" role="2Ry0An">
+                          <property role="2Ry0Am" value="dummy.jar" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5bAGsVFhMB9" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -2844,6 +2871,51 @@
       </node>
       <node concept="L2wRC" id="5bAGsVFhMD3" role="39821P">
         <ref role="L2wRA" node="5bAGsVFhMB1" resolve="testPackagedLanguage" />
+        <node concept="3yLZsm" id="6BljlJlAQMg" role="3yL2VB">
+          <property role="3yLZsk" value="." />
+          <node concept="55IIr" id="6BljlJlAQMh" role="3yLZsn">
+            <node concept="2Ry0Ak" id="6BljlJlAQML" role="iGT6I">
+              <property role="2Ry0Am" value="testbench" />
+              <node concept="2Ry0Ak" id="6BljlJlAQMQ" role="2Ry0An">
+                <property role="2Ry0Am" value="modules" />
+                <node concept="2Ry0Ak" id="6BljlJlAQMX" role="2Ry0An">
+                  <property role="2Ry0Am" value="testPackaged" />
+                  <node concept="2Ry0Ak" id="6BljlJlAQN2" role="2Ry0An">
+                    <property role="2Ry0Am" value="testPackagedLanguage" />
+                    <node concept="2Ry0Ak" id="6BljlJlAQN7" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="6BljlJlAQNc" role="2Ry0An">
+                        <property role="2Ry0Am" value="dummy.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="28jJK3" id="6BljlJlAQNO" role="39821P">
+        <node concept="55IIr" id="6BljlJlAQNQ" role="28jJRO">
+          <node concept="2Ry0Ak" id="6BljlJlAQOx" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="6BljlJlAQOA" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="6BljlJlAQOF" role="2Ry0An">
+                <property role="2Ry0Am" value="testPackaged" />
+                <node concept="2Ry0Ak" id="6BljlJlAQOK" role="2Ry0An">
+                  <property role="2Ry0Am" value="testPackagedLanguage" />
+                  <node concept="2Ry0Ak" id="6BljlJlAQOP" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="6BljlJlAQOU" role="2Ry0An">
+                      <property role="2Ry0Am" value="dummy.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="10PD9b" id="5bAGsVFhMvp" role="10PD9s" />
