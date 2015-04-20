@@ -12,28 +12,30 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 10:
+      case 11:
         return new SubstituteNodeBuilderVariableReference_Constraints();
-      case 7:
-        return new SideTransformVariableReference_Constraints();
-      case 2:
-        return new NodeFactory_Constraints();
-      case 1:
-        return new NodeFactories_Constraints();
-      case 3:
-        return new NodeSubstituteActions_Constraints();
-      case 4:
-        return new PasteWrappers_Constraints();
-      case 5:
-        return new SideTransformHintSubstituteActions_Constraints();
       case 8:
-        return new SmartActionParameterReference_Constraints();
+        return new SideTransformVariableReference_Constraints();
+      case 3:
+        return new NodeFactory_Constraints();
+      case 2:
+        return new NodeFactories_Constraints();
+      case 4:
+        return new NodeSubstituteActions_Constraints();
+      case 5:
+        return new PasteWrappers_Constraints();
       case 6:
-        return new SideTransformMenuPart_Constraints();
+        return new SideTransformHintSubstituteActions_Constraints();
       case 9:
+        return new SmartActionParameterReference_Constraints();
+      case 7:
+        return new SideTransformMenuPart_Constraints();
+      case 10:
         return new SubstituteMenuPart_Constraints();
-      case 0:
+      case 1:
         return new CopyPasteHandlers_Constraints();
+      case 0:
+        return new ConceptRightTransformPart_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -73,7 +75,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x528ba37dd3383e1eL) {
       return new CopyPasteHandlers_Constraints();
     }
+    if (id == 0x1136583873dL) {
+      return new ConceptRightTransformPart_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"};
 }
