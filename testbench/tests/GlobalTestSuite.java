@@ -33,7 +33,6 @@ import org.junit.runners.Suite;
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,
     jetbrains.mps.classloading.ModulesReloadTestStress.class,
-    jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
