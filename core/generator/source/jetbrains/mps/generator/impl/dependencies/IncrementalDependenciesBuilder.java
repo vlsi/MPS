@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -265,8 +265,8 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromIncremental(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
+  public GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy) {
+    return GenerationDependencies.fromIncremental(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
   }
 
   /* working with cache */

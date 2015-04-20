@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.textGen.TextGen;
 import org.jdom.Element;
@@ -169,12 +168,10 @@ public class GenerationDependencies {
       }
       root.addContent(e);
     }
-    if (myRootDependencies != null) {
-      for (GenerationRootDependencies data : myRootDependencies) {
-        Element e = new Element(data.getRootId() != null ? NODE_ROOT : NODE_COMMON);
-        data.saveTo(e);
-        root.addContent(e);
-      }
+    for (GenerationRootDependencies data : myRootDependencies) {
+      Element e = new Element(data.getRootId() != null ? NODE_ROOT : NODE_COMMON);
+      data.saveTo(e);
+      root.addContent(e);
     }
     return root;
   }
@@ -211,7 +208,7 @@ public class GenerationDependencies {
   }
 
   public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash,
-      String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
+      String parametersHash, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
       Map<String, String> dependenciesTraces) {
     Map<String, List<String>> generatedFiles = getGeneratedFiles(currentToOriginalMap);
 
@@ -238,7 +235,7 @@ public class GenerationDependencies {
       for (String modelReference : dep.getExternal()) {
         if (!externalHashes.containsKey(modelReference)) {
           SModel sm = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
-          Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, operationContext);
+          Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, null);
           String value = hashes != null ? hashes.get(GeneratableSModel.FILE) : null;
           externalHashes.put(modelReference, value);
         }

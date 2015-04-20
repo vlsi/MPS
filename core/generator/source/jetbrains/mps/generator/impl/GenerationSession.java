@@ -45,7 +45,6 @@ import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -151,7 +150,7 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -239,7 +238,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
         success = generationStatus.isOk();
