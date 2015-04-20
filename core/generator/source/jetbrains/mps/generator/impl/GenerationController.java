@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -51,7 +49,6 @@ public class GenerationController implements ITaskPoolProvider {
 
   private List<? extends SModel> myInputModels;
   private final GenControllerContext myContext;
-  private final IOperationContext myOperationContext;
   private final IGenerationHandler myGenerationHandler;
   private GeneratorLoggerAdapter myLogger;
   private GenerationOptions myOptions;
@@ -60,10 +57,9 @@ public class GenerationController implements ITaskPoolProvider {
   private final List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
   public GenerationController(List<? extends SModel> inputModels, @NotNull GenControllerContext context,
-                IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
+                IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger) {
     myInputModels = inputModels;
     myContext = context;
-    myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
     myLogger = generatorLogger;
     myOptions = context.getOptions();
@@ -118,7 +114,7 @@ public class GenerationController implements ITaskPoolProvider {
           myLogger.info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
         }
         // compile
-        generationOK = myGenerationHandler.compile(myOperationContext, myModuleSequence, true, monitor.subTask(compileWork));
+        generationOK = myGenerationHandler.compile(null, myModuleSequence, true, monitor.subTask(compileWork));
         monitor.advance(0);
       } else {
         myLogger.error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
@@ -144,13 +140,11 @@ public class GenerationController implements ITaskPoolProvider {
     boolean currentGenerationOK = true;
     monitor.start(module.getModuleName(), inputModels.size());
 
-    // TODO fix context
-    ModuleContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
-    myGenerationHandler.startModule(module, inputModels, myOperationContext);
+    myGenerationHandler.startModule(module, inputModels, null);
 
     //++ generation
     for (SModel inputModel : topoOrder(inputModels)) {
-      currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1, SubProgressKind.REPLACING));
+      currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, monitor.subTask(1, SubProgressKind.REPLACING));
       monitor.advance(0);
     }
 
@@ -207,7 +201,7 @@ public class GenerationController implements ITaskPoolProvider {
     return rv;
   }
 
-  private boolean generateModel(final SModel inputModel, final SModule module, final IOperationContext invocationContext, final ProgressMonitor monitor) throws GenerationCanceledException {
+  private boolean generateModel(final SModel inputModel, final SModule module, final ProgressMonitor monitor) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
     IPerformanceTracer ttrace = myOptions.getTracingMode() != GenerationOptions.TRACE_OFF
@@ -248,7 +242,7 @@ public class GenerationController implements ITaskPoolProvider {
         transientModule.publishTrace(inputModel.getReference(), genTrace);
       }
 
-      currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, monitor.subTask(1));
+      currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, null, monitor.subTask(1));
       monitor.advance(0);
     } finally {
       generationSession.getLoggingHandler().unregister();
