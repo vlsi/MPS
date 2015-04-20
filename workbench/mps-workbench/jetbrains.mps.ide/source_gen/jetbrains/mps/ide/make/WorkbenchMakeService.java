@@ -55,6 +55,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.make.script.IOption;
@@ -348,11 +350,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
       // end of hack 
 
-      Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-      if (tparams != null) {
-        tparams._0(GenerationSettings.getInstance().isFailOnMissingTextGen());
-        tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
-      }
+      IModifiableGenerationSettings genSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+      new TextGenFacetInitializer().failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
 
       new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 

@@ -66,6 +66,7 @@
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="lv7v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text(MPS.Core/jetbrains.mps.text@java_stub)" />
+    <import index="f0ym" ref="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -6681,101 +6682,65 @@
             </node>
           </node>
           <node concept="3clFbH" id="2zR2ackh1h2" role="3cqZAp" />
-          <node concept="3cpWs8" id="9D0Ba05v5_" role="3cqZAp">
-            <node concept="3cpWsn" id="9D0Ba05v5A" role="3cpWs9">
-              <property role="TrG5h" value="tparams" />
-              <node concept="1LlUBW" id="9D0Ba05v5B" role="1tU5fm">
-                <node concept="3uibUv" id="9D0Ba05v5C" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <node concept="3cpWs8" id="72ouys9IxgZ" role="3cqZAp">
+            <node concept="3cpWsn" id="72ouys9Ixh0" role="3cpWs9">
+              <property role="TrG5h" value="genSettings" />
+              <node concept="3uibUv" id="72ouys9IyVb" role="1tU5fm">
+                <ref role="3uigEE" to="y5px:~IModifiableGenerationSettings" resolve="IModifiableGenerationSettings" />
+              </node>
+              <node concept="2OqwBi" id="72ouys9IxMI" role="33vP2m">
+                <node concept="2YIFZM" id="72ouys9IxM2" role="2Oq$k0">
+                  <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
+                  <ref role="1Pybhc" to="y5px:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
                 </node>
-                <node concept="3uibUv" id="9D0Ba05v5D" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                <node concept="liA8E" id="72ouys9IxRe" role="2OqNvi">
+                  <ref role="37wK5l" to="y5px:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
                 </node>
               </node>
-              <node concept="10QFUN" id="9D0Ba05v5E" role="33vP2m">
-                <node concept="1LlUBW" id="9D0Ba05v5F" role="10QFUM">
-                  <node concept="3uibUv" id="9D0Ba05v5G" role="1Lm7xW">
-                    <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="72ouys9I5$T" role="3cqZAp">
+            <node concept="2OqwBi" id="72ouys9IvR9" role="3clFbG">
+              <node concept="2OqwBi" id="72ouys9Iv$x" role="2Oq$k0">
+                <node concept="2OqwBi" id="72ouys9Ivix" role="2Oq$k0">
+                  <node concept="2ShNRf" id="72ouys9I5$P" role="2Oq$k0">
+                    <node concept="1pGfFk" id="72ouys9Ivi3" role="2ShVmc">
+                      <ref role="37wK5l" to="f0ym:7UozGIEOUu1" resolve="TextGenFacetInitializer" />
+                    </node>
                   </node>
-                  <node concept="3uibUv" id="9D0Ba05v5H" role="1Lm7xW">
-                    <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="9D0Ba05v5I" role="10QFUP">
-                  <node concept="37vLTw" id="2BHiRxgm7rv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="9D0Ba05v4d" resolve="ppool" />
-                  </node>
-                  <node concept="liA8E" id="9D0Ba05v5K" role="2OqNvi">
-                    <ref role="37wK5l" to="i9so:5XvfMqim0Fy" resolve="properties" />
-                    <node concept="29r_a" id="9D0Ba05v5L" role="37wK5m">
-                      <ref role="29tk1" to="tpcq:5L5h3brvDHA" resolve="textGen" />
-                      <node concept="2n6ZRZ" id="9D0Ba05v5M" role="29tkj">
-                        <node concept="2e$Q_j" id="9D0Ba05v5N" role="2n6ZRX">
-                          <ref role="1Mm5Yu" to="tpcq:5L5h3brvDH_" resolve="TextGen" />
-                        </node>
+                  <node concept="liA8E" id="72ouys9IvzP" role="2OqNvi">
+                    <ref role="37wK5l" to="f0ym:7UozGIEPmYI" resolve="failNoTextGen" />
+                    <node concept="2OqwBi" id="72ouys9Iwsl" role="37wK5m">
+                      <node concept="37vLTw" id="72ouys9Iy6T" role="2Oq$k0">
+                        <ref role="3cqZAo" node="72ouys9Ixh0" resolve="genSettings" />
+                      </node>
+                      <node concept="liA8E" id="72ouys9Iwsn" role="2OqNvi">
+                        <ref role="37wK5l" to="y5px:~IGenerationSettings.isFailOnMissingTextGen():boolean" resolve="isFailOnMissingTextGen" />
                       </node>
                     </node>
-                    <node concept="3VsKOn" id="9D0Ba05v5O" role="37wK5m">
-                      <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="72ouys9IvQf" role="2OqNvi">
+                  <ref role="37wK5l" to="f0ym:7UozGIEPrKT" resolve="generateDebugInfo" />
+                  <node concept="2OqwBi" id="72ouys9Iyuo" role="37wK5m">
+                    <node concept="37vLTw" id="72ouys9IylZ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="72ouys9Ixh0" resolve="genSettings" />
+                    </node>
+                    <node concept="liA8E" id="72ouys9Iz0r" role="2OqNvi">
+                      <ref role="37wK5l" to="y5px:~IGenerationSettings.isGenerateDebugInfo():boolean" resolve="isGenerateDebugInfo" />
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="72ouys9Iwcw" role="2OqNvi">
+                <ref role="37wK5l" to="f0ym:7UozGIEP8Yt" resolve="populate" />
+                <node concept="37vLTw" id="72ouys9Iwre" role="37wK5m">
+                  <ref role="3cqZAo" node="9D0Ba05v4d" resolve="ppool" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbJ" id="9D0Ba05v5P" role="3cqZAp">
-            <node concept="3clFbS" id="9D0Ba05v5Q" role="3clFbx">
-              <node concept="3clFbF" id="9D0Ba05v5R" role="3cqZAp">
-                <node concept="37vLTI" id="9D0Ba05v5S" role="3clFbG">
-                  <node concept="2OqwBi" id="9D0Ba05v5T" role="37vLTx">
-                    <node concept="2YIFZM" id="9D0Ba05v5U" role="2Oq$k0">
-                      <ref role="1Pybhc" to="xjo8:~GenerationSettings" resolve="GenerationSettings" />
-                      <ref role="37wK5l" to="xjo8:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
-                    </node>
-                    <node concept="liA8E" id="9D0Ba05v5V" role="2OqNvi">
-                      <ref role="37wK5l" to="y5px:~IGenerationSettings.isFailOnMissingTextGen():boolean" resolve="isFailOnMissingTextGen" />
-                    </node>
-                  </node>
-                  <node concept="1LFfDK" id="9D0Ba05v5W" role="37vLTJ">
-                    <node concept="3cmrfG" id="9D0Ba05v5X" role="1LF_Uc">
-                      <property role="3cmrfH" value="0" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagT_MI" role="1LFl5Q">
-                      <ref role="3cqZAo" node="9D0Ba05v5A" resolve="tparams" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="9D0Ba05v5Z" role="3cqZAp">
-                <node concept="37vLTI" id="9D0Ba05v60" role="3clFbG">
-                  <node concept="2OqwBi" id="9D0Ba05v61" role="37vLTx">
-                    <node concept="2YIFZM" id="9D0Ba05v62" role="2Oq$k0">
-                      <ref role="1Pybhc" to="xjo8:~GenerationSettings" resolve="GenerationSettings" />
-                      <ref role="37wK5l" to="xjo8:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
-                    </node>
-                    <node concept="liA8E" id="9D0Ba05v63" role="2OqNvi">
-                      <ref role="37wK5l" to="y5px:~IModifiableGenerationSettings.isGenerateDebugInfo():boolean" resolve="isGenerateDebugInfo" />
-                    </node>
-                  </node>
-                  <node concept="1LFfDK" id="9D0Ba05v64" role="37vLTJ">
-                    <node concept="37vLTw" id="3GM_nagTvIC" role="1LFl5Q">
-                      <ref role="3cqZAo" node="9D0Ba05v5A" resolve="tparams" />
-                    </node>
-                    <node concept="3cmrfG" id="9D0Ba05v66" role="1LF_Uc">
-                      <property role="3cmrfH" value="1" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="9D0Ba05v67" role="3clFbw">
-              <node concept="10Nm6u" id="9D0Ba05v68" role="3uHU7w" />
-              <node concept="37vLTw" id="3GM_nagTsHA" role="3uHU7B">
-                <ref role="3cqZAo" node="9D0Ba05v5A" resolve="tparams" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="bvkaYAGHC7" role="3cqZAp" />
+          <node concept="3clFbH" id="72ouys9I5cz" role="3cqZAp" />
           <node concept="3clFbF" id="bvkaYAI0Xd" role="3cqZAp">
             <node concept="2OqwBi" id="bvkaYAHYsw" role="3clFbG">
               <node concept="2OqwBi" id="bvkaYAHxFo" role="2Oq$k0">
