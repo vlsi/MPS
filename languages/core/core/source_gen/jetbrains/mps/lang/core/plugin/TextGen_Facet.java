@@ -469,7 +469,7 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              final jetbrains.mps.text.TextGeneratorEngine tgEngine = new jetbrains.mps.text.TextGeneratorEngine();
+              final jetbrains.mps.text.TextGeneratorEngine tgEngine = new jetbrains.mps.text.TextGeneratorEngine(TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler());
               try {
                 int modelsCount = Sequence.fromIterable(input).count();
                 final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
@@ -483,8 +483,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     // It looks like 'best effort' (generate all possible) is reasonable alternative. 
                     continue;
                   }
-                  // FIXME shall take project from MakeSession and use it for readAction 
-                  ModelAccess.instance().runReadAction(new Runnable() {
+                  TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       tgEngine.schedule(model, resultQueue);
                     }

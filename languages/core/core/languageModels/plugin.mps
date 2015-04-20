@@ -2159,7 +2159,20 @@
                 </node>
                 <node concept="2ShNRf" id="BfgvErhHBv" role="33vP2m">
                   <node concept="1pGfFk" id="BfgvErhIVy" role="2ShVmc">
-                    <ref role="37wK5l" to="lv7v:~TextGeneratorEngine.&lt;init&gt;()" resolve="TextGeneratorEngine" />
+                    <ref role="37wK5l" to="lv7v:~TextGeneratorEngine.&lt;init&gt;(jetbrains.mps.messages.IMessageHandler)" resolve="TextGeneratorEngine" />
+                    <node concept="2OqwBi" id="13CsAhVSOGu" role="37wK5m">
+                      <node concept="2bn25q" id="13CsAhVSOrk" role="2Oq$k0">
+                        <node concept="2bn25r" id="13CsAhVSOri" role="2Oq$k0">
+                          <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
+                        </node>
+                        <node concept="2sxana" id="13CsAhVSOrj" role="2OqNvi">
+                          <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="13CsAhVSOUH" role="2OqNvi">
+                        <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2285,19 +2298,10 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3SKdUt" id="BfgvErhJQi" role="3cqZAp">
-                      <node concept="3SKdUq" id="BfgvErhJQp" role="3SKWNk">
-                        <property role="3SKdUp" value="FIXME shall take project from MakeSession and use it for readAction" />
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="BfgvErhZYY" role="3cqZAp">
                       <node concept="2OqwBi" id="BfgvErhZYZ" role="3clFbG">
-                        <node concept="2YIFZM" id="BfgvErhZZ0" role="2Oq$k0">
-                          <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                          <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                        </node>
                         <node concept="liA8E" id="BfgvErhZZ1" role="2OqNvi">
-                          <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                          <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                           <node concept="1bVj0M" id="BfgvErhZZ2" role="37wK5m">
                             <node concept="3clFbS" id="BfgvErhZZ3" role="1bW5cS">
                               <node concept="3clFbF" id="BfgvErhZZ4" role="3cqZAp">
@@ -2317,6 +2321,24 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="13CsAhVSQHF" role="2Oq$k0">
+                          <node concept="2OqwBi" id="13CsAhVSPAL" role="2Oq$k0">
+                            <node concept="2bn25q" id="13CsAhVSPm8" role="2Oq$k0">
+                              <node concept="2bn25r" id="13CsAhVSPm9" role="2Oq$k0">
+                                <ref role="2bn25l" node="72ouys9JzGh" resolve="configure" />
+                              </node>
+                              <node concept="2sxana" id="13CsAhVSPma" role="2OqNvi">
+                                <ref role="2sxfKC" node="72ouys9JDlL" resolve="makeSession" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="13CsAhVSPMc" role="2OqNvi">
+                              <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="13CsAhVSR18" role="2OqNvi">
+                            <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                           </node>
                         </node>
                       </node>

@@ -46,10 +46,6 @@ public final class TextGeneratorEngine {
   private final ExecutorService myExecutor;
   private final IMessageHandler myMessages;
 
-  public TextGeneratorEngine() {
-    this(IMessageHandler.NULL_HANDLER);
-  }
-
   public TextGeneratorEngine(@NotNull IMessageHandler messageHandler) {
     myMessages = messageHandler;
     // availableProcessors()*2 ?
@@ -76,7 +72,7 @@ public final class TextGeneratorEngine {
       myExecutor.execute(new Runnable() {
         @Override
         public void run() {
-          // FIXME honest read action. Need project/repository to grap access from
+          // FIXME honest read action. Need project/repository to grab access from
           final boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
           try {
             // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
