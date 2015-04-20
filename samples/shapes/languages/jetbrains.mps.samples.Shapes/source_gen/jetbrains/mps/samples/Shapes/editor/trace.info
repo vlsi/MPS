@@ -570,7 +570,7 @@
       <node id="4001135958236470107" at="110,96,111,134" concept="2" />
       <node id="4001135958236470107" at="112,34,113,95" concept="2" />
       <node id="4001135958236470107" at="113,95,114,98" concept="2" />
-      <node id="4001135958236470107" at="116,131,117,139" concept="2" />
+      <node id="4001135958236470107" at="116,122,117,139" concept="2" />
       <node id="4001135958237243515" at="122,91,123,78" concept="6" />
       <node id="4001135958237243515" at="123,78,124,22" concept="7" />
       <node id="4001135958236470107" at="126,91,127,97" concept="6" />
@@ -611,7 +611,7 @@
       <scope id="4001135958236470107" at="78,85,79,84" />
       <scope id="4001135958236470107" at="79,84,80,84" />
       <scope id="4001135958236470107" at="91,99,92,50" />
-      <scope id="4001135958236470107" at="116,131,117,139" />
+      <scope id="4001135958236470107" at="116,122,117,139" />
       <scope id="4001135958236470107" at="128,50,129,85" />
       <scope id="4001135958236471303" at="137,121,138,44" />
       <scope id="4001135958236471271" at="69,35,71,109">
@@ -1338,7 +1338,7 @@
       <node id="5898776707557489248" at="91,96,92,134" concept="2" />
       <node id="5898776707557489248" at="93,34,94,95" concept="2" />
       <node id="5898776707557489248" at="94,95,95,98" concept="2" />
-      <node id="5898776707557489248" at="97,131,98,139" concept="2" />
+      <node id="5898776707557489248" at="97,122,98,139" concept="2" />
       <node id="5898776707557489248" at="27,0,30,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5898776707557489248" at="72,0,75,0" concept="1" trace="shapesListHandler_v161ay_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="5898776707557489248" at="96,9,99,9" concept="4" />
@@ -1358,7 +1358,7 @@
       <scope id="5898776707557489248" at="34,81,35,81" />
       <scope id="5898776707557489248" at="35,81,36,84" />
       <scope id="5898776707557489248" at="72,98,73,50" />
-      <scope id="5898776707557489248" at="97,131,98,139" />
+      <scope id="5898776707557489248" at="97,122,98,139" />
       <scope id="5898776707557489263" at="58,35,60,109">
         <var name="manager" id="5898776707557489263" />
       </scope>
