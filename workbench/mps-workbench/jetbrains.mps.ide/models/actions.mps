@@ -36666,11 +36666,6 @@
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
       <node concept="1oajcY" id="3EnpNH2zGiL" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="3EnpNH2zGiM" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="3EnpNH2zGiN" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="3EnpNH2zGiO" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -36790,12 +36785,6 @@
                     <ref role="2WH_rO" node="3EnpNH2zGiO" resolve="project" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3EnpNH2zGj_" role="37wK5m">
-                  <node concept="2WthIp" id="3EnpNH2zGjA" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="3EnpNH2zGjB" role="2OqNvi">
-                    <ref role="2WH_rO" node="3EnpNH2zGiM" resolve="context" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -36845,13 +36834,6 @@
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="3EnpNH2zGjT" role="1tU5fm">
           <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3EnpNH2zGjU" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="3EnpNH2zGjV" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
       <node concept="3clFbS" id="3EnpNH2zGjW" role="3clF47">

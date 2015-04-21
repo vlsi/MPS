@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.designer.LightToolWindowManager;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -27,22 +26,17 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -203,12 +197,17 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       myOpenConceptLabel.addHyperlinkListener(new HyperlinkListener() {
         @Override
         public void hyperlinkUpdate(HyperlinkEvent e) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          if (myNode == null) {
+            return;
+          }
+          final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+          mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              SNode concept = SNodeOperations.getConceptDeclaration(myNode);
-              ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-              NavigationSupport.getInstance().openNode(context, concept, true, false);
+              SNode concept = myNode.getConcept().getDeclarationNode();
+              if (concept != null) {
+                NavigationSupport.getInstance().openNode(mpsProject, concept, true, false);
+              }
             }
           });
         }

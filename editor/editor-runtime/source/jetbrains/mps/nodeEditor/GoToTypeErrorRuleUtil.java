@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -66,6 +65,6 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    NavigationSupport.getInstance().openNode(new ProjectOperationContext(project), rule, false, true);
+    NavigationSupport.getInstance().openNode(project, rule, false, true);
   }
 }
