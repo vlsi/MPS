@@ -15,36 +15,10 @@
  */
 package jetbrains.mps.smodel.structure;
 
-public interface Extension<T> {
+import jetbrains.mps.util.Function;
 
-  String getExtensionPointId();
-
-  T get();
-
-  void activate();
-
-  void deactivate();
-
-  abstract class Default<T> implements Extension<T> {
-
-    private final String myExtensionPointId;
-
-    public Default(String extensionPointId) {
-      myExtensionPointId = extensionPointId;
-    }
-
-    @Override
-    public String getExtensionPointId() {
-      return myExtensionPointId;
-    }
-
-    @Override
-    public void activate() {
-    }
-
-    @Override
-    public void deactivate() {
-    }
-  }
-
+public interface ExtensionFunction<T, R> extends Extension<Function<T, R>> {
+  boolean applicable(T argument);
+  boolean isOverriding(ExtensionFunction<T, R> compareTo);
+  R apply(T argument, Iterable<ExtensionFunction<T, R>> parents);
 }

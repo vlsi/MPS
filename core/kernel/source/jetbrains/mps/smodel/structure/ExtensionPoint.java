@@ -16,63 +16,55 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.language.ExtensionRegistry;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class ExtensionPoint<T> {
 
   private final String myId;
-  private Class<T> myType = null;
 
   @SuppressWarnings("unchecked")
   public static <T> ExtensionPoint<T> generify(ExtensionPoint raw) {
     return (ExtensionPoint<T>) raw;
   }
 
-  @Deprecated
-  public ExtensionPoint (String id) {
+  public ExtensionPoint(String id) {
     myId = id;
   }
 
-  public ExtensionPoint (String id, Class<T> type) {
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public ExtensionPoint(String id, Class<T> type) {
     myId = id;
-    myType = type;
   }
-  
-  public Class<T> getType () {
-    return myType;
-  }
-  
-  public Iterable<Extension<T>> getExtensions () {
+
+  public Iterable<? extends Extension<T>> getExtensions() {
     return ExtensionRegistry.getInstance().getExtensions(this);
   }
 
-  public Iterable<T> getObjects () {
+  public Iterable<T> getObjects() {
     return ExtensionRegistry.getInstance().getObjects(this);
   }
 
-  public String getNamespace () {
-    int lastDot = myId.lastIndexOf(".");
-    return lastDot >= 0 ? myId.substring(lastDot+1) : "";
-  }
-  
-  public String getId () {
+  public String getId() {
     return myId;
   }
 
   @Override
   public boolean equals(Object obj) {
     if (obj == null || obj.getClass() != ExtensionPoint.class) return false;
-    return eq(((ExtensionPoint)obj).myId, myId) && eq(((ExtensionPoint)obj).myType, myType);
+    return EqualUtil.equals(((ExtensionPoint) obj).myId, myId);
   }
 
   @Override
   public int hashCode() {
     int h = 37;
-    h += myId != null ? myId.hashCode()*17 : 53;
-    h += myType != null ? myType.hashCode()*23 : 67;
+    h += myId != null ? myId.hashCode() * 17 : 53;
     return h;
   }
-  
-  private boolean eq (Object a, Object b) {
-    return a == null ? b == null : a.equals(b);
+
+  @Override
+  public String toString() {
+    return getId();
   }
 }
