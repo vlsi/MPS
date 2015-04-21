@@ -29,7 +29,9 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
+import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.tool.builder.util.PathManager;
 import junit.framework.Assert;
 
 import java.util.Arrays;
@@ -39,7 +41,6 @@ import java.util.Arrays;
  */
 @SuppressWarnings({"HardCodedStringLiteral"})
 public class ProjectViewTests extends BaseProjectViewTestCase {
-
   public void testShowRoots() throws Exception {
     getProjectTreeStructure().setProviders(new MPSTreeStructureProvider());
     myPrintInfo = new Queryable.PrintInfo();
@@ -53,7 +54,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
 
   @Override
   protected String getTestDataPath() {
-    return System.getProperty("idea.plugins.path") + "/tests";
+    return PathManager.getPluginsPath() + "/tests";
   }
 
   @Override

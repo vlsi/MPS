@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -72,8 +72,7 @@ public class NodeCopier {
       ((jetbrains.mps.smodel.SNode) node).setId(id);
       SModelOperations.addRootNode(model, node);
     } else {
-      // hardcoded to get rid of dependency on core language 
-      SNode stubNode = new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
+      SNode stubNode = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
       SNodeOperations.replaceWithAnother(node, stubNode);
       ((jetbrains.mps.smodel.SNode) node).setId(id);
       SNodeOperations.replaceWithAnother(stubNode, node);

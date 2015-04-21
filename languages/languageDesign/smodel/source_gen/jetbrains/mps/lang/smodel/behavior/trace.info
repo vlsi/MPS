@@ -33,7 +33,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,288,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,292,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
@@ -139,6 +139,15 @@
     </file>
     <file name="IfInstanceOfVariable_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.IfInstanceOfVariable_BehaviorDescriptor" />
+    </file>
+    <file name="LanguageId_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.smodel.behavior.LanguageId_BehaviorDescriptor" />
+    </file>
+    <file name="LanguageIdentity_BehaviorDescriptor.java">
+      <unit at="8,0,12,0" name="jetbrains.mps.lang.smodel.behavior.LanguageIdentity_BehaviorDescriptor" />
+    </file>
+    <file name="LanguageRefExpression_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.LanguageRefExpression_BehaviorDescriptor" />
     </file>
     <file name="LanguageReferenceExpression_BehaviorDescriptor.java">
       <unit at="10,0,22,0" name="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_BehaviorDescriptor" />
@@ -2720,6 +2729,41 @@
       <unit id="3542758363529077379" at="7,0,11,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3542851458883438736">
+    <file name="LanguageIdentity_Behavior.java">
+      <node id="3542851458883438736" at="8,0,10,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3542851458883438738" at="8,43,8,43" />
+      <scope id="3542851458883438736" at="8,0,10,0">
+        <var name="thisNode" id="3542851458883438736" />
+      </scope>
+      <unit id="3542851458883438736" at="7,0,11,0" name="jetbrains.mps.lang.smodel.behavior.LanguageIdentity_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3542851458883439860">
+    <file name="LanguageId_Behavior.java">
+      <node id="3542851458883488426" at="15,83,16,577" concept="7" />
+      <node id="3542851458883480733" at="18,98,19,214" concept="2" />
+      <node id="3542851458883443026" at="19,214,20,196" concept="2" />
+      <node id="3542851458883443034" at="20,196,21,203" concept="2" />
+      <node id="3542851458883439860" at="13,0,15,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3542851458883439860" at="15,0,18,0" concept="8" trace="virtual_getLanguage_3542851458883438739#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SLanguage;" />
+      <node id="3542851458883439860" at="18,0,23,0" concept="8" trace="virtual_setLanguage_3542851458883438752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SLanguage;)V" />
+      <scope id="3542851458883439862" at="13,43,13,43" />
+      <scope id="3542851458883439867" at="15,83,16,577" />
+      <scope id="3542851458883439860" at="13,0,15,0">
+        <var name="thisNode" id="3542851458883439860" />
+      </scope>
+      <scope id="3542851458883439860" at="15,0,18,0">
+        <var name="thisNode" id="3542851458883439860" />
+      </scope>
+      <scope id="3542851458883439877" at="18,98,21,203" />
+      <scope id="3542851458883439860" at="18,0,23,0">
+        <var name="language" id="3542851458883439878" />
+        <var name="thisNode" id="3542851458883439860" />
+      </scope>
+      <unit id="3542851458883439860" at="12,0,24,0" name="jetbrains.mps.lang.smodel.behavior.LanguageId_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3575813534625144062">
     <file name="AbstractNodeRefExpression_Behavior.java">
       <node id="5207260697409323600" at="21,97,22,50" concept="6" />
@@ -2856,6 +2900,16 @@
         <var name="thisNode" id="4040588429969441025" />
       </scope>
       <unit id="4040588429969441025" at="16,0,26,0" name="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/4497478346159812266">
+    <file name="LanguageRefExpression_Behavior.java">
+      <node id="4497478346159812266" at="8,0,10,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4497478346159812268" at="8,43,8,43" />
+      <scope id="4497478346159812266" at="8,0,10,0">
+        <var name="thisNode" id="4497478346159812266" />
+      </scope>
+      <unit id="4497478346159812266" at="7,0,11,0" name="jetbrains.mps.lang.smodel.behavior.LanguageRefExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/559557797393017727">

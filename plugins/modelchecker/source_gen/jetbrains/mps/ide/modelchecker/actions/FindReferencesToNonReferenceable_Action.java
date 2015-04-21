@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +23,7 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.HashMap;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -72,6 +73,10 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
@@ -89,13 +94,13 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
       final Wrappers._int referenceable = new Wrappers._int();
       final Map<String, Integer> used = MapSequence.fromMap(new HashMap<String, Integer>());
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
         public void run() {
           ListSequence.fromList(modelDescriptors).visitAll(new IVisitor<SModel>() {
             public void visit(SModel it) {
               for (SNode n : it.getRootNodes()) {
                 for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
-                  SNode ccp = SNodeOperations.as(((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+                  SNode ccp = SNodeOperations.asConcept(SNodeOperations.getConceptDeclaration(i), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
                   if (ccp != null) {
                     total.value++;
                     if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null))) {

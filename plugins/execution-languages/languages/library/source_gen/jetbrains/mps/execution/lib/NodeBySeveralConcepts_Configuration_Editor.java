@@ -8,9 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.util.Factory;
 
 public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx<NodeBySeveralConcepts_Configuration> {
@@ -36,8 +33,8 @@ public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx
       }
     });
   }
-  private List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
-  public NodeBySeveralConcepts_Configuration_Editor(final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+  private List<NodesDescriptor> myTargets;
+  public NodeBySeveralConcepts_Configuration_Editor(final List<NodesDescriptor> targets) {
     super(new Factory<NodeBySeveralConcepts_Configuration>() {
       public NodeBySeveralConcepts_Configuration create() {
         return new NodeBySeveralConcepts_Configuration(targets);

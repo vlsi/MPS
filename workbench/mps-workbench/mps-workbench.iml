@@ -34,6 +34,8 @@
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="dataflow-rt" />
+    <orderEntry type="module" module-name="migrations-runtime" />
+    <orderEntry type="module" module-name="textgen" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Commons-httpclient" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
@@ -46,4 +48,3 @@
     <orderEntry type="module" module-name="make-facets" />
   </component>
 </module>
-

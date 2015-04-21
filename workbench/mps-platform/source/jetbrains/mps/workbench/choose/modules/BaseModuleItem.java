@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@ package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseModuleItem implements NavigationItem {
@@ -42,11 +40,6 @@ public abstract class BaseModuleItem implements NavigationItem {
   @Nullable
   public ItemPresentation getPresentation() {
     return new ModulePresentation(myModuleReference);
-  }
-
-  public FileStatus getFileStatus() {
-    //todo return correct value
-    return FileStatus.NOT_CHANGED;
   }
 
   @Override

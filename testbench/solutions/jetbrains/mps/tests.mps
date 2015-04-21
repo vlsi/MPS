@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -1597,14 +1597,11 @@
     <node concept="lpD6D" id="6G8AH$1K1dC" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6z32qfm5_oN" resolve="AddPropertyAttribute" />
     </node>
-    <node concept="lpD6D" id="2axhso1GnJl" role="lpD6w">
+    <node concept="lpD6D" id="pK5T2zG5wd" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8qTL" resolve="AddReference" />
     </node>
-    <node concept="lpD6D" id="6G8AH$1K1o3" role="lpD6w">
+    <node concept="lpD6D" id="pK5T2zG5Sc" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6z32qfm5KJo" resolve="AddReferenceAttribute" />
-    </node>
-    <node concept="lpD6D" id="2axhso1Go3h" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9YboFsG" resolve="AddStatements" />
     </node>
     <node concept="lpD6D" id="2axhso1Goby" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DeleteChild" />

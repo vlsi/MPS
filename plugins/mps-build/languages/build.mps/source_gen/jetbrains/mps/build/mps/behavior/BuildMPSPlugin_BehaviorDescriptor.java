@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class BuildMPSPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
   public BuildMPSPlugin_BehaviorDescriptor() {
@@ -18,10 +19,10 @@ public class BuildMPSPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescr
   public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return BuildMPSPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
   }
-  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
+  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SAbstractConcept kind) {
     return BuildMPSPlugin_Behavior.virtual_getLayoutScope_1224588814561807654(thisNode, kind);
   }
-  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
+  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SAbstractConcept kind) {
     return BuildMPSPlugin_Behavior.virtual_getProjectStructureScope_3734116213129936182(thisNode, kind);
   }
   @Override

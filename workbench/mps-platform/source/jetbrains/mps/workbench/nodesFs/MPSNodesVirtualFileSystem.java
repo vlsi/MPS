@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
@@ -256,7 +257,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
     @Override
     public void visitPropertyEvent(final SModelPropertyEvent event) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
+      if (!SNodeUtil.isAccessible(event.getNode(), MPSModuleRepository.getInstance())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
       if (!(event.getNode().getModel() != null && event.getNode().getParent() == null) || vf == null)

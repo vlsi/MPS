@@ -23,7 +23,6 @@
     <import index="tped" ref="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" />
     <import index="ff4b" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -99,7 +98,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -4183,32 +4182,6 @@
             <node concept="1mIQ4w" id="3Asza4l8T84" role="2OqNvi">
               <node concept="chp4Y" id="3Asza4l8T86" role="cj9EA">
                 <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="2PqlIr" id="4HJc9fnx6VK">
-    <property role="39L4OI" value="Potentially not migratable usages" />
-    <property role="TrG5h" value="Potentially not migratable usages" />
-    <ref role="3gKJdq" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-    <node concept="2PqlIu" id="4HJc9fnx6VW" role="3gKxsI">
-      <node concept="3clFbS" id="4HJc9fnx6VX" role="2VODD2">
-        <node concept="2Gpval" id="43YezHg16ge" role="3cqZAp">
-          <node concept="2YIFZM" id="43YezHg1cNU" role="2GsD0m">
-            <ref role="37wK5l" to="tped:43YezHfXgJH" resolve="findNonMigratableUsages" />
-            <ref role="1Pybhc" to="tped:43YezHfX6VU" resolve="NonMigratableUsagesFinder" />
-            <node concept="39LhUk" id="43YezHg1cQB" role="37wK5m" />
-          </node>
-          <node concept="2GrKxI" id="43YezHg16gg" role="2Gsz3X">
-            <property role="TrG5h" value="result" />
-          </node>
-          <node concept="3clFbS" id="43YezHg16gk" role="2LFqv$">
-            <node concept="1O1abz" id="43YezHg1foJ" role="3cqZAp">
-              <node concept="2GrUjf" id="43YezHg1fpp" role="1O1k6O">
-                <ref role="2Gs0qQ" node="43YezHg16gg" resolve="result" />
               </node>
             </node>
           </node>

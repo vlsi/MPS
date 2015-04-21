@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import jetbrains.mps.ide.ui.tree.MPSTree;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import java.util.Collection;
 import org.jetbrains.annotations.Nullable;
@@ -18,9 +17,7 @@ import java.awt.Color;
 import javax.swing.UIManager;
 
 /*package*/ abstract class GroupedTree<D extends CheckBoxNodeRenderer.NodeData> extends MPSTree {
-  private final IOperationContext myContext;
-  public GroupedTree(IOperationContext context) {
-    myContext = context;
+  public GroupedTree() {
     setCellRenderer(new CheckBoxNodeRenderer(true));
     setCellEditor(new CheckBoxNodeRenderer.CheckBoxNodeEditor<CheckBoxNodeRenderer.NodeData>(true) {
       @Override
@@ -33,12 +30,12 @@ import javax.swing.UIManager;
     });
     setEditable(true);
   }
-  protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D data);
+  protected abstract MPSTreeNode createDataNode(D data);
   protected abstract GroupedTree.GroupKind<D, Object> createRootGroupKind();
   protected abstract Collection<D> getData();
   @Override
   protected MPSTreeNode rebuild() {
-    return new GroupedTree.GroupTreeNode(myContext, createRootGroupKind(), new Object(), getData());
+    return new GroupedTree.GroupTreeNode(createRootGroupKind(), new Object(), getData());
   }
   @Nullable
   public MPSTreeNode findNodeForData(D nodeData) {
@@ -149,8 +146,8 @@ import javax.swing.UIManager;
   }
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<D> myData;
-    public GroupTreeNode(IOperationContext operationContext, @NotNull GroupedTree.GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
-      super(new GroupedTree.GroupData(group, kind, data), operationContext);
+    public GroupTreeNode(@NotNull GroupedTree.GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
+      super(new GroupedTree.GroupData(group, kind, data));
       GroupedTree.GroupData groupData = getGroupData();
       setNodeIdentifier(groupData.getText());
       setText(groupData.getText());
@@ -165,16 +162,16 @@ import javax.swing.UIManager;
       }
       if (subGroupKind == null) {
         for (D d : myData) {
-          add(createDataNode(operationContext, d));
+          add(createDataNode(d));
         }
       } else {
         Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myData);
         for (Object subGroup : sorted.keySet()) {
           if (subGroup != null) {
-            add(new GroupedTree.GroupTreeNode(operationContext, subGroupKind, subGroup, sorted.get(subGroup)));
+            add(new GroupedTree.GroupTreeNode(subGroupKind, subGroup, sorted.get(subGroup)));
           } else {
             for (D d : sorted.get(subGroup)) {
-              add(createDataNode(operationContext, d));
+              add(createDataNode(d));
             }
           }
         }

@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.jps.project;
 
-import com.intellij.openapi.roots.LibraryOrderEntry;
-import com.intellij.openapi.roots.OrderEntry;
-import com.intellij.openapi.roots.impl.libraries.LibraryTableImplUtil;
-import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.project.model.impl.module.JpsOrderEntryFactory;
-import com.intellij.project.model.impl.module.JpsRootModel;
-import com.intellij.project.model.impl.module.dependencies.JpsLibraryOrderEntry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
@@ -42,7 +35,6 @@ import java.util.Set;
 /**
  * danilla 7/12/13
  */
-
 public class ClassStubsJpsModelRootContributor implements JpsModelRootContributor {
   @Override
   public Iterable<ModelRoot> getModelRoots(JpsModule module) {

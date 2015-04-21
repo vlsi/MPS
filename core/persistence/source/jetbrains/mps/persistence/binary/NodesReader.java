@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,7 @@ public final class NodesReader extends BareNodeReader {
     }
     // TODO report if (nodeInfo != 0 && myEnv != null) .. myEnv.nodeRoleRead/conceptRead();
 
-    jetbrains.mps.smodel.SNode node = interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept);
-    node.setId(nodeId);
+    jetbrains.mps.smodel.SNode node = interfaceNode ? new InterfaceSNode(concept, nodeId) : new jetbrains.mps.smodel.SNode(concept, nodeId);
 
     if (parent == null) {
       return node;

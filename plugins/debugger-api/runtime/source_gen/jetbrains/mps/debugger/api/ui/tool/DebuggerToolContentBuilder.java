@@ -27,7 +27,7 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.execution.runners.RestartAction;
+import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
@@ -98,9 +98,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
     //  TODO use context to get data to the action 
-    RestartAction restartAction = new RestartAction(myExecutor, myRunner, contentDescriptor, myEnvironment);
-    restartAction.registerShortcut(ui.getComponent());
-    actionGroup.add(restartAction);
+    actionGroup.add(ActionManager.getInstance().getAction(IdeActions.ACTION_RERUN));
     actionGroup.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup")));
     actionGroup.addAll(myExecutionResult.getActions());
     actionGroup.addSeparator();

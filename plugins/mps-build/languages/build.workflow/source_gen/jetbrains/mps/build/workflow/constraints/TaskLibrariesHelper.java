@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class TaskLibrariesHelper {

@@ -185,6 +185,41 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.AuthorBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.BaseParameterReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.CodeInlineDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.CodeSnippet_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.CommentLine_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DeprecatedBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocComment_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.HTMLElement_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.InheritDocInlineDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.InlineTagCommentLinePart_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.LinkInlineDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ParameterBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ReturnBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.SeeBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.SinceBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.StaticFieldDocReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.TextCommentLinePart_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ValueInlineDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.VersionBlockDocTag_TextGen" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
+    <classNode dependClassName="jetbrains.mps.text.LegacyTextGenAdapter" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.BaseTextGenAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" file="ThrowsBlockDocTag_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

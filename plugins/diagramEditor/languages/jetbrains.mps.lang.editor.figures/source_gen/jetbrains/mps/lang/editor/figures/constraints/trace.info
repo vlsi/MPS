@@ -151,8 +151,8 @@
   <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/5422656561916216335">
     <file name="ExternalViewClassifierScope.java">
       <node id="5422656561916393494" at="18,0,19,0" concept="3" trace="myModel" />
-      <node id="5422656561916293964" at="19,52,20,105" concept="9" />
-      <node id="5422656561916394478" at="20,105,21,20" concept="2" />
+      <node id="5422656561916293964" at="19,52,20,193" concept="9" />
+      <node id="5422656561916394478" at="20,193,21,20" concept="2" />
       <node id="5422656561916379083" at="24,41,25,193" concept="6" />
       <node id="5422656561916551127" at="26,354,27,18" concept="7" />
       <node id="5422656561916623210" at="29,409,30,18" concept="7" />

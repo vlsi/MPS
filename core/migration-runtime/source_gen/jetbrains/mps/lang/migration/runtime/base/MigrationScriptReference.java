@@ -14,6 +14,10 @@ public class MigrationScriptReference {
     this.language = language;
     this.fromVersion = fromVersion;
   }
+  public MigrationScriptReference(SLanguage language) {
+    this.language = language;
+    this.fromVersion = language.getLanguageVersion();
+  }
   public SLanguage getLanguage() {
     return language;
   }
@@ -39,17 +43,15 @@ public class MigrationScriptReference {
   }
   @Override
   public int hashCode() {
-    int result = 0;
-    result = 31 * result + language.hashCode();
-    result = 31 * result + fromVersion;
-    return result;
+    return language.hashCode() + 31 * fromVersion;
   }
   public String serialize() {
     return IdHelper.getLanguageId(language).serialize() + "(" + language.getQualifiedName() + ")" + "/" + fromVersion;
   }
   public static MigrationScriptReference deserialize(String s) {
     int version = Integer.parseInt(s.substring(s.indexOf('/') + 1));
-    SLanguage language = MetaAdapterFactory.getLanguage(SLanguageId.deserialize(s.substring(0, s.indexOf('('))), s.substring(s.indexOf('(') + 1, s.indexOf(')')));
-    return new MigrationScriptReference(language, version);
+    int ix = s.indexOf('(');
+    SLanguage language = MetaAdapterFactory.getLanguage(SLanguageId.deserialize(s.substring(0, ix)), s.substring(ix + 1, s.indexOf(')', ix)), version);
+    return new MigrationScriptReference(language);
   }
 }

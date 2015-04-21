@@ -18,6 +18,8 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.iterable.IterableEnumeration;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,9 +29,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author Kostik
- */
 public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
@@ -53,17 +52,30 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public boolean hasClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
-      boolean result = item.hasClass(name);
-      if (result) return true;
+      if (item.hasClass(name)) {
+        return true;
+      }
     }
     return false;
   }
 
   @Override
-  public byte[] getClass(String name) {
+  public boolean hasPackage(@NotNull String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
-      byte[] result = item.getClass(name);
+      if (item.hasPackage(name)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @Nullable
+  @Override
+  public ClassBytes getClassBytes(String name) {
+    checkValidity();
+    for (IClassPathItem item : myChildren) {
+      ClassBytes result = item.getClassBytes(name);
       if (result != null) return result;
     }
     return null;

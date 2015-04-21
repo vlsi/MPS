@@ -7,9 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
+/**
+ * 
+ * @deprecated use CellActionDeleteSPropertyOrNode
+ */
+@Deprecated
 public class CellAction_DeletePropertyOrNode extends AbstractCellAction {
   private SNode mySemanticNode;
   private String myPropertyName;
+  @Deprecated
   public CellAction_DeletePropertyOrNode(SNode semanticNode, String propertyName) {
     mySemanticNode = semanticNode;
     myPropertyName = propertyName;

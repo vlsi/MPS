@@ -22,8 +22,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
@@ -33,6 +32,7 @@ import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.MResource;
@@ -46,7 +46,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
@@ -94,12 +93,8 @@ public class Generate_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (vars(pa.global()).project() == null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("project is null")));
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
-              if (vars(pa.global()).operationContext() == null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("operationContext is null")));
+              if (vars(pa.global()).makeSession() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Facet requires access to make session")));
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
               if (vars(pa.global()).cleanMake() == null) {
@@ -152,7 +147,7 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._3) t).assign((Tuples._3) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
@@ -162,33 +157,27 @@ public class Generate_Facet extends IFacet.Stub {
     public static Generate_Facet.Target_checkParameters.Variables vars(IPropertiesPool ppool) {
       return ppool.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
     }
-    public static class Variables extends MultiTuple._3<Project, IOperationContext, Boolean> {
+    public static class Variables extends MultiTuple._2<MakeSession, Boolean> {
       public Variables() {
         super();
       }
-      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake) {
-        super(project, operationContext, cleanMake);
+      public Variables(MakeSession makeSession, Boolean cleanMake) {
+        super(makeSession, cleanMake);
       }
-      public Project project(Project value) {
+      public MakeSession makeSession(MakeSession value) {
         return super._0(value);
       }
-      public IOperationContext operationContext(IOperationContext value) {
+      public Boolean cleanMake(Boolean value) {
         return super._1(value);
       }
-      public Boolean cleanMake(Boolean value) {
-        return super._2(value);
-      }
-      public Project project() {
+      public MakeSession makeSession() {
         return super._0();
       }
-      public IOperationContext operationContext() {
+      public Boolean cleanMake() {
         return super._1();
       }
-      public Boolean cleanMake() {
-        return super._2();
-      }
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._3<Project, IOperationContext, Boolean> from) {
+      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._2<MakeSession, Boolean> from) {
         return (Generate_Facet.Target_checkParameters.Variables) super.assign(from);
       }
     }
@@ -223,8 +212,9 @@ public class Generate_Facet extends IFacet.Stub {
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 
-              TransientModelsProvider tmc = Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(TransientModelsProvider.class);
-              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(Generate_Facet.Target_checkParameters.vars(pa.global()).project(), null)));
+              Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
+              TransientModelsProvider tmc = mpsProject.getComponent(TransientModelsProvider.class);
+              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(mpsProject, null)));
 
               vars(pa.global()).transientModelsProvider().removeAllTransient();
               return new IResult.SUCCESS(_output_fi61u2_a0b);
@@ -349,10 +339,11 @@ public class Generate_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_fi61u2_a0c);
               }
               monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
+              final Project project = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
               Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
                 public void visit(final MResource mod) {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
-                  Generate_Facet.Target_checkParameters.vars(pa.global()).project().getModelAccess().runReadAction(new Runnable() {
+                  project.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModel>() {
                         public void visit(SModel m) {
@@ -431,8 +422,9 @@ public class Generate_Facet extends IFacet.Stub {
             case 0:
               boolean generationOk = false;
               final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
+              final Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
 
-              Generate_Facet.Target_checkParameters.vars(pa.global()).project().getModelAccess().runReadAction(new Runnable() {
+              mpsProject.getModelAccess().runReadAction(new Runnable() {
                 public void run() {
                   retainedModels.value = RetainedUtil.collectModelsToRetain(input);
                 }
@@ -445,15 +437,7 @@ public class Generate_Facet extends IFacet.Stub {
                   return true;
                 }
               });
-              IMessageHandler mh = new IMessageHandler() {
-                @Override
-                public void handle(IMessage msg) {
-                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
-                }
-                @Override
-                public void clear() {
-                }
-              };
+              IMessageHandler mh = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getMessageHandler();
 
               progressMonitor.start("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<MResource, Integer>() {
                 public Integer combine(Integer s, MResource it) {
@@ -467,7 +451,7 @@ public class Generate_Facet extends IFacet.Stub {
                   }
                 }).toListSequence();
 
-                generationOk = GenerationFacade.generateModels(Generate_Facet.Target_checkParameters.vars(pa.global()).project(), models, Generate_Facet.Target_checkParameters.vars(pa.global()).operationContext(), gh, progressMonitor.subTask(1000), mh, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create(), Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider());
+                generationOk = GenerationFacade.generateModels(mpsProject, models, null, gh, progressMonitor.subTask(1000), mh, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create(), Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider());
               } finally {
                 progressMonitor.done();
               }
@@ -556,8 +540,7 @@ public class Generate_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.makeSession", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
         }
       }
@@ -577,11 +560,8 @@ public class Generate_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
           Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.project")) {
-            props.project(null);
-          }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.operationContext")) {
-            props.operationContext(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.makeSession")) {
+            props.makeSession(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
             props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));

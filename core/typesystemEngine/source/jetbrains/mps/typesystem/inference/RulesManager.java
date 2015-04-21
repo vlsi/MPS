@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
-import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.CheckingRuleSet;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.DoubleRuleSet;
@@ -30,15 +29,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsManager;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +43,6 @@ import java.util.Set;
 public class RulesManager {
 
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
-  private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
@@ -61,26 +56,13 @@ public class RulesManager {
   private volatile boolean myNeedsLoading = false;
   private Set<LanguageRuntime> myLoadedLanguages = new HashSet<LanguageRuntime>();
   private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<LanguageRuntime>();
-  private LanguageRegistry myLanguageRegistry;
 
   public RulesManager(TypeChecker typeChecker) {
     myRulesManagerNew = new RulesManagerNew(typeChecker);
     myOverloadedOperationsManager = new OverloadedOperationsManager(typeChecker);
-    myLanguageRegistry = typeChecker.getLanguageRegistry();
-  }
-
-  public boolean loadLanguage(final String languageNamespace) {
-    ModelAccess.assertLegalWrite();
-    LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
-    if (language == null) return false;
-    if (!myLoadedLanguages.contains(language)) {
-      loadLanguages(Collections.singleton(language));
-    }
-    return true;
   }
 
   public void loadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       assert !myLoadedLanguages.contains(language);
       myLanguagesToLoad.add(language);
@@ -97,7 +79,6 @@ public class RulesManager {
         return;
       }
 
-//      ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : myLanguagesToLoad) {
         assert !myLoadedLanguages.contains(language);
         myLoadedLanguages.add(language);
@@ -115,7 +96,6 @@ public class RulesManager {
         }
         try {
           myInferenceRules.addRuleSetItem(typesystem.getInferenceRules());
-          myNonTypesystemRules.addRuleSetItem(typesystem.getNonTypesystemRules());
           mySubtypingRules.addRuleSetItem(typesystem.getSubtypingRules());
           Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
           myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
@@ -132,7 +112,6 @@ public class RulesManager {
   }
 
   public void unloadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
     for (LanguageRuntime language : languages) {
       if (myLoadedLanguages.contains(language)) {
         unloadLoadedAllLoaded();
@@ -145,14 +124,12 @@ public class RulesManager {
   }
 
   private void unloadLoadedAllLoaded() {
-    ModelAccess.assertLegalWrite();
 
     myLanguagesToLoad.addAll(myLoadedLanguages);
     myLoadedLanguages = new HashSet<LanguageRuntime>();
 
     // TODO: cleanup
     myInferenceRules.clear();
-    myNonTypesystemRules.clear();
     mySubtypingRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();
@@ -184,15 +161,6 @@ public class RulesManager {
 
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
-    /* List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
-          new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
-        Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
-        for (NonTypesystemRule_Runtime rule : ruleSet) {
-          IsApplicableStatus status = rule.isApplicableAndPattern(node);
-          if (status.isApplicable()) {
-            result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
-          }
-        }        */
     return myRulesManagerNew.getNonTypesystemRules(node);
   }
 
@@ -260,16 +228,6 @@ public class RulesManager {
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
     ensureAllRulesLoaded();
     return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer);
-  }
-
-  @Deprecated
-  public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
-    return null;
-  }
-
-  @Deprecated
-  public boolean isBlockingDependentComputationNode(SNode node) {
-    return false;
   }
 }
 

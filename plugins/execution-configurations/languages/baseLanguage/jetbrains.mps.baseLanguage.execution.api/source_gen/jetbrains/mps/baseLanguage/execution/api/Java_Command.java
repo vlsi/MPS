@@ -39,7 +39,7 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.util.SystemProperties;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;

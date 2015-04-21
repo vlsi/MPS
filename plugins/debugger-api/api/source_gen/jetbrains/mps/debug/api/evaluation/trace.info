@@ -3,15 +3,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:4a0301da-c964-420c-8e35-486843de9df5(jetbrains.mps.debug.api.evaluation)/4474271214082914177">
     <file name="IEvaluationProvider.java">
-      <node id="4474271214082914179" at="12,0,13,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <node id="4474271214082914185" at="13,0,14,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;)V" />
+      <node id="4474271214082914179" at="12,0,13,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;)V" />
+      <node id="4474271214082914185" at="13,0,14,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;Ljava/util/List;)V" />
       <node id="4474271214082914199" at="16,0,17,0" concept="0" trace="canEvaluate#()Z" />
       <node id="4474271214082914194" at="14,0,16,0" concept="0" trace="createWatchesPanel#()Ljavax/swing/JComponent;" />
       <scope id="4474271214082914179" at="12,0,13,0">
-        <var name="context" id="4474271214082914182" />
+        <var name="mpsProject" id="4474271214082914182" />
       </scope>
       <scope id="4474271214082914185" at="13,0,14,0">
-        <var name="context" id="4474271214082914188" />
+        <var name="mpsProject" id="5069373260571709118" />
         <var name="selectedNodes" id="4474271214082914190" />
       </scope>
       <scope id="4474271214082914199" at="16,0,17,0" />

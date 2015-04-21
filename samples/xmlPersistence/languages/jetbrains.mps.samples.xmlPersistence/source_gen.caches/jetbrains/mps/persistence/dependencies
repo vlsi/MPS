@@ -21,7 +21,8 @@
     <classNode dependClassName="jetbrains.mps.persistence.xml.XmlConverter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGen" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />

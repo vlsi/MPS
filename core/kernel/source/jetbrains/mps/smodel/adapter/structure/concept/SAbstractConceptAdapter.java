@@ -18,16 +18,23 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -38,9 +45,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
-public abstract class SAbstractConceptAdapter implements SAbstractConcept {
+public abstract class SAbstractConceptAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
   protected String myFqName;
 
   protected SAbstractConceptAdapter(String fqName) {
@@ -50,6 +58,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
 
+  @NotNull
+  public abstract SConceptId getId();
+
   protected abstract SNode findInModel(SModel strucModel);
 
   @Override
@@ -58,7 +69,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public Iterable<SReferenceLink> getReferenceLinks() {
+  public Collection<SReferenceLink> getReferenceLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -70,7 +81,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public Iterable<SContainmentLink> getContainmentLinks() {
+  public Collection<SContainmentLink> getContainmentLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -128,7 +139,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public Iterable<SProperty> getProperties() {
+  public Collection<SProperty> getProperties() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -205,6 +216,39 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   @Override
   public boolean isValid() {
     return getConceptDescriptor() != null;
+  }
+
+  @NotNull
+  @Override
+  public SProperty convertProperty(String propertyName) {
+    SProperty prop = MetaAdapterFactoryByName.getProperty(getQualifiedName(), propertyName);
+    SPropertyId id = ((SPropertyAdapter) prop).getId();
+    if (id.equals(MetaIdFactory.INVALID_PROP_ID)) {
+      return prop;
+    }
+    return MetaAdapterFactory.getProperty(id, propertyName);
+  }
+
+  @NotNull
+  @Override
+  public SReferenceLink convertAssociation(String role) {
+    SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(getQualifiedName(), role);
+    SReferenceLinkId id = ((SReferenceLinkAdapter) link).getRoleId();
+    if (id.equals(MetaIdFactory.INVALID_REF_ID)) {
+      return link;
+    }
+    return MetaAdapterFactory.getReferenceLink(id, role);
+  }
+
+  @NotNull
+  @Override
+  public SContainmentLink convertAggregation(String role) {
+    SContainmentLink link = MetaAdapterFactoryByName.getContainmentLink(getQualifiedName(), role);
+    SContainmentLinkId id = ((SContainmentLinkAdapter) link).getRoleId();
+    if (id.equals(MetaIdFactory.INVALID_LINK_ID)) {
+      return link;
+    }
+    return MetaAdapterFactory.getContainmentLink(id, role);
   }
 
   @Override

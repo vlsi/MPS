@@ -18,8 +18,9 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.apache.log4j.Logger;
@@ -90,7 +91,8 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
+      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(true).forceNewTab(false);
+      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("project")), FindUtils.makeProvider(finder), new SearchQuery(null), opt);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);

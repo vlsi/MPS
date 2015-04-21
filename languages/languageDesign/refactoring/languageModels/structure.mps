@@ -70,15 +70,6 @@
     <property role="34LRSv" value="refactor" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="hjZk6Ue">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="UpdateModelClause" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <property role="34LRSv" value="updateModel" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
   <node concept="1TIwiD" id="hjZlhNl">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -87,15 +78,6 @@
     <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
     <property role="34LRSv" value="model" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="1TIwiD" id="hr9$37Z">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="UpdateModelByDefaultOperation" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <property role="34LRSv" value="updateModelByDefault" />
-    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
   </node>
   <node concept="1TIwiD" id="hsgLPLR">
     <property role="R5$K7" value="false" />
@@ -264,16 +246,6 @@
   <node concept="PlHQZ" id="2NZZazZelWJ">
     <property role="TrG5h" value="RefactoringAction" />
     <property role="3GE5qa" value="RefActions" />
-  </node>
-  <node concept="1TIwiD" id="2NZZazZexa8">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="merge node with another node" />
-    <property role="TrG5h" value="MergeNodeWithAnotherNodeExpression" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="RefActions" />
-    <property role="34LRSv" value="mergeNode" />
-    <ref role="1TJDcQ" node="hteVAv1" resolve="AbstractMoveNodeExpression" />
   </node>
   <node concept="1TIwiD" id="5YKiRiBuwlD">
     <property role="R5$K7" value="true" />
@@ -492,12 +464,6 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="hut9MF6" resolve="AffectedNodesClause" />
     </node>
-    <node concept="1TJgyj" id="1aNzB2zUQ0C" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="updateModelBlock" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="hjZk6Ue" resolve="UpdateModelClause" />
-    </node>
     <node concept="1TJgyi" id="5YKiRiBuebj" role="1TKVEl">
       <property role="TrG5h" value="userFriendlyName" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -629,54 +595,6 @@
     <property role="3GE5qa" value="RefDecl.Methods" />
     <property role="34LRSv" value="models to generate" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="2RjnwervHEa">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ChangeFeatureNameExpression" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="RefActions" />
-    <property role="34LRSv" value="changeFeatureName" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="2RjnwervHEb" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="feature" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyj" id="2RjnwervHEc" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="newConceptFQName" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyj" id="2RjnwervHEd" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="newFeatureName" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="2RjnwervHEf" role="PzmwI">
-      <ref role="PrY4T" node="2NZZazZelWJ" resolve="RefactoringAction" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2RjnwervIpj">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="DeleteFeatureExpression" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="RefActions" />
-    <property role="34LRSv" value="deleteFeature" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="2RjnwervIpk" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="feature" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="2RjnwervIpm" role="PzmwI">
-      <ref role="PrY4T" node="2NZZazZelWJ" resolve="RefactoringAction" />
-    </node>
   </node>
   <node concept="1TIwiD" id="72p_rFnslum">
     <property role="R5$K7" value="false" />

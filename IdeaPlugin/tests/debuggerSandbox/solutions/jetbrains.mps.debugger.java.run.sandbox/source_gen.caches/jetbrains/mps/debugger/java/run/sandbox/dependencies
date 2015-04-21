@@ -23,8 +23,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" file="DebugObjects.java">
     <classNode dependClassName="java.lang.Integer" />

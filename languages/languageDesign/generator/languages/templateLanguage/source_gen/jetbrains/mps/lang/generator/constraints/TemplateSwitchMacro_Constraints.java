@@ -17,6 +17,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateSwitchMacro_Constraints extends BaseConstraintsDescriptor {
@@ -41,7 +42,7 @@ public class TemplateSwitchMacro_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.generator.structure.TemplateSwitch");
+            return new ModelPlusImportedScope(_context.getModel(), true, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
           }
         };
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,7 @@ import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.ide.highlighter.ModuleFileType;
-import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
@@ -42,19 +40,22 @@ import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
 import com.intellij.util.ThrowableRunnable;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import junit.framework.Assert;
-import org.apache.log4j.BasicConfigurator;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
 
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   private static int ourIndex = 0;
-  private static boolean TRACE_ON_HACK = false;
 
   protected MPSFacet myFacet;
   private JavaCodeInsightTestFixture myFixture;
@@ -62,7 +63,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 
   static {
-    if (TRACE_ON_HACK) BasicConfigurator.configure();
+    com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
     IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
   }
 
@@ -101,8 +102,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
     myFacet = addMPSFacet(myModule);
-
-    if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
 
     //Flush all EDT events to be made before run tests
     try {
@@ -180,6 +179,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected void preConfigureFacet(MPSFacetConfiguration configuration) {
   }
 
+  /**
+   * Execute Runnable with MPS read lock
+   */
+  protected final void runModelRead(@NotNull Runnable r) {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myModule.getProject());
+    mpsProject.getModelAccess().runReadAction(r);
+  }
+
+  protected final <T> T runModelRead(@NotNull Computable<T> c) {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myModule.getProject())).runReadAction(c);
+  }
+
   public static class CustomJavaModuleFixtureBuilder extends JavaTestFixtureFactoryImpl.MyJavaModuleFixtureBuilderImpl {
     private static int ourIndex;
     private String myModuleFolderName;
@@ -190,8 +201,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
     @Override
     protected void initModule(Module module) {
-      // turn on trace
-      if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
       super.initModule(module);
     }
 

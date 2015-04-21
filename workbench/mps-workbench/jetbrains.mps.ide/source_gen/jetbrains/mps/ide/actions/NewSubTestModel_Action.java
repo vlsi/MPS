@@ -100,8 +100,8 @@ public class NewSubTestModel_Action extends BaseAction {
           for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedModels()) {
             ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
           }
-          for (SLanguage importedLanguageId : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
-            ((SModelInternal) createdModel.value).addLanguageId(importedLanguageId, importedLanguageId.getLanguageVersion());
+          for (SLanguage importedLanguage : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
+            ((SModelInternal) createdModel.value).addLanguage(importedLanguage);
           }
           for (SModuleReference devKit : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedDevkits()) {
             ((SModelInternal) createdModel.value).addDevKit(devKit);

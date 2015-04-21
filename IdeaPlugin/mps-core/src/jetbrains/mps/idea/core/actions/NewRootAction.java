@@ -93,22 +93,22 @@ public class NewRootAction extends AnAction {
 
   @Override
   public void actionPerformed(AnActionEvent e) {
-    if(myModelDescriptor == null && myNewModel) {
+    if (myModelDescriptor == null && myNewModel) {
       if (createPerRootModel(e)) return;
     }
 
-    if(myModelDescriptor == null)
+    if (myModelDescriptor == null)
       return;
 
-    if(myConceptFqNameToNodePointerMap.isEmpty()) {
+    if (myConceptFqNameToNodePointerMap.isEmpty()) {
       ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
         myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null, new Runnable() {
-        @Override
-        public void run() {
-          final ProjectView projectView = ProjectView.getInstance(myProject);
-          projectView.refresh();
-        }
-      });
+          @Override
+          public void run() {
+            final ProjectView projectView = ProjectView.getInstance(myProject);
+            projectView.refresh();
+          }
+        });
       return;
     }
 
@@ -158,7 +158,7 @@ public class NewRootAction extends AnAction {
             }
           }
         }
-        if(useModelRoot == null) return null;
+        if (useModelRoot == null) return null;
 
         final String modelName = ((PsiJavaDirectoryImpl) psiElement).getPresentation().getLocationString();
         EditableSModel model = null;
@@ -189,9 +189,9 @@ public class NewRootAction extends AnAction {
 
     final boolean isEnabled = isEnabled(e);
     e.getPresentation().setVisible(isEnabled);
-    if(!isEnabled) return;
+    if (!isEnabled) return;
 
-    if(myConceptFqNameToNodePointerMap.isEmpty()) {
+    if (myConceptFqNameToNodePointerMap.isEmpty()) {
       e.getPresentation().setText("Add Language Import");
       e.getPresentation().setIcon(IdeIcons.LANGUAGE_ICON);
     } else {
@@ -210,20 +210,20 @@ public class NewRootAction extends AnAction {
     if (myProject == null) {
       return;
     }
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
     if (mpsProject == null) {
       return;
     }
 
     Module module = e.getData(LangDataKeys.MODULE);
-    VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
+    final VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null ||
-        vFiles == null ||
-        vFiles.length != 1) {
+      vFiles == null ||
+      vFiles.length != 1) {
       return;
     }
 
-    MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+    final MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !mpsFacet.wasInitialized()) {
       return;
     }
@@ -232,19 +232,20 @@ public class NewRootAction extends AnAction {
     if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) {
       return;
     }
-    String path = VirtualFileManager.extractPath(url);
-    for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
-      if (!(root instanceof DefaultModelRoot)) continue;
-      DefaultModelRoot modelRoot = (DefaultModelRoot) root;
-      for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (path.startsWith(sourceRoot)) {
-          Solution solution = mpsFacet.getSolution();
-          myOperationContext = new ModuleContext(solution, mpsProject);
-          myModelDescriptor = (EditableSModel) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
-          if (myModelDescriptor != null) {
-            mpsProject.getModelAccess().runReadAction(new Runnable() {
-              @Override
-              public void run() {
+    final String path = VirtualFileManager.extractPath(url);
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
+          if (!(root instanceof DefaultModelRoot)) continue;
+          DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+          for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+            if (path.startsWith(sourceRoot)) {
+              Solution solution = mpsFacet.getSolution();
+              myOperationContext = new ModuleContext(solution, mpsProject);
+              myModelDescriptor = (EditableSModel) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
+              if (myModelDescriptor != null) {
+
                 SModel model = myModelDescriptor;
                 List<Language> modelLanguages = SModelOperations.getLanguages(model);
                 for (Language language : modelLanguages) {
@@ -256,14 +257,15 @@ public class NewRootAction extends AnAction {
                   }
                 }
               }
-            });
-          } else {
-            myNewModel = true;
+
+            } else {
+              myNewModel = true;
+            }
+            return;
           }
-          return;
         }
       }
-    }
+    });
   }
 
   public boolean isEnabled(AnActionEvent e) {
@@ -275,7 +277,7 @@ public class NewRootAction extends AnAction {
     VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
     boolean isUnderSourceRoot = false;
-    if(psiElement instanceof MPSPsiModel) {
+    if (psiElement instanceof MPSPsiModel) {
       isUnderSourceRoot = true;
     } else {
       Module module = e.getData(LangDataKeys.MODULE);
@@ -288,7 +290,7 @@ public class NewRootAction extends AnAction {
           //Can't be source or test folder
           return false;
         }
-        isUnderSourceRoot =  isUnderSourceRoot || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
+        isUnderSourceRoot = isUnderSourceRoot || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
       }
     }
 

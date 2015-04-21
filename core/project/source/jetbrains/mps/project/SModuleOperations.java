@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,9 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.CustomClassLoadingFacet;
-import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -62,7 +58,10 @@ public class SModuleOperations {
     for (ModelRoot modelRoot : module.getModelRoots()) {
       if (modelRoot instanceof FileBasedModelRoot) {
         FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) modelRoot;
-        result.add(exposePath(fileBasedModelRoot.getContentRoot()));
+        String contentRoot = fileBasedModelRoot.getContentRoot();
+        if (contentRoot != null) {
+          result.add(exposePath(contentRoot));
+        }
         // todo: use excluded & source folders like IDEA
 //        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
 //          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
@@ -211,8 +210,9 @@ public class SModuleOperations {
    * Reads module from file and eventually reloads it (when CLManager triggers refresh)
    */
   public static void reloadFromDisk(AbstractModule module) {
-    ModelAccess.assertLegalWrite();
     if (module.getRepository() == null) throw new IllegalArgumentException("Module " + module + " is disposed");
+
+    module.getRepository().getModelAccess().checkWriteAccess();
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();

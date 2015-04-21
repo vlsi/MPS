@@ -541,8 +541,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread || myCancellable.isCancelled()) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
-            return false;
+          if (node == null) return false;
           if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.

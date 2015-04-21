@@ -24,7 +24,9 @@ import java.util.Set;
 /**
  * Subscribe via {@link jetbrains.mps.classloading.ClassLoaderManager#addClassesHandler} if you want
  * to receive class loading notifications.
- *
+ * <p/>
+ * Listeners are notified with a write lock for a module repository being held.
+ * <p/>
  * API: A client must not throw exceptions in {@link #beforeClassesUnloaded} and {@link #afterClassesLoaded} methods
  * Otherwise the application may behave unexpectedly
  */

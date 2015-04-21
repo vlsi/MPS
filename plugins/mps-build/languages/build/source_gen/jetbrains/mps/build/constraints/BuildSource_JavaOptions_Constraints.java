@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescriptor {
@@ -61,7 +64,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9ac67L, "jetbrains.mps.build.structure.BuildJavaPlugin"));
       }
-    }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
+    }) || parentNode.getConcept().getLanguage().getSourceModule().equals(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"), Language.class));
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

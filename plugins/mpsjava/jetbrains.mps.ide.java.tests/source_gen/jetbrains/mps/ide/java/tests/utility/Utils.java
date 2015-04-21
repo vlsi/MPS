@@ -19,12 +19,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.extapi.model.SModelBase;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
@@ -67,7 +69,7 @@ public class Utils {
     checkString(code, expected, true);
   }
 
-  public static void checkString(String code, SNode expected, boolean onlyStubs) {
+  public static void checkString(String code, final SNode expected, boolean onlyStubs) {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
@@ -76,10 +78,10 @@ public class Utils {
       List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
-      SNode result = SNodeOperations.cast(res.get(0), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      final SNode result = SNodeOperations.cast(res.get(0), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       SModelOperations.addRootNode(mdl, result);
       if (mdl instanceof SModelBase && SNodeOperations.getModel(expected) instanceof SModelBase) {
-        for (SModuleReference langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguages()) {
+        for (SLanguage langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguageIds()) {
           ((SModelBase) mdl).addLanguage(langref);
         }
       }
@@ -93,9 +95,13 @@ public class Utils {
       NodePatcher.fixNonStatic(result);
       NodePatcher.copyImportAttrs(result, expected);
 
-      Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      final Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildClassifierNodeMap(result, expected, nodeMap);
-      NodeDifference diff = NodesMatcher.matchNodes(result, expected, nodeMap);
+      NodeDifference diff = TypeContextManager.getInstance().runResolveAction(new Computable<NodeDifference>() {
+        public NodeDifference compute() {
+          return new NodesMatcher(nodeMap).match(result, expected);
+        }
+      });
 
       Assert.assertEquals(null, diff);
 

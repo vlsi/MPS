@@ -86,7 +86,7 @@ public abstract class AbstractQueueSequence<T> extends AbstractCollectionSequenc
   protected Queue<T> getQueue() {
     return queue;
   }
-  private void setQueue(Queue<T> queue) {
+  protected void setQueue(Queue<T> queue) {
     this.queue = queue;
   }
 

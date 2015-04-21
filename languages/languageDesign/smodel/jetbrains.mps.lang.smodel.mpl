@@ -4,9 +4,6 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="classes_gen" />
-    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -14,9 +11,6 @@
   <generators>
     <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
       <models>
-        <modelRoot contentPath="${module}" type="java_classes">
-          <sourceRoot location="classes_gen" />
-        </modelRoot>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/baseLanguage" />
         </modelRoot>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,10 +89,13 @@ public class DynamicReference extends SReferenceBase {
   public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     return new DynamicReference(role, sourceNode, modelName, resolveInfo);
   }
+  public static DynamicReference createDynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+  }
 
   private DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
-    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
+    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
       setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
     } else {
@@ -112,7 +115,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
   @Deprecated
-  private boolean isTargetClassifier(@NotNull SNode node, @NotNull String role) {
+  private static boolean isTargetClassifier(@NotNull SNode node, @NotNull String role) {
     SAbstractLink lnk = node.getConcept().getLink(role);
     SAbstractConcept lnkTarget = lnk == null ? null : lnk.getTargetConcept();
     if (lnkTarget == null) {
@@ -122,7 +125,7 @@ public class DynamicReference extends SReferenceBase {
     return lnkTarget.isSubConceptOf(classifierConcept);
   }
 
-  private boolean isTargetClassifier(@NotNull SNode node, @NotNull SReferenceLink role) {
+  private static boolean isTargetClassifier(@NotNull SReferenceLink role) {
     SAbstractConcept lnkTarget = role.getTargetConcept();
     if (lnkTarget == null) {
       return false;

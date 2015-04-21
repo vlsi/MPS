@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,28 +19,32 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Status;
 import jetbrains.mps.util.Status.ERROR;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
- *
+ * Facility to track cache generators and their respective output location
  * @author Artem Tikhomirov
  */
 public class CacheGenLayout {
   private final List<Pair<StreamHandler, CacheGenerator>> myGenerators;
-  private final List<IMessage> myErrors = new ArrayList<IMessage>();
+  private final IMessageHandler myMessageHandler;
 
-  public CacheGenLayout() {
+  public CacheGenLayout(@NotNull IMessageHandler messageHandler) {
+    myMessageHandler = messageHandler;
     myGenerators = new ArrayList<Pair<StreamHandler, CacheGenerator>>();
   }
 
@@ -52,18 +56,21 @@ public class CacheGenLayout {
   }
 
   public IStatus serialize(GenerationStatus genStatus) {
-    myErrors.clear();
+    boolean errors = false;
     for (Pair<StreamHandler, CacheGenerator> p : myGenerators) {
       try {
           p.o2.generateCache(genStatus, p.o1);
       } catch (Throwable t) {
-        myErrors.add(new Message(MessageKind.ERROR, t.toString()).setException(t));
+        myMessageHandler.handle(new Message(MessageKind.ERROR, t.toString()).setException(t));
+        errors = true;
       }
     }
-    return myErrors.isEmpty() ? Status.NO_ERRORS : new ERROR("Cache serialization failed");
+    return errors ? new ERROR("Cache serialization failed") : Status.NO_ERRORS;
   }
 
+  @Deprecated
+  @ToRemove(version = 0)
   public Collection<IMessage> getErrors() {
-    return new ArrayList<IMessage>(myErrors);
+    return Collections.emptyList();
   }
 }

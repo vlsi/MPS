@@ -85,7 +85,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
   private TestOutputFilter filter = new TestOutputFilter() {
     @Override
     protected boolean isLineOK(String line) {
-      return !(line.contains("attribute") && line.contains("undeclared child role:"));
+      return line != null && !(line.contains("attribute") && line.contains("undeclared child role:"));
     }
   };
 

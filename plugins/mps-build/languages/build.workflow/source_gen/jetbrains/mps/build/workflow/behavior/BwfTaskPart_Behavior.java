@@ -17,7 +17,7 @@ public class BwfTaskPart_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6275L, "jetbrains.mps.build.workflow.structure.BwfSubTask").getDeclarationNode()) {
       SNode task = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task"));
-      SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1baL, "subTasks")));
+      SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(thisNode, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1baL, "subTasks"));
       CompositeScope scope = new CompositeScope(currentSubtaskScope);
       if (task != null) {
         scope.addScope(BehaviorReflection.invokeVirtual(Scope.class, task, "virtual_getScope_3734116213129936182", new Object[]{kind, null}));
@@ -25,7 +25,7 @@ public class BwfTaskPart_Behavior {
       if (task == null || SNodeOperations.getParent(task) != SNodeOperations.getParent(thisNode)) {
         for (SNode n : SNodeOperations.getAllSiblings(thisNode, false)) {
           if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart")) && SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart")), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task"))) {
-            scope.addScope(SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1baL, "subTasks"))));
+            scope.addScope(SimpleRoleScope.forNamedElements(n, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1baL, "subTasks")));
           }
         }
       }

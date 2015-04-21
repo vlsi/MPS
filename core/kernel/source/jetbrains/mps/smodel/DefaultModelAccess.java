@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -309,11 +308,5 @@ public class DefaultModelAccess extends ModelAccess {
   @Override
   public void writeFilesInEDT(@NotNull Runnable action) {
     throw new UnsupportedOperationException("cannot invoke write files in EDT");
-  }
-
-  @Override
-  public void runWriteActionWithProgressSynchronously(@NotNull RunnableWithProgress runnable, String progressTitle, boolean canBeCanceled,
-      jetbrains.mps.project.Project project) {
-    throw new UnsupportedOperationException("cannot run with progress");
   }
 }

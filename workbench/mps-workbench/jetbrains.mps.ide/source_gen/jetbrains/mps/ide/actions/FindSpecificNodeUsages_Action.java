@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -61,10 +60,6 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
@@ -84,7 +79,7 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.findUsages");
-      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), true).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
+      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), true).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindSpecificNodeUsages", t);

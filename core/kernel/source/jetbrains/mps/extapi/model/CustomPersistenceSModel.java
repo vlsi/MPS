@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileWithBackupDataSource;
 import jetbrains.mps.smodel.InvalidSModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.IterableUtil;
@@ -127,7 +126,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected void reloadContents() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     if (!isLoaded()) return;
 

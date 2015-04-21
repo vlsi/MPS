@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,20 +25,22 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -245,10 +247,13 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   public void navigateToBookmark(int number) {
     if (number < 0 || number > 9) return;
     SNodeReference pointer = myBookmarks[number];
-    if (pointer == null) return;
-    SNode targetNode = pointer.resolve(MPSModuleRepository.getInstance());
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    if (pointer == null || mpsProject == null) {
+      return;
+    }
+    SNode targetNode = pointer.resolve(mpsProject.getRepository());
     if (targetNode != null) {
-      NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), targetNode, true, true);
+      NavigationSupport.getInstance().openNode(mpsProject, targetNode, true, true);
     }
   }
 

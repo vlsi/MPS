@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -104,7 +103,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Override
   public boolean isValid() {
     if (!myModel.isValid() || mySeparateFile != null && !mySeparateFile.isValid()) return false;
-    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final SRepository repository = getProjectRepository();
     final Ref<Boolean> result = new Ref<Boolean>(false);
     final SNodeReference nodeRef = getSNodeReference();
     if (nodeRef == null) return false;
@@ -218,8 +217,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
         SNode node = model.getNode(myNodeId);
         if (node == null) return;
 
-        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-        NavigationSupport.getInstance().openNode(context, node, requestFocus, false);
+        NavigationSupport.getInstance().openNode(ProjectHelper.toMPSProject(getProject()), node, requestFocus, false);
       }
     });
   }

@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -48,8 +49,11 @@ public class GlobalModuleDependenciesManager {
   }
 
   /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()} directly.
    * @return all languages used by the given modules
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Collection<Language> getUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (SModule module : myModules) {

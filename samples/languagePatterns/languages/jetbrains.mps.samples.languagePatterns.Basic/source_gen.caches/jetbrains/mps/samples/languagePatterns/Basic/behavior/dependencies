@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" file="AbstractRequestDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.AgendaItem_BehaviorDescriptor" file="AgendaItem_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" file="Apple_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -21,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawLine_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawRect_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.IncompleteCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.ListOfDrawCommands_BehaviorDescriptor" />
@@ -29,8 +36,11 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.PerformanceWithTitle_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Performance_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.RaceParticipant_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
@@ -129,6 +139,12 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" file="FormDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" file="FruitPlate_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -207,6 +223,22 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" file="Request_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" file="SimplifiedFormDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" file="Singer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -221,6 +253,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.LineStyle_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" file="StringDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" file="Truck_BehaviorDescriptor.java">

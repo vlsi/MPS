@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public abstract class RefactoringAccessEx extends RefactoringAccess {
   private RefactoringFacadeImpl myRefactoringFacade;
@@ -24,15 +23,6 @@ public abstract class RefactoringAccessEx extends RefactoringAccess {
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModel model);
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
-  public abstract boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate);
-  public boolean showRefactoringDialogBase(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    if (!(RefactoringOptionsDialog.needToBeShown(refactoring, hasModelsToGenerate))) {
-      return false;
-    }
-    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(project, refactoringContext, refactoring, hasModelsToGenerate);
-    dialog.show();
-    return dialog.isCancelled();
-  }
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
 
   public static RefactoringAccessEx getInstance() {

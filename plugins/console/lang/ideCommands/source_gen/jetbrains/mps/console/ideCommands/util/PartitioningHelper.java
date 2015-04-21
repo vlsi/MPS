@@ -93,8 +93,6 @@ public class PartitioningHelper {
     SModel inputModel = models.get(0);
 
     MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
-    messagesView.resetAutoscrollOption();
-
     new PartitioningHelper(inputModel, messagesView, console).show();
 
     // other 

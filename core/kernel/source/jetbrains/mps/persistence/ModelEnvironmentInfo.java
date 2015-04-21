@@ -47,7 +47,4 @@ public interface ModelEnvironmentInfo {
   boolean isInUnorderedRole(SNode node);
 
   SNodeReference getPropertyId(SNode containingNode, String propertyName);
-
-  int getModelVersion(SModelReference modelReference);
-
 }

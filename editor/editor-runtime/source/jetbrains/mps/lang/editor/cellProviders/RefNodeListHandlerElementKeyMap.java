@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
@@ -55,7 +56,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
         public void execute(EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          jetbrains.mps.util.SNodeOperations.insertChild(myListHandler.getOwner(), myListHandler.getElementRole(), nodeToInsert, anchorNode);
+          myListHandler.getOwner().insertChildBefore(myListHandler.getElementRole(), nodeToInsert, anchorNode.getNextSibling());
         }
       };
       addAction.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
@@ -68,6 +69,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
     }
   }
 
+  @NotNull
   private SNode getAnchorNode(EditorContext context) {
     SNode owner = myListHandler.getOwner();
     SNode anchorNode = context.getContextCell().getSNode();

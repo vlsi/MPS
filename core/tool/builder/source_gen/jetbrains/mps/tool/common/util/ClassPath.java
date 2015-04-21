@@ -9,7 +9,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
-import sun.misc.Resource;
 import java.util.List;
 import java.io.IOException;
 import java.util.Enumeration;

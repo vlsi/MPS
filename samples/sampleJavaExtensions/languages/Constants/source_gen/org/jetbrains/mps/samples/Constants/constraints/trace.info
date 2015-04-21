@@ -30,14 +30,14 @@
       <node id="2687243112287755361" at="34,44,35,20" concept="6" />
       <node id="2687243112287755361" at="42,63,43,58" concept="6" />
       <node id="2687243112287883841" at="47,678,48,26" concept="6" />
-      <node id="2687243112287829375" at="49,13,50,611" concept="6" />
+      <node id="2687243112287829375" at="49,13,50,574" concept="6" />
       <node id="2687243112287755361" at="54,7,55,22" concept="6" />
       <node id="2687243112287755361" at="57,0,58,0" concept="7" trace="breakingNode_3o2gse_a0a0a0a0a1a0b0a1a1" />
       <node id="2687243112287755361" at="26,0,29,0" concept="1" trace="DistantConstantReference_Constraints#()V" />
       <node id="2687243112287830053" at="46,122,49,13" concept="3" />
       <node id="2687243112287755361" at="33,0,37,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="2687243112287755361" at="41,0,45,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="2687243112287755361" at="46,122,50,611" concept="0" />
+      <node id="2687243112287755361" at="46,122,50,574" concept="0" />
       <node id="2687243112287755361" at="45,0,52,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="2687243112287755361" at="39,56,52,10" concept="6" />
       <node id="2687243112287755361" at="37,0,54,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -50,8 +50,8 @@
       <scope id="2687243112287755361" at="26,0,29,0" />
       <scope id="2687243112287755361" at="33,0,37,0" />
       <scope id="2687243112287755361" at="41,0,45,0" />
-      <scope id="2687243112287755361" at="46,122,50,611" />
-      <scope id="2687243112287755568" at="46,122,50,611" />
+      <scope id="2687243112287755361" at="46,122,50,574" />
+      <scope id="2687243112287755568" at="46,122,50,574" />
       <scope id="2687243112287755361" at="45,0,52,0">
         <var name="_context" id="2687243112287755361" />
         <var name="operationContext" id="2687243112287755361" />

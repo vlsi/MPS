@@ -29,7 +29,7 @@ public class QueryParameter_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
       if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter").getDeclarationNode()) {
-        SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
+        SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter"));
         return;
       }
 
@@ -53,7 +53,7 @@ public class QueryParameter_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
       if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter").getDeclarationNode()) {
-        SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
+        SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter"));
         return;
       }
 

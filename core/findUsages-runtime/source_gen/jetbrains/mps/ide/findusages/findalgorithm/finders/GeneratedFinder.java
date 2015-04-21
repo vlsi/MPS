@@ -12,8 +12,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -65,9 +63,11 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> results = new SearchResults<SNode>();
-    IHolder holder = query.getObjectHolder();
-    assert holder instanceof NodeHolder;
-    SNode node = ((NodeHolder) holder).getObject();
+    Object value = query.getObjectHolder().getObject();
+    if (!(value instanceof SNode)) {
+      return results;
+    }
+    SNode node = (SNode) value;
     SConcept c = SConceptRepository.getInstance().getInstanceConcept(getConcept());
     if (node.getConcept().isSubConceptOf(c) && isApplicable(node)) {
       List<SNode> resSN = ListSequence.fromList(new ArrayList<SNode>());

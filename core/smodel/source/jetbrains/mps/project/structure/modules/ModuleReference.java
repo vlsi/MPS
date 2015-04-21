@@ -79,22 +79,22 @@ public final class ModuleReference implements SModuleReference {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof SModuleReference)) return false;
+    if (!(obj instanceof SModuleReference)) {
+      return false;
+    }
     SModuleReference p = (SModuleReference) obj;
 
-    if (myModuleId == null && p.getModuleId() == null) return myModuleName.equals(p.getModuleName());
+    if (myModuleId == null && p.getModuleId() == null) {
+      return myModuleName.equals(p.getModuleName());
+    }
     return EqualUtil.equals(myModuleId, p.getModuleId());
   }
 
   public String toString() {
-    if (myModuleId == null) return myModuleName;
+    if (myModuleId == null) {
+      return myModuleName;
+    }
     return myModuleId.toString() + "(" + myModuleName + ")";
-  }
-
-  // deprecated
-  @Deprecated
-  public String getModuleFqName() {
-    return myModuleName;
   }
 
   public static SModuleReference parseReference(String text) {
@@ -104,6 +104,21 @@ public final class ModuleReference implements SModuleReference {
       return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
     }
     return new ModuleReference(text);
+  }
+
+  /**
+   * Common functionality to tell if two references are identical, identical here being both id and name.
+   * Unlike #equals(), where id takes precedence.
+   * Not specific to ModuleReference implementation, lives here as there's no better/discoverable place yet.
+   * Originates from RefUpdateUtil.
+   * @return <code>true</code> if either reference is null, or either references' name or id does not match
+   */
+  public static boolean differs(SModuleReference ref1, SModuleReference ref2) {
+    if (ref1 == null || ref2 == null) {
+      return ref1 != ref2;
+    }
+    // both not null
+    return !(EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId()) && EqualUtil.equals(ref1.getModuleName(), ref2.getModuleName()));
   }
 }
 

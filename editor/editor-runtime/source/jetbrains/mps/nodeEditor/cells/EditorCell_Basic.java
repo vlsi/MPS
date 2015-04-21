@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
@@ -457,9 +458,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
+    SNode link = new SNodeLegacy(node).getRoleLink();
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
+    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(MetaAdapterByDeclaration.getConcept(concept));
     if (node.getConcept().equals(concreteConcept)) {
       return null;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
-import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
+import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -28,6 +28,7 @@ import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -55,16 +56,17 @@ public class TextGen {
   }
 
   public static boolean canGenerateTextFor(SNode node) {
-    return !(getTextGenForNode(node) instanceof DefaultTextGenDescriptor);
+    return !(getTextGenForNode(node) instanceof MissingTextGenDescriptor);
   }
 
   public static String getExtension(@NotNull SNode node) {
-    return getTextGenForNode(node).getExtension(node);
+    return getLegacyTextGen(node).getExtension(node);
   }
 
   public static String getFileName(@NotNull SNode node) {
-    String fname = getTextGenForNode(node).getFilename(node);
-    String extension = getExtension(node);
+    final SNodeTextGen tg = getLegacyTextGen(node);
+    String fname = tg.getFilename(node);
+    String extension = tg.getExtension(node);
     return (extension == null) ? fname : fname + '.' + extension;
   }
 
@@ -87,7 +89,7 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
-    appendNodeText(buffer, node, null);
+    appendNodeText(buffer, node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
@@ -128,37 +130,36 @@ public class TextGen {
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
-  // compatibility stuff
-  @Deprecated
-  public static void appendNodeText(SNodeTextGen textGen, SNode node, TextGenBuffer buffer) {
-    textGen.setBuffer(buffer);
-    try {
-      textGen.setSNode(node);
-      textGen.doGenerateText(node);
-      textGen.setSNode(null);
-    } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + SNodeOperations.getDebugText(node), node, e);
-    }
-  }
-
-  /* package */ static void appendNodeText(TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
+  private static void appendNodeText(TextGenBuffer buffer, SNode node) {
     if (node == null) {
       buffer.append("???");
-
-      if (contextNode != null) {
-        buffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(contextNode), contextNode, null);
-      }
-
       return;
     }
 
-    getTextGenForNode(node).doGenerateText(node, buffer);
+    getTextGenForNode(node).generateText(new TextGenTransitionContext(node, buffer));
   }
 
   // helper stuff
   @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
+  /*package*/ static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+    return TextGenRegistry.getInstance().getTextGenDescriptor(node);
+  }
+
+  // compatibility code until TextUnit and code to break input model into these units, with filename assigned, are introduced.
+  private static SNodeTextGen getLegacyTextGen(@NotNull SNode node) {
+    try {
+      Class<? extends SNodeTextGen> textgenClass = TextGenRegistry.getInstance().getLegacyTextGenClass(node.getConcept());
+      if (textgenClass != null) {
+        return textgenClass.newInstance();
+      }
+    } catch (InstantiationException ex) {
+      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
+      // fall-through
+    } catch (IllegalAccessException ex) {
+      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
+      // fall-through
+    }
+    return new DefaultTextGen();
   }
 
   private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {

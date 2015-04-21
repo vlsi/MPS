@@ -7,9 +7,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -33,17 +33,17 @@ public class LanguageConceptsScope extends SimpleScope {
       return Collections.emptyList();
     }
 
-    Deque<Language> languagesToVisit = DequeSequence.fromDeque(new LinkedList<Language>());
+    Deque<Language> languagesToVisit = DequeSequence.fromDequeNew(new LinkedList<Language>());
     Set<Language> visibleLanguages = SetSequence.fromSet(new HashSet<Language>());
-    DequeSequence.fromDeque(languagesToVisit).addLastElement(language);
+    DequeSequence.fromDequeNew(languagesToVisit).addLastElement(language);
     SetSequence.fromSet(visibleLanguages).addElement(language);
-    while (DequeSequence.fromDeque(languagesToVisit).isNotEmpty()) {
-      Language nextLanguage = DequeSequence.fromDeque(languagesToVisit).removeFirstElement();
+    while (DequeSequence.fromDequeNew(languagesToVisit).isNotEmpty()) {
+      Language nextLanguage = DequeSequence.fromDequeNew(languagesToVisit).removeFirstElement();
       for (SModuleReference extendedLangRef : SetSequence.fromSet(nextLanguage.getExtendedLanguageRefs())) {
         Language extendedLanguage = as_gt0k3c_a0a0a1a7a1(extendedLangRef.resolve(nextLanguage.getRepository()), Language.class);
         if (extendedLanguage != null && !(SetSequence.fromSet(visibleLanguages).contains(extendedLanguage))) {
           SetSequence.fromSet(visibleLanguages).addElement(extendedLanguage);
-          DequeSequence.fromDeque(languagesToVisit).addLastElement(extendedLanguage);
+          DequeSequence.fromDequeNew(languagesToVisit).addLastElement(extendedLanguage);
         }
       }
     }

@@ -19,32 +19,32 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)/4577525712681038408">
     <file name="EditWatchDialog.java">
-      <node id="5498026401458111774" at="17,137,18,41" concept="15" />
-      <node id="5498026401458099194" at="20,174,21,50" concept="14" />
-      <node id="5498026401458111783" at="21,50,22,26" concept="2" />
+      <node id="5498026401458111774" at="17,131,18,45" concept="15" />
+      <node id="5498026401458099194" at="20,168,21,54" concept="14" />
+      <node id="5498026401458111783" at="21,54,22,26" concept="2" />
       <node id="2656624718522727946" at="26,29,27,26" concept="2" />
       <node id="2656624718522727940" at="28,5,29,23" concept="2" />
       <node id="2656624718522764952" at="33,38,34,39" concept="9" />
       <node id="1568068832543949350" at="39,45,40,43" concept="9" />
       <node id="3566077830424367644" at="15,0,17,0" concept="3" trace="myOkAction" />
-      <node id="4577525712681038410" at="17,0,20,0" concept="1" trace="EditWatchDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="4577525712681038410" at="17,0,20,0" concept="1" trace="EditWatchDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
       <node id="2656624718522727944" at="25,31,28,5" concept="6" />
-      <node id="5498026401458099190" at="20,0,24,0" concept="1" trace="EditWatchDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+      <node id="5498026401458099190" at="20,0,24,0" concept="1" trace="EditWatchDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
       <node id="2656624718522764943" at="31,0,36,0" concept="7" trace="createActions#()[Ljavax/swing/Action;" />
       <node id="1568068832543944951" at="36,0,42,0" concept="7" trace="getDimensionServiceKey#()Ljava/lang/String;" />
       <node id="2656624718522727935" at="24,0,31,0" concept="7" trace="doOKAction#()V" />
-      <scope id="4577525712681038413" at="17,137,18,41" />
+      <scope id="4577525712681038413" at="17,131,18,45" />
       <scope id="2656624718522727945" at="26,29,27,26" />
       <scope id="2656624718522764947" at="33,38,34,39" />
       <scope id="1568068832543944956" at="39,45,40,43" />
-      <scope id="5498026401458099193" at="20,174,22,26" />
+      <scope id="5498026401458099193" at="20,168,22,26" />
       <scope id="4577525712681038410" at="17,0,20,0">
-        <var name="context" id="4577525712681046186" />
+        <var name="ideaProject" id="5069373260571586181" />
         <var name="model" id="4577525712681046192" />
         <var name="provider" id="4577525712681046189" />
       </scope>
       <scope id="5498026401458099190" at="20,0,24,0">
-        <var name="context" id="5498026401458099199" />
+        <var name="ideaProject" id="5498026401458099199" />
         <var name="model" id="5498026401458099205" />
         <var name="okAction" id="5498026401458099208" />
         <var name="provider" id="5498026401458099202" />
@@ -61,15 +61,15 @@
       <node id="4577525712681046225" at="18,0,19,0" concept="3" trace="myProvider" />
       <node id="4577525712681046228" at="19,0,20,0" concept="3" trace="myEvaluationPanel" />
       <node id="4577525712681046231" at="20,0,21,0" concept="3" trace="mySessionStopDisposer" />
-      <node id="4577525712681046213" at="21,133,22,61" concept="14" />
-      <node id="2656624718522723648" at="22,61,23,20" concept="2" />
+      <node id="4577525712681046213" at="21,136,22,23" concept="14" />
+      <node id="2656624718522723648" at="22,23,23,20" concept="2" />
       <node id="4577525712681046234" at="23,20,24,0" concept="11" />
       <node id="4577525712681046244" at="24,0,25,20" concept="2" />
       <node id="4577525712681046247" at="25,20,26,0" concept="11" />
       <node id="4577525712681046248" at="26,0,27,26" concept="2" />
       <node id="4577525712681046252" at="27,26,28,65" concept="8" />
-      <node id="4577525712681046258" at="28,65,29,123" concept="2" />
-      <node id="1568068832543915732" at="29,123,30,62" concept="2" />
+      <node id="4577525712681046258" at="28,65,29,85" concept="2" />
+      <node id="1568068832543915732" at="29,85,30,62" concept="2" />
       <node id="4577525712681046283" at="33,48,34,27" concept="2" />
       <node id="4577525712681046286" at="36,7,37,0" concept="11" />
       <node id="4577525712681046309" at="43,29,44,22" concept="2" />
@@ -89,7 +89,7 @@
       <node id="4577525712681101545" at="60,0,66,0" concept="7" trace="dispose#()V" />
       <node id="4577525712681046293" at="39,0,48,0" concept="7" trace="doDispose#()V" />
       <node id="4577525712681046287" at="37,0,48,6" concept="2" />
-      <node id="4577525712681046200" at="21,0,52,0" concept="1" trace="AbstractEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Ljava/lang/String;)V" />
+      <node id="4577525712681046200" at="21,0,52,0" concept="1" trace="AbstractEvaluationDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Ljava/lang/String;)V" />
       <scope id="4577525712681046282" at="33,48,34,27" />
       <scope id="4577525712681046308" at="43,29,44,22" />
       <scope id="4577525712681101539" at="52,43,53,29" />
@@ -104,11 +104,11 @@
       <scope id="4577525712681046296" at="40,31,46,11" />
       <scope id="4577525712681101545" at="60,0,66,0" />
       <scope id="4577525712681046293" at="39,0,48,0" />
-      <scope id="4577525712681046203" at="21,133,50,11">
+      <scope id="4577525712681046203" at="21,136,50,11">
         <var name="debugSession" id="4577525712681046253" />
       </scope>
       <scope id="4577525712681046200" at="21,0,52,0">
-        <var name="context" id="4577525712681046205" />
+        <var name="ideaProject" id="5069373260571594489" />
         <var name="model" id="4577525712681046210" />
         <var name="provider" id="4577525712681046207" />
         <var name="title" id="4577525712681046221" />
@@ -210,27 +210,27 @@
   </root>
   <root nodeRef="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)/5849716370568348282">
     <file name="EvaluationDialog.java">
-      <node id="5849716370568348356" at="16,130,17,52" concept="14" />
+      <node id="5849716370568348356" at="16,127,17,56" concept="14" />
       <node id="2656624718522778469" at="24,47,25,37" concept="2" />
       <node id="2656624718522778497" at="29,47,30,72" concept="2" />
       <node id="2656624718522778505" at="30,72,31,21" concept="2" />
       <node id="2656624718522778531" at="35,47,36,21" concept="2" />
       <node id="1568068832543932926" at="43,45,44,44" concept="9" />
-      <node id="5849716370568348349" at="16,0,19,0" concept="1" trace="EvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="5849716370568348349" at="16,0,19,0" concept="1" trace="EvaluationDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
       <node id="2656624718522778461" at="23,0,27,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
       <node id="2656624718522778524" at="34,0,38,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
       <node id="2656624718522778489" at="28,0,33,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
       <node id="1568068832543932916" at="40,0,46,0" concept="7" trace="getDimensionServiceKey#()Ljava/lang/String;" />
       <node id="2656624718522764997" at="21,38,38,7" concept="9" />
       <node id="2656624718522764989" at="19,0,40,0" concept="7" trace="createActions#()[Ljavax/swing/Action;" />
-      <scope id="5849716370568348355" at="16,130,17,52" />
+      <scope id="5849716370568348355" at="16,127,17,56" />
       <scope id="2656624718522778466" at="24,47,25,37" />
       <scope id="2656624718522778529" at="35,47,36,21" />
       <scope id="1568068832543932921" at="43,45,44,44" />
       <scope id="2656624718522778494" at="29,47,31,21" />
       <scope id="5849716370568348349" at="16,0,19,0">
         <var name="container" id="2814952292830127447" />
-        <var name="context" id="5849716370568348351" />
+        <var name="ideaProject" id="5069373260571633081" />
         <var name="provider" id="2814952292830128614" />
       </scope>
       <scope id="2656624718522778461" at="23,0,27,0">

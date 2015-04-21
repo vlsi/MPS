@@ -336,6 +336,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_robprv_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "user-defined dependencies(advanced):");
     editorCell.setCellId("Constant_robprv_a0a_0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

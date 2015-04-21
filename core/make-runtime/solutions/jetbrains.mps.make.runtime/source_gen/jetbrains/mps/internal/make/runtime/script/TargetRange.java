@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class TargetRange {

@@ -71,6 +71,8 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
+  @Override
+  @NotNull
   public SConceptId getId() {
     return myConceptId;
   }

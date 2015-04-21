@@ -1,0 +1,7 @@
+modelsLocation tests/makeTests/models;
+modelsToCopy ManifestXml.mps;
+modelsDirName models;
+moduleName makeTests;
+generatorOutputPath models;
+useModuleSourceFolder true;
+useTransientOutputFolder false;

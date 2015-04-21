@@ -18,13 +18,17 @@ package jetbrains.mps.jps.build;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.util.io.FileUtilRt;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
+import jetbrains.mps.project.MPSExtentions;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
@@ -43,16 +47,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import static jetbrains.mps.project.MPSExtentions.*;
+
 /**
  * evgeny, 11/30/12
  */
 public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
+  @NonNls
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSModuleLevelBuilder.class);
-
-  private static final String JAVA_EXTENSION = "java";
-  static final String MODEL_EXTENSION = "model";
-  static final String MPSR_EXTENSION = "mpsr";
-  static final String MPS_MODEL_EXTENSION = "mps";
 
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
 
@@ -147,11 +149,12 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
       final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
       if (toMake.isEmpty()) {
-        LOG.debug("Nothing to do");
+        LOG.debug("Nothing to do -- no changed models");
         return status;
       }
 
-      MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, compileContext, refreshComponent, outputConsumer);
+      final JpsMPSProject project = JpsMPSRepositoryFacade.getInstance().getProject();
+      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext,  outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
         status = ExitCode.OK;
@@ -174,11 +177,11 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         JpsSolutionIdea solution = JpsMPSRepositoryFacade.getInstance().getSolution(target.getModule());
         if (solution == null) return true;
 
-        String suffix = FileUtil.getExtension(file.getName());
-        if (!suffix.equals("model")) {
+        String suffix = FileUtilRt.getExtension(file.getName());
+        if (!suffix.equals(MODEL_HEADER)) {
           ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
           if (modelFactory == null) return true;
-        }
+        } // fixme obviously
 
         String path = FileUtil.toCanonicalPath(file.getPath());
         SModel model = solution.getModelByPath(path);
@@ -196,6 +199,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public List<String> getCompilableFileExtensions() {
-    return Arrays.asList(JAVA_EXTENSION, MPSR_EXTENSION, MODEL_EXTENSION, MPS_MODEL_EXTENSION);
+//    return Arrays.asList(MODEL_ROOT, MODEL, MODEL_HEADER, TRACE_INFO_EXT);
+    return null;
   }
 }

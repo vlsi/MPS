@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class RemoveRedundantExtends_QuickFix extends QuickFix_Runtime {
   public RemoveRedundantExtends_QuickFix() {
@@ -13,6 +14,6 @@ public class RemoveRedundantExtends_QuickFix extends QuickFix_Runtime {
     return "Remove redundunt 'extends Object'";
   }
   public void execute(SNode node) {
-    SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.WildCardType");
+    SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
   }
 }

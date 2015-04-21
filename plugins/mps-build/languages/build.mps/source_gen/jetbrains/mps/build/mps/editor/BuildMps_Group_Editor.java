@@ -79,6 +79,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createRefNodeList_pilq2t_a2a(editorContext, node));
     return editorCell;
   }

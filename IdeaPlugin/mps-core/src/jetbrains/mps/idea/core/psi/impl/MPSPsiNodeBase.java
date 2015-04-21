@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.util.TextRange;

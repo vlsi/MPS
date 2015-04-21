@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,6 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.ModelComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -63,8 +61,36 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   @Override
+  public void visitModuleNode(@NotNull final ProjectModuleTreeNode node) {
+    // XXX might be fruitful to have pre/post visit notifications, so that we can get rid of propagateStatusToNamespaceNodes (do it from post visit)
+    if (node.isInitialized()) {
+      // we've got children (SModelTreeNodes) and there's update for them in #visitModelNode(), below
+      return;
+    }
+    scheduleModelRead(node, new Runnable() {
+      @Override
+      public void run() {
+        if (node.getModule().isReadOnly()) {
+          new StatusUpdate(node).update(GenerationStatus.READONLY);
+          return;
+        }
+        final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+        if (project != null && DumbService.getInstance(project).isDumb()) {
+          // see visitModelNode for explanation
+          propagateStatusToNamespaceNodes(node, GenerationStatus.UPDATING);
+          return;
+        }
+        GenerationStatus s = new StatusUpdate(node).update();
+        // no need to check for generator and language here as #visitModelNode does, as now
+        // we can face generator module only as sibling to language's models (i.e. SModelTreeNodes)
+        propagateStatusToNamespaceNodes(node, s);
+      }
+    });
+  }
+
+  @Override
   public void visitModelNode(@NotNull final SModelTreeNode modelNode) {
-    schedule(modelNode, new Runnable() {
+    scheduleModelRead(modelNode, new Runnable() {
       @Override
       public void run() {
         if (isTimeToRelax()) {
@@ -131,7 +157,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     }
   }
 
-  private class StatusUpdate implements Computable<GenerationStatus> {
+  private class StatusUpdate {
     private final SModelTreeNode myModelNode;
     private final ProjectModuleTreeNode myModuleNode;
 
@@ -147,7 +173,8 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       if (myModuleNode == null && myModelNode == null) {
         return null;
       }
-      GenerationStatus status = new ModelComputeRunnable<GenerationStatus>(this).runRead(myProject.getModelAccess());
+      // FIXME update is inside model read already, no need to wrap once again
+      GenerationStatus status = compute();
       update(status);
       return status;
     }
@@ -160,8 +187,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       }
     }
 
-    @Override
-    public GenerationStatus compute() {
+    private GenerationStatus compute() {
       if (myModelNode != null) {
         // extra check before read action
         if (myModelNode.getModel().getModule() == null) {

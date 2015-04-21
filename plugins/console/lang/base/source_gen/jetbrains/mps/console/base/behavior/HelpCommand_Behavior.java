@@ -15,9 +15,9 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;
@@ -50,14 +50,14 @@ public class HelpCommand_Behavior {
           return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }
       }, true);
-      Deque<SNode> groupedConstructions = LinkedListSequence.fromLinkedList(new LinkedList<SNode>());
+      Deque<SNode> groupedConstructions = LinkedListSequence.fromLinkedListNew(new LinkedList<SNode>());
       for (SNode e : Sequence.fromIterable(constructions)) {
-        if (BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(e), "virtual_getGroup_6928665434441162387", new Object[]{}) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedList(groupedConstructions).last())) {
-          LinkedListSequence.fromLinkedList(groupedConstructions).addElement(null);
+        if (BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(e), "virtual_getGroup_6928665434441162387", new Object[]{}) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedListNew(groupedConstructions).last())) {
+          LinkedListSequence.fromLinkedListNew(groupedConstructions).addElement(null);
         }
-        LinkedListSequence.fromLinkedList(groupedConstructions).addElement(e);
+        LinkedListSequence.fromLinkedListNew(groupedConstructions).addElement(e);
       }
-      List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedList(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
+      List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedListNew(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
         public IListSequence<String> select(SNode it) {
           try {
             return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getShortDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getShortHelp_473081947982699339", new Object[]{}));
@@ -68,7 +68,7 @@ public class HelpCommand_Behavior {
             try {
               return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getShortDisplayString_7006261637493126103", new Object[]{}), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.asNode(it), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "");
             }
           }
         }

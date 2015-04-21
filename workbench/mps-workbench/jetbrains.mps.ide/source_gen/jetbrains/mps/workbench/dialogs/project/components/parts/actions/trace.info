@@ -72,17 +72,6 @@
       <unit id="1560298786499490464" at="11,0,40,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseAddAction" />
     </file>
   </root>
-  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493326">
-    <file name="TableAddAction.java">
-      <node id="1560298786499493334" at="8,39,9,37" concept="8" />
-      <node id="1560298786499493329" at="8,0,11,0" concept="0" trace="TableAddAction#(Ljavax/swing/JTable;)V" />
-      <scope id="1560298786499493333" at="8,39,9,37" />
-      <scope id="1560298786499493329" at="8,0,11,0">
-        <var name="table" id="1560298786499493331" />
-      </scope>
-      <unit id="1560298786499493326" at="7,0,12,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableAddAction" />
-    </file>
-  </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493338">
     <file name="ListRemoveAction.java">
       <node id="1560298786499493341" at="10,0,11,0" concept="2" trace="myList" />
@@ -137,123 +126,35 @@
   </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499494244">
     <file name="BaseValidatedAction.java">
-      <node id="1560298786499494247" at="10,0,11,0" concept="2" trace="myValidator" />
-      <node id="1560298786499494259" at="11,77,12,35" concept="8" />
-      <node id="1560298786499494269" at="15,54,16,17" concept="1" />
-      <node id="1560298786499494281" at="17,30,18,24" concept="1" />
-      <node id="1560298786499494293" at="21,54,22,28" concept="1" />
-      <node id="1560298786499494299" at="24,0,25,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499494250" at="11,0,14,0" concept="0" trace="BaseValidatedAction#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/Icon;)V" />
-      <node id="1560298786499494274" at="16,17,19,5" concept="4" />
-      <node id="1560298786499494287" at="21,0,24,0" concept="5" trace="setValidator#(Ljava/lang/Runnable;)V" />
-      <node id="1560298786499494263" at="14,0,21,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="1560298786499494258" at="11,77,12,35" />
-      <scope id="1560298786499494280" at="17,30,18,24" />
-      <scope id="1560298786499494292" at="21,54,22,28" />
-      <scope id="1560298786499494299" at="24,0,25,0">
+      <node id="1560298786499494247" at="17,0,18,0" concept="2" trace="myValidator" />
+      <node id="1560298786499494259" at="19,77,20,35" concept="8" />
+      <node id="1560298786499494269" at="23,54,24,17" concept="1" />
+      <node id="1560298786499494281" at="25,30,26,24" concept="1" />
+      <node id="1560298786499494293" at="29,54,30,28" concept="1" />
+      <node id="1560298786499494299" at="32,0,33,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499494274" at="24,17,27,5" concept="4" />
+      <node id="1560298786499494287" at="29,0,32,0" concept="5" trace="setValidator#(Ljava/lang/Runnable;)V" />
+      <node id="1560298786499494250" at="18,0,22,0" concept="0" trace="BaseValidatedAction#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/Icon;)V" />
+      <node id="1560298786499494263" at="22,0,29,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="1560298786499494258" at="19,77,20,35" />
+      <scope id="1560298786499494280" at="25,30,26,24" />
+      <scope id="1560298786499494292" at="29,54,30,28" />
+      <scope id="1560298786499494299" at="32,0,33,0">
         <var name="e" id="1560298786499494302" />
       </scope>
-      <scope id="1560298786499494250" at="11,0,14,0">
+      <scope id="1560298786499494287" at="29,0,32,0">
+        <var name="validator" id="1560298786499494290" />
+      </scope>
+      <scope id="1560298786499494250" at="18,0,22,0">
         <var name="description" id="1560298786499494254" />
         <var name="icon" id="1560298786499494256" />
         <var name="text" id="1560298786499494252" />
       </scope>
-      <scope id="1560298786499494287" at="21,0,24,0">
-        <var name="validator" id="1560298786499494290" />
-      </scope>
-      <scope id="1560298786499494268" at="15,54,19,5" />
-      <scope id="1560298786499494263" at="14,0,21,0">
+      <scope id="1560298786499494268" at="23,54,27,5" />
+      <scope id="1560298786499494263" at="22,0,29,0">
         <var name="e" id="1560298786499494266" />
       </scope>
-      <unit id="1560298786499494244" at="9,0,26,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
-    </file>
-  </root>
-  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499495342">
-    <file name="TableRemoveAction.java">
-      <node id="1560298786499495345" at="10,0,11,0" concept="2" trace="myTable" />
-      <node id="1560298786499495353" at="11,42,12,55" concept="8" />
-      <node id="1560298786499495357" at="12,55,13,20" concept="1" />
-      <node id="1560298786499495369" at="16,39,17,20" concept="1" />
-      <node id="1560298786499495372" at="17,20,18,71" concept="1" />
-      <node id="1560298786499495392" at="21,48,22,41" concept="6" />
-      <node id="1560298786499495414" at="24,22,25,18" concept="1" />
-      <node id="1560298786499495418" at="27,5,28,16" concept="1" />
-      <node id="1560298786499495423" at="28,16,29,52" concept="6" />
-      <node id="1560298786499495451" at="30,28,31,14" concept="1" />
-      <node id="1560298786499495446" at="33,36,34,16" concept="1" />
-      <node id="1560298786499495460" at="36,21,37,69" concept="1" />
-      <node id="1560298786499495470" at="40,0,41,0" concept="5" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499495409" at="23,45,26,7" concept="4" />
-      <node id="1560298786499495437" at="32,10,35,5" concept="4" />
-      <node id="1560298786499495454" at="35,5,38,5" concept="4" />
-      <node id="1560298786499495348" at="11,0,15,0" concept="0" trace="TableRemoveAction#(Ljavax/swing/JTable;)V" />
-      <node id="1560298786499495363" at="15,0,20,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499495400" at="22,41,27,5" concept="3" />
-      <node id="1560298786499495433" at="29,52,35,5" concept="4" />
-      <node id="1560298786499495386" at="20,0,40,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="1560298786499495413" at="24,22,25,18" />
-      <scope id="1560298786499495450" at="30,28,31,14" />
-      <scope id="1560298786499495445" at="33,36,34,16" />
-      <scope id="1560298786499495459" at="36,21,37,69" />
-      <scope id="1560298786499495470" at="40,0,41,0">
-        <var name="e" id="1560298786499495473" />
-      </scope>
-      <scope id="1560298786499495352" at="11,42,13,20" />
-      <scope id="1560298786499495368" at="16,39,18,71" />
-      <scope id="1560298786499495408" at="23,45,26,7" />
-      <scope id="1560298786499495348" at="11,0,15,0">
-        <var name="table" id="1560298786499495350" />
-      </scope>
-      <scope id="1560298786499495363" at="15,0,20,0">
-        <var name="e" id="1560298786499495366" />
-      </scope>
-      <scope id="1560298786499495400" at="22,41,27,5">
-        <var name="i" id="1560298786499495406" />
-      </scope>
-      <scope id="1560298786499495391" at="21,48,38,5">
-        <var name="index" id="1560298786499495393" />
-        <var name="listSize" id="1560298786499495424" />
-      </scope>
-      <scope id="1560298786499495386" at="20,0,40,0">
-        <var name="e" id="1560298786499495389" />
-      </scope>
-      <unit id="1560298786499495342" at="9,0,42,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
-    </file>
-  </root>
-  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499497503">
-    <file name="ListEditAction.java">
-      <node id="1560298786499497506" at="10,0,11,0" concept="2" trace="myList" />
-      <node id="1560298786499497514" at="11,37,12,55" concept="8" />
-      <node id="1560298786499497518" at="12,55,13,18" concept="1" />
-      <node id="1560298786499497530" at="16,39,17,20" concept="1" />
-      <node id="1560298786499497533" at="17,20,18,51" concept="1" />
-      <node id="8156633209088098085" at="20,36,21,51" concept="7" />
-      <node id="1560298786499497555" at="24,48,25,13" concept="1" />
-      <node id="8156633209087166437" at="27,26,28,18" concept="7" />
-      <node id="1560298786499497559" at="30,0,31,0" concept="5" trace="doEdit#()V" />
-      <node id="8156633209088098094" at="20,0,23,0" concept="5" trace="isApplicable#()Z" />
-      <node id="8156633209087164974" at="27,0,30,0" concept="5" trace="getList#()Ljavax/swing/JList;" />
-      <node id="1560298786499497509" at="11,0,15,0" concept="0" trace="ListEditAction#(Ljavax/swing/JList;)V" />
-      <node id="1560298786499497549" at="23,0,27,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499497524" at="15,0,20,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="8156633209088098084" at="20,36,21,51" />
-      <scope id="1560298786499497554" at="24,48,25,13" />
-      <scope id="8156633209087164977" at="27,26,28,18" />
-      <scope id="1560298786499497559" at="30,0,31,0" />
-      <scope id="1560298786499497513" at="11,37,13,18" />
-      <scope id="1560298786499497529" at="16,39,18,51" />
-      <scope id="8156633209088098094" at="20,0,23,0" />
-      <scope id="8156633209087164974" at="27,0,30,0" />
-      <scope id="1560298786499497509" at="11,0,15,0">
-        <var name="list" id="1560298786499497511" />
-      </scope>
-      <scope id="1560298786499497549" at="23,0,27,0">
-        <var name="e" id="1560298786499497552" />
-      </scope>
-      <scope id="1560298786499497524" at="15,0,20,0">
-        <var name="e" id="1560298786499497527" />
-      </scope>
-      <unit id="1560298786499497503" at="9,0,32,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction" />
+      <unit id="1560298786499494244" at="10,0,34,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
     </file>
   </root>
 </debug-info>

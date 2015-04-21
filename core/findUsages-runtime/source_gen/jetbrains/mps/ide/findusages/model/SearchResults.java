@@ -12,17 +12,20 @@ import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SearchResults<T> implements UsagesList {
-  private final Set<T> mySearchedNodes;
+  private final Set<Object> mySearchedNodes;
   private List<SearchResult<T>> mySearchResults;
   public SearchResults() {
-    mySearchedNodes = new HashSet<T>();
+    mySearchedNodes = new HashSet<Object>();
     mySearchResults = new ArrayList<SearchResult<T>>();
   }
-  public SearchResults(Set<T> searchedNodes, List<SearchResult<T>> searchResults) {
-    mySearchedNodes = searchedNodes;
+  public SearchResults(Set<?> searchedNodes, List<SearchResult<T>> searchResults) {
+    mySearchedNodes = new HashSet<Object>(searchedNodes);
     mySearchResults = searchResults;
   }
-  public Set<T> getSearchedNodes() {
+  public Set<Object> getSearchedNodes() {
+    // mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same 
+    // kind as our results, hence we use <?>, not <T> (I don't feel there's reason introduce <E> as it 
+    // (a) limits where we can look; (b) complicates the code 
     return mySearchedNodes;
   }
   public List<SearchResult<T>> getSearchResults() {
@@ -78,9 +81,9 @@ public class SearchResults<T> implements UsagesList {
     }
     return alive;
   }
-  public Set<T> getAliveNodes() {
-    Set<T> alive = new HashSet<T>();
-    for (T node : mySearchedNodes) {
+  public Set<?> getAliveNodes() {
+    Set<Object> alive = new HashSet<Object>();
+    for (Object node : mySearchedNodes) {
       if (node != null) {
         alive.add(node);
       }
@@ -88,6 +91,6 @@ public class SearchResults<T> implements UsagesList {
     return alive;
   }
   public void removeDuplicates() {
-    mySearchResults = new ArrayList(new LinkedHashSet(mySearchResults));
+    mySearchResults = new ArrayList<SearchResult<T>>(new LinkedHashSet<SearchResult<T>>(mySearchResults));
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -42,7 +40,7 @@ public class GoToTypeErrorRuleUtil {
   }
 
   public static void goToRuleById(Project project, Pair<String, String> ruleModelAndId) {
-    ModelAccess.assertLegalWrite();
+    project.getModelAccess().checkWriteAccess();
 
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
@@ -67,6 +65,6 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    NavigationSupport.getInstance().openNode(new ProjectOperationContext(project), rule, false, true);
+    NavigationSupport.getInstance().openNode(project, rule, false, true);
   }
 }
