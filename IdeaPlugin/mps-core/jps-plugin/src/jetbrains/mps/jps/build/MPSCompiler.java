@@ -13,7 +13,6 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -50,7 +49,6 @@ public class MPSCompiler {
      * returns true, if all models were successfully built
      */
     public boolean build() {
-        ProjectOperationContext context = new ProjectOperationContext(myProject);
         List<SModel> models = new ArrayList<SModel>();
         GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
@@ -58,7 +56,7 @@ public class MPSCompiler {
             models.add((SModel) m);
         }
 
-        boolean success = GenerationFacade.generateModels(myProject, models, context,
+        boolean success = GenerationFacade.generateModels(myProject, models, null,
                 new JpsGenerationHandler(),
                 myContext.getProgressMonitor(), myContext.getMessageHandler(),
                 GenerationOptions.fromSettings(GenerationSettingsProvider.getInstance().getGenerationSettings()).create(),
