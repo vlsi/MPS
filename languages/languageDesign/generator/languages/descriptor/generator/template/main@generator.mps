@@ -3381,9 +3381,6 @@
               <node concept="35c_gC" id="1_Iic4WUlrP" role="37wK5m">
                 <ref role="35c_gD" to="bj1v:nUEAIXlVr8" resolve="Rule" />
               </node>
-              <node concept="35c_gC" id="1_Iic4WUpgm" role="37wK5m">
-                <ref role="35c_gD" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
-              </node>
             </node>
           </node>
         </node>
