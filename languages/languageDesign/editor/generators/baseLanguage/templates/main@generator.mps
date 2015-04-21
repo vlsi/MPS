@@ -68,6 +68,7 @@
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(jetbrains.mps.openapi.editor@java_stub)" />
     <import index="oz2g" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <import index="nh4" ref="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -9549,19 +9550,6 @@
                     </node>
                   </node>
                   <node concept="22lmx$" id="heOoiKp" role="3clFbw">
-                    <node concept="2ZW3vV" id="heOoiKu" role="3uHU7w">
-                      <node concept="2OqwBi" id="h_XJc7E" role="2ZW6bz">
-                        <node concept="liA8E" id="h_XJc7F" role="2OqNvi">
-                          <ref role="37wK5l" to="nu8v:~EditorCell.getSubstituteInfo():jetbrains.mps.openapi.editor.cells.SubstituteInfo" resolve="getSubstituteInfo" />
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxgha7h" role="2Oq$k0">
-                          <ref role="3cqZAo" node="heOoiKG" resolve="elementCell" />
-                        </node>
-                      </node>
-                      <node concept="3uibUv" id="heOoiKx" role="2ZW6by">
-                        <ref role="3uigEE" to="4ky7:~DefaultReferenceSubstituteInfo" resolve="DefaultReferenceSubstituteInfo" />
-                      </node>
-                    </node>
                     <node concept="3clFbC" id="heOoiKq" role="3uHU7B">
                       <node concept="2OqwBi" id="h_XJ6oG" role="3uHU7B">
                         <node concept="liA8E" id="h_XJ6oH" role="2OqNvi">
@@ -9572,6 +9560,19 @@
                         </node>
                       </node>
                       <node concept="10Nm6u" id="heOoiKt" role="3uHU7w" />
+                    </node>
+                    <node concept="2ZW3vV" id="heOoiKu" role="3uHU7w">
+                      <node concept="2OqwBi" id="h_XJc7E" role="2ZW6bz">
+                        <node concept="liA8E" id="h_XJc7F" role="2OqNvi">
+                          <ref role="37wK5l" to="nu8v:~EditorCell.getSubstituteInfo():jetbrains.mps.openapi.editor.cells.SubstituteInfo" resolve="getSubstituteInfo" />
+                        </node>
+                        <node concept="37vLTw" id="2BHiRxgha7h" role="2Oq$k0">
+                          <ref role="3cqZAo" node="heOoiKG" resolve="elementCell" />
+                        </node>
+                      </node>
+                      <node concept="3uibUv" id="4XOMKE0OCbx" role="2ZW6by">
+                        <ref role="3uigEE" to="nu8v:~DefaultSubstituteInfo" resolve="DefaultSubstituteInfo" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3clFbS" id="heOoiKg" role="3clFbx">

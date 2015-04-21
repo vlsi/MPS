@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.CopyUtil;
@@ -47,7 +48,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
 
   private SNode myParentNode;
   private SNode myCurrentChild;

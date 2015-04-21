@@ -301,7 +301,7 @@
       <node id="1270798772176070201" at="80,96,81,134" concept="2" />
       <node id="1270798772176070201" at="82,34,83,95" concept="2" />
       <node id="1270798772176070201" at="83,95,84,98" concept="2" />
-      <node id="1270798772176070201" at="86,131,87,139" concept="2" />
+      <node id="1270798772176070201" at="86,122,87,139" concept="2" />
       <node id="1270798772176070201" at="24,0,27,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1270798772176070201" at="61,0,64,0" concept="1" trace="breakpointableConceptsListHandler_q67mwo_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1270798772176070201" at="85,9,88,9" concept="3" />
@@ -322,7 +322,7 @@
       <scope id="1270798772176070201" at="41,49,42,84" />
       <scope id="1270798772176070201" at="42,84,43,85" />
       <scope id="1270798772176070201" at="61,115,62,50" />
-      <scope id="1270798772176070201" at="86,131,87,139" />
+      <scope id="1270798772176070201" at="86,122,87,139" />
       <scope id="2886182022232400553" at="35,89,37,22">
         <var name="editorCell" id="2886182022232400553" />
       </scope>
@@ -459,7 +459,7 @@
       <node id="2566194812862845914" at="109,96,110,134" concept="2" />
       <node id="2566194812862845914" at="111,34,112,95" concept="2" />
       <node id="2566194812862845914" at="112,95,113,98" concept="2" />
-      <node id="2566194812862845914" at="115,131,116,139" concept="2" />
+      <node id="2566194812862845914" at="115,122,116,139" concept="2" />
       <node id="2566194812862845914" at="121,90,122,97" concept="5" />
       <node id="2566194812862845914" at="122,97,123,49" concept="2" />
       <node id="2566194812862845914" at="123,49,124,34" concept="5" />
@@ -622,7 +622,7 @@
       <scope id="2566194812862845914" at="73,40,74,85" />
       <scope id="2566194812862845914" at="74,85,75,86" />
       <scope id="2566194812862845914" at="90,120,91,50" />
-      <scope id="2566194812862845914" at="115,131,116,139" />
+      <scope id="2566194812862845914" at="115,122,116,139" />
       <scope id="2566194812862845914" at="126,40,127,82" />
       <scope id="2566194812862845914" at="127,82,128,84" />
       <scope id="7796501636717832278" at="131,97,132,361" />

@@ -53,7 +53,7 @@
       <node id="3675491646420501088" at="70,96,71,134" concept="2" />
       <node id="3675491646420501088" at="72,34,73,95" concept="2" />
       <node id="3675491646420501088" at="73,95,74,98" concept="2" />
-      <node id="3675491646420501088" at="76,131,77,139" concept="2" />
+      <node id="3675491646420501088" at="76,122,77,139" concept="2" />
       <node id="3675491646420516126" at="82,88,83,86" concept="5" />
       <node id="3675491646420516126" at="83,86,84,47" concept="2" />
       <node id="3675491646420516126" at="84,47,85,34" concept="5" />
@@ -84,7 +84,7 @@
       <node id="3675491646420501088" at="123,96,124,134" concept="2" />
       <node id="3675491646420501088" at="125,34,126,95" concept="2" />
       <node id="3675491646420501088" at="126,95,127,98" concept="2" />
-      <node id="3675491646420501088" at="129,131,130,139" concept="2" />
+      <node id="3675491646420501088" at="129,122,130,139" concept="2" />
       <node id="3675491646420514122" at="135,88,136,86" concept="5" />
       <node id="3675491646420514122" at="136,86,137,47" concept="2" />
       <node id="3675491646420514122" at="137,47,138,34" concept="5" />
@@ -115,7 +115,7 @@
       <node id="3675491646420501088" at="176,96,177,134" concept="2" />
       <node id="3675491646420501088" at="178,34,179,95" concept="2" />
       <node id="3675491646420501088" at="179,95,180,98" concept="2" />
-      <node id="3675491646420501088" at="182,131,183,139" concept="2" />
+      <node id="3675491646420501088" at="182,122,183,139" concept="2" />
       <node id="3675491646420501088" at="24,0,27,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3675491646420501088" at="51,0,54,0" concept="1" trace="statesListHandler_qpt50r_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3675491646420501088" at="75,9,78,9" concept="3" />
@@ -154,11 +154,11 @@
       <scope id="3675491646420501088" at="33,84,34,81" />
       <scope id="3675491646420501088" at="34,81,35,84" />
       <scope id="3675491646420501088" at="51,98,52,50" />
-      <scope id="3675491646420501088" at="76,131,77,139" />
+      <scope id="3675491646420501088" at="76,122,77,139" />
       <scope id="3675491646420501088" at="104,98,105,50" />
-      <scope id="3675491646420501088" at="129,131,130,139" />
+      <scope id="3675491646420501088" at="129,122,130,139" />
       <scope id="3675491646420501088" at="157,103,158,50" />
-      <scope id="3675491646420501088" at="182,131,183,139" />
+      <scope id="3675491646420501088" at="182,122,183,139" />
       <scope id="3675491646420501088" at="54,66,56,93">
         <var name="listOwner" id="3675491646420501088" />
       </scope>

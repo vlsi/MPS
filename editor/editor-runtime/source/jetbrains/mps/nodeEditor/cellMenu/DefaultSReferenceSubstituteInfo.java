@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.CopyUtil;
@@ -40,7 +41,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private SNode mySourceNode;
   private SReferenceLink myLink;
   private static final Logger LOG = LogManager.getLogger(DefaultSReferenceSubstituteInfo.class);

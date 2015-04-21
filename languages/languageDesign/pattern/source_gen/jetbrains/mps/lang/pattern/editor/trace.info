@@ -1242,7 +1242,7 @@
       <node id="2879868312062971227" at="78,34,79,95" concept="3" />
       <node id="2879868312062971227" at="79,95,80,98" concept="3" />
       <node id="2879868312062971227" at="80,98,81,80" concept="3" />
-      <node id="2879868312062971227" at="83,131,84,139" concept="3" />
+      <node id="2879868312062971227" at="83,122,84,139" concept="3" />
       <node id="2879868312062971227" at="89,104,90,100" concept="7" />
       <node id="2879868312062971227" at="90,100,91,38" concept="3" />
       <node id="2879868312062971227" at="91,38,92,36" concept="7" />
@@ -1295,7 +1295,7 @@
       <node id="2879868312062971227" at="157,96,158,134" concept="3" />
       <node id="2879868312062971227" at="159,34,160,95" concept="3" />
       <node id="2879868312062971227" at="160,95,161,98" concept="3" />
-      <node id="2879868312062971227" at="163,131,164,139" concept="3" />
+      <node id="2879868312062971227" at="163,122,164,139" concept="3" />
       <node id="2879868312062971227" at="25,0,28,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2879868312062971227" at="28,0,31,0" concept="6" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2879868312062971227" at="57,0,60,0" concept="2" trace="clauseListHandler_oeflkv_b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -1328,11 +1328,11 @@
       <scope id="2879868312062971227" at="35,81,36,84" />
       <scope id="2879868312062971227" at="36,84,37,81" />
       <scope id="2879868312062971227" at="57,98,58,50" />
-      <scope id="2879868312062971227" at="83,131,84,139" />
+      <scope id="2879868312062971227" at="83,122,84,139" />
       <scope id="2879868312062971227" at="113,28,114,83" />
       <scope id="2879868312062971227" at="114,83,115,86" />
       <scope id="2879868312062971227" at="138,100,139,50" />
-      <scope id="2879868312062971227" at="163,131,164,139" />
+      <scope id="2879868312062971227" at="163,122,164,139" />
       <scope id="2879868312062971227" at="60,66,62,93">
         <var name="listOwner" id="2879868312062971227" />
       </scope>

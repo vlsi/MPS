@@ -39,9 +39,9 @@
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
     <import index="mfhd" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
+    <import index="qe67" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" implicit="true" />
     <import index="9nge" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.fileGenerator(MPS.Core/jetbrains.mps.generator.fileGenerator@java_stub)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="qe67" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2902,6 +2902,106 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6UDbxo8i0QX" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="6qGpHl7IHpK">
+    <property role="TrG5h" value="HeadlessEditorComponent" />
+    <node concept="3clFbW" id="2qx2hw9gxhG" role="jymVt">
+      <node concept="37vLTG" id="1$3BPv3VYLL" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="1$3BPv3VYLM" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="HonEu9vgRQ" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="1QnJaNXOBYe" role="1tU5fm">
+          <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="2qx2hw9gxhI" role="3clF45" />
+      <node concept="3Tm1VV" id="2qx2hw9gxhJ" role="1B3o_S" />
+      <node concept="3clFbS" id="2qx2hw9gxhK" role="3clF47">
+        <node concept="XkiVB" id="2qx2hw9gz2u" role="3cqZAp">
+          <ref role="37wK5l" to="9a8:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="EditorComponent" />
+          <node concept="37vLTw" id="2qx2hw9gzFV" role="37wK5m">
+            <ref role="3cqZAo" node="HonEu9vgRQ" resolve="repository" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2qx2hw9g$ur" role="3cqZAp">
+          <node concept="1rXfSq" id="2qx2hw9g$up" role="3clFbG">
+            <ref role="37wK5l" to="9a8:~EditorComponent.editNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="editNode" />
+            <node concept="37vLTw" id="2qx2hw9g_4D" role="37wK5m">
+              <ref role="3cqZAo" node="1$3BPv3VYLL" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2qx2hw9g_n5" role="jymVt" />
+    <node concept="3clFb_" id="2qx2hw9gBmI" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="attachListeners" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tmbuc" id="2qx2hw9gBmJ" role="1B3o_S" />
+      <node concept="3cqZAl" id="2qx2hw9gBmL" role="3clF45" />
+      <node concept="3clFbS" id="2qx2hw9gBmM" role="3clF47" />
+      <node concept="2AHcQZ" id="2qx2hw9gBmN" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2qx2hw9gBtD" role="jymVt" />
+    <node concept="3clFb_" id="2qx2hw9gBwp" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="detachListeners" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tmbuc" id="2qx2hw9gBwq" role="1B3o_S" />
+      <node concept="3cqZAl" id="2qx2hw9gBws" role="3clF45" />
+      <node concept="3clFbS" id="2qx2hw9gBwt" role="3clF47" />
+      <node concept="2AHcQZ" id="2qx2hw9gBwu" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="6qGpHl7IHpL" role="1B3o_S" />
+    <node concept="3uibUv" id="2qx2hw9gwJ0" role="1zkMxy">
+      <ref role="3uigEE" to="9a8:~EditorComponent" resolve="EditorComponent" />
+    </node>
+    <node concept="3UR2Jj" id="7jFHz5ktb41" role="lGtFl">
+      <node concept="TZ5HA" id="7jFHz5ktb5i" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5ktb5j" role="1dT_Ay">
+          <property role="1dT_AB" value="This editor component was designed to be used in headless mode. Instance of this editor component can be created" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5ktb7k" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5ktb7l" role="1dT_Ay">
+          <property role="1dT_AB" value="in order to: part" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5ktb7y" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5ktb7z" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5ktb7q" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5ktb7r" role="1dT_Ay">
+          <property role="1dT_AB" value="- render the node tree as projection-specific text" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5kvX6v" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5kvX6w" role="1dT_Ay">
+          <property role="1dT_AB" value="- render the node tree as a picture" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5kvX6F" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5kvX6G" role="1dT_Ay">
+          <property role="1dT_AB" value="- call some editor-specific aciotns - e.g. substitute" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7jFHz5kvX6T" role="TZ5H$">
+        <node concept="1dT_AC" id="7jFHz5kvX6U" role="1dT_Ay">
+          <property role="1dT_AB" value="- ..." />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
