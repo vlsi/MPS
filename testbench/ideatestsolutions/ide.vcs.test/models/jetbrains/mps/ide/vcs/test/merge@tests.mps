@@ -596,25 +596,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="56cvcsnCBZ_" role="jymVt" />
-    <node concept="312cEg" id="3oUomEoN5m8" role="jymVt">
-      <property role="TrG5h" value="myWaitCompleted" />
-      <node concept="3Tm6S6" id="3oUomEoN5m9" role="1B3o_S" />
-      <node concept="10P_77" id="3oUomEoN5mb" role="1tU5fm" />
-    </node>
-    <node concept="312cEg" id="3Lj0jv7EEkd" role="jymVt">
-      <property role="TrG5h" value="myWaitLock" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="3Lj0jv7EEke" role="1B3o_S" />
-      <node concept="3uibUv" id="3Lj0jv7EEkf" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
-      </node>
-      <node concept="2ShNRf" id="3Lj0jv7EEks" role="33vP2m">
-        <node concept="1pGfFk" id="3Lj0jv7EEkt" role="2ShVmc">
-          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="56cvcsnCHjQ" role="jymVt" />
     <node concept="312cEg" id="3oUomEoMAZS" role="jymVt">
       <property role="TrG5h" value="myChangeListManager" />
       <node concept="3Tm6S6" id="3oUomEoMAZT" role="1B3o_S" />
@@ -4082,130 +4063,6 @@
               <ref role="37wK5l" to="3dcm:~VcsShowConfirmationOption.setValue(com.intellij.openapi.vcs.VcsShowConfirmationOption$Value):void" resolve="setValue" />
               <node concept="37vLTw" id="2BHiRxgm84k" role="37wK5m">
                 <ref role="3cqZAo" node="xjl$fQR0hW" resolve="value" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3oUomEoN5mg" role="jymVt">
-      <property role="TrG5h" value="waitForSomething" />
-      <node concept="3cqZAl" id="3oUomEoN5mh" role="3clF45" />
-      <node concept="3Tm6S6" id="3oUomEoN5mk" role="1B3o_S" />
-      <node concept="3clFbS" id="3oUomEoN5mj" role="3clF47">
-        <node concept="1HWtB8" id="4DNDPQS2L0x" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeuVYC" role="1HWFw0">
-            <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-          </node>
-          <node concept="3clFbS" id="4DNDPQS2L0z" role="1HWHxc">
-            <node concept="3clFbF" id="3oUomEoN5mr" role="3cqZAp">
-              <node concept="37vLTI" id="3oUomEoN5mt" role="3clFbG">
-                <node concept="3clFbT" id="3oUomEoN5mw" role="37vLTx">
-                  <property role="3clFbU" value="false" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuu0_" role="37vLTJ">
-                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="3oUomEoN5my" role="3cqZAp">
-              <node concept="2OqwBi" id="3oUomEoN5m$" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxgm$SD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3oUomEoN5mp" resolve="waitScheduling" />
-                </node>
-                <node concept="liA8E" id="3oUomEoN5mC" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
-          <node concept="3fqX7Q" id="3oUomEoN5mF" role="2$JKZa">
-            <node concept="37vLTw" id="2BHiRxeuFiy" role="3fr31v">
-              <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
-            <node concept="1HWtB8" id="3oUomEoN5mI" role="3cqZAp">
-              <node concept="37vLTw" id="2BHiRxeuxRY" role="1HWFw0">
-                <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-              </node>
-              <node concept="3clFbS" id="3oUomEoN5mK" role="1HWHxc">
-                <node concept="SfApY" id="3oUomEoN5mL" role="3cqZAp">
-                  <node concept="3clFbS" id="3oUomEoN5mM" role="SfCbr">
-                    <node concept="3clFbF" id="3oUomEoN5mN" role="3cqZAp">
-                      <node concept="2OqwBi" id="3oUomEoN5mO" role="3clFbG">
-                        <node concept="37vLTw" id="2BHiRxeun3l" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-                        </node>
-                        <node concept="liA8E" id="3oUomEoN5mQ" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Object.wait():void" resolve="wait" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="TDmWw" id="3oUomEoN5mR" role="TEbGg">
-                    <node concept="3cpWsn" id="3oUomEoN5mS" role="TDEfY">
-                      <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="3oUomEoN5mT" role="1tU5fm">
-                        <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="3oUomEoN5mU" role="TDEfX">
-                      <node concept="3clFbF" id="3oUomEoN5mV" role="3cqZAp">
-                        <node concept="2OqwBi" id="3oUomEoN5mW" role="3clFbG">
-                          <node concept="37vLTw" id="3GM_nagTvgg" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3oUomEoN5mS" resolve="e" />
-                          </node>
-                          <node concept="liA8E" id="3oUomEoN5mY" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~Throwable.printStackTrace():void" resolve="printStackTrace" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3oUomEoN5mp" role="3clF46">
-        <property role="TrG5h" value="waitScheduling" />
-        <node concept="3uibUv" id="3oUomEoN5mq" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3oUomEoN5n0" role="jymVt">
-      <property role="TrG5h" value="waitCompleted" />
-      <node concept="3cqZAl" id="3oUomEoN5n1" role="3clF45" />
-      <node concept="3Tm6S6" id="3oUomEoN5n4" role="1B3o_S" />
-      <node concept="3clFbS" id="3oUomEoN5n3" role="3clF47">
-        <node concept="1HWtB8" id="3oUomEoN5n5" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeuwxh" role="1HWFw0">
-            <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-          </node>
-          <node concept="3clFbS" id="3oUomEoN5n7" role="1HWHxc">
-            <node concept="3clFbF" id="3oUomEoN5n8" role="3cqZAp">
-              <node concept="37vLTI" id="3oUomEoN5n9" role="3clFbG">
-                <node concept="3clFbT" id="3oUomEoN5na" role="37vLTx">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuOQo" role="37vLTJ">
-                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="3oUomEoN5nc" role="3cqZAp">
-              <node concept="2OqwBi" id="3oUomEoN5nd" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuvxq" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-                </node>
-                <node concept="liA8E" id="3oUomEoN5nf" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Object.notify():void" resolve="notify" />
-                </node>
               </node>
             </node>
           </node>
@@ -12014,6 +11871,160 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="56cvcsnDPb0" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="56cvcsnE0tk">
+    <property role="TrG5h" value="ChangesManagerTestHelper" />
+    <node concept="312cEg" id="3oUomEoN5m8" role="jymVt">
+      <property role="TrG5h" value="myWaitCompleted" />
+      <node concept="3Tm6S6" id="3oUomEoN5m9" role="1B3o_S" />
+      <node concept="10P_77" id="3oUomEoN5mb" role="1tU5fm" />
+    </node>
+    <node concept="312cEg" id="3Lj0jv7EEkd" role="jymVt">
+      <property role="TrG5h" value="myWaitLock" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="3Lj0jv7EEke" role="1B3o_S" />
+      <node concept="3uibUv" id="3Lj0jv7EEkf" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+      </node>
+      <node concept="2ShNRf" id="3Lj0jv7EEks" role="33vP2m">
+        <node concept="1pGfFk" id="3Lj0jv7EEkt" role="2ShVmc">
+          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnEivc" role="jymVt" />
+    <node concept="3clFb_" id="3oUomEoN5mg" role="jymVt">
+      <property role="TrG5h" value="waitForSomething" />
+      <node concept="3cqZAl" id="3oUomEoN5mh" role="3clF45" />
+      <node concept="3Tm6S6" id="3oUomEoN5mk" role="1B3o_S" />
+      <node concept="3clFbS" id="3oUomEoN5mj" role="3clF47">
+        <node concept="1HWtB8" id="4DNDPQS2L0x" role="3cqZAp">
+          <node concept="37vLTw" id="2BHiRxeuVYC" role="1HWFw0">
+            <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+          </node>
+          <node concept="3clFbS" id="4DNDPQS2L0z" role="1HWHxc">
+            <node concept="3clFbF" id="3oUomEoN5mr" role="3cqZAp">
+              <node concept="37vLTI" id="3oUomEoN5mt" role="3clFbG">
+                <node concept="3clFbT" id="3oUomEoN5mw" role="37vLTx">
+                  <property role="3clFbU" value="false" />
+                </node>
+                <node concept="37vLTw" id="2BHiRxeuu0_" role="37vLTJ">
+                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3oUomEoN5my" role="3cqZAp">
+              <node concept="2OqwBi" id="3oUomEoN5m$" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxgm$SD" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3oUomEoN5mp" resolve="waitScheduling" />
+                </node>
+                <node concept="liA8E" id="3oUomEoN5mC" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
+          <node concept="3clFbT" id="56cvcsnEi$l" role="2$JKZa">
+            <property role="3clFbU" value="true" />
+          </node>
+          <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
+            <node concept="1HWtB8" id="3oUomEoN5mI" role="3cqZAp">
+              <node concept="37vLTw" id="2BHiRxeuxRY" role="1HWFw0">
+                <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+              </node>
+              <node concept="3clFbS" id="3oUomEoN5mK" role="1HWHxc">
+                <node concept="3clFbJ" id="56cvcsnEiAO" role="3cqZAp">
+                  <node concept="3clFbS" id="56cvcsnEiAQ" role="3clFbx">
+                    <node concept="3zACq4" id="56cvcsnEiD1" role="3cqZAp" />
+                  </node>
+                  <node concept="37vLTw" id="56cvcsnEiCa" role="3clFbw">
+                    <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                  </node>
+                </node>
+                <node concept="SfApY" id="3oUomEoN5mL" role="3cqZAp">
+                  <node concept="3clFbS" id="3oUomEoN5mM" role="SfCbr">
+                    <node concept="3clFbF" id="3oUomEoN5mN" role="3cqZAp">
+                      <node concept="2OqwBi" id="3oUomEoN5mO" role="3clFbG">
+                        <node concept="37vLTw" id="2BHiRxeun3l" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+                        </node>
+                        <node concept="liA8E" id="3oUomEoN5mQ" role="2OqNvi">
+                          <ref role="37wK5l" to="e2lb:~Object.wait():void" resolve="wait" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="3oUomEoN5mR" role="TEbGg">
+                    <node concept="3cpWsn" id="3oUomEoN5mS" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="3oUomEoN5mT" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="3oUomEoN5mU" role="TDEfX">
+                      <node concept="3clFbF" id="3oUomEoN5mV" role="3cqZAp">
+                        <node concept="2OqwBi" id="3oUomEoN5mW" role="3clFbG">
+                          <node concept="37vLTw" id="3GM_nagTvgg" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3oUomEoN5mS" resolve="e" />
+                          </node>
+                          <node concept="liA8E" id="3oUomEoN5mY" role="2OqNvi">
+                            <ref role="37wK5l" to="e2lb:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oUomEoN5mp" role="3clF46">
+        <property role="TrG5h" value="waitScheduling" />
+        <node concept="3uibUv" id="3oUomEoN5mq" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="3oUomEoN5n0" role="jymVt">
+      <property role="TrG5h" value="waitCompleted" />
+      <node concept="3cqZAl" id="3oUomEoN5n1" role="3clF45" />
+      <node concept="3Tm6S6" id="3oUomEoN5n4" role="1B3o_S" />
+      <node concept="3clFbS" id="3oUomEoN5n3" role="3clF47">
+        <node concept="1HWtB8" id="3oUomEoN5n5" role="3cqZAp">
+          <node concept="37vLTw" id="2BHiRxeuwxh" role="1HWFw0">
+            <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+          </node>
+          <node concept="3clFbS" id="3oUomEoN5n7" role="1HWHxc">
+            <node concept="3clFbF" id="3oUomEoN5n8" role="3cqZAp">
+              <node concept="37vLTI" id="3oUomEoN5n9" role="3clFbG">
+                <node concept="3clFbT" id="3oUomEoN5na" role="37vLTx">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="37vLTw" id="2BHiRxeuOQo" role="37vLTJ">
+                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3oUomEoN5nc" role="3cqZAp">
+              <node concept="2OqwBi" id="3oUomEoN5nd" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuvxq" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+                </node>
+                <node concept="liA8E" id="3oUomEoN5nf" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~Object.notify():void" resolve="notify" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnEivm" role="jymVt" />
+    <node concept="3Tm1VV" id="56cvcsnE0tl" role="1B3o_S" />
   </node>
 </model>
 
