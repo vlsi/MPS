@@ -152,6 +152,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
@@ -566,13 +569,6 @@
       <node concept="10P_77" id="6hwF4wZO$fL" role="1tU5fm" />
     </node>
     <node concept="2tJIrI" id="56cvcsnCXOe" role="jymVt" />
-    <node concept="312cEg" id="3oUomEoMJt4" role="jymVt">
-      <property role="TrG5h" value="myProject" />
-      <node concept="3Tm6S6" id="3oUomEoMJt5" role="1B3o_S" />
-      <node concept="3uibUv" id="3oUomEoMJti" role="1tU5fm">
-        <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-      </node>
-    </node>
     <node concept="312cEg" id="3oUomEoMJuI" role="jymVt">
       <property role="TrG5h" value="myIdeaProject" />
       <node concept="3Tm6S6" id="3oUomEoMJuJ" role="1B3o_S" />
@@ -580,14 +576,17 @@
         <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
       </node>
     </node>
-    <node concept="2tJIrI" id="56cvcsnCS$N" role="jymVt" />
-    <node concept="312cEg" id="2FxQamhd2SD" role="jymVt">
-      <property role="TrG5h" value="myRegistry" />
-      <node concept="3Tm6S6" id="2FxQamhd2SE" role="1B3o_S" />
-      <node concept="3uibUv" id="2FxQamhd2SG" role="1tU5fm">
-        <ref role="3uigEE" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+    <node concept="312cEg" id="56cvcsnFql$" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myWaitHelper" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="56cvcsnFl6T" role="1B3o_S" />
+      <node concept="3uibUv" id="56cvcsnFqk0" role="1tU5fm">
+        <ref role="3uigEE" node="56cvcsnE0tk" resolve="ChangesManagerTestWaitHelper" />
       </node>
     </node>
+    <node concept="2tJIrI" id="56cvcsnF7w_" role="jymVt" />
     <node concept="312cEg" id="4DNDPQS2KYT" role="jymVt">
       <property role="TrG5h" value="myFileStatusManager" />
       <node concept="3Tm6S6" id="4DNDPQS2KYU" role="1B3o_S" />
@@ -595,7 +594,6 @@
         <ref role="3uigEE" to="3dcm:~FileStatusManager" resolve="FileStatusManager" />
       </node>
     </node>
-    <node concept="2tJIrI" id="56cvcsnCBZ_" role="jymVt" />
     <node concept="312cEg" id="3oUomEoMAZS" role="jymVt">
       <property role="TrG5h" value="myChangeListManager" />
       <node concept="3Tm6S6" id="3oUomEoMAZT" role="1B3o_S" />
@@ -615,13 +613,6 @@
       <node concept="3Tm6S6" id="3oUomEoMJto" role="1B3o_S" />
       <node concept="3uibUv" id="3oUomEoMJtp" role="1tU5fm">
         <ref role="3uigEE" to="3dcm:~AbstractVcs" resolve="AbstractVcs" />
-      </node>
-    </node>
-    <node concept="312cEg" id="xjl$fQQZVD" role="jymVt">
-      <property role="TrG5h" value="myAfterReloadTask" />
-      <node concept="3Tm6S6" id="xjl$fQQZVE" role="1B3o_S" />
-      <node concept="3uibUv" id="xjl$fQQZWg" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
       </node>
     </node>
     <node concept="2tJIrI" id="1oVBfwt1ipJ" role="jymVt" />
@@ -788,17 +779,6 @@
       <node concept="3cqZAl" id="3oUomEoMJtI" role="3clF45" />
       <node concept="3Tm1VV" id="6hwF4wZOyZ4" role="1B3o_S" />
       <node concept="3clFbS" id="3oUomEoMJtK" role="3clF47">
-        <node concept="3clFbF" id="6hwF4wZOyZ7" role="3cqZAp">
-          <node concept="37vLTI" id="6hwF4wZOyZ9" role="3clFbG">
-            <node concept="10M0yZ" id="7uIch3P6tFd" role="37vLTx">
-              <ref role="1PxDUh" node="2FxQamhcX1N" resolve="ChangesManagerTest" />
-              <ref role="3cqZAo" node="6hwF4wZOtrP" resolve="ourProject" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeunjI" role="37vLTJ">
-              <ref role="3cqZAo" node="3oUomEoMJt4" resolve="myProject" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3oUomEoMJuL" role="3cqZAp">
           <node concept="37vLTI" id="3oUomEoMJuM" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeussc" role="37vLTJ">
@@ -807,29 +787,50 @@
             <node concept="2YIFZM" id="3oUomEoMJuQ" role="37vLTx">
               <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
               <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-              <node concept="37vLTw" id="2BHiRxeuFie" role="37wK5m">
-                <ref role="3cqZAo" node="3oUomEoMJt4" resolve="myProject" />
+              <node concept="37vLTw" id="56cvcsnFBaE" role="37wK5m">
+                <ref role="3cqZAo" node="6hwF4wZOtrP" resolve="ourProject" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3oUomEoMJtV" role="3cqZAp">
-          <node concept="37vLTI" id="3oUomEoMJtW" role="3clFbG">
-            <node concept="2YIFZM" id="3oUomEoMJtX" role="37vLTx">
+        <node concept="3cpWs8" id="56cvcsnFz63" role="3cqZAp">
+          <node concept="3cpWsn" id="56cvcsnFz64" role="3cpWs9">
+            <property role="TrG5h" value="registry" />
+            <node concept="3uibUv" id="56cvcsnFz62" role="1tU5fm">
+              <ref role="3uigEE" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+            </node>
+            <node concept="2YIFZM" id="56cvcsnFz65" role="33vP2m">
               <ref role="1Pybhc" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
               <ref role="37wK5l" to="lcr:2JwSLRbyYP0" resolve="getInstance" />
-              <node concept="37vLTw" id="2BHiRxeuyn4" role="37wK5m">
+              <node concept="37vLTw" id="56cvcsnFz66" role="37wK5m">
                 <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
               </node>
             </node>
-            <node concept="37vLTw" id="2BHiRxeuXcL" role="37vLTJ">
-              <ref role="3cqZAo" node="2FxQamhd2SD" resolve="myRegistry" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="56cvcsnFwax" role="3cqZAp">
+          <node concept="37vLTI" id="56cvcsnFwry" role="3clFbG">
+            <node concept="2ShNRf" id="56cvcsnFwEW" role="37vLTx">
+              <node concept="1pGfFk" id="56cvcsnFz4_" role="2ShVmc">
+                <ref role="37wK5l" node="56cvcsnEVnD" resolve="ChangesManagerTestWaitHelper" />
+                <node concept="37vLTw" id="56cvcsnFzVf" role="37wK5m">
+                  <ref role="3cqZAo" node="56cvcsnFz64" resolve="registry" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="56cvcsnFwav" role="37vLTJ">
+              <ref role="3cqZAo" node="56cvcsnFql$" resolve="myWaitHelper" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3oUomEoMJu0" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyzcKK" role="3clFbG">
-            <ref role="37wK5l" node="11TrveYpy6S" resolve="waitForChangesManager" />
+        <node concept="3clFbF" id="56cvcsnF$qk" role="3cqZAp">
+          <node concept="2OqwBi" id="56cvcsnF$EE" role="3clFbG">
+            <node concept="37vLTw" id="56cvcsnF$qi" role="2Oq$k0">
+              <ref role="3cqZAo" node="56cvcsnFql$" resolve="myWaitHelper" />
+            </node>
+            <node concept="liA8E" id="56cvcsnFANQ" role="2OqNvi">
+              <ref role="37wK5l" node="11TrveYpy6S" resolve="waitForChangesManager" />
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="3oUomEoMJu2" role="3cqZAp" />
@@ -870,8 +871,8 @@
               <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
             </node>
             <node concept="2OqwBi" id="3Lj0jv7EvVP" role="37vLTx">
-              <node concept="37vLTw" id="2BHiRxeuVuA" role="2Oq$k0">
-                <ref role="3cqZAo" node="2FxQamhd2SD" resolve="myRegistry" />
+              <node concept="37vLTw" id="56cvcsnFBzc" role="2Oq$k0">
+                <ref role="3cqZAo" node="56cvcsnFz64" resolve="registry" />
               </node>
               <node concept="liA8E" id="3Lj0jv7EvVR" role="2OqNvi">
                 <ref role="37wK5l" to="lcr:2JwSLRbyYTp" resolve="getCurrentDifference" />
@@ -929,28 +930,12 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="491od_YTI3c" role="3cqZAp">
-          <node concept="2OqwBi" id="491od_YUlXV" role="3clFbG">
-            <node concept="liA8E" id="491od_YWwCK" role="2OqNvi">
-              <ref role="37wK5l" to="2eq1:491od_YVjMw" resolve="addReloadListener" />
-              <node concept="2ShNRf" id="491od_YWO$o" role="37wK5m">
-                <node concept="1pGfFk" id="491od_YXkAr" role="2ShVmc">
-                  <ref role="37wK5l" node="xjl$fQR15s" resolve="ChangesManagerTest.MyReloadListener" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="491od_YU1Ny" role="2Oq$k0">
-              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
-              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="38WJxXowpLo" role="3cqZAp" />
         <node concept="3clFbF" id="38WJxXowpLq" role="3cqZAp">
           <node concept="2OqwBi" id="38WJxXowpLu" role="3clFbG">
             <node concept="2OqwBi" id="38WJxXowpLr" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxeuOQ8" role="2Oq$k0">
-                <ref role="3cqZAo" node="2FxQamhd2SD" resolve="myRegistry" />
+              <node concept="37vLTw" id="56cvcsnFBGp" role="2Oq$k0">
+                <ref role="3cqZAo" node="56cvcsnFz64" resolve="registry" />
               </node>
               <node concept="liA8E" id="38WJxXowpLt" role="2OqNvi">
                 <ref role="37wK5l" to="lcr:2JwSLRbyYWE" resolve="getCommandQueue" />
@@ -1119,16 +1104,30 @@
             <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
             <node concept="2OqwBi" id="6hwF4wZObhJ" role="37wK5m">
               <node concept="2OqwBi" id="6hwF4wZObhK" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxeunaG" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2FxQamhd2SD" resolve="myRegistry" />
-                </node>
                 <node concept="liA8E" id="6hwF4wZObhM" role="2OqNvi">
                   <ref role="37wK5l" to="lcr:2JwSLRbyYWE" resolve="getCommandQueue" />
+                </node>
+                <node concept="2YIFZM" id="56cvcsnFBM5" role="2Oq$k0">
+                  <ref role="37wK5l" to="lcr:2JwSLRbyYP0" resolve="getInstance" />
+                  <ref role="1Pybhc" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+                  <node concept="37vLTw" id="56cvcsnFBM6" role="37wK5m">
+                    <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
+                  </node>
                 </node>
               </node>
               <node concept="liA8E" id="6hwF4wZObhN" role="2OqNvi">
                 <ref role="37wK5l" to="lcr:4xDM31OB1Mi" resolve="hadExceptions" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="56cvcsnFWNW" role="3cqZAp">
+          <node concept="2OqwBi" id="56cvcsnFWYn" role="3clFbG">
+            <node concept="37vLTw" id="56cvcsnFWNU" role="2Oq$k0">
+              <ref role="3cqZAo" node="56cvcsnFql$" resolve="myWaitHelper" />
+            </node>
+            <node concept="liA8E" id="56cvcsnG07D" role="2OqNvi">
+              <ref role="37wK5l" node="56cvcsnFXT_" resolve="dispose" />
             </node>
           </node>
         </node>
@@ -4377,46 +4376,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="11TrveYpy6S" role="jymVt">
-      <property role="TrG5h" value="waitForChangesManager" />
-      <node concept="3cqZAl" id="11TrveYpy6T" role="3clF45" />
-      <node concept="3Tm6S6" id="11TrveYpy6W" role="1B3o_S" />
-      <node concept="3clFbS" id="11TrveYpy6V" role="3clF47">
-        <node concept="3clFbF" id="3oUomEoN5ni" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyz9fM" role="3clFbG">
-            <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
-            <node concept="1bVj0M" id="3oUomEoN5no" role="37wK5m">
-              <node concept="3clFbS" id="3oUomEoN5np" role="1bW5cS">
-                <node concept="3clFbF" id="3oUomEoN5nq" role="3cqZAp">
-                  <node concept="2OqwBi" id="3oUomEoN5nr" role="3clFbG">
-                    <node concept="2OqwBi" id="3oUomEoN5ns" role="2Oq$k0">
-                      <node concept="37vLTw" id="2BHiRxeuftt" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2FxQamhd2SD" resolve="myRegistry" />
-                      </node>
-                      <node concept="liA8E" id="3oUomEoN5nu" role="2OqNvi">
-                        <ref role="37wK5l" to="lcr:2JwSLRbyYWE" resolve="getCommandQueue" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3oUomEoN5nv" role="2OqNvi">
-                      <ref role="37wK5l" to="lcr:3eE6dTgTRlP" resolve="addTask" />
-                      <node concept="1bVj0M" id="3oUomEoN5nw" role="37wK5m">
-                        <node concept="3clFbS" id="3oUomEoN5nx" role="1bW5cS">
-                          <node concept="3clFbF" id="3oUomEoN5nH" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyyYnw" role="3clFbG">
-                              <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="3oUomEoMJsI" role="jymVt">
       <property role="TrG5h" value="checkAndEnable" />
       <node concept="3cqZAl" id="3oUomEoMJsJ" role="3clF45" />
@@ -6647,105 +6606,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="xjl$fQQZd4" role="jymVt">
-      <property role="TrG5h" value="waitForReloadFinished" />
-      <node concept="3Tm6S6" id="xjl$fQQZd5" role="1B3o_S" />
-      <node concept="3cqZAl" id="xjl$fQQZd6" role="3clF45" />
-      <node concept="3clFbS" id="xjl$fQQZd7" role="3clF47">
-        <node concept="3clFbF" id="xjl$fQQZd8" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyIaD" role="3clFbG">
-            <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
-            <node concept="1bVj0M" id="xjl$fQQZda" role="37wK5m">
-              <node concept="3clFbS" id="xjl$fQQZdb" role="1bW5cS">
-                <node concept="1HWtB8" id="xjl$fQQZWt" role="3cqZAp">
-                  <node concept="Xjq3P" id="xjl$fQQZWw" role="1HWFw0" />
-                  <node concept="3clFbS" id="xjl$fQQZWv" role="1HWHxc">
-                    <node concept="3clFbF" id="xjl$fQQZWx" role="3cqZAp">
-                      <node concept="37vLTI" id="xjl$fQQZWC" role="3clFbG">
-                        <node concept="1bVj0M" id="xjl$fQQZWF" role="37vLTx">
-                          <node concept="3clFbS" id="xjl$fQQZWG" role="1bW5cS">
-                            <node concept="1HWtB8" id="xjl$fQQZWK" role="3cqZAp">
-                              <node concept="Xjq3P" id="xjl$fQQZWN" role="1HWFw0" />
-                              <node concept="3clFbS" id="xjl$fQQZWM" role="1HWHxc">
-                                <node concept="3clFbF" id="xjl$fQQZWO" role="3cqZAp">
-                                  <node concept="37vLTI" id="xjl$fQQZWQ" role="3clFbG">
-                                    <node concept="10Nm6u" id="xjl$fQQZWT" role="37vLTx" />
-                                    <node concept="37vLTw" id="2BHiRxeuu26" role="37vLTJ">
-                                      <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="xjl$fQQZWH" role="3cqZAp">
-                              <node concept="1rXfSq" id="4hiugqyAR5h" role="3clFbG">
-                                <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxeuNZj" role="37vLTJ">
-                          <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="312cEu" id="xjl$fQR15o" role="jymVt">
-      <property role="TrG5h" value="MyReloadListener" />
-      <property role="2bfB8j" value="true" />
-      <node concept="3uibUv" id="491od_Z0WfV" role="EKbjA">
-        <ref role="3uigEE" to="2eq1:491od_XHIv7" resolve="ReloadListener" />
-      </node>
-      <node concept="3Tm6S6" id="xjl$fQR15q" role="1B3o_S" />
-      <node concept="3clFbW" id="xjl$fQR15s" role="jymVt">
-        <node concept="3clFbS" id="xjl$fQR15t" role="3clF47" />
-        <node concept="3Tm1VV" id="xjl$fQR15u" role="1B3o_S" />
-        <node concept="3cqZAl" id="xjl$fQR15v" role="3clF45" />
-      </node>
-      <node concept="3clFb_" id="xjl$fQR0Vd" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="reloadStarted" />
-        <node concept="3Tm1VV" id="xjl$fQR0Ve" role="1B3o_S" />
-        <node concept="3cqZAl" id="xjl$fQR0Vf" role="3clF45" />
-        <node concept="3clFbS" id="xjl$fQR0Vg" role="3clF47" />
-        <node concept="2AHcQZ" id="3tYsUK_Ut6U" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="3clFb_" id="xjl$fQR0Vh" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="reloadFinished" />
-        <node concept="3Tm1VV" id="xjl$fQR0Vi" role="1B3o_S" />
-        <node concept="3cqZAl" id="xjl$fQR0Vj" role="3clF45" />
-        <node concept="3clFbS" id="xjl$fQR0Vk" role="3clF47">
-          <node concept="1HWtB8" id="xjl$fQQZWV" role="3cqZAp">
-            <node concept="Xjq3P" id="xjl$fQQZWZ" role="1HWFw0" />
-            <node concept="3clFbS" id="xjl$fQQZWX" role="1HWHxc">
-              <node concept="3clFbF" id="xjl$fQQZWi" role="3cqZAp">
-                <node concept="2EnYce" id="xjl$fQQZWo" role="3clFbG">
-                  <node concept="37vLTw" id="2BHiRxeuq81" role="2Oq$k0">
-                    <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
-                  </node>
-                  <node concept="liA8E" id="xjl$fQQZWr" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="3tYsUK_Ut6V" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -11873,7 +11733,7 @@
     <node concept="3Tm1VV" id="56cvcsnDPb0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="56cvcsnE0tk">
-    <property role="TrG5h" value="ChangesManagerTestHelper" />
+    <property role="TrG5h" value="ChangesManagerTestWaitHelper" />
     <node concept="312cEg" id="3oUomEoN5m8" role="jymVt">
       <property role="TrG5h" value="myWaitCompleted" />
       <node concept="3Tm6S6" id="3oUomEoN5m9" role="1B3o_S" />
@@ -11892,7 +11752,193 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="56cvcsnEivc" role="jymVt" />
+    <node concept="2tJIrI" id="56cvcsnFNZD" role="jymVt" />
+    <node concept="312cEg" id="56cvcsnEV9K" role="jymVt">
+      <property role="TrG5h" value="myRegistry" />
+      <node concept="3Tm6S6" id="56cvcsnEV9L" role="1B3o_S" />
+      <node concept="3uibUv" id="56cvcsnEV9M" role="1tU5fm">
+        <ref role="3uigEE" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnETwW" role="jymVt" />
+    <node concept="312cEg" id="xjl$fQQZVD" role="jymVt">
+      <property role="TrG5h" value="myAfterReloadTask" />
+      <node concept="3Tm6S6" id="xjl$fQQZVE" role="1B3o_S" />
+      <node concept="3uibUv" id="xjl$fQQZWg" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
+      </node>
+    </node>
+    <node concept="312cEg" id="56cvcsnFY50" role="jymVt">
+      <property role="TrG5h" value="myReloadListener" />
+      <node concept="3Tm6S6" id="56cvcsnFY4W" role="1B3o_S" />
+      <node concept="3uibUv" id="56cvcsnFY4X" role="1tU5fm">
+        <ref role="3uigEE" node="xjl$fQR15o" resolve="ChangesManagerTestWaitHelper.MyReloadListener" />
+      </node>
+      <node concept="2ShNRf" id="56cvcsnFY4Y" role="33vP2m">
+        <node concept="1pGfFk" id="56cvcsnFY4Z" role="2ShVmc">
+          <ref role="37wK5l" node="xjl$fQR15s" resolve="ChangesManagerTestWaitHelper.MyReloadListener" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnFO6G" role="jymVt" />
+    <node concept="3clFbW" id="56cvcsnEVnD" role="jymVt">
+      <node concept="3cqZAl" id="56cvcsnEVnE" role="3clF45" />
+      <node concept="3Tm1VV" id="56cvcsnEVnF" role="1B3o_S" />
+      <node concept="3clFbS" id="56cvcsnEVnH" role="3clF47">
+        <node concept="3clFbF" id="56cvcsnEVnL" role="3cqZAp">
+          <node concept="37vLTI" id="56cvcsnEVnN" role="3clFbG">
+            <node concept="37vLTw" id="56cvcsnEVnR" role="37vLTJ">
+              <ref role="3cqZAo" node="56cvcsnEV9K" resolve="myRegistry" />
+            </node>
+            <node concept="37vLTw" id="56cvcsnEVnS" role="37vLTx">
+              <ref role="3cqZAo" node="56cvcsnEVnK" resolve="registry" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="491od_YTI3c" role="3cqZAp">
+          <node concept="2OqwBi" id="491od_YUlXV" role="3clFbG">
+            <node concept="liA8E" id="491od_YWwCK" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:491od_YVjMw" resolve="addReloadListener" />
+              <node concept="2OqwBi" id="56cvcsnFY58" role="37wK5m">
+                <node concept="Xjq3P" id="56cvcsnFY59" role="2Oq$k0" />
+                <node concept="2OwXpG" id="56cvcsnFY5a" role="2OqNvi">
+                  <ref role="2Oxat5" node="56cvcsnFY50" resolve="myReloadListener" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="491od_YU1Ny" role="2Oq$k0">
+              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
+              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="56cvcsnEVnK" role="3clF46">
+        <property role="TrG5h" value="registry" />
+        <node concept="3uibUv" id="56cvcsnEVnJ" role="1tU5fm">
+          <ref role="3uigEE" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnFXuR" role="jymVt" />
+    <node concept="3clFb_" id="56cvcsnFXT_" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="dispose" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="56cvcsnFXTC" role="3clF47">
+        <node concept="3clFbF" id="56cvcsnFY2E" role="3cqZAp">
+          <node concept="2OqwBi" id="56cvcsnFY2F" role="3clFbG">
+            <node concept="liA8E" id="56cvcsnFY2G" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:491od_YVk7k" resolve="removeReloadListener" />
+              <node concept="37vLTw" id="56cvcsnFYEp" role="37wK5m">
+                <ref role="3cqZAo" node="56cvcsnFY50" resolve="myReloadListener" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="56cvcsnFY2J" role="2Oq$k0">
+              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="56cvcsnFXKI" role="1B3o_S" />
+      <node concept="3cqZAl" id="56cvcsnFXTz" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="56cvcsnEVh6" role="jymVt" />
+    <node concept="3clFb_" id="11TrveYpy6S" role="jymVt">
+      <property role="TrG5h" value="waitForChangesManager" />
+      <node concept="3cqZAl" id="11TrveYpy6T" role="3clF45" />
+      <node concept="3Tm1VV" id="56cvcsnF_e2" role="1B3o_S" />
+      <node concept="3clFbS" id="11TrveYpy6V" role="3clF47">
+        <node concept="3clFbF" id="3oUomEoN5ni" role="3cqZAp">
+          <node concept="1rXfSq" id="4hiugqyz9fM" role="3clFbG">
+            <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
+            <node concept="1bVj0M" id="3oUomEoN5no" role="37wK5m">
+              <node concept="3clFbS" id="3oUomEoN5np" role="1bW5cS">
+                <node concept="3clFbF" id="3oUomEoN5nq" role="3cqZAp">
+                  <node concept="2OqwBi" id="3oUomEoN5nr" role="3clFbG">
+                    <node concept="2OqwBi" id="3oUomEoN5ns" role="2Oq$k0">
+                      <node concept="37vLTw" id="56cvcsnEVfb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="56cvcsnEV9K" resolve="myRegistry" />
+                      </node>
+                      <node concept="liA8E" id="3oUomEoN5nu" role="2OqNvi">
+                        <ref role="37wK5l" to="lcr:2JwSLRbyYWE" resolve="getCommandQueue" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="3oUomEoN5nv" role="2OqNvi">
+                      <ref role="37wK5l" to="lcr:3eE6dTgTRlP" resolve="addTask" />
+                      <node concept="1bVj0M" id="3oUomEoN5nw" role="37wK5m">
+                        <node concept="3clFbS" id="3oUomEoN5nx" role="1bW5cS">
+                          <node concept="3clFbF" id="3oUomEoN5nH" role="3cqZAp">
+                            <node concept="1rXfSq" id="4hiugqyyYnw" role="3clFbG">
+                              <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnFHl2" role="jymVt" />
+    <node concept="3clFb_" id="xjl$fQQZd4" role="jymVt">
+      <property role="TrG5h" value="waitForReloadFinished" />
+      <node concept="3Tm1VV" id="56cvcsnFHfB" role="1B3o_S" />
+      <node concept="3cqZAl" id="xjl$fQQZd6" role="3clF45" />
+      <node concept="3clFbS" id="xjl$fQQZd7" role="3clF47">
+        <node concept="3clFbF" id="xjl$fQQZd8" role="3cqZAp">
+          <node concept="1rXfSq" id="4hiugqyyIaD" role="3clFbG">
+            <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
+            <node concept="1bVj0M" id="xjl$fQQZda" role="37wK5m">
+              <node concept="3clFbS" id="xjl$fQQZdb" role="1bW5cS">
+                <node concept="1HWtB8" id="xjl$fQQZWt" role="3cqZAp">
+                  <node concept="Xjq3P" id="xjl$fQQZWw" role="1HWFw0" />
+                  <node concept="3clFbS" id="xjl$fQQZWv" role="1HWHxc">
+                    <node concept="3clFbF" id="xjl$fQQZWx" role="3cqZAp">
+                      <node concept="37vLTI" id="xjl$fQQZWC" role="3clFbG">
+                        <node concept="1bVj0M" id="xjl$fQQZWF" role="37vLTx">
+                          <node concept="3clFbS" id="xjl$fQQZWG" role="1bW5cS">
+                            <node concept="1HWtB8" id="xjl$fQQZWK" role="3cqZAp">
+                              <node concept="Xjq3P" id="xjl$fQQZWN" role="1HWFw0" />
+                              <node concept="3clFbS" id="xjl$fQQZWM" role="1HWHxc">
+                                <node concept="3clFbF" id="xjl$fQQZWO" role="3cqZAp">
+                                  <node concept="37vLTI" id="xjl$fQQZWQ" role="3clFbG">
+                                    <node concept="10Nm6u" id="xjl$fQQZWT" role="37vLTx" />
+                                    <node concept="37vLTw" id="2BHiRxeuu26" role="37vLTJ">
+                                      <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="xjl$fQQZWH" role="3cqZAp">
+                              <node concept="1rXfSq" id="4hiugqyAR5h" role="3clFbG">
+                                <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="2BHiRxeuNZj" role="37vLTJ">
+                          <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnETp2" role="jymVt" />
     <node concept="3clFb_" id="3oUomEoN5mg" role="jymVt">
       <property role="TrG5h" value="waitForSomething" />
       <node concept="3cqZAl" id="3oUomEoN5mh" role="3clF45" />
@@ -12023,7 +12069,57 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="56cvcsnEivm" role="jymVt" />
+    <node concept="2tJIrI" id="56cvcsnFUY3" role="jymVt" />
+    <node concept="312cEu" id="xjl$fQR15o" role="jymVt">
+      <property role="TrG5h" value="MyReloadListener" />
+      <property role="2bfB8j" value="true" />
+      <node concept="3uibUv" id="491od_Z0WfV" role="EKbjA">
+        <ref role="3uigEE" to="2eq1:491od_XHIv7" resolve="ReloadListener" />
+      </node>
+      <node concept="3Tm6S6" id="xjl$fQR15q" role="1B3o_S" />
+      <node concept="3clFbW" id="xjl$fQR15s" role="jymVt">
+        <node concept="3clFbS" id="xjl$fQR15t" role="3clF47" />
+        <node concept="3Tm1VV" id="xjl$fQR15u" role="1B3o_S" />
+        <node concept="3cqZAl" id="xjl$fQR15v" role="3clF45" />
+      </node>
+      <node concept="3clFb_" id="xjl$fQR0Vd" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="reloadStarted" />
+        <node concept="3Tm1VV" id="xjl$fQR0Ve" role="1B3o_S" />
+        <node concept="3cqZAl" id="xjl$fQR0Vf" role="3clF45" />
+        <node concept="3clFbS" id="xjl$fQR0Vg" role="3clF47" />
+        <node concept="2AHcQZ" id="3tYsUK_Ut6U" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="xjl$fQR0Vh" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="reloadFinished" />
+        <node concept="3Tm1VV" id="xjl$fQR0Vi" role="1B3o_S" />
+        <node concept="3cqZAl" id="xjl$fQR0Vj" role="3clF45" />
+        <node concept="3clFbS" id="xjl$fQR0Vk" role="3clF47">
+          <node concept="1HWtB8" id="xjl$fQQZWV" role="3cqZAp">
+            <node concept="Xjq3P" id="xjl$fQQZWZ" role="1HWFw0" />
+            <node concept="3clFbS" id="xjl$fQQZWX" role="1HWHxc">
+              <node concept="3clFbF" id="xjl$fQQZWi" role="3cqZAp">
+                <node concept="2EnYce" id="xjl$fQQZWo" role="3clFbG">
+                  <node concept="37vLTw" id="2BHiRxeuq81" role="2Oq$k0">
+                    <ref role="3cqZAo" node="xjl$fQQZVD" resolve="myAfterReloadTask" />
+                  </node>
+                  <node concept="liA8E" id="xjl$fQQZWr" role="2OqNvi">
+                    <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3tYsUK_Ut6V" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="56cvcsnFV06" role="jymVt" />
     <node concept="3Tm1VV" id="56cvcsnE0tl" role="1B3o_S" />
   </node>
 </model>
