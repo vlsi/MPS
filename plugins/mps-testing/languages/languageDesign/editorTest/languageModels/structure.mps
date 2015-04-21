@@ -13,6 +13,14 @@
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
@@ -333,6 +341,68 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="container" />
       <ref role="20lvS9" node="6LcR7Gqxc8y" resolve="DelTestChildContainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="P9hc2Kf3eR">
+    <property role="TrG5h" value="SubstTestRoot" />
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="P9hc2Kf3nJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChild" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="P9hc2KgOpM" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multiChild" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="P9hc2Kf3iI">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestAbstractChild" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="P9hc2Kf3kH">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestBooleanPropertyChild" />
+    <ref role="1TJDcQ" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    <node concept="1TJgyi" id="P9hc2Kf75T" role="1TKVEl">
+      <property role="TrG5h" value="myProperty" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="PrWs8" id="P9hc2KfCUK" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="P9hc2Kf3mI">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestEnumPropertyChild" />
+    <ref role="1TJDcQ" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    <node concept="1TJgyi" id="P9hc2KfU0I" role="1TKVEl">
+      <property role="TrG5h" value="myEnumProperty" />
+      <ref role="AX2Wp" node="P9hc2KfQmc" resolve="SubstTestEnum" />
+    </node>
+    <node concept="PrWs8" id="P9hc2Kg1bb" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="P9hc2KfQmc">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstTestEnum" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="P9hc2KfQmd" role="M5hS2">
+      <property role="1uS6qo" value="v1" />
+    </node>
+    <node concept="M4N5e" id="P9hc2KfQnj" role="M5hS2">
+      <property role="1uS6qo" value="v2" />
+      <property role="1uS6qv" value="v2" />
+    </node>
+    <node concept="M4N5e" id="P9hc2KfQnm" role="M5hS2">
+      <property role="1uS6qo" value="v3" />
+      <property role="1uS6qv" value="v3" />
     </node>
   </node>
 </model>

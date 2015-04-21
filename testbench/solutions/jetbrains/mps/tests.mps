@@ -363,6 +363,18 @@
     <node concept="lpD6D" id="6LcR7GqywmP" role="lpD6w">
       <ref role="lpD7u" to="e6od:6LcR7GqvFCf" resolve="DelOnChild1ReplaceItWithLinkTarget" />
     </node>
+    <node concept="lpD6D" id="P9hc2KhcFg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgOoG" resolve="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcGf" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kh9KP" resolve="Subst_MultiChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcHg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
     </node>

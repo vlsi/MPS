@@ -6,7 +6,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,66,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,72,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BinaryExpression_BehaviorDescriptor" />
@@ -67,6 +67,18 @@
     </file>
     <file name="StubBlock_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
+    </file>
+    <file name="SubstTestAbstractChild_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestAbstractChild_BehaviorDescriptor" />
+    </file>
+    <file name="SubstTestBooleanPropertyChild_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestBooleanPropertyChild_BehaviorDescriptor" />
+    </file>
+    <file name="SubstTestEnumPropertyChild_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestEnumPropertyChild_BehaviorDescriptor" />
+    </file>
+    <file name="SubstTestRoot_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestRoot_BehaviorDescriptor" />
     </file>
     <file name="TestBlockList_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
