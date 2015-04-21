@@ -326,15 +326,14 @@ public class TextGen_Facet extends IFacet.Stub {
 
               } catch (InterruptedException ex) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
+                return new IResult.FAILURE(_output_21gswx_a0b);
               } catch (Exception ex) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Exception during TextGen:" + ex.toString())));
+                return new IResult.FAILURE(_output_21gswx_a0b);
               } finally {
                 tgEngine.shutdown();
                 monitor.currentProgress().finishWork("Writing");
               }
-
-
-
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);
           }
