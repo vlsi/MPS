@@ -1138,38 +1138,38 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                   try {
                     environment.nodeCopied(context, tnode7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364940286");
                     {
-                      final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+                      final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
-                        environment.nodeCopied(context, tnode8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364940439");
-                        environment.resolveInTemplateLater(tnode8, "typeVariableDeclaration", templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2p, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364885196", "T", context);
-                      } finally {
-                      }
-                      if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
-                      }
-                      // TODO validate child 
-                    }
-                    {
-                      final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
-                      try {
-                        environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2500865565357341571");
-                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2500865565357343872(new PropertyMacroContext(context, "textgen.TextGenAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c51))));
+                        environment.nodeCopied(context, tnode8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2500865565357341571");
+                        SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2500865565357343872(new PropertyMacroContext(context, "textgen.TextGenAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0b0b0b0b0b0b0c0c0c51))));
                         {
-                          final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
+                          final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
-                            environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2500865565357343817");
-                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text.rt(MPS.Core/jetbrains.mps.text.rt@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectDescriptor")));
+                            environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2500865565357343817");
+                            tnode9.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode9, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text.rt(MPS.Core/jetbrains.mps.text.rt@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectDescriptor")));
                           } finally {
                           }
-                          if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                          if (tnode9 != null) {
+                            tnode8.addChild("type", tnode9);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
-                      if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                      if (tnode8 != null) {
+                        tnode7.addChild("expression", tnode8);
+                      }
+                      // TODO validate child 
+                    }
+                    {
+                      final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+                      try {
+                        environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364940439");
+                        environment.resolveInTemplateLater(tnode10, "typeVariableDeclaration", templateNode_2tkj9d_c0a1a1a2a1a1a1a1a1a2a2a2p, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364885196", "T", context);
+                      } finally {
+                      }
+                      if (tnode10 != null) {
+                        tnode7.addChild("type", tnode10);
                       }
                       // TODO validate child 
                     }
@@ -1591,8 +1591,8 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
   private static SNodePointer templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2o = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365215430");
   private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c41 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365228073");
   private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a2a2p = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651364885188");
-  private static SNodePointer templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2p = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651364940439");
-  private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c51 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2500865565357343871");
+  private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0b0b0b0b0b0b0c0c0c51 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2500865565357343871");
+  private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a1a1a1a2a2a2p = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651364940439");
   private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a2a2q = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365023252");
   private static SNodePointer templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2q = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365023256");
   private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c61 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365033835");
