@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -61,8 +61,8 @@ public class EvaluateExpression_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     {
@@ -97,7 +97,7 @@ public class EvaluateExpression_Action extends BaseAction {
             });
           }
         }
-        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers);
+        evaluationProvider.showEvaluationDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), nodePointers);
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
