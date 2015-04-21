@@ -17,7 +17,6 @@ package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -33,7 +32,7 @@ public class GenerationCheckHelper {
   public boolean checkModelsBeforeGenerationIfNeeded(Project p, List<SModel> modelDescriptors) {
     final ProjectOperationContext operationContext = new ProjectOperationContext(p);
     for (ModelValidator modelValidator : ModelValidator.EP_NAME.getExtensions()) {
-      if (!modelValidator.check(p, operationContext, modelDescriptors)) {
+      if (!modelValidator.check(p, modelDescriptors)) {
         return false;
       }
     }
