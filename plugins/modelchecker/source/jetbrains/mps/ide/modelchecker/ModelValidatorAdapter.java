@@ -54,12 +54,7 @@ public class ModelValidatorAdapter implements ModelValidator {
     if (tool == null) {
       return true;
     }
-
     final IModifiableGenerationSettings generationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-    boolean checkModels = generationSettings.isCheckModelsBeforeGeneration();
-    if (!(checkModels)) {
-      return true;
-    }
 
     ModelCheckerViewer viewer = tool.checkModels(modelDescriptors);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
@@ -110,7 +105,7 @@ public class ModelValidatorAdapter implements ModelValidator {
         @Override
         public void itemStateChanged(ItemEvent ev) {
           boolean selected = ev.getStateChange() == ItemEvent.SELECTED;
-          mySettings.setCheckModelsBeforeGeneration(!(selected));
+          mySettings.setCheckModelsBeforeGeneration(!selected);
         }
       });
 

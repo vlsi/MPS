@@ -15,22 +15,23 @@
  */
 package jetbrains.mps.ide.generator;
 
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
 /**
- * DON'T USE THIS CODE AS IT'S SCHEDULED FOR REFACTORING/REMOVAL
- * FIXME MakeActionImpl could use ModelValidator directly, there's little sense in static instance of this class
+ * Utility code to run model check prior to generation according to settings
  */
-@ToRemove(version = 3.2)
 public class GenerationCheckHelper {
 
   public boolean checkModelsBeforeGenerationIfNeeded(Project p, List<SModel> modelDescriptors) {
-    final ProjectOperationContext operationContext = new ProjectOperationContext(p);
+    final IModifiableGenerationSettings generationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    if (!generationSettings.isCheckModelsBeforeGeneration()) {
+      return true;
+    }
     for (ModelValidator modelValidator : ModelValidator.EP_NAME.getExtensions()) {
       if (!modelValidator.check(p, modelDescriptors)) {
         return false;
