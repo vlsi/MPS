@@ -106,7 +106,7 @@ public class MPSCompiler {
                     tf.failNoTextGen(false).generateDebug(true).generateBaseLangDeps(true);
                     tf.produceTextModel();
                     tf.serializeOutcome(javaSourcesLocation);
-                    CacheGenLayout cgl = new CacheGenLayout();
+                    CacheGenLayout cgl = new CacheGenLayout(myContext.getMessageHandler());
                     cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
                     cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
                     cgl.register(javaSourcesLocation, TraceInfoCache.getInstance().getGenerator());

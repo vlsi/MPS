@@ -58,6 +58,7 @@ public final class TextGeneratorEngine {
 
   /**
    * requires read access
+   * Contract: for each model there'd be a TextGenResult instance in the queue (unless interrupted)
    * <p/>
    * might add schedule(SModel):Future&lt;Result&gt; (one more async alternative) and generate(SModel):Result (synchronous alternative)
    * @param model model to produce text for

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.text.impl;
 
+import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -27,7 +28,7 @@ import java.nio.charset.Charset;
 /**
  * @author Artem Tikhomirov
  */
-public class RegularTextUnit implements TextUnit {
+public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   private final SNode myStartNode;
   private final String myFilename;
   private TextGenerationResult myResult;
@@ -79,6 +80,26 @@ public class RegularTextUnit implements TextUnit {
     if (myResult.getResult() instanceof String) {
       return FileUtil.DEFAULT_CHARSET;
     }
+    // FIXME allow textgen component to affect encoding, e.g. when breaking down to TextUnits
     throw new IllegalStateException("Unknown TextGen outcome (either byte[] or string expected");
+  }
+
+  @Override
+  public Status getState() {
+    if (myResult == null) {
+      return Status.Undefined;
+    }
+    if (myResult.getResult() == TextGen.NO_TEXTGEN) {
+      return Status.Empty;
+    }
+    if (myResult.hasErrors()) {
+      return Status.Failed;
+    }
+    return Status.Generated;
+  }
+
+  @Override
+  public TextGenerationResult getLegacyResult() {
+    return myResult;
   }
 }
