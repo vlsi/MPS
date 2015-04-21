@@ -3715,22 +3715,15 @@
                           </node>
                         </node>
                         <node concept="2OqwBi" id="33nYo6lVp7G" role="3clFbw">
-                          <node concept="2YIFZM" id="33nYo6lVp7H" role="2Oq$k0">
-                            <ref role="37wK5l" to="xjo8:~GenerationCheckHelper.getInstance():jetbrains.mps.ide.generator.GenerationCheckHelper" resolve="getInstance" />
-                            <ref role="1Pybhc" to="xjo8:~GenerationCheckHelper" resolve="GenerationCheckHelper" />
+                          <node concept="2ShNRf" id="4vhWdcu6Oz" role="2Oq$k0">
+                            <node concept="1pGfFk" id="4vhWdcuaIV" role="2ShVmc">
+                              <ref role="37wK5l" to="xjo8:~GenerationCheckHelper.&lt;init&gt;()" resolve="GenerationCheckHelper" />
+                            </node>
                           </node>
                           <node concept="liA8E" id="33nYo6lVp7I" role="2OqNvi">
-                            <ref role="37wK5l" to="xjo8:~GenerationCheckHelper.checkModelsBeforeGenerationIfNeeded(jetbrains.mps.project.Project,jetbrains.mps.smodel.IOperationContext,java.util.List):boolean" resolve="checkModelsBeforeGenerationIfNeeded" />
+                            <ref role="37wK5l" to="xjo8:~GenerationCheckHelper.checkModelsBeforeGenerationIfNeeded(jetbrains.mps.project.Project,java.util.List):boolean" resolve="checkModelsBeforeGenerationIfNeeded" />
                             <node concept="37vLTw" id="5wEedBsf31i" role="37wK5m">
                               <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
-                            </node>
-                            <node concept="2ShNRf" id="7iCFfvQy8XV" role="37wK5m">
-                              <node concept="1pGfFk" id="7iCFfvQyb3K" role="2ShVmc">
-                                <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                                <node concept="37vLTw" id="7iCFfvQyb7b" role="37wK5m">
-                                  <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
-                                </node>
-                              </node>
                             </node>
                             <node concept="37vLTw" id="12f8nXbfJzV" role="37wK5m">
                               <ref role="3cqZAo" node="12f8nXbfJzN" resolve="models" />

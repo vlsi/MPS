@@ -331,10 +331,10 @@
         <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.EvaluateExpression" resolve="EvaluateExpression" />
       </node>
     </node>
-    <node concept="1DS2jV" id="68aArIS9HCx" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDjB" role="1oa70y" />
+    <node concept="1DS2jV" id="4pq21WIfsXi" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="4pq21WIfsXj" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="49S2960UJSt" role="1NuT2Z">
       <property role="TrG5h" value="component" />
@@ -556,8 +556,8 @@
                   <ref role="37wK5l" to="lt1n:3SnNvqCaJu9" resolve="showEvaluationDialog" />
                   <node concept="2OqwBi" id="68aArIS9HCJ" role="37wK5m">
                     <node concept="2WthIp" id="68aArIS9HCK" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="68aArIS9HCL" role="2OqNvi">
-                      <ref role="2WH_rO" node="68aArIS9HCx" resolve="operationContext" />
+                    <node concept="1DTwFV" id="4pq21WIfuak" role="2OqNvi">
+                      <ref role="2WH_rO" node="4pq21WIfsXi" resolve="mpsProject" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3GM_nagTwkL" role="37wK5m">

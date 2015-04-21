@@ -9,9 +9,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -36,6 +38,16 @@ public class EditWatchAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT_CONTEXT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    return true;
+  }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationContainer container = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
@@ -43,7 +55,7 @@ public class EditWatchAction_Action extends BaseAction {
       if (container == null || session == null) {
         return;
       }
-      session.getEvaluationProvider().showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), container);
+      session.getEvaluationProvider().showEditWatchDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), container);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "EditWatchAction", t);

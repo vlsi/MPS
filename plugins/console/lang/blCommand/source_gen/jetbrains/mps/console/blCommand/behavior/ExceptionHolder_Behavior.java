@@ -9,8 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class ExceptionHolder_Behavior {
   public static void init(SNode thisNode) {
@@ -18,7 +16,7 @@ public class ExceptionHolder_Behavior {
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     StringSelection contents = new StringSelection(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")));
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+    final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project);
     dialog.show();
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {

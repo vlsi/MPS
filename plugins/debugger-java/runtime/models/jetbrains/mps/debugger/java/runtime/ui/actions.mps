@@ -2,13 +2,13 @@
 <model ref="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -103,6 +103,7 @@
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
         <reference id="1217252646389" name="key" index="1DUlNI" />
       </concept>
+      <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
@@ -473,6 +474,11 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="watches" />
     <property role="2uzpH1" value="Edit Watch" />
+    <node concept="1DS2jV" id="4pq21WIf4VE" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
+      <node concept="1oajcY" id="4pq21WIf4VF" role="1oa70y" />
+    </node>
     <node concept="tnohg" id="7vO$jtdT52Y" role="tncku">
       <node concept="3clFbS" id="7vO$jtdT52Z" role="2VODD2">
         <node concept="3cpWs8" id="2xODT92YH9w" role="3cqZAp">
@@ -552,19 +558,10 @@
             </node>
             <node concept="liA8E" id="2xODT92YH9P" role="2OqNvi">
               <ref role="37wK5l" to="anh2:_hR$3XCoXq" resolve="showEditWatchDialog" />
-              <node concept="2OqwBi" id="2xODT92YH9Q" role="37wK5m">
-                <node concept="10M0yZ" id="2xODT92YH9R" role="2Oq$k0">
-                  <ref role="3cqZAo" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-                  <ref role="1PxDUh" to="5xh9:~MPSCommonDataKeys" resolve="MPSCommonDataKeys" />
-                </node>
-                <node concept="liA8E" id="2xODT92YH9S" role="2OqNvi">
-                  <ref role="37wK5l" to="nx1:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
-                  <node concept="2OqwBi" id="2xODT92YH9T" role="37wK5m">
-                    <node concept="tl45R" id="7vO$jtdT534" role="2Oq$k0" />
-                    <node concept="liA8E" id="2xODT92YH9V" role="2OqNvi">
-                      <ref role="37wK5l" to="nx1:~AnActionEvent.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
-                    </node>
-                  </node>
+              <node concept="2OqwBi" id="4pq21WIf9RG" role="37wK5m">
+                <node concept="2WthIp" id="4pq21WIf9RJ" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4pq21WIf9RL" role="2OqNvi">
+                  <ref role="2WH_rO" node="4pq21WIf4VE" resolve="ideaProject" />
                 </node>
               </node>
               <node concept="37vLTw" id="3GM_nagTwwV" role="37wK5m">

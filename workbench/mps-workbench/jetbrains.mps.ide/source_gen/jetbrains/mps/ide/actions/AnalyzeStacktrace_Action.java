@@ -15,7 +15,6 @@ import java.io.PrintWriter;
 import java.awt.datatransfer.StringSelection;
 import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -58,10 +57,6 @@ public class AnalyzeStacktrace_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -78,7 +73,7 @@ public class AnalyzeStacktrace_Action extends BaseAction {
         StringSelection contents = new StringSelection(writer.toString());
         CopyPasteManagerEx.getInstanceEx().setContents(contents);
       }
-      final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Project) MapSequence.fromMap(_params).get("project")));
       dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

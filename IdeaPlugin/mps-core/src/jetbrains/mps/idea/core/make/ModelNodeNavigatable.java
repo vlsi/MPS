@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeId;
@@ -52,7 +51,8 @@ public class ModelNodeNavigatable implements Navigatable {
 
   @Override
   public void navigate(final boolean requestFocus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SModel model = lookupModel();
@@ -63,8 +63,7 @@ public class ModelNodeNavigatable implements Navigatable {
           if (prj == null) {
             prj = module.getProject();
           }
-          ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(prj));
-          NavigationSupport.getInstance().openNode(context, node, requestFocus, true);
+          NavigationSupport.getInstance().openNode(mpsProject, node, requestFocus, true);
         }
       }
     });

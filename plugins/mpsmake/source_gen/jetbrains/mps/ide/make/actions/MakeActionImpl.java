@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -58,7 +57,7 @@ public class MakeActionImpl {
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake()) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
-        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, new ProjectOperationContext(project), models)) {
+        if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
           // ok to go 
           scriptRunnable.run();
         } else {

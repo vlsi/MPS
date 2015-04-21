@@ -155,7 +155,6 @@
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
@@ -178,7 +177,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSActionPlaces" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
