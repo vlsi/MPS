@@ -266,7 +266,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromIncremental(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
+    return GenerationDependencies.fromIncremental(myAllBuilders, myModelHash, myParametersHash, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
   }
 
   /* working with cache */

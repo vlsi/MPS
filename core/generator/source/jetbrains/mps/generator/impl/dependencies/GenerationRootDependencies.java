@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
+import org.jdom.Attribute;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jdom.Attribute;
-import org.jdom.Element;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -93,12 +93,15 @@ public class GenerationRootDependencies {
   }
 
   public List<String> getFiles() {
-    return Collections.unmodifiableList(myGeneratedFiles);
+    return myGeneratedFiles == null ? Collections.<String>emptyList() : Collections.unmodifiableList(myGeneratedFiles);
   }
 
   public void addGeneratedFile(String name) {
     if (name == null) {
       throw new IllegalArgumentException("name is null");
+    }
+    if (myGeneratedFiles == null) {
+      myGeneratedFiles = new ArrayList<String>(2);
     }
     if (!myGeneratedFiles.contains(name)) {
       myGeneratedFiles.add(name);
@@ -131,10 +134,13 @@ public class GenerationRootDependencies {
       node.setAttribute(ATTR_MODEL_ID, id);
       element.addContent(node);
     }
-    for (String file : myGeneratedFiles) {
-      Element node = new Element(NODE_FILE);
-      node.setAttribute(ATTR_NAME, file);
-      element.addContent(node);
+    if (myGeneratedFiles != null) {
+      Collections.sort(myGeneratedFiles);
+      for (String file : myGeneratedFiles) {
+        Element node = new Element(NODE_FILE);
+        node.setAttribute(ATTR_NAME, file);
+        element.addContent(node);
+      }
     }
   }
 
@@ -172,7 +178,7 @@ public class GenerationRootDependencies {
     return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, dependsOnNodes, local, external, files);
   }
 
-  public static GenerationRootDependencies fromData(RootDependenciesBuilder l, List<String> generatedFiles) {
+  public static GenerationRootDependencies fromData(RootDependenciesBuilder l) {
     final Collection<SNode> localNodes = l.getDependsOn();
     final Collection<SModel> externalModels = l.getDependsOnModels();
 
@@ -185,19 +191,15 @@ public class GenerationRootDependencies {
     List<String> external = new ArrayList<String>(externalModels.size());
     for (SModel m : externalModels) {
       final SModelReference modelRef = m.getReference();
-      if(modelRef == null) {
-        continue; // TODO report error?
-      }
       external.add(modelRef.toString());
     }
     Collections.sort(external);
-    Collections.sort(generatedFiles);
 
     final SNode originalRoot = l.getOriginalRoot();
     return new GenerationRootDependencies(
       originalRoot != null ? originalRoot.getNodeId().toString() : null,
       originalRoot != null ? originalRoot.getName() : null,
       l.getHash(), l.isDependsOnConditionals(), l.isDependsOnModelNodes(),
-      local, external, generatedFiles);
+      local, external, null);
   }
 }

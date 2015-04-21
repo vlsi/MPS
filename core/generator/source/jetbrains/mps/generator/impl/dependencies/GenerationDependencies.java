@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.textGen.TextGen;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -207,20 +206,15 @@ public class GenerationDependencies {
     return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0, null);
   }
 
-  public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash,
+  public static GenerationDependencies fromIncremental(RootDependenciesBuilder[] roots, String modelHash,
       String parametersHash, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
       Map<String, String> dependenciesTraces) {
-    Map<String, List<String>> generatedFiles = getGeneratedFiles(currentToOriginalMap);
 
     List<GenerationRootDependencies> unchanged = null;
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
     Map<String, String> externalHashes = new HashMap<String, String>();
     for (RootDependenciesBuilder l : roots) {
       SNode originalRoot = l.getOriginalRoot();
-      List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getNodeId().toString() : "");
-      if (files == null) {
-        files = Collections.emptyList();
-      }
       GenerationRootDependencies dep;
       if (l.isUnchanged()) {
         dep = l.getSavedDependencies();
@@ -229,7 +223,7 @@ public class GenerationDependencies {
         }
         unchanged.add(dep);
       } else {
-        dep = GenerationRootDependencies.fromData(l, files);
+        dep = GenerationRootDependencies.fromData(l);
       }
       rootDependencies.add(dep);
       for (String modelReference : dep.getExternal()) {
@@ -247,25 +241,5 @@ public class GenerationDependencies {
 
   public static GenerationDependencies fromNonIncremental(String modelHash, String parametersHash) {
     return new GenerationDependencies(modelHash, parametersHash);
-  }
-
-  private static Map<String, List<String>> getGeneratedFiles(Map<SNode, SNode> currentToOriginalMap) {
-    Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
-
-    for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
-      String inputRootId = entry.getValue() != null ? entry.getValue().getNodeId().toString() : "";
-      SNode outputRoot = entry.getKey();
-
-      List<String> filesList = generatedFiles.get(inputRootId);
-      if (filesList == null) {
-        filesList = new ArrayList<String>();
-        generatedFiles.put(inputRootId, filesList);
-      }
-      String fileName = TextGen.getFileName(outputRoot);
-      if (fileName != null) {
-        filesList.add(fileName);
-      }
-    }
-    return generatedFiles;
   }
 }
