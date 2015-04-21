@@ -128,7 +128,7 @@
       <node id="1195166230007" at="171,96,172,134" concept="2" />
       <node id="1195166230007" at="173,34,174,95" concept="2" />
       <node id="1195166230007" at="174,95,175,98" concept="2" />
-      <node id="1195166230007" at="177,131,178,139" concept="2" />
+      <node id="1195166230007" at="177,122,178,139" concept="2" />
       <node id="1195166230007" at="28,0,31,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1218735984791" at="125,58,128,5" concept="3" />
       <node id="1195166230007" at="152,0,155,0" concept="1" trace="outputChildListHandler_3ev9w4_g0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -168,7 +168,7 @@
       <scope id="1195166230007" at="110,82,111,81" />
       <scope id="1218735984791" at="126,39,127,41" />
       <scope id="1195166230007" at="152,103,153,50" />
-      <scope id="1195166230007" at="177,131,178,139" />
+      <scope id="1195166230007" at="177,122,178,139" />
       <scope id="1195166557185" at="70,35,72,109">
         <var name="manager" id="1195166557185" />
       </scope>
@@ -405,7 +405,7 @@
       <node id="1195170430749" at="141,34,142,95" concept="2" />
       <node id="1195170430749" at="142,95,143,98" concept="2" />
       <node id="1195170430749" at="143,98,144,80" concept="2" />
-      <node id="1195170430749" at="146,131,147,139" concept="2" />
+      <node id="1195170430749" at="146,122,147,139" concept="2" />
       <node id="1195170430749" at="152,104,153,100" concept="5" />
       <node id="1195170430749" at="153,100,154,38" concept="2" />
       <node id="1195170430749" at="154,38,155,36" concept="5" />
@@ -454,7 +454,7 @@
       <scope id="1195170430749" at="93,82,94,85" />
       <scope id="1195170430749" at="117,104,118,50" />
       <scope id="1195170430749" at="135,89,136,66" />
-      <scope id="1195170430749" at="146,131,147,139" />
+      <scope id="1195170430749" at="146,122,147,139" />
       <scope id="1195170883727" at="80,35,82,109">
         <var name="manager" id="1195170883727" />
       </scope>

@@ -5,12 +5,16 @@
     <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="1228934484974" name="jetbrains.mps.lang.test.structure.PressKeyStatement" flags="nn" index="yd1bK">
+        <child id="1228934507814" name="keyStrokes" index="yd6KS" />
+      </concept>
       <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
@@ -28,8 +32,20 @@
         <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
         <property id="1229432188737" name="isLastPosition" index="ZRATv" />
       </concept>
+      <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
+        <property id="1227184461946" name="keys" index="2TTd_B" />
+      </concept>
+      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
+        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      </concept>
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
+      </concept>
+    </language>
+    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
+      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
+        <property id="1207318242773" name="modifiers" index="pLAjc" />
+        <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -47,6 +63,16 @@
       </concept>
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="957371990174086574" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild" flags="ng" index="2Xtn5I">
+        <property id="957371990174310446" name="myEnumProperty" index="2XtIjI" />
+      </concept>
+      <concept id="957371990174086445" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild" flags="ng" index="2Xtn7H">
+        <property id="957371990174101881" name="myProperty" index="2XtjmT" />
+      </concept>
+      <concept id="957371990174086071" name="jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot" flags="ng" index="2XtntR">
+        <child id="957371990174549618" name="multiChild" index="2X2waM" />
+        <child id="957371990174086639" name="singleChild" index="2Xtn4J" />
+      </concept>
       <concept id="7803854675610450426" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot" flags="ng" index="1QLem1">
         <child id="7803854675610450486" name="container" index="1QLepd" />
       </concept>
@@ -126,6 +152,195 @@
         <node concept="1iFQzN" id="6LcR7GqykDL" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="P9hc2Kf3cS">
+    <property role="TrG5h" value="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="P9hc2Kf5jE" role="LiRBU">
+      <node concept="2Xtn7H" id="P9hc2Kg$aK" role="2Xtn4J">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="P9hc2KgJPV" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="2XtntR" id="P9hc2Kg$bq" role="LiZbd">
+      <node concept="2Xtn5I" id="P9hc2KgLjB" role="2Xtn4J">
+        <node concept="LIFWc" id="P9hc2KgLjD" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="2" />
+          <property role="p6zMs" value="2" />
+          <property role="LIFWd" value="property_myEnumProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="P9hc2Kg$ej" role="LjaKd">
+      <node concept="2TK7Tu" id="P9hc2KgLrp" role="3cqZAp">
+        <property role="2TTd_B" value="v1" />
+      </node>
+      <node concept="yd1bK" id="P9hc2Kg$gb" role="3cqZAp">
+        <node concept="pLAjd" id="P9hc2Kg$gd" role="yd6KS">
+          <property role="pLAjc" value="ctrl" />
+          <property role="pLAjf" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2XOHcx" id="50UgHNTM2nS">
+    <property role="2XOHcw" value="${mps_home}" />
+  </node>
+  <node concept="LiM7Y" id="P9hc2KgLWf">
+    <property role="TrG5h" value="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="P9hc2KgLWg" role="LiRBU">
+      <node concept="2Xtn5I" id="P9hc2KgO4C" role="2Xtn4J">
+        <property role="2XtIjI" value="v2" />
+        <node concept="LIFWc" id="P9hc2KgO4H" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_myEnumProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="2XtntR" id="P9hc2KgLWj" role="LiZbd">
+      <node concept="2Xtn7H" id="P9hc2KgO4L" role="2Xtn4J">
+        <property role="2XtjmT" value="false" />
+        <node concept="LIFWc" id="P9hc2KgO4N" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="5" />
+          <property role="p6zMs" value="5" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="P9hc2KgLWm" role="LjaKd">
+      <node concept="2TK7Tu" id="P9hc2KgLWn" role="3cqZAp">
+        <property role="2TTd_B" value="fal" />
+      </node>
+      <node concept="yd1bK" id="P9hc2KgLWo" role="3cqZAp">
+        <node concept="pLAjd" id="P9hc2KgLWp" role="yd6KS">
+          <property role="pLAjc" value="ctrl" />
+          <property role="pLAjf" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="P9hc2KgOoG">
+    <property role="TrG5h" value="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="P9hc2KgOoH" role="LiRBU">
+      <node concept="2Xtn7H" id="P9hc2Kh7eU" role="2X2waM">
+        <property role="2XtjmT" value="false" />
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh7dV" role="2X2waM">
+        <property role="2XtjmT" value="true" />
+        <node concept="LIFWc" id="P9hc2Kh7g0" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh7eY" role="2X2waM">
+        <property role="2XtjmT" value="false" />
+      </node>
+      <node concept="2Xtn7H" id="P9hc2KgOoI" role="2Xtn4J">
+        <property role="2XtjmT" value="true" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="P9hc2KgOoN" role="LjaKd">
+      <node concept="2TK7Tu" id="P9hc2KgOoO" role="3cqZAp">
+        <property role="2TTd_B" value="v1" />
+      </node>
+      <node concept="yd1bK" id="P9hc2KgOoP" role="3cqZAp">
+        <node concept="pLAjd" id="P9hc2KgOoQ" role="yd6KS">
+          <property role="pLAjc" value="ctrl" />
+          <property role="pLAjf" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+    <node concept="2XtntR" id="P9hc2Kh7hl" role="LiZbd">
+      <node concept="2Xtn7H" id="P9hc2Kh7hm" role="2X2waM">
+        <property role="2XtjmT" value="false" />
+      </node>
+      <node concept="2Xtn5I" id="P9hc2Kh7hx" role="2X2waM">
+        <node concept="LIFWc" id="P9hc2Kh7h_" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="2" />
+          <property role="p6zMs" value="2" />
+          <property role="LIFWd" value="property_myEnumProperty" />
+        </node>
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh7hp" role="2X2waM">
+        <property role="2XtjmT" value="false" />
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh7hq" role="2Xtn4J">
+        <property role="2XtjmT" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="P9hc2Kh9KP">
+    <property role="TrG5h" value="Subst_MultiChild_OnlyEnumProperty_with_Another" />
+    <property role="3GE5qa" value="substitute" />
+    <node concept="2XtntR" id="P9hc2Kh9KQ" role="LiRBU">
+      <node concept="2Xtn5I" id="P9hc2Kh9Mo" role="2X2waM" />
+      <node concept="2Xtn5I" id="P9hc2Kh9Mt" role="2X2waM">
+        <property role="2XtIjI" value="v2" />
+        <node concept="LIFWc" id="P9hc2Kh9Ok" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_myEnumProperty" />
+        </node>
+      </node>
+      <node concept="2Xtn5I" id="P9hc2Kh9Mx" role="2X2waM">
+        <property role="2XtIjI" value="v3" />
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh9KV" role="2Xtn4J">
+        <property role="2XtjmT" value="true" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="P9hc2Kh9KW" role="LjaKd">
+      <node concept="2TK7Tu" id="P9hc2Kh9KX" role="3cqZAp">
+        <property role="2TTd_B" value="fal" />
+      </node>
+      <node concept="yd1bK" id="P9hc2Kh9KY" role="3cqZAp">
+        <node concept="pLAjd" id="P9hc2Kh9KZ" role="yd6KS">
+          <property role="pLAjc" value="ctrl" />
+          <property role="pLAjf" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+    <node concept="2XtntR" id="P9hc2Kh9O7" role="LiZbd">
+      <node concept="2Xtn5I" id="P9hc2Kh9O8" role="2X2waM" />
+      <node concept="2Xtn7H" id="P9hc2Kh9Om" role="2X2waM">
+        <property role="2XtjmT" value="false" />
+        <node concept="LIFWc" id="P9hc2Kh9Oq" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="5" />
+          <property role="p6zMs" value="5" />
+          <property role="LIFWd" value="property_myProperty" />
+        </node>
+      </node>
+      <node concept="2Xtn5I" id="P9hc2Kh9Oa" role="2X2waM">
+        <property role="2XtIjI" value="v3" />
+      </node>
+      <node concept="2Xtn7H" id="P9hc2Kh9Ob" role="2Xtn4J">
+        <property role="2XtjmT" value="true" />
       </node>
     </node>
   </node>

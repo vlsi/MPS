@@ -212,7 +212,7 @@
       <node id="3409470686614952150" at="115,96,116,134" concept="2" />
       <node id="3409470686614952150" at="117,34,118,95" concept="2" />
       <node id="3409470686614952150" at="118,95,119,98" concept="2" />
-      <node id="3409470686614952150" at="121,131,122,139" concept="2" />
+      <node id="3409470686614952150" at="121,122,122,139" concept="2" />
       <node id="3409470686614952150" at="34,0,37,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3409470686614952150" at="96,0,99,0" concept="1" trace="dailyPlansListHandler_wlaatl_e0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3409470686614952150" at="120,9,123,9" concept="4" />
@@ -238,7 +238,7 @@
       <scope id="3409470686614952150" at="43,81,44,81" />
       <scope id="3409470686614952150" at="44,81,45,84" />
       <scope id="3409470686614952150" at="96,102,97,50" />
-      <scope id="3409470686614952150" at="121,131,122,139" />
+      <scope id="3409470686614952150" at="121,122,122,139" />
       <scope id="5063359128232955531" at="67,35,69,109">
         <var name="manager" id="5063359128232955531" />
       </scope>

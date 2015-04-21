@@ -284,7 +284,7 @@
       <node id="3932724607435080292" at="83,96,84,134" concept="2" />
       <node id="3932724607435080292" at="85,34,86,95" concept="2" />
       <node id="3932724607435080292" at="86,95,87,98" concept="2" />
-      <node id="3932724607435080292" at="89,131,90,139" concept="2" />
+      <node id="3932724607435080292" at="89,122,90,139" concept="2" />
       <node id="3932724607435080292" at="24,0,27,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3932724607435080292" at="64,0,67,0" concept="1" trace="dependenciesListHandler_n7f8t_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3932724607435080292" at="88,9,91,9" concept="3" />
@@ -303,7 +303,7 @@
       <scope id="3932724607435080292" at="34,81,35,80" />
       <scope id="3932724607435080292" at="35,80,36,83" />
       <scope id="3932724607435080292" at="64,103,65,50" />
-      <scope id="3932724607435080292" at="89,131,90,139" />
+      <scope id="3932724607435080292" at="89,122,90,139" />
       <scope id="5820409521797705105" at="39,88,41,22">
         <var name="editorCell" id="5820409521797705105" />
       </scope>
@@ -424,7 +424,7 @@
       <node id="4144229974054254524" at="83,96,84,134" concept="2" />
       <node id="4144229974054254524" at="85,34,86,95" concept="2" />
       <node id="4144229974054254524" at="86,95,87,98" concept="2" />
-      <node id="4144229974054254524" at="89,131,90,139" concept="2" />
+      <node id="4144229974054254524" at="89,122,90,139" concept="2" />
       <node id="4144229974054254524" at="24,0,27,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4144229974054254524" at="64,0,67,0" concept="1" trace="dependenciesListHandler_l3byek_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4144229974054254524" at="88,9,91,9" concept="3" />
@@ -443,7 +443,7 @@
       <scope id="4144229974054254524" at="34,82,35,81" />
       <scope id="4144229974054254524" at="35,81,36,84" />
       <scope id="4144229974054254524" at="64,104,65,50" />
-      <scope id="4144229974054254524" at="89,131,90,139" />
+      <scope id="4144229974054254524" at="89,122,90,139" />
       <scope id="4144229974054256129" at="39,89,41,22">
         <var name="editorCell" id="4144229974054256129" />
       </scope>

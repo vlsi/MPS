@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
+public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
 
   private SNode myNode;
   private String myPropertyName;
