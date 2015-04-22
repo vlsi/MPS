@@ -61,8 +61,9 @@ public class ChangesCalculationTest extends ChangesTestBase {
     final SNodeId id = new jetbrains.mps.smodel.SNodeId.Regular(1);
     testDiffCorrectness(new Runnable() {
       public void run() {
-        SNode created = SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_7w1430_a0a0a0a0b0g());
-        ((jetbrains.mps.smodel.SNode) created).setId(id);
+        SNode newRoot = createClassConcept_7w1430_a0a0a0b0g();
+        ((jetbrains.mps.smodel.SNode) newRoot).setId(id);
+        SModelOperations.addRootNode(((SModel) getTestModel()), newRoot);
       }
     }, new AddRootChange(createFakeChangeSet(), id));
   }
@@ -129,7 +130,7 @@ public class ChangesCalculationTest extends ChangesTestBase {
       Assert.assertEquals(real.toString(), expected.toString());
     }
   }
-  private static SNode createClassConcept_7w1430_a0a0a0a0b0g() {
+  private static SNode createClassConcept_7w1430_a0a0a0b0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NewRoot");
