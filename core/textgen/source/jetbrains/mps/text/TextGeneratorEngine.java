@@ -32,13 +32,22 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Re-work of jetbrains.mps.generator.textGen.TextGeneratorEngine
+ * Facility to run parallel text generation for text units given model breaks down to.
+ * <p/>
+ * For the time being, text units correspond to model root nodes, the way it used to be in the past MPS history.
+ * Pending API changes to bring control over text units to user and j.m.lang.textgen.
+ * <p/>
+ * Re-work of what used to be jetbrains.mps.generator.textGen.TextGeneratorEngine
  * @author Artem Tikhomirov
  * @since 3.3
  */
@@ -54,6 +63,22 @@ public final class TextGeneratorEngine {
 
   public void shutdown() {
     myExecutor.shutdown();
+  }
+
+  /**
+   * Contract: same as {@link #schedule(SModel, BlockingQueue)}
+   * @param model input for model-to-text transformation
+   * @return future result, use {@link Future#get()} to retrieve
+   */
+  public Future<TextGenResult> generateText(@NotNull final SModel model) {
+    final ArrayBlockingQueue<TextGenResult> queue = new ArrayBlockingQueue<TextGenResult>(1);
+    schedule(model, queue);
+    return new FutureTask<TextGenResult>(new Callable<TextGenResult>() {
+      @Override
+      public TextGenResult call() throws Exception {
+        return queue.take();
+      }
+    });
   }
 
   /**

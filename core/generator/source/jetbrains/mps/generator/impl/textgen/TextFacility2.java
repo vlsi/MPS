@@ -42,6 +42,15 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Bridge text generation outcome with GenerationStatus object.
  * FIXME it's not quite nice to have generator to depend from textgen, shall be separate.
+ * This is the only class in [generator-engine] module that depends on [textgen]
+ *
+ * Compared to its previous incarnation (TextFacility), lost responsibility to perform actual transformation:
+ * <ul>
+ *   <li><strike>Transform output model to model of textual representation</strike></li>
+ *   <li>Serialize outcome</li>
+ *   <li>Update various generation caches based on new textual representation</li>
+ *   <li>Serialize generation caches</li>
+ * </ul>
  * The class doesn't add much value, perhaps it should focus on GenerationStatus update, while all serializeXXX code shall become external.
  * @author Artem Tikhomirov
  */
@@ -92,6 +101,10 @@ public class TextFacility2 {
       TextUnit.Status tgStatus = tu.getState();
       assert tgStatus != TextUnit.Status.Undefined;
       if (tgStatus == TextUnit.Status.Empty) {
+        continue;
+      }
+      if (tgStatus == TextUnit.Status.Failed) {
+        success = false;
         continue;
       }
       streamHandler.saveStream(tu.getFileName(), tu.getBytes());
