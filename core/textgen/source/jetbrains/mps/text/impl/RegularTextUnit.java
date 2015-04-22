@@ -19,11 +19,18 @@ import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textgen.trace.ScopePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.nio.charset.Charset;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Artem Tikhomirov
@@ -98,8 +105,29 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
     return Status.Generated;
   }
 
+  @Nullable
   @Override
-  public TextGenerationResult getLegacyResult() {
-    return myResult;
+  public Pair<List<String>, List<String>> getDependencies() {
+    if (myResult.hasDependencies()) {
+      return new Pair<List<String>, List<String>>(
+          myResult.getDependencies(TextGen.DEPENDENCY),
+          myResult.getDependencies(TextGen.EXTENDS));
+    }
+    return null;
+  }
+
+  @Nullable
+  public Map<SNode, TraceablePositionInfo> getPositions() {
+    return myResult.getPositions();
+  }
+
+  @Nullable
+  public Map<SNode, ScopePositionInfo> getScopePositions() {
+    return myResult.getScopePositions();
+  }
+
+  @Nullable
+  public Map<SNode, UnitPositionInfo> getUnitPositions() {
+    return myResult.getUnitPositions();
   }
 }

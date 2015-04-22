@@ -15,13 +15,23 @@
  */
 package jetbrains.mps.text;
 
-import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textgen.trace.ScopePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Transition interface to give access to TextGen outcome through new TextUnit API.
  * Added just to ensure transition from old TextGen API to the new one, and shall cease afterwards.
+ *
+ * Used to return TextGenerationResult directly, however, there are troubles compiling generator module
+ * due to package name clash (jetbrains.mps.textgen.trace and j.m.textGen)
  *
  * Once we introduce new mechanism to keep data associated with textual generation (e.g. TextUnit.getAssociatedData(Class)),
  * AND generate new textgen that fill this associated data instead of TextGenBuffer (or better yet, update TextGenBuffer to put the data into TextUnit)
@@ -31,6 +41,17 @@ import org.jetbrains.annotations.Nullable;
  */
 @ToRemove(version = 3.3)
 public interface CompatibilityTextUnit extends TextUnit {
+  /**
+   * Pair(dependenciesMap.get(TextGen.DEPENDENCY), dependenciesMap.get(TextGen.EXTENDS))
+   */
   @Nullable
-  TextGenerationResult getLegacyResult();
+  Pair<List<String>,List<String>> getDependencies();
+
+  @Nullable
+  Map<SNode, TraceablePositionInfo> getPositions();
+
+  @Nullable
+  Map<SNode, ScopePositionInfo> getScopePositions();
+  @Nullable
+  Map<SNode, UnitPositionInfo> getUnitPositions();
 }

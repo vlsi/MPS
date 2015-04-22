@@ -26,23 +26,26 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.DebugInfoBuilder;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Status;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.List;
+
 /**
  * Bridge text generation outcome with GenerationStatus object.
  * FIXME it's not quite nice to have generator to depend from textgen, shall be separate.
  * This is the only class in [generator-engine] module that depends on [textgen]
+ * However, there's no right place to put this class to, the one that depends both from generator and textgen
+ * and is visible to lang.core.plugin model, where TextGen facet resides (I assume mps-core.jar is what's visible there).
  *
  * Compared to its previous incarnation (TextFacility), lost responsibility to perform actual transformation:
  * <ul>
@@ -138,14 +141,14 @@ public class TextFacility2 {
       if (!(tu instanceof CompatibilityTextUnit)) {
         continue;
       }
-      final TextGenerationResult result = ((CompatibilityTextUnit) tu).getLegacyResult();
-      if (result.hasDependencies()) {
+      final Pair<List<String>, List<String>> dependencies = ((CompatibilityTextUnit) tu).getDependencies();
+      if (dependencies != null) {
         final SNode root = tu.getStartNode();
         modelDependencies.addDependencies(new RootDependencies(
             NameUtil.nodeFQName(root), // JavaTextUnit.getClassName()?
             tu.getFileName(),
-            result.getDependencies(TextGen.DEPENDENCY),
-            result.getDependencies(TextGen.EXTENDS)));
+            dependencies.o1,
+            dependencies.o2));
       }
     }
     return modelDependencies;
@@ -162,8 +165,8 @@ public class TextFacility2 {
       if (!(tu instanceof CompatibilityTextUnit)) {
         continue;
       }
-      final TextGenerationResult result = ((CompatibilityTextUnit) tu).getLegacyResult();
-      debugInfoBuilder.fillDebugInfo(TextGen.getFileName(tu.getStartNode()), result.getPositions(), result.getScopePositions(), result.getUnitPositions(), originalInput);
+      final CompatibilityTextUnit result = (CompatibilityTextUnit) tu;
+      debugInfoBuilder.fillDebugInfo(tu.getFileName(), result.getPositions(), result.getScopePositions(), result.getUnitPositions(), originalInput);
     }
     return debugInfoBuilder.getDebugInfo();
   }
