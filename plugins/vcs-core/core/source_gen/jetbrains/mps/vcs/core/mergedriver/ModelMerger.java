@@ -48,7 +48,6 @@ import org.apache.log4j.LogManager;
       return null;
     }
 
-    RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);

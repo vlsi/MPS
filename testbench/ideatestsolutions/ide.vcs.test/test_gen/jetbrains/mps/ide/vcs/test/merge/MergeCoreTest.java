@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 @RunWith(Parameterized.class)
 public class MergeCoreTest extends WorkbenchMpsTest {
   private static final File TESTDATA_HOME = new File("testbench/modules/merge");
-  private static boolean ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
   private String myZipName;
   public MergeCoreTest(String testName, String zipName) {
@@ -54,15 +53,12 @@ public class MergeCoreTest extends WorkbenchMpsTest {
   }
   @BeforeClass
   public static void setUpClass() {
-    MergeCoreTest.ourPlayRefactoringWas = RuntimeFlags.isPlayRefactoringsMode();
     MergeCoreTest.ourMergeDriverModeWas = RuntimeFlags.isMergeDriverMode();
 
-    RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
   }
   @AfterClass
   public static void tearDownClass() {
-    RuntimeFlags.setPlayRefactoringsMode(MergeCoreTest.ourPlayRefactoringWas);
     RuntimeFlags.setMergeDriverMode(MergeCoreTest.ourMergeDriverModeWas);
   }
   public static void main(String[] args) throws IOException, ModelReadException {

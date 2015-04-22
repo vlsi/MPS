@@ -33,7 +33,6 @@ public class ConvertToBinaryWorker {
     mpsPersistence.init();
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
-    RuntimeFlags.setPlayRefactoringsMode(false);
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
