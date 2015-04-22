@@ -2007,7 +2007,7 @@
     </node>
   </node>
   <node concept="312cEu" id="oJ77aNIJob">
-    <property role="TrG5h" value="MergeCoreTest" />
+    <property role="TrG5h" value="MergeTest" />
     <node concept="3Tm1VV" id="oJ77aNIJoc" role="1B3o_S" />
     <node concept="2AHcQZ" id="X3Q$KaTEdP" role="2AJF6D">
       <ref role="2AI5Lk" to="u67u:~RunWith" resolve="RunWith" />
@@ -2095,7 +2095,7 @@
                         <node concept="1pGfFk" id="X3Q$KaTFlP" role="2ShVmc">
                           <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
                           <node concept="10M0yZ" id="7uIch3P6Gap" role="37wK5m">
-                            <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+                            <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
                             <ref role="3cqZAo" node="oJ77aNIX0U" resolve="TESTDATA_HOME" />
                           </node>
                           <node concept="37vLTw" id="2BHiRxeujQT" role="37wK5m">
@@ -2163,7 +2163,7 @@
                   <node concept="2OqwBi" id="X3Q$KaTFkd" role="2Oq$k0">
                     <node concept="2OqwBi" id="X3Q$KaTFk4" role="2Oq$k0">
                       <node concept="10M0yZ" id="7uIch3P6Gaq" role="2Oq$k0">
-                        <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+                        <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
                         <ref role="3cqZAo" node="oJ77aNIX0U" resolve="TESTDATA_HOME" />
                       </node>
                       <node concept="liA8E" id="X3Q$KaTFka" role="2OqNvi">
@@ -2273,7 +2273,7 @@
             </node>
             <node concept="10M0yZ" id="7uIch3P6Gar" role="37vLTJ">
               <ref role="3cqZAo" node="3M3NwzbdoG" resolve="ourPlayRefactoringWas" />
-              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
             </node>
           </node>
         </node>
@@ -2281,7 +2281,7 @@
           <node concept="37vLTI" id="3M3NwzbdpE" role="3clFbG">
             <node concept="10M0yZ" id="7uIch3P6Gas" role="37vLTJ">
               <ref role="3cqZAo" node="3M3NwzbdoK" resolve="ourMergeDriverModeWas" />
-              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
             </node>
             <node concept="2YIFZM" id="1jLye1tLXNj" role="37vLTx">
               <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
@@ -2323,7 +2323,7 @@
             <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
             <ref role="37wK5l" to="1p1s:~RuntimeFlags.setPlayRefactoringsMode(boolean):void" resolve="setPlayRefactoringsMode" />
             <node concept="10M0yZ" id="7uIch3P6Gat" role="37wK5m">
-              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
               <ref role="3cqZAo" node="3M3NwzbdoG" resolve="ourPlayRefactoringWas" />
             </node>
           </node>
@@ -2334,7 +2334,7 @@
             <ref role="37wK5l" to="1p1s:~RuntimeFlags.setMergeDriverMode(boolean):void" resolve="setMergeDriverMode" />
             <node concept="10M0yZ" id="7uIch3P6Gau" role="37wK5m">
               <ref role="3cqZAo" node="3M3NwzbdoK" resolve="ourMergeDriverModeWas" />
-              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeCoreTest" />
+              <ref role="1PxDUh" node="oJ77aNIJob" resolve="MergeTest" />
             </node>
           </node>
         </node>
