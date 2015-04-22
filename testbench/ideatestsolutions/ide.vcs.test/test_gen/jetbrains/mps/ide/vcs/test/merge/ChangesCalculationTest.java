@@ -123,10 +123,15 @@ public class ChangesCalculationTest extends ChangesTestBase {
     });
     makeChangeAndWait(todo);
 
-    ModelChangeSet diff = ChangeSetBuilder.buildChangeSet(modelCopy.value, getTestModel());
-    Assert.assertEquals(ListSequence.fromList(diff.getModelChanges()).count(), changes.length);
+    final Wrappers._T<ModelChangeSet> diff = new Wrappers._T<ModelChangeSet>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        diff.value = ChangeSetBuilder.buildChangeSet(modelCopy.value, getTestModel());
+      }
+    });
+    Assert.assertEquals(ListSequence.fromList(diff.value.getModelChanges()).count(), changes.length);
     for (int i = 0; i < changes.length; i++) {
-      ModelChange real = ListSequence.fromList(diff.getModelChanges()).getElement(i);
+      ModelChange real = ListSequence.fromList(diff.value.getModelChanges()).getElement(i);
       ModelChange expected = changes[i];
       Assert.assertEquals(real.toString(), expected.toString());
     }
