@@ -2399,13 +2399,25 @@
                     <node concept="3Tqbb2" id="7HgS$Vkf7f4" role="1tU5fm">
                       <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                     </node>
-                    <node concept="2pJPEk" id="7HgS$Vkf7re" role="33vP2m">
-                      <node concept="2pJPED" id="7HgS$Vkf7tu" role="2pJPEn">
+                    <node concept="2pJPEk" id="4CruXksy55$" role="33vP2m">
+                      <node concept="2pJPED" id="4CruXksy55_" role="2pJPEn">
                         <ref role="2pJxaS" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-                        <node concept="2pJxcG" id="7HgS$Vkf7xD" role="2pJxcM">
+                        <node concept="2pJxcG" id="4CruXksy55A" role="2pJxcM">
                           <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
-                          <node concept="Xl_RD" id="7HgS$Vkf7BL" role="2pJxcZ">
+                          <node concept="Xl_RD" id="4CruXksy55B" role="2pJxcZ">
                             <property role="Xl_RC" value="newMethod" />
+                          </node>
+                        </node>
+                        <node concept="2pIpSj" id="4CruXksy55C" role="2pJxcM">
+                          <ref role="2pIpSl" to="tpee:fzclF7Z" />
+                          <node concept="2pJPED" id="4CruXksy55D" role="2pJxcZ">
+                            <ref role="2pJxaS" to="tpee:fzclF80" resolve="StatementList" />
+                          </node>
+                        </node>
+                        <node concept="2pIpSj" id="4CruXksy55E" role="2pJxcM">
+                          <ref role="2pIpSl" to="tpee:fzclF7X" />
+                          <node concept="2pJPED" id="4CruXksy55F" role="2pJxcZ">
+                            <ref role="2pJxaS" to="tpee:fzcqZ_H" resolve="VoidType" />
                           </node>
                         </node>
                       </node>

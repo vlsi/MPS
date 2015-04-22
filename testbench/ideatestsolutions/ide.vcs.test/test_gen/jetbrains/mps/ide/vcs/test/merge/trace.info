@@ -311,8 +311,10 @@
   <root nodeRef="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)/445606167100192267">
     <file name="MergeTest.java">
       <node id="8885850892997835843" at="202,220,202,220" concept="1" />
-      <node id="8885850892998190752" at="216,223,216,223" concept="1" />
-      <node id="8885850892998190752" at="217,218,217,218" concept="1" />
+      <node id="5339997938414801252" at="210,223,210,223" concept="1" />
+      <node id="5339997938414801252" at="211,218,211,218" concept="1" />
+      <node id="8885850892998190752" at="222,223,222,223" concept="1" />
+      <node id="8885850892998190752" at="223,218,223,218" concept="1" />
       <node id="68133678146704944" at="41,0,42,0" concept="14" trace="ourMergeDriverModeWas" />
       <node id="68133678146704998" at="47,35,48,71" concept="4" />
       <node id="2445003365367301445" at="48,71,49,42" concept="4" />
@@ -375,19 +377,22 @@
       <node id="8885850892997835843" at="200,62,201,63" concept="10" />
       <node id="8885850892997835843" at="201,63,202,220" concept="10" />
       <node id="8885850892997835843" at="202,220,203,14" concept="11" />
-      <node id="8885850892998047438" at="205,75,206,63" concept="10" />
-      <node id="8885850892998047438" at="206,63,207,233" concept="10" />
-      <node id="8885850892998047438" at="207,233,208,146" concept="1" />
-      <node id="8885850892998047438" at="207,233,208,146" concept="4" />
-      <node id="8885850892998047438" at="208,146,209,14" concept="11" />
-      <node id="8885850892998190752" at="211,75,212,63" concept="10" />
-      <node id="8885850892998190752" at="212,63,213,233" concept="10" />
-      <node id="8885850892998190752" at="214,5,215,148" concept="4" />
-      <node id="8885850892998190752" at="215,148,216,223" concept="10" />
-      <node id="8885850892998190752" at="216,223,217,218" concept="10" />
-      <node id="8885850892998190752" at="217,218,218,141" concept="4" />
-      <node id="8885850892998190752" at="218,141,219,147" concept="4" />
-      <node id="8885850892998190752" at="220,5,221,14" concept="11" />
+      <node id="5339997938414801252" at="205,75,206,63" concept="10" />
+      <node id="5339997938414801252" at="206,63,207,233" concept="10" />
+      <node id="5339997938414801252" at="208,5,209,148" concept="4" />
+      <node id="5339997938414801252" at="209,148,210,223" concept="10" />
+      <node id="5339997938414801252" at="210,223,211,218" concept="10" />
+      <node id="5339997938414801252" at="211,218,212,141" concept="4" />
+      <node id="5339997938414801252" at="212,141,213,147" concept="4" />
+      <node id="5339997938414801252" at="214,5,215,14" concept="11" />
+      <node id="8885850892998190752" at="217,75,218,63" concept="10" />
+      <node id="8885850892998190752" at="218,63,219,233" concept="10" />
+      <node id="8885850892998190752" at="220,5,221,148" concept="4" />
+      <node id="8885850892998190752" at="221,148,222,223" concept="10" />
+      <node id="8885850892998190752" at="222,223,223,218" concept="10" />
+      <node id="8885850892998190752" at="223,218,224,141" concept="4" />
+      <node id="8885850892998190752" at="224,141,225,147" concept="4" />
+      <node id="8885850892998190752" at="226,5,227,14" concept="11" />
       <node id="8885850892997431045" at="43,0,45,0" concept="3" trace="MergeTest#()V" />
       <node id="1317392967216124151" at="168,0,171,0" concept="9" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
       <node id="445606167100350697" at="184,0,187,0" concept="9" trace="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/String;" />
@@ -405,11 +410,11 @@
       <node id="8885850892997820714" at="82,0,88,0" concept="9" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="8885850892998029497" at="105,0,111,0" concept="9" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="8885850892998112323" at="128,0,134,0" concept="9" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="8885850892998047438" at="205,0,211,0" concept="15" trace="createInstanceMethodDeclaration_u0wfvp_a0a0a0a0q#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8885850892997877441" at="92,49,99,7" concept="4" />
       <node id="8885850892997714440" at="115,47,122,7" concept="4" />
       <node id="445606167100350799" at="188,38,195,7" concept="7" />
-      <node id="8885850892998190752" at="213,233,220,5" concept="1" />
+      <node id="5339997938414801252" at="207,233,214,5" concept="1" />
+      <node id="8885850892998190752" at="219,233,226,5" concept="1" />
       <node id="8885850892997820712" at="80,46,88,7" concept="4" />
       <node id="8885850892998029495" at="103,47,111,7" concept="4" />
       <node id="8885850892998112321" at="126,43,134,7" concept="4" />
@@ -421,7 +426,8 @@
       <node id="8885850892998029491" at="102,0,113,0" concept="9" trace="testSymmetricChanges_AddChild#()V" />
       <node id="8885850892998112317" at="125,0,136,0" concept="9" trace="testSymmetricChanges_Link#()V" />
       <node id="8885850892998164656" at="140,0,152,0" concept="9" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="8885850892998190752" at="211,0,223,0" concept="15" trace="createInstanceMethodDeclaration_u0wfvp_a0a0a0a0w#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5339997938414801252" at="205,0,217,0" concept="15" trace="createInstanceMethodDeclaration_u0wfvp_a0a0a0a0q#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8885850892998190752" at="217,0,229,0" concept="15" trace="createInstanceMethodDeclaration_u0wfvp_a0a0a0a0w#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8885850892998164654" at="138,34,152,7" concept="4" />
       <node id="445606167100350674" at="182,42,196,5" concept="7" />
       <node id="8885850892997813214" at="137,0,154,0" concept="9" trace="testTwoSideMerge#()V" />
@@ -431,13 +437,14 @@
       <node id="8885850892997670282" at="155,0,180,0" concept="9" trace="testMerge#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P2_E0;)V" />
       <scope id="8885850892997431049" at="43,22,43,22" />
       <scope id="8885850892997835843" at="202,220,202,220" />
-      <scope id="8885850892998190752" at="216,223,216,223" />
-      <scope id="8885850892998190752" at="217,218,217,218" />
+      <scope id="5339997938414801252" at="210,223,210,223" />
+      <scope id="5339997938414801252" at="211,218,211,218" />
+      <scope id="8885850892998190752" at="222,223,222,223" />
+      <scope id="8885850892998190752" at="223,218,223,218" />
       <scope id="1317392967216124152" at="168,48,169,81" />
       <scope id="445606167100350698" at="184,43,185,28" />
       <scope id="445606167100350822" at="190,45,191,30" />
       <scope id="445606167100350802" at="193,17,194,60" />
-      <scope id="8885850892998047438" at="207,233,208,146" />
       <scope id="8885850892997431045" at="43,0,45,0" />
       <scope id="68133678146704951" at="54,38,56,69" />
       <scope id="8885850892997677944" at="62,56,64,20" />
@@ -475,10 +482,6 @@
       <scope id="8885850892998112328" at="128,56,132,20">
         <var name="returnTypeId" id="8885850892998112330" />
       </scope>
-      <scope id="8885850892998047438" at="205,75,209,14">
-        <var name="facade" id="8885850892998047438" />
-        <var name="n1" id="8885850892998047438" />
-      </scope>
       <scope id="68133678146704948" at="53,0,58,0" />
       <scope id="8885850892997877443" at="94,0,99,0">
         <var name="mine" id="8885850892997877443" />
@@ -489,7 +492,11 @@
         <var name="theirs" id="8885850892997714442" />
       </scope>
       <scope id="8885850892997835843" at="200,0,205,0" />
-      <scope id="8885850892998190752" at="214,5,219,147">
+      <scope id="5339997938414801252" at="208,5,213,147">
+        <var name="n2" id="5339997938414801252" />
+        <var name="n3" id="5339997938414801252" />
+      </scope>
+      <scope id="8885850892998190752" at="220,5,225,147">
         <var name="n2" id="8885850892998190752" />
         <var name="n3" id="8885850892998190752" />
       </scope>
@@ -508,7 +515,6 @@
         <var name="mine" id="8885850892998112323" />
         <var name="theirs" id="8885850892998112323" />
       </scope>
-      <scope id="8885850892998047438" at="205,0,211,0" />
       <scope id="8885850892997877440" at="92,49,99,7" />
       <scope id="8885850892997660224" at="115,47,122,7" />
       <scope id="445606167100350799" at="188,38,195,7">
@@ -527,7 +533,11 @@
         <var name="newChild" id="8885850892998190750" />
         <var name="result" id="8885850892998194896" />
       </scope>
-      <scope id="8885850892998190752" at="211,75,221,14">
+      <scope id="5339997938414801252" at="205,75,215,14">
+        <var name="facade" id="5339997938414801252" />
+        <var name="n1" id="5339997938414801252" />
+      </scope>
+      <scope id="8885850892998190752" at="217,75,227,14">
         <var name="facade" id="8885850892998190752" />
         <var name="n1" id="8885850892998190752" />
       </scope>
@@ -538,7 +548,8 @@
         <var name="mine" id="8885850892998164656" />
         <var name="theirs" id="8885850892998164656" />
       </scope>
-      <scope id="8885850892998190752" at="211,0,223,0" />
+      <scope id="5339997938414801252" at="205,0,217,0" />
+      <scope id="8885850892998190752" at="217,0,229,0" />
       <scope id="8885850892997813217" at="138,34,152,7" />
       <scope id="445606167100350674" at="182,42,196,5">
         <var name="change" id="445606167100350675" />
@@ -577,7 +588,7 @@
       <unit id="8885850892998112323" at="127,18,134,5" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$7" />
       <unit id="8885850892998164656" at="139,18,152,5" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$8" />
       <unit id="8885850892997535519" at="158,45,178,5" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$9" />
-      <unit id="445606167100192267" at="37,0,224,0" name="jetbrains.mps.ide.vcs.test.merge.MergeTest" />
+      <unit id="445606167100192267" at="37,0,230,0" name="jetbrains.mps.ide.vcs.test.merge.MergeTest" />
     </file>
   </root>
   <root nodeRef="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)/5876208808348832447">
