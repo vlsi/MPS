@@ -17,12 +17,12 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -81,10 +81,10 @@ public class RefUpdateUtil {
     return changed;
   }
 
-  public static boolean updateMappingPriorityRules(List<MappingPriorityRule> rules) {
+  public static boolean updateMappingPriorityRules(List<MappingPriorityRule> rules, SRepository repository) {
     boolean changed = false;
     for (MappingPriorityRule rule : rules) {
-      boolean result = rule.updateReferences();
+      boolean result = rule.updateReferences(repository);
       changed = changed || result;
     }
     return changed;

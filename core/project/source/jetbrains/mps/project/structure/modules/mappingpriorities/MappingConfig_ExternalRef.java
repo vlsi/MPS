@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
-
-import java.util.HashSet;
-import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
@@ -64,15 +63,16 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public boolean updateReferences() {
-    Set<SModuleReference> set = new HashSet<SModuleReference>();
-    set.add(myGenerator);
-    boolean result = RefUpdateUtil.updateModuleRefs(set);
-    myGenerator = set.iterator().next();
-    if (myMappingConfig != null) {
-      result |= myMappingConfig.updateReferences();
+  public boolean updateReferences(SRepository repository) {
+    SModule newGenerator = myGenerator.resolve(repository);
+    boolean changed = newGenerator != null && ModuleReference.differs(myGenerator, newGenerator.getModuleReference());
+    if (changed) {
+      myGenerator = newGenerator.getModuleReference();
     }
-    return result;
+    if (myMappingConfig != null) {
+      changed |= myMappingConfig.updateReferences(repository);
+    }
+    return changed;
   }
 
   @Override

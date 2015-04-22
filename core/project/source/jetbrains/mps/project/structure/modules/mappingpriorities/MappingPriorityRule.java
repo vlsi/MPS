@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
-import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 
@@ -76,11 +76,8 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     return GenerationPartitioningUtil.asString(this, true);
   }
 
-  public boolean updateReferences() {
-    return RefUpdateUtil.composeUpdates(
-      myRight.updateReferences(),
-      myLeft.updateReferences()
-    );
+  public boolean updateReferences(SRepository repository) {
+    return myRight.updateReferences(repository) | myLeft.updateReferences(repository);
   }
 
   public void save(ModelOutputStream stream) throws IOException {
