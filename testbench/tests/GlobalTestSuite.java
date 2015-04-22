@@ -40,6 +40,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
     jetbrains.mps.ide.vcs.test.merge.ChangesCalculationTest.class,
+    jetbrains.mps.ide.vcs.test.merge.RootStatusTest.class,
     jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Nodes.class,
     jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model.class,
     jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest.class,
