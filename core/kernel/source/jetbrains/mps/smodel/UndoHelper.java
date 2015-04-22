@@ -47,6 +47,7 @@ public class UndoHelper {
     myHandler.flushCommand(p);
   }
 
+  // FIXME any restriction whether this method is invoked within model read/write action?
   public <T> T runNonUndoableAction(Computable<T> t) {
     if (ModelAccess.instance().canWrite() && myHandler != DEFAULT) {
       // locks optimization, install temporary dummy handler

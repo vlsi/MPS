@@ -50,7 +50,7 @@ public class TransientModelsProvider {
   }
 
   protected void clearAll() {
-    ModelAccess.instance().requireWrite(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
@@ -70,7 +70,7 @@ public class TransientModelsProvider {
   }
 
   public void publishAll() {
-    ModelAccess.instance().requireWrite(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         for (TransientModelsModule m : myModuleMap.values()) {

@@ -26,6 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * FIXME what the hell is that? Any contract? Project/global? read/write access to model? What to clear?
+ */
+@Deprecated
 public class CleanupManager implements CoreComponent {
   private static CleanupManager INSTANCE;
   private ClassLoaderManager myManager;

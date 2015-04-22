@@ -57,8 +57,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   private final AtomicInteger myWritesScheduled = new AtomicInteger();
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
 
-  // changed only in EDT
-  private volatile boolean myDistributedLocksMode = false;
   private static final int REQUIRE_MAX_TRIES = 8;
 
   private DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
@@ -104,9 +102,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       r.run();
       return;
     }
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
-    }
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -125,9 +120,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (canRead()) {
       return c.compute();
     }
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
-    }
     ComputeRunnable<T> r = new ComputeRunnable<T>(c);
     runReadAction(r);
     return r.getResult();
@@ -140,9 +132,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       return;
     }
     assertNotWriteFromRead();
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
-    }
     Runnable runnable = new Runnable() {
       @Override
       public void run() {
@@ -173,9 +162,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       return c.compute();
     }
     assertNotWriteFromRead();
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
-    }
     ComputeRunnable<T> r = new ComputeRunnable<T>(c);
     runWriteAction(r);
     return r.getResult();
@@ -184,24 +170,15 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void writeFilesInEDT(@NotNull final Runnable action) {
     // EDT should have IDEA write lock
+    // FIXME this code seems to be outdated or at least deserves a thorough explanation. runReadInWriteAction() does odd tricks with locks and flags
     runReadInWriteAction(new Computable<Object>() {
       @Override
       public Object compute() {
-        Runnable task = new Runnable() {
-          @Override
-          public void run() {
-            runReadInWriteWorker(action);
-          }
-        };
         if (ApplicationManager.getApplication().isDispatchThread()) {
-          task.run();
+          runReadInWriteWorker(action);
         } else {
-          if (!myDistributedLocksMode) {
-            LOG.error("EDT should have IDEA write lock", new Exception());
-            throw new IllegalStateException();
-          } else {
-            ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
-          }
+          LOG.error("EDT should have IDEA write lock", new Exception());
+          throw new IllegalStateException();
         }
         return null;
       }
@@ -244,10 +221,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (canRead()) {
       r.run();
       return true;
-    }
-
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return false;
     }
 
     return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<Boolean>() {
@@ -332,10 +305,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       return c.compute();
     }
 
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return null;
-    }
-
     // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
     com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
       @Override
@@ -360,7 +329,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (isInEDT()) {
       return new TryWriteActionComputable<T>(computable).compute();
     } else {
-      // [artem] Why on earth do we run read action without acquiring a read lock???
       return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
@@ -395,9 +363,6 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public boolean tryWriteInCommand(final Runnable r, Project p) {
-    if (myDistributedLocksMode) {
-      return false;
-    }
     ApplicationManager.getApplication().assertIsDispatchThread();
 
     final boolean[] res = new boolean[]{false};

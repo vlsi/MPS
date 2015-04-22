@@ -114,6 +114,10 @@ public interface ModelCommandExecutor {
   /**
    * Returns true iff the locking and the operation were successful.
    *
+   * XXX [artem] The only justification for the method I see is that we may use it from UI events like 'show tooltip', where we can ignore
+   * value if not calculated, and don't want to stop UI thread to wait for write command to complete. Asynchronous runReadInEDT() might
+   * come handy replacement if we can update/push UI element (uiComponent.setTooltipText()), but is useless when UI element is queried (e.g. getTooltipText())
+   *
    * @param r
    * @return
    */
@@ -132,9 +136,13 @@ public interface ModelCommandExecutor {
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
    *
+   * @deprecated see {@link #requireWrite(Runnable)} for explanation
+   *
    * @param r
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void requireRead(Runnable r);
 
   /**
@@ -142,15 +150,22 @@ public interface ModelCommandExecutor {
    * Throws a RuntimeException if nothing helped.
    * Returns the result of the computation.
    *
+   * @deprecated see {@link #requireWrite(Runnable)} for explanation
+   *
    * @param c
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   <T> T requireRead(Computable<T> c);
 
   void flushEventQueue();
 
   /**
    * Returns true iff the locking and the operation were successful.
+   *
+   * XXX likely shall be internal method, to use from runWriteAction (once combined with requireWrite()). There are no external uses
+   * of the method, nor do I see any reason to have any - I could imagine optional reads, but hardly could justify optional writes
    *
    * @param r
    * @return
@@ -159,6 +174,8 @@ public interface ModelCommandExecutor {
 
   /**
    * Returns the result of the computation, null if locking was unsuccessful.
+   *
+   * see {@link #tryWrite(Runnable)} for API considerations
    *
    * @param c
    * @param <T>
@@ -170,8 +187,14 @@ public interface ModelCommandExecutor {
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
    *
+   * @deprecated deadlock prevention (if needed) shall be part of {@link #runWriteAction(Runnable)}, user confirmation
+   * shall be part of specific implementation (i.e. WorkbenchModelAccess, initialized from IDE, might ask one, while DefaultModelAccess,
+   * from Ant build, shall not), and clients running read/write actions shall not care about these implementation details (they can't reasonably react anyway)
+   *
    * @param r
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void requireWrite(Runnable r);
 
   /**
@@ -179,9 +202,13 @@ public interface ModelCommandExecutor {
    * Throws a RuntimeException if nothing helped.
    * Returns the result of the computation.
    *
+   * @deprecated see {@link #requireWrite(Runnable)} for explanation
+   *
    * @param c
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   <T> T requireWrite(Computable<T> c);
 
   @Nullable
