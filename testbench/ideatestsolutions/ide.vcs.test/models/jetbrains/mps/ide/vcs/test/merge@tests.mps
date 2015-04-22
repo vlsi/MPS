@@ -991,11 +991,38 @@
               </node>
             </node>
             <node concept="3clFbH" id="4fbpUpEDw14" role="3cqZAp" />
-            <node concept="3clFbF" id="6hwF4wZOzAA" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqyz8Qm" role="3clFbG">
-                <ref role="37wK5l" node="3oUomEoMJsI" resolve="checkAndEnable" />
+            <node concept="3clFbF" id="4CruXksu4Zy" role="3cqZAp">
+              <node concept="2OqwBi" id="4CruXksu4Zz" role="3clFbG">
+                <node concept="2YIFZM" id="4CruXksu4Z$" role="2Oq$k0">
+                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                </node>
+                <node concept="liA8E" id="4CruXksu4Z_" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+                  <node concept="1bVj0M" id="4CruXksu4ZA" role="37wK5m">
+                    <node concept="3clFbS" id="4CruXksu4ZB" role="1bW5cS">
+                      <node concept="3clFbF" id="6hwF4wZOzAA" role="3cqZAp">
+                        <node concept="1rXfSq" id="4hiugqyz8Qm" role="3clFbG">
+                          <ref role="37wK5l" node="3oUomEoMJsI" resolve="checkAndEnable" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
+            <node concept="3clFbF" id="4CruXksu5TN" role="3cqZAp">
+              <node concept="2OqwBi" id="4CruXksu60a" role="3clFbG">
+                <node concept="2YIFZM" id="4CruXksu5YQ" role="2Oq$k0">
+                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                </node>
+                <node concept="liA8E" id="4CruXksu6hT" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="4CruXksu5OE" role="3cqZAp" />
             <node concept="3clFbF" id="6hwF4wZO$fV" role="3cqZAp">
               <node concept="37vLTI" id="6hwF4wZO$fX" role="3clFbG">
                 <node concept="3clFbT" id="6hwF4wZO$g0" role="37vLTx">

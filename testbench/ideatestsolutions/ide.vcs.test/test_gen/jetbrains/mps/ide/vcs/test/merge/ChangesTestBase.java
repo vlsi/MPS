@@ -24,13 +24,13 @@ import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vcs.FileStatusManager;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.smodel.ModelAccess;
 import org.junit.After;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping;
@@ -115,7 +115,13 @@ public abstract class ChangesTestBase {
         throw new AssertionError(e);
       }
 
-      checkAndEnable();
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          checkAndEnable();
+        }
+      });
+      ModelAccess.instance().flushEventQueue();
+
       ChangesTestBase.ourEnabled = true;
     }
   }
