@@ -19,7 +19,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.text.impl.JavaTextUnit;
@@ -29,6 +29,7 @@ import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,30 +94,27 @@ public final class TextGeneratorEngine {
     if (textUnits.size() == 0) {
       resultQueue.offer(new TextGenResult(model, textUnits));
     }
+    final ModelAccess modelAccess = model.getRepository() != null ? model.getRepository().getModelAccess() : null;
     final AtomicInteger unitsCount = new AtomicInteger(textUnits.size());
     for (final TextUnit tu : textUnits) {
-      myExecutor.execute(new Runnable() {
+      final Runnable tuGenerate = new Runnable() {
         @Override
         public void run() {
-          // FIXME honest read action. Need project/repository to grab access from
-          final boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-          try {
-            // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
-            tu.generate();
-            // once the last unit of the model is completed, notify consumer
-            if (unitsCount.decrementAndGet() == 0) {
-              try {
-                resultQueue.put(new TextGenResult(model, textUnits));
-              } catch (InterruptedException ex) {
-                // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
-                myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getModelName())).setException(ex));
-              }
+          // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
+          tu.generate();
+          // once the last unit of the model is completed, notify consumer
+          if (unitsCount.decrementAndGet() == 0) {
+            try {
+              resultQueue.put(new TextGenResult(model, textUnits));
+            } catch (InterruptedException ex) {
+              // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
+              myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getModelName())).setException(ex));
             }
-          } finally {
-            ModelAccess.instance().setReadEnabledFlag(oldFlag);
           }
         }
-      });
+      };
+
+      myExecutor.execute(modelAccess == null ? tuGenerate : new ModelReadRunnable(modelAccess, tuGenerate));
     }
   }
 
