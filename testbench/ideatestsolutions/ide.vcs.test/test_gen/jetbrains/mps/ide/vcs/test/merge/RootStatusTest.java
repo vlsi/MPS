@@ -4,9 +4,9 @@ package jetbrains.mps.ide.vcs.test.merge;
 
 import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,7 +25,7 @@ public class RootStatusTest extends ChangesTestBase {
         SNodeOperations.deleteNode(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"));
       }
     });
-    checkRootStatuses(new RootStatusItem("Root", null));
+    checkRootStatuses(new RootStatusItem("Root", FileStatus.NOT_CHANGED));
   }
 
   @Test
@@ -35,7 +35,7 @@ public class RootStatusTest extends ChangesTestBase {
         SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_37f57n_a0a0a0a0a2());
       }
     });
-    checkRootStatuses(new RootStatusItem("NewRoot", FileStatus.ADDED));
+    checkRootStatuses(new RootStatusItem("NewRoot", FileStatus.NOT_CHANGED));
   }
 
   @Test
