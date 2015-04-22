@@ -32,10 +32,10 @@
     <import index="uekr" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem(MPS.Core/jetbrains.mps.newTypesystem@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
-    <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="gqu6" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency(MPS.Core/jetbrains.mps.project.dependency@java_stub)" />
+    <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -998,8 +998,8 @@
       <node concept="3clFbS" id="6U9FOjHeN_m" role="3clF47">
         <node concept="3clFbJ" id="2yUoJD0YFup" role="3cqZAp">
           <node concept="2ZW3vV" id="3nCzltNmdVu" role="3clFbw">
-            <node concept="3uibUv" id="3nCzltNmdVv" role="2ZW6by">
-              <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
+            <node concept="3uibUv" id="6X2NSHvQtsj" role="2ZW6by">
+              <ref role="3uigEE" to="l077:~TransientSModule" resolve="TransientSModule" />
             </node>
             <node concept="2EnYce" id="hCs8wWtT7T" role="2ZW6bz">
               <node concept="2JrnkZ" id="3nCzltNmdVy" role="2Oq$k0">
@@ -12293,8 +12293,8 @@
                                 <ref role="3cqZAo" node="9R85EWcrR" resolve="it" />
                               </node>
                             </node>
-                            <node concept="3uibUv" id="791rit5f679" role="2ZW6by">
-                              <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
+                            <node concept="3uibUv" id="6X2NSHvQmkp" role="2ZW6by">
+                              <ref role="3uigEE" to="l077:~TransientSModule" resolve="TransientSModule" />
                             </node>
                           </node>
                         </node>
@@ -14084,8 +14084,8 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3uibUv" id="791rit5f670" role="2ZW6by">
-                            <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
+                          <node concept="3uibUv" id="6X2NSHvQnp3" role="2ZW6by">
+                            <ref role="3uigEE" to="l077:~TransientSModule" resolve="TransientSModule" />
                           </node>
                         </node>
                       </node>
@@ -15149,8 +15149,8 @@
                             <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                           </node>
                         </node>
-                        <node concept="3uibUv" id="791rit5f66R" role="2ZW6by">
-                          <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
+                        <node concept="3uibUv" id="6X2NSHvQoBo" role="2ZW6by">
+                          <ref role="3uigEE" to="l077:~TransientSModule" resolve="TransientSModule" />
                         </node>
                       </node>
                     </node>

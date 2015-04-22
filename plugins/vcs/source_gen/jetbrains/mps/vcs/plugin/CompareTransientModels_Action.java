@@ -10,16 +10,13 @@ import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.ui.tree.SortUtil;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
@@ -38,7 +35,7 @@ public class CompareTransientModels_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a3(SNodeOperations.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), SNodeOperations.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
+    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientSModel && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientSModel && eq_5whyyr_a0a0a3(NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -70,11 +67,7 @@ public class CompareTransientModels_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
-      final String[] titles = ModelAccess.instance().runReadAction(new Computable<String[]>() {
-        public String[] compute() {
-          return new String[]{SModelOperations.getModelName(model[0]), SModelOperations.getModelName(model[1])};
-        }
-      });
+      final String[] titles = new String[]{model[0].getModelName(), model[1].getModelName()};
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), model[0], model[1], titles[0], titles[1], null).show();

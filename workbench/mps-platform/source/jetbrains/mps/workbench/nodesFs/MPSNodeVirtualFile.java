@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -67,7 +67,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
           myPath = "";
         } else {
           myName = myPresentationName = String.valueOf(node.getPresentation());
-          if (node.getModel() != null && node.getModel().getModule() instanceof TransientModelsModule) {
+          if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
             // it's common to open same node from different generation steps (transient models)
             // and to tell nodes from different steps we append model's identification
             final String s = SModelStereotype.getStereotype(node.getModel());
