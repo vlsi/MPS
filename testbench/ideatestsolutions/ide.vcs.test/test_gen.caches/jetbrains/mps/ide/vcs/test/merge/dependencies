@@ -133,7 +133,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />

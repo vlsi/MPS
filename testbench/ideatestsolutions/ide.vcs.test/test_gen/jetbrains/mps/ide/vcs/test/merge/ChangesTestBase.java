@@ -32,7 +32,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping;
+import jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -171,7 +171,7 @@ public abstract class ChangesTestBase {
   }
 
   protected void checkRootStatuses(final RootStatusItem... statuses) {
-    final NodeFileStatusMapping fsm = myIdeaProject.getComponent(NodeFileStatusMapping.class);
+    final NodeFileStatusMappingExt fsm = myIdeaProject.getComponent(NodeFileStatusMappingExt.class);
     final SModel model = myDiff.getModelDescriptor();
     // query for first time 
     ModelAccess.instance().runReadAction(new Runnable() {
