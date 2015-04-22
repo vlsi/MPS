@@ -1184,21 +1184,16 @@
           <node concept="2YIFZM" id="3oUomEoMiLD" role="3clFbG">
             <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
             <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
-            <node concept="2OqwBi" id="3oUomEoMiLE" role="37wK5m">
-              <node concept="2EnYce" id="3oUomEoMiLF" role="2Oq$k0">
-                <node concept="2OqwBi" id="3oUomEoMiLG" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxeuPgS" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
-                  </node>
-                  <node concept="liA8E" id="3oUomEoMiLI" role="2OqNvi">
-                    <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
-                  </node>
+            <node concept="3clFbC" id="4CruXksunNl" role="37wK5m">
+              <node concept="10Nm6u" id="4CruXksunOR" role="3uHU7w" />
+              <node concept="2OqwBi" id="4CruXksunm_" role="3uHU7B">
+                <node concept="37vLTw" id="4CruXksunmA" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
                 </node>
-                <node concept="liA8E" id="3oUomEoMiLJ" role="2OqNvi">
-                  <ref role="37wK5l" to="bfxj:3kRMfhMv9tJ" resolve="getModelChanges" />
+                <node concept="liA8E" id="4CruXksunmB" role="2OqNvi">
+                  <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
                 </node>
               </node>
-              <node concept="3GX2aA" id="3oUomEoMiLK" role="2OqNvi" />
             </node>
           </node>
         </node>

@@ -28,13 +28,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.junit.After;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -143,7 +143,7 @@ public abstract class ChangesTestBase {
     myDiff.setEnabled(true);
     myWaitHelper.waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a5a71(myDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(myDiff.getChangeSet() == null);
   }
 
   protected void setAutoaddPolicy(VcsShowConfirmationOption.Value value) {
@@ -248,12 +248,6 @@ public abstract class ChangesTestBase {
 
   public String getDefaultExt() {
     return PersistenceRegistry.getInstance().getDefaultModelFactory().getFileExtension();
-  }
-  private static List<ModelChange> check_l1nwgz_a0a5a71(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
   }
   private static FileStatus check_l1nwgz_a0b0a0a0a0g0z(RootStatusItem checkedDotOperand) {
     if (null != checkedDotOperand) {
