@@ -8569,15 +8569,8 @@
                 <node concept="1rXfSq" id="7HgS$Vkcfud" role="37wK5m">
                   <ref role="37wK5l" node="7HgS$Vkcdg0" resolve="createFakeChangeSet" />
                 </node>
-                <node concept="2OqwBi" id="7HgS$Vkcg6f" role="37wK5m">
-                  <node concept="2JrnkZ" id="7HgS$Vkcg3M" role="2Oq$k0">
-                    <node concept="3B5_sB" id="7HgS$Vkcfzo" role="2JrQYb">
-                      <ref role="3B5MYn" to="1k94:56cvcsnDMz9" resolve="Root" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="7HgS$VkcgfQ" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
-                  </node>
+                <node concept="37vLTw" id="4CruXksymMO" role="37wK5m">
+                  <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
                 </node>
               </node>
             </node>
@@ -8780,6 +8773,56 @@
       <node concept="3cqZAl" id="7HgS$Vkbw8u" role="3clF45" />
       <node concept="3Tm1VV" id="7HgS$Vkbw8v" role="1B3o_S" />
       <node concept="3clFbS" id="7HgS$Vkbw8w" role="3clF47">
+        <node concept="3cpWs8" id="4CruXksymlX" role="3cqZAp">
+          <node concept="3cpWsn" id="4CruXksymlY" role="3cpWs9">
+            <property role="TrG5h" value="change" />
+            <node concept="3uibUv" id="4CruXksymlP" role="1tU5fm">
+              <ref role="3uigEE" to="btf5:2nH2HpRnsob" resolve="SetReferenceChange" />
+            </node>
+          </node>
+        </node>
+        <node concept="1QHqEK" id="4CruXksym_2" role="3cqZAp">
+          <node concept="1QHqEC" id="4CruXksym_4" role="1QHqEI">
+            <node concept="3clFbS" id="4CruXksym_6" role="1bW5cS">
+              <node concept="3clFbF" id="4CruXksymqQ" role="3cqZAp">
+                <node concept="37vLTI" id="4CruXksymqS" role="3clFbG">
+                  <node concept="2ShNRf" id="4CruXksymlZ" role="37vLTx">
+                    <node concept="1pGfFk" id="4CruXksymm0" role="2ShVmc">
+                      <ref role="37wK5l" to="btf5:2nH2HpRnsMF" resolve="SetReferenceChange" />
+                      <node concept="1rXfSq" id="4CruXksymm1" role="37wK5m">
+                        <ref role="37wK5l" node="7HgS$Vkcdg0" resolve="createFakeChangeSet" />
+                      </node>
+                      <node concept="37vLTw" id="4CruXksymm2" role="37wK5m">
+                        <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
+                      </node>
+                      <node concept="359W_D" id="4CruXksymm3" role="37wK5m">
+                        <ref role="359W_E" to="tpee:g7uibYu" resolve="ClassifierType" />
+                        <ref role="359W_F" to="tpee:g7uigIF" />
+                      </node>
+                      <node concept="2OqwBi" id="4CruXksymm4" role="37wK5m">
+                        <node concept="1rXfSq" id="4CruXksymm5" role="2Oq$k0">
+                          <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
+                        </node>
+                        <node concept="liA8E" id="4CruXksymm6" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="4CruXksymm7" role="37wK5m">
+                        <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
+                      </node>
+                      <node concept="Xl_RD" id="4CruXksymm8" role="37wK5m">
+                        <property role="Xl_RC" value="Root" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4CruXksymqW" role="37vLTJ">
+                    <ref role="3cqZAo" node="4CruXksymlY" resolve="change" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7HgS$VkcjBP" role="3cqZAp">
           <node concept="1rXfSq" id="7HgS$VkcjBQ" role="3clFbG">
             <ref role="37wK5l" node="7HgS$VkbLl$" resolve="testDiffCorrectness" />
@@ -8813,34 +8856,8 @@
                 </node>
               </node>
             </node>
-            <node concept="2ShNRf" id="7HgS$VkcjBX" role="37wK5m">
-              <node concept="1pGfFk" id="7HgS$VkcjBY" role="2ShVmc">
-                <ref role="37wK5l" to="btf5:2nH2HpRnsMF" resolve="SetReferenceChange" />
-                <node concept="1rXfSq" id="7HgS$VkcjBZ" role="37wK5m">
-                  <ref role="37wK5l" node="7HgS$Vkcdg0" resolve="createFakeChangeSet" />
-                </node>
-                <node concept="37vLTw" id="4CruXksvROA" role="37wK5m">
-                  <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
-                </node>
-                <node concept="359W_D" id="7HgS$Vkck4l" role="37wK5m">
-                  <ref role="359W_E" to="tpee:g7uibYu" resolve="ClassifierType" />
-                  <ref role="359W_F" to="tpee:g7uigIF" />
-                </node>
-                <node concept="2OqwBi" id="7HgS$VkckmS" role="37wK5m">
-                  <node concept="1rXfSq" id="7HgS$VkckiM" role="2Oq$k0">
-                    <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
-                  </node>
-                  <node concept="liA8E" id="7HgS$Vkckyt" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="4CruXksvRT4" role="37wK5m">
-                  <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
-                </node>
-                <node concept="Xl_RD" id="7HgS$VkckML" role="37wK5m">
-                  <property role="Xl_RC" value="Root" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="4CruXksymm9" role="37wK5m">
+              <ref role="3cqZAo" node="4CruXksymlY" resolve="change" />
             </node>
           </node>
         </node>
