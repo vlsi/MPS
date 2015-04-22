@@ -38,6 +38,9 @@ import java.util.List;
  * Counterpart to {@link jetbrains.mps.generator.impl.GenerationSession} to handle exports
  * during generation of a given model.
  *
+ * There's one ExportsSessionContext per model generation/GenerationSession.
+ * To facilitate access from multiple generation threads, some instance methods are synchronized on <code>this</code>
+ *
  * @author Artem Tikhomirov
  */
 public class ExportsSessionContext {
@@ -77,20 +80,23 @@ public class ExportsSessionContext {
     // XXX here we imply templateContext.inputNode is from the model being processed (though technically it's feasible to have inputNode
     // from another model). We need original (not transient) model for streamManager to find proper location
     assert templateContext.getEnvironment().getGenerator().getInputModel() == templateContext.getInput().getModel();
-    if (myExportsModel == null) {
-      // when the model is being generated, overwrite any existing exports file - there gonna be new values.
-      myExportsModel = myExportsVault.newExportsModel(myContext.getOriginalInputModel());
-    }
-    for (SNode v : values) {
-      SNode keeper = SModelUtil_new.instantiateConceptDeclaration(keeperConcept, null, true);
-      ExportLabelContext ctx = new ExportLabelContextImpl(templateContext.getInput(), v, keeper);
-      invokeExportFunction(exportLabel.getModel(), functionName, ctx);
-      SModel outputModel = v.getModel() != null ? v.getModel() : templateContext.getEnvironment().getOutputModel();
-      final SNode/*node<ExportEntry>*/ exportEntry =
-          new CrossModelUtil().newEntry(ctx, exportLabel, myExportsModel, outputModel);
-      // FIXME likely CrossModelUtil would get some of these arguments right into constructor.
-      //       Just unsure at the moment which one, gonna decide once there are more uses.
-      myExportsModel.addRootNode(exportEntry);
+    // ExportsSessionContext
+    synchronized (this) {
+      if (myExportsModel == null) {
+        // when the model is being generated, overwrite any existing exports file - there gonna be new values.
+        myExportsModel = myExportsVault.newExportsModel(myContext.getOriginalInputModel());
+      }
+      for (SNode v : values) {
+        SNode keeper = SModelUtil_new.instantiateConceptDeclaration(keeperConcept, null, true);
+        ExportLabelContext ctx = new ExportLabelContextImpl(templateContext.getInput(), v, keeper);
+        invokeExportFunction(exportLabel.getModel(), functionName, ctx);
+        SModel outputModel = v.getModel() != null ? v.getModel() : templateContext.getEnvironment().getOutputModel();
+        final SNode/*node<ExportEntry>*/ exportEntry =
+            new CrossModelUtil().newEntry(ctx, exportLabel, myExportsModel, outputModel);
+        // FIXME likely CrossModelUtil would get some of these arguments right into constructor.
+        //       Just unsure at the moment which one, gonna decide once there are more uses.
+        myExportsModel.addRootNode(exportEntry);
+      }
     }
   }
 
