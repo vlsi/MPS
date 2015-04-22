@@ -5,7 +5,6 @@ package jetbrains.mps.ide.vcs.test.merge;
 import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -20,6 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
@@ -46,13 +46,13 @@ public class ChangesCalculationTest extends ChangesTestBase {
 
   @Test
   public void testAddRoot() {
-    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
+    final SNodeId id = new jetbrains.mps.smodel.SNodeId.Regular(1);
     testDiffCorrectness(new Runnable() {
       public void run() {
         SNode created = SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_7w1430_a0a0a0a0b0c());
-        id.value = created.getNodeId();
+        ((jetbrains.mps.smodel.SNode) created).setId(id);
       }
-    }, new AddRootChange(createFakeChangeSet(), id.value));
+    }, new AddRootChange(createFakeChangeSet(), id));
   }
 
   @Test

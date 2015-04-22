@@ -1625,9 +1625,9 @@
   <root nodeRef="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)/8885850892995882493">
     <file name="ChangesCalculationTest.java">
       <node id="8885850892997099971" at="41,25,42,163" concept="4" />
-      <node id="8885850892997303050" at="48,29,49,63" concept="10" />
+      <node id="8885850892997303050" at="48,29,49,67" concept="10" />
       <node id="8885850892997299679" at="51,25,52,121" concept="10" />
-      <node id="8885850892997303431" at="52,121,53,39" concept="4" />
+      <node id="5339997938413972690" at="52,121,53,57" concept="4" />
       <node id="8885850892997304786" at="61,25,62,289" concept="4" />
       <node id="8885850892997310969" at="70,25,71,733" concept="4" />
       <node id="8885850892997317038" at="79,29,80,337" concept="11" />
@@ -1671,7 +1671,7 @@
       <node id="8885850892997342490" at="86,29,91,331" concept="4" />
       <node id="8885850892997199698" at="104,68,109,7" concept="4" />
       <node id="8885850892997222472" at="113,95,118,5" concept="6" />
-      <node id="8885850892997298764" at="49,63,55,59" concept="4" />
+      <node id="8885850892997298764" at="49,67,55,53" concept="4" />
       <node id="8885850892997299687" at="120,0,126,0" concept="15" trace="createClassConcept_7w1430_a0a0a0a0b0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8885850892997100111" at="126,0,133,0" concept="15" trace="_quotation_createNode_7w1430_a0a0a0a0i#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8885850892997099963" at="38,0,46,0" concept="9" trace="testRemoveRoot#()V" />
@@ -1690,7 +1690,7 @@
       <scope id="8885850892997284801" at="99,47,100,61" />
       <scope id="8885850892997199700" at="106,25,107,129" />
       <scope id="8885850892997299687" at="122,220,123,144" />
-      <scope id="8885850892997298767" at="51,25,53,39">
+      <scope id="8885850892997298767" at="51,25,53,57">
         <var name="created" id="8885850892997299680" />
       </scope>
       <scope id="8885850892997100111" at="128,30,130,498" />
@@ -1724,7 +1724,7 @@
         <var name="quotedNode_1" id="8885850892997100111" />
       </scope>
       <scope id="8885850892997299687" at="120,0,126,0" />
-      <scope id="8885850892997099987" at="48,29,55,59">
+      <scope id="8885850892997099987" at="48,29,55,53">
         <var name="id" id="8885850892997303051" />
       </scope>
       <scope id="8885850892997100111" at="126,0,133,0" />
