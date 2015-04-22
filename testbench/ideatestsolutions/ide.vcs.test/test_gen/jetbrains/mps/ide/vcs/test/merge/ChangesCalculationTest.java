@@ -64,6 +64,7 @@ public class ChangesCalculationTest extends ChangesTestBase {
         SNode newRoot = createClassConcept_7w1430_a0a0a0b0g();
         ((jetbrains.mps.smodel.SNode) newRoot).setId(id);
         SModelOperations.addRootNode(((SModel) getTestModel()), newRoot);
+        assert newRoot.getNodeId().equals(new jetbrains.mps.smodel.SNodeId.Regular(1)) : "this can't happen in universe's lifetime";
       }
     }, new AddRootChange(createFakeChangeSet(), id));
   }

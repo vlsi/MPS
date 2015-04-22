@@ -288,6 +288,7 @@
       </concept>
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
+        <child id="1160998916832" name="message" index="1gVpfI" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -8646,6 +8647,34 @@
                         <ref role="3cqZAo" node="4CruXkswDGX" resolve="newRoot" />
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="1gVbGN" id="4CruXksxbGv" role="3cqZAp">
+                  <node concept="2OqwBi" id="4CruXksxcAT" role="1gVkn0">
+                    <node concept="2OqwBi" id="4CruXksxc6B" role="2Oq$k0">
+                      <node concept="2JrnkZ" id="4CruXksxc3H" role="2Oq$k0">
+                        <node concept="37vLTw" id="4CruXksxbKG" role="2JrQYb">
+                          <ref role="3cqZAo" node="4CruXkswDGX" resolve="newRoot" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="4CruXksxcgW" role="2OqNvi">
+                        <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="4CruXksxcRP" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="2ShNRf" id="4CruXksxcVp" role="37wK5m">
+                        <node concept="1pGfFk" id="4CruXksxe4X" role="2ShVmc">
+                          <ref role="37wK5l" to="cu2c:~SNodeId$Regular.&lt;init&gt;(long)" resolve="SNodeId.Regular" />
+                          <node concept="3cmrfG" id="4CruXksxe99" role="37wK5m">
+                            <property role="3cmrfH" value="1" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="4CruXksxenP" role="1gVpfI">
+                    <property role="Xl_RC" value="this can't happen in universe's lifetime" />
                   </node>
                 </node>
               </node>
