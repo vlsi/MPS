@@ -206,7 +206,11 @@ public abstract class ChangesTestBase {
   }
 
   protected void revertMemChangesAndWait() {
-    getTestModel().reloadFromSource();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        getTestModel().reloadFromSource();
+      }
+    });
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a2a72(myDiff.getChangeSet())).isEmpty());
   }
