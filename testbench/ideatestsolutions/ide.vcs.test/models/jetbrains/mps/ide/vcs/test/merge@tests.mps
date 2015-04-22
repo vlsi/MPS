@@ -8792,8 +8792,23 @@
                       <node concept="1rXfSq" id="4CruXksymm1" role="37wK5m">
                         <ref role="37wK5l" node="7HgS$Vkcdg0" resolve="createFakeChangeSet" />
                       </node>
-                      <node concept="37vLTw" id="4CruXksymm2" role="37wK5m">
-                        <ref role="3cqZAo" node="4CruXksvRhH" resolve="ROOT_ID" />
+                      <node concept="2OqwBi" id="4CruXksyFCB" role="37wK5m">
+                        <node concept="2JrnkZ" id="4CruXksyFw$" role="2Oq$k0">
+                          <node concept="2OqwBi" id="4CruXksyD8q" role="2JrQYb">
+                            <node concept="3fl2lp" id="4CruXksyCP2" role="2Oq$k0">
+                              <ref role="3fl3PK" to="1k94:7HgS$Vk0way" resolve="method" />
+                              <node concept="3B5_sB" id="4CruXksyB$J" role="3fl3PI">
+                                <ref role="3B5MYn" to="1k94:56cvcsnDMz9" resolve="Root" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="4CruXksyECn" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:fzclF7X" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="4CruXksyFRn" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                        </node>
                       </node>
                       <node concept="359W_D" id="4CruXksymm3" role="37wK5m">
                         <ref role="359W_E" to="tpee:g7uibYu" resolve="ClassifierType" />

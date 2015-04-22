@@ -83,7 +83,7 @@ public class ChangesCalculationTest extends ChangesTestBase {
     final Wrappers._T<SetReferenceChange> change = new Wrappers._T<SetReferenceChange>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        change.value = new SetReferenceChange(createFakeChangeSet(), ROOT_ID, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), getTestModel().getReference(), ROOT_ID, "Root");
+        change.value = new SetReferenceChange(createFakeChangeSet(), SLinkOperations.getTarget(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "8885850892994216610"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")).getNodeId(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), getTestModel().getReference(), ROOT_ID, "Root");
       }
     });
     testDiffCorrectness(new Runnable() {
