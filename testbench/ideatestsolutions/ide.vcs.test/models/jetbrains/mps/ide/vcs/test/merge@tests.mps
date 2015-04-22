@@ -623,38 +623,9 @@
             <node concept="3clFbT" id="2pL3QjrvqrM" role="37wK5m">
               <property role="3clFbU" value="true" />
             </node>
-            <node concept="2OqwBi" id="2pL3Qjrx99G" role="37wK5m">
-              <node concept="liA8E" id="2pL3QjrxhXD" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-                <node concept="Xl_RD" id="2pL3Qjrwq2k" role="37wK5m">
-                  <property role="Xl_RC" value="jetbrains.mps.ide.make" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2pL3Qjrw99n" role="2Oq$k0">
-                <node concept="liA8E" id="2pL3Qjrwh8o" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-                  <node concept="Xl_RD" id="2pL3QjrwhSs" role="37wK5m">
-                    <property role="Xl_RC" value="jetbrains.mps.vcs" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="2pL3QjrvKFZ" role="2Oq$k0">
-                  <node concept="2OqwBi" id="2pL3Qjrw1ks" role="2Oq$k0">
-                    <node concept="liA8E" id="2pL3Qjrw90n" role="2OqNvi">
-                      <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
-                    </node>
-                    <node concept="2YIFZM" id="2pL3Qjrw1gs" role="2Oq$k0">
-                      <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
-                      <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="2pL3QjrvS$Q" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-                    <node concept="Xl_RD" id="2pL3QjrvSAl" role="37wK5m">
-                      <property role="Xl_RC" value="Git4Idea" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+            <node concept="2YIFZM" id="4CruXkszA3t" role="37wK5m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultEnvironment" />
+              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
           </node>
         </node>

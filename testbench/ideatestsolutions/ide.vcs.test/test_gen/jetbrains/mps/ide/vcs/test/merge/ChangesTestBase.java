@@ -74,7 +74,7 @@ public abstract class ChangesTestBase {
 
   @BeforeClass
   public static void setUp() {
-    MpsTestsSupport.initEnv(true, EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().addPlugin("Git4Idea").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.make"));
+    MpsTestsSupport.initEnv(true, EnvironmentConfig.defaultEnvironment());
 
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
