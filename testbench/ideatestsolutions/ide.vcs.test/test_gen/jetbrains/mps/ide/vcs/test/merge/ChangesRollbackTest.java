@@ -9,12 +9,12 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -37,8 +37,8 @@ public class ChangesRollbackTest extends ChangesTestBase {
     List<ModelChange> changes = ListSequence.fromListWithValues(new ArrayList<ModelChange>(), myDiff.getChangeSet().getModelChanges());
     ListSequence.fromList(changes).reversedList().visitAll(new IVisitor<ModelChange>() {
       public void visit(final ModelChange change) {
-        testChanges(new _FunctionTypes._void_P0_E0() {
-          public void invoke() {
+        testChanges(new Runnable() {
+          public void run() {
             change.getOppositeChange().apply(model, new NodeCopier(model));
           }
         });
@@ -57,8 +57,8 @@ public class ChangesRollbackTest extends ChangesTestBase {
         return ch.getOppositeChange();
       }
     }).toListSequence();
-    testChanges(new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+    testChanges(new Runnable() {
+      public void run() {
         final NodeCopier nc = new NodeCopier(model);
         ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
@@ -82,7 +82,7 @@ public class ChangesRollbackTest extends ChangesTestBase {
   }
 
   private void makeChanges() {
-    testChanges(new _FunctionTypes._return_P0_E0<SNode>() {
+    testChanges(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode root = SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705");
         SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "newName");
@@ -90,7 +90,7 @@ public class ChangesRollbackTest extends ChangesTestBase {
         SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).first());
         return ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a4a0a0a4());
       }
-    });
+    }));
     checkRootStatuses();
   }
   private static List<ModelChange> check_p3cuek_a0a0c0c(ChangeSet checkedDotOperand) {

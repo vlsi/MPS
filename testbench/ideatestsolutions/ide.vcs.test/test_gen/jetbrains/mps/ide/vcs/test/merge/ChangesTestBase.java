@@ -145,18 +145,16 @@ public abstract class ChangesTestBase {
     vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(value);
   }
 
-  protected void testChanges(Runnable... changes) {
-    for (Runnable change : changes) {
-      makeChangeAndWait(change);
+  protected void testChanges(Runnable change) {
+    makeChangeAndWait(change);
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ChangeSet cs = myDiff.getChangeSet();
-          ChangeSet rebuiltChangeSet = ChangeSetBuilder.buildChangeSet(cs.getOldModel(), cs.getNewModel());
-          Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(cs));
-        }
-      });
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ChangeSet cs = myDiff.getChangeSet();
+        ChangeSet rebuiltChangeSet = ChangeSetBuilder.buildChangeSet(cs.getOldModel(), cs.getNewModel());
+        Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(cs));
+      }
+    });
   }
 
   protected void makeChangeAndWait(Runnable change) {
