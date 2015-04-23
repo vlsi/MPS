@@ -687,7 +687,7 @@
                     <node concept="3clFbF" id="3ofMfJ4ZZkH" role="3cqZAp">
                       <node concept="2YIFZM" id="3ofMfJ4YC4E" role="3clFbG">
                         <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                        <ref role="37wK5l" to="zofw:~ModelPersistence.index(byte[],org.jetbrains.mps.openapi.util.Consumer,jetbrains.mps.persistence.IndexAwareModelFactory$Callback):void" resolve="index" />
+                        <ref role="37wK5l" to="zofw:~ModelPersistence.index(byte[],jetbrains.mps.persistence.IndexAwareModelFactory$Callback):void" resolve="index" />
                         <node concept="2OqwBi" id="3ofMfJ4W$hh" role="37wK5m">
                           <node concept="liA8E" id="3ofMfJ4W$hl" role="2OqNvi">
                             <ref role="37wK5l" to="e2lb:~String.getBytes(java.nio.charset.Charset):byte[]" resolve="getBytes" />
@@ -700,7 +700,6 @@
                             <ref role="3cqZAo" node="6BljlJl_vAr" resolve="serialized" />
                           </node>
                         </node>
-                        <node concept="10Nm6u" id="3ofMfJ4W$hn" role="37wK5m" />
                         <node concept="37vLTw" id="3ofMfJ504EE" role="37wK5m">
                           <ref role="3cqZAo" node="3ofMfJ4W$gC" resolve="c" />
                         </node>
