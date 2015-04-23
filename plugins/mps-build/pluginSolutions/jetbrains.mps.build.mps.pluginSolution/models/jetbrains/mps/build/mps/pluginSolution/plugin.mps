@@ -12739,6 +12739,9 @@
                               <ref role="3cqZAo" node="2OJWaFGOSlY" resolve="macro" />
                             </node>
                           </node>
+                          <node concept="2Ry0Ak" id="4vY518spdqS" role="iGT6I">
+                            <property role="2Ry0Am" value="plugins" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -13940,7 +13943,7 @@
                 <node concept="aVJcg" id="3f6C5dcXB1j" role="aVJcv">
                   <node concept="NbPM2" id="3f6C5dcXB1k" role="aVJcq">
                     <node concept="3Mxwew" id="3f6C5dcXB1l" role="3MwsjC">
-                      <property role="3MwjfP" value="2.5" />
+                      <property role="3MwjfP" value="3.2" />
                     </node>
                   </node>
                 </node>
