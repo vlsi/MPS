@@ -189,9 +189,6 @@ public abstract class ChangesTestBase {
                 return it.rootName().equals(r.getName());
               }
             }));
-            if (actual == null) {
-              actual = FileStatus.NOT_CHANGED;
-            }
             Assert.assertSame(expected, actual);
           }
         });

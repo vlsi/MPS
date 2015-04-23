@@ -35,7 +35,7 @@ public class RootStatusTest extends ChangesTestBase {
         SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_37f57n_a0a0a0a0a2());
       }
     });
-    checkRootStatuses(new RootStatusItem("NewRoot", FileStatus.NOT_CHANGED));
+    checkRootStatuses(new RootStatusItem("NewRoot", FileStatus.ADDED));
   }
 
   @Test
