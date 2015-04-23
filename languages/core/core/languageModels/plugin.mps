@@ -139,9 +139,6 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -1854,163 +1851,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="3xnl$BhG3r1" role="3cqZAp" />
-                <node concept="3SKdUt" id="3xnl$BhGbs7" role="3cqZAp">
-                  <node concept="3SKdUq" id="3xnl$BhGbs8" role="3SKWNk">
-                    <property role="3SKdUp" value="clean up" />
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="3xnl$BhGbs9" role="3cqZAp">
-                  <node concept="3fqX7Q" id="3xnl$BhGbsa" role="3clFbw">
-                    <node concept="2OqwBi" id="3xnl$BhGbsb" role="3fr31v">
-                      <node concept="liA8E" id="3xnl$BhGbsc" role="2OqNvi">
-                        <ref role="37wK5l" to="59et:~FileSystem.runWriteTransaction(java.lang.Runnable):boolean" resolve="runWriteTransaction" />
-                        <node concept="1bVj0M" id="3xnl$BhGbsd" role="37wK5m">
-                          <node concept="3clFbS" id="3xnl$BhGbse" role="1bW5cS">
-                            <node concept="3clFbF" id="3xnl$BhGbsf" role="3cqZAp">
-                              <node concept="2OqwBi" id="3xnl$BhGbsg" role="3clFbG">
-                                <node concept="2YIFZM" id="3xnl$BhGbsh" role="2Oq$k0">
-                                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                                </node>
-                                <node concept="liA8E" id="3xnl$BhGbsi" role="2OqNvi">
-                                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.requireWrite(java.lang.Runnable):void" resolve="requireWrite" />
-                                  <node concept="1bVj0M" id="3xnl$BhGbsj" role="37wK5m">
-                                    <node concept="3clFbS" id="3xnl$BhGbsk" role="1bW5cS">
-                                      <node concept="3clFbJ" id="3xnl$BhGbsl" role="3cqZAp">
-                                        <node concept="3clFbS" id="3xnl$BhGbsm" role="3clFbx">
-                                          <node concept="2Gpval" id="3xnl$BhGbsn" role="3cqZAp">
-                                            <node concept="2OqwBi" id="3xnl$BhGlFo" role="2GsD0m">
-                                              <node concept="37vLTw" id="3xnl$BhGlcL" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="7A08csWbWQu" resolve="textGenInput2Resource" />
-                                              </node>
-                                              <node concept="liA8E" id="3xnl$BhGmAZ" role="2OqNvi">
-                                                <ref role="37wK5l" to="k7g3:~Map.values():java.util.Collection" resolve="values" />
-                                              </node>
-                                            </node>
-                                            <node concept="2GrKxI" id="3xnl$BhGbsp" role="2Gsz3X">
-                                              <property role="TrG5h" value="resource" />
-                                            </node>
-                                            <node concept="3clFbS" id="3xnl$BhGbsq" role="2LFqv$">
-                                              <node concept="3cpWs8" id="3xnl$BhGbsr" role="3cqZAp">
-                                                <node concept="3cpWsn" id="3xnl$BhGbss" role="3cpWs9">
-                                                  <property role="TrG5h" value="outputMD" />
-                                                  <node concept="3uibUv" id="3xnl$BhGbst" role="1tU5fm">
-                                                    <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-                                                  </node>
-                                                  <node concept="2OqwBi" id="3xnl$BhGbsu" role="33vP2m">
-                                                    <node concept="2OqwBi" id="3xnl$BhGbsv" role="2Oq$k0">
-                                                      <node concept="2GrUjf" id="3xnl$BhGbsw" role="2Oq$k0">
-                                                        <ref role="2Gs0qQ" node="3xnl$BhGbsp" resolve="resource" />
-                                                      </node>
-                                                      <node concept="2sxana" id="3xnl$BhGbsx" role="2OqNvi">
-                                                        <ref role="2sxfKC" to="fn29:1Xl3kQ1uadG" resolve="status" />
-                                                      </node>
-                                                    </node>
-                                                    <node concept="liA8E" id="3xnl$BhGbsy" role="2OqNvi">
-                                                      <ref role="37wK5l" to="y5px:~GenerationStatus.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                              </node>
-                                              <node concept="3clFbJ" id="3xnl$BhGbsz" role="3cqZAp">
-                                                <node concept="2ZW3vV" id="3xnl$BhGbs$" role="3clFbw">
-                                                  <node concept="3uibUv" id="3xnl$BhGbs_" role="2ZW6by">
-                                                    <ref role="3uigEE" to="y5px:~TransientModelsModule$TransientSModelDescriptor" resolve="TransientModelsModule.TransientSModelDescriptor" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="3xnl$BhGbsA" role="2ZW6bz">
-                                                    <ref role="3cqZAo" node="3xnl$BhGbss" resolve="outputMD" />
-                                                  </node>
-                                                </node>
-                                                <node concept="3clFbS" id="3xnl$BhGbsB" role="3clFbx">
-                                                  <node concept="3clFbF" id="3xnl$BhGbsC" role="3cqZAp">
-                                                    <node concept="2OqwBi" id="3xnl$BhGbsD" role="3clFbG">
-                                                      <node concept="liA8E" id="3xnl$BhGbsE" role="2OqNvi">
-                                                        <ref role="37wK5l" to="y5px:~TransientModelsModule.removeModel(org.jetbrains.mps.openapi.model.SModel):void" resolve="removeModel" />
-                                                        <node concept="37vLTw" id="3xnl$BhGbsF" role="37wK5m">
-                                                          <ref role="3cqZAo" node="3xnl$BhGbss" resolve="outputMD" />
-                                                        </node>
-                                                      </node>
-                                                      <node concept="1eOMI4" id="3xnl$BhGbsG" role="2Oq$k0">
-                                                        <node concept="10QFUN" id="3xnl$BhGbsH" role="1eOMHV">
-                                                          <node concept="2OqwBi" id="3xnl$BhGbsI" role="10QFUP">
-                                                            <node concept="liA8E" id="3xnl$BhGbsJ" role="2OqNvi">
-                                                              <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                                            </node>
-                                                            <node concept="37vLTw" id="3xnl$BhGbsK" role="2Oq$k0">
-                                                              <ref role="3cqZAo" node="3xnl$BhGbss" resolve="outputMD" />
-                                                            </node>
-                                                          </node>
-                                                          <node concept="3uibUv" id="3xnl$BhGbsL" role="10QFUM">
-                                                            <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
-                                                          </node>
-                                                        </node>
-                                                      </node>
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3fqX7Q" id="3xnl$BhGbsM" role="3clFbw">
-                                          <node concept="2OqwBi" id="3xnl$BhGbsN" role="3fr31v">
-                                            <node concept="10M0yZ" id="3xnl$BhGbsO" role="2Oq$k0">
-                                              <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
-                                              <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
-                                            </node>
-                                            <node concept="liA8E" id="3xnl$BhGbsP" role="2OqNvi">
-                                              <ref role="37wK5l" to="e2lb:~Boolean.equals(java.lang.Object):boolean" resolve="equals" />
-                                              <node concept="2bn25q" id="3xnl$BhGA3x" role="37wK5m">
-                                                <node concept="2bn25r" id="3xnl$BhGA3v" role="2Oq$k0">
-                                                  <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
-                                                </node>
-                                                <node concept="2sxana" id="3xnl$BhGA3w" role="2OqNvi">
-                                                  <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                      <node concept="3clFbF" id="3xnl$BhGbsT" role="3cqZAp">
-                                        <node concept="2OqwBi" id="3xnl$BhGbsU" role="3clFbG">
-                                          <node concept="2YIFZM" id="3xnl$BhGbsV" role="2Oq$k0">
-                                            <ref role="37wK5l" to="51om:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
-                                            <ref role="1Pybhc" to="51om:~CleanupManager" resolve="CleanupManager" />
-                                          </node>
-                                          <node concept="liA8E" id="3xnl$BhGbsW" role="2OqNvi">
-                                            <ref role="37wK5l" to="51om:~CleanupManager.cleanup():void" resolve="cleanup" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2YIFZM" id="3xnl$BhGbsX" role="2Oq$k0">
-                        <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
-                        <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="3xnl$BhGbsY" role="3clFbx">
-                    <node concept="1daRAt" id="3xnl$BhGbsZ" role="3cqZAp">
-                      <property role="1daRAr" value="ERROR" />
-                      <node concept="Xl_RD" id="3xnl$BhGbt0" role="1daK9t">
-                        <property role="Xl_RC" value="Failed to remove transient models" />
-                      </node>
-                    </node>
-                    <node concept="3D7k6m" id="3xnl$BhGbt1" role="3cqZAp">
-                      <property role="3D7k6l" value="FAILURE" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="3xnl$BhGzLN" role="3cqZAp" />
               </node>
               <node concept="3clFbS" id="7A08csWcyKm" role="2GVbov">
                 <node concept="3clFbF" id="7A08csWcBk3" role="3cqZAp">
@@ -3721,6 +3561,32 @@
                                               <node concept="2sxana" id="1sTai73x1yr" role="2OqNvi">
                                                 <ref role="2sxfKC" node="1sTai73x1y1" resolve="transientModelsProvider" />
                                               </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="3SKdUt" id="2Op6w9TyU4E" role="3cqZAp">
+                                          <node concept="3SKdUq" id="2Op6w9TyU5y" role="3SKWNk">
+                                            <property role="3SKdUp" value="XXX CleanupManager was there in TextGen's part of transient model removal" />
+                                          </node>
+                                        </node>
+                                        <node concept="3SKdUt" id="2Op6w9TyU6J" role="3cqZAp">
+                                          <node concept="3SKdUq" id="2Op6w9TyU7D" role="3SKWNk">
+                                            <property role="3SKdUp" value="Since this is the only place to care about transient models now, moved cleanup()" />
+                                          </node>
+                                        </node>
+                                        <node concept="3SKdUt" id="2Op6w9TyU8S" role="3cqZAp">
+                                          <node concept="3SKdUq" id="2Op6w9TyU9N" role="3SKWNk">
+                                            <property role="3SKdUp" value="here, despite being unsure whether it's needed at all or not." />
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbF" id="2Op6w9TyU1K" role="3cqZAp">
+                                          <node concept="2OqwBi" id="2Op6w9TyU1L" role="3clFbG">
+                                            <node concept="2YIFZM" id="2Op6w9TyU1M" role="2Oq$k0">
+                                              <ref role="1Pybhc" to="51om:~CleanupManager" resolve="CleanupManager" />
+                                              <ref role="37wK5l" to="51om:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
+                                            </node>
+                                            <node concept="liA8E" id="2Op6w9TyU1N" role="2OqNvi">
+                                              <ref role="37wK5l" to="51om:~CleanupManager.cleanup():void" resolve="cleanup" />
                                             </node>
                                           </node>
                                         </node>

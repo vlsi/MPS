@@ -52,6 +52,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 
 public class Generate_Facet extends IFacet.Stub {
@@ -472,6 +473,10 @@ public class Generate_Facet extends IFacet.Stub {
                 public boolean reconcile() {
                   if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
                     Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().removeAllTransient();
+                    // XXX CleanupManager was there in TextGen's part of transient model removal 
+                    // Since this is the only place to care about transient models now, moved cleanup() 
+                    // here, despite being unsure whether it's needed at all or not. 
+                    CleanupManager.getInstance().cleanup();
                   }
                   return true;
                 }

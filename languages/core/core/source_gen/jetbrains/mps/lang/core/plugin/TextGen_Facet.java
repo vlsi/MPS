@@ -56,10 +56,6 @@ import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -308,29 +304,6 @@ public class TextGen_Facet extends IFacet.Stub {
                   IResource result = new TResource(delta, resource.module(), resource.model());
                   _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
                 }
-
-                // clean up 
-                if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                  public void run() {
-                    ModelAccess.instance().requireWrite(new Runnable() {
-                      public void run() {
-                        if (!(Boolean.TRUE.equals(Generate_Facet.Target_configure.vars(pa.global()).saveTransient()))) {
-                          for (GResource resource : CollectionSequence.fromCollection(textGenInput2Resource.values())) {
-                            SModel outputMD = resource.status().getOutputModel();
-                            if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                              ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
-                            }
-                          }
-                        }
-                        CleanupManager.getInstance().cleanup();
-                      }
-                    });
-                  }
-                }))) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
-                  return new IResult.FAILURE(_output_21gswx_a0b);
-                }
-
               } catch (InterruptedException ex) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
                 return new IResult.FAILURE(_output_21gswx_a0b);
