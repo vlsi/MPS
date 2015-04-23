@@ -239,10 +239,12 @@ public class TextGen_Facet extends IFacet.Stub {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
 
                   monitor.currentProgress().advanceWork("Writing", 1, tgr.getModel().getReference().getModelName());
+                  final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
+
+                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(inputResource.model(), inputResource.module(), tgr))));
 
                   mpsProject.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      GResource inputResource = textGenInput2Resource.get(tgr.getModel());
                       Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(Sequence.fromIterable(inputResource.retainedModels()).where(new IWhereFilter<SModel>() {
                         public boolean accept(SModel smd) {
                           return GenerationFacade.canGenerate(smd);
@@ -301,8 +303,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 // output result 
                 for (GResource resource : SetSequence.fromSet(MapSequence.fromMap(deltas2).keySet())) {
                   Iterable<IDelta> delta = MapSequence.fromMap(deltas2).get(resource);
-                  IResource result = new TResource(delta, resource.module(), resource.model());
-                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
+                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(delta, resource.module(), resource.model()))));
                 }
               } catch (InterruptedException ex) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
