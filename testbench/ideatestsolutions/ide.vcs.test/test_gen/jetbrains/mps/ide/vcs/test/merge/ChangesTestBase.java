@@ -84,6 +84,7 @@ public abstract class ChangesTestBase {
   }
   @AfterClass
   public static void tearDown() {
+    ourEnabled = false;
     ProjectTestsSupport.waitUntilAllEventsFlushed();
     ActiveEnvironment.getInstance().disposeProject(ourProject.getProjectFile());
   }
