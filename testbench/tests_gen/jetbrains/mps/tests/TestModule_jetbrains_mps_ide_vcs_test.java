@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.ide.vcs.test.merge.MergeCoreTest", "jetbrains.mps.ide.vcs.test.merge.ChangesManagerTest", "jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest"}, tests = {"testMerge", "modifySaveCommit,modifyExternallyRollback,removeModifiedRoot,addRoot,changeProperty,changeReference,moveNode,inlineVariable,rollbackAllSerially,rollbackAllAtomically,createNewModel,deleteModelAndRollback", "modifyDisk_chooseMemory,modifyDisk_chooseDisk,deleteDisk_chooseMemory,deleteDisk_chooseDisk"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest"}, tests = {"modifyDisk_chooseMemory,modifyDisk_chooseDisk,deleteDisk_chooseMemory,deleteDisk_chooseDisk"})
 @ModuleSymbolicSuite.ModuleReference("9dc77d7d-3b66-403c-b568-37677f157448(jetbrains.mps.ide.vcs.test)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_ide_vcs_test {

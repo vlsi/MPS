@@ -3771,12 +3771,6 @@
     </node>
   </node>
   <node concept="lpD6F" id="7Psq8BycRoy">
-    <node concept="lpD6A" id="3P7Hp8k5FCr" role="lpD6w">
-      <ref role="lpD7v" to="j5ir:oJ77aNIJob" resolve="MergeCoreTest" />
-    </node>
-    <node concept="lpD6A" id="3P7Hp8k5FCx" role="lpD6w">
-      <ref role="lpD7v" to="j5ir:2FxQamhcX1N" resolve="ChangesManagerTest" />
-    </node>
     <node concept="lpD6A" id="3P7Hp8k5FC_" role="lpD6w">
       <ref role="lpD7v" to="j5ir:6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
     </node>
