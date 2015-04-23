@@ -938,14 +938,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" isTestSource="false" />

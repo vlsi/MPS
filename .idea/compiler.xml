@@ -529,10 +529,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPersistence/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoring/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testPrimitiveType/generator/source_gen" includeSubdirectories="true" />
