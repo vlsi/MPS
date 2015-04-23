@@ -98,7 +98,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myDiff.setEnabled(true);
     myWaitHelper.waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a2(myDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a2(myDiff.getChangeSet())).isEmpty());
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
   }
 
