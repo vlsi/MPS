@@ -1664,6 +1664,19 @@
       <node concept="3Tmbuc" id="7HgS$Vk3p3X" role="1B3o_S" />
       <node concept="3cqZAl" id="7HgS$VjMeLN" role="3clF45" />
       <node concept="3clFbS" id="7HgS$VjMeKJ" role="3clF47">
+        <node concept="3clFbF" id="64KdXaUqwJv" role="3cqZAp">
+          <node concept="2OqwBi" id="64KdXaUqwVv" role="3clFbG">
+            <node concept="37vLTw" id="64KdXaUqwJt" role="2Oq$k0">
+              <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
+            </node>
+            <node concept="liA8E" id="64KdXaUqxsy" role="2OqNvi">
+              <ref role="37wK5l" to="o84r:~ChangeListManagerImpl.ensureUpToDate(boolean):boolean" resolve="ensureUpToDate" />
+              <node concept="3clFbT" id="64KdXaUqxuN" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7HgS$VjMeL0" role="3cqZAp">
           <node concept="3cpWsn" id="7HgS$VjMeL1" role="3cpWs9">
             <property role="TrG5h" value="modelFileChange" />
@@ -1675,9 +1688,14 @@
                 <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
               </node>
               <node concept="liA8E" id="7HgS$VjMeL5" role="2OqNvi">
-                <ref role="37wK5l" to="o84r:~ChangeListManagerImpl.getChange(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.changes.Change" resolve="getChange" />
-                <node concept="37vLTw" id="7HgS$Vkauc5" role="37wK5m">
-                  <ref role="3cqZAo" node="7HgS$Vkatzs" resolve="modelFile" />
+                <ref role="37wK5l" to="o84r:~ChangeListManagerImpl.getChange(com.intellij.openapi.vcs.FilePath):com.intellij.openapi.vcs.changes.Change" resolve="getChange" />
+                <node concept="2ShNRf" id="4CruXksD1xd" role="37wK5m">
+                  <node concept="1pGfFk" id="4CruXksD2EY" role="2ShVmc">
+                    <ref role="37wK5l" to="3dcm:~FilePathImpl.&lt;init&gt;(com.intellij.openapi.vfs.VirtualFile)" resolve="FilePathImpl" />
+                    <node concept="37vLTw" id="4CruXksD2JA" role="37wK5m">
+                      <ref role="3cqZAo" node="7HgS$Vkatzs" resolve="modelFile" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

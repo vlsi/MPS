@@ -43,6 +43,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.Change;
+import com.intellij.openapi.vcs.FilePathImpl;
 import java.util.List;
 import com.intellij.openapi.vcs.VcsException;
 import java.util.ArrayList;
@@ -209,14 +210,15 @@ public abstract class ChangesTestBase {
   }
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
-    Change modelFileChange = myChangeListManager.getChange(modelFile);
+    myChangeListManager.ensureUpToDate(false);
+    Change modelFileChange = myChangeListManager.getChange(new FilePathImpl(modelFile));
     List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
     myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(modelFileChange), exceptions, RollbackProgressListener.EMPTY);
     Assert.assertTrue(ListSequence.fromList(exceptions).isEmpty());
 
     myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a7a92(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a8a92(myDiff.getChangeSet())).isEmpty());
   }
 
   protected EditableSModel getTestModel() {
@@ -258,7 +260,7 @@ public abstract class ChangesTestBase {
     }
     return null;
   }
-  private static List<ModelChange> check_l1nwgz_a0a7a92(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_l1nwgz_a0a8a92(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
