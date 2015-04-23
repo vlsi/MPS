@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
+import java.io.IOException;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelRepository;
@@ -19,7 +20,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
-import java.io.IOException;
 import jetbrains.mps.persistence.PersistenceRegistry;
 
 public class TestPersistence_Test extends TestCase {
@@ -45,7 +45,12 @@ public class TestPersistence_Test extends TestCase {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         String serialized = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
-        ModelPersistence.index(serialized.getBytes(FileUtil.DEFAULT_CHARSET), null, c);
+
+        try {
+          ModelPersistence.index(serialized.getBytes(FileUtil.DEFAULT_CHARSET), null, c);
+        } catch (IOException e) {
+          Assert.fail(e.getMessage());
+        }
       }
     });
 

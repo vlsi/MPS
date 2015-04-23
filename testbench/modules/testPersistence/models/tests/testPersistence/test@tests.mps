@@ -85,6 +85,10 @@
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
+      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
+        <child id="1164879758292" name="body" index="SfCbr" />
+        <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -677,25 +681,52 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="3ofMfJ4ZZkH" role="3cqZAp">
-                  <node concept="2YIFZM" id="3ofMfJ4YC4E" role="3clFbG">
-                    <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="37wK5l" to="zofw:~ModelPersistence.index(byte[],org.jetbrains.mps.openapi.util.Consumer,jetbrains.mps.persistence.IndexAwareModelFactory$Callback):void" resolve="index" />
-                    <node concept="2OqwBi" id="3ofMfJ4W$hh" role="37wK5m">
-                      <node concept="liA8E" id="3ofMfJ4W$hl" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.getBytes(java.nio.charset.Charset):byte[]" resolve="getBytes" />
-                        <node concept="10M0yZ" id="3ofMfJ4YEYV" role="37wK5m">
-                          <ref role="3cqZAo" to="msyo:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
-                          <ref role="1PxDUh" to="msyo:~FileUtil" resolve="FileUtil" />
+                <node concept="3clFbH" id="1jI9DyqTPFr" role="3cqZAp" />
+                <node concept="SfApY" id="1jI9DyqTPM8" role="3cqZAp">
+                  <node concept="3clFbS" id="1jI9DyqTPMa" role="SfCbr">
+                    <node concept="3clFbF" id="3ofMfJ4ZZkH" role="3cqZAp">
+                      <node concept="2YIFZM" id="3ofMfJ4YC4E" role="3clFbG">
+                        <ref role="1Pybhc" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
+                        <ref role="37wK5l" to="zofw:~ModelPersistence.index(byte[],org.jetbrains.mps.openapi.util.Consumer,jetbrains.mps.persistence.IndexAwareModelFactory$Callback):void" resolve="index" />
+                        <node concept="2OqwBi" id="3ofMfJ4W$hh" role="37wK5m">
+                          <node concept="liA8E" id="3ofMfJ4W$hl" role="2OqNvi">
+                            <ref role="37wK5l" to="e2lb:~String.getBytes(java.nio.charset.Charset):byte[]" resolve="getBytes" />
+                            <node concept="10M0yZ" id="3ofMfJ4YEYV" role="37wK5m">
+                              <ref role="1PxDUh" to="msyo:~FileUtil" resolve="FileUtil" />
+                              <ref role="3cqZAo" to="msyo:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="6BljlJl_vAv" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6BljlJl_vAr" resolve="serialized" />
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="3ofMfJ4W$hn" role="37wK5m" />
+                        <node concept="37vLTw" id="3ofMfJ504EE" role="37wK5m">
+                          <ref role="3cqZAo" node="3ofMfJ4W$gC" resolve="c" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="6BljlJl_vAv" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6BljlJl_vAr" resolve="serialized" />
+                    </node>
+                  </node>
+                  <node concept="TDmWw" id="1jI9DyqTPMb" role="TEbGg">
+                    <node concept="3clFbS" id="1jI9DyqTPMd" role="TDEfX">
+                      <node concept="3xETmq" id="1jI9DyqTQ8a" role="3cqZAp">
+                        <node concept="3_1$Yv" id="1jI9DyqTQbP" role="3_9lra">
+                          <node concept="2OqwBi" id="1jI9DyqTQB6" role="3_1BAH">
+                            <node concept="37vLTw" id="1jI9DyqTQfG" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1jI9DyqTPMf" resolve="e" />
+                            </node>
+                            <node concept="liA8E" id="1jI9DyqTQOV" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="10Nm6u" id="3ofMfJ4W$hn" role="37wK5m" />
-                    <node concept="37vLTw" id="3ofMfJ504EE" role="37wK5m">
-                      <ref role="3cqZAo" node="3ofMfJ4W$gC" resolve="c" />
+                    <node concept="3cpWsn" id="1jI9DyqTPMf" role="TDEfY">
+                      <property role="TrG5h" value="e" />
+                      <node concept="3uibUv" id="1jI9DyqTPZI" role="1tU5fm">
+                        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
+                      </node>
                     </node>
                   </node>
                 </node>
