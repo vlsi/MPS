@@ -215,7 +215,7 @@ public abstract class ChangesTestBase {
     myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(modelFileChange), exceptions, RollbackProgressListener.EMPTY);
     Assert.assertTrue(ListSequence.fromList(exceptions).isEmpty());
 
-    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.MODIFIED);
+    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a7a92(myDiff.getChangeSet())).isEmpty());
   }

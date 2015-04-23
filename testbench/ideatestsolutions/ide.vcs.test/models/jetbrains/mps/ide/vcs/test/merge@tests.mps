@@ -1774,7 +1774,7 @@
               </node>
               <node concept="10M0yZ" id="4DNDPQS2Lsy" role="37wK5m">
                 <ref role="1PxDUh" to="3dcm:~FileStatus" resolve="FileStatus" />
-                <ref role="3cqZAo" to="3dcm:~FileStatus.MODIFIED" resolve="MODIFIED" />
+                <ref role="3cqZAo" to="3dcm:~FileStatus.NOT_CHANGED" resolve="NOT_CHANGED" />
               </node>
             </node>
           </node>
