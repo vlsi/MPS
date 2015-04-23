@@ -26,8 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 /**
- * These tests check that incremental changes building works well with 
- * different variants of rollback operations
+ * [Mihail Muhin] I'm not sure what these are about, these tests were just copied from old ChangesManagerTest
  */
 public class ChangesRollbackTest extends ChangesTestBase {
   @Test
@@ -85,8 +84,7 @@ public class ChangesRollbackTest extends ChangesTestBase {
         SNode root = SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705");
         SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "newName");
         SLinkOperations.setTarget(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), _quotation_createNode_p3cuek_a0c0a0a0e());
-        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).first());
-        return ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a4a0a0a4());
+        return ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a3a0a0a4());
       }
     }));
   }
@@ -103,7 +101,7 @@ public class ChangesRollbackTest extends ChangesTestBase {
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-  private static SNode createInstanceMethodDeclaration_p3cuek_a0a4a0a0a4() {
+  private static SNode createInstanceMethodDeclaration_p3cuek_a0a3a0a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null, null, false);
     {

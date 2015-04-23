@@ -8447,22 +8447,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="7HgS$Vk5cz7" role="3cqZAp">
-                  <node concept="2OqwBi" id="7HgS$Vk5kqT" role="3clFbG">
-                    <node concept="2OqwBi" id="7HgS$Vk5eL3" role="2Oq$k0">
-                      <node concept="2OqwBi" id="7HgS$Vk5cNx" role="2Oq$k0">
-                        <node concept="37vLTw" id="7HgS$Vk5cz5" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7HgS$Vk57jb" resolve="root" />
-                        </node>
-                        <node concept="3Tsc0h" id="7HgS$Vk5dy$" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
-                        </node>
-                      </node>
-                      <node concept="1uHKPH" id="7HgS$Vk5iQj" role="2OqNvi" />
-                    </node>
-                    <node concept="1PgB_6" id="7HgS$Vk5kSd" role="2OqNvi" />
-                  </node>
-                </node>
                 <node concept="3clFbF" id="7HgS$Vk5771" role="3cqZAp">
                   <node concept="2OqwBi" id="7HgS$Vk4XSv" role="3clFbG">
                     <node concept="2OqwBi" id="7HgS$Vk4XSw" role="2Oq$k0">
@@ -8513,12 +8497,7 @@
     <node concept="3UR2Jj" id="7HgS$VkcWBY" role="lGtFl">
       <node concept="TZ5HA" id="7HgS$VkcWBZ" role="TZ5H$">
         <node concept="1dT_AC" id="7HgS$VkcWC0" role="1dT_Ay">
-          <property role="1dT_AB" value="These tests check that incremental changes building works well with " />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="7HgS$VkcXio" role="TZ5H$">
-        <node concept="1dT_AC" id="7HgS$VkcXip" role="1dT_Ay">
-          <property role="1dT_AB" value="different variants of rollback operations" />
+          <property role="1dT_AB" value="[Mihail Muhin] I'm not sure what these are about, these tests were just copied from old ChangesManagerTest" />
         </node>
       </node>
     </node>

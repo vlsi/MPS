@@ -72,9 +72,6 @@
     <dependency reexport="false">dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)</dependency>
     <dependency reexport="false">cdd4e8a8-17c1-4f16-b054-27e94948bd47(jetbrains.mps.transformation.test.inputModels)</dependency>
     <dependency reexport="false">b3170ec7-82d9-4e10-a3f0-31baa75ffc0c(testSubtypingTest)</dependency>
-    <dependency reexport="false">2f5af9e7-34c8-45f3-b417-4dcbb52409b8(testPackagedLanguage.test)</dependency>
-    <dependency reexport="false">f2f32c65-17db-4e68-ad2f-8b0e2554dbd6(tests.testPersistence)</dependency>
-    <dependency reexport="false">4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d(tests.testDepViewer)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
