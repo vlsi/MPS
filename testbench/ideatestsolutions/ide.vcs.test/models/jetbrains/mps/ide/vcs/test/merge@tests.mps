@@ -370,6 +370,7 @@
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -1596,38 +1597,17 @@
       <node concept="3Tmbuc" id="7HgS$Vk3kUS" role="1B3o_S" />
       <node concept="3cqZAl" id="7HgS$VjRIYq" role="3clF45" />
       <node concept="3clFbS" id="7HgS$VjRIY4" role="3clF47">
-        <node concept="3SKdUt" id="4CruXks_2Zv" role="3cqZAp">
-          <node concept="3SKdUq" id="4CruXks_32R" role="3SKWNk">
-            <property role="3SKdUp" value="todo: ACHTUNG! must do a command here as diff is not updated on write action (uses CommandListener). " />
-          </node>
-        </node>
-        <node concept="3clFbF" id="4CruXks_2dl" role="3cqZAp">
-          <node concept="2OqwBi" id="4CruXks_2mW" role="3clFbG">
-            <node concept="2YIFZM" id="4CruXks_2kJ" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="4CruXks_2zY" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandProjectExecutor.runCommandInEDT(java.lang.Runnable,jetbrains.mps.project.Project):void" resolve="runCommandInEDT" />
-              <node concept="1bVj0M" id="4CruXks_2Aw" role="37wK5m">
-                <node concept="3clFbS" id="4CruXks_2Ax" role="1bW5cS">
-                  <node concept="3clFbF" id="7HgS$VjRIY5" role="3cqZAp">
-                    <node concept="2OqwBi" id="7HgS$VjRIY6" role="3clFbG">
-                      <node concept="1rXfSq" id="7HgS$VjRIY7" role="2Oq$k0">
-                        <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
-                      </node>
-                      <node concept="liA8E" id="7HgS$VjRIY8" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~EditableSModel.reloadFromSource():void" resolve="reloadFromSource" />
-                      </node>
-                    </node>
+        <node concept="1QHqEM" id="4CruXksCKJc" role="3cqZAp">
+          <node concept="1QHqEC" id="4CruXksCKJe" role="1QHqEI">
+            <node concept="3clFbS" id="4CruXksCKJg" role="1bW5cS">
+              <node concept="3clFbF" id="4CruXksCKOK" role="3cqZAp">
+                <node concept="2OqwBi" id="7HgS$VjRIY6" role="3clFbG">
+                  <node concept="1rXfSq" id="7HgS$VjRIY7" role="2Oq$k0">
+                    <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
                   </node>
-                </node>
-              </node>
-              <node concept="2YIFZM" id="4CruXks_2Rj" role="37wK5m">
-                <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="37vLTw" id="4CruXks_2T$" role="37wK5m">
-                  <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
+                  <node concept="liA8E" id="7HgS$VjRIY8" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~EditableSModel.reloadFromSource():void" resolve="reloadFromSource" />
+                  </node>
                 </node>
               </node>
             </node>

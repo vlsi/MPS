@@ -198,15 +198,14 @@ public abstract class ChangesTestBase {
   }
 
   protected void revertMemChangesAndWait() {
-    // todo: ACHTUNG! must do a command here as diff is not updated on write action (uses CommandListener).  
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         getTestModel().reloadFromSource();
       }
-    }, ProjectHelper.toMPSProject(myIdeaProject));
+    });
     ModelAccess.instance().flushEventQueue();
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a4a72(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a3a72(myDiff.getChangeSet())).isEmpty());
   }
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
@@ -253,7 +252,7 @@ public abstract class ChangesTestBase {
     }
     return null;
   }
-  private static List<ModelChange> check_l1nwgz_a0a4a72(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_l1nwgz_a0a3a72(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
