@@ -44,7 +44,6 @@ public class ChangesRollbackTest extends ChangesTestBase {
         });
       }
     });
-    checkRootStatuses();
     Assert.assertTrue(ListSequence.fromList(myDiff.getChangeSet().getModelChanges()).isEmpty());
   }
 
@@ -77,7 +76,6 @@ public class ChangesRollbackTest extends ChangesTestBase {
         nc.restoreIds(true);
       }
     });
-    checkRootStatuses();
     Assert.assertTrue(ListSequence.fromList(myDiff.getChangeSet().getModelChanges()).isEmpty());
   }
 
@@ -91,7 +89,6 @@ public class ChangesRollbackTest extends ChangesTestBase {
         return ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a4a0a0a4());
       }
     }));
-    checkRootStatuses();
   }
   private static List<ModelChange> check_p3cuek_a0a0c0c(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
