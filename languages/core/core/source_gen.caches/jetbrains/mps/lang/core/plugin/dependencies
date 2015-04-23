@@ -208,6 +208,7 @@
     <classNode dependClassName="jetbrains.mps.text.TextUnit" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
+    <classNode dependClassName="jetbrains.mps.util.IStatus" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />

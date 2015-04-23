@@ -34,7 +34,7 @@ public class SingleMakeTestCase extends MpsJpsSingleTestCase {
 
   public void testBrokenProject() {
     setUpEnvironment("brokenProject/in");
-    final BuildResult buildResult = doMake(true);
+    final BuildResult buildResult = doMake(false);
     buildResult.assertFailed();
   }
 }
