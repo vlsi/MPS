@@ -124,7 +124,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a4(newModelDiff.getChangeSet())).isEmpty());
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), newModel.value.getModule(), newModel.value, false, true);
       }
