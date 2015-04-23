@@ -108,7 +108,6 @@ public class TextFacility2 {
       }
       if (tgStatus == TextUnit.Status.Failed) {
         success = false;
-        continue;
       }
       streamHandler.saveStream(tu.getFileName(), tu.getBytes());
     }
@@ -118,7 +117,7 @@ public class TextFacility2 {
         streamHandler.touch(fname);
       }
     }
-    return success ? Status.NO_ERRORS : new Status.ERROR("Failed to serialize textgen outcome");
+    return success ? Status.NO_ERRORS : new Status.ERROR("Text outcome has been generated with errors");
   }
 
   public IStatus serializeCaches(CacheGenLayout genLayout) {

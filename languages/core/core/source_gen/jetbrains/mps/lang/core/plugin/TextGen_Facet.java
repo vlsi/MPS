@@ -47,6 +47,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
+import jetbrains.mps.util.IStatus;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
@@ -266,7 +267,10 @@ public class TextGen_Facet extends IFacet.Stub {
                       ListSequence.fromList(fileProcessors2).addElement(fp);
                       FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, fp);
                       FileDeltaCollector cachesLocation = new FileDeltaCollector(cacheOutputDir, fp);
-                      tf2.serializeOutcome(javaSourcesLoc);
+                      IStatus status = tf2.serializeOutcome(javaSourcesLoc);
+                      if (status.isError()) {
+                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
+                      }
                       CacheGenLayout cgl = new CacheGenLayout(messageHandler);
                       cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
                       cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
@@ -274,7 +278,10 @@ public class TextGen_Facet extends IFacet.Stub {
                         cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().getGenerator());
                       }
                       cgl.register(javaSourcesLoc, new ModelExports.CacheGen());
-                      tf2.serializeCaches(cgl);
+                      status = tf2.serializeCaches(cgl);
+                      if (status.isError()) {
+                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
+                      }
                       staleFileCollector.updateDelta(javaSourcesLoc.getDelta());
                       new StaleFilesCollector(cacheOutputDir).updateDelta(cachesLocation.getDelta());
                       ListSequence.fromList(MapSequence.fromMap(deltas2).get(inputResource)).addElement(javaSourcesLoc.getDelta());

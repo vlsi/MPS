@@ -1403,16 +1403,45 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="3QuLV9OzOaQ" role="3cqZAp">
-                                      <node concept="2OqwBi" id="3QuLV9OzOaR" role="3clFbG">
-                                        <node concept="37vLTw" id="3QuLV9OzYSy" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="7A08csWcKKX" resolve="tf2" />
+                                    <node concept="3cpWs8" id="6hyK6ATUgbu" role="3cqZAp">
+                                      <node concept="3cpWsn" id="6hyK6ATUgbv" role="3cpWs9">
+                                        <property role="TrG5h" value="status" />
+                                        <node concept="3uibUv" id="6hyK6ATUga$" role="1tU5fm">
+                                          <ref role="3uigEE" to="msyo:~IStatus" resolve="IStatus" />
                                         </node>
-                                        <node concept="liA8E" id="3QuLV9OzOaT" role="2OqNvi">
-                                          <ref role="37wK5l" to="8tn2:~TextFacility2.serializeOutcome(jetbrains.mps.generator.generationTypes.StreamHandler):jetbrains.mps.util.IStatus" resolve="serializeOutcome" />
-                                          <node concept="37vLTw" id="3QuLV9OzOaU" role="37wK5m">
-                                            <ref role="3cqZAo" node="3QuLV9OzOaD" resolve="javaSourcesLoc" />
+                                        <node concept="2OqwBi" id="6hyK6ATUgbw" role="33vP2m">
+                                          <node concept="37vLTw" id="6hyK6ATUgbx" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="7A08csWcKKX" resolve="tf2" />
                                           </node>
+                                          <node concept="liA8E" id="6hyK6ATUgby" role="2OqNvi">
+                                            <ref role="37wK5l" to="8tn2:~TextFacility2.serializeOutcome(jetbrains.mps.generator.generationTypes.StreamHandler):jetbrains.mps.util.IStatus" resolve="serializeOutcome" />
+                                            <node concept="37vLTw" id="6hyK6ATUgbz" role="37wK5m">
+                                              <ref role="3cqZAo" node="3QuLV9OzOaD" resolve="javaSourcesLoc" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbJ" id="6hyK6ATUgKS" role="3cqZAp">
+                                      <node concept="3clFbS" id="6hyK6ATUgKU" role="3clFbx">
+                                        <node concept="1daRAt" id="6hyK6ATUiom" role="3cqZAp">
+                                          <property role="1daRAr" value="ERROR" />
+                                          <node concept="2OqwBi" id="6hyK6ATUix4" role="1daK9t">
+                                            <node concept="37vLTw" id="6hyK6ATUiwu" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6hyK6ATUgbv" resolve="status" />
+                                            </node>
+                                            <node concept="liA8E" id="6hyK6ATUiJ$" role="2OqNvi">
+                                              <ref role="37wK5l" to="msyo:~IStatus.getMessage():java.lang.String" resolve="getMessage" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="6hyK6ATUhJY" role="3clFbw">
+                                        <node concept="37vLTw" id="6hyK6ATUhtn" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="6hyK6ATUgbv" resolve="status" />
+                                        </node>
+                                        <node concept="liA8E" id="6hyK6ATUifG" role="2OqNvi">
+                                          <ref role="37wK5l" to="msyo:~IStatus.isError():boolean" resolve="isError" />
                                         </node>
                                       </node>
                                     </node>
@@ -1524,16 +1553,44 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="3QuLV9OzObz" role="3cqZAp">
-                                      <node concept="2OqwBi" id="3QuLV9OzOb$" role="3clFbG">
-                                        <node concept="37vLTw" id="3QuLV9OzU_V" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="7A08csWcKKX" resolve="tf2" />
+                                    <node concept="3clFbF" id="6hyK6ATUjys" role="3cqZAp">
+                                      <node concept="37vLTI" id="6hyK6ATUk52" role="3clFbG">
+                                        <node concept="37vLTw" id="6hyK6ATUjyq" role="37vLTJ">
+                                          <ref role="3cqZAo" node="6hyK6ATUgbv" resolve="status" />
                                         </node>
-                                        <node concept="liA8E" id="3QuLV9OzObA" role="2OqNvi">
-                                          <ref role="37wK5l" to="8tn2:~TextFacility2.serializeCaches(jetbrains.mps.generator.impl.cache.CacheGenLayout):jetbrains.mps.util.IStatus" resolve="serializeCaches" />
-                                          <node concept="37vLTw" id="3QuLV9OzObB" role="37wK5m">
-                                            <ref role="3cqZAo" node="3QuLV9OzOaW" resolve="cgl" />
+                                        <node concept="2OqwBi" id="3QuLV9OzOb$" role="37vLTx">
+                                          <node concept="37vLTw" id="3QuLV9OzU_V" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="7A08csWcKKX" resolve="tf2" />
                                           </node>
+                                          <node concept="liA8E" id="3QuLV9OzObA" role="2OqNvi">
+                                            <ref role="37wK5l" to="8tn2:~TextFacility2.serializeCaches(jetbrains.mps.generator.impl.cache.CacheGenLayout):jetbrains.mps.util.IStatus" resolve="serializeCaches" />
+                                            <node concept="37vLTw" id="3QuLV9OzObB" role="37wK5m">
+                                              <ref role="3cqZAo" node="3QuLV9OzOaW" resolve="cgl" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbJ" id="6hyK6ATUlbJ" role="3cqZAp">
+                                      <node concept="3clFbS" id="6hyK6ATUlbL" role="3clFbx">
+                                        <node concept="1daRAt" id="6hyK6ATUmKx" role="3cqZAp">
+                                          <property role="1daRAr" value="ERROR" />
+                                          <node concept="2OqwBi" id="6hyK6ATUn0Z" role="1daK9t">
+                                            <node concept="37vLTw" id="6hyK6ATUmSD" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6hyK6ATUgbv" resolve="status" />
+                                            </node>
+                                            <node concept="liA8E" id="6hyK6ATUnfl" role="2OqNvi">
+                                              <ref role="37wK5l" to="msyo:~IStatus.getMessage():java.lang.String" resolve="getMessage" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="6hyK6ATUmc9" role="3clFbw">
+                                        <node concept="37vLTw" id="6hyK6ATUlIA" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="6hyK6ATUgbv" resolve="status" />
+                                        </node>
+                                        <node concept="liA8E" id="6hyK6ATUm_n" role="2OqNvi">
+                                          <ref role="37wK5l" to="msyo:~IStatus.isError():boolean" resolve="isError" />
                                         </node>
                                       </node>
                                     </node>
