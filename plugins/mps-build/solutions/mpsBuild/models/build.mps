@@ -13618,7 +13618,7 @@
                 </node>
                 <node concept="1688n2" id="7XQqoCTlWKR" role="28jJR8">
                   <property role="1688n6" value="gi" />
-                  <property role="1688n3" value="../../../workbench/mps-platform/source_gen/jetbrains/" />
+                  <property role="1688n3" value="../../../workbench/mps-ui/source_gen/jetbrains/" />
                   <node concept="NbPM2" id="7XQqoCTlWKS" role="1688n0">
                     <node concept="3Mxwew" id="7XQqoCTlWKV" role="3MwsjC">
                       <property role="3MwjfP" value="../jetbrains/" />
@@ -13647,8 +13647,8 @@
                 <node concept="2Ry0Ak" id="7XQqoCTmwiF" role="iGT6I">
                   <property role="2Ry0Am" value="workbench" />
                   <node concept="2Ry0Ak" id="7XQqoCTmwiG" role="2Ry0An">
-                    <property role="2Ry0Am" value="mps-platform" />
-                    <node concept="2Ry0Ak" id="7XQqoCTmwiH" role="2Ry0An">
+                    <property role="2Ry0Am" value="mps-ui" />
+                    <node concept="2Ry0Ak" id="74pLHFVnSSj" role="2Ry0An">
                       <property role="2Ry0Am" value="source_gen" />
                     </node>
                   </node>
