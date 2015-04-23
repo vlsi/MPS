@@ -103,7 +103,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
   }
 
   @Test
-  public void createNewModel() {
+  public void testNoCreatedChangesForNewModel() {
     final Wrappers._T<EditableSModel> newModel = new Wrappers._T<EditableSModel>();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -123,6 +123,8 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myWaitHelper.waitForFileStatusChange(vf, FileStatus.UNKNOWN);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a4(newModelDiff.getChangeSet())).isEmpty());
+
+    DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), newModel.value.getModule(), newModel.value, false, true);
   }
 
   @Test
