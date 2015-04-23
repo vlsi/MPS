@@ -136,10 +136,10 @@ public class ChangesTracking {
       updateCacheForChange(ch);
     }
   }
-  /*package*/ void scheduleFullUpdate() {
+  /*package*/ void scheduleFullUpdate(final boolean force) {
     myQueue.addTask(new Runnable() {
       public void run() {
-        update(false);
+        update(force);
       }
     });
   }

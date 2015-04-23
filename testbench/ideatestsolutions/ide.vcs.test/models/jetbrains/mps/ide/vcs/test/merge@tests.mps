@@ -370,7 +370,6 @@
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
-      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -965,38 +964,11 @@
               </node>
             </node>
             <node concept="3clFbH" id="4fbpUpEDw14" role="3cqZAp" />
-            <node concept="3clFbF" id="4CruXksu4Zy" role="3cqZAp">
-              <node concept="2OqwBi" id="4CruXksu4Zz" role="3clFbG">
-                <node concept="2YIFZM" id="4CruXksu4Z$" role="2Oq$k0">
-                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                </node>
-                <node concept="liA8E" id="4CruXksu4Z_" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
-                  <node concept="1bVj0M" id="4CruXksu4ZA" role="37wK5m">
-                    <node concept="3clFbS" id="4CruXksu4ZB" role="1bW5cS">
-                      <node concept="3clFbF" id="6hwF4wZOzAA" role="3cqZAp">
-                        <node concept="1rXfSq" id="4hiugqyz8Qm" role="3clFbG">
-                          <ref role="37wK5l" node="3oUomEoMJsI" resolve="checkAndEnable" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+            <node concept="3clFbF" id="6hwF4wZOzAA" role="3cqZAp">
+              <node concept="1rXfSq" id="4hiugqyz8Qm" role="3clFbG">
+                <ref role="37wK5l" node="3oUomEoMJsI" resolve="checkAndEnable" />
               </node>
             </node>
-            <node concept="3clFbF" id="4CruXksu5TN" role="3cqZAp">
-              <node concept="2OqwBi" id="4CruXksu60a" role="3clFbG">
-                <node concept="2YIFZM" id="4CruXksu5YQ" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                </node>
-                <node concept="liA8E" id="4CruXksu6hT" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="4CruXksu5OE" role="3cqZAp" />
             <node concept="3clFbF" id="6hwF4wZO$fV" role="3cqZAp">
               <node concept="37vLTI" id="6hwF4wZO$fX" role="3clFbG">
                 <node concept="3clFbT" id="6hwF4wZO$g0" role="37vLTx">
@@ -1158,16 +1130,21 @@
           <node concept="2YIFZM" id="3oUomEoMiLD" role="3clFbG">
             <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
             <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
-            <node concept="3clFbC" id="4CruXksunNl" role="37wK5m">
-              <node concept="10Nm6u" id="4CruXksunOR" role="3uHU7w" />
-              <node concept="2OqwBi" id="4CruXksunm_" role="3uHU7B">
-                <node concept="37vLTw" id="4CruXksunmA" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
+            <node concept="2OqwBi" id="4CruXksApDU" role="37wK5m">
+              <node concept="2OqwBi" id="4CruXksApe9" role="2Oq$k0">
+                <node concept="2OqwBi" id="4CruXksunm_" role="2Oq$k0">
+                  <node concept="37vLTw" id="4CruXksunmA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
+                  </node>
+                  <node concept="liA8E" id="4CruXksunmB" role="2OqNvi">
+                    <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="4CruXksunmB" role="2OqNvi">
-                  <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
+                <node concept="liA8E" id="4CruXksApmz" role="2OqNvi">
+                  <ref role="37wK5l" to="bfxj:3kRMfhMv9tJ" resolve="getModelChanges" />
                 </node>
               </node>
+              <node concept="1v1jN8" id="4CruXksAqLR" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -1630,19 +1607,51 @@
       <node concept="3Tmbuc" id="7HgS$Vk3kUS" role="1B3o_S" />
       <node concept="3cqZAl" id="7HgS$VjRIYq" role="3clF45" />
       <node concept="3clFbS" id="7HgS$VjRIY4" role="3clF47">
-        <node concept="1QHqEM" id="4CruXksvfv_" role="3cqZAp">
-          <node concept="1QHqEC" id="4CruXksvfvB" role="1QHqEI">
-            <node concept="3clFbS" id="4CruXksvfvD" role="1bW5cS">
-              <node concept="3clFbF" id="7HgS$VjRIY5" role="3cqZAp">
-                <node concept="2OqwBi" id="7HgS$VjRIY6" role="3clFbG">
-                  <node concept="1rXfSq" id="7HgS$VjRIY7" role="2Oq$k0">
-                    <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
-                  </node>
-                  <node concept="liA8E" id="7HgS$VjRIY8" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~EditableSModel.reloadFromSource():void" resolve="reloadFromSource" />
+        <node concept="3SKdUt" id="4CruXks_2Zv" role="3cqZAp">
+          <node concept="3SKdUq" id="4CruXks_32R" role="3SKWNk">
+            <property role="3SKdUp" value="todo: ACHTUNG! must do a command here as diff is not updated on write action (uses CommandListener). " />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4CruXks_2dl" role="3cqZAp">
+          <node concept="2OqwBi" id="4CruXks_2mW" role="3clFbG">
+            <node concept="2YIFZM" id="4CruXks_2kJ" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="4CruXks_2zY" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelCommandProjectExecutor.runCommandInEDT(java.lang.Runnable,jetbrains.mps.project.Project):void" resolve="runCommandInEDT" />
+              <node concept="1bVj0M" id="4CruXks_2Aw" role="37wK5m">
+                <node concept="3clFbS" id="4CruXks_2Ax" role="1bW5cS">
+                  <node concept="3clFbF" id="7HgS$VjRIY5" role="3cqZAp">
+                    <node concept="2OqwBi" id="7HgS$VjRIY6" role="3clFbG">
+                      <node concept="1rXfSq" id="7HgS$VjRIY7" role="2Oq$k0">
+                        <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
+                      </node>
+                      <node concept="liA8E" id="7HgS$VjRIY8" role="2OqNvi">
+                        <ref role="37wK5l" to="ec5l:~EditableSModel.reloadFromSource():void" resolve="reloadFromSource" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
+              <node concept="2YIFZM" id="4CruXks_2Rj" role="37wK5m">
+                <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                <node concept="37vLTw" id="4CruXks_2T$" role="37wK5m">
+                  <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4CruXks_jGE" role="3cqZAp">
+          <node concept="2OqwBi" id="4CruXks_jSm" role="3clFbG">
+            <node concept="2YIFZM" id="4CruXks_jLa" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="4CruXks_k6X" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.flushEventQueue():void" resolve="flushEventQueue" />
             </node>
           </node>
         </node>

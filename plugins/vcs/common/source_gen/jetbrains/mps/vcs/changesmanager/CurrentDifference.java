@@ -87,7 +87,7 @@ public class CurrentDifference {
     if (myEnabled != enabled) {
       myEnabled = enabled;
       if (enabled) {
-        myTracking.scheduleFullUpdate();
+        myTracking.scheduleFullUpdate(true);
       } else {
         myCommandQueue.addTask(new Runnable() {
           public void run() {

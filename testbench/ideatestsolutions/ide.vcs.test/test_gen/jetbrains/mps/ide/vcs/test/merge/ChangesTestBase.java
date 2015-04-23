@@ -24,17 +24,17 @@ import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vcs.FileStatusManager;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.smodel.ModelAccess;
 import org.junit.After;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -115,13 +115,7 @@ public abstract class ChangesTestBase {
         throw new AssertionError(e);
       }
 
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        public void run() {
-          checkAndEnable();
-        }
-      });
-      ModelAccess.instance().flushEventQueue();
-
+      checkAndEnable();
       ChangesTestBase.ourEnabled = true;
     }
   }
@@ -143,7 +137,7 @@ public abstract class ChangesTestBase {
     myDiff.setEnabled(true);
     myWaitHelper.waitForChangesManager();
 
-    Assert.assertTrue(myDiff.getChangeSet() == null);
+    Assert.assertTrue(ListSequence.fromList(myDiff.getChangeSet().getModelChanges()).isEmpty());
   }
 
   protected void setAutoaddPolicy(VcsShowConfirmationOption.Value value) {
@@ -206,13 +200,15 @@ public abstract class ChangesTestBase {
   }
 
   protected void revertMemChangesAndWait() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    // todo: ACHTUNG! must do a command here as diff is not updated on write action (uses CommandListener).  
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         getTestModel().reloadFromSource();
       }
-    });
+    }, ProjectHelper.toMPSProject(myIdeaProject));
+    ModelAccess.instance().flushEventQueue();
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a2a72(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a4a72(myDiff.getChangeSet())).isEmpty());
   }
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
@@ -259,7 +255,7 @@ public abstract class ChangesTestBase {
     }
     return null;
   }
-  private static List<ModelChange> check_l1nwgz_a0a2a72(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_l1nwgz_a0a4a72(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
