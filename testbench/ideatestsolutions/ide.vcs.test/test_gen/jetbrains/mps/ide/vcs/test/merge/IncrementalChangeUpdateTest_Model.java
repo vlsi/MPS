@@ -139,14 +139,20 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         model.value = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
       }
     });
-    SModel changedCopy = PersistenceUtil.loadModel(model.value, getDefaultExt());
+    final SModel changedCopy = PersistenceUtil.loadModel(model.value, getDefaultExt());
     SModelOperations.addRootNode(changedCopy, createClassConcept_2jv4hj_a0a3a6());
-    final String changedContent = PersistenceUtil.saveModel(changedCopy, getDefaultExt());
+    final Wrappers._T<String> changedContent = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        // todo that's just because of the Object ref, and Persistence9.genResolveInfo which goes by ref 
+        changedContent.value = PersistenceUtil.saveModel(changedCopy, getDefaultExt());
+      }
+    });
 
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         try {
-          getTestModelFile().setBinaryContent(changedContent.getBytes(FileUtil.DEFAULT_CHARSET));
+          getTestModelFile().setBinaryContent(changedContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
         } catch (IOException e) {
           throw new AssertionError(e);
         }
@@ -155,13 +161,13 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     ModelAccess.instance().flushEventQueue();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.MODIFIED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a6(myDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a6(myDiff.getChangeSet())).isNotEmpty());
 
     revertDiskChangesAndWait(getTestModelFile());
     revertMemChangesAndWait();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a61a6(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a71a6(myDiff.getChangeSet())).isEmpty());
   }
   private static List<ModelChange> check_2jv4hj_a0a91a0(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -187,13 +193,13 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NewRoot");
     return n1;
   }
-  private static List<ModelChange> check_2jv4hj_a0a01a6(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a11a6(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-  private static List<ModelChange> check_2jv4hj_a0a61a6(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a71a6(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

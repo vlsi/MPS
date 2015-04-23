@@ -7789,14 +7789,32 @@
             <node concept="3uibUv" id="7HgS$VkfQ$o" role="1tU5fm">
               <ref role="3uigEE" to="e2lb:~String" resolve="String" />
             </node>
-            <node concept="2YIFZM" id="7HgS$VkfQ$p" role="33vP2m">
-              <ref role="37wK5l" to="d2v5:~PersistenceUtil.saveModel(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="saveModel" />
-              <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-              <node concept="37vLTw" id="7HgS$VkfQQF" role="37wK5m">
-                <ref role="3cqZAo" node="7HgS$VkfPgP" resolve="changedCopy" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="64CfcYYhZCQ" role="3cqZAp">
+          <node concept="1QHqEC" id="64CfcYYhZCS" role="1QHqEI">
+            <node concept="3clFbS" id="64CfcYYhZCU" role="1bW5cS">
+              <node concept="3SKdUt" id="64CfcYYi02P" role="3cqZAp">
+                <node concept="3SKdUq" id="64CfcYYi04b" role="3SKWNk">
+                  <property role="3SKdUp" value="todo that's just because of the Object ref, and Persistence9.genResolveInfo which goes by ref" />
+                </node>
               </node>
-              <node concept="1rXfSq" id="7HgS$VkfQ$r" role="37wK5m">
-                <ref role="37wK5l" node="7HgS$VkbA$F" resolve="getDefaultExt" />
+              <node concept="3clFbF" id="64CfcYYhZgM" role="3cqZAp">
+                <node concept="37vLTI" id="64CfcYYhZgO" role="3clFbG">
+                  <node concept="2YIFZM" id="7HgS$VkfQ$p" role="37vLTx">
+                    <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
+                    <ref role="37wK5l" to="d2v5:~PersistenceUtil.saveModel(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="saveModel" />
+                    <node concept="37vLTw" id="7HgS$VkfQQF" role="37wK5m">
+                      <ref role="3cqZAo" node="7HgS$VkfPgP" resolve="changedCopy" />
+                    </node>
+                    <node concept="1rXfSq" id="7HgS$VkfQ$r" role="37wK5m">
+                      <ref role="37wK5l" node="7HgS$VkbA$F" resolve="getDefaultExt" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="64CfcYYhZgS" role="37vLTJ">
+                    <ref role="3cqZAo" node="7HgS$VkfQ$n" resolve="changedContent" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
