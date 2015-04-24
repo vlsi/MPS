@@ -49,11 +49,8 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.smodel.resources.DResource;
-import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.make.delta.IInternalDelta;
+import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.make.delta.IDeltaVisitor;
 
 public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -460,31 +457,20 @@ public class Generate_Facet extends IFacet.Stub {
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
-              _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
-                @Override
-                public IDelta merge(IDelta toMerge) {
-                  return this;
-                }
-                @Override
-                public boolean contains(IDelta other) {
-                  return false;
-                }
-                @Override
-                public boolean reconcile() {
-                  if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
+              if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
+                _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CleanupActivityResource() {
+                  public String describe() {
+                    return "Drop transient models";
+                  }
+                  public void run() {
                     Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().removeAllTransient();
                     // XXX CleanupManager was there in TextGen's part of transient model removal 
                     // Since this is the only place to care about transient models now, moved cleanup() 
                     // here, despite being unsure whether it's needed at all or not. 
                     CleanupManager.getInstance().cleanup();
                   }
-                  return true;
-                }
-                @Override
-                public boolean acceptVisitor(IDeltaVisitor visitor) {
-                  return true;
-                }
-              })))));
+                })));
+              }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0d.value);
           }
@@ -504,7 +490,7 @@ public class Generate_Facet extends IFacet.Stub {
       return null;
     }
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.cleanup"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
     public ITarget.Name getName() {
       return name;

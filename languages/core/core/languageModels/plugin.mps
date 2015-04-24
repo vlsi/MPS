@@ -3485,163 +3485,75 @@
                 </node>
               </node>
             </node>
-            <node concept="ElOAg" id="5L5h3brvzi1" role="3cqZAp">
-              <node concept="2ShNRf" id="5L5h3brvzi2" role="ElOA9">
-                <node concept="2HTt$P" id="5L5h3brvzi3" role="2ShVmc">
-                  <node concept="3uibUv" id="6J33RVdY3HR" role="2HTBi0">
-                    <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
-                  </node>
-                  <node concept="2ry78W" id="5L5h3brvzi5" role="2HTEbv">
-                    <ref role="2ryb1Q" to="fn29:17BsPLzesis" resolve="DResource" />
-                    <node concept="2r$n1x" id="5L5h3brvzi6" role="2r_Bvh">
-                      <ref role="2r$qp6" to="fn29:17BsPLzesix" resolve="delta" />
-                      <node concept="2ShNRf" id="5L5h3brvzi7" role="2r_lH1">
-                        <node concept="2HTt$P" id="5L5h3brvzi8" role="2ShVmc">
-                          <node concept="3uibUv" id="5L5h3brvzi9" role="2HTBi0">
-                            <ref role="3uigEE" to="1kj4:16rzRJauwMP" resolve="IDelta" />
+            <node concept="3clFbJ" id="72EPOrtLB5J" role="3cqZAp">
+              <node concept="3clFbS" id="72EPOrtLB5L" role="3clFbx">
+                <node concept="ElOAg" id="72EPOrtL_0w" role="3cqZAp">
+                  <node concept="2ShNRf" id="72EPOrtL_A$" role="ElOA9">
+                    <node concept="YeOm9" id="72EPOrtLApf" role="2ShVmc">
+                      <node concept="1Y3b0j" id="72EPOrtLApi" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="fn29:72EPOrtLkP6" resolve="CleanupActivityResource" />
+                        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                        <node concept="3Tm1VV" id="72EPOrtLApj" role="1B3o_S" />
+                        <node concept="3clFb_" id="72EPOrtLAsz" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="describe" />
+                          <node concept="17QB3L" id="72EPOrtLAs$" role="3clF45" />
+                          <node concept="3Tm1VV" id="72EPOrtLAs_" role="1B3o_S" />
+                          <node concept="3clFbS" id="72EPOrtLAsE" role="3clF47">
+                            <node concept="3clFbF" id="72EPOrtLAvX" role="3cqZAp">
+                              <node concept="Xl_RD" id="72EPOrtLAvW" role="3clFbG">
+                                <property role="Xl_RC" value="Drop transient models" />
+                              </node>
+                            </node>
                           </node>
-                          <node concept="2ShNRf" id="5L5h3brvzia" role="2HTEbv">
-                            <node concept="YeOm9" id="5L5h3brvzib" role="2ShVmc">
-                              <node concept="1Y3b0j" id="5L5h3brvzic" role="YeSDq">
-                                <property role="2bfB8j" value="true" />
-                                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                                <ref role="1Y3XeK" to="1kj4:4HnUtj9IJNm" resolve="IInternalDelta" />
-                                <node concept="3Tm1VV" id="5L5h3brvzid" role="1B3o_S" />
-                                <node concept="3clFb_" id="5L5h3brvzie" role="jymVt">
-                                  <property role="1EzhhJ" value="false" />
-                                  <property role="TrG5h" value="merge" />
-                                  <node concept="3uibUv" id="5L5h3brvzif" role="3clF45">
-                                    <ref role="3uigEE" to="1kj4:16rzRJauwMP" resolve="IDelta" />
+                        </node>
+                        <node concept="3clFb_" id="72EPOrtLAsF" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="run" />
+                          <property role="DiZV1" value="false" />
+                          <property role="IEkAT" value="false" />
+                          <node concept="3Tm1VV" id="72EPOrtLAsG" role="1B3o_S" />
+                          <node concept="3cqZAl" id="72EPOrtLAsI" role="3clF45" />
+                          <node concept="3clFbS" id="72EPOrtLAsM" role="3clF47">
+                            <node concept="3clFbF" id="5L5h3brvzi$" role="3cqZAp">
+                              <node concept="2OqwBi" id="5L5h3brvzi_" role="3clFbG">
+                                <node concept="liA8E" id="5L5h3brvziG" role="2OqNvi">
+                                  <ref role="37wK5l" to="y5px:~TransientModelsProvider.removeAllTransient():void" resolve="removeAllTransient" />
+                                </node>
+                                <node concept="2bn25q" id="1sTai73x1yp" role="2Oq$k0">
+                                  <node concept="2bn25r" id="1sTai73x1yq" role="2Oq$k0">
+                                    <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
                                   </node>
-                                  <node concept="3Tm1VV" id="5L5h3brvzig" role="1B3o_S" />
-                                  <node concept="37vLTG" id="5L5h3brvzih" role="3clF46">
-                                    <property role="TrG5h" value="toMerge" />
-                                    <node concept="3uibUv" id="5L5h3brvzii" role="1tU5fm">
-                                      <ref role="3uigEE" to="1kj4:16rzRJauwMP" resolve="IDelta" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbS" id="5L5h3brvzij" role="3clF47">
-                                    <node concept="3clFbF" id="5L5h3brvzik" role="3cqZAp">
-                                      <node concept="Xjq3P" id="5L5h3brvzil" role="3clFbG" />
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3tYsUK_Se5X" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                                  <node concept="2sxana" id="1sTai73x1yr" role="2OqNvi">
+                                    <ref role="2sxfKC" node="1sTai73x1y1" resolve="transientModelsProvider" />
                                   </node>
                                 </node>
-                                <node concept="3clFb_" id="5L5h3brvzim" role="jymVt">
-                                  <property role="1EzhhJ" value="false" />
-                                  <property role="TrG5h" value="contains" />
-                                  <node concept="10P_77" id="5L5h3brvzin" role="3clF45" />
-                                  <node concept="3Tm1VV" id="5L5h3brvzio" role="1B3o_S" />
-                                  <node concept="37vLTG" id="5L5h3brvzip" role="3clF46">
-                                    <property role="TrG5h" value="other" />
-                                    <node concept="3uibUv" id="5L5h3brvziq" role="1tU5fm">
-                                      <ref role="3uigEE" to="1kj4:16rzRJauwMP" resolve="IDelta" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbS" id="5L5h3brvzir" role="3clF47">
-                                    <node concept="3clFbF" id="5L5h3brvzis" role="3cqZAp">
-                                      <node concept="3clFbT" id="5L5h3brvzit" role="3clFbG">
-                                        <property role="3clFbU" value="false" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3tYsUK_Se60" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                                  </node>
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="2Op6w9TyU4E" role="3cqZAp">
+                              <node concept="3SKdUq" id="2Op6w9TyU5y" role="3SKWNk">
+                                <property role="3SKdUp" value="XXX CleanupManager was there in TextGen's part of transient model removal" />
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="2Op6w9TyU6J" role="3cqZAp">
+                              <node concept="3SKdUq" id="2Op6w9TyU7D" role="3SKWNk">
+                                <property role="3SKdUp" value="Since this is the only place to care about transient models now, moved cleanup()" />
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="2Op6w9TyU8S" role="3cqZAp">
+                              <node concept="3SKdUq" id="2Op6w9TyU9N" role="3SKWNk">
+                                <property role="3SKdUp" value="here, despite being unsure whether it's needed at all or not." />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="2Op6w9TyU1K" role="3cqZAp">
+                              <node concept="2OqwBi" id="2Op6w9TyU1L" role="3clFbG">
+                                <node concept="2YIFZM" id="2Op6w9TyU1M" role="2Oq$k0">
+                                  <ref role="37wK5l" to="51om:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="51om:~CleanupManager" resolve="CleanupManager" />
                                 </node>
-                                <node concept="3clFb_" id="5L5h3brvziu" role="jymVt">
-                                  <property role="1EzhhJ" value="false" />
-                                  <property role="TrG5h" value="reconcile" />
-                                  <node concept="10P_77" id="5L5h3brvziv" role="3clF45" />
-                                  <node concept="3Tm1VV" id="5L5h3brvziw" role="1B3o_S" />
-                                  <node concept="3clFbS" id="5L5h3brvzix" role="3clF47">
-                                    <node concept="3clFbJ" id="5L5h3brvziy" role="3cqZAp">
-                                      <node concept="3clFbS" id="5L5h3brvziz" role="3clFbx">
-                                        <node concept="3clFbF" id="5L5h3brvzi$" role="3cqZAp">
-                                          <node concept="2OqwBi" id="5L5h3brvzi_" role="3clFbG">
-                                            <node concept="liA8E" id="5L5h3brvziG" role="2OqNvi">
-                                              <ref role="37wK5l" to="y5px:~TransientModelsProvider.removeAllTransient():void" resolve="removeAllTransient" />
-                                            </node>
-                                            <node concept="2bn25q" id="1sTai73x1yp" role="2Oq$k0">
-                                              <node concept="2bn25r" id="1sTai73x1yq" role="2Oq$k0">
-                                                <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
-                                              </node>
-                                              <node concept="2sxana" id="1sTai73x1yr" role="2OqNvi">
-                                                <ref role="2sxfKC" node="1sTai73x1y1" resolve="transientModelsProvider" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3SKdUt" id="2Op6w9TyU4E" role="3cqZAp">
-                                          <node concept="3SKdUq" id="2Op6w9TyU5y" role="3SKWNk">
-                                            <property role="3SKdUp" value="XXX CleanupManager was there in TextGen's part of transient model removal" />
-                                          </node>
-                                        </node>
-                                        <node concept="3SKdUt" id="2Op6w9TyU6J" role="3cqZAp">
-                                          <node concept="3SKdUq" id="2Op6w9TyU7D" role="3SKWNk">
-                                            <property role="3SKdUp" value="Since this is the only place to care about transient models now, moved cleanup()" />
-                                          </node>
-                                        </node>
-                                        <node concept="3SKdUt" id="2Op6w9TyU8S" role="3cqZAp">
-                                          <node concept="3SKdUq" id="2Op6w9TyU9N" role="3SKWNk">
-                                            <property role="3SKdUp" value="here, despite being unsure whether it's needed at all or not." />
-                                          </node>
-                                        </node>
-                                        <node concept="3clFbF" id="2Op6w9TyU1K" role="3cqZAp">
-                                          <node concept="2OqwBi" id="2Op6w9TyU1L" role="3clFbG">
-                                            <node concept="2YIFZM" id="2Op6w9TyU1M" role="2Oq$k0">
-                                              <ref role="1Pybhc" to="51om:~CleanupManager" resolve="CleanupManager" />
-                                              <ref role="37wK5l" to="51om:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
-                                            </node>
-                                            <node concept="liA8E" id="2Op6w9TyU1N" role="2OqNvi">
-                                              <ref role="37wK5l" to="51om:~CleanupManager.cleanup():void" resolve="cleanup" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                      <node concept="3fqX7Q" id="5L5h3brvziH" role="3clFbw">
-                                        <node concept="2bn25q" id="5L5h3brvziI" role="3fr31v">
-                                          <node concept="2bn25r" id="5L5h3brvziJ" role="2Oq$k0">
-                                            <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
-                                          </node>
-                                          <node concept="2sxana" id="5L5h3brvziK" role="2OqNvi">
-                                            <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="3clFbF" id="5L5h3brvziL" role="3cqZAp">
-                                      <node concept="3clFbT" id="5L5h3brvziM" role="3clFbG">
-                                        <property role="3clFbU" value="true" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3tYsUK_Se5Y" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                                  </node>
-                                </node>
-                                <node concept="3clFb_" id="5gNumu$ELTa" role="jymVt">
-                                  <property role="TrG5h" value="acceptVisitor" />
-                                  <node concept="10P_77" id="5gNumu$EML5" role="3clF45" />
-                                  <node concept="3Tm1VV" id="5gNumu$ELTc" role="1B3o_S" />
-                                  <node concept="3clFbS" id="5gNumu$ELTd" role="3clF47">
-                                    <node concept="3clFbF" id="5gNumu$EML8" role="3cqZAp">
-                                      <node concept="3clFbT" id="5gNumu$EML9" role="3clFbG">
-                                        <property role="3clFbU" value="true" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTG" id="5gNumu$EML6" role="3clF46">
-                                    <property role="TrG5h" value="visitor" />
-                                    <node concept="3uibUv" id="5gNumu$EML7" role="1tU5fm">
-                                      <ref role="3uigEE" to="1kj4:5gNumu$ELT8" resolve="IDeltaVisitor" />
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3tYsUK_Se5Z" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                                  </node>
+                                <node concept="liA8E" id="2Op6w9TyU1N" role="2OqNvi">
+                                  <ref role="37wK5l" to="51om:~CleanupManager.cleanup():void" resolve="cleanup" />
                                 </node>
                               </node>
                             </node>
@@ -3649,6 +3561,16 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="5L5h3brvziH" role="3clFbw">
+                <node concept="2bn25q" id="5L5h3brvziI" role="3fr31v">
+                  <node concept="2bn25r" id="5L5h3brvziJ" role="2Oq$k0">
+                    <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
+                  </node>
+                  <node concept="2sxana" id="5L5h3brvziK" role="2OqNvi">
+                    <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
                   </node>
                 </node>
               </node>
@@ -3661,7 +3583,7 @@
         <ref role="15KeV8" node="5L5h3brvz8m" resolve="configure" />
       </node>
       <node concept="15KeVb" id="5L5h3brvziO" role="15LFui">
-        <ref role="15KeV8" to="fy8e:taepSZ9r$W" resolve="reconcile" />
+        <ref role="15KeV8" to="fy8e:72EPOrtLo_c" resolve="cleanup" />
       </node>
       <node concept="15KeVb" id="5L5h3brvziP" role="15LFui">
         <ref role="15KeV8" to="fy8e:taepSZ9rBr" resolve="make" />

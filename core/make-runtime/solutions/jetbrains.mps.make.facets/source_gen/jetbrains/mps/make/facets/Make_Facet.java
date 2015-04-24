@@ -30,6 +30,8 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
@@ -40,6 +42,7 @@ public class Make_Facet extends IFacet.Stub {
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facets.Make");
   public Make_Facet() {
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_reconcile());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_cleanup());
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_make());
   }
   public Iterable<ITarget> targets() {
@@ -198,6 +201,70 @@ public class Make_Facet extends IFacet.Stub {
       }
     }
   }
+  public static class Target_cleanup implements ITargetEx {
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.cleanup");
+    public Target_cleanup() {
+    }
+    public IJob createJob() {
+      return new IJob.Stub() {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+          Iterable<IResource> _output_pm9z_a0b = null;
+          final Iterable<CleanupActivityResource> input = (Iterable<CleanupActivityResource>) (Iterable) rawInput;
+          switch (0) {
+            case 0:
+              for (CleanupActivityResource activity : Sequence.fromIterable(input)) {
+                activity.run();
+              }
+            default:
+              return new IResult.SUCCESS(_output_pm9z_a0b);
+          }
+        }
+      };
+    }
+    public IConfig createConfig() {
+      return null;
+    }
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
+    }
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
+    }
+    public ITarget.Name getName() {
+      return name;
+    }
+    public boolean isOptional() {
+      return true;
+    }
+    public boolean requiresInput() {
+      return true;
+    }
+    public boolean producesOutput() {
+      return false;
+    }
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(CleanupActivityResource.class);
+      return rv;
+    }
+    public Iterable<Class<? extends IResource>> expectedOutput() {
+      return null;
+    }
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
+  }
   public static class Target_make implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.make");
     public Target_make() {
@@ -206,12 +273,12 @@ public class Make_Facet extends IFacet.Stub {
       return new IJob.Stub() {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          Iterable<IResource> _output_pm9z_a0b = null;
+          Iterable<IResource> _output_pm9z_a0c = null;
           final Iterable<IResource> input = (Iterable<IResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:
-              return new IResult.SUCCESS(_output_pm9z_a0b);
+              return new IResult.SUCCESS(_output_pm9z_a0c);
           }
         }
       };
@@ -239,7 +306,7 @@ public class Make_Facet extends IFacet.Stub {
       return null;
     }
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.cleanup")});
     }
     public Iterable<ITarget.Name> notBefore() {
       return null;

@@ -9,6 +9,10 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.ICResouce" />
   </dependency>
+  <dependency className="jetbrains.mps.smodel.resources.CleanupActivityResource" file="CleanupActivityResource.java">
+    <classNode extendsClassName="java.lang.Runnable" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
+  </dependency>
   <dependency className="jetbrains.mps.smodel.resources.DResource" file="DResource.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
