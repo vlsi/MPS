@@ -2,7 +2,7 @@
 <model ref="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
   <persistence version="9" />
   <languages>
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -3613,16 +3613,6 @@
         <ref role="3uigEE" to="y5px:~MPSGenerator" resolve="MPSGenerator" />
       </node>
     </node>
-    <node concept="312cEg" id="2IizP$ACFmm" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myMPSBaseLanguage" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="2IizP$ACF6Y" role="1B3o_S" />
-      <node concept="3uibUv" id="2IizP$ACFmi" role="1tU5fm">
-        <ref role="3uigEE" to="5h2r:17_Ehlwj8wB" resolve="MPSBaseLanguage" />
-      </node>
-    </node>
     <node concept="3Tm1VV" id="KL8AqliugF" role="1B3o_S" />
     <node concept="3clFbW" id="KL8AqliugG" role="jymVt">
       <node concept="3Tm1VV" id="11RXB4mcSq6" role="1B3o_S" />
@@ -3682,18 +3672,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2IizP$ACFPU" role="3cqZAp">
-          <node concept="37vLTI" id="2IizP$ACFYV" role="3clFbG">
-            <node concept="2ShNRf" id="2IizP$ACG4I" role="37vLTx">
-              <node concept="1pGfFk" id="2IizP$ACGnN" role="2ShVmc">
-                <ref role="37wK5l" to="5h2r:17_Ehlwj8wD" resolve="MPSBaseLanguage" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="2IizP$ACFPT" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACFmm" resolve="myMPSBaseLanguage" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="KL8AqliugN" role="3cqZAp">
           <node concept="2OqwBi" id="KL8AqliugO" role="3clFbG">
             <node concept="37vLTw" id="11RXB4mcXw8" role="2Oq$k0">
@@ -3734,16 +3712,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2IizP$ACGp2" role="3cqZAp">
-          <node concept="2OqwBi" id="2IizP$ACGyV" role="3clFbG">
-            <node concept="37vLTw" id="2IizP$ACGp1" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACFmm" resolve="myMPSBaseLanguage" />
-            </node>
-            <node concept="liA8E" id="2IizP$ACGDg" role="2OqNvi">
-              <ref role="37wK5l" to="5h2r:17_EhlwjbqY" resolve="init" />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="3Tm1VV" id="KL8Aqliuh7" role="1B3o_S" />
     </node>
@@ -3753,16 +3721,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="KL8Aqliuha" role="3clF47">
-        <node concept="3clFbF" id="2IizP$ACGX4" role="3cqZAp">
-          <node concept="2OqwBi" id="2IizP$ACH6K" role="3clFbG">
-            <node concept="37vLTw" id="2IizP$ACGX3" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACFmm" resolve="myMPSBaseLanguage" />
-            </node>
-            <node concept="liA8E" id="2IizP$ACHe5" role="2OqNvi">
-              <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2IizP$AC$ld" role="3cqZAp">
           <node concept="2OqwBi" id="2IizP$AC$uB" role="3clFbG">
             <node concept="37vLTw" id="2IizP$AC$lc" role="2Oq$k0">
@@ -3800,14 +3758,6 @@
             </node>
             <node concept="liA8E" id="KL8Aqliuhu" role="2OqNvi">
               <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2IizP$ACHzD" role="3cqZAp">
-          <node concept="37vLTI" id="2IizP$ACHIr" role="3clFbG">
-            <node concept="10Nm6u" id="2IizP$ACHQ5" role="37vLTx" />
-            <node concept="37vLTw" id="2IizP$ACHzC" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACFmm" resolve="myMPSBaseLanguage" />
             </node>
           </node>
         </node>

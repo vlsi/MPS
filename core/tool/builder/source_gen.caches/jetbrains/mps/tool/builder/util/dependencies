@@ -49,7 +49,6 @@
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.util.MpsPlatform" file="MpsPlatform.java">
     <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
     <classNode dependClassName="jetbrains.mps.generator.MPSGenerator" />
     <classNode dependClassName="jetbrains.mps.persistence.MPSPersistence" />
     <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
