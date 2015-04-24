@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
+  /*package*/ final ConceptDescriptor myConceptExtension = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.Extension", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x1c30c5b543be3b2L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(126958800891274597L, "extensionPoint", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L), false)).references("extensionPoint").create();
   /*package*/ final ConceptDescriptor myConceptExtensionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3729007189729192405L, "extensionPoint", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L), false)).references("extensionPoint").childDescriptors(new ConceptDescriptorBuilder.Link(8029776554053057811L, "objectGetter", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x6f6f7f3b7a178565L), false, false, false), new ConceptDescriptorBuilder.Link(7036359038356050926L, "activator", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL), true, false, false), new ConceptDescriptorBuilder.Link(7036359038356050934L, "deactivator", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL), true, false, false), new ConceptDescriptorBuilder.Link(7036359038356115164L, "fieldDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L), true, true, false)).children(new String[]{"objectGetter", "activator", "deactivator", "fieldDeclaration"}, new boolean[]{false, false, false, true}).create();
   /*package*/ final ConceptDescriptor myConceptExtensionFieldDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(7036359038356115101L, "fieldType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false)).children(new String[]{"fieldType"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptExtensionFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldReference", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(7036359038356115103L, "declaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L), false)).references("declaration").staticScope(StaticScope.NONE).create();
@@ -25,34 +26,36 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptExtensionDeclaration, myConceptExtensionFieldDeclaration, myConceptExtensionFieldReference, myConceptExtensionFunction, myConceptExtensionObjectGetter, myConceptExtensionPointDeclaration, myConceptExtensionPointExpression, myConceptExtensionPointType, myConceptGetExtensionObjectsOperation);
+    return Arrays.asList(myConceptExtension, myConceptExtensionDeclaration, myConceptExtensionFieldDeclaration, myConceptExtensionFieldReference, myConceptExtensionFunction, myConceptExtensionObjectGetter, myConceptExtensionPointDeclaration, myConceptExtensionPointExpression, myConceptExtensionPointType, myConceptGetExtensionObjectsOperation);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
       case 0:
-        return myConceptExtensionDeclaration;
+        return myConceptExtension;
       case 1:
-        return myConceptExtensionFieldDeclaration;
+        return myConceptExtensionDeclaration;
       case 2:
-        return myConceptExtensionFieldReference;
+        return myConceptExtensionFieldDeclaration;
       case 3:
-        return myConceptExtensionFunction;
+        return myConceptExtensionFieldReference;
       case 4:
-        return myConceptExtensionObjectGetter;
+        return myConceptExtensionFunction;
       case 5:
-        return myConceptExtensionPointDeclaration;
+        return myConceptExtensionObjectGetter;
       case 6:
-        return myConceptExtensionPointExpression;
+        return myConceptExtensionPointDeclaration;
       case 7:
-        return myConceptExtensionPointType;
+        return myConceptExtensionPointExpression;
       case 8:
+        return myConceptExtensionPointType;
+      case 9:
         return myConceptGetExtensionObjectsOperation;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
 }

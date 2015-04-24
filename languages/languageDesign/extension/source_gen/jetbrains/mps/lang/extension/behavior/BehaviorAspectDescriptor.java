@@ -11,27 +11,29 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 0:
-        return new ExtensionDeclaration_BehaviorDescriptor();
-      case 5:
-        return new ExtensionPointDeclaration_BehaviorDescriptor();
-      case 4:
-        return new ExtensionObjectGetter_BehaviorDescriptor();
-      case 6:
-        return new ExtensionPointExpression_BehaviorDescriptor();
-      case 3:
-        return new ExtensionFunction_BehaviorDescriptor();
       case 1:
-        return new ExtensionFieldDeclaration_BehaviorDescriptor();
-      case 2:
-        return new ExtensionFieldReference_BehaviorDescriptor();
+        return new ExtensionDeclaration_BehaviorDescriptor();
+      case 6:
+        return new ExtensionPointDeclaration_BehaviorDescriptor();
+      case 5:
+        return new ExtensionObjectGetter_BehaviorDescriptor();
       case 7:
-        return new ExtensionPointType_BehaviorDescriptor();
+        return new ExtensionPointExpression_BehaviorDescriptor();
+      case 4:
+        return new ExtensionFunction_BehaviorDescriptor();
+      case 2:
+        return new ExtensionFieldDeclaration_BehaviorDescriptor();
+      case 3:
+        return new ExtensionFieldReference_BehaviorDescriptor();
       case 8:
+        return new ExtensionPointType_BehaviorDescriptor();
+      case 9:
         return new GetExtensionObjectsOperation_BehaviorDescriptor();
+      case 0:
+        return new Extension_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
 }
