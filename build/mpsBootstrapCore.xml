@@ -3963,7 +3963,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-tool" depends="java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core-component, java.compile.baselang-kernel, fetchDependencies">
+  <target name="java.compile.mps-tool" depends="java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core-component, fetchDependencies">
     <mkdir dir="${mps_home}/core/tool/builder/source_gen" />
     <mkdir dir="${mps_home}/core/tool/common/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-tool" />
@@ -3986,7 +3986,6 @@
         <pathelement path="${build.tmp}/java/out/kernel-resources" />
         <pathelement path="${build.tmp}/java/out/mps-make-rt" />
         <pathelement path="${build.tmp}/java/out/mps-core-component" />
-        <pathelement path="${build.tmp}/java/out/baselang-kernel" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
