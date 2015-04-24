@@ -46,6 +46,7 @@ import java.io.File;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -270,7 +271,13 @@ public class NewModelDialog extends DialogWrapper {
         }
       });
 
-      for (ModelRoot modelRoot : myModule.getModelRoots()) {
+      final Wrappers._T<Iterable<ModelRoot>> modelRoots = new Wrappers._T<Iterable<ModelRoot>>();
+      myProject.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          modelRoots.value = myModule.getModelRoots();
+        }
+      });
+      for (ModelRoot modelRoot : modelRoots.value) {
         if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
           myModelRoots.addItem(modelRoot);
           myModelRoots.setSelectedItem(modelRoot);

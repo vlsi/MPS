@@ -17,6 +17,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -75,9 +76,14 @@ public class NewAccessoryModel_Action extends BaseAction {
       }
 
       final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
-      d.show();
-      final SModel result = d.getResult();
+      final Wrappers._T<NewModelDialog> d = new Wrappers._T<NewModelDialog>();
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          d.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
+        }
+      });
+      d.value.show();
+      final SModel result = d.value.getResult();
 
       if (result == null) {
         return;

@@ -2,9 +2,9 @@
 <model ref="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -43,7 +43,7 @@
     <import index="byws" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.lang.model(JDK/javax.lang.model@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="oj8w" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="nx1" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" implicit="true" />
@@ -2772,6 +2772,51 @@
               </node>
             </node>
             <node concept="3clFbH" id="6TR48CGda6O" role="3cqZAp" />
+            <node concept="3cpWs8" id="7fCDz7rTRqs" role="3cqZAp">
+              <node concept="3cpWsn" id="7fCDz7rTRqt" role="3cpWs9">
+                <property role="TrG5h" value="modelRoots" />
+                <node concept="3uibUv" id="7fCDz7rTRqk" role="1tU5fm">
+                  <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                  <node concept="3uibUv" id="7fCDz7rTRqn" role="11_B2D">
+                    <ref role="3uigEE" to="qx6n:~ModelRoot" resolve="ModelRoot" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7fCDz7rTSB6" role="3cqZAp">
+              <node concept="2OqwBi" id="7fCDz7rTT06" role="3clFbG">
+                <node concept="2OqwBi" id="7fCDz7rTSB8" role="2Oq$k0">
+                  <node concept="37vLTw" id="7fCDz7rTSB9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="7fCDz7rTSBa" role="2OqNvi">
+                    <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7fCDz7rTT56" role="2OqNvi">
+                  <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                  <node concept="1bVj0M" id="7fCDz7rTX1N" role="37wK5m">
+                    <node concept="3clFbS" id="7fCDz7rTX1O" role="1bW5cS">
+                      <node concept="3clFbF" id="7fCDz7rTRRh" role="3cqZAp">
+                        <node concept="37vLTI" id="7fCDz7rTRRj" role="3clFbG">
+                          <node concept="2OqwBi" id="7fCDz7rTRqu" role="37vLTx">
+                            <node concept="liA8E" id="7fCDz7rTRqv" role="2OqNvi">
+                              <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                            </node>
+                            <node concept="37vLTw" id="7fCDz7rTRqw" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="7fCDz7rTRRn" role="37vLTJ">
+                            <ref role="3cqZAo" node="7fCDz7rTRqt" resolve="modelRoots" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="1DcWWT" id="2OVU6XAacfy" role="3cqZAp">
               <node concept="3clFbS" id="2OVU6XAacf$" role="2LFqv$">
                 <node concept="3clFbJ" id="2OVU6XAacy0" role="3cqZAp">
@@ -2849,13 +2894,8 @@
                   <ref role="3uigEE" to="qx6n:~ModelRoot" resolve="ModelRoot" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="2OVU6XAa6q$" role="1DdaDG">
-                <node concept="liA8E" id="2OVU6XAa73J" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
-                </node>
-                <node concept="37vLTw" id="2OVU6XAa6kD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
-                </node>
+              <node concept="37vLTw" id="7fCDz7rTRqx" role="1DdaDG">
+                <ref role="3cqZAo" node="7fCDz7rTRqt" resolve="modelRoots" />
               </node>
             </node>
           </node>
