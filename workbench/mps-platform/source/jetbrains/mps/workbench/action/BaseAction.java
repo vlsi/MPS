@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +17,21 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.Project;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.UndoRunnable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ActionPlace;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import javax.swing.Icon;
 import java.awt.event.KeyEvent;
@@ -75,20 +79,16 @@ public abstract class BaseAction extends AnAction {
   }
 
   public boolean isApplicable(final AnActionEvent e) {
-    final THashMap<String, Object> params = new THashMap<String, Object>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        collectActionData(e, params);
-      }
-    });
-    return isApplicable(e, params);
+    Map<String, Object> params = new ModelAccessHelper(getModelAccess(e)).runReadAction(new CollectActionData(e));
+    return params != null && isApplicable(e, params);
   }
 
   public void setMnemonic(char mnemonic) {
     String text = getTemplatePresentation().getText();
     int pos = text.indexOf(Character.toUpperCase(mnemonic));
-    if (pos == -1) pos = text.indexOf(Character.toLowerCase(mnemonic));
+    if (pos == -1) {
+      pos = text.indexOf(Character.toLowerCase(mnemonic));
+    }
     StringBuilder newText = new StringBuilder(text);
     newText.insert(pos, '_');
     getTemplatePresentation().setText(newText.toString());
@@ -109,50 +109,71 @@ public abstract class BaseAction extends AnAction {
       }
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    if (myDisableOnNoProject && getEventProject(e) == null) {
+      disable(e.getPresentation());
+      return;
+    }
+    getModelAccess(e).runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
+        Map<String, Object> params = new CollectActionData(e).compute();
+        if (params == null) {
           disable(e.getPresentation());
           return;
         }
-        THashMap<String, Object> params = new THashMap<String, Object>();
-        if (!collectActionData(e, params)) {
+        try {
+          doUpdate(e, params);
+        } catch (Exception ex) {
+          final Logger log = LogManager.getLogger(getClass());
+          if (log.isEnabledFor(Level.ERROR)) {
+            log.error(String.format("User's action doUpdate method failed. Action: %s. Class: %s", getTemplatePresentation().getText(), BaseAction.this.getClass().getName()), ex);
+          }
           disable(e.getPresentation());
-          return;
         }
-        doUpdate(e, params);
       }
     });
   }
 
   @Override
   public final void actionPerformed(final AnActionEvent event) {
-    final THashMap<String, Object> params = new THashMap<String, Object>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final Map<String, Object> params = new ModelAccessHelper(getModelAccess(event)).runReadAction(new CollectActionData(event));
+
+    final Runnable r = new UndoRunnable.Base(getTemplatePresentation().getText(), null) {
       @Override
       public void run() {
-        collectActionData(event, params);
-      }
-    });
-    if (myExecuteOutsideCommand) {
-      doExecute(event, params);
-    } else {
-      final Runnable r = new UndoRunnable.Base(getTemplatePresentation().getText(), null) {
-        @Override
-        public void run() {
+        try {
           doExecute(event, params);
+        } catch (Exception ex) {
+          final Logger log = LogManager.getLogger(getClass());
+          if (log.isEnabledFor(Level.ERROR)) {
+            log.error(String.format("User's action execute method failed. Action: %s. Class: %s", getName(), BaseAction.this.getClass().getName()), ex);
+          }
         }
-      };
+      }
+    };
+    if (myExecuteOutsideCommand) {
+      r.run();
+    } else {
       Project project = getEventProject(event);
       if (project != null) {
-        ProjectHelper.getModelAccess(project).executeCommand(r);
+        // XXX project != null shall become assert once we've found all actions that require command but run without project
+        getModelAccess(event).executeCommand(r);
       } else {
+        Logger.getLogger(BaseAction.class).error(String.format("Action %s needs a command but is executed without project.", getClass().getName()));
         // it's odd to have an action that runs without a project, but still wants a command.
         // Present implementation of openapi.ModelAccess in global repository doesn't support commands,
         // thus we run it as a mere write action
-        MPSModuleRepository.getInstance().getModelAccess().runWriteAction(r);
+        getModelAccess(event).runWriteAction(r);
       }
+    }
+  }
+
+  protected final ModelAccess getModelAccess(AnActionEvent event) {
+    Project project = getEventProject(event);
+    if (project != null) {
+      return ProjectHelper.getModelAccess(project);
+    } else {
+      return MPSModuleRepository.getInstance().getModelAccess();
     }
   }
 
@@ -169,8 +190,11 @@ public abstract class BaseAction extends AnAction {
   //made public just to use in MPS classifiers, workaround on MPS-3472
 
   public void setEnabledState(Presentation p, boolean state) {
-    if (state) enable(p);
-    else disable(p);
+    if (state) {
+      enable(p);
+    } else {
+      disable(p);
+    }
   }
 
   public void addPlace(ActionPlace place) {
@@ -199,4 +223,24 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected abstract void doExecute(AnActionEvent e, Map<String, Object> params);
+
+  /**
+   * Produce initialized map with action parameters, or null if any required parameter is missing
+   */
+  private class CollectActionData implements Computable<Map<String,Object>> {
+    private final AnActionEvent myEvent;
+
+    public CollectActionData(AnActionEvent event) {
+      myEvent = event;
+    }
+
+    @Override
+    public Map<String, Object> compute() {
+      THashMap<String, Object> params = new THashMap<String, Object>();
+      if (collectActionData(myEvent, params)) {
+        return params;
+      }
+      return null;
+    }
+  }
 }
