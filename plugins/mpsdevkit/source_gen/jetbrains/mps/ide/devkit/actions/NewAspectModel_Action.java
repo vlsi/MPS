@@ -13,15 +13,12 @@ import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,19 +34,12 @@ public class NewAspectModel_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
-      event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
-      if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((SModule) MapSequence.fromMap(_params).get("module")))) == null);
-      } else {
-        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
-      }
-      this.disable(event.getPresentation());
+    event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
+    event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
+    if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
+      NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((SModule) MapSequence.fromMap(_params).get("module")))) == null);
+    } else {
+      NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -67,20 +57,14 @@ public class NewAspectModel_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
-      // we need it since tree is updated later 
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
+    final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
+    // we need it since tree is updated later 
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
       }
-    }
+    });
   }
   @NotNull
   public String getActionId() {
@@ -94,5 +78,4 @@ public class NewAspectModel_Action extends BaseAction {
   public static String aspect_State(LanguageAspect object) {
     return object.getName();
   }
-  protected static Logger LOG = LogManager.getLogger(NewAspectModel_Action.class);
 }

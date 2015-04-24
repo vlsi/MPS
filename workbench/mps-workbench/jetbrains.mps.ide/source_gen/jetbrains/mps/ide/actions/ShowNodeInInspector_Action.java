@@ -10,11 +10,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,16 +28,9 @@ public class ShowNodeInInspector_Action extends BaseAction {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editor")) instanceof InspectorEditorComponent;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeInInspector", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -64,13 +54,6 @@ public class ShowNodeInInspector_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"))).editNode(((SNode) MapSequence.fromMap(_params).get("node")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
-      }
-    }
+    ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"))).editNode(((SNode) MapSequence.fromMap(_params).get("node")));
   }
-  protected static Logger LOG = LogManager.getLogger(ShowNodeInInspector_Action.class);
 }

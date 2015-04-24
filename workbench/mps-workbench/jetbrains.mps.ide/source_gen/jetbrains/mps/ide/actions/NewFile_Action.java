@@ -8,7 +8,6 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -21,8 +20,6 @@ import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewFile_Action extends BaseAction {
   private static final Icon ICON = AllIcons.FileTypes.Any_type;
@@ -36,14 +33,7 @@ public class NewFile_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewFile", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,48 +50,41 @@ public class NewFile_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
-      final VirtualFile[] result = new VirtualFile[1];
-      InputValidator validator = new InputValidator() {
-        @Override
-        public boolean checkInput(String p) {
-          return true;
+    final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
+    final VirtualFile[] result = new VirtualFile[1];
+    InputValidator validator = new InputValidator() {
+      @Override
+      public boolean checkInput(String p) {
+        return true;
+      }
+      @Override
+      public boolean canClose(final String p) {
+        if (p.length() == 0) {
+          return false;
         }
-        @Override
-        public boolean canClose(final String p) {
-          if (p.length() == 0) {
-            return false;
-          }
-          if (p.contains(System.getProperty("file.separator"))) {
-            return false;
-          }
+        if (p.contains(System.getProperty("file.separator"))) {
+          return false;
+        }
 
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              try {
-                result[0] = dir.createChildData(null, p);
-              } catch (IOException e) {
-              }
-            }
-          });
-          return true;
-        }
-      };
-      Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
-      if (result[0] != null) {
-        ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
+            try {
+              result[0] = dir.createChildData(null, p);
+            } catch (IOException e) {
+            }
           }
         });
+        return true;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewFile", t);
-      }
+    };
+    Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
+    if (result[0] != null) {
+      ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
+        }
+      });
     }
   }
-  protected static Logger LOG = LogManager.getLogger(NewFile_Action.class);
 }

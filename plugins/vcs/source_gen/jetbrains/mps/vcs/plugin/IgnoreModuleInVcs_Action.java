@@ -14,13 +14,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class IgnoreModuleInVcs_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,19 +31,12 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Ignore %s...", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
-        boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
-        presentation.setEnabled(enabled);
-        presentation.setVisible(enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "IgnoreModuleInVcs", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      Presentation presentation = event.getPresentation();
+      presentation.setText(String.format("Ignore %s...", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
+      boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+      presentation.setEnabled(enabled);
+      presentation.setVisible(enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -64,14 +54,7 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
-      IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "IgnoreModuleInVcs", t);
-      }
-    }
+    List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
+    IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
   }
-  protected static Logger LOG = LogManager.getLogger(IgnoreModuleInVcs_Action.class);
 }

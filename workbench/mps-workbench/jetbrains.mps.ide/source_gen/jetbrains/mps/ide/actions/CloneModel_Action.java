@@ -11,12 +11,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CloneModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,16 +39,9 @@ public class CloneModel_Action extends BaseAction {
     }
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CloneModel", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -73,19 +63,12 @@ public class CloneModel_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
-        }
-      });
-      dialog.value.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CloneModel", t);
+    final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
       }
-    }
+    });
+    dialog.value.show();
   }
-  protected static Logger LOG = LogManager.getLogger(CloneModel_Action.class);
 }

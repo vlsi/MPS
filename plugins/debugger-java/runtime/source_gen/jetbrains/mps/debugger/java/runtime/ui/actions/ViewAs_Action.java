@@ -12,13 +12,10 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ViewAs_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,17 +31,10 @@ public class ViewAs_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        event.getPresentation().setText(ViewAs_Action.this.factory.getName());
-        IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-        event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ViewAs", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      event.getPresentation().setText(ViewAs_Action.this.factory.getName());
+      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+      event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -58,17 +48,11 @@ public class ViewAs_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-      if (value == null || !(value instanceof JavaValue)) {
-        return;
-      }
-      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory, (DebugSession) DebugActionsUtil.getDebugSession(event));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ViewAs", t);
-      }
+    IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    if (value == null || !(value instanceof JavaValue)) {
+      return;
     }
+    CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory, (DebugSession) DebugActionsUtil.getDebugSession(event));
   }
   @NotNull
   public String getActionId() {
@@ -82,5 +66,4 @@ public class ViewAs_Action extends BaseAction {
   public static String factory_State(ValueWrapperFactory object) {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
-  protected static Logger LOG = LogManager.getLogger(ViewAs_Action.class);
 }

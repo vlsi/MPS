@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -20,8 +19,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class UpdateDepecatedBlockDocTags_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,14 +32,7 @@ public class UpdateDepecatedBlockDocTags_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "UpdateDepecatedBlockDocTags", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,20 +50,13 @@ public class UpdateDepecatedBlockDocTags_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      SNodeReference script = new SNodePointer("r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)", "992603585967257187");
+    SNodeReference script = new SNodePointer("r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)", "992603585967257187");
 
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Initialize the text child for all DeprecatedBlockDocTag instances", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      if (ModelAccess.instance().canWrite()) {
-        executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
-      } else {
-        executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "UpdateDepecatedBlockDocTags", t);
-      }
+    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Initialize the text child for all DeprecatedBlockDocTag instances", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+    if (ModelAccess.instance().canWrite()) {
+      executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
+    } else {
+      executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(UpdateDepecatedBlockDocTags_Action.class);
 }

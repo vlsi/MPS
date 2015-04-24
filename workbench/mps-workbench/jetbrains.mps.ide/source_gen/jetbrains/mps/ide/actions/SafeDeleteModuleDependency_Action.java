@@ -13,7 +13,6 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.DependenciesUtil;
@@ -28,8 +27,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.depanalyzer.DepLink;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
@@ -51,16 +48,9 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     return !(from.isReadOnly()) && check_bai5av_a0a0c0a(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SafeDeleteModuleDependency", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -82,25 +72,19 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      AbstractModule from = (AbstractModule) check_bai5av_a0a0a0(as_iuftgz_a0a0a0a0a6(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-      SModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
-      SearchResults results = DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("ideaProject")), ((MPSProject) MapSequence.fromMap(_params).get("project")), false, false);
-      if (!(results.getSearchResults().isEmpty())) {
-        int res = Messages.showDialog("Can't safe delete dependency", "Safe delete impossible", new String[]{"View dependencies", "Delete anyway", "Cancel"}, 0, null);
-        if (res == 0) {
-          DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), null, true);
-        }
-        if (res != 1) {
-          return;
-        }
+    AbstractModule from = (AbstractModule) check_bai5av_a0a0a0(as_iuftgz_a0a0a0a6(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    SModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+    SearchResults results = DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("ideaProject")), ((MPSProject) MapSequence.fromMap(_params).get("project")), false, false);
+    if (!(results.getSearchResults().isEmpty())) {
+      int res = Messages.showDialog("Can't safe delete dependency", "Safe delete impossible", new String[]{"View dependencies", "Delete anyway", "Cancel"}, 0, null);
+      if (res == 0) {
+        DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), null, true);
       }
-      SafeDeleteModuleDependency_Action.this.removeDependency(from, to, _params);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SafeDeleteModuleDependency", t);
+      if (res != 1) {
+        return;
       }
     }
+    SafeDeleteModuleDependency_Action.this.removeDependency(from, to, _params);
   }
   private void removeDependency(final AbstractModule from, final SModule to, final Map<String, Object> _params) {
     final ModuleDescriptor descriptor = from.getModuleDescriptor();
@@ -119,7 +103,6 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     });
     ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
-  protected static Logger LOG = LogManager.getLogger(SafeDeleteModuleDependency_Action.class);
   private static SModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
@@ -150,10 +133,10 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static <T> T as_iuftgz_a0a0a0c0d(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iuftgz_a0a0a0a0a6(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iuftgz_a0a0b0a0g(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0b0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

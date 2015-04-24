@@ -13,13 +13,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -51,16 +48,9 @@ public class MakeNamespace_Action extends BaseAction {
     return false;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeNamespace", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -78,14 +68,8 @@ public class MakeNamespace_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeNamespace_Action.this.selectedModules(_params)).cleanMake(MakeNamespace_Action.this.cleanMake)).executeAction();
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeNamespace_Action.this.selectedModules(_params)).cleanMake(MakeNamespace_Action.this.cleanMake)).executeAction();
 
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeNamespace", t);
-      }
-    }
   }
   @NotNull
   public String getActionId() {
@@ -105,5 +89,4 @@ public class MakeNamespace_Action extends BaseAction {
     }
     return modules;
   }
-  protected static Logger LOG = LogManager.getLogger(MakeNamespace_Action.class);
 }

@@ -10,9 +10,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StepOut_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.StepOut;
@@ -26,26 +23,12 @@ public class StepOut_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "StepOut", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+      event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
     }
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      DebugActionsUtil.getDebugSession(event).stepOut();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "StepOut", t);
-      }
-    }
+    DebugActionsUtil.getDebugSession(event).stepOut();
   }
-  protected static Logger LOG = LogManager.getLogger(StepOut_Action.class);
 }

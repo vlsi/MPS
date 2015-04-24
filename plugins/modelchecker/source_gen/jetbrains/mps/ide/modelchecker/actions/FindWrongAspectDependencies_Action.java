@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
@@ -24,8 +23,6 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,14 +36,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -59,26 +49,20 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())).where(new IWhereFilter<SModule>() {
-        public boolean accept(SModule it) {
-          return FindWrongAspectDependencies_Action.this.needsProcessing(it, _params);
-        }
-      }).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel md) {
-          return SModelStereotype.isUserModel(md);
-        }
-      }));
-      ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return FindWrongAspectDependencies_Action.this.needsProcessing(it, _params);
       }
-    }
+    }).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel md) {
+        return SModelStereotype.isUserModel(md);
+      }
+    }));
+    ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
   }
   /*package*/ boolean needsProcessing(SModule module, final Map<String, Object> _params) {
     if (module instanceof Language) {
@@ -88,5 +72,4 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     }
     return false;
   }
-  protected static Logger LOG = LogManager.getLogger(FindWrongAspectDependencies_Action.class);
 }

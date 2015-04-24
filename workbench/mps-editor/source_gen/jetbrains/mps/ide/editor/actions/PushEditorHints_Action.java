@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -22,8 +21,6 @@ import java.util.HashSet;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class PushEditorHints_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,16 +37,9 @@ public class PushEditorHints_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "PushEditorHints", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -67,26 +57,19 @@ public class PushEditorHints_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final EditorComponent component = ((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent());
-      if (component == null) {
-        return;
-      }
-      final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          String[] initialEditorHints = component.getUpdater().getInitialEditorHints();
-          settings.updateSettings((initialEditorHints == null ? Collections.<String>emptySet() : SetSequence.fromSetAndArray(new HashSet<String>(), initialEditorHints)));
-          final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
-          DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
-          dialog.show();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "PushEditorHints", t);
-      }
+    final EditorComponent component = ((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent());
+    if (component == null) {
+      return;
     }
+    final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        String[] initialEditorHints = component.getUpdater().getInitialEditorHints();
+        settings.updateSettings((initialEditorHints == null ? Collections.<String>emptySet() : SetSequence.fromSetAndArray(new HashSet<String>(), initialEditorHints)));
+        final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
+        DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
+        dialog.show();
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(PushEditorHints_Action.class);
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -23,8 +22,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,16 +49,9 @@ public class DeleteModules_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -87,37 +77,30 @@ public class DeleteModules_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
-      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
-      dialog.show();
-      if (!(dialog.isOK())) {
-        return;
-      }
-
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      if (!(filesOption.selected) && Sequence.fromIterable(((Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).any(new IWhereFilter<SModule>() {
-        public boolean accept(SModule it) {
-          return !(((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(it));
-        }
-      })) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
-        return;
-      }
-
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-            DeleteModuleHelper.deleteModule(((MPSProject) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteModules", t);
-      }
+    String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
+    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
+    DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
+    dialog.show();
+    if (!(dialog.isOK())) {
+      return;
     }
+
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    if (!(filesOption.selected) && Sequence.fromIterable(((Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).any(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(it));
+      }
+    })) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
+      return;
+    }
+
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
+          DeleteModuleHelper.deleteModule(((MPSProject) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
+        }
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteModules_Action.class);
 }

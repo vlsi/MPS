@@ -10,7 +10,6 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -18,8 +17,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeSelection_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,16 +43,9 @@ public class MakeSelection_Action extends BaseAction {
     return false;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeSelection", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -73,13 +63,7 @@ public class MakeSelection_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeSelection_Action.this.getModules(_params)).models(MakeSelection_Action.this.getModels(_params)).cleanMake(MakeSelection_Action.this.cleanMake)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeSelection", t);
-      }
-    }
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeSelection_Action.this.getModules(_params)).models(MakeSelection_Action.this.getModels(_params)).cleanMake(MakeSelection_Action.this.cleanMake)).executeAction();
   }
   @NotNull
   public String getActionId() {
@@ -114,5 +98,4 @@ public class MakeSelection_Action extends BaseAction {
     }
     return rv;
   }
-  protected static Logger LOG = LogManager.getLogger(MakeSelection_Action.class);
 }

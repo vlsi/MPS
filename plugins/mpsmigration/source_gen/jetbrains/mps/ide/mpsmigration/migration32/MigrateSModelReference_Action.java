@@ -7,15 +7,12 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.SModelReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrateSModelReference_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,14 +26,7 @@ public class MigrateSModelReference_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MigrateSModelReference", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -57,16 +47,9 @@ public class MigrateSModelReference_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ForcedSaveAll_Action")), event);
-      SModelReference.replaceModuleReferences = true;
-      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ForcedSaveAll_Action")), event);
-      SModelReference.replaceModuleReferences = false;
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MigrateSModelReference", t);
-      }
-    }
+    ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ForcedSaveAll_Action")), event);
+    SModelReference.replaceModuleReferences = true;
+    ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ForcedSaveAll_Action")), event);
+    SModelReference.replaceModuleReferences = false;
   }
-  protected static Logger LOG = LogManager.getLogger(MigrateSModelReference_Action.class);
 }

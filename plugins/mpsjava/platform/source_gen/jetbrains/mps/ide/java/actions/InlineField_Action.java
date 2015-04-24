@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -31,8 +30,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceO
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldReferenceRefactoring;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class InlineField_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,16 +51,9 @@ public class InlineField_Action extends BaseAction {
     return (isFieldDeclaration || isStaticFieldDeclaration);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "InlineField", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -100,68 +90,61 @@ public class InlineField_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.inline");
-      ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
-      final Wrappers._T<InlineFieldRefactoring> ref = new Wrappers._T<InlineFieldRefactoring>();
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.inline");
+    ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
+    final Wrappers._T<InlineFieldRefactoring> ref = new Wrappers._T<InlineFieldRefactoring>();
 
-      final Wrappers._boolean isAvailable = new Wrappers._boolean(true);
-      String messageDialogTitle = "Inline Field";
-      final Wrappers._T<String> infoMessage = new Wrappers._T<String>(null);
-      final Wrappers._T<String> yesNoMessage = new Wrappers._T<String>(null);
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
-            SNode fieldDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
-            InlineFieldAssignmentRefactoring inlineVARef = new InlineFieldAssignmentRefactoring(fieldDeclaration);
+    final Wrappers._boolean isAvailable = new Wrappers._boolean(true);
+    String messageDialogTitle = "Inline Field";
+    final Wrappers._T<String> infoMessage = new Wrappers._T<String>(null);
+    final Wrappers._T<String> yesNoMessage = new Wrappers._T<String>(null);
+    modelAccess.runReadAction(new Runnable() {
+      public void run() {
+        if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+          SNode fieldDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+          InlineFieldAssignmentRefactoring inlineVARef = new InlineFieldAssignmentRefactoring(fieldDeclaration);
 
-            if ((SLinkOperations.getTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null)) {
-              isAvailable.value = false;
-            }
-
-            String fieldName = SPropertyOperations.getString(fieldDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-            int nodesCount = Sequence.fromIterable(inlineVARef.findAllReferences(fieldDeclaration)).count() + Sequence.fromIterable(inlineVARef.findAllReferenceOperations(fieldDeclaration)).count();
-            if (nodesCount == 0) {
-              infoMessage.value = "Field " + fieldName + " is never used";
-            } else {
-              yesNoMessage.value = "Inline field '" + fieldName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurence") + ")";
-            }
-
-            ref.value = inlineVARef;
-          } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"))) {
-            ref.value = new InlineFieldReferenceOperationRefactoring(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")));
-          } else {
-            SNode localVariableReference = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
-            ref.value = new InlineFieldReferenceRefactoring(localVariableReference);
+          if ((SLinkOperations.getTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null)) {
+            isAvailable.value = false;
           }
-        }
-      });
-      if (!(isAvailable.value)) {
-        return;
-      }
 
-      if (infoMessage.value != null) {
-        Messages.showInfoMessage(((Frame) MapSequence.fromMap(_params).get("frame")), infoMessage.value, messageDialogTitle);
-        return;
-      }
-      if (yesNoMessage.value != null) {
-        int code = Messages.showYesNoDialog(((Frame) MapSequence.fromMap(_params).get("frame")), yesNoMessage.value, messageDialogTitle, null);
-        if (code != 0) {
-          return;
-        }
-      }
+          String fieldName = SPropertyOperations.getString(fieldDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          int nodesCount = Sequence.fromIterable(inlineVARef.findAllReferences(fieldDeclaration)).count() + Sequence.fromIterable(inlineVARef.findAllReferenceOperations(fieldDeclaration)).count();
+          if (nodesCount == 0) {
+            infoMessage.value = "Field " + fieldName + " is never used";
+          } else {
+            yesNoMessage.value = "Inline field '" + fieldName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurence") + ")";
+          }
 
-      modelAccess.executeCommand(new Runnable() {
-        public void run() {
-          SNode result = ref.value.doRefactoring();
-          ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
+          ref.value = inlineVARef;
+        } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"))) {
+          ref.value = new InlineFieldReferenceOperationRefactoring(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")));
+        } else {
+          SNode localVariableReference = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
+          ref.value = new InlineFieldReferenceRefactoring(localVariableReference);
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "InlineField", t);
+      }
+    });
+    if (!(isAvailable.value)) {
+      return;
+    }
+
+    if (infoMessage.value != null) {
+      Messages.showInfoMessage(((Frame) MapSequence.fromMap(_params).get("frame")), infoMessage.value, messageDialogTitle);
+      return;
+    }
+    if (yesNoMessage.value != null) {
+      int code = Messages.showYesNoDialog(((Frame) MapSequence.fromMap(_params).get("frame")), yesNoMessage.value, messageDialogTitle, null);
+      if (code != 0) {
+        return;
       }
     }
+
+    modelAccess.executeCommand(new Runnable() {
+      public void run() {
+        SNode result = ref.value.doRefactoring();
+        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(InlineField_Action.class);
 }

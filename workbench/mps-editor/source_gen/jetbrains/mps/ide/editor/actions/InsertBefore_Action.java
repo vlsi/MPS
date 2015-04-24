@@ -11,12 +11,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class InsertBefore_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,16 +30,9 @@ public class InsertBefore_Action extends BaseAction {
     return EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) != null && EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "InsertBefore", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -66,20 +56,13 @@ public class InsertBefore_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        public void run() {
-          if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property && ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit()) {
-            return;
-          }
-          EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property && ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit()) {
+          return;
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "InsertBefore", t);
+        EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(InsertBefore_Action.class);
 }

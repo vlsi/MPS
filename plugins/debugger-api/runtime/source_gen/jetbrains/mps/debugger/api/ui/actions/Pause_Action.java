@@ -10,9 +10,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class Pause_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Pause;
@@ -26,26 +23,12 @@ public class Pause_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isRunning());
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "Pause", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+      event.getPresentation().setEnabled(debugSession != null && debugSession.isRunning());
     }
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      DebugActionsUtil.getDebugSession(event).pause();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "Pause", t);
-      }
-    }
+    DebugActionsUtil.getDebugSession(event).pause();
   }
-  protected static Logger LOG = LogManager.getLogger(Pause_Action.class);
 }

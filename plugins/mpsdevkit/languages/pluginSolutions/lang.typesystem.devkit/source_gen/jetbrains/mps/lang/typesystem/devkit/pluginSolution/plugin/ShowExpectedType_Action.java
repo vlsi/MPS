@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,8 +16,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowExpectedType_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,14 +29,7 @@ public class ShowExpectedType_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowExpectedType", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,25 +50,18 @@ public class ShowExpectedType_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          type.value = TypeChecker.getInstance().getInequalitiesForHole(((SNode) MapSequence.fromMap(_params).get("node")), false).getExpectedType();
-        }
-      });
-      if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no expected type");
-        return;
+    final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        type.value = TypeChecker.getInstance().getInequalitiesForHole(((SNode) MapSequence.fromMap(_params).get("node")), false).getExpectedType();
       }
-      MyBaseNodeDialog dialog;
-      dialog = new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
-      dialog.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowExpectedType", t);
-      }
+    });
+    if (type.value == null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no expected type");
+      return;
     }
+    MyBaseNodeDialog dialog;
+    dialog = new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
+    dialog.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ShowExpectedType_Action.class);
 }

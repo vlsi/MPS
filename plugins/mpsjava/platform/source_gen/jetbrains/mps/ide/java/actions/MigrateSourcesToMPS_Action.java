@@ -11,7 +11,6 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
@@ -28,8 +27,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.io.IOException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrateSourcesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,16 +44,9 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     return moduleDescr != null && !(moduleDescr.getSourcePaths().isEmpty());
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MigrateSourcesToMPS", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -82,40 +72,33 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ModuleDescriptor moduleDescr = ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor();
-      if (moduleDescr == null || moduleDescr.getSourcePaths().isEmpty()) {
-        return;
-      }
-
-      List<IFile> sourcePaths = ListSequence.fromList(new ArrayList<IFile>());
-      for (String path : moduleDescr.getSourcePaths()) {
-        ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
-      }
-
-      final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
-      final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
-
-      ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-
-          try {
-            parser.convertToMps(filesToParse, new ProgressMonitorAdapter(indicator));
-
-          } catch (JavaParseException e) {
-            throw new RuntimeException(e);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
-
-      moduleDescr.getSourcePaths().clear();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);
-      }
+    ModuleDescriptor moduleDescr = ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor();
+    if (moduleDescr == null || moduleDescr.getSourcePaths().isEmpty()) {
+      return;
     }
+
+    List<IFile> sourcePaths = ListSequence.fromList(new ArrayList<IFile>());
+    for (String path : moduleDescr.getSourcePaths()) {
+      ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
+    }
+
+    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+    final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
+
+    ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+
+        try {
+          parser.convertToMps(filesToParse, new ProgressMonitorAdapter(indicator));
+
+        } catch (JavaParseException e) {
+          throw new RuntimeException(e);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    });
+
+    moduleDescr.getSourcePaths().clear();
   }
-  protected static Logger LOG = LogManager.getLogger(MigrateSourcesToMPS_Action.class);
 }

@@ -10,15 +10,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.DeleteBreakpoint;
@@ -32,16 +29,9 @@ public class DeleteBreakpointAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
-        event.getPresentation().setEnabled(breakpoint != null);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteBreakpointAction", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
+      event.getPresentation().setEnabled(breakpoint != null);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -59,22 +49,15 @@ public class DeleteBreakpointAction_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
-      if (breakpoint == null) {
-        return;
-      }
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          BreakpointManagerComponent.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).removeBreakpoint(breakpoint);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteBreakpointAction", t);
-      }
+    final IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
+    if (breakpoint == null) {
+      return;
     }
+
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        BreakpointManagerComponent.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).removeBreakpoint(breakpoint);
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteBreakpointAction_Action.class);
 }

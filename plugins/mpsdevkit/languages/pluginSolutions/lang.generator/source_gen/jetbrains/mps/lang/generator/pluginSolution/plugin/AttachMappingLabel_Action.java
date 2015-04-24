@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -34,8 +33,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -88,16 +85,9 @@ public class AttachMappingLabel_Action extends BaseAction {
     return false;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AttachMappingLabel", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -115,90 +105,83 @@ public class AttachMappingLabel_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      SModule module = SNodeOperations.getModel(node).getModule();
-      Iterable<SNode> mappings;
-      if (module instanceof Generator) {
-        Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
-        mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
-          public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.roots(it, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
-          }
-        });
-      } else {
-        mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
-      }
-      final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
-        public Iterable<String> translate(final SNode it) {
-          return new Iterable<String>() {
-            public Iterator<String> iterator() {
-              return new YieldingIterator<String>() {
-                private int __CP__ = 0;
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x1179be725f9L, "mappingLabel"))).iterator();
-                      case 3:
-                        if (!(this._2_label_it.hasNext())) {
-                          this.__CP__ = 1;
-                          break;
-                        }
-                        this._2_label = this._2_label_it.next();
-                        this.__CP__ = 4;
-                        break;
-                      case 5:
-                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-                          this.__CP__ = 6;
-                          break;
-                        }
-                        this.__CP__ = 3;
-                        break;
-                      case 7:
-                        this.__CP__ = 3;
-                        this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      case 4:
-                        this.__CP__ = 5;
-                        break;
-                      case 6:
-                        this.__CP__ = 7;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-                private SNode _2_label;
-                private Iterator<SNode> _2_label_it;
-              };
-            }
-          };
-        }
-      }).toListSequence();
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          dialog.show();
+    final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
+    SModule module = SNodeOperations.getModel(node).getModule();
+    Iterable<SNode> mappings;
+    if (module instanceof Generator) {
+      Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
+      mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.roots(it, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
         }
       });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
-      }
+    } else {
+      mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
     }
+    final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
+      public Iterable<String> translate(final SNode it) {
+        return new Iterable<String>() {
+          public Iterator<String> iterator() {
+            return new YieldingIterator<String>() {
+              private int __CP__ = 0;
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x1179be725f9L, "mappingLabel"))).iterator();
+                    case 3:
+                      if (!(this._2_label_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_label = this._2_label_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 7:
+                      this.__CP__ = 3;
+                      this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+              private SNode _2_label;
+              private Iterator<SNode> _2_label_it;
+            };
+          }
+        };
+      }
+    }).toListSequence();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+        dialog.show();
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(AttachMappingLabel_Action.class);
   private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

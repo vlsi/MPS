@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -17,8 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CloneRoot_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,14 +30,7 @@ public class CloneRoot_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CloneRoot", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -71,19 +61,12 @@ public class CloneRoot_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-        SNode root = SNodeOperations.getContainingRoot(node);
-        SNode copy = SNodeOperations.copyNode(root);
-        SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, true, true);
-        NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, false);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CloneRoot", t);
-      }
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+      SNode root = SNodeOperations.getContainingRoot(node);
+      SNode copy = SNodeOperations.copyNode(root);
+      SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
+      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, true, true);
+      NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, false);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CloneRoot_Action.class);
 }

@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -20,8 +19,6 @@ import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CheckNamespace_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
@@ -38,16 +35,9 @@ public class CheckNamespace_Action extends BaseAction {
     return ListSequence.fromList(CheckNamespace_Action.this.modules2check(_params)).isNotEmpty();
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CheckNamespace", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -65,14 +55,8 @@ public class CheckNamespace_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SModule> modules = CheckNamespace_Action.this.modules2check(_params);
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModulesAndShowResult(modules);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CheckNamespace", t);
-      }
-    }
+    List<SModule> modules = CheckNamespace_Action.this.modules2check(_params);
+    ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModulesAndShowResult(modules);
   }
   /*package*/ List<SModule> modules2check(final Map<String, Object> _params) {
     List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
@@ -84,5 +68,4 @@ public class CheckNamespace_Action extends BaseAction {
     }
     return modules;
   }
-  protected static Logger LOG = LogManager.getLogger(CheckNamespace_Action.class);
 }

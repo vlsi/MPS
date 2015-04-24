@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -28,8 +27,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,16 +47,9 @@ public class ExtractMethod_Action extends BaseAction {
     }))) && ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -101,24 +91,17 @@ public class ExtractMethod_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
-      final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
-      final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
-      ((EditorContext) MapSequence.fromMap(_params).get("context")).getRepository().getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
-          refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
-          params.value.setReturnType(refactoring.value.getMethodType());
-        }
-      });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
-      dialog.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
+    final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
+    final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
+    ((EditorContext) MapSequence.fromMap(_params).get("context")).getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+        refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
+        params.value.setReturnType(refactoring.value.getMethodType());
       }
-    }
+    });
+    ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
+    dialog.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ExtractMethod_Action.class);
 }

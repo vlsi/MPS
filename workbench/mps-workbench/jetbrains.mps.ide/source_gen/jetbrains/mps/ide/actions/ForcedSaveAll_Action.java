@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -23,6 +22,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -38,14 +38,7 @@ public class ForcedSaveAll_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ForcedSaveAll", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -58,51 +51,45 @@ public class ForcedSaveAll_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
-      List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
-        public boolean accept(EditableSModel it) {
-          return SModelStereotype.isUserModel(it);
-        }
-      }).toListSequence();
+    Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+    List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
+      public boolean accept(EditableSModel it) {
+        return SModelStereotype.isUserModel(it);
+      }
+    }).toListSequence();
 
-      for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
-        for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
-          generator.updateModuleReferences();
-        }
-        language.updateSModelReferences();
-        language.save();
+    for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
+      for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
+        generator.updateModuleReferences();
       }
-      for (Solution solution : Sequence.fromIterable(modules).ofType(Solution.class)) {
-        solution.updateSModelReferences();
-        solution.save();
-      }
+      language.updateSModelReferences();
+      language.save();
+    }
+    for (Solution solution : Sequence.fromIterable(modules).ofType(Solution.class)) {
+      solution.updateSModelReferences();
+      solution.save();
+    }
 
-      for (EditableSModel model : ListSequence.fromList(allModels)) {
-        if (model.isReadOnly()) {
-          continue;
-        }
-        try {
-          // ensure model is loaded 
-          model.load();
-          //  and force to save model 
-          model.setChanged(true);
-          if (model.isChanged()) {
-            model.save();
-          }
-        } catch (Exception ex) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Error re-saving model " + model.getModelName(), ex);
-          }
-        }
+    for (EditableSModel model : ListSequence.fromList(allModels)) {
+      if (model.isReadOnly()) {
+        continue;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ForcedSaveAll", t);
+      try {
+        // ensure model is loaded 
+        model.load();
+        //  and force to save model 
+        model.setChanged(true);
+        if (model.isChanged()) {
+          model.save();
+        }
+      } catch (Exception ex) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Error re-saving model " + model.getModelName(), ex);
+        }
       }
     }
   }

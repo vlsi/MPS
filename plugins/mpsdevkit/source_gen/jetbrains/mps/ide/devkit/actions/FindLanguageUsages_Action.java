@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -22,8 +21,6 @@ import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindLanguageUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -40,16 +37,9 @@ public class FindLanguageUsages_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -67,17 +57,10 @@ public class FindLanguageUsages_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
-      final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
-      final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
-      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
-      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
-      }
-    }
+    final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
+    final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
+    final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
+    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
   }
-  protected static Logger LOG = LogManager.getLogger(FindLanguageUsages_Action.class);
 }

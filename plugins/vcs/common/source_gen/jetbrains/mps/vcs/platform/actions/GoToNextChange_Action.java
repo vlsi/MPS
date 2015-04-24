@@ -11,11 +11,8 @@ import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToNextChange_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.NextOccurence;
@@ -29,14 +26,7 @@ public class GoToNextChange_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToNextChange", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -53,13 +43,6 @@ public class GoToNextChange_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ChangesStripActionsHelper.goToNeighbourGroup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToNextChange", t);
-      }
-    }
+    ChangesStripActionsHelper.goToNeighbourGroup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToNextChange_Action.class);
 }

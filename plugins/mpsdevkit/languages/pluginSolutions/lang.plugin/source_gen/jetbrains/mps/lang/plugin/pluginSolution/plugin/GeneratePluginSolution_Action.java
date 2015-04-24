@@ -8,7 +8,6 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -26,8 +25,6 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -44,14 +41,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GeneratePluginSolution", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -69,48 +59,41 @@ public class GeneratePluginSolution_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
-      dialog.show();
-      final Solution s = dialog.getSolution();
-      if (s == null) {
-        return;
-      }
-
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ModelRoot defaultRoot = s.getModelRoots().iterator().next();
-          SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");
-
-          s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
-          ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
-          s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
-          ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
-          s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
-          ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
-          s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
-          ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
-          s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-          ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-
-          SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a41a0f0a());
-
-          s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
-          MPSModuleRepository.getInstance().saveAll();
-        }
-      });
-
-
-
-      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
-      projectPane.selectModule(s, false);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GeneratePluginSolution", t);
-      }
+    NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
+    dialog.show();
+    final Solution s = dialog.getSolution();
+    if (s == null) {
+      return;
     }
+
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ModelRoot defaultRoot = s.getModelRoots().iterator().next();
+        SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");
+
+        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
+        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
+        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
+        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
+        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
+        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
+        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
+        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
+        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+
+        SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a41a0f0a());
+
+        s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
+        MPSModuleRepository.getInstance().saveAll();
+      }
+    });
+
+
+
+    ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+    projectPane.selectModule(s, false);
   }
-  protected static Logger LOG = LogManager.getLogger(GeneratePluginSolution_Action.class);
   private static SNode _quotation_createNode_ljjiw0_a0a41a0f0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

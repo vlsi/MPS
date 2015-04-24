@@ -11,14 +11,11 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RenameFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_replace;
@@ -35,16 +32,9 @@ public class RenameFavoritesList_Action extends BaseAction {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenameFavoritesList", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -58,26 +48,19 @@ public class RenameFavoritesList_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
-      String oldName = pane.getSubId();
-      String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
-      if (newName == null || (newName == null || newName.length() == 0)) {
-        return;
-      }
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
-      if (favoritesManager == null) {
-        return;
-      }
-      List<Object> objects = favoritesManager.getRoots(oldName);
-      favoritesManager.addNewFavoritesList(newName);
-      favoritesManager.addRoots(newName, objects);
-      favoritesManager.removeFavoritesList(oldName);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
-      }
+    FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
+    String oldName = pane.getSubId();
+    String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
+    if (newName == null || (newName == null || newName.length() == 0)) {
+      return;
     }
+    MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+    if (favoritesManager == null) {
+      return;
+    }
+    List<Object> objects = favoritesManager.getRoots(oldName);
+    favoritesManager.addNewFavoritesList(newName);
+    favoritesManager.addRoots(newName, objects);
+    favoritesManager.removeFavoritesList(oldName);
   }
-  protected static Logger LOG = LogManager.getLogger(RenameFavoritesList_Action.class);
 }

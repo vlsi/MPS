@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.openapi.ui.Messages;
@@ -19,8 +18,6 @@ import com.intellij.openapi.ui.InputValidator;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import java.util.List;
 import javax.swing.tree.TreeNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.AddFavoritesList;
@@ -34,15 +31,8 @@ public class AddToNewFavoritesList_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {
-        event.getPresentation().setText("Send to New Favorites List");
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AddToNewFavoritesList", t);
-      }
-      this.disable(event.getPresentation());
+    if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {
+      event.getPresentation().setText("Send to New Favorites List");
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -60,33 +50,26 @@ public class AddToNewFavoritesList_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
-      final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
-        @Override
-        public boolean checkInput(String p0) {
-          return (p0 != null && p0.length() > 0);
-        }
-        @Override
-        public boolean canClose(String p0) {
-          return true;
-        }
-      });
-      if ((name == null || name.length() == 0)) {
-        return;
+    MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+    final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
+      @Override
+      public boolean checkInput(String p0) {
+        return (p0 != null && p0.length() > 0);
       }
-      favoritesManager.addNewFavoritesList(name);
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
-      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
-      if (pane != null) {
-        favoritesManager.removeRoots(pane.getSubId(), toMove);
+      @Override
+      public boolean canClose(String p0) {
+        return true;
       }
-      favoritesManager.addRoots(name, toMove);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
-      }
+    });
+    if ((name == null || name.length() == 0)) {
+      return;
     }
+    favoritesManager.addNewFavoritesList(name);
+    FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
+    List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+    if (pane != null) {
+      favoritesManager.removeRoots(pane.getSubId(), toMove);
+    }
+    favoritesManager.addRoots(name, toMove);
   }
-  protected static Logger LOG = LogManager.getLogger(AddToNewFavoritesList_Action.class);
 }

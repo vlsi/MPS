@@ -13,11 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowOriginNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,20 +28,13 @@ public class ShowOriginNode_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null) && SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))) instanceof TransientSModel) {
-        SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
-        // I'd like to have the action visible (although not necessarily enabled) for any transient node, hence can't use enable()/disable() 
-        event.getPresentation().setVisible(true);
-        event.getPresentation().setEnabled(origin != null);
-      } else {
-        disable(event.getPresentation());
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowOriginNode", t);
-      }
-      this.disable(event.getPresentation());
+    if ((((SNode) MapSequence.fromMap(_params).get("node")) != null) && SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))) instanceof TransientSModel) {
+      SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+      // I'd like to have the action visible (although not necessarily enabled) for any transient node, hence can't use enable()/disable() 
+      event.getPresentation().setVisible(true);
+      event.getPresentation().setEnabled(origin != null);
+    } else {
+      disable(event.getPresentation());
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -67,20 +57,13 @@ public class ShowOriginNode_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
-          if (origin != null) {
-            NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), origin, true, true);
-          }
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+        if (origin != null) {
+          NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), origin, true, true);
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowOriginNode", t);
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ShowOriginNode_Action.class);
 }

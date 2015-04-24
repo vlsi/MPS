@@ -12,13 +12,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowGenerationTrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,19 +29,12 @@ public class ShowGenerationTrace_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
-        if ((((SNode) MapSequence.fromMap(_params).get("node")) == null) || tool == null) {
-          disable(event.getPresentation());
-        }
-        setEnabledState(event.getPresentation(), tool.hasTraceInputData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
+    {
+      GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
+      if ((((SNode) MapSequence.fromMap(_params).get("node")) == null) || tool == null) {
+        disable(event.getPresentation());
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTrace", t);
-      }
-      this.disable(event.getPresentation());
+      setEnabledState(event.getPresentation(), tool.hasTraceInputData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -71,16 +61,9 @@ public class ShowGenerationTrace_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
-      if (!(tool.showTraceInputData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
-      }
+    GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
+    if (!(tool.showTraceInputData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ShowGenerationTrace_Action.class);
 }

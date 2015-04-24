@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -28,8 +27,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,53 +40,39 @@ public class GoToModule_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToModule", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Project project = event.getData(PlatformDataKeys.PROJECT);
-      assert project != null;
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
-      // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-      BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
-        @Override
-        public NavigationItem doGetNavigationItem(final SModuleReference ref) {
-          return new BaseModuleItem(ref) {
-            @Override
-            public void navigate(boolean requestFocus) {
-              ProjectPane projectPane = ProjectPane.getInstance(project);
-              SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-              projectPane.selectModule(module, true);
-            }
-          };
-        }
-        @Override
-        public SModuleReference[] find(SearchScope scope) {
-          List<SModuleReference> modules = new ArrayList<SModuleReference>();
-          for (SModule module : scope.getModules()) {
-            if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
-              continue;
-            }
-            modules.add(module.getModuleReference());
+    final Project project = event.getData(PlatformDataKeys.PROJECT);
+    assert project != null;
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
+    // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
+    BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
+      @Override
+      public NavigationItem doGetNavigationItem(final SModuleReference ref) {
+        return new BaseModuleItem(ref) {
+          @Override
+          public void navigate(boolean requestFocus) {
+            ProjectPane projectPane = ProjectPane.getInstance(project);
+            SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+            projectPane.selectModule(module, true);
           }
-          return modules.toArray(new SModuleReference[modules.size()]);
-        }
-      };
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, GoToModule_Action.this);
-
-      popup.invoke(new NavigateCallback(), ModalityState.current(), true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToModule", t);
+        };
       }
-    }
+      @Override
+      public SModuleReference[] find(SearchScope scope) {
+        List<SModuleReference> modules = new ArrayList<SModuleReference>();
+        for (SModule module : scope.getModules()) {
+          if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
+            continue;
+          }
+          modules.add(module.getModuleReference());
+        }
+        return modules.toArray(new SModuleReference[modules.size()]);
+      }
+    };
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, GoToModule_Action.this);
+
+    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToModule_Action.class);
 }

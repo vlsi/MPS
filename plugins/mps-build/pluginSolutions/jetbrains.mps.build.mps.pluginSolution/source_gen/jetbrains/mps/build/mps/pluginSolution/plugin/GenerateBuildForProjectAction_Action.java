@@ -8,15 +8,12 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Ant.Build;
@@ -30,14 +27,7 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildForProjectAction", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -54,19 +44,12 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((MPSProject) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          wizard.show();
-        }
-      }, ModalityState.NON_MODAL);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GenerateBuildForProjectAction", t);
+    final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((MPSProject) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        wizard.show();
       }
-    }
+    }, ModalityState.NON_MODAL);
   }
-  protected static Logger LOG = LogManager.getLogger(GenerateBuildForProjectAction_Action.class);
 }

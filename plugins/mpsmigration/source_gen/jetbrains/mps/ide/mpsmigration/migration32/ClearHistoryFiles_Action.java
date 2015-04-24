@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -24,8 +23,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ClearHistoryFiles_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,14 +36,7 @@ public class ClearHistoryFiles_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ClearHistoryFiles", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -59,48 +49,41 @@ public class ClearHistoryFiles_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      Iterable<? extends SModule> modulesWithGenerators = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
-      Sequence.fromIterable(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      }).select(new ISelector<SModel, DataSource>() {
-        public DataSource select(SModel it) {
-          return it.getSource();
-        }
-      }).select(new ISelector<DataSource, IFile>() {
-        public IFile select(DataSource it) {
-          if (it instanceof FileDataSource) {
-            IFile modelFile = as_wouwxe_a0a0a0a0a0a0a0a0b0a0f(it, FileDataSource.class).getFile();
-            String modelPath = modelFile.getPath();
-            return FileSystem.getInstance().getFileByPath(modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + MPSExtentions.DOT_REFACTORINGS);
-          } else if (it instanceof FilePerRootDataSource) {
-            return as_wouwxe_a0a0a0a0a0a0a0a0b0a0f_0(it, FilePerRootDataSource.class).getFile(MPSExtentions.DOT_REFACTORINGS);
-          } else {
-            return null;
-          }
-        }
-      }).where(new IWhereFilter<IFile>() {
-        public boolean accept(IFile it) {
-          return it != null && it.exists();
-        }
-      }).visitAll(new IVisitor<IFile>() {
-        public void visit(IFile it) {
-          it.delete();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ClearHistoryFiles", t);
+    Iterable<? extends SModule> modulesWithGenerators = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+    Sequence.fromIterable(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
       }
-    }
+    }).select(new ISelector<SModel, DataSource>() {
+      public DataSource select(SModel it) {
+        return it.getSource();
+      }
+    }).select(new ISelector<DataSource, IFile>() {
+      public IFile select(DataSource it) {
+        if (it instanceof FileDataSource) {
+          IFile modelFile = as_wouwxe_a0a0a0a0a0a0a0a0b0f(it, FileDataSource.class).getFile();
+          String modelPath = modelFile.getPath();
+          return FileSystem.getInstance().getFileByPath(modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + MPSExtentions.DOT_REFACTORINGS);
+        } else if (it instanceof FilePerRootDataSource) {
+          return as_wouwxe_a0a0a0a0a0a0a0a0b0f_0(it, FilePerRootDataSource.class).getFile(MPSExtentions.DOT_REFACTORINGS);
+        } else {
+          return null;
+        }
+      }
+    }).where(new IWhereFilter<IFile>() {
+      public boolean accept(IFile it) {
+        return it != null && it.exists();
+      }
+    }).visitAll(new IVisitor<IFile>() {
+      public void visit(IFile it) {
+        it.delete();
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ClearHistoryFiles_Action.class);
-  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0a0f(Object o, Class<T> type) {
+  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0f(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0a0f_0(Object o, Class<T> type) {
+  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0f_0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -18,8 +17,6 @@ import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RenameFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,14 +30,7 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenameFileOrDirectory", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -61,37 +51,31 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
-      RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), oldName, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
-      dialog.show();
-      if (!(dialog.isOK())) {
-        return;
-      }
-      final String result = dialog.getResult();
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          try {
-            if (RenameFileOrDirectory_Action.this.isNotValid(result, _params)) {
-              return;
-            }
-            ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).rename(null, result);
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
-              }
-            });
-          } catch (IOException e) {
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenameFileOrDirectory", t);
-      }
+    String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
+    RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), oldName, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
+    dialog.show();
+    if (!(dialog.isOK())) {
+      return;
     }
+    final String result = dialog.getResult();
+
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        try {
+          if (RenameFileOrDirectory_Action.this.isNotValid(result, _params)) {
+            return;
+          }
+          ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).rename(null, result);
+          ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
+            }
+          });
+        } catch (IOException e) {
+        }
+      }
+    });
   }
   /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
@@ -104,7 +88,6 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
-  protected static Logger LOG = LogManager.getLogger(RenameFileOrDirectory_Action.class);
   private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.findChild(result);

@@ -10,15 +10,12 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Set;
 import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,16 +32,9 @@ public class MakeModule_Action extends BaseAction {
     return SModuleOperations.isCompileInMps(((SModule) MapSequence.fromMap(_params).get("module")));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeModule", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -62,14 +52,7 @@ public class MakeModule_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      Set<SModule> modules = Collections.<SModule>singleton(((SModule) MapSequence.fromMap(_params).get("module")));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, false));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeModule", t);
-      }
-    }
+    Set<SModule> modules = Collections.<SModule>singleton(((SModule) MapSequence.fromMap(_params).get("module")));
+    ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, false));
   }
-  protected static Logger LOG = LogManager.getLogger(MakeModule_Action.class);
 }

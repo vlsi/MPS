@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
@@ -21,8 +20,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToNodeById_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,14 +33,7 @@ public class GoToNodeById_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToNodeById", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -68,42 +58,35 @@ public class GoToNodeById_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL"))), JOptionPane.QUESTION_MESSAGE);
-      if (value == null) {
-        return;
-      }
-      value = ((value == null ? null : value.trim()));
-      final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(jetbrains.mps.smodel.SNodeId.fromString(value));
-      if (id.value == null) {
-        // try new nodeId presentation format 
-        try {
-          id.value = new IdEncoder().parseNodeId(value);
-        } catch (IdEncoder.EncodingException e) {
-        }
-      }
-      if (id.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
-        return;
-      }
-      final String trimmedValue = value;
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          SNode node;
-          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id.value);
-          if (node == null) {
-            JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
-            return;
-          }
-          NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), node, true, true);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToNodeById", t);
+    String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL"))), JOptionPane.QUESTION_MESSAGE);
+    if (value == null) {
+      return;
+    }
+    value = ((value == null ? null : value.trim()));
+    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(jetbrains.mps.smodel.SNodeId.fromString(value));
+    if (id.value == null) {
+      // try new nodeId presentation format 
+      try {
+        id.value = new IdEncoder().parseNodeId(value);
+      } catch (IdEncoder.EncodingException e) {
       }
     }
+    if (id.value == null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
+      return;
+    }
+    final String trimmedValue = value;
+
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        SNode node;
+        node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id.value);
+        if (node == null) {
+          JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
+          return;
+        }
+        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), node, true, true);
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(GoToNodeById_Action.class);
 }

@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -17,8 +16,6 @@ import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,14 +29,7 @@ public class ShowStructure_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowStructure", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,24 +50,17 @@ public class ShowStructure_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final StructureViewBuilder structureViewBuilder = ((FileEditor) MapSequence.fromMap(_params).get("fileEditor")).getStructureViewBuilder();
-      if (structureViewBuilder == null) {
-        return;
-      }
-
-      StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
-      FileStructurePopup popup = new FileStructurePopup(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
-      if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
-        // todo: look like this action is unnecessary (it's just ctrl+f12 idea action by logic and implementation) 
-        popup.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getName());
-      }
-      popup.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowStructure", t);
-      }
+    final StructureViewBuilder structureViewBuilder = ((FileEditor) MapSequence.fromMap(_params).get("fileEditor")).getStructureViewBuilder();
+    if (structureViewBuilder == null) {
+      return;
     }
+
+    StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
+    FileStructurePopup popup = new FileStructurePopup(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
+    if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
+      // todo: look like this action is unnecessary (it's just ctrl+f12 idea action by logic and implementation) 
+      popup.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getName());
+    }
+    popup.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ShowStructure_Action.class);
 }

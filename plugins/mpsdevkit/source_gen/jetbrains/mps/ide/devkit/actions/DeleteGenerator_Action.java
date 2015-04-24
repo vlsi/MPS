@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
@@ -21,8 +20,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,16 +36,9 @@ public class DeleteGenerator_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteGenerator", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -66,41 +56,34 @@ public class DeleteGenerator_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
-      DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
+    DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
+    DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
 
-      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
-      dialog.show();
-      if (!(dialog.isOK())) {
-        return;
-      }
-
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
-      final DeleteGeneratorHelper butcher = new DeleteGeneratorHelper(((MPSProject) MapSequence.fromMap(_params).get("project")));
-      butcher.safeDelete(safeOption.selected).deleteFiles(filesOption.selected);
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
-          final IStatus s = butcher.canDelete(generator);
-          if (s.isOk()) {
-            // this is needed since we reload language after deleting generator, see MPS-18743 
-            MPSModuleRepository.getInstance().saveAll();
-            butcher.delete(generator);
-          } else {
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
-              }
-            });
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteGenerator", t);
-      }
+    DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
+    dialog.show();
+    if (!(dialog.isOK())) {
+      return;
     }
+
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
+    final DeleteGeneratorHelper butcher = new DeleteGeneratorHelper(((MPSProject) MapSequence.fromMap(_params).get("project")));
+    butcher.safeDelete(safeOption.selected).deleteFiles(filesOption.selected);
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
+        final IStatus s = butcher.canDelete(generator);
+        if (s.isOk()) {
+          // this is needed since we reload language after deleting generator, see MPS-18743 
+          MPSModuleRepository.getInstance().saveAll();
+          butcher.delete(generator);
+        } else {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
+            }
+          });
+        }
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteGenerator_Action.class);
 }

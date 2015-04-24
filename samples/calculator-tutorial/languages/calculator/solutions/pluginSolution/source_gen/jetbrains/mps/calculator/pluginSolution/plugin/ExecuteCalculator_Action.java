@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExecuteCalculator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,16 +31,9 @@ public class ExecuteCalculator_Action extends BaseAction {
     return ExecuteCalculator_Action.this.getMainMethod(_params) != null;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteCalculator", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -66,27 +56,21 @@ public class ExecuteCalculator_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      try {
-        final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
-        Thread thread = new Thread(new Runnable() {
-          @Override
-          public void run() {
-            try {
-              String[] args = new String[0];
-              method.invoke(null, new Object[]{args});
-            } catch (Throwable e) {
-              e.printStackTrace();
-            }
+      final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
+      Thread thread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            String[] args = new String[0];
+            method.invoke(null, new Object[]{args});
+          } catch (Throwable e) {
+            e.printStackTrace();
           }
-        });
-        thread.start();
-      } catch (Throwable e) {
-        e.printStackTrace();
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExecuteCalculator", t);
-      }
+        }
+      });
+      thread.start();
+    } catch (Throwable e) {
+      e.printStackTrace();
     }
   }
   private Class getCalcClass(final Map<String, Object> _params) {
@@ -105,5 +89,4 @@ public class ExecuteCalculator_Action extends BaseAction {
       return null;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ExecuteCalculator_Action.class);
 }

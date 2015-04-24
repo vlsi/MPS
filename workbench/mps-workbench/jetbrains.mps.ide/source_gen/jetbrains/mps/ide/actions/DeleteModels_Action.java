@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
@@ -19,8 +18,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteModels_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,14 +31,7 @@ public class DeleteModels_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteModels", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -62,33 +52,26 @@ public class DeleteModels_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
-      DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
-      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?", safeOption);
-      dialog.show();
-      if (!(dialog.isOK())) {
-        return;
-      }
-
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          // see MPS-18743 
-          MPSModuleRepository.getInstance().saveAll();
-          for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
-            if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
-              continue;
-            }
-            DeleteModelHelper.deleteModel(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, true);
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteModels", t);
-      }
+    final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+    DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
+    DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?", safeOption);
+    dialog.show();
+    if (!(dialog.isOK())) {
+      return;
     }
+
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        // see MPS-18743 
+        MPSModuleRepository.getInstance().saveAll();
+        for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
+          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
+            continue;
+          }
+          DeleteModelHelper.deleteModel(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, true);
+        }
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteModels_Action.class);
 }

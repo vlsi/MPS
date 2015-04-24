@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -35,8 +34,6 @@ import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -56,16 +53,9 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     return Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).isNotEmpty();
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -87,32 +77,26 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final EditorCell selectedCell = ShowSurroundWithIntentions_Action.this.getAnchorCell(_params);
-      int x = selectedCell.getX();
-      int y = selectedCell.getY();
-      y += selectedCell.getHeight();
-      final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
-      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          ActionGroup group = ShowSurroundWithIntentions_Action.this.getActionGroup(_params);
-          if (group.getChildren(event).length == 0) {
-            return;
-          }
-          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
+    final EditorCell selectedCell = ShowSurroundWithIntentions_Action.this.getAnchorCell(_params);
+    int x = selectedCell.getX();
+    int y = selectedCell.getY();
+    y += selectedCell.getHeight();
+    final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
+    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        ActionGroup group = ShowSurroundWithIntentions_Action.this.getActionGroup(_params);
+        if (group.getChildren(event).length == 0) {
+          return;
         }
-      });
-      if (popup.value == null) {
-        return;
+        popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
       }
-
-      RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
-      popup.value.show(relativePoint);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
+    });
+    if (popup.value == null) {
+      return;
     }
+
+    RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
+    popup.value.show(relativePoint);
   }
   private EditorCell getAnchorCell(final Map<String, Object> _params) {
     Selection selection = ((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getSelectionManager().getSelection();
@@ -165,5 +149,4 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private String getDescriptior(Pair<IntentionExecutable, SNode> pair, final Map<String, Object> _params) {
     return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
-  protected static Logger LOG = LogManager.getLogger(ShowSurroundWithIntentions_Action.class);
 }

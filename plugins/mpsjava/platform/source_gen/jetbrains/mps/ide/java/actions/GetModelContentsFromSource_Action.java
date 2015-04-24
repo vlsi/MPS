@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.module.TransientSModule;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
@@ -35,8 +34,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.io.IOException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -57,16 +54,9 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     return !(module instanceof TransientSModule);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GetModelContentsFromSource", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -91,45 +81,38 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
 
-      Project ideaProject = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject();
+    Project ideaProject = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject();
 
-      FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
-      FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ideaProject, ((Frame) MapSequence.fromMap(_params).get("frame")));
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ideaProject, ((Frame) MapSequence.fromMap(_params).get("frame")));
 
-      VirtualFile[] chosen = dialog.choose(null, ideaProject);
+    VirtualFile[] chosen = dialog.choose(null, ideaProject);
 
-      if (chosen.length == 0) {
-        return;
-      }
-
-      List<IFile> chosenIFiles = ListSequence.fromList(new ArrayList<IFile>(chosen.length));
-      for (VirtualFile vfile : chosen) {
-        ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
-      }
-      final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
-
-      final JavaToMpsConverter parser = new JavaToMpsConverter(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
-      ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-
-          try {
-            parser.convertToMps(ifilesToParse, new ProgressMonitorAdapter(indicator));
-
-          } catch (JavaParseException e) {
-            throw new RuntimeException(e);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
-
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GetModelContentsFromSource", t);
-      }
+    if (chosen.length == 0) {
+      return;
     }
+
+    List<IFile> chosenIFiles = ListSequence.fromList(new ArrayList<IFile>(chosen.length));
+    for (VirtualFile vfile : chosen) {
+      ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
+    }
+    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
+
+    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+    ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+
+        try {
+          parser.convertToMps(ifilesToParse, new ProgressMonitorAdapter(indicator));
+
+        } catch (JavaParseException e) {
+          throw new RuntimeException(e);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    });
+
   }
-  protected static Logger LOG = LogManager.getLogger(GetModelContentsFromSource_Action.class);
 }

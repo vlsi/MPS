@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -41,8 +40,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,16 +56,9 @@ public class GoToOverridenMethod_Action extends BaseAction {
     return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params) != null) && (GoToOverridenMethod_Action.this.getClassifier(_params) != null);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -117,36 +107,30 @@ public class GoToOverridenMethod_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
-      final Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>>();
-      final String[] methodName = new String[1];
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
-        @Override
-        public void run(@NotNull ProgressIndicator p0) {
-          ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
-            public void run() {
-              overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod(_params);
-              methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-            }
-          });
-        }
-      });
-      EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
-      InputEvent inputEvent = event.getInputEvent();
-      List<SNodeReference> methods = SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
-        public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
-          return it._0();
-        }
-      }).toListSequence();
-      RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
-      String title = "Choose super method of" + methodName[0] + "()";
-      GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(), relativePoint);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
+    final Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>>();
+    final String[] methodName = new String[1];
+    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+      @Override
+      public void run(@NotNull ProgressIndicator p0) {
+        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod(_params);
+            methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          }
+        });
       }
-    }
+    });
+    EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
+    InputEvent inputEvent = event.getInputEvent();
+    List<SNodeReference> methods = SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
+      public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
+        return it._0();
+      }
+    }).toListSequence();
+    RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
+    String title = "Choose super method of" + methodName[0] + "()";
+    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(), relativePoint);
   }
   private SNode getInstanceMethodDeclaration(final Map<String, Object> _params) {
     return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), true, false);
@@ -166,5 +150,4 @@ public class GoToOverridenMethod_Action extends BaseAction {
     }
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(GoToOverridenMethod_Action.class);
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.make.IMakeService;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
@@ -19,8 +18,6 @@ import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.make.TextPreviewUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,16 +38,9 @@ public class TextPreviewModel_Action extends BaseAction {
     return md != null && SNodeOperations.isGeneratable(md);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "TextPreviewModel", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -70,15 +60,9 @@ public class TextPreviewModel_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new DefaultMakeMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))), true);
-      if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "TextPreviewModel", t);
-      }
+    MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new DefaultMakeMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))), true);
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
     }
   }
   private SModel modelToGenerate(final Map<String, Object> _params) {
@@ -90,5 +74,4 @@ public class TextPreviewModel_Action extends BaseAction {
     }
     return md;
   }
-  protected static Logger LOG = LogManager.getLogger(TextPreviewModel_Action.class);
 }

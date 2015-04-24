@@ -10,10 +10,7 @@ import jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class InstalVcsAddons_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,16 +27,9 @@ public class InstalVcsAddons_Action extends BaseAction {
     return MergeDriverInstaller.isApplicable(((Project) MapSequence.fromMap(_params).get("project")));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "InstalVcsAddons", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -53,13 +43,6 @@ public class InstalVcsAddons_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MergeDriverInstaller.installWhereNeeded(((Project) MapSequence.fromMap(_params).get("project")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "InstalVcsAddons", t);
-      }
-    }
+    MergeDriverInstaller.installWhereNeeded(((Project) MapSequence.fromMap(_params).get("project")));
   }
-  protected static Logger LOG = LogManager.getLogger(InstalVcsAddons_Action.class);
 }

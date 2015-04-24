@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -28,8 +27,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,60 +40,46 @@ public class GoToModel_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Project project = event.getData(PlatformDataKeys.PROJECT);
-      assert project != null;
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
-      // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-      BaseModelModel goToModelModel = new BaseModelModel(project) {
-        @Override
-        public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-          return new BaseModelItem(modelReference) {
-            @Override
-            public void navigate(boolean requestFocus) {
-              ProjectPane projectPane = ProjectPane.getInstance(project);
-              SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
-              projectPane.selectModel(md, true);
-            }
-          };
-        }
-        @Override
-        public SModelReference[] find(SearchScope scope) {
-          Condition<SModel> cond = new Condition<SModel>() {
-            @Override
-            public boolean met(SModel modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          };
-          ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
-          List<SModelReference> result = new ArrayList<SModelReference>();
-          for (SModel md : iter) {
-            result.add(md.getReference());
+    final Project project = event.getData(PlatformDataKeys.PROJECT);
+    assert project != null;
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
+    // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
+    BaseModelModel goToModelModel = new BaseModelModel(project) {
+      @Override
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
+          @Override
+          public void navigate(boolean requestFocus) {
+            ProjectPane projectPane = ProjectPane.getInstance(project);
+            SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            projectPane.selectModel(md, true);
           }
-          return result.toArray(new SModelReference[result.size()]);
-        }
-      };
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, GoToModel_Action.this);
-      popup.setShowListForEmptyPattern(true);
-
-      popup.invoke(new NavigateCallback(), ModalityState.current(), true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToModel", t);
+        };
       }
-    }
+      @Override
+      public SModelReference[] find(SearchScope scope) {
+        Condition<SModel> cond = new Condition<SModel>() {
+          @Override
+          public boolean met(SModel modelDescriptor) {
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
+            boolean hasModule = modelDescriptor.getModule() != null;
+            return rightStereotype && hasModule;
+          }
+        };
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
+        List<SModelReference> result = new ArrayList<SModelReference>();
+        for (SModel md : iter) {
+          result.add(md.getReference());
+        }
+        return result.toArray(new SModelReference[result.size()]);
+      }
+    };
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, GoToModel_Action.this);
+    popup.setShowListForEmptyPattern(true);
+
+    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToModel_Action.class);
 }

@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -63,16 +62,9 @@ public class CollectTests_Action extends BaseAction {
     return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CollectTests", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -90,27 +82,21 @@ public class CollectTests_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._boolean done = new Wrappers._boolean(false);
-      IdeEventQueue.getInstance().flushQueue();
-      ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-        public void run() {
-          ProgressIndicator proInd = ProgressManager.getInstance().getProgressIndicator();
-          proInd.pushState();
-          try {
-            done.value = CollectTests_Action.this.doExecute(proInd, _params);
-          } finally {
-            proInd.popState();
-          }
+    final Wrappers._boolean done = new Wrappers._boolean(false);
+    IdeEventQueue.getInstance().flushQueue();
+    ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+      public void run() {
+        ProgressIndicator proInd = ProgressManager.getInstance().getProgressIndicator();
+        proInd.pushState();
+        try {
+          done.value = CollectTests_Action.this.doExecute(proInd, _params);
+        } finally {
+          proInd.popState();
         }
-      }, "Collecting Tests", true, ((Project) MapSequence.fromMap(_params).get("project")));
-      if (!(done.value)) {
-        CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CollectTests", t);
-      }
+    }, "Collecting Tests", true, ((Project) MapSequence.fromMap(_params).get("project")));
+    if (!(done.value)) {
+      CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
     }
   }
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
@@ -201,5 +187,4 @@ public class CollectTests_Action extends BaseAction {
       }
     }).toListSequence();
   }
-  protected static Logger LOG = LogManager.getLogger(CollectTests_Action.class);
 }

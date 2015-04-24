@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -24,8 +23,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CleanProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,14 +36,7 @@ public class CleanProject_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CleanProject", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -67,25 +57,18 @@ public class CleanProject_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
-        @Override
-        public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ModuleMaker maker = new ModuleMaker();
-              maker.clean(modulesToBuild, new ProgressMonitorAdapter(indicator));
-            }
-          });
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CleanProject", t);
+    final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
+    SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
+    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
+      @Override
+      public void run(@NotNull final ProgressIndicator indicator) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ModuleMaker maker = new ModuleMaker();
+            maker.clean(modulesToBuild, new ProgressMonitorAdapter(indicator));
+          }
+        });
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(CleanProject_Action.class);
 }

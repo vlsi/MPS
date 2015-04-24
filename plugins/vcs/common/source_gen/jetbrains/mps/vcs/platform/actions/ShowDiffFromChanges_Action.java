@@ -8,7 +8,6 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -21,8 +20,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
@@ -36,14 +33,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowDiffFromChanges", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,24 +50,17 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-      final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          final SModel model = editedNode.getModel();
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              VcsActionsUtil.showRootDifference((EditableSModel) model, editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
-            }
-          });
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowDiffFromChanges", t);
+    final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        final SModel model = editedNode.getModel();
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            VcsActionsUtil.showRootDifference((EditableSModel) model, editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
+          }
+        });
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ShowDiffFromChanges_Action.class);
 }

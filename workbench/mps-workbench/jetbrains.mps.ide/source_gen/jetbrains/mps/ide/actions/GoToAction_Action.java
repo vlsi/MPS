@@ -8,10 +8,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -27,24 +24,11 @@ public class GoToAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GoToAction_Action.this.action.update(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToAction", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    GoToAction_Action.this.action.update(event);
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.action");
-      GoToAction_Action.this.action.actionPerformed(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToAction", t);
-      }
-    }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.action");
+    GoToAction_Action.this.action.actionPerformed(event);
   }
   @NotNull
   public String getActionId() {
@@ -58,5 +42,4 @@ public class GoToAction_Action extends BaseAction {
   public static String action_State(AnAction object) {
     return "";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToAction_Action.class);
 }

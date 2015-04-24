@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -32,8 +31,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,14 +44,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -71,50 +61,43 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Finding Usages", true) {
-        @Override
-        public void run(@NotNull ProgressIndicator p0) {
-          final Wrappers._T<SearchResults<SNode>> concepts = new Wrappers._T<SearchResults<SNode>>();
-          final Wrappers._T<List<SearchResult<SNode>>> results = new Wrappers._T<List<SearchResult<SNode>>>();
+    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Finding Usages", true) {
+      @Override
+      public void run(@NotNull ProgressIndicator p0) {
+        final Wrappers._T<SearchResults<SNode>> concepts = new Wrappers._T<SearchResults<SNode>>();
+        final Wrappers._T<List<SearchResult<SNode>>> results = new Wrappers._T<List<SearchResult<SNode>>>();
 
-          modelAccess.runReadAction(new Runnable() {
-            public void run() {
-              concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-              results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
-                public boolean accept(SearchResult<SNode> it) {
-                  SNode node = (SNode) it.getObject();
-                  return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) && isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
-                }
-              }).toListSequence();
-            }
-          });
-
-          if (p0.isCanceled()) {
-            return;
+        modelAccess.runReadAction(new Runnable() {
+          public void run() {
+            concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+            results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
+              public boolean accept(SearchResult<SNode> it) {
+                SNode node = (SNode) it.getObject();
+                return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) && isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
+              }
+            }).toListSequence();
           }
+        });
 
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              RefactoringAccessEx.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("ideaProject")), new RefactoringViewAction() {
-                @Override
-                public void performAction(RefactoringViewItem refactoringViewItem) {
-                  refactoringViewItem.close();
-                }
-              }, new SearchResults<SNode>(concepts.value.getSearchedNodes(), results.value), false, "Safe Delete");
-            }
-          });
+        if (p0.isCanceled()) {
+          return;
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            RefactoringAccessEx.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("ideaProject")), new RefactoringViewAction() {
+              @Override
+              public void performAction(RefactoringViewItem refactoringViewItem) {
+                refactoringViewItem.close();
+              }
+            }, new SearchResults<SNode>(concepts.value.getSearchedNodes(), results.value), false, "Safe Delete");
+          }
+        });
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(FindRootableConceptsWithoutIcons_Action.class);
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

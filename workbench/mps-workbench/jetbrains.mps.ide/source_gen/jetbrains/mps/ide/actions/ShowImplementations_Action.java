@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
@@ -32,8 +31,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowImplementations_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,16 +47,9 @@ public class ShowImplementations_Action extends BaseAction {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowImplementations", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -96,55 +86,48 @@ public class ShowImplementations_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final List<SNode> nodes = new ArrayList<SNode>();
-      ListSequence.fromList(nodes).addElement(((SNode) MapSequence.fromMap(_params).get("node")));
+    final List<SNode> nodes = new ArrayList<SNode>();
+    ListSequence.fromList(nodes).addElement(((SNode) MapSequence.fromMap(_params).get("node")));
 
-      SearchResults<SNode> results;
-      if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-      } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
-        results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
-      } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
-      } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-        results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
-      } else {
-        return;
-      }
-      for (SearchResult<SNode> searchResult : results.getSearchResults()) {
-        SNode foundNode = searchResult.getObject();
-        if ((foundNode != null)) {
-          ListSequence.fromList(nodes).addElement(foundNode);
-        }
-      }
-      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
-          final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((MPSProject) MapSequence.fromMap(_params).get("project")));
-
-          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPreferredFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-              modelAccess.executeCommandInEDT(new Runnable() {
-                public void run() {
-                  component.dispose();
-                }
-              });
-              return Boolean.TRUE;
-            }
-          }).createPopup();
-          popup.show(new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY())));
-          component.getPreferredFocusableComponent().setRequestFocusEnabled(true);
-          component.setPopup(popup);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowImplementations", t);
+    SearchResults<SNode> results;
+    if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+    } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+    } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
+    } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
+    } else {
+      return;
+    }
+    for (SearchResult<SNode> searchResult : results.getSearchResults()) {
+      SNode foundNode = searchResult.getObject();
+      if ((foundNode != null)) {
+        ListSequence.fromList(nodes).addElement(foundNode);
       }
     }
+    final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
+        final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((MPSProject) MapSequence.fromMap(_params).get("project")));
+
+        JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPreferredFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            modelAccess.executeCommandInEDT(new Runnable() {
+              public void run() {
+                component.dispose();
+              }
+            });
+            return Boolean.TRUE;
+          }
+        }).createPopup();
+        popup.show(new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY())));
+        component.getPreferredFocusableComponent().setRequestFocusEnabled(true);
+        component.setPopup(popup);
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ShowImplementations_Action.class);
 }

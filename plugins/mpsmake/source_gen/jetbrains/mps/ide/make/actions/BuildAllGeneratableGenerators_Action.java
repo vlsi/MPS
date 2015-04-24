@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -21,8 +20,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BuildAllGeneratableGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,14 +33,7 @@ public class BuildAllGeneratableGenerators_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "BuildAllGeneratableGenerators", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -56,28 +46,21 @@ public class BuildAllGeneratableGenerators_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<List<SModule>> m = new Wrappers._T<List<SModule>>();
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
-          m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), Sequence.fromIterable(projectModules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
-            public Iterable<Generator> translate(Language it) {
-              return it.getGenerators();
-            }
-          }).where(new IWhereFilter<Generator>() {
-            public boolean accept(Generator it) {
-              return it.generateTemplates();
-            }
-          }));
-        }
-      });
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(m.value).cleanMake(true)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "BuildAllGeneratableGenerators", t);
+    final Wrappers._T<List<SModule>> m = new Wrappers._T<List<SModule>>();
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+        m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), Sequence.fromIterable(projectModules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
+          public Iterable<Generator> translate(Language it) {
+            return it.getGenerators();
+          }
+        }).where(new IWhereFilter<Generator>() {
+          public boolean accept(Generator it) {
+            return it.generateTemplates();
+          }
+        }));
       }
-    }
+    });
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(m.value).cleanMake(true)).executeAction();
   }
-  protected static Logger LOG = LogManager.getLogger(BuildAllGeneratableGenerators_Action.class);
 }

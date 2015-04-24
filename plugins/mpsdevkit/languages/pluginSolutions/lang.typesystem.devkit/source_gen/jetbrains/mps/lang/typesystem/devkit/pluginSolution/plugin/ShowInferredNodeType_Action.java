@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,8 +16,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowInferredNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,14 +29,7 @@ public class ShowInferredNodeType_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowInferredNodeType", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -60,25 +50,18 @@ public class ShowInferredNodeType_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          type.value = TypeChecker.getInstance().getInferredTypeOf(((SNode) MapSequence.fromMap(_params).get("node")));
-        }
-      });
-      if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
-        return;
+    final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        type.value = TypeChecker.getInstance().getInferredTypeOf(((SNode) MapSequence.fromMap(_params).get("node")));
       }
-      MyBaseNodeDialog dialog;
-      dialog = new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
-      dialog.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowInferredNodeType", t);
-      }
+    });
+    if (type.value == null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+      return;
     }
+    MyBaseNodeDialog dialog;
+    dialog = new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
+    dialog.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ShowInferredNodeType_Action.class);
 }

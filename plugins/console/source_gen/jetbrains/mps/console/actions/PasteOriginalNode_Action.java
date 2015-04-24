@@ -13,7 +13,6 @@ import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
@@ -21,8 +20,6 @@ import jetbrains.mps.console.tool.ConsoleTool;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.IdeActions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class PasteOriginalNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,16 +36,9 @@ public class PasteOriginalNode_Action extends BaseAction {
     return PlatformDataKeys.PASTE_PROVIDER.getData(((EditorComponent) MapSequence.fromMap(_params).get("editor"))) instanceof BaseConsoleTab.MyPasteProvider && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editor")), ((EditorCell) MapSequence.fromMap(_params).get("cell"))));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "PasteOriginalNode", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -76,17 +66,10 @@ public class PasteOriginalNode_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).runWithoutPasteAsRef(new Runnable() {
-        public void run() {
-          ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction(IdeActions.ACTION_PASTE), event);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "PasteOriginalNode", t);
+    ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).runWithoutPasteAsRef(new Runnable() {
+      public void run() {
+        ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction(IdeActions.ACTION_PASTE), event);
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(PasteOriginalNode_Action.class);
 }

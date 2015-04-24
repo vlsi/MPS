@@ -14,14 +14,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,16 +39,9 @@ public class ShowNodeMessages_Action extends BaseAction {
     }).isNotEmpty();
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeMessages", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -83,27 +73,20 @@ public class ShowNodeMessages_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SimpleEditorMessage> messages = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node")));
-      StringBuilder sb = new StringBuilder();
-      for (SimpleEditorMessage message : ListSequence.fromList(messages).where(new IWhereFilter<SimpleEditorMessage>() {
-        public boolean accept(SimpleEditorMessage it) {
-          return isNotEmptyString(it.getMessage());
-        }
-      })) {
-        sb.append(message.getMessage());
-        sb.append("; owner is ");
-        sb.append(message.getOwner());
-        sb.append("\n");
+    List<SimpleEditorMessage> messages = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node")));
+    StringBuilder sb = new StringBuilder();
+    for (SimpleEditorMessage message : ListSequence.fromList(messages).where(new IWhereFilter<SimpleEditorMessage>() {
+      public boolean accept(SimpleEditorMessage it) {
+        return isNotEmptyString(it.getMessage());
       }
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), sb.toString(), "Node Messages", Messages.getInformationIcon());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
-      }
+    })) {
+      sb.append(message.getMessage());
+      sb.append("; owner is ");
+      sb.append(message.getOwner());
+      sb.append("\n");
     }
+    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), sb.toString(), "Node Messages", Messages.getInformationIcon());
   }
-  protected static Logger LOG = LogManager.getLogger(ShowNodeMessages_Action.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

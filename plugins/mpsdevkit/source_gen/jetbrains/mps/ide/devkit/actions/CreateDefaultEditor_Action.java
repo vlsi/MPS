@@ -21,12 +21,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CreateDefaultEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,16 +59,9 @@ public class CreateDefaultEditor_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CreateDefaultEditor", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -98,24 +88,17 @@ public class CreateDefaultEditor_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-      SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, conceptDeclaration, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration").getDeclarationNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
-      assert BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
-      assert eq_e50aup_a0d0a0g(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), conceptDeclaration);
-      if (SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")) != null) {
-        SPropertyOperations.set(editorDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
-      }
-      BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
-      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CreateDefaultEditor", t);
-      }
+    SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+    SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, conceptDeclaration, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration").getDeclarationNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+    assert BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
+    assert eq_e50aup_a0d0g(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), conceptDeclaration);
+    if (SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")) != null) {
+      SPropertyOperations.set(editorDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     }
+    BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
+    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
   }
-  protected static Logger LOG = LogManager.getLogger(CreateDefaultEditor_Action.class);
-  private static boolean eq_e50aup_a0d0a0g(Object a, Object b) {
+  private static boolean eq_e50aup_a0d0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

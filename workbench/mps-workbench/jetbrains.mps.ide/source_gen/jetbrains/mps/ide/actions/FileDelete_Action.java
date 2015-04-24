@@ -8,12 +8,9 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FileDelete_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,14 +26,7 @@ public class FileDelete_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FileDelete_Action.this.action.update(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FileDelete", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    FileDelete_Action.this.action.update(event);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -53,13 +43,7 @@ public class FileDelete_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FileDelete_Action.this.action.actionPerformed(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FileDelete", t);
-      }
-    }
+    FileDelete_Action.this.action.actionPerformed(event);
   }
   @NotNull
   public String getActionId() {
@@ -73,5 +57,4 @@ public class FileDelete_Action extends BaseAction {
   public static String action_State(AnAction object) {
     return "";
   }
-  protected static Logger LOG = LogManager.getLogger(FileDelete_Action.class);
 }

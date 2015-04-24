@@ -17,12 +17,9 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,16 +47,9 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     return false;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -77,14 +67,8 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
-      }
-    }
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
   }
   @NotNull
   public String getActionId() {
@@ -95,5 +79,4 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-  protected static Logger LOG = LogManager.getLogger(MakeOrRebuildModelsFromChangeList_Action.class);
 }

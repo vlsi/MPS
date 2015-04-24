@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
@@ -23,8 +22,6 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,16 +50,9 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToUsageInMappingConfig", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -89,15 +79,8 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
-      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(true).forceNewTab(false);
-      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("project")), FindUtils.makeProvider(finder), new SearchQuery(null), opt);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);
-      }
-    }
+    MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(true).forceNewTab(false);
+    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("project")), FindUtils.makeProvider(finder), new SearchQuery(null), opt);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToUsageInMappingConfig_Action.class);
 }

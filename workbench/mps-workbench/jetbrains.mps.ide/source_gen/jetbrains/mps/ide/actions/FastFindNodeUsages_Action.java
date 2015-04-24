@@ -10,15 +10,12 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FastFindNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -36,16 +33,9 @@ public class FastFindNodeUsages_Action extends BaseAction {
     return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable();
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FastFindNodeUsages", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -77,13 +67,6 @@ public class FastFindNodeUsages_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
-      }
-    }
+    new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
   }
-  protected static Logger LOG = LogManager.getLogger(FastFindNodeUsages_Action.class);
 }

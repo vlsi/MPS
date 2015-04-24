@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
@@ -28,8 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,16 +49,9 @@ public class DeleteNode_Action extends BaseAction {
     return res.value;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteNode", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -83,37 +73,31 @@ public class DeleteNode_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<List<SNode>> affNodes = new Wrappers._T<List<SNode>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          affNodes.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).toListSequence();
-        }
-      });
-      final DeleteNodesHelper helper = new DeleteNodesHelper(affNodes.value, ((MPSProject) MapSequence.fromMap(_params).get("project")));
-
-      final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          dialogNeeded.value = helper.hasOptions();
-        }
-      });
-
-      DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
-      DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
-      if (dialogNeeded.value) {
-        DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
-        dialog.show();
-        if (!(dialog.isOK())) {
-          return;
-        }
+    final Wrappers._T<List<SNode>> affNodes = new Wrappers._T<List<SNode>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        affNodes.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).toListSequence();
       }
-      helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteNode", t);
+    });
+    final DeleteNodesHelper helper = new DeleteNodesHelper(affNodes.value, ((MPSProject) MapSequence.fromMap(_params).get("project")));
+
+    final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        dialogNeeded.value = helper.hasOptions();
+      }
+    });
+
+    DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+    DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
+    if (dialogNeeded.value) {
+      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
+      dialog.show();
+      if (!(dialog.isOK())) {
+        return;
       }
     }
+    helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
   }
   private Iterable<SNode> getAffectedNodes(final Map<String, Object> _params) {
     Set<Pair<SModel, String>> packs = SetSequence.fromSetWithValues(new HashSet<Pair<SModel, String>>(), ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")));
@@ -132,7 +116,6 @@ public class DeleteNode_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
   private static boolean check_v2o7qu_a0a0a0a2a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();

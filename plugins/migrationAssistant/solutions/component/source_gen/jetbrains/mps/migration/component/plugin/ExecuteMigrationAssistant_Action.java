@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -22,8 +21,6 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,14 +34,7 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteMigrationAssistant", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -61,30 +51,23 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-      final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
+    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
+      }
+    });
+    if (!(migrationRequired.value)) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
+          Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
         }
       });
-      if (!(migrationRequired.value)) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
-          }
-        });
-        return;
-      }
-
-      MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
-      mt.postponeMigration();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExecuteMigrationAssistant", t);
-      }
+      return;
     }
+
+    MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
+    mt.postponeMigration();
   }
-  protected static Logger LOG = LogManager.getLogger(ExecuteMigrationAssistant_Action.class);
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.ide.editor.util.GoToHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -21,8 +20,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.event.InputEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToOverridingClassMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,16 +36,9 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     return GoToHelper.hasApplicableFinder(((SNode) MapSequence.fromMap(_params).get("methodNode")), GoToOverridingClassMethod_Action.this.getFinderName(_params));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingClassMethod", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -78,19 +68,12 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-      EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
-      InputEvent inputEvent = event.getInputEvent();
-      GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToOverridingClassMethod", t);
-      }
-    }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
+    EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
+    InputEvent inputEvent = event.getInputEvent();
+    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
   private String getFinderName(final Map<String, Object> _params) {
     return "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToOverridingClassMethod_Action.class);
 }

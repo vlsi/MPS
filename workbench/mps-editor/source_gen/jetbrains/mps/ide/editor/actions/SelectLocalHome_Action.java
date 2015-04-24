@@ -11,11 +11,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class SelectLocalHome_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,16 +29,9 @@ public class SelectLocalHome_Action extends BaseAction {
     return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SelectLocalHome", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -69,14 +59,7 @@ public class SelectLocalHome_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getActionHandler().executeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")), CellActionType.SELECT_LOCAL_HOME);
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SelectLocalHome", t);
-      }
-    }
+    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getActionHandler().executeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")), CellActionType.SELECT_LOCAL_HOME);
+    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
   }
-  protected static Logger LOG = LogManager.getLogger(SelectLocalHome_Action.class);
 }

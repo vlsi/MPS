@@ -13,13 +13,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class CutNode_Action extends BaseAction {
@@ -45,16 +42,9 @@ public class CutNode_Action extends BaseAction {
     return CutNode_Action.this.getProjectPane(_params) != null;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CutNode", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -82,28 +72,21 @@ public class CutNode_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
-      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-        if (node == ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).last()) {
-          ProjectPane pane = CutNode_Action.this.getProjectPane(_params);
-          if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
-            pane.rebuildTree();
-          }
-          pane.selectNextNode(node);
+    CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+      if (node == ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).last()) {
+        ProjectPane pane = CutNode_Action.this.getProjectPane(_params);
+        if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
+          pane.rebuildTree();
         }
-        SNodeOperations.deleteNode(node);
+        pane.selectNextNode(node);
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CutNode", t);
-      }
+      SNodeOperations.deleteNode(node);
     }
   }
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
-  protected static Logger LOG = LogManager.getLogger(CutNode_Action.class);
   private static boolean check_n39602_a1a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();

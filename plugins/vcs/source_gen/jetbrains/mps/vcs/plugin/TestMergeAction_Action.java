@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -28,6 +27,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -43,14 +43,7 @@ public class TestMergeAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -63,64 +56,58 @@ public class TestMergeAction_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, true, true, false, false) {
-        @Override
-        public boolean isFileSelectable(VirtualFile file) {
-          return !((file.isDirectory())) && file.getName().toLowerCase().endsWith(".zip");
+    final FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, true, true, false, false) {
+      @Override
+      public boolean isFileSelectable(VirtualFile file) {
+        return !((file.isDirectory())) && file.getName().toLowerCase().endsWith(".zip");
+      }
+    };
+
+    descriptor.setTitle("select archive with merge files");
+    descriptor.setDescription("Zip files (*.zip) ");
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
+
+        final String resFile;
+        SModel[] zipped;
+        try {
+          zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
+          resFile = File.createTempFile("mpstmp", ".result").getAbsolutePath();
+        } catch (Exception e) {
+          e.printStackTrace();
+          return;
         }
-      };
 
-      descriptor.setTitle("select archive with merge files");
-      descriptor.setDescription("Zip files (*.zip) ");
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
+        MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), zipped, new String[]{"Local Version", "Merge Result", "Remote Version"}));
 
-          final String resFile;
-          SModel[] zipped;
-          try {
-            zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
-            resFile = File.createTempFile("mpstmp", ".result").getAbsolutePath();
-          } catch (Exception e) {
-            e.printStackTrace();
-            return;
-          }
-
-          MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), zipped, new String[]{"Local Version", "Merge Result", "Remote Version"}));
-
-          ISaveMergedModel saver = new ISaveMergedModel() {
-            public boolean save(MergeModelsDialog parent, final org.jetbrains.mps.openapi.model.SModel resultModel) {
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                @Override
-                public void run() {
-                  IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
-                  if (!(iFile.exists())) {
-                    iFile.createNewFile();
-                  }
-                  try {
-                    PersistenceFacade.getInstance().getDefaultModelFactory().save(resultModel, new FileDataSource(iFile));
-                  } catch (Exception e) {
-                    if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Cannot save model.", e);
-                    }
+        ISaveMergedModel saver = new ISaveMergedModel() {
+          public boolean save(MergeModelsDialog parent, final org.jetbrains.mps.openapi.model.SModel resultModel) {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              @Override
+              public void run() {
+                IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
+                if (!(iFile.exists())) {
+                  iFile.createNewFile();
+                }
+                try {
+                  PersistenceFacade.getInstance().getDefaultModelFactory().save(resultModel, new FileDataSource(iFile));
+                } catch (Exception e) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
+                    LOG.error("Cannot save model.", e);
                   }
                 }
-              });
+              }
+            });
 
-              return true;
-            }
-          };
+            return true;
+          }
+        };
 
-          dialog.setSaver(saver);
-          dialog.show();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "TestMergeAction", t);
+        dialog.setSaver(saver);
+        dialog.show();
       }
-    }
+    });
   }
   protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 }

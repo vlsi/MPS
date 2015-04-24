@@ -13,12 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RebuildSelectedModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,16 +44,9 @@ public class RebuildSelectedModules_Action extends BaseAction {
     return false;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RebuildSelectedModules", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -72,13 +62,7 @@ public class RebuildSelectedModules_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(RebuildSelectedModules_Action.this.getModules(_params)).cleanMake(true)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RebuildSelectedModules", t);
-      }
-    }
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(RebuildSelectedModules_Action.this.getModules(_params)).cleanMake(true)).executeAction();
   }
   private List<SModule> getModules(final Map<String, Object> _params) {
     SModule cmd = ((SModule) MapSequence.fromMap(_params).get("cmodule"));
@@ -94,5 +78,4 @@ public class RebuildSelectedModules_Action extends BaseAction {
     }
     return rv;
   }
-  protected static Logger LOG = LogManager.getLogger(RebuildSelectedModules_Action.class);
 }

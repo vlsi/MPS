@@ -8,7 +8,6 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -19,8 +18,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowInspection;
@@ -37,16 +34,9 @@ public class AnalyzeDependencies_Action extends BaseAction {
     return !(AnalyzeDependencies_Action.this.computeScope(_params).isEmpty());
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeDependencies", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -67,17 +57,11 @@ public class AnalyzeDependencies_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      DependencyViewerScope scope = AnalyzeDependencies_Action.this.computeScope(_params);
-      if (scope.isEmpty()) {
-        return;
-      }
-      DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), scope, true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
-      }
+    DependencyViewerScope scope = AnalyzeDependencies_Action.this.computeScope(_params);
+    if (scope.isEmpty()) {
+      return;
     }
+    DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), scope, true);
   }
   /*package*/ DependencyViewerScope computeScope(final Map<String, Object> _params) {
     final DependencyViewerScope scope = new DependencyViewerScope();
@@ -103,7 +87,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
     });
     return scope;
   }
-  protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
   private static SNode check_rkpdtm_a0a0c0a0a1a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();

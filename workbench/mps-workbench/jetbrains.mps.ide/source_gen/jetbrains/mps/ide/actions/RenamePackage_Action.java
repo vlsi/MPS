@@ -10,7 +10,6 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
@@ -19,8 +18,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,16 +34,9 @@ public class RenamePackage_Action extends BaseAction {
     return ((TreeNode) MapSequence.fromMap(_params).get("ppNode")) instanceof PackageNode;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenamePackage", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -68,30 +58,23 @@ public class RenamePackage_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
-      final String name = treeNode.getPackage();
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Package Name", name);
-      if (newName == null) {
-        return;
-      }
-
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          Set<SNode> nodesUnderPackage = treeNode.getNodesUnderPackage();
-          for (SNode node : nodesUnderPackage) {
-            String oldPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
-            String newPackage = newName + oldPackage.substring(name.length());
-            SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), (newPackage.length() > 0 ? newPackage : null));
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenamePackage", t);
-      }
+    final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
+    final String name = treeNode.getPackage();
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Package Name", name);
+    if (newName == null) {
+      return;
     }
+
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        Set<SNode> nodesUnderPackage = treeNode.getNodesUnderPackage();
+        for (SNode node : nodesUnderPackage) {
+          String oldPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
+          String newPackage = newName + oldPackage.substring(name.length());
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), (newPackage.length() > 0 ? newPackage : null));
+        }
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(RenamePackage_Action.class);
 }

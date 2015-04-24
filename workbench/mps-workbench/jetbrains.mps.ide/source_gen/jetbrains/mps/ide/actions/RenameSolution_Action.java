@@ -10,11 +10,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.refactoring.RenameModuleDialog;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RenameSolution_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,16 +28,9 @@ public class RenameSolution_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -62,13 +52,6 @@ public class RenameSolution_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new RenameModuleDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);
-      }
-    }
+    new RenameModuleDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
   }
-  protected static Logger LOG = LogManager.getLogger(RenameSolution_Action.class);
 }

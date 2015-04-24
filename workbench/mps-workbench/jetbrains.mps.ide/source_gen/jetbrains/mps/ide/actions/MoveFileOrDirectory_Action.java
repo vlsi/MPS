@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -24,8 +23,6 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MoveFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,14 +36,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MoveFileOrDirectory", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -71,39 +61,33 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
-      MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
-      dialog.show();
-      if (!(dialog.isOK())) {
-        return;
-      }
-      final String result = dialog.getResult();
-
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      modelAccess.executeCommand(new Runnable() {
-        public void run() {
-          try {
-            if (MoveFileOrDirectory_Action.this.isNotValid(result, _params)) {
-              return;
-            }
-            VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
-            ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).move(null, virtualFile);
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
-              }
-            });
-          } catch (IOException e) {
-          }
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);
-      }
+    String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
+    MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
+    dialog.show();
+    if (!(dialog.isOK())) {
+      return;
     }
+    final String result = dialog.getResult();
+
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    modelAccess.executeCommand(new Runnable() {
+      public void run() {
+        try {
+          if (MoveFileOrDirectory_Action.this.isNotValid(result, _params)) {
+            return;
+          }
+          VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
+          ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).move(null, virtualFile);
+          ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
+            }
+          });
+        } catch (IOException e) {
+        }
+      }
+    });
   }
   /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
@@ -116,5 +100,4 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
-  protected static Logger LOG = LogManager.getLogger(MoveFileOrDirectory_Action.class);
 }

@@ -8,7 +8,6 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
@@ -19,8 +18,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -34,14 +31,7 @@ public class ModuleProperties_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -62,26 +52,19 @@ public class ModuleProperties_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      // save all is sort of hack - changes to a module might lead to module re-load 
-      // (happens for Generator) and close of all respective modified editors (and changes lost) 
-      // The best way to fix would be Generator module not changing its language (which in turn triggers  
-      // removal of all generator models), but preserving everything intact as it is for e.g. language module changes 
-      new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).execute();
-      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
-      configurable.setParentForCallBack(configurableEditor);
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          configurableEditor.show();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ModuleProperties", t);
+    // save all is sort of hack - changes to a module might lead to module re-load 
+    // (happens for Generator) and close of all respective modified editors (and changes lost) 
+    // The best way to fix would be Generator module not changing its language (which in turn triggers  
+    // removal of all generator models), but preserving everything intact as it is for e.g. language module changes 
+    new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).execute();
+    MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+    configurable.setParentForCallBack(configurableEditor);
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        configurableEditor.show();
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ModuleProperties_Action.class);
 }

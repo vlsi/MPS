@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.File;
@@ -27,8 +26,6 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,14 +39,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -62,25 +52,19 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
+    File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(_params);
+    if (targetDir == null) {
+      return;
+    }
+    if (!(targetDir.exists())) {
+      targetDir.mkdirs();
+    }
     try {
-      File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
-      File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(_params);
-      if (targetDir == null) {
-        return;
-      }
-      if (!(targetDir.exists())) {
-        targetDir.mkdirs();
-      }
-      try {
-        FileUtil.copyFileChecked(pluginFile, targetDir);
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
-      } catch (IOException e) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
-      }
+      FileUtil.copyFileChecked(pluginFile, targetDir);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
+    } catch (IOException e) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
   }
   private File getTargetDir(final Map<String, Object> _params) {
@@ -134,7 +118,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     assert files.length <= 1;
     return (files.length == 0 ? null : VirtualFileUtils.toFile(files[0]));
   }
-  protected static Logger LOG = LogManager.getLogger(InstallIDEAPlugin_Action.class);
   private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
   private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
@@ -21,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.ide.blame.perform.Response;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -44,16 +44,9 @@ public class SubmitToTracker_Action extends BaseAction {
     });
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SubmitToTracker", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -79,38 +72,32 @@ public class SubmitToTracker_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
-      StringBuilder description = new StringBuilder();
-      boolean first = true;
-      for (IMessage msg : ((List<IMessage>) MapSequence.fromMap(_params).get("messages"))) {
-        if (first) {
-          dialog.setIssueTitle(msg.getText());
-          first = false;
-        } else {
-          description.append(msg.getText()).append('\n');
-        }
-        dialog.addEx(msg.getException());
+    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+    StringBuilder description = new StringBuilder();
+    boolean first = true;
+    for (IMessage msg : ((List<IMessage>) MapSequence.fromMap(_params).get("messages"))) {
+      if (first) {
+        dialog.setIssueTitle(msg.getText());
+        first = false;
+      } else {
+        description.append(msg.getText()).append('\n');
       }
-      dialog.setDescription(description.toString());
-      dialog.show();
+      dialog.addEx(msg.getException());
+    }
+    dialog.setDescription(description.toString());
+    dialog.show();
 
 
-      if (!(dialog.isCancelled())) {
-        Response response = dialog.getResult();
-        String message = response.getMessage();
-        if (response.isSuccess()) {
-          JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Submit failed: " + message, response.getThrowable());
-          }
+    if (!(dialog.isCancelled())) {
+      Response response = dialog.getResult();
+      String message = response.getMessage();
+      if (response.isSuccess()) {
+        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Submit failed: " + message, response.getThrowable());
         }
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SubmitToTracker", t);
       }
     }
   }

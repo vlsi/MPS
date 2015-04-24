@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
@@ -22,8 +21,6 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CopyThisDown_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,16 +42,9 @@ public class CopyThisDown_Action extends BaseAction {
     }));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -88,39 +78,32 @@ public class CopyThisDown_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.duplicateLine");
-      if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
-        SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
-        while (SNodeOperations.getParent(nodeToCopy) != null) {
-          SNode parent = SNodeOperations.getParent(nodeToCopy);
-          SContainmentLink link = nodeToCopy.getContainmentLink();
-          if (link.isMultiple()) {
-            SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            parent.insertChildAfter(link, copy, nodeToCopy);
-            EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
-            editorContext.selectWRTFocusPolicy(copy);
-            ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
-            return;
-          }
-          nodeToCopy = parent;
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.duplicateLine");
+    if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
+      SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
+      while (SNodeOperations.getParent(nodeToCopy) != null) {
+        SNode parent = SNodeOperations.getParent(nodeToCopy);
+        SContainmentLink link = nodeToCopy.getContainmentLink();
+        if (link.isMultiple()) {
+          SNode copy = SNodeOperations.copyNode(nodeToCopy);
+          parent.insertChildAfter(link, copy, nodeToCopy);
+          EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
+          editorContext.selectWRTFocusPolicy(copy);
+          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
+          return;
         }
-      } else {
-        SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
-        SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
-        SContainmentLink role = firstNode.getContainmentLink();
-        SNode parent = SNodeOperations.getParent(firstNode);
-        for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          parent.insertChildAfter(role, SNodeOperations.copyNode(node), lastNode);
-        }
-        EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
-        editorContext.selectRange(firstNode, lastNode);
+        nodeToCopy = parent;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
+    } else {
+      SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
+      SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
+      SContainmentLink role = firstNode.getContainmentLink();
+      SNode parent = SNodeOperations.getParent(firstNode);
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
+        parent.insertChildAfter(role, SNodeOperations.copyNode(node), lastNode);
       }
+      EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
+      editorContext.selectRange(firstNode, lastNode);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CopyThisDown_Action.class);
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,8 +26,6 @@ import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Type;
@@ -42,14 +39,7 @@ public class ShowNodeType_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeType", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -85,53 +75,46 @@ public class ShowNodeType_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
-      final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
+    final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
+    final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeForTypechecking(), new ITypechecking.Action() {
-            public void run(TypeCheckingContext typeCheckingContext) {
-              if (!(typeCheckingContext.isCheckedRoot(false))) {
-                typeCheckingContext.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
-              }
-              type.value = typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
-              reporter.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeForTypechecking(), new ITypechecking.Action() {
+          public void run(TypeCheckingContext typeCheckingContext) {
+            if (!(typeCheckingContext.isCheckedRoot(false))) {
+              typeCheckingContext.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
             }
-          });
+            type.value = typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+            reporter.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+          }
+        });
+      }
+    });
+
+    if (type.value == null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+      return;
+    }
+
+    final Wrappers._T<SModel> tmpModel = new Wrappers._T<SModel>();
+
+    try {
+      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        public void run() {
+          tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+          tmpModel.value.addRootNode(type.value);
+          TemporaryModels.getInstance().addMissingImports(tmpModel.value);
         }
       });
-
-      if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
-        return;
-      }
-
-      final Wrappers._T<SModel> tmpModel = new Wrappers._T<SModel>();
-
-      try {
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-          public void run() {
-            tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
-            tmpModel.value.addRootNode(type.value);
-            TemporaryModels.getInstance().addMissingImports(tmpModel.value);
-          }
-        });
-        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
-      } finally {
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-          public void run() {
-            tmpModel.value.removeRootNode(type.value);
-            TemporaryModels.getInstance().dispose(tmpModel.value);
-          }
-        });
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
-      }
+      new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
+    } finally {
+      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        public void run() {
+          tmpModel.value.removeRootNode(type.value);
+          TemporaryModels.getInstance().dispose(tmpModel.value);
+        }
+      });
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ShowNodeType_Action.class);
 }

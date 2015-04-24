@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -40,8 +39,6 @@ import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -58,16 +55,9 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -123,61 +113,54 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-      final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
-          } else {
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
-          }
+    final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
+    final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
+    modelAccess.runReadAction(new Runnable() {
+      public void run() {
+        if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+        } else {
+          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+          ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
         }
-      });
-
-      final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
-
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
-        @Override
-        public void run(@NotNull final ProgressIndicator p) {
-          modelAccess.runReadAction(new Runnable() {
-            public void run() {
-              for (String finderClass : finderClasses) {
-                List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
-                  public SNodePointer select(SNode it) {
-                    return new SNodePointer(it);
-                  }
-                }));
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
-                  }
-                }).translate(new ITranslator2<SNode, SNodePointer>() {
-                  public Iterable<SNodePointer> translate(SNode it) {
-                    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
-                      public SNodePointer select(SNode e) {
-                        return new SNodePointer(e);
-                      }
-                    });
-                  }
-                }));
-              }
-            }
-          });
-        }
-      });
-      RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
-      String title = "Choose inherited class to navigate to";
-      GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, nodes, new DefaultNodeRenderer(), relativePoint);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
       }
-    }
+    });
+
+    final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
+
+    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+      @Override
+      public void run(@NotNull final ProgressIndicator p) {
+        modelAccess.runReadAction(new Runnable() {
+          public void run() {
+            for (String finderClass : finderClasses) {
+              List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
+              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
+                public SNodePointer select(SNode it) {
+                  return new SNodePointer(it);
+                }
+              }));
+              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
+                }
+              }).translate(new ITranslator2<SNode, SNodePointer>() {
+                public Iterable<SNodePointer> translate(SNode it) {
+                  return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
+                    public SNodePointer select(SNode e) {
+                      return new SNodePointer(e);
+                    }
+                  });
+                }
+              }));
+            }
+          }
+        });
+      }
+    });
+    RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
+    String title = "Choose inherited class to navigate to";
+    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, nodes, new DefaultNodeRenderer(), relativePoint);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToInheritedClassifier_Action.class);
 }

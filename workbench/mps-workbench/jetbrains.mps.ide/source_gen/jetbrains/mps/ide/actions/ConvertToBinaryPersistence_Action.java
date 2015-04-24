@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -23,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.persistence.PersistenceUtil;
+import org.apache.log4j.Level;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -53,16 +53,9 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
     });
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ConvertToBinaryPersistence", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -84,71 +77,65 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
-      final Iterable<SModel> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it) {
-          return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
-        }
-      });
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+    final Iterable<SModel> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
+      }
+    });
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
-      final ModelFactory binaryFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
+    final ModelFactory binaryFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
 
-      modelAccess.runWriteAction(new Runnable() {
-        public void run() {
-          // see MPS-18743 
-          MPSModuleRepository.getInstance().saveAll();
+    modelAccess.runWriteAction(new Runnable() {
+      public void run() {
+        // see MPS-18743 
+        MPSModuleRepository.getInstance().saveAll();
 
-          for (SModel smodel : Sequence.fromIterable(seq)) {
-            IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
-            SModel newModel = PersistenceUtil.loadModel(oldFile);
-            if (newModel == null) {
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("cannot read " + smodel);
-              }
-              continue;
+        for (SModel smodel : Sequence.fromIterable(seq)) {
+          IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
+          SModel newModel = PersistenceUtil.loadModel(oldFile);
+          if (newModel == null) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("cannot read " + smodel);
             }
+            continue;
+          }
 
-            Iterable<SModel.Problem> problems = Sequence.fromIterable(((Iterable<SModel.Problem>) newModel.getProblems())).where(new IWhereFilter<SModel.Problem>() {
-              public boolean accept(SModel.Problem it) {
-                return it.isError();
-              }
-            });
-            if (Sequence.fromIterable(problems).isNotEmpty()) {
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("cannot read " + smodel + ": " + Sequence.fromIterable(problems).first().getText());
-              }
-              continue;
+          Iterable<SModel.Problem> problems = Sequence.fromIterable(((Iterable<SModel.Problem>) newModel.getProblems())).where(new IWhereFilter<SModel.Problem>() {
+            public boolean accept(SModel.Problem it) {
+              return it.isError();
             }
+          });
+          if (Sequence.fromIterable(problems).isNotEmpty()) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("cannot read " + smodel + ": " + Sequence.fromIterable(problems).first().getText());
+            }
+            continue;
+          }
 
-            IFile newFile = oldFile.getParent().getDescendant(FileUtil.getNameWithoutExtension(oldFile.getName()) + "." + MPSExtentions.MODEL_BINARY);
-            SModule module = smodel.getModule();
-            try {
-              binaryFactory.save(newModel, new FileDataSource(newFile));
-              if (module != null) {
-                ((SModuleBase) module).unregisterModel((SModelBase) smodel);
-              }
-              oldFile.delete();
-              ((AbstractModule) module).updateModelsSet();
-            } catch (IOException ex) {
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("cannot write " + smodel, ex);
-              }
-            } catch (ModelSaveException ex) {
-              // shouldn't happen 
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("cannot write " + smodel, ex);
-              }
+          IFile newFile = oldFile.getParent().getDescendant(FileUtil.getNameWithoutExtension(oldFile.getName()) + "." + MPSExtentions.MODEL_BINARY);
+          SModule module = smodel.getModule();
+          try {
+            binaryFactory.save(newModel, new FileDataSource(newFile));
+            if (module != null) {
+              ((SModuleBase) module).unregisterModel((SModelBase) smodel);
+            }
+            oldFile.delete();
+            ((AbstractModule) module).updateModelsSet();
+          } catch (IOException ex) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("cannot write " + smodel, ex);
+            }
+          } catch (ModelSaveException ex) {
+            // shouldn't happen 
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("cannot write " + smodel, ex);
             }
           }
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ConvertToBinaryPersistence", t);
       }
-    }
+    });
   }
   protected static Logger LOG = LogManager.getLogger(ConvertToBinaryPersistence_Action.class);
 }

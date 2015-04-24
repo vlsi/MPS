@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -23,8 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BuildAllRefactorings_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,14 +35,7 @@ public class BuildAllRefactorings_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "BuildAllRefactorings", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -58,28 +48,21 @@ public class BuildAllRefactorings_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
-            public SModel select(Language it) {
-              return LanguageAspect.REFACTORINGS.get(it);
-            }
-          }).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it) {
-              return it != null && SNodeOperations.isGeneratable(it);
-            }
-          }));
-        }
-      });
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models.value).cleanMake(true)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "BuildAllRefactorings", t);
+    final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+        models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
+          public SModel select(Language it) {
+            return LanguageAspect.REFACTORINGS.get(it);
+          }
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return it != null && SNodeOperations.isGeneratable(it);
+          }
+        }));
       }
-    }
+    });
+    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models.value).cleanMake(true)).executeAction();
   }
-  protected static Logger LOG = LogManager.getLogger(BuildAllRefactorings_Action.class);
 }

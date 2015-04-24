@@ -7,12 +7,9 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CopyModuleName_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,14 +23,7 @@ public class CopyModuleName_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CopyModuleName", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -46,13 +36,6 @@ public class CopyModuleName_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      CopyPasteUtil.copyTextToClipboard(((SModule) MapSequence.fromMap(_params).get("module")).getModuleName());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CopyModuleName", t);
-      }
-    }
+    CopyPasteUtil.copyTextToClipboard(((SModule) MapSequence.fromMap(_params).get("module")).getModuleName());
   }
-  protected static Logger LOG = LogManager.getLogger(CopyModuleName_Action.class);
 }

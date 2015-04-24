@@ -8,9 +8,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,23 +23,10 @@ public class GoToNamedNode_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GoToNamedNode_Action.this.action.update(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToNamedNode", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    GoToNamedNode_Action.this.action.update(event);
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GoToNamedNode_Action.this.action.actionPerformed(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToNamedNode", t);
-      }
-    }
+    GoToNamedNode_Action.this.action.actionPerformed(event);
   }
   @NotNull
   public String getActionId() {
@@ -56,5 +40,4 @@ public class GoToNamedNode_Action extends BaseAction {
   public static String action_State(AnAction object) {
     return "";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToNamedNode_Action.class);
 }

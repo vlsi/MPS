@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.java.util.StubResolver;
@@ -18,8 +17,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ResolveStubReferencesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,14 +30,7 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ResolveStubReferencesToMPS", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -57,17 +47,10 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
-      for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
-        SetSequence.fromSet(modulesToReload).addElement(model.getModule());
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);
-      }
+    new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
+    for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+      SetSequence.fromSet(modulesToReload).addElement(model.getModule());
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ResolveStubReferencesToMPS_Action.class);
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -25,8 +24,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConce
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -54,16 +51,9 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageConceptsUsages", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -81,17 +71,10 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      SearchScope scope = GlobalScope.getInstance();
-      final SearchQuery query = new SearchQuery(((SModule) MapSequence.fromMap(_params).get("module")), scope);
-      final IResultProvider provider = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
-      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("There are no usages of language's concepts");
-      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
-      }
-    }
+    SearchScope scope = GlobalScope.getInstance();
+    final SearchQuery query = new SearchQuery(((SModule) MapSequence.fromMap(_params).get("module")), scope);
+    final IResultProvider provider = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("There are no usages of language's concepts");
+    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
   }
-  protected static Logger LOG = LogManager.getLogger(FindLanguageConceptsUsages_Action.class);
 }

@@ -11,7 +11,6 @@ import java.util.Map;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -22,8 +21,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
@@ -37,14 +34,7 @@ public class NewAccessoryModel_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -69,32 +59,25 @@ public class NewAccessoryModel_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
-        return;
-      }
-
-      final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
-      d.show();
-      final SModel result = d.getResult();
-
-      if (result == null) {
-        return;
-      }
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          LanguageDescriptor descriptor = language.getModuleDescriptor();
-          descriptor.getAccessoryModels().add(result.getReference());
-          language.save();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
-      }
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+      return;
     }
+
+    final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
+    NewModelDialog d = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
+    d.show();
+    final SModel result = d.getResult();
+
+    if (result == null) {
+      return;
+    }
+
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        LanguageDescriptor descriptor = language.getModuleDescriptor();
+        descriptor.getAccessoryModels().add(result.getReference());
+        language.save();
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(NewAccessoryModel_Action.class);
 }

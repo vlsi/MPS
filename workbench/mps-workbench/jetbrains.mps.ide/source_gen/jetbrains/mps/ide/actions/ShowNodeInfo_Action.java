@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -17,8 +16,6 @@ import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.NodeInformationDialog;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowNodeInfo_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,14 +29,7 @@ public class ShowNodeInfo_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeInfo", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -70,23 +60,16 @@ public class ShowNodeInfo_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Point point = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY());
-      SwingUtilities.convertPointToScreen(point, ((EditorComponent) MapSequence.fromMap(_params).get("editor")));
-      // Displaying this action in .invokeLater call to let popup menu be disposed first ( <node> will be diposed immediately by corresponding events otherwise) 
-      final Frame frame = ((Frame) MapSequence.fromMap(_params).get("frame"));
-      final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, node).setVisible(true);
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowNodeInfo", t);
+    final Point point = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY());
+    SwingUtilities.convertPointToScreen(point, ((EditorComponent) MapSequence.fromMap(_params).get("editor")));
+    // Displaying this action in .invokeLater call to let popup menu be disposed first ( <node> will be diposed immediately by corresponding events otherwise) 
+    final Frame frame = ((Frame) MapSequence.fromMap(_params).get("frame"));
+    final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, node).setVisible(true);
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ShowNodeInfo_Action.class);
 }

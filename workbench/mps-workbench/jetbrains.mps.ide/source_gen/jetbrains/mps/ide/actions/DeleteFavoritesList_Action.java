@@ -10,13 +10,10 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteFavoritesList_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,16 +30,9 @@ public class DeleteFavoritesList_Action extends BaseAction {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteFavoritesList", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -56,19 +46,12 @@ public class DeleteFavoritesList_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
-      FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
-      if (favoritesManager == null) {
-        return;
-      }
-      favoritesManager.removeFavoritesList(pane.getSubId());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteFavoritesList", t);
-      }
+    ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+    FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
+    MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+    if (favoritesManager == null) {
+      return;
     }
+    favoritesManager.removeFavoritesList(pane.getSubId());
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteFavoritesList_Action.class);
 }

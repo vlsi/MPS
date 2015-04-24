@@ -11,9 +11,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteReferenceAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,16 +31,9 @@ public class DeleteReferenceAction_Action extends BaseAction {
     return parent instanceof ReferencesTreeNode;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteReferenceAction", t);
-      }
-      this.disable(event.getPresentation());
+    {
+      boolean enabled = this.isApplicable(event, _params);
+      this.setEnabledState(event.getPresentation(), enabled);
     }
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -57,16 +47,9 @@ public class DeleteReferenceAction_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
-      ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;
-      ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      refsNode.getSNode().setReference(refNode.getRef().getRole(), null);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteReferenceAction", t);
-      }
-    }
+    TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
+    ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;
+    ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
+    refsNode.getSNode().setReference(refNode.getRef().getRole(), null);
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteReferenceAction_Action.class);
 }
