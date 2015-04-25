@@ -11257,21 +11257,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNm8U" id="17DjL8wcLkd" role="3o6s8t">
-                  <node concept="3o66tx" id="17DjL8wcLkO" role="3o66t8">
-                    <property role="3o66tw" value="ant's MpsPlatform needs MPSBaseLanguage" />
-                  </node>
-                </node>
-                <node concept="2pNNFK" id="5g8Dzn7ljy7" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="5g8Dzn7ljy8" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="5gMOuD$LtFE" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/baselang-kernel" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="2pNm8U" id="17DjL8wcLlu" role="3o6s8t">
                   <node concept="3o66tx" id="17DjL8wcLm7" role="3o66t8">
                     <property role="3o66tw" value="MPSCore instantiates MigrationPropertiesManager" />
