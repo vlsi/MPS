@@ -15,6 +15,7 @@
     <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
+    <orderEntry type="library" name="mps.MPS.Platform_auto" level="project" />
     <orderEntry type="library" scope="TEST" name="mps.MPS.Editor_auto" level="project" />
     <orderEntry type="module" module-name="mps-java-jps-plugin" scope="TEST" />
     <orderEntry type="module-library">

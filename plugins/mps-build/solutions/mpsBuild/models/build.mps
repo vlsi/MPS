@@ -13031,6 +13031,9 @@
       <node concept="nCB5N" id="1iml1A5bReS" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzMQ" resolve="mps-tool" />
       </node>
+      <node concept="nCB5N" id="2EFUhCuudZM" role="nCB5Z">
+        <ref role="nCB5Y" node="16Vg0jOco3P" resolve="mps-platform" />
+      </node>
     </node>
     <node concept="398b33" id="16Vg0jOdbWA" role="3989C9">
       <property role="TrG5h" value="mps-plugin" />
