@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,21 @@ package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
+  @Deprecated
+  @ToRemove(version = 3.3)
   public BaseModelModel(Project project) {
     super(project, "model");
+  }
+
+  public BaseModelModel(jetbrains.mps.project.Project mpsProject) {
+    super(mpsProject, "model");
   }
 
   @Override

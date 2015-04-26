@@ -68,6 +68,11 @@ public class SModelRepository implements CoreComponent {
 
   private static SModelRepository INSTANCE;
 
+  /**
+   * @deprecated global collection of SModels doesn't allow us to move forward. Do not use.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SModelRepository getInstance() {
     return INSTANCE;
   }
