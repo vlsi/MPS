@@ -159,17 +159,24 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.3)
   <T> T requireRead(Computable<T> c);
 
+  /**
+   * @deprecated with no contract, what could justify its use?
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void flushEventQueue();
 
   /**
    * Returns true iff the locking and the operation were successful.
    *
-   * XXX likely shall be internal method, to use from runWriteAction (once combined with requireWrite()). There are no external uses
+   * @deprecated likely shall be internal method, to use from runWriteAction (once combined with requireWrite()). There are no external uses
    * of the method, nor do I see any reason to have any - I could imagine optional reads, but hardly could justify optional writes
    *
    * @param r
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   boolean tryWrite(Runnable r);
 
   /**
@@ -181,6 +188,8 @@ public interface ModelCommandExecutor {
    * @param <T>
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   <T> T tryWrite(Computable<T> c);
 
   /**

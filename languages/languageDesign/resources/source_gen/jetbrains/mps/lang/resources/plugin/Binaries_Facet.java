@@ -43,8 +43,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
@@ -149,16 +147,12 @@ public class Binaries_Facet extends IFacet.Stub {
                 progressMonitor.advance(1);
                 progressMonitor.step("Copying content");
 
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                  @Override
                   public void run() {
-                    ModelAccess.instance().requireWrite(new Runnable() {
-                      @Override
-                      public void run() {
-                        Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
-                          public void visit(Tuples._2<IFile, IFile> ftc) {
-                            IFileUtils.copyFileContent(ftc._0(), ftc._1());
-                          }
-                        });
+                    Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                      public void visit(Tuples._2<IFile, IFile> ftc) {
+                        IFileUtils.copyFileContent(ftc._0(), ftc._1());
                       }
                     });
                   }
