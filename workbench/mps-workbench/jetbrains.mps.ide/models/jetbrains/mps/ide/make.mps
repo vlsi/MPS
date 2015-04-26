@@ -3874,9 +3874,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="9D0Ba05uWU" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="9D0Ba05uWV" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="1tRhlzSE6_T" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3Tm1VV" id="9D0Ba05uWW" role="1B3o_S" />
@@ -3982,13 +3982,8 @@
                       <node concept="2YIFZM" id="9D0Ba05uXG" role="37wK5m">
                         <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
                         <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                        <node concept="2OqwBi" id="9D0Ba05uXH" role="37wK5m">
-                          <node concept="37vLTw" id="2BHiRxghiBb" role="2Oq$k0">
-                            <ref role="3cqZAo" node="9D0Ba05uWU" resolve="context" />
-                          </node>
-                          <node concept="liA8E" id="9D0Ba05uXJ" role="2OqNvi">
-                            <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                          </node>
+                        <node concept="37vLTw" id="2BHiRxghiBb" role="37wK5m">
+                          <ref role="3cqZAo" node="9D0Ba05uWU" resolve="mpsProject" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="9D0Ba05uXK" role="37wK5m">
@@ -6823,7 +6818,7 @@
                                     <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
                                   </node>
                                   <node concept="liA8E" id="9D0Ba05v7k" role="2OqNvi">
-                                    <ref role="37wK5l" to="hfuk:7yGn3z4N4Np" resolve="getContext" />
+                                    <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                                   </node>
                                 </node>
                               </node>

@@ -5,8 +5,6 @@ package jetbrains.mps.make;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.messages.IMessageHandler;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
@@ -33,14 +31,6 @@ public class MakeSession {
     this.myIsCleanMake = cleanMake;
     this.myIsSticky = false;
   }
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.make.MakeSession#getProject() }
-   */
-  @Deprecated
-  public IOperationContext getContext() {
-    return new ProjectOperationContext(myProject);
-  }
   @NotNull
   public Project getProject() {
     return myProject;
@@ -54,7 +44,7 @@ public class MakeSession {
   }
   /**
    * 
-   * @deprecated according to Fedor, obsolete functionality
+   * @deprecated according to Fedor, obsolete functionality. There are usecases when we can benefit from sticky make session and its explicit shutdown, perhaps shall resurrect.
    */
   @Deprecated
   @ToRemove(version = 3.2)
