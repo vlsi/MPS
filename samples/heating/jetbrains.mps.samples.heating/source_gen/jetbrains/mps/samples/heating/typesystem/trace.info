@@ -8,6 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
@@ -38,7 +39,7 @@
       <node id="2161719505004106887" at="44,68,48,5" concept="0" />
       <node id="2161719505004106887" at="44,0,50,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="2161719505004141434" at="27,337,34,7" concept="3" />
-      <node id="2161719505004108210" at="25,54,39,5" concept="8" />
+      <node id="2161719505004108210" at="25,54,39,5" concept="9" />
       <node id="2161719505004106887" at="23,0,41,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2161719505004106887" at="21,57,21,57" />
       <scope id="2161719505004085603" at="35,63,36,15" />
@@ -79,50 +80,52 @@
   </root>
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/2978080762093972440">
     <file name="AssignCorrectValue_QuickFix.java">
-      <node id="2978080762093973106" at="14,44,15,34" concept="6" />
-      <node id="2978080762093983767" at="17,35,18,218" concept="5" />
-      <node id="2978080762094012385" at="19,25,20,499" concept="2" />
-      <node id="2978080762094027047" at="21,12,22,335" concept="2" />
-      <node id="2978080762093972440" at="12,0,14,0" concept="1" trace="AssignCorrectValue_QuickFix#()V" />
-      <node id="2978080762094026487" at="21,10,23,5" concept="0" />
-      <node id="2978080762093972440" at="14,0,17,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="2978080762093984825" at="18,218,23,5" concept="3" />
-      <node id="2978080762093972440" at="17,0,25,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="2978080762093972440" at="12,40,12,40" />
-      <scope id="2978080762093972448" at="14,44,15,34" />
-      <scope id="2978080762093984828" at="19,25,20,499" />
-      <scope id="2978080762094026488" at="21,12,22,335" />
-      <scope id="2978080762093972440" at="12,0,14,0" />
-      <scope id="2978080762093972440" at="14,0,17,0">
+      <node id="2978080762093972440" at="13,40,14,135" concept="8" />
+      <node id="2978080762093973106" at="16,44,17,34" concept="6" />
+      <node id="2978080762093983767" at="19,35,20,218" concept="5" />
+      <node id="2978080762094012385" at="21,25,22,499" concept="2" />
+      <node id="2978080762094027047" at="23,12,24,335" concept="2" />
+      <node id="2978080762094026487" at="23,10,25,5" concept="0" />
+      <node id="2978080762093972440" at="13,0,16,0" concept="1" trace="AssignCorrectValue_QuickFix#()V" />
+      <node id="2978080762093972440" at="16,0,19,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2978080762093984825" at="20,218,25,5" concept="3" />
+      <node id="2978080762093972440" at="19,0,27,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2978080762093972440" at="13,40,14,135" />
+      <scope id="2978080762093972448" at="16,44,17,34" />
+      <scope id="2978080762093984828" at="21,25,22,499" />
+      <scope id="2978080762094026488" at="23,12,24,335" />
+      <scope id="2978080762093972440" at="13,0,16,0" />
+      <scope id="2978080762093972440" at="16,0,19,0">
         <var name="node" id="2978080762093972440" />
       </scope>
-      <scope id="2978080762093972442" at="17,35,23,5">
+      <scope id="2978080762093972442" at="19,35,25,5">
         <var name="prev" id="2978080762093983768" />
       </scope>
-      <scope id="2978080762093972440" at="17,0,25,0">
+      <scope id="2978080762093972440" at="19,0,27,0">
         <var name="node" id="2978080762093972440" />
       </scope>
-      <unit id="2978080762093972440" at="11,0,26,0" name="jetbrains.mps.samples.heating.typesystem.AssignCorrectValue_QuickFix" />
+      <unit id="2978080762093972440" at="12,0,28,0" name="jetbrains.mps.samples.heating.typesystem.AssignCorrectValue_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/4664795093170882986">
     <file name="RemoveSlot_QuickFix.java">
-      <node id="4664795093170883652" at="12,44,13,30" concept="6" />
-      <node id="4664795093170891849" at="15,35,16,37" concept="2" />
-      <node id="4664795093170882986" at="10,0,12,0" concept="1" trace="RemoveSlot_QuickFix#()V" />
-      <node id="4664795093170882986" at="12,0,15,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4664795093170882986" at="15,0,18,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4664795093170882986" at="10,32,10,32" />
-      <scope id="4664795093170882994" at="12,44,13,30" />
-      <scope id="4664795093170882988" at="15,35,16,37" />
-      <scope id="4664795093170882986" at="10,0,12,0" />
-      <scope id="4664795093170882986" at="12,0,15,0">
+      <node id="4664795093170882986" at="11,32,12,135" concept="8" />
+      <node id="4664795093170883652" at="14,44,15,30" concept="6" />
+      <node id="4664795093170891849" at="17,35,18,37" concept="2" />
+      <node id="4664795093170882986" at="11,0,14,0" concept="1" trace="RemoveSlot_QuickFix#()V" />
+      <node id="4664795093170882986" at="14,0,17,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4664795093170882986" at="17,0,20,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4664795093170882986" at="11,32,12,135" />
+      <scope id="4664795093170882994" at="14,44,15,30" />
+      <scope id="4664795093170882988" at="17,35,18,37" />
+      <scope id="4664795093170882986" at="11,0,14,0" />
+      <scope id="4664795093170882986" at="14,0,17,0">
         <var name="node" id="4664795093170882986" />
       </scope>
-      <scope id="4664795093170882986" at="15,0,18,0">
+      <scope id="4664795093170882986" at="17,0,20,0">
         <var name="node" id="4664795093170882986" />
       </scope>
-      <unit id="4664795093170882986" at="9,0,19,0" name="jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix" />
+      <unit id="4664795093170882986" at="10,0,21,0" name="jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5063359128233238129">
@@ -227,41 +230,42 @@
   </root>
   <root nodeRef="r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)/5224141982809132419">
     <file name="MoveItemToTheRightPositionWithinDailyPlan_QuickFix.java">
-      <node id="5224141982809133134" at="17,44,18,73" concept="6" />
-      <node id="5224141982809141196" at="20,35,21,192" concept="5" />
-      <node id="5224141982809270800" at="22,176,23,13" concept="6" />
-      <node id="5224141982809141920" at="24,5,25,223" concept="5" />
-      <node id="5224141982809164438" at="27,39,28,339" concept="6" />
-      <node id="5224141982809166927" at="31,32,32,64" concept="2" />
-      <node id="5224141982809132419" at="15,0,17,0" concept="1" trace="MoveItemToTheRightPositionWithinDailyPlan_QuickFix#()V" />
-      <node id="5224141982809132419" at="17,0,20,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="5224141982809245936" at="21,192,24,5" concept="3" />
-      <node id="5224141982809164436" at="27,0,30,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5224141982809166051" at="30,7,33,5" concept="3" />
-      <node id="5224141982809164429" at="25,223,30,7" concept="5" />
-      <node id="5224141982809132419" at="20,0,35,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="5224141982809132419" at="15,63,15,63" />
-      <scope id="5224141982809132476" at="17,44,18,73" />
-      <scope id="5224141982809245939" at="22,176,23,13" />
-      <scope id="5224141982809164437" at="27,39,28,339" />
-      <scope id="5224141982809166054" at="31,32,32,64" />
-      <scope id="5224141982809132419" at="15,0,17,0" />
-      <scope id="5224141982809132419" at="17,0,20,0">
+      <node id="5224141982809132419" at="16,63,17,135" concept="8" />
+      <node id="5224141982809133134" at="19,44,20,73" concept="6" />
+      <node id="5224141982809141196" at="22,35,23,192" concept="5" />
+      <node id="5224141982809270800" at="24,176,25,13" concept="6" />
+      <node id="5224141982809141920" at="26,5,27,223" concept="5" />
+      <node id="5224141982809164438" at="29,39,30,339" concept="6" />
+      <node id="5224141982809166927" at="33,32,34,64" concept="2" />
+      <node id="5224141982809132419" at="16,0,19,0" concept="1" trace="MoveItemToTheRightPositionWithinDailyPlan_QuickFix#()V" />
+      <node id="5224141982809132419" at="19,0,22,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5224141982809245936" at="23,192,26,5" concept="3" />
+      <node id="5224141982809164436" at="29,0,32,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5224141982809166051" at="32,7,35,5" concept="3" />
+      <node id="5224141982809164429" at="27,223,32,7" concept="5" />
+      <node id="5224141982809132419" at="22,0,37,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5224141982809132419" at="16,63,17,135" />
+      <scope id="5224141982809132476" at="19,44,20,73" />
+      <scope id="5224141982809245939" at="24,176,25,13" />
+      <scope id="5224141982809164437" at="29,39,30,339" />
+      <scope id="5224141982809166054" at="33,32,34,64" />
+      <scope id="5224141982809132419" at="16,0,19,0" />
+      <scope id="5224141982809132419" at="19,0,22,0">
         <var name="node" id="5224141982809132419" />
       </scope>
-      <scope id="5224141982809164436" at="27,0,30,0">
+      <scope id="5224141982809164436" at="29,0,32,0">
         <var name="it" id="5224141982809164436" />
       </scope>
-      <scope id="5224141982809132421" at="20,35,33,5">
+      <scope id="5224141982809132421" at="22,35,35,5">
         <var name="dailyPlan" id="5224141982809141921" />
         <var name="item" id="5224141982809141197" />
         <var name="nextSibling" id="5224141982809164430" />
       </scope>
-      <scope id="5224141982809132419" at="20,0,35,0">
+      <scope id="5224141982809132419" at="22,0,37,0">
         <var name="node" id="5224141982809132419" />
       </scope>
-      <unit id="5224141982809164436" at="26,232,30,5" name="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix$1" />
-      <unit id="5224141982809132419" at="14,0,36,0" name="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix" />
+      <unit id="5224141982809164436" at="28,232,32,5" name="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix$1" />
+      <unit id="5224141982809132419" at="15,0,38,0" name="jetbrains.mps.samples.heating.typesystem.MoveItemToTheRightPositionWithinDailyPlan_QuickFix" />
     </file>
   </root>
 </debug-info>

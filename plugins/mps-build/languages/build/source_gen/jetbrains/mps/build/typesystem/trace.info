@@ -10,6 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="TypesystemDescriptor.java">
       <unit at="8,0,60,0" name="jetbrains.mps.build.typesystem.TypesystemDescriptor" />
@@ -123,53 +124,54 @@
   </root>
   <root nodeRef="r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)/1979010778009329265">
     <file name="fixContainerName_QuickFix.java">
-      <node id="1979010778009329274" at="19,44,20,106" concept="7" />
-      <node id="1979010778009330172" at="22,35,23,192" concept="6" />
-      <node id="1979010778009330252" at="23,192,24,222" concept="6" />
-      <node id="1979010778009330397" at="25,192,26,193" concept="6" />
-      <node id="1979010778009330550" at="26,193,27,189" concept="6" />
-      <node id="1979010778009330494" at="27,189,28,588" concept="2" />
-      <node id="1979010778009330298" at="29,12,30,326" concept="2" />
-      <node id="1979010778009330356" at="33,83,34,63" concept="6" />
-      <node id="1979010778009330356" at="34,63,35,30" concept="6" />
-      <node id="1979010778009330356" at="35,30,36,230" concept="2" />
-      <node id="1979010778009330356" at="36,230,37,192" concept="2" />
-      <node id="1979010778009330356" at="37,192,38,24" concept="7" />
-      <node id="1979010778009329265" at="17,0,19,0" concept="1" trace="fixContainerName_QuickFix#()V" />
-      <node id="1979010778009330296" at="29,10,31,5" concept="0" />
-      <node id="1979010778009330356" at="35,30,37,192" concept="0" />
-      <node id="1979010778009330356" at="35,30,37,192" concept="0" />
-      <node id="1979010778009329265" at="19,0,22,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1979010778009330262" at="24,222,31,5" concept="4" />
-      <node id="1979010778009330356" at="33,0,40,0" concept="9" trace="_quotation_createNode_8v9hl7_a0a0a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1979010778009329265" at="22,0,33,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1979010778009329265" at="17,38,17,38" />
-      <scope id="1979010778009329273" at="19,44,20,106" />
-      <scope id="1979010778009330297" at="29,12,30,326" />
-      <scope id="1979010778009329265" at="17,0,19,0" />
-      <scope id="1979010778009330356" at="35,30,37,192" />
-      <scope id="1979010778009329265" at="19,0,22,0">
+      <node id="1979010778009329265" at="18,38,19,125" concept="10" />
+      <node id="1979010778009329274" at="21,44,22,106" concept="7" />
+      <node id="1979010778009330172" at="24,35,25,192" concept="6" />
+      <node id="1979010778009330252" at="25,192,26,222" concept="6" />
+      <node id="1979010778009330397" at="27,192,28,193" concept="6" />
+      <node id="1979010778009330550" at="28,193,29,189" concept="6" />
+      <node id="1979010778009330494" at="29,189,30,588" concept="2" />
+      <node id="1979010778009330298" at="31,12,32,326" concept="2" />
+      <node id="1979010778009330356" at="35,83,36,63" concept="6" />
+      <node id="1979010778009330356" at="36,63,37,30" concept="6" />
+      <node id="1979010778009330356" at="37,30,38,230" concept="2" />
+      <node id="1979010778009330356" at="38,230,39,192" concept="2" />
+      <node id="1979010778009330356" at="39,192,40,24" concept="7" />
+      <node id="1979010778009330296" at="31,10,33,5" concept="0" />
+      <node id="1979010778009330356" at="37,30,39,192" concept="0" />
+      <node id="1979010778009330356" at="37,30,39,192" concept="0" />
+      <node id="1979010778009329265" at="18,0,21,0" concept="1" trace="fixContainerName_QuickFix#()V" />
+      <node id="1979010778009329265" at="21,0,24,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1979010778009330262" at="26,222,33,5" concept="4" />
+      <node id="1979010778009330356" at="35,0,42,0" concept="9" trace="_quotation_createNode_8v9hl7_a0a0a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1979010778009329265" at="24,0,35,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1979010778009329265" at="18,38,19,125" />
+      <scope id="1979010778009329273" at="21,44,22,106" />
+      <scope id="1979010778009330297" at="31,12,32,326" />
+      <scope id="1979010778009330356" at="37,30,39,192" />
+      <scope id="1979010778009329265" at="18,0,21,0" />
+      <scope id="1979010778009329265" at="21,0,24,0">
         <var name="node" id="1979010778009329265" />
       </scope>
-      <scope id="1979010778009330263" at="25,192,28,588">
+      <scope id="1979010778009330263" at="27,192,30,588">
         <var name="dot" id="1979010778009330551" />
         <var name="text" id="1979010778009330398" />
       </scope>
-      <scope id="1979010778009330356" at="33,83,38,24">
+      <scope id="1979010778009330356" at="35,83,40,24">
         <var name="facade" id="1979010778009330356" />
         <var name="quotedNode_2" id="1979010778009330356" />
       </scope>
-      <scope id="1979010778009330356" at="33,0,40,0">
+      <scope id="1979010778009330356" at="35,0,42,0">
         <var name="parameter_1" id="1979010778009330356" />
       </scope>
-      <scope id="1979010778009329267" at="22,35,31,5">
+      <scope id="1979010778009329267" at="24,35,33,5">
         <var name="containerName" id="1979010778009330173" />
         <var name="last" id="1979010778009330253" />
       </scope>
-      <scope id="1979010778009329265" at="22,0,33,0">
+      <scope id="1979010778009329265" at="24,0,35,0">
         <var name="node" id="1979010778009329265" />
       </scope>
-      <unit id="1979010778009329265" at="16,0,41,0" name="jetbrains.mps.build.typesystem.fixContainerName_QuickFix" />
+      <unit id="1979010778009329265" at="17,0,43,0" name="jetbrains.mps.build.typesystem.fixContainerName_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)/1979010778009332526">

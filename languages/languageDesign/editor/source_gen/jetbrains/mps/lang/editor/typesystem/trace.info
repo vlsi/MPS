@@ -13,6 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
@@ -897,7 +898,7 @@
       <node id="1950447826689176450" at="36,68,40,5" concept="0" />
       <node id="1950447826689176450" at="36,0,42,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1950447826689177472" at="23,326,30,7" concept="6" />
-      <node id="1950447826689177462" at="21,30,31,5" concept="13" />
+      <node id="1950447826689177462" at="21,30,31,5" concept="14" />
       <node id="1950447826689176450" at="20,0,33,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1950447826689176450" at="18,52,18,52" />
       <scope id="1950447826689176450" at="33,46,34,65" />
@@ -1192,22 +1193,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/3302086321380659367">
     <file name="fix_Braces_QuickFix.java">
-      <node id="3302086321380661388" at="13,44,14,31" concept="9" />
-      <node id="3302086321380661401" at="16,35,17,227" concept="4" />
-      <node id="3302086321380659367" at="11,0,13,0" concept="2" trace="fix_Braces_QuickFix#()V" />
-      <node id="3302086321380659367" at="13,0,16,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3302086321380659367" at="16,0,19,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3302086321380659367" at="11,32,11,32" />
-      <scope id="3302086321380659372" at="13,44,14,31" />
-      <scope id="3302086321380659369" at="16,35,17,227" />
-      <scope id="3302086321380659367" at="11,0,13,0" />
-      <scope id="3302086321380659367" at="13,0,16,0">
+      <node id="3302086321380659367" at="12,32,13,131" concept="13" />
+      <node id="3302086321380661388" at="15,44,16,31" concept="9" />
+      <node id="3302086321380661401" at="18,35,19,227" concept="4" />
+      <node id="3302086321380659367" at="12,0,15,0" concept="2" trace="fix_Braces_QuickFix#()V" />
+      <node id="3302086321380659367" at="15,0,18,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3302086321380659367" at="18,0,21,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3302086321380659367" at="12,32,13,131" />
+      <scope id="3302086321380659372" at="15,44,16,31" />
+      <scope id="3302086321380659369" at="18,35,19,227" />
+      <scope id="3302086321380659367" at="12,0,15,0" />
+      <scope id="3302086321380659367" at="15,0,18,0">
         <var name="node" id="3302086321380659367" />
       </scope>
-      <scope id="3302086321380659367" at="16,0,19,0">
+      <scope id="3302086321380659367" at="18,0,21,0">
         <var name="node" id="3302086321380659367" />
       </scope>
-      <unit id="3302086321380659367" at="10,0,20,0" name="jetbrains.mps.lang.editor.typesystem.fix_Braces_QuickFix" />
+      <unit id="3302086321380659367" at="11,0,22,0" name="jetbrains.mps.lang.editor.typesystem.fix_Braces_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/3604384757196115093">
@@ -1883,7 +1885,7 @@
       <node id="6050628152418938626" at="47,38,52,11" concept="0" />
       <node id="6050628152418947751" at="47,38,52,11" concept="0" />
       <node id="6050628152418936547" at="60,0,66,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6050628152418938626" at="38,88,53,9" concept="13" />
+      <node id="6050628152418938626" at="38,88,53,9" concept="14" />
       <node id="6050628152418938626" at="33,12,54,7" concept="0" />
       <node id="6050628152418938616" at="33,10,55,5" concept="0" />
       <node id="6050628152418938579" at="27,266,55,5" concept="6" />
@@ -2041,7 +2043,7 @@
       <node id="6246554009626232159" at="79,67,94,7" concept="6" />
       <node id="6246554009629528280" at="97,88,112,7" concept="5" />
       <node id="6246554009626571832" at="96,0,113,5" concept="6" />
-      <node id="6246554009625688225" at="68,0,95,5" concept="13" />
+      <node id="6246554009625688225" at="68,0,95,5" concept="14" />
       <node id="6246554009624637045" at="43,0,115,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="6246554009624637045" at="41,83,41,83" />
       <scope id="6246554009627911880" at="45,226,46,13" />

@@ -14,6 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="TypesystemDescriptor.java">
       <unit at="588,49,602,7" name="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
@@ -5085,34 +5086,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/1224686720631">
     <file name="ConvertCastToSModelCast_QuickFix.java">
-      <node id="1224686740450" at="15,44,16,36" concept="9" />
-      <node id="1224686938651" at="18,35,19,23" concept="8" />
-      <node id="1224686853255" at="19,23,20,190" concept="8" />
-      <node id="1224686986340" at="20,190,21,176" concept="8" />
-      <node id="1224686998321" at="21,176,22,191" concept="3" />
-      <node id="1224686748124" at="22,191,23,237" concept="8" />
-      <node id="1224686896220" at="23,237,24,621" concept="3" />
-      <node id="1224686956848" at="24,621,25,52" concept="3" />
-      <node id="1224686963560" at="25,52,26,173" concept="3" />
-      <node id="1224686720631" at="13,0,15,0" concept="2" trace="ConvertCastToSModelCast_QuickFix#()V" />
-      <node id="1224686720631" at="15,0,18,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1224686720631" at="18,0,28,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1224686720631" at="13,45,13,45" />
-      <scope id="1224686739199" at="15,44,16,36" />
-      <scope id="1224686720631" at="13,0,15,0" />
-      <scope id="1224686720631" at="15,0,18,0">
+      <node id="1224686720631" at="14,45,15,125" concept="14" />
+      <node id="1224686740450" at="17,44,18,36" concept="9" />
+      <node id="1224686938651" at="20,35,21,23" concept="8" />
+      <node id="1224686853255" at="21,23,22,190" concept="8" />
+      <node id="1224686986340" at="22,190,23,176" concept="8" />
+      <node id="1224686998321" at="23,176,24,191" concept="3" />
+      <node id="1224686748124" at="24,191,25,237" concept="8" />
+      <node id="1224686896220" at="25,237,26,621" concept="3" />
+      <node id="1224686956848" at="26,621,27,52" concept="3" />
+      <node id="1224686963560" at="27,52,28,173" concept="3" />
+      <node id="1224686720631" at="14,0,17,0" concept="2" trace="ConvertCastToSModelCast_QuickFix#()V" />
+      <node id="1224686720631" at="17,0,20,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1224686720631" at="20,0,30,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1224686720631" at="14,45,15,125" />
+      <scope id="1224686739199" at="17,44,18,36" />
+      <scope id="1224686720631" at="14,0,17,0" />
+      <scope id="1224686720631" at="17,0,20,0">
         <var name="node" id="1224686720631" />
       </scope>
-      <scope id="1224686720633" at="18,35,26,173">
+      <scope id="1224686720633" at="20,35,28,173">
         <var name="blCast" id="1224686853256" />
         <var name="cast" id="1224686748125" />
         <var name="expr" id="1224686986341" />
         <var name="snode" id="1224686938652" />
       </scope>
-      <scope id="1224686720631" at="18,0,28,0">
+      <scope id="1224686720631" at="20,0,30,0">
         <var name="node" id="1224686720631" />
       </scope>
-      <unit id="1224686720631" at="12,0,29,0" name="jetbrains.mps.lang.smodel.typesystem.ConvertCastToSModelCast_QuickFix" />
+      <unit id="1224686720631" at="13,0,31,0" name="jetbrains.mps.lang.smodel.typesystem.ConvertCastToSModelCast_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/1226068607116">

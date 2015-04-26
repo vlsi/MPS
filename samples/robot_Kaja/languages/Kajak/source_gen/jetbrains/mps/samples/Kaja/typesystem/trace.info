@@ -11,6 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
@@ -82,28 +83,29 @@
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595817127967">
     <file name="RemoveRepetition_QuickFix.java">
-      <node id="1645404595817128789" at="17,44,18,45" concept="8" />
-      <node id="1645404595817154180" at="20,35,21,201" concept="7" />
-      <node id="1645404595817150392" at="21,201,22,382" concept="3" />
-      <node id="1645404595817162296" at="22,382,23,540" concept="3" />
-      <node id="1645404595817232693" at="23,540,24,170" concept="3" />
-      <node id="1645404595817243488" at="24,170,25,71" concept="3" />
-      <node id="1645404595817127967" at="15,0,17,0" concept="1" trace="RemoveRepetition_QuickFix#()V" />
-      <node id="1645404595817127967" at="17,0,20,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1645404595817127967" at="20,0,27,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1645404595817127967" at="15,38,15,38" />
-      <scope id="1645404595817127975" at="17,44,18,45" />
-      <scope id="1645404595817127967" at="15,0,17,0" />
-      <scope id="1645404595817127967" at="17,0,20,0">
+      <node id="1645404595817127967" at="16,38,17,132" concept="11" />
+      <node id="1645404595817128789" at="19,44,20,45" concept="8" />
+      <node id="1645404595817154180" at="22,35,23,201" concept="7" />
+      <node id="1645404595817150392" at="23,201,24,382" concept="3" />
+      <node id="1645404595817162296" at="24,382,25,540" concept="3" />
+      <node id="1645404595817232693" at="25,540,26,170" concept="3" />
+      <node id="1645404595817243488" at="26,170,27,71" concept="3" />
+      <node id="1645404595817127967" at="16,0,19,0" concept="1" trace="RemoveRepetition_QuickFix#()V" />
+      <node id="1645404595817127967" at="19,0,22,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1645404595817127967" at="22,0,29,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1645404595817127967" at="16,38,17,132" />
+      <scope id="1645404595817127975" at="19,44,20,45" />
+      <scope id="1645404595817127967" at="16,0,19,0" />
+      <scope id="1645404595817127967" at="19,0,22,0">
         <var name="node" id="1645404595817127967" />
       </scope>
-      <scope id="1645404595817127969" at="20,35,25,71">
+      <scope id="1645404595817127969" at="22,35,27,71">
         <var name="repeat" id="1645404595817154181" />
       </scope>
-      <scope id="1645404595817127967" at="20,0,27,0">
+      <scope id="1645404595817127967" at="22,0,29,0">
         <var name="node" id="1645404595817127967" />
       </scope>
-      <unit id="1645404595817127967" at="14,0,28,0" name="jetbrains.mps.samples.Kaja.typesystem.RemoveRepetition_QuickFix" />
+      <unit id="1645404595817127967" at="15,0,30,0" name="jetbrains.mps.samples.Kaja.typesystem.RemoveRepetition_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1904811872814114087">
@@ -337,7 +339,7 @@
       <node id="1223640538234" at="47,64,48,234" concept="7" />
       <node id="6630310702472189615" at="51,11,52,64" concept="7" />
       <node id="6630310702472189615" at="52,64,53,267" concept="7" />
-      <node id="8249991444799099488" at="57,42,58,143" concept="11" />
+      <node id="8249991444799099488" at="57,42,58,143" concept="12" />
       <node id="6630310702470813501" at="59,5,60,0" concept="9" />
       <node id="6630310702470230800" at="62,46,63,62" concept="8" />
       <node id="6630310702470230800" at="66,5,67,130" concept="7" />
@@ -357,7 +359,7 @@
       <node id="6067900799350600172" at="30,59,37,7" concept="5" />
       <node id="6630310702472144042" at="44,9,55,9" concept="5" />
       <node id="1223640538232" at="39,0,56,7" concept="4" />
-      <node id="6630310702470948035" at="28,5,59,5" concept="12" />
+      <node id="6630310702470948035" at="28,5,59,5" concept="13" />
       <node id="6630310702470230800" at="25,0,62,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="6630310702470230800" at="23,49,23,49" />
       <scope id="8249991444799099449" at="26,30,27,13" />

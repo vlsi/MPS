@@ -11,6 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="TypesystemDescriptor.java">
       <unit at="9,0,29,0" name="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
@@ -327,47 +328,48 @@
   </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/3834658221333152923">
     <file name="FixMethodSignature_QuickFix.java">
-      <node id="3834658221333152931" at="15,44,16,34" concept="9" />
-      <node id="3834658221333152937" at="18,35,19,637" concept="3" />
-      <node id="3834658221333152950" at="19,637,20,435" concept="8" />
-      <node id="3834658221333152960" at="20,435,21,284" concept="8" />
-      <node id="3834658221333152979" at="23,52,24,1033" concept="3" />
-      <node id="3834658221333153004" at="26,35,27,714" concept="3" />
-      <node id="3834658221333153030" at="30,66,31,300" concept="3" />
-      <node id="3834658221333153046" at="32,9,33,14" concept="1" />
-      <node id="3834658221333152923" at="13,0,15,0" concept="2" trace="FixMethodSignature_QuickFix#()V" />
-      <node id="3834658221333152923" at="15,0,18,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3834658221333152970" at="22,71,25,7" concept="6" />
-      <node id="3834658221333153002" at="25,7,28,7" concept="6" />
-      <node id="3834658221333153025" at="29,28,32,9" concept="4" />
-      <node id="3834658221333153023" at="28,7,34,7" concept="6" />
-      <node id="3834658221333152968" at="21,284,35,5" concept="4" />
-      <node id="3834658221333152923" at="18,0,37,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3834658221333152923" at="13,40,13,40" />
-      <scope id="3834658221333152930" at="15,44,16,34" />
-      <scope id="3834658221333152978" at="23,52,24,1033" />
-      <scope id="3834658221333153003" at="26,35,27,714" />
-      <scope id="3834658221333153029" at="30,66,31,300" />
-      <scope id="3834658221333152923" at="13,0,15,0" />
-      <scope id="3834658221333152923" at="15,0,18,0">
+      <node id="3834658221333152923" at="14,40,15,133" concept="11" />
+      <node id="3834658221333152931" at="17,44,18,34" concept="9" />
+      <node id="3834658221333152937" at="20,35,21,637" concept="3" />
+      <node id="3834658221333152950" at="21,637,22,435" concept="8" />
+      <node id="3834658221333152960" at="22,435,23,284" concept="8" />
+      <node id="3834658221333152979" at="25,52,26,1033" concept="3" />
+      <node id="3834658221333153004" at="28,35,29,714" concept="3" />
+      <node id="3834658221333153030" at="32,66,33,300" concept="3" />
+      <node id="3834658221333153046" at="34,9,35,14" concept="1" />
+      <node id="3834658221333152923" at="14,0,17,0" concept="2" trace="FixMethodSignature_QuickFix#()V" />
+      <node id="3834658221333152923" at="17,0,20,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3834658221333152970" at="24,71,27,7" concept="6" />
+      <node id="3834658221333153002" at="27,7,30,7" concept="6" />
+      <node id="3834658221333153025" at="31,28,34,9" concept="4" />
+      <node id="3834658221333153023" at="30,7,36,7" concept="6" />
+      <node id="3834658221333152968" at="23,284,37,5" concept="4" />
+      <node id="3834658221333152923" at="20,0,39,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3834658221333152923" at="14,40,15,133" />
+      <scope id="3834658221333152930" at="17,44,18,34" />
+      <scope id="3834658221333152978" at="25,52,26,1033" />
+      <scope id="3834658221333153003" at="28,35,29,714" />
+      <scope id="3834658221333153029" at="32,66,33,300" />
+      <scope id="3834658221333152923" at="14,0,17,0" />
+      <scope id="3834658221333152923" at="17,0,20,0">
         <var name="node" id="3834658221333152923" />
       </scope>
-      <scope id="3834658221333153025" at="29,28,32,9">
+      <scope id="3834658221333153025" at="31,28,34,9">
         <var name="j" id="3834658221333153026" />
       </scope>
-      <scope id="3834658221333153024" at="29,28,33,14" />
-      <scope id="3834658221333152969" at="22,71,34,7" />
-      <scope id="3834658221333152968" at="21,284,35,5">
+      <scope id="3834658221333153024" at="31,28,35,14" />
+      <scope id="3834658221333152969" at="24,71,36,7" />
+      <scope id="3834658221333152968" at="23,284,37,5">
         <var name="i" id="3834658221333153050" />
       </scope>
-      <scope id="3834658221333152925" at="18,35,35,5">
+      <scope id="3834658221333152925" at="20,35,37,5">
         <var name="currentParamCount" id="3834658221333152961" />
         <var name="paramCount" id="3834658221333152951" />
       </scope>
-      <scope id="3834658221333152923" at="18,0,37,0">
+      <scope id="3834658221333152923" at="20,0,39,0">
         <var name="node" id="3834658221333152923" />
       </scope>
-      <unit id="3834658221333152923" at="12,0,38,0" name="jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix" />
+      <unit id="3834658221333152923" at="13,0,40,0" name="jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix" />
     </file>
   </root>
 </debug-info>
