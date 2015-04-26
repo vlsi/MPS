@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -41,12 +40,9 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -83,7 +79,7 @@ public class TabbedEditor extends BaseNodeEditor {
       if (comp != null) {
         getComponent().remove(comp);
       }
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           installTabsComponent();
@@ -96,17 +92,17 @@ public class TabbedEditor extends BaseNodeEditor {
   };
   private MPSNodeVirtualFile myVirtualFile;
 
-  public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull IOperationContext context) {
-    super(context);
+  public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull Project mpsProject) {
+    super(mpsProject);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
-    myProject = ProjectHelper.toIdeaProject(context.getProject());
+    myProject = mpsProject;
 
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
 
     installTabsComponent();
 
-    showNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), false);
+    showNode(myBaseNode.resolve(myProject.getRepository()), false);
 
     myNextTabAction = new ShadowAction(new BaseNavigationAction(new Runnable() {
       @Override
@@ -143,7 +139,7 @@ public class TabbedEditor extends BaseNodeEditor {
           public void enterCreateMode(JComponent replace) {
             showComponent(replace);
           }
-        }, myProject
+        }, ProjectHelper.toIdeaProject(myProject)
     );
 
     JComponent c = myTabsComponent.getComponent();
@@ -158,7 +154,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
     myNextTabAction.dispose();
     myPrevTabAction.dispose();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         SModel model = getCurrentNodeModel();
@@ -210,7 +206,7 @@ public class TabbedEditor extends BaseNodeEditor {
     SModel md = node.getModel();
     SModule module = md.getModule();
     assert module != null : md.getReference().toString() + "; node is disposed = " + !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node,
-        MPSModuleRepository.getInstance());
+        myProject.getRepository());
     SNodeReference selection = select ? nodeRef : null;
     if (myTabsComponent.getCurrentTabAspect() != null) {
       Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);
@@ -237,12 +233,14 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private SModel getCurrentNodeModel() {
     SNodeReference n = getCurrentlyEditedNode();
-    if (n == null) return null;
-    return SModelRepository.getInstance().getModelDescriptor(n.getModelReference());
+    if (n == null) {
+      return null;
+    }
+    return n.getModelReference().resolve(myProject.getRepository());
   }
 
   private boolean updateProperties() {
-    final Project project = ProjectHelper.toIdeaProject(getOperationContext().getProject());
+    final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return true;
@@ -306,18 +304,18 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public void loadState(@NotNull final EditorState state) {
     super.loadState(state);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         if (state instanceof TabbedEditorState) {
           SNodeReference nodePointer = ((TabbedEditorState) state).myCurrentNode;
-          SNode node = nodePointer == null ? null : nodePointer.resolve(MPSModuleRepository.getInstance());
+          SNode node = nodePointer == null ? null : nodePointer.resolve(myProject.getRepository());
           if (node != null) {
             showNode(node, false);
           }
         } else {
           //regular editor was shown for that node last time
-          showNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), false);
+          showNode(myBaseNode.resolve(myProject.getRepository()), false);
         }
       }
     });

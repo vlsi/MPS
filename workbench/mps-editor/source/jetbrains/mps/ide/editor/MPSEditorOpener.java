@@ -45,11 +45,10 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.awt.Component;
 
 public class MPSEditorOpener {
-  private Project myProject;
+  private final Project myProject;
 
-  public MPSEditorOpener(Project project) {
+  public MPSEditorOpener(@NotNull Project project) {
     myProject = project;
-    assert myProject != null;
   }
 
   public Editor createEditorFor(IOperationContext operationContext, SNode node) {

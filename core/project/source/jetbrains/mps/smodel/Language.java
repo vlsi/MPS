@@ -317,7 +317,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   public List<SModel> getAccessoryModels() {
     List<SModel> result = new LinkedList<SModel>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+      SModel modelDescriptor = model.resolve(getRepository());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
