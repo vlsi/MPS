@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -34,30 +34,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public class GenerationTaskPool implements IGenerationTaskPool {
-
-  private class GenerationTaskAdapter implements Runnable {
-    private final GenerationTask myTask;
-
-    private GenerationTaskAdapter(GenerationTask task) {
-      myTask = task;
-    }
-    @Override
-    public void run() {
-      try {
-        TypeChecker.getInstance().generationWorkerStarted();
-        myTask.run();
-      } catch (GenerationCanceledException e) {
-        reportException(e);
-      } catch (GenerationFailureException e) {
-        reportException(e);
-      } catch (Throwable th) {
-        reportException(th);
-      } finally {
-        TypeChecker.getInstance().generationWorkerFinished();
-      }
-    }
-
-  }
 
   public GenerationTaskPool(int numberOfThreads, @NotNull ModelAccess modelAccess) {
     myModelAccess = modelAccess;
@@ -82,6 +58,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   final AtomicLong tasksInQueue = new AtomicLong();
   final Object objectLock = new Object();
+  final List<Throwable> exceptions = new LinkedList<Throwable>();
 
   @Override
   public void addTask(GenerationTask r) {
@@ -89,7 +66,15 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       return;
     }
     tasksInQueue.incrementAndGet();
-    myExecutor.execute(new ModelReadRunnable(myModelAccess, new GenerationTaskAdapter(r)));
+    myExecutor.execute(new ModelReadRunnable(myModelAccess, new GenerationTaskAdapter(r, new Callback<Throwable>() {
+      @Override
+      public void call(Throwable param) {
+        synchronized (objectLock) {
+          exceptions.add(param);
+          objectLock.notifyAll();
+        }
+      }
+    })));
   }
 
   @Override
@@ -122,23 +107,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
     // rethrow
     if (th != null) {
-      if (th instanceof GenerationCanceledException) {
-        throw (GenerationCanceledException) th;
-      } else if (th instanceof GenerationFailureException) {
-        throw (GenerationFailureException) th;
-      } else if (th instanceof RuntimeException) {
-        throw (RuntimeException) th;
-      }
-      throw new GenerationFailureException(th);
-    }
-  }
-
-  private List<Throwable> exceptions = new LinkedList<Throwable>();
-
-  private void reportException(Throwable thr) {
-    synchronized (objectLock) {
-      exceptions.add(thr);
-      objectLock.notifyAll();
+      GenerationTaskAdapter.rethrow(th);
     }
   }
 

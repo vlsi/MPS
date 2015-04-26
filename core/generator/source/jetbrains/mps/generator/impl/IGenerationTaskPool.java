@@ -16,11 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.ParallelTemplateGenerator.CompositeGenerationTask;
+import jetbrains.mps.util.Callback;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-
-import java.util.Deque;
-import java.util.LinkedList;
 
 /**
  * Evgeny Gryaznov, Mar 4, 2010
@@ -38,7 +37,7 @@ public interface IGenerationTaskPool {
   void dispose();
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
-    private final Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
+    private final CompositeGenerationTask myQueue = new CompositeGenerationTask();
     private final ModelAccess myModelAccess;
 
     public SimpleGenerationTaskPool(@NotNull ModelAccess modelAccess) {
@@ -47,44 +46,21 @@ public interface IGenerationTaskPool {
 
     @Override
     public void addTask(GenerationTask r) {
-      // FIXME addFirst seems to be for tests only
-      queue.addFirst(r);
+      myQueue.addTask(r);
     }
 
     @Override
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
-      // FIXME shall use GenerationTaskAdapter to handle exceptions, and CompositeGenerationTask for queue management
-      // not to duplicate code
-      // XXX why don't we do TypeChecker.getInstance().generationWorkerStarted() here like GenerationTaskAdapter does?
-      final Exception[] exception = new Exception[1];
-      myModelAccess.runReadAction(new Runnable() {
+      final Throwable[] exception = new Throwable[1];
+      myModelAccess.runReadAction(new GenerationTaskAdapter(myQueue, new Callback<Throwable>() {
         @Override
-        public void run() {
-          GenerationTask next;
-          try {
-            while ((next = queue.poll()) != null) {
-              next.run();
-            }
-          } catch (Exception ex) {
-            exception[0] = ex;
-          } finally {
-            queue.clear();
-          }
+        public void call(Throwable param) {
+          exception[0] = param;
         }
-      });
-      if (exception[0] == null) {
-        return;
+      }));
+      if (exception[0] != null) {
+        GenerationTaskAdapter.rethrow(exception[0]);
       }
-      if (exception[0] instanceof GenerationCanceledException) {
-        throw (GenerationCanceledException) exception[0];
-      }
-      if (exception[0] instanceof GenerationFailureException) {
-        throw (GenerationFailureException) exception[0];
-      }
-      if (exception[0] instanceof RuntimeException) {
-        throw (RuntimeException) exception[0];
-      }
-      throw new GenerationFailureException(exception[0]);
     }
 
     @Override
