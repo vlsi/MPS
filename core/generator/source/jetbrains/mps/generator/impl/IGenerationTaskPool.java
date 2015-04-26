@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -38,46 +38,57 @@ public interface IGenerationTaskPool {
   void dispose();
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
-    private Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
+    private final Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
+    private final ModelAccess myModelAccess;
+
+    public SimpleGenerationTaskPool(@NotNull ModelAccess modelAccess) {
+      myModelAccess = modelAccess;
+    }
 
     @Override
     public void addTask(GenerationTask r) {
+      // FIXME addFirst seems to be for tests only
       queue.addFirst(r);
     }
 
     @Override
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
-      GenerationTask next;
-      try {
-        while ((next = queue.poll()) != null) {
-          next.run();
+      // FIXME shall use GenerationTaskAdapter to handle exceptions, and CompositeGenerationTask for queue management
+      // not to duplicate code
+      // XXX why don't we do TypeChecker.getInstance().generationWorkerStarted() here like GenerationTaskAdapter does?
+      final Exception[] exception = new Exception[1];
+      myModelAccess.runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          GenerationTask next;
+          try {
+            while ((next = queue.poll()) != null) {
+              next.run();
+            }
+          } catch (Exception ex) {
+            exception[0] = ex;
+          } finally {
+            queue.clear();
+          }
         }
-      } finally {
-        queue.clear();
+      });
+      if (exception[0] == null) {
+        return;
       }
+      if (exception[0] instanceof GenerationCanceledException) {
+        throw (GenerationCanceledException) exception[0];
+      }
+      if (exception[0] instanceof GenerationFailureException) {
+        throw (GenerationFailureException) exception[0];
+      }
+      if (exception[0] instanceof RuntimeException) {
+        throw (RuntimeException) exception[0];
+      }
+      throw new GenerationFailureException(exception[0]);
     }
 
     @Override
     public void dispose() {
-    }
-  }
-
-  public static final class ModelReadTask implements GenerationTask {
-    @NotNull
-    private final GenerationTask myDelegate;
-
-    public ModelReadTask(@NotNull GenerationTask delegate) {
-      myDelegate = delegate;
-    }
-
-    @Override
-    public void run() throws GenerationCanceledException, GenerationFailureException {
-      boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-      try {
-        myDelegate.run();
-      } finally {
-        ModelAccess.instance().setReadEnabledFlag(oldFlag);
-      }
     }
   }
 

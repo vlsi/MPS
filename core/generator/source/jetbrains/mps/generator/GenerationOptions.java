@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ public class GenerationOptions {
   public static final int TRACE_STEPS = 1;
   public static final int TRACE_LANGS = 2;
   public static final int TRACE_TYPES = 3;
-
-  public static /*final*/ boolean USE_PARALLEL_POOL = true;
 
   private final boolean mySaveTransientModels;
   private final boolean myActiveInplaceTransform;

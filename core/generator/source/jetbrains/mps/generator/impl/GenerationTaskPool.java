@@ -16,8 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NamedThreadFactory;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,7 +41,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     private GenerationTaskAdapter(GenerationTask task) {
       myTask = task;
     }
-
     @Override
     public void run() {
       try {
@@ -54,11 +56,11 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         TypeChecker.getInstance().generationWorkerFinished();
       }
     }
+
   }
 
-  private volatile boolean isCancelled = false;
-
-  public GenerationTaskPool(int numberOfThreads) {
+  public GenerationTaskPool(int numberOfThreads, @NotNull ModelAccess modelAccess) {
+    myModelAccess = modelAccess;
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
@@ -72,17 +74,22 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     };
   }
 
+  private final ModelAccess myModelAccess;
+  private volatile boolean isCancelled = false;
+
   final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
-  ThreadPoolExecutor myExecutor;
+  final ThreadPoolExecutor myExecutor;
 
   final AtomicLong tasksInQueue = new AtomicLong();
   final Object objectLock = new Object();
 
   @Override
   public void addTask(GenerationTask r) {
-    if (isCancelled) return;
+    if (isCancelled) {
+      return;
+    }
     tasksInQueue.incrementAndGet();
-    myExecutor.execute(new GenerationTaskAdapter(r));
+    myExecutor.execute(new ModelReadRunnable(myModelAccess, new GenerationTaskAdapter(r)));
   }
 
   @Override
