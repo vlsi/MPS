@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.components.JBTextField;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JLabel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
@@ -118,7 +119,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modulePanel = new JBPanel(new GridBagLayout());
     modulePanel.add(new JBLabel("Module:"), LayoutUtil.createLabelConstraints(0));
-    myModuleChooser = new ModuleChooser();
+    myModuleChooser = new ModuleChooser(ProjectHelper.toMPSProject(project));
     myModuleChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModuleValue(myModuleChooser.getText());
@@ -128,7 +129,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modelPanel = new JBPanel(new GridBagLayout());
     modelPanel.add(new JBLabel("Model:"), LayoutUtil.createLabelConstraints(0));
-    myModelChooser = new ModelChooser();
+    myModelChooser = new ModelChooser(ProjectHelper.toMPSProject(project));
     myModelChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModelValue(myModelChooser.getText());
