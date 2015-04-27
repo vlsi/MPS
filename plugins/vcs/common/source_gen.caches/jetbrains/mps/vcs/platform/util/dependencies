@@ -46,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
@@ -54,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vcs.util.ModelVersion" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

@@ -22,9 +22,10 @@ import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
@@ -93,11 +94,12 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         String base = modelsAsText[MergeVersion.BASE.ordinal()];
         String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
-        SModelReference uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
+        SModelReference uid = VCSPersistenceSupport.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
         if (uid == null || !(uid.equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
           continue;
         }
 
+        // this.model came from repo, so it must be supported by ModelPersistence 
         mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
         if (mine == null) {
           return;

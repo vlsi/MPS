@@ -211,6 +211,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="19k7_Wy_T3O">
+    <property role="3GE5qa" value="container" />
     <ref role="1M2myG" to="tp3r:hqc44pp" resolve="Quotation" />
     <node concept="nKS2y" id="19k7_Wy_T3Q" role="1MLUbF">
       <node concept="3clFbS" id="19k7_Wy_T3R" role="2VODD2">
@@ -234,6 +235,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1$rAeIsTPCs">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1M2myG" to="tp3r:hqc44pm" resolve="AbstractAntiquotation" />
     <node concept="nKS2y" id="1$rAeIsTPCt" role="1MLUbF">
       <node concept="3clFbS" id="1$rAeIsTPCu" role="2VODD2">
@@ -915,7 +917,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="RRzwLnBtkf">
-    <property role="3GE5qa" value="builder" />
+    <property role="3GE5qa" value="container" />
     <ref role="1M2myG" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
     <node concept="nKS2y" id="RRzwLnBtkg" role="1MLUbF">
       <node concept="3clFbS" id="RRzwLnBtkh" role="2VODD2">

@@ -56,7 +56,7 @@ public class HashProvider9 extends IHashProvider {
       if (token != XmlFastScanner.OPEN_TAG && token != XmlFastScanner.SIMPLE_TAG && token != XmlFastScanner.CLOSE_TAG) {
         continue;
       }
-      if (scanner.tagDepth() != 1 || !ModelPersistence.NODE.equals(scanner.getName())) {
+      if (scanner.tagDepth() != 1 || !"node".equals(scanner.getName())) {
         continue;
       }
       switch (token) {

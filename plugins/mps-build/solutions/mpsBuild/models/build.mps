@@ -23239,48 +23239,6 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="2HvfSZ" id="35zoHQHRZ4l" role="39821P">
-                        <node concept="398BVA" id="63lu3g6ErVq" role="2HvfZ0">
-                          <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
-                          <node concept="2Ry0Ak" id="63lu3g6ErVr" role="iGT6I">
-                            <property role="2Ry0Am" value="IdeaPlugin" />
-                            <node concept="2Ry0Ak" id="63lu3g6ErVs" role="2Ry0An">
-                              <property role="2Ry0Am" value="tests" />
-                              <node concept="2Ry0Ak" id="63lu3g6ErVt" role="2Ry0An">
-                                <property role="2Ry0Am" value="blProject" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3LWZYx" id="63lu3g6BW6H" role="2HvfZ1">
-                          <property role="3LWZYw" value="blProject.iml" />
-                        </node>
-                        <node concept="3LWZYx" id="63lu3g6BW6J" role="2HvfZ1">
-                          <property role="3LWZYw" value="models/main.mps" />
-                        </node>
-                        <node concept="1AswPB" id="63lu3g6ErVp" role="2HvfZ1" />
-                      </node>
-                      <node concept="2HvfSZ" id="35zoHQHRZ4i" role="39821P">
-                        <node concept="398BVA" id="63lu3g6FKES" role="2HvfZ0">
-                          <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
-                          <node concept="2Ry0Ak" id="63lu3g6FKET" role="iGT6I">
-                            <property role="2Ry0Am" value="IdeaPlugin" />
-                            <node concept="2Ry0Ak" id="63lu3g6FKEU" role="2Ry0An">
-                              <property role="2Ry0Am" value="tests" />
-                              <node concept="2Ry0Ak" id="63lu3g6FKEV" role="2Ry0An">
-                                <property role="2Ry0Am" value="simple" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3LWZYx" id="63lu3g6FKEW" role="2HvfZ1">
-                          <property role="3LWZYw" value="simple.iml" />
-                        </node>
-                        <node concept="3LWZYx" id="63lu3g6FKEX" role="2HvfZ1">
-                          <property role="3LWZYw" value="models/simple.mps" />
-                        </node>
-                        <node concept="1AswPB" id="63lu3g6FKFg" role="2HvfZ1" />
-                      </node>
                       <node concept="2HvfSZ" id="35zoHQHRZ4h" role="39821P">
                         <node concept="398BVA" id="63lu3g6FKF0" role="2HvfZ0">
                           <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />

@@ -18,6 +18,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
+import com.intellij.openapi.diff.SimpleContent;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
@@ -79,7 +84,13 @@ public class TestMergeAction_Action extends BaseAction {
           return;
         }
 
-        MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), zipped, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+        SimpleContent[] diffContents = Sequence.fromIterable(Sequence.fromArray(zipped)).select(new ISelector<SModel, SimpleContent>() {
+          public SimpleContent select(SModel m) {
+            return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
+          }
+        }).toGenericArray(SimpleContent.class);
+
+        MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), diffContents, new String[]{"Local Version", "Merge Result", "Remote Version"}));
 
         ISaveMergedModel saver = new ISaveMergedModel() {
           public boolean save(MergeModelsDialog parent, final org.jetbrains.mps.openapi.model.SModel resultModel) {

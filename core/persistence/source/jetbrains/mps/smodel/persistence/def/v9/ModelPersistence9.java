@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
@@ -39,15 +38,15 @@ import java.util.List;
 
 public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   // per-root
-  public static final String FILE_CONTENT = ModelPersistence.FILE_CONTENT;
+  public static final String FILE_CONTENT = "content";
 
   // elements
-  public static final String MODEL = "model";
+  public static final String MODEL = ModelPersistence.MODEL;
   public static final String MODEL_ATTRIBUTE = "attribute";
   public static final String MODEL_PERSISTENCE = ModelPersistence.PERSISTENCE;
 
   public static final String NODE = "node";
-  public static final String NODE_PROPERTY = ModelPersistence.PROPERTY;
+  public static final String NODE_PROPERTY = "property";
   public static final String NODE_REFERENCE = "ref";
 
   public static final String LANGUAGES = "languages";
@@ -58,18 +57,18 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   public static final String IMPORT = "import";
 
   public static final String REGISTRY = "registry";
-  public static final String REGISTRY_LANGUAGE = ModelPersistence.LANGUAGE;
+  public static final String REGISTRY_LANGUAGE = "language";
   public static final String REGISTRY_CONCEPT = "concept";
-  public static final String REGISTRY_PROPERTY = ModelPersistence.PROPERTY;
+  public static final String REGISTRY_PROPERTY = "property";
   public static final String REGISTRY_ASSOCIATION = "reference";
   public static final String REGISTRY_AGGREGATION = "child";
 
   // attributes
 
-  public static final String REF = "ref";
-  public static final String ID = ModelPersistence.ID;
-  public static final String NAME = ModelPersistence.NAME;
-  public static final String VALUE = ModelPersistence.VALUE;
+  public static final String REF = ModelPersistence.REF;
+  public static final String ID = "id";
+  public static final String NAME = "name";
+  public static final String VALUE = "value";
   public static final String INDEX = "index";
   public static final String FLAGS = "flags";
   public static final String UNORDERED = "unordered";
@@ -88,11 +87,6 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   }
 
   @Override
-  public IModelWriter getModelWriter() {
-    return new ModelWriter9(new RegularMetaModelInfo());
-  }
-
-  @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
     final MetaModelInfoProvider mmiProvider;
     if (header != null && header.getMetaInfoProvider() != null) {
@@ -101,11 +95,6 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
       mmiProvider = new RegularMetaModelInfo();
     }
     return new ModelWriter9(mmiProvider);
-  }
-
-  @Override
-  public IModelReader getModelReader() {
-    return null;
   }
 
   @Override

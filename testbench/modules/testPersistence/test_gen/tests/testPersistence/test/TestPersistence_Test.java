@@ -47,7 +47,7 @@ public class TestPersistence_Test extends TestCase {
         String serialized = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
 
         try {
-          ModelPersistence.index(serialized.getBytes(FileUtil.DEFAULT_CHARSET), null, c);
+          ModelPersistence.index(serialized.getBytes(FileUtil.DEFAULT_CHARSET), c);
         } catch (IOException e) {
           Assert.fail(e.getMessage());
         }

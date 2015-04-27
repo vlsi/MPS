@@ -35,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.vcs.changes.ui.ChangesViewContentManager;
@@ -151,7 +151,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
     final Wrappers._T<ModelReadException> mre = new Wrappers._T<ModelReadException>(null);
     try {
-      myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
+      myFileLineToContent = VCSPersistenceSupport.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
     } catch (ModelReadException e) {
       mre.value = e;
     }

@@ -22,15 +22,17 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
+import com.intellij.openapi.diff.DiffContent;
 import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
@@ -90,8 +92,8 @@ public class TestMergeDialog {
       }
     } else
     if (args.length == 4 || args.length == 3) {
-      models[0] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[0])), false);
-      models[1] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[1])), false);
+      models[0] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[0])), false);
+      models[1] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[1])), false);
       models[2] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[2])), false);
       if (args.length == 3) {
         resultFile = File.createTempFile("", "").getAbsolutePath();
@@ -107,7 +109,7 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(new MergeTemporaryModel(models[0], true), new MergeTemporaryModel(models[1], true), new MergeTemporaryModel(models[2], true), new SimpleDiffRequest(TestMergeDialog.ourProject, (SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+            return new MergeModelsDialog(new MergeTemporaryModel(models[0], true), new MergeTemporaryModel(models[1], true), new MergeTemporaryModel(models[2], true), new SimpleDiffRequest(TestMergeDialog.ourProject, (DiffContent[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {

@@ -90,6 +90,4 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return true;
   }
-
-
 }

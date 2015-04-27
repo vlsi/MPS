@@ -496,15 +496,9 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" file="SimpleDiffRequest.java">
     <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
-    <classNode dependClassName="com.intellij.openapi.diff.SimpleContent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.diff.DiffRequest" />

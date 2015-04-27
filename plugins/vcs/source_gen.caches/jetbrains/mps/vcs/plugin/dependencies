@@ -136,6 +136,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -210,6 +211,7 @@
   <dependency className="jetbrains.mps.vcs.plugin.TestMergeAction_Action" file="TestMergeAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.diff.SimpleContent" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -224,9 +226,13 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
+    <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel" />

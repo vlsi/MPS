@@ -19,8 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public interface ICheckingRule_Runtime extends Rule_Runtime {
+  void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status);
 
-  public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status);
-
-  public boolean overrides();
+  boolean overrides();
 }
