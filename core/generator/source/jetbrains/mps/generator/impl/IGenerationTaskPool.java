@@ -52,6 +52,8 @@ public interface IGenerationTaskPool {
     @Override
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
       final Throwable[] exception = new Throwable[1];
+      // XXX I assume SimpleGenerationTaskPool is used from 'main' generation thread which already holds
+      // read lock, so that read lock fairness (GenerationTaskAdapter#run()) won't cause any deadlock here
       myModelAccess.runReadAction(new GenerationTaskAdapter(myQueue, new Callback<Throwable>() {
         @Override
         public void call(Throwable param) {

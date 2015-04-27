@@ -66,7 +66,8 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       return;
     }
     tasksInQueue.incrementAndGet();
-    myExecutor.execute(new ModelReadRunnable(myModelAccess, new GenerationTaskAdapter(r, new Callback<Throwable>() {
+    // see GenerationTaskAdapter#run for explanation why we don't use model read action here yet
+    myExecutor.execute(/*new ModelReadRunnable(myModelAccess,...)*/new GenerationTaskAdapter(r, new Callback<Throwable>() {
       @Override
       public void call(Throwable param) {
         synchronized (objectLock) {
@@ -74,7 +75,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
           objectLock.notifyAll();
         }
       }
-    })));
+    }));
   }
 
   @Override

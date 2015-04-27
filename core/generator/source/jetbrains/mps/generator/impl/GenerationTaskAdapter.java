@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Callback;
 import org.jetbrains.annotations.NotNull;
@@ -37,6 +38,20 @@ class GenerationTaskAdapter implements Runnable {
 
   @Override
   public void run() {
+    /*
+     * readEnabledFlag is a workaround to deal with implementation peculiarities of non-fair ReentrantReadWriteLock.
+     * IDEA uses non-fair RRWL for its read/write actions, which we use for our model read-write actions.
+     * Generator starts with a read action, and grabs platform read lock. GenerationTaskPool#waitForCompletion
+     * blocks read, and spawns few other threads which try to grab read lock. Unless there's a platform write action,
+     * everything is fine. If, however, there's a write action (e.g. focus lost event and document save action), platform
+     * tries to lock write lock of RRWL, which, in its non-fair state, put write requestee to the top of waiting queue,
+     * effectively preventing any further read attempts. Threads of GenerationTaskPool has no chance to complete,
+     * and read lock of primary generator thread is never released. Deadlock.
+     *
+     * Note, readEnabledFlag (or any other 'lightweight' model read alternative) doesn't look as a decent solution,
+     * as the read lock of primary thread still blocks platform write actions.
+     */
+    final boolean flag = ModelAccess.instance().setReadEnabledFlag(true);
     try {
       TypeChecker.getInstance().generationWorkerStarted();
       myTask.run();
@@ -44,6 +59,7 @@ class GenerationTaskAdapter implements Runnable {
       myExceptionReporter.call(th);
     } finally {
       TypeChecker.getInstance().generationWorkerFinished();
+      ModelAccess.instance().setReadEnabledFlag(flag);
     }
   }
 
