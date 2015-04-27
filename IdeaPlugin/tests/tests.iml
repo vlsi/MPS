@@ -14,13 +14,11 @@
         <modelRoots>
           <modelRoot type="default">
             <settings contentPath="$MODULE_DIR$" type="default">
-              <sourceRoot location="blProject/models" />
-              <sourceRoot location="blScopesTest/models" />
               <sourceRoot location="editorTests/models" />
               <sourceRoot location="makeTestBroken/models" />
               <sourceRoot location="makeTests/models" />
               <sourceRoot location="psiProject/models" />
-              <sourceRoot location="simple/models" />
+              <sourceRoot location="projectView/showRoots/src" />
             </settings>
           </modelRoot>
         </modelRoots>
