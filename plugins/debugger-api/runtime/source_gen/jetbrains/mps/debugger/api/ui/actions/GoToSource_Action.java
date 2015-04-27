@@ -9,11 +9,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class GoToSource_Action extends BaseAction {
@@ -38,21 +35,17 @@ public class GoToSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), true, true);
+        NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), true, true);
       }
     });
   }

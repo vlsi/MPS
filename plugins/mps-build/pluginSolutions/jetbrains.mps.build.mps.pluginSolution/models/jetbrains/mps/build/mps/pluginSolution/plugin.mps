@@ -542,6 +542,9 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
@@ -565,6 +568,11 @@
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439833" name="version" index="2V$B1S" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -10671,25 +10679,11 @@
       </node>
       <node concept="3Tm6S6" id="7$e6lgA3Bmv" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="7$e6lgA3Bxr" role="jymVt">
-      <property role="TrG5h" value="myOperationContext" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="7$e6lgA3Bxs" role="1B3o_S" />
-      <node concept="3uibUv" id="7$e6lgA3Bxt" role="1tU5fm">
-        <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-      </node>
-    </node>
     <node concept="3clFbW" id="7$e6lgA3BiN" role="jymVt">
       <node concept="37vLTG" id="7$e6lgA3BiO" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="OqYxEju9WB" role="1tU5fm">
           <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7$e6lgA3BiQ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="7$e6lgA3BiR" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
       <node concept="3cqZAl" id="7$e6lgA3BiS" role="3clF45" />
@@ -10702,16 +10696,6 @@
             </node>
             <node concept="37vLTw" id="2BHiRxeuywP" role="37vLTJ">
               <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7$e6lgA3Bj1" role="3cqZAp">
-          <node concept="37vLTI" id="7$e6lgA3Bj2" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuTvs" role="37vLTJ">
-              <ref role="3cqZAo" node="7$e6lgA3Bxr" resolve="myOperationContext" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgm7gF" role="37vLTx">
-              <ref role="3cqZAo" node="7$e6lgA3BiQ" resolve="context" />
             </node>
           </node>
         </node>
@@ -10986,9 +10970,9 @@
                             <ref role="1Pybhc" to="oobn:~NavigationSupport" resolve="NavigationSupport" />
                           </node>
                           <node concept="liA8E" id="7xbAEiFOQDg" role="2OqNvi">
-                            <ref role="37wK5l" to="oobn:~NavigationSupport.openNode(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,boolean,boolean):jetbrains.mps.openapi.editor.Editor" resolve="openNode" />
-                            <node concept="37vLTw" id="2BHiRxeud_4" role="37wK5m">
-                              <ref role="3cqZAo" node="7$e6lgA3Bxr" resolve="myOperationContext" />
+                            <ref role="37wK5l" to="oobn:~NavigationSupport.openNode(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.model.SNode,boolean,boolean):jetbrains.mps.openapi.editor.Editor" resolve="openNode" />
+                            <node concept="37vLTw" id="7TBXmZ6j2Qa" role="37wK5m">
+                              <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
                             </node>
                             <node concept="2GrUjf" id="3f6C5dcXtGu" role="37wK5m">
                               <ref role="2Gs0qQ" node="3f6C5dcXtGh" resolve="node" />
@@ -11689,9 +11673,13 @@
               </node>
             </node>
             <node concept="liA8E" id="38bQ8pLeENl" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-              <node concept="2L6k_Z" id="625yo8SlZlk" role="37wK5m">
-                <property role="2L6k_S" value="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
+              <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+              <node concept="pHN19" id="7TBXmZ6jGSm" role="37wK5m">
+                <node concept="2V$Bhx" id="7TBXmZ6jGTR" role="2V$M_3">
+                  <property role="2V$B1T" value="798100da-4f0a-421a-b991-71f8c50ce5d2" />
+                  <property role="2V$B1Q" value="jetbrains.mps.build" />
+                  <property role="2V$B1S" value="-1" />
+                </node>
               </node>
             </node>
           </node>
@@ -11709,9 +11697,13 @@
               </node>
             </node>
             <node concept="liA8E" id="38bQ8pLeENs" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-              <node concept="2L6k_Z" id="625yo8Sm1oa" role="37wK5m">
-                <property role="2L6k_S" value="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
+              <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+              <node concept="pHN19" id="7TBXmZ6jH4z" role="37wK5m">
+                <node concept="2V$Bhx" id="7TBXmZ6jH5Z" role="2V$M_3">
+                  <property role="2V$B1T" value="0cf935df-4699-4e9c-a132-fa109541cba3" />
+                  <property role="2V$B1Q" value="jetbrains.mps.build.mps" />
+                  <property role="2V$B1S" value="-1" />
+                </node>
               </node>
             </node>
           </node>
@@ -16856,11 +16848,6 @@
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="7$e6lgA3B_F" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7$e6lgA3B_I" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="4$Favkc8OnO" role="1oa70y" />
-    </node>
     <node concept="tnohg" id="7$e6lgA3B_J" role="tncku">
       <node concept="3clFbS" id="7$e6lgA3B_K" role="2VODD2">
         <node concept="3cpWs8" id="7$e6lgA3B_L" role="3cqZAp">
@@ -16890,12 +16877,6 @@
                         <ref role="2WH_rO" node="7$e6lgA3B_E" resolve="project" />
                       </node>
                       <node concept="2WthIp" id="7$e6lgA3B_X" role="2Oq$k0" />
-                    </node>
-                    <node concept="2OqwBi" id="7$e6lgA3B_Z" role="37wK5m">
-                      <node concept="2WthIp" id="7$e6lgA3BA0" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="7$e6lgA3BA1" role="2OqNvi">
-                        <ref role="2WH_rO" node="7$e6lgA3B_I" resolve="operationContext" />
-                      </node>
                     </node>
                   </node>
                 </node>

@@ -2735,32 +2735,28 @@
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
       <node concept="1oajcY" id="7vO$jtdT3Xc" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7vO$jtdT3Xe" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7vO$jtdT3Xf" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="7vO$jtdT3X9" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7vO$jtdT3Xb" role="1oa70y" />
+    <node concept="1DS2jV" id="7TBXmZ6i7N$" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="7TBXmZ6i7N_" role="1oa70y" />
     </node>
     <node concept="tnohg" id="7vO$jtdT3WT" role="tncku">
       <node concept="3clFbS" id="7vO$jtdT3WU" role="2VODD2">
         <node concept="3clFbF" id="3SnNvqCbxuR" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCbxuS" role="3clFbG">
-            <node concept="2YIFZM" id="2eZyLQFFo5B" role="2Oq$k0">
-              <ref role="37wK5l" to="pt5l:~ProjectHelper.getModelAccess(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-              <node concept="2OqwBi" id="2eZyLQFFo5C" role="37wK5m">
-                <node concept="1DTwFV" id="2eZyLQFFo5D" role="2OqNvi">
-                  <ref role="2WH_rO" node="7vO$jtdT3X9" resolve="project" />
+            <node concept="2OqwBi" id="7TBXmZ6isW_" role="2Oq$k0">
+              <node concept="2OqwBi" id="7TBXmZ6i8Gx" role="2Oq$k0">
+                <node concept="2WthIp" id="7TBXmZ6i8G$" role="2Oq$k0" />
+                <node concept="1DTwFV" id="7TBXmZ6i8GA" role="2OqNvi">
+                  <ref role="2WH_rO" node="7TBXmZ6i7N$" resolve="mpsProject" />
                 </node>
-                <node concept="2WthIp" id="2eZyLQFFo5E" role="2Oq$k0" />
+              </node>
+              <node concept="liA8E" id="7TBXmZ6itw5" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
             </node>
             <node concept="liA8E" id="3SnNvqCbxuU" role="2OqNvi">
-              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
               <node concept="2ShNRf" id="3SnNvqCbxuV" role="37wK5m">
                 <node concept="YeOm9" id="3SnNvqCbxuW" role="2ShVmc">
                   <node concept="1Y3b0j" id="3SnNvqCbxuX" role="YeSDq">
@@ -2777,13 +2773,13 @@
                         <node concept="3clFbF" id="VutodU6mhf" role="3cqZAp">
                           <node concept="2OqwBi" id="VutodU6mhj" role="3clFbG">
                             <node concept="liA8E" id="VutodU6mhn" role="2OqNvi">
-                              <ref role="37wK5l" to="oobn:~NavigationSupport.openNode(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,boolean,boolean):jetbrains.mps.openapi.editor.Editor" resolve="openNode" />
-                              <node concept="2OqwBi" id="7vO$jtdT3Xq" role="37wK5m">
-                                <node concept="1DTwFV" id="7vO$jtdT3Xs" role="2OqNvi">
-                                  <ref role="2WH_rO" node="7vO$jtdT3Xe" resolve="context" />
-                                </node>
-                                <node concept="2WthIp" id="7vO$jtdT3Xr" role="2Oq$k0">
+                              <ref role="37wK5l" to="oobn:~NavigationSupport.openNode(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.model.SNode,boolean,boolean):jetbrains.mps.openapi.editor.Editor" resolve="openNode" />
+                              <node concept="2OqwBi" id="7TBXmZ6itAf" role="37wK5m">
+                                <node concept="2WthIp" id="7TBXmZ6itAi" role="2Oq$k0">
                                   <ref role="32nkFo" node="7vO$jtdT3WS" resolve="GoToSource" />
+                                </node>
+                                <node concept="1DTwFV" id="7TBXmZ6itAk" role="2OqNvi">
+                                  <ref role="2WH_rO" node="7TBXmZ6i7N$" resolve="mpsProject" />
                                 </node>
                               </node>
                               <node concept="2OqwBi" id="7vO$jtdT3Xu" role="37wK5m">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.datatransfer;
 
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SimpleColoredComponent;
@@ -25,6 +24,8 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -52,15 +53,15 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   private SModelReference[] mySelectedImports;
   private SModuleReference[] mySelectedLanguages;
 
-  public AddRequiredImportsDialog(Project project, @NotNull SModelReference[] requiredImports, @NotNull SModuleReference[] requiredLanguages) {
-    super(project, true);
+  public AddRequiredImportsDialog(@NotNull final Project project, @NotNull SModelReference[] requiredImports, @NotNull SModuleReference[] requiredLanguages) {
+    super(ProjectHelper.toIdeaProject(project), true);
     myRequiredImports = requiredImports;
     myRequiredLanguages = requiredLanguages;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (SModelReference ref : myRequiredImports) {
-          SModel descr = SModelRepository.getInstance().getModelDescriptor(ref);
+          SModel descr = ref.resolve(project.getRepository());
           if (descr == null) continue;
           SModule module = descr.getModule();
           if (module == null) continue;

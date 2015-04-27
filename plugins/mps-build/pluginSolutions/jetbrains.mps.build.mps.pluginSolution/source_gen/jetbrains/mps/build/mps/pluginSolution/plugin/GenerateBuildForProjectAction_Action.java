@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -37,14 +36,10 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
-    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((MPSProject) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
+    final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((MPSProject) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((MPSProject) MapSequence.fromMap(_params).get("project"))));
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {

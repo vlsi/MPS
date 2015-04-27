@@ -34,16 +34,12 @@ import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -296,7 +292,8 @@ public class CopyPasteUtil {
     }
     final List<SModuleReference> additionalLanguages = new ArrayList<SModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    Project mpsProject = context.getProject();
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
@@ -321,10 +318,10 @@ public class CopyPasteUtil {
       return null;
     }
 
-    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new SModuleReference[necessaryLanguages.size()]));
+    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(mpsProject, necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new SModuleReference[necessaryLanguages.size()]));
     dialog.show();
     if (dialog.isOK()) {
-      return addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
+      return addImports(mpsProject, targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
     } else {
       return null;
     }
@@ -340,7 +337,7 @@ public class CopyPasteUtil {
 
     return CopyPasteUtil.addImportsWithDialog(targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
-  private static Runnable addImports(Project p, final SModel targetModel, @NotNull final SModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
+  private static Runnable addImports(final Project p, final SModel targetModel, @NotNull final SModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
     if (requiredLanguages.length == 0 && requiredImports.length == 0) {
       return null;
     }
@@ -365,12 +362,12 @@ public class CopyPasteUtil {
           ((AbstractModule) targetModule).addUsedLanguage(language);
         }
 
-        for (SModelReference model : requiredImports) {
-          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
-          if (modelDescriptor == null) {
+        for (SModelReference modelRef : requiredImports) {
+          SModel model = modelRef.resolve(p.getRepository());
+          if (model == null) {
             continue;
           }
-          SModule module = modelDescriptor.getModule();
+          SModule module = model.getModule();
           if (module == null || module == targetModule) {
             continue;
           }
@@ -399,20 +396,6 @@ public class CopyPasteUtil {
     }
     return false;
   }
-  /**
-   * Deprecated since MPS 3.1 looks like not used anymore
-   */
-  @Deprecated
-  public static boolean doesClipboardContainNode() {
-    Transferable content = null;
-    for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
-      if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-        return true;
-      }
-      break;
-    }
-    return false;
-  }
   public static synchronized void setDataConverter(CopyPasteUtil.IDataConverter dataConverter) {
     myDataConverter = dataConverter;
   }
@@ -421,15 +404,6 @@ public class CopyPasteUtil {
   }
   public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
     return (myDataConverter == null ? null : myDataConverter.getPasteNodeData(model, project));
-  }
-  public static boolean canPasteNodes(SModel model, SNode anchor) {
-    List<SNode> nodes = getNodesFromClipboard(model);
-    return ListSequence.fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
-  }
-  public static synchronized void pasteNodes(SModel model, SNode anchor, Project project) {
-    if (myDataConverter != null) {
-      myDataConverter.pasteAsNodes(model, anchor, project);
-    }
   }
   @Deprecated
   public static interface IDataConverter {

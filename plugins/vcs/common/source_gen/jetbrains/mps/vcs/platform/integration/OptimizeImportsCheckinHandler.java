@@ -19,7 +19,6 @@ import java.io.File;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -68,7 +67,6 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
     if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT) {
       Collection<File> affectedFiles = myPanel.getFiles();
       final List<SModel> affectedModels = new ArrayList<SModel>();
-      SModelRepository modelRepository = SModelRepository.getInstance();
       for (File file : affectedFiles) {
         SModel model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
         if (model == null) {

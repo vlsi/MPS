@@ -97,109 +97,107 @@
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/5337823064584388635">
     <file name="OptimizeImportsCheckinHandler.java">
-      <node id="5337823064584388661" at="33,0,34,0" concept="15" trace="LOG" />
-      <node id="5337823064584388666" at="34,0,35,0" concept="6" trace="myProject" />
-      <node id="5337823064584388669" at="35,0,36,0" concept="6" trace="myPanel" />
-      <node id="5337823064584388680" at="36,84,37,29" concept="5" />
-      <node id="5337823064584388686" at="37,29,38,25" concept="5" />
-      <node id="5337823064584388696" at="40,44,41,51" concept="12" />
-      <node id="5337823064584388703" at="44,70,45,86" concept="11" />
-      <node id="5337823064584388717" at="48,40,49,56" concept="11" />
-      <node id="5337823064584388726" at="49,56,50,43" concept="5" />
-      <node id="5337823064584388731" at="50,43,51,21" concept="12" />
-      <node id="5337823064584388737" at="54,34,55,98" concept="5" />
-      <node id="5337823064584388748" at="58,31,59,100" concept="5" />
-      <node id="5337823064584388770" at="68,63,69,58" concept="11" />
-      <node id="5337823064584388777" at="69,58,70,66" concept="11" />
-      <node id="5337823064584388784" at="70,66,71,72" concept="11" />
-      <node id="5337823064584388793" at="72,39,73,129" concept="11" />
-      <node id="5337823064584388810" at="74,28,75,19" concept="4" />
-      <node id="5337823064584388811" at="76,9,77,34" concept="5" />
-      <node id="5337823064584388816" at="78,7,79,90" concept="11" />
-      <node id="5337823064584388823" at="79,90,80,30" concept="5" />
-      <node id="5337823064584388859" at="84,31,85,80" concept="5" />
-      <node id="5337823064584388871" at="86,59,87,56" concept="5" />
-      <node id="5337823064584388828" at="92,29,93,64" concept="5" />
-      <node id="5337823064584388879" at="95,5,96,46" concept="12" />
-      <node id="5337823064584388654" at="103,91,104,74" concept="12" />
-      <node id="5337823064584388641" at="99,0,101,0" concept="3" trace="OptimizeImportsCheckinHandlerFactory#()V" />
-      <node id="5337823064584388692" at="40,0,43,0" concept="10" trace="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
-      <node id="5337823064584388756" at="61,0,64,0" concept="10" trace="refresh#()V" />
-      <node id="5337823064584388805" at="73,129,76,9" concept="9" />
-      <node id="5337823064584388866" at="85,80,88,15" concept="8" />
-      <node id="5337823064584388672" at="36,0,40,0" concept="3" trace="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
-      <node id="5337823064584388733" at="53,0,57,0" concept="10" trace="restoreState#()V" />
-      <node id="5337823064584388744" at="57,0,61,0" concept="10" trace="saveState#()V" />
-      <node id="5337823064584388645" at="101,0,106,0" concept="10" trace="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
-      <node id="5337823064584388713" at="47,0,53,0" concept="10" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <node id="6352952732700888509" at="84,0,90,0" concept="10" trace="run#()V" />
-      <node id="5337823064584388788" at="71,72,78,7" concept="8" />
-      <node id="6352952732700865546" at="82,30,90,13" concept="5" />
-      <node id="5337823064584388843" at="81,11,91,9" concept="9" />
-      <node id="5337823064584388825" at="80,30,94,7" concept="20" />
-      <node id="5337823064584388709" at="45,86,64,6" concept="12" />
-      <node id="5337823064584388699" at="43,0,66,0" concept="10" trace="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
-      <node id="5337823064584388765" at="67,54,95,5" concept="9" />
-      <node id="5337823064584388761" at="66,0,98,0" concept="10" trace="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
-      <scope id="5337823064584388759" at="62,29,62,29" />
-      <scope id="5337823064584388644" at="99,51,99,51" />
-      <scope id="5337823064584388695" at="40,44,41,51" />
-      <scope id="5337823064584388736" at="54,34,55,98" />
-      <scope id="5337823064584388747" at="58,31,59,100" />
-      <scope id="5337823064584388809" at="74,28,75,19" />
-      <scope id="5337823064584388870" at="86,59,87,56" />
-      <scope id="5337823064584388826" at="92,0,93,64">
+      <node id="5337823064584388661" at="32,0,33,0" concept="15" trace="LOG" />
+      <node id="5337823064584388666" at="33,0,34,0" concept="6" trace="myProject" />
+      <node id="5337823064584388669" at="34,0,35,0" concept="6" trace="myPanel" />
+      <node id="5337823064584388680" at="35,84,36,29" concept="5" />
+      <node id="5337823064584388686" at="36,29,37,25" concept="5" />
+      <node id="5337823064584388696" at="39,44,40,51" concept="12" />
+      <node id="5337823064584388703" at="43,70,44,86" concept="11" />
+      <node id="5337823064584388717" at="47,40,48,56" concept="11" />
+      <node id="5337823064584388726" at="48,56,49,43" concept="5" />
+      <node id="5337823064584388731" at="49,43,50,21" concept="12" />
+      <node id="5337823064584388737" at="53,34,54,98" concept="5" />
+      <node id="5337823064584388748" at="57,31,58,100" concept="5" />
+      <node id="5337823064584388770" at="67,63,68,58" concept="11" />
+      <node id="5337823064584388777" at="68,58,69,66" concept="11" />
+      <node id="5337823064584388793" at="70,39,71,129" concept="11" />
+      <node id="5337823064584388810" at="72,28,73,19" concept="4" />
+      <node id="5337823064584388811" at="74,9,75,34" concept="5" />
+      <node id="5337823064584388816" at="76,7,77,90" concept="11" />
+      <node id="5337823064584388823" at="77,90,78,30" concept="5" />
+      <node id="5337823064584388859" at="82,31,83,80" concept="5" />
+      <node id="5337823064584388871" at="84,59,85,56" concept="5" />
+      <node id="5337823064584388828" at="90,29,91,64" concept="5" />
+      <node id="5337823064584388879" at="93,5,94,46" concept="12" />
+      <node id="5337823064584388654" at="101,91,102,74" concept="12" />
+      <node id="5337823064584388641" at="97,0,99,0" concept="3" trace="OptimizeImportsCheckinHandlerFactory#()V" />
+      <node id="5337823064584388692" at="39,0,42,0" concept="10" trace="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
+      <node id="5337823064584388756" at="60,0,63,0" concept="10" trace="refresh#()V" />
+      <node id="5337823064584388805" at="71,129,74,9" concept="9" />
+      <node id="5337823064584388866" at="83,80,86,15" concept="8" />
+      <node id="5337823064584388672" at="35,0,39,0" concept="3" trace="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
+      <node id="5337823064584388733" at="52,0,56,0" concept="10" trace="restoreState#()V" />
+      <node id="5337823064584388744" at="56,0,60,0" concept="10" trace="saveState#()V" />
+      <node id="5337823064584388645" at="99,0,104,0" concept="10" trace="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
+      <node id="5337823064584388713" at="46,0,52,0" concept="10" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="6352952732700888509" at="82,0,88,0" concept="10" trace="run#()V" />
+      <node id="5337823064584388788" at="69,66,76,7" concept="8" />
+      <node id="6352952732700865546" at="80,30,88,13" concept="5" />
+      <node id="5337823064584388843" at="79,11,89,9" concept="9" />
+      <node id="5337823064584388825" at="78,30,92,7" concept="20" />
+      <node id="5337823064584388709" at="44,86,63,6" concept="12" />
+      <node id="5337823064584388699" at="42,0,65,0" concept="10" trace="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
+      <node id="5337823064584388765" at="66,54,93,5" concept="9" />
+      <node id="5337823064584388761" at="65,0,96,0" concept="10" trace="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
+      <scope id="5337823064584388759" at="61,29,61,29" />
+      <scope id="5337823064584388644" at="97,51,97,51" />
+      <scope id="5337823064584388695" at="39,44,40,51" />
+      <scope id="5337823064584388736" at="53,34,54,98" />
+      <scope id="5337823064584388747" at="57,31,58,100" />
+      <scope id="5337823064584388809" at="72,28,73,19" />
+      <scope id="5337823064584388870" at="84,59,85,56" />
+      <scope id="5337823064584388826" at="90,0,91,64">
         <var name="e" id="5337823064584388834" />
       </scope>
-      <scope id="5337823064584388827" at="92,29,93,64" />
-      <scope id="5337823064584388653" at="103,91,104,74" />
-      <scope id="5337823064584388679" at="36,84,38,25" />
-      <scope id="5337823064584388641" at="99,0,101,0" />
-      <scope id="5337823064584388692" at="40,0,43,0" />
-      <scope id="5337823064584388716" at="48,40,51,21">
+      <scope id="5337823064584388827" at="90,29,91,64" />
+      <scope id="5337823064584388653" at="101,91,102,74" />
+      <scope id="5337823064584388679" at="35,84,37,25" />
+      <scope id="5337823064584388641" at="97,0,99,0" />
+      <scope id="5337823064584388692" at="39,0,42,0" />
+      <scope id="5337823064584388716" at="47,40,50,21">
         <var name="panel" id="5337823064584388718" />
       </scope>
-      <scope id="5337823064584388756" at="61,0,64,0" />
-      <scope id="5337823064584388866" at="85,80,88,15">
+      <scope id="5337823064584388756" at="60,0,63,0" />
+      <scope id="5337823064584388866" at="83,80,86,15">
         <var name="affectedModel" id="5337823064584388868" />
       </scope>
-      <scope id="5337823064584388672" at="36,0,40,0">
+      <scope id="5337823064584388672" at="35,0,39,0">
         <var name="panel" id="5337823064584388677" />
         <var name="project" id="5337823064584388675" />
       </scope>
-      <scope id="5337823064584388733" at="53,0,57,0" />
-      <scope id="5337823064584388744" at="57,0,61,0" />
-      <scope id="6352952732700888510" at="84,31,88,15" />
-      <scope id="5337823064584388792" at="72,39,77,34">
+      <scope id="5337823064584388733" at="52,0,56,0" />
+      <scope id="5337823064584388744" at="56,0,60,0" />
+      <scope id="6352952732700888510" at="82,31,86,15" />
+      <scope id="5337823064584388792" at="70,39,75,34">
         <var name="model" id="5337823064584388794" />
       </scope>
-      <scope id="5337823064584388645" at="101,0,106,0">
+      <scope id="5337823064584388645" at="99,0,104,0">
         <var name="context" id="5337823064584388650" />
         <var name="panel" id="5337823064584388648" />
       </scope>
-      <scope id="5337823064584388713" at="47,0,53,0" />
-      <scope id="6352952732700888509" at="84,0,90,0" />
-      <scope id="5337823064584388788" at="71,72,78,7">
+      <scope id="5337823064584388713" at="46,0,52,0" />
+      <scope id="6352952732700888509" at="82,0,88,0" />
+      <scope id="5337823064584388788" at="69,66,76,7">
         <var name="file" id="5337823064584388790" />
       </scope>
-      <scope id="5337823064584388847" at="82,30,90,13" />
-      <scope id="5337823064584388836" at="81,11,91,9" />
-      <scope id="5337823064584388702" at="44,70,64,6">
+      <scope id="5337823064584388847" at="80,30,88,13" />
+      <scope id="5337823064584388836" at="79,11,89,9" />
+      <scope id="5337823064584388702" at="43,70,63,6">
         <var name="optimizeImportsCheckBox" id="5337823064584388704" />
       </scope>
-      <scope id="5337823064584388699" at="43,0,66,0" />
-      <scope id="5337823064584388769" at="68,63,94,7">
+      <scope id="5337823064584388699" at="42,0,65,0" />
+      <scope id="5337823064584388769" at="67,63,92,7">
         <var name="affectedFiles" id="5337823064584388771" />
         <var name="affectedModels" id="5337823064584388778" />
-        <var name="modelRepository" id="5337823064584388785" />
         <var name="project" id="5337823064584388817" />
       </scope>
-      <scope id="5337823064584388764" at="67,54,96,46" />
-      <scope id="5337823064584388761" at="66,0,98,0" />
-      <unit id="6352952732700888509" at="83,75,90,11" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$2" />
-      <unit id="5337823064584388638" at="98,0,107,0" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory" />
-      <unit id="5337823064584388712" at="46,15,64,5" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$1" />
-      <unit id="5337823064584388635" at="32,0,108,0" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
+      <scope id="5337823064584388764" at="66,54,94,46" />
+      <scope id="5337823064584388761" at="65,0,96,0" />
+      <unit id="6352952732700888509" at="81,75,88,11" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$2" />
+      <unit id="5337823064584388638" at="96,0,105,0" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory" />
+      <unit id="5337823064584388712" at="45,15,63,5" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$1" />
+      <unit id="5337823064584388635" at="31,0,106,0" name="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
     </file>
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199020">
