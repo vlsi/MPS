@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="MPS" name="MPS">
+      <configuration>
+        <option name="UUID" value="7f347daf-67a1-4601-ae46-88b25599aa46" />
+        <option name="generatorOutputPath" value="$MODULE_DIR$/src_gen" />
+        <option name="modelRoots" />
+        <modelRoots>
+          <modelRoot type="default">
+            <settings contentPath="$MODULE_DIR$" type="default">
+              <sourceRoot location="blProject/models" />
+              <sourceRoot location="blScopesTest/models" />
+              <sourceRoot location="editorTests/models" />
+              <sourceRoot location="makeTestBroken/models" />
+              <sourceRoot location="makeTests/models" />
+              <sourceRoot location="psiProject/models" />
+              <sourceRoot location="simple/models" />
+            </settings>
+          </modelRoot>
+        </modelRoots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
