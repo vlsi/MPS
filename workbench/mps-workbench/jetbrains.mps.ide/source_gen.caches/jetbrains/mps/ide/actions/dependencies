@@ -1323,9 +1323,7 @@
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopup" />
     <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1333,8 +1331,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelItem" />
