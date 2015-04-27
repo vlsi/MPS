@@ -4,8 +4,6 @@ package jetbrains.mps.workbench.dialogs.project.properties.project;
 
 import com.intellij.ui.components.JBPanel;
 import org.jetbrains.mps.openapi.ui.Modifiable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
@@ -26,15 +24,13 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.AbstractListModel;
 import java.util.List;
 
 public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
-  private static final Logger LOG = LogManager.getLogger(ProjectPropertiesComponent.class);
-  private StandaloneMPSProject myProject;
-  private ProjectProperties myProperties = new ProjectProperties();
-  private ProjectPrefsExtraPanel[] myExtraPanels;
+  private final StandaloneMPSProject myProject;
+  private final ProjectProperties myProperties = new ProjectProperties();
+  private final ProjectPrefsExtraPanel[] myExtraPanels;
 
   public ProjectPropertiesComponent(Project project, ProjectPrefsExtraPanel[] extraPanels) {
     super(true);
@@ -108,7 +104,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
   }
   @Override
   public void apply() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         myProperties.saveTo(myProject);
@@ -119,11 +115,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     }
   }
   public void reset() {
-    try {
-      myProperties.loadFrom(myProject);
-    } catch (Throwable t) {
-      LOG.error("This should not be thrown", t);
-    }
+    myProperties.loadFrom(myProject);
     for (ProjectPrefsExtraPanel ep : myExtraPanels) {
       ep.reset();
     }
@@ -145,13 +137,11 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       return myProperties.getModules();
     }
     public void addPath(Path path) {
-      myProperties.getModules().add(path);
-      int i = myProperties.getModules().indexOf(path);
+      int i = myProperties.add(path);
       fireIntervalAdded(this, i, i);
     }
     public void removePath(Object path) {
-      int i = myProperties.getModules().indexOf(path);
-      myProperties.getModules().remove(path);
+      int i = myProperties.remove((Path) path);
       fireIntervalRemoved(this, i, i);
     }
   }

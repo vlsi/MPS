@@ -60,7 +60,6 @@ import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -236,13 +235,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           new ModelTableCellRender() {
             @Override
             protected DependencyCellState getDependencyCellState(final org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              DependencyCellState res = ModelAccess.instance().runReadAction(new Computable<DependencyCellState>() {
+              DependencyCellState res = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<DependencyCellState>() {
                 @Override
                 public DependencyCellState compute() {
-                  if (!StateUtil.isAvailable(modelReference)) {
+                  final SModel model = modelReference.resolve(myProject.getRepository());
+                  if (model == null) {
                     return DependencyCellState.NOT_AVAILABLE;
                   }
-                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
+                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), model)) {
                     return DependencyCellState.NOT_IN_SCOPE;
                   }
                   if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {

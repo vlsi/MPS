@@ -20,62 +20,43 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458686420">
     <file name="StateUtil.java">
-      <node id="3995997045458686421" at="13,0,14,0" concept="13" trace="normal" />
-      <node id="3995997045458686429" at="16,75,17,85" concept="10" />
-      <node id="3995997045458686442" at="19,71,20,83" concept="10" />
-      <node id="3995997045458686455" at="22,50,23,61" concept="9" />
-      <node id="3995997045458686470" at="24,43,25,19" concept="10" />
-      <node id="3995997045458686472" at="26,5,27,16" concept="10" />
-      <node id="3995997045458686523" at="30,28,31,15" concept="10" />
-      <node id="3995997045458686531" at="33,28,34,16" concept="10" />
-      <node id="3995997045458686537" at="35,5,36,13" concept="10" />
-      <node id="3995997045458686584" at="38,87,39,69" concept="10" />
-      <node id="3995997045458686594" at="41,57,42,59" concept="10" />
-      <node id="3995997045458686605" at="14,0,16,0" concept="2" trace="StateUtil#()V" />
-      <node id="3995997045458686425" at="16,0,19,0" concept="14" trace="isAvailable#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
-      <node id="3995997045458686438" at="19,0,22,0" concept="14" trace="isAvailable#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Z" />
-      <node id="3995997045458686460" at="23,61,26,5" concept="7" />
-      <node id="3995997045458686521" at="29,59,32,5" concept="7" />
-      <node id="3995997045458686529" at="32,5,35,5" concept="7" />
-      <node id="3995997045458686576" at="38,0,41,0" concept="14" trace="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
-      <node id="3995997045458686590" at="41,0,44,0" concept="14" trace="compare#(Ljava/lang/String;Ljava/lang/String;)I" />
-      <node id="3995997045458686451" at="22,0,29,0" concept="14" trace="isAvailable#(Ljava/lang/String;)Z" />
-      <node id="3995997045458686517" at="29,0,38,0" concept="14" trace="compare#(ZZ)I" />
-      <scope id="3995997045458686608" at="14,22,14,22" />
-      <scope id="3995997045458686428" at="16,75,17,85" />
-      <scope id="3995997045458686441" at="19,71,20,83" />
-      <scope id="3995997045458686469" at="24,43,25,19" />
-      <scope id="3995997045458686522" at="30,28,31,15" />
-      <scope id="3995997045458686530" at="33,28,34,16" />
-      <scope id="3995997045458686583" at="38,87,39,69" />
-      <scope id="3995997045458686593" at="41,57,42,59" />
-      <scope id="3995997045458686605" at="14,0,16,0" />
-      <scope id="3995997045458686425" at="16,0,19,0">
-        <var name="modelReference" id="3995997045458686436" />
-      </scope>
-      <scope id="3995997045458686438" at="19,0,22,0">
-        <var name="moduleReference" id="3995997045458686449" />
-      </scope>
-      <scope id="3995997045458686576" at="38,0,41,0">
-        <var name="moduleRef1" id="3995997045458686577" />
-        <var name="moduleRef2" id="3995997045458686579" />
-      </scope>
-      <scope id="3995997045458686590" at="41,0,44,0">
+      <node id="3995997045458686421" at="9,0,10,0" concept="13" trace="normal" />
+      <node id="3995997045458686455" at="12,50,13,61" concept="9" />
+      <node id="3995997045458686470" at="14,43,15,19" concept="10" />
+      <node id="3995997045458686472" at="16,5,17,16" concept="10" />
+      <node id="3995997045458686523" at="20,28,21,15" concept="10" />
+      <node id="3995997045458686531" at="23,28,24,16" concept="10" />
+      <node id="3995997045458686537" at="25,5,26,13" concept="10" />
+      <node id="3995997045458686594" at="28,57,29,59" concept="10" />
+      <node id="3995997045458686605" at="10,0,12,0" concept="2" trace="StateUtil#()V" />
+      <node id="3995997045458686460" at="13,61,16,5" concept="7" />
+      <node id="3995997045458686521" at="19,59,22,5" concept="7" />
+      <node id="3995997045458686529" at="22,5,25,5" concept="7" />
+      <node id="3995997045458686590" at="28,0,31,0" concept="14" trace="compare#(Ljava/lang/String;Ljava/lang/String;)I" />
+      <node id="3995997045458686451" at="12,0,19,0" concept="14" trace="isAvailable#(Ljava/lang/String;)Z" />
+      <node id="3995997045458686517" at="19,0,28,0" concept="14" trace="compare#(ZZ)I" />
+      <scope id="3995997045458686608" at="10,23,10,23" />
+      <scope id="3995997045458686469" at="14,43,15,19" />
+      <scope id="3995997045458686522" at="20,28,21,15" />
+      <scope id="3995997045458686530" at="23,28,24,16" />
+      <scope id="3995997045458686593" at="28,57,29,59" />
+      <scope id="3995997045458686605" at="10,0,12,0" />
+      <scope id="3995997045458686590" at="28,0,31,0">
         <var name="path1" id="3995997045458686600" />
         <var name="path2" id="3995997045458686602" />
       </scope>
-      <scope id="3995997045458686454" at="22,50,27,16">
+      <scope id="3995997045458686454" at="12,50,17,16">
         <var name="file" id="3995997045458686456" />
       </scope>
-      <scope id="3995997045458686451" at="22,0,29,0">
+      <scope id="3995997045458686451" at="12,0,19,0">
         <var name="path" id="3995997045458686474" />
       </scope>
-      <scope id="3995997045458686520" at="29,59,36,13" />
-      <scope id="3995997045458686517" at="29,0,38,0">
+      <scope id="3995997045458686520" at="19,59,26,13" />
+      <scope id="3995997045458686517" at="19,0,28,0">
         <var name="isOk1" id="3995997045458686539" />
         <var name="isOk2" id="3995997045458686541" />
       </scope>
-      <unit id="3995997045458686420" at="12,0,45,0" name="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
+      <unit id="3995997045458686420" at="8,0,32,0" name="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     </file>
   </root>
   <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458695685">
