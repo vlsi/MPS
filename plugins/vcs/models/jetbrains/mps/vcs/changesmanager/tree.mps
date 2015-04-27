@@ -2,11 +2,11 @@
 <model ref="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -548,12 +548,6 @@
       <node concept="3cqZAl" id="3ghtVL8TofU" role="3clF45" />
       <node concept="3Tm1VV" id="3ghtVL8TofV" role="1B3o_S" />
       <node concept="3clFbS" id="3ghtVL8TofW" role="3clF47">
-        <node concept="3clFbF" id="3ghtVL8Tog$" role="3cqZAp">
-          <node concept="2YIFZM" id="3ghtVL8TogA" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="3ghtVL8Tog7" role="3cqZAp">
           <node concept="3clFbS" id="3ghtVL8Tog8" role="3clFbx">
             <node concept="3clFbF" id="312Lf7n$py5" role="3cqZAp">
@@ -944,12 +938,6 @@
       </node>
       <node concept="3Tm1VV" id="3ghtVL8Tomw" role="1B3o_S" />
       <node concept="3clFbS" id="3ghtVL8Tomx" role="3clF47">
-        <node concept="3clFbF" id="3ghtVL8TomI" role="3cqZAp">
-          <node concept="2YIFZM" id="3ghtVL8TomJ" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-          </node>
-        </node>
         <node concept="3cpWs6" id="3ghtVL8TonB" role="3cqZAp">
           <node concept="2OqwBi" id="3ghtVL8TonC" role="3cqZAk">
             <node concept="2OqwBi" id="3ghtVL8TonD" role="2Oq$k0">
@@ -1546,14 +1534,7 @@
           <ref role="3uigEE" to="gwd2:4oT3Lbm4LXh" resolve="Feature" />
         </node>
       </node>
-      <node concept="3Tm6S6" id="3ghtVL8TsOl" role="1B3o_S" />
       <node concept="3clFbS" id="3ghtVL8TsOk" role="3clF47">
-        <node concept="3clFbF" id="3ghtVL8Tv3N" role="3cqZAp">
-          <node concept="2YIFZM" id="3ghtVL8Tv3P" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="3ghtVL8TsOK" role="3cqZAp">
           <node concept="3cpWsn" id="3ghtVL8TsOL" role="3cpWs9">
             <property role="TrG5h" value="result" />
@@ -2089,12 +2070,8 @@
         <node concept="3clFbS" id="3ghtVL8TsO8" role="3clF47">
           <node concept="3clFbF" id="1KUoCipv$Qc" role="3cqZAp">
             <node concept="2OqwBi" id="1KUoCipv$Qd" role="3clFbG">
-              <node concept="2YIFZM" id="1KUoCipv$Qe" role="2Oq$k0">
-                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-              </node>
               <node concept="liA8E" id="1KUoCipv$Qf" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                 <node concept="1bVj0M" id="1KUoCipv$Qg" role="37wK5m">
                   <node concept="3clFbS" id="1KUoCipv$Qh" role="1bW5cS">
                     <node concept="3cpWs8" id="1KUoCipv$Qi" role="3cqZAp">
@@ -2161,6 +2138,13 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="2YIFZM" id="CdpzC2NTFk" role="2Oq$k0">
+                <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="pt5l:~ProjectHelper.getModelAccess(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <node concept="37vLTw" id="CdpzC2NTLX" role="37wK5m">
+                  <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
                 </node>
               </node>
             </node>

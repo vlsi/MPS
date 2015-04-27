@@ -148,7 +148,8 @@ public class ConceptDescendantsCache implements CoreComponent {
    * @return non-empty set of descendant concepts including the one supplied.
    */
   public Set<String> getDescendants(String conceptFqName) {
-    ModelAccess.assertLegalRead();
+    myModuleRepository.getModelAccess().checkReadAccess();
+
     synchronized (myNotProcessedRuntimes) {
       if (!myNotProcessedRuntimes.isEmpty()) {
         loadConcepts(myNotProcessedRuntimes);
@@ -170,7 +171,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   }
 
   public Set<String> getDirectDescendants(String conceptFqName) {
-    ModelAccess.assertLegalRead();
+    myModuleRepository.getModelAccess().checkReadAccess();
     Set<String> result = myDescendantsCache.get(conceptFqName);
     return result != null ? result : Collections.<String>emptySet();
   }

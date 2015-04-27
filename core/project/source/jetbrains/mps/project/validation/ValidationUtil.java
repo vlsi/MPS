@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
@@ -45,12 +44,14 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.File;
@@ -61,12 +62,18 @@ import java.util.List;
 import java.util.Set;
 
 public class ValidationUtil {
-  public static void validateModel(final SModel model, Consumer<ValidationProblem> consumer) {
-    ModelAccess.assertLegalRead();
+  public static void validateModel(@NotNull final SModel model, @NotNull Consumer<ValidationProblem> consumer) {
+    final SRepository repository = model.getRepository();
+    if (repository != null) {
+      repository.getModelAccess().checkReadAccess();
+    }
 
-    if (model instanceof TransientSModel) return;
+    if (model instanceof TransientSModel) {
+      return;
+    }
 
     //todo replace those two by a check for accessibility in repo
+    // XXX should not they go after InvalidSModel check, so that we could get problems of invalid model before we try to find out whether the model is registered?
     if (model.getModule() == null) return;
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return;
 
@@ -94,6 +101,11 @@ public class ValidationUtil {
               ". Please run Tools->Migration 3.2->Migrate from Names to Ids"));
     }
 
+    if (repository == null) {
+      consumer.consume(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"));
+      return;
+    }
+
     SModule module = model.getModule();
     final SModelReference modelToValidateRef = model.getReference();
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
@@ -110,13 +122,13 @@ public class ValidationUtil {
     langsToCheck.addAll(SModelOperations.getAllImportedLanguages(model));
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
     for (final SModuleReference lang : langsToCheck) {
-      if (model.getRepository().getModule(lang.getModuleId()) == null) {
+      if (repository.getModule(lang.getModuleId()) == null) {
         consumer.consume(new MissingLanguageError(model, lang));
       }
     }
 
     for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
-      if (model.getRepository().getModule(devKit.getModuleId()) == null) {
+      if (repository.getModule(devKit.getModuleId()) == null) {
         consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()) {
         });
       }

@@ -38,7 +38,6 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
@@ -103,13 +102,18 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private MyState myState = new MyState();
 
   private final ClassLoaderManager myClassLoaderManager;
+  /**
+   * FIXME this field is here just for the sake of ModelAccess, ApplicationComponent shall not depend on any project-related stuff,
+   * rather shall get it from context.
+   */
+  private final MPSModuleRepository myRepository;
 
   public IntentionsManager(MPSCoreComponents coreComponents) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
+    myRepository = coreComponents.getModuleRepository();
   }
 
   public synchronized IntentionType getHighestAvailableBaseIntentionType(final SNode node, final EditorContext editorContext) {
-    ModelAccess.assertLegalRead();
     final GetHighestAvailableIntentionTypeVisitor visitor = new GetHighestAvailableIntentionTypeVisitor();
     checkLoaded();
     TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) editorContext.getEditorComponent(), new Runnable() {
@@ -134,7 +138,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, @NotNull final SNode node,
       final EditorContext context) {
-    ModelAccess.assertLegalRead();
     checkLoaded();
     return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(),
         new Computable<Collection<Pair<IntentionExecutable, SNode>>>() {
@@ -265,7 +268,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void load() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    // XXX here we assume ModuleRepositoryFacade is in fact facade to MPSModuleRepository, that's why we use ModelAccess of the latter
+    myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
@@ -307,7 +311,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
 
   private void clear() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         myIntentionFactories.clear();

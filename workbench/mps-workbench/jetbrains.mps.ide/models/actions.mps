@@ -37605,10 +37605,19 @@
         </node>
       </node>
       <node concept="3clFbS" id="_dGddVVXvJ" role="3clF47">
-        <node concept="3clFbF" id="7osd9LNuCzw" role="3cqZAp">
-          <node concept="2YIFZM" id="7osd9LNuCOM" role="3clFbG">
-            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3clFbF" id="3yVaudEZqGU" role="3cqZAp">
+          <node concept="2OqwBi" id="3yVaudEZrlc" role="3clFbG">
+            <node concept="2OqwBi" id="3yVaudEZqVu" role="2Oq$k0">
+              <node concept="37vLTw" id="3yVaudEZqGS" role="2Oq$k0">
+                <ref role="3cqZAo" node="_dGddVVXvH" resolve="project" />
+              </node>
+              <node concept="liA8E" id="3yVaudEZrky" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3yVaudEZrCM" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.checkReadAccess():void" resolve="checkReadAccess" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="_dGddVVXvM" role="3cqZAp">

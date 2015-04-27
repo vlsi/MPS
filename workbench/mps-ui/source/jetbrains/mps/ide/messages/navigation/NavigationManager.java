@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.FileWithLogicalPosition;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.make.FileWithPosition;
@@ -51,12 +52,11 @@ public class NavigationManager {
 
   public boolean canNavigateTo(Object o) {
     assert !(o instanceof IMessage) : "accepts object to navigate, not a message";
-    ModelAccess.assertLegalRead();
     return getHandlers(o).isEmpty();
   }
 
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    ModelAccess.assertLegalRead();
+    ProjectHelper.getModelAccess(project).checkReadAccess();
 
     for (INavigationHandler h : getHandlers(o)) {
       h.navigate(o, project, focus, select);
