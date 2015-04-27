@@ -105,12 +105,14 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 }
               }
 
-              IDelta folded = ListSequence.fromList(deltas).ofType(IDelta.class).reduceLeft(new ILeftCombinator<IDelta, IDelta>() {
-                public IDelta combine(IDelta a, IDelta b) {
-                  return a.merge(b);
-                }
-              });
-              _output_ixa0pj_a0a = Sequence.fromIterable(_output_ixa0pj_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(folded)))));
+              if (ListSequence.fromList(deltas).isNotEmpty()) {
+                IDelta folded = ListSequence.fromList(deltas).ofType(IDelta.class).reduceLeft(new ILeftCombinator<IDelta, IDelta>() {
+                  public IDelta combine(IDelta a, IDelta b) {
+                    return a.merge(b);
+                  }
+                });
+                _output_ixa0pj_a0a = Sequence.fromIterable(_output_ixa0pj_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(folded)))));
+              }
 
               monitor.currentProgress().advanceWork("Build language ANT files", 1, "writing...");
 
