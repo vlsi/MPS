@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.plugin.test.multiModules.module1.root1.MPSC2" file="MPSC2.java" />
-</dependenciesRoot>
-
