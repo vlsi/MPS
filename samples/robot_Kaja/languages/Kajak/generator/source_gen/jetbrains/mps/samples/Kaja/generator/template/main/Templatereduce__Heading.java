@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class Templatereduce__Heading extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -33,7 +34,7 @@ public class Templatereduce__Heading extends TemplateDeclarationBase implements 
         final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_3308300503039683770(new SourceSubstituteMacroNodeContext(context, copySrcMacro_tax5tt_b0a0c0c0b0c));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_tax5tt_b0a0c0c0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039683764", context);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("actualArgument", child3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
         }
         // TODO validate child 
       }

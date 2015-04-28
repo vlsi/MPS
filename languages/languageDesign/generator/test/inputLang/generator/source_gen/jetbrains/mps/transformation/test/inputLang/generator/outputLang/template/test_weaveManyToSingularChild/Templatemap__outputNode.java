@@ -40,7 +40,7 @@ public class Templatemap__outputNode extends TemplateDeclarationBase implements 
         } finally {
         }
         if (tnode3 != null) {
-          tnode2.addChild("specialChild", tnode3);
+          tnode2.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11bc24e708cL, "specialChild"), tnode3);
         }
         // TODO validate child 
       }

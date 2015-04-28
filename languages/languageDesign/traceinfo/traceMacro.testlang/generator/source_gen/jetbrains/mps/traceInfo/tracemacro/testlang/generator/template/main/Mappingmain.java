@@ -24,8 +24,8 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -92,7 +92,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_7980748436587788180(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0b0c0b51));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_b0a0c0b0c0b51, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587788173", context);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-            tnode1.addChild("inputSequence", child3);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac72911aL, "inputSequence"), child3);
           }
           // TODO validate child 
         }
@@ -101,7 +101,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7980748436587788201(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0c0c0b51));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_417xrn_b0a0c0c0c0b51, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587788174", context);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
-            tnode1.addChild("body", child5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body"), child5);
           }
           // TODO validate child 
         }
@@ -125,7 +125,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           } finally {
           }
           for (SNode child8 : TemplateUtil.asNotNull(tlist6)) {
-            tnode1.addChild("variable", child8);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable"), child8);
           }
           // TODO validate child 
         }

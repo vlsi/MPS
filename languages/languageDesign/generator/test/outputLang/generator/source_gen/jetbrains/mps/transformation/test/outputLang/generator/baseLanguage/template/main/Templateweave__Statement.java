@@ -38,7 +38,7 @@ public class Templateweave__Statement extends TemplateDeclarationBase implements
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("returnType", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), tnode2);
         }
         // TODO validate child 
       }
@@ -49,7 +49,7 @@ public class Templateweave__Statement extends TemplateDeclarationBase implements
         } finally {
         }
         if (tnode3 != null) {
-          tnode1.addChild("visibility", tnode3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode3);
         }
         // TODO validate child 
       }
@@ -69,21 +69,21 @@ public class Templateweave__Statement extends TemplateDeclarationBase implements
                 } finally {
                 }
                 if (tnode6 != null) {
-                  tnode5.addChild("commentPart", tnode6);
+                  tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode6);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode5 != null) {
-              tnode4.addChild("statement", tnode5);
+              tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode5);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode4 != null) {
-          tnode1.addChild("body", tnode4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), tnode4);
         }
         // TODO validate child 
       }
@@ -103,7 +103,7 @@ public class Templateweave__Statement extends TemplateDeclarationBase implements
         } finally {
         }
         if (tnode8 != null) {
-          tnode7.addChild("commentPart", tnode8);
+          tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode8);
         }
         // TODO validate child 
       }

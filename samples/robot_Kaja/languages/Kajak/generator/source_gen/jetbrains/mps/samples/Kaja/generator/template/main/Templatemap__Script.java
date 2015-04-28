@@ -42,7 +42,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("visibility", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode2);
         }
         // TODO validate child 
       }
@@ -54,7 +54,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
         } finally {
         }
         if (tnode3 != null) {
-          tnode1.addChild("superclass", tnode3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), tnode3);
         }
         // TODO validate child 
       }
@@ -69,7 +69,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode5 != null) {
-              tnode4.addChild("returnType", tnode5);
+              tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), tnode5);
             }
             // TODO validate child 
           }
@@ -80,7 +80,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode6 != null) {
-              tnode4.addChild("visibility", tnode6);
+              tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode6);
             }
             // TODO validate child 
           }
@@ -91,14 +91,14 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode7 != null) {
-              tnode4.addChild("body", tnode7);
+              tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), tnode7);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode4 != null) {
-          tnode1.addChild("member", tnode4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnode4);
         }
         // TODO validate child 
       }
@@ -115,7 +115,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode9 != null) {
-              tnode8.addChild("returnType", tnode9);
+              tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), tnode9);
             }
             // TODO validate child 
           }
@@ -126,7 +126,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode10 != null) {
-              tnode8.addChild("visibility", tnode10);
+              tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode10);
             }
             // TODO validate child 
           }
@@ -150,21 +150,21 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                   }
                 }
                 for (SNode child14 : TemplateUtil.asNotNull(tlist12)) {
-                  tnode11.addChild("statement", child14);
+                  tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child14);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode11 != null) {
-              tnode8.addChild("body", tnode11);
+              tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), tnode11);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode8 != null) {
-          tnode1.addChild("member", tnode8);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnode8);
         }
         // TODO validate child 
       }
@@ -184,7 +184,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
           }
         }
         for (SNode child17 : TemplateUtil.asNotNull(tlist15)) {
-          tnode1.addChild("member", child17);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), child17);
         }
         // TODO validate child 
       }
@@ -204,7 +204,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
           }
         }
         for (SNode child20 : TemplateUtil.asNotNull(tlist18)) {
-          tnode1.addChild("member", child20);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), child20);
         }
         // TODO validate child 
       }
@@ -220,7 +220,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode22 != null) {
-              tnode21.addChild("returnType", tnode22);
+              tnode21.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), tnode22);
             }
             // TODO validate child 
           }
@@ -231,7 +231,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
             } finally {
             }
             if (tnode23 != null) {
-              tnode21.addChild("visibility", tnode23);
+              tnode21.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode23);
             }
             // TODO validate child 
           }
@@ -256,7 +256,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                         } finally {
                         }
                         if (tnode27 != null) {
-                          tnode26.addChild("type", tnode27);
+                          tnode26.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), tnode27);
                         }
                         // TODO validate child 
                       }
@@ -272,28 +272,28 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                             } finally {
                             }
                             if (tnode29 != null) {
-                              tnode28.addChild("creator", tnode29);
+                              tnode28.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), tnode29);
                             }
                             // TODO validate child 
                           }
                         } finally {
                         }
                         if (tnode28 != null) {
-                          tnode26.addChild("initializer", tnode28);
+                          tnode26.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), tnode28);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode26 != null) {
-                      tnode25.addChild("localVariableDeclaration", tnode26);
+                      tnode25.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"), tnode26);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode25 != null) {
-                  tnode24.addChild("statement", tnode25);
+                  tnode24.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode25);
                 }
                 // TODO validate child 
               }
@@ -313,7 +313,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                         } finally {
                         }
                         if (tnode32 != null) {
-                          tnode31.addChild("operand", tnode32);
+                          tnode31.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode32);
                         }
                         // TODO validate child 
                       }
@@ -325,21 +325,21 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                         } finally {
                         }
                         if (tnode33 != null) {
-                          tnode31.addChild("operation", tnode33);
+                          tnode31.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), tnode33);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode31 != null) {
-                      tnode30.addChild("expression", tnode31);
+                      tnode30.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnode31);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode30 != null) {
-                  tnode24.addChild("statement", tnode30);
+                  tnode24.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode30);
                 }
                 // TODO validate child 
               }
@@ -359,7 +359,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                         } finally {
                         }
                         if (tnode36 != null) {
-                          tnode35.addChild("operand", tnode36);
+                          tnode35.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode36);
                         }
                         // TODO validate child 
                       }
@@ -371,28 +371,28 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                         } finally {
                         }
                         if (tnode37 != null) {
-                          tnode35.addChild("operation", tnode37);
+                          tnode35.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), tnode37);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode35 != null) {
-                      tnode34.addChild("expression", tnode35);
+                      tnode34.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnode35);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode34 != null) {
-                  tnode24.addChild("statement", tnode34);
+                  tnode24.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode34);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode24 != null) {
-              tnode21.addChild("body", tnode24);
+              tnode21.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), tnode24);
             }
             // TODO validate child 
           }
@@ -412,28 +412,28 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                     } finally {
                     }
                     if (tnode40 != null) {
-                      tnode39.addChild("componentType", tnode40);
+                      tnode39.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType"), tnode40);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode39 != null) {
-                  tnode38.addChild("type", tnode39);
+                  tnode38.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), tnode39);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode38 != null) {
-              tnode21.addChild("parameter", tnode38);
+              tnode21.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"), tnode38);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode21 != null) {
-          tnode1.addChild("member", tnode21);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnode21);
         }
         // TODO validate child 
       }

@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -43,7 +44,7 @@ public class Templateaaaaa extends TemplateDeclarationBase implements TemplateDe
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("statements", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements"), tnode2);
         }
         // TODO validate child 
       }

@@ -37,7 +37,7 @@ public class Templatereduce__CommentLine extends TemplateDeclarationBase impleme
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("commentPart", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode2);
         }
         // TODO validate child 
       }

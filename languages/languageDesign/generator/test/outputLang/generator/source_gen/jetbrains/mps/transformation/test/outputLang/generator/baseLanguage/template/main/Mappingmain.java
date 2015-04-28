@@ -106,7 +106,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput2 = context.getInput();
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_b0a0c0c0c0b71, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604251671", context);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-            tnode1.addChild("outputChild", child3);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child3);
           }
           // TODO validate child 
         }
@@ -161,7 +161,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput2 = context.getInput();
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_b0a0c0c0c0b91, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301918", context);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-            tnode1.addChild("outputChild", child3);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child3);
           }
           // TODO validate child 
         }
@@ -208,7 +208,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("type", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), tnode3);
               }
               // TODO validate child 
             }
@@ -220,14 +220,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("initializer", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("localVariableDeclaration", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"), tnode2);
           }
           // TODO validate child 
         }
@@ -248,7 +248,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
               }
               if (tnode7 != null) {
-                tnode6.addChild("type", tnode7);
+                tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), tnode7);
               }
               // TODO validate child 
             }
@@ -264,7 +264,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                   }
                   if (tnode9 != null) {
-                    tnode8.addChild("leftExpression", tnode9);
+                    tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode9);
                   }
                   // TODO validate child 
                 }
@@ -276,21 +276,21 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                   }
                   if (tnode10 != null) {
-                    tnode8.addChild("rightExpression", tnode10);
+                    tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode10);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode8 != null) {
-                tnode6.addChild("initializer", tnode8);
+                tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), tnode8);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode6 != null) {
-            tnode5.addChild("localVariableDeclaration", tnode6);
+            tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"), tnode6);
           }
           // TODO validate child 
         }
@@ -356,14 +356,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
                       final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_2681305894288283515(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0b0b0b0b0b0b0b0c0c32));
                       tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_417xrn_b0a0c0b0b0b0b0b0b0b0c0c32, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288283512", context);
                       for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
-                        tnode4.addChild("expression", child6);
+                        tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), child6);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode4 != null) {
-                    tnode3.addChild("rightExpression", tnode4);
+                    tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode4);
                   }
                   // TODO validate child 
                 }
@@ -376,28 +376,28 @@ public class Mappingmain implements TemplateMappingConfiguration {
                       final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_2681305894288283498(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0b0b0c0b0b0b0b0c0c32));
                       tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_417xrn_b0a0c0b0b0c0b0b0b0b0c0c32, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288283495", context);
                       for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
-                        tnode7.addChild("expression", child9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), child9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode3.addChild("leftExpression", tnode7);
+                    tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("expression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), tnode3);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("expression", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), tnode2);
           }
           // TODO validate child 
         }
@@ -430,7 +430,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_2681305894288387824(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0b0c0c42));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_b0a0c0b0c0c42, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288387817", context);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-            tnode1.addChild("rightExpression", child3);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), child3);
           }
           // TODO validate child 
         }
@@ -439,7 +439,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_2681305894288387821(new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_b0a0c0c0c0c42));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_417xrn_b0a0c0c0c0c42, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288387816", context);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
-            tnode1.addChild("leftExpression", child5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), child5);
           }
           // TODO validate child 
         }
@@ -499,7 +499,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("leftExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -515,7 +515,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                   }
                   if (tnode5 != null) {
-                    tnode4.addChild("operand", tnode5);
+                    tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode5);
                   }
                   // TODO validate child 
                 }
@@ -527,21 +527,21 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                   }
                   if (tnode6 != null) {
-                    tnode4.addChild("operation", tnode6);
+                    tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), tnode6);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("rightExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("expression", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), tnode2);
           }
           // TODO validate child 
         }
@@ -601,7 +601,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("leftExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -609,14 +609,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
               Collection<SNode> tlist4 = null;
               tlist4 = new Templateprocess42(((SNode) context.getPatternVariable("patternVar_ref"))).apply(environment, context);
               for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
-                tnode2.addChild("rightExpression", child5);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), child5);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("expression", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), tnode2);
           }
           // TODO validate child 
         }

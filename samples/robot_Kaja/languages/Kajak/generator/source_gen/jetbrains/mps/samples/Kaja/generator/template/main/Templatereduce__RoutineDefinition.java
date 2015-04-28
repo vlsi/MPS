@@ -40,7 +40,7 @@ public class Templatereduce__RoutineDefinition extends TemplateDeclarationBase i
         } finally {
         }
         if (tnode3 != null) {
-          tnode2.addChild("returnType", tnode3);
+          tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), tnode3);
         }
         // TODO validate child 
       }
@@ -51,7 +51,7 @@ public class Templatereduce__RoutineDefinition extends TemplateDeclarationBase i
         } finally {
         }
         if (tnode4 != null) {
-          tnode2.addChild("visibility", tnode4);
+          tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode4);
         }
         // TODO validate child 
       }
@@ -64,14 +64,14 @@ public class Templatereduce__RoutineDefinition extends TemplateDeclarationBase i
             final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_3308300503039907032(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_18musb_b0a0c0b0b0e0d0c));
             tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_18musb_b0a0c0b0b0e0d0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039907017", context1);
             for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
-              tnode5.addChild("statement", child7);
+              tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child7);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode5 != null) {
-          tnode2.addChild("body", tnode5);
+          tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), tnode5);
         }
         // TODO validate child 
       }

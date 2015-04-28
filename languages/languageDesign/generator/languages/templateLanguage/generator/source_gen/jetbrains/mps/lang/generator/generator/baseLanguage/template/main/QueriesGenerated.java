@@ -240,14 +240,8 @@ public class QueriesGenerated {
     }
     return "";
   }
-  public static Object propertyMacro_GetPropertyValue_1246578104714226066(final PropertyMacroContext _context) {
-    return _context.getNode().getRoleInParent();
-  }
   public static Object propertyMacro_GetPropertyValue_1246578104714225930(final PropertyMacroContext _context) {
     return "child" + ++((int[]) _context.getVariable("varindex"))[0];
-  }
-  public static Object propertyMacro_GetPropertyValue_1246578104714225971(final PropertyMacroContext _context) {
-    return _context.getNode().getRoleInParent();
   }
   public static Object propertyMacro_GetPropertyValue_8196331069071119405(final PropertyMacroContext _context) {
     return GenUtil.saveVar(_context, _context.getNode(), "tlist" + ++((int[]) _context.getVariable("varindex"))[0]);
@@ -2206,7 +2200,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2338220375237894673(final SourceSubstituteMacroNodeContext _context) {
     return AttributeOperations.getPropertyDeclaration(_context.getNode());
   }
-  public static SNode sourceNodeQuery_2338220375238789910(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4219501964100899286(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2073070af8a4bc2aL, 0x2073070af8a4bc2cL, "role"));
   }
   public static SNode sourceNodeQuery_2338220375238797104(final SourceSubstituteMacroNodeContext _context) {
@@ -2221,8 +2215,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1246578104714226092(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
+  public static SNode sourceNodeQuery_4219501964100894403(final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode().getContainmentLink().getDeclarationNode();
+  }
   public static SNode sourceNodeQuery_1246578104714225962(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
+  }
+  public static SNode sourceNodeQuery_4219501964100892448(final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode().getContainmentLink().getDeclarationNode();
   }
   public static SNode sourceNodeQuery_99767819676502867(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());

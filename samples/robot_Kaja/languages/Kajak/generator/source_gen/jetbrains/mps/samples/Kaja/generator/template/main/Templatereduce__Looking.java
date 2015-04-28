@@ -16,6 +16,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class Templatereduce__Looking extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -52,7 +53,7 @@ public class Templatereduce__Looking extends TemplateDeclarationBase implements 
           }
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("actualArgument", child4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
         }
         // TODO validate child 
       }

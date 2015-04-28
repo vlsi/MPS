@@ -36,7 +36,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_b0a0a1a3a1a2));
         tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_q702qm_b0a0a1a3a1a2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086888", context);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child3);
         }
         // TODO validate child 
       }

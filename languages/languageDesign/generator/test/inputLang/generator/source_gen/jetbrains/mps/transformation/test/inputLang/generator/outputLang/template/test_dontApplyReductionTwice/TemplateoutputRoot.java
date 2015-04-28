@@ -38,7 +38,7 @@ public class TemplateoutputRoot extends TemplateDeclarationBase implements Templ
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("outputChild", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), tnode2);
         }
         // TODO validate child 
       }

@@ -66,7 +66,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("outputChild", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode6);
               }
               // TODO validate child 
             }
@@ -82,7 +82,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
                 tlist7 = TemplateUtil.singletonList(tnode8);
               }
               for (SNode child9 : TemplateUtil.asNotNull(tlist7)) {
-                tnode5.addChild("outputChild", child9);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child9);
               }
               // TODO validate child 
             }
@@ -94,7 +94,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
               } finally {
               }
               if (tnode10 != null) {
-                tnode5.addChild("outputChild", tnode10);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode10);
               }
               // TODO validate child 
             }
@@ -140,7 +140,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
       {
         Collection<SNode> tlist2 = applyNode0(environment, context);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child3);
         }
         // TODO validate child 
       }

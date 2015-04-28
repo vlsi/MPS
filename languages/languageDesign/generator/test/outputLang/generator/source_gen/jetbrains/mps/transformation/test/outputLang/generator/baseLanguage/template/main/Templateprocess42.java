@@ -49,7 +49,7 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("leftExpression", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode2);
         }
         // TODO validate child 
       }
@@ -69,7 +69,7 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
                 } finally {
                 }
                 if (tnode5 != null) {
-                  tnode4.addChild("operand", tnode5);
+                  tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode5);
                 }
                 // TODO validate child 
               }
@@ -81,21 +81,21 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
                 } finally {
                 }
                 if (tnode6 != null) {
-                  tnode4.addChild("operation", tnode6);
+                  tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), tnode6);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode4 != null) {
-              tnode3.addChild("expression", tnode4);
+              tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), tnode4);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode3 != null) {
-          tnode1.addChild("rightExpression", tnode3);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
         }
         // TODO validate child 
       }

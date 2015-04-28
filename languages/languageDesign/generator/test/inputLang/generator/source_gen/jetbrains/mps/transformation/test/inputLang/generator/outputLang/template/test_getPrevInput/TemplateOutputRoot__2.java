@@ -82,7 +82,7 @@ public class TemplateOutputRoot__2 extends TemplateDeclarationBase implements Te
                     }
                   }, context4));
                   for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
-                    tnode5.addChild("outputChild", child7);
+                    tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child7);
                   }
                   // TODO validate child 
                 }
@@ -100,7 +100,7 @@ public class TemplateOutputRoot__2 extends TemplateDeclarationBase implements Te
                     }
                   }, null, context4));
                   for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
-                    tnode5.addChild("outputChild", child9);
+                    tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child9);
                   }
                   // TODO validate child 
                 }
@@ -122,7 +122,7 @@ public class TemplateOutputRoot__2 extends TemplateDeclarationBase implements Te
                     }
                   }, context4));
                   for (SNode child11 : TemplateUtil.asNotNull(tlist10)) {
-                    tnode5.addChild("outputChild", child11);
+                    tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), child11);
                   }
                   // TODO validate child 
                 }
@@ -143,7 +143,7 @@ public class TemplateOutputRoot__2 extends TemplateDeclarationBase implements Te
           }
         }
         for (SNode child12 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child12);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child12);
         }
         // TODO validate child 
       }

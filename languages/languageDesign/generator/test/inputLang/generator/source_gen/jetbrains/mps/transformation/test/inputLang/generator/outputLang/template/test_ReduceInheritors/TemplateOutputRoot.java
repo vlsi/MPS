@@ -59,7 +59,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         } finally {
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child4);
         }
         // TODO validate child 
       }
@@ -68,7 +68,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_b0a0a1a4a1a2));
         tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_q702qm_b0a0a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", context);
         for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
-          tnode1.addChild("outputChild", child6);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child6);
         }
         // TODO validate child 
       }
@@ -80,7 +80,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         } finally {
         }
         if (tnode7 != null) {
-          tnode1.addChild("outputChild", tnode7);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), tnode7);
         }
         // TODO validate child 
       }

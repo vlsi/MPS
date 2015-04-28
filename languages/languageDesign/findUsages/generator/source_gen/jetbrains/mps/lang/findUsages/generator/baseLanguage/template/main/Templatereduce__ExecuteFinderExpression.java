@@ -43,7 +43,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("actualArgument", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode2);
         }
         // TODO validate child 
       }
@@ -52,7 +52,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
         final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_5097877160789322137(new SourceSubstituteMacroNodeContext(context, copySrcMacro_qubm7t_b0a0c0e0b0c));
         tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_qubm7t_b0a0c0e0b0c, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322135", context);
         for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
-          tnode1.addChild("actualArgument", child4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
         }
         // TODO validate child 
       }
@@ -73,7 +73,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
           tlist5 = tlist7;
         }
         for (SNode child8 : TemplateUtil.asNotNull(tlist5)) {
-          tnode1.addChild("actualArgument", child8);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child8);
         }
         // TODO validate child 
       }
@@ -93,7 +93,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
                 } finally {
                 }
                 if (tnode12 != null) {
-                  tnode11.addChild("operand", tnode12);
+                  tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode12);
                 }
                 // TODO validate child 
               }
@@ -110,14 +110,14 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
                     } finally {
                     }
                     if (tnode14 != null) {
-                      tnode13.addChild("actualArgument", tnode14);
+                      tnode13.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode14);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode13 != null) {
-                  tnode11.addChild("operation", tnode13);
+                  tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), tnode13);
                 }
                 // TODO validate child 
               }
@@ -143,7 +143,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
               } finally {
               }
               if (tnode17 != null) {
-                tnode16.addChild("creator", tnode17);
+                tnode16.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), tnode17);
               }
               // TODO validate child 
             }
@@ -152,7 +152,7 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
           tlist9 = TemplateUtil.singletonList(tnode16);
         }
         for (SNode child18 : TemplateUtil.asNotNull(tlist9)) {
-          tnode1.addChild("actualArgument", child18);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child18);
         }
         // TODO validate child 
       }

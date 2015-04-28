@@ -72,7 +72,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -84,14 +84,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -115,7 +115,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -132,35 +132,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -195,7 +195,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -207,14 +207,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -238,7 +238,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -255,35 +255,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -318,7 +318,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -330,14 +330,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -361,7 +361,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -387,49 +387,49 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                                   } finally {
                                   }
                                   if (tnode12 != null) {
-                                    tnode11.addChild("visibility", tnode12);
+                                    tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode12);
                                   }
                                   // TODO validate child 
                                 }
                               } finally {
                               }
                               if (tnode11 != null) {
-                                tnode10.addChild("cls", tnode11);
+                                tnode10.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"), tnode11);
                               }
                               // TODO validate child 
                             }
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("creator", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -464,7 +464,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -476,14 +476,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -507,7 +507,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -524,35 +524,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -587,7 +587,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -599,14 +599,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -630,7 +630,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -656,49 +656,49 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                                   } finally {
                                   }
                                   if (tnode12 != null) {
-                                    tnode11.addChild("visibility", tnode12);
+                                    tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), tnode12);
                                   }
                                   // TODO validate child 
                                 }
                               } finally {
                               }
                               if (tnode11 != null) {
-                                tnode10.addChild("cls", tnode11);
+                                tnode10.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"), tnode11);
                               }
                               // TODO validate child 
                             }
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("creator", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -733,7 +733,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -745,14 +745,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -776,7 +776,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -793,35 +793,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -856,7 +856,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -868,14 +868,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -899,7 +899,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -916,35 +916,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -979,7 +979,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -991,14 +991,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -1022,7 +1022,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -1039,35 +1039,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -1102,7 +1102,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -1114,14 +1114,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -1150,14 +1150,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode9 != null) {
-                            tnode8.addChild("type", tnode9);
+                            tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode9);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("expression", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -1169,28 +1169,28 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode10 != null) {
-                        tnode7.addChild("type", tnode10);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode10);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -1225,7 +1225,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -1237,14 +1237,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -1268,7 +1268,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -1285,35 +1285,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -1348,7 +1348,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -1360,14 +1360,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -1391,7 +1391,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -1408,35 +1408,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
@@ -1471,7 +1471,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode3 != null) {
-                tnode2.addChild("rightExpression", tnode3);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode3);
               }
               // TODO validate child 
             }
@@ -1483,14 +1483,14 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
               } finally {
               }
               if (tnode4 != null) {
-                tnode2.addChild("leftExpression", tnode4);
+                tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode4);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode2 != null) {
-            tnode1.addChild("condition", tnode2);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode2);
           }
           // TODO validate child 
         }
@@ -1514,7 +1514,7 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                       } finally {
                       }
                       if (tnode8 != null) {
-                        tnode7.addChild("type", tnode8);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type"), tnode8);
                       }
                       // TODO validate child 
                     }
@@ -1531,35 +1531,35 @@ public class SwitchreturnLanguageAspectDescriptor extends TemplateSwitchBase imp
                           } finally {
                           }
                           if (tnode10 != null) {
-                            tnode9.addChild("type", tnode10);
+                            tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11295b91963L, "type"), tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
                       if (tnode9 != null) {
-                        tnode7.addChild("expression", tnode9);
+                        tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), tnode9);
                       }
                       // TODO validate child 
                     }
                   } finally {
                   }
                   if (tnode7 != null) {
-                    tnode6.addChild("expression", tnode7);
+                    tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), tnode7);
                   }
                   // TODO validate child 
                 }
               } finally {
               }
               if (tnode6 != null) {
-                tnode5.addChild("statement", tnode6);
+                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
               }
               // TODO validate child 
             }
           } finally {
           }
           if (tnode5 != null) {
-            tnode1.addChild("ifTrue", tnode5);
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
           }
           // TODO validate child 
         }
