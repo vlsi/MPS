@@ -1883,7 +1883,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="concept" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
     <node concept="PrWs8" id="UjtgkvXiu2" role="PzmwI">
       <ref role="PrY4T" node="4Ns790kXiYG" resolve="ActionParameterCondition" />

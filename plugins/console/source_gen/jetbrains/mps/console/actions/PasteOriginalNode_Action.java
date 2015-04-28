@@ -35,6 +35,7 @@ public class PasteOriginalNode_Action extends BaseAction {
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return PlatformDataKeys.PASTE_PROVIDER.getData(((EditorComponent) MapSequence.fromMap(_params).get("editor"))) instanceof BaseConsoleTab.MyPasteProvider && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editor")), ((EditorCell) MapSequence.fromMap(_params).get("cell"))));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
