@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.MPSProject;
 
 public class CloneModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,17 +48,26 @@ public class CloneModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("selSize", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
-    if (MapSequence.fromMap(_params).get("selSize") == null) {
-      return false;
+    {
+      Integer p = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE);
+      MapSequence.fromMap(_params).put("selSize", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

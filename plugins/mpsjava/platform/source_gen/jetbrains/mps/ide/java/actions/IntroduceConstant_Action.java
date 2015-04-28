@@ -21,11 +21,11 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefa
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.java.platform.refactorings.IntroduceConstantDialog;
-import com.intellij.openapi.project.Project;
 import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends BaseAction {
@@ -62,16 +62,17 @@ public class IntroduceConstant_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
       MapSequence.fromMap(_params).put("node", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
+    {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      MapSequence.fromMap(_params).put("editorContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
@@ -79,13 +80,16 @@ public class IntroduceConstant_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("component", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("component") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("projct", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("projct") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("projct", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

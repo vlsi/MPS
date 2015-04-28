@@ -68,6 +68,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <property id="3984210554599197374" name="ID" index="3mtozt" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="394857668356997869" name="places" index="med8o" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -452,6 +453,7 @@
     <property role="TrG5h" value="ShowHelpForNode" />
     <property role="2uzpH1" value="Show Help for Node" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9cJ" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9cK" role="2VODD2">
         <node concept="3clFbF" id="4KDfkUwM9cL" role="3cqZAp">
@@ -536,6 +538,7 @@
     <property role="2uzpH1" value="Show Default Help" />
     <property role="3GE5qa" value="Actions" />
     <property role="3mtozt" value="ContextHelp" />
+    <property role="1teQrl" value="true" />
     <node concept="mfpdH" id="79ALBP9Jg68" role="med8o" />
     <node concept="1DS2jV" id="4KDfkUwM9dh" role="1NuT2Z">
       <property role="TrG5h" value="module" />
@@ -1504,6 +1507,7 @@
     <property role="TrG5h" value="ShowHelpForRoot" />
     <property role="2uzpH1" value="Show Help for Root" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9iP" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9iQ" role="2VODD2">
         <node concept="3clFbF" id="4KDfkUwM9iR" role="3cqZAp">
@@ -1587,6 +1591,7 @@
     <property role="TrG5h" value="ShowHelpForAspect" />
     <property role="2uzpH1" value="Show Help for Aspect" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9jn" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9jo" role="2VODD2">
         <node concept="3clFbF" id="4KDfkUwM9jp" role="3cqZAp">
@@ -1734,6 +1739,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Move Property Up" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9up" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9uq" role="2VODD2">
         <node concept="3cpWs8" id="3EqKdwuHdzA" role="3cqZAp">
@@ -2455,6 +2461,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rename Concept" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM9vA" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="4KDfkUwM9vB" role="1B3o_S" />
@@ -2665,6 +2672,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rename Property" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM9wE" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="4KDfkUwM9wF" role="1B3o_S" />
@@ -2875,6 +2883,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Move Link Up" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM9xn" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="4KDfkUwM9xo" role="1B3o_S" />
@@ -3773,6 +3782,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rename Link" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM9z0" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="4KDfkUwM9z1" role="1B3o_S" />
@@ -3982,6 +3992,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Move Concepts" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM9_k" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="4KDfkUwM9_l" role="1B3o_S" />

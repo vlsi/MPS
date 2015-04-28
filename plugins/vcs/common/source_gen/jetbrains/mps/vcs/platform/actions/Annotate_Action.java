@@ -42,9 +42,9 @@ public class Annotate_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editor", editorComponent);
-    }
-    if (MapSequence.fromMap(_params).get("editor") == null) {
-      return false;
+      if (editorComponent == null) {
+        return false;
+      }
     }
     return true;
   }

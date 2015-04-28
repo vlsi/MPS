@@ -9,14 +9,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
 
 public class ModelProperties_Action extends BaseAction {
@@ -43,25 +44,40 @@ public class ModelProperties_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("size", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
-    if (MapSequence.fromMap(_params).get("size") == null) {
-      return false;
+    {
+      Integer p = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE);
+      MapSequence.fromMap(_params).put("size", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
-    if (MapSequence.fromMap(_params).get("place") == null) {
-      return false;
+    {
+      ActionPlace p = event.getData(MPSCommonDataKeys.PLACE);
+      MapSequence.fromMap(_params).put("place", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

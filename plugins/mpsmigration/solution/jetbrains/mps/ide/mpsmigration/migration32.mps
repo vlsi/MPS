@@ -2,11 +2,11 @@
 <model ref="0c495a8c-90c6-4330-9351-2acbf72e5bb8/r:4550e75a-fac1-4312-b276-24f9bae04a9a(jetbrains.mps.ide.mpsmigration/jetbrains.mps.ide.mpsmigration.migration32)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -36,6 +36,7 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
@@ -220,6 +221,7 @@
     <property role="1WHSii" value="All model references should have module reference" />
     <property role="TrG5h" value="MigrateSModelReference" />
     <property role="2uzpH1" value="Migrate Model Reference" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7tZeFupJFiv" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -283,6 +285,7 @@
   <node concept="sE7Ow" id="7vy2u1BNC$F">
     <property role="TrG5h" value="ClearHistoryFiles" />
     <property role="2uzpH1" value="Clear History Files" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7vy2u1BNC$G" role="tncku">
       <node concept="3clFbS" id="7vy2u1BNC$H" role="2VODD2">
         <node concept="3cpWs8" id="7vy2u1BOpDQ" role="3cqZAp">
@@ -608,6 +611,7 @@
     <property role="TrG5h" value="MigrateIds" />
     <property role="2uzpH1" value="Migrate from Names to Ids" />
     <property role="1WHSii" value="Concept/property/reference/link/language id" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6qheojHebey" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -640,6 +644,7 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="WrapNotExpressionInParens" />
     <property role="2uzpH1" value="Wrap NotExpression in Parentheses Where Necessary" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5Df7ZI$EHZ1" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -759,6 +764,7 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="UpdateDepecatedBlockDocTags" />
     <property role="2uzpH1" value="Initialize the Text for All DeprecatedBlockDocTag Instances" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4XbESZhKqK" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -878,6 +884,7 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="MigrateFloatConstants" />
     <property role="2uzpH1" value="Migrate Float Constants" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1UVYfO0DGdZ" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />

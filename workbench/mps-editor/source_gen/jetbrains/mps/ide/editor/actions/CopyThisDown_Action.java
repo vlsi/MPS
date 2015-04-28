@@ -57,23 +57,21 @@ public class CopyThisDown_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-    }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
+      if (editorComponent == null) {
+        return false;
+      }
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
-      if (nodes != null) {
-      }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("inputNodes", null);
       } else {
         MapSequence.fromMap(_params).put("inputNodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
-    }
-    if (MapSequence.fromMap(_params).get("inputNodes") == null) {
-      return false;
+      if (nodes == null) {
+        return false;
+      }
+
     }
     return true;
   }

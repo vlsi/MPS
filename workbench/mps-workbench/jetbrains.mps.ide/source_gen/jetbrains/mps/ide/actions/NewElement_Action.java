@@ -47,8 +47,14 @@ public class NewElement_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
-    MapSequence.fromMap(_params).put("group", event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP));
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("node", p);
+    }
+    {
+      ActionGroup p = event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP);
+      MapSequence.fromMap(_params).put("group", p);
+    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {

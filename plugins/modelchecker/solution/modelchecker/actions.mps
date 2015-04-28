@@ -129,6 +129,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="394857668356997869" name="places" index="med8o" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
@@ -607,6 +608,7 @@
     <property role="72QZ$" value="false" />
     <property role="3GE5qa" value="Model Checker.Actions" />
     <property role="2uzpH1" value="Model Checker..." />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1gEYwydCrTQ" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -769,6 +771,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Model Checker.Actions" />
     <property role="2uzpH1" value="Check Project" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6hehsrpcaUE" role="3Uehp1">
       <node concept="10M0yZ" id="6hehsrpcaUF" role="3xaMm5">
         <ref role="3cqZAo" to="c4ym:~MPSIcons$General.ModelChecker" resolve="ModelChecker" />
@@ -809,6 +812,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Model Checker.Actions" />
     <property role="2uzpH1" value="Check [Module]" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="3pNk_u$34RM" role="32lrUH">
       <property role="TrG5h" value="modules2check" />
       <node concept="3uibUv" id="3pNk_u$37Mg" role="3clF45">
@@ -1194,6 +1198,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Model Checker.Actions" />
     <property role="2uzpH1" value="Check Model" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6hehsrpbFSo" role="3Uehp1">
       <node concept="10M0yZ" id="6hehsrpc1Ei" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$General" resolve="MPSIcons.General" />
@@ -1697,6 +1702,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="DevKit.Internal" />
     <property role="2uzpH1" value="Find All Broken References" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2$1L9HI7HT2" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -1854,6 +1860,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find All Adapter Usages" />
     <property role="3GE5qa" value="DevKit.Internal" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5FBv6mOnSAE" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -1950,6 +1957,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Cross-template References" />
     <property role="3GE5qa" value="DevKit.Internal" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6h3t152gT6k" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -2058,6 +2066,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Wrong Aspect Dependencies" />
     <property role="3GE5qa" value="DevKit.Internal" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7SNXUnYXKN6" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -3754,6 +3763,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Check Selected Modules" />
     <property role="3GE5qa" value="Model Checker.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="3pNk_u$3SOf" role="32lrUH">
       <property role="TrG5h" value="modules2check" />
       <node concept="_YKpA" id="3pNk_u$3TgH" role="3clF45">
@@ -4906,6 +4916,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find References to non-referenceable concepts" />
     <property role="3GE5qa" value="DevKit.Internal" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1_LT7K4nNuU" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />

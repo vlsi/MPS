@@ -52,23 +52,27 @@ public class CommentStatements_Action extends BaseAction {
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
       if (nodes != null) {
+        boolean error = false;
         for (SNode node : ListSequence.fromList(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")))) {
             error = true;
             break;
           }
         }
+        if (error) {
+          nodes = null;
+        }
       }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("nodes", null);
       } else {
         MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
-    }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
+      if (nodes == null) {
+        return false;
+      }
+
     }
     {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
@@ -76,9 +80,9 @@ public class CommentStatements_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-    }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
+      if (editorComponent == null) {
+        return false;
+      }
     }
     return true;
   }

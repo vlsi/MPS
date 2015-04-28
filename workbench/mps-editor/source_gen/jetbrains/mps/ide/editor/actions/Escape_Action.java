@@ -51,13 +51,16 @@ public class Escape_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("isModalContext", event.getData(PlatformDataKeys.IS_MODAL_CONTEXT));
-    if (MapSequence.fromMap(_params).get("isModalContext") == null) {
-      return false;
+    {
+      Boolean p = event.getData(PlatformDataKeys.IS_MODAL_CONTEXT);
+      MapSequence.fromMap(_params).put("isModalContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

@@ -7,13 +7,13 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import java.util.List;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import com.intellij.openapi.project.Project;
-import java.util.List;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
-import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToFavorites_Action extends BaseAction {
@@ -36,13 +36,19 @@ public class AddToFavorites_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
-    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
-      return false;
+    {
+      List<TreeNode> p = event.getData(MPSCommonDataKeys.TREE_NODES);
+      MapSequence.fromMap(_params).put("treeNodes", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

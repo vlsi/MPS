@@ -8,8 +8,10 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class FileDelete_Action extends BaseAction {
@@ -32,13 +34,19 @@ public class FileDelete_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(CommonDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
-      return false;
+    {
+      VirtualFile p = event.getData(CommonDataKeys.VIRTUAL_FILE);
+      MapSequence.fromMap(_params).put("selectedFile", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("deleteProvider", event.getData(PlatformDataKeys.DELETE_ELEMENT_PROVIDER));
-    if (MapSequence.fromMap(_params).get("deleteProvider") == null) {
-      return false;
+    {
+      DeleteProvider p = event.getData(PlatformDataKeys.DELETE_ELEMENT_PROVIDER);
+      MapSequence.fromMap(_params).put("deleteProvider", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

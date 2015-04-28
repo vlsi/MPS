@@ -222,6 +222,7 @@
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="394857668356997869" name="places" index="med8o" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
@@ -1421,6 +1422,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Fix Module Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGnoi8R" role="tncku">
       <node concept="3clFbS" id="hGnoi8S" role="2VODD2">
         <node concept="3clFbF" id="7SVrflNJkBD" role="3cqZAp">
@@ -1455,6 +1457,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Clone Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGnLICr" role="tncku">
       <node concept="3clFbS" id="hGnLICs" role="2VODD2">
         <node concept="3cpWs8" id="hGnMdxc" role="3cqZAp">
@@ -1648,6 +1651,7 @@
     <property role="TrG5h" value="CloneRoot" />
     <property role="2uzpH1" value="Clone Root" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="mfpdH" id="7rL2sZp0TIv" role="med8o" />
     <node concept="tnohg" id="hGnMLrP" role="tncku">
       <node concept="3clFbS" id="hGnMLrQ" role="2VODD2">
@@ -1777,6 +1781,7 @@
     <property role="TrG5h" value="ExpandNode" />
     <property role="2uzpH1" value="Expand All" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGoorIl" role="tncku">
       <node concept="3clFbS" id="hGoorIm" role="2VODD2">
         <node concept="3cpWs8" id="hGopulR" role="3cqZAp">
@@ -1882,6 +1887,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Optimize Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGoCYwa" role="tncku">
       <node concept="3clFbS" id="hGoCYwb" role="2VODD2">
         <node concept="3cpWs8" id="hIWP75a" role="3cqZAp">
@@ -2014,6 +2020,7 @@
     <property role="TrG5h" value="RemoveTransientModels" />
     <property role="2uzpH1" value="Remove Transient Models" />
     <property role="3GE5qa" value="Menu.ProjectPane.TransientModules" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGoIdF9" role="tncku">
       <node concept="3clFbS" id="hGoIdFa" role="2VODD2">
         <node concept="3clFbF" id="hGoI_4q" role="3cqZAp">
@@ -2089,6 +2096,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="77nRokVR8jO" role="3Uehp1">
       <node concept="10M0yZ" id="77nRokVRzZZ" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -2987,6 +2995,7 @@
     <property role="TrG5h" value="ShowErrorMessage" />
     <property role="2uzpH1" value="Show Error Message" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGpJkjw" role="tncku">
       <node concept="3clFbS" id="hGpJkjx" role="2VODD2" />
     </node>
@@ -3004,6 +3013,7 @@
     <property role="TrG5h" value="ShowClassInHierarchy" />
     <property role="2uzpH1" value="Show Class in Hierarchy" />
     <property role="3GE5qa" value="BaseLanguage" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3U4Yh9n4RUn" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -3237,6 +3247,7 @@
     <property role="TrG5h" value="ShowConceptInHierarchy" />
     <property role="2uzpH1" value="Show Concept in Hierarchy" />
     <property role="3GE5qa" value="DevKit" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi9u0l" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi9udz" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Toolwindows" resolve="AllIcons.Toolwindows" />
@@ -3577,6 +3588,7 @@
     <property role="TrG5h" value="RevertMemoryChanges" />
     <property role="2uzpH1" value="Revert Memory Changes" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGAswG8" role="tncku">
       <node concept="3clFbS" id="hGAswG9" role="2VODD2">
         <node concept="3clFbF" id="hGAsC9h" role="3cqZAp">
@@ -3629,6 +3641,7 @@
     <property role="TrG5h" value="ShowInLogicalView" />
     <property role="2uzpH1" value="Show Node in Logical View" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2ScWuX" id="2AAf5r02UK3" role="tmbBb">
       <node concept="3clFbS" id="2AAf5r02UUd" role="2VODD2">
         <node concept="3cpWs8" id="wTMLDYGqN2" role="3cqZAp">
@@ -3790,6 +3803,7 @@
     <property role="TrG5h" value="ShowNodeInInspector" />
     <property role="2uzpH1" value="Inspect Node" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGAImS0" role="tncku">
       <node concept="3clFbS" id="hGAImS1" role="2VODD2">
         <node concept="3clFbF" id="2ADrPEHclM$" role="3cqZAp">
@@ -3853,6 +3867,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Module Properties" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8_Fi" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8A5K" role="3xaMm5">
         <ref role="3cqZAo" to="zxm0:~AllIcons$General.Settings" resolve="Settings" />
@@ -4029,6 +4044,7 @@
     <property role="TrG5h" value="RemoveModuleFromProject" />
     <property role="2uzpH1" value="Remove from Project" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGAQHPR" role="tncku">
       <node concept="3clFbS" id="hGAQHPS" role="2VODD2">
         <node concept="3cpWs8" id="hGARHPg" role="3cqZAp">
@@ -4362,6 +4378,7 @@
     <property role="TrG5h" value="SetModuleFolder" />
     <property role="2uzpH1" value="Set Folder" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGASdEW" role="tncku">
       <node concept="3clFbS" id="hGASdEX" role="2VODD2">
         <node concept="3cpWs8" id="hGASxVp" role="3cqZAp">
@@ -4657,6 +4674,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Project Paths" />
     <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hMRTVTe" role="tncku">
       <node concept="3clFbS" id="hMRTVTf" role="2VODD2">
         <node concept="3cpWs8" id="hMRVkwm" role="3cqZAp">
@@ -4941,6 +4959,7 @@
     <property role="TrG5h" value="DeleteReferenceAction" />
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hSPQ8SG" role="tncku">
       <node concept="3clFbS" id="hSPQ8SH" role="2VODD2">
         <node concept="3cpWs8" id="hSPSueP" role="3cqZAp">
@@ -5093,6 +5112,7 @@
     <property role="TrG5h" value="DeletePropertyAction" />
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hSPVNcS" role="tncku">
       <node concept="3clFbS" id="hSPVNcT" role="2VODD2">
         <node concept="3cpWs8" id="hSPVNcU" role="3cqZAp">
@@ -5252,6 +5272,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="1eMX9nD40fU" role="32lrUH">
       <property role="TrG5h" value="getAffectedNodes" />
       <node concept="A3Dl8" id="1eMX9nD59BX" role="3clF45">
@@ -5716,6 +5737,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Solution" />
     <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hSQishx" role="tncku">
       <node concept="3clFbS" id="hSQishy" role="2VODD2">
         <node concept="3cpWs8" id="hSQohnu" role="3cqZAp">
@@ -5941,6 +5963,7 @@
     <property role="TrG5h" value="GoToBookmark" />
     <property role="2uzpH1" value="Go to Bookmark" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Bookmarks" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hXheiqM" role="tncku">
       <node concept="3clFbS" id="hXheiqN" role="2VODD2">
         <node concept="3clFbF" id="hXheiqO" role="3cqZAp">
@@ -6056,6 +6079,7 @@
     <property role="TrG5h" value="RemoveAllBookmarks" />
     <property role="2uzpH1" value="Remove All Bookmarks" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Bookmarks" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hXqU8eJ" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -6091,6 +6115,7 @@
     <property role="TrG5h" value="ShowBookmarks" />
     <property role="2uzpH1" value="Bookmarks..." />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hXrtPYZ" role="tncku">
       <node concept="3clFbS" id="hXrtPZ0" role="2VODD2">
         <node concept="3clFbF" id="hXru4Og" role="3cqZAp">
@@ -6130,6 +6155,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Model Properties" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8sml" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8t6K" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$General" resolve="AllIcons.General" />
@@ -6318,6 +6344,7 @@
     <property role="TrG5h" value="CopyModelName" />
     <property role="2uzpH1" value="Copy Model Name" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hZijRO9" role="1NuT2Z">
       <property role="TrG5h" value="model" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODEL" resolve="MODEL" />
@@ -6348,6 +6375,7 @@
     <property role="TrG5h" value="CopyModuleName" />
     <property role="2uzpH1" value="Copy Module Name" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hZikNJB" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -6379,6 +6407,7 @@
     <property role="TrG5h" value="CopyNodeName" />
     <property role="2uzpH1" value="Copy Node FQName" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hZimakv" role="tncku">
       <node concept="3clFbS" id="hZimakw" role="2VODD2">
         <node concept="3clFbF" id="hZimrJ2" role="3cqZAp">
@@ -6448,6 +6477,7 @@
     <property role="TrG5h" value="SetBookmarkNoNumber" />
     <property role="2uzpH1" value="Set Bookmark" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Bookmarks" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hZrM0q2" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -6506,6 +6536,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Optimize Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hZsPrN4" role="1NuT2Z">
       <property role="TrG5h" value="models" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
@@ -6698,6 +6729,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Optimize Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="hZsb5Sf" role="1NuT2Z">
       <property role="TrG5h" value="modules" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULES" resolve="MODULES" />
@@ -6908,6 +6940,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Show Bookmarks Dialog" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Bookmarks" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hZsuckw" role="tncku">
       <node concept="3clFbS" id="hZsuckx" role="2VODD2">
         <node concept="3cpWs8" id="hZsuDHq" role="3cqZAp">
@@ -6976,6 +7009,7 @@
     <property role="TrG5h" value="AddModuleToProject" />
     <property role="2uzpH1" value="Add to Project" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="i3M$4hN" role="1NuT2Z">
       <property role="TrG5h" value="modules" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULES" resolve="MODULES" />
@@ -7145,6 +7179,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete Module..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="OqYxEj90LV" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -7531,6 +7566,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete Models" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="36tV70Zqv$R" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -7766,6 +7802,7 @@
     <property role="TrG5h" value="CopyNodeReference" />
     <property role="2uzpH1" value="Copy Reference" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4npc6Q0omPU" role="1NuT2Z">
       <property role="TrG5h" value="nodes" />
       <node concept="1oajcY" id="7HZe2EwZDgw" role="1oa70y" />
@@ -7869,6 +7906,7 @@
     <property role="TrG5h" value="CopyNode" />
     <property role="2uzpH1" value="Copy" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8ggu" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8gTt" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -7953,6 +7991,7 @@
     <property role="TrG5h" value="CutNode" />
     <property role="2uzpH1" value="Cut" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="OqYxEj5wsV" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -8187,6 +8226,7 @@
     <property role="TrG5h" value="FastFindNodeUsages" />
     <property role="2uzpH1" value="Find Usages" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8jE6" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8k9R" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -8296,6 +8336,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Usages Settings..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8nu1" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8nyU" role="3xaMm5">
         <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.Find" resolve="Find" />
@@ -8422,6 +8463,7 @@
     <property role="2uzpH1" value="Rename" />
     <property role="3GE5qa" value="Menu.ProjectPane.Packages.Actions" />
     <property role="72QZ$" value="true" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7TSspuy9C7" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -8692,6 +8734,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Set Virtual Package..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6PWCPPtV$53" role="32lrUH">
       <property role="TrG5h" value="fetchExistingPackages" />
       <node concept="3clFbS" id="6PWCPPtV$55" role="3clF47">
@@ -9178,6 +9221,7 @@
     <property role="TrG5h" value="ShowParameters" />
     <property role="2uzpH1" value="Show Parameters" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6PWCPPtWblV" role="32lrUH">
       <property role="TrG5h" value="getCellNode" />
       <node concept="3Tqbb2" id="6PWCPPtWblY" role="3clF45" />
@@ -10645,6 +10689,7 @@
     <property role="72QZ$" value="false" />
     <property role="2uzpH1" value="Highlight Instances" />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="cAZ8XCabSH" role="tncku">
       <node concept="3clFbS" id="cAZ8XCabSI" role="2VODD2">
         <node concept="3cpWs8" id="cAZ8XCabSJ" role="3cqZAp">
@@ -10882,6 +10927,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Highlight Usages" />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4NbzjXXK6ut" role="tncku">
       <node concept="3clFbS" id="4NbzjXXK6uu" role="2VODD2">
         <node concept="3clFbF" id="6q3Z_tb_xrg" role="3cqZAp">
@@ -11332,6 +11378,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Paste" />
     <property role="3GE5qa" value="Menu.MainMenu.EditActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi98ZQ" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi9k0j" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -12138,6 +12185,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5VIEYrBjMRp" role="tncku">
       <node concept="3clFbS" id="5VIEYrBjMRq" role="2VODD2">
         <node concept="3clFbF" id="5VIEYrBjMRr" role="3cqZAp">
@@ -12269,6 +12317,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename" />
     <property role="3GE5qa" value="Menu.ProjectPane.Packages.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="OqYxEj7HKG" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -12520,6 +12569,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Module" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Solution.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3fhZBTge84r" role="tncku">
       <node concept="3clFbS" id="3fhZBTge84s" role="2VODD2">
         <node concept="3clFbF" id="3fhZBTgeaEH" role="3cqZAp">
@@ -12670,6 +12720,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Show Node Info" />
     <property role="3GE5qa" value="DevKit" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4NhTXTAh4kw" role="tncku">
       <node concept="3clFbS" id="4NhTXTAh4kx" role="2VODD2">
         <node concept="3cpWs8" id="4NhTXTAhejK" role="3cqZAp">
@@ -13009,6 +13060,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Go to Action" />
     <property role="3GE5qa" value="DevKit" />
+    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="3oS0mv1G9VW" role="2JrayB">
       <property role="TrG5h" value="action" />
       <node concept="3Tm6S6" id="3oS0mv1G9VX" role="1B3o_S" />
@@ -13080,6 +13132,7 @@
     <property role="TrG5h" value="GoToRootNode" />
     <property role="2uzpH1" value="Go to Root Node" />
     <property role="3GE5qa" value="Menu.MainMenu.GotoActions" />
+    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="79_fceV1f8w" role="2JrayB">
       <property role="TrG5h" value="savedText" />
       <node concept="3Tm6S6" id="79_fceV1f8x" role="1B3o_S" />
@@ -13293,6 +13346,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Go to Symbol" />
     <property role="3GE5qa" value="Menu.MainMenu.GotoActions" />
+    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="3oS0mv1G9Xh" role="2JrayB">
       <property role="TrG5h" value="action" />
       <node concept="3Tm6S6" id="3oS0mv1G9Xi" role="1B3o_S" />
@@ -13350,6 +13404,7 @@
     <property role="TrG5h" value="GoToModel" />
     <property role="2uzpH1" value="Go to Model" />
     <property role="3GE5qa" value="Menu.MainMenu.GotoActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3oS0mv1G9XP" role="tncku">
       <node concept="3clFbS" id="3oS0mv1G9XQ" role="2VODD2">
         <node concept="3cpWs8" id="7gZx2pWG357" role="3cqZAp">
@@ -13826,6 +13881,7 @@
     <property role="TrG5h" value="GoToModule" />
     <property role="2uzpH1" value="Go to Module" />
     <property role="3GE5qa" value="Menu.MainMenu.GotoActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3oS0mv1G9YR" role="tncku">
       <node concept="3clFbS" id="3oS0mv1G9YS" role="2VODD2">
         <node concept="3cpWs8" id="6IHSVKeLNja" role="3cqZAp">
@@ -14200,6 +14256,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2fKk7pETRv0" role="1NuT2Z">
       <property role="TrG5h" value="selectedFile" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.VIRTUAL_FILE" resolve="VIRTUAL_FILE" />
@@ -14921,6 +14978,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="18ld1NQVZUU" role="3Uehp1">
       <node concept="10M0yZ" id="18ld1NQWEZA" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -15276,6 +15334,7 @@
     <property role="72QZ$" value="false" />
     <property role="2uzpH1" value="New Runtime Module" />
     <property role="3GE5qa" value="Menu.ProjectPane.RuntimeFolder" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="z$IXO4dqwP" role="tncku">
       <node concept="3clFbS" id="z$IXO4dqwQ" role="2VODD2">
         <node concept="3cpWs8" id="z$IXO4d$cP" role="3cqZAp">
@@ -15743,6 +15802,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Go to File" />
     <property role="3GE5qa" value="Menu.MainMenu.GotoActions" />
+    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="4mmGoAAuZsr" role="2JrayB">
       <property role="TrG5h" value="action" />
       <node concept="3Tm6S6" id="4mmGoAAuZss" role="1B3o_S" />
@@ -16846,6 +16906,7 @@
     <property role="TrG5h" value="NewFile" />
     <property role="2uzpH1" value="File" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="3YM7NwaMEmV" role="3Uehp1">
       <node concept="10M0yZ" id="3YM7NwaN8$c" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$FileTypes" resolve="AllIcons.FileTypes" />
@@ -17210,6 +17271,7 @@
     <property role="TrG5h" value="NewDirectory" />
     <property role="2uzpH1" value="Directory" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3maH0V41RWn" role="tncku">
       <node concept="3clFbS" id="3maH0V41RWo" role="2VODD2">
         <node concept="3cpWs8" id="3maH0V42nVE" role="3cqZAp">
@@ -17608,6 +17670,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename..." />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6tNFAUMsC5Y" role="32lrUH">
       <property role="TrG5h" value="isNotValid" />
       <node concept="10P_77" id="6tNFAUMsC61" role="3clF45" />
@@ -17979,6 +18042,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move..." />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6tNFAUMsC5$" role="32lrUH">
       <property role="TrG5h" value="isNotValid" />
       <node concept="10P_77" id="6tNFAUMsC5B" role="3clF45" />
@@ -18403,6 +18467,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Test Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="3WVt5L$JcJE" role="3Uehp1">
       <node concept="10M0yZ" id="3WVt5L$JiLy" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -19105,6 +19170,7 @@
     <property role="TrG5h" value="AddToNewFavoritesList" />
     <property role="2uzpH1" value="Add to New Favorites List" />
     <property role="3GE5qa" value="Favorites" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi7Jeq" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi7VRb" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$General" resolve="AllIcons.General" />
@@ -19557,6 +19623,7 @@
     <property role="TrG5h" value="AddToFavorites" />
     <property role="2uzpH1" value="Add to Favorites" />
     <property role="3GE5qa" value="Favorites" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2tmN3ZB3EL2" role="1NuT2Z">
       <property role="TrG5h" value="treeNodes" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.TREE_NODES" resolve="TREE_NODES" />
@@ -19732,6 +19799,7 @@
     <property role="TrG5h" value="RemoveFromFavorites" />
     <property role="2uzpH1" value="Remove from Favorites" />
     <property role="3GE5qa" value="Favorites" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="79AZtQxEvcf" role="1NuT2Z">
       <property role="TrG5h" value="treeNodes" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.TREE_NODES" resolve="TREE_NODES" />
@@ -19986,6 +20054,7 @@
     <property role="TrG5h" value="RenameFavoritesList" />
     <property role="2uzpH1" value="Rename Favorites List" />
     <property role="3GE5qa" value="Favorites" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="4rA9Dd$RDak" role="3Uehp1">
       <node concept="10M0yZ" id="4rA9Dd$REQE" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -20193,6 +20262,7 @@
     <property role="TrG5h" value="DeleteFavoritesList" />
     <property role="2uzpH1" value="Delete Favorites List" />
     <property role="3GE5qa" value="Favorites" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="79AZtQxG3ae" role="tncku">
       <node concept="3clFbS" id="79AZtQxG3af" role="2VODD2">
         <node concept="3cpWs8" id="4gB5YcdKc$C" role="3cqZAp">
@@ -20355,6 +20425,7 @@
     <property role="TrG5h" value="ShowImplementations" />
     <property role="2uzpH1" value="Show Implementation" />
     <property role="3GE5qa" value="BaseLanguage" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6qBuBFvMxqO" role="tncku">
       <node concept="3clFbS" id="6qBuBFvMxqP" role="2VODD2">
         <node concept="3cpWs8" id="6qBuBFvNeaV" role="3cqZAp">
@@ -21119,6 +21190,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="New..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Common" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6R$xsE24akj" role="tncku">
       <node concept="3clFbS" id="6R$xsE24akk" role="2VODD2">
         <node concept="3cpWs8" id="6R$xsE24DTa" role="3cqZAp">
@@ -21711,6 +21783,7 @@
     <property role="TrG5h" value="EditGivenNode" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="2uzpH1" value="&lt;no caption&gt;" />
+    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="1JAxb5h3N9e" role="2JrayB">
       <property role="TrG5h" value="targetNode" />
       <node concept="3Tm6S6" id="1JAxb5h3N9f" role="1B3o_S" />
@@ -21838,6 +21911,7 @@
     <property role="TrG5h" value="SetBookmark" />
     <property role="2uzpH1" value="Set Bookmark" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Bookmarks" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="73o9OgiE94V" role="tncku">
       <node concept="3clFbS" id="73o9OgiE94W" role="2VODD2">
         <node concept="3clFbF" id="73o9OgiE95A" role="3cqZAp">
@@ -22015,6 +22089,7 @@
     <property role="TrG5h" value="GoToNode" />
     <property role="2uzpH1" value="Go to Source Node" />
     <property role="3GE5qa" value="trace" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="eJiWXTZ1vG" role="3Uehp1">
       <node concept="10M0yZ" id="eJiWXTZyzw" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -22071,6 +22146,7 @@
     <property role="TrG5h" value="GoToRule" />
     <property role="2uzpH1" value="Go to Rule" />
     <property role="3GE5qa" value="trace" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="W9jQfsDuzI" role="3Uehp1">
       <node concept="10M0yZ" id="W9jQfsDX$4" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -23139,6 +23215,7 @@
     <property role="TrG5h" value="FixModuleImportsInProject" />
     <property role="2uzpH1" value="Fix Module Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7WIQM6zDjrW" role="tncku">
       <node concept="3clFbS" id="7WIQM6zDjrX" role="2VODD2">
         <node concept="2Gpval" id="7WIQM6zDjsg" role="3cqZAp">
@@ -23266,6 +23343,7 @@
     <property role="TrG5h" value="PrintNodePosition" />
     <property role="2uzpH1" value="Print Node Line" />
     <property role="3GE5qa" value="analyzeTrace" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="D0bc7NfeJE" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="3Tm6S6" id="D0bc7NfeJF" role="1B3o_S" />
@@ -23464,6 +23542,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Analyze Module Dependencies" />
     <property role="3GE5qa" value="dependencies" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8eWj" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8f2g" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Toolwindows" resolve="AllIcons.Toolwindows" />
@@ -23538,6 +23617,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.MessagesView" />
     <property role="2uzpH1" value="Submit to Issue Tracker" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4NDCWHeJ$bA" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -23923,6 +24003,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="dependencies" />
     <property role="2uzpH1" value="Safe Delete Dependency" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="44sVLhmXetW" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.TREE_NODE" resolve="TREE_NODE" />
@@ -24447,6 +24528,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="dependencies" />
     <property role="2uzpH1" value="Show Usages" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="44sVLhmXeF6" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.TREE_NODE" resolve="TREE_NODE" />
@@ -28163,6 +28245,7 @@
     <property role="TrG5h" value="GoByCurrentReferenceToIDEA" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="2uzpH1" value="Open Declaration in IDEA" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7A$kb8eg1gK" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -29199,6 +29282,7 @@
     <property role="TrG5h" value="FindModelUsages" />
     <property role="2uzpH1" value="Find Usages" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSpi8mJa" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi8mVJ" role="3xaMm5">
         <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.Find" resolve="Find" />
@@ -29420,6 +29504,7 @@
     <property role="TrG5h" value="ShowTodoViewer" />
     <property role="2uzpH1" value="Todo..." />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4HeMkQiYOb$" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -30604,6 +30689,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Safe Delete" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="OqYxEj5h67" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -30658,6 +30744,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
     <property role="2uzpH1" value="Find Rootable Concepts without Icons" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4lvnFqUUXBY" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -31022,6 +31109,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="dependencies" />
     <property role="2uzpH1" value="Show Usages" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2Fydl1EdN_m" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -32094,6 +32182,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Calc properties/refs/children statistic for SNodes" />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6rUiV25ZRhF" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -32445,6 +32534,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
     <property role="2uzpH1" value="Calc classifiers in roots statistic" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="1bPACG$Waa_" role="32lrUH">
       <property role="TrG5h" value="calcAllClassifierTypesInRoot" />
       <node concept="3clFbS" id="1bPACG$WaaB" role="3clF47">
@@ -33291,6 +33381,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
     <property role="2uzpH1" value="Convert to binary format" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="63zBYr2_vNd" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -33896,6 +33987,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find unused and deprecated concepts" />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3uqRiOwKs1q" role="tncku">
       <node concept="3clFbS" id="3uqRiOwKs1r" role="2VODD2">
         <node concept="3cpWs8" id="3uqRiOwKs1x" role="3cqZAp">
@@ -34470,6 +34562,7 @@
     <property role="TrG5h" value="ForcedSaveAll" />
     <property role="2uzpH1" value="Re-save all models from project" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6HwFPBykFA" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -34789,6 +34882,7 @@
     <property role="TrG5h" value="FindConceptInstances" />
     <property role="3GE5qa" value="Menu.ProjectPane.Node.Actions" />
     <property role="2uzpH1" value="Find Concept Instances" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="M3eFeZXiWv" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
       <property role="1Ld5UQ" value="true" />
@@ -35092,6 +35186,7 @@
   <node concept="sE7Ow" id="5ACi1uVc9On">
     <property role="TrG5h" value="SetPluginIdToCompileInIdeaModules" />
     <property role="2uzpH1" value="Set pluginId to compile in idea modules" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="2aZcM6jmAsJ" role="32lrUH">
       <property role="TrG5h" value="getPluginIdForModule" />
       <node concept="37vLTG" id="2aZcM6jmNiw" role="3clF46">
@@ -35663,6 +35758,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
     <property role="2uzpH1" value="Convert to file-per-root format" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="38LNA6KbjqC" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -36624,6 +36720,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Analyze Stacktrace..." />
     <property role="3GE5qa" value="analyzeTrace" />
+    <property role="1teQrl" value="true" />
     <node concept="2ScWuX" id="3EnpNH2zGiu" role="tmbBb">
       <node concept="3clFbS" id="3EnpNH2zGiv" role="2VODD2">
         <node concept="3clFbJ" id="3EnpNH2zGiw" role="3cqZAp">

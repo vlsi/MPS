@@ -7,15 +7,15 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.ide.structureView.StructureViewBuilder;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ide.structureView.StructureViewBuilder;
+import com.intellij.ide.structureView.StructureView;
+import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,17 +35,26 @@ public class ShowStructure_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("fileEditor", event.getData(PlatformDataKeys.FILE_EDITOR));
-    if (MapSequence.fromMap(_params).get("fileEditor") == null) {
-      return false;
+    {
+      FileEditor p = event.getData(PlatformDataKeys.FILE_EDITOR);
+      MapSequence.fromMap(_params).put("fileEditor", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("file", event.getData(CommonDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("file") == null) {
-      return false;
+    {
+      VirtualFile p = event.getData(CommonDataKeys.VIRTUAL_FILE);
+      MapSequence.fromMap(_params).put("file", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

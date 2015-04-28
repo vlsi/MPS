@@ -84,6 +84,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1227008813498" name="constructionParameter" index="2JrayB" />
@@ -402,6 +403,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rerun Merge from Backup" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="7xjR2e1II1J" role="32lrUH">
       <property role="TrG5h" value="getBackupFiles" />
       <node concept="A3Dl8" id="7xjR2e1IJ99" role="3clF45">
@@ -1137,6 +1139,7 @@
     <property role="TrG5h" value="ShowDifferencesWithModelOnDisk" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Differences with Model on Disk" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6ySnuJfjgCQ" role="tncku">
       <node concept="3clFbS" id="6ySnuJfjgCR" role="2VODD2">
         <node concept="3cpWs8" id="6z2l4wac7g7" role="3cqZAp">
@@ -1346,6 +1349,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Ignore Module..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6ySnuJfjnzE" role="tncku">
       <node concept="3clFbS" id="6ySnuJfjnzF" role="2VODD2">
         <node concept="3cpWs8" id="6ySnuJfjnzG" role="3cqZAp">
@@ -1517,6 +1521,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Add Module to VCS" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="2hX4PxwLP3n" role="3Uehp1">
       <node concept="10M0yZ" id="2hX4PxwM2MW" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
@@ -1718,6 +1723,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Compare with the Same Repository Version" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6ySnuJfjmmB" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -2176,6 +2182,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Make Models" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7iCFfvQyOHZ" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -2426,6 +2433,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Compare Models" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3ndSBELTflb" role="tncku">
       <node concept="3clFbS" id="3ndSBELTflc" role="2VODD2">
         <node concept="3cpWs8" id="7ZOzw8MmTfC" role="3cqZAp">
@@ -2707,6 +2715,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Merge test data from ZIP" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4odLqy5SXtm" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />

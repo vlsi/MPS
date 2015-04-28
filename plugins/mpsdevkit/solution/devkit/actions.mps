@@ -148,6 +148,7 @@
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -836,6 +837,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="DevKit" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="56$IWKxenas" role="tncku">
       <node concept="3clFbS" id="56$IWKxenat" role="2VODD2">
         <node concept="3cpWs8" id="56$IWKxenau" role="3cqZAp">
@@ -1035,6 +1037,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="Language" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="56$IWKxenbi" role="tncku">
       <node concept="3clFbS" id="56$IWKxenbj" role="2VODD2">
         <node concept="3cpWs8" id="3vlfNhjK_PR" role="3cqZAp">
@@ -1172,6 +1175,7 @@
     <property role="TrG5h" value="GoToEditorDeclaration" />
     <property role="3GE5qa" value="Goto" />
     <property role="2uzpH1" value="Editor Declaration" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="1wPwVvaJhn$" role="tncku">
       <node concept="3clFbS" id="1wPwVvaJhn_" role="2VODD2">
         <node concept="3clFbF" id="4SfVnupEZNK" role="3cqZAp">
@@ -1497,6 +1501,7 @@
     <property role="TrG5h" value="GoToConceptDeclaration" />
     <property role="3GE5qa" value="Goto" />
     <property role="2uzpH1" value="Concept Declaration" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="1wPwVvaJhqf" role="tncku">
       <node concept="3clFbS" id="1wPwVvaJhqg" role="2VODD2">
         <node concept="3clFbF" id="1wPwVvaJhqh" role="3cqZAp">
@@ -1616,6 +1621,7 @@
     <property role="72QZ$" value="false" />
     <property role="3GE5qa" value="Goto" />
     <property role="2uzpH1" value="Go to Typesystem Rules" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1wPwVvaJhqN" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -1711,6 +1717,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="Add Accessory Model" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="30peylOO27e" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -2231,6 +2238,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="New Accessory Model" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4oi2Bf2tcm3" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -2513,6 +2521,7 @@
     <property role="TrG5h" value="NewAspectModel" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="Aspect Model" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="30peylOO7$v" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -2778,6 +2787,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="New" />
     <property role="2uzpH1" value="Generator" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="30peylOO7Af" role="tncku">
       <node concept="3clFbS" id="30peylOO7Ag" role="2VODD2">
         <node concept="3cpWs8" id="30peylOO7An" role="3cqZAp">
@@ -3032,6 +3042,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Delete" />
     <property role="2uzpH1" value="Delete Generator..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="1tuGf38GoJZ" role="tncku">
       <node concept="3clFbS" id="1tuGf38GoK0" role="2VODD2">
         <node concept="3cpWs8" id="7OWEUve5YwR" role="3cqZAp">
@@ -3386,6 +3397,7 @@
     <property role="TrG5h" value="LanguageHierarchy" />
     <property role="3GE5qa" value="Properties" />
     <property role="2uzpH1" value="Language Diagram" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="1Fww89lnTk1" role="tncku">
       <node concept="3clFbS" id="1Fww89lnTk2" role="2VODD2">
         <node concept="3cpWs8" id="1Fww89lnTk3" role="3cqZAp">
@@ -3577,6 +3589,7 @@
     <property role="TrG5h" value="CellProperties" />
     <property role="3GE5qa" value="InternalActions" />
     <property role="2uzpH1" value="Cell Properties" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2jM9X_IgWNO" role="tncku">
       <node concept="3clFbS" id="2jM9X_IgWNP" role="2VODD2">
         <node concept="3clFbF" id="2jM9X_IgWNQ" role="3cqZAp">
@@ -3615,6 +3628,7 @@
     <property role="TrG5h" value="HighlightCellDependencies" />
     <property role="3GE5qa" value="InternalActions" />
     <property role="2uzpH1" value="Higlighted Cell's Dependent Nodes" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2jM9X_IgWT2" role="tncku">
       <node concept="3clFbS" id="2jM9X_IgWT3" role="2VODD2">
         <node concept="3cpWs8" id="2jM9X_IgWT4" role="3cqZAp">
@@ -3898,6 +3912,7 @@
     <property role="TrG5h" value="PrintNodeID" />
     <property role="3GE5qa" value="InternalActions" />
     <property role="2uzpH1" value="Print Node ID To System.out" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2jM9X_IgWXA" role="tncku">
       <node concept="3clFbS" id="2jM9X_IgWXB" role="2VODD2">
         <node concept="3clFbF" id="2jM9X_IgWXC" role="3cqZAp">
@@ -3944,6 +3959,7 @@
     <property role="TrG5h" value="ShowCellInExplorer" />
     <property role="3GE5qa" value="InternalActions" />
     <property role="2uzpH1" value="Show Cell In Explorer" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2jM9X_IgWXP" role="tncku">
       <node concept="3clFbS" id="2jM9X_IgWXQ" role="2VODD2">
         <node concept="3clFbF" id="2jM9X_IgWXR" role="3cqZAp">
@@ -4022,6 +4038,7 @@
     <property role="TrG5h" value="ShowGenerationTrace" />
     <property role="3GE5qa" value="GenerationTrace" />
     <property role="2uzpH1" value="Show Generation Trace" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="14z8V6nEs7M" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -4198,6 +4215,7 @@
     <property role="TrG5h" value="ShowGenerationTraceback" />
     <property role="3GE5qa" value="GenerationTrace" />
     <property role="2uzpH1" value="Show Generation Traceback" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="14z8V6nEs9k" role="tncku">
       <node concept="3clFbS" id="14z8V6nEs9l" role="2VODD2">
         <node concept="3cpWs8" id="5oSeKmCes51" role="3cqZAp">
@@ -4406,6 +4424,7 @@
     <property role="TrG5h" value="GoToUsageInMappingConfig" />
     <property role="3GE5qa" value="Editor" />
     <property role="2uzpH1" value="Go to Mapping Config" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="25sHNDqAn98" role="tncku">
       <node concept="3clFbS" id="25sHNDqAn99" role="2VODD2">
         <node concept="3cpWs8" id="25sHNDqAn9a" role="3cqZAp">
@@ -4633,6 +4652,7 @@
     <property role="TrG5h" value="ShowNodeInExplorer" />
     <property role="3GE5qa" value="Tools" />
     <property role="2uzpH1" value="Show Node in Explorer" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7LWFAMfAqWl" role="tncku">
       <node concept="3clFbS" id="7LWFAMfAqWm" role="2VODD2">
         <node concept="3cpWs8" id="7LWFAMfAqWn" role="3cqZAp">
@@ -5077,6 +5097,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="DevKitTools" />
     <property role="2uzpH1" value="Reload All Classes" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="1TFxXPONz$G" role="tncku">
       <node concept="3clFbS" id="1TFxXPONz$H" role="2VODD2">
         <node concept="3clFbF" id="1TFxXPONz$I" role="3cqZAp">
@@ -5218,6 +5239,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="DevKitTools" />
     <property role="2uzpH1" value="Install IntelliJ IDEA Plugin" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="1TFxXPONz_h" role="32lrUH">
       <property role="TrG5h" value="getTargetDir" />
       <node concept="3uibUv" id="1TFxXPONz_i" role="3clF45">
@@ -6055,6 +6077,7 @@
     <property role="TrG5h" value="ShowTypeSystemTrace" />
     <property role="3GE5qa" value="typesystem" />
     <property role="2uzpH1" value="Show Typesystem Trace" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7oAN7tz7mrj" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -6403,6 +6426,7 @@
     <property role="TrG5h" value="NavigateToGeneratedQuery" />
     <property role="2uzpH1" value="Generated Query" />
     <property role="3GE5qa" value="Goto" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="gXLcbBbpLC" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
@@ -7159,6 +7183,7 @@
     <property role="72QZ$" value="false" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Language" />
     <property role="2uzpH1" value="Find Usages" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5r64_$Qz1lr" role="tncku">
       <node concept="3clFbS" id="5r64_$Qz1ls" role="2VODD2">
         <node concept="3cpWs8" id="5r64_$Qz1lJ" role="3cqZAp">
@@ -7322,6 +7347,7 @@
     <property role="72QZ$" value="false" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Language" />
     <property role="2uzpH1" value="Find Concepts Usages" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5r64_$Qz1mM" role="tncku">
       <node concept="3clFbS" id="5r64_$Qz1mN" role="2VODD2">
         <node concept="3cpWs8" id="5r64_$Qz1nc" role="3cqZAp">
@@ -10527,6 +10553,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.MainMenu" />
     <property role="2uzpH1" value="Show Structure" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="12Xh7JlccnL" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -10719,6 +10746,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Editor" />
     <property role="2uzpH1" value="Go to Overriding Methods" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="1oCHNhnjllZ" role="32lrUH">
       <property role="TrG5h" value="getFinderName" />
       <node concept="17QB3L" id="1oCHNhnjlm0" role="3clF45" />
@@ -10874,6 +10902,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Code" />
     <property role="2uzpH1" value="Implement Behavior Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="1oCHNhnjKXQ" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="3Tm6S6" id="1oCHNhnjKXR" role="1B3o_S" />
@@ -11004,6 +11033,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Code" />
     <property role="2uzpH1" value="Override Behavior Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="1oCHNhnjKYE" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="3Tm6S6" id="1oCHNhnjKYF" role="1B3o_S" />
@@ -12904,6 +12934,7 @@
     <property role="TrG5h" value="CreateDefaultEditor" />
     <property role="2uzpH1" value="Generate Default Editor (Expression-like)" />
     <property role="3GE5qa" value="Intentions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="nMe5u0CZfZ" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="nMe5u0CZg0" role="1oa70y" />
@@ -13287,6 +13318,7 @@
     <property role="1WHSii" value="Navigate to node in original model selected transient node originates from" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Reveal Origin Node" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5VaWw4ezIWY" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />

@@ -8,11 +8,11 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.Pair;
 
 public class GoToRule_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Rule;
@@ -32,13 +32,19 @@ public class GoToRule_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ruleModelAndId", event.getData(MPSDataKeys.RULE_MODEL_AND_ID));
-    if (MapSequence.fromMap(_params).get("ruleModelAndId") == null) {
-      return false;
+    {
+      Pair<String, String> p = event.getData(MPSDataKeys.RULE_MODEL_AND_ID);
+      MapSequence.fromMap(_params).put("ruleModelAndId", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

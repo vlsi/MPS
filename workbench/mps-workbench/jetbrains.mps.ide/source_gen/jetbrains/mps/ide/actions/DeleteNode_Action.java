@@ -10,15 +10,15 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.dialogs.DeleteDialog;
-import java.util.Set;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -58,17 +58,26 @@ public class DeleteNode_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("nodes", event.getData(MPSCommonDataKeys.NODES));
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
+    {
+      List<SNode> p = event.getData(MPSCommonDataKeys.NODES);
+      MapSequence.fromMap(_params).put("nodes", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("packs", event.getData(MPSDataKeys.VIRTUAL_PACKAGES));
-    if (MapSequence.fromMap(_params).get("packs") == null) {
-      return false;
+    {
+      List<Pair<SModel, String>> p = event.getData(MPSDataKeys.VIRTUAL_PACKAGES);
+      MapSequence.fromMap(_params).put("packs", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

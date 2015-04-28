@@ -52,6 +52,7 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
@@ -351,6 +352,7 @@
     <property role="TrG5h" value="CollectTests" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Collect Tests" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4KDfkUwMp5T" role="32lrUH">
       <property role="TrG5h" value="doExecute" />
       <node concept="37vLTG" id="4KDfkUwMp5U" role="3clF46">

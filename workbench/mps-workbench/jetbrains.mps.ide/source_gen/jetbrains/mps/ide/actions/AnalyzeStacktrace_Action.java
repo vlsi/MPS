@@ -8,12 +8,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import java.awt.datatransfer.StringSelection;
 import com.intellij.ide.CopyPasteManagerEx;
-import com.intellij.openapi.project.Project;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,15 +44,24 @@ public class AnalyzeStacktrace_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("exception", event.getData(MPSCommonDataKeys.EXCEPTION));
+    {
+      Throwable p = event.getData(MPSCommonDataKeys.EXCEPTION);
+      MapSequence.fromMap(_params).put("exception", p);
+    }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {

@@ -35,17 +35,15 @@ public class CopyNodeReference_Action extends BaseAction {
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
-      if (nodes != null) {
-      }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("nodes", null);
       } else {
         MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
-    }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
+      if (nodes == null) {
+        return false;
+      }
+
     }
     return true;
   }

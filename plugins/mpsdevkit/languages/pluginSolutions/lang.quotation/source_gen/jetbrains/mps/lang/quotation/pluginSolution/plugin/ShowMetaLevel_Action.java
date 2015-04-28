@@ -12,10 +12,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.awt.Component;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import javax.swing.JOptionPane;
-import java.awt.Component;
 
 public class ShowMetaLevel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,19 +37,20 @@ public class ShowMetaLevel_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")))) {
-          node = null;
-        }
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")))) {
+        node = null;
       }
       MapSequence.fromMap(_params).put("currentNode", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("currentNode") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("component", event.getData(PlatformDataKeys.CONTEXT_COMPONENT));
-    if (MapSequence.fromMap(_params).get("component") == null) {
-      return false;
+    {
+      Component p = event.getData(PlatformDataKeys.CONTEXT_COMPONENT);
+      MapSequence.fromMap(_params).put("component", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

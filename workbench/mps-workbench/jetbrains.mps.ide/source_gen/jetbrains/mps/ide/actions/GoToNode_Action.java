@@ -8,11 +8,11 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class GoToNode_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Node;
@@ -32,13 +32,19 @@ public class GoToNode_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("operationContext", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("source", event.getData(MPSDataKeys.SOURCE_NODE));
-    if (MapSequence.fromMap(_params).get("source") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSDataKeys.SOURCE_NODE);
+      MapSequence.fromMap(_params).put("source", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

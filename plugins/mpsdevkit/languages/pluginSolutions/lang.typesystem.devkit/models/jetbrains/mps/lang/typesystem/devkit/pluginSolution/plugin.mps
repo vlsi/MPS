@@ -46,6 +46,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -257,6 +258,7 @@
     <property role="TrG5h" value="ShowRulesWhichAffectNodeType" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Rules Which Affect Node's Type" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4vCqlNf_Cua" role="tncku">
       <node concept="3clFbS" id="4vCqlNf_Cub" role="2VODD2">
         <node concept="3cpWs8" id="4vCqlNf_Cuc" role="3cqZAp">
@@ -431,6 +433,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Inferred Type" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3U4Yh9n6y5f" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -581,6 +584,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Expected Type" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3U4Yh9n6v7g" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -750,6 +754,7 @@
     <property role="TrG5h" value="GoToTypeErrorRule_InGroup" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Go to Rule Which Caused Error" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1clgIweJQ4R" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -911,6 +916,7 @@
     <property role="TrG5h" value="GoToTypeErrorRule" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Go to Rule Which Caused Error" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4vCqlNf_CxV" role="tncku">
       <node concept="3clFbS" id="4vCqlNf_CxW" role="2VODD2">
         <node concept="3cpWs8" id="4vCqlNf_CxX" role="3cqZAp">

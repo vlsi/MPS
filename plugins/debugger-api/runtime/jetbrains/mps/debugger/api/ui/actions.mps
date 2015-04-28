@@ -76,6 +76,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -325,6 +326,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="tool" />
     <property role="2uzpH1" value="Evaluate Expression" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphFHI2" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphFK9T" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
@@ -628,6 +630,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="tool" />
     <property role="2uzpH1" value="Export Threads" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="68aArIS9HFv" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -1303,6 +1306,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="execution" />
     <property role="2uzpH1" value="Pause" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGd5l" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGdlv" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -1379,6 +1383,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="execution" />
     <property role="2uzpH1" value="Resume" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGedS" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGfg$" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger$ThreadStates" resolve="AllIcons.Debugger.ThreadStates" />
@@ -1453,6 +1458,7 @@
     <property role="TrG5h" value="StepInto" />
     <property role="3GE5qa" value="execution" />
     <property role="2uzpH1" value="Step Into" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGg91" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGhE7" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -1527,6 +1533,7 @@
     <property role="TrG5h" value="StepOut" />
     <property role="3GE5qa" value="execution" />
     <property role="2uzpH1" value="Step Out" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGijq" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGizo" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -1602,6 +1609,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="execution" />
     <property role="2uzpH1" value="Step Over" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGjcl" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGjsk" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -1675,6 +1683,7 @@
     <property role="TrG5h" value="ToggleBreakpoint" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="2uzpH1" value="Toggle Breakpoint" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="68aArIS9HJP" role="tncku">
       <node concept="3clFbS" id="68aArIS9HJQ" role="2VODD2">
         <node concept="3clFbF" id="68aArIS9HJR" role="3cqZAp">
@@ -1780,6 +1789,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="2uzpH1" value="View Breakpoints" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4_scbGUJDhJ" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -2231,6 +2241,7 @@
     <property role="TrG5h" value="GoToBreakpointSourceAction" />
     <property role="2uzpH1" value="Go To" />
     <property role="3GE5qa" value="breakpoints.dialog" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="1Pvy3VLlVy2" role="3Uehp1">
       <node concept="10M0yZ" id="1Pvy3VLlVyr" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
@@ -2425,6 +2436,7 @@
     <property role="TrG5h" value="ViewBreakpointSourceAction" />
     <property role="2uzpH1" value="View Source" />
     <property role="3GE5qa" value="breakpoints.dialog" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="3SQRqvYTzFM" role="3Uehp1">
       <node concept="10M0yZ" id="3SQRqvYTzFN" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -2574,6 +2586,7 @@
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="breakpoints.dialog" />
     <property role="fJN8o" value="true" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="ndZCfAIfOj" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -2730,6 +2743,7 @@
     <property role="TrG5h" value="GoToSource" />
     <property role="2uzpH1" value="Go To Source" />
     <property role="3GE5qa" value="tree" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7vO$jtdT3X7" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />

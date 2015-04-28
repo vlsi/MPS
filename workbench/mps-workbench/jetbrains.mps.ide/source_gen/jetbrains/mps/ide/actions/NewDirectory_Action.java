@@ -8,14 +8,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.application.ApplicationManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
@@ -39,13 +39,19 @@ public class NewDirectory_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(CommonDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
-      return false;
+    {
+      VirtualFile p = event.getData(CommonDataKeys.VIRTUAL_FILE);
+      MapSequence.fromMap(_params).put("selectedFile", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }

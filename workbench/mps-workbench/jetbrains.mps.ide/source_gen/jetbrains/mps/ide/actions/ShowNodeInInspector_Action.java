@@ -10,8 +10,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,9 +37,12 @@ public class ShowNodeInInspector_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
+      MapSequence.fromMap(_params).put("node", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
@@ -47,9 +50,9 @@ public class ShowNodeInInspector_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editor", editorComponent);
-    }
-    if (MapSequence.fromMap(_params).get("editor") == null) {
-      return false;
+      if (editorComponent == null) {
+        return false;
+      }
     }
     return true;
   }

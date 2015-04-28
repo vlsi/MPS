@@ -80,6 +80,7 @@
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -518,6 +519,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Extract Component" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3M9DpEEa1t4" role="tncku">
       <node concept="3clFbS" id="3M9DpEEa1t5" role="2VODD2">
         <node concept="3clFbF" id="3M9DpEEa1t6" role="3cqZAp">
@@ -1055,6 +1057,7 @@
     <property role="TrG5h" value="CopyThisDown" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Duplicate Node" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3M9DpEEa3zM" role="tncku">
       <node concept="3clFbS" id="3M9DpEEa3zN" role="2VODD2">
         <node concept="3clFbF" id="6q3Z_tb_xrg" role="3cqZAp">
@@ -1484,6 +1487,7 @@
     <property role="TrG5h" value="DeleteLine" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Delete Line" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3hypUcHYaIW" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -2225,6 +2229,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Line End" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7eEUNheFy8" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -2283,6 +2288,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Line Start" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6KwcZ1G3Pjc" role="tncku">
       <node concept="3clFbS" id="6KwcZ1G3Pjd" role="2VODD2">
         <node concept="3clFbF" id="7rsoIdzZIAp" role="3cqZAp">
@@ -2341,6 +2347,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Insert New Element" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6KwcZ1G3Pjo" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -2543,6 +2550,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Insert New Element before Current" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6KwcZ1G3Pkr" role="1NuT2Z">
       <property role="TrG5h" value="editorCell" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
@@ -2678,6 +2686,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Next Word" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7eEUNheG4g" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -2736,6 +2745,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Previous Word" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7eEUNheG4m" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -2794,6 +2804,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Text End" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6KwcZ1G3Pl4" role="tncku">
       <node concept="3clFbS" id="6KwcZ1G3Pl5" role="2VODD2">
         <node concept="3clFbF" id="1KsjPY0CKul" role="3cqZAp">
@@ -2852,6 +2863,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Text Start" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6KwcZ1G3Plf" role="tncku">
       <node concept="3clFbS" id="6KwcZ1G3Plg" role="2VODD2">
         <node concept="3clFbF" id="1KsjPY0CKuE" role="3cqZAp">
@@ -2910,6 +2922,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Shrink Selection" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6KwcZ1G3Plq" role="tncku">
       <node concept="3clFbS" id="6KwcZ1G3Plr" role="2VODD2">
         <node concept="3clFbF" id="4oqZqZuFGTm" role="3cqZAp">
@@ -2967,6 +2980,7 @@
     <property role="TrG5h" value="SelectLocalEnd" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Next Word with Selection" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6KwcZ1G3Pl_" role="1NuT2Z">
       <property role="TrG5h" value="editorCell" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
@@ -3067,6 +3081,7 @@
     <property role="TrG5h" value="SelectLocalHome" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Caret to Previous Word with Selection" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6KwcZ1G3PmO" role="1NuT2Z">
       <property role="TrG5h" value="editorCell" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
@@ -3168,6 +3183,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Expand Selection" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6KwcZ1G3Po3" role="tncku">
       <node concept="3clFbS" id="6KwcZ1G3Po4" role="2VODD2">
         <node concept="3clFbF" id="4kUE7yO2BkR" role="3cqZAp">
@@ -4753,6 +4769,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Left" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="53rxPrsP0Jw" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -4886,6 +4903,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Right" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="53rxPrsP0Jy" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -5019,6 +5037,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Up" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="53rxPrsP0Jz" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -5152,6 +5171,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Down" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="R3$tg1aBO3" role="tncku">
       <node concept="3clFbS" id="R3$tg1aBO4" role="2VODD2">
         <node concept="3cpWs8" id="FQ3Fx4Rw8B" role="3cqZAp">
@@ -5286,6 +5306,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Escape" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5QmTFjQZLb8" role="tncku">
       <node concept="3clFbS" id="5QmTFjQZLb9" role="2VODD2">
         <node concept="3clFbJ" id="5QmTFjR0nE7" role="3cqZAp">
@@ -5675,6 +5696,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Elements Up" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2pEKBmjmblj" role="tncku">
       <node concept="3clFbS" id="2pEKBmjmblk" role="2VODD2">
         <node concept="3clFbF" id="2pEKBmjmkD0" role="3cqZAp">
@@ -5740,6 +5762,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="EditorActions" />
     <property role="2uzpH1" value="Move Elements Down" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2pEKBmjmchS" role="tncku">
       <node concept="3clFbS" id="2pEKBmjmchT" role="2VODD2">
         <node concept="3clFbF" id="2pEKBmjmn4t" role="3cqZAp">
@@ -5813,6 +5836,7 @@
     <property role="TrG5h" value="SelectNext" />
     <property role="2uzpH1" value="Select Next" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3E$GKBvNxdn" role="tncku">
       <node concept="3clFbS" id="3E$GKBvNxdo" role="2VODD2">
         <node concept="3clFbF" id="5avgoB3v8EK" role="3cqZAp">
@@ -5872,6 +5896,7 @@
     <property role="TrG5h" value="SelectPrevious" />
     <property role="2uzpH1" value="Select Previous" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3E$GKBvO4G9" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -5932,6 +5957,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7HPyHg84hwh" role="tncku">
       <node concept="3clFbS" id="7HPyHg84hwi" role="2VODD2">
         <node concept="3clFbF" id="dCzc11VJDT" role="3cqZAp">
@@ -6030,6 +6056,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Delete to Word End" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7HPyHg86GQo" role="tncku">
       <node concept="3clFbS" id="7HPyHg86GQp" role="2VODD2">
         <node concept="3clFbF" id="dCzc11VHzs" role="3cqZAp">
@@ -6109,6 +6136,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Backspace" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7HPyHg86S0C" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -6206,6 +6234,7 @@
     <property role="TrG5h" value="SelectLeft" />
     <property role="2uzpH1" value="Left with Selection" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7aqfviVHWRi" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -6286,6 +6315,7 @@
     <property role="TrG5h" value="SelectRight" />
     <property role="2uzpH1" value="Right with Selection" />
     <property role="3GE5qa" value="EditorActions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7aqfviVHWRk" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -6520,6 +6550,7 @@
     <property role="TrG5h" value="GoByCurrentReference" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="2uzpH1" value="Declaration" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7A$kb8efTNf" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
@@ -6734,6 +6765,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Folding" />
     <property role="2uzpH1" value="Collapse" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4p0Cg4vAvL1" role="32lrUH">
       <property role="TrG5h" value="getAction" />
       <node concept="3uibUv" id="5OMo51zHpQp" role="3clF45">
@@ -6814,6 +6846,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Folding" />
     <property role="2uzpH1" value="Collapse All" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4p0Cg4vAvLz" role="32lrUH">
       <property role="TrG5h" value="getAction" />
       <node concept="3uibUv" id="5OMo51zHsAE" role="3clF45">
@@ -6894,6 +6927,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Folding" />
     <property role="2uzpH1" value="Expand" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4p0Cg4vAvM5" role="32lrUH">
       <property role="TrG5h" value="getAction" />
       <node concept="3uibUv" id="5OMo51zIhqL" role="3clF45">
@@ -6979,6 +7013,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Folding" />
     <property role="2uzpH1" value="Expand All" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4p0Cg4vAvMD" role="32lrUH">
       <property role="TrG5h" value="getAction" />
       <node concept="3uibUv" id="5OMo51zIkUI" role="3clF45">
@@ -7059,6 +7094,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Folding" />
     <property role="2uzpH1" value="Fold Selection" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="4p0Cg4vAvNb" role="32lrUH">
       <property role="TrG5h" value="getAction" />
       <node concept="3uibUv" id="5OMo51zIoVP" role="3clF45">
@@ -7156,6 +7192,7 @@
     <property role="TrG5h" value="DoNotSuppressErrors" />
     <property role="3GE5qa" value="Menu.EditorLeftHighlighter" />
     <property role="2uzpH1" value="Do not Supress Errors" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5YEoTZrE_cG" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -7230,6 +7267,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Intentions" />
     <property role="2uzpH1" value="Insert..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="2M3H3BXpUDa" role="tncku">
       <node concept="3clFbS" id="2M3H3BXpUDb" role="2VODD2">
         <node concept="3cpWs8" id="2M3H3BXpUDk" role="3cqZAp">
@@ -7523,6 +7561,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.EditorPopup.Actions.Intentions" />
     <property role="2uzpH1" value="Surround with..." />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="2M3H3BXpUF7" role="32lrUH">
       <property role="TrG5h" value="getAnchorCell" />
       <node concept="3uibUv" id="2M3H3BXpUF8" role="3clF45">
@@ -8410,6 +8449,7 @@
     <property role="TrG5h" value="AddLanguageImport" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Language Import" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="30tYQkHUrmS" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -8514,6 +8554,7 @@
     <property role="TrG5h" value="AddModelImport" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Model Import" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3WfhvVJ3q5l" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -8564,6 +8605,7 @@
     <property role="TrG5h" value="AddModelImportByRoot" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Model Import by Root" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="30tYQkHUrnK" role="32lrUH">
       <property role="TrG5h" value="getErrorCell" />
       <node concept="3uibUv" id="1C72Z0GtEpJ" role="3clF45">
@@ -9413,6 +9455,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find..." />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3Ps9wDHYw7B" role="tncku">
       <node concept="3clFbS" id="3Ps9wDHYw7C" role="2VODD2">
         <node concept="3clFbF" id="3Ps9wDHYw7D" role="3cqZAp">
@@ -9449,6 +9492,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Next" />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3Ps9wDHYw7O" role="tncku">
       <node concept="3clFbS" id="3Ps9wDHYw7P" role="2VODD2">
         <node concept="3clFbF" id="3Ps9wDHYw7Q" role="3cqZAp">
@@ -9507,6 +9551,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Previous" />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3Ps9wDHYw8b" role="tncku">
       <node concept="3clFbS" id="3Ps9wDHYw8c" role="2VODD2">
         <node concept="3clFbF" id="3Ps9wDHYw8d" role="3cqZAp">
@@ -9561,6 +9606,7 @@
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="TrG5h" value="PushEditorHints" />
     <property role="2uzpH1" value="Push Editor Hints" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2OiVRCDoa2h" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />

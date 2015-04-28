@@ -42,15 +42,13 @@ public class ExecuteCalculator_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "jetbrains.mps.calculator.structure.Calculator")))) {
-          node = null;
-        }
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "jetbrains.mps.calculator.structure.Calculator")))) {
+        node = null;
       }
       MapSequence.fromMap(_params).put("calcNode", node);
-    }
-    if (MapSequence.fromMap(_params).get("calcNode") == null) {
-      return false;
+      if (node == null) {
+        return false;
+      }
     }
     return true;
   }

@@ -104,6 +104,7 @@
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
@@ -728,6 +729,7 @@
     <property role="TrG5h" value="PasteAsJavaClass" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfaW" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -845,6 +847,7 @@
     <property role="TrG5h" value="PasteAsJavaMethods" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class Content" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfbe" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -969,6 +972,7 @@
     <property role="TrG5h" value="PasteAsJavaStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfbv" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -1094,6 +1098,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Get Model Contents from Source" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1bRM4HyGOHv" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -1529,6 +1534,7 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPS" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1N_sel8h_Yv" role="1NuT2Z">
       <property role="TrG5h" value="models" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
@@ -1622,6 +1628,7 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPSGlobal" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code in the Whole Project" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3Kb8mGRKrfg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -1682,6 +1689,7 @@
     <property role="2uzpH1" value="Migrate Sources to MPS" />
     <property role="3GE5qa" value="Actions" />
     <property role="72QZ$" value="true" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="60HWYcsjXo3" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -2057,6 +2065,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Convert Anonymous Class" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRiG" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRiH" role="1B3o_S" />
@@ -2307,6 +2316,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRlK" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRlL" role="1B3o_S" />
@@ -2655,6 +2665,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Make Field Final" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRnB" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRnC" role="1B3o_S" />
@@ -2784,6 +2795,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Make Field Static" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="cvGLnZnRof" role="tncku">
       <node concept="3clFbS" id="cvGLnZnRog" role="2VODD2">
         <node concept="3clFbF" id="3dReA4l3cdc" role="3cqZAp">
@@ -2910,6 +2922,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Static Field" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRoA" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRoB" role="1B3o_S" />
@@ -2999,6 +3012,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Static Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRpN" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRpO" role="1B3o_S" />
@@ -3369,6 +3383,7 @@
     <property role="TrG5h" value="GenerateConstructor" />
     <property role="2uzpH1" value="Constructor" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CD4Kj" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CD4Kl" role="3clF47">
@@ -4582,6 +4597,7 @@
     <property role="TrG5h" value="GenerateEqualsAndHashCode" />
     <property role="2uzpH1" value="equals() and hashCode" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLLY" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLLZ" role="3clF47">
@@ -6992,6 +7008,7 @@
     <property role="TrG5h" value="GenerateGetters" />
     <property role="3GE5qa" value="generate" />
     <property role="2uzpH1" value="Getter" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLHB" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLHC" role="3clF47">
@@ -7752,6 +7769,7 @@
     <property role="TrG5h" value="GenerateGettersAndSetters" />
     <property role="2uzpH1" value="Getter and Setter" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLIy" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLIz" role="3clF47">
@@ -9423,6 +9441,7 @@
     <property role="TrG5h" value="GenerateMainMethod" />
     <property role="2uzpH1" value="main(Strins[] args)" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLMw" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLMx" role="3clF47">
@@ -9697,6 +9716,7 @@
     <property role="TrG5h" value="GenerateSetters" />
     <property role="2uzpH1" value="Setter" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLI4" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLI5" role="3clF47">
@@ -10513,6 +10533,7 @@
     <property role="TrG5h" value="GenerateToString" />
     <property role="2uzpH1" value="toString()" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLMW" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLMX" role="3clF47">
@@ -14557,6 +14578,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Implement Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAHLU" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAHLV" role="1oa70y" />
@@ -14877,6 +14899,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Override Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAHMS" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAHMT" role="1oa70y" />
@@ -15213,6 +15236,7 @@
     <property role="TrG5h" value="ImplementMethodsAsIntention" />
     <property role="2uzpH1" value="Implement Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAL9_" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAL9A" role="1oa70y" />
@@ -15533,6 +15557,7 @@
     <property role="TrG5h" value="OverrideMethodsAsIntention" />
     <property role="2uzpH1" value="Override Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPALan" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPALao" role="1oa70y" />
@@ -15898,6 +15923,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Go to Overriden Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="2rUHgdX2EEM" role="32lrUH">
       <property role="TrG5h" value="getInstanceMethodDeclaration" />
       <node concept="3Tqbb2" id="2rUHgdX2EEN" role="3clF45">
@@ -16514,6 +16540,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Go to Inherited Classifiers" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2rUHgdX2EIz" role="1NuT2Z">
       <property role="TrG5h" value="classifierNode" />
       <node concept="1oajcY" id="2rUHgdX2EI$" role="1oa70y" />
@@ -17056,6 +17083,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Go to Overriding Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2rUHgdX2y0U" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="2rUHgdX2y0V" role="1oa70y" />
@@ -17214,6 +17242,7 @@
     <property role="TrG5h" value="CommentLine" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Comment Line" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="5wICCZJ10z9" role="32lrUH">
       <property role="TrG5h" value="getStatement" />
       <node concept="3Tqbb2" id="5wICCZJ10za" role="3clF45">
@@ -17704,6 +17733,7 @@
     <property role="TrG5h" value="UncommentStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Uncomment Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5wICCZJ10_F" role="tncku">
       <node concept="3clFbS" id="5wICCZJ10_G" role="2VODD2">
         <node concept="3cpWs8" id="5wICCZJ10_H" role="3cqZAp">
@@ -17847,6 +17877,7 @@
     <property role="TrG5h" value="CommentStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Comment Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5wICCZJ10Aw" role="tncku">
       <node concept="3clFbS" id="5wICCZJ10Ax" role="2VODD2">
         <node concept="3cpWs8" id="5wICCZJ10Ay" role="3cqZAp">
@@ -17992,6 +18023,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Members" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="beXdrGepvN" role="tncku">
       <node concept="3clFbS" id="beXdrGepvO" role="2VODD2">
         <node concept="3cpWs8" id="5hB0G_qDMX8" role="3cqZAp">
@@ -18234,6 +18266,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Extract Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbJ0" role="1NuT2Z">
       <property role="TrG5h" value="nodes" />
       <node concept="1oajcY" id="8qS5$SbJ1" role="1oa70y" />
@@ -18481,6 +18514,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Local Variable" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="8qS5$SbK8" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
@@ -19161,6 +19195,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbNx" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="8qS5$SbNy" role="1oa70y" />
@@ -19395,6 +19430,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Constant..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbOD" role="tncku">
       <node concept="3clFbS" id="8qS5$SbOE" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEPRN" role="3cqZAp">
@@ -19763,6 +19799,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Field..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbPX" role="tncku">
       <node concept="3clFbS" id="8qS5$SbPY" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEPRT" role="3cqZAp">
@@ -20314,6 +20351,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Variable..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbRe" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="8qS5$SbRf" role="1oa70y" />
@@ -20689,6 +20727,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rename Variable" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbS_" role="tncku">
       <node concept="3clFbS" id="8qS5$SbSA" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEaTB" role="3cqZAp">
@@ -21479,6 +21518,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Field" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6XT2l8YhG$1" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
@@ -24191,6 +24231,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Safe Delete Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2o0RM2fztWG" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="2o0RM2fztWH" role="1B3o_S" />

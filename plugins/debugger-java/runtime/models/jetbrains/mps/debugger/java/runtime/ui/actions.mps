@@ -67,6 +67,7 @@
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -274,6 +275,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="watches" />
     <property role="2uzpH1" value="New Watch..." />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGS4F" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGV3i" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$General" resolve="AllIcons.General" />
@@ -356,6 +358,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="watches" />
     <property role="2uzpH1" value="Remove Watch" />
+    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphGV$S" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphGWcb" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$General" resolve="AllIcons.General" />
@@ -474,6 +477,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="watches" />
     <property role="2uzpH1" value="Edit Watch" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4pq21WIf4VE" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
       <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
@@ -653,6 +657,7 @@
   <node concept="sE7Ow" id="7HIptzC9jpY">
     <property role="TrG5h" value="CopyValueAction" />
     <property role="2uzpH1" value="Copy Value" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7HIptzC9jpZ" role="tncku">
       <node concept="3clFbS" id="7HIptzC9jq0" role="2VODD2">
         <node concept="3cpWs8" id="7HIptzC9jrr" role="3cqZAp">
@@ -952,6 +957,7 @@
     <property role="fJN8o" value="true" />
     <property role="TrG5h" value="CopyStackTraceToClipboard" />
     <property role="2uzpH1" value="Copy Stacktrace to Clipboard" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4fC4L_vjdcT" role="tncku">
       <node concept="3clFbS" id="4fC4L_vjdcU" role="2VODD2">
         <node concept="3cpWs8" id="4fC4L_vjdgZ" role="3cqZAp">
@@ -1351,6 +1357,7 @@
   <node concept="sE7Ow" id="3E$bVnPdCoH">
     <property role="TrG5h" value="ViewAs" />
     <property role="2uzpH1" value="View With Factory" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3E$bVnPdCoI" role="tncku">
       <node concept="3clFbS" id="3E$bVnPdCoJ" role="2VODD2">
         <node concept="3cpWs8" id="3x4PZFhpt9c" role="3cqZAp">
