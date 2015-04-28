@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<Function<T, R>> {
 
-  ExtensionFunctionPoint(String id) {
+  public ExtensionFunctionPoint(String id) {
     super(id);
   }
 
