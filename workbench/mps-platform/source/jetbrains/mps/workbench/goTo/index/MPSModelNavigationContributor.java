@@ -24,7 +24,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.util.FileUtil;
@@ -84,8 +84,8 @@ public class MPSModelNavigationContributor implements ApplicationComponent, Navi
 
       boolean needToLoad = false;
       for (NavigationTarget snd : descriptors.get(0)) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getQualifiedName()).getProperty(
-          SNodeUtil.property_INamedConcept_name.getName());
+        PropertyConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(snd.getConcept()).getProperty(
+            SNodeUtil.property_INamedConcept_name.getName());
         if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;
           break;

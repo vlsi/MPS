@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.FilteredScope;
@@ -25,7 +24,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,17 +34,10 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
 import java.util.Collection;
 
 public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
-  public RootNodeNameIndex myIndex;
 
-  public RootChooseModel(Project project, RootNodeNameIndex index) {
+  public RootChooseModel(Project project) {
     super(project, "node");
-    myIndex = index;
     setCheckBoxName("Include stubs and &non-&&project models");
-  }
-
-  @Deprecated
-  public RootChooseModel(com.intellij.openapi.project.Project project, RootNodeNameIndex index) {
-    this(ProjectHelper.toMPSProject(project), index);
   }
 
   @Override

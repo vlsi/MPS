@@ -40,7 +40,6 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
@@ -253,7 +252,8 @@ public class ImportHelper {
 
   public static void addModelImportByRoot(final Project project, final SModule contextModule, final SModel model,
       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
-    BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    BaseMPSChooseModel goToNodeModel = new RootChooseModel(mpsProject) {
       @Override
       public NavigationItem doGetNavigationItem(final NavigationTarget object) {
         return new RootNodeElement(object) {
@@ -280,7 +280,7 @@ public class ImportHelper {
 
       @Override
       public void elementChosen(final Object element) {
-        jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(new Runnable() {
+        mpsProject.getModelAccess().runWriteAction(new Runnable() {
           @Override
           public void run() {
             NavigationItem navigationItem = (NavigationItem) element;

@@ -13111,20 +13111,19 @@
           </node>
         </node>
         <node concept="3clFbH" id="6HJOBr8j$F7" role="3cqZAp" />
-        <node concept="3cpWs8" id="6w88OgACexw" role="3cqZAp">
-          <node concept="3cpWsn" id="6w88OgACexx" role="3cpWs9">
-            <property role="TrG5h" value="project" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="6w88OgACf_y" role="1tU5fm">
-              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        <node concept="3cpWs8" id="4EpMpIF2t1M" role="3cqZAp">
+          <node concept="3cpWsn" id="4EpMpIF2t1N" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="4EpMpIF2t1L" role="1tU5fm">
+              <ref role="3uigEE" to="jrbx:~MPSProject" resolve="MPSProject" />
             </node>
-            <node concept="2OqwBi" id="6w88OgACexz" role="33vP2m">
-              <node concept="tl45R" id="6w88OgACf$x" role="2Oq$k0" />
-              <node concept="liA8E" id="6w88OgACex_" role="2OqNvi">
+            <node concept="2OqwBi" id="4EpMpIF2t1O" role="33vP2m">
+              <node concept="tl45R" id="4EpMpIF2t1P" role="2Oq$k0" />
+              <node concept="liA8E" id="4EpMpIF2t1Q" role="2OqNvi">
                 <ref role="37wK5l" to="nx1:~AnActionEvent.getData(com.intellij.openapi.actionSystem.DataKey):java.lang.Object" resolve="getData" />
-                <node concept="10M0yZ" id="6w88OgACexA" role="37wK5m">
-                  <ref role="1PxDUh" to="nx1:~PlatformDataKeys" resolve="PlatformDataKeys" />
-                  <ref role="3cqZAo" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+                <node concept="10M0yZ" id="4EpMpIF2t1R" role="37wK5m">
+                  <ref role="1PxDUh" to="5xh9:~MPSCommonDataKeys" resolve="MPSCommonDataKeys" />
+                  <ref role="3cqZAo" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
                 </node>
               </node>
             </node>
@@ -13133,7 +13132,7 @@
         <node concept="1gVbGN" id="6w88OgACexB" role="3cqZAp">
           <node concept="3y3z36" id="6w88OgACexC" role="1gVkn0">
             <node concept="37vLTw" id="3GM_nagT_2N" role="3uHU7B">
-              <ref role="3cqZAo" node="6w88OgACexx" resolve="project" />
+              <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
             </node>
             <node concept="10Nm6u" id="6w88OgACexE" role="3uHU7w" />
           </node>
@@ -13148,14 +13147,9 @@
             </node>
             <node concept="2ShNRf" id="3l8GlOJ514l" role="33vP2m">
               <node concept="1pGfFk" id="3l8GlOJ5bdu" role="2ShVmc">
-                <ref role="37wK5l" to="3cc4:~RootChooseModel.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.workbench.goTo.index.RootNodeNameIndex)" resolve="RootChooseModel" />
+                <ref role="37wK5l" to="3cc4:~RootChooseModel.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="RootChooseModel" />
                 <node concept="37vLTw" id="3l8GlOJ5bdN" role="37wK5m">
-                  <ref role="3cqZAo" node="6w88OgACexx" resolve="project" />
-                </node>
-                <node concept="2ShNRf" id="3l8GlOJ5bfR" role="37wK5m">
-                  <node concept="1pGfFk" id="3l8GlOJ5bfQ" role="2ShVmc">
-                    <ref role="37wK5l" to="4b02:~RootNodeNameIndex.&lt;init&gt;()" resolve="RootNodeNameIndex" />
-                  </node>
+                  <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -13168,8 +13162,13 @@
             <node concept="2YIFZM" id="79_fceV1Jah" role="33vP2m">
               <ref role="37wK5l" to="4g50:~MpsPopupFactory.createNodePopup(com.intellij.openapi.project.Project,com.intellij.ide.util.gotoByName.ChooseByNameModel,java.lang.String,jetbrains.mps.workbench.action.BaseAction):com.intellij.ide.util.gotoByName.ChooseByNamePopup" resolve="createNodePopup" />
               <ref role="1Pybhc" to="4g50:~MpsPopupFactory" resolve="MpsPopupFactory" />
-              <node concept="37vLTw" id="79_fceV1Jai" role="37wK5m">
-                <ref role="3cqZAo" node="6w88OgACexx" resolve="project" />
+              <node concept="2OqwBi" id="4EpMpIF2ulo" role="37wK5m">
+                <node concept="37vLTw" id="4EpMpIF2tTF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
+                </node>
+                <node concept="liA8E" id="4EpMpIF2uUt" role="2OqNvi">
+                  <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                </node>
               </node>
               <node concept="37vLTw" id="79_fceV1Jaj" role="37wK5m">
                 <ref role="3cqZAo" node="5mI2DYCrp9g" resolve="chooseSNodeResult" />

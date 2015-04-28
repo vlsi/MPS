@@ -8,10 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -37,11 +35,11 @@ public class GoToRootNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 
-    Project project = event.getData(PlatformDataKeys.PROJECT);
-    assert project != null;
+    MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    assert mpsProject != null;
 
-    RootChooseModel chooseSNodeResult = new RootChooseModel(project, new RootNodeNameIndex());
-    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
+    RootChooseModel chooseSNodeResult = new RootChooseModel(mpsProject);
+    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
