@@ -20,11 +20,11 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -51,7 +51,6 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Frame;
@@ -62,14 +61,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// XXX mpsProject shall be cons argument of an instance utility, to avoid long lists of arguments in static methods
 public class ImportHelper {
 
-  public static void addModelImport(final Project project, final SModule module, final SModel model,
+  public static void addModelImport(final MPSProject mpsProject, final SModule module, final SModel model,
       @Nullable BaseAction parentAction) {
-    BaseModelModel goToModelModel = new BaseModelModel(project) {
+    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
       @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new AddModelItem(project, model, modelReference);
+        return new AddModelItem(mpsProject, model, modelReference);
       }
 
       @Override
@@ -90,28 +90,14 @@ public class ImportHelper {
         }
         return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }
-
-      @Override
-      @Nullable
-      public String getPromptText() {
-        return "Import model:";
-      }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, parentAction);
+    goToModelModel.setPromptText("Import model:");
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModelModel, parentAction);
 
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      @Override
-      public void onClose() {
-        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
-      }
-
-      @Override
-      public void elementChosen(final Object element) {
-        ((NavigationItem) element).navigate(true);
-      }
-    }, ModalityState.current(), true);
+    popup.invoke(new NavigateCallback(null), ModalityState.current(), true);
   }
 
+  // XXX [artem] used from idea plugin, that's why left intact
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
                                        @Nullable BaseAction parentAction) {
     addLanguageImport(project, contextModule, model, parentAction, null);
@@ -133,29 +119,12 @@ public class ImportHelper {
         }
         return res.toArray(new SModuleReference[res.size()]);
       }
-
-      @Nullable
-      @Override
-      public String getPromptText() {
-        return "Import language:";
-      }
     };
+    goToLanguageModel.setPromptText("Import language:");
+
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel, parentAction);
 
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      @Override
-      public void onClose() {
-        //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
-        if(onClose != null) {
-          onClose.run();
-        }
-      }
-
-      @Override
-      public void elementChosen(Object element) {
-        ((NavigationItem) element).navigate(true);
-      }
-    }, ModalityState.current(), true);
+    popup.invoke(new NavigateCallback(onClose), ModalityState.current(), true);
   }
 
   private static class AddLanguageItem extends BaseModuleItem {
@@ -250,27 +219,12 @@ public class ImportHelper {
     return dialog.getSelectedModules();
   }
 
-  public static void addModelImportByRoot(final Project project, final SModule contextModule, final SModel model,
+  public static void addModelImportByRoot(final MPSProject mpsProject, final SModule contextModule, final SModel model,
       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    BaseMPSChooseModel goToNodeModel = new RootChooseModel(mpsProject) {
-      @Override
-      public NavigationItem doGetNavigationItem(final NavigationTarget object) {
-        return new RootNodeElement(object) {
-          @Override
-          public void navigate(boolean requestFocus) {
-            new AddModelItem(project, model, object.getNodeReference().getModelReference()).navigate(requestFocus);
-          }
-        };
-      }
+    BaseMPSChooseModel goToNodeModel = new RootChooseModel(mpsProject);
+    goToNodeModel.setPromptText("Import model that contains root:");
 
-      @Override
-      @Nullable
-      public String getPromptText() {
-        return "Import model that contains root:";
-      }
-    };
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText, parentAction);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), goToNodeModel, initialText, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
@@ -283,9 +237,9 @@ public class ImportHelper {
         mpsProject.getModelAccess().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            NavigationItem navigationItem = (NavigationItem) element;
-            navigationItem.navigate(true);
-            callback.importForRootAdded(navigationItem.getPresentation().getPresentableText());
+            RootNodeElement object = (RootNodeElement) element;
+            new AddModelItem(mpsProject, model, object.getModel()).navigate(true);
+            callback.importForRootAdded(object.getPresentation().getPresentableText());
           }
         });
       }
@@ -293,31 +247,52 @@ public class ImportHelper {
   }
 
   private static class AddModelItem extends BaseModelItem {
-    private Project myProject;
+    private jetbrains.mps.project.Project myProject;
     private SModel myModel;
 
-    public AddModelItem(Project project, SModel model, SModelReference modelToImport) {
+    public AddModelItem(jetbrains.mps.project.Project mpsProject, SModel model, SModelReference modelToImport) {
       super(modelToImport);
-      myProject = project;
+      myProject = mpsProject;
       myModel = model;
     }
 
     public Frame getFrame() {
-      return WindowManager.getInstance().getFrame(myProject);
+      return ProjectHelper.toMainFrame(myProject);
     }
 
     @Override
     public void navigate(boolean requestFocus) {
-      ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
-      assert modelAccess != null;
-
-      modelAccess.runWriteAction(new Runnable() {
+      myProject.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           SModelReference modelToImport = getModelReference();
           new ModelImporter(myModel, getFrame()).execute(modelToImport);
         }
       });
+    }
+  }
+
+  // FIXME there's one more j.m.w.goTo.NavigateCallback, which suggests we shall navigate from
+  // onClose(). Since Idea developers are too smart to document what's the right approach,
+  // leave the one that used to work here for the time being.
+  private static class NavigateCallback extends ChooseByNamePopupComponent.Callback {
+    private final Runnable myOnClose;
+
+    public NavigateCallback(@Nullable Runnable onClose) {
+      myOnClose = onClose;
+    }
+
+    @Override
+    public void onClose() {
+      if (myOnClose != null) {
+        myOnClose.run();
+      }
+    }
+
+    @Override
+    public void elementChosen(Object element) {
+      ((NavigationItem) element).navigate(true);
+
     }
   }
 

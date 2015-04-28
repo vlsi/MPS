@@ -8514,10 +8514,10 @@
     <property role="TrG5h" value="AddModelImport" />
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Model Import" />
-    <node concept="1DS2jV" id="30tYQkHUrnk" role="1NuT2Z">
+    <node concept="1DS2jV" id="3WfhvVJ3q5l" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="30tYQkHUrnl" role="1oa70y" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3WfhvVJ3q5m" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="30tYQkHUrnm" role="1NuT2Z">
       <property role="TrG5h" value="module" />
@@ -8535,11 +8535,11 @@
         <node concept="3clFbF" id="30tYQkHUrns" role="3cqZAp">
           <node concept="2YIFZM" id="4jh213biq4W" role="3clFbG">
             <ref role="1Pybhc" to="n6sx:~ImportHelper" resolve="ImportHelper" />
-            <ref role="37wK5l" to="n6sx:~ImportHelper.addModelImport(com.intellij.openapi.project.Project,org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.workbench.action.BaseAction):void" resolve="addModelImport" />
+            <ref role="37wK5l" to="n6sx:~ImportHelper.addModelImport(jetbrains.mps.project.MPSProject,org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.workbench.action.BaseAction):void" resolve="addModelImport" />
             <node concept="2OqwBi" id="4jh213biq4X" role="37wK5m">
               <node concept="2WthIp" id="4jh213biq4Y" role="2Oq$k0" />
               <node concept="1DTwFV" id="4jh213biq4Z" role="2OqNvi">
-                <ref role="2WH_rO" node="30tYQkHUrnk" resolve="project" />
+                <ref role="2WH_rO" node="3WfhvVJ3q5l" resolve="project" />
               </node>
             </node>
             <node concept="2OqwBi" id="4jh213biq50" role="37wK5m">
@@ -8607,10 +8607,10 @@
       </node>
       <node concept="3Tm6S6" id="30tYQkHUrom" role="1B3o_S" />
     </node>
-    <node concept="1DS2jV" id="30tYQkHUron" role="1NuT2Z">
+    <node concept="1DS2jV" id="3WfhvVJ3Syz" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="30tYQkHUroo" role="1oa70y" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3WfhvVJ3Sy$" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="30tYQkHUrop" role="1NuT2Z">
       <property role="TrG5h" value="module" />
@@ -8920,11 +8920,11 @@
         <node concept="3clFbF" id="30tYQkHUrph" role="3cqZAp">
           <node concept="2YIFZM" id="4jh213biv9Y" role="3clFbG">
             <ref role="1Pybhc" to="n6sx:~ImportHelper" resolve="ImportHelper" />
-            <ref role="37wK5l" to="n6sx:~ImportHelper.addModelImportByRoot(com.intellij.openapi.project.Project,org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel,java.lang.String,jetbrains.mps.workbench.action.BaseAction,jetbrains.mps.ide.editor.actions.ImportHelper$ModelImportByRootCallback):void" resolve="addModelImportByRoot" />
+            <ref role="37wK5l" to="n6sx:~ImportHelper.addModelImportByRoot(jetbrains.mps.project.MPSProject,org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel,java.lang.String,jetbrains.mps.workbench.action.BaseAction,jetbrains.mps.ide.editor.actions.ImportHelper$ModelImportByRootCallback):void" resolve="addModelImportByRoot" />
             <node concept="2OqwBi" id="4jh213biv9Z" role="37wK5m">
               <node concept="2WthIp" id="4jh213biva0" role="2Oq$k0" />
               <node concept="1DTwFV" id="4jh213biva1" role="2OqNvi">
-                <ref role="2WH_rO" node="30tYQkHUron" resolve="project" />
+                <ref role="2WH_rO" node="3WfhvVJ3Syz" resolve="project" />
               </node>
             </node>
             <node concept="2OqwBi" id="4jh213biva2" role="37wK5m">

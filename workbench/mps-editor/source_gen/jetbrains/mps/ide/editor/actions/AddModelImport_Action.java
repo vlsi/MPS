@@ -8,10 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -33,7 +32,7 @@ public class AddModelImport_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -51,6 +50,6 @@ public class AddModelImport_Action extends BaseAction {
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
+    ImportHelper.addModelImport(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
   }
 }

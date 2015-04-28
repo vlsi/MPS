@@ -51,7 +51,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   private final Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
   private final Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
 
-  protected String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
+  private String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
 
 
   /**
@@ -206,6 +206,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   @Nullable
   public String getPromptText() {
     return myPromptText;
+  }
+
+  public final void setPromptText(String promptText) {
+    myPromptText = promptText;
   }
 
   @Override
