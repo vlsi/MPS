@@ -32,10 +32,8 @@ public class CopyValueAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-      event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
-    }
+    IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());

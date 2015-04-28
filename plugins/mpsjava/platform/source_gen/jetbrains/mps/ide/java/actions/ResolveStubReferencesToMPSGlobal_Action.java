@@ -4,13 +4,13 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -25,9 +25,6 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

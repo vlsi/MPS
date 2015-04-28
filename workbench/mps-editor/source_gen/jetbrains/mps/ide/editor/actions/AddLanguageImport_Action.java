@@ -31,10 +31,7 @@ public class AddLanguageImport_Action extends BaseAction {
     return (((SModel) MapSequence.fromMap(_params).get("model")) != null && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel) || (((SModel) MapSequence.fromMap(_params).get("model")) == null && ((SModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

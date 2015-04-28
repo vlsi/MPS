@@ -31,10 +31,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
     return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

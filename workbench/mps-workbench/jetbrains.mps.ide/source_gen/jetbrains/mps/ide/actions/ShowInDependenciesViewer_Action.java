@@ -36,10 +36,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     return linktype == DependencyUtil.LinkType.Depends || linktype == DependencyUtil.LinkType.ReexportsDep || linktype == DependencyUtil.LinkType.ExtendsLanguage || linktype == DependencyUtil.LinkType.ExportsRuntime || linktype == DependencyUtil.LinkType.UsesLanguage;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

@@ -28,20 +28,18 @@ public class ShowDefaultHelp_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
-      if (defaultHelp == null) {
-        ContextHelpAction contextHelpAction = new ContextHelpAction();
-        contextHelpAction.update(event);
-        if (event.getPresentation().isEnabled()) {
-          return;
-        }
-        ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
+    HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
+    if (defaultHelp == null) {
+      ContextHelpAction contextHelpAction = new ContextHelpAction();
+      contextHelpAction.update(event);
+      if (event.getPresentation().isEnabled()) {
         return;
       }
-      ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
-      event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
+      ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
+      return;
     }
+    ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
+    event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

@@ -35,10 +35,7 @@ public class CompareTransientModels_Action extends BaseAction {
     return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientSModel && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientSModel && eq_5whyyr_a0a0a3(NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

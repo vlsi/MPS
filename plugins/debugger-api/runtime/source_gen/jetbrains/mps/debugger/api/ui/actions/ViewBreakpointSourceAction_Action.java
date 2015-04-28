@@ -27,10 +27,8 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
-      event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
-    }
+    IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
+    event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

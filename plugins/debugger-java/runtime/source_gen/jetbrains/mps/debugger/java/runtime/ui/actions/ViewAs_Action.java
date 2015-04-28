@@ -32,11 +32,9 @@ public class ViewAs_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      event.getPresentation().setText(ViewAs_Action.this.factory.getName());
-      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-      event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
-    }
+    event.getPresentation().setText(ViewAs_Action.this.factory.getName());
+    IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

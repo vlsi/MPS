@@ -30,10 +30,8 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2);
-      event.getPresentation().setText(text);
-    }
+    String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2);
+    event.getPresentation().setText(text);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

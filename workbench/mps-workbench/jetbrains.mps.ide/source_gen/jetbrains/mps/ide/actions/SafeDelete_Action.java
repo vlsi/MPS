@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
@@ -13,6 +12,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -24,9 +24,6 @@ public class SafeDelete_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

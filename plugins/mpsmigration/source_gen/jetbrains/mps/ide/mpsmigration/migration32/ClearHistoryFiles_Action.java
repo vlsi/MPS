@@ -4,12 +4,12 @@ package jetbrains.mps.ide.mpsmigration.migration32;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -34,9 +34,6 @@ public class ClearHistoryFiles_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -64,11 +61,11 @@ public class ClearHistoryFiles_Action extends BaseAction {
     }).select(new ISelector<DataSource, IFile>() {
       public IFile select(DataSource it) {
         if (it instanceof FileDataSource) {
-          IFile modelFile = as_wouwxe_a0a0a0a0a0a0a0a0b0f(it, FileDataSource.class).getFile();
+          IFile modelFile = as_wouwxe_a0a0a0a0a0a0a0a0b0e(it, FileDataSource.class).getFile();
           String modelPath = modelFile.getPath();
           return FileSystem.getInstance().getFileByPath(modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + MPSExtentions.DOT_REFACTORINGS);
         } else if (it instanceof FilePerRootDataSource) {
-          return as_wouwxe_a0a0a0a0a0a0a0a0b0f_0(it, FilePerRootDataSource.class).getFile(MPSExtentions.DOT_REFACTORINGS);
+          return as_wouwxe_a0a0a0a0a0a0a0a0b0e_0(it, FilePerRootDataSource.class).getFile(MPSExtentions.DOT_REFACTORINGS);
         } else {
           return null;
         }
@@ -83,10 +80,10 @@ public class ClearHistoryFiles_Action extends BaseAction {
       }
     });
   }
-  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0f(Object o, Class<T> type) {
+  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0f_0(Object o, Class<T> type) {
+  private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0e_0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -4,12 +4,12 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
@@ -37,9 +37,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -85,7 +82,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     String userHome = System.getProperty("user.home");
     String ideaConfigRootPath = (isMac ? userHome + File.separator + "Library" + File.separator + "Application Support" : userHome);
     final VirtualFile ideaConfigRoot = VirtualFileUtils.getVirtualFile(ideaConfigRootPath);
-    final Pattern namePattern = (isMac ? REGEXP_gyxeh4_a0a4a7_0 : REGEXP_gyxeh4_a0a4a7);
+    final Pattern namePattern = (isMac ? REGEXP_gyxeh4_a0a4a6_0 : REGEXP_gyxeh4_a0a4a6);
     List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
     for (VirtualFile child : ideaConfigRoot.getChildren()) {
       if (child.isDirectory()) {
@@ -121,6 +118,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     assert files.length <= 1;
     return (files.length == 0 ? null : VirtualFileUtils.toFile(files[0]));
   }
-  private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
-  private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
+  private static Pattern REGEXP_gyxeh4_a0a4a6 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
+  private static Pattern REGEXP_gyxeh4_a0a4a6_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 }

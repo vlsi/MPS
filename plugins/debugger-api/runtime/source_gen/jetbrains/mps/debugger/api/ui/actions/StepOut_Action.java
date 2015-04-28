@@ -23,10 +23,8 @@ public class StepOut_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-      event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
-    }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     DebugActionsUtil.getDebugSession(event).stepOut();

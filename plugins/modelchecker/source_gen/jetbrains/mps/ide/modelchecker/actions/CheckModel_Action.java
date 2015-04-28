@@ -34,23 +34,21 @@ public class CheckModel_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      List<SModel> modelsToCheck = new ArrayList<SModel>();
-      if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
-        modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      }
-      if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
-        modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
-      }
-
-      String whatToCheck = "Model";
-      if (modelsToCheck.size() > 1) {
-        whatToCheck = modelsToCheck.size() + " Models";
-      }
-
-      event.getPresentation().setText("Check " + whatToCheck);
-      event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
+    List<SModel> modelsToCheck = new ArrayList<SModel>();
+    if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
     }
+    if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+      modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
+    }
+
+    String whatToCheck = "Model";
+    if (modelsToCheck.size() > 1) {
+      whatToCheck = modelsToCheck.size() + " Models";
+    }
+
+    event.getPresentation().setText("Check " + whatToCheck);
+    event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

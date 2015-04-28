@@ -29,9 +29,6 @@ public class GoToRootNode_Action extends BaseAction {
   public boolean isDumbAware() {
     return false;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
-  }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 

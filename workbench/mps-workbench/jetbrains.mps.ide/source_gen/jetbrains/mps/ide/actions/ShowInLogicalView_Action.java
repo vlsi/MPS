@@ -35,10 +35,7 @@ public class ShowInLogicalView_Action extends BaseAction {
     return Sequence.fromIterable(modules).contains(check_kgxlnq_a0a1a0(check_kgxlnq_a0a0b0a(((SNode) MapSequence.fromMap(_params).get("node")))));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

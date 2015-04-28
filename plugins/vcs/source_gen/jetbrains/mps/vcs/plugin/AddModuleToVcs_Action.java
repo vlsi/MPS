@@ -32,13 +32,11 @@ public class AddModuleToVcs_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      Presentation presentation = event.getPresentation();
-      presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
-      boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
-      presentation.setEnabled(enabled);
-      presentation.setVisible(enabled);
-    }
+    Presentation presentation = event.getPresentation();
+    presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
+    boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+    presentation.setEnabled(enabled);
+    presentation.setVisible(enabled);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

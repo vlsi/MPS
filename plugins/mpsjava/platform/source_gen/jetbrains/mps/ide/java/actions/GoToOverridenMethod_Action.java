@@ -57,10 +57,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
     return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params) != null) && (GoToOverridenMethod_Action.this.getClassifier(_params) != null);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

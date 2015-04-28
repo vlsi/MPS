@@ -29,13 +29,11 @@ public class ShowGenerationTraceback_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
-      if ((((SNode) MapSequence.fromMap(_params).get("node")) == null) || tool == null) {
-        disable(event.getPresentation());
-      }
-      setEnabledState(event.getPresentation(), tool.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
+    GenerationTracerViewTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracerViewTool.class);
+    if ((((SNode) MapSequence.fromMap(_params).get("node")) == null) || tool == null) {
+      disable(event.getPresentation());
     }
+    setEnabledState(event.getPresentation(), tool.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

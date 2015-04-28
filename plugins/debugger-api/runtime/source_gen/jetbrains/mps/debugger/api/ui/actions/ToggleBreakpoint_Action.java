@@ -27,10 +27,8 @@ public class ToggleBreakpoint_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
-      event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
-    }
+    BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+    event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

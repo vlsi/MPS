@@ -42,10 +42,8 @@ public class EvaluateExpression_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
-      event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
-    }
+    IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
+    event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

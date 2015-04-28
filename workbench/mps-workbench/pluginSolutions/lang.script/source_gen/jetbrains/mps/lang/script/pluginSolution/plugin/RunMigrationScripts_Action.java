@@ -6,7 +6,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
@@ -18,6 +17,7 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
@@ -38,9 +38,6 @@ public class RunMigrationScripts_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

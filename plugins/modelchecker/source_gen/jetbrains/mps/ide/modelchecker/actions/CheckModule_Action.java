@@ -30,22 +30,20 @@ public class CheckModule_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      List<SModule> modulesToCheck = CheckModule_Action.this.modules2check(_params);
+    List<SModule> modulesToCheck = CheckModule_Action.this.modules2check(_params);
 
-      String whatToCheck = "Module";
+    String whatToCheck = "Module";
 
-      if (modulesToCheck.size() == 1) {
-        whatToCheck = modulesToCheck.get(0).getClass().getSimpleName();
-      } else if (modulesToCheck.size() > 1) {
-        whatToCheck = modulesToCheck.size() + " Modules";
-      }
-
-      event.getPresentation().setText("Check " + whatToCheck);
-      event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
-      event.getPresentation().setEnabled(!(modulesToCheck.isEmpty()));
-
+    if (modulesToCheck.size() == 1) {
+      whatToCheck = modulesToCheck.get(0).getClass().getSimpleName();
+    } else if (modulesToCheck.size() > 1) {
+      whatToCheck = modulesToCheck.size() + " Modules";
     }
+
+    event.getPresentation().setText("Check " + whatToCheck);
+    event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
+    event.getPresentation().setEnabled(!(modulesToCheck.isEmpty()));
+
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

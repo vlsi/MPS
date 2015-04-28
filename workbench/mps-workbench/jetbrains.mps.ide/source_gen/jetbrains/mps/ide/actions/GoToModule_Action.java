@@ -39,9 +39,6 @@ public class GoToModule_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
-  }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Project project = event.getData(PlatformDataKeys.PROJECT);
     assert project != null;

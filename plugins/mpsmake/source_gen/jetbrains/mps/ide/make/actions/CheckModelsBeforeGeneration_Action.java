@@ -24,13 +24,11 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
-      if (optionEnabled) {
-        event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
-      } else {
-        event.getPresentation().setIcon(new EmptyIcon(18, 18));
-      }
+    boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
+    if (optionEnabled) {
+      event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
+    } else {
+      event.getPresentation().setIcon(new EmptyIcon(18, 18));
     }
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {

@@ -35,11 +35,9 @@ public class ExportThreads_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-      event.getPresentation().setEnabled(debugSession != null);
-      event.getPresentation().setVisible(true);
-    }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    event.getPresentation().setEnabled(debugSession != null);
+    event.getPresentation().setVisible(true);
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {

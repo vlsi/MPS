@@ -37,9 +37,6 @@ public class GoToModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.enable(event.getPresentation());
-  }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     assert mpsProject != null;

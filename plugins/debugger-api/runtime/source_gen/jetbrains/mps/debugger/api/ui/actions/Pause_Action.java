@@ -23,10 +23,8 @@ public class Pause_Action extends BaseAction {
     return true;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-      event.getPresentation().setEnabled(debugSession != null && debugSession.isRunning());
-    }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    event.getPresentation().setEnabled(debugSession != null && debugSession.isRunning());
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     DebugActionsUtil.getDebugSession(event).pause();

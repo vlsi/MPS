@@ -48,10 +48,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     return !(from.isReadOnly()) && check_bai5av_a0a0c0a(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    {
-      boolean enabled = this.isApplicable(event, _params);
-      this.setEnabledState(event.getPresentation(), enabled);
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
@@ -110,7 +107,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
         from.save();
       }
     });
-    ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll(_params);
+    ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
   private static SModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
