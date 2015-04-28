@@ -35,6 +35,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -69,6 +70,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
     MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());

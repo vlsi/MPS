@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
@@ -29,10 +28,12 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2);
     event.getPresentation().setText(text);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -44,15 +45,9 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
         return false;
       }
     }
-    {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
-      if (p == null) {
-        return false;
-      }
-    }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     GoToTypeErrorRuleUtil.goToRuleById(((MPSProject) MapSequence.fromMap(_params).get("project")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
   }

@@ -7,10 +7,9 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.annotate.AnnotationHelper;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class Annotate_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -23,12 +22,15 @@ public class Annotate_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return AnnotationHelper.isAnnotateable(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
+    return AnnotationHelper.isAnnotateable(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -38,14 +40,14 @@ public class Annotate_Action extends BaseAction {
       if (editorComponent != null && editorComponent.isInvalid()) {
         editorComponent = null;
       }
-      MapSequence.fromMap(_params).put("editor", editorComponent);
       if (editorComponent == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    AnnotationHelper.annotate(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
+    AnnotationHelper.annotate(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
 }

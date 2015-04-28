@@ -28,6 +28,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((SModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
@@ -35,9 +36,11 @@ public class PasteAsJavaClass_Action extends BaseAction {
     SModel m = ((SModel) MapSequence.fromMap(_params).get("model"));
     return m != null && SModelOperations.hasLanguage(m, PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)")) && JavaPaster.areDataAvailableInClipboard();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -55,7 +58,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
       if (p == null) {
         return false;
       }
-      if (!(p instanceof EditableSModel) || ((EditableSModel) p).isReadOnly()) {
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }
@@ -68,6 +71,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
   }

@@ -9,12 +9,11 @@ import java.util.Map;
 import java.util.List;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
@@ -41,39 +40,41 @@ public class ReportModelMergeProblem_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
+    List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
       public boolean accept(VcsDirectoryMapping m) {
         return isNotEmptyString(m.getVcs());
       }
     });
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+    final BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(event.getData(CommonDataKeys.PROJECT), event.getData(MPSCommonDataKeys.FRAME));
     blameDialog.setIssueHidden(true);
     blameDialog.setSubsystem("Version Control");
     blameDialog.setIssueTitle("Model merge problem");
@@ -99,7 +100,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       }
     });
     if (listFiles == null) {
-      ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
+      ReportModelMergeProblem_Action.this.showNoBackupsAvailable(event);
     } else {
       List<File> zipFiles = Arrays.asList(listFiles);
       String[] zipNames = ListSequence.fromList(zipFiles).sort(new ISelector<File, Long>() {
@@ -112,9 +113,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         }
       }).toGenericArray(String.class);
       if (zipNames.length == 0) {
-        ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
+        ReportModelMergeProblem_Action.this.showNoBackupsAvailable(event);
       } else {
-        int selectedIndex = Messages.showChooseDialog(((Project) MapSequence.fromMap(_params).get("project")), "Choose merge backup file to attach", "Model Merge Problem", Messages.getQuestionIcon(), zipNames, zipNames[0]);
+        int selectedIndex = Messages.showChooseDialog(event.getData(CommonDataKeys.PROJECT), "Choose merge backup file to attach", "Model Merge Problem", Messages.getQuestionIcon(), zipNames, zipNames[0]);
         if (selectedIndex < 0) {
           return;
         }
@@ -123,8 +124,8 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       }
     }
   }
-  private void showNoBackupsAvailable(final Map<String, Object> _params) {
-    Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
+  private void showNoBackupsAvailable(final AnActionEvent event) {
+    Messages.showInfoMessage(event.getData(CommonDataKeys.PROJECT), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

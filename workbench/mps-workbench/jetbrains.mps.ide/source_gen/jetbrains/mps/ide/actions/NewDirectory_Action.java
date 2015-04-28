@@ -32,9 +32,11 @@ public class NewDirectory_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setIcon(IdeIcons.OPENED_FOLDER);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -55,6 +57,7 @@ public class NewDirectory_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
     final VirtualFile[] result = new VirtualFile[1];

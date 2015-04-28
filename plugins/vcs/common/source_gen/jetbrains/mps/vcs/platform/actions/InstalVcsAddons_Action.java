@@ -7,10 +7,9 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project;
 
 public class InstalVcsAddons_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -23,26 +22,29 @@ public class InstalVcsAddons_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return MergeDriverInstaller.isApplicable(((Project) MapSequence.fromMap(_params).get("project")));
+    return MergeDriverInstaller.isApplicable(event.getData(CommonDataKeys.PROJECT));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    MergeDriverInstaller.installWhereNeeded(((Project) MapSequence.fromMap(_params).get("project")));
+    MergeDriverInstaller.installWhereNeeded(event.getData(CommonDataKeys.PROJECT));
   }
 }

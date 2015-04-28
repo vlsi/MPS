@@ -1091,11 +1091,6 @@
     <property role="TrG5h" value="RunMigrationScripts" />
     <property role="2uzpH1" value="All Scripts..." />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="4KDfkUwM97B" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="4KDfkUwM97C" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="_5aXW7KLUx" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />

@@ -40,6 +40,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModule from = check_bai5av_a0a0a(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
     if (!(from instanceof AbstractModule)) {
@@ -47,9 +48,11 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     }
     return !(from.isReadOnly()) && check_bai5av_a0a0c0a(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -77,6 +80,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     AbstractModule from = (AbstractModule) check_bai5av_a0a0a0(as_iuftgz_a0a0a0a6(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
     SModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));

@@ -608,7 +608,6 @@
     <property role="72QZ$" value="false" />
     <property role="3GE5qa" value="Model Checker.Actions" />
     <property role="2uzpH1" value="Model Checker..." />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1gEYwydCrTQ" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -1702,7 +1701,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="DevKit.Internal" />
     <property role="2uzpH1" value="Find All Broken References" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2$1L9HI7HT2" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -1860,7 +1858,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find All Adapter Usages" />
     <property role="3GE5qa" value="DevKit.Internal" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5FBv6mOnSAE" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -1957,7 +1954,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Cross-template References" />
     <property role="3GE5qa" value="DevKit.Internal" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6h3t152gT6k" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -2066,7 +2062,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Find Wrong Aspect Dependencies" />
     <property role="3GE5qa" value="DevKit.Internal" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7SNXUnYXKN6" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />

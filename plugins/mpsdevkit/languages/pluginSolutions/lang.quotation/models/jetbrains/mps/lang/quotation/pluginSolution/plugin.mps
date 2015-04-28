@@ -22,7 +22,6 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -112,7 +111,6 @@
   <node concept="sE7Ow" id="4KDfkUwM8Va">
     <property role="TrG5h" value="ShowMetaLevel" />
     <property role="2uzpH1" value="Show Quotation Metalevel" />
-    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="4KDfkUwM8Vb" role="1NuT2Z">
       <property role="TrG5h" value="currentNode" />
       <node concept="3Tm6S6" id="4KDfkUwM8Vc" role="1B3o_S" />

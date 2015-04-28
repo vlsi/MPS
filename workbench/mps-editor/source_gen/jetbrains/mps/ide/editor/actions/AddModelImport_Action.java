@@ -25,6 +25,7 @@ public class AddModelImport_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -49,12 +50,13 @@ public class AddModelImport_Action extends BaseAction {
       if (p == null) {
         return false;
       }
-      if (!(p instanceof EditableSModel) || ((EditableSModel) p).isReadOnly()) {
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ImportHelper.addModelImport(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
   }

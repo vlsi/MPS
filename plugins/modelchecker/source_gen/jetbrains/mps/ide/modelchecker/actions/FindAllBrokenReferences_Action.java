@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,21 +32,22 @@ public class FindAllBrokenReferences_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators())).translate(new ITranslator2<SModule, SModel>() {
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators())).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
@@ -56,6 +56,6 @@ public class FindAllBrokenReferences_Action extends BaseAction {
         return SModelStereotype.isUserModel(md);
       }
     }));
-    ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModelsAndShowResult(models, new UnresolvedReferencesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
+    ModelCheckerTool.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).checkModelsAndShowResult(models, new UnresolvedReferencesChecker(event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
 }

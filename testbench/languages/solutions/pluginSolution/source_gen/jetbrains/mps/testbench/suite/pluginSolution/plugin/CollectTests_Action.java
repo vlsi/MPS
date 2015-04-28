@@ -57,13 +57,16 @@ public class CollectTests_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite", -1);
     return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -84,6 +87,7 @@ public class CollectTests_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._boolean done = new Wrappers._boolean(false);
     IdeEventQueue.getInstance().flushQueue();

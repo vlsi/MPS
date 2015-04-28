@@ -31,11 +31,13 @@ public class ViewAs_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText(ViewAs_Action.this.factory.getName());
     IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
     event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -49,6 +51,7 @@ public class ViewAs_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
     if (value == null || !(value instanceof JavaValue)) {

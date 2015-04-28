@@ -32,6 +32,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
       if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {

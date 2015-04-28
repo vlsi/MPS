@@ -41,6 +41,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
   public boolean isDumbAware() {
     return false;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -65,7 +66,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
       if (p == null) {
         return false;
       }
-      if (!(p instanceof EditableSModel) || ((EditableSModel) p).isReadOnly()) {
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }
@@ -86,6 +87,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<String> initialText = new Wrappers._T<String>("");
 

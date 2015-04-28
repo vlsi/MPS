@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
@@ -38,22 +37,23 @@ public class InstallIDEAPlugin_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
-    File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(_params);
+    File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(event);
     if (targetDir == null) {
       return;
     }
@@ -62,13 +62,13 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     }
     try {
       FileUtil.copyFileChecked(pluginFile, targetDir);
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
+      JOptionPane.showMessageDialog(event.getData(MPSCommonDataKeys.FRAME), "Plugin Installed\nYou should restart IDEA before using plugin");
     } catch (IOException e) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(event.getData(MPSCommonDataKeys.FRAME), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
   }
-  private File getTargetDir(final Map<String, Object> _params) {
-    File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir(_params);
+  private File getTargetDir(final AnActionEvent event) {
+    File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir(event);
     if (targetIdeaInstallDir == null) {
       return null;
     }
@@ -77,7 +77,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     }
     return new File(targetIdeaInstallDir, "config" + File.separator + "plugins");
   }
-  private File getTargetIdeaInstallDir(final Map<String, Object> _params) {
+  private File getTargetIdeaInstallDir(final AnActionEvent event) {
     boolean isMac = SystemInfo.isMac;
     String userHome = System.getProperty("user.home");
     String ideaConfigRootPath = (isMac ? userHome + File.separator + "Library" + File.separator + "Application Support" : userHome);
@@ -92,7 +92,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
       }
     }
     if (ListSequence.fromList(existingIdeaConfigs).isEmpty()) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(event.getData(MPSCommonDataKeys.FRAME), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
       return null;
     } else if (ListSequence.fromList(existingIdeaConfigs).count() == 1) {
       return VirtualFileUtils.toFile(ListSequence.fromList(existingIdeaConfigs).first());
@@ -112,7 +112,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
 
     String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
-    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, null, ((Frame) MapSequence.fromMap(_params).get("frame")));
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, null, event.getData(MPSCommonDataKeys.FRAME));
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;

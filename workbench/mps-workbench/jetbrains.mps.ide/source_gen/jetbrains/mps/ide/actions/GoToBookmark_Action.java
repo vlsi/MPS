@@ -25,10 +25,12 @@ public class GoToBookmark_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
     event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -42,6 +44,7 @@ public class GoToBookmark_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
   }

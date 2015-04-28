@@ -32,6 +32,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -52,6 +53,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();

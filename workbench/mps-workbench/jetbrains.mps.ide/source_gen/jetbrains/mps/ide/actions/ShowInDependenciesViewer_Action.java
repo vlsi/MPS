@@ -28,6 +28,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof DependencyTreeNode)) {
       return false;
@@ -35,9 +36,11 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     DependencyUtil.LinkType linktype = ((DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getLink().linktype;
     return linktype == DependencyUtil.LinkType.Depends || linktype == DependencyUtil.LinkType.ReexportsDep || linktype == DependencyUtil.LinkType.ExtendsLanguage || linktype == DependencyUtil.LinkType.ExportsRuntime || linktype == DependencyUtil.LinkType.UsesLanguage;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -65,6 +68,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
     SModule from = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0g(treeNode.getParent(), DependencyTreeNode.class));

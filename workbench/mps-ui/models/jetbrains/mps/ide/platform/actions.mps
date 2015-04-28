@@ -1457,7 +1457,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="MainMenu.Analyze" />
     <property role="2uzpH1" value="Analyze Model Dependencies" />
-    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="3EnpNH2yrIP" role="32lrUH">
       <property role="TrG5h" value="computeScope" />
       <node concept="3uibUv" id="3EnpNH2yvDk" role="3clF45">

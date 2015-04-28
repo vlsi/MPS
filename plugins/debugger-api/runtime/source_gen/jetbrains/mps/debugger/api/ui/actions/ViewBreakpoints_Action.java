@@ -26,6 +26,7 @@ public class ViewBreakpoints_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -39,6 +40,7 @@ public class ViewBreakpoints_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     ApplicationManager.getApplication().invokeLater(new Runnable() {

@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 
@@ -24,20 +23,21 @@ public class RollbackChanges_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      MapSequence.fromMap(_params).put("editorContext", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    ChangesStripActionsHelper.rollbackChanges(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
 }

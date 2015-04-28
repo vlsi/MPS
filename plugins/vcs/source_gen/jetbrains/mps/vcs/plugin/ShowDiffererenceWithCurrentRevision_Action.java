@@ -8,15 +8,13 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.persistence.FilePerRootDataSource;
@@ -24,8 +22,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 
@@ -40,65 +39,66 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    DataSource dataSource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
+  @Override
+  public boolean isApplicable(final AnActionEvent event, final Map<String, Object> _params) {
+    DataSource dataSource = event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource();
     if (dataSource instanceof FileDataSource) {
-      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile());
-      if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
-        FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile());
+      if (SNodeOperations.isRoot(event.getData(MPSCommonDataKeys.NODE)) && ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
+        FileStatus fileStatus = event.getData(CommonDataKeys.PROJECT).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
         return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
       }
     } else if (dataSource instanceof FilePerRootDataSource) {
-      if (!(SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))))) {
+      if (!(SNodeOperations.isRoot(event.getData(MPSCommonDataKeys.NODE)))) {
         return false;
       }
       String rootName = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return ((SNode) MapSequence.fromMap(_params).get("node")).getName();
+          return event.getData(MPSCommonDataKeys.NODE).getName();
         }
       });
-      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
-      if (ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
-        FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
+      if (ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
+        FileStatus fileStatus = event.getData(CommonDataKeys.PROJECT).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
         return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
       }
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
       if (p == null) {
         return false;
       }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-      MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
         return false;
       }
-      if (!(p instanceof EditableSModel) || ((EditableSModel) p).isReadOnly()) {
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    VcsActionsUtil.showRootDifference((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
+    VcsActionsUtil.showRootDifference(event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE), event.getData(CommonDataKeys.PROJECT), null);
   }
 }

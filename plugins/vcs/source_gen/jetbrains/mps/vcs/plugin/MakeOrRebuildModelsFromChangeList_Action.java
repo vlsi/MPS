@@ -11,14 +11,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
@@ -34,44 +33,46 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY)));
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild).actionText();
+    String text = new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       VirtualFile[] p = event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY);
-      MapSequence.fromMap(_params).put("virtualFiles", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
-    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY)));
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
   }
   @NotNull
   public String getActionId() {

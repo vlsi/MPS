@@ -8,10 +8,9 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CopyOldNodes_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
@@ -24,26 +23,29 @@ public class CopyOldNodes_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ChangesStripActionsHelper.areOldNodesAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    return ChangesStripActionsHelper.areOldNodesAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      MapSequence.fromMap(_params).put("editorContext", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.copyOldNodes(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    ChangesStripActionsHelper.copyOldNodes(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
 }

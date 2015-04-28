@@ -24,6 +24,7 @@ public class SetBookmarkNoNumber_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -44,6 +45,7 @@ public class SetBookmarkNoNumber_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     BookmarkManager bookmarkManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class);
     bookmarkManager.setUnnumberedBookmark(((SNode) MapSequence.fromMap(_params).get("node")));

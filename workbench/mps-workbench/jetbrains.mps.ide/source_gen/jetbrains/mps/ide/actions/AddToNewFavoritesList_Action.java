@@ -30,11 +30,13 @@ public class AddToNewFavoritesList_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {
       event.getPresentation().setText("Send to New Favorites List");
     }
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -55,6 +57,7 @@ public class AddToNewFavoritesList_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
     final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {

@@ -34,12 +34,15 @@ public class NewElement_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((TreeNode) MapSequence.fromMap(_params).get("node")) != null || ((ActionGroup) MapSequence.fromMap(_params).get("group")) != null;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -54,6 +57,7 @@ public class NewElement_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
     ModelAccess.instance().runReadAction(new Runnable() {

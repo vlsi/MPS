@@ -33,6 +33,7 @@ public class NewAspectModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
     event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
@@ -42,6 +43,7 @@ public class NewAspectModel_Action extends BaseAction {
       NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
     }
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,6 +64,7 @@ public class NewAspectModel_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
     // we need it since tree is updated later 

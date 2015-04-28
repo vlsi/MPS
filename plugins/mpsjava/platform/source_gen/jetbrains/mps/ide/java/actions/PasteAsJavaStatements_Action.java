@@ -33,15 +33,18 @@ public class PasteAsJavaStatements_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ReadOnlyUtil.isSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))) {
       return false;
     }
     return (SNodeOperations.getNodeAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +69,7 @@ public class PasteAsJavaStatements_Action extends BaseAction {
       if (p == null) {
         return false;
       }
-      if (!(p instanceof EditableSModel) || ((EditableSModel) p).isReadOnly()) {
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }
@@ -89,6 +92,7 @@ public class PasteAsJavaStatements_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.STATEMENTS, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
   }

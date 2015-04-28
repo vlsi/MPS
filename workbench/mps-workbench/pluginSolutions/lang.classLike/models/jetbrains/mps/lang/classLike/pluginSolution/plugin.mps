@@ -42,7 +42,6 @@
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1227008813498" name="constructionParameter" index="2JrayB" />
@@ -533,7 +532,6 @@
   <node concept="sE7Ow" id="2WSWNq1PvU$">
     <property role="TrG5h" value="NewClassLike" />
     <property role="2uzpH1" value="New &lt;something&gt;" />
-    <property role="1teQrl" value="true" />
     <node concept="2JriF1" id="2WSWNq1Pw7L" role="2JrayB">
       <property role="TrG5h" value="descr" />
       <node concept="3Tm6S6" id="2WSWNq1Pw7M" role="1B3o_S" />

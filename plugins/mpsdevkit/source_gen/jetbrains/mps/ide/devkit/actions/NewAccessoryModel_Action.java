@@ -8,14 +8,11 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import javax.swing.tree.TreeNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
@@ -34,50 +31,43 @@ public class NewAccessoryModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
+    event.getPresentation().setText(((event.getData(MPSCommonDataKeys.TREE_NODE) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("module", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
-      MapSequence.fromMap(_params).put("treeNode", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof AbstractModule)) {
       return;
     }
 
-    final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-    NewModelDialog d = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
+    final Language language = ((Language) event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
+    NewModelDialog d = new NewModelDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), ((AbstractModule) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), language.getModuleName(), SModelStereotype.NONE, true);
     d.show();
     final SModel result = d.getResult();
 
@@ -85,7 +75,7 @@ public class NewAccessoryModel_Action extends BaseAction {
       return;
     }
 
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().executeCommand(new Runnable() {
       public void run() {
         LanguageDescriptor descriptor = language.getModuleDescriptor();
         descriptor.getAccessoryModels().add(result.getReference());

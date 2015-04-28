@@ -22,7 +22,10 @@
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="nx1" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
+    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
+    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -154,7 +157,6 @@
   <node concept="sE7Ow" id="4KDfkUwM7Dx">
     <property role="TrG5h" value="PrintDFAResult" />
     <property role="2uzpH1" value="Print DFA" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM7Dy" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM7Dz" role="2VODD2">
         <node concept="3cpWs8" id="4KDfkUwM7D$" role="3cqZAp">
@@ -251,12 +253,19 @@
         </node>
         <node concept="3clFbF" id="1KUoCipvzh5" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCipvzh6" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvzh7" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="3D0DuOpxZuc" role="2Oq$k0">
+              <node concept="2OqwBi" id="3D0DuOpxYXo" role="2Oq$k0">
+                <node concept="2WthIp" id="3D0DuOpxYXr" role="2Oq$k0" />
+                <node concept="1DTwFV" id="3D0DuOpxYXt" role="2OqNvi">
+                  <ref role="2WH_rO" node="3D0DuOpxYDJ" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3D0DuOpxZZH" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="1KUoCipvzh8" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="1KUoCipvzh9" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCipvzha" role="1bW5cS">
                   <node concept="3clFbF" id="1KUoCipvzhb" role="3cqZAp">
@@ -328,10 +337,15 @@
                     <ref role="2WH_rO" node="4KDfkUwM7Ej" resolve="context" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="4KDfkUwM7Eg" role="37wK5m">
-                  <node concept="2WthIp" id="4KDfkUwM7Eh" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7ex9EVq1qzF" role="2OqNvi">
-                    <ref role="2WH_rO" node="7ex9EVq1qz$" resolve="project" />
+                <node concept="2OqwBi" id="3D0DuOpy10c" role="37wK5m">
+                  <node concept="2OqwBi" id="3D0DuOpy0zQ" role="2Oq$k0">
+                    <node concept="2WthIp" id="3D0DuOpy0zT" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="3D0DuOpy0zV" role="2OqNvi">
+                      <ref role="2WH_rO" node="3D0DuOpxYDJ" resolve="mpsProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3D0DuOpy1_c" role="2OqNvi">
+                    <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="4sNt2MbMjht" role="37wK5m">
@@ -357,16 +371,15 @@
       <node concept="3Tqbb2" id="4KDfkUwM7En" role="1tU5fm" />
       <node concept="1oajcY" id="4KDfkUwM7Eo" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7ex9EVq1qz$" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7ex9EVq1qz_" role="1oa70y" />
+    <node concept="1DS2jV" id="3D0DuOpxYDJ" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3D0DuOpxYDK" role="1oa70y" />
     </node>
   </node>
   <node concept="sE7Ow" id="4KDfkUwM7Er">
     <property role="TrG5h" value="PrintReachingDefinintionsInformation" />
     <property role="2uzpH1" value="Print DFA Reaching Definitions Information" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM7Es" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM7Et" role="2VODD2">
         <node concept="3cpWs8" id="4KDfkUwM7Eu" role="3cqZAp">
@@ -449,7 +462,6 @@
   <node concept="sE7Ow" id="4KDfkUwM7EW">
     <property role="TrG5h" value="PrintInitializationInformation" />
     <property role="2uzpH1" value="Print DFA Initialization Information" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM7EX" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM7EY" role="2VODD2">
         <node concept="3cpWs8" id="4KDfkUwM7EZ" role="3cqZAp">

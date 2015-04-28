@@ -36,7 +36,6 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
@@ -221,22 +220,6 @@
     <property role="1WHSii" value="All model references should have module reference" />
     <property role="TrG5h" value="MigrateSModelReference" />
     <property role="2uzpH1" value="Migrate Model Reference" />
-    <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="7tZeFupJFiv" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDny" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="6HwFPBykFA" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="6HwFPBykFB" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="3Kb8mGRKsn5" role="1NuT2Z">
-      <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7HZe2EwZDnC" role="1oa70y" />
-    </node>
     <node concept="tnohg" id="6ST_gT5KRq5" role="tncku">
       <node concept="3clFbS" id="6ST_gT5KRq6" role="2VODD2">
         <node concept="3clFbF" id="6ST_gT5M2_Y" role="3cqZAp">
@@ -285,7 +268,6 @@
   <node concept="sE7Ow" id="7vy2u1BNC$F">
     <property role="TrG5h" value="ClearHistoryFiles" />
     <property role="2uzpH1" value="Clear History Files" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7vy2u1BNC$G" role="tncku">
       <node concept="3clFbS" id="7vy2u1BNC$H" role="2VODD2">
         <node concept="3cpWs8" id="7vy2u1BOpDQ" role="3cqZAp">
@@ -611,7 +593,6 @@
     <property role="TrG5h" value="MigrateIds" />
     <property role="2uzpH1" value="Migrate from Names to Ids" />
     <property role="1WHSii" value="Concept/property/reference/link/language id" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6qheojHebey" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -644,7 +625,6 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="WrapNotExpressionInParens" />
     <property role="2uzpH1" value="Wrap NotExpression in Parentheses Where Necessary" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="5Df7ZI$EHZ1" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -764,7 +744,6 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="UpdateDepecatedBlockDocTags" />
     <property role="2uzpH1" value="Initialize the Text for All DeprecatedBlockDocTag Instances" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4XbESZhKqK" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -884,7 +863,6 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="MigrateFloatConstants" />
     <property role="2uzpH1" value="Migrate Float Constants" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1UVYfO0DGdZ" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />

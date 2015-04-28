@@ -387,7 +387,6 @@
     <property role="TrG5h" value="RollbackChanges" />
     <property role="2uzpH1" value="Rollback" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphUkZP" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphUl0t" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$General" resolve="AllIcons.General" />
@@ -423,7 +422,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Previous Change" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphUl_G" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphUlL_" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -492,7 +490,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Next Change" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphUmx9" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphUmys" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -706,7 +703,6 @@
     <property role="TrG5h" value="CopyOldNodes" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Copy Old Code" />
-    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="6XsdSphUnj5" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSphUnmB" role="3xaMm5">
         <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
@@ -1820,7 +1816,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Report Model Merge Problem..." />
-    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="341WClvYTWi" role="32lrUH">
       <property role="TrG5h" value="showNoBackupsAvailable" />
       <node concept="3cqZAl" id="341WClvYTWj" role="3clF45" />
@@ -2437,7 +2432,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Install MPS VCS Add-ons..." />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="341WClvYU09" role="tncku">
       <node concept="3clFbS" id="341WClvYU0a" role="2VODD2">
         <node concept="3clFbF" id="341WClvYU0b" role="3cqZAp">
@@ -2481,7 +2475,6 @@
     <property role="TrG5h" value="Annotate" />
     <property role="2uzpH1" value="Annotate" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3WCIgQv3c7U" role="tncku">
       <node concept="3clFbS" id="3WCIgQv3c7V" role="2VODD2">
         <node concept="3clFbF" id="3WCIgQv3c7W" role="3cqZAp">
@@ -2559,7 +2552,6 @@
     <property role="TrG5h" value="ResolveNonconflictingChanges" />
     <property role="2uzpH1" value="Resolve non-conflicting changes in MPS models" />
     <property role="72QZ$" value="true" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7yFo2E9ZbMd" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />

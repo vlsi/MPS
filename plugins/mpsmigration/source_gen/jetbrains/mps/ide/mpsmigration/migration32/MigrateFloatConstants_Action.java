@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.awt.Frame;
@@ -31,38 +30,37 @@ public class MigrateFloatConstants_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "2214637407304092437");
 
-    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Migrate float constants with f|F", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Migrate float constants with f|F", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(CommonDataKeys.PROJECT));
     if (ModelAccess.instance().canWrite()) {
       executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
     } else {
-      executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
+      executor.execAsCommand(event.getData(MPSCommonDataKeys.FRAME));
     }
   }
 }

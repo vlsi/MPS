@@ -6,13 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -30,36 +29,38 @@ public class LanguageHierarchy_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return event.getData(MPSCommonDataKeys.MODULE) instanceof Language;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
+    Language language = (Language) event.getData(MPSCommonDataKeys.MODULE);
     MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
-    FileEditorManager editorManager = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+    FileEditorManager editorManager = FileEditorManager.getInstance(event.getData(CommonDataKeys.PROJECT));
     FileEditor[] res = editorManager.openFile(file, true, true);
     MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
     languageEditor.getComponent().requestFocus();

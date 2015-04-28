@@ -31,12 +31,15 @@ public class CompareTransientModels_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientSModel && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientSModel && eq_5whyyr_a0a0a3(NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,6 +60,7 @@ public class CompareTransientModels_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
     final String[] titles = new String[]{model[0].getModelName(), model[1].getModelName()};

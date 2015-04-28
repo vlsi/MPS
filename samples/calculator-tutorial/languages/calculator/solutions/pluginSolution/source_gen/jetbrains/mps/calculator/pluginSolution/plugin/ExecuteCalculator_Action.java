@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -27,12 +26,15 @@ public class ExecuteCalculator_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ExecuteCalculator_Action.this.getMainMethod(_params) != null;
+    return ExecuteCalculator_Action.this.getMainMethod(event) != null;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -42,16 +44,16 @@ public class ExecuteCalculator_Action extends BaseAction {
       if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "jetbrains.mps.calculator.structure.Calculator")))) {
         node = null;
       }
-      MapSequence.fromMap(_params).put("calcNode", node);
       if (node == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
+      final Method method = ExecuteCalculator_Action.this.getMainMethod(event);
       Thread thread = new Thread(new Runnable() {
         @Override
         public void run() {
@@ -68,13 +70,13 @@ public class ExecuteCalculator_Action extends BaseAction {
       e.printStackTrace();
     }
   }
-  private Class getCalcClass(final Map<String, Object> _params) {
-    String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-    String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode")))) + "." + className;
-    return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModule(), fqClassName);
+  private Class getCalcClass(final AnActionEvent event) {
+    String className = SPropertyOperations.getString(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE))) + "." + className;
+    return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)).getModule(), fqClassName);
   }
-  private Method getMainMethod(final Map<String, Object> _params) {
-    final Class c = ExecuteCalculator_Action.this.getCalcClass(_params);
+  private Method getMainMethod(final AnActionEvent event) {
+    final Class c = ExecuteCalculator_Action.this.getCalcClass(event);
     if (c == null) {
       return null;
     }

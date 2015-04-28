@@ -23,6 +23,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof ReferenceTreeNode)) {
       return false;
@@ -30,9 +31,11 @@ public class DeleteReferenceAction_Action extends BaseAction {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
     return parent instanceof ReferencesTreeNode;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -46,6 +49,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
     ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;

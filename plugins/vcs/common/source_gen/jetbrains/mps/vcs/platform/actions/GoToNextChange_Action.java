@@ -9,9 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 
@@ -26,30 +25,31 @@ public class GoToNextChange_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true));
+    event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      MapSequence.fromMap(_params).put("editorContext", p);
       if (p == null) {
         return false;
       }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.goToNeighbourGroup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true);
+    ChangesStripActionsHelper.goToNeighbourGroup(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true);
   }
 }

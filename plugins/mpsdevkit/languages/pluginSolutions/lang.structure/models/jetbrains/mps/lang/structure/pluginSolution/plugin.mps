@@ -343,9 +343,6 @@
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
-      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
-        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
-      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -453,7 +450,6 @@
     <property role="TrG5h" value="ShowHelpForNode" />
     <property role="2uzpH1" value="Show Help for Node" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9cJ" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9cK" role="2VODD2">
         <node concept="3clFbF" id="4KDfkUwM9cL" role="3cqZAp">
@@ -538,7 +534,6 @@
     <property role="2uzpH1" value="Show Default Help" />
     <property role="3GE5qa" value="Actions" />
     <property role="3mtozt" value="ContextHelp" />
-    <property role="1teQrl" value="true" />
     <node concept="mfpdH" id="79ALBP9Jg68" role="med8o" />
     <node concept="1DS2jV" id="4KDfkUwM9dh" role="1NuT2Z">
       <property role="TrG5h" value="module" />
@@ -1591,7 +1586,6 @@
     <property role="TrG5h" value="ShowHelpForAspect" />
     <property role="2uzpH1" value="Show Help for Aspect" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM9jn" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9jo" role="2VODD2">
         <node concept="3clFbF" id="4KDfkUwM9jp" role="3cqZAp">
@@ -3993,24 +3987,6 @@
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Move Concepts" />
     <property role="1teQrl" value="true" />
-    <node concept="2S4$dB" id="4KDfkUwM9_k" role="1NuT2Z">
-      <property role="TrG5h" value="target" />
-      <node concept="3Tm6S6" id="4KDfkUwM9_l" role="1B3o_S" />
-      <node concept="2I9FWS" id="4KDfkUwM9_m" role="1tU5fm">
-        <ref role="2I9WkF" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
-      <node concept="1oajcY" id="4KDfkUwM9_n" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="4KDfkUwM9_o" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="4KDfkUwM9_p" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="4KDfkUwM9_q" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="4KDfkUwM9_r" role="1oa70y" />
-    </node>
     <node concept="tnohg" id="4KDfkUwM9_s" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM9_t" role="2VODD2">
         <node concept="3clFbF" id="55QDKWL$KBB" role="3cqZAp">

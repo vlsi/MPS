@@ -27,6 +27,7 @@ public class AddModuleToProject_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     HashSet<SModule> projectModules = new HashSet<SModule>(IterableUtil.asCollection(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules()));
     for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
@@ -36,9 +37,11 @@ public class AddModuleToProject_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -59,6 +62,7 @@ public class AddModuleToProject_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
       ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addModule(module.getModuleReference());

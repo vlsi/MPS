@@ -7,13 +7,12 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -36,11 +35,12 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
+    if (!(event.getData(MPSCommonDataKeys.MODULE) instanceof Language)) {
       return false;
     }
-    Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
+    Language language = (Language) event.getData(MPSCommonDataKeys.MODULE);
     SModel structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;
@@ -50,34 +50,35 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
     }
     {
       Project p = event.getData(PlatformDataKeys.PROJECT_CONTEXT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SearchScope scope = GlobalScope.getInstance();
-    final SearchQuery query = new SearchQuery(((SModule) MapSequence.fromMap(_params).get("module")), scope);
+    final SearchQuery query = new SearchQuery(event.getData(MPSCommonDataKeys.MODULE), scope);
     final IResultProvider provider = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("There are no usages of language's concepts");
-    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
+    UsagesViewTool.showUsages(event.getData(PlatformDataKeys.PROJECT_CONTEXT), provider, query, opt);
   }
 }

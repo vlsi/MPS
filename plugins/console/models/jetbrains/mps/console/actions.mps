@@ -443,7 +443,6 @@
   <node concept="sE7Ow" id="2ONldtgwNPF">
     <property role="TrG5h" value="ExecuteActionAttachedToCurrentNode" />
     <property role="2uzpH1" value="Execute Attached Action" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="26Zgp9fCgIn" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />

@@ -7,18 +7,16 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -45,13 +43,14 @@ public class AttachMappingLabel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
+    SNode node = event.getData(MPSCommonDataKeys.NODE);
     if (!(BaseConcept_Behavior.call_isInTemplates_1213877396627(node))) {
       return false;
     }
-    //  not an element form generator language 
-    if ((Language) check_gwd6n9_a0a3a0(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) == BootstrapLanguages.generatorLanguage()) {
+    //  not an element from generator language 
+    if (SNodeOperations.getConcept(node).getLanguage().equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator", -1))) {
       return false;
     }
     //  not inside macro 
@@ -84,31 +83,32 @@ public class AttachMappingLabel_Action extends BaseAction {
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("nodeSelected", p);
       if (p == null) {
         return false;
       }
     }
     {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      MapSequence.fromMap(_params).put("editorContext", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
+    final SNode node = event.getData(MPSCommonDataKeys.NODE);
     SModule module = SNodeOperations.getModel(node).getModule();
     Iterable<SNode> mappings;
     if (module instanceof Generator) {
@@ -180,16 +180,10 @@ __switch__:
     }).toListSequence();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
         dialog.show();
       }
     });
-  }
-  private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

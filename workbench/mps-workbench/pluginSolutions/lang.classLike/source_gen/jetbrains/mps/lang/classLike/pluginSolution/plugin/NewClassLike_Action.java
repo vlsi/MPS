@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -30,35 +29,36 @@ public class NewClassLike_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " class");
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
-      MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SNode newClass = ClassLikeUtil.createNewClassLike(NewClassLike_Action.this.descr, ((SModel) MapSequence.fromMap(_params).get("model")));
-    if (!(NewRootNodeAction.trySelectInCurrentPane(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass))) {
-      NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, false);
+    SNode newClass = ClassLikeUtil.createNewClassLike(NewClassLike_Action.this.descr, event.getData(MPSCommonDataKeys.MODEL));
+    if (!(NewRootNodeAction.trySelectInCurrentPane(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass))) {
+      NavigationSupport.getInstance().selectInTree(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, false);
     }
-    NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, true, false);
+    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, true, false);
   }
   @NotNull
   public String getActionId() {

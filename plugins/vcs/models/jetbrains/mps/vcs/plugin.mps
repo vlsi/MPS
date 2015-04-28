@@ -1349,7 +1349,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Ignore Module..." />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6ySnuJfjnzE" role="tncku">
       <node concept="3clFbS" id="6ySnuJfjnzF" role="2VODD2">
         <node concept="3cpWs8" id="6ySnuJfjnzG" role="3cqZAp">
@@ -1521,7 +1520,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Add Module to VCS" />
-    <property role="1teQrl" value="true" />
     <node concept="1QGGSu" id="2hX4PxwLP3n" role="3Uehp1">
       <node concept="10M0yZ" id="2hX4PxwM2MW" role="3xaMm5">
         <ref role="1PxDUh" to="c4ym:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
@@ -1723,7 +1721,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Compare with the Same Repository Version" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6ySnuJfjmmB" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -1746,15 +1743,10 @@
           <node concept="2YIFZM" id="6ySnuJfjmmI" role="3clFbG">
             <ref role="37wK5l" to="zbx9:78RbNhWi9Me" resolve="showRootDifference" />
             <ref role="1Pybhc" to="zbx9:78RbNhWi9Md" resolve="VcsActionsUtil" />
-            <node concept="10QFUN" id="1BhuHejRfIn" role="37wK5m">
-              <node concept="3uibUv" id="1HT8bsQ$jEl" role="10QFUM">
-                <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
-              </node>
-              <node concept="2OqwBi" id="1BhuHejRfIo" role="10QFUP">
-                <node concept="2WthIp" id="1BhuHejRfIp" role="2Oq$k0" />
-                <node concept="1DTwFV" id="1BhuHejRfIq" role="2OqNvi">
-                  <ref role="2WH_rO" node="6ySnuJfjmmE" resolve="model" />
-                </node>
+            <node concept="2OqwBi" id="1BhuHejRfIo" role="37wK5m">
+              <node concept="2WthIp" id="1BhuHejRfIp" role="2Oq$k0" />
+              <node concept="1DTwFV" id="1BhuHejRfIq" role="2OqNvi">
+                <ref role="2WH_rO" node="6ySnuJfjmmE" resolve="model" />
               </node>
             </node>
             <node concept="2OqwBi" id="6ySnuJfjmmU" role="37wK5m">
@@ -2182,7 +2174,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Make Models" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="7iCFfvQyOHZ" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />

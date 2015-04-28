@@ -8,15 +8,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -34,54 +33,55 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")))))) {
+    if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE))))) {
       return false;
     }
-    if ((SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))) == null)) {
+    if ((SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)) == null)) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
       return false;
     }
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator)) {
+    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof Generator)) {
       return false;
     }
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", node);
       if (node == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
+    MappingConfigFinder finder = new MappingConfigFinder(((Generator) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)));
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(true).forceNewTab(false);
-    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("project")), FindUtils.makeProvider(finder), new SearchQuery(null), opt);
+    UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), FindUtils.makeProvider(finder), new SearchQuery(null), opt);
   }
 }

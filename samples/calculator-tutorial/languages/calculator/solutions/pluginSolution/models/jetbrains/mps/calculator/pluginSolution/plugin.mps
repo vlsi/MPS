@@ -25,7 +25,6 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
@@ -198,7 +197,6 @@
   <node concept="sE7Ow" id="4KDfkUwMkVT">
     <property role="TrG5h" value="ExecuteCalculator" />
     <property role="2uzpH1" value="Execute Calculator" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwMkVU" role="tncku">
       <node concept="3clFbS" id="4KDfkUwMkVV" role="2VODD2">
         <node concept="SfApY" id="4KDfkUwMkVW" role="3cqZAp">

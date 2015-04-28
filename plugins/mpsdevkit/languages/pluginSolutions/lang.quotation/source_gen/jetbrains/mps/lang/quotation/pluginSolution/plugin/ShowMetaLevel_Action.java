@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Component;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +27,7 @@ public class ShowMetaLevel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -37,22 +37,21 @@ public class ShowMetaLevel_Action extends BaseAction {
       if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")))) {
         node = null;
       }
-      MapSequence.fromMap(_params).put("currentNode", node);
       if (node == null) {
         return false;
       }
     }
     {
       Component p = event.getData(PlatformDataKeys.CONTEXT_COMPONENT);
-      MapSequence.fromMap(_params).put("component", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, ((SNode) MapSequence.fromMap(_params).get("currentNode")), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
-    JOptionPane.showMessageDialog(((Component) MapSequence.fromMap(_params).get("component")), metaLevel);
+    int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, event.getData(MPSCommonDataKeys.NODE), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
+    JOptionPane.showMessageDialog(event.getData(PlatformDataKeys.CONTEXT_COMPONENT), metaLevel);
   }
 }

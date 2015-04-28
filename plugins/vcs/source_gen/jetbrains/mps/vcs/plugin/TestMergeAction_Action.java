@@ -47,6 +47,7 @@ public class TestMergeAction_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -60,6 +61,7 @@ public class TestMergeAction_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, true, true, false, false) {
       @Override

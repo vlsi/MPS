@@ -11,11 +11,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
@@ -30,15 +28,25 @@ public class NewGenerator_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModule) MapSequence.fromMap(_params).get("module")) != null && ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language && ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))).getGenerators().isEmpty();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.MODULE);
@@ -47,26 +55,20 @@ public class NewGenerator_Action extends BaseAction {
         return false;
       }
     }
-    {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        dialog[0] = new NewGeneratorDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
+        dialog[0] = new NewGeneratorDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
       }
     });
     dialog[0].show();
     Generator result = dialog[0].getResult();
     if (result != null) {
-      ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModule(result, false);
+      ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).selectModule(result, false);
     }
   }
 }

@@ -33,6 +33,7 @@ public class CheckModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> modelsToCheck = new ArrayList<SModel>();
     if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
@@ -50,6 +51,7 @@ public class CheckModel_Action extends BaseAction {
     event.getPresentation().setText("Check " + whatToCheck);
     event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -78,6 +80,7 @@ public class CheckModel_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     // check all models in model 
     List<SModel> modelsToCheck = new ArrayList<SModel>();

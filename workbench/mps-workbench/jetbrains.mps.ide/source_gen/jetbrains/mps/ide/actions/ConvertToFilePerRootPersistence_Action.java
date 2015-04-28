@@ -47,6 +47,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     FolderModelFactory filePerRootFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
     if (filePerRootFactory == null) {
@@ -60,9 +61,11 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       }
     });
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -90,6 +93,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     final Iterable<SModel> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {

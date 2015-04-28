@@ -31,14 +31,17 @@ public class ShowGenerationActions_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"));
     group.update(event);
     return group.getChildren(event).length != 0;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -59,6 +62,7 @@ public class ShowGenerationActions_Action extends BaseAction {
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     int x = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getX();
     int y = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getHeight();
