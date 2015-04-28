@@ -32,7 +32,6 @@
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
@@ -44,4 +43,3 @@
     <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>
-
