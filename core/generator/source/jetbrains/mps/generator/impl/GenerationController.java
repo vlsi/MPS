@@ -85,7 +85,6 @@ public class GenerationController implements ITaskPoolProvider {
   }
 
   public boolean generate(ProgressMonitor monitor) {
-    myLogger.clear();
     long startJobTime = System.currentTimeMillis();
 
     myGenerationHandler.startGeneration(myLogger);
