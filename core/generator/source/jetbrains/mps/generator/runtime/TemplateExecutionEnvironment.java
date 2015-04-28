@@ -24,6 +24,7 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -116,8 +117,16 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * ReferenceMacro support
+   * @deprecated replaced with {@link #resolve(ReferenceResolver2)}
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context);
+
+  /**
+   * ReferenceMacro support
+   */
+  void resolve(@NotNull ReferenceResolver2 resolver);
 
   /**
    * Support for $MAP-SRC$ macro's mapping function

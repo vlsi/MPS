@@ -23,12 +23,14 @@ import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
+import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
@@ -40,6 +42,8 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
@@ -228,18 +232,23 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
-    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
+    new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).setAndRegister(generator);
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
-    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, context);
-    new PostponedReference(role, outputNode, refInfo).setAndRegister(generator);
+    resolve(new RefResolverAdapter(outputNode, ((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), context, resolver));
+  }
+
+  @Override
+  public void resolve(@NotNull ReferenceResolver2 resolver) {
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
+    new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).setAndRegister(generator);
   }
 
   /*
-  *  returns temporary node
-  */
+    *  returns temporary node
+    */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());

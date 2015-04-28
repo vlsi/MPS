@@ -34,14 +34,6 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
   private SReference myReplacementReference;
   private TemplateGenerator myGenerator;
 
-
-  @Deprecated
-  @ToRemove(version = 0)
-  public PostponedReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull ReferenceInfo referenceInfo) {
-    super(role, sourceNode);
-    myReferenceInfo = referenceInfo;
-  }
-
   public PostponedReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @NotNull ReferenceInfo referenceInfo) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
