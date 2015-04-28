@@ -23,6 +23,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
     if (optionEnabled) {
@@ -31,6 +32,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       event.getPresentation().setIcon(new EmptyIcon(18, 18));
     }
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IModifiableGenerationSettings settings = GenerationSettings.getInstance();
     settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));

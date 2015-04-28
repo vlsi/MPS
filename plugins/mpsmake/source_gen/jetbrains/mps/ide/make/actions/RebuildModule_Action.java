@@ -7,12 +7,11 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
@@ -29,8 +28,9 @@ public class RebuildModule_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SModuleOperations.isCompileInMps(((SModule) MapSequence.fromMap(_params).get("module")));
+    return SModuleOperations.isCompileInMps(event.getData(MPSCommonDataKeys.MODULE));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
@@ -40,22 +40,21 @@ public class RebuildModule_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    Set<SModule> modules = Collections.<SModule>singleton(((SModule) MapSequence.fromMap(_params).get("module")));
-    ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, true));
+    Set<SModule> modules = Collections.<SModule>singleton(event.getData(MPSCommonDataKeys.MODULE));
+    ProgressManager.getInstance().run(new DefaultMakeTask(event.getData(CommonDataKeys.PROJECT), "Compiling", modules, true));
   }
 }

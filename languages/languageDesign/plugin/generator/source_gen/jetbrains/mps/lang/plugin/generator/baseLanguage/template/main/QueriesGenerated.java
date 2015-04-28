@@ -745,7 +745,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_2712129534618300098(final IfMacroContext _context) {
     return eq_x583g4_a0a0rh(SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"))), SNodeOperations.getModel(_context.getNode()));
   }
-  public static boolean ifMacro_Condition_997079742912537839(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4197537290462330213(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"), false, false), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0xdd656be50ed306bL, "fillActionContext"));
   }
   public static boolean ifMacro_Condition_7237738794729151784(final IfMacroContext _context) {

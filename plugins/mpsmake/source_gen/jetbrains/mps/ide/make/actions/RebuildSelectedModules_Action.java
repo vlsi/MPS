@@ -10,10 +10,9 @@ import jetbrains.mps.make.IMakeService;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 
@@ -32,17 +31,18 @@ public class RebuildSelectedModules_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    List<SModule> list = RebuildSelectedModules_Action.this.getModules(_params);
+    List<SModule> list = RebuildSelectedModules_Action.this.getModules(event);
     if (ListSequence.fromList(list).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(list).cleanMake(true).actionText();
+    String text = new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(list).cleanMake(true).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
@@ -52,32 +52,30 @@ public class RebuildSelectedModules_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       List<SModule> p = event.getData(MPSCommonDataKeys.MODULES);
-      MapSequence.fromMap(_params).put("modules", p);
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("cmodule", p);
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(RebuildSelectedModules_Action.this.getModules(_params)).cleanMake(true)).executeAction();
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(RebuildSelectedModules_Action.this.getModules(event)).cleanMake(true)).executeAction();
   }
-  private List<SModule> getModules(final Map<String, Object> _params) {
-    SModule cmd = ((SModule) MapSequence.fromMap(_params).get("cmodule"));
+  private List<SModule> getModules(final AnActionEvent event) {
+    SModule cmd = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
     if (cmd instanceof Generator) {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
     List<SModule> rv = ListSequence.fromList(new ArrayList<SModule>());
-    if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
-      ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules"))));
+    if (event.getData(MPSCommonDataKeys.MODULES) != null) {
+      ListSequence.fromList(rv).addSequence(ListSequence.fromList(event.getData(MPSCommonDataKeys.MODULES)));
     }
     if (cmd != null && !(ListSequence.fromList(rv).contains(cmd))) {
       ListSequence.fromList(rv).addElement(cmd);

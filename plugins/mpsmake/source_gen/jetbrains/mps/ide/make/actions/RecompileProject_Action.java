@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
@@ -36,23 +35,22 @@ public class RecompileProject_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Set<SModule> modules = SetSequence.fromSet(new LinkedHashSet<SModule>());
-    SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
-    ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Compiling", modules, true));
+    SetSequence.fromSet(modules).addSequence(ListSequence.fromList(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules(SModule.class)));
+    ProgressManager.getInstance().run(new DefaultMakeTask(event.getData(CommonDataKeys.PROJECT), "Compiling", modules, true));
   }
 }

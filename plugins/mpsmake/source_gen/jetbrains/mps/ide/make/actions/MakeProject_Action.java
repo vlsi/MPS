@@ -11,7 +11,6 @@ import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,6 +30,7 @@ public class MakeProject_Action extends BaseAction {
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(IMakeService.INSTANCE.get().isSessionActive());
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
@@ -40,15 +40,15 @@ public class MakeProject_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules());
-    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(modules)).executeAction();
+    List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules());
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(modules)).executeAction();
   }
 }

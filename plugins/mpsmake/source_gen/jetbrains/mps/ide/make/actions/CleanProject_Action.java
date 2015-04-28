@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -42,31 +41,29 @@ public class CleanProject_Action extends BaseAction {
     }
     {
       IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
-    SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
-    ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
+    SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules(SModule.class)));
+    ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Cleaning", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {

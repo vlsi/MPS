@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
@@ -40,18 +39,18 @@ public class BuildAllBehaviors_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
         models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
           public SModel select(Language it) {
             return LanguageAspect.BEHAVIOR.get(it);
@@ -63,6 +62,6 @@ public class BuildAllBehaviors_Action extends BaseAction {
         }));
       }
     });
-    new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models.value).cleanMake(true)).executeAction();
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models.value).cleanMake(true)).executeAction();
   }
 }

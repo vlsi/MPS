@@ -22,9 +22,11 @@ public class Options_Action extends BaseAction {
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
   }
 }
