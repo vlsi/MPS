@@ -131,11 +131,11 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)/1209605205934">
     <file name="TemplateoutputRoot.java">
       <node id="1209605205934" at="24,43,25,32" concept="7" />
-      <node id="1209605205934" at="27,158,28,123" concept="6" />
+      <node id="1209605205934" at="27,158,28,212" concept="6" />
       <node id="1209605205934" at="29,9,30,106" concept="2" />
       <node id="1209605205934" at="30,106,31,170" concept="2" />
       <node id="1209605205934" at="31,170,32,210" concept="2" />
-      <node id="1209605205934" at="33,7,34,159" concept="6" />
+      <node id="1209605205934" at="33,7,34,248" concept="6" />
       <node id="1209605205934" at="35,13,36,110" concept="2" />
       <node id="1209605205934" at="36,110,37,223" concept="2" />
       <node id="1209605205934" at="40,29,41,162" concept="2" />
@@ -145,9 +145,9 @@
       <node id="1209605205934" at="22,0,24,0" concept="1" trace="TemplateoutputRoot#()V" />
       <node id="1209605205934" at="24,0,27,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1209605205934" at="39,9,42,9" concept="4" />
-      <node id="1209605205934" at="34,159,39,9" concept="10" />
+      <node id="1209605205934" at="34,248,39,9" concept="10" />
       <node id="1209605205934" at="32,210,44,7" concept="0" />
-      <node id="1209605205934" at="28,123,46,5" concept="10" />
+      <node id="1209605205934" at="28,212,46,5" concept="10" />
       <node id="1209605205934" at="27,0,49,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1209605205934" at="22,31,22,31" />
       <scope id="1209605205934" at="38,19,38,19" />

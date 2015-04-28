@@ -55,9 +55,19 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   SModel getOutputModel();
 
+  /**
+   * @deprecated shall use {@link #createOutputNode(SConcept)}
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.3)
   SNode createOutputNode(@NotNull String conceptName);
 
+  /**
+   *
+   * @param concept we don't expect templates to instantiate interface concepts.
+   * @return instance of the concept, instantiated using output model as a factory, not belonging to the model, though.
+   */
   @NotNull
   SNode createOutputNode(@NotNull SConcept concept);
 

@@ -122,15 +122,15 @@
     </file>
     <file name="Templatestring_x0020switch_x0020template.java">
       <node id="400642802550420129" at="31,43,32,159" concept="9" />
-      <node id="400642802550420129" at="34,154,35,110" concept="8" />
+      <node id="400642802550420129" at="34,154,35,199" concept="8" />
       <node id="400642802550420129" at="36,9,37,111" concept="3" />
       <node id="400642802550420129" at="38,7,39,58" concept="8" />
       <node id="400642802550420129" at="39,58,40,177" concept="8" />
       <node id="400642802550420129" at="42,32,43,21" concept="2" />
       <node id="400642802550420129" at="44,11,45,71" concept="8" />
-      <node id="400642802550420129" at="45,71,46,111" concept="8" />
+      <node id="400642802550420129" at="45,71,46,200" concept="8" />
       <node id="400642802550420129" at="47,15,48,118" concept="3" />
-      <node id="400642802550420129" at="49,13,50,120" concept="8" />
+      <node id="400642802550420129" at="49,13,50,208" concept="8" />
       <node id="400642802550420129" at="51,19,52,122" concept="3" />
       <node id="400642802550420129" at="52,122,53,342" concept="3" />
       <node id="400642802550420129" at="56,35,57,167" concept="3" />
@@ -148,19 +148,19 @@
       <node id="400642802550420129" at="83,169,84,189" concept="3" />
       <node id="400642802550420129" at="85,61,86,163" concept="3" />
       <node id="400642802550420129" at="87,9,88,31" concept="10" />
-      <node id="400642802550420129" at="90,7,91,116" concept="8" />
+      <node id="400642802550420129" at="90,7,91,204" concept="8" />
       <node id="400642802550420129" at="92,13,93,117" concept="3" />
       <node id="400642802550420129" at="93,117,94,581" concept="3" />
       <node id="400642802550420129" at="94,581,95,509" concept="3" />
-      <node id="400642802550420129" at="96,11,97,139" concept="8" />
+      <node id="400642802550420129" at="96,11,97,228" concept="8" />
       <node id="400642802550420129" at="98,17,99,121" concept="3" />
       <node id="400642802550420129" at="99,121,100,184" concept="3" />
       <node id="400642802550420129" at="100,184,101,191" concept="3" />
-      <node id="400642802550420129" at="102,15,103,128" concept="8" />
+      <node id="400642802550420129" at="102,15,103,217" concept="8" />
       <node id="400642802550420129" at="104,21,105,125" concept="3" />
-      <node id="400642802550420129" at="106,19,107,139" concept="8" />
+      <node id="400642802550420129" at="106,19,107,228" concept="8" />
       <node id="400642802550420129" at="108,25,109,129" concept="3" />
-      <node id="400642802550420129" at="110,23,111,126" concept="8" />
+      <node id="400642802550420129" at="110,23,111,215" concept="8" />
       <node id="400642802550420129" at="112,29,113,133" concept="3" />
       <node id="400642802550420129" at="116,46,117,182" concept="3" />
       <node id="400642802550420129" at="118,25,119,47" concept="10" />
@@ -211,8 +211,8 @@
       <node id="400642802550420129" at="154,200,157,13" concept="5" />
       <node id="400642802550420129" at="161,9,164,9" concept="6" />
       <node id="400642802550420129" at="171,0,174,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="400642802550420129" at="111,126,115,25" concept="13" />
-      <node id="400642802550420129" at="50,120,55,15" concept="13" />
+      <node id="400642802550420129" at="111,215,115,25" concept="13" />
+      <node id="400642802550420129" at="50,208,55,15" concept="13" />
       <node id="400642802550420129" at="174,0,180,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
       <node id="400642802550420129" at="60,13,69,13" concept="0" />
       <node id="400642802550420129" at="80,7,89,7" concept="0" />
@@ -220,18 +220,18 @@
       <node id="400642802550420129" at="150,11,159,11" concept="0" />
       <node id="400642802550420129" at="109,129,120,23" concept="0" />
       <node id="400642802550420129" at="48,118,60,13" concept="0" />
-      <node id="400642802550420129" at="107,139,131,21" concept="13" />
-      <node id="400642802550420129" at="46,111,71,11" concept="13" />
+      <node id="400642802550420129" at="107,228,131,21" concept="13" />
+      <node id="400642802550420129" at="46,200,71,11" concept="13" />
       <node id="400642802550420129" at="105,125,136,19" concept="0" />
       <node id="400642802550420129" at="40,177,75,9" concept="5" />
-      <node id="400642802550420129" at="103,128,138,17" concept="13" />
+      <node id="400642802550420129" at="103,217,138,17" concept="13" />
       <node id="400642802550420129" at="101,191,143,15" concept="0" />
       <node id="400642802550420129" at="37,111,80,7" concept="0" />
-      <node id="400642802550420129" at="97,139,145,13" concept="13" />
+      <node id="400642802550420129" at="97,228,145,13" concept="13" />
       <node id="400642802550420129" at="95,509,150,11" concept="0" />
-      <node id="400642802550420129" at="91,116,161,9" concept="13" />
+      <node id="400642802550420129" at="91,204,161,9" concept="13" />
       <node id="400642802550420129" at="89,7,166,7" concept="0" />
-      <node id="400642802550420129" at="35,110,168,5" concept="13" />
+      <node id="400642802550420129" at="35,199,168,5" concept="13" />
       <node id="400642802550420129" at="34,0,171,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="400642802550420129" at="29,53,29,53" />
       <scope id="400642802550420129" at="54,25,54,25" />

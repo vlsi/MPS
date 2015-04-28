@@ -46,21 +46,21 @@
       <node id="1206459766745" at="81,29,82,271" concept="13" />
       <node id="1206459766745" at="85,131,86,125" concept="9" />
       <node id="1206459766745" at="89,108,90,80" concept="8" />
-      <node id="1206459766745" at="90,80,91,125" concept="8" />
+      <node id="1206459766745" at="90,80,91,214" concept="8" />
       <node id="1206459766745" at="92,11,93,108" concept="3" />
       <node id="1206459766745" at="93,108,94,185" concept="3" />
       <node id="1206459766745" at="96,7,97,48" concept="9" />
       <node id="1206459766745" at="101,29,102,271" concept="13" />
       <node id="1206459766745" at="105,131,106,125" concept="9" />
       <node id="1206459766745" at="109,108,110,80" concept="8" />
-      <node id="1206459766745" at="110,80,111,125" concept="8" />
+      <node id="1206459766745" at="110,80,111,214" concept="8" />
       <node id="1206459766745" at="112,11,113,108" concept="3" />
       <node id="1206459766745" at="113,108,114,185" concept="3" />
       <node id="1206459766745" at="116,7,117,48" concept="9" />
       <node id="1206459766745" at="121,29,122,269" concept="13" />
       <node id="1206459766745" at="125,131,126,125" concept="9" />
       <node id="1206459766745" at="129,108,130,80" concept="8" />
-      <node id="1206459766745" at="130,80,131,125" concept="8" />
+      <node id="1206459766745" at="130,80,131,214" concept="8" />
       <node id="1206459766745" at="132,11,133,108" concept="3" />
       <node id="1206459766745" at="133,108,134,188" concept="3" />
       <node id="1206459766745" at="136,7,137,48" concept="9" />
@@ -99,9 +99,9 @@
       <node id="1206459766745" at="124,0,128,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="1206459766745" at="161,0,165,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1206459766745" at="39,0,44,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
-      <node id="1206459766745" at="91,125,96,7" concept="14" />
-      <node id="1206459766745" at="111,125,116,7" concept="14" />
-      <node id="1206459766745" at="131,125,136,7" concept="14" />
+      <node id="1206459766745" at="91,214,96,7" concept="14" />
+      <node id="1206459766745" at="111,214,116,7" concept="14" />
+      <node id="1206459766745" at="131,214,136,7" concept="14" />
       <node id="1206459766745" at="155,0,161,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="1206459766745" at="88,0,99,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1206459766745" at="108,0,119,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -250,7 +250,7 @@
     </file>
     <file name="TemplateOutputRoot.java">
       <node id="1206460153890" at="28,43,29,32" concept="9" />
-      <node id="1206460153890" at="31,158,32,123" concept="8" />
+      <node id="1206460153890" at="31,158,32,212" concept="8" />
       <node id="1206460153890" at="33,9,34,106" concept="3" />
       <node id="1206460153890" at="34,106,35,170" concept="3" />
       <node id="1206460153890" at="35,170,36,208" concept="3" />
@@ -274,7 +274,7 @@
       <node id="1206460153890" at="68,181,69,162" concept="3" />
       <node id="1206460153890" at="70,61,71,162" concept="3" />
       <node id="1206460153890" at="72,9,73,31" concept="10" />
-      <node id="1206460153890" at="75,7,76,127" concept="8" />
+      <node id="1206460153890" at="75,7,76,216" concept="8" />
       <node id="1206460153890" at="77,13,78,116" concept="3" />
       <node id="1206460153890" at="78,116,79,335" concept="3" />
       <node id="1206460153890" at="82,29,83,162" concept="3" />
@@ -291,14 +291,14 @@
       <node id="1206460153890" at="60,9,63,9" concept="5" />
       <node id="1206460153890" at="69,162,72,9" concept="5" />
       <node id="1206460153890" at="81,9,84,9" concept="6" />
-      <node id="1206460153890" at="76,127,81,9" concept="14" />
+      <node id="1206460153890" at="76,216,81,9" concept="14" />
       <node id="1206460153890" at="47,188,54,13" concept="5" />
       <node id="1206460153890" at="65,7,74,7" concept="0" />
       <node id="1206460153890" at="74,7,86,7" concept="0" />
       <node id="1206460153890" at="44,54,58,11" concept="6" />
       <node id="1206460153890" at="38,40,60,9" concept="14" />
       <node id="1206460153890" at="36,208,65,7" concept="0" />
-      <node id="1206460153890" at="32,123,88,5" concept="14" />
+      <node id="1206460153890" at="32,212,88,5" concept="14" />
       <node id="1206460153890" at="31,0,91,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1206460153890" at="26,31,26,31" />
       <scope id="1206460153890" at="59,19,59,19" />
@@ -357,11 +357,11 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)/8417539822878724212">
     <file name="Templateweave__InputRoot.java">
       <node id="8417539822878724212" at="24,43,25,200" concept="9" />
-      <node id="8417539822878724212" at="27,154,28,123" concept="8" />
+      <node id="8417539822878724212" at="27,154,28,212" concept="8" />
       <node id="8417539822878724212" at="29,9,30,112" concept="3" />
       <node id="8417539822878724212" at="30,112,31,169" concept="3" />
       <node id="8417539822878724212" at="33,5,34,18" concept="9" />
-      <node id="8417539822878724212" at="36,154,37,123" concept="8" />
+      <node id="8417539822878724212" at="36,154,37,212" concept="8" />
       <node id="8417539822878724212" at="38,9,39,112" concept="3" />
       <node id="8417539822878724212" at="39,112,40,169" concept="3" />
       <node id="8417539822878724212" at="42,5,43,18" concept="9" />
@@ -378,8 +378,8 @@
       <node id="8417539822878724212" at="22,0,24,0" concept="1" trace="Templateweave__InputRoot#()V" />
       <node id="8417539822878724212" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="8417539822878724212" at="45,0,48,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="8417539822878724212" at="28,123,33,5" concept="14" />
-      <node id="8417539822878724212" at="37,123,42,5" concept="14" />
+      <node id="8417539822878724212" at="28,212,33,5" concept="14" />
+      <node id="8417539822878724212" at="37,212,42,5" concept="14" />
       <node id="8417539822878724212" at="27,0,36,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8417539822878724212" at="36,0,45,0" concept="7" trace="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8417539822878724212" at="48,0,57,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
