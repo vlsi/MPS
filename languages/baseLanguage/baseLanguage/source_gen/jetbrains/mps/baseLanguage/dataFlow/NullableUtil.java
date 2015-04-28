@@ -9,6 +9,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import java.util.Map;
+import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 
 public class NullableUtil {
   public NullableUtil() {
@@ -61,5 +75,110 @@ public class NullableUtil {
       return SLinkOperations.getTarget(equals, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
     }
     return null;
+  }
+  public static Tuples._3<Boolean, String, SNode> isNullableDotExpression(@NotNull SNode parent, @NotNull SNode source, @NotNull NullableState state) {
+    if (!(NullableState.canBeNull(state))) {
+      return MultiTuple.<Boolean,String,SNode>from(false, ((String) null), ((SNode) null));
+    }
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
+      SNode dot = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+      if (SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")) == source && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10ec4627e6fL, "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation")))) {
+        return MultiTuple.<Boolean,String,SNode>from(true, "This operation can produce 'java.lang.NullPointerException'", dot);
+      }
+    }
+    return MultiTuple.<Boolean,String,SNode>from(false, ((String) null), ((SNode) null));
+  }
+  public static Tuples._3<Boolean, String, SNode> isNullableMethodCall(@NotNull SNode parent, @NotNull SNode source, @NotNull NullableState state) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parent, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).contains(SNodeOperations.cast(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")))) {
+      SNode methodCall = SNodeOperations.cast(parent, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+      SNode methodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+      if (methodDeclaration != null) {
+        {
+          Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getChildren(methodCall, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).iterator();
+          Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getChildren(methodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
+          SNode arg_var;
+          SNode param_var;
+          while (arg_it.hasNext() && param_it.hasNext()) {
+            arg_var = arg_it.next();
+            param_var = param_it.next();
+            if (eq_cmc61d_a0c0e0a0c0a0h(arg_var, source)) {
+              if (ListSequence.fromList(SLinkOperations.getChildren(param_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")) != null);
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"));
+                }
+              }).contains(SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) && NullableState.canBeNull(state)) {
+                String warning;
+                if (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+                  warning = "Argument " + SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " might be null";
+                } else {
+                  warning = "Argument might be null";
+                }
+                return MultiTuple.<Boolean,String,SNode>from(true, warning, source);
+              }
+            }
+          }
+        }
+      }
+    }
+    return MultiTuple.<Boolean,String,SNode>from(false, ((String) null), ((SNode) null));
+  }
+
+  public static Tuples._3<Boolean, String, SNode> isAlwaysTrueOrFalse(Instruction instruction, SNode parent, SNode source, NullableState state) {
+    if (instruction instanceof ReadInstruction && (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")))) {
+      boolean inCondition = false;
+      boolean equals = SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
+      boolean isNull = NullableState.NULL.equals(state);
+      boolean isNotNull = NullableState.NOTNULL.equals(state);
+      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getParent(source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), false, new SAbstractConcept[]{})).isNotEmpty()) {
+        if (SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), false, false) != null && ListSequence.fromList(SNodeOperations.getNodeAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition")))) {
+          inCondition = true;
+        }
+        if (SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), false, false) != null && ListSequence.fromList(SNodeOperations.getNodeAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, 0xfaa4bf0f30L, "condition")))) {
+          inCondition = true;
+        }
+        if (inCondition) {
+          if (equals && isNotNull || !(equals) && isNull) {
+            return MultiTuple.<Boolean,String,SNode>from(true, "This condition is always false", parent);
+          }
+          if (equals && isNull || !(equals) && isNotNull) {
+            return MultiTuple.<Boolean,String,SNode>from(true, "This condition is always true", parent);
+
+          }
+        }
+      }
+    }
+    return MultiTuple.<Boolean,String,SNode>from(false, ((String) null), ((SNode) null));
+  }
+  public static Tuples._3<Boolean, String, SNode> checkNullableAssignment(Instruction instruction, AnalysisResult<Map<SNode, NullableState>> result) {
+    if (instruction instanceof WriteInstruction) {
+      WriteInstruction write = (WriteInstruction) instruction;
+      List<SNode> annotation = SLinkOperations.getChildren(((SNode) write.getVariable()), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));
+      if (annotation != null && ListSequence.fromList(annotation).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")) != null);
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"));
+        }
+      }).contains(SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+        SNode value = (SNode) write.getValue();
+        if (SNodeOperations.isInstanceOf(value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+          value = SLinkOperations.getTarget(SNodeOperations.cast(value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
+        }
+        if (NullableState.canBeNull(result.get(instruction).get(value))) {
+          return MultiTuple.<Boolean,String,SNode>from(true, "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", (SNode) write.getValue());
+        }
+      }
+    }
+    return MultiTuple.<Boolean,String,SNode>from(false, ((String) null), ((SNode) null));
+
+  }
+  private static boolean eq_cmc61d_a0c0e0a0c0a0h(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

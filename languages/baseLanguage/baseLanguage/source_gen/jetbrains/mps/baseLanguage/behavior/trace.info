@@ -165,7 +165,7 @@
       <unit at="7,0,24,0" name="jetbrains.mps.baseLanguage.behavior.ByteType_BehaviorDescriptor" />
     </file>
     <file name="CastExpression_BehaviorDescriptor.java">
-      <unit at="8,0,31,0" name="jetbrains.mps.baseLanguage.behavior.CastExpression_BehaviorDescriptor" />
+      <unit at="9,0,35,0" name="jetbrains.mps.baseLanguage.behavior.CastExpression_BehaviorDescriptor" />
     </file>
     <file name="CatchClause_BehaviorDescriptor.java">
       <unit at="13,0,30,0" name="jetbrains.mps.baseLanguage.behavior.CatchClause_BehaviorDescriptor" />
@@ -297,7 +297,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_BehaviorDescriptor" />
     </file>
     <file name="Expression_BehaviorDescriptor.java">
-      <unit at="10,0,45,0" name="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+      <unit at="11,0,49,0" name="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     </file>
     <file name="FieldDeclaration_BehaviorDescriptor.java">
       <unit at="16,0,82,0" name="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_BehaviorDescriptor" />
@@ -612,7 +612,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.behavior.ParameterReference_BehaviorDescriptor" />
     </file>
     <file name="ParenthesizedExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_BehaviorDescriptor" />
     </file>
     <file name="PlaceholderMember_BehaviorDescriptor.java">
       <unit at="11,0,43,0" name="jetbrains.mps.baseLanguage.behavior.PlaceholderMember_BehaviorDescriptor" />
@@ -768,7 +768,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.behavior.SynchronizedStatement_BehaviorDescriptor" />
     </file>
     <file name="TernaryOperatorExpression_BehaviorDescriptor.java">
-      <unit at="7,0,30,0" name="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_BehaviorDescriptor" />
+      <unit at="8,0,34,0" name="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_BehaviorDescriptor" />
     </file>
     <file name="TextCommentPart_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.behavior.TextCommentPart_BehaviorDescriptor" />
@@ -9279,71 +9279,78 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877519768">
     <file name="Expression_Behavior.java">
-      <node id="1213877519772" at="15,83,16,84" concept="18" />
-      <node id="1213877519784" at="18,86,19,16" concept="13" />
-      <node id="1213877519789" at="21,72,22,295" concept="13" />
-      <node id="1238860364538" at="24,85,25,297" concept="13" />
-      <node id="1238860370838" at="27,106,28,46" concept="18" />
-      <node id="6329021646629620938" at="31,322,32,18" concept="13" />
-      <node id="1241531203715" at="33,5,34,305" concept="13" />
-      <node id="1262430001741497938" at="36,90,37,17" concept="13" />
-      <node id="1262430001741498031" at="39,100,40,17" concept="13" />
-      <node id="1262430001741498049" at="42,92,43,17" concept="13" />
-      <node id="1213877519768" at="13,0,15,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877519768" at="15,0,18,0" concept="17" trace="virtual_eval_1213877519769#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
-      <node id="1213877519768" at="18,0,21,0" concept="17" trace="virtual_getVariableExpectedName_1213877519781#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1213877519768" at="21,0,24,0" concept="17" trace="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1213877519768" at="24,0,27,0" concept="17" trace="virtual_isCompileTimeConstant_1238860258777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1213877519768" at="27,0,30,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
-      <node id="6329021646629620921" at="30,82,33,5" concept="10" />
-      <node id="1213877519768" at="36,0,39,0" concept="17" trace="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1213877519768" at="39,0,42,0" concept="17" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1213877519768" at="42,0,45,0" concept="17" trace="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1213877519768" at="30,0,36,0" concept="17" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1213877519794" at="13,43,13,43" />
-      <scope id="1213877519771" at="15,83,16,84" />
-      <scope id="1213877519783" at="18,86,19,16" />
-      <scope id="1213877519788" at="21,72,22,295" />
-      <scope id="1238860258780" at="24,85,25,297" />
-      <scope id="1238860310641" at="27,106,28,46" />
-      <scope id="6329021646629620922" at="31,322,32,18" />
-      <scope id="1262430001741497941" at="36,90,37,17" />
-      <scope id="1262430001741498034" at="39,100,40,17" />
-      <scope id="1262430001741498052" at="42,92,43,17" />
-      <scope id="1213877519768" at="13,0,15,0">
+      <node id="1213877519772" at="16,83,17,84" concept="18" />
+      <node id="1213877519784" at="19,86,20,16" concept="13" />
+      <node id="1213877519789" at="22,72,23,295" concept="13" />
+      <node id="1238860364538" at="25,85,26,297" concept="13" />
+      <node id="1238860370838" at="28,106,29,46" concept="18" />
+      <node id="6329021646629620938" at="32,322,33,18" concept="13" />
+      <node id="1241531203715" at="34,5,35,305" concept="13" />
+      <node id="3906759656526127154" at="37,111,38,17" concept="13" />
+      <node id="1262430001741497938" at="40,90,41,17" concept="13" />
+      <node id="1262430001741498031" at="43,100,44,17" concept="13" />
+      <node id="1262430001741498049" at="46,92,47,17" concept="13" />
+      <node id="1213877519768" at="14,0,16,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877519768" at="16,0,19,0" concept="17" trace="virtual_eval_1213877519769#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
+      <node id="1213877519768" at="19,0,22,0" concept="17" trace="virtual_getVariableExpectedName_1213877519781#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1213877519768" at="22,0,25,0" concept="17" trace="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1213877519768" at="25,0,28,0" concept="17" trace="virtual_isCompileTimeConstant_1238860258777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1213877519768" at="28,0,31,0" concept="17" trace="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
+      <node id="6329021646629620921" at="31,82,34,5" concept="10" />
+      <node id="1213877519768" at="37,0,40,0" concept="17" trace="virtual_keepsNullState_3906759656526126506#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1213877519768" at="40,0,43,0" concept="17" trace="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1213877519768" at="43,0,46,0" concept="17" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1213877519768" at="46,0,49,0" concept="17" trace="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1213877519768" at="31,0,37,0" concept="17" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1213877519794" at="14,43,14,43" />
+      <scope id="1213877519771" at="16,83,17,84" />
+      <scope id="1213877519783" at="19,86,20,16" />
+      <scope id="1213877519788" at="22,72,23,295" />
+      <scope id="1238860258780" at="25,85,26,297" />
+      <scope id="1238860310641" at="28,106,29,46" />
+      <scope id="6329021646629620922" at="32,322,33,18" />
+      <scope id="3906759656526126508" at="37,111,38,17" />
+      <scope id="1262430001741497941" at="40,90,41,17" />
+      <scope id="1262430001741498034" at="43,100,44,17" />
+      <scope id="1262430001741498052" at="46,92,47,17" />
+      <scope id="1213877519768" at="14,0,16,0">
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="15,0,18,0">
+      <scope id="1213877519768" at="16,0,19,0">
         <var name="module" id="1213877519779" />
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="18,0,21,0">
+      <scope id="1213877519768" at="19,0,22,0">
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="21,0,24,0">
+      <scope id="1213877519768" at="22,0,25,0">
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="24,0,27,0">
+      <scope id="1213877519768" at="25,0,28,0">
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="27,0,30,0">
+      <scope id="1213877519768" at="28,0,31,0">
         <var name="module" id="1238861641336" />
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <scope id="1213877519768" at="36,0,39,0">
-        <var name="thisConcept" id="1213877519768" />
-      </scope>
-      <scope id="1213877519768" at="39,0,42,0">
-        <var name="thisConcept" id="1213877519768" />
-      </scope>
-      <scope id="1213877519768" at="42,0,45,0">
-        <var name="thisConcept" id="1213877519768" />
-      </scope>
-      <scope id="1239211900847" at="30,82,34,305" />
-      <scope id="1213877519768" at="30,0,36,0">
+      <scope id="1213877519768" at="37,0,40,0">
+        <var name="descendant" id="3906759656533173606" />
         <var name="thisNode" id="1213877519768" />
       </scope>
-      <unit id="1213877519768" at="12,0,46,0" name="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
+      <scope id="1213877519768" at="40,0,43,0">
+        <var name="thisConcept" id="1213877519768" />
+      </scope>
+      <scope id="1213877519768" at="43,0,46,0">
+        <var name="thisConcept" id="1213877519768" />
+      </scope>
+      <scope id="1213877519768" at="46,0,49,0">
+        <var name="thisConcept" id="1213877519768" />
+      </scope>
+      <scope id="1239211900847" at="31,82,35,305" />
+      <scope id="1213877519768" at="31,0,37,0">
+        <var name="thisNode" id="1213877519768" />
+      </scope>
+      <unit id="1213877519768" at="13,0,50,0" name="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877520962">
@@ -11810,61 +11817,84 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204577884822">
     <file name="TernaryOperatorExpression_Behavior.java">
-      <node id="4985347495059467874" at="12,113,13,172" concept="6" />
-      <node id="4985347495057936801" at="15,114,16,170" concept="6" />
-      <node id="1742226163711443444" at="18,102,19,173" concept="13" />
-      <node id="1742226163711446087" at="21,103,22,171" concept="13" />
-      <node id="2572626204577884822" at="10,0,12,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2572626204577884822" at="12,0,15,0" concept="17" trace="virtual_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2572626204577884822" at="15,0,18,0" concept="17" trace="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2572626204577884822" at="18,0,21,0" concept="17" trace="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2572626204577884822" at="21,0,24,0" concept="17" trace="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2572626204577884824" at="10,43,10,43" />
-      <scope id="1742226163722797715" at="12,113,13,172" />
-      <scope id="1742226163722798538" at="15,114,16,170" />
-      <scope id="1742226163711443160" at="18,102,19,173" />
-      <scope id="1742226163711445757" at="21,103,22,171" />
-      <scope id="2572626204577884822" at="10,0,12,0">
+      <node id="4985347495059467874" at="14,113,15,172" concept="6" />
+      <node id="4985347495057936801" at="17,114,18,170" concept="6" />
+      <node id="1742226163711443444" at="20,102,21,173" concept="13" />
+      <node id="1742226163711446087" at="23,103,24,171" concept="13" />
+      <node id="3906759656533386418" at="27,60,28,19" concept="13" />
+      <node id="3906759656533440770" at="30,186,31,19" concept="13" />
+      <node id="3906759656533441187" at="32,5,33,16" concept="13" />
+      <node id="2572626204577884822" at="12,0,14,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2572626204577884822" at="14,0,17,0" concept="17" trace="virtual_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2572626204577884822" at="17,0,20,0" concept="17" trace="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2572626204577884822" at="20,0,23,0" concept="17" trace="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2572626204577884822" at="23,0,26,0" concept="17" trace="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3906759656533297401" at="26,111,29,5" concept="10" />
+      <node id="3906759656533386626" at="29,5,32,5" concept="10" />
+      <node id="2572626204577884822" at="26,0,35,0" concept="17" trace="virtual_keepsNullState_3906759656526126506#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2572626204577884824" at="12,43,12,43" />
+      <scope id="1742226163722797715" at="14,113,15,172" />
+      <scope id="1742226163722798538" at="17,114,18,170" />
+      <scope id="1742226163711443160" at="20,102,21,173" />
+      <scope id="1742226163711445757" at="23,103,24,171" />
+      <scope id="3906759656533297403" at="27,60,28,19" />
+      <scope id="3906759656533386628" at="30,186,31,19" />
+      <scope id="2572626204577884822" at="12,0,14,0">
         <var name="thisNode" id="2572626204577884822" />
       </scope>
-      <scope id="2572626204577884822" at="12,0,15,0">
+      <scope id="2572626204577884822" at="14,0,17,0">
         <var name="expr" id="1742226163722797716" />
         <var name="thisNode" id="2572626204577884822" />
       </scope>
-      <scope id="2572626204577884822" at="15,0,18,0">
+      <scope id="2572626204577884822" at="17,0,20,0">
         <var name="expr" id="1742226163722798539" />
         <var name="thisNode" id="2572626204577884822" />
       </scope>
-      <scope id="2572626204577884822" at="18,0,21,0">
+      <scope id="2572626204577884822" at="20,0,23,0">
         <var name="thisNode" id="2572626204577884822" />
       </scope>
-      <scope id="2572626204577884822" at="21,0,24,0">
+      <scope id="2572626204577884822" at="23,0,26,0">
         <var name="thisNode" id="2572626204577884822" />
       </scope>
-      <unit id="2572626204577884822" at="9,0,25,0" name="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
+      <scope id="3906759656533294708" at="26,111,33,16" />
+      <scope id="2572626204577884822" at="26,0,35,0">
+        <var name="descendant" id="3906759656533294709" />
+        <var name="thisNode" id="2572626204577884822" />
+      </scope>
+      <unit id="2572626204577884822" at="11,0,36,0" name="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204612779323">
     <file name="CastExpression_Behavior.java">
-      <node id="1742226163711452600" at="12,103,13,172" concept="13" />
-      <node id="6141629764102834074" at="15,114,16,171" concept="6" />
-      <node id="2572626204612779323" at="10,0,12,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2572626204612779323" at="12,0,15,0" concept="17" trace="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2572626204612779323" at="15,0,18,0" concept="17" trace="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="2572626204612779325" at="10,43,10,43" />
-      <scope id="1742226163711452373" at="12,103,13,172" />
-      <scope id="6141629764102833814" at="15,114,16,171" />
-      <scope id="2572626204612779323" at="10,0,12,0">
+      <node id="1742226163711452600" at="14,103,15,172" concept="13" />
+      <node id="6141629764102834074" at="17,114,18,171" concept="6" />
+      <node id="3906759656533333453" at="21,60,22,18" concept="13" />
+      <node id="3906759656533333460" at="23,5,24,17" concept="13" />
+      <node id="2572626204612779323" at="12,0,14,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2572626204612779323" at="14,0,17,0" concept="17" trace="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2572626204612779323" at="17,0,20,0" concept="17" trace="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3906759656533333451" at="20,111,23,5" concept="10" />
+      <node id="2572626204612779323" at="20,0,26,0" concept="17" trace="virtual_keepsNullState_3906759656526126506#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2572626204612779325" at="12,43,12,43" />
+      <scope id="1742226163711452373" at="14,103,15,172" />
+      <scope id="6141629764102833814" at="17,114,18,171" />
+      <scope id="3906759656533333452" at="21,60,22,18" />
+      <scope id="2572626204612779323" at="12,0,14,0">
         <var name="thisNode" id="2572626204612779323" />
       </scope>
-      <scope id="2572626204612779323" at="12,0,15,0">
+      <scope id="2572626204612779323" at="14,0,17,0">
         <var name="thisNode" id="2572626204612779323" />
       </scope>
-      <scope id="2572626204612779323" at="15,0,18,0">
+      <scope id="2572626204612779323" at="17,0,20,0">
         <var name="expr" id="6141629764102833815" />
         <var name="thisNode" id="2572626204612779323" />
       </scope>
-      <unit id="2572626204612779323" at="9,0,19,0" name="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
+      <scope id="3906759656526133278" at="20,111,24,17" />
+      <scope id="2572626204612779323" at="20,0,26,0">
+        <var name="descendant" id="3906759656533173828" />
+        <var name="thisNode" id="2572626204612779323" />
+      </scope>
+      <unit id="2572626204612779323" at="11,0,27,0" name="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2622108313341288809">
@@ -14045,19 +14075,29 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6307653274956830892">
     <file name="ParenthesizedExpression_Behavior.java">
-      <node id="6307653274956830908" at="14,83,15,272" concept="13" />
-      <node id="6307653274956830892" at="12,0,14,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6307653274956830892" at="14,0,17,0" concept="17" trace="virtual_eval_1213877519769#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
-      <scope id="6307653274956830894" at="12,43,12,43" />
-      <scope id="6307653274956830902" at="14,83,15,272" />
-      <scope id="6307653274956830892" at="12,0,14,0">
+      <node id="6307653274956830908" at="16,83,17,272" concept="13" />
+      <node id="3906759656533303851" at="20,60,21,18" concept="13" />
+      <node id="3906759656533303196" at="22,5,23,17" concept="13" />
+      <node id="6307653274956830892" at="14,0,16,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6307653274956830892" at="16,0,19,0" concept="17" trace="virtual_eval_1213877519769#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Object;" />
+      <node id="3906759656533298960" at="19,111,22,5" concept="10" />
+      <node id="6307653274956830892" at="19,0,25,0" concept="17" trace="virtual_keepsNullState_3906759656526126506#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6307653274956830894" at="14,43,14,43" />
+      <scope id="6307653274956830902" at="16,83,17,272" />
+      <scope id="3906759656533298962" at="20,60,21,18" />
+      <scope id="6307653274956830892" at="14,0,16,0">
         <var name="thisNode" id="6307653274956830892" />
       </scope>
-      <scope id="6307653274956830892" at="14,0,17,0">
+      <scope id="6307653274956830892" at="16,0,19,0">
         <var name="module" id="6307653274956830904" />
         <var name="thisNode" id="6307653274956830892" />
       </scope>
-      <unit id="6307653274956830892" at="11,0,18,0" name="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" />
+      <scope id="3906759656526127693" at="19,111,23,17" />
+      <scope id="6307653274956830892" at="19,0,25,0">
+        <var name="descendant" id="3906759656533174086" />
+        <var name="thisNode" id="6307653274956830892" />
+      </scope>
+      <unit id="6307653274956830892" at="13,0,26,0" name="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/7236590470026154810">

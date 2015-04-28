@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CastExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -14,5 +16,11 @@ public class CastExpression_Behavior {
   }
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), expr);
+  }
+  public static boolean virtual_keepsNullState_3906759656526126506(SNode thisNode, @NotNull SNode descendant) {
+    if (SNodeOperations.getParent(descendant) == thisNode) {
+      return true;
+    }
+    return false;
   }
 }
