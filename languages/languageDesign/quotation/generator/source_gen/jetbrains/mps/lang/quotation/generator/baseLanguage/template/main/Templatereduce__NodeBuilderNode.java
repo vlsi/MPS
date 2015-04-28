@@ -23,8 +23,7 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -98,17 +97,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                       final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                       try {
                         environment.nodeCopied(context3, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959034c/5494233285271349718");
-                        environment.resolve(new ReferenceResolver() {
-                          public Object resolve(SNode outputNode, TemplateContext context) {
-                            return QueriesGenerated.referenceMacro_GetReferent_5494233285271349720(new ReferenceMacroContext(context, tnode11, referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0b0e0b0c0d0b0e0c, "variableDeclaration"));
+                        environment.resolve(new RefResolver(tnode11, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context3, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5494233285271349719"), "param1") {
+                          public Object resolve() {
+                            return QueriesGenerated.referenceMacro_GetReferent_5494233285271349720(createQueryContext());
                           }
-                          public String getDefaultResolveInfo() {
-                            return "param1";
-                          }
-                          public SNodeReference getTemplateNode() {
-                            return referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0b0e0b0c0d0b0e0c;
-                          }
-                        }, tnode11, "variableDeclaration", context3);
+                        });
                       } finally {
                       }
                       if (tnode11 != null) {
@@ -364,17 +357,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                               final SNode tnode40 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                               try {
                                 environment.nodeCopied(context31, tnode40, "tpl/r:00000000-0000-4000-0000-011c8959034c/3143347504358680258");
-                                environment.resolve(new ReferenceResolver() {
-                                  public Object resolve(SNode outputNode, TemplateContext context) {
-                                    return QueriesGenerated.referenceMacro_GetReferent_3143347504358680260(new ReferenceMacroContext(context, tnode40, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0d0b0c0b0b0d0c0c0b0b0b0d, "variableDeclaration"));
+                                environment.resolve(new RefResolver(tnode40, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context31, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3143347504358680259"), "param1") {
+                                  public Object resolve() {
+                                    return QueriesGenerated.referenceMacro_GetReferent_3143347504358680260(createQueryContext());
                                   }
-                                  public String getDefaultResolveInfo() {
-                                    return "param1";
-                                  }
-                                  public SNodeReference getTemplateNode() {
-                                    return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0d0b0c0b0b0d0c0c0b0b0b0d;
-                                  }
-                                }, tnode40, "variableDeclaration", context31);
+                                });
                               } finally {
                               }
                               if (tnode40 != null) {
@@ -952,17 +939,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                               final SNode tnode98 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                               try {
                                 environment.nodeCopied(context89, tnode98, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151356958");
-                                environment.resolve(new ReferenceResolver() {
-                                  public Object resolve(SNode outputNode, TemplateContext context) {
-                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(new ReferenceMacroContext(context, tnode98, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0g0b0b0b0d, "variableDeclaration"));
+                                environment.resolve(new RefResolver(tnode98, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context89, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787207"), "param1") {
+                                  public Object resolve() {
+                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(createQueryContext());
                                   }
-                                  public String getDefaultResolveInfo() {
-                                    return "param1";
-                                  }
-                                  public SNodeReference getTemplateNode() {
-                                    return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0g0b0b0b0d;
-                                  }
-                                }, tnode98, "variableDeclaration", context89);
+                                });
                               } finally {
                               }
                               if (tnode98 != null) {
@@ -1084,17 +1065,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                               final SNode tnode110 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                               try {
                                 environment.nodeCopied(context101, tnode110, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905150310987");
-                                environment.resolve(new ReferenceResolver() {
-                                  public Object resolve(SNode outputNode, TemplateContext context) {
-                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(new ReferenceMacroContext(context, tnode110, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0h0b0b0b0d, "variableDeclaration"));
+                                environment.resolve(new RefResolver(tnode110, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context101, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787537"), "param1") {
+                                  public Object resolve() {
+                                    return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(createQueryContext());
                                   }
-                                  public String getDefaultResolveInfo() {
-                                    return "param1";
-                                  }
-                                  public SNodeReference getTemplateNode() {
-                                    return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0h0b0b0b0d;
-                                  }
-                                }, tnode110, "variableDeclaration", context101);
+                                });
                               } finally {
                               }
                               if (tnode110 != null) {
@@ -1287,17 +1262,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                       final SNode tnode127 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                       try {
                         environment.nodeCopied(context113, tnode127, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151608284");
-                        environment.resolve(new ReferenceResolver() {
-                          public Object resolve(SNode outputNode, TemplateContext context) {
-                            return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(new ReferenceMacroContext(context, tnode127, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0d0c0i0b0b0b0d, "variableDeclaration"));
+                        environment.resolve(new RefResolver(tnode127, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context113, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787972"), "param1") {
+                          public Object resolve() {
+                            return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(createQueryContext());
                           }
-                          public String getDefaultResolveInfo() {
-                            return "param1";
-                          }
-                          public SNodeReference getTemplateNode() {
-                            return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0d0c0i0b0b0b0d;
-                          }
-                        }, tnode127, "variableDeclaration", context113);
+                        });
                       } finally {
                       }
                       if (tnode127 != null) {
@@ -1378,17 +1347,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                             final SNode tnode137 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                             try {
                               environment.nodeCopied(context133, tnode137, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363111130");
-                              environment.resolve(new ReferenceResolver() {
-                                public Object resolve(SNode outputNode, TemplateContext context) {
-                                  return QueriesGenerated.referenceMacro_GetReferent_429601079677083064(new ReferenceMacroContext(context, tnode137, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0j0b0b0b0d, "variableDeclaration"));
+                              environment.resolve(new RefResolver(tnode137, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context133, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079677083063"), "_node_") {
+                                public Object resolve() {
+                                  return QueriesGenerated.referenceMacro_GetReferent_429601079677083064(createQueryContext());
                                 }
-                                public String getDefaultResolveInfo() {
-                                  return "_node_";
-                                }
-                                public SNodeReference getTemplateNode() {
-                                  return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0j0b0b0b0d;
-                                }
-                              }, tnode137, "variableDeclaration", context133);
+                              });
                             } finally {
                             }
                             if (tnode137 != null) {
@@ -1447,17 +1410,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                                 final SNode tnode143 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                 try {
                                   environment.nodeCopied(context133, tnode143, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151612451");
-                                  environment.resolve(new ReferenceResolver() {
-                                    public Object resolve(SNode outputNode, TemplateContext context) {
-                                      return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(new ReferenceMacroContext(context, tnode143, referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0d0b0c0b0b0d0h0c0j0b0b0b0d, "variableDeclaration"));
+                                  environment.resolve(new RefResolver(tnode143, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context133, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789932"), "param1") {
+                                    public Object resolve() {
+                                      return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(createQueryContext());
                                     }
-                                    public String getDefaultResolveInfo() {
-                                      return "param1";
-                                    }
-                                    public SNodeReference getTemplateNode() {
-                                      return referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0d0b0c0b0b0d0h0c0j0b0b0b0d;
-                                    }
-                                  }, tnode143, "variableDeclaration", context133);
+                                  });
                                 } finally {
                                 }
                                 if (tnode143 != null) {
@@ -1578,17 +1535,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                           final SNode tnode155 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                           try {
                             environment.nodeCopied(context147, tnode155, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363090073");
-                            environment.resolve(new ReferenceResolver() {
-                              public Object resolve(SNode outputNode, TemplateContext context) {
-                                return QueriesGenerated.referenceMacro_GetReferent_429601079676846587(new ReferenceMacroContext(context, tnode155, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0c0l0b0b0b0d, "variableDeclaration"));
+                            environment.resolve(new RefResolver(tnode155, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context147, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676846586"), "_node_") {
+                              public Object resolve() {
+                                return QueriesGenerated.referenceMacro_GetReferent_429601079676846587(createQueryContext());
                               }
-                              public String getDefaultResolveInfo() {
-                                return "_node_";
-                              }
-                              public SNodeReference getTemplateNode() {
-                                return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0c0l0b0b0b0d;
-                              }
-                            }, tnode155, "variableDeclaration", context147);
+                            });
                           } finally {
                           }
                           if (tnode155 != null) {
@@ -1654,17 +1605,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                             final SNode tnode163 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                             try {
                               environment.nodeCopied(context159, tnode163, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363113553");
-                              environment.resolve(new ReferenceResolver() {
-                                public Object resolve(SNode outputNode, TemplateContext context) {
-                                  return QueriesGenerated.referenceMacro_GetReferent_429601079677082939(new ReferenceMacroContext(context, tnode163, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0m0b0b0b0d, "variableDeclaration"));
+                              environment.resolve(new RefResolver(tnode163, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context159, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079677082938"), "_node_") {
+                                public Object resolve() {
+                                  return QueriesGenerated.referenceMacro_GetReferent_429601079677082939(createQueryContext());
                                 }
-                                public String getDefaultResolveInfo() {
-                                  return "_node_";
-                                }
-                                public SNodeReference getTemplateNode() {
-                                  return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0m0b0b0b0d;
-                                }
-                              }, tnode163, "variableDeclaration", context159);
+                              });
                             } finally {
                             }
                             if (tnode163 != null) {
@@ -1708,17 +1653,11 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
                             final SNode tnode167 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                             try {
                               environment.nodeCopied(context159, tnode167, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363113475");
-                              environment.resolve(new ReferenceResolver() {
-                                public Object resolve(SNode outputNode, TemplateContext context) {
-                                  return QueriesGenerated.referenceMacro_GetReferent_429601079676846089(new ReferenceMacroContext(context, tnode167, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0h0c0m0b0b0b0d, "variableDeclaration"));
+                              environment.resolve(new RefResolver(tnode167, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context159, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676846088"), "_node_") {
+                                public Object resolve() {
+                                  return QueriesGenerated.referenceMacro_GetReferent_429601079676846089(createQueryContext());
                                 }
-                                public String getDefaultResolveInfo() {
-                                  return "_node_";
-                                }
-                                public SNodeReference getTemplateNode() {
-                                  return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0h0c0m0b0b0b0d;
-                                }
-                              }, tnode167, "variableDeclaration", context159);
+                              });
                             } finally {
                             }
                             if (tnode167 != null) {
@@ -1784,7 +1723,6 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
   private static SNodePointer varMacroRef_g27wod_b0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845414");
   private static SNodePointer propertyMacro_g27wod_c0a0c0b0d0b0e0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676781979");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a3a1a2a3a1a4a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5494233285271349709");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0b0e0b0c0d0b0e0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5494233285271349719");
   private static SNodePointer ifMacroRef_g27wod_b0a0b0e0b0c0d0b0e0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5494233285271349733");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a1a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676785721");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a1a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363114829");
@@ -1793,7 +1731,6 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a2a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786595");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a2a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363100545");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a2a2a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084547488");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0d0b0c0b0b0d0c0c0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3143347504358680259");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a3a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786278");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a3a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363073863");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a2a3a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084549193");
@@ -1814,33 +1751,25 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a6a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786922");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a6a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363107285");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a2a6a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084571124");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0g0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787207");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a7a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787548");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a7a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363093017");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a2a7a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084572770");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0h0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787537");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a8a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787984");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a1a1a1a1a3a2a8a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363081388");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a1a1a1a1a3a2a8a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084574407");
   private static SNodePointer templateNode_g27wod_c0a1a1a3a1a2a1a1a1a1a1a1a3a2a8a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363085829");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0d0c0i0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787972");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a9a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789821");
   private static SNodePointer varMacroRef_g27wod_b0a0a3a2a9a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789871");
   private static SNodePointer loopMacroRef_g27wod_b0a0a6a2a9a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789877");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0j0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079677083063");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a7a2a9a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084575759");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0d0b0c0b0b0d0h0c0j0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789932");
   private static SNodePointer copySrcListMacro_g27wod_b0a0a1a01a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845657");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a11a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789066");
   private static SNodePointer templateNode_g27wod_c0a1a1a1a1a1a1a1a3a2a11a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363090003");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a2a11a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084623397");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0c0l0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676846586");
   private static SNodePointer loopMacroRef_g27wod_b0a0a1a21a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789415");
   private static SNodePointer varMacroRef_g27wod_b0a0a3a2a21a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789498");
   private static SNodePointer loopMacroRef_g27wod_b0a0a6a2a21a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789519");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0m0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079677082938");
   private static SNodePointer includeMacro_g27wod_b0a0a0a1a2a1a2a1a1a3a7a2a21a1a1a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5645466361084625203");
-  private static SNodePointer referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0h0c0m0b0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676846088");
   private static SNodePointer weaveTfConst_g27wod_a0b0f = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079677119986");
   private static SNodePointer weaveTfConst_g27wod_a0e0f = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845473");
 }

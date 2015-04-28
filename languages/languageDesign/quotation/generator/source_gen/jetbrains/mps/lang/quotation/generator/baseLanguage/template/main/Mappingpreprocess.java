@@ -26,8 +26,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -95,17 +94,11 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
           try {
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468140239188");
-            environment.resolve(new ReferenceResolver() {
-              public Object resolve(SNode outputNode, TemplateContext context) {
-                return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(new ReferenceMacroContext(context, tnode2, referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51, "concept"));
+            environment.resolve(new RefResolver(tnode2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x10975873562L, "concept"), context, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891"), "Attribute") {
+              public Object resolve() {
+                return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(createQueryContext());
               }
-              public String getDefaultResolveInfo() {
-                return "Attribute";
-              }
-              public SNodeReference getTemplateNode() {
-                return referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51;
-              }
-            }, tnode2, "concept", context);
+            });
             {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
               try {
@@ -140,6 +133,5 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
       return TemplateUtil.singletonList(tnode1);
     }
   }
-  private static SNodePointer referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891");
   private static SNodePointer copySrcMacro_pbbzd9_b0a0c0d0b0c0b0b0c0c51 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468139287102");
 }

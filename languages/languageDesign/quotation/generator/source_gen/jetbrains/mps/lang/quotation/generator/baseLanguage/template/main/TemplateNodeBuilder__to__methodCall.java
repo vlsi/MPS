@@ -26,8 +26,7 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.impl.reference.RefResolver;
 
 @Generated
 public class TemplateNodeBuilder__to__methodCall extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -225,17 +224,11 @@ public class TemplateNodeBuilder__to__methodCall extends TemplateDeclarationBase
                     final SNode tnode24 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                     try {
                       environment.nodeCopied(context, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363094905");
-                      environment.resolve(new ReferenceResolver() {
-                        public Object resolve(SNode outputNode, TemplateContext context) {
-                          return QueriesGenerated.referenceMacro_GetReferent_429601079676882571(new ReferenceMacroContext(context, tnode24, referenceMacro_7ucwoc_c0a0a0a0a0a0b0b0b0b0e0b0f0b0b0b0c, "variableDeclaration"));
+                      environment.resolve(new RefResolver(tnode24, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676882570"), "result") {
+                        public Object resolve() {
+                          return QueriesGenerated.referenceMacro_GetReferent_429601079676882571(createQueryContext());
                         }
-                        public String getDefaultResolveInfo() {
-                          return "result";
-                        }
-                        public SNodeReference getTemplateNode() {
-                          return referenceMacro_7ucwoc_c0a0a0a0a0a0b0b0b0b0e0b0f0b0b0b0c;
-                        }
-                      }, tnode24, "variableDeclaration", context);
+                      });
                     } finally {
                     }
                     if (tnode24 != null) {
@@ -315,7 +308,6 @@ public class TemplateNodeBuilder__to__methodCall extends TemplateDeclarationBase
   private static SNodePointer propertyMacro_7ucwoc_c0a0c0b0d0f0c0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709308");
   private static SNodePointer ifMacroRef_7ucwoc_b0a0b0b0b0f0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676882500");
   private static SNodePointer copySrcMacro_7ucwoc_b0a0c0d0b0f0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676882525");
-  private static SNodePointer referenceMacro_7ucwoc_c0a0a0a0a0a0b0b0b0b0e0b0f0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676882570");
   private static SNodePointer templateNode_7ucwoc_c0a1a1a2a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709483");
   private static SNodePointer loopMacroRef_7ucwoc_b0a0a1a2a1a2a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709495");
   private static SNodePointer copySrcMacro_7ucwoc_b0a0e0c0c0b0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709536");

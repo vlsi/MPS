@@ -2512,76 +2512,64 @@
       <node id="3308300503039701253" at="29,9,30,112" concept="3" />
       <node id="3308300503039701253" at="31,7,32,114" concept="8" />
       <node id="3308300503039701253" at="33,13,34,116" concept="3" />
-      <node id="3308300503039701253" at="36,78,37,199" concept="9" />
-      <node id="3308300503039701253" at="39,51,40,27" concept="9" />
-      <node id="3308300503039701253" at="42,53,43,65" concept="9" />
-      <node id="3308300503039701253" at="48,29,49,48" concept="3" />
-      <node id="3308300503039701253" at="50,9,51,31" concept="10" />
-      <node id="3308300503039701253" at="54,5,55,18" concept="9" />
-      <node id="3308300503039701253" at="57,146,58,72" concept="9" />
-      <node id="3308300503039701253" at="60,180,61,56" concept="8" />
-      <node id="3308300503039701253" at="61,56,62,56" concept="8" />
-      <node id="3308300503039701253" at="62,56,63,100" concept="3" />
-      <node id="3308300503039701253" at="63,100,64,50" concept="9" />
-      <node id="3308300503039701253" at="66,0,67,0" concept="12" trace="referenceMacro_at64ip_c0a0a0a0a0a0b0b0b0b0c" />
-      <node id="3308300503039701253" at="67,0,68,0" concept="12" trace="weaveTfConst_at64ip_a0b0e" />
+      <node id="3308300503039701253" at="36,37,37,107" concept="9" />
+      <node id="3308300503039701253" at="42,29,43,48" concept="3" />
+      <node id="3308300503039701253" at="44,9,45,31" concept="10" />
+      <node id="3308300503039701253" at="48,5,49,18" concept="9" />
+      <node id="3308300503039701253" at="51,146,52,72" concept="9" />
+      <node id="3308300503039701253" at="54,180,55,56" concept="8" />
+      <node id="3308300503039701253" at="55,56,56,56" concept="8" />
+      <node id="3308300503039701253" at="56,56,57,100" concept="3" />
+      <node id="3308300503039701253" at="57,100,58,50" concept="9" />
+      <node id="3308300503039701253" at="60,0,61,0" concept="12" trace="weaveTfConst_at64ip_a0b0e" />
       <node id="3308300503039701253" at="22,0,24,0" concept="1" trace="Templatereduce__RoutineCall#()V" />
       <node id="3308300503039701253" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="3308300503039701253" at="36,0,39,0" concept="7" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/lang/Object;" />
-      <node id="3308300503039701253" at="39,0,42,0" concept="7" trace="getDefaultResolveInfo#()Ljava/lang/String;" />
-      <node id="3308300503039701253" at="42,0,45,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="3308300503039701253" at="47,9,50,9" concept="6" />
-      <node id="3308300503039701253" at="57,0,60,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="3308300503039701253" at="60,0,66,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
-      <node id="3308300503039701253" at="34,116,45,55" concept="3" />
-      <node id="3308300503039701253" at="32,114,47,9" concept="15" />
-      <node id="3308300503039701253" at="30,112,52,7" concept="0" />
-      <node id="3308300503039701253" at="28,114,54,5" concept="15" />
-      <node id="3308300503039701253" at="27,0,57,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3308300503039701253" at="36,0,39,0" concept="7" trace="resolve#()Ljava/lang/Object;" />
+      <node id="3308300503039701253" at="41,9,44,9" concept="6" />
+      <node id="3308300503039701253" at="51,0,54,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3308300503039701253" at="34,116,39,13" concept="3" />
+      <node id="3308300503039701253" at="54,0,60,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
+      <node id="3308300503039701253" at="32,114,41,9" concept="15" />
+      <node id="3308300503039701253" at="30,112,46,7" concept="0" />
+      <node id="3308300503039701253" at="28,114,48,5" concept="15" />
+      <node id="3308300503039701253" at="27,0,51,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3308300503039701253" at="22,40,22,40" />
-      <scope id="3308300503039701253" at="46,19,46,19" />
-      <scope id="3308300503039701253" at="53,15,53,15" />
+      <scope id="3308300503039701253" at="40,19,40,19" />
+      <scope id="3308300503039701253" at="47,15,47,15" />
       <scope id="3308300503039701253" at="24,43,25,155" />
-      <scope id="3308300503039701253" at="36,78,37,199" />
-      <scope id="3308300503039701253" at="39,51,40,27" />
-      <scope id="3308300503039701253" at="42,53,43,65" />
-      <scope id="3308300503039701253" at="48,29,49,48" />
-      <scope id="3308300503039701253" at="57,146,58,72" />
+      <scope id="3308300503039701253" at="36,37,37,107" />
+      <scope id="3308300503039701253" at="42,29,43,48" />
+      <scope id="3308300503039701253" at="51,146,52,72" />
       <scope id="3308300503039701253" at="22,0,24,0" />
       <scope id="3308300503039701253" at="24,0,27,0" />
-      <scope id="3308300503039701253" at="36,0,39,0">
-        <var name="context" id="3308300503039701253" />
-        <var name="outputNode" id="3308300503039701253" />
-      </scope>
-      <scope id="3308300503039701253" at="39,0,42,0" />
-      <scope id="3308300503039701253" at="42,0,45,0" />
-      <scope id="3308300503039701253" at="57,0,60,0">
+      <scope id="3308300503039701253" at="36,0,39,0" />
+      <scope id="3308300503039701253" at="51,0,54,0">
         <var name="context" id="3308300503039701253" />
         <var name="environment" id="3308300503039701253" />
       </scope>
-      <scope id="3308300503039701253" at="60,180,64,50">
+      <scope id="3308300503039701253" at="54,180,58,50">
         <var name="tnodepart0" id="3308300503039701253" />
         <var name="weaveTf0" id="3308300503039701253" />
       </scope>
-      <scope id="3308300503039701253" at="60,0,66,0">
+      <scope id="3308300503039701253" at="33,13,39,13" />
+      <scope id="3308300503039701253" at="54,0,60,0">
         <var name="context" id="3308300503039701253" />
         <var name="environment" id="3308300503039701253" />
         <var name="outputContextNode" id="3308300503039701253" />
       </scope>
-      <scope id="3308300503039701253" at="33,13,45,55" />
-      <scope id="3308300503039701253" at="31,7,51,31">
+      <scope id="3308300503039701253" at="31,7,45,31">
         <var name="tnode2" id="3308300503039701253" />
       </scope>
-      <scope id="3308300503039701253" at="29,9,52,7" />
-      <scope id="3308300503039701253" at="27,154,55,18">
+      <scope id="3308300503039701253" at="29,9,46,7" />
+      <scope id="3308300503039701253" at="27,154,49,18">
         <var name="tnode1" id="3308300503039701253" />
       </scope>
-      <scope id="3308300503039701253" at="27,0,57,0">
+      <scope id="3308300503039701253" at="27,0,51,0">
         <var name="context" id="3308300503039701253" />
         <var name="environment" id="3308300503039701253" />
       </scope>
-      <unit id="3308300503039701253" at="35,34,45,11" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall$1" />
-      <unit id="3308300503039701253" at="20,0,69,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall" />
+      <unit id="3308300503039701253" at="35,34,39,11" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall$1" />
+      <unit id="3308300503039701253" at="20,0,62,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039761162">
