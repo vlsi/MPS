@@ -11,12 +11,19 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -38,6 +45,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -78,6 +88,10 @@
     <node concept="PrWs8" id="58aSpRitVbW" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="70AZf4CVrP_" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="use Extension instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3f064wGFUBm">
     <property role="19KtqR" value="true" />
@@ -96,11 +110,20 @@
     <node concept="PrWs8" id="3f064wGFUBn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="aRphP9VZsR" role="PzmwI">
+      <ref role="PrY4T" node="aRphP9VDPM" resolve="IRootWithUniqueName" />
+    </node>
+    <node concept="PrWs8" id="aRphP9WCAe" role="PzmwI">
+      <ref role="PrY4T" node="aRphP9WC_H" resolve="IExtensionPoint" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6XJvNHU5Sl_">
     <property role="TrG5h" value="ExtensionObjectGetter" />
     <property role="2_RsDV" value="none" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="70AZf4CVrPF" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5JRjEZJSe_0">
     <property role="R5$K7" value="false" />
@@ -113,13 +136,16 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extensionPoint" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3f064wGFUBm" resolve="ExtensionPointDeclaration" />
+      <ref role="20lvS9" node="aRphP9WC_H" resolve="IExtensionPoint" />
     </node>
   </node>
   <node concept="1TIwiD" id="66AaOfxk_fJ">
     <property role="TrG5h" value="ExtensionFunction" />
     <property role="2_RsDV" value="none" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2UKVRofbKnr" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="66AaOfxkOUp">
     <property role="TrG5h" value="ExtensionFieldDeclaration" />
@@ -133,6 +159,9 @@
     <node concept="PrWs8" id="66AaOfxkOUr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="70AZf4CVrPB" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="66AaOfxkOUu">
     <property role="TrG5h" value="ExtensionFieldReference" />
@@ -143,6 +172,9 @@
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="66AaOfxkOUp" resolve="ExtensionFieldDeclaration" />
+    </node>
+    <node concept="asaX9" id="70AZf4CVrPD" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="2KgYA8kbFkS">
@@ -156,7 +188,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extensionPoint" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3f064wGFUBm" resolve="ExtensionPointDeclaration" />
+      <ref role="20lvS9" node="aRphP9WC_H" resolve="IExtensionPoint" />
     </node>
   </node>
   <node concept="1TIwiD" id="2KgYA8kbJt7">
@@ -179,6 +211,46 @@
     </node>
     <node concept="PrWs8" id="3zLwYDe0E2G" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2UKVRofbKn5">
+    <property role="19KtqR" value="true" />
+    <property role="TrG5h" value="ExtensionPointOverlappingDeclaration" />
+    <node concept="1TJgyj" id="aRphP9UjJo" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argumentType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="aRphP9U_ea" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="resultType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="2UKVRofbKn8" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="aRphP9VZt0" role="PzmwI">
+      <ref role="PrY4T" node="aRphP9VDPM" resolve="IRootWithUniqueName" />
+    </node>
+    <node concept="PrWs8" id="aRphP9WCAr" role="PzmwI">
+      <ref role="PrY4T" node="aRphP9WC_H" resolve="IExtensionPoint" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="aRphP9VDPM">
+    <property role="TrG5h" value="IRootWithUniqueName" />
+    <node concept="PrWs8" id="aRphP9VE3T" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="aRphP9WC_H">
+    <property role="TrG5h" value="IExtensionPoint" />
+    <node concept="PrWs8" id="aRphP9WKr7" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="aRphP9WMpR" role="PrDN$">
+      <ref role="PrY4T" node="aRphP9VDPM" resolve="IRootWithUniqueName" />
     </node>
   </node>
 </model>

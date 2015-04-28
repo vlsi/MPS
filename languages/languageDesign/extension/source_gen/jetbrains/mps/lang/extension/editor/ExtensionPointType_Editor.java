@@ -81,15 +81,12 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     }
     private EditorCell createProperty_i3f4o0_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("extensionName");
-      provider.setNoTargetText("<no extensionName>");
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_extensionName");
-      Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
-      editorCell.getStyle().putAll(style);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -20,6 +20,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ExtensionFieldDeclaration_Constraints();
       case 3:
         return new GetExtensionObjectsOperation_Constraints();
+      case 4:
+        return new IRootWithUniqueName_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -38,7 +40,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x2c10fa62142ef747L) {
       return new GetExtensionObjectsOperation_Constraints();
     }
+    if (id == 0x2b7651d49ee9d72L) {
+      return new IRootWithUniqueName_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName"};
 }

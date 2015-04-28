@@ -27,8 +27,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 5:
         return Collections.<ConceptEditor>singletonList(new ExtensionPointExpression_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ExtensionPointType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointOverlappingDeclaration_Editor());
       case 7:
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointType_Editor());
+      case 8:
         return Collections.<ConceptEditor>singletonList(new GetExtensionObjectsOperation_Editor());
       default:
     }
@@ -39,5 +41,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
 }

@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointOverlappingDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
@@ -87,15 +88,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" file="ExtensionPointDeclaration_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" file="ExtensionPointDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -103,6 +102,9 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.IExtensionPoint_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -121,6 +123,29 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointOverlappingDeclaration_Behavior" file="ExtensionPointOverlappingDeclaration_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointOverlappingDeclaration_BehaviorDescriptor" file="ExtensionPointOverlappingDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointOverlappingDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.IExtensionPoint_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointType_Behavior" file="ExtensionPointType_Behavior.java">
@@ -168,6 +193,27 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.IExtensionPoint_Behavior" file="IExtensionPoint_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.IExtensionPoint_BehaviorDescriptor" file="IExtensionPoint_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_Behavior" file="IRootWithUniqueName_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" file="IRootWithUniqueName_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
 </dependenciesRoot>
 

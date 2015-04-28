@@ -7,17 +7,17 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class ExtensionPointDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IRootWithUniqueName_BehaviorDescriptor, IExtensionPoint_BehaviorDescriptor {
-  public ExtensionPointDeclaration_BehaviorDescriptor() {
+public class ExtensionPointOverlappingDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IRootWithUniqueName_BehaviorDescriptor, IExtensionPoint_BehaviorDescriptor {
+  public ExtensionPointOverlappingDeclaration_BehaviorDescriptor() {
   }
   public SNode virtual_getExtensionType_195736285283075115(SNode thisNode) {
-    return ExtensionPointDeclaration_Behavior.virtual_getExtensionType_195736285283075115(thisNode);
+    return ExtensionPointOverlappingDeclaration_Behavior.virtual_getExtensionType_195736285283075115(thisNode);
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration";
+    return "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration";
   }
 }

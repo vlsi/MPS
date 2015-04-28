@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -19,7 +18,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior;
+import jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -32,7 +31,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_hr8njl_a_0(editorContext, node);
   }
   private EditorCell createCollection_hr8njl_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hr8njl_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_hr8njl_a0(editorContext, node));
@@ -52,9 +51,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -117,14 +114,13 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_hr8njl_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hr8njl_a_0");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hr8njl_a0(editorContext, node));
@@ -170,7 +166,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_hr8njl_a0b0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return ExtensionPointDeclaration_Behavior.call_getId_63012922130945363(node);
+          return IRootWithUniqueName_Behavior.call_getId_63012922130945363(node);
         }
         public void setText(String s) {
         }
