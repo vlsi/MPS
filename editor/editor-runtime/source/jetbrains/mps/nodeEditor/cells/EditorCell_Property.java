@@ -35,11 +35,12 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   private ModelAccessor myModelAccessor;
   private boolean myCommitInProgress;
   private boolean myCommitInCommand = true;
+  private String myLastModelText;
 
   protected EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
-    setErrorState(!accessor.isValidText(getText()));
     myModelAccessor = accessor;
+    synchronizeViewWithModel();
   }
 
   public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
@@ -66,6 +67,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   @Override
   public void synchronizeViewWithModel() {
     String text = myModelAccessor.getText();
+    myLastModelText = text;
     setErrorState(!isValidText(text));
     setText(text);
   }
@@ -132,10 +134,18 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
     if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
-    } else if (myModelAccessor instanceof TransactionalModelAccessor) {
+      synchronizeViewWithModel();
+      return;
+    }
+
+    if (myModelAccessor instanceof TransactionalModelAccessor) {
       ((TransactionalModelAccessor) myModelAccessor).resetUncommittedValue();
     }
     setErrorState(!isValidText(text));
+  }
+
+  public String getLastModelText() {
+    return myLastModelText;
   }
 
   @Override

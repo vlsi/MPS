@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,10 +37,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 class Memento {
   private static final Comparator<EditorCell> FOLDED_CELLS_COMPARATOR = new Comparator<EditorCell>() {
@@ -63,7 +60,7 @@ class Memento {
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
   private List<CellInfo> myFolded = new ArrayList<CellInfo>();
 
-  private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
+  private List<ErrorMarker> myErrors = new ArrayList<ErrorMarker>();
   private Point myViewPosition;
   private String[] myEnabledHints = null;
   private SNodeReference myEditedNodeReference;
@@ -97,9 +94,8 @@ class Memento {
 
   private void collectErrors(EditorComponent editor) {
     for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
-      if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
-        EditorCell_Label label = (EditorCell_Label) cell;
-        myErrorTexts.put(label.getCellInfo(), label.getText());
+      if (cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()) {
+        myErrors.add(new ErrorMarker((EditorCell_Label) cell));
       }
     }
   }
@@ -153,24 +149,15 @@ class Memento {
   private boolean restoreErrors(EditorComponent editor) {
     boolean needsRelayout = false;
     for (EditorCell cell : new ArrayList<EditorCell>(editor.getCellTracker().getErrorCells())) {
-      if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
+      if (cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()) {
         EditorCell_Label label = (EditorCell_Label) cell;
         label.synchronizeViewWithModel();
         needsRelayout = true;
       }
     }
 
-    for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
-      EditorCell cell = entry.getKey().findCell(editor);
-      if (cell instanceof EditorCell_Label) {
-        EditorCell_Label cellLabel = (EditorCell_Label) cell;
-        String text = cellLabel.getText();
-        String oldText = entry.getValue();
-        if (!EqualUtil.equals(text, oldText) && (!cellLabel.isValidText(oldText) || !cellLabel.isEditable())) {
-          cellLabel.changeText(oldText);
-          needsRelayout = true;
-        }
-      }
+    for (ErrorMarker error : myErrors) {
+      needsRelayout = error.restore(editor) || needsRelayout;
     }
     return needsRelayout;
   }
@@ -211,9 +198,7 @@ class Memento {
   private static final String ENABLED_HINTS = "enabledHints";
   private static final String ENABLED_HINTS_ELEMENT = "enabledHintsElement";
   private static final String ENABLED_HINTS_ATTRIBUTE = "enabledHintsAttribute";
-  private static final String ERROR_LABELS = "errorLabels";
-  private static final String ERROR_LABEL = "errorLabel";
-  private static final String ERROR_TEXT = "errorText";
+  private static final String ERROR_MARKERS = "errorMarkers";
   private static final String EDITED_NODE = "currentlyEditedNode";
 
   public void save(Element e) {
@@ -229,13 +214,10 @@ class Memento {
       selectionStack.addContent(stackElement);
     }
 
-    Element errorLabels = new Element(ERROR_LABELS);
-    e.addContent(errorLabels);
-    for (Entry<CellInfo, String> errorTextEntry : myErrorTexts.entrySet()) {
-      Element errorLabelElement = new Element(ERROR_LABEL);
-      errorLabelElement.setAttribute(ERROR_TEXT, errorTextEntry.getValue());
-      ((DefaultCellInfo) errorTextEntry.getKey()).saveTo(errorLabelElement);
-      errorLabels.addContent(errorLabelElement);
+    Element errorMarkers = new Element(ERROR_MARKERS);
+    e.addContent(errorMarkers);
+    for (ErrorMarker error : myErrors) {
+      error.save(errorMarkers);
     }
 
     boolean success = true;
@@ -281,13 +263,9 @@ class Memento {
       }
     }
 
-    Element errorLabels = e.getChild(ERROR_LABELS);
-    if (errorLabels != null) {
-      for (Element errorLabelElement : errorLabels.getChildren(ERROR_LABEL)) {
-        String errorText = errorLabelElement.getAttributeValue(ERROR_TEXT);
-        CellInfo cellInfo = DefaultCellInfo.loadFrom(errorLabelElement);
-        memento.myErrorTexts.put(cellInfo, errorText);
-      }
+    Element errorMarkers = e.getChild(ERROR_MARKERS);
+    if (errorMarkers != null) {
+      memento.myErrors.addAll(ErrorMarker.loadMarkers(errorMarkers));
     }
 
     Element folded = e.getChild(FOLDED);
@@ -315,5 +293,93 @@ class Memento {
     }
 
     return memento;
+  }
+
+  private static class ErrorMarker {
+    private static final String ERROR_MARKER = "errorMarker";
+    private static final String TEXT = "text";
+    private static final String MODEL_TEXT = "modelText";
+    private static final String PROPERTY_CELL = "propertyCell";
+
+    private CellInfo myCellInfo;
+    private String myText;
+    private String myModelText = null;
+    private boolean myPropertyCell = false;
+
+    public ErrorMarker(EditorCell_Label label) {
+      myText = label.getText();
+      myCellInfo = label.getCellInfo();
+      if (label instanceof EditorCell_Property) {
+        myModelText = ((EditorCell_Property) label).getLastModelText();
+        myPropertyCell = true;
+      }
+    }
+
+    private ErrorMarker(Element errorElement) {
+      myText = errorElement.getAttributeValue(TEXT);
+      myModelText = errorElement.getAttributeValue(MODEL_TEXT);
+      myPropertyCell = Boolean.parseBoolean(errorElement.getAttributeValue(PROPERTY_CELL));
+      myCellInfo = DefaultCellInfo.loadFrom(errorElement);
+    }
+
+    private boolean isPropertyCell() {
+      return myPropertyCell;
+    }
+
+    public boolean restore(EditorComponent editor) {
+      EditorCell cell = myCellInfo.findCell(editor);
+      if (!(cell instanceof EditorCell_Label)) {
+        return false;
+      }
+      EditorCell_Label cellLabel = (EditorCell_Label) cell;
+      if (!cellLabel.isEditable()) {
+        return false;
+      }
+
+      return isPropertyCell() ? restorePropertyCell(cellLabel) : restoreLabelCell(cellLabel);
+    }
+
+    private boolean restoreLabelCell(EditorCell_Label cellLabel) {
+      if (canRestoreText(cellLabel)) {
+        cellLabel.changeText(myText);
+        return true;
+      }
+      return false;
+    }
+
+    private boolean restorePropertyCell(EditorCell_Label cell) {
+      if (!(cell instanceof EditorCell_Property)) {
+        return false;
+      }
+      EditorCell_Property cellProperty = (EditorCell_Property) cell;
+      if (EqualUtil.equals(myModelText, cellProperty.getLastModelText()) && canRestoreText(cellProperty)) {
+        cellProperty.changeText(myText);
+        return true;
+      }
+      return false;
+    }
+
+    private boolean canRestoreText(EditorCell_Label cellLabel) {
+      return !EqualUtil.equals(cellLabel.getText(), myText) && !cellLabel.isValidText(myText);
+    }
+
+    public void save(Element errorMarkers) {
+      Element errorElement = new Element(ERROR_MARKER);
+      errorElement.setAttribute(TEXT, myText);
+      if (myModelText != null) {
+        errorElement.setAttribute(MODEL_TEXT, myModelText);
+      }
+      errorElement.setAttribute(PROPERTY_CELL, Boolean.toString(myPropertyCell));
+      ((DefaultCellInfo) myCellInfo).saveTo(errorElement);
+      errorMarkers.addContent(errorElement);
+    }
+
+    public static List<ErrorMarker> loadMarkers(Element errorMarkers) {
+      List<ErrorMarker> result = new ArrayList<ErrorMarker>();
+      for (Element errorElement : errorMarkers.getChildren(ERROR_MARKER)) {
+        result.add(new ErrorMarker(errorElement));
+      }
+      return result;
+    }
   }
 }
