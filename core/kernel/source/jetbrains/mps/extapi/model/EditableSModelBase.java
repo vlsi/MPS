@@ -22,9 +22,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -321,7 +321,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @ToRemove(version = 3.3)
   public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role);
+    SReferenceLink link = ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role);
     getEventDispatch().fireReferenceChange(node, link, oldValue, newValue);
   }
 
@@ -333,7 +333,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @ToRemove(version = 3.3)
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SProperty prop = MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), propertyName);
+    SProperty prop = ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName);
     getEventDispatch().firePropertyChange(node, prop, oldValue, newValue);
   }
 
@@ -345,7 +345,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @ToRemove(version = 3.3)
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SContainmentLink link = role == null ? null : MetaAdapterFactoryByName.getContainmentLink(node.getConcept().getQualifiedName(), role);
+    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
     getEventDispatch().fireNodeAdd(node, link, child);
   }
 
@@ -357,7 +357,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @ToRemove(version = 3.3)
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SContainmentLink link = role == null ? null : MetaAdapterFactoryByName.getContainmentLink(node.getConcept().getQualifiedName(), role);
+    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
     getEventDispatch().fireNodeRemove(node, link, child);
   }
 
