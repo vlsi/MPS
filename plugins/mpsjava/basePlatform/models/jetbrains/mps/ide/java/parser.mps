@@ -444,6 +444,9 @@
         <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
         <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
@@ -472,6 +475,11 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439833" name="version" index="2V$B1S" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
@@ -28317,9 +28325,13 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="4s6Dffjm5M4" role="2OqNvi">
-                              <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-                              <node concept="2L6k_Z" id="4s6Dffjm5M5" role="37wK5m">
-                                <property role="2L6k_S" value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+                              <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+                              <node concept="pHN19" id="2lGuVOSQ$J3" role="37wK5m">
+                                <node concept="2V$Bhx" id="2lGuVOSQ_DR" role="2V$M_3">
+                                  <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
+                                  <property role="2V$B1Q" value="jetbrains.mps.baseLanguage" />
+                                  <property role="2V$B1S" value="-1" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -28337,9 +28349,13 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="5DSm3oe9cEb" role="2OqNvi">
-                              <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
-                              <node concept="2L6k_Z" id="5DSm3oe9cEc" role="37wK5m">
-                                <property role="2L6k_S" value="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
+                              <ref role="37wK5l" to="51te:~SModelDescriptorStub.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+                              <node concept="pHN19" id="2lGuVOSQAJT" role="37wK5m">
+                                <node concept="2V$Bhx" id="2lGuVOSQBAq" role="2V$M_3">
+                                  <property role="2V$B1T" value="f2801650-65d5-424e-bb1b-463a8781b786" />
+                                  <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.javadoc" />
+                                  <property role="2V$B1S" value="-1" />
+                                </node>
                               </node>
                             </node>
                           </node>
