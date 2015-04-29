@@ -23,7 +23,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     return this.createCollection_i3f4o0_a(editorContext, node);
   }
   private EditorCell createCollection_i3f4o0_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i3f4o0_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_i3f4o0_a0(editorContext, node));

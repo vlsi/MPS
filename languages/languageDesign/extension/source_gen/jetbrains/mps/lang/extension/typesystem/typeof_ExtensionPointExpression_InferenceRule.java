@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ExtensionPointExpression_InferenceRule() {
@@ -21,7 +20,7 @@ public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = epe;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791047", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791042", true), (SNode) _quotation_createNode_x0hnp2_a0a0b(SLinkOperations.getTarget(epe, MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x5bf74eafefe0e940L, 0x5bf74eafefe0eb55L, "extensionPoint"))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791042", true), (SNode) createExtensionPointType_x0hnp2_a0a0b(SLinkOperations.getTarget(epe, MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x5bf74eafefe0e940L, 0x5bf74eafefe0eb55L, "extensionPoint"))), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -36,11 +35,10 @@ public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_x0hnp2_a0a0b(Object parameter_1) {
+  private static SNode createExtensionPointType_x0hnp2_a0a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, "jetbrains.mps.lang.extension.structure.ExtensionPointType"), null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, 0x2c10fa62142eb539L, "extensionPoint"), (SNode) parameter_1);
-    return quotedNode_2;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, "jetbrains.mps.lang.extension.structure.ExtensionPointType"), null, null, false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, 0x2c10fa62142eb539L, "extensionPoint"), (SNode) p0);
+    return n1;
   }
 }
