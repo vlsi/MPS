@@ -6,6 +6,7 @@
   </dependency>
   <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" file="JavaClassStubModelDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />

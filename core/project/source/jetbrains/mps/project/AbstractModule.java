@@ -38,9 +38,11 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
@@ -169,36 +171,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-    // todo: collect languages for now? and convert to SLanguages in the end?
-    if (getModuleDescriptor() == null) {
-      return Collections.emptySet();
-    }
 
-    Set<SLanguage> languages = new HashSet<SLanguage>();
-    for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
-      if (language != null) {
-        languages.add(MetaAdapterByDeclaration.getLanguage(language));
-      }
+    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
+    for (SModel m : getModels()) {
+      usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
     }
+    usedLanguages.add(BootstrapLanguages.getLangCore());
 
-    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
-      if (devKit != null) {
-        for (Language language : devKit.getAllExportedLanguages()) {
-          if (language != null) {
-            languages.add(MetaAdapterByDeclaration.getLanguage(language));
-          }
-        }
-      }
-    }
-
-    if (BootstrapLanguages.coreLanguage() != null) {
-      // todo: ???
-      languages.add(MetaAdapterByDeclaration.getLanguage(BootstrapLanguages.coreLanguage()));
-    }
-
-    return languages; // todo: maybe collect extended languages here
+    return usedLanguages;
   }
 
   @Override
@@ -311,6 +291,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   /**
+   * FIXME drop
    * Register language to use in module's models
    * @since 3.3
    */
@@ -319,6 +300,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     addUsedLanguage(language.getSourceModule().getModuleReference());
   }
 
+  // FIXME left intact, shall become no-op once all uses are revisited
   public void addUsedLanguage(SModuleReference langRef) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -331,11 +313,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
+  /**
+   * FIXME drop
+   * @since 3.3
+   */
   public void removeUsedLanguage(SLanguage lang) {
     // FIXME SLanguage->SModuleReference transition
     removeUsedLanguage(lang.getSourceModule().getModuleReference());
   }
 
+  // FIXME left intact, shall become no-op once all uses are revisited
   public void removeUsedLanguage(SModuleReference langRef) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
