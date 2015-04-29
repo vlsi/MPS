@@ -612,6 +612,9 @@
       <concept id="1237909114519" name="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" flags="nn" index="T8wYR" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
+        <child id="4611582986551314344" name="requestedType" index="UnYnz" />
+      </concept>
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
@@ -11950,7 +11953,7 @@
                 <node concept="3clFbF" id="2EkHBjgiHie" role="3cqZAp">
                   <node concept="2YIFZM" id="2EkHBjgiKq9" role="3clFbG">
                     <ref role="1Pybhc" to="msyo:~SNodeOperations" resolve="SNodeOperations" />
-                    <ref role="37wK5l" to="msyo:~SNodeOperations.insertChild(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChild" />
+                    <ref role="37wK5l" to="msyo:~SNodeOperations.insertChild(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChild" />
                     <node concept="37vLTw" id="2EkHBjgiPc6" role="37wK5m">
                       <ref role="3cqZAo" node="5EoRO0420jm" resolve="clas" />
                     </node>
@@ -12783,29 +12786,9 @@
                                           <ref role="3cqZAo" node="7o4ozN$nzzt" resolve="theRightNode" />
                                         </node>
                                       </node>
-                                      <node concept="3zZkjj" id="2IXrFxMVV93" role="2OqNvi">
-                                        <node concept="1bVj0M" id="2IXrFxMVV95" role="23t8la">
-                                          <node concept="3clFbS" id="2IXrFxMVV96" role="1bW5cS">
-                                            <node concept="3clFbF" id="2IXrFxMVVgV" role="3cqZAp">
-                                              <node concept="2ZW3vV" id="2IXrFxMVVzY" role="3clFbG">
-                                                <node concept="3uibUv" id="2IXrFxMVVFc" role="2ZW6by">
-                                                  <ref role="3uigEE" to="cu2c:~StaticReference" resolve="StaticReference" />
-                                                </node>
-                                                <node concept="10QFUN" id="2IXrFxMVVOV" role="2ZW6bz">
-                                                  <node concept="37vLTw" id="2IXrFxMVVOU" role="10QFUP">
-                                                    <ref role="3cqZAo" node="2IXrFxMVV97" resolve="it" />
-                                                  </node>
-                                                  <node concept="3uibUv" id="2IXrFxMVVVx" role="10QFUM">
-                                                    <ref role="3uigEE" to="ec5l:~SReference" resolve="SReference" />
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="Rh6nW" id="2IXrFxMVV97" role="1bW2Oz">
-                                            <property role="TrG5h" value="it" />
-                                            <node concept="2jxLKc" id="2IXrFxMVV98" role="1tU5fm" />
-                                          </node>
+                                      <node concept="UnYns" id="2lGuVOSPDpW" role="2OqNvi">
+                                        <node concept="3uibUv" id="2lGuVOSPDvv" role="UnYnz">
+                                          <ref role="3uigEE" to="cu2c:~StaticReference" resolve="StaticReference" />
                                         </node>
                                       </node>
                                     </node>
@@ -12819,15 +12802,8 @@
                                                 <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
                                               </node>
                                               <node concept="2OqwBi" id="yvC2iN29P6" role="33vP2m">
-                                                <node concept="1eOMI4" id="yvC2iN2913" role="2Oq$k0">
-                                                  <node concept="10QFUN" id="yvC2iN2910" role="1eOMHV">
-                                                    <node concept="3uibUv" id="yvC2iN29ch" role="10QFUM">
-                                                      <ref role="3uigEE" to="cu2c:~StaticReference" resolve="StaticReference" />
-                                                    </node>
-                                                    <node concept="37vLTw" id="yvC2iN29sC" role="10QFUP">
-                                                      <ref role="3cqZAo" node="2IXrFxMW1uw" resolve="it" />
-                                                    </node>
-                                                  </node>
+                                                <node concept="37vLTw" id="2lGuVOSPCPb" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="2IXrFxMW1uw" resolve="it" />
                                                 </node>
                                                 <node concept="liA8E" id="yvC2iN2bzF" role="2OqNvi">
                                                   <ref role="37wK5l" to="cu2c:~SReferenceBase.getTargetSModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getTargetSModelReference" />
