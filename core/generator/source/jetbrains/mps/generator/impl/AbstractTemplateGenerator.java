@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,15 +21,12 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.List;
-import java.util.Set;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
@@ -42,12 +39,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final RoleValidation myValidation;
   private final GeneratorMappings myMappings;
 
-  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel) {
+  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, GeneratorMappings mappings) {
     myOperationContext = operationContext;
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myValidation = operationContext.getRoleValidationFacility();
-    myMappings = new GeneratorMappings(operationContext.getLogger());
+    myMappings = mappings;
   }
 
   @Override
