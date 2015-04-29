@@ -131,6 +131,9 @@
         <child id="1175147624276" name="body" index="2sgrp5" />
       </concept>
       <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
+      <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
+        <child id="1175517761460" name="condition" index="2MkoU_" />
+      </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
@@ -190,6 +193,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
@@ -1178,6 +1182,59 @@
     <node concept="1YaCAy" id="3m06Jgsp0Uy" role="1YuTPh">
       <property role="TrG5h" value="classLikeProperty" />
       <ref role="1YaFvo" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7z8Vrj4ZmQg">
+    <property role="TrG5h" value="check_ClassLikeDescriptor" />
+    <property role="3GE5qa" value="" />
+    <node concept="3clFbS" id="7z8Vrj4ZmQh" role="18ibNy">
+      <node concept="3clFbJ" id="7z8Vrj4ZmQn" role="3cqZAp">
+        <node concept="3clFbS" id="7z8Vrj4ZmQo" role="3clFbx">
+          <node concept="2Mj0R9" id="7z8Vrj4Zp8a" role="3cqZAp">
+            <node concept="1YBJjd" id="7z8Vrj4Zsn2" role="2OEOjV">
+              <ref role="1YBMHb" node="7z8Vrj4ZmQj" resolve="classLikeDescriptor" />
+            </node>
+            <node concept="Xl_RD" id="7z8Vrj4Zsan" role="2MkJ7o">
+              <property role="Xl_RC" value="ClassLikeDescriptor can extend only ClassLikeDescriptor" />
+            </node>
+            <node concept="2OqwBi" id="7z8Vrj4ZrcA" role="2MkoU_">
+              <node concept="2OqwBi" id="7z8Vrj4Zqxw" role="2Oq$k0">
+                <node concept="2OqwBi" id="7z8Vrj4Zpi1" role="2Oq$k0">
+                  <node concept="1YBJjd" id="7z8Vrj4Zp8u" role="2Oq$k0">
+                    <ref role="1YBMHb" node="7z8Vrj4ZmQj" resolve="classLikeDescriptor" />
+                  </node>
+                  <node concept="3TrEf2" id="7z8Vrj4ZpSL" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:gXzkM_H" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="7z8Vrj4ZqMU" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="7z8Vrj4Zs3G" role="2OqNvi">
+                <node concept="chp4Y" id="7z8Vrj4Zs64" role="cj9EA">
+                  <ref role="cht4Q" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="7z8Vrj4ZoQQ" role="3clFbw">
+          <node concept="2OqwBi" id="7z8Vrj4Zn00" role="2Oq$k0">
+            <node concept="1YBJjd" id="7z8Vrj4ZmQz" role="2Oq$k0">
+              <ref role="1YBMHb" node="7z8Vrj4ZmQj" resolve="classLikeDescriptor" />
+            </node>
+            <node concept="3TrEf2" id="7z8Vrj4Zogb" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:gXzkM_H" />
+            </node>
+          </node>
+          <node concept="3x8VRR" id="7z8Vrj4Zp71" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7z8Vrj4ZmQj" role="1YuTPh">
+      <property role="TrG5h" value="classLikeDescriptor" />
+      <ref role="1YaFvo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
     </node>
   </node>
 </model>

@@ -46,7 +46,7 @@
         <var name="descr" id="1909661648054929839" />
         <var name="model" id="1909661648054930862" />
       </scope>
-      <unit id="3402736933912013908" at="30,208,34,5" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil$1" />
+      <unit id="3402736933912013908" at="30,121,34,5" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil$1" />
       <unit id="1909661648054906471" at="24,0,45,0" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil" />
     </file>
   </root>
