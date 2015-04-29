@@ -4,6 +4,7 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -11,6 +12,6 @@ public class CustomMemberDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
-    return (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt"))), null);
+    return (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))), null);
   }
 }
