@@ -4,7 +4,10 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
 import java.util.Deque;
@@ -17,18 +20,22 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LanguageConceptsScope extends SimpleScope {
-  public LanguageConceptsScope(SModel model, SNode metaConcept) {
+  public LanguageConceptsScope(SModel model, SAbstractConcept metaConcept) {
     super(getAvailableLanguageConcepts(model, metaConcept));
   }
-  private static Iterable<SNode> getAvailableLanguageConcepts(SModel model, final SNode metaConcept) {
-    Language language = as_gt0k3c_a0a0a1(model.getModule(), Language.class);
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public LanguageConceptsScope(SModel model, SNode metaConcept) {
+    super(getAvailableLanguageConcepts(model, SNodeOperations.asSConcept(metaConcept)));
+  }
+  private static Iterable<SNode> getAvailableLanguageConcepts(SModel model, final SAbstractConcept metaConcept) {
+    Language language = as_gt0k3c_a0a0a2(model.getModule(), Language.class);
     if (language == null) {
       return Collections.emptyList();
     }
@@ -40,7 +47,7 @@ public class LanguageConceptsScope extends SimpleScope {
     while (DequeSequence.fromDequeNew(languagesToVisit).isNotEmpty()) {
       Language nextLanguage = DequeSequence.fromDequeNew(languagesToVisit).removeFirstElement();
       for (SModuleReference extendedLangRef : SetSequence.fromSet(nextLanguage.getExtendedLanguageRefs())) {
-        Language extendedLanguage = as_gt0k3c_a0a0a1a7a1(extendedLangRef.resolve(nextLanguage.getRepository()), Language.class);
+        Language extendedLanguage = as_gt0k3c_a0a0a1a7a2(extendedLangRef.resolve(nextLanguage.getRepository()), Language.class);
         if (extendedLanguage != null && !(SetSequence.fromSet(visibleLanguages).contains(extendedLanguage))) {
           SetSequence.fromSet(visibleLanguages).addElement(extendedLanguage);
           DequeSequence.fromDequeNew(languagesToVisit).addLastElement(extendedLanguage);
@@ -74,10 +81,10 @@ public class LanguageConceptsScope extends SimpleScope {
   public String getReferenceText(@NotNull SNode target) {
     return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{});
   }
-  private static <T> T as_gt0k3c_a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_gt0k3c_a0a0a2(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_gt0k3c_a0a0a1a7a1(Object o, Class<T> type) {
+  private static <T> T as_gt0k3c_a0a0a1a7a2(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
