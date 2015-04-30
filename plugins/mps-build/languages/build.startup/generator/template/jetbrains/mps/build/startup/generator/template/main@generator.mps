@@ -365,7 +365,7 @@
               <node concept="2pNNFK" id="7d8Y7G7P4af" role="3o6s8t">
                 <property role="2pNNFO" value="key" />
                 <node concept="3o6iSG" id="7d8Y7G7P4am" role="3o6s8t">
-                  <property role="3o6i5n" value="CFBundleTypeExtensions" />
+                  <property role="3o6i5n" value="CFBundleTypeName" />
                 </node>
               </node>
               <node concept="2pNNFK" id="7d8Y7G7P4ax" role="3o6s8t">
@@ -392,7 +392,7 @@
               <node concept="2pNNFK" id="7d8Y7G7P4c4" role="3o6s8t">
                 <property role="2pNNFO" value="key" />
                 <node concept="3o6iSG" id="7d8Y7G7P4cl" role="3o6s8t">
-                  <property role="3o6i5n" value="CFBundleTypeOSTypes" />
+                  <property role="3o6i5n" value="CFBundleTypeRole" />
                 </node>
               </node>
               <node concept="2pNNFK" id="7d8Y7G7P4bh" role="3o6s8t">
@@ -592,7 +592,7 @@
           <node concept="2pNNFK" id="7d8Y7G7OX3R" role="3o6s8t">
             <property role="2pNNFO" value="key" />
             <node concept="3o6iSG" id="7d8Y7G7OXyc" role="3o6s8t">
-              <property role="3o6i5n" value="LSRequiresNativeExecution" />
+              <property role="3o6i5n" value="LSMinimumSystemVersion" />
             </node>
           </node>
           <node concept="2pNNFK" id="7d8Y7G7OY0_" role="3o6s8t">

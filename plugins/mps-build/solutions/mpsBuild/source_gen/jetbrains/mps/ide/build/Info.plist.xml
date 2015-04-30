@@ -23,13 +23,13 @@
         <array>
           <string>*</string>
         </array>
-        <key>CFBundleTypeExtensions</key>
+        <key>CFBundleTypeName</key>
         <string>All documents</string>
         <key>CFBundleTypeOSTypes</key>
         <array>
           <string>****</string>
         </array>
-        <key>CFBundleTypeOSTypes</key>
+        <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>LSTypeIsPackage</key>
         <false />
@@ -67,7 +67,7 @@
     </array>
     <key>LSRequiresNativeExecution</key>
     <string>YES</string>
-    <key>LSRequiresNativeExecution</key>
+    <key>LSMinimumSystemVersion</key>
     <string>10.6</string>
     <key>CFBundleURLTypes</key>
     <array>
