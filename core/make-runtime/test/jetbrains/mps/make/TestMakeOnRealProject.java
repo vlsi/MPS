@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -43,11 +45,17 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -65,6 +73,12 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * I assume intention of this test, despite the 'Make' in the name, is to check parts of JavaCompile facet, pretending java files
+ * are produced by previous steps (e.g. generated). There's another use-case in MPS, where a module may
+ * reference existing Java sources (i.e. to get existing Java projects into MPS world) and MPS shall compile these as well.
+ * However, for that case I'd expect dependencies to be expressed in a way of module dependencies, not through language and its runtime solution.
+ */
 public class TestMakeOnRealProject extends WorkbenchMpsTest {
   private static final String TEST_JAVA_FILE = "Test.java";
 
@@ -329,7 +343,6 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     solutionDescriptor.setId(ModuleId.regular());
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
-    solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
     modelRoot.setContentRoot(descriptorFile.getParent().getPath());
@@ -340,6 +353,9 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
-    return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
+    final Solution rv = (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
+    final SModel m1 = rv.getModelRoots().iterator().next().createModel("m1");
+    ((SModelInternal) m1).addLanguage(MetaAdapterFactory.getLanguage(myCreatedLanguage.getModuleReference()));
+    return rv;
   }
 }
