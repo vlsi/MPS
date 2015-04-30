@@ -26,59 +26,61 @@ public class IfEqualsNullAll implements DataFlowConstructor {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
   public void performActions(Program o, SNode node) {
-    SNode ifTrue = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"));
-    List<SNode> vars = new ArrayList<SNode>();
-    for (SNode expression : NullableUtil.getOrConditions(node)) {
-      if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression")));
-        if (notNullNode != null) {
-          ListSequence.fromList(vars).addElement(notNullNode);
-        }
-      }
-    }
-    if (!((ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"))))) {
-      for (SNode var : vars) {
-        {
-          Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"));
-          if (((Program) o).contains(object)) {
-            boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue")));
-            Instruction instruction = new nullableInstruction(var);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1228615757308596556");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+    /*
+      SNode ifTrue = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"));
+      List<SNode> vars = new ArrayList<SNode>();
+      for (SNode expression : NullableUtil.getOrConditions(node)) {
+        if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
+          SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression")));
+          if (notNullNode != null) {
+            ListSequence.fromList(vars).addElement(notNullNode);
           }
         }
       }
-    }
-    if (!(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).isEmpty())) {
+      if (!((ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"))))) {
+        for (SNode var : vars) {
+          {
+            Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"));
+            if (((Program) o).contains(object)) {
+              boolean before = true;
+              int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue")));
+              Instruction instruction = new nullableInstruction(var);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1228615757308596556");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
+          }
+        }
+      }
+      if (!(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).isEmpty())) {
+        for (SNode var : vars) {
+          {
+            Object object = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first();
+            if (((Program) o).contains(object)) {
+              boolean before = true;
+              int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first());
+              Instruction instruction = new notNullInstruction(var);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1259268621398138708");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
+          }
+        }
+      }
       for (SNode var : vars) {
         {
-          Object object = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first();
+          Object object = SNodeOperations.getParent(var);
           if (((Program) o).contains(object)) {
-            boolean before = true;
-            int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first());
+            boolean before = false;
+            int position = ((Program) (o)).getEnd(object);
             Instruction instruction = new notNullInstruction(var);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1259268621398138708");
+            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4258402621852112799");
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }
-    }
-    for (SNode var : vars) {
-      {
-        Object object = SNodeOperations.getParent(var);
-        if (((Program) o).contains(object)) {
-          boolean before = false;
-          int position = ((Program) (o)).getEnd(object);
-          Instruction instruction = new notNullInstruction(var);
-          instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4258402621852112799");
-          instruction.setSource(node);
-          ((Program) (o)).insert(instruction, position, true, before);
-        }
-      }
-    }
+    */
 
   }
 }

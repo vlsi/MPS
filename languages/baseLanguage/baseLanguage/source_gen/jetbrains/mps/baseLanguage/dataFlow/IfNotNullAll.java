@@ -25,61 +25,63 @@ public class IfNotNullAll implements DataFlowConstructor {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
   public void performActions(Program o, SNode node) {
-    List<SNode> conditions = NullableUtil.getAndConditions(node);
-    for (SNode condition : conditions) {
-      if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
-        if (notNullNode != null) {
-          {
-            Object object = condition;
-            if (((Program) o).contains(object)) {
-              boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new notNullInstruction(notNullNode);
-              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513471519");
-              instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
-            }
-          }
-          {
-            Object object = node;
-            if (((Program) o).contains(object)) {
-              boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new nullableInstruction(notNullNode);
-              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513479569");
-              instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
-            }
-          }
-          if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")) != null) {
+    /*
+      List<SNode> conditions = NullableUtil.getAndConditions(node);
+      for (SNode condition : conditions) {
+        if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+          SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
+          if (notNullNode != null) {
             {
-              Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement"));
+              Object object = condition;
               if (((Program) o).contains(object)) {
-                boolean before = true;
-                int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")));
-                Instruction instruction = new nullableInstruction(notNullNode);
-                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107714");
+                boolean before = false;
+                int position = ((Program) (o)).getEnd(object);
+                Instruction instruction = new notNullInstruction(notNullNode);
+                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513471519");
                 instruction.setSource(node);
                 ((Program) (o)).insert(instruction, position, true, before);
               }
             }
-          }
-          if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).isNotEmpty()) {
             {
-              Object object = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first();
+              Object object = node;
               if (((Program) o).contains(object)) {
-                boolean before = true;
-                int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first());
+                boolean before = false;
+                int position = ((Program) (o)).getEnd(object);
                 Instruction instruction = new nullableInstruction(notNullNode);
-                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107741");
+                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513479569");
                 instruction.setSource(node);
                 ((Program) (o)).insert(instruction, position, true, before);
+              }
+            }
+            if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")) != null) {
+              {
+                Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement"));
+                if (((Program) o).contains(object)) {
+                  boolean before = true;
+                  int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")));
+                  Instruction instruction = new nullableInstruction(notNullNode);
+                  instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107714");
+                  instruction.setSource(node);
+                  ((Program) (o)).insert(instruction, position, true, before);
+                }
+              }
+            }
+            if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).isNotEmpty()) {
+              {
+                Object object = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first();
+                if (((Program) o).contains(object)) {
+                  boolean before = true;
+                  int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))).first());
+                  Instruction instruction = new nullableInstruction(notNullNode);
+                  instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107741");
+                  instruction.setSource(node);
+                  ((Program) (o)).insert(instruction, position, true, before);
+                }
               }
             }
           }
         }
       }
-    }
+    */
   }
 }
