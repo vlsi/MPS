@@ -83,7 +83,17 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
 
 
   @Override
-  public void modelAdded(SModule sModule, SModel sModel) {
+  public void modelAdded(SModule sModule, final SModel sModel) {
+    packRunnable(new Runnable() {
+      @Override
+      public void run() {
+        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
+        if (psiModel == null) {
+          return;
+        }
+        myPsiProvider.notifyPsiChanged(psiModel, null);
+      }
+    });
   }
 
   @Override
