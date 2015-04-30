@@ -16,14 +16,11 @@
 package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,9 +30,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.JOptionPane;
 import java.awt.Component;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Set;
 
 /**
  * @author Alex Pyshkin on 5/23/14.
@@ -52,28 +46,21 @@ public class ModelImporter {
   }
 
   private Result analyzeImport(final SModelReference modelRefToImport) {
-    final SModuleReference[] module = {null};
-    final boolean[] dependency = {true};
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel modelToImport = SModelRepository.getInstance().getModelDescriptor(modelRefToImport);
-        assert modelToImport != null;
-        SModule moduleToImport = modelToImport.getModule();
+    SModuleReference module = null;
+    boolean dependency = true;
 
-        if (moduleToImport instanceof Language &&
-            myModule instanceof Solution &&
-            ((Language) moduleToImport).isAccessoryModel(modelRefToImport)
-            ) {
-          dependency[0] = false;
-        }
+    SModel modelToImport = modelRefToImport.resolve(myModel.getRepository());
+    assert modelToImport != null;
+    SModule moduleToImport = modelToImport.getModule();
 
-        if (!VisibilityUtil.isVisible(myModule, modelToImport)) {
-          module[0] = moduleToImport.getModuleReference();
-        }
-      }
-    });
-    return Result.create(dependency[0], module[0]);
+    if (moduleToImport instanceof Language && myModule instanceof Solution && ((Language) moduleToImport).isAccessoryModel(modelRefToImport)) {
+      dependency = false;
+    }
+
+    if (!VisibilityUtil.isVisible(myModule, modelToImport)) {
+      module = moduleToImport.getModuleReference();
+    }
+    return Result.create(dependency, module);
   }
 
   public void execute(final SModelReference modelToImport) {
@@ -90,31 +77,21 @@ public class ModelImporter {
   }
 
   private void importOnlyModel(final SModelReference modelToImport) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
-      public void run() {
-        SModelInternal model = (SModelInternal) myModel;
-        model.addModelImport(modelToImport, false);
-      }
-    });
+    SModelInternal model = (SModelInternal) myModel;
+    model.addModelImport(modelToImport, false);
   }
 
   private void importModelWithModule(final SModelReference modelToImport, final SModuleReference moduleRefToImport, final boolean needToAddDep) {
     boolean result = showDialog(moduleRefToImport, modelToImport);
     if (result) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        @Override
-        public void run() {
-          AbstractModule module = (AbstractModule) myModule;
-          SModelInternal model = (SModelInternal) myModel;
-          if (needToAddDep) {
-            module.addDependency(moduleRefToImport, false);
-            model.addModelImport(modelToImport, false);
-          } else {
-            model.addLanguage(moduleRefToImport);
-          }
-        }
-      });
+      AbstractModule module = (AbstractModule) myModule;
+      SModelInternal model = (SModelInternal) myModel;
+      if (needToAddDep) {
+        module.addDependency(moduleRefToImport, false);
+        model.addModelImport(modelToImport, false);
+      } else {
+        model.addLanguage(moduleRefToImport); // FIXME it's easy to use MetaAdapterFactory, but shall pass SLanguage here instead
+      }
     }
   }
 
