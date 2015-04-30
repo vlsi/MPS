@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.CoreMpsTest;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -93,9 +93,15 @@ public class ModuleMpsTest extends CoreMpsTest {
         descriptor.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
         descriptor.setId(ModuleId.fromString(uuid));
         solutions[0] = StubSolution.newInstance(getTestRepository(), descriptor, OWNER);
+        populate(solutions[0]);
       }
     });
     return solutions[0];
+  }
+
+  // invoked in write action once new module is created
+  protected void populate(AbstractModule module) {
+    // no-op, subclasses may add whatever appropriate to the newly created module
   }
 
   private int getNewId() {
@@ -138,6 +144,7 @@ public class ModuleMpsTest extends CoreMpsTest {
       @Override
       public void run() {
         languages[0] = TestLanguage.newInstance(getTestRepository(), descriptor, OWNER);
+        populate(languages[0]);
       }
     });
     return languages[0];
@@ -153,6 +160,7 @@ public class ModuleMpsTest extends CoreMpsTest {
         d.setNamespace(TEST_PREFIX_DEVKIT + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
         devKits[0] = ((MPSModuleRepository) getTestRepository()).registerModule(new DevKit(d, null), OWNER);
+        populate(devKits[0]);
       }
     });
     return devKits[0];
