@@ -72,7 +72,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -101,8 +100,15 @@ public class NewRootAction extends AnAction {
       return;
 
     if (myConceptFqNameToNodePointerMap.isEmpty()) {
+      final SModel[] model = new SModel[1];
+      myModelDescriptor.getRepository().getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          model[0] = myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId());
+        }
+      });
       ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
-        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null, new Runnable() {
+        model[0], null, new Runnable() {
           @Override
           public void run() {
             final ProjectView projectView = ProjectView.getInstance(myProject);
