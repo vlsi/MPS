@@ -262,10 +262,9 @@ public class NewRootAction extends AnAction {
                     }
                   }
                 }
+              } else {
+                myNewModel = true;
               }
-
-            } else {
-              myNewModel = true;
             }
             return;
           }
