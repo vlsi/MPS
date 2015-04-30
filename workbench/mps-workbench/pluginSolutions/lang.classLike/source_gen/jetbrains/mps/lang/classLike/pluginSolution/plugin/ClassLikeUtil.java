@@ -4,13 +4,13 @@ package jetbrains.mps.lang.classLike.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.Language;
 
 public class ClassLikeUtil {
   public static SNode createNewClassLike(SNode descr, SModel model) {
-    final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(descr)), null));
+    final SNode newClass = SNodeOperations.cast(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(descr))), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     model.addRootNode(newClass);
     AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"))));
     SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor"), descr);

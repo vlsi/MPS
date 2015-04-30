@@ -17,8 +17,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.lang.classLike.pluginSolution.plugin)/1909661648054906471">
     <file name="ClassLikeUtil.java">
-      <node id="3402736933910993997" at="25,69,26,204" concept="7" />
-      <node id="3384419124890909909" at="26,204,27,32" concept="2" />
+      <node id="3402736933910993997" at="25,69,26,385" concept="7" />
+      <node id="3384419124890909909" at="26,385,27,32" concept="2" />
       <node id="3402736933911010699" at="27,32,28,468" concept="2" />
       <node id="3402736933910988348" at="28,468,29,412" concept="2" />
       <node id="6478870542308645504" at="31,35,32,117" concept="2" />

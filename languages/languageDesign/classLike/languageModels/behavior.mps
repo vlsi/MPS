@@ -20,6 +20,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
@@ -240,6 +241,9 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
@@ -259,10 +263,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1568,12 +1568,14 @@
     <node concept="13i0hz" id="1_lSsE3TA5X" role="13h7CS">
       <property role="TrG5h" value="getPreferredConcept" />
       <node concept="3Tm1VV" id="1_lSsE3TA5Y" role="1B3o_S" />
-      <node concept="3THzug" id="2gRrw8RmY9c" role="3clF45" />
+      <node concept="3Tqbb2" id="2iCqkkxCNJY" role="3clF45">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
       <node concept="3clFbS" id="1_lSsE3TA60" role="3clF47">
         <node concept="3clFbF" id="1_lSsE3TA6u" role="3cqZAp">
           <node concept="3K4zz7" id="1_lSsE3TAOH" role="3clFbG">
-            <node concept="3TUQnm" id="1_lSsE3TAQK" role="3K4E3e">
-              <ref role="3TV0OU" to="tpee:fz12cDA" resolve="ClassConcept" />
+            <node concept="3B5_sB" id="2iCqkkxCNTV" role="3K4E3e">
+              <ref role="3B5MYn" to="tpee:fz12cDA" resolve="ClassConcept" />
             </node>
             <node concept="3clFbC" id="1_lSsE3TACt" role="3K4Cdx">
               <node concept="10Nm6u" id="1_lSsE3TAI6" role="3uHU7w" />

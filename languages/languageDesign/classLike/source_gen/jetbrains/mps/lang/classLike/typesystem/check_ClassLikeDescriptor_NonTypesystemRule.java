@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClassLikeDescriptor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,6 +26,14 @@ public class check_ClassLikeDescriptor_NonTypesystemRule extends AbstractNonType
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeDescriptor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor")))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classLikeDescriptor, "ClassLikeDescriptor can extend only ClassLikeDescriptor", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "8703467640548332042", null, errorTarget);
+      }
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeDescriptor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor"))) {
+        SNode parentPrefferedConcept = ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeDescriptor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor")));
+        if (!(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(classLikeDescriptor), parentPrefferedConcept))) {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new ReferenceMessageTarget("preferredConcept");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classLikeDescriptor, "Preferred concept should be subconcept of " + parentPrefferedConcept, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "2641476927090814013", null, errorTarget);
+        }
       }
     }
   }
