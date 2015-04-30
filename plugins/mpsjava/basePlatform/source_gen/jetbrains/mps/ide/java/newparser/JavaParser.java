@@ -42,8 +42,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import org.jetbrains.mps.openapi.model.SModel;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
