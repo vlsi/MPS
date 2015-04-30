@@ -9,25 +9,22 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class GeneratePluginSolution_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Nodes.Plugin;
@@ -47,62 +44,46 @@ public class GeneratePluginSolution_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       String p = event.getData(MPSDataKeys.NAMESPACE);
-      MapSequence.fromMap(_params).put("namespace", p);
     }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
+    NewSolutionDialog dialog = new NewSolutionDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSDataKeys.NAMESPACE));
     dialog.show();
     final Solution s = dialog.getSolution();
     if (s == null) {
       return;
     }
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         ModelRoot defaultRoot = s.getModelRoots().iterator().next();
         SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");
 
-        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
-        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"));
-        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
-        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)"));
-        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
-        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"));
-        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
-        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)"));
-        s.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-        ((SModelBase) newModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin", -1));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L), "jetbrains.mps.lang.plugin.standalone", -1));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L), "jetbrains.mps.lang.smodel", -1));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x63650c5916c8498aL, 0x99c8005c7ee9515dL), "jetbrains.mps.lang.access", -1));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
 
-        SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a41a0f0a());
+        SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a9a0a0a0a5a0());
 
         s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
         MPSModuleRepository.getInstance().saveAll();
       }
     });
 
-
-
-    ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+    ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
     projectPane.selectModule(s, false);
   }
-  private static SNode _quotation_createNode_ljjiw0_a0a41a0f0a() {
+  private static SNode _quotation_createNode_ljjiw0_a0a9a0a0a0a5a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"), null, null, false);

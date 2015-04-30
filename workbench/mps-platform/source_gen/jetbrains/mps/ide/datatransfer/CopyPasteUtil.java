@@ -358,10 +358,6 @@ public class CopyPasteUtil {
           return;
         }
 
-        for (SModuleReference language : requiredLanguages) {
-          ((AbstractModule) targetModule).addUsedLanguage(language);
-        }
-
         for (SModelReference modelRef : requiredImports) {
           SModel model = modelRef.resolve(p.getRepository());
           if (model == null) {

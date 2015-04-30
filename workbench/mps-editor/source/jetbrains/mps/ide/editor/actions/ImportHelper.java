@@ -22,13 +22,11 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -188,16 +186,18 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
-            Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-            if (lang == null) continue;
+            Language lang = ((Language) ref.resolve(myContextModule.getRepository()));
+            if (lang == null) {
+              continue;
+            }
             if (myContextModule instanceof DevKit) {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
             } else {
               final SLanguage rtLanguage = MetaAdapterByDeclaration.getLanguage(lang);
               if (!myContextModule.getUsedLanguages().contains(rtLanguage)) {
-                ((AbstractModule) myContextModule).addUsedLanguage(rtLanguage);
-                reload = true;
+                // assume myModel is from myContextModule. If the model gets the new import, then the module would get new dependency
+                reload = myModel != null;
               }
             }
             if (myModel != null) {

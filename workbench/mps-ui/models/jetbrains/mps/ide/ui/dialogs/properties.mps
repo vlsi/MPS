@@ -1454,31 +1454,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="3tOCygy4RtQ" role="2LFqv$">
-            <node concept="3clFbF" id="3tOCygy4Ru7" role="3cqZAp">
-              <node concept="2OqwBi" id="3tOCygy4Ru8" role="3clFbG">
-                <node concept="1eOMI4" id="voRWC5KCuc" role="2Oq$k0">
-                  <node concept="10QFUN" id="voRWC5KCud" role="1eOMHV">
-                    <node concept="3uibUv" id="voRWC5KCue" role="10QFUM">
-                      <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                    </node>
-                    <node concept="2OqwBi" id="voRWC5KCuf" role="10QFUP">
-                      <node concept="liA8E" id="voRWC5KCug" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                      </node>
-                      <node concept="37vLTw" id="2BHiRxeuFGP" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3tOCygy4Rou" resolve="myModelDescriptor" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="3tOCygy4Ruc" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.addUsedLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addUsedLanguage" />
-                  <node concept="37vLTw" id="53YkKlLaOTo" role="37wK5m">
-                    <ref role="3cqZAo" node="3tOCygy4RtO" resolve="lang" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="3tOCygy4Rus" role="3cqZAp">
               <node concept="2OqwBi" id="3tOCygy4Rut" role="3clFbG">
                 <node concept="1eOMI4" id="5WIcYaGh$ql" role="2Oq$k0">

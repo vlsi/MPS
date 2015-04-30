@@ -3962,41 +3962,6 @@
                       </node>
                     </node>
                     <node concept="3clFbH" id="1U6F4ugnwZ6" role="3cqZAp" />
-                    <node concept="1DcWWT" id="1U6F4ugnwZn" role="3cqZAp">
-                      <node concept="37vLTw" id="2BHiRxglpP0" role="1DdaDG">
-                        <ref role="3cqZAo" node="7nlecdCDEKe" resolve="requiredLanguages" />
-                      </node>
-                      <node concept="3cpWsn" id="1U6F4ugnwZp" role="1Duv9x">
-                        <property role="TrG5h" value="language" />
-                        <property role="3TUv4t" value="false" />
-                        <node concept="3uibUv" id="1U6F4ugnwZq" role="1tU5fm">
-                          <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="1U6F4ugnwZr" role="2LFqv$">
-                        <node concept="3clFbF" id="1U6F4ugnwZs" role="3cqZAp">
-                          <node concept="2OqwBi" id="4DHl3rY6hmh" role="3clFbG">
-                            <node concept="1eOMI4" id="voRWC5KBRR" role="2Oq$k0">
-                              <node concept="10QFUN" id="voRWC5KBRS" role="1eOMHV">
-                                <node concept="3uibUv" id="voRWC5KBRT" role="10QFUM">
-                                  <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                                </node>
-                                <node concept="37vLTw" id="3GM_nagTrTG" role="10QFUP">
-                                  <ref role="3cqZAo" node="1U6F4ugnwYT" resolve="targetModule" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="4DHl3rY6hmn" role="2OqNvi">
-                              <ref role="37wK5l" to="vsqj:~AbstractModule.addUsedLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addUsedLanguage" />
-                              <node concept="37vLTw" id="3GM_nagTsYg" role="37wK5m">
-                                <ref role="3cqZAo" node="1U6F4ugnwZp" resolve="language" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbH" id="4DHl3rY6hmp" role="3cqZAp" />
                     <node concept="1DcWWT" id="1U6F4ugnwZE" role="3cqZAp">
                       <node concept="37vLTw" id="2BHiRxghgq4" role="1DdaDG">
                         <ref role="3cqZAo" node="7nlecdCDEKi" resolve="requiredImports" />

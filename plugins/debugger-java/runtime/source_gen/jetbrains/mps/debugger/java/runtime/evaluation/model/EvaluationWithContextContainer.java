@@ -19,11 +19,12 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -99,10 +100,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
     containerModule.updateModelsSet();
 
-    ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)"));
-    ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
-    containerModule.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)"));
-    containerModule.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
+    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7da4580f9d754603L, 0x816251a896d78375L), "jetbrains.mps.debugger.java.evaluation", -1));
+    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x802088974572437dL, 0xb50e8f050cba9566L), "jetbrains.mps.debugger.java.privateMembers", -1));
     containerModule.addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
   }
   private void tryToImport(final SNode evaluatorNode, List<SNodeReference> nodesToImport) {

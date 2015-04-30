@@ -291,72 +291,39 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   /**
-   * FIXME drop
-   * Register language to use in module's models
-   * @since 3.3
+   * @deprecated set of used languages for a module is derived from used languages of owned models
    */
-  public void addUsedLanguage(@NotNull SLanguage language) {
-    // FIXME SLanguage->SModuleReference transition
-    addUsedLanguage(language.getSourceModule().getModuleReference());
-  }
-
-  // FIXME left intact, shall become no-op once all uses are revisited
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void addUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().add(langRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
   /**
-   * FIXME drop
-   * @since 3.3
+   * @deprecated set of used language for a module is derived from used languages of owned models
    */
-  public void removeUsedLanguage(SLanguage lang) {
-    // FIXME SLanguage->SModuleReference transition
-    removeUsedLanguage(lang.getSourceModule().getModuleReference());
-  }
-
-  // FIXME left intact, shall become no-op once all uses are revisited
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void removeUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().remove(langRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void addUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().add(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void removeUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().remove(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
   //----languages & devkits

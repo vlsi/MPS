@@ -47,6 +47,7 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   // FIXME rename to importedLanguages once original is removed
   java.util.Collection<SLanguage> importedLanguageIds();
 
+  // FIXME refactor, rename to removeLanguage(SLanguage), expose in SModel
   void deleteLanguageId(@NotNull SLanguage ref);
 
   void addLanguage(Language language);

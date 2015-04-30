@@ -67,10 +67,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -5869,13 +5865,7 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a842(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
-        SLanguage javadocLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1);
-        if (!(model.importedLanguageIds().contains(javadocLang))) {
-          module.addUsedLanguage(javadocLang);
-          model.addLanguage(javadocLang);
-        }
+        ModuleDependencyUtils.addDependencyOnJavaDocIfMissing(SNodeOperations.getModel(_context.getSourceNode()));
 
         SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
         while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"))) {
@@ -6781,7 +6771,4 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a0 = Pattern.compile("-?[0-9]+\\.[0-9]*(?:[eE][\\-\\+]?[0-9]+)?[fF]", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0a = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a0 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a842(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
 }

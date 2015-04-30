@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -73,15 +72,9 @@ public class ModelsAutoImportsManager {
       ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(modelToImport.getReference(), false);
     }
     for (Language language : getAutoImportedLanguages(module, model)) {
-      if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
-        module.addUsedLanguage(language.getModuleReference());
-      }
       ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language.getModuleReference());
     }
     for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-      if (!module.getModuleDescriptor().getUsedDevkits().contains(devKit.getModuleReference())) {
-        module.addUsedDevkit(devKit.getModuleReference());
-      }
       ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());
     }
   }
