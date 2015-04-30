@@ -37,12 +37,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
@@ -339,9 +339,12 @@ public class JavaParser {
               }
             }).visitAll(new IVisitor<SReference>() {
               public void visit(SReference it) {
+                SModel sourceModel = theRightNode.getModel();
                 SModelReference targetModel = ((StaticReference) it).getTargetSModelReference();
-                ((SModelInternal) theRightNode.getModel()).addModelImport(targetModel, true);
+                if (!(sourceModel.getReference().equals(targetModel))) {
+                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
 
+                }
               }
             });
           }
@@ -375,7 +378,7 @@ public class JavaParser {
         node.setReferenceTarget(ref.getRole(), target);
 
         SModel targetModel = target.getModel();
-        if (targetModel != null) {
+        if (targetModel != null && !(ourModel.getReference().equals(targetModel.getReference()))) {
           ((SModelInternal) ourModel).addModelImport(targetModel.getReference(), true);
         }
       }
