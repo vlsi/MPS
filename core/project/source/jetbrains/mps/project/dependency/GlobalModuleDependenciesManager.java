@@ -120,7 +120,11 @@ public class GlobalModuleDependenciesManager {
   public static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
     Set<Language> result = new HashSet<Language>();
     for (SLanguage language : module.getUsedLanguages()) {
-      result.add((Language) language.getSourceModule());
+      final SModule sourceModule = language.getSourceModule();
+      // respect sourceModule may be null
+      if (sourceModule instanceof Language) {
+        result.add((Language) sourceModule);
+      }
     }
     return result;
   }
