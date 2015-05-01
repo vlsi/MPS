@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -34,7 +33,6 @@ public class FixModuleImportsInProject_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -43,7 +41,7 @@ public class FixModuleImportsInProject_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    for (SModule module : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
+    for (SModule module : Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators())) {
       if (module.isReadOnly()) {
         continue;
       }

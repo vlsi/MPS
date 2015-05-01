@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 
@@ -16,7 +15,7 @@ public class FixModuleImports_Action extends BaseAction {
   public FixModuleImports_Action() {
     super("Fix Module Imports", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
   @Override
   public boolean isDumbAware() {
@@ -29,7 +28,6 @@ public class FixModuleImports_Action extends BaseAction {
     }
     {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
-      MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
         return false;
       }
@@ -38,6 +36,6 @@ public class FixModuleImports_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new MissingDependenciesFixer(((SModel) MapSequence.fromMap(_params).get("model"))).fixModuleDependencies();
+    new MissingDependenciesFixer(event.getData(MPSCommonDataKeys.MODEL)).fixModuleDependencies();
   }
 }

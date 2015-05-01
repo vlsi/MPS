@@ -1419,10 +1419,8 @@
   <node concept="sE7Ow" id="hGnoi8Q">
     <property role="fJN8o" value="true" />
     <property role="TrG5h" value="FixModuleImports" />
-    <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Fix Module Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGnoi8R" role="tncku">
       <node concept="3clFbS" id="hGnoi8S" role="2VODD2">
         <node concept="3clFbF" id="7SVrflNJkBD" role="3cqZAp">
@@ -23215,7 +23213,6 @@
     <property role="TrG5h" value="FixModuleImportsInProject" />
     <property role="2uzpH1" value="Fix Module Imports" />
     <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="7WIQM6zDjrW" role="tncku">
       <node concept="3clFbS" id="7WIQM6zDjrX" role="2VODD2">
         <node concept="2Gpval" id="7WIQM6zDjsg" role="3cqZAp">

@@ -97,6 +97,7 @@ public class ProjectFactory {
             }
 
             if (myCreatedSolution != null && myCreatedLanguage != null) {
+              myCreatedSolution.save();
               if (myOptions.getCreateModel()) {
                 EditableSModel model = SModuleOperations.createModelWithAdjustments(
                     myCreatedSolution.getModuleReference().getModuleName() + ".sandbox",
@@ -104,7 +105,6 @@ public class ProjectFactory {
                 ((SModelInternal) model).addLanguage(MetaAdapterFactory.getLanguage(myCreatedLanguage.getModuleReference()));
                 model.save();
               }
-              myCreatedSolution.save();
             }
             if (myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
               ((StandaloneMPSProject) mpsProject).update();
