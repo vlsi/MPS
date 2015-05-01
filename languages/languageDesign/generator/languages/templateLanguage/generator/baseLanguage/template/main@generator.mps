@@ -546,9 +546,6 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
-        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
-      </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
@@ -590,7 +587,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -36856,13 +36852,10 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="4gPmXg0dl$6" role="3clFbw">
-              <node concept="2OqwBi" id="4gPmXg0dl$7" role="2Oq$k0">
-                <node concept="30H73N" id="4gPmXg0dl$8" role="2Oq$k0" />
-                <node concept="3NT_Vc" id="4gPmXg0dl$9" role="2OqNvi" />
-              </node>
-              <node concept="2Zo12i" id="4gPmXg0dl$a" role="2OqNvi">
-                <node concept="chp4Y" id="4gPmXg0dl$b" role="2Zo12j">
+            <node concept="2OqwBi" id="71CUO596_aE" role="3clFbw">
+              <node concept="30H73N" id="4gPmXg0dl$8" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="71CUO596_u2" role="2OqNvi">
+                <node concept="chp4Y" id="71CUO596_Fq" role="cj9EA">
                   <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                 </node>
               </node>
