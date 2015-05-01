@@ -744,8 +744,6 @@
 
     <action id="SaveDocument" class="com.intellij.ide.actions.SaveDocumentAction"/>
 
-    <!-- MPS Patch: not added to platform
     <action id="MarkNotificationsAsRead" class="com.intellij.notification.impl.actions.MarkAllNotificationsAsReadAction"/>
-     -->
   </actions>
 </component>

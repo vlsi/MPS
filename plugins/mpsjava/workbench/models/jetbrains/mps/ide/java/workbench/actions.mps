@@ -49,6 +49,7 @@
     <import index="qnm7" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.fileChooser(MPS.IDEA/com.intellij.openapi.fileChooser@java_stub)" />
     <import index="jwd7" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)" />
     <import index="suci" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.classpath(MPS.Workbench/jetbrains.mps.ide.classpath@java_stub)" />
+    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -305,6 +306,7 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
+        <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -1965,57 +1967,105 @@
             <node concept="3uibUv" id="1FKWe04nEdz" role="1tU5fm">
               <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
             </node>
-            <node concept="2OqwBi" id="1FKWe04nGr0" role="33vP2m">
-              <node concept="liA8E" id="1FKWe04nGr1" role="2OqNvi">
+            <node concept="2OqwBi" id="2DCMdV5spj4" role="33vP2m">
+              <node concept="liA8E" id="2DCMdV5spj5" role="2OqNvi">
                 <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
-              <node concept="2OqwBi" id="1FKWe04nGr2" role="2Oq$k0">
-                <node concept="2WthIp" id="1FKWe04nGr3" role="2Oq$k0" />
-                <node concept="1DTwFV" id="1FKWe04nGr4" role="2OqNvi">
+              <node concept="2OqwBi" id="2DCMdV5spj6" role="2Oq$k0">
+                <node concept="2WthIp" id="2DCMdV5spj7" role="2Oq$k0" />
+                <node concept="1DTwFV" id="2DCMdV5spj8" role="2OqNvi">
                   <ref role="2WH_rO" node="5JozKOuiHYs" resolve="project" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="fHZXTzxEr" role="3cqZAp">
-          <node concept="3cpWsn" id="fHZXTzxEs" role="3cpWs9">
-            <property role="TrG5h" value="modelAccess" />
-            <property role="3TUv4t" value="true" />
-            <node concept="2OqwBi" id="fHZXTzEB_" role="33vP2m">
-              <node concept="liA8E" id="fHZXTzFvS" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
-              <node concept="37vLTw" id="1FKWe04nI4d" role="2Oq$k0">
-                <ref role="3cqZAo" node="1FKWe04n$UV" resolve="repository" />
+        <node concept="3cpWs8" id="2DCMdV5skzV" role="3cqZAp">
+          <node concept="3cpWsn" id="2DCMdV5skzW" role="3cpWs9">
+            <property role="TrG5h" value="checkModelRoots" />
+            <node concept="3uibUv" id="2DCMdV5skzT" role="1tU5fm">
+              <ref role="3uigEE" to="msyo:~Computable" resolve="Computable" />
+              <node concept="3uibUv" id="2DCMdV5slku" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
               </node>
             </node>
-            <node concept="3uibUv" id="fHZXTzxEt" role="1tU5fm">
-              <ref role="3uigEE" to="88zw:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2ShNRf" id="2DCMdV5slpj" role="33vP2m">
+              <node concept="YeOm9" id="2DCMdV5sp1O" role="2ShVmc">
+                <node concept="1Y3b0j" id="2DCMdV5sp1R" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="msyo:~Computable" resolve="Computable" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="2DCMdV5sp1S" role="1B3o_S" />
+                  <node concept="3clFb_" id="2DCMdV5sp1T" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="compute" />
+                    <property role="DiZV1" value="false" />
+                    <property role="IEkAT" value="false" />
+                    <node concept="3Tm1VV" id="2DCMdV5sp1U" role="1B3o_S" />
+                    <node concept="3uibUv" id="2DCMdV5sp22" role="3clF45">
+                      <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                    </node>
+                    <node concept="3clFbS" id="2DCMdV5sp1X" role="3clF47">
+                      <node concept="3clFbF" id="2DCMdV5sp6o" role="3cqZAp">
+                        <node concept="2OqwBi" id="2DCMdV5sp6q" role="3clFbG">
+                          <node concept="liA8E" id="2DCMdV5sp6r" role="2OqNvi">
+                            <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
+                          </node>
+                          <node concept="2OqwBi" id="2DCMdV5sp6s" role="2Oq$k0">
+                            <node concept="liA8E" id="2DCMdV5sp6t" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                            </node>
+                            <node concept="2OqwBi" id="2DCMdV5sp6u" role="2Oq$k0">
+                              <node concept="2OqwBi" id="2DCMdV5sp6v" role="2Oq$k0">
+                                <node concept="2WthIp" id="2DCMdV5sp6w" role="2Oq$k0" />
+                                <node concept="1DTwFV" id="2DCMdV5sp6x" role="2OqNvi">
+                                  <ref role="2WH_rO" node="60HWYcsjXo9" resolve="module" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2DCMdV5sp6y" role="2OqNvi">
+                                <ref role="37wK5l" to="88zw:~SModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="2DCMdV5sp21" role="2Ghqu4">
+                    <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2DCMdV5spj0" role="3cqZAp">
+          <node concept="3cpWsn" id="2DCMdV5spj1" role="3cpWs9">
+            <property role="TrG5h" value="maHelper" />
+            <node concept="3uibUv" id="2DCMdV5spiV" role="1tU5fm">
+              <ref role="3uigEE" to="cu2c:~ModelAccessHelper" resolve="ModelAccessHelper" />
+            </node>
+            <node concept="2ShNRf" id="2DCMdV5spj2" role="33vP2m">
+              <node concept="1pGfFk" id="2DCMdV5spj3" role="2ShVmc">
+                <ref role="37wK5l" to="cu2c:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                <node concept="37vLTw" id="2DCMdV5sw_l" role="37wK5m">
+                  <ref role="3cqZAo" node="1FKWe04n$UV" resolve="repository" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
         <node concept="3clFbH" id="1FKWe04mgCm" role="3cqZAp" />
         <node concept="3clFbJ" id="60HWYcsjXof" role="3cqZAp">
           <node concept="3fqX7Q" id="3envJk8DXmW" role="3clFbw">
-            <node concept="2OqwBi" id="3envJk8DXmX" role="3fr31v">
-              <node concept="liA8E" id="3envJk8DXmY" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
+            <node concept="2OqwBi" id="2DCMdV5srCi" role="3fr31v">
+              <node concept="37vLTw" id="2DCMdV5srre" role="2Oq$k0">
+                <ref role="3cqZAo" node="2DCMdV5spj1" resolve="maHelper" />
               </node>
-              <node concept="2OqwBi" id="3envJk8DXmZ" role="2Oq$k0">
-                <node concept="liA8E" id="3envJk8DXn0" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
-                </node>
-                <node concept="2OqwBi" id="3envJk8DXn1" role="2Oq$k0">
-                  <node concept="2OqwBi" id="3envJk8DXn2" role="2Oq$k0">
-                    <node concept="2WthIp" id="3envJk8DXn3" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="3envJk8DXn4" role="2OqNvi">
-                      <ref role="2WH_rO" node="60HWYcsjXo9" resolve="module" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="3envJk8DXn5" role="2OqNvi">
-                    <ref role="37wK5l" to="88zw:~SModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
-                  </node>
+              <node concept="liA8E" id="2DCMdV5ss3D" role="2OqNvi">
+                <ref role="37wK5l" to="cu2c:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="37vLTw" id="2DCMdV5sssJ" role="37wK5m">
+                  <ref role="3cqZAo" node="2DCMdV5skzW" resolve="checkModelRoots" />
                 </node>
               </node>
             </node>
@@ -2120,55 +2170,48 @@
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="3cpWs6" id="zQt_taLjKO" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="1FKWe04mcHu" role="3cqZAp" />
-        <node concept="3clFbJ" id="60HWYcsjXoO" role="3cqZAp">
-          <node concept="3clFbS" id="60HWYcsjXoP" role="3clFbx">
-            <node concept="3clFbF" id="60HWYcsjXoQ" role="3cqZAp">
-              <node concept="2YIFZM" id="60HWYcsjXoR" role="3clFbG">
-                <ref role="37wK5l" to="dbrf:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
-                <ref role="1Pybhc" to="dbrf:~JOptionPane" resolve="JOptionPane" />
-                <node concept="2OqwBi" id="60HWYcsjXoS" role="37wK5m">
-                  <node concept="2WthIp" id="60HWYcsjXoT" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="60HWYcsjXoU" role="2OqNvi">
-                    <ref role="2WH_rO" node="60HWYcsjXo3" resolve="frame" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="60HWYcsjXoV" role="37wK5m">
-                  <property role="Xl_RC" value="Can't create a model in solution with no model roots" />
-                </node>
-                <node concept="Xl_RD" id="60HWYcsjXoW" role="37wK5m">
-                  <property role="Xl_RC" value="Can't create model" />
-                </node>
-                <node concept="10M0yZ" id="60HWYcsjXoX" role="37wK5m">
-                  <ref role="1PxDUh" to="dbrf:~JOptionPane" resolve="JOptionPane" />
-                  <ref role="3cqZAo" to="dbrf:~JOptionPane.ERROR_MESSAGE" resolve="ERROR_MESSAGE" />
+              <node concept="9aQIb" id="2DCMdV5stdO" role="9aQIa">
+                <node concept="3clFbS" id="2DCMdV5stdP" role="9aQI4">
+                  <node concept="3cpWs6" id="zQt_taLjKO" role="3cqZAp" />
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="60HWYcsjXoY" role="3cqZAp" />
-          </node>
-          <node concept="3fqX7Q" id="3envJk8DZ3e" role="3clFbw">
-            <node concept="2OqwBi" id="3envJk8DZ3f" role="3fr31v">
-              <node concept="liA8E" id="3envJk8DZ3g" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
-              </node>
-              <node concept="2OqwBi" id="3envJk8DZ3h" role="2Oq$k0">
-                <node concept="liA8E" id="3envJk8DZ3i" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
-                </node>
-                <node concept="2OqwBi" id="3envJk8DZ3j" role="2Oq$k0">
-                  <node concept="2OqwBi" id="3envJk8DZ3k" role="2Oq$k0">
-                    <node concept="2WthIp" id="3envJk8DZ3l" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="3envJk8DZ3m" role="2OqNvi">
-                      <ref role="2WH_rO" node="60HWYcsjXo9" resolve="module" />
+            <node concept="3clFbJ" id="60HWYcsjXoO" role="3cqZAp">
+              <node concept="3clFbS" id="60HWYcsjXoP" role="3clFbx">
+                <node concept="3clFbF" id="60HWYcsjXoQ" role="3cqZAp">
+                  <node concept="2YIFZM" id="60HWYcsjXoR" role="3clFbG">
+                    <ref role="37wK5l" to="dbrf:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
+                    <ref role="1Pybhc" to="dbrf:~JOptionPane" resolve="JOptionPane" />
+                    <node concept="2OqwBi" id="60HWYcsjXoS" role="37wK5m">
+                      <node concept="2WthIp" id="60HWYcsjXoT" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="60HWYcsjXoU" role="2OqNvi">
+                        <ref role="2WH_rO" node="60HWYcsjXo3" resolve="frame" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="60HWYcsjXoV" role="37wK5m">
+                      <property role="Xl_RC" value="Can't create a model in solution with no model roots" />
+                    </node>
+                    <node concept="Xl_RD" id="60HWYcsjXoW" role="37wK5m">
+                      <property role="Xl_RC" value="Can't create model" />
+                    </node>
+                    <node concept="10M0yZ" id="60HWYcsjXoX" role="37wK5m">
+                      <ref role="1PxDUh" to="dbrf:~JOptionPane" resolve="JOptionPane" />
+                      <ref role="3cqZAo" to="dbrf:~JOptionPane.ERROR_MESSAGE" resolve="ERROR_MESSAGE" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="3envJk8DZ3n" role="2OqNvi">
-                    <ref role="37wK5l" to="88zw:~SModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                </node>
+                <node concept="3cpWs6" id="60HWYcsjXoY" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="3envJk8DZ3e" role="3clFbw">
+                <node concept="2OqwBi" id="2DCMdV5ssPN" role="3fr31v">
+                  <node concept="37vLTw" id="2DCMdV5ssPO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2DCMdV5spj1" resolve="maHelper" />
+                  </node>
+                  <node concept="liA8E" id="2DCMdV5ssPP" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                    <node concept="37vLTw" id="2DCMdV5ssPQ" role="37wK5m">
+                      <ref role="3cqZAo" node="2DCMdV5skzW" resolve="checkModelRoots" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2381,7 +2424,7 @@
                     <ref role="2WH_rO" node="60HWYcsjXo9" resolve="module" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="1FKWe04pWzM" role="37wK5m">
+                <node concept="37vLTw" id="2DCMdV5sx$_" role="37wK5m">
                   <ref role="3cqZAo" node="1FKWe04n$UV" resolve="repository" />
                 </node>
               </node>

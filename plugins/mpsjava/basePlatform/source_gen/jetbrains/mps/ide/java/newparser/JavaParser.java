@@ -36,12 +36,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import java.util.LinkedList;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 
@@ -335,9 +335,12 @@ public class JavaParser {
             // FIXME maybe it's better to re-use auto model import 
             Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
               public void visit(StaticReference it) {
+                SModel sourceModel = theRightNode.getModel();
                 SModelReference targetModel = it.getTargetSModelReference();
-                ((SModelInternal) theRightNode.getModel()).addModelImport(targetModel, true);
+                if (!(sourceModel.getReference().equals(targetModel))) {
+                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
 
+                }
               }
             });
           }
@@ -371,7 +374,7 @@ public class JavaParser {
         node.setReferenceTarget(ref.getRole(), target);
 
         SModel targetModel = target.getModel();
-        if (targetModel != null) {
+        if (targetModel != null && !(ourModel.getReference().equals(targetModel.getReference()))) {
           ((SModelInternal) ourModel).addModelImport(targetModel.getReference(), true);
         }
       }

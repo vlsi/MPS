@@ -18,7 +18,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import javax.swing.tree.TreeNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
@@ -123,21 +124,26 @@ public class NewModelFromSource_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
-    final ModelAccess modelAccess = repository.getModelAccess();
+    Computable<Boolean> checkModelRoots = new Computable<Boolean>() {
+      public Boolean compute() {
+        return ((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext();
+      }
+    };
+    ModelAccessHelper maHelper = new ModelAccessHelper(repository);
 
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+    if (!(maHelper.runReadAction(checkModelRoots))) {
       int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
       if (code == JOptionPane.YES_OPTION) {
         MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
         final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
         configurableEditor.show();
+      } else {
+        return;
       }
-      return;
-    }
-
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
-      return;
+      if (!(maHelper.runReadAction(checkModelRoots))) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
     }
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);

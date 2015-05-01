@@ -111,7 +111,7 @@
       <node id="1395491627848273965" at="40,82,41,118" concept="8" />
       <node id="2298389068003820080" at="44,46,45,41" concept="2" />
       <node id="2298389068004278098" at="46,25,47,269" concept="7" />
-      <node id="3395068133255634675" at="47,269,48,152" concept="2" />
+      <node id="3395068133255634675" at="47,269,48,136" concept="2" />
       <node id="6020129713119570126" at="33,212,36,5" concept="5" />
       <node id="2298389068003820088" at="45,41,49,5" concept="5" />
       <node id="2298389068003808795" at="38,0,43,0" concept="6" trace="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -121,7 +121,7 @@
       <scope id="2298389068003808800" at="39,52,41,118">
         <var name="myTargetCell" id="1395491627848273958" />
       </scope>
-      <scope id="2298389068003820089" at="46,25,48,152">
+      <scope id="2298389068003820089" at="46,25,48,136">
         <var name="defaultTarget" id="2298389068004278099" />
       </scope>
       <scope id="2298389068003808795" at="38,0,43,0">

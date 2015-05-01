@@ -124,10 +124,13 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
         for (final AbstractTreeNode child : children) {
           if (child instanceof PsiFileNode) {
-            PsiFile value = ((PsiFileNode) child).getValue();
+            VirtualFile vFile = ((PsiFileNode) child).getVirtualFile();
+            if (vFile == null) {
+              continue;
+            }
 
             // check if it's a single file model
-            final SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiFileNode) child).getVirtualFile()));
+            final SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vFile));
             if (sModel != null) {
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
@@ -136,7 +139,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
               continue;
             }
 
-            if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(((PsiFileNode) child).getVirtualFile()))) {
+            if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(vFile))) {
               // it's a file that constitutes a FolderDataSource-backed model, remove it from the tree (root nodes are shown instead)
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
@@ -302,18 +305,20 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   }
 
   private IFile getModelFile(AbstractTreeNode treeNode) {
-    if (treeNode instanceof MPSPsiElementTreeNode) {
-      return getModelFile(treeNode.getParent());
-
-    } else if (treeNode instanceof MPSPsiModelTreeNode) {
+    if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) {
         return null;
+      }
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
     } else if (treeNode instanceof PsiDirectoryNode) {
-      IFile ifile = FileSystem.getInstance().getFileByPath(((PsiDirectoryNode) treeNode).getVirtualFile().getPath());
+      VirtualFile virtualFile = ((PsiDirectoryNode) treeNode).getVirtualFile();
+      if (virtualFile == null) {
+        return null;
+      }
+      IFile ifile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
       SModel model = SModelFileTracker.getInstance().findModel(ifile);
       if (model != null) return ifile;
 
@@ -390,7 +395,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY = new ProviderFactory<SNodeDeleteProvider>() {
     @Override
     public SNodeDeleteProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
-      return new SNodeDeleteProvider(selectedNodes, modelDescriptor, project);
+      return new SNodeDeleteProvider(selectedNodes, project);
     }
   };
 

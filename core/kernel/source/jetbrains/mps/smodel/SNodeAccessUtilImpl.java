@@ -17,9 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -52,7 +52,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return hasPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
+    return hasPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(name));
   }
 
   @Override
@@ -89,7 +89,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return getPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
+    return getPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(name));
   }
 
   @Override
@@ -122,7 +122,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
-    setPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), propertyName), propertyValue);
+    setPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName), propertyValue);
   }
 
 
@@ -161,7 +161,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTargetImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), target);
+    setReferenceTargetImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role), target);
   }
 
   @Override
@@ -172,7 +172,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReferenceImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), reference);
+    setReferenceImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role), reference);
   }
 
   private class InProgressThreadLocal<T> extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>>> {
