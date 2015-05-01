@@ -11568,19 +11568,6 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="5_uX04TlQXW" resolve="mps-icons" />
       </node>
-      <node concept="25zrj4" id="56$9Uh0eFN3" role="nCB5Z">
-        <node concept="2HycW7" id="56$9Uh0eFN4" role="25zrj5">
-          <node concept="398BVA" id="56$9Uh0eFN6" role="25ysHA">
-            <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="56$9Uh0eFN7" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="56$9Uh0eFN8" role="2Ry0An">
-                <property role="2Ry0Am" value="beansbinding-1.2.1.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="398b33" id="1nJh0raUJrG" role="3989C9">
       <property role="TrG5h" value="MpsSupport" />
@@ -12532,17 +12519,6 @@
         </node>
       </node>
       <node concept="398223" id="5xa9wY2ujzm" role="39821P">
-        <node concept="28jJK3" id="35zoHQHRZ3Z" role="39821P">
-          <node concept="398BVA" id="3PtN$74LPqD" role="28jJRO">
-            <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="3PtN$74LPqE" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="3PtN$74LPqF" role="2Ry0An">
-                <property role="2Ry0Am" value="beansbinding-1.2.1.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3_J27D" id="5xa9wY2ujzn" role="Nbhlr">
           <node concept="3Mxwew" id="5xa9wY2ujzo" role="3MwsjC">
             <property role="3MwjfP" value="lib" />

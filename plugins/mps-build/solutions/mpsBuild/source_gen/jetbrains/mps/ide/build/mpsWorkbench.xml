@@ -263,9 +263,6 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-plugin-standalone-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/lib" />
-    <copy todir="${build.layout}/lib">
-      <fileset file="${mps_home}/lib/beansbinding-1.2.1.jar" />
-    </copy>
     <jar destfile="${build.layout}/lib/mps-resources.jar">
       <fileset dir="${mps_home}/workbench/resources/source" />
     </jar>
@@ -494,7 +491,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
-        <fileset file="${mps_home}/lib/beansbinding-1.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

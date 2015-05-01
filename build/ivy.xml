@@ -505,9 +505,6 @@
     <!--
     lib
     (Not IDEA platform libs)-->
-    <dependency org="lib" name="beansbinding-1.2.1.jar" rev="1.2.1">
-      <artifact name="beansbinding-1.2.1.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib" name="diffutils-1.2.1.jar" rev="1.2.1">
       <artifact name="diffutils-1.2.1.jar" ext="jar"/>
     </dependency>
@@ -522,9 +519,6 @@
     lib
       src
     (Not IDEA platform libs)-->
-    <dependency org="lib.src" name="beansbinding-1.2.1-src.zip" rev="1.2.1">
-      <artifact name="beansbinding-1.2.1-src.zip" ext="zip"/>
-    </dependency>
     <dependency org="lib.src" name="diffutils-1.2.1-sources.jar" rev="1.2.1">
       <artifact name="diffutils-1.2.1-sources.jar" ext="jar"/>
     </dependency>
