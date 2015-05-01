@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -33,6 +35,10 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import java.util.Collection;
+import java.util.Collections;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {
 
@@ -52,6 +58,9 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   private SModel createModel() {
     SModel model = new SModel(myModelRef);
     processStreams(getSource().getAvailableStreams(), model);
+    for (SLanguage l : CollectionSequence.fromCollection(importedLanguageIds())) {
+      model.addLanguage(l);
+    }
     return model;
   }
 
@@ -235,6 +244,11 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
       myModel = null;
       fireModelStateChanged(ModelLoadingState.NOT_LOADED);
     }
+  }
+
+  @Override
+  public Collection<SLanguage> importedLanguageIds() {
+    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
   }
 
   public void reloadFromDiskSafe() {

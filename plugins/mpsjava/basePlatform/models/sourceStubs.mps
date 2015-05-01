@@ -260,8 +260,16 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439833" name="version" index="2V$B1S" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -1235,6 +1243,29 @@
             <node concept="37vLTw" id="lHAw_FdIM2" role="37wK5m">
               <ref role="3cqZAo" node="lHAw_F0KDp" resolve="model" />
             </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="1Z$xEXrVQyV" role="3cqZAp">
+          <node concept="2GrKxI" id="1Z$xEXrVQyX" role="2Gsz3X">
+            <property role="TrG5h" value="l" />
+          </node>
+          <node concept="3clFbS" id="1Z$xEXrVQyZ" role="2LFqv$">
+            <node concept="3clFbF" id="1Z$xEXrVQ1g" role="3cqZAp">
+              <node concept="2OqwBi" id="1Z$xEXrVQ5H" role="3clFbG">
+                <node concept="37vLTw" id="1Z$xEXrVQ1e" role="2Oq$k0">
+                  <ref role="3cqZAo" node="lHAw_F0KDp" resolve="model" />
+                </node>
+                <node concept="liA8E" id="1Z$xEXrVQi5" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+                  <node concept="2GrUjf" id="1Z$xEXrVRj$" role="37wK5m">
+                    <ref role="2Gs0qQ" node="1Z$xEXrVQyX" resolve="l" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1rXfSq" id="1Z$xEXrVQOQ" role="2GsD0m">
+            <ref role="37wK5l" node="1Z$xEXrVFm0" resolve="importedLanguageIds" />
           </node>
         </node>
         <node concept="3clFbF" id="lHAw_F1HP8" role="3cqZAp">
@@ -2572,6 +2603,38 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2zDDKmDL8a2" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1Z$xEXrVDgf" role="jymVt" />
+    <node concept="3clFb_" id="1Z$xEXrVFm0" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="importedLanguageIds" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="1Z$xEXrVFm1" role="1B3o_S" />
+      <node concept="3uibUv" id="1Z$xEXrVFm3" role="3clF45">
+        <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="1Z$xEXrVFm4" role="11_B2D">
+          <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1Z$xEXrVFma" role="3clF47">
+        <node concept="3cpWs6" id="1Z$xEXrVIn5" role="3cqZAp">
+          <node concept="2YIFZM" id="1Z$xEXrVK34" role="3cqZAk">
+            <ref role="37wK5l" to="k7g3:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
+            <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+            <node concept="pHN19" id="1Z$xEXrVM8M" role="37wK5m">
+              <node concept="2V$Bhx" id="1Z$xEXrVOew" role="2V$M_3">
+                <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
+                <property role="2V$B1Q" value="jetbrains.mps.baseLanguage" />
+                <property role="2V$B1S" value="-1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1Z$xEXrVFmb" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
