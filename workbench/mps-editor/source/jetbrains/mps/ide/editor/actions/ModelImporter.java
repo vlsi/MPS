@@ -32,6 +32,9 @@ import javax.swing.JOptionPane;
 import java.awt.Component;
 
 /**
+ * Utility to add imports to a model.
+ * This class doesn't manage read/write access to a model, it's responsibility of a caller.
+ * FIXME may show UI confirmation dialog from within a command/write action, is it good?
  * @author Alex Pyshkin on 5/23/14.
  */
 public class ModelImporter {

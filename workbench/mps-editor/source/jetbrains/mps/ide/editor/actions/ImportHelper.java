@@ -262,7 +262,7 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      myProject.getModelAccess().runWriteAction(new Runnable() {
+      myProject.getModelAccess().executeCommand(new Runnable() {
         @Override
         public void run() {
           SModelReference modelToImport = getModelReference();
