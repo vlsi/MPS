@@ -54,6 +54,16 @@
         <property id="1885452693916492794" name="detail" index="1nA5F6" />
         <property id="1885452693916492789" name="requestor" index="1nA5F9" />
       </concept>
+      <concept id="1885452693916492757" name="jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription" flags="ng" index="1nA5FD">
+        <property id="1885452693916492758" name="value" index="1nA5FE" />
+      </concept>
+      <concept id="1885452693916492894" name="jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription" flags="ng" index="1nA5Py">
+        <property id="1885452693916492909" name="detail" index="1nA5Ph" />
+        <property id="1885452693916492904" name="purpose" index="1nA5Pk" />
+        <property id="1885452693916492900" name="firstTimeApplicant" index="1nA5Po" />
+        <property id="1885452693916492897" name="age" index="1nA5Pt" />
+        <property id="1885452693916492895" name="requestor" index="1nA5Pz" />
+      </concept>
       <concept id="5681697064999188987" name="jetbrains.mps.samples.languagePatterns.Basic.structure.Container" flags="ng" index="3YvCyr">
         <child id="5681697064999189115" name="components" index="3YvCGr" />
       </concept>
@@ -258,9 +268,28 @@
   </node>
   <node concept="1nA5DH" id="1CEujLdGPmJ">
     <property role="TrG5h" value="NewScreen" />
+    <property role="3GE5qa" value="seamless-substitution" />
     <node concept="1nA5F8" id="1CEujLdHGWA" role="1nA5ER">
       <property role="1nA5F9" value="Joe" />
       <property role="1nA5F6" value="need it now" />
+    </node>
+  </node>
+  <node concept="1nA5DH" id="603vF1qr27z">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="NewChair" />
+    <node concept="1nA5FD" id="603vF1qr27_" role="1nA5ER">
+      <property role="1nA5FE" value="I need a new chair." />
+    </node>
+  </node>
+  <node concept="1nA5DH" id="603vF1qr27C">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="NewPen" />
+    <node concept="1nA5Py" id="603vF1qr27E" role="1nA5ER">
+      <property role="1nA5Pz" value="Dave" />
+      <property role="1nA5Pt" value="26" />
+      <property role="1nA5Po" value="true" />
+      <property role="1nA5Pk" value="Draw a picture" />
+      <property role="1nA5Ph" value="There are no pens around" />
     </node>
   </node>
 </model>
