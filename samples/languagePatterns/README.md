@@ -68,3 +68,16 @@ the Editor cookbook (https://confluence.jetbrains.com/display/MPSD32/Editor+cook
 An example of using editor components that get overriden in a sub-concept (Truck). An editor in Car uses an editor component CarProperties also defined in Car.
 A sub-concept (Truck) overrides the CarProperties editor component with the TruckProperties editor component to contain its own properties. The editor in Car
 will use the Truck’s variant of the editor component for Trucks and the Car variant for Cars.
+
+
+## seamless-substitution
+
+
+
+An example that seamlessly switches (substitutes) between different related subconcepts. A Request contains a "description", which may be either a string,
+a simple form or a complex form. A completion-menu lets the user pick the requested description type. If the user simply types text, the "string"-based
+description is picked automatically in the "PickTheRightDescriptionType" substitute action.
+The first cell of editors for each of the description concepts is sensitive to substitution (set through the "menu" property of the cell)
+and so offers the option to switch between description types with completion-menu.
+The "Converters" node factories contain code that preserves parts of the description information and propagates it into the newly instantiated
+description concept.
