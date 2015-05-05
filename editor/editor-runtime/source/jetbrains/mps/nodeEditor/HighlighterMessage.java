@@ -217,10 +217,6 @@ public class HighlighterMessage extends EditorMessageWithTarget {
       g.setColor(color);
       ColorAndGraphicsUtil.drawWave(g, myX + myLeftInset, myX + myLeftInset + myEffectiveWidth, myY - ColorAndGraphicsUtil.WAVE_HEIGHT);
     }
-
-    public boolean isSameY(Region another) {
-      return myY == another.myY;
-    }
   }
 
   enum AnchorCellType {
