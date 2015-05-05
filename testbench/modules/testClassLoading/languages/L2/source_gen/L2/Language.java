@@ -18,6 +18,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "L2";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("4a198fda-5562-4289-92df-374119a5f771"));
   }

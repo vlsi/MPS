@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptC1 = new ConceptDescriptorBuilder("L1.structure.C1", MetaIdFactory.conceptId(new UUID(4970783334670355103L, -9004326591361419536L), 3842746946078441444L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).create();
+  /*package*/ final ConceptDescriptor myConceptC1 = new ConceptDescriptorBuilder("L1.structure.C1", MetaIdFactory.conceptId(0x44fbc51b46754a9fL, 0x830a34ac104c76f0L, 0x35542dfcdab8ffe4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
