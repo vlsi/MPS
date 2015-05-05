@@ -23,16 +23,18 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.PersistenceUtil;
+import jetbrains.mps.smodel.persistence.def.v9.Indexer9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.util.List;
 
-public class ModelPersistence8 implements IModelPersistence {
+public class ModelPersistence8 implements IModelPersistence, XMLPersistence {
   public static final String ROOT_NODE = "root";
 
   @Override
@@ -58,5 +60,16 @@ public class ModelPersistence8 implements IModelPersistence {
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
+  }
+
+  @Nullable
+  @Override
+  public Indexer getIndexSupport(@NotNull final Callback callback) {
+    return new Indexer() {
+      @Override
+      public void index(@NotNull Reader input) throws IOException {
+        PersistenceUtil.index(Indexer9.getChars(input), callback);
+      }
+    };
   }
 }
