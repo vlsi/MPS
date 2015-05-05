@@ -14,6 +14,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -25,7 +29,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.GeneralSettings;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.migration.component.util.MigrationComponent;
 import com.intellij.openapi.ui.Messages;
@@ -35,10 +38,8 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -99,15 +100,30 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
+          Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+            public void visit(AbstractModule it) {
+              it.validateLanguageVersions();
+            }
+          });
           tryMigratingProject();
         }
       });
       return;
     }
 
-    saveAnsSetTipsState();
+    saveAndSetTipsState();
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+              public void visit(AbstractModule it) {
+                it.validateLanguageVersions();
+              }
+            });
+          }
+        });
+
         // this line should be executed in post-startup activity as we can have language in the same project 
         // with the solution to migrate, and in this case classes of this language will be cleared, but after 
         // they are compiled at startup, they are only reloaded in a pre-startup activity 
@@ -152,7 +168,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     return "MigrationTrigger";
   }
 
-  private void saveAnsSetTipsState() {
+  private void saveAndSetTipsState() {
     if (myState.tips == null) {
       myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
     }
@@ -237,7 +253,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
 
-    saveAnsSetTipsState();
+    saveAndSetTipsState();
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {

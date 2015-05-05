@@ -220,7 +220,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
       public boolean accept(final AbstractModule module) {
-        module.validateLanguageVersions();
         return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
           public boolean accept(MigrationScriptReference item) {
             return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
@@ -361,7 +360,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
           public Integer select(AbstractModule module) {
             int scripts = 0;
-            module.validateLanguageVersions();
             for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
               int currentLangVersion = lang.getLanguageVersion();
               int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
