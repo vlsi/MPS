@@ -44,6 +44,9 @@ Scoping rules ensure that:
 
 * each singer can only be listed once in a combined performance
 
+* a handy intention (IntroduceSinger) is available to create a singer from a string typed in the performance (frequently known as "create from usage"
+or "introduce variable" refactoring).
+
 
 ## fluent editing
 
