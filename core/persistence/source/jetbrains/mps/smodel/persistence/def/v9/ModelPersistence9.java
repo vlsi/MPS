@@ -123,11 +123,6 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   }
 
   @Override
-  public void index(char[] data, Consumer<String> consumer) {
-    throw new UnsupportedOperationException(String.format("Use facilities of %s instead", XMLPersistence.class));
-  }
-
-  @Override
   public Indexer getIndexSupport(@NotNull Callback callback) {
     return new Indexer9(callback);
   }

@@ -40,6 +40,4 @@ public interface IModelPersistence {
   XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header);
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
-
-  void index(char[] data, Consumer<String> consumer);
 }

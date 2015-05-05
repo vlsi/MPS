@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
 import java.util.List;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,10 +25,6 @@ public class ModelPersistence4 implements IModelPersistence, IPersistenceWithRea
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return null;
-  }
-  @Override
-  public void index(char[] data, Consumer<String> consumer) {
-    // no-op 
   }
   @Override
   public int getVersion() {

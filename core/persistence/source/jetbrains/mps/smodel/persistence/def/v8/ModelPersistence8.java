@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v8;
 
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
+import jetbrains.mps.persistence.xml.XMLPersistence;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -24,6 +26,7 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.PersistenceUtil;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
@@ -31,11 +34,6 @@ import java.util.List;
 
 public class ModelPersistence8 implements IModelPersistence {
   public static final String ROOT_NODE = "root";
-
-  @Override
-  public void index(char[] data, Consumer<String> consumer) {
-    PersistenceUtil.index(data, consumer);
-  }
 
   @Override
   public int getVersion() {
