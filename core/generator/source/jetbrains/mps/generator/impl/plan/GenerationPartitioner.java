@@ -28,6 +28,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
 import org.apache.log4j.LogManager;
@@ -154,7 +158,8 @@ public class GenerationPartitioner {
     // auxiliary rules to ensure generator runs no later than any generator of its target language
     MultiMap<SLanguage, TemplateModule> lang2gen = new MultiMap<SLanguage, TemplateModule>();
     for (TemplateModule generator : myGenerators) {
-      SLanguage lang = SConceptRepository.getInstance().getLanguage(generator.getSourceLanguage().getNamespace());
+      LanguageRuntime sLanguage = generator.getSourceLanguage();
+      SLanguage lang = MetaAdapterFactory.getLanguage(sLanguage.getId(),sLanguage.getNamespace());
       lang2gen.putValue(lang, generator);
     }
     for (TemplateModule generator : myGenerators) {
