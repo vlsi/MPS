@@ -36,8 +36,8 @@ public class LocalVariableIntroducer {
   public void invoke(DataContext dataContext) {
     if (myRefactoring.hasDuplicates()) {
       AnAction thisOnly = new LocalVariableIntroducer.ExecuteAction("Replace this occurrence only", false);
-      AnAction allOccurences = new LocalVariableIntroducer.ExecuteAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurrence"), true);
-      ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Multiple occurrences found", ActionUtils.groupFromActions(thisOnly, allOccurences), dataContext, null, false);
+      AnAction allOccurrences = new LocalVariableIntroducer.ExecuteAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurrence"), true);
+      ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Multiple occurrences found", ActionUtils.groupFromActions(thisOnly, allOccurrences), dataContext, null, false);
       popup.show(getRelativePoint());
     } else {
       execute(false);
