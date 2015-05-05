@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.SimpleTextAttributes;
+import jetbrains.mps.openapi.editor.ColorConstants;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Color;
@@ -32,17 +33,18 @@ public enum DependencyCellState {
    * Engaged generator entry that might need attention as the language is directly in use by the model
    */
   SUPERFLUOUS_ENGAGED(
-      new SimpleTextAttributes(NORMAL.getTextAttributes().getStyle() | SimpleTextAttributes.STYLE_WAVED, NORMAL.getTextAttributes().getFgColor(), Color.YELLOW),
+      new SimpleTextAttributes(NORMAL.getTextAttributes().getStyle() | SimpleTextAttributes.STYLE_WAVED, NORMAL.getTextAttributes().getFgColor(), new Color(
+          ColorConstants.WARNING)),
       "Language is used by the model directly, no need to engage it explicitly");
 
   private final SimpleTextAttributes myTextAttributes;
   private final String myTooltip;
 
-  private DependencyCellState (SimpleTextAttributes textAttributes) {
+  DependencyCellState(SimpleTextAttributes textAttributes) {
     this(textAttributes, null);
   }
 
-  private DependencyCellState (SimpleTextAttributes textAttributes, @Nullable String tooltip) {
+  DependencyCellState(SimpleTextAttributes textAttributes, @Nullable String tooltip) {
     myTextAttributes = textAttributes;
     myTooltip = tooltip;
   }
