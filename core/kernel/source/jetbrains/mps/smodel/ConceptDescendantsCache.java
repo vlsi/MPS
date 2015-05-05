@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -183,7 +184,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     }
 
     if (structureDescriptor instanceof BaseStructureAspectDescriptor) {
-      return new HashSet<ConceptDescriptor>(((BaseStructureAspectDescriptor) structureDescriptor).getDescriptors());
+      return new HashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
     } else {
       return doGetConceptsUsingStructureLanguage(languageRuntime, structureDescriptor);
     }
@@ -203,7 +204,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     }
     for (SNode root : structureModel.getRootNodes()) {
       if (root.getConcept().isSubConceptOf(abstractConceptDeclaration)) {
-        ConceptDescriptor descriptor = structureDescriptor.getDescriptor(NameUtil.nodeFQName(root));
+        ConceptDescriptor descriptor = structureDescriptor.getDescriptor(MetaIdByDeclaration.getConceptId(root));
         if (descriptor != null) {
           result.add(descriptor);
         } else {
