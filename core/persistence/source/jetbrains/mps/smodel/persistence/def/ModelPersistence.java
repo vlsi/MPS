@@ -322,7 +322,12 @@ public class ModelPersistence {
   public static void index(byte[] data, Callback newConsumer) throws IOException {
     SModelHeader header = loadDescriptor(new InputSource(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET)));
     IModelPersistence mp = getPersistence(header.getPersistenceVersion());
-    assert mp instanceof XMLPersistence : "Using unsupported persistence version: " + header.getPersistenceVersion();
+    if (!(mp instanceof XMLPersistence)){
+      LOG.error("Can't index old persistence. Please update persistence of old models.\n" +
+          "Persistence version: " + header.getPersistenceVersion()+"\n"+
+          "Model: "+header.getModelReference().getModelName());
+      return;
+    }
 
     Indexer indexSupport = ((XMLPersistence) mp).getIndexSupport(newConsumer);
     indexSupport.index(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
