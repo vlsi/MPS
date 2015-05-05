@@ -356,8 +356,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._int result = new Wrappers._int();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        Iterable<? extends SModule> projectModules = mpsProject.getModulesWithGenerators();
-        Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
+        Iterable<Integer> scriptsByModule = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
           public Integer select(AbstractModule module) {
             int scripts = 0;
             for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
@@ -391,8 +390,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public Boolean invoke() {
         Collection<ScriptApplied> scripts = CollectionSequence.fromCollection(new ArrayList<ScriptApplied>());
 
-        Iterable<? extends SModule> projectModules = mpsProject.getModulesWithGenerators();
-        return Sequence.fromIterable(projectModules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
+        return Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
           public boolean accept(final AbstractModule module) {
             return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
               public boolean accept(MigrationScriptReference it) {
