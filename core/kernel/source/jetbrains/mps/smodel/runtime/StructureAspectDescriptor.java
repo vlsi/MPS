@@ -44,4 +44,6 @@ public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
    * @return <code>null</code> if no concept with specified id is known to this descriptor
    */
   ConceptDescriptor getDescriptor(SConceptId id);
+
+  Collection<ConceptDescriptor> getDescriptors();
 }
