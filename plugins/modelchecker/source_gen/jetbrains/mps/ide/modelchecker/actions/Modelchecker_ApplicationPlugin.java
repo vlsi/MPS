@@ -28,8 +28,6 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CheckModule_Action());
     addAction(new CheckNamespace_Action());
     addAction(new CheckProject_Action());
-    addAction(new FindAllAdapterUsages_Action());
-    addAction(new FindAllBrokenReferences_Action());
     addAction(new FindCrossTemplateReferences_Action());
     addAction(new FindReferencesToNonReferenceable_Action());
     addAction(new FindWrongAspectDependencies_Action());
