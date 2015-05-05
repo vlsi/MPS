@@ -12,6 +12,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.apache.log4j.Level;
 import javax.swing.JComponent;
 import javax.swing.DefaultListModel;
 import java.util.Collections;
@@ -40,6 +41,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
@@ -60,6 +63,10 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         PersistenceRegistry.getInstance().disableFastFindUsages();
         try {
           doRun(progress);
+        } catch (Throwable t) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("exception occured on migration", t);
+          }
         } finally {
           myIsComplete = true;
           setFraction(progress, 1.0);
@@ -340,4 +347,5 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       });
     }
   }
+  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
 }
