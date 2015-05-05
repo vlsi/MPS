@@ -19,11 +19,16 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -76,20 +81,24 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   @Override
   public void paint(Graphics g, EditorComponent editorComponent, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
     if (cell != null) {
-      for (Region nextRegion : getCellToUnderline(cell)) {
+      for (Region nextRegion : getHighlightedRegions(cell)) {
         nextRegion.drawWaveUnderCell(g, getColor());
       }
     }
   }
 
-  private List<Region> getCellToUnderline(EditorCell cell) {
+  private List<Region> getHighlightedRegions(EditorCell cell) {
     Deque<Iterator<EditorCell>> iteratorsStack = new LinkedList<Iterator<EditorCell>>();
     if (cell instanceof EditorCell_Collection) {
       iteratorsStack.addLast(((EditorCell_Collection) cell).iterator());
     } else {
       iteratorsStack.addLast(Collections.singletonList(cell).iterator());
     }
+
+    Region anchorRegion = null;
+    AnchorCellType anchorCellType = AnchorCellType.NONE;
     List<Region> regions = new ArrayList<Region>();
+    boolean insidePrefix = true;
     while (!iteratorsStack.isEmpty()) {
       Iterator<EditorCell> currentIterator = iteratorsStack.peekLast();
       if (!currentIterator.hasNext()) {
@@ -98,41 +107,75 @@ public class HighlighterMessage extends EditorMessageWithTarget {
       }
       EditorCell nextCell = currentIterator.next();
       if (nextCell.getSNode() != cell.getSNode()) {
+        insidePrefix = false;
         continue;
       }
       if (nextCell instanceof EditorCell_Collection) {
         iteratorsStack.addLast(((EditorCell_Collection) nextCell).iterator());
       } else {
         Region nextRegion = new Region(nextCell);
-        if (!regions.isEmpty() && regions.get(regions.size() - 1).canMerge(nextRegion)) {
-          nextRegion = regions.get(regions.size() - 1).merge(nextRegion);
-          regions.set(regions.size() - 1, nextRegion);
-        } else {
-          regions.add(nextRegion);
+        regions.add(nextRegion);
+        AnchorCellType nextCellType = getAnchorCellType(nextCell, insidePrefix);
+        if (nextCellType.ordinal() < anchorCellType.ordinal()) {
+          anchorRegion = nextRegion;
+          anchorCellType = nextCellType;
         }
       }
     }
+
+    if (anchorRegion != null) {
+      int anchorRegionIndex = regions.indexOf(anchorRegion);
+      assert anchorRegionIndex != -1;
+
+      Region result = anchorRegion;
+      for (int i = anchorRegionIndex + 1; i < regions.size() && result.canMerge(regions.get(i)); i++) {
+        result = result.merge(regions.get(i));
+      }
+      for (int i = anchorRegionIndex - 1; i >= 0 && result.canMerge(regions.get(i)); i--) {
+        result = result.merge(regions.get(i));
+      }
+      return Collections.singletonList(result);
+    }
+
+    for (int i = 0; i < regions.size(); ) {
+      if (i > 0 && regions.get(i - 1).canMerge(regions.get(i))) {
+        regions.set(i - 1, regions.get(i - 1).merge(regions.get(i)));
+        regions.remove(i);
+      } else {
+        i++;
+      }
+    }
+
     return highlightContainingCollection(regions) ? Collections.singletonList(new Region(cell)) : regions;
+  }
+
+  public static AnchorCellType getAnchorCellType(EditorCell cell, boolean prefixCell) {
+    if (cell instanceof EditorCell_Property && ((EditorCell_Property) cell).getModelAccessor() instanceof PropertyAccessor) {
+      PropertyAccessor accessor = (PropertyAccessor) ((EditorCell_Property) cell).getModelAccessor();
+      if (SNodeUtil.property_INamedConcept_name.getName().equals(accessor.getPropertyName())) {
+        return AnchorCellType.NAME;
+      }
+    }
+
+    if (cell instanceof EditorCell_Property && prefixCell) {
+      return AnchorCellType.PROPERTY;
+    } else if (cell instanceof EditorCell_Error && prefixCell) {
+      return AnchorCellType.ERROR;
+    } else if (cell instanceof EditorCell_Constant && prefixCell) {
+      return AnchorCellType.CONSTANT;
+    } else {
+      return AnchorCellType.NONE;
+    }
   }
 
   /**
    * return true if all regions are located on the same "line", so in this case we will underline
    * containing collection instead of drawing separate errors.
-   *
+   * <p/>
    * In case of multi-line cells we are still drawing messages as merged cell regions in order to try to highlight editor lines..
    */
-  private boolean highlightContainingCollection(Iterable<Region> regions) {
-    Region firstRegion = null;
-    for (Region region : regions) {
-      if (firstRegion == null) {
-        firstRegion = region;
-        continue;
-      }
-      if (!firstRegion.isSameY(region)) {
-        return false;
-      }
-    }
-    return true;
+  private boolean highlightContainingCollection(List<Region> regions) {
+    return regions.isEmpty();
   }
 
   private class Region {
@@ -155,7 +198,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     }
 
     public boolean canMerge(Region another) {
-      return myY == another.myY && (myX + myWidth == another.myX || myX == another.myX + myWidth);
+      return myY == another.myY && (myX + myWidth == another.myX || myX == another.myX + another.myWidth);
     }
 
     public Region merge(Region another) {
@@ -177,6 +220,13 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
     public boolean isSameY(Region another) {
       return myY == another.myY;
+    }
+  }
+
+  enum AnchorCellType {
+    NAME, PROPERTY, ERROR, CONSTANT, NONE;
+
+    AnchorCellType() {
     }
   }
 }
