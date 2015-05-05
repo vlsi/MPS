@@ -23,7 +23,7 @@ public class SDataTypeAdapter implements SDataType {
 
   @Override
   public Object fromString(String string) {
-    return null;
+    return string;
   }
 
   @Override
