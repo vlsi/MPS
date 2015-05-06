@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodeValidationProblem extends ValidationProblem {
   private final SNode myNode;
 
-  public NodeValidationProblem(Severity severity,SNode node, String message) {
+  public NodeValidationProblem(Severity severity, SNode node, String message) {
     super(severity, message);
     myNode = node;
   }

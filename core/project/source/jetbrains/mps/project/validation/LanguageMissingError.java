@@ -24,7 +24,7 @@ public class LanguageMissingError extends NodeValidationProblem {
   private boolean myCompletelyAbsent;
 
   public LanguageMissingError(SNode node, SLanguage language, boolean completelyAbsent) {
-    super(Severity.ERROR, node, completelyAbsent ? "Language not in repository" : "Language not loaded");
+    super(Severity.ERROR, node, "Language " + language.getQualifiedName() + (completelyAbsent ? " not in repository" : " not loaded"));
     myLanguage = language;
     myCompletelyAbsent = completelyAbsent;
   }

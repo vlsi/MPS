@@ -22,7 +22,7 @@ public class ConceptMissingError extends NodeValidationProblem {
   private SConcept myConcept;
 
   public ConceptMissingError(SNode node, SConcept concept) {
-    super(Severity.ERROR, node,"Missing concept");
+    super(Severity.ERROR, node, "Missing concept " + concept.getName());
     myConcept = concept;
   }
 

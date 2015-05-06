@@ -24,7 +24,7 @@ public class ImportSelfWarning extends ValidationProblem {
   private final SModelReference myReference;
 
   public ImportSelfWarning(SModel model, SModelReference reference) {
-    super(Severity.WARNING, "Model should not import itself");
+    super(Severity.WARNING, "Model should not import itself: " + model.getModelName());
     myModel = model;
     myReference = reference;
   }
