@@ -7,11 +7,8 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" file="ConceptFeatureMissingProblem.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.check.Problem" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.ConceptMissingProblem" file="ConceptMissingProblem.java">

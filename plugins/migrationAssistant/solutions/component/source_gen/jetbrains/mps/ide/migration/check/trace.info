@@ -363,36 +363,24 @@
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/3875289449858828678">
     <file name="ConceptFeatureMissingProblem.java">
-      <node id="3875289449860660513" at="11,0,12,0" concept="3" trace="myFeature" />
-      <node id="3875289449860660298" at="12,80,13,20" concept="12" />
-      <node id="3875289449860660517" at="13,20,14,24" concept="2" />
-      <node id="3875289449860662072" at="17,30,18,53" concept="7" />
-      <node id="3875289449860667230" at="19,41,20,28" concept="2" />
-      <node id="3875289449860672737" at="21,49,22,29" concept="2" />
-      <node id="3875289449860673643" at="23,12,24,30" concept="2" />
-      <node id="3875289449860662175" at="25,5,26,0" concept="10" />
-      <node id="3875289449860662223" at="26,0,27,25" concept="8" />
-      <node id="3875289449861599295" at="30,31,31,36" concept="8" />
-      <node id="3875289449860672002" at="23,10,25,5" concept="0" />
-      <node id="3875289449861598241" at="30,0,33,0" concept="6" trace="getCategory#()Ljava/lang/String;" />
-      <node id="3875289449858828685" at="12,0,16,0" concept="1" trace="ConceptFeatureMissingProblem#(Lorg/jetbrains/mps/openapi/language/SConceptFeature;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3875289449860665713" at="18,53,25,5" concept="5" />
-      <node id="3875289449858828707" at="17,0,29,0" concept="6" trace="getMessage#()Ljava/lang/String;" />
-      <scope id="3875289449860665716" at="19,41,20,28" />
-      <scope id="3875289449860670690" at="21,49,22,29" />
-      <scope id="3875289449860672003" at="23,12,24,30" />
-      <scope id="3875289449861598245" at="30,31,31,36" />
-      <scope id="3875289449858828688" at="12,80,14,24" />
-      <scope id="3875289449861598241" at="30,0,33,0" />
-      <scope id="3875289449858828685" at="12,0,16,0">
+      <node id="3875289449860660513" at="9,0,10,0" concept="3" trace="myFeature" />
+      <node id="3875289449860660298" at="10,80,11,20" concept="12" />
+      <node id="3875289449860660517" at="11,20,12,24" concept="2" />
+      <node id="3875289449860662223" at="15,30,16,55" concept="8" />
+      <node id="3875289449861599295" at="19,31,20,36" concept="8" />
+      <node id="3875289449858828707" at="15,0,18,0" concept="6" trace="getMessage#()Ljava/lang/String;" />
+      <node id="3875289449861598241" at="19,0,22,0" concept="6" trace="getCategory#()Ljava/lang/String;" />
+      <node id="3875289449858828685" at="10,0,14,0" concept="1" trace="ConceptFeatureMissingProblem#(Lorg/jetbrains/mps/openapi/language/SConceptFeature;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3875289449858828710" at="15,30,16,55" />
+      <scope id="3875289449861598245" at="19,31,20,36" />
+      <scope id="3875289449858828688" at="10,80,12,24" />
+      <scope id="3875289449858828707" at="15,0,18,0" />
+      <scope id="3875289449861598241" at="19,0,22,0" />
+      <scope id="3875289449858828685" at="10,0,14,0">
         <var name="feature" id="3875289449858828693" />
         <var name="instance" id="3875289449858828695" />
       </scope>
-      <scope id="3875289449858828710" at="17,30,27,25">
-        <var name="sb" id="3875289449860662073" />
-      </scope>
-      <scope id="3875289449858828707" at="17,0,29,0" />
-      <unit id="3875289449858828678" at="10,0,34,0" name="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" />
+      <unit id="3875289449858828678" at="8,0,23,0" name="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" />
     </file>
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/3875289449860269660">
