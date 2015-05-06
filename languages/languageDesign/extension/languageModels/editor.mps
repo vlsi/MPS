@@ -130,6 +130,11 @@
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="24kQdi" id="3f064wGFUBo">
     <ref role="1XX52x" to="v54s:3f064wGFUBm" resolve="ExtensionPointDeclaration" />
@@ -414,7 +419,7 @@
         <node concept="1sVBvm" id="7335HkeZ08" role="1sWHZn">
           <node concept="3F0A7n" id="7335HkeZ1u" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="v54s:58aSpRitLIm" resolve="extensionName" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -437,6 +442,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="aRphP9SU1p">
+    <property role="3GE5qa" value="overlapping" />
     <ref role="1XX52x" to="v54s:2UKVRofbKn5" resolve="ExtensionPointOverlappingDeclaration" />
     <node concept="3EZMnI" id="aRphP9SU1r" role="2wV5jI">
       <node concept="3F0ifn" id="aRphP9SU1s" role="3EZMnx">
@@ -483,6 +489,89 @@
         </node>
       </node>
       <node concept="l2Vlx" id="aRphP9SU1z" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1it1kXyqlqL">
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="1XX52x" to="v54s:3tZJV06aagQ" resolve="ExtensionOverlapping" />
+    <node concept="3EZMnI" id="1it1kXyqlqM" role="2wV5jI">
+      <node concept="3F0ifn" id="1it1kXyqlr$" role="3EZMnx">
+        <property role="3F0ifm" value="overlapping" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="1it1kXyqlqN" role="3EZMnx">
+        <property role="3F0ifm" value="extension" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0A7n" id="1it1kXyqlqO" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="1it1kXyqlqP" role="3EZMnx">
+        <property role="3F0ifm" value="of" />
+      </node>
+      <node concept="1iCGBv" id="1it1kXyqlqQ" role="3EZMnx">
+        <ref role="1NtTu8" to="v54s:1it1kXyqfMF" />
+        <node concept="1sVBvm" id="1it1kXyqlqR" role="1sWHZn">
+          <node concept="3F0A7n" id="1it1kXyqlqS" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1it1kXyqlqT" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="ljvvj" id="1it1kXyqlqU" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="1it1kXyqlqV" role="2iSdaV" />
+      <node concept="PMmxH" id="1it1kXyqlqW" role="3EZMnx">
+        <ref role="PMmxG" to="tpen:3Z61ZaMckgv" resolve="ClassifierMembers_Component" />
+        <node concept="ljvvj" id="1it1kXyqlqX" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1it1kXyqlqY" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="1it1kXyre31">
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="1XX52x" to="v54s:1it1kXyre2A" resolve="OverridesItem" />
+    <node concept="3EZMnI" id="1QReUKIIgU$" role="2wV5jI">
+      <node concept="l2Vlx" id="1QReUKIIgU_" role="2iSdaV" />
+      <node concept="3F0ifn" id="1QReUKIIgUC" role="3EZMnx">
+        <property role="3F0ifm" value="overrides" />
+      </node>
+      <node concept="1iCGBv" id="1it1kXyre33" role="3EZMnx">
+        <ref role="1NtTu8" to="v54s:1it1kXyqoFA" />
+        <node concept="1sVBvm" id="1it1kXyre35" role="1sWHZn">
+          <node concept="3F0A7n" id="1it1kXyre3c" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1QReUKIIOwh" role="3EZMnx">
+        <property role="3F0ifm" value="as" />
+      </node>
+      <node concept="3F0A7n" id="1QReUKIIOwv" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="1QReUKIIQoE">
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="1XX52x" to="v54s:1QReUKIIK3z" resolve="OverridesReference" />
+    <node concept="1iCGBv" id="1QReUKIIQoG" role="2wV5jI">
+      <ref role="1NtTu8" to="v54s:1QReUKIIKg8" />
+      <node concept="1sVBvm" id="1QReUKIIQoI" role="1sWHZn">
+        <node concept="3F0A7n" id="1QReUKIIQoP" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

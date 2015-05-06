@@ -41,14 +41,14 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<Function<T, R>>
     for (ExtensionFunction<T, R> ext1 : allExtensions) {
       boolean ext1OverridesAll = true;
       for (ExtensionFunction<T, R> ext2 : allExtensions) {
-        if (ext2 != ext1 && !ext1.isOverriding(ext2)) {
+        if (ext2 != ext1 && !ext1.getOverridden().contains(ext2)) {
           ext1OverridesAll = false;
           break;
         }
       }
       if (ext1OverridesAll) {
         allExtensions.remove(ext1);
-        return ext1.apply(arg, allExtensions);
+        return ext1.get().fun(arg);
       }
     }
     throw new IllegalStateException("Multiple applicable extensions for extension point " + toString());

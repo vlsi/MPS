@@ -46,6 +46,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -216,6 +217,7 @@
   <node concept="1TIwiD" id="2UKVRofbKn5">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ExtensionPointOverlappingDeclaration" />
+    <property role="3GE5qa" value="overlapping" />
     <node concept="1TJgyj" id="aRphP9UjJo" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argumentType" />
@@ -251,6 +253,58 @@
     </node>
     <node concept="PrWs8" id="aRphP9WMpR" role="PrDN$">
       <ref role="PrY4T" node="aRphP9VDPM" resolve="IRootWithUniqueName" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3tZJV06aagQ">
+    <property role="TrG5h" value="ExtensionOverlapping" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="1TJgyj" id="1it1kXyqfMF" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="extensionPoint" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2UKVRofbKn5" resolve="ExtensionPointOverlappingDeclaration" />
+    </node>
+    <node concept="PrWs8" id="3tZJV06aagS" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1it1kXyre2A">
+    <property role="3GE5qa" value="overlapping" />
+    <property role="TrG5h" value="OverridesItem" />
+    <property role="34LRSv" value="overrides" />
+    <node concept="1TJgyj" id="1it1kXyqoFA" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="parent" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3tZJV06aagQ" resolve="ExtensionOverlapping" />
+    </node>
+    <node concept="PrWs8" id="3yKhys4ADHp" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="3yKhys4ADHx" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
+    </node>
+    <node concept="PrWs8" id="3yKhys4ADTI" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
+    </node>
+    <node concept="PrWs8" id="6d7r2FpKxx0" role="PzmwI">
+      <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1QReUKIIK3z">
+    <property role="3GE5qa" value="overlapping" />
+    <property role="TrG5h" value="OverridesReference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="1QReUKIIKg8" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="decl" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1it1kXyre2A" resolve="OverridesItem" />
+    </node>
+    <node concept="PrWs8" id="1QReUKIIK3P" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
   </node>
 </model>

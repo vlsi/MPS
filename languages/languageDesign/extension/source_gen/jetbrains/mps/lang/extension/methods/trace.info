@@ -13,5 +13,28 @@
       <unit id="4103205777865557976" at="10,0,15,0" name="jetbrains.mps.lang.extension.methods.Extension_Queries" />
     </file>
   </root>
+  <root nodeRef="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)/8703467640548368853">
+    <file name="ExtensionOverlapping_Queries.java">
+      <node id="1485349290613647679" at="11,51,12,552" concept="0" />
+      <node id="1485349290613753130" at="14,44,15,552" concept="0" />
+      <node id="1485349290613745753" at="17,44,18,550" concept="0" />
+      <node id="8703467640548368853" at="11,0,14,0" concept="1" trace="applicable_arg#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8703467640548368853" at="14,0,17,0" concept="1" trace="get_arg#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8703467640548368853" at="17,0,20,0" concept="1" trace="get_ret#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1485349290613646929" at="11,51,12,552" />
+      <scope id="1485349290613753129" at="14,44,15,552" />
+      <scope id="1485349290613745752" at="17,44,18,550" />
+      <scope id="8703467640548368853" at="11,0,14,0">
+        <var name="point" id="1485349290613646927" />
+      </scope>
+      <scope id="8703467640548368853" at="14,0,17,0">
+        <var name="point" id="1485349290613753127" />
+      </scope>
+      <scope id="8703467640548368853" at="17,0,20,0">
+        <var name="point" id="1485349290613745750" />
+      </scope>
+      <unit id="8703467640548368853" at="10,0,21,0" name="jetbrains.mps.lang.extension.methods.ExtensionOverlapping_Queries" />
+    </file>
+  </root>
 </debug-info>
 

@@ -4,14 +4,9 @@ package jetbrains.mps.lang.extension.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class Extension_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public Extension_BehaviorDescriptor() {
-  }
-  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    return Extension_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
   @Override
   public String getConceptFqName() {

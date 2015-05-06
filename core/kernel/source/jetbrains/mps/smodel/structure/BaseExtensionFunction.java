@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,10 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.util.Function;
 
-import java.util.Collection;
+public abstract class BaseExtensionFunction<T, R> extends Extension.Default<Function<T, R>> implements ExtensionFunction<T, R> {
 
-public interface ExtensionFunction<T, R> extends Extension<Function<T, R>> {
-  boolean applicable(T argument);
-  Collection<ExtensionFunction<T, R>> getOverridden();
+  public BaseExtensionFunction(String extensionPointId) {
+    super(extensionPointId);
+  }
+
 }

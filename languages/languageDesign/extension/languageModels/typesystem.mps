@@ -15,6 +15,8 @@
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="w0jm" ref="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)" implicit="true" />
+    <import index="tpdu" ref="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" implicit="true" />
+    <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -62,6 +64,9 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
@@ -109,6 +114,7 @@
         <child id="1185805056450" name="argument" index="nvjzm" />
         <child id="1205761991995" name="argumentRepresentator" index="2X0Ygz" />
       </concept>
+      <concept id="1177406296561" name="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression" flags="nn" index="yS_3z" />
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
@@ -126,6 +132,10 @@
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
+      <concept id="1176543928247" name="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" flags="nn" index="3JuTUA">
+        <child id="1176543945045" name="subtypeExpression" index="3JuY14" />
+        <child id="1176543950311" name="supertypeExpression" index="3JuZjQ" />
+      </concept>
       <concept id="1176558773329" name="jetbrains.mps.lang.typesystem.structure.CoerceStatement" flags="nn" index="3Knyl0">
         <child id="1176558868203" name="body" index="3KnTvU" />
         <child id="1176558876970" name="pattern" index="3KnVwV" />
@@ -178,6 +188,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
@@ -186,6 +197,11 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes">
+      <concept id="1159268661480" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" flags="ig" index="3DMZB_">
+        <reference id="1159268661479" name="descriptor" index="3DMZBE" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -508,6 +524,175 @@
     <node concept="1YaCAy" id="aRphP9VEJz" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="v54s:aRphP9VDPM" resolve="IRootWithUniqueName" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1QReUKIF4g8">
+    <property role="TrG5h" value="check_ExtensionPointOverlappingDeclaration" />
+    <property role="3GE5qa" value="overlapping" />
+    <node concept="3clFbS" id="1QReUKIF4g9" role="18ibNy">
+      <node concept="2Mj0R9" id="1QReUKIFb2w" role="3cqZAp">
+        <node concept="2OqwBi" id="1QReUKIFb2x" role="2OEOjV">
+          <node concept="1YBJjd" id="1QReUKIFb2y" role="2Oq$k0">
+            <ref role="1YBMHb" node="1QReUKIF4gb" resolve="extensionPoint" />
+          </node>
+          <node concept="3TrEf2" id="1QReUKIFb2z" role="2OqNvi">
+            <ref role="3Tt5mk" to="v54s:aRphP9UjJo" />
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="1QReUKIFb2$" role="2MkoU_">
+          <node concept="yS_3z" id="1QReUKIFb2_" role="3fr31v">
+            <node concept="2OqwBi" id="1QReUKIFb2A" role="3JuY14">
+              <node concept="1YBJjd" id="1QReUKIFb2B" role="2Oq$k0">
+                <ref role="1YBMHb" node="1QReUKIF4gb" resolve="extensionPoint" />
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFb2C" role="2OqNvi">
+                <ref role="3Tt5mk" to="v54s:aRphP9UjJo" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1QReUKIFb2D" role="3JuZjQ">
+              <node concept="2c44tf" id="1QReUKIFb2E" role="2Oq$k0">
+                <node concept="3DMZB_" id="1QReUKIFb2F" role="2c44tc">
+                  <ref role="3DMZBE" to="tpdu:hqvUXrO" resolve="Primitive" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFb2G" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpdt:gRDMZzB" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="Xl_RD" id="1QReUKIFb2H" role="2MkJ7o">
+          <property role="Xl_RC" value="primitive types not allowed" />
+        </node>
+      </node>
+      <node concept="2Mj0R9" id="1QReUKIF4gf" role="3cqZAp">
+        <node concept="2OqwBi" id="1QReUKIFayj" role="2OEOjV">
+          <node concept="1YBJjd" id="1QReUKIFavd" role="2Oq$k0">
+            <ref role="1YBMHb" node="1QReUKIF4gb" resolve="extensionPoint" />
+          </node>
+          <node concept="3TrEf2" id="1QReUKIFbwz" role="2OqNvi">
+            <ref role="3Tt5mk" to="v54s:aRphP9U_ea" />
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="1QReUKIFafH" role="2MkoU_">
+          <node concept="yS_3z" id="1QReUKIFafJ" role="3fr31v">
+            <node concept="2OqwBi" id="1QReUKIFaME" role="3JuY14">
+              <node concept="1YBJjd" id="1QReUKIFafK" role="2Oq$k0">
+                <ref role="1YBMHb" node="1QReUKIF4gb" resolve="extensionPoint" />
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFbj3" role="2OqNvi">
+                <ref role="3Tt5mk" to="v54s:aRphP9U_ea" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1QReUKIFafL" role="3JuZjQ">
+              <node concept="2c44tf" id="1QReUKIFafM" role="2Oq$k0">
+                <node concept="3DMZB_" id="1QReUKIFafN" role="2c44tc">
+                  <ref role="3DMZBE" to="tpdu:hqvUXrO" resolve="Primitive" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFafO" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpdt:gRDMZzB" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="Xl_RD" id="hpp1WEa" role="2MkJ7o">
+          <property role="Xl_RC" value="primitive types not allowed" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1QReUKIF4gb" role="1YuTPh">
+      <property role="TrG5h" value="extensionPoint" />
+      <ref role="1YaFvo" to="v54s:2UKVRofbKn5" resolve="ExtensionPointOverlappingDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1QReUKIFbxC">
+    <property role="TrG5h" value="check_ExtensionPointDeclaration" />
+    <property role="3GE5qa" value="overlapping" />
+    <node concept="3clFbS" id="1QReUKIFbxD" role="18ibNy">
+      <node concept="2Mj0R9" id="1QReUKIFbxE" role="3cqZAp">
+        <node concept="2OqwBi" id="1QReUKIFbxF" role="2OEOjV">
+          <node concept="1YBJjd" id="1QReUKIFbxG" role="2Oq$k0">
+            <ref role="1YBMHb" node="1QReUKIFby6" resolve="extensionPoint" />
+          </node>
+          <node concept="3TrEf2" id="1QReUKIFc9D" role="2OqNvi">
+            <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="1QReUKIFbxI" role="2MkoU_">
+          <node concept="yS_3z" id="1QReUKIFbxJ" role="3fr31v">
+            <node concept="2OqwBi" id="1QReUKIFbxK" role="3JuY14">
+              <node concept="1YBJjd" id="1QReUKIFbxL" role="2Oq$k0">
+                <ref role="1YBMHb" node="1QReUKIFby6" resolve="extensionPoint" />
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFbVI" role="2OqNvi">
+                <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1QReUKIFbxN" role="3JuZjQ">
+              <node concept="2c44tf" id="1QReUKIFbxO" role="2Oq$k0">
+                <node concept="3DMZB_" id="1QReUKIFbxP" role="2c44tc">
+                  <ref role="3DMZBE" to="tpdu:hqvUXrO" resolve="Primitive" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1QReUKIFbxQ" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpdt:gRDMZzB" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="Xl_RD" id="1QReUKIFbxR" role="2MkJ7o">
+          <property role="Xl_RC" value="primitive types not allowed" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1QReUKIFby6" role="1YuTPh">
+      <property role="TrG5h" value="extensionPoint" />
+      <ref role="1YaFvo" to="v54s:3f064wGFUBm" resolve="ExtensionPointDeclaration" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1QReUKILzhG">
+    <property role="TrG5h" value="typeof_OverridesReference" />
+    <property role="3GE5qa" value="overlapping" />
+    <node concept="3clFbS" id="1QReUKILzhH" role="18ibNy">
+      <node concept="1Z5TYs" id="1QReUKILzjw" role="3cqZAp">
+        <node concept="mw_s8" id="1QReUKILzkZ" role="1ZfhKB">
+          <node concept="2pJPEk" id="1QReUKILzkV" role="mwGJk">
+            <node concept="2pJPED" id="1QReUKILzla" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="1QReUKILzm9" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36biLy" id="1QReUKILzmK" role="2pJxcZ">
+                  <node concept="2OqwBi" id="1QReUKILzLR" role="36biLW">
+                    <node concept="2OqwBi" id="1QReUKILzpc" role="2Oq$k0">
+                      <node concept="1YBJjd" id="1QReUKILzmV" role="2Oq$k0">
+                        <ref role="1YBMHb" node="1QReUKILzhJ" resolve="overridesReference" />
+                      </node>
+                      <node concept="3TrEf2" id="1QReUKILzz9" role="2OqNvi">
+                        <ref role="3Tt5mk" to="v54s:1QReUKIIKg8" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="1QReUKIL$4W" role="2OqNvi">
+                      <ref role="3Tt5mk" to="v54s:1it1kXyqoFA" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1QReUKILzjz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1QReUKILzhN" role="mwGJk">
+            <node concept="1YBJjd" id="1QReUKILzif" role="1Z2MuG">
+              <ref role="1YBMHb" node="1QReUKILzhJ" resolve="overridesReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1QReUKILzhJ" role="1YuTPh">
+      <property role="TrG5h" value="overridesReference" />
+      <ref role="1YaFvo" to="v54s:1QReUKIIK3z" resolve="OverridesReference" />
     </node>
   </node>
 </model>
