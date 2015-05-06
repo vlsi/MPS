@@ -130,7 +130,7 @@ public class InlineLocalVariable_Action extends BaseAction {
           if (nodesCount == 0) {
             infoMessage.value = "Variable " + variableName + " is never used";
           } else {
-            yesNoMessage.value = "Inline local variable '" + variableName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurence") + ")";
+            yesNoMessage.value = "Inline local variable '" + variableName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurrence") + ")";
           }
 
           ref.value = inlineVARef;
