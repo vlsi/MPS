@@ -72,7 +72,7 @@
       <node id="3719390199793465061" at="53,5,54,25" concept="10" />
       <node id="3719390199793465067" at="56,81,57,101" concept="9" />
       <node id="3719390199793465074" at="57,101,58,0" concept="12" />
-      <node id="3719390199793465079" at="58,0,59,89" concept="4" />
+      <node id="3719390199793465079" at="58,0,59,79" concept="4" />
       <node id="3719390199793465088" at="60,35,61,87" concept="4" />
       <node id="3719390199793465094" at="62,5,63,88" concept="4" />
       <node id="3719390199793465103" at="64,40,65,102" concept="4" />
@@ -106,7 +106,7 @@
       <node id="3719390199793464938" at="32,0,35,0" concept="8" trace="initComponent#()V" />
       <node id="3719390199793464943" at="35,0,38,0" concept="8" trace="disposeComponent#()V" />
       <node id="3719390199793465050" at="50,56,53,5" concept="7" />
-      <node id="3719390199793465085" at="59,89,62,5" concept="7" />
+      <node id="3719390199793465085" at="59,79,62,5" concept="7" />
       <node id="3719390199793465100" at="63,88,66,5" concept="7" />
       <node id="3719390199793465132" at="71,47,74,5" concept="7" />
       <node id="3719390199793465140" at="74,5,77,5" concept="7" />
@@ -830,39 +830,42 @@
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793467711">
-    <file name="UnavailableConceptsChecker.java">
-      <node id="3719390199793467721" at="20,98,21,124" concept="9" />
-      <node id="3719390199793467730" at="21,124,22,0" concept="12" />
-      <node id="3719390199793467731" at="22,0,23,45" concept="4" />
-      <node id="3719390199793467747" at="25,33,26,14" concept="1" />
-      <node id="3719390199793467751" at="27,7,28,66" concept="9" />
-      <node id="3719390199793467762" at="29,33,30,168" concept="4" />
-      <node id="3719390199793467782" at="32,5,33,19" concept="4" />
-      <node id="3719390199793467786" at="33,19,34,0" concept="12" />
-      <node id="3719390199793467787" at="34,0,35,19" concept="10" />
-      <node id="3719390199793467712" at="17,0,19,0" concept="2" trace="UnavailableConceptsChecker#()V" />
-      <node id="3719390199793467745" at="24,83,27,7" concept="7" />
-      <node id="3719390199793467757" at="28,66,31,7" concept="7" />
-      <node id="3719390199793467743" at="23,45,32,5" concept="6" />
-      <node id="3719390199793467716" at="19,0,37,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <scope id="3719390199793467715" at="17,39,17,39" />
-      <scope id="3719390199793467746" at="25,33,26,14" />
-      <scope id="3719390199793467761" at="29,33,30,168" />
+    <file name="StructureChecker.java">
+      <node id="3719390199793467731" at="20,104,21,34" concept="4" />
+      <node id="3719390199793467721" at="21,34,22,130" concept="9" />
+      <node id="3310907803989331283" at="25,35,26,23" concept="10" />
+      <node id="3310907803989360639" at="28,55,29,22" concept="10" />
+      <node id="3310907803989364007" at="30,9,31,63" concept="9" />
+      <node id="3719390199793467762" at="31,63,32,129" concept="4" />
+      <node id="3310907803989452924" at="32,129,33,20" concept="10" />
+      <node id="3719390199793467782" at="35,7,36,19" concept="4" />
+      <node id="3719390199793467786" at="36,19,37,0" concept="12" />
+      <node id="3719390199793467787" at="37,0,38,19" concept="10" />
+      <node id="3719390199793467712" at="17,0,19,0" concept="2" trace="StructureChecker#()V" />
+      <node id="3719390199793467745" at="24,52,27,9" concept="7" />
+      <node id="3310907803989356084" at="27,9,30,9" concept="7" />
+      <node id="3310907803989329927" at="24,0,35,0" concept="8" trace="process#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
+      <node id="3310907803989328200" at="22,130,35,7" concept="4" />
+      <node id="3719390199793467716" at="19,0,40,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <scope id="3719390199793467715" at="17,29,17,29" />
+      <scope id="3719390199793467746" at="25,35,26,23" />
+      <scope id="3310907803989356086" at="28,55,29,22" />
       <scope id="3719390199793467712" at="17,0,19,0" />
-      <scope id="3719390199793467744" at="24,83,31,7">
-        <var name="concept" id="3719390199793467752" />
+      <scope id="3310907803989329929" at="24,52,33,20">
+        <var name="nvp" id="3310907803989364008" />
       </scope>
-      <scope id="3719390199793467743" at="23,45,32,5">
-        <var name="node" id="3719390199793467778" />
+      <scope id="3310907803989329927" at="24,0,35,0">
+        <var name="vp" id="3310907803989329927" />
       </scope>
-      <scope id="3719390199793467720" at="20,98,35,19">
+      <scope id="3719390199793467720" at="20,104,38,19">
         <var name="results" id="3719390199793467722" />
       </scope>
-      <scope id="3719390199793467716" at="19,0,37,0">
+      <scope id="3719390199793467716" at="19,0,40,0">
         <var name="model" id="3719390199793467790" />
         <var name="monitor" id="3719390199793467792" />
       </scope>
-      <unit id="3719390199793467711" at="16,0,38,0" name="jetbrains.mps.ide.modelchecker.platform.actions.UnavailableConceptsChecker" />
+      <unit id="3310907803989329927" at="23,51,35,5" name="jetbrains.mps.ide.modelchecker.platform.actions.StructureChecker$1" />
+      <unit id="3719390199793467711" at="16,0,41,0" name="jetbrains.mps.ide.modelchecker.platform.actions.StructureChecker" />
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793467799">

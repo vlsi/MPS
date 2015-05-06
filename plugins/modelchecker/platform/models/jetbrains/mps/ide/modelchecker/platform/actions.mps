@@ -70,7 +70,6 @@
     <import index="oxmj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.content.tabs(MPS.IDEA/com.intellij.ui.content.tabs@java_stub)" />
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="zofw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(MPS.Core/jetbrains.mps.smodel.persistence.def@java_stub)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -355,7 +354,6 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
-      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -366,7 +364,6 @@
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7" />
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -633,7 +630,7 @@
             <node concept="TSZUe" id="3etVqSRKzrT" role="2OqNvi">
               <node concept="2ShNRf" id="3etVqSRKzrU" role="25WWJ7">
                 <node concept="1pGfFk" id="3etVqSRKzrV" role="2ShVmc">
-                  <ref role="37wK5l" node="3etVqSRK$50" resolve="UnavailableConceptsChecker" />
+                  <ref role="37wK5l" node="3etVqSRK$50" resolve="StructureChecker" />
                 </node>
               </node>
             </node>
@@ -4834,7 +4831,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3etVqSRK$4Z">
-    <property role="TrG5h" value="UnavailableConceptsChecker" />
+    <property role="TrG5h" value="StructureChecker" />
     <property role="3GE5qa" value="Model Checker.Specific Checks" />
     <node concept="3clFbW" id="3etVqSRK$50" role="jymVt">
       <node concept="3cqZAl" id="3etVqSRK$51" role="3clF45" />
@@ -4852,6 +4849,22 @@
         </node>
       </node>
       <node concept="3clFbS" id="3etVqSRK$58" role="3clF47">
+        <node concept="3clFbF" id="3etVqSRK$5j" role="3cqZAp">
+          <node concept="2OqwBi" id="3etVqSRK$5k" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxgmuYm" role="2Oq$k0">
+              <ref role="3cqZAo" node="3etVqSRK$6g" resolve="monitor" />
+            </node>
+            <node concept="liA8E" id="3etVqSRK$5m" role="2OqNvi">
+              <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <node concept="Xl_RD" id="sQz2V6ojUW" role="37wK5m">
+                <property role="Xl_RC" value="structure" />
+              </node>
+              <node concept="3cmrfG" id="3etVqSRK$5u" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="3etVqSRK$59" role="3cqZAp">
           <node concept="3cpWsn" id="3etVqSRK$5a" role="3cpWs9">
             <property role="TrG5h" value="results" />
@@ -4875,111 +4888,115 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="3etVqSRK$5i" role="3cqZAp" />
-        <node concept="3clFbF" id="3etVqSRK$5j" role="3cqZAp">
-          <node concept="2OqwBi" id="3etVqSRK$5k" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmuYm" role="2Oq$k0">
-              <ref role="3cqZAo" node="3etVqSRK$6g" resolve="monitor" />
+        <node concept="3clFbF" id="2RMHhGkQ$58" role="3cqZAp">
+          <node concept="2YIFZM" id="2RMHhGkQ$eJ" role="3clFbG">
+            <ref role="37wK5l" to="6k24:~ValidationUtil.validateModelContent(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModelContent" />
+            <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
+            <node concept="37vLTw" id="2RMHhGkQ$qC" role="37wK5m">
+              <ref role="3cqZAo" node="3etVqSRK$6e" resolve="model" />
             </node>
-            <node concept="liA8E" id="3etVqSRK$5m" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="sQz2V6ojUW" role="37wK5m">
-                <property role="Xl_RC" value="unavailable concepts" />
-              </node>
-              <node concept="3cmrfG" id="3etVqSRK$5u" role="37wK5m">
-                <property role="3cmrfH" value="1" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2Gpval" id="3etVqSRK$5v" role="3cqZAp">
-          <node concept="3clFbS" id="3etVqSRK$5w" role="2LFqv$">
-            <node concept="3clFbJ" id="3etVqSRK$5x" role="3cqZAp">
-              <node concept="3clFbS" id="3etVqSRK$5y" role="3clFbx">
-                <node concept="3zACq4" id="3etVqSRK$5z" role="3cqZAp" />
-              </node>
-              <node concept="2OqwBi" id="3etVqSRK$5$" role="3clFbw">
-                <node concept="liA8E" id="3etVqSRK$5_" role="2OqNvi">
-                  <ref role="37wK5l" to="z8de:~ProgressMonitor.isCanceled():boolean" resolve="isCanceled" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm2uX" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3etVqSRK$6g" resolve="monitor" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="3etVqSRK$5B" role="3cqZAp">
-              <node concept="3cpWsn" id="3etVqSRK$5C" role="3cpWs9">
-                <property role="TrG5h" value="concept" />
-                <node concept="2OqwBi" id="3etVqSRK$5D" role="33vP2m">
-                  <node concept="2yIwOk" id="4k9eBecv4sb" role="2OqNvi" />
-                  <node concept="2GrUjf" id="3etVqSRK$5F" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="3etVqSRK$62" resolve="node" />
+            <node concept="1bVj0M" id="2RMHhGkQ$w7" role="37wK5m">
+              <node concept="3clFbS" id="2RMHhGkQ$w9" role="1bW5cS">
+                <node concept="3clFbJ" id="3etVqSRK$5x" role="3cqZAp">
+                  <node concept="3clFbS" id="3etVqSRK$5y" role="3clFbx">
+                    <node concept="3cpWs6" id="2RMHhGkQ$Pj" role="3cqZAp">
+                      <node concept="3clFbT" id="2RMHhGkQ$Su" role="3cqZAk">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="3etVqSRK$5$" role="3clFbw">
+                    <node concept="liA8E" id="3etVqSRK$5_" role="2OqNvi">
+                      <ref role="37wK5l" to="z8de:~ProgressMonitor.isCanceled():boolean" resolve="isCanceled" />
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxgm2uX" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3etVqSRK$6g" resolve="monitor" />
+                    </node>
                   </node>
                 </node>
-                <node concept="3bZ5Sz" id="4k9eBecv5Gy" role="1tU5fm" />
-              </node>
-            </node>
-            <node concept="3clFbJ" id="3etVqSRK$5H" role="3cqZAp">
-              <node concept="3fqX7Q" id="4k9eBecvbpD" role="3clFbw">
-                <node concept="2OqwBi" id="4k9eBecvbpF" role="3fr31v">
-                  <node concept="37vLTw" id="4k9eBecvbpG" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3etVqSRK$5C" resolve="concept" />
+                <node concept="3clFbJ" id="2RMHhGkQESO" role="3cqZAp">
+                  <node concept="3clFbS" id="2RMHhGkQESQ" role="3clFbx">
+                    <node concept="3cpWs6" id="2RMHhGkQFZZ" role="3cqZAp">
+                      <node concept="3clFbT" id="2RMHhGkQGht" role="3cqZAk">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="liA8E" id="4k9eBecvbpH" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+                  <node concept="3fqX7Q" id="2RMHhGkQF6g" role="3clFbw">
+                    <node concept="1eOMI4" id="2RMHhGkQFiR" role="3fr31v">
+                      <node concept="2ZW3vV" id="2RMHhGkQFCU" role="1eOMHV">
+                        <node concept="3uibUv" id="2RMHhGkQFNe" role="2ZW6by">
+                          <ref role="3uigEE" to="6k24:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                        </node>
+                        <node concept="37vLTw" id="2RMHhGkQFud" role="2ZW6bz">
+                          <ref role="3cqZAo" node="2RMHhGkQ$xn" resolve="vp" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
-              </node>
-              <node concept="3clFbS" id="3etVqSRK$5L" role="3clFbx">
+                <node concept="3cpWs8" id="2RMHhGkQGOB" role="3cqZAp">
+                  <node concept="3cpWsn" id="2RMHhGkQGOC" role="3cpWs9">
+                    <property role="TrG5h" value="nvp" />
+                    <node concept="3uibUv" id="2RMHhGkQGO_" role="1tU5fm">
+                      <ref role="3uigEE" to="6k24:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                    </node>
+                    <node concept="10QFUN" id="2RMHhGkQGOD" role="33vP2m">
+                      <node concept="37vLTw" id="2RMHhGkQGOE" role="10QFUP">
+                        <ref role="3cqZAo" node="2RMHhGkQ$xn" resolve="vp" />
+                      </node>
+                      <node concept="3uibUv" id="2RMHhGkQGOF" role="10QFUM">
+                        <ref role="3uigEE" to="6k24:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="3etVqSRK$5M" role="3cqZAp">
                   <node concept="2YIFZM" id="50Q$OHe3vrT" role="3clFbG">
-                    <ref role="1Pybhc" node="3etVqSRRx7i" resolve="SpecificChecker" />
                     <ref role="37wK5l" node="3etVqSRRx7z" resolve="addIssue" />
+                    <ref role="1Pybhc" node="3etVqSRRx7i" resolve="SpecificChecker" />
                     <node concept="37vLTw" id="50Q$OHe3vrU" role="37wK5m">
                       <ref role="3cqZAo" node="3etVqSRK$5a" resolve="results" />
                     </node>
-                    <node concept="2GrUjf" id="50Q$OHe3vrV" role="37wK5m">
-                      <ref role="2Gs0qQ" node="3etVqSRK$62" resolve="node" />
-                    </node>
-                    <node concept="3cpWs3" id="50Q$OHe3vrW" role="37wK5m">
-                      <node concept="Xl_RD" id="50Q$OHe3vrX" role="3uHU7w">
-                        <property role="Xl_RC" value="\&quot;" />
+                    <node concept="2OqwBi" id="2RMHhGkQDEQ" role="37wK5m">
+                      <node concept="37vLTw" id="2RMHhGkQHtF" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2RMHhGkQGOC" resolve="nvp" />
                       </node>
-                      <node concept="3cpWs3" id="50Q$OHe3vrY" role="3uHU7B">
-                        <node concept="Xl_RD" id="50Q$OHe3vrZ" role="3uHU7B">
-                          <property role="Xl_RC" value="Cannot find concept \&quot;" />
-                        </node>
-                        <node concept="2OqwBi" id="50Q$OHe3vs0" role="3uHU7w">
-                          <node concept="liA8E" id="4k9eBecvbTM" role="2OqNvi">
-                            <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                          </node>
-                          <node concept="37vLTw" id="50Q$OHe3vs4" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3etVqSRK$5C" resolve="concept" />
-                          </node>
-                        </node>
+                      <node concept="liA8E" id="2RMHhGkQHNT" role="2OqNvi">
+                        <ref role="37wK5l" to="6k24:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2RMHhGkR0XA" role="37wK5m">
+                      <node concept="37vLTw" id="2RMHhGkR0Rn" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2RMHhGkQGOC" resolve="nvp" />
+                      </node>
+                      <node concept="liA8E" id="2RMHhGkR19I" role="2OqNvi">
+                        <ref role="37wK5l" to="6k24:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
                       </node>
                     </node>
                     <node concept="10M0yZ" id="50Q$OHe3vs5" role="37wK5m">
-                      <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
                       <ref role="3cqZAo" node="3etVqSRKzLr" resolve="SEVERITY_ERROR" />
+                      <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
                     </node>
                     <node concept="Xl_RD" id="50Q$OHe3vs6" role="37wK5m">
-                      <property role="Xl_RC" value="unavailable concept" />
+                      <property role="Xl_RC" value="structure error" />
                     </node>
                     <node concept="10Nm6u" id="50Q$OHe3vs7" role="37wK5m" />
                   </node>
                 </node>
+                <node concept="3cpWs6" id="2RMHhGkR2xW" role="3cqZAp">
+                  <node concept="3clFbT" id="2RMHhGkR2ME" role="3cqZAk">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTG" id="2RMHhGkQ$xn" role="1bW2Oz">
+                <property role="TrG5h" value="vp" />
+                <node concept="3uibUv" id="2RMHhGkQ$xm" role="1tU5fm">
+                  <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+                </node>
               </node>
             </node>
-          </node>
-          <node concept="2GrKxI" id="3etVqSRK$62" role="2Gsz3X">
-            <property role="TrG5h" value="node" />
-          </node>
-          <node concept="2OqwBi" id="3etVqSRK$63" role="2GsD0m">
-            <node concept="37vLTw" id="2BHiRxgmaLy" role="2Oq$k0">
-              <ref role="3cqZAo" node="3etVqSRK$6e" resolve="model" />
-            </node>
-            <node concept="2SmgA7" id="3etVqSRK$65" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbF" id="3etVqSRK$66" role="3cqZAp">

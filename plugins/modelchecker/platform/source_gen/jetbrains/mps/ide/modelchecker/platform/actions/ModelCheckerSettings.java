@@ -56,7 +56,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
-    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
+    ListSequence.fromList(specificCheckers).addElement(new StructureChecker());
     if (isCheckModelProperties()) {
       ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
     }
