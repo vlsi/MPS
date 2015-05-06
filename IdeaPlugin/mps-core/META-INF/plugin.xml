@@ -134,7 +134,16 @@
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.MPSRenameRefactoringHandler"/>
     <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate" order="first"/> <!-- isn't first a bit too much -->
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
-    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor-api.jar"/>
+    <!-- FIXME: mps-editor-api.jar doesn't look good in jps classpath -->
+    <!-- FIXME: added mps-platform.jar to avoid NoClassDefFound for VisibilityUtil from baseLanguage.search
+    2 things should happen
+      1) baseLanguage.search separated into its own jar, as we shouldn't need mps-platform here
+      2) this jar should ideally go from this mps-core/plugin.xml to mps-java/plugin.xml
+         It doesn't work currently (NoClassDef still occurs) most likely due to the fact that baseLanguage is part
+         of mps-core not mps-java, so its generator works in the core jps plugin's classloader.
+         Ideally baseLanguage must be part of mps-java
+    -->
+    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor-api.jar;mps-platform.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
