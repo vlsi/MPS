@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -48,6 +49,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -65,43 +67,51 @@ import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 //todo: all methods should accept Processor as a parameter, not a Consumer
 public class ValidationUtil {
-  public static void validateModelContent(@NotNull Collection<SNode> rootsToCheck, @NotNull Processor<ValidationProblem> processor) {
-    for (SNode root : rootsToCheck) {
-      for (SNode node : SNodeUtil.getDescendants(root)) {
-        SConcept concept = node.getConcept();
-        if (!concept.isValid()) {
-          if (!processor.process(new ConceptMissingError(node, concept))) return;
-          continue;
-        }
+  //this processes all nodes and shows the most "common" problem for each node. E.g. if the lansguage of the node is missing,
+  //this won't show "concept missing" error
+  public static void validateModelContent(@NotNull SModel model, @NotNull Processor<ValidationProblem> processor) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
+      SLanguage lang = node.getConcept().getLanguage();
+      if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
+        LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
+        if (!processor.process(error)) return;
+        continue;
+      }
 
-        // in case of props, refs, links, list should be better than set
-        List<SProperty> props = IterableUtil.asList(concept.getProperties());
-        for (SProperty p : node.getProperties()) {
-          if (props.contains(p)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, p, "property"))) return;
-        }
+      SConcept concept = node.getConcept();
+      if (!concept.isValid()) {
+        if (!processor.process(new ConceptMissingError(node, concept))) return;
+        continue;
+      }
 
-        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
-        for (SNode n : node.getChildren()) {
-          SContainmentLink l = n.getContainmentLink();
-          if (links.contains(l)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, l, "link"))) return;
-        }
+      // in case of props, refs, links, list should be better than set
+      List<SProperty> props = IterableUtil.asList(concept.getProperties());
+      for (SProperty p : node.getProperties()) {
+        if (props.contains(p)) continue;
+        if (!processor.process(new ConceptFeatureMissingError(node, p, "property"))) return;
+      }
 
-        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
-        for (SReference r : node.getReferences()) {
-          SReferenceLink l = r.getLink();
-          if (refs.contains(l)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, l, "reference"))) return;
-        }
+      List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
+      for (SNode n : node.getChildren()) {
+        SContainmentLink l = n.getContainmentLink();
+        if (links.contains(l)) continue;
+        if (!processor.process(new ConceptFeatureMissingError(node, l, "link"))) return;
+      }
+
+      List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
+      for (SReference r : node.getReferences()) {
+        SReferenceLink l = r.getLink();
+        if (refs.contains(l)) continue;
+        if (!processor.process(new ConceptFeatureMissingError(node, l, "reference"))) return;
       }
     }
   }
@@ -167,7 +177,7 @@ public class ValidationUtil {
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
     for (final SModuleReference lang : langsToCheck) {
       if (repository.getModule(lang.getModuleId()) == null) {
-        consumer.consume(new MissingLanguageError(model, lang));
+        consumer.consume(new MissingImportedLanguageError(model, lang));
       }
     }
 
