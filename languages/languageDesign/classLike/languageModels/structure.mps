@@ -367,5 +367,18 @@
       <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1QReUKIFP7I">
+    <property role="3GE5qa" value="member" />
+    <property role="TrG5h" value="MultipleModifier" />
+    <property role="34LRSv" value="multiple" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1QReUKIFP7J" role="1TKVEl">
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="1QReUKIFP7K" role="PzmwI">
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
+    </node>
+  </node>
 </model>
 

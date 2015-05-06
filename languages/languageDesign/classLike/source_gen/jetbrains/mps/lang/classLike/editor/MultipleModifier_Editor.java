@@ -8,11 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
-public class RequiredModifier_Editor extends DefaultNodeEditor {
+public class MultipleModifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_r4ruvv_a(editorContext, node);
+    return this.createComponent_4cx7f6_a(editorContext, node);
   }
-  private EditorCell createComponent_r4ruvv_a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_4cx7f6_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {

@@ -14,10 +14,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 1:
         return new ClassLikeMethod_Constraints();
-      case 2:
+      case 3:
         return new RequiredModifier_Constraints();
       case 0:
         return new ClassLikeDescriptor_Constraints();
+      case 2:
+        return new CustomMemberDescriptor_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -33,7 +35,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x340eb2bd2e03d160L) {
       return new ClassLikeDescriptor_Constraints();
     }
+    if (id == 0x72b255a044805d9cL) {
+      return new CustomMemberDescriptor_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

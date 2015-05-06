@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ClassLikeMember_Behavior {
   public static void init(SNode thisNode) {
   }
+  public static boolean call_isMultiple_2141245758541890151(SNode thisNode) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x1db73bac2eaf51eeL, "jetbrains.mps.lang.classLike.structure.MultipleModifier"))).isNotEmpty();
+  }
   public static boolean call_isRequired_3402736933911994098(SNode thisNode) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x2f38f33681e6c616L, "jetbrains.mps.lang.classLike.structure.RequiredModifier"))).isNotEmpty();
   }

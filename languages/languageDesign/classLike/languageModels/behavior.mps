@@ -619,6 +619,31 @@
   <node concept="13h7C7" id="5BD$AU437ay">
     <property role="3GE5qa" value="member" />
     <ref role="13h7C2" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+    <node concept="13i0hz" id="1QReUKIGS9B" role="13h7CS">
+      <property role="TrG5h" value="isMultiple" />
+      <node concept="3Tm1VV" id="1QReUKIGS9C" role="1B3o_S" />
+      <node concept="10P_77" id="1QReUKIGS9D" role="3clF45" />
+      <node concept="3clFbS" id="1QReUKIGS9E" role="3clF47">
+        <node concept="3clFbF" id="1QReUKIGS9F" role="3cqZAp">
+          <node concept="2OqwBi" id="1QReUKIGS9G" role="3clFbG">
+            <node concept="2OqwBi" id="1QReUKIGS9H" role="2Oq$k0">
+              <node concept="2OqwBi" id="1QReUKIGS9I" role="2Oq$k0">
+                <node concept="13iPFW" id="1QReUKIGS9J" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="1QReUKIGS9K" role="2OqNvi">
+                  <ref role="3TtcxE" to="oubp:2WSWNq1TGlC" />
+                </node>
+              </node>
+              <node concept="v3k3i" id="1QReUKIGS9L" role="2OqNvi">
+                <node concept="chp4Y" id="1QReUKIGSuB" role="v3oSu">
+                  <ref role="cht4Q" to="oubp:1QReUKIFP7I" resolve="MultipleModifier" />
+                </node>
+              </node>
+            </node>
+            <node concept="3GX2aA" id="1QReUKIGS9N" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="2WSWNq1VhVM" role="13h7CS">
       <property role="TrG5h" value="isRequired" />
       <node concept="3Tm1VV" id="2WSWNq1VhVN" role="1B3o_S" />
