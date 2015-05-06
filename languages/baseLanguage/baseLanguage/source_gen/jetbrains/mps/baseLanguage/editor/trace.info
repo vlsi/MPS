@@ -22,7 +22,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,425,0" name="jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,423,0" name="jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/1073416106125">
@@ -38445,35 +38445,6 @@
       <unit id="4848386836749782320" at="21,0,36,0" name="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_DeleteClass$ClassifierClassExpression_DeleteClass_DELETE" />
       <unit id="4848386836749782320" at="36,0,51,0" name="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_DeleteClass$ClassifierClassExpression_DeleteClass_BACKSPACE" />
       <unit id="4848386836749782320" at="16,0,52,0" name="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_DeleteClass" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/4898614932449915863">
-    <file name="PlaceholderMethodDeclaration_Editor.java">
-      <node id="4898614932449915863" at="15,79,16,61" concept="12" />
-      <node id="4898614932449980389" at="18,87,19,167" concept="11" />
-      <node id="4898614932449980389" at="19,167,20,46" concept="5" />
-      <node id="4898614932449980389" at="20,46,21,28" concept="5" />
-      <node id="4898614932449980389" at="21,28,22,34" concept="11" />
-      <node id="4898614932449980389" at="22,34,23,63" concept="5" />
-      <node id="4898614932449980389" at="23,63,24,40" concept="5" />
-      <node id="4898614932449980389" at="24,40,25,34" concept="5" />
-      <node id="4898614932449980389" at="25,34,26,22" concept="12" />
-      <node id="4898614932449915863" at="15,0,18,0" concept="10" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4898614932449980389" at="18,0,28,0" concept="10" trace="createConstant_s75wnn_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="4898614932449915863" at="15,79,16,61" />
-      <scope id="4898614932449915863" at="15,0,18,0">
-        <var name="editorContext" id="4898614932449915863" />
-        <var name="node" id="4898614932449915863" />
-      </scope>
-      <scope id="4898614932449980389" at="18,87,26,22">
-        <var name="editorCell" id="4898614932449980389" />
-        <var name="style" id="4898614932449980389" />
-      </scope>
-      <scope id="4898614932449980389" at="18,0,28,0">
-        <var name="editorContext" id="4898614932449980389" />
-        <var name="node" id="4898614932449980389" />
-      </scope>
-      <unit id="4898614932449915863" at="14,0,29,0" name="jetbrains.mps.baseLanguage.editor.PlaceholderMethodDeclaration_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/4972241301747172167">

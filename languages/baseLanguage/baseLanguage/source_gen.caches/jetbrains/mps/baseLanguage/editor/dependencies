@@ -2309,7 +2309,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParenthesizedExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PlaceholderMember_Editor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PlaceholderMethodDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PostfixDecrementExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PostfixIncrementExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PrefixDecrementExpression_Editor" />
@@ -3785,16 +3784,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PlaceholderMember_Editor" file="PlaceholderMember_Editor.java">
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.PlaceholderMethodDeclaration_Editor" file="PlaceholderMethodDeclaration_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />

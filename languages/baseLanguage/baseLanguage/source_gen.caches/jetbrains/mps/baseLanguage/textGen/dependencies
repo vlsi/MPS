@@ -955,23 +955,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.PlaceholderMethodDeclaration_TextGen" file="PlaceholderMethodDeclaration_TextGen.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.PlusExpression_TextGen" file="PlusExpression_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -1364,7 +1347,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ParameterDeclaration_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ParenthesizedExpression_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.PlaceholderMember_TextGen" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.PlaceholderMethodDeclaration_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.PlusExpression_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.PostfixDecrementExpression_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.PostfixIncrementExpression_TextGen" />

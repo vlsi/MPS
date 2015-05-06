@@ -13,7 +13,7 @@ import jetbrains.mps.text.LegacyTextGenAdapter;
 public class TextGenAspectDescriptor extends BaseTextGenAspectDescriptor {
   private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[140];
+    myId2Index = new long[139];
     myId2Index[0] = 0xf8c108ca66L;
     myId2Index[1] = 0xf8c108ca68L;
     myId2Index[2] = 0xf8c37a7f6eL;
@@ -146,14 +146,13 @@ public class TextGenAspectDescriptor extends BaseTextGenAspectDescriptor {
     myId2Index[129] = 0x2724644c0ac833a5L;
     myId2Index[130] = 0x3b418722717710b4L;
     myId2Index[131] = 0x3f57ea36bd70a4e1L;
-    myId2Index[132] = 0x43fb6053bc19f3d6L;
-    myId2Index[133] = 0x483ee9d7f09580d6L;
-    myId2Index[134] = 0x494547eeedc219b9L;
-    myId2Index[135] = 0x57d533a7af15ed3aL;
-    myId2Index[136] = 0x57d533a7af15ed3dL;
-    myId2Index[137] = 0x57d533a7af16ff67L;
-    myId2Index[138] = 0x6c6b6a1e379f9404L;
-    myId2Index[139] = 0x6fea7de6103549b1L;
+    myId2Index[132] = 0x483ee9d7f09580d6L;
+    myId2Index[133] = 0x494547eeedc219b9L;
+    myId2Index[134] = 0x57d533a7af15ed3aL;
+    myId2Index[135] = 0x57d533a7af15ed3dL;
+    myId2Index[136] = 0x57d533a7af16ff67L;
+    myId2Index[137] = 0x6c6b6a1e379f9404L;
+    myId2Index[138] = 0x6fea7de6103549b1L;
   }
   @Nullable
   @Override
@@ -425,20 +424,18 @@ public class TextGenAspectDescriptor extends BaseTextGenAspectDescriptor {
       case 131:
         return new LegacyTextGenAdapter(PrimitiveClassExpression_TextGen.class);
       case 132:
-        return new LegacyTextGenAdapter(PlaceholderMethodDeclaration_TextGen.class);
-      case 133:
         return new LegacyTextGenAdapter(ArrayCloneOperation_TextGen.class);
-      case 134:
+      case 133:
         return new LegacyTextGenAdapter(FloatingPointFloatConstant_TextGen.class);
-      case 135:
+      case 134:
         return new LegacyTextGenAdapter(SingleLineComment_TextGen.class);
-      case 136:
+      case 135:
         return new LegacyTextGenAdapter(TextCommentPart_TextGen.class);
-      case 137:
+      case 136:
         return new LegacyTextGenAdapter(StatementCommentPart_TextGen.class);
-      case 138:
+      case 137:
         return new LegacyTextGenAdapter(LocalMethodCall_TextGen.class);
-      case 139:
+      case 138:
         return new LegacyTextGenAdapter(UnaryMinus_TextGen.class);
       default:
         return null;

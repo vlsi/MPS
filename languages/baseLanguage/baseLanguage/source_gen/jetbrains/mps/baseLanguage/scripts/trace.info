@@ -608,49 +608,6 @@
       <unit id="481464699838541779" at="15,0,42,0" name="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/7416165818498990440">
-    <file name="ReplacePlaceholderMethodDeclaration_MigrationScript.java">
-      <node id="7416165818498990440" at="13,98,14,73" concept="10" />
-      <node id="7416165818499013833" at="16,31,17,104" concept="7" />
-      <node id="7416165818499013833" at="19,41,20,104" concept="7" />
-      <node id="7416165818499013833" at="22,59,23,83" concept="7" />
-      <node id="7416165818499014522" at="25,59,26,216" concept="7" />
-      <node id="7416165818499048214" at="28,52,29,202" concept="2" />
-      <node id="7416165818499013833" at="31,42,32,21" concept="7" />
-      <node id="7416165818499013833" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="7416165818499013833" at="19,0,22,0" concept="5" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="7416165818499013833" at="22,0,25,0" concept="5" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-      <node id="7416165818499013833" at="25,0,28,0" concept="5" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7416165818499013833" at="28,0,31,0" concept="5" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7416165818499013833" at="31,0,34,0" concept="5" trace="isShowAsIntention#()Z" />
-      <node id="7416165818498990440" at="14,73,34,7" concept="0" />
-      <node id="7416165818499013833" at="14,73,34,7" concept="2" />
-      <node id="7416165818498990440" at="13,0,36,0" concept="1" trace="ReplacePlaceholderMethodDeclaration_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <scope id="7416165818499013833" at="16,31,17,104" />
-      <scope id="7416165818499013833" at="19,41,20,104" />
-      <scope id="7416165818499013833" at="22,59,23,83" />
-      <scope id="7416165818499013840" at="25,59,26,216" />
-      <scope id="7416165818499013835" at="28,52,29,202" />
-      <scope id="7416165818499013833" at="31,42,32,21" />
-      <scope id="7416165818499013833" at="16,0,19,0" />
-      <scope id="7416165818499013833" at="19,0,22,0" />
-      <scope id="7416165818499013833" at="22,0,25,0" />
-      <scope id="7416165818499013833" at="25,0,28,0">
-        <var name="node" id="7416165818499013833" />
-      </scope>
-      <scope id="7416165818499013833" at="28,0,31,0">
-        <var name="node" id="7416165818499013833" />
-      </scope>
-      <scope id="7416165818499013833" at="31,0,34,0" />
-      <scope id="7416165818499013833" at="14,73,34,7" />
-      <scope id="7416165818498990440" at="13,98,34,7" />
-      <scope id="7416165818498990440" at="13,0,36,0">
-        <var name="operationContext" id="7416165818498990440" />
-      </scope>
-      <unit id="7416165818499013833" at="15,28,34,5" name="jetbrains.mps.baseLanguage.scripts.ReplacePlaceholderMethodDeclaration_MigrationScript$1" />
-      <unit id="7416165818498990440" at="12,0,37,0" name="jetbrains.mps.baseLanguage.scripts.ReplacePlaceholderMethodDeclaration_MigrationScript" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/818296778609449086">
     <file name="UpdateTernaryOperatorExpressionParens_MigrationScript.java">
       <node id="818296778609449086" at="15,100,16,76" concept="10" />

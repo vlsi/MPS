@@ -3323,17 +3323,6 @@
       <ref role="20lvS9" node="gFTlX_I" resolve="Visibility" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4fVo5eW6vfm">
-    <property role="TrG5h" value="PlaceholderMethodDeclaration" />
-    <property role="3GE5qa" value="classifiers.members" />
-    <property role="34LRSv" value="empty line" />
-    <property role="R4oN_" value="Use PlaceholderMember instead" />
-    <ref role="1TJDcQ" node="fzclF8t" resolve="InstanceMethodDeclaration" />
-    <node concept="PrWs8" id="3QVLcMuKuFf" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="asaX9" id="6rFwSjRbHpF" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="5vlcUuJ5uOX">
     <property role="TrG5h" value="TextCommentPart" />
     <property role="2_RsDV" value="none" />

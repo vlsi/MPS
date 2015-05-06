@@ -5608,21 +5608,6 @@
               </node>
             </node>
             <node concept="3clFbS" id="2Jvt1sWfuPM" role="2LFqv$">
-              <node concept="3clFbJ" id="2Jvt1sWfuPN" role="3cqZAp">
-                <node concept="2OqwBi" id="5xPXeFAaF76" role="3clFbw">
-                  <node concept="37vLTw" id="3GM_nagTtu$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2Jvt1sWfuPK" resolve="currMethod" />
-                  </node>
-                  <node concept="1mIQ4w" id="5xPXeFAaF7a" role="2OqNvi">
-                    <node concept="chp4Y" id="5xPXeFAaF7c" role="cj9EA">
-                      <ref role="cht4Q" to="tpee:4fVo5eW6vfm" resolve="PlaceholderMethodDeclaration" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbS" id="2Jvt1sWfuPR" role="3clFbx">
-                  <node concept="3N13vt" id="2Jvt1sWfuPS" role="3cqZAp" />
-                </node>
-              </node>
               <node concept="3cpWs8" id="2Jvt1sWfuPT" role="3cqZAp">
                 <node concept="3cpWsn" id="2Jvt1sWfuPU" role="3cpWs9">
                   <property role="TrG5h" value="name" />

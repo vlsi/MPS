@@ -126,7 +126,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.behavior.BaseVariableReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,426,0" name="jetbrains.mps.baseLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,424,0" name="jetbrains.mps.baseLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryBitwiseOperation_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.behavior.BinaryBitwiseOperation_BehaviorDescriptor" />
@@ -616,9 +616,6 @@
     </file>
     <file name="PlaceholderMember_BehaviorDescriptor.java">
       <unit at="11,0,43,0" name="jetbrains.mps.baseLanguage.behavior.PlaceholderMember_BehaviorDescriptor" />
-    </file>
-    <file name="PlaceholderMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.PlaceholderMethodDeclaration_BehaviorDescriptor" />
     </file>
     <file name="PlusAssignmentExpression_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.behavior.PlusAssignmentExpression_BehaviorDescriptor" />
