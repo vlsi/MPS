@@ -695,11 +695,7 @@ public class QueriesGenerated {
                     ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
                   }
                 } else if (SNodeOperations.isInstanceOf((item), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-                  methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return !(SNodeOperations.isInstanceOf(it));
-                    }
-                  }).toListSequence();
+                  methodsToImplement = ListSequence.fromList(methodsToImplement).toListSequence();
                 }
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
