@@ -61,6 +61,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -70,13 +71,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+//todo: all methods should accept Processor as a parameter, not a Consumer
 public class ValidationUtil {
-  public static void validateModelContent(@NotNull Collection<SNode> rootsToCheck, @NotNull Consumer<ValidationProblem> consumer) {
+  public static void validateModelContent(@NotNull Collection<SNode> rootsToCheck, @NotNull Processor<ValidationProblem> processor) {
     for (SNode root : rootsToCheck) {
       for (SNode node : SNodeUtil.getDescendants(root)) {
         SConcept concept = node.getConcept();
         if (!concept.isValid()) {
-          consumer.consume(new ConceptMissingError(node, concept));
+          if (!processor.process(new ConceptMissingError(node, concept))) return;
           continue;
         }
 
@@ -84,21 +86,21 @@ public class ValidationUtil {
         List<SProperty> props = IterableUtil.asList(concept.getProperties());
         for (SProperty p : node.getProperties()) {
           if (props.contains(p)) continue;
-          consumer.consume(new ConceptFeatureMissingError(node, p, "property"));
+          if (!processor.process(new ConceptFeatureMissingError(node, p, "property"))) return;
         }
 
         List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
         for (SNode n : node.getChildren()) {
           SContainmentLink l = n.getContainmentLink();
           if (links.contains(l)) continue;
-          consumer.consume(new ConceptFeatureMissingError(node, l, "link"));
+          if (!processor.process(new ConceptFeatureMissingError(node, l, "link"))) return;
         }
 
         List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
         for (SReference r : node.getReferences()) {
           SReferenceLink l = r.getLink();
           if (refs.contains(l)) continue;
-          consumer.consume(new ConceptFeatureMissingError(node, l, "reference"));
+          if (!processor.process(new ConceptFeatureMissingError(node, l, "reference"))) return;
         }
       }
     }
