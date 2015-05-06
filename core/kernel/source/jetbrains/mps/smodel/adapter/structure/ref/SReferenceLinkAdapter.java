@@ -38,6 +38,18 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     myName = name;
   }
 
+  @NotNull
+  @Override
+  public String getPresentableKind() {
+    return "reference";
+  }
+
+  @NotNull
+  @Override
+  public String getPresentableName() {
+    return getRoleName();
+  }
+
   @Nullable
   public abstract ReferenceDescriptor getReferenceDescriptor();
 

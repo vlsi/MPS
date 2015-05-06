@@ -34,6 +34,8 @@ public interface SProperty extends SConceptFeature {
    * Returns a name of this property
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
    */
+  @Deprecated //use SConceptFeature.getPresentableName
+  //ToRemove after 3.3
   String getName();
 
   /**

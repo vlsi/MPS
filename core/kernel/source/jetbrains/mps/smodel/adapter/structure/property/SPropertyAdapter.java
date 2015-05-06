@@ -44,6 +44,18 @@ public abstract class SPropertyAdapter implements SProperty {
   protected abstract SNode findInConcept(SNode cnode);
 
   @NotNull
+  @Override
+  public String getPresentableKind() {
+    return "property";
+  }
+
+  @NotNull
+  @Override
+  public String getPresentableName() {
+    return getName();
+  }
+
+  @NotNull
   public abstract SPropertyId getId();
 
   @Override
