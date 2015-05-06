@@ -19,20 +19,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class LanguageMissingError extends ValidationProblem {
-  private SNode myNode;
+public class LanguageMissingError extends NodeValidationProblem {
   private SLanguage myLanguage;
   private boolean myCompletelyAbsent;
 
   public LanguageMissingError(SNode node, SLanguage language, boolean completelyAbsent) {
-    super(Severity.ERROR, completelyAbsent ? "Language not in repository" : "Language not loaded");
-    myNode = node;
+    super(Severity.ERROR, node, completelyAbsent ? "Language not in repository" : "Language not loaded");
     myLanguage = language;
     myCompletelyAbsent = completelyAbsent;
-  }
-
-  public SNode getNode() {
-    return myNode;
   }
 
   public SLanguage getLanguage() {

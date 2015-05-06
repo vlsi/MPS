@@ -18,18 +18,12 @@ package jetbrains.mps.project.validation;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptMissingError extends ValidationProblem {
-  private SNode myNode;
+public class ConceptMissingError extends NodeValidationProblem {
   private SConcept myConcept;
 
   public ConceptMissingError(SNode node, SConcept concept) {
-    super(Severity.ERROR, "Missing concept");
-    myNode = node;
+    super(Severity.ERROR, node,"Missing concept");
     myConcept = concept;
-  }
-
-  public SNode getNode() {
-    return myNode;
   }
 
   public SConcept getConcept() {
