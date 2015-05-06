@@ -24,15 +24,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.project.validation.ValidationProblem;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.project.validation.MessageCollectConsumer;
 
 public class CheckingTestsUtil {
@@ -200,31 +199,9 @@ public class CheckingTestsUtil {
     return errors;
   }
   private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
-    for (final SNode node : SNodeUtil.getDescendants(model)) {
-      final SConcept concept = node.getConcept();
-      if (concept == null) {
-        result.add("unknown concept of node: " + SNodeOperations.getDebugText(node));
-        continue;
-      }
-      for (String name : node.getPropertyNames()) {
-        if (concept.getProperty(name) == null) {
-          result.add("unknown property: `" + name + "' in node " + SNodeOperations.getDebugText(node));
-        }
-      }
-      for (SReference ref : node.getReferences()) {
-        SAbstractLink link = concept.getLink(ref.getRole());
-        if (link == null || !(link.isReference())) {
-          result.add("unknown link role: `" + ref.getRole() + "' in node " + SNodeOperations.getDebugText(node));
-        }
-      }
-      for (SNode child : node.getChildren()) {
-        String role = child.getRoleInParent();
-        SAbstractLink link = concept.getLink(role);
-        if (link == null || link.isReference()) {
-          result.add("unknown child role: `" + role + "' in node " + SNodeOperations.getDebugText(node));
-        }
-      }
-    }
+    MessageCollectProcessor collector = new MessageCollectProcessor();
+    ValidationUtil.validateModelContent(model, collector);
+    result.addAll(collector.getErrors());
   }
   private static String checkModel(final SModel sm) {
     final StringBuilder errorMessages = new StringBuilder();
