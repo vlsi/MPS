@@ -42,11 +42,19 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -56,12 +64,46 @@ import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class ValidationUtil {
+  public static void validateModelContent(@NotNull Collection<SNode> rootsToCheck, @NotNull Consumer<ValidationProblem> consumer) {
+    for (SNode root : rootsToCheck) {
+      for (SNode node : SNodeUtil.getDescendants(root)) {
+        SConcept concept = node.getConcept();
+        if (!concept.isValid()) {
+          consumer.consume(new ConceptMissingError(node, concept));
+          continue;
+        }
+
+        // in case of props, refs, links, list should be better than set
+        List<SProperty> props = IterableUtil.asList(concept.getProperties());
+        for (SProperty p : node.getProperties()) {
+          if (props.contains(p)) continue;
+          consumer.consume(new ConceptFeatureMissingError(node, p, "property"));
+        }
+
+        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
+        for (SNode n : node.getChildren()) {
+          SContainmentLink l = n.getContainmentLink();
+          if (links.contains(l)) continue;
+          consumer.consume(new ConceptFeatureMissingError(node, l, "link"));
+        }
+
+        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
+        for (SReference r : node.getReferences()) {
+          SReferenceLink l = r.getLink();
+          if (refs.contains(l)) continue;
+          consumer.consume(new ConceptFeatureMissingError(node, l, "reference"));
+        }
+      }
+    }
+  }
+
   public static void validateModel(@NotNull final SModel model, @NotNull Consumer<ValidationProblem> consumer) {
     final SRepository repository = model.getRepository();
     if (repository != null) {
@@ -361,7 +403,7 @@ public class ValidationUtil {
     // todo: =(
     if ((module instanceof Generator)) return;
     for (SDependency dependency : module.getDeclaredDependencies()) {
-      if (!(dependency.getTarget() instanceof Generator))continue;
+      if (!(dependency.getTarget() instanceof Generator)) continue;
       consumer.consume(new ValidationProblem(Severity.ERROR, "Contains dependency on generator: " + dependency.getTargetModule().getModuleName()));
     }
   }

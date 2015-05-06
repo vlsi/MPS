@@ -15,35 +15,34 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class ImportSelfWarning extends ValidationProblem {
-  private final SModel myModel;
-  private final SModelReference myReference;
+public class ConceptMissingError extends ValidationProblem {
+  private SNode myNode;
+  private SConcept myConcept;
 
-  public ImportSelfWarning(SModel model, SModelReference reference) {
-    super(Severity.WARNING, "Model should not import itself");
-    myModel = model;
-    myReference = reference;
+  public ConceptMissingError(SNode node, SConcept concept) {
+    super(Severity.ERROR, "Missing concept");
+    myNode = node;
+    myConcept = concept;
   }
 
-  public SModel getModel() {
-    return myModel;
+  public SNode getNode() {
+    return myNode;
   }
 
-  public SModelReference getReference() {
-    return myReference;
+  public SConcept getConcept() {
+    return myConcept;
   }
 
   @Override
   public boolean canFix() {
-    return true;
+    return false;
   }
 
   @Override
   public void fix() {
-    ((SModelInternal) myModel).deleteModelImport(myReference);
+
   }
 }

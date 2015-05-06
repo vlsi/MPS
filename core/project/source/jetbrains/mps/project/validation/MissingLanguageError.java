@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-class MissingLanguageError extends ValidationProblem {
+public class MissingLanguageError extends ValidationProblem {
   private final SModel myModel;
   private final SModuleReference myLang;
 
@@ -30,6 +30,14 @@ class MissingLanguageError extends ValidationProblem {
     super(Severity.ERROR, "Can't find language: " + lang.getModuleName());
     myModel = model;
     myLang = lang;
+  }
+
+  public SModel getModel() {
+    return myModel;
+  }
+
+  public SModuleReference getLang() {
+    return myLang;
   }
 
   @Override
