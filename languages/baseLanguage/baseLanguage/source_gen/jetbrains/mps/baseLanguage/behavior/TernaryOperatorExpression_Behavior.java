@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TernaryOperatorExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -22,14 +20,5 @@ public class TernaryOperatorExpression_Behavior {
   }
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse"));
-  }
-  public static boolean virtual_keepsNullState_3906759656526126506(SNode thisNode, @NotNull SNode descendant) {
-    if (SNodeOperations.getParent(descendant) != thisNode) {
-      return false;
-    }
-    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")) == descendant) {
-      return false;
-    }
-    return true;
   }
 }

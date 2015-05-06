@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Expression_Behavior {
@@ -33,9 +32,6 @@ public class Expression_Behavior {
       return true;
     }
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode)), "virtual_legalAsStatement_1262430001741498032", new Object[]{});
-  }
-  public static boolean virtual_keepsNullState_3906759656526126506(SNode thisNode, @NotNull SNode descendant) {
-    return false;
   }
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return false;

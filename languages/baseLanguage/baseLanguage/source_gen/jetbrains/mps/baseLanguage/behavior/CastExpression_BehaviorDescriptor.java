@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
 
 public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, IBinaryLike_BehaviorDescriptor {
   public CastExpression_BehaviorDescriptor() {
@@ -17,9 +16,6 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
   }
   public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return CastExpression_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
-  }
-  public boolean virtual_keepsNullState_3906759656526126506(SNode thisNode, @NotNull SNode descendant) {
-    return CastExpression_Behavior.virtual_keepsNullState_3906759656526126506(thisNode, descendant);
   }
   public void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
     IBinaryLike_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);

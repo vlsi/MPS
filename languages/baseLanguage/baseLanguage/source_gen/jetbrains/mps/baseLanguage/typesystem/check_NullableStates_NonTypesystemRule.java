@@ -18,7 +18,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.dataFlow.NullableUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -27,6 +26,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -52,18 +52,12 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       NullableState varState = result.get(instruction).get(variable);
       SNode parent = SNodeOperations.getParent(source);
 
-      SNode nullParent = parent;
-      SNode nullSource = source;
-      while (SNodeOperations.isInstanceOf(nullParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(nullParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_keepsNullState_3906759656526126506", new Object[]{nullSource})) {
-        nullSource = nullParent;
-        nullParent = SNodeOperations.getParent(nullParent);
-      }
       Tuples._3<Boolean, String, SNode> checkingResult;
       boolean shouldWarn;
       String warning;
       SNode nodeToWarn;
 
-      checkingResult = NullableUtil.isNullableDotExpression(nullParent, nullSource, varState);
+      checkingResult = NullableUtil.isNullableDotExpression(parent, source, varState);
       shouldWarn = (boolean) checkingResult._0();
       if (shouldWarn) {
         warning = checkingResult._1();
@@ -75,7 +69,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         continue;
       }
 
-      checkingResult = NullableUtil.isNullableMethodCall(nullParent, nullSource, varState);
+      checkingResult = NullableUtil.isNullableMethodCall(parent, source, varState);
       shouldWarn = (boolean) checkingResult._0();
       if (shouldWarn) {
         warning = checkingResult._1();

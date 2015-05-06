@@ -6,7 +6,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class Expression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Expression_BehaviorDescriptor() {
@@ -31,9 +30,6 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
   }
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return Expression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-  public boolean virtual_keepsNullState_3906759656526126506(SNode thisNode, @NotNull SNode descendant) {
-    return Expression_Behavior.virtual_keepsNullState_3906759656526126506(thisNode, descendant);
   }
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return Expression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
