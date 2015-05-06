@@ -76,7 +76,7 @@ import java.util.Set;
 
 //todo: all methods should accept Processor as a parameter, not a Consumer
 public class ValidationUtil {
-  //this processes all nodes and shows the most "common" problem for each node. E.g. if the lansguage of the node is missing,
+  //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
   public static void validateModelContent(@NotNull SModel model, @NotNull Processor<ValidationProblem> processor) {
     for (SNode node : SNodeUtil.getDescendants(model)) {
