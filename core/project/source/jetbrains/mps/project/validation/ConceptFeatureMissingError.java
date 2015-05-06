@@ -20,20 +20,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptFeatureMissingError extends NodeValidationProblem {
   private final SConceptFeature myFeature;
-  private final String myKind;
 
-  public ConceptFeatureMissingError(SNode node, SConceptFeature feature, String kind) {
-    super(Severity.ERROR, node, "Missing concept " + kind);
+  public ConceptFeatureMissingError(SNode node, SConceptFeature feature) {
+    super(Severity.ERROR, node, "Missing concept " + feature.getPresentableKind() + ": " + feature.getPresentableName());
     myFeature = feature;
-    myKind = kind;
   }
 
   public SConceptFeature getFeature() {
     return myFeature;
-  }
-
-  public String getKind() {
-    return myKind;
   }
 
   @Override

@@ -97,21 +97,21 @@ public class ValidationUtil {
       List<SProperty> props = IterableUtil.asList(concept.getProperties());
       for (SProperty p : node.getProperties()) {
         if (props.contains(p)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, p, "property"))) return;
+        if (!processor.process(new ConceptFeatureMissingError(node, p))) return;
       }
 
       List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
       for (SNode n : node.getChildren()) {
         SContainmentLink l = n.getContainmentLink();
         if (links.contains(l)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, l, "link"))) return;
+        if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
       }
 
       List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
       for (SReference r : node.getReferences()) {
         SReferenceLink l = r.getLink();
         if (refs.contains(l)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, l, "reference"))) return;
+        if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
       }
     }
   }
