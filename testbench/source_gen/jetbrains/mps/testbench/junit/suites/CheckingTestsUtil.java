@@ -91,7 +91,7 @@ public class CheckingTestsUtil {
   }
   public static List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
-    return checkModels(models);
+    return checkReferences(models);
   }
   public static List<String> checkStructure(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
@@ -167,7 +167,7 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-  private static List<String> checkModels(final Iterable<SModel> models) {
+  private static List<String> checkReferences(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

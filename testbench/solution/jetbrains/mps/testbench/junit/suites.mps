@@ -3333,7 +3333,7 @@
         </node>
         <node concept="3cpWs6" id="7X3$Ctw4p7U" role="3cqZAp">
           <node concept="1rXfSq" id="7X3$Ctw4p7V" role="3cqZAk">
-            <ref role="37wK5l" node="7X3$Ctw4pcs" resolve="checkModels" />
+            <ref role="37wK5l" node="7X3$Ctw4pcs" resolve="checkReferences" />
             <node concept="37vLTw" id="7X3$Ctw4p7W" role="37wK5m">
               <ref role="3cqZAo" node="7X3$Ctw4p7J" resolve="models" />
             </node>
@@ -4119,7 +4119,7 @@
       </node>
     </node>
     <node concept="2YIFZL" id="7X3$Ctw4pcs" role="jymVt">
-      <property role="TrG5h" value="checkModels" />
+      <property role="TrG5h" value="checkReferences" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="37vLTG" id="7X3$Ctw4pct" role="3clF46">
