@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,14 +56,15 @@ public class ErrorChecker extends TreeUpdateVisitor {
 
         final List<String> errors = new ArrayList<String>();
         final List<String> warnings = new ArrayList<String>();
-        ValidationUtil.validateModel(modelDescriptor, new Consumer<ValidationProblem>() {
+        ValidationUtil.validateModel(modelDescriptor, new Processor<ValidationProblem>() {
           @Override
-          public void consume(ValidationProblem problem) {
+          public boolean process(ValidationProblem problem) {
             if (problem.getSeverity() == Severity.ERROR) {
               errors.add(problem.getMessage());
             } else {
               warnings.add(problem.getMessage());
             }
+            return true;
           }
         });
         schedule(node, new ErrorReport(node, errors, warnings));

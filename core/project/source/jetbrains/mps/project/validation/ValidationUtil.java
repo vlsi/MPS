@@ -116,15 +116,12 @@ public class ValidationUtil {
     }
   }
 
-  public static void validateModel(@NotNull final SModel model, @NotNull Consumer<ValidationProblem> consumer) {
+  public static void validateModel(@NotNull final SModel model, @NotNull Processor<ValidationProblem> processor) {
     final SRepository repository = model.getRepository();
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
     }
-
-    if (model instanceof TransientSModel) {
-      return;
-    }
+    if (model instanceof TransientSModel) return;
 
     //todo replace those two by a check for accessibility in repo
     // XXX should not they go after InvalidSModel check, so that we could get problems of invalid model before we try to find out whether the model is registered?
@@ -134,13 +131,13 @@ public class ValidationUtil {
     if (model instanceof InvalidSModel) {
       Iterable<SModel.Problem> problems = model.getProblems();
       if (!problems.iterator().hasNext()) {
-        consumer.consume(new ValidationProblem(Severity.ERROR, "Couldn't read model"));
+        if (!processor.process(new ValidationProblem(Severity.ERROR, "Couldn't read model"))) return;
         return;
       }
 
       for (SModel.Problem m : problems) {
         if (!m.isError()) continue;
-        consumer.consume(new ValidationProblem(Severity.ERROR, m.getText()));
+        if (!processor.process(new ValidationProblem(Severity.ERROR, m.getText()))) return;
       }
       return;
     }
@@ -150,13 +147,13 @@ public class ValidationUtil {
             (model instanceof PersistenceVersionAware) &&
             ((PersistenceVersionAware) model).getPersistenceVersion() < ModelPersistence.LAST_VERSION
         ) {
-      consumer.consume(
+      if (!processor.process(
           new ValidationProblem(Severity.WARNING, "Outdated model persistence is used: " + ((PersistenceVersionAware) model).getPersistenceVersion() +
-              ". Please run Tools->Migration 3.2->Migrate from Names to Ids"));
+              ". Please upgrade model persistence"))) return;
     }
 
     if (repository == null) {
-      consumer.consume(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"));
+      if (!processor.process(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"))) return;
       return;
     }
 
@@ -165,10 +162,10 @@ public class ValidationUtil {
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {
         String msg = "Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName());
-        consumer.consume(new MissingModelError(model, msg, reference));
+        if (!processor.process(new MissingModelError(model, msg, reference))) return;
       }
       if (reference.equals(modelToValidateRef)) {
-        consumer.consume(new ImportSelfWarning(model, reference));
+        if (!processor.process(new ImportSelfWarning(model, reference))) return;
       }
     }
 
@@ -177,14 +174,13 @@ public class ValidationUtil {
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
     for (final SModuleReference lang : langsToCheck) {
       if (repository.getModule(lang.getModuleId()) == null) {
-        consumer.consume(new MissingImportedLanguageError(model, lang));
+        if (!processor.process(new MissingImportedLanguageError(model, lang))) return;
       }
     }
 
     for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
       if (repository.getModule(devKit.getModuleId()) == null) {
-        consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()) {
-        });
+        if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) return;
       }
     }
   }

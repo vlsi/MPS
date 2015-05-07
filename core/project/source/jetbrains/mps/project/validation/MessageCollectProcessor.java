@@ -30,7 +30,7 @@ public class MessageCollectProcessor implements Processor<ValidationProblem> {
   public boolean process(ValidationProblem problem) {
     if (problem.getSeverity()== Severity.ERROR){
       myErrors.add(problem.getMessage());
-    } else{
+    } else {
       myWarnings.add(problem.getMessage());
     }
     return true;

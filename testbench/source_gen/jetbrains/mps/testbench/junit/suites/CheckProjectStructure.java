@@ -67,7 +67,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectConsumer collector = new MessageCollectConsumer();
+          MessageCollectProcessor collector = new MessageCollectProcessor();
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
             continue;
