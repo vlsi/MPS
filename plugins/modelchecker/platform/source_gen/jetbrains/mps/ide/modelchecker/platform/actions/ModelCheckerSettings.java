@@ -43,6 +43,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   @Override
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
+    if (!(myState.myCheckTypesystem)) {
+      myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.CONSTRAINTS;
+      if (!(myState.myCheckConstraints)) {
+        myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.STRUCTURE;
+      }
+    }
+    myState.myCheckTypesystem = true;
+    myState.myCheckConstraints = true;
   }
   @Nullable
   public Icon getIcon() {
@@ -53,7 +61,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
   public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
     List<SpecificChecker> checkers = ListSequence.fromList(new ArrayList<SpecificChecker>());
-
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
         ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker()));

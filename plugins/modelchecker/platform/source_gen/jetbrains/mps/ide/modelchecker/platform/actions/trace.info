@@ -60,124 +60,131 @@
       <node id="3719390199793464933" at="30,36,31,36" concept="10" />
       <node id="3719390199793464950" at="40,50,41,19" concept="10" />
       <node id="3719390199793464960" at="44,61,45,20" concept="4" />
-      <node id="3719390199793464978" at="48,25,49,16" concept="10" />
-      <node id="3719390199793465294" at="51,52,52,88" concept="10" />
-      <node id="3719390199793465067" at="54,81,55,93" concept="9" />
-      <node id="3719390199793465074" at="55,93,56,0" concept="12" />
-      <node id="2224120312792493174" at="58,22,59,116" concept="4" />
-      <node id="2224120312792498760" at="60,23,61,114" concept="4" />
-      <node id="2224120312792314054" at="62,21,63,75" concept="4" />
-      <node id="3719390199793465088" at="64,14,65,81" concept="4" />
-      <node id="3119624751583074001" at="65,81,66,89" concept="4" />
-      <node id="3719390199793465103" at="66,89,67,96" concept="4" />
-      <node id="2224120312792288632" at="68,5,69,0" concept="12" />
-      <node id="2224120312792322654" at="70,28,71,82" concept="4" />
-      <node id="3719390199793465124" at="72,5,73,20" concept="10" />
-      <node id="3719390199793465235" at="76,64,77,35" concept="10" />
-      <node id="3719390199793465245" at="79,82,80,44" concept="4" />
-      <node id="2224120312792244024" at="82,36,83,35" concept="10" />
-      <node id="2224120312792244014" at="85,55,86,44" concept="4" />
-      <node id="2224120312792298488" at="88,33,89,32" concept="10" />
-      <node id="2224120312792298478" at="91,49,92,38" concept="4" />
-      <node id="3719390199793465257" at="94,40,95,39" concept="10" />
-      <node id="3719390199793465267" at="97,63,98,52" concept="4" />
-      <node id="2224120312792132781" at="115,0,116,0" concept="5" trace="myCheckingLevel" />
-      <node id="2224120312792297857" at="116,0,117,0" concept="5" trace="myCheckSpecific" />
-      <node id="3719390199793465318" at="117,0,118,0" concept="5" trace="myCheckBeforeCommit" />
-      <node id="3719390199793465322" at="118,0,119,0" concept="5" trace="myCheckStubs" />
-      <node id="4306698225313692340" at="129,0,130,0" concept="5" trace="myPresentation" />
-      <node id="4306698225313692344" at="130,40,131,36" concept="4" />
-      <node id="4306698225313693542" at="133,37,134,28" concept="10" />
+      <node id="5123098556656008817" at="46,39,47,79" concept="4" />
+      <node id="5123098556655982984" at="48,42,49,79" concept="4" />
+      <node id="5123098556655993555" at="51,5,52,37" concept="4" />
+      <node id="5123098556655996188" at="52,37,53,38" concept="4" />
+      <node id="3719390199793464978" at="56,25,57,16" concept="10" />
+      <node id="3719390199793465294" at="59,52,60,88" concept="10" />
+      <node id="3719390199793465067" at="62,81,63,93" concept="9" />
+      <node id="2224120312792493174" at="65,22,66,116" concept="4" />
+      <node id="2224120312792498760" at="67,23,68,114" concept="4" />
+      <node id="2224120312792314054" at="69,21,70,75" concept="4" />
+      <node id="3719390199793465088" at="71,14,72,81" concept="4" />
+      <node id="3119624751583074001" at="72,81,73,89" concept="4" />
+      <node id="3719390199793465103" at="73,89,74,96" concept="4" />
+      <node id="2224120312792288632" at="75,5,76,0" concept="12" />
+      <node id="2224120312792322654" at="77,28,78,82" concept="4" />
+      <node id="3719390199793465124" at="79,5,80,20" concept="10" />
+      <node id="3719390199793465235" at="83,64,84,35" concept="10" />
+      <node id="3719390199793465245" at="86,82,87,44" concept="4" />
+      <node id="2224120312792244024" at="89,36,90,35" concept="10" />
+      <node id="2224120312792244014" at="92,55,93,44" concept="4" />
+      <node id="2224120312792298488" at="95,33,96,32" concept="10" />
+      <node id="2224120312792298478" at="98,49,99,38" concept="4" />
+      <node id="3719390199793465257" at="101,40,102,39" concept="10" />
+      <node id="3719390199793465267" at="104,63,105,52" concept="4" />
+      <node id="2224120312792132781" at="122,0,123,0" concept="5" trace="myCheckingLevel" />
+      <node id="2224120312792297857" at="123,0,124,0" concept="5" trace="myCheckSpecific" />
+      <node id="3719390199793465318" at="124,0,125,0" concept="5" trace="myCheckBeforeCommit" />
+      <node id="3719390199793465322" at="125,0,126,0" concept="5" trace="myCheckStubs" />
+      <node id="4306698225313692340" at="136,0,137,0" concept="5" trace="myPresentation" />
+      <node id="4306698225313692344" at="137,40,138,36" concept="4" />
+      <node id="4306698225313693542" at="140,37,141,28" concept="10" />
       <node id="3719390199793464925" at="25,0,27,0" concept="2" trace="ModelCheckerSettings#()V" />
-      <node id="3719390199793465306" at="108,0,110,0" concept="5" trace="myCheckConstraints" />
-      <node id="3719390199793465310" at="110,0,112,0" concept="5" trace="myCheckModelProperties" />
-      <node id="3719390199793465314" at="112,0,114,0" concept="5" trace="myCheckTypesystem" />
-      <node id="3719390199793465326" at="119,0,121,0" concept="2" trace="MyState#()V" />
+      <node id="3719390199793465306" at="115,0,117,0" concept="5" trace="myCheckConstraints" />
+      <node id="3719390199793465310" at="117,0,119,0" concept="5" trace="myCheckModelProperties" />
+      <node id="3719390199793465314" at="119,0,121,0" concept="5" trace="myCheckTypesystem" />
+      <node id="3719390199793465326" at="126,0,128,0" concept="2" trace="MyState#()V" />
       <node id="3719390199793464938" at="33,0,36,0" concept="8" trace="initComponent#()V" />
       <node id="3719390199793464943" at="36,0,39,0" concept="8" trace="disposeComponent#()V" />
-      <node id="3719390199793465291" at="51,0,54,0" concept="14" trace="getInstance#()Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings;" />
-      <node id="2224120312792319607" at="69,0,72,5" concept="7" />
-      <node id="3719390199793465233" at="76,0,79,0" concept="8" trace="getCheckingLevel#()Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/CheckingLevel;" />
-      <node id="3719390199793465241" at="79,0,82,0" concept="8" trace="setCheckingLevel#(Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/CheckingLevel;)V" />
-      <node id="2224120312792244022" at="82,0,85,0" concept="8" trace="isCheckSpecific#()Z" />
-      <node id="2224120312792244010" at="85,0,88,0" concept="8" trace="setCheckSpecific#(Z)V" />
-      <node id="2224120312792298486" at="88,0,91,0" concept="8" trace="isCheckStubs#()Z" />
-      <node id="2224120312792298474" at="91,0,94,0" concept="8" trace="setCheckStubs#(Z)V" />
-      <node id="3719390199793465253" at="94,0,97,0" concept="8" trace="isCheckBeforeCommit#()Z" />
-      <node id="3719390199793465261" at="97,0,100,0" concept="8" trace="setCheckBeforeCommit#(Z)V" />
-      <node id="4306698225313691683" at="130,0,133,0" concept="2" trace="CheckingLevel#(Ljava/lang/String;)V" />
-      <node id="4306698225313693538" at="133,0,136,0" concept="8" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="5123098556656010100" at="47,79,50,7" concept="7" />
+      <node id="3719390199793465291" at="59,0,62,0" concept="14" trace="getInstance#()Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings;" />
+      <node id="2224120312792319607" at="76,0,79,5" concept="7" />
+      <node id="3719390199793465233" at="83,0,86,0" concept="8" trace="getCheckingLevel#()Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/CheckingLevel;" />
+      <node id="3719390199793465241" at="86,0,89,0" concept="8" trace="setCheckingLevel#(Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/CheckingLevel;)V" />
+      <node id="2224120312792244022" at="89,0,92,0" concept="8" trace="isCheckSpecific#()Z" />
+      <node id="2224120312792244010" at="92,0,95,0" concept="8" trace="setCheckSpecific#(Z)V" />
+      <node id="2224120312792298486" at="95,0,98,0" concept="8" trace="isCheckStubs#()Z" />
+      <node id="2224120312792298474" at="98,0,101,0" concept="8" trace="setCheckStubs#(Z)V" />
+      <node id="3719390199793465253" at="101,0,104,0" concept="8" trace="isCheckBeforeCommit#()Z" />
+      <node id="3719390199793465261" at="104,0,107,0" concept="8" trace="setCheckBeforeCommit#(Z)V" />
+      <node id="4306698225313691683" at="137,0,140,0" concept="2" trace="CheckingLevel#(Ljava/lang/String;)V" />
+      <node id="4306698225313693538" at="140,0,143,0" concept="8" trace="getPresentation#()Ljava/lang/String;" />
       <node id="3719390199793464948" at="39,0,43,0" concept="8" trace="getState#()Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/MyState;" />
-      <node id="3719390199793464955" at="43,0,47,0" concept="8" trace="loadState#(Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/MyState;)V" />
-      <node id="3719390199793464974" at="47,0,51,0" concept="8" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="3719390199793464974" at="55,0,59,0" concept="8" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="3719390199793464929" at="27,0,33,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="3719390199793465301" at="102,0,108,0" concept="5" trace="myCheckUnresolvedReferences" />
-      <node id="2224120312792308824" at="56,0,68,5" concept="16" />
-      <node id="3719390199793465065" at="54,0,75,0" concept="8" trace="getSpecificCheckers#(Ljetbrains/mps/project/Project;)Ljava/util/List;" />
+      <node id="5123098556656006104" at="45,20,51,5" concept="7" />
+      <node id="3719390199793465301" at="109,0,115,0" concept="5" trace="myCheckUnresolvedReferences" />
+      <node id="3719390199793464955" at="43,0,55,0" concept="8" trace="loadState#(Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerSettings/MyState;)V" />
+      <node id="2224120312792308824" at="63,93,75,5" concept="16" />
+      <node id="3719390199793465065" at="62,0,82,0" concept="8" trace="getSpecificCheckers#(Ljetbrains/mps/project/Project;)Ljava/util/List;" />
       <scope id="3719390199793464928" at="25,33,25,33" />
       <scope id="3719390199793464940" at="34,31,34,31" />
       <scope id="3719390199793464945" at="37,34,37,34" />
-      <scope id="3719390199793465327" at="119,22,119,22" />
+      <scope id="3719390199793465327" at="126,22,126,22" />
       <scope id="3719390199793464932" at="30,36,31,36" />
       <scope id="3719390199793464949" at="40,50,41,19" />
-      <scope id="3719390199793464959" at="44,61,45,20" />
-      <scope id="3719390199793464977" at="48,25,49,16" />
-      <scope id="3719390199793465293" at="51,52,52,88" />
-      <scope id="2224120312792310256" at="58,22,59,116" />
-      <scope id="2224120312792311081" at="60,23,61,114" />
-      <scope id="2224120312792311407" at="62,21,63,75" />
-      <scope id="2224120312792319609" at="70,28,71,82" />
-      <scope id="3719390199793465234" at="76,64,77,35" />
-      <scope id="3719390199793465244" at="79,82,80,44" />
-      <scope id="2224120312792244023" at="82,36,83,35" />
-      <scope id="2224120312792244013" at="85,55,86,44" />
-      <scope id="2224120312792298487" at="88,33,89,32" />
-      <scope id="2224120312792298477" at="91,49,92,38" />
-      <scope id="3719390199793465256" at="94,40,95,39" />
-      <scope id="3719390199793465266" at="97,63,98,52" />
-      <scope id="4306698225313691687" at="130,40,131,36" />
-      <scope id="4306698225313693541" at="133,37,134,28" />
+      <scope id="5123098556656010102" at="48,42,49,79" />
+      <scope id="3719390199793464977" at="56,25,57,16" />
+      <scope id="3719390199793465293" at="59,52,60,88" />
+      <scope id="2224120312792310256" at="65,22,66,116" />
+      <scope id="2224120312792311081" at="67,23,68,114" />
+      <scope id="2224120312792311407" at="69,21,70,75" />
+      <scope id="2224120312792319609" at="77,28,78,82" />
+      <scope id="3719390199793465234" at="83,64,84,35" />
+      <scope id="3719390199793465244" at="86,82,87,44" />
+      <scope id="2224120312792244023" at="89,36,90,35" />
+      <scope id="2224120312792244013" at="92,55,93,44" />
+      <scope id="2224120312792298487" at="95,33,96,32" />
+      <scope id="2224120312792298477" at="98,49,99,38" />
+      <scope id="3719390199793465256" at="101,40,102,39" />
+      <scope id="3719390199793465266" at="104,63,105,52" />
+      <scope id="4306698225313691687" at="137,40,138,36" />
+      <scope id="4306698225313693541" at="140,37,141,28" />
       <scope id="3719390199793464925" at="25,0,27,0" />
-      <scope id="3719390199793465326" at="119,0,121,0" />
+      <scope id="3719390199793465326" at="126,0,128,0" />
       <scope id="3719390199793464938" at="33,0,36,0" />
       <scope id="3719390199793464943" at="36,0,39,0" />
-      <scope id="3719390199793465291" at="51,0,54,0" />
-      <scope id="2224120312792308826" at="64,14,67,96" />
-      <scope id="3719390199793465233" at="76,0,79,0" />
-      <scope id="3719390199793465241" at="79,0,82,0">
+      <scope id="3719390199793465291" at="59,0,62,0" />
+      <scope id="2224120312792308826" at="71,14,74,96" />
+      <scope id="3719390199793465233" at="83,0,86,0" />
+      <scope id="3719390199793465241" at="86,0,89,0">
         <var name="checkingLevel" id="3719390199793465242" />
       </scope>
-      <scope id="2224120312792244022" at="82,0,85,0" />
-      <scope id="2224120312792244010" at="85,0,88,0">
+      <scope id="2224120312792244022" at="89,0,92,0" />
+      <scope id="2224120312792244010" at="92,0,95,0">
         <var name="checkSpecific" id="2224120312792244011" />
       </scope>
-      <scope id="2224120312792298486" at="88,0,91,0" />
-      <scope id="2224120312792298474" at="91,0,94,0">
+      <scope id="2224120312792298486" at="95,0,98,0" />
+      <scope id="2224120312792298474" at="98,0,101,0">
         <var name="checkStubs" id="2224120312792298475" />
       </scope>
-      <scope id="3719390199793465253" at="94,0,97,0" />
-      <scope id="3719390199793465261" at="97,0,100,0">
+      <scope id="3719390199793465253" at="101,0,104,0" />
+      <scope id="3719390199793465261" at="104,0,107,0">
         <var name="checkBeforeCommit" id="3719390199793465264" />
       </scope>
-      <scope id="4306698225313691683" at="130,0,133,0">
+      <scope id="4306698225313691683" at="137,0,140,0">
         <var name="presentation" id="4306698225313692100" />
       </scope>
-      <scope id="4306698225313693538" at="133,0,136,0" />
+      <scope id="4306698225313693538" at="140,0,143,0" />
       <scope id="3719390199793464948" at="39,0,43,0" />
-      <scope id="3719390199793464955" at="43,0,47,0">
+      <scope id="5123098556656006106" at="46,39,50,7" />
+      <scope id="3719390199793464974" at="55,0,59,0" />
+      <scope id="3719390199793464929" at="27,0,33,0" />
+      <scope id="3719390199793464959" at="44,61,53,38" />
+      <scope id="3719390199793464955" at="43,0,55,0">
         <var name="state" id="3719390199793464956" />
       </scope>
-      <scope id="3719390199793464974" at="47,0,51,0" />
-      <scope id="3719390199793464929" at="27,0,33,0" />
-      <scope id="3719390199793465066" at="54,81,73,20">
+      <scope id="3719390199793465066" at="62,81,80,20">
         <var name="checkers" id="3719390199793465068" />
       </scope>
-      <scope id="3719390199793465065" at="54,0,75,0">
+      <scope id="3719390199793465065" at="62,0,82,0">
         <var name="mpsProject" id="2954859002378322347" />
       </scope>
-      <unit id="4306698225313688425" at="122,0,137,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings$CheckingLevel" />
-      <unit id="3719390199793465300" at="101,0,122,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings$MyState" />
-      <unit id="3719390199793464912" at="21,0,138,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings" />
+      <unit id="4306698225313688425" at="129,0,144,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings$CheckingLevel" />
+      <unit id="3719390199793465300" at="108,0,129,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings$MyState" />
+      <unit id="3719390199793464912" at="21,0,145,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings" />
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793465345">

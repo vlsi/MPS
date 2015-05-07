@@ -572,6 +572,96 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="4soTJTMN3fo" role="3cqZAp">
+          <node concept="3clFbS" id="4soTJTMN3fq" role="3clFbx">
+            <node concept="3clFbF" id="4soTJTMN3TL" role="3cqZAp">
+              <node concept="37vLTI" id="4soTJTMMYvp" role="3clFbG">
+                <node concept="Rm8GO" id="4soTJTMMYAz" role="37vLTx">
+                  <ref role="1Px2BO" node="3J4tNviCaHD" resolve="ModelCheckerSettings.CheckingLevel" />
+                  <ref role="Rm8GQ" node="3J4tNviCbeH" resolve="CONSTRAINTS" />
+                </node>
+                <node concept="2OqwBi" id="4soTJTMMYvr" role="37vLTJ">
+                  <node concept="37vLTw" id="4soTJTMMYvs" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+                  </node>
+                  <node concept="2OwXpG" id="4soTJTMMYvt" role="2OqNvi">
+                    <ref role="2Oxat5" node="1VtEqfXHaMH" resolve="myCheckingLevel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="4soTJTMN4dO" role="3cqZAp">
+              <node concept="3clFbS" id="4soTJTMN4dQ" role="3clFbx">
+                <node concept="3clFbF" id="4soTJTMMXA8" role="3cqZAp">
+                  <node concept="37vLTI" id="4soTJTMMY0o" role="3clFbG">
+                    <node concept="Rm8GO" id="4soTJTMN1KM" role="37vLTx">
+                      <ref role="Rm8GQ" node="3J4tNviCb7w" resolve="STRUCTURE" />
+                      <ref role="1Px2BO" node="3J4tNviCaHD" resolve="ModelCheckerSettings.CheckingLevel" />
+                    </node>
+                    <node concept="2OqwBi" id="4soTJTMMXAY" role="37vLTJ">
+                      <node concept="37vLTw" id="4soTJTMMXA6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+                      </node>
+                      <node concept="2OwXpG" id="4soTJTMMXHx" role="2OqNvi">
+                        <ref role="2Oxat5" node="1VtEqfXHaMH" resolve="myCheckingLevel" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="4soTJTMN1pF" role="3clFbw">
+                <node concept="2OqwBi" id="4soTJTMN1pG" role="3fr31v">
+                  <node concept="37vLTw" id="4soTJTMN1pH" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+                  </node>
+                  <node concept="2OwXpG" id="4soTJTMN1E$" role="2OqNvi">
+                    <ref role="2Oxat5" node="3etVqSRKzvq" resolve="myCheckConstraints" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="4soTJTMN2pI" role="3clFbw">
+            <node concept="2OqwBi" id="4soTJTMN2pJ" role="3fr31v">
+              <node concept="37vLTw" id="4soTJTMN2pK" role="2Oq$k0">
+                <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="4soTJTMN2pL" role="2OqNvi">
+                <ref role="2Oxat5" node="3etVqSRKzvy" resolve="myCheckTypesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4soTJTMN0bj" role="3cqZAp">
+          <node concept="37vLTI" id="4soTJTMN0K5" role="3clFbG">
+            <node concept="3clFbT" id="4soTJTMN0L6" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="2OqwBi" id="4soTJTMN0oD" role="37vLTJ">
+              <node concept="37vLTw" id="4soTJTMN0bh" role="2Oq$k0">
+                <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="4soTJTMN0yE" role="2OqNvi">
+                <ref role="2Oxat5" node="3etVqSRKzvy" resolve="myCheckTypesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4soTJTMN0Os" role="3cqZAp">
+          <node concept="37vLTI" id="4soTJTMN0Ot" role="3clFbG">
+            <node concept="3clFbT" id="4soTJTMN0Ou" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="2OqwBi" id="4soTJTMN0Ov" role="37vLTJ">
+              <node concept="37vLTw" id="4soTJTMN0Ow" role="2Oq$k0">
+                <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="4soTJTMN1b$" role="2OqNvi">
+                <ref role="2Oxat5" node="3etVqSRKzvq" resolve="myCheckConstraints" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="3etVqSRKzq4" role="1B3o_S" />
       <node concept="2AHcQZ" id="3etVqSRKzq5" role="2AJF6D">
@@ -636,7 +726,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="3etVqSRKzrM" role="3cqZAp" />
         <node concept="3KaCP$" id="1VtEqfXHPLo" role="3cqZAp">
           <node concept="3KbdKl" id="1VtEqfXHQ7I" role="3KbHQx">
             <node concept="Rm8GO" id="1VtEqfXHQgW" role="3Kbmr1">
