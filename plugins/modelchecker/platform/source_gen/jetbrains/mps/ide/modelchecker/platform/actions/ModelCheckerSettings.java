@@ -110,8 +110,24 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
   public static class MyState {
-    public boolean myCheckUnresolvedReferences = true;
-    public boolean myCheckConstraints = true;
+    public void setMyCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
+      myCheckUnresolvedReferences = checkUnresolvedReferences;
+    }
+
+    public void setMyCheckConstraints(boolean checkConstraints) {
+      myCheckConstraints = checkConstraints;
+    }
+
+    public boolean isCheckUnresolvedReferences() {
+      return myCheckUnresolvedReferences;
+    }
+
+    public boolean isCheckConstraints() {
+      return myCheckConstraints;
+    }
+
+    private boolean myCheckUnresolvedReferences = true;
+    private boolean myCheckConstraints = true;
     public boolean myCheckModelProperties = true;
     public boolean myCheckTypesystem = true;
     public boolean myCheckBeforeCommit = true;
