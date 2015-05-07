@@ -45,6 +45,7 @@ import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -232,8 +233,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   public boolean executeScript(ScriptApplied sa) {
     MigrationScript script = sa.getScript();
     AbstractModule module = ((AbstractModule) sa.getModule());
-    SLanguage language = script.getDescriptor().getLanguage();
-    Integer usedVersion = module.getModuleDescriptor().getLanguageVersions().get(language);
+    SLanguage fromLanguage = script.getDescriptor().getLanguage();
+    Integer usedVersion = module.getModuleDescriptor().getLanguageVersions().get(fromLanguage);
     usedVersion = Math.max(usedVersion, 0);
     assert usedVersion == script.getDescriptor().getFromVersion();
     try {
@@ -249,7 +250,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
 
     int toVersion = script.getDescriptor().getFromVersion() + 1;
-    module.getModuleDescriptor().getLanguageVersions().put(language, toVersion);
+    final SLanguage toLanguage = MetaAdapterFactory.getLanguage(fromLanguage, toVersion);
+    module.getModuleDescriptor().getLanguageVersions().put(fromLanguage, toVersion);
     module.setChanged();
 
     for (SModel model : ListSequence.fromList(module.getModels())) {
@@ -259,12 +261,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       if (!((model instanceof SModelInternal))) {
         continue;
       }
-      if (!(((SModelInternal) model).importedLanguageIds().contains(language))) {
+      if (!(((SModelInternal) model).importedLanguageIds().contains(fromLanguage))) {
         continue;
       }
 
-      ((SModelInternal) model).deleteLanguageId(language);
-      ((SModelInternal) model).addLanguageId(language, toVersion);
+      ((SModelInternal) model).deleteLanguageId(fromLanguage);
+      ((SModelInternal) model).addLanguage(toLanguage);
     }
 
     return true;
@@ -356,13 +358,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._int result = new Wrappers._int();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        Iterable<? extends SModule> projectModules = mpsProject.getModulesWithGenerators();
-        Iterable<Integer> scriptsByModule = Sequence.fromIterable(projectModules).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
+        Iterable<Integer> scriptsByModule = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
           public Integer select(AbstractModule module) {
             int scripts = 0;
-            for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+            for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
               int currentLangVersion = lang.getLanguageVersion();
-              int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+              int ver = module.getUsedLanguageVersion(lang);
 
               ver = Math.max(ver, 0);
               currentLangVersion = Math.max(currentLangVersion, 0);
@@ -391,8 +392,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public Boolean invoke() {
         Collection<ScriptApplied> scripts = CollectionSequence.fromCollection(new ArrayList<ScriptApplied>());
 
-        Iterable<? extends SModule> projectModules = mpsProject.getModulesWithGenerators();
-        return Sequence.fromIterable(projectModules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
+        return Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
           public boolean accept(final AbstractModule module) {
             return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
               public boolean accept(MigrationScriptReference it) {
