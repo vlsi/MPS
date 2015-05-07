@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -145,7 +146,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
               return it.invoke(editorContext, node, oldValue, newValue);
             }
           }))) {
-            editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
+            editorContext.getRepository().getModelAccess().executeCommand(new UndoRunnable.Base(null, "name_" + node.getNodeId().toString()) {
               public void run() {
                 SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
               }
@@ -154,7 +155,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setCellId("TransactionalProperty_ueqr71_d0a");
+      editorCell.setCellId("name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);

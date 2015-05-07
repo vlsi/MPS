@@ -49,8 +49,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
@@ -89,10 +91,12 @@ public abstract class EditorCell_Basic implements EditorCell {
   private boolean myErrorState;
   private boolean mySelected;
 
+  @NotNull
   private EditorContext myEditorContext;
 
   private EditorCell_Collection myParent = null;
   private SNode myNode;
+  private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
@@ -111,9 +115,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   private boolean myBig;
   private EditorCellContext myCellContext;
 
-  protected EditorCell_Basic(EditorContext editorContext, SNode node) {
+  protected EditorCell_Basic(@NotNull EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
     myNode = node;
+    myNodeId = node == null ? null : node.getNodeId();
   }
 
   @Override
@@ -221,8 +226,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myNode;
   }
 
-  public final void setSNode(SNode node) {
+  public final void setSNode(@NotNull SNode node) {
     myNode = node;
+    myNodeId = node.getNodeId();
+  }
+
+  @NotNull
+  protected SNodeId getSNodeId() {
+    return myNodeId;
   }
 
   @Override
@@ -327,7 +338,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public void setCellId(String cellId) {
+  public void setCellId(@NotNull String cellId) {
     assert myCellId == null;
     myCellId = cellId;
   }
@@ -350,7 +361,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void setRole(String role) {
     myRole = role;
   }
-
 
   @Override
   public void setSelected(boolean selected) {

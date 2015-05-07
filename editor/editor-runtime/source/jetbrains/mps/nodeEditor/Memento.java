@@ -167,8 +167,8 @@ class Memento {
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-          EqualUtil.equals(myFolded, m.myFolded) && Arrays.equals(myEnabledHints, m.myEnabledHints) &&
-          EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
+          EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myErrors, m.myErrors) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
+          Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
         return true;
       }
     }
@@ -380,6 +380,24 @@ class Memento {
         result.add(new ErrorMarker(errorElement));
       }
       return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      ErrorMarker that = (ErrorMarker) o;
+
+      if (myPropertyCell != that.myPropertyCell) return false;
+      if (!myCellInfo.equals(that.myCellInfo)) return false;
+      if (!myText.equals(that.myText)) return false;
+      return !(myModelText != null ? !myModelText.equals(that.myModelText) : that.myModelText != null);
+    }
+
+    @Override
+    public int hashCode() {
+      return myCellInfo.hashCode();
     }
   }
 }

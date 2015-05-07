@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -96,7 +97,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
               return it.invoke(editorContext, node, oldValue, newValue);
             }
           }))) {
-            editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
+            editorContext.getRepository().getModelAccess().executeCommand(new UndoRunnable.Base(null, "name_" + node.getNodeId().toString()) {
               public void run() {
                 SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
               }
@@ -105,7 +106,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setCellId("TransactionalProperty_7v1nzk_b0a");
+      editorCell.setCellId("name");
       editorCell.setDefaultText("<no name>");
       editorCell.setCommitInCommand(false);
     }
