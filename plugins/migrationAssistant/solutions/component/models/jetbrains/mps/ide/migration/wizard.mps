@@ -9,6 +9,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="bktd" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.wizard(MPS.IDEA/com.intellij.ide.wizard@java_stub)" />
@@ -90,6 +91,7 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
+        <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -106,6 +108,10 @@
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
@@ -295,6 +301,14 @@
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1149,6 +1163,26 @@
                         </node>
                       </node>
                       <node concept="2GUZhq" id="2htE_P_NHLz" role="3cqZAp">
+                        <node concept="TDmWw" id="4pYGyBVuTXl" role="TEXxN">
+                          <node concept="3clFbS" id="4pYGyBVuTXm" role="TDEfX">
+                            <node concept="34ab3g" id="4pYGyBVuU58" role="3cqZAp">
+                              <property role="35gtTG" value="error" />
+                              <property role="34fQS0" value="true" />
+                              <node concept="Xl_RD" id="4pYGyBVuU5a" role="34bqiv">
+                                <property role="Xl_RC" value="exception occured on migration" />
+                              </node>
+                              <node concept="37vLTw" id="4pYGyBVuU5c" role="34bMjA">
+                                <ref role="3cqZAo" node="4pYGyBVuTXn" resolve="t" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWsn" id="4pYGyBVuTXn" role="TDEfY">
+                            <property role="TrG5h" value="t" />
+                            <node concept="3uibUv" id="4pYGyBVuU0A" role="1tU5fm">
+                              <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3clFbS" id="2htE_P_NHL_" role="2GV8ay">
                           <node concept="3clFbF" id="7rK8qWGEWRo" role="3cqZAp">
                             <node concept="1rXfSq" id="7rK8qWGEWRn" role="3clFbG">
