@@ -1216,13 +1216,37 @@
           <node concept="2GrKxI" id="1VlRc9NxHc" role="2Gsz3X">
             <property role="TrG5h" value="language" />
           </node>
-          <node concept="2OqwBi" id="1VlRc9NQUt" role="2GsD0m">
-            <node concept="37vLTw" id="1VlRc9NQxf" role="2Oq$k0">
-              <ref role="3cqZAo" node="6HwFPByrzJ" resolve="modules" />
+          <node concept="2OqwBi" id="2hu8fhm3UHM" role="2GsD0m">
+            <node concept="2OqwBi" id="1VlRc9NQUt" role="2Oq$k0">
+              <node concept="37vLTw" id="1VlRc9NQxf" role="2Oq$k0">
+                <ref role="3cqZAo" node="6HwFPByrzJ" resolve="modules" />
+              </node>
+              <node concept="UnYns" id="1VlRc9NSoh" role="2OqNvi">
+                <node concept="3uibUv" id="1VlRc9NSN7" role="UnYnz">
+                  <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                </node>
+              </node>
             </node>
-            <node concept="UnYns" id="1VlRc9NSoh" role="2OqNvi">
-              <node concept="3uibUv" id="1VlRc9NSN7" role="UnYnz">
-                <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+            <node concept="3zZkjj" id="2hu8fhm3Vvt" role="2OqNvi">
+              <node concept="1bVj0M" id="2hu8fhm3Vvv" role="23t8la">
+                <node concept="3clFbS" id="2hu8fhm3Vvw" role="1bW5cS">
+                  <node concept="3clFbF" id="2hu8fhm3Vyg" role="3cqZAp">
+                    <node concept="3fqX7Q" id="2hu8fhm3Vye" role="3clFbG">
+                      <node concept="2OqwBi" id="2hu8fhm3VT$" role="3fr31v">
+                        <node concept="37vLTw" id="2hu8fhm3VFM" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2hu8fhm3Vvx" resolve="it" />
+                        </node>
+                        <node concept="liA8E" id="2hu8fhm3Yfw" role="2OqNvi">
+                          <ref role="37wK5l" to="vsqj:~AbstractModule.isReadOnly():boolean" resolve="isReadOnly" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="2hu8fhm3Vvx" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="2hu8fhm3Vvy" role="1tU5fm" />
+                </node>
               </node>
             </node>
           </node>
@@ -2053,13 +2077,37 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="513ZrA4v6_E" role="2GsD0m">
-            <node concept="37vLTw" id="513ZrA4uOa_" role="2Oq$k0">
-              <ref role="3cqZAo" node="513ZrA4uCJl" resolve="modules" />
+          <node concept="2OqwBi" id="2hu8fhm3HEJ" role="2GsD0m">
+            <node concept="2OqwBi" id="513ZrA4v6_E" role="2Oq$k0">
+              <node concept="37vLTw" id="513ZrA4uOa_" role="2Oq$k0">
+                <ref role="3cqZAo" node="513ZrA4uCJl" resolve="modules" />
+              </node>
+              <node concept="UnYns" id="513ZrA4v7EB" role="2OqNvi">
+                <node concept="3uibUv" id="513ZrA4v7GD" role="UnYnz">
+                  <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                </node>
+              </node>
             </node>
-            <node concept="UnYns" id="513ZrA4v7EB" role="2OqNvi">
-              <node concept="3uibUv" id="513ZrA4v7GD" role="UnYnz">
-                <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+            <node concept="3zZkjj" id="2hu8fhm3Izl" role="2OqNvi">
+              <node concept="1bVj0M" id="2hu8fhm3Izn" role="23t8la">
+                <node concept="3clFbS" id="2hu8fhm3Izo" role="1bW5cS">
+                  <node concept="3clFbF" id="2hu8fhm3JyK" role="3cqZAp">
+                    <node concept="3fqX7Q" id="2hu8fhm3JyI" role="3clFbG">
+                      <node concept="2OqwBi" id="2hu8fhm3JFB" role="3fr31v">
+                        <node concept="37vLTw" id="2hu8fhm3JAG" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2hu8fhm3Izp" resolve="it" />
+                        </node>
+                        <node concept="liA8E" id="2hu8fhm3LE9" role="2OqNvi">
+                          <ref role="37wK5l" to="vsqj:~AbstractModule.isReadOnly():boolean" resolve="isReadOnly" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="2hu8fhm3Izp" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="2hu8fhm3Izq" role="1tU5fm" />
+                </node>
               </node>
             </node>
           </node>

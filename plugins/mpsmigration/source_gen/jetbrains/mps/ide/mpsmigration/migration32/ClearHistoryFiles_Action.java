@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
@@ -20,7 +21,6 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ClearHistoryFiles_Action extends BaseAction {
@@ -53,6 +53,10 @@ public class ClearHistoryFiles_Action extends BaseAction {
     Sequence.fromIterable(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly());
       }
     }).select(new ISelector<SModel, DataSource>() {
       public DataSource select(SModel it) {

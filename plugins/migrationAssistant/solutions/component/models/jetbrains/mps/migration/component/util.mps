@@ -35,8 +35,8 @@
     <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
-    <import index="pt5l" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(jetbrains.mps.ide.project@java_stub)" />
-    <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
+    <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
+    <import index="hy6y" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(jetbrains.mps.smodel.adapter.structure@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -2916,16 +2916,16 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="7rK8qWGHJxe" role="2Oq$k0">
-                      <node concept="UnYns" id="7rK8qWGHJxg" role="2OqNvi">
-                        <node concept="3uibUv" id="7rK8qWGHJxh" role="UnYnz">
-                          <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                        </node>
-                      </node>
                       <node concept="2YIFZM" id="7LVOmkXCdlK" role="2Oq$k0">
                         <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                         <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
                         <node concept="37vLTw" id="1d0AlUPJkJ6" role="37wK5m">
                           <ref role="3cqZAo" node="1hucSHYkqjq" resolve="mpsProject" />
+                        </node>
+                      </node>
+                      <node concept="UnYns" id="7rK8qWGHJxg" role="2OqNvi">
+                        <node concept="3uibUv" id="7rK8qWGHJxh" role="UnYnz">
+                          <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                         </node>
                       </node>
                     </node>
@@ -3261,11 +3261,6 @@
                     </node>
                   </node>
                   <node concept="2OqwBi" id="3Chm5EXL3WR" role="2Oq$k0">
-                    <node concept="UnYns" id="3Chm5EXL3WT" role="2OqNvi">
-                      <node concept="3uibUv" id="3Chm5EXL3WU" role="UnYnz">
-                        <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                      </node>
-                    </node>
                     <node concept="2YIFZM" id="7_bOiTKCdH7" role="2Oq$k0">
                       <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                       <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
@@ -3275,6 +3270,11 @@
                         <node concept="37vLTw" id="7_bOiTKCdH9" role="37wK5m">
                           <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
                         </node>
+                      </node>
+                    </node>
+                    <node concept="UnYns" id="3Chm5EXL3WT" role="2OqNvi">
+                      <node concept="3uibUv" id="3Chm5EXL3WU" role="UnYnz">
+                        <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                       </node>
                     </node>
                   </node>
