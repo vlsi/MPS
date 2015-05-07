@@ -4,12 +4,17 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import com.intellij.openapi.options.SearchableConfigurable;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JCheckBox;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
+import java.util.Hashtable;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridBagConstraints;
 import javax.swing.Icon;
 import com.intellij.openapi.options.ConfigurationException;
+import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -18,64 +23,81 @@ import javax.swing.JComponent;
 
 public class ModelCheckerPreferencesPage implements SearchableConfigurable {
   private JPanel myPage;
-  private JCheckBox myCheckUnresolvedReferencesCheckBox = new JCheckBox("Check for unresolved references");
-  private JCheckBox myCheckConstraintsCheckBox = new JCheckBox("Check constraints");
-  private JCheckBox myCheckModelPropertiesCheckBox = new JCheckBox("Check model properties");
-  private JCheckBox myCheckTypesystemCheckBox = new JCheckBox("Perform typesystem checks");
+  private JSlider myCheckingLevelSlider = new JSlider(JSlider.HORIZONTAL, 0, ModelCheckerSettings.CheckingLevel.values().length - 1, 0);
   private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
+  private JCheckBox myCheckSpecificCheckBox = new JCheckBox("Perform other checks");
   private ModelCheckerSettings myModelCheckerSettings;
+
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
     myModelCheckerSettings = settings;
 
-    JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
-    optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
-    optionsPanel.add(myCheckConstraintsCheckBox);
-    optionsPanel.add(myCheckModelPropertiesCheckBox);
-    optionsPanel.add(myCheckTypesystemCheckBox);
-    optionsPanel.add(myCheckStubsCheckBox);
+    Hashtable t = new Hashtable();
+    for (ModelCheckerSettings.CheckingLevel level : ModelCheckerSettings.CheckingLevel.values()) {
+      t.put(level.ordinal(), new JLabel(level.getPresentation()));
+    }
+    myCheckingLevelSlider.setLabelTable(t);
+    myCheckingLevelSlider.setPaintLabels(true);
+    myCheckingLevelSlider.setPaintTicks(true);
+    myCheckingLevelSlider.setMajorTickSpacing(1);
+    myCheckingLevelSlider.setPreferredSize(new Dimension(350, 60));
 
-    myPage = new JPanel(new BorderLayout());
+    myPage = new JPanel(new GridBagLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
-    myPage.add(optionsPanel, BorderLayout.NORTH);
+    GridBagConstraints c = new GridBagConstraints();
+
+    c.gridx = 0;
+    c.gridy = 0;
+    c.anchor = GridBagConstraints.NORTHWEST;
+    c.fill = GridBagConstraints.NONE;
+    myPage.add(new JLabel("Model checking level"), c);
+
+    c.gridy = 1;
+    myPage.add(myCheckingLevelSlider, c);
+
+    c.gridy = 2;
+    myPage.add(myCheckStubsCheckBox, c);
+
+    c.gridy = 3;
+    myPage.add(myCheckSpecificCheckBox, c);
+
+    c.gridy = 4;
+    c.weightx = 1.0;
+    c.weighty = 1.0;
+    c.fill = GridBagConstraints.BOTH;
+    myPage.add(new JPanel(), c);
   }
+
   public String getName() {
     return "Model Checker";
   }
+
   public Icon getIcon() {
     return null;
   }
+
   public boolean validate() {
     return true;
   }
+
   public void apply() throws ConfigurationException {
-    myModelCheckerSettings.setCheckUnresolvedReferences(myCheckUnresolvedReferencesCheckBox.isSelected());
-    myModelCheckerSettings.setCheckConstraints(myCheckConstraintsCheckBox.isSelected());
-    myModelCheckerSettings.setCheckModelProperties(myCheckModelPropertiesCheckBox.isSelected());
-    myModelCheckerSettings.setCheckTypesystem(myCheckTypesystemCheckBox.isSelected());
+    myModelCheckerSettings.setCheckingLevel(ModelCheckerSettings.CheckingLevel.values()[myCheckingLevelSlider.getValue()]);
     myModelCheckerSettings.setCheckStubs(myCheckStubsCheckBox.isSelected());
+    myModelCheckerSettings.setCheckSpecific(myCheckSpecificCheckBox.isSelected());
   }
   public void reset() {
-    myCheckUnresolvedReferencesCheckBox.setSelected(myModelCheckerSettings.isCheckUnresolvedReferences());
-    myCheckConstraintsCheckBox.setSelected(myModelCheckerSettings.isCheckConstraints());
-    myCheckModelPropertiesCheckBox.setSelected(myModelCheckerSettings.isCheckModelProperties());
-    myCheckTypesystemCheckBox.setSelected(myModelCheckerSettings.isCheckTypesystem());
+    myCheckingLevelSlider.setValue(Arrays.binarySearch(ModelCheckerSettings.CheckingLevel.values(), myModelCheckerSettings.getCheckingLevel()));
     myCheckStubsCheckBox.setSelected(myModelCheckerSettings.isCheckStubs());
+    myCheckSpecificCheckBox.setSelected(myModelCheckerSettings.isCheckSpecific());
   }
   @Override
   public boolean isModified() {
-    if (myModelCheckerSettings.isCheckUnresolvedReferences() != myCheckUnresolvedReferencesCheckBox.isSelected()) {
-      return true;
-    }
-    if (myModelCheckerSettings.isCheckConstraints() != myCheckConstraintsCheckBox.isSelected()) {
-      return true;
-    }
-    if (myModelCheckerSettings.isCheckModelProperties() != myCheckModelPropertiesCheckBox.isSelected()) {
-      return true;
-    }
-    if (myModelCheckerSettings.isCheckTypesystem() != myCheckTypesystemCheckBox.isSelected()) {
+    if (myCheckingLevelSlider.getValue() != Arrays.binarySearch(ModelCheckerSettings.CheckingLevel.values(), myModelCheckerSettings.getCheckingLevel())) {
       return true;
     }
     if (myModelCheckerSettings.isCheckStubs() != myCheckStubsCheckBox.isSelected()) {
+      return true;
+    }
+    if (myModelCheckerSettings.isCheckSpecific() != myCheckSpecificCheckBox.isSelected()) {
       return true;
     }
     return false;
@@ -103,11 +125,5 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     return myPage;
   }
   public void disposeUIResources() {
-    myCheckConstraintsCheckBox = null;
-    myCheckModelPropertiesCheckBox = null;
-    myCheckStubsCheckBox = null;
-    myCheckTypesystemCheckBox = null;
-    myCheckUnresolvedReferencesCheckBox = null;
-    myPage = null;
   }
 }

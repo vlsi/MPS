@@ -14,70 +14,16 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/135987422146913546">
     <file name="INodeChecker.java">
       <node id="135987422146913554" at="11,0,12,0" concept="7" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
-      <node id="135987422146913563" at="12,0,13,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
       <scope id="135987422146913554" at="11,0,12,0">
         <var name="node" id="135987422146913558" />
         <var name="repoitory" id="5779969123418040038" />
       </scope>
-      <scope id="135987422146913563" at="12,0,13,0" />
-      <unit id="135987422146913546" at="10,0,14,0" name="jetbrains.mps.checkers.INodeChecker" />
-    </file>
-  </root>
-  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/3364928926666847271">
-    <file name="CheckersComponent.java">
-      <node id="1519428872448363207" at="13,0,14,0" concept="12" trace="INSTANCE" />
-      <node id="3364928926666865052" at="14,0,15,0" concept="4" trace="myCheckers" />
-      <node id="3364928926666865066" at="15,0,16,0" concept="4" trace="myLanguageChecker" />
-      <node id="3364928926666865070" at="16,30,17,46" concept="3" />
-      <node id="3364928926666865089" at="17,46,18,71" concept="3" />
-      <node id="3364928926666847292" at="22,36,23,22" concept="9" />
-      <node id="1519428872448363243" at="27,27,28,63" concept="14" />
-      <node id="1519428872448363233" at="29,5,30,0" concept="11" />
-      <node id="1519428872448363226" at="30,0,31,20" concept="3" />
-      <node id="3364928926666865058" at="31,20,32,68" concept="3" />
-      <node id="3364928926666865079" at="35,25,36,71" concept="3" />
-      <node id="1519428872448363219" at="36,71,37,20" concept="3" />
-      <node id="3364928926666865113" at="39,48,40,58" concept="3" />
-      <node id="3364928926666865128" at="42,51,43,61" concept="3" />
-      <node id="7736411024399746334" at="45,43,46,22" concept="9" />
-      <node id="1519428872448363215" at="48,49,49,20" concept="9" />
-      <node id="1519428872448363234" at="26,22,29,5" concept="6" />
-      <node id="3364928926666865107" at="39,0,42,0" concept="7" trace="addChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
-      <node id="3364928926666865122" at="42,0,45,0" concept="7" trace="removeChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
-      <node id="7736411024399746330" at="45,0,48,0" concept="7" trace="getCheckers#()Ljava/util/List;" />
-      <node id="1519428872448363211" at="48,0,51,0" concept="13" trace="getInstance#()Ljetbrains/mps/checkers/CheckersComponent;" />
-      <node id="3364928926666847273" at="16,0,20,0" concept="1" trace="CheckersComponent#()V" />
-      <node id="3364928926666847286" at="20,0,25,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="3364928926666847278" at="34,0,39,0" concept="7" trace="dispose#()V" />
-      <node id="3364928926666847282" at="25,0,34,0" concept="7" trace="init#()V" />
-      <scope id="3364928926666847291" at="22,36,23,22" />
-      <scope id="1519428872448363235" at="27,27,28,63" />
-      <scope id="3364928926666865110" at="39,48,40,58" />
-      <scope id="3364928926666865125" at="42,51,43,61" />
-      <scope id="7736411024399746333" at="45,43,46,22" />
-      <scope id="1519428872448363214" at="48,49,49,20" />
-      <scope id="3364928926666847276" at="16,30,18,71" />
-      <scope id="3364928926666847281" at="35,25,37,20" />
-      <scope id="3364928926666865107" at="39,0,42,0">
-        <var name="checker" id="3364928926666865111" />
-      </scope>
-      <scope id="3364928926666865122" at="42,0,45,0">
-        <var name="checker" id="3364928926666865126" />
-      </scope>
-      <scope id="7736411024399746330" at="45,0,48,0" />
-      <scope id="1519428872448363211" at="48,0,51,0" />
-      <scope id="3364928926666847273" at="16,0,20,0" />
-      <scope id="3364928926666847286" at="20,0,25,0" />
-      <scope id="3364928926666847278" at="34,0,39,0" />
-      <scope id="3364928926666847285" at="26,22,32,68" />
-      <scope id="3364928926666847282" at="25,0,34,0" />
-      <unit id="3364928926666847271" at="12,0,52,0" name="jetbrains.mps.checkers.CheckersComponent" />
+      <unit id="135987422146913546" at="10,0,13,0" name="jetbrains.mps.checkers.INodeChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/3364928926666856641">
@@ -92,13 +38,9 @@
       <node id="7390982340086720003" at="24,56,25,61" concept="8" />
       <node id="7390982340086720010" at="25,61,26,30" concept="3" />
       <node id="7390982340086720014" at="26,30,27,18" concept="9" />
-      <node id="5231630840089786265" at="30,31,31,36" concept="9" />
-      <node id="5231630840089786261" at="29,0,33,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
       <node id="3364928926666856643" at="15,0,21,0" concept="1" trace="LanguageChecker#()V" />
       <node id="7390982340086719987" at="21,0,29,0" concept="7" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
-      <scope id="5231630840089786264" at="30,31,31,36" />
       <scope id="3364928926666856646" at="15,28,19,72" />
-      <scope id="5231630840089786261" at="29,0,33,0" />
       <scope id="7390982340086719989" at="22,79,27,18">
         <var name="errorsComponent" id="7390982340086719991" />
         <var name="result" id="7390982340086720004" />
@@ -108,7 +50,7 @@
         <var name="repoitory" id="7390982340086720018" />
         <var name="rootNode" id="7390982340086720016" />
       </scope>
-      <unit id="3364928926666856641" at="13,0,34,0" name="jetbrains.mps.checkers.LanguageChecker" />
+      <unit id="3364928926666856641" at="13,0,30,0" name="jetbrains.mps.checkers.LanguageChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/6803901086853929087">
@@ -134,7 +76,7 @@
       <node id="6631111943583880214" at="38,0,41,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1047408822409602300" at="43,7,46,7" concept="6" />
       <node id="6631111943583880195" at="36,7,43,7" concept="6" />
-      <node id="6631111943583857203" at="29,31,49,5" concept="16" />
+      <node id="6631111943583857203" at="29,31,49,5" concept="15" />
       <node id="6803901086853929093" at="20,0,52,0" concept="13" trace="shouldReportError#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="6803901086853929092" at="18,28,18,28" />
       <scope id="414045414354372318" at="23,24,24,19" />
@@ -535,7 +477,7 @@
       <node id="7390982340086718806" at="133,0,142,0" concept="7" trace="addModelListener#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="7390982340086719046" at="166,0,175,0" concept="7" trace="invalidate#()V" />
       <node id="2132380399757266642" at="176,70,185,5" concept="6" />
-      <node id="2132380399760757065" at="200,83,209,9" concept="15" />
+      <node id="2132380399760757065" at="200,83,209,9" concept="14" />
       <node id="7390982340086718494" at="295,0,304,0" concept="7" trace="beforeModelDisposed#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="7390982340086718604" at="78,0,88,0" concept="7" trace="addDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7390982340086719198" at="233,0,243,0" concept="7" trace="clear#()V" />
@@ -544,11 +486,11 @@
       <node id="2132380399756939537" at="103,96,115,9" concept="6" />
       <node id="7390982340086719068" at="175,0,187,0" concept="7" trace="invalidateDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6786156891328436159" at="152,0,165,0" concept="7" trace="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;Ljetbrains/mps/errors/QuickFixProvider;)V" />
-      <node id="2132380399760702292" at="197,63,212,5" concept="16" />
+      <node id="2132380399760702292" at="197,63,212,5" concept="15" />
       <node id="2132380399756937359" at="101,74,117,7" concept="5" />
       <node id="2132380399756926061" at="99,0,118,5" concept="6" />
       <node id="7390982340086719254" at="263,9,283,8" concept="8" />
-      <node id="7390982340086719252" at="262,42,288,5" concept="15" />
+      <node id="7390982340086719252" at="262,42,288,5" concept="14" />
       <node id="2132380399755951310" at="93,0,123,0" concept="7" trace="removeDependencyFromMapping#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
       <node id="7390982340086718897" at="187,0,219,0" concept="7" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
       <node id="7390982340086719232" at="260,0,294,0" concept="7" trace="runCheckingAction#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />

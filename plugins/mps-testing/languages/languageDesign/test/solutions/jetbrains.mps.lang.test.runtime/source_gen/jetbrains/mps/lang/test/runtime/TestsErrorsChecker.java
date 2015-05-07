@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 import org.jetbrains.annotations.Nullable;
@@ -50,16 +49,6 @@ public class TestsErrorsChecker {
     return result;
   }
 
-  private Iterable<IErrorReporter> getTypeSystemErrors() {
-    INodeChecker checker = new TypesystemChecker();
-    return checker.getErrors(myRoot, null);
-  }
-
-  private Iterable<IErrorReporter> getConstraintsErrors() {
-    INodeChecker checker = new LanguageChecker();
-    return checker.getErrors(myRoot, null);
-  }
-
   private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode aNode) {
     return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
@@ -75,17 +64,12 @@ public class TestsErrorsChecker {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
 
-    Set<IErrorReporter> result = collectRootErrors();
-    return result;
-  }
-
-  private Set<IErrorReporter> collectRootErrors() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrors()));
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new LanguageChecker().getErrors(myRoot, null)));
     modelErrorsHolder.set(myRoot, result);
     return result;
   }

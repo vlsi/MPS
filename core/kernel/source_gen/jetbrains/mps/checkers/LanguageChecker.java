@@ -26,8 +26,4 @@ public class LanguageChecker implements INodeChecker {
     errorsComponent.dispose();
     return result;
   }
-  @Override
-  public String getCategory() {
-    return "constraints and scopes";
-  }
 }
