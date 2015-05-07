@@ -185,56 +185,56 @@ public class ValidationUtil {
     }
   }
 
-  public static void validateModule(final SModule m, Consumer<ValidationProblem> consumer) {
+  public static void validateModule(final SModule m, Processor<ValidationProblem> processor) {
     if (m instanceof TransientSModule || m instanceof ProjectStructureModule) return;
 
     if (m instanceof DevKit) {
-      validateDevkit((DevKit) m, consumer);
+      validateDevkit((DevKit) m, processor);
     } else if (m instanceof Language) {
-      validateLanguage((Language) m, consumer);
+      validateLanguage((Language) m, processor);
     } else if (m instanceof Generator) {
-      validateGenerator((Generator) m, consumer);
+      validateGenerator((Generator) m, processor);
     } else if (m instanceof Solution) {
-      validateAbstractModule((Solution) m, consumer);
+      validateAbstractModule((Solution) m, processor);
     } else {
       throw new IllegalArgumentException("Unknown module for validation: " + m.getClass());
     }
   }
 
-  private static void validateDevkit(final DevKit dk, Consumer<ValidationProblem> consumer) {
+  private static void validateDevkit(final DevKit dk, Processor<ValidationProblem> processor) {
     Throwable loadException = dk.getModuleDescriptor().getLoadException();
     if (loadException != null) {
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Couldn't load devkit: " + loadException.getMessage()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) return;
       return;
     }
 
     for (SModuleReference extDevkit : dk.getModuleDescriptor().getExtendedDevkits()) {
       if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) return;
     }
     for (SModuleReference expLang : dk.getModuleDescriptor().getExportedLanguages()) {
       if (ModuleRepositoryFacade.getInstance().getModule(expLang) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expLang.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expLang.getModuleName()))) return;
     }
     for (SModuleReference expSol : dk.getModuleDescriptor().getExportedSolutions()) {
       if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expSol.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expSol.getModuleName()))) return;
     }
   }
 
-  private static void validateLanguage(final Language language, Consumer<ValidationProblem> consumer) {
-    validateAbstractModule(language, consumer);
+  private static void validateLanguage(final Language language, Processor<ValidationProblem> processor) {
+    if (!validateAbstractModule(language, processor)) return;
 
     for (SModuleReference el : language.getExtendedLanguageRefs()) {
       if (ModuleRepositoryFacade.getInstance().getModule(el) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find extended language: " + el.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find extended language: " + el.getModuleName()))) return;
     }
 
     for (Language l : LanguageDependenciesManager.getAllExtendedLanguages(language)) {
       SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
       if (descriptor != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR,
-          language == l ? "Behavior aspect is absent" : "Cannot extend language without behavior aspect: " + l.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR,
+          language == l ? "Behavior aspect is absent" : "Cannot extend language without behavior aspect: " + l.getModuleName()))) return;
     }
 
     for (SModuleReference mr : language.getRuntimeModulesReferences()) {
@@ -242,7 +242,7 @@ public class ValidationUtil {
       if (runtimeModule == null) continue;
       if ((runtimeModule instanceof Solution)) continue;
 
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Runtime module " + runtimeModule + " is not a solution"));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Runtime module " + runtimeModule + " is not a solution"))) return;
     }
 
     for (SModelReference accessory : language.getModuleDescriptor().getAccessoryModels()) {
@@ -252,11 +252,11 @@ public class ValidationUtil {
       if (accModel == null) continue;
 
       if (VisibilityUtil.isVisible(language, accModel)) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find accessory model: " + accessory.getModelName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find accessory model: " + accessory.getModelName()))) return;
     }
 
     if (!checkCyclicInheritance(language)) {
-      consumer.consume(new ValidationProblem(Severity.WARNING, "Cyclic language hierarchy"));
+      if (!processor.process(new ValidationProblem(Severity.WARNING, "Cyclic language hierarchy"))) return;
     }
   }
 
@@ -288,12 +288,12 @@ public class ValidationUtil {
     return result;
   }
 
-  private static void validateGenerator(final Generator generator, Consumer<ValidationProblem> consumer) {
-    validateAbstractModule(generator, consumer);
+  private static void validateGenerator(final Generator generator, Processor<ValidationProblem> processor) {
+    if (!validateAbstractModule(generator, processor)) return;
 
     for (SModuleReference gen : generator.getModuleDescriptor().getDepGenerators()) {
       if (ModuleRepositoryFacade.getInstance().getModule(gen) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find generator dependency: " + gen.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find generator dependency: " + gen.getModuleName()))) return;
     }
 
     Set<String> usedLanguages = new HashSet<String>();
@@ -316,14 +316,15 @@ public class ValidationUtil {
       }
       depScan.walk(model);
     }
-    warnMissingTargetLangRuntime(generator, usedLanguages, consumer);
+    if (!warnMissingTargetLangRuntime(generator, usedLanguages, processor)) return;
 
     if (!anyGeneratorModelNotLoaded) {
-      warnStrictGeneratorDependencies(generator, depScan, consumer);
+      warnStrictGeneratorDependencies(generator, depScan, processor);
     }
   }
 
-  private static void warnStrictGeneratorDependencies(Generator generator, ModelDependencyScanner dependencies, Consumer<ValidationProblem> consumer) {
+  //returns true to continue analysing, false to stop
+  private static boolean warnStrictGeneratorDependencies(Generator generator, ModelDependencyScanner dependencies, Processor<ValidationProblem> processor) {
     HashSet<SModule> seen = new HashSet<SModule>();
     for (SDependency dep : generator.getDeclaredDependencies()) {
       SModule depTarget = dep.getTarget();
@@ -346,14 +347,16 @@ public class ValidationUtil {
 
       // models of the dep.target are not referenced, likely superfluous dependency.
       String msg = "Superfluous dependency to generator " + depTarget.getModuleName() + ", no generator template nor its source language's node is in use";
-      consumer.consume(new ValidationProblem(Severity.WARNING, msg));
+      if (!processor.process(new ValidationProblem(Severity.WARNING, msg))) return false;
     }
+    return true;
   }
 
-  private static void warnMissingTargetLangRuntime(Generator generator, Set<String> usedLanguages, Consumer<ValidationProblem> consumer) {
+  //returns true to continue analysing, false to stop
+  private static boolean warnMissingTargetLangRuntime(Generator generator, Set<String> usedLanguages, Processor<ValidationProblem> processor) {
     Language sourceLanguage = generator.getSourceLanguage();
     usedLanguages.remove(sourceLanguage.getModuleName());
-    if (usedLanguages.isEmpty()) return;
+    if (usedLanguages.isEmpty()) return true;
 
     final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
     for (SModule d : new GlobalModuleDependenciesManager(sourceLanguage).getModules(Deptype.COMPILE)) {
@@ -366,37 +369,39 @@ public class ValidationUtil {
       // language we generate into (target) has runtime, check we've got appropriate dependency
       if (compileTimeDeps.containsAll(language.getRuntimeModulesReferences())) continue;
 
-      consumer.consume(new ValidationProblem(Severity.WARNING, String.format("%s shall specify language %s as generation target", sourceLanguage, lang)));
+      if (!processor.process(new ValidationProblem(Severity.WARNING, String.format("%s shall specify language %s as generation target", sourceLanguage, lang))))
+        return false;
     }
+    return true;
   }
 
-  private static void validateAbstractModule(final AbstractModule module, Consumer<ValidationProblem> consumer) {
+  //returns true to continue analysing, false to stop
+  private static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
     Throwable loadException = module.getModuleDescriptor().getLoadException();
     if (loadException != null) {
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Couldn't load module: " + loadException.getMessage()));
-      return;
+      return processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load module: " + loadException.getMessage()));
     }
 
     ModuleDescriptor descriptor = module.getModuleDescriptor();
     for (Dependency dep : descriptor.getDependencies()) {
       SModuleReference moduleRef = dep.getModuleRef();
       if (ModuleRepositoryFacade.getInstance().getModule(moduleRef) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find dependency: " + moduleRef.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find dependency: " + moduleRef.getModuleName()))) return false;
     }
     for (SModuleReference reference : descriptor.getUsedLanguages()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find used language: " + reference.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find used language: " + reference.getModuleName()))) return false;
     }
     for (SModuleReference reference : descriptor.getUsedDevkits()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference) != null) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find used devkit: " + reference.getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find used devkit: " + reference.getModuleName()))) return false;
     }
 
     if (descriptor.getSourcePaths() != null && !module.isPackaged()) {
       for (String sourcePath : descriptor.getSourcePaths()) {
         IFile file = FileSystem.getInstance().getFileByPath(sourcePath);
         if (file != null && file.exists()) continue;
-        consumer.consume(new ValidationProblem(Severity.ERROR, "Can't find source path: " + sourcePath));
+        if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find source path: " + sourcePath))) return false;
       }
     }
     if (descriptor.getAdditionalJavaStubPaths() != null) {
@@ -404,15 +409,18 @@ public class ValidationUtil {
         IFile file = FileSystem.getInstance().getFileByPath(path);
         if (file != null && file.exists()) continue;
         String msg = (new File(path).exists() ? "Idea VFS is not up-to-date. " : "") + "Can't find library: " + path;
-        consumer.consume(new ValidationProblem(Severity.ERROR, msg));
+        if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) return false;
       }
     }
 
     // todo: =(
-    if ((module instanceof Generator)) return;
+    if ((module instanceof Generator)) return true;
     for (SDependency dependency : module.getDeclaredDependencies()) {
       if (!(dependency.getTarget() instanceof Generator)) continue;
-      consumer.consume(new ValidationProblem(Severity.ERROR, "Contains dependency on generator: " + dependency.getTargetModule().getModuleName()));
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Contains dependency on generator: " + dependency.getTargetModule().getModuleName())))
+        return false;
+      ;
     }
+    return true;
   }
 }

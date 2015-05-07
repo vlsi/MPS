@@ -11,12 +11,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.validation.MessageCollectConsumer;
+import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.project.validation.MessageCollectProcessor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -42,14 +41,14 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
         }
 
         for (SModule sm : modules) {
-          MessageCollectConsumer consumer = new MessageCollectConsumer();
-          ValidationUtil.validateModule(sm, consumer);
-          if (consumer.getErrors().isEmpty()) {
+          MessageCollectProcessor processor = new MessageCollectProcessor();
+          ValidationUtil.validateModule(sm, processor);
+          if (processor.getErrors().isEmpty()) {
             continue;
           }
 
           StringBuilder errorMessages = new StringBuilder();
-          for (String item : consumer.getErrors()) {
+          for (String item : processor.getErrors()) {
             errorMessages.append("\t").append(item).append("\n");
           }
           errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());

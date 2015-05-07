@@ -8747,8 +8747,8 @@
           <node concept="3clFbS" id="3etVqSRT$DB" role="2GV8ay">
             <node concept="3clFbF" id="55QDKWLAHv5" role="3cqZAp">
               <node concept="2YIFZM" id="55QDKWLAHJL" role="3clFbG">
-                <ref role="37wK5l" to="6k24:~ValidationUtil.validateModule(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.util.Consumer):void" resolve="validateModule" />
                 <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
+                <ref role="37wK5l" to="6k24:~ValidationUtil.validateModule(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModule" />
                 <node concept="37vLTw" id="55QDKWLAHM3" role="37wK5m">
                   <ref role="3cqZAo" node="3etVqSRT$F5" resolve="module" />
                 </node>
@@ -8872,6 +8872,11 @@
                             <ref role="37wK5l" to="5fm0:~SearchResults.getSearchResults():java.util.List" resolve="getSearchResults" />
                           </node>
                         </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWs6" id="2sSkv2aGpXr" role="3cqZAp">
+                      <node concept="3clFbT" id="2sSkv2aGqhs" role="3cqZAk">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>

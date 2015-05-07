@@ -22,7 +22,7 @@ import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.validation.MessageCollectConsumer;
+import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayList;
@@ -80,7 +79,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
       public void run() {
         SModule module = mr.resolve(myProject.getRepository());
 
-        MessageCollectConsumer collector = new MessageCollectConsumer();
+        MessageCollectProcessor collector = new MessageCollectProcessor();
         if (module != null) {
           ValidationUtil.validateModule(module, collector);
         }

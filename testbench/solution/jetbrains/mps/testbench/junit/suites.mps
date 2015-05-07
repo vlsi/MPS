@@ -4067,26 +4067,26 @@
                 <node concept="3clFbS" id="2RMHhGkSJyf" role="2LFqv$">
                   <node concept="3cpWs8" id="2RMHhGkSJyg" role="3cqZAp">
                     <node concept="3cpWsn" id="2RMHhGkSJyh" role="3cpWs9">
-                      <property role="TrG5h" value="consumer" />
-                      <node concept="3uibUv" id="2RMHhGkSJyi" role="1tU5fm">
-                        <ref role="3uigEE" to="6k24:~MessageCollectConsumer" resolve="MessageCollectConsumer" />
+                      <property role="TrG5h" value="processor" />
+                      <node concept="3uibUv" id="2sSkv2aG3xs" role="1tU5fm">
+                        <ref role="3uigEE" to="6k24:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
                       </node>
                       <node concept="2ShNRf" id="2RMHhGkSJyj" role="33vP2m">
                         <node concept="1pGfFk" id="2RMHhGkSJyk" role="2ShVmc">
-                          <ref role="37wK5l" to="6k24:~MessageCollectConsumer.&lt;init&gt;()" resolve="MessageCollectConsumer" />
+                          <ref role="37wK5l" to="6k24:~MessageCollectProcessor.&lt;init&gt;()" resolve="MessageCollectProcessor" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="2RMHhGkSJyo" role="3cqZAp">
-                    <node concept="2YIFZM" id="2RMHhGkSJyp" role="3clFbG">
+                    <node concept="2YIFZM" id="2sSkv2aGhGb" role="3clFbG">
+                      <ref role="37wK5l" to="6k24:~ValidationUtil.validateModule(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModule" />
                       <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
-                      <ref role="37wK5l" to="6k24:~ValidationUtil.validateModule(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.util.Consumer):void" resolve="validateModule" />
-                      <node concept="37vLTw" id="2RMHhGkTbVs" role="37wK5m">
+                      <node concept="37vLTw" id="2sSkv2aGhGc" role="37wK5m">
                         <ref role="3cqZAo" node="2RMHhGkSJyd" resolve="sm" />
                       </node>
-                      <node concept="37vLTw" id="2RMHhGkSJyr" role="37wK5m">
-                        <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="consumer" />
+                      <node concept="37vLTw" id="2sSkv2aGhGd" role="37wK5m">
+                        <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="processor" />
                       </node>
                     </node>
                   </node>
@@ -4097,10 +4097,10 @@
                     <node concept="2OqwBi" id="2RMHhGkSJyv" role="3clFbw">
                       <node concept="2OqwBi" id="2RMHhGkSJyw" role="2Oq$k0">
                         <node concept="37vLTw" id="2RMHhGkSJyx" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="consumer" />
+                          <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="processor" />
                         </node>
                         <node concept="liA8E" id="2RMHhGkSJyy" role="2OqNvi">
-                          <ref role="37wK5l" to="6k24:~MessageCollectConsumer.getErrors():java.util.List" resolve="getErrors" />
+                          <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
                         </node>
                       </node>
                       <node concept="liA8E" id="2RMHhGkSJyz" role="2OqNvi">
@@ -4126,10 +4126,10 @@
                   <node concept="1DcWWT" id="2RMHhGkSJyE" role="3cqZAp">
                     <node concept="2OqwBi" id="2RMHhGkSJyF" role="1DdaDG">
                       <node concept="37vLTw" id="2RMHhGkSJyG" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="consumer" />
+                        <ref role="3cqZAo" node="2RMHhGkSJyh" resolve="processor" />
                       </node>
                       <node concept="liA8E" id="2RMHhGkSJyH" role="2OqNvi">
-                        <ref role="37wK5l" to="6k24:~MessageCollectConsumer.getErrors():java.util.List" resolve="getErrors" />
+                        <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
                       </node>
                     </node>
                     <node concept="3cpWsn" id="2RMHhGkSJyI" role="1Duv9x">
@@ -4304,20 +4304,20 @@
                   <node concept="3cpWs8" id="2RMHhGkTSMe" role="3cqZAp">
                     <node concept="3cpWsn" id="2RMHhGkTSMf" role="3cpWs9">
                       <property role="TrG5h" value="collector" />
-                      <node concept="3uibUv" id="2RMHhGkTSMd" role="1tU5fm">
-                        <ref role="3uigEE" to="6k24:~MessageCollectConsumer" resolve="MessageCollectConsumer" />
+                      <node concept="3uibUv" id="2sSkv2aGmM$" role="1tU5fm">
+                        <ref role="3uigEE" to="6k24:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
                       </node>
                       <node concept="2ShNRf" id="2RMHhGkTSMg" role="33vP2m">
                         <node concept="1pGfFk" id="2RMHhGkTSMh" role="2ShVmc">
-                          <ref role="37wK5l" to="6k24:~MessageCollectConsumer.&lt;init&gt;()" resolve="MessageCollectConsumer" />
+                          <ref role="37wK5l" to="6k24:~MessageCollectProcessor.&lt;init&gt;()" resolve="MessageCollectProcessor" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="2RMHhGkT$7I" role="3cqZAp">
                     <node concept="2YIFZM" id="2RMHhGkT$7J" role="3clFbG">
-                      <ref role="37wK5l" to="6k24:~ValidationUtil.validateModel(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Consumer):void" resolve="validateModel" />
                       <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
+                      <ref role="37wK5l" to="6k24:~ValidationUtil.validateModel(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModel" />
                       <node concept="37vLTw" id="2RMHhGkT$7K" role="37wK5m">
                         <ref role="3cqZAo" node="2RMHhGkT$7b" resolve="sm" />
                       </node>
@@ -4336,7 +4336,7 @@
                           <ref role="3cqZAo" node="2RMHhGkTSMf" resolve="collector" />
                         </node>
                         <node concept="liA8E" id="2RMHhGkXSeI" role="2OqNvi">
-                          <ref role="37wK5l" to="6k24:~MessageCollectConsumer.getErrors():java.util.List" resolve="getErrors" />
+                          <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
                         </node>
                       </node>
                       <node concept="liA8E" id="2RMHhGkXUUZ" role="2OqNvi">
@@ -4407,7 +4407,7 @@
                               <ref role="3cqZAo" node="2RMHhGkTSMf" resolve="collector" />
                             </node>
                             <node concept="liA8E" id="2RMHhGkWl2P" role="2OqNvi">
-                              <ref role="37wK5l" to="6k24:~MessageCollectConsumer.getErrors():java.util.List" resolve="getErrors" />
+                              <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
                             </node>
                           </node>
                           <node concept="_YKpA" id="2RMHhGkWowm" role="10QFUM">
