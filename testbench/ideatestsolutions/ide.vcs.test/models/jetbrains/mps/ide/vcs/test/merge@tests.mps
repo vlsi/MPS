@@ -634,7 +634,7 @@
         <node concept="3clFbF" id="6hwF4wZOyZ2" role="3cqZAp">
           <node concept="2YIFZM" id="6hwF4wZOyZ3" role="3clFbG">
             <ref role="1Pybhc" to="cu2c:~SReference" resolve="SReference" />
-            <ref role="37wK5l" to="cu2c:~SReference.disableLogging():void" resolve="disableLogging" />
+            <ref role="37wK5l" to="cu2c:~SReference.disableLogging():boolean" resolve="disableLogging" />
           </node>
         </node>
         <node concept="3clFbF" id="21kBj8J3IH_" role="3cqZAp">
