@@ -458,13 +458,6 @@
       </node>
       <node concept="3Tm6S6" id="3etVqSRKzpl" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="3etVqSRKzpm" role="jymVt">
-      <property role="TrG5h" value="myPreferences" />
-      <node concept="3Tm6S6" id="3etVqSRKzpn" role="1B3o_S" />
-      <node concept="3uibUv" id="3etVqSRKzpo" role="1tU5fm">
-        <ref role="3uigEE" node="3etVqSRKzPq" resolve="ModelCheckerPreferencesPage" />
-      </node>
-    </node>
     <node concept="3clFbW" id="3etVqSRKzpt" role="jymVt">
       <node concept="3cqZAl" id="3etVqSRKzpu" role="3clF45" />
       <node concept="3Tm1VV" id="3etVqSRKzpv" role="1B3o_S" />
@@ -566,43 +559,6 @@
       <node concept="2AHcQZ" id="3etVqSRKzqk" role="2AJF6D">
         <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
-    </node>
-    <node concept="3clFb_" id="3etVqSRKzro" role="jymVt">
-      <property role="TrG5h" value="getPreferences" />
-      <node concept="3clFbS" id="3etVqSRKzrp" role="3clF47">
-        <node concept="3clFbJ" id="3etVqSRKzrq" role="3cqZAp">
-          <node concept="3clFbS" id="3etVqSRKzrr" role="3clFbx">
-            <node concept="3clFbF" id="3etVqSRKzrs" role="3cqZAp">
-              <node concept="37vLTI" id="3etVqSRKzrt" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeujRX" role="37vLTJ">
-                  <ref role="3cqZAo" node="3etVqSRKzpm" resolve="myPreferences" />
-                </node>
-                <node concept="2ShNRf" id="3etVqSRKzrv" role="37vLTx">
-                  <node concept="1pGfFk" id="3etVqSRKzrw" role="2ShVmc">
-                    <ref role="37wK5l" node="3etVqSRKzPZ" resolve="ModelCheckerPreferencesPage" />
-                    <node concept="Xjq3P" id="3etVqSRKzrx" role="37wK5m" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="3etVqSRKzry" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuvIz" role="3uHU7B">
-              <ref role="3cqZAo" node="3etVqSRKzpm" resolve="myPreferences" />
-            </node>
-            <node concept="10Nm6u" id="3etVqSRKzr$" role="3uHU7w" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="3etVqSRKzr_" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeumw_" role="3cqZAk">
-            <ref role="3cqZAo" node="3etVqSRKzpm" resolve="myPreferences" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="3etVqSRKzrB" role="3clF45">
-        <ref role="3uigEE" node="3etVqSRKzPq" resolve="ModelCheckerPreferencesPage" />
-      </node>
-      <node concept="3Tm6S6" id="3etVqSRKzrC" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="3etVqSRKzrD" role="jymVt">
       <property role="TrG5h" value="getSpecificCheckers" />

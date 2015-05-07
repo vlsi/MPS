@@ -143,7 +143,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelPersistenceVersionChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelPropertiesChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />

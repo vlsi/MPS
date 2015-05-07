@@ -20,7 +20,6 @@ import com.intellij.openapi.application.ApplicationManager;
 })
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
-  private ModelCheckerPreferencesPage myPreferences;
   public ModelCheckerSettings() {
   }
   @NonNls
@@ -46,12 +45,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   @Nullable
   public Icon getIcon() {
     return null;
-  }
-  private ModelCheckerPreferencesPage getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new ModelCheckerPreferencesPage(this);
-    }
-    return myPreferences;
   }
   public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
