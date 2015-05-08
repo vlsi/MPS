@@ -80,57 +80,59 @@ import java.util.Set;
 public class ValidationUtil {
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
-  public static void validateModelContent(@NotNull SModel model, @NotNull Processor<ValidationProblem> processor) {
-    for (SNode node : SNodeUtil.getDescendants(model)) {
-      SLanguage lang = node.getConcept().getLanguage();
-      if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
-        LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
-        if (!processor.process(error)) return;
-        continue;
-      }
-
-      SConcept concept = node.getConcept();
-      if (!concept.isValid()) {
-        if (!processor.process(new ConceptMissingError(node, concept))) return;
-        continue;
-      }
-
-      // in case of props, refs, links, list should be better than set
-      List<SProperty> props = IterableUtil.asList(concept.getProperties());
-      for (SProperty p : node.getProperties()) {
-        if (props.contains(p)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, p))) return;
-      }
-
-      List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
-      for (SNode n : node.getChildren()) {
-        SContainmentLink l = n.getContainmentLink();
-        if (links.contains(l)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
-      }
-
-      List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
-      for (SReference r : node.getReferences()) {
-        SReferenceLink l = r.getLink();
-        if (refs.contains(l)) continue;
-        if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
-      }
-
-      for (SContainmentLink link : concept.getContainmentLinks()) {
-        Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
-        if (!link.isOptional() && children.isEmpty()) {
-          // TODO this is a hack for constructor declarations
-          if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
-          if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return;
+  public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<ValidationProblem> processor) {
+    for (SNode root : roots) {
+      for (SNode node : SNodeUtil.getDescendants(root)) {
+        SLanguage lang = node.getConcept().getLanguage();
+        if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
+          LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
+          if (!processor.process(error)) return;
+          continue;
         }
-        if (!link.isMultiple() && children.size() > 1) {
-          if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return;
+
+        SConcept concept = node.getConcept();
+        if (!concept.isValid()) {
+          if (!processor.process(new ConceptMissingError(node, concept))) return;
+          continue;
         }
-      }
-      for (SReferenceLink ref : concept.getReferenceLinks()) {
-        if (!ref.isOptional()) {
-          if (node.getReference(ref) == null) {
-            if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return;
+
+        // in case of props, refs, links, list should be better than set
+        List<SProperty> props = IterableUtil.asList(concept.getProperties());
+        for (SProperty p : node.getProperties()) {
+          if (props.contains(p)) continue;
+          if (!processor.process(new ConceptFeatureMissingError(node, p))) return;
+        }
+
+        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
+        for (SNode n : node.getChildren()) {
+          SContainmentLink l = n.getContainmentLink();
+          if (links.contains(l)) continue;
+          if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
+        }
+
+        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
+        for (SReference r : node.getReferences()) {
+          SReferenceLink l = r.getLink();
+          if (refs.contains(l)) continue;
+          if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
+        }
+
+        for (SContainmentLink link : concept.getContainmentLinks()) {
+          Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
+          if (!link.isOptional() && children.isEmpty()) {
+            // TODO this is a hack for constructor declarations
+            if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
+            if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return;
+          }
+          if (!link.isMultiple() && children.size() > 1) {
+            if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return;
+          }
+        }
+        for (SReferenceLink ref : concept.getReferenceLinks()) {
+          if (!ref.isOptional()) {
+            if (node.getReference(ref) == null) {
+              if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return;
+            }
           }
         }
       }

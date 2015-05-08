@@ -665,10 +665,15 @@
           <node concept="3clFbS" id="J4peHRNLXc" role="2LFqv$">
             <node concept="3clFbF" id="2RwlJ15Yya_" role="3cqZAp">
               <node concept="2YIFZM" id="2RwlJ15ZUWi" role="3clFbG">
-                <ref role="37wK5l" to="6k24:~ValidationUtil.validateModelContent(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModelContent" />
                 <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
-                <node concept="2GrUjf" id="17tv9cWL8h5" role="37wK5m">
-                  <ref role="2Gs0qQ" node="J4peHRNLXa" resolve="model" />
+                <ref role="37wK5l" to="6k24:~ValidationUtil.validateModelContent(java.lang.Iterable,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModelContent" />
+                <node concept="2OqwBi" id="4soTJTMNJHv" role="37wK5m">
+                  <node concept="2GrUjf" id="17tv9cWL8h5" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="J4peHRNLXa" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="4soTJTMNKvg" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SModel.getRootNodes():java.lang.Iterable" resolve="getRootNodes" />
+                  </node>
                 </node>
                 <node concept="1bVj0M" id="2RwlJ15ZUWn" role="37wK5m">
                   <node concept="3clFbS" id="2RwlJ15ZUWo" role="1bW5cS">

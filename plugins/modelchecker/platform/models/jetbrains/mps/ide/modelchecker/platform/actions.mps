@@ -9979,10 +9979,13 @@
         </node>
         <node concept="3clFbF" id="2RMHhGkQ$58" role="3cqZAp">
           <node concept="2YIFZM" id="2RMHhGkQ$eJ" role="3clFbG">
-            <ref role="37wK5l" to="6k24:~ValidationUtil.validateModelContent(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModelContent" />
             <ref role="1Pybhc" to="6k24:~ValidationUtil" resolve="ValidationUtil" />
-            <node concept="37vLTw" id="2RMHhGkQ$qC" role="37wK5m">
-              <ref role="3cqZAo" node="3etVqSRK$6e" resolve="model" />
+            <ref role="37wK5l" to="6k24:~ValidationUtil.validateModelContent(java.lang.Iterable,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModelContent" />
+            <node concept="2OqwBi" id="4soTJTMNLiF" role="37wK5m">
+              <node concept="37vLTw" id="2RMHhGkQ$qC" role="2Oq$k0">
+                <ref role="3cqZAo" node="3etVqSRK$6e" resolve="model" />
+              </node>
+              <node concept="2RRcyG" id="4soTJTMNLu2" role="2OqNvi" />
             </node>
             <node concept="1bVj0M" id="2RMHhGkQ$w7" role="37wK5m">
               <node concept="3clFbS" id="2RMHhGkQ$w9" role="1bW5cS">

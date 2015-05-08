@@ -83,7 +83,7 @@ public class MigrationCheckUtil {
     // find missing concepts, when language's not missing 
     // find missing concept features when concept's not mising 
     for (SModel model : Sequence.fromIterable(models)) {
-      ValidationUtil.validateModelContent(model, new Processor<ValidationProblem>() {
+      ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
         public boolean process(ValidationProblem vp) {
           if (vp instanceof LanguageMissingError) {
             LanguageMissingError err = (LanguageMissingError) vp;

@@ -94,7 +94,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
       public void run() {
         for (SModel sm : extractModels(true)) {
           MessageCollectProcessor collector = new MessageCollectProcessor();
-          ValidationUtil.validateModelContent(sm, collector);
+          ValidationUtil.validateModelContent(sm.getRootNodes(), collector);
           errors.addAll(collector.getErrors());
         }
       }
