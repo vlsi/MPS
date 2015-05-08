@@ -52,57 +52,54 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       NullableState varState = result.get(instruction).get(variable);
       SNode parent = SNodeOperations.getParent(source);
 
-      Tuples._3<Boolean, String, SNode> checkingResult;
-      boolean shouldWarn;
+      Tuples._2<String, SNode> checkingResult;
       String warning;
       SNode nodeToWarn;
 
       checkingResult = NullableUtil.isNullableDotExpression(parent, source, varState);
-      shouldWarn = (boolean) checkingResult._0();
-      if (shouldWarn) {
-        warning = checkingResult._1();
-        nodeToWarn = checkingResult._2();
+      if (checkingResult != null) {
+        warning = checkingResult._0();
+        nodeToWarn = checkingResult._1();
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343684", null, errorTarget);
         }
-        continue;
       }
 
       checkingResult = NullableUtil.isNullableMethodCall(parent, source, varState);
-      shouldWarn = (boolean) checkingResult._0();
-      if (shouldWarn) {
-        warning = checkingResult._1();
-        nodeToWarn = checkingResult._2();
+      if (checkingResult != null) {
+        warning = checkingResult._0();
+        nodeToWarn = checkingResult._1();
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "741163781874494202", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4235809288654203516", null, errorTarget);
         }
+        continue;
       }
 
       // Test equals and not equals is always true or false 
       checkingResult = NullableUtil.isAlwaysTrueOrFalse(instruction, parent, source, varState);
-      shouldWarn = (boolean) checkingResult._0();
-      if (shouldWarn) {
-        warning = checkingResult._1();
-        nodeToWarn = checkingResult._2();
+      if (checkingResult != null) {
+        warning = checkingResult._0();
+        nodeToWarn = checkingResult._1();
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3906759656537165649", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4235809288654205433", null, errorTarget);
         }
+        continue;
       }
 
 
       // Find Nullable assignements to NotNull variables 
       checkingResult = NullableUtil.checkNullableAssignment(instruction, result);
-      shouldWarn = (boolean) checkingResult._0();
-      if (shouldWarn) {
-        warning = checkingResult._1();
-        nodeToWarn = checkingResult._2();
+      if (checkingResult != null) {
+        warning = checkingResult._0();
+        nodeToWarn = checkingResult._1();
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3906759656537238595", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4235809288654207287", null, errorTarget);
         }
+        continue;
       }
 
     }
