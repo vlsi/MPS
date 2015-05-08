@@ -1413,6 +1413,27 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3zKvvWw1Lfv" role="jymVt" />
+    <node concept="2tJIrI" id="4soTJTMNmN0" role="jymVt" />
+    <node concept="Wx3nA" id="4soTJTMNmnL" role="jymVt">
+      <property role="TrG5h" value="link_ConstructorDeclaration_returnType" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4soTJTMNmnM" role="1B3o_S" />
+      <node concept="359W_D" id="4soTJTMNnm0" role="33vP2m">
+        <ref role="359W_E" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+        <ref role="359W_F" to="tpee:fzclF7X" />
+      </node>
+      <node concept="3uibUv" id="4soTJTMNmnO" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+      </node>
+      <node concept="z59LJ" id="4soTJTMNne2" role="lGtFl">
+        <node concept="TZ5HA" id="4soTJTMNne3" role="TZ5H$">
+          <node concept="1dT_AC" id="4soTJTMNne4" role="1dT_Ay">
+            <property role="1dT_AB" value="todo:remove this hack" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4soTJTMNmbg" role="jymVt" />
     <node concept="3Tm1VV" id="1YioXbrr5pc" role="1B3o_S" />
     <node concept="Wx3nA" id="2iMJRNxJZTe" role="jymVt">
       <property role="TrG5h" value="concept_IResolveInfo" />

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
@@ -67,6 +68,7 @@ import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -112,6 +114,25 @@ public class ValidationUtil {
         SReferenceLink l = r.getLink();
         if (refs.contains(l)) continue;
         if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
+      }
+
+      for (SContainmentLink link : concept.getContainmentLinks()) {
+        Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
+        if (!link.isOptional() && children.isEmpty()) {
+          // TODO this is a hack for constructor declarations
+          if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
+          if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return;
+        }
+        if (!link.isMultiple() && children.size() > 1) {
+          if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return;
+        }
+      }
+      for (SReferenceLink ref : concept.getReferenceLinks()) {
+        if (!ref.isOptional()) {
+          if (node.getReference(ref) == null) {
+            if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return;
+          }
+        }
       }
     }
   }
