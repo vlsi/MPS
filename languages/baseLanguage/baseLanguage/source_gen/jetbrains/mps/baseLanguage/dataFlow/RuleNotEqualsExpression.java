@@ -8,7 +8,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.behavior.NextNodeKeeper;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleNotEqualsExpression implements DataFlowConstructor {
@@ -27,122 +28,89 @@ public class RuleNotEqualsExpression implements DataFlowConstructor {
     if (otherThanNull == null) {
       return;
     }
-    Tuples._4<SNode, SNode, Boolean, Boolean> calcWhereToJump;
-    SNode beforeNode;
-    SNode afterNode;
-    boolean ifJump;
-    calcWhereToJump = NullableUtil.calcWhereToJump(node, true);
-    beforeNode = calcWhereToJump._0();
-    afterNode = calcWhereToJump._1();
-    ifJump = (boolean) calcWhereToJump._3();
-    if (beforeNode != null) {
-      if (ifJump) {
+    if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))))) {
+      return;
+    }
+    NextNodeKeeper nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{node, true});
+    if (nextNodeKeeper != null && nextNodeKeeper.getNextNode() != null) {
+      if (nextNodeKeeper.willJump()) {
         {
           Object object = node;
           if (((Program) o).contains(object)) {
             boolean before = false;
             int position = ((Program) (o)).getEnd(object);
             Instruction instruction = new notNullInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581162");
+            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583316");
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       } else {
-        {
-          Object object = beforeNode;
-          if (((Program) o).contains(object)) {
-            boolean before = true;
-            int position = ((Program) (o)).getStart(beforeNode);
-            Instruction instruction = new notNullInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581170");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+        if (nextNodeKeeper.isBefore()) {
+          {
+            Object object = nextNodeKeeper.getNextNode();
+            if (((Program) o).contains(object)) {
+              boolean before = true;
+              int position = ((Program) (o)).getStart(nextNodeKeeper.getNextNode());
+              Instruction instruction = new notNullInstruction(otherThanNull);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583328");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
+          }
+        } else {
+          {
+            Object object = nextNodeKeeper.getNextNode();
+            if (((Program) o).contains(object)) {
+              boolean before = false;
+              int position = ((Program) (o)).getEnd(object);
+              Instruction instruction = new notNullInstruction(otherThanNull);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583340");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
           }
         }
       }
     }
-    if (afterNode != null) {
-      if (ifJump) {
-        {
-          Object object = node;
-          if (((Program) o).contains(object)) {
-            boolean before = false;
-            int position = ((Program) (o)).getEnd(object);
-            Instruction instruction = new notNullInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581182");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
-          }
-        }
-      } else {
-        {
-          Object object = afterNode;
-          if (((Program) o).contains(object)) {
-            boolean before = false;
-            int position = ((Program) (o)).getEnd(object);
-            Instruction instruction = new notNullInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581190");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
-          }
-        }
-      }
-    }
-    calcWhereToJump = NullableUtil.calcWhereToJump(node, false);
-    beforeNode = calcWhereToJump._0();
-    afterNode = calcWhereToJump._1();
-    ifJump = (boolean) calcWhereToJump._3();
-    if (beforeNode != null) {
-      if (ifJump) {
+    nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{node, false});
+    if (nextNodeKeeper != null && nextNodeKeeper.getNextNode() != null) {
+      if (nextNodeKeeper.willJump()) {
         {
           Object object = node;
           if (((Program) o).contains(object)) {
             boolean before = false;
             int position = ((Program) (o)).getEnd(object);
             Instruction instruction = new nullableInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581227");
+            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583371");
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       } else {
-        {
-          Object object = beforeNode;
-          if (((Program) o).contains(object)) {
-            boolean before = true;
-            int position = ((Program) (o)).getStart(beforeNode);
-            Instruction instruction = new nullableInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581235");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+        if (nextNodeKeeper.isBefore()) {
+          {
+            Object object = nextNodeKeeper.getNextNode();
+            if (((Program) o).contains(object)) {
+              boolean before = true;
+              int position = ((Program) (o)).getStart(nextNodeKeeper.getNextNode());
+              Instruction instruction = new nullableInstruction(otherThanNull);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583383");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
           }
-        }
-      }
-    }
-    if (afterNode != null) {
-      if (ifJump) {
-        {
-          Object object = node;
-          if (((Program) o).contains(object)) {
-            boolean before = false;
-            int position = ((Program) (o)).getEnd(object);
-            Instruction instruction = new nullableInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581247");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
-          }
-        }
-      } else {
-        {
-          Object object = afterNode;
-          if (((Program) o).contains(object)) {
-            boolean before = false;
-            int position = ((Program) (o)).getEnd(object);
-            Instruction instruction = new nullableInstruction(otherThanNull);
-            instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189581255");
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+        } else {
+          {
+            Object object = nextNodeKeeper.getNextNode();
+            if (((Program) o).contains(object)) {
+              boolean before = false;
+              int position = ((Program) (o)).getEnd(object);
+              Instruction instruction = new nullableInstruction(otherThanNull);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651583395");
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true, before);
+            }
           }
         }
       }

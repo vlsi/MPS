@@ -4,12 +4,16 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.NotNull;
 
-public class ParenthesizedExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
+public class ParenthesizedExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
   public ParenthesizedExpression_BehaviorDescriptor() {
   }
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return ParenthesizedExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
+  }
+  public NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return ParenthesizedExpression_Behavior.virtual_getNextNode_4235809288648213009(thisNode, child, value);
   }
   @Override
   public String getConceptFqName() {

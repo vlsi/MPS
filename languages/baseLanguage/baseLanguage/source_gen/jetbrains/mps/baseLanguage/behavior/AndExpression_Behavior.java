@@ -4,11 +4,36 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AndExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 3;
+  }
+  public static NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))) {
+      if (value) {
+        return new NextNodeKeeper(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), true, false);
+      } else {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))) {
+          NextNodeKeeper nextNode = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{thisNode, value});
+          if (nextNode != null) {
+            return new NextNodeKeeper(nextNode.getNextNode(), nextNode.isBefore(), true);
+          }
+        }
+      }
+    } else if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"))) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))) {
+        NextNodeKeeper nextNode = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{thisNode, value});
+        return nextNode;
+      }
+    }
+    return null;
   }
 }

@@ -5,12 +5,16 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 
-public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor, IConditional_BehaviorDescriptor {
   public IfStatement_BehaviorDescriptor() {
   }
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     IfStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  }
+  public NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return IfStatement_Behavior.virtual_getNextNode_4235809288648213009(thisNode, child, value);
   }
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);

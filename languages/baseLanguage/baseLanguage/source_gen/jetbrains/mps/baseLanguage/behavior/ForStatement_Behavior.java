@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.annotations.NotNull;
 
 public class ForStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -40,5 +41,15 @@ public class ForStatement_Behavior {
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
+  }
+  public static NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    if (child != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, 0x10a69819132L, "condition"))) {
+      return null;
+    }
+    if (value) {
+      return new NextNodeKeeper(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")), true, false);
+    } else {
+      return new NextNodeKeeper(thisNode, false, true);
+    }
   }
 }

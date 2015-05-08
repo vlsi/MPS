@@ -8,86 +8,28 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.NextNodeKeeper;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AndExpression_DataFlow extends DataFlowBuilder {
   public AndExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
-    SNode leftExpression = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
-    boolean needtoAnalyze = NullableUtil.needToAnalyze(leftExpression);
-    SNode before;
-    SNode after;
-    boolean needReturn = false;
-    if (needtoAnalyze) {
-      Tuples._4<SNode, SNode, Boolean, Boolean> calcWhereToJump = NullableUtil.calcWhereToJump(leftExpression, false);
-      before = calcWhereToJump._0();
-      after = calcWhereToJump._1();
-      boolean ifJump = !((boolean) calcWhereToJump._2());
-      if (ifJump) {
-        if (after != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().after(after), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194134");
-        }
-        if (before != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().before(before), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194142");
-        }
-        if (needReturn) {
-          // <node> 
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))) {
+      NextNodeKeeper nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{_context.getNode(), false});
+      if (nextNodeKeeper != null) {
+        SNode nodeToJump = nextNodeKeeper.getNextNode();
+        if (nodeToJump != null) {
+          if (nextNodeKeeper.isBefore()) {
+            _context.getBuilder().emitIfJump(_context.getBuilder().before(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649359569");
+          } else {
+            _context.getBuilder().emitIfJump(_context.getBuilder().after(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649360025");
+          }
         }
       }
-      calcWhereToJump = NullableUtil.calcWhereToJump(leftExpression, true);
-      before = calcWhereToJump._0();
-      after = calcWhereToJump._1();
-      ifJump = !((boolean) calcWhereToJump._2());
-      if (ifJump) {
-        if (after != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().after(after), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194184");
-        }
-        if (before != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().before(before), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194192");
-        }
-        if (needReturn) {
-          // <node> 
-        }
-      }
-
-
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
-    SNode rightExpression = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
-    needtoAnalyze = NullableUtil.needToAnalyze(leftExpression);
-    if (needtoAnalyze) {
-      Tuples._4<SNode, SNode, Boolean, Boolean> calcWhereToJump = NullableUtil.calcWhereToJump(rightExpression, false);
-      before = calcWhereToJump._0();
-      after = calcWhereToJump._1();
-      boolean ifJump = !((boolean) calcWhereToJump._2());
-      if (ifJump) {
-        if (after != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().after(after), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194258");
-        }
-        if (before != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().before(before), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194266");
-        }
-        if (needReturn) {
-          // <node> 
-        }
-      }
-      calcWhereToJump = NullableUtil.calcWhereToJump(rightExpression, true);
-      before = calcWhereToJump._0();
-      after = calcWhereToJump._1();
-      ifJump = !((boolean) calcWhereToJump._2());
-      if (ifJump) {
-        if (after != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().after(after), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194308");
-        }
-        if (before != null) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().before(before), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600191194316");
-        }
-        if (needReturn) {
-          // <node> 
-        }
-      }
-    }
   }
 }
