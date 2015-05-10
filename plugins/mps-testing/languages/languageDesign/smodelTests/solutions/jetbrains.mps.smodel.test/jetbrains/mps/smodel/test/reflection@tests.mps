@@ -239,6 +239,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
     </language>
     <language id="b02ae39f-4c16-4545-8dfa-88df16804e7e" name="jetbrains.mps.lang.smodelTests">
       <concept id="34342663958604621" name="jetbrains.mps.lang.smodelTests.structure.ChildSubConcept" flags="ng" index="2dBE$P" />
@@ -1426,6 +1427,7 @@
         <node concept="3xLA65" id="2xk$X1Lbl_y" role="lGtFl">
           <property role="TrG5h" value="emptyReferenceContainer" />
         </node>
+        <node concept="15s5l7" id="3PYSXOr72IF" role="lGtFl" />
       </node>
     </node>
     <node concept="1qefOq" id="2xk$X1LbtqD" role="1SKRRt">
@@ -1543,6 +1545,7 @@
         <node concept="3xLA65" id="2xk$X1LbP8x" role="lGtFl">
           <property role="TrG5h" value="emptyReferenceContainer" />
         </node>
+        <node concept="15s5l7" id="3PYSXOr749g" role="lGtFl" />
       </node>
     </node>
     <node concept="1qefOq" id="2xk$X1LbP93" role="1SKRRt">
