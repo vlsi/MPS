@@ -31,26 +31,25 @@
       <node id="3364928926666856660" at="14,0,15,0" concept="4" trace="myRules" />
       <node id="3364928926666856668" at="15,28,16,70" concept="3" />
       <node id="3364928926666856674" at="16,70,17,67" concept="3" />
-      <node id="3364928926666856680" at="17,67,18,72" concept="3" />
-      <node id="3364928926666856686" at="18,72,19,72" concept="3" />
-      <node id="7390982340086719990" at="22,79,23,110" concept="8" />
-      <node id="7390982340086719996" at="23,110,24,56" concept="3" />
-      <node id="7390982340086720003" at="24,56,25,61" concept="8" />
-      <node id="7390982340086720010" at="25,61,26,30" concept="3" />
-      <node id="7390982340086720014" at="26,30,27,18" concept="9" />
-      <node id="3364928926666856643" at="15,0,21,0" concept="1" trace="LanguageChecker#()V" />
-      <node id="7390982340086719987" at="21,0,29,0" concept="7" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
-      <scope id="3364928926666856646" at="15,28,19,72" />
-      <scope id="7390982340086719989" at="22,79,27,18">
+      <node id="3364928926666856686" at="17,67,18,72" concept="3" />
+      <node id="7390982340086719990" at="21,79,22,110" concept="8" />
+      <node id="7390982340086719996" at="22,110,23,56" concept="3" />
+      <node id="7390982340086720003" at="23,56,24,61" concept="8" />
+      <node id="7390982340086720010" at="24,61,25,30" concept="3" />
+      <node id="7390982340086720014" at="25,30,26,18" concept="9" />
+      <node id="3364928926666856643" at="15,0,20,0" concept="1" trace="LanguageChecker#()V" />
+      <node id="7390982340086719987" at="20,0,28,0" concept="7" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
+      <scope id="3364928926666856646" at="15,28,18,72" />
+      <scope id="3364928926666856643" at="15,0,20,0" />
+      <scope id="7390982340086719989" at="21,79,26,18">
         <var name="errorsComponent" id="7390982340086719991" />
         <var name="result" id="7390982340086720004" />
       </scope>
-      <scope id="3364928926666856643" at="15,0,21,0" />
-      <scope id="7390982340086719987" at="21,0,29,0">
+      <scope id="7390982340086719987" at="20,0,28,0">
         <var name="repoitory" id="7390982340086720018" />
         <var name="rootNode" id="7390982340086720016" />
       </scope>
-      <unit id="3364928926666856641" at="13,0,30,0" name="jetbrains.mps.checkers.LanguageChecker" />
+      <unit id="3364928926666856641" at="13,0,29,0" name="jetbrains.mps.checkers.LanguageChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/6803901086853929087">
@@ -930,54 +929,6 @@
       <unit id="7390982340086720433" at="122,56,126,5" name="jetbrains.mps.checkers.ConstraintsChecker$5" />
       <unit id="7390982340086720506" at="138,98,142,7" name="jetbrains.mps.checkers.ConstraintsChecker$6" />
       <unit id="7390982340086720127" at="31,0,155,0" name="jetbrains.mps.checkers.ConstraintsChecker" />
-    </file>
-  </root>
-  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086720573">
-    <file name="CardinalitiesChecker.java">
-      <node id="7390982340086720600" at="21,96,22,64" concept="8" />
-      <node id="1959421118256808273" at="23,100,24,69" concept="8" />
-      <node id="1959421118256810273" at="24,69,25,0" concept="11" />
-      <node id="7390982340086720636" at="26,78,27,60" concept="10" />
-      <node id="7390982340086720640" at="28,320,29,19" concept="2" />
-      <node id="1959421118256872693" at="30,9,31,0" concept="11" />
-      <node id="2368278226919208920" at="31,0,32,97" concept="3" />
-      <node id="2914632879687654143" at="34,80,35,161" concept="3" />
-      <node id="1959421118256714480" at="40,63,41,148" concept="3" />
-      <node id="7390982340086720575" at="18,0,20,0" concept="1" trace="CardinalitiesChecker#()V" />
-      <node id="7390982340086720638" at="27,60,30,9" concept="6" />
-      <node id="2914632879687654122" at="33,7,36,7" concept="6" />
-      <node id="1959421118256714478" at="39,33,42,9" concept="6" />
-      <node id="1959421118256714419" at="38,96,43,7" concept="6" />
-      <node id="1959421118256714406" at="37,5,44,5" concept="5" />
-      <node id="7390982340086720630" at="25,0,33,7" concept="6" />
-      <node id="7390982340086720611" at="22,64,37,5" concept="5" />
-      <node id="7390982340086720580" at="20,0,46,0" concept="7" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <scope id="7390982340086720578" at="18,33,18,33" />
-      <scope id="7390982340086720639" at="28,320,29,19" />
-      <scope id="2914632879687654138" at="34,80,35,161" />
-      <scope id="1959421118256714479" at="40,63,41,148" />
-      <scope id="7390982340086720575" at="18,0,20,0" />
-      <scope id="1959421118256714420" at="39,33,42,9" />
-      <scope id="1959421118256714408" at="38,96,43,7" />
-      <scope id="7390982340086720631" at="26,78,32,97" />
-      <scope id="1959421118256714406" at="37,5,44,5">
-        <var name="link" id="1959421118256714407" />
-      </scope>
-      <scope id="7390982340086720616" at="23,100,36,7">
-        <var name="children" id="1959421118256808274" />
-      </scope>
-      <scope id="7390982340086720611" at="22,64,37,5">
-        <var name="link" id="7390982340086720612" />
-      </scope>
-      <scope id="7390982340086720589" at="21,96,44,5">
-        <var name="concept" id="7390982340086720601" />
-      </scope>
-      <scope id="7390982340086720580" at="20,0,46,0">
-        <var name="component" id="7390982340086720585" />
-        <var name="node" id="7390982340086720583" />
-        <var name="repository" id="4525171225383422193" />
-      </scope>
-      <unit id="7390982340086720573" at="17,0,47,0" name="jetbrains.mps.checkers.CardinalitiesChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086720780">
