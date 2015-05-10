@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
@@ -63,17 +62,14 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 //todo: all methods should accept Processor as a parameter, not a Consumer
@@ -83,60 +79,65 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<ValidationProblem> processor) {
     for (SNode root : roots) {
       for (SNode node : SNodeUtil.getDescendants(root)) {
-        SLanguage lang = node.getConcept().getLanguage();
-        if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
-          LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
-          if (!processor.process(error)) return;
-          continue;
-        }
+        if (!validateSingleNode(node, processor)) return;
+      }
+    }
+  }
 
-        SConcept concept = node.getConcept();
-        if (!concept.isValid()) {
-          if (!processor.process(new ConceptMissingError(node, concept))) return;
-          continue;
-        }
+  public static boolean validateSingleNode(SNode node, @NotNull Processor<ValidationProblem> processor) {
+    SLanguage lang = node.getConcept().getLanguage();
+    if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
+      LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
+      if (!processor.process(error)) return false;
+      return true;
+    }
 
-        // in case of props, refs, links, list should be better than set
-        List<SProperty> props = IterableUtil.asList(concept.getProperties());
-        for (SProperty p : node.getProperties()) {
-          if (props.contains(p)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, p))) return;
-        }
+    SConcept concept = node.getConcept();
+    if (!concept.isValid()) {
+      if (!processor.process(new ConceptMissingError(node, concept))) return false;
+      return true;
+    }
 
-        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
-        for (SNode n : node.getChildren()) {
-          SContainmentLink l = n.getContainmentLink();
-          if (links.contains(l)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
-        }
+    // in case of props, refs, links, list should be better than set
+    List<SProperty> props = IterableUtil.asList(concept.getProperties());
+    for (SProperty p : node.getProperties()) {
+      if (props.contains(p)) continue;
+      if (!processor.process(new ConceptFeatureMissingError(node, p))) return false;
+    }
 
-        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
-        for (SReference r : node.getReferences()) {
-          SReferenceLink l = r.getLink();
-          if (refs.contains(l)) continue;
-          if (!processor.process(new ConceptFeatureMissingError(node, l))) return;
-        }
+    List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
+    for (SNode n : node.getChildren()) {
+      SContainmentLink l = n.getContainmentLink();
+      if (links.contains(l)) continue;
+      if (!processor.process(new ConceptFeatureMissingError(node, l))) return false;
+    }
 
-        for (SContainmentLink link : concept.getContainmentLinks()) {
-          Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
-          if (!link.isOptional() && children.isEmpty()) {
-            // TODO this is a hack for constructor declarations
-            if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
-            if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return;
-          }
-          if (!link.isMultiple() && children.size() > 1) {
-            if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return;
-          }
-        }
-        for (SReferenceLink ref : concept.getReferenceLinks()) {
-          if (!ref.isOptional()) {
-            if (node.getReference(ref) == null) {
-              if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return;
-            }
-          }
+    List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
+    for (SReference r : node.getReferences()) {
+      SReferenceLink l = r.getLink();
+      if (refs.contains(l)) continue;
+      if (!processor.process(new ConceptFeatureMissingError(node, l))) return false;
+    }
+
+    for (SContainmentLink link : concept.getContainmentLinks()) {
+      Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
+      if (!link.isOptional() && children.isEmpty()) {
+        // TODO this is a hack for constructor declarations
+        if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
+        if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return false;
+      }
+      if (!link.isMultiple() && children.size() > 1) {
+        if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return false;
+      }
+    }
+    for (SReferenceLink ref : concept.getReferenceLinks()) {
+      if (!ref.isOptional()) {
+        if (node.getReference(ref) == null) {
+          if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return false;
         }
       }
     }
+    return true;
   }
 
   public static void validateModel(@NotNull final SModel model, @NotNull Processor<ValidationProblem> processor) {
