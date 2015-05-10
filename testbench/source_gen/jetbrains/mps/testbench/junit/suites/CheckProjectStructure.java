@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
-import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
+import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -106,7 +106,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
               return err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
             }
           };
-          ValidationUtil.validateModelContent(sm.getRootNodes(), new TemplatesModelProcessorDecorator(sm, collector));
+          ValidationUtil.validateModelContent(sm.getRootNodes(), new SuppressingAwareProcessorDecorator(collector));
           if (collector.getErrors().isEmpty()) {
             continue;
           }

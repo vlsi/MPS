@@ -72,6 +72,7 @@
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="zofw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(MPS.Core/jetbrains.mps.smodel.persistence.def@java_stub)" />
     <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
+    <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -9987,12 +9988,9 @@
               </node>
               <node concept="2RRcyG" id="4soTJTMNLu2" role="2OqNvi" />
             </node>
-            <node concept="2ShNRf" id="5xiD47T608W" role="37wK5m">
-              <node concept="1pGfFk" id="5xiD47T68Sp" role="2ShVmc">
-                <ref role="37wK5l" to="6k24:~TemplatesModelProcessorDecorator.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor)" resolve="TemplatesModelProcessorDecorator" />
-                <node concept="37vLTw" id="5xiD47T6l6U" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRK$6e" resolve="model" />
-                </node>
+            <node concept="2ShNRf" id="w2yda4e_3q" role="37wK5m">
+              <node concept="1pGfFk" id="w2yda4eU5k" role="2ShVmc">
+                <ref role="37wK5l" to="h9bu:w2yda4ezwI" resolve="SuppressingAwareProcessorDecorator" />
                 <node concept="1bVj0M" id="2RMHhGkQ$w7" role="37wK5m">
                   <node concept="3clFbS" id="2RMHhGkQ$w9" role="1bW5cS">
                     <node concept="3clFbJ" id="3etVqSRK$5x" role="3cqZAp">
@@ -10051,8 +10049,8 @@
                     </node>
                     <node concept="3clFbF" id="3etVqSRK$5M" role="3cqZAp">
                       <node concept="2YIFZM" id="50Q$OHe3vrT" role="3clFbG">
-                        <ref role="37wK5l" node="3etVqSRRx7z" resolve="addIssue" />
                         <ref role="1Pybhc" node="3etVqSRRx7i" resolve="SpecificChecker" />
+                        <ref role="37wK5l" node="3etVqSRRx7z" resolve="addIssue" />
                         <node concept="37vLTw" id="50Q$OHe3vrU" role="37wK5m">
                           <ref role="3cqZAo" node="3etVqSRK$5a" resolve="results" />
                         </node>

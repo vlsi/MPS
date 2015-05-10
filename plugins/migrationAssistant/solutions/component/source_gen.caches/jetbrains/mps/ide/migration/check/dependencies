@@ -77,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.project.validation.ConceptFeatureMissingError" />
     <classNode dependClassName="jetbrains.mps.project.validation.ConceptMissingError" />
     <classNode dependClassName="jetbrains.mps.project.validation.LanguageMissingError" />
-    <classNode dependClassName="jetbrains.mps.project.validation.TemplatesModelProcessorDecorator" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />

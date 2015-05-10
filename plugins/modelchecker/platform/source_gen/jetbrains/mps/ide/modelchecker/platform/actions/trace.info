@@ -855,7 +855,7 @@
         <var name="model" id="3719390199793467790" />
         <var name="monitor" id="3719390199793467792" />
       </scope>
-      <unit id="3310907803989329927" at="25,125,37,5" name="jetbrains.mps.ide.modelchecker.platform.actions.StructureChecker$1" />
+      <unit id="3310907803989329927" at="25,120,37,5" name="jetbrains.mps.ide.modelchecker.platform.actions.StructureChecker$1" />
       <unit id="3719390199793467711" at="18,0,43,0" name="jetbrains.mps.ide.modelchecker.platform.actions.StructureChecker" />
     </file>
   </root>

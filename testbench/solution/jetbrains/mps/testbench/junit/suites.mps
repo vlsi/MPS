@@ -50,6 +50,7 @@
     <import index="vyt2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.scope(jetbrains.mps.scope@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(jetbrains.mps@java_stub)" />
     <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4697,10 +4698,7 @@
                       </node>
                       <node concept="2ShNRf" id="5xiD47T6ciY" role="37wK5m">
                         <node concept="1pGfFk" id="5xiD47T6dOH" role="2ShVmc">
-                          <ref role="37wK5l" to="6k24:~TemplatesModelProcessorDecorator.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor)" resolve="TemplatesModelProcessorDecorator" />
-                          <node concept="37vLTw" id="5xiD47T6pPI" role="37wK5m">
-                            <ref role="3cqZAo" node="2RMHhGkSwJC" resolve="sm" />
-                          </node>
+                          <ref role="37wK5l" to="h9bu:w2yda4ezwI" resolve="SuppressingAwareProcessorDecorator" />
                           <node concept="37vLTw" id="5xiD47T6e2y" role="37wK5m">
                             <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
                           </node>

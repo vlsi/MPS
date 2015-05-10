@@ -52,7 +52,6 @@ import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import org.apache.log4j.Logger;
@@ -322,7 +321,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     public InEditorStructureChecker() {
     }
     public void checkNode(final SNode node, final LanguageErrorsComponent component, SRepository repository) {
-      ValidationUtil.validateSingleNode(node, new TemplatesModelProcessorDecorator(SNodeOperations.getModel(node), new Processor<ValidationProblem>() {
+      ValidationUtil.validateSingleNode(node, new Processor<ValidationProblem>() {
         public boolean process(ValidationProblem vp) {
           if (vp.getSeverity() != ValidationProblem.Severity.ERROR) {
             return true;
@@ -330,7 +329,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
           component.addError(node, vp.getMessage(), null);
           return true;
         }
-      }));
+      });
     }
   }
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);

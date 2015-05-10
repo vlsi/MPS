@@ -2589,74 +2589,63 @@
               <node concept="37vLTw" id="15gCTDhDnFK" role="37wK5m">
                 <ref role="3cqZAo" node="4soTJTMNAeN" resolve="node" />
               </node>
-              <node concept="2ShNRf" id="15gCTDhDn7T" role="37wK5m">
-                <node concept="1pGfFk" id="15gCTDhDn7U" role="2ShVmc">
-                  <ref role="37wK5l" to="6k24:~TemplatesModelProcessorDecorator.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor)" resolve="TemplatesModelProcessorDecorator" />
-                  <node concept="2OqwBi" id="15gCTDhDn7V" role="37wK5m">
-                    <node concept="37vLTw" id="15gCTDhDn7W" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4soTJTMNAeN" resolve="node" />
-                    </node>
-                    <node concept="I4A8Y" id="15gCTDhDn7X" role="2OqNvi" />
-                  </node>
-                  <node concept="1bVj0M" id="15gCTDhDn7Y" role="37wK5m">
-                    <node concept="3clFbS" id="15gCTDhDn7Z" role="1bW5cS">
-                      <node concept="3clFbJ" id="15gCTDhDn80" role="3cqZAp">
-                        <node concept="3clFbS" id="15gCTDhDn81" role="3clFbx">
-                          <node concept="3cpWs6" id="15gCTDhDn82" role="3cqZAp">
-                            <node concept="3clFbT" id="15gCTDhDn83" role="3cqZAk">
-                              <property role="3clFbU" value="true" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3y3z36" id="15gCTDhDn84" role="3clFbw">
-                          <node concept="2OqwBi" id="15gCTDhDn85" role="3uHU7B">
-                            <node concept="37vLTw" id="15gCTDhDn86" role="2Oq$k0">
-                              <ref role="3cqZAo" node="15gCTDhDn8k" resolve="vp" />
-                            </node>
-                            <node concept="liA8E" id="15gCTDhDn87" role="2OqNvi">
-                              <ref role="37wK5l" to="6k24:~ValidationProblem.getSeverity():jetbrains.mps.project.validation.ValidationProblem$Severity" resolve="getSeverity" />
-                            </node>
-                          </node>
-                          <node concept="Rm8GO" id="15gCTDhDn88" role="3uHU7w">
-                            <ref role="Rm8GQ" to="6k24:~ValidationProblem$Severity.ERROR" resolve="ERROR" />
-                            <ref role="1Px2BO" to="6k24:~ValidationProblem$Severity" resolve="ValidationProblem.Severity" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="15gCTDhDn89" role="3cqZAp">
-                        <node concept="2OqwBi" id="15gCTDhDn8a" role="3clFbG">
-                          <node concept="37vLTw" id="15gCTDhDn8b" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4soTJTMNAeP" resolve="component" />
-                          </node>
-                          <node concept="liA8E" id="15gCTDhDn8c" role="2OqNvi">
-                            <ref role="37wK5l" to="wsw7:6qi2OtU3u3H" resolve="addError" />
-                            <node concept="37vLTw" id="15gCTDhDn8d" role="37wK5m">
-                              <ref role="3cqZAo" node="4soTJTMNAeN" resolve="node" />
-                            </node>
-                            <node concept="2OqwBi" id="15gCTDhDn8e" role="37wK5m">
-                              <node concept="37vLTw" id="15gCTDhDn8f" role="2Oq$k0">
-                                <ref role="3cqZAo" node="15gCTDhDn8k" resolve="vp" />
-                              </node>
-                              <node concept="liA8E" id="15gCTDhDn8g" role="2OqNvi">
-                                <ref role="37wK5l" to="6k24:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
-                              </node>
-                            </node>
-                            <node concept="10Nm6u" id="15gCTDhDn8h" role="37wK5m" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs6" id="15gCTDhDn8i" role="3cqZAp">
-                        <node concept="3clFbT" id="15gCTDhDn8j" role="3cqZAk">
+              <node concept="1bVj0M" id="15gCTDhDn7Y" role="37wK5m">
+                <node concept="3clFbS" id="15gCTDhDn7Z" role="1bW5cS">
+                  <node concept="3clFbJ" id="15gCTDhDn80" role="3cqZAp">
+                    <node concept="3clFbS" id="15gCTDhDn81" role="3clFbx">
+                      <node concept="3cpWs6" id="15gCTDhDn82" role="3cqZAp">
+                        <node concept="3clFbT" id="15gCTDhDn83" role="3cqZAk">
                           <property role="3clFbU" value="true" />
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTG" id="15gCTDhDn8k" role="1bW2Oz">
-                      <property role="TrG5h" value="vp" />
-                      <node concept="3uibUv" id="15gCTDhDn8l" role="1tU5fm">
-                        <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+                    <node concept="3y3z36" id="15gCTDhDn84" role="3clFbw">
+                      <node concept="2OqwBi" id="15gCTDhDn85" role="3uHU7B">
+                        <node concept="37vLTw" id="15gCTDhDn86" role="2Oq$k0">
+                          <ref role="3cqZAo" node="15gCTDhDn8k" resolve="vp" />
+                        </node>
+                        <node concept="liA8E" id="15gCTDhDn87" role="2OqNvi">
+                          <ref role="37wK5l" to="6k24:~ValidationProblem.getSeverity():jetbrains.mps.project.validation.ValidationProblem$Severity" resolve="getSeverity" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="15gCTDhDn88" role="3uHU7w">
+                        <ref role="1Px2BO" to="6k24:~ValidationProblem$Severity" resolve="ValidationProblem.Severity" />
+                        <ref role="Rm8GQ" to="6k24:~ValidationProblem$Severity.ERROR" resolve="ERROR" />
                       </node>
                     </node>
+                  </node>
+                  <node concept="3clFbF" id="15gCTDhDn89" role="3cqZAp">
+                    <node concept="2OqwBi" id="15gCTDhDn8a" role="3clFbG">
+                      <node concept="37vLTw" id="15gCTDhDn8b" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4soTJTMNAeP" resolve="component" />
+                      </node>
+                      <node concept="liA8E" id="15gCTDhDn8c" role="2OqNvi">
+                        <ref role="37wK5l" to="wsw7:6qi2OtU3u3H" resolve="addError" />
+                        <node concept="37vLTw" id="15gCTDhDn8d" role="37wK5m">
+                          <ref role="3cqZAo" node="4soTJTMNAeN" resolve="node" />
+                        </node>
+                        <node concept="2OqwBi" id="15gCTDhDn8e" role="37wK5m">
+                          <node concept="37vLTw" id="15gCTDhDn8f" role="2Oq$k0">
+                            <ref role="3cqZAo" node="15gCTDhDn8k" resolve="vp" />
+                          </node>
+                          <node concept="liA8E" id="15gCTDhDn8g" role="2OqNvi">
+                            <ref role="37wK5l" to="6k24:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="15gCTDhDn8h" role="37wK5m" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="15gCTDhDn8i" role="3cqZAp">
+                    <node concept="3clFbT" id="15gCTDhDn8j" role="3cqZAk">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTG" id="15gCTDhDn8k" role="1bW2Oz">
+                  <property role="TrG5h" value="vp" />
+                  <node concept="3uibUv" id="15gCTDhDn8l" role="1tU5fm">
+                    <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
                   </node>
                 </node>
               </node>
