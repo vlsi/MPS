@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
-import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -51,6 +50,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.project.validation.ValidationProblem;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -111,7 +115,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
-    SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
+    SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.InEditorStructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
@@ -313,6 +317,21 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   protected void resetCheckerState() {
     myForceRunQuickFixes = true;
     super.resetCheckerState();
+  }
+  private class InEditorStructureChecker extends AbstractConstraintsChecker {
+    public InEditorStructureChecker() {
+    }
+    public void checkNode(final SNode node, final LanguageErrorsComponent component, SRepository repository) {
+      ValidationUtil.validateSingleNode(node, new TemplatesModelProcessorDecorator(SNodeOperations.getModel(node), new Processor<ValidationProblem>() {
+        public boolean process(ValidationProblem vp) {
+          if (vp.getSeverity() != ValidationProblem.Severity.ERROR) {
+            return true;
+          }
+          component.addError(node, vp.getMessage(), null);
+          return true;
+        }
+      }));
+    }
   }
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
 }
